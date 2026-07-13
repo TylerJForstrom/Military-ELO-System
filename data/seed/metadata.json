@@ -7,9 +7,9 @@
   "comprehensive": false,
   "description": "A deliberately small, hand-curated seed spanning selected conflicts from the Late Bronze Age through 2021. It exists to exercise entity resets, tactical/operational/strategic layers, coalition participation, participant-specific stakes, and differentiated defeat types. It is not a ranking-ready census of all countries, empires, wars, campaigns, or battles.",
   "record_counts_expected": {
-    "entities": 35,
+    "entities": 36,
     "events": 40,
-    "sources": 39
+    "sources": 40
   },
   "year_range": {
     "start": -1274,

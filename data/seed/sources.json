@@ -349,5 +349,14 @@
     "license": "U.S. government work",
     "source_type": "official_government_report",
     "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_fifth_republic",
+    "title": "Fifth Republic (French history)",
+    "url": "https://www.britannica.com/topic/Fifth-Republic-French-history",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
   }
 ]

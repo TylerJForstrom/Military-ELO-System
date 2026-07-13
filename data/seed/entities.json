@@ -396,6 +396,18 @@
     "source_ids": ["cliopatria_polities", "army_chosin"]
   },
   {
+    "id": "french_fifth_republic",
+    "name": "French Fifth Republic",
+    "kind": "republic",
+    "start_year": 1958,
+    "end_year": null,
+    "region": "Western Europe",
+    "aliases": ["France", "French Republic"],
+    "predecessors": [],
+    "continuity_note": "The 1958 constitutional founding starts a new rated identity at the baseline. Earlier French kingdoms, empires, and republics are separate entities, and none of their Elo is inherited.",
+    "source_ids": ["britannica_fifth_republic", "project_continuity_policy"]
+  },
+  {
     "id": "islamic_republic_afghanistan",
     "name": "Islamic Republic of Afghanistan",
     "kind": "state",
