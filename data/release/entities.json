@@ -1,0 +1,1828 @@
+[
+  {
+    "id": "hittite_empire",
+    "name": "Hittite Empire",
+    "kind": "empire",
+    "start_year": -1650,
+    "end_year": -1180,
+    "region": "Anatolia",
+    "aliases": [
+      "Hatti"
+    ],
+    "predecessors": [],
+    "continuity_note": "Broad conventional imperial period used for demonstration.",
+    "source_ids": [
+      "cliopatria_polities",
+      "whe_kadesh"
+    ]
+  },
+  {
+    "id": "egypt_new_kingdom",
+    "name": "New Kingdom of Egypt",
+    "kind": "empire",
+    "start_year": -1550,
+    "end_year": -1069,
+    "region": "North Africa",
+    "aliases": [
+      "Egyptian New Kingdom"
+    ],
+    "predecessors": [],
+    "continuity_note": "Curated demonstration boundary; dynastic precision is intentionally not implied.",
+    "source_ids": [
+      "cliopatria_polities",
+      "whe_kadesh"
+    ]
+  },
+  {
+    "id": "carthage",
+    "name": "Carthage",
+    "kind": "republic",
+    "start_year": -650,
+    "end_year": -146,
+    "region": "North Africa and Western Mediterranean",
+    "aliases": [
+      "Carthaginian Republic",
+      "Punic Carthage"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends with the destruction of Carthage in the Third Punic War.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_punic_wars"
+    ]
+  },
+  {
+    "id": "sparta",
+    "name": "Sparta",
+    "kind": "city_state",
+    "start_year": -650,
+    "end_year": -192,
+    "region": "Southern Europe",
+    "aliases": [
+      "Lacedaemon"
+    ],
+    "predecessors": [],
+    "continuity_note": "Conventional independent Spartan polity period for this demonstration.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_greco_persian",
+      "britannica_peloponnesian"
+    ]
+  },
+  {
+    "id": "achaemenid_empire",
+    "name": "Achaemenid Empire",
+    "kind": "empire",
+    "start_year": -550,
+    "end_year": -330,
+    "region": "West and Central Asia",
+    "aliases": [
+      "First Persian Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends as a rated entity with the Macedonian conquest; successor regimes do not inherit its rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_alexander",
+      "iranica_salamis"
+    ]
+  },
+  {
+    "id": "roman_republic",
+    "name": "Roman Republic",
+    "kind": "republic",
+    "start_year": -509,
+    "end_year": -27,
+    "region": "Southern Europe and Mediterranean",
+    "aliases": [
+      "Republican Rome"
+    ],
+    "predecessors": [],
+    "continuity_note": "Separate rated polity from the Roman Empire under the project's historiographic-entity rule.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_punic_wars"
+    ]
+  },
+  {
+    "id": "athens",
+    "name": "Athens",
+    "kind": "city_state",
+    "start_year": -508,
+    "end_year": -322,
+    "region": "Southern Europe",
+    "aliases": [
+      "Classical Athens",
+      "Athenian polis"
+    ],
+    "predecessors": [],
+    "continuity_note": "Classical democratic and imperial-era Athens only.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_greco_persian",
+      "britannica_peloponnesian"
+    ]
+  },
+  {
+    "id": "macedonian_empire",
+    "name": "Macedonian Empire of Alexander",
+    "kind": "empire",
+    "start_year": -336,
+    "end_year": -323,
+    "region": "Southern Europe and West Asia",
+    "aliases": [
+      "Empire of Alexander the Great"
+    ],
+    "predecessors": [],
+    "continuity_note": "Alexander's imperial polity; the Diadochi successor kingdoms require separate future entities.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_alexander",
+      "iranica_gaugamela"
+    ]
+  },
+  {
+    "id": "clio_ir_seleucid_emp_bce318_21d0ee32",
+    "name": "Seleucid Empire",
+    "kind": "empire",
+    "start_year": -318,
+    "end_year": -64,
+    "region": "Unclassified",
+    "aliases": [
+      "Seleucid dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_tr_pergamon_k_bce279_0883ae17",
+    "name": "Kingdom of Pergamon",
+    "kind": "kingdom",
+    "start_year": -279,
+    "end_year": -127,
+    "region": "Unclassified",
+    "aliases": [
+      "Kingdom of Pergamon"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_dz_numidia_bce197_0f528fc7",
+    "name": "Kingdom of Numidia",
+    "kind": "kingdom",
+    "start_year": -197,
+    "end_year": -47,
+    "region": "Unclassified",
+    "aliases": [
+      "Jugurtha"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "roman_empire",
+    "name": "Roman Empire",
+    "kind": "empire",
+    "start_year": -27,
+    "end_year": 395,
+    "region": "Europe, North Africa, and West Asia",
+    "aliases": [
+      "Imperial Rome",
+      "Principate and Dominate"
+    ],
+    "predecessors": [
+      "roman_republic"
+    ],
+    "continuity_note": "The project ends this rating line at the permanent 395 division. The Byzantine rating starts independently at baseline.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_shapur"
+    ]
+  },
+  {
+    "id": "sasanian_empire",
+    "name": "Sasanian Empire",
+    "kind": "empire",
+    "start_year": 224,
+    "end_year": 651,
+    "region": "West and Central Asia",
+    "aliases": [
+      "Sassanian Empire",
+      "Eran-shahr"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends as a polity after the Rashidun conquest; later Iranian states receive new IDs.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_shapur",
+      "iranica_arab_conquest"
+    ]
+  },
+  {
+    "id": "byzantine_empire",
+    "name": "Byzantine Empire",
+    "kind": "empire",
+    "start_year": 395,
+    "end_year": 1453,
+    "region": "Eastern Mediterranean",
+    "aliases": [
+      "Eastern Roman Empire"
+    ],
+    "predecessors": [
+      "roman_empire"
+    ],
+    "continuity_note": "Explicit project convention: new entity and full Elo reset at 395. The predecessor link is descriptive and transfers no rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_byzantine",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "frankish_kingdom",
+    "name": "Frankish Kingdom",
+    "kind": "kingdom",
+    "start_year": 481,
+    "end_year": 843,
+    "region": "Western Europe",
+    "aliases": [
+      "Kingdom of the Franks",
+      "Frankish realm"
+    ],
+    "predecessors": [],
+    "continuity_note": "Broad Frankish polity used for the Tours demonstration record; later partitions are not merged into this rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_tours"
+    ]
+  },
+  {
+    "id": "clio_it_italian_k_587_7218f0c7",
+    "name": "Kingdom of Italy",
+    "kind": "kingdom",
+    "start_year": 587,
+    "end_year": 1946,
+    "region": "Unclassified",
+    "aliases": [
+      "Kingdom of Italy"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "rashidun_caliphate",
+    "name": "Rashidun Caliphate",
+    "kind": "caliphate",
+    "start_year": 632,
+    "end_year": 661,
+    "region": "West Asia and North Africa",
+    "aliases": [
+      "Rightly Guided Caliphate"
+    ],
+    "predecessors": [],
+    "continuity_note": "Rated separately from the subsequent Umayyad Caliphate.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_arab_conquest",
+      "britannica_yarmouk"
+    ]
+  },
+  {
+    "id": "umayyad_caliphate",
+    "name": "Umayyad Caliphate",
+    "kind": "caliphate",
+    "start_year": 661,
+    "end_year": 750,
+    "region": "West Asia, North Africa, and Iberia",
+    "aliases": [
+      "Umayyad Empire"
+    ],
+    "predecessors": [
+      "rashidun_caliphate"
+    ],
+    "continuity_note": "New dynastic imperial entity and independent rating line.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_umayyad",
+      "britannica_tours"
+    ]
+  },
+  {
+    "id": "clio_bg_bulgaria_early_682_95daf02a",
+    "name": "First Bulgarian Empire",
+    "kind": "empire",
+    "start_year": 682,
+    "end_year": 1017,
+    "region": "Unclassified",
+    "aliases": [
+      "First Bulgarian Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_it_papal_state_1_755_50394c66",
+    "name": "Papal States",
+    "kind": "polity",
+    "start_year": 755,
+    "end_year": 1870,
+    "region": "Unclassified",
+    "aliases": [
+      "Papal States"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_es_leon_k_911_229ce82d",
+    "name": "Kingdom of León",
+    "kind": "kingdom",
+    "start_year": 911,
+    "end_year": 1235,
+    "region": "Unclassified",
+    "aliases": [
+      "Kingdom of León"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_es_cordoba_cal_936_feb4eaea",
+    "name": "Caliphate of Córdoba",
+    "kind": "caliphate",
+    "start_year": 936,
+    "end_year": 1071,
+    "region": "Unclassified",
+    "aliases": [
+      "Caliphate of Córdoba"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_france",
+    "name": "Kingdom of France",
+    "kind": "kingdom",
+    "start_year": 987,
+    "end_year": 1792,
+    "region": "Western Europe",
+    "aliases": [
+      "France under the Ancien Regime"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends before revolutionary and Napoleonic entities, which receive independent ratings.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_seven_years"
+    ]
+  },
+  {
+    "id": "clio_ir_seljuk_sultanate_1040_577da931",
+    "name": "Great Seljuk Empire",
+    "kind": "empire",
+    "start_year": 1040,
+    "end_year": 1201,
+    "region": "Unclassified",
+    "aliases": [
+      "Seljuk Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mongol_empire",
+    "name": "Mongol Empire",
+    "kind": "empire",
+    "start_year": 1206,
+    "end_year": 1294,
+    "region": "Eurasia",
+    "aliases": [
+      "Great Mongol State"
+    ],
+    "predecessors": [],
+    "continuity_note": "Unified imperial line only; khanates require separate future records.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "clio_de_empire_2_1236_22361181",
+    "name": "Teutonic Order",
+    "kind": "polity",
+    "start_year": 1236,
+    "end_year": 1525,
+    "region": "Unclassified",
+    "aliases": [
+      "Teutonic Order"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mamluk_sultanate",
+    "name": "Mamluk Sultanate",
+    "kind": "sultanate",
+    "start_year": 1250,
+    "end_year": 1517,
+    "region": "Egypt and the Levant",
+    "aliases": [
+      "Mamluk Egypt"
+    ],
+    "predecessors": [],
+    "continuity_note": "Cairo-based Mamluk Sultanate through Ottoman conquest.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "ottoman_empire",
+    "name": "Ottoman Empire",
+    "kind": "empire",
+    "start_year": 1299,
+    "end_year": 1922,
+    "region": "Southeastern Europe, West Asia, and North Africa",
+    "aliases": [
+      "Ottoman State"
+    ],
+    "predecessors": [],
+    "continuity_note": "The Republic of Turkey would be a new entity and does not inherit this rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_fall_constantinople",
+      "iranica_chaldiran"
+    ]
+  },
+  {
+    "id": "clio_cn_ming_dyn_1375_80721637",
+    "name": "Ming Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 1375,
+    "end_year": 1644,
+    "region": "Unclassified",
+    "aliases": [
+      "Ming dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_mn_mongol_late_1375_3c63bd86",
+    "name": "Northern Yuan",
+    "kind": "polity",
+    "start_year": 1375,
+    "end_year": 1439,
+    "region": "Unclassified",
+    "aliases": [
+      "Northern Yuan"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_uz_timurid_emp_1375_73c13c8e",
+    "name": "Timurid Empire",
+    "kind": "empire",
+    "start_year": 1375,
+    "end_year": 1506,
+    "region": "Unclassified",
+    "aliases": [
+      "Timurid Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ru_crimean_khanate_1450_32e63e65",
+    "name": "Crimean Khanate",
+    "kind": "khanate",
+    "start_year": 1450,
+    "end_year": 1782,
+    "region": "Unclassified",
+    "aliases": [
+      "Crimean Khanate"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_us_haudenosaunee_1_1450_0f51fc43",
+    "name": "Haudenosaunee",
+    "kind": "polity",
+    "start_year": 1450,
+    "end_year": 1782,
+    "region": "Unclassified",
+    "aliases": [
+      "Iroquois"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_jp_azuchi_momoyama_1468_686ae822",
+    "name": "Warring States Japan",
+    "kind": "polity",
+    "start_year": 1468,
+    "end_year": 1601,
+    "region": "Unclassified",
+    "aliases": [
+      "Azuchi-Momoyama period",
+      "Sengoku period"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "spanish_empire",
+    "name": "Spanish Monarchy and Empire",
+    "kind": "empire",
+    "start_year": 1479,
+    "end_year": 1898,
+    "region": "Europe and overseas empire",
+    "aliases": [
+      "Spanish Empire",
+      "Habsburg and Bourbon Spain"
+    ],
+    "predecessors": [],
+    "continuity_note": "Aggregated imperial Spanish polity for demonstration; future production data should adjudicate regime boundaries more finely.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_eighty_years"
+    ]
+  },
+  {
+    "id": "safavid_empire",
+    "name": "Safavid Iran",
+    "kind": "empire",
+    "start_year": 1501,
+    "end_year": 1736,
+    "region": "West Asia",
+    "aliases": [
+      "Safavid Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Distinct Safavid polity; later Iranian dynasties require separate ratings.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_chaldiran",
+      "iranica_kandahar"
+    ]
+  },
+  {
+    "id": "clio_es_spanish_emp_1_1516_a376311d",
+    "name": "Kingdom of Spain",
+    "kind": "kingdom",
+    "start_year": 1516,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Spain"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mughal_empire",
+    "name": "Mughal Empire",
+    "kind": "empire",
+    "start_year": 1526,
+    "end_year": 1857,
+    "region": "South Asia",
+    "aliases": [
+      "Mughal India"
+    ],
+    "predecessors": [],
+    "continuity_note": "Conventional Mughal imperial span; periods of reduced control remain part of the same demonstration entity.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iranica_kandahar"
+    ]
+  },
+  {
+    "id": "clio_ru_moskva_rurik_dyn_1547_93deb0e2",
+    "name": "Tsardom of Russia",
+    "kind": "polity",
+    "start_year": 1547,
+    "end_year": 1720,
+    "region": "Unclassified",
+    "aliases": [
+      "Tsardom of Russia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "dutch_republic",
+    "name": "Dutch Revolt and Republic",
+    "kind": "republic",
+    "start_year": 1568,
+    "end_year": 1795,
+    "region": "Western Europe and overseas empire",
+    "aliases": [
+      "United Provinces",
+      "Dutch Republic"
+    ],
+    "predecessors": [],
+    "continuity_note": "Begins with the revolt for this demonstration so its independence war can be rated; the later Kingdom of the Netherlands is separate.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_eighty_years"
+    ]
+  },
+  {
+    "id": "clio_mn_zungharian_emp_1609_f84aab9a",
+    "name": "Dzungar Khanate",
+    "kind": "khanate",
+    "start_year": 1609,
+    "end_year": 1756,
+    "region": "Unclassified",
+    "aliases": [
+      "Dzungar Khanate"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_cn_qing_dyn_1_1645_8a50480c",
+    "name": "Qing Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 1645,
+    "end_year": 1911,
+    "region": "Unclassified",
+    "aliases": [
+      "Qing dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q1028_1670_ae522447",
+    "name": "Morocco",
+    "kind": "polity",
+    "start_year": 1670,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Morocco"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_gh_ashanti_emp_1702_3221e1b6",
+    "name": "Ashanti Empire",
+    "kind": "empire",
+    "start_year": 1702,
+    "end_year": 1897,
+    "region": "Unclassified",
+    "aliases": [
+      "Ashanti Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "united_kingdom",
+    "name": "United Kingdom",
+    "kind": "state_empire",
+    "start_year": 1707,
+    "end_year": null,
+    "region": "Western Europe and former overseas empire",
+    "aliases": [
+      "Great Britain",
+      "British Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "The sovereign United Kingdom is the rated entity; imperial status is an era tag rather than a successor ID here.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_seven_years",
+      "britannica_napoleonic_wars"
+    ]
+  },
+  {
+    "id": "russian_empire",
+    "name": "Russian Empire",
+    "kind": "empire",
+    "start_year": 1721,
+    "end_year": 1917,
+    "region": "Eastern Europe and Northern Asia",
+    "aliases": [
+      "Imperial Russia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends in 1917; the Soviet Union is independently initialized.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_napoleon_russia",
+      "britannica_russo_japanese"
+    ]
+  },
+  {
+    "id": "clio_om_busaidi_imamate_1_1744_c23501c3",
+    "name": "Sultanate of Oman",
+    "kind": "sultanate",
+    "start_year": 1744,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Oman"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q817_1757_7fca26e3",
+    "name": "Kuwait",
+    "kind": "polity",
+    "start_year": 1757,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Kuwait"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "united_states",
+    "name": "United States",
+    "kind": "state",
+    "start_year": 1776,
+    "end_year": null,
+    "region": "North America",
+    "aliases": [
+      "United States of America",
+      "USA"
+    ],
+    "predecessors": [],
+    "continuity_note": "Continuous rated polity from the declaration-era independence struggle for this demonstration.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_american_revolution",
+      "state_vietnam",
+      "sigar_afghanistan"
+    ]
+  },
+  {
+    "id": "clio_ir_qajar_dyn_1788_ccb19019",
+    "name": "Qajar Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 1788,
+    "end_year": 1923,
+    "region": "Unclassified",
+    "aliases": [
+      "Qajar dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "first_french_empire",
+    "name": "First French Empire",
+    "kind": "empire",
+    "start_year": 1804,
+    "end_year": 1815,
+    "region": "Western Europe",
+    "aliases": [
+      "Napoleonic France"
+    ],
+    "predecessors": [
+      "kingdom_france"
+    ],
+    "continuity_note": "Explicit new imperial entity; predecessor link is lineage metadata and transfers no Elo.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_napoleonic_wars"
+    ]
+  },
+  {
+    "id": "clio_q733_1811_e6f4d24c",
+    "name": "Paraguay",
+    "kind": "polity",
+    "start_year": 1811,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Paraguay"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ch_chile_rep_1_1812_3b31ba25",
+    "name": "Republic of Chile",
+    "kind": "republic",
+    "start_year": 1812,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Chile"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_co_colombia_rep_1_1822_118274ea",
+    "name": "Gran Colombia",
+    "kind": "polity",
+    "start_year": 1822,
+    "end_year": 1833,
+    "region": "Unclassified",
+    "aliases": [
+      "Gran Colombia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q419_1822_a6e12c5b",
+    "name": "Republic of Peru",
+    "kind": "republic",
+    "start_year": 1822,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Peru"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_bo_bolivia_modern_1825_016dfcaa",
+    "name": "Bolivia",
+    "kind": "polity",
+    "start_year": 1825,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Bolivia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ve_venezuela_rep_1_1834_44eb6dd2",
+    "name": "Venezuela",
+    "kind": "polity",
+    "start_year": 1834,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Venezuela"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q774_1840_14933123",
+    "name": "Guatemala",
+    "kind": "polity",
+    "start_year": 1840,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Guatemala"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q783_1840_cd44c8fd",
+    "name": "Honduras",
+    "kind": "polity",
+    "start_year": 1840,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Honduras"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q792_1840_1f746d13",
+    "name": "Republic of El Salvador",
+    "kind": "republic",
+    "start_year": 1840,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "El Salvador"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q811_1840_5de7c37c",
+    "name": "Republic of Nicaragua",
+    "kind": "republic",
+    "start_year": 1840,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Nicaragua"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "empire_japan",
+    "name": "Empire of Japan",
+    "kind": "empire",
+    "start_year": 1868,
+    "end_year": 1947,
+    "region": "East Asia and Pacific",
+    "aliases": [
+      "Imperial Japan"
+    ],
+    "predecessors": [],
+    "continuity_note": "Imperial constitutional and expansionist-era entity; postwar Japan requires a new record for future conflicts.",
+    "source_ids": [
+      "cliopatria_polities",
+      "nhhc_midway",
+      "national_wwii_pacific"
+    ]
+  },
+  {
+    "id": "clio_mx_mexico_1_1868_ffbcfbae",
+    "name": "Mexico",
+    "kind": "polity",
+    "start_year": 1868,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Mexico"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "german_empire",
+    "name": "German Empire",
+    "kind": "empire",
+    "start_year": 1871,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [
+      "Imperial Germany",
+      "Second German Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends with the imperial regime in 1918; Nazi Germany is a later, independently rated entity.",
+    "source_ids": [
+      "cliopatria_polities",
+      "iwm_first_world_war"
+    ]
+  },
+  {
+    "id": "clio_q408_1905_c58c97bb",
+    "name": "Commonwealth of Australia",
+    "kind": "polity",
+    "start_year": 1905,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Australia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q222_1912_79c87c78",
+    "name": "Albania",
+    "kind": "polity",
+    "start_year": 1912,
+    "end_year": 1945,
+    "region": "Unclassified",
+    "aliases": [
+      "Albania"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_cn_chinese_rep_1912_970b7032",
+    "name": "Republic of China",
+    "kind": "republic",
+    "start_year": 1912,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Republic of China (1912-1949)"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_su_finland_rep_1918_31f8394b",
+    "name": "Republic of Finland",
+    "kind": "republic",
+    "start_year": 1918,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Finland"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "soviet_union",
+    "name": "Soviet Union",
+    "kind": "union_state",
+    "start_year": 1922,
+    "end_year": 1991,
+    "region": "Eastern Europe and Northern Asia",
+    "aliases": [
+      "USSR"
+    ],
+    "predecessors": [
+      "russian_empire"
+    ],
+    "continuity_note": "New polity and baseline reset; no Russian Empire Elo is inherited.",
+    "source_ids": [
+      "cliopatria_polities",
+      "ushmm_wwii_europe",
+      "britannica_barbarossa"
+    ]
+  },
+  {
+    "id": "clio_tr_turkey_rep_1924_934e0bcd",
+    "name": "Republic of Turkey",
+    "kind": "republic",
+    "start_year": 1924,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Turkey"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q414_1930_5e281b3e",
+    "name": "Argentine Republic",
+    "kind": "republic",
+    "start_year": 1930,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Argentina"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ca_canada_dominion_1932_4993f47a",
+    "name": "Canada",
+    "kind": "polity",
+    "start_year": 1932,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Canada"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_sa_south_africa_rep_1932_8a5c7c70",
+    "name": "South Africa",
+    "kind": "polity",
+    "start_year": 1932,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "South Africa"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "nazi_germany",
+    "name": "Nazi Germany",
+    "kind": "regime_state",
+    "start_year": 1933,
+    "end_year": 1945,
+    "region": "Central Europe",
+    "aliases": [
+      "Third Reich"
+    ],
+    "predecessors": [
+      "german_empire"
+    ],
+    "continuity_note": "Treated as a distinct historiographic regime-state. It ends in terminal military defeat, occupation, and regime destruction in 1945.",
+    "source_ids": [
+      "cliopatria_polities",
+      "ushmm_wwii_europe"
+    ]
+  },
+  {
+    "id": "clio_q851_1936_a94f117c",
+    "name": "Kingdom of Saudi Arabia",
+    "kind": "kingdom",
+    "start_year": 1936,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Saudi Arabia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q115_1942_f6caec22",
+    "name": "Ethiopia",
+    "kind": "polity",
+    "start_year": 1942,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Ethiopia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "north_vietnam",
+    "name": "Democratic Republic of Vietnam",
+    "kind": "state",
+    "start_year": 1945,
+    "end_year": 1976,
+    "region": "Southeast Asia",
+    "aliases": [
+      "North Vietnam"
+    ],
+    "predecessors": [],
+    "continuity_note": "Distinct wartime state; unified post-1976 Vietnam would be a successor entity in expanded data.",
+    "source_ids": [
+      "cliopatria_polities",
+      "state_vietnam",
+      "army_tet"
+    ]
+  },
+  {
+    "id": "clio_id_indonesian_rep_1946_87b95608",
+    "name": "Republic of Indonesia",
+    "kind": "republic",
+    "start_year": 1946,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Indonesia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q38_1946_db68a543",
+    "name": "Republic of Italy",
+    "kind": "republic",
+    "start_year": 1946,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Italy"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q28513_1947_00ad820b",
+    "name": "Hungary",
+    "kind": "polity",
+    "start_year": 1947,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Hungary"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_pk_pakistan_islamic_rep_1947_f2f20bf1",
+    "name": "Islamic Republic of Pakistan",
+    "kind": "republic",
+    "start_year": 1947,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Pakistan"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q810_1947_98de647a",
+    "name": "Kingdom of Jordan",
+    "kind": "kingdom",
+    "start_year": 1947,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Jordan"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q668_1947_58395c54",
+    "name": "Republic of India",
+    "kind": "republic",
+    "start_year": 1947,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "India"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ko_korean_democratic_peoples_rep_1948_296d18c9",
+    "name": "Democratic People's Republic of Korea",
+    "kind": "republic",
+    "start_year": 1948,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "North Korea"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_ko_korean_rep_1948_38fc5887",
+    "name": "Republic of Korea",
+    "kind": "republic",
+    "start_year": 1948,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "South Korea"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q801_1948_5abea45e",
+    "name": "State of Israel",
+    "kind": "polity",
+    "start_year": 1948,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Israel"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "peoples_republic_china",
+    "name": "People's Republic of China",
+    "kind": "state",
+    "start_year": 1949,
+    "end_year": null,
+    "region": "East Asia",
+    "aliases": [
+      "PRC",
+      "China"
+    ],
+    "predecessors": [],
+    "continuity_note": "Begins as a new polity in 1949; predecessor civil-war actors are outside this seed.",
+    "source_ids": [
+      "cliopatria_polities",
+      "army_chosin"
+    ]
+  },
+  {
+    "id": "south_vietnam",
+    "name": "Republic of Vietnam",
+    "kind": "state",
+    "start_year": 1955,
+    "end_year": 1975,
+    "region": "Southeast Asia",
+    "aliases": [
+      "South Vietnam"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ends in existential defeat and state dissolution in 1975.",
+    "source_ids": [
+      "cliopatria_polities",
+      "state_vietnam",
+      "army_tet"
+    ]
+  },
+  {
+    "id": "clio_q424_1956_697364de",
+    "name": "Kingdom of Cambodia",
+    "kind": "kingdom",
+    "start_year": 1956,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Cambodia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_tn_tunisia_rep_1956_8ceb010d",
+    "name": "Republic of Tunisia",
+    "kind": "republic",
+    "start_year": 1956,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Tunisia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "french_fifth_republic",
+    "name": "French Fifth Republic",
+    "kind": "republic",
+    "start_year": 1958,
+    "end_year": null,
+    "region": "Western Europe",
+    "aliases": [
+      "France",
+      "French Republic"
+    ],
+    "predecessors": [],
+    "continuity_note": "The 1958 constitutional founding starts a new rated identity at the baseline. Earlier French kingdoms, empires, and republics are separate entities, and none of their Elo is inherited.",
+    "source_ids": [
+      "britannica_fifth_republic",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "clio_q241_1960_43b78c21",
+    "name": "Communist Cuba",
+    "kind": "polity",
+    "start_year": 1960,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Cuba"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q1045_1960_b5c3f32e",
+    "name": "Federal Republic of Somalia",
+    "kind": "republic",
+    "start_year": 1960,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Somalia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_iq_iraq_rep_1960_89655724",
+    "name": "Iraqi Republic",
+    "kind": "republic",
+    "start_year": 1960,
+    "end_year": 2005,
+    "region": "Unclassified",
+    "aliases": [
+      "Iraq"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q229_1961_530bc70e",
+    "name": "Republic of Cyprus",
+    "kind": "republic",
+    "start_year": 1961,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Cyprus"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q833_1963_69748196",
+    "name": "Malaysia",
+    "kind": "polity",
+    "start_year": 1963,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Malaysia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_eg_egypt_modern_2_1973_e01853c2",
+    "name": "Arab Republic of Egypt",
+    "kind": "republic",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Egypt"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q398_1973_4d12507c",
+    "name": "Kingdom of Bahrain",
+    "kind": "kingdom",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Bahrain"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q902_1973_443d2ddf",
+    "name": "People's Republic of Bangladesh",
+    "kind": "republic",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Bangladesh"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q846_1973_3cec65e7",
+    "name": "State of Qatar",
+    "kind": "polity",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Qatar"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q41137_1973_b05dea50",
+    "name": "Syria",
+    "kind": "polity",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Syria"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q878_1973_2d067636",
+    "name": "United Arab Emirates",
+    "kind": "polity",
+    "start_year": 1973,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "United Arab Emirates"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_vt_vietnam_socialist_rep_1976_7f7549c0",
+    "name": "Socialist Republic of Vietnam",
+    "kind": "republic",
+    "start_year": 1976,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Vietnam"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q794_1979_8535ea94",
+    "name": "Islamic Republic of Iran",
+    "kind": "republic",
+    "start_year": 1979,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Iran"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q399_1992_e18a1f0d",
+    "name": "Republic of Armenia",
+    "kind": "republic",
+    "start_year": 1992,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Armenia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q227_1992_175f7495",
+    "name": "Republic of Azerbaijan",
+    "kind": "republic",
+    "start_year": 1992,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Azerbaijan"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q986_1992_ada8dae7",
+    "name": "State of Eritrea",
+    "kind": "polity",
+    "start_year": 1992,
+    "end_year": 2024,
+    "region": "Unclassified",
+    "aliases": [
+      "Eritrea"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "taliban",
+    "name": "Taliban",
+    "kind": "armed_movement_de_facto_regime",
+    "start_year": 1994,
+    "end_year": null,
+    "region": "South and Central Asia",
+    "aliases": [
+      "Islamic Emirate of Afghanistan",
+      "Taliban movement"
+    ],
+    "predecessors": [],
+    "continuity_note": "Included because state-versus-insurgent wars cannot be rated accurately without the opposing armed actor; governmental episodes are not treated as inherited from the Afghan Republic.",
+    "source_ids": [
+      "cliopatria_polities",
+      "sigar_afghanistan",
+      "crs_taliban_takeover"
+    ]
+  },
+  {
+    "id": "islamic_republic_afghanistan",
+    "name": "Islamic Republic of Afghanistan",
+    "kind": "state",
+    "start_year": 2004,
+    "end_year": 2021,
+    "region": "South and Central Asia",
+    "aliases": [
+      "Afghan Republic"
+    ],
+    "predecessors": [],
+    "continuity_note": "Rated only for its 2004-2021 existence; it ends in state collapse during the Taliban offensive.",
+    "source_ids": [
+      "cliopatria_polities",
+      "sigar_afghanistan",
+      "crs_taliban_takeover"
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "dataset_id": "military-elo-expanded-provisional-v0.2",
+  "title": "Expanded provisional Military History Elo evidence release",
+  "version": "0.2.0",
+  "as_of": "2026-07-13",
+  "coverage_status": "expanded_provisional",
+  "comprehensive": false,
+  "description": "The curated seed plus strict source-derived HCED tactical and IWD strategic tranches. The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
+  "record_counts_expected": {
+    "entities": 109,
+    "events": 1461,
+    "sources": 44,
+    "registry_polities": 1582
+  },
+  "year_range": {
+    "start": -1274,
+    "end": 2021,
+    "calendar_note": "Negative integers denote BCE years using the project's integer-year convention; no claim of day-level precision is made."
+  },
+  "layer_policy": {
+    "engagement": "tactical",
+    "campaign": "operational",
+    "war": "strategic",
+    "double_counting_note": "Nested events update different rating tracks. A battle, campaign, and final war settlement must not all update one undifferentiated Elo stream."
+  },
+  "continuity_policy": {
+    "default": "A polity conventionally treated as a new country, empire, or regime-state receives a new entity ID and begins from the model baseline. Predecessor links are descriptive only.",
+    "roman_byzantine_convention": "For this project, the Roman Empire rating ends at 395 and the Byzantine Empire begins at 395 with a complete Elo reset. This is an explicit project convention, not a claim that scholarship supplies one uncontested Byzantine start date.",
+    "no_inheritance": true
+  },
+  "outcome_policy": {
+    "participant_specific": true,
+    "dimensions_required": true,
+    "stakes_and_scale": "Participant stakes and national_scale are coded separately from event-wide scope and scale.",
+    "termination_examples": {
+      "united_states_vietnam": "withdrawal_after_failed_intervention; major strategic defeat with homeland sovereignty preserved",
+      "south_vietnam": "capitulation_and_state_ceased; existential defeat",
+      "north_vietnam": "decisive_victory_and_reunification",
+      "nazi_germany_1945": "unconditional_surrender_occupation_and_regime_destroyed; existential defeat"
+    }
+  },
+  "source_policy": {
+    "purpose": "Stable academic, official-history, museum, structured-data, and edited general-reference links support this demonstration.",
+    "provenance_limit": "An event-level URL is not a substitute for claim-level citations, page references, source-family deduplication, or multilingual scholarly review in production data.",
+    "licensing": "Only original normalized seed assertions are stored. Linked copyrighted references are cited rather than copied. Government-work and open-data license labels should still be checked at item level before redistribution."
+  },
+  "known_limitations": [
+    "The release is not a complete census and must not be presented as a definitive all-history ranking.",
+    "Strategic war outcomes remain much less complete than tactical engagement outcomes.",
+    "HCED winner labels and the Seshat crosswalk are source assertions pending claim-level human review.",
+    "Cliopatria intervals are split at temporal gaps; final historiographic continuity still requires explicit decisions.",
+    "Some Cliopatria identity intervals span successive regimes (for example one Cambodia identity covering 1956-2024), so events resolved to them can share a rating line across regime changes until those identities receive explicit curated splits.",
+    "Aggregated IWD coalition events use declared uniform defaults for contribution, role, scale, and stakes because the source carries no per-participant data.",
+    "Ancient, non-literate, small, defeated, and non-European polities remain systematically under-recorded."
+  ],
+  "recommended_use": [
+    "Engine and audit testing",
+    "Dashboard and graph demonstrations",
+    "Sensitivity examples",
+    "Human review of taxonomy and continuity rules"
+  ],
+  "prohibited_interpretation": "Do not treat provisional ratings or unrated registry entries as a definitive ranking of every country and empire in history.",
+  "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
+  "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
+  "promotion": {
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. All other parent wars stay staged.",
+    "accepted_hced_events": 1377,
+    "accepted_iwd_wars": 44,
+    "iwd_parent_wars_total": 93,
+    "iwd_components_aggregated": 72,
+    "iwd_components_attached_to_rated_parents": 72,
+    "hced_rejections": {
+      "duplicate_of_curated_seed": 5,
+      "duplicate_source_id": 6,
+      "missing_or_invalid_year": 3,
+      "no_unique_time_valid_polity": 657,
+      "outcome_not_aligned_to_crosswalk_sides": 8,
+      "outside_continuity_policy": 61,
+      "same_or_empty_opposing_side": 14,
+      "uncoded_side": 6750
+    },
+    "iwd_rejections": {
+      "inconsistent_coalition_sides": 1,
+      "mixed_component_outcomes": 2,
+      "overlaps_curated_strategic_event": 6,
+      "unresolved_time_bounded_party": 40
+    },
+    "source_queue_counts": {
+      "cliopatria-entity-candidates.jsonl": 1637,
+      "hced-candidates.jsonl": 8881,
+      "iwbd-candidates.jsonl": 1708,
+      "iwd-1.21-candidates.jsonl": 265,
+      "ucdp-actor-26.1-candidates.jsonl": 1987,
+      "ucdp-conflict-26.1-candidates.jsonl": 2816,
+      "ucdp-dyadic-26.1-candidates.jsonl": 3518,
+      "ucdp-termination-conflict-candidates.jsonl": 2752,
+      "ucdp-termination-dyad-candidates.jsonl": 3432,
+      "wikidata-candidates.jsonl": 18
+    }
+  }
+}
