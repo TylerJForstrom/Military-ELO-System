@@ -13,6 +13,12 @@ The system publishes four values rather than hiding everything in one number:
 
 Each layer starts at 1500 with high uncertainty. A successor or newly recognized polity always starts from that prior; predecessor ratings are descriptive history, never inherited points.
 
+## Coverage and evidence tiers
+
+The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,582 time-bounded polity identities, but only 109 have accepted rating evidence. Its 1,461 events consist of 40 manually curated events, 1,377 source-derived HCED tactical encounters, and 44 coalition-aggregated IWD strategic parent wars. An unrated registry entry has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
+
+Source-derived events enter only through declared mechanical promotion rules and remain provisional. HCED promotion requires nonduplicate records, an outcome aligned to both crosswalk sides, and a unique polity identity valid for the entire event date range. IWD component rows are never promoted individually, because they can repeat one larger war across many dyads. Instead, each IWD parent conflict is reconstructed as two coalitions from its component initiator/target pairs and rated at most once, and only when the reconstruction is defensible: sides must be consistent (an entity coded on both sides quarantines the parent, since no explicit time-bounded side-switch policy exists), component outcomes must be unanimous once oriented to the reconstructed sides (draws and mixed dyad results are never forced into one binary umbrella outcome), no curated seed war may overlap (naming variants are canonicalized so `WorldWarI` matches `First World War`), and every belligerent must resolve to a unique time-bounded identity. Aggregated confidence is reduced when component rows could not contribute, component rows are attached to the event as provenance, and existential or regime-ending severity is never inferred from IWD's outcome codes. Because IWD supplies no per-participant contribution or stakes data, these events use declared uniform defaults — equal contribution shares within each coalition side, the `major_ally` role for every coalition member, one shared outcome vector per side, and `major_war` scale with `major` stakes for every parent — rather than invented differentiation. These filters make the build reproducible; they do not substitute for claim-level human adjudication or make the release comprehensive.
+
 ## Event hierarchy and double-counting
 
 ```text
@@ -25,6 +31,8 @@ war
 - Campaigns update only the operational layer.
 - Completed-war outcomes update only the strategic layer.
 - A battle can be nested within a campaign and war, but it is never inserted twice into the same rating stream.
+- Events sharing a war cluster and rating layer each receive evidence weight `n^-0.5`, where `n` is that cluster's event count. The same factor scales Elo movement, uncertainty reduction, effective evidence, and cumulative achievement so a richly documented war cannot manufacture hundreds of independent observations.
+- When exact dates are unavailable, same-year records use a stable `(end year, start year, event id)` order; source-file row order is never treated as chronology.
 - One-sided violence against civilians is not a competitive match and is never scored as a victory.
 - Ongoing, disputed and excluded records are visible to the review process but are not rated as completed outcomes.
 
@@ -146,7 +154,7 @@ Every new entity begins with rating uncertainty 350. Evidence reduces uncertaint
 
 Routine builds can run seeded Monte Carlo sensitivity simulations. Low-confidence outcome dimensions are perturbed more than high-confidence ones, and plausible model weights are sampled. The output includes median, 10th–90th percentile, median rank and probability of a top-ten finish. A production release should use at least 1,000 simulations and source-family/bootstrap and entity-boundary alternatives.
 
-An entity is “established” only after at least five effective events, three completed wars and composite uncertainty no greater than 200. Other rankings are marked provisional.
+An entity reaches the model's coverage threshold only after at least five effective events, three effective completed-war observations and composite uncertainty no greater than 200. This is a statistical sufficiency label, not a claim that its identity or every underlying historical judgment has been fully established. Other rankings are marked low coverage or provisional.
 
 ## Disconnected networks and cross-era comparison
 
@@ -160,7 +168,7 @@ The index is:
 + 25% cumulative achievement percentile
 ```
 
-For provisional actors, that raw index is shrunk toward 50 using effective event count, completed-war count and opponent-network size. This prevents a polity with one surviving victory record from appearing as a certain all-time leader. Both the raw percentile index and the coverage-adjusted headline remain available in the generated data.
+For provisional actors, that raw index is shrunk toward 50 using effective event count, effective completed-war evidence, opponent-network size, and the fraction of maximum uncertainty that the evidence has actually resolved. This prevents a polity with one surviving victory record—or hundreds of correlated records from one famous war—from appearing as a certain all-time leader. Both the raw percentile index and the coverage-adjusted headline remain available in the generated data.
 
 Peak, sustained and achievement remain separately visible. No single index is presented as objective truth.
 
@@ -168,7 +176,7 @@ Peak, sustained and achievement remain separately visible. No single index is pr
 
 The project must publish coverage by century, region, war type, domain and source quality. Known risks include survivor/victor bias, Eurocentric and modern over-documentation, famous wars being split into more records, non-state actors being omitted, and copied web pages masquerading as independent sources.
 
-Controls include immutable raw snapshots, claim-level provenance, source-family deduplication, explicit missingness, review queues, blind adjudication samples, alternative entity boundaries, region/source-language checks and leave-one-dataset-out sensitivity runs. Automated extraction proposes records; it never approves identity, objectives or strategic outcomes.
+Controls include immutable raw snapshots, claim-level provenance, source-family deduplication, explicit missingness, review queues, blind adjudication samples, alternative entity boundaries, region/source-language checks and leave-one-dataset-out sensitivity runs. Automated extraction proposes records. A narrow, declared ruleset may promote source assertions into the provisional ledger, but this status is never represented as human approval of identity, objectives, or strategic interpretation.
 
 ## Validation
 

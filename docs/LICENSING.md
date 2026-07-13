@@ -16,7 +16,7 @@ or used to create a competing product.
 
 | Class | Meaning | Current sources |
 |---|---|---|
-| Open core | Raw facts may be staged and derived records may be released while satisfying the stated attribution terms | HCED, HCED-Seshat crosswalk, IWBD, UCDP, Cliopatria, Wikidata structured data, Pleiades, GeoNames |
+| Open core | Raw facts may be staged and derived records may be released while satisfying the stated attribution terms | HCED, HCED-Seshat crosswalk, IWD, IWBD, UCDP, Cliopatria, Wikidata structured data, Pleiades, GeoNames |
 | Separate/secondary | Do not merge into the public corpus without a compatibility review; link or query separately if needed | DBpedia |
 | Permission-gated | Do not download into a distributable corpus, commit raw records, or base a public product on the data without written authorization | COW, MIE, ACLED, PA-X, Brecke Conflict Catalog, broader Seshat data |
 
@@ -34,6 +34,8 @@ Current sources:
   <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6ZFC0V>
 - Interstate War Battle Dataset:
   <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KLQFAP>
+- Interstate War Data v1.21:
+  <https://doi.org/10.7910/DVN/WGS1YX>
 - Wikidata structured data:
   <https://www.wikidata.org/wiki/Wikidata:Licensing>
 

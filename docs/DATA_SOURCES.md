@@ -36,6 +36,7 @@ an actor merely falling below a fatality threshold are also different outcomes.
 |---|---|---|---|
 | HCED | Usually | Encounter-level `Winner` and `Loser` labels | No. Treat as a tactical proposal pending entity, side, scope, and confidence review. |
 | IWBD | Yes | Tactical victor under a strategic-objective standard; also attacker/defender and war-side role | No. Strong tactical evidence, but it does not establish the enclosing war's strategic outcome. |
+| IWD | Yes | Terminal component-war outcome from the initiator's perspective: victory, defeat, or draw | Rated only through parent-war coalition aggregation: at most one strategic update per parent conflict, with consistent sides, unanimous outcomes, and time-bounded identities; unresolved parents stay staged. |
 | UCDP conflict/dyadic/GED/deaths | No | Actors, conflict type, intensity, events, and deaths | No. Intensity and fatalities are not victory labels. |
 | UCDP Conflict Termination | Yes, for terminated episodes | Peace, ceasefire, government-side victory, non-state-side victory, low activity, or actor cessation | No automatic rating. It is strong strategic evidence but is episode-level and may not describe every supporter or coalition participant. |
 | Wikidata | Sometimes through `winner` (P1346) | A community-maintained sourced statement | No. Preserve statement references and qualifiers and verify against scholarly sources. |
@@ -156,6 +157,55 @@ the final settlement of the enclosing war.
   theater labels such as Eastern Front, Western Front, Pacific, and War at Sea.
 - Campaigns and constituent battles may both appear. The event hierarchy and
   `parent_event_id` must prevent double-counting.
+
+### Interstate War Data (IWD)
+
+**Purpose:** participant and terminal-outcome evidence for interstate component
+wars, kept separate from the IWBD battle inventory.
+
+- Dataset record and DOI: <https://doi.org/10.7910/DVN/WGS1YX>
+- Data: <https://dataverse.harvard.edu/api/access/datafile/5118363>
+- Version used: 1.21, covering 1823-2003.
+- License: CC0 1.0.
+- Workspace snapshot SHA-256:
+  `fd6cfbcbebed2d31cc0aa8eaa417ec4b9d1514f9d0261cb843c153c05ba231ec`.
+
+The file has 627 annual rows describing 265 component records within 93
+larger-war umbrellas. `annualoutcome` is coded from the initiator's perspective:
+0 is ongoing, 1 initiator victory, 2 initiator defeat, and 3 draw. The staging
+pipeline groups by `initwarid` and preserves one unambiguous terminal outcome
+per component record instead of treating every annual row as a new war.
+
+IWD provides a strategic result category, but its component records are not
+independent wars. One parent conflict can appear as many dyads: rating those
+rows separately would repeatedly reward or penalize the same coalition result.
+The release therefore rates IWD only through parent-war coalition aggregation.
+Each `largerwarid` group is reconstructed as two coalitions from its
+initiator/target pairs and receives at most one strategic update, and only when
+every check passes: the opposition graph is two-colorable and connected (an
+entity coded on both sides quarantines the parent, because no explicit
+time-bounded side-switch policy is defined), the component outcomes are
+unanimous once oriented to the reconstructed sides, no curated seed war
+overlaps (naming variants such as `WorldWarI` are canonicalized), and every
+belligerent resolves to a unique time-bounded identity. COW code 365 is
+resolved by an explicit era policy — Russian Empire through 1917, Soviet Union
+from 1922 — and the 1918-1921 revolutionary years deliberately stay unresolved.
+Event confidence is reduced when some component rows could not contribute, and
+all component rows are attached to the emitted event as provenance. In the
+current build, 44 of 93 parent wars pass (72 of 265 component records); the
+rest stay staged. IWD also cannot by itself establish that a defeat was
+existential, regime-ending, or equivalent to surrender, so aggregated outcomes
+are never coded above limited victory or defeat.
+
+Because IWD supplies no per-participant contribution, role, or stakes data,
+aggregated coalition events use declared uniform defaults: every member of a
+multi-entity side receives an equal contribution share with the `major_ally`
+role, both sides share one outcome vector, and every parent war is coded at
+`major_war` scale with `major` stakes. This is a provisional mechanical
+default, not a claim that (for example) every 1991 coalition member
+contributed equally; the participation-review guidance below still applies
+before any of these events can be treated as curated. Differentiated coalition
+contribution is future curated work.
 
 ### Uppsala Conflict Data Program (UCDP)
 
@@ -452,7 +502,7 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 3. **Polity registry:** seed time-bounded entities from Cliopatria and Wikidata,
    then apply the project's historiographic continuity rule. A successor starts
    at baseline even when linked to a predecessor.
-4. **Candidate staging:** stage HCED, IWBD, and UCDP records into
+4. **Candidate staging:** stage HCED, IWD, IWBD, and UCDP records into
    `data/review/*.jsonl` with raw labels, row location, source snapshot, and
    `do_not_rate_automatically=true`.
 5. **Entity resolution:** resolve aliases to a polity that existed on the event
@@ -469,8 +519,27 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
    and contribution. Do not assign an entire coalition's outcome equally to
    every participant.
 9. **Confidence and audit:** retain conflicting assertions, date/location
-   precision, casualty ranges, and confidence. Only reviewed, fully sourced
-   events may receive `status=complete` and enter the engine.
+   precision, casualty ranges, and confidence. A narrow, declared ruleset may
+   admit qualifying source assertions to the provisional ledger; only
+   claim-level reviewed events belong in a fully curated release.
 10. **Restricted validation:** use COW, MIE, PA-X, ACLED, DBpedia, Brecke, or
     broader Seshat data only within the limits in `LICENSING.md` and never copy
     their raw records into a public release without the required permission.
+
+## Current expanded provisional release
+
+The 2026-07-13 build publishes three coverage numbers separately:
+
+- 1,582 time-bounded polity identities in the rated-and-unrated registry;
+- 109 entities with rateable evidence; and
+- 1,461 rating events: 40 manually curated events, 1,377 HCED tactical
+  encounters, and 44 coalition-aggregated IWD strategic parent wars.
+
+The review queues contain 27,014 staged source records across Cliopatria, HCED,
+IWD, IWBD, UCDP, and the small Wikidata discovery sample. That total includes
+identity records and the source-derived evidence promoted into this
+provisional release; it is not an unresolved-record count. Of 23,390 event-like
+candidates, 21,941 remain outside the rating ledger because their layer,
+identity, outcome, duplication, or continuity requirements are unresolved.
+The registry and queue sizes document coverage work; neither is evidence that
+the historical record is complete.

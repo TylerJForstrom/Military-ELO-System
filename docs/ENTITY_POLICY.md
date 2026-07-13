@@ -30,6 +30,23 @@ A new entity is not created solely for a monarch, dynasty, capital, translated n
 - **Civil-war victory:** the winning faction and resulting successor polity can be linked but are not automatically the same entity.
 - **Changing sides:** use separate participation episodes, not two simultaneous coalition memberships.
 
+## Source-label identity policies
+
+Open datasets sometimes label a polity with a name that does not identify the
+historical actor by itself. Those labels are resolved only through explicit,
+time-bounded policies, never through loose name similarity:
+
+- **COW code 365 ("Russia"):** resolves to the Russian Empire through 1917 and
+  to the Soviet Union from 1922 through 1991. The 1918-1921 revolutionary years
+  deliberately resolve to nothing, so wars against the early RSFSR stay staged
+  rather than being attached to either neighboring identity. No rating crosses
+  the 1917 or 1991 boundaries.
+- **"France" in modern interstate sources:** resolves to the curated French
+  Fifth Republic identity (1958-present), which starts at the baseline like
+  every new polity. Earlier French kingdoms, empires, and republics are
+  separate identities, and labels naming France between their intervals stay
+  unresolved.
+
 ## Rome and Byzantium project convention
 
 This project implements the requested rule that the Byzantine Empire does not inherit Rome's rating. The v1 registry uses 395 CE as a practical split convention and records an explicit reset. There is no uncontested scholarly “Byzantine start” date, so 330, 395, 476 and 610 should be available as sensitivity alternatives in a mature release.

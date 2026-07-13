@@ -1,12 +1,25 @@
 # Data review and adjudication workflow
 
-## Three data zones
+## Four data zones
 
 1. `data/raw/` contains immutable downloaded snapshots plus SHA-256, URL, version, retrieval time and license in `manifest.jsonl`.
 2. `data/review/` contains machine-extracted candidates. Every candidate is explicitly marked `do_not_rate_automatically`.
-3. `data/seed/` (and later `data/curated/`) contains approved, sourced entities and events accepted by the audit.
+3. `data/seed/` contains the manually adjudicated foundation. `data/release/` combines that foundation with strictly filtered, source-derived provisional evidence.
+4. `data/catalog/registry.json` contains the wider time-bounded polity registry, including entries with no rating evidence.
 
 Raw facts are never overwritten. Corrections produce a new curated version and preserve the prior decision history.
+
+The current release catalogues 1,582 polity identities, rates 109 entities across 1,461 events, and reports all 27,014 staged source records separately. The staged total includes identity records and promoted evidence; 21,941 event-like candidates remain outside the rating ledger. These are different denominators and must never be collapsed into a claim that every catalogued polity has been rated.
+
+## Provisional source promotion
+
+The release builder applies a narrow, reproducible filter before any source-derived record can affect a rating:
+
+- HCED encounters must have a valid date, a nonduplicate source ID, both opposing Seshat-coded sides, winner/loser labels aligned to those sides, and one unique time-valid polity for every code.
+- IWD component dyads are rated only through parent-war coalition aggregation: each parent conflict receives at most one strategic update, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. An entity coded on both sides, a mixed dyad outcome, or an unresolved party quarantines the whole parent. This prevents a single umbrella conflict from generating many strategic updates.
+- IWBD and UCDP records remain candidates until their layer, identity, and participant-specific outcomes can be established. Battle victory, intensity, or fatalities alone are not promoted into strategic success.
+
+Promoted HCED records are labelled provisional even when they pass the schema audit. The filter demonstrates that the source assertion is internally usable; it is not the same as the claim-level human review below.
 
 ## Required review for an event
 
@@ -38,4 +51,4 @@ Entity boundaries, existential outcomes, major objective coding and the events p
 
 ## Reproducible release
 
-A release records the raw manifest, curated-data checksum, model configuration, audit output, code version and Monte Carlo seed/count. It publishes coverage and sensitivity results alongside rankings.
+A release records the raw manifest, foundation and release checksums, promotion rules and rejection counts, model configuration, audit output, code version and Monte Carlo seed/count. It publishes registry size, rateable-entity count, event count, staged-record and unresolved-event-candidate counts, coverage warnings and sensitivity results alongside rankings.

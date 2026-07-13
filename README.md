@@ -2,7 +2,7 @@
 
 An auditable, uncertainty-aware system for exploring the military success of historical countries, empires and other autonomous actors.
 
-The project is working as a research-grade foundation, not yet a claim to have completed “every battle ever.” It currently includes:
+The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 1,582 catalogued, time-bounded polity identities, of which 109 have rateable evidence across 1,461 events. It currently includes:
 
 - separate tactical, operational and strategic ratings;
 - participant-specific outcome vectors, so limited withdrawals and terminal defeats are not equivalent;
@@ -19,7 +19,7 @@ The project is working as a research-grade foundation, not yet a claim to have c
 Build the data:
 
 ```powershell
-python scripts/build_dashboard.py --simulations 200
+python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 200
 ```
 
 Start the local site:
@@ -36,7 +36,7 @@ The repository includes `netlify.toml`. Import the GitHub repository into
 Netlify and the site will build with these settings automatically:
 
 ```text
-Build command: python scripts/build_dashboard.py --simulations 1000
+Build command: python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000
 Publish directory: web
 ```
 
@@ -44,14 +44,15 @@ Every push to the selected production branch will rebuild the rating results
 and deploy the standalone static dashboard. No database, server process, or
 runtime API is required.
 
-The seed history is deliberately labeled a curated demonstration. Do not publish its current ranking as a comprehensive historical conclusion. The downloaded and staged source corpus is much larger, but candidates only enter the rating after identity, outcome and provenance review.
+The dashboard deliberately separates the polity registry from the rating ledger. The 1,582-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 1,461-event ledger combines 40 manually curated seed events, 1,377 strictly filtered HCED tactical encounters, and 44 coalition-aggregated IWD strategic parent wars. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
 ## Data already staged
 
 The live ingestion pipeline has immutable snapshots and review candidates from:
 
-- Cliopatria v0.2.0: 1,633 global polity/relation identity candidates spanning 3400 BCE–2024;
+- Cliopatria v0.2.0: 1,637 time-bounded identity candidates spanning 3400 BCE–2024, consolidated with the curated identities into the 1,582-entry registry;
 - Historical Conflict Event Dataset (HCED): 8,881 encounter candidates;
+- Interstate War Data (IWD) v1.21: 265 component-war candidates derived once per war rather than once per annual row;
 - Interstate War Battle Dataset (IWBD): 1,708 battle candidates;
 - UCDP/PRIO conflict-year v26.1: 2,816 candidates;
 - UCDP dyadic v26.1: 3,518 candidates;
@@ -61,11 +62,15 @@ The live ingestion pipeline has immutable snapshots and review candidates from:
 
 These records remain in `data/review/` and are not silently treated as accurate Elo matches.
 
+Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 44 currently pass those checks (72 of 265 component records); the rest stay staged. IWBD and UCDP also remain staged evidence because battle winners, conflict intensity, and deaths do not by themselves establish participant-specific strategic success.
+
 ## Refresh the open source corpus
 
 ```powershell
 python scripts/download_open_data.py core
 python scripts/stage_open_data.py core
+python scripts/build_release.py
+python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 200
 ```
 
 Wikidata discovery is paged and resumable:
@@ -84,7 +89,9 @@ Correlates of War import is supported for a locally supplied CSV, but COW's redi
 config/                 versioned model parameters
 data/raw/               immutable source snapshots + SHA-256 manifest
 data/review/            extracted, unapproved candidates
-data/seed/              small adjudicated demonstration dataset
+data/seed/              manually adjudicated foundation dataset
+data/release/           reproducible provisional rating ledger
+data/catalog/           full rated and unrated polity registry
 docs/                   methodology, identity rules, sources and review policy
 src/military_elo/       model, audit, sensitivity and ingestion code
 tests/                  mathematical and historical stress tests
@@ -94,7 +101,7 @@ web/                    interactive dashboard
 ## Accuracy principles
 
 1. Automated scraping discovers evidence; it does not decide historical identity or victory.
-2. A battle, campaign and war are different evidence layers and are not double-counted.
+2. A battle, campaign and war are different evidence layers; correlated records in one war cluster receive diminishing evidence weight.
 3. Every participant gets its own objectives, consequences, stakes and termination.
 4. Unknown is not a draw, peace is not a loss, and civilian killing is not a competitive win.
 5. Sparse, ancient and disconnected records get wider uncertainty and visible coverage warnings.
