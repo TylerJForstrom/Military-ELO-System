@@ -64,6 +64,15 @@ DATASETS: dict[str, OpenDataset] = {
         "pdf",
         "Variable definitions and coding rules",
     ),
+    "iwd-1.21": OpenDataset(
+        "iwd-1.21",
+        "Interstate War Data",
+        "https://dataverse.harvard.edu/api/access/datafile/5118363",
+        "CC0-1.0",
+        "1.21 (1823-2003)",
+        "tsv",
+        "Participant-specific outcomes for 265 interstate component wars; rate one final component outcome, not annual rows",
+    ),
     "ucdp-conflict-26.1": OpenDataset(
         "ucdp-conflict-26.1",
         "UCDP/PRIO Armed Conflict Dataset",
@@ -117,6 +126,7 @@ CORE_DATASETS = (
     "hced-seshat-crosswalk",
     "iwbd",
     "iwbd-codebook",
+    "iwd-1.21",
     "ucdp-conflict-26.1",
     "ucdp-dyadic-26.1",
     "ucdp-actor-26.1",

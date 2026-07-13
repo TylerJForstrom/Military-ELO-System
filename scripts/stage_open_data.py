@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from military_elo.ingest.stage_open_data import (
     stage_cliopatria,
     stage_hced,
+    stage_iwd,
     stage_iwbd,
     stage_ucdp_archive,
     stage_ucdp_csv,
@@ -19,6 +20,7 @@ STAGERS = {
     "cliopatria-0.2.0": stage_cliopatria,
     "hced": stage_hced,
     "iwbd": stage_iwbd,
+    "iwd-1.21": stage_iwd,
     "ucdp-conflict-26.1": lambda raw_root: stage_ucdp_archive("ucdp-conflict-26.1", raw_root),
     "ucdp-dyadic-26.1": lambda raw_root: stage_ucdp_archive("ucdp-dyadic-26.1", raw_root),
     "ucdp-actor-26.1": lambda raw_root: stage_ucdp_archive("ucdp-actor-26.1", raw_root),
