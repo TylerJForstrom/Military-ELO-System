@@ -1,0 +1,61 @@
+{
+  "dataset_id": "military-elo-curated-demonstration-v0.1",
+  "title": "Curated demonstration data for the Military History Elo engine",
+  "version": "0.1.0",
+  "as_of": "2026-07-13",
+  "coverage_status": "demonstration_only",
+  "comprehensive": false,
+  "description": "A deliberately small, hand-curated seed spanning selected conflicts from the Late Bronze Age through 2021. It exists to exercise entity resets, tactical/operational/strategic layers, coalition participation, participant-specific stakes, and differentiated defeat types. It is not a ranking-ready census of all countries, empires, wars, campaigns, or battles.",
+  "record_counts_expected": {
+    "entities": 35,
+    "events": 40,
+    "sources": 39
+  },
+  "year_range": {
+    "start": -1274,
+    "end": 2021,
+    "calendar_note": "Negative integers denote BCE years using the project's integer-year convention; no claim of day-level precision is made."
+  },
+  "layer_policy": {
+    "engagement": "tactical",
+    "campaign": "operational",
+    "war": "strategic",
+    "double_counting_note": "Nested events update different rating tracks. A battle, campaign, and final war settlement must not all update one undifferentiated Elo stream."
+  },
+  "continuity_policy": {
+    "default": "A polity conventionally treated as a new country, empire, or regime-state receives a new entity ID and begins from the model baseline. Predecessor links are descriptive only.",
+    "roman_byzantine_convention": "For this project, the Roman Empire rating ends at 395 and the Byzantine Empire begins at 395 with a complete Elo reset. This is an explicit project convention, not a claim that scholarship supplies one uncontested Byzantine start date.",
+    "no_inheritance": true
+  },
+  "outcome_policy": {
+    "participant_specific": true,
+    "dimensions_required": true,
+    "stakes_and_scale": "Participant stakes and national_scale are coded separately from event-wide scope and scale.",
+    "termination_examples": {
+      "united_states_vietnam": "withdrawal_after_failed_intervention; major strategic defeat with homeland sovereignty preserved",
+      "south_vietnam": "capitulation_and_state_ceased; existential defeat",
+      "north_vietnam": "decisive_victory_and_reunification",
+      "nazi_germany_1945": "unconditional_surrender_occupation_and_regime_destroyed; existential defeat"
+    }
+  },
+  "source_policy": {
+    "purpose": "Stable academic, official-history, museum, structured-data, and edited general-reference links support this demonstration.",
+    "provenance_limit": "An event-level URL is not a substitute for claim-level citations, page references, source-family deduplication, or multilingual scholarly review in production data.",
+    "licensing": "Only original normalized seed assertions are stored. Linked copyrighted references are cited rather than copied. Government-work and open-data license labels should still be checked at item level before redistribution."
+  },
+  "known_limitations": [
+    "Selection is illustrative and strongly incomplete; absence of an entity or event is not evidence of military inactivity or failure.",
+    "Several coalition records intentionally rate a documented dyadic or principal-participant slice because the seed roster does not yet contain every ally, vassal, client, or non-state actor.",
+    "Ancient dates, force sizes, casualties, and even outcomes can be highly uncertain; this seed usually omits force_size rather than encode false precision.",
+    "Cross-era raw Elo values are not directly identifiable because opponent networks are disconnected and military technology changes radically.",
+    "The preferred cross-era display is contemporary-network percentile with uncertainty, not a literal claim that two entities separated by centuries could be compared as if they fought.",
+    "The source list is suitable for a demonstration build, not yet for the project's stated goal of maximum historical accuracy. Production ingestion requires claim-level provenance and expert adjudication."
+  ],
+  "recommended_use": [
+    "Engine and audit testing",
+    "Dashboard and graph demonstrations",
+    "Sensitivity examples",
+    "Human review of taxonomy and continuity rules"
+  ],
+  "prohibited_interpretation": "Do not publish this seed's leaderboard as a definitive ranking of the most militarily successful states or empires in history."
+}

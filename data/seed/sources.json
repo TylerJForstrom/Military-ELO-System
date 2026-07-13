@@ -1,0 +1,353 @@
+[
+  {
+    "id": "cliopatria_polities",
+    "title": "Cliopatria: a geospatial knowledge graph of historical polities, version 0.2.0",
+    "url": "https://zenodo.org/records/20274630",
+    "publisher": "Zenodo",
+    "license": "CC BY 4.0",
+    "source_type": "academic_dataset",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "project_continuity_policy",
+    "title": "Byzantine Empire overview (used with the project's explicit 395 reset convention)",
+    "url": "https://www.britannica.com/place/Byzantine-Empire",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference_and_project_convention",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "whe_kadesh",
+    "title": "Kadesh",
+    "url": "https://www.worldhistory.org/Kadesh/",
+    "publisher": "World History Encyclopedia",
+    "license": "CC BY-NC-SA 4.0",
+    "source_type": "edited_general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_greco_persian",
+    "title": "Greco-Persian Wars",
+    "url": "https://www.britannica.com/event/Greco-Persian-Wars",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_salamis",
+    "title": "Salamis",
+    "url": "https://www.iranicaonline.org/articles/salamis/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_peloponnesian",
+    "title": "Peloponnesian War",
+    "url": "https://www.britannica.com/event/Peloponnesian-War",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_alexander",
+    "title": "Alexander the Great",
+    "url": "https://www.iranicaonline.org/articles/alexander-the-great-356-23-bc/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_gaugamela",
+    "title": "Gaugamela",
+    "url": "https://www.iranicaonline.org/articles/gaugamela/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_punic_wars",
+    "title": "Punic Wars",
+    "url": "https://www.britannica.com/event/Punic-Wars",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_shapur",
+    "title": "Shapur I: History",
+    "url": "https://www.iranicaonline.org/articles/shapur-i/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_edessa",
+    "title": "Edessa",
+    "url": "https://www.iranicaonline.org/articles/edessa/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_heraclius",
+    "title": "Heraclius, Byzantine emperor",
+    "url": "https://www.britannica.com/biography/Heraclius-Byzantine-emperor",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_arab_conquest",
+    "title": "Arab conquest of Iran",
+    "url": "https://www.iranicaonline.org/articles/arab-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_yarmouk",
+    "title": "Battle of Yarmouk",
+    "url": "https://www.britannica.com/event/Battle-of-Yarmouk-636",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_byzantine",
+    "title": "Byzantine Empire",
+    "url": "https://www.britannica.com/place/Byzantine-Empire",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_umayyad",
+    "title": "Umayyad dynasty",
+    "url": "https://www.britannica.com/topic/Umayyad-dynasty-Islamic-history",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_tours",
+    "title": "Battle of Tours",
+    "url": "https://www.britannica.com/event/Battle-of-Tours-732",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_ain_jalut",
+    "title": "Battle of Ayn Jalut",
+    "url": "https://www.britannica.com/event/Battle-of-Ayn-Jalut",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_fall_constantinople",
+    "title": "Fall of Constantinople",
+    "url": "https://www.britannica.com/event/Fall-of-Constantinople-1453",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_chaldiran",
+    "title": "Chaldiran, Battle of",
+    "url": "https://www.iranicaonline.org/articles/calderan-battle/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iranica_kandahar",
+    "title": "Kandahar: From the Mongol invasion through the Safavid era",
+    "url": "https://www.iranicaonline.org/articles/kandahar-from-the-mongol-invasion-through-the-safavid-era/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_eighty_years",
+    "title": "Eighty Years' War",
+    "url": "https://www.britannica.com/event/Eighty-Years-War",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_seven_years",
+    "title": "Seven Years' War",
+    "url": "https://www.britannica.com/event/Seven-Years-War",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_american_revolution",
+    "title": "American Revolution",
+    "url": "https://www.britannica.com/event/American-Revolution",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_napoleon_russia",
+    "title": "Napoleonic Wars: The retreat from Moscow",
+    "url": "https://www.britannica.com/event/Napoleonic-Wars/The-retreat-from-Moscow",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_napoleonic_wars",
+    "title": "Napoleonic Wars",
+    "url": "https://www.britannica.com/event/Napoleonic-Wars",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "nam_crimean",
+    "title": "The Crimean War",
+    "url": "https://www.nam.ac.uk/explore/crimean-war",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "museum_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_russo_japanese",
+    "title": "Russo-Japanese War",
+    "url": "https://www.britannica.com/event/Russo-Japanese-War",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_tannenberg",
+    "title": "Battle of Tannenberg",
+    "url": "https://www.britannica.com/event/Battle-of-Tannenberg-World-War-I-1914",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "iwm_first_world_war",
+    "title": "First World War",
+    "url": "https://www.iwm.org.uk/history/first-world-war",
+    "publisher": "Imperial War Museums",
+    "license": "Citation and link only",
+    "source_type": "museum_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "ushmm_wwii_europe",
+    "title": "World War II in Europe",
+    "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-in-europe",
+    "publisher": "United States Holocaust Memorial Museum",
+    "license": "Citation and link only",
+    "source_type": "museum_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_barbarossa",
+    "title": "Operation Barbarossa",
+    "url": "https://www.britannica.com/event/Operation-Barbarossa",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "national_wwii_pacific",
+    "title": "The Pacific Strategy, 1941-1944",
+    "url": "https://www.nationalww2museum.org/war/articles/pacific-strategy-1941-1944",
+    "publisher": "The National WWII Museum",
+    "license": "Citation and link only",
+    "source_type": "museum_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "nhhc_midway",
+    "title": "Battle of Midway",
+    "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1942/midway.html",
+    "publisher": "U.S. Naval History and Heritage Command",
+    "license": "U.S. government work; check item-level notices",
+    "source_type": "official_history",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "army_chosin",
+    "title": "The Chinese Intervention: Korea, 1950",
+    "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/K%20Pdf/CMH_Pub_19-8.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "U.S. government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "state_vietnam",
+    "title": "The Paris Peace Accords and the end of the Vietnam War, 1969-1975",
+    "url": "https://history.state.gov/milestones/1969-1976/ending-vietnam",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "U.S. government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "army_tet",
+    "title": "Turning Point, 1967-1968",
+    "url": "https://history.army.mil/Publications/Publications-Catalog/Turning-Point/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "U.S. government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "sigar_afghanistan",
+    "title": "What We Need to Learn: Lessons from Twenty Years of Afghanistan Reconstruction",
+    "url": "https://www.sigar.mil/Reports/Article-Display/Article/4000123/what-we-need-to-learn-lessons-from-twenty-years-of-afghanistan-reconstruction/",
+    "publisher": "Special Inspector General for Afghanistan Reconstruction",
+    "license": "U.S. government work",
+    "source_type": "official_government_report",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "crs_taliban_takeover",
+    "title": "Afghanistan: Background and U.S. Policy",
+    "url": "https://crsreports.congress.gov/product/pdf/R/R45122",
+    "publisher": "Congressional Research Service",
+    "license": "U.S. government work",
+    "source_type": "official_government_report",
+    "accessed": "2026-07-13"
+  }
+]
