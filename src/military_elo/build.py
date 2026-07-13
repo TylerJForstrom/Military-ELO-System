@@ -32,6 +32,7 @@ def build_results(
     config_path: str | Path | None = None,
     audit_path: str | Path | None = None,
     simulations: int = 0,
+    registry_path: str | Path | None = None,
 ) -> dict[str, object]:
     entities, events, sources, metadata = load_records(data_dir)
     config = ModelConfig.from_file(config_path) if config_path else ModelConfig()
@@ -48,16 +49,20 @@ def build_results(
         raise ValueError(f"Dataset audit failed:\n{messages}")
 
     engine = EloEngine(config).run(entities, events)
+    source_coverage = metadata.get("coverage", {})
+    if not isinstance(source_coverage, dict):
+        source_coverage = {}
     metadata = {
         **metadata,
         "generated": date.today().isoformat(),
-        "model_version": "0.1.0",
+        "model_version": "0.2.0",
         "baseline": config.baseline,
         "rated_events": len(engine.event_updates),
         "entities": len(entities),
         "audit_warnings": sum(issue.severity == "warning" for issue in issues),
         "simulations": simulations,
         "coverage": {
+            **source_coverage,
             "event_types": dict(Counter(event.event_type for event in events if event.status == "complete")),
             "war_types": dict(Counter(event.war_type for event in events if event.status == "complete")),
             "domains": dict(Counter(event.domain for event in events if event.status == "complete")),
@@ -78,6 +83,11 @@ def build_results(
         },
     }
     results = engine.export(sources, metadata)
+    if registry_path:
+        registry_document = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+        if not isinstance(registry_document, dict):
+            raise ValueError("Registry document must be a JSON object")
+        results["registry"] = registry_document
     sensitivity = run_sensitivity(entities, events, config, simulations=simulations)
     if sensitivity:
         results["sensitivity"] = sensitivity

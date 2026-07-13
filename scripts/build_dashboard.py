@@ -12,7 +12,11 @@ from military_elo.build import build_results
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit curated data and rebuild the dashboard")
-    parser.add_argument("--data", default=str(ROOT / "data" / "seed"))
+    parser.add_argument("--data", default=str(ROOT / "data" / "release"))
+    parser.add_argument(
+        "--registry",
+        default=str(ROOT / "data" / "catalog" / "registry.json"),
+    )
     parser.add_argument("--output", default=str(ROOT / "web" / "data" / "results.json"))
     parser.add_argument("--audit", default=str(ROOT / "build" / "audit.json"))
     parser.add_argument("--config", default=str(ROOT / "config" / "model.default.json"))
@@ -24,6 +28,7 @@ def main() -> int:
         config_path=args.config,
         audit_path=args.audit,
         simulations=max(0, args.simulations),
+        registry_path=args.registry,
     )
     print(
         f"Built {len(results['entities'])} entities and {len(results['events'])} rated events "

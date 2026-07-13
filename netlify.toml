@@ -1,5 +1,5 @@
 [build]
-  command = "python scripts/build_dashboard.py --simulations 1000"
+  command = "python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000"
   publish = "web"
 
 [build.environment]

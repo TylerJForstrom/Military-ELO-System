@@ -4,6 +4,8 @@
   const DATA_URL = "./data/results.json";
   const SVG_NS = "http://www.w3.org/2000/svg";
   const MAX_PINNED = 10;
+  const REGISTRY_PAGE_SIZE = 40;
+  const REGISTRY_STATUSES = new Set(["rated", "unrated", "provisional"]);
 
   const METRIC_LABELS = {
     composite: "Composite",
@@ -38,14 +40,23 @@
   const elements = {
     datasetBadge: document.getElementById("dataset-badge"),
     generatedLabel: document.getElementById("generated-label"),
-    coverageEntities: document.getElementById("coverage-entities"),
-    coverageEvents: document.getElementById("coverage-events"),
-    coverageYears: document.getElementById("coverage-years"),
-    coverageSources: document.getElementById("coverage-sources"),
+    coverageRegistryPolities: document.getElementById("coverage-registry-polities"),
+    coverageRatedEntities: document.getElementById("coverage-rated-entities"),
+    coverageRatedEvents: document.getElementById("coverage-rated-events"),
+    coverageStagedRecords: document.getElementById("coverage-staged-records"),
     datasetNotice: document.getElementById("dataset-notice"),
     noticeTitle: document.getElementById("notice-title"),
     noticeCopy: document.getElementById("notice-copy"),
     noticeDetails: document.getElementById("notice-details"),
+    registryCount: document.getElementById("registry-count"),
+    registrySearch: document.getElementById("registry-search"),
+    registryStatus: document.getElementById("registry-status-filter"),
+    registryKind: document.getElementById("registry-kind-filter"),
+    registrySummary: document.getElementById("registry-summary"),
+    registryBody: document.getElementById("registry-body"),
+    registryEmpty: document.getElementById("registry-empty"),
+    registryShowing: document.getElementById("registry-showing"),
+    registryShowMore: document.getElementById("registry-show-more"),
     search: document.getElementById("entity-search"),
     searchResultsWrap: document.getElementById("search-results-wrap"),
     searchResults: document.getElementById("search-results"),
@@ -93,6 +104,7 @@
     leaderboardById: new Map(),
     eventById: new Map(),
     entityEventYears: new Map(),
+    ratedEntityIds: new Set(),
     eventYears: [],
     minYear: 0,
     maxYear: 1,
@@ -106,6 +118,7 @@
     visibleEntityIds: [],
     searchMatches: [],
     searchIndex: -1,
+    registryVisibleLimit: REGISTRY_PAGE_SIZE,
     fallbackUsed: false,
     renderFrame: 0,
     resizeFrame: 0,
@@ -140,7 +153,9 @@
 
     buildIndexes();
     configureTimeline();
+    configureRegistry();
     renderMetadata();
+    renderRegistry();
     renderAll();
     observeChartSize();
   }
@@ -192,6 +207,26 @@
       state.pinned.clear();
       renderAll();
       showToast("All pinned polities cleared.");
+    });
+
+    elements.registrySearch.addEventListener("input", () => {
+      state.registryVisibleLimit = REGISTRY_PAGE_SIZE;
+      renderRegistry();
+    });
+
+    elements.registryStatus.addEventListener("change", () => {
+      state.registryVisibleLimit = REGISTRY_PAGE_SIZE;
+      renderRegistry();
+    });
+
+    elements.registryKind.addEventListener("change", () => {
+      state.registryVisibleLimit = REGISTRY_PAGE_SIZE;
+      renderRegistry();
+    });
+
+    elements.registryShowMore.addEventListener("click", () => {
+      state.registryVisibleLimit += REGISTRY_PAGE_SIZE;
+      renderRegistry();
     });
 
     document.addEventListener("click", (event) => {
@@ -263,12 +298,46 @@
           .sort((a, b) => a.year - b.year || a.name.localeCompare(b.name))
       : [];
 
-    const leaderboard = Array.isArray(raw.leaderboard)
+    const normalizedLeaderboard = Array.isArray(raw.leaderboard)
       ? raw.leaderboard.map((row, index) => normalizeLeaderboardRow(row, index))
       : [];
 
+    const eventParticipantIds = new Set(
+      events.flatMap((event) => event.participants.map((participant) => participant.entity_id)),
+    );
+    const leaderboard = normalizedLeaderboard.filter((row) =>
+      row.events !== null ? row.events > 0 : eventParticipantIds.has(row.entity_id),
+    );
+    const summaryById = new Map(normalizedLeaderboard.map((row) => [row.entity_id, row]));
+
+    const rawRegistry = raw.registry && typeof raw.registry === "object" ? raw.registry : {};
+    const registryInput = Array.isArray(rawRegistry.entities) ? rawRegistry.entities : entities;
+    const seenRegistryIds = new Set();
+    const registryEntities = registryInput
+      .map((entity, index) => normalizeRegistryEntity(entity, index, summaryById, eventParticipantIds))
+      .filter((entity) => {
+        if (!entity || seenRegistryIds.has(entity.id)) return false;
+        seenRegistryIds.add(entity.id);
+        return true;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    const coverageInput = rawRegistry.coverage && typeof rawRegistry.coverage === "object" ? rawRegistry.coverage : {};
+    const registryCoverage = {
+      registry_polities: nonNegativeNumber(coverageInput.registry_polities) ?? registryEntities.length,
+      rated_entities:
+        nonNegativeNumber(coverageInput.rated_entities) ??
+        registryEntities.filter((entity) => entity.status === "rated" || entity.status === "provisional").length,
+      rated_events: nonNegativeNumber(coverageInput.rated_events) ?? events.length,
+      staged_source_records:
+        nonNegativeNumber(coverageInput.staged_source_records) ??
+        nonNegativeNumber(coverageInput.staged_source_assertions) ??
+        nonNegativeNumber(coverageInput.unresolved_source_assertions),
+    };
+
     const yearCandidates = [];
-    for (const points of Object.values(series)) {
+    for (const [entityId, points] of Object.entries(series)) {
+      if (!eventParticipantIds.has(entityId)) continue;
       for (const point of points) yearCandidates.push(point.year);
     }
     for (const event of events) {
@@ -276,6 +345,7 @@
       if (event.end_year !== null) yearCandidates.push(event.end_year);
     }
     for (const entity of entities) {
+      if (!eventParticipantIds.has(entity.id)) continue;
       if (entity.start_year !== null) yearCandidates.push(entity.start_year);
       if (entity.end_year !== null) yearCandidates.push(entity.end_year);
     }
@@ -290,6 +360,39 @@
       series,
       leaderboard,
       events,
+      registry: {
+        entities: registryEntities,
+        coverage: registryCoverage,
+      },
+    };
+  }
+
+  function normalizeRegistryEntity(entity, index, summaryById, eventParticipantIds) {
+    if (!entity || typeof entity !== "object") return null;
+    const id = String(entity.id ?? `registry-${index + 1}`).trim();
+    if (!id) return null;
+
+    const suppliedStatus = String(entity.status ?? "").trim().toLocaleLowerCase();
+    let status = REGISTRY_STATUSES.has(suppliedStatus) ? suppliedStatus : null;
+    if (!status) {
+      const summary = summaryById.get(id);
+      status = eventParticipantIds.has(id) ? (summary && summary.established === false ? "provisional" : "rated") : "unrated";
+    }
+
+    const suppliedIdentityStatus = String(entity.identity_status ?? "").trim().toLocaleLowerCase();
+    const identityStatus = suppliedIdentityStatus === "curated" ? "curated" : "source_candidate";
+    const region = cleanOptionalText(entity.region);
+
+    return {
+      id,
+      name: String(entity.name ?? id),
+      kind: cleanOptionalText(entity.kind),
+      start_year: finiteNumber(entity.start_year),
+      end_year: finiteNumber(entity.end_year),
+      region: region && region.toLocaleLowerCase() !== "unclassified" ? region : null,
+      status,
+      identity_status: identityStatus,
+      coverage_discontinuous: entity.coverage_discontinuous === true,
     };
   }
 
@@ -402,9 +505,13 @@
     state.entityById = new Map(state.data.entities.map((entity) => [entity.id, entity]));
     state.leaderboardById = new Map(state.data.leaderboard.map((row) => [row.entity_id, row]));
     state.eventById = new Map(state.data.events.map((event) => [event.id, event]));
+    state.ratedEntityIds = new Set(
+      state.data.events.flatMap((event) => event.participants.map((participant) => participant.entity_id)),
+    );
 
     const allYears = [];
-    for (const points of Object.values(state.data.series)) {
+    for (const [entityId, points] of Object.entries(state.data.series)) {
+      if (!state.ratedEntityIds.has(entityId)) continue;
       for (const point of points) allYears.push(point.year);
     }
     for (const event of state.data.events) {
@@ -413,6 +520,7 @@
     }
 
     for (const entity of state.data.entities) {
+      if (!state.ratedEntityIds.has(entity.id)) continue;
       if (entity.start_year !== null) allYears.push(entity.start_year);
       if (entity.end_year !== null) allYears.push(entity.end_year);
     }
@@ -472,30 +580,125 @@
     }
   }
 
+  function configureRegistry() {
+    const kinds = [...new Set(state.data.registry.entities.map((entity) => entity.kind).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b),
+    );
+    elements.registryKind.replaceChildren();
+    const allKinds = createElement("option", "", "All kinds");
+    allKinds.value = "all";
+    elements.registryKind.append(allKinds);
+    for (const kind of kinds) {
+      const option = createElement("option", "", humanize(kind));
+      option.value = kind;
+      elements.registryKind.append(option);
+    }
+    elements.registryKind.disabled = kinds.length < 2;
+  }
+
+  function renderRegistry() {
+    if (!state.data) return;
+
+    const query = elements.registrySearch.value.trim().toLocaleLowerCase();
+    const status = elements.registryStatus.value;
+    const kind = elements.registryKind.value;
+    const matches = state.data.registry.entities.filter((entity) => {
+      if (status !== "all" && entity.status !== status) return false;
+      if (kind !== "all" && entity.kind !== kind) return false;
+      if (!query) return true;
+      const searchable = [entity.name, entity.kind, entity.region, entityEra(entity)]
+        .filter(Boolean)
+        .join(" ")
+        .toLocaleLowerCase();
+      return searchable.includes(query);
+    });
+
+    const visible = matches.slice(0, state.registryVisibleLimit);
+    elements.registryBody.replaceChildren();
+    elements.registryEmpty.hidden = matches.length > 0;
+    elements.registryCount.textContent = `${formatInteger(state.data.registry.coverage.registry_polities)} registered`;
+    elements.registrySummary.textContent = registryFilterSummary(matches.length, status, kind, query);
+
+    for (const entity of visible) {
+      const row = createElement("tr");
+      const nameCell = createElement("td", "registry-name-cell");
+      nameCell.append(createElement("span", "registry-name", entity.name));
+      if (entity.region) nameCell.append(createElement("span", "registry-region", entity.region));
+
+      const statusCell = createElement("td");
+      statusCell.append(createElement("span", `registry-status is-${entity.status}`, humanize(entity.status)));
+      if (entity.identity_status === "source_candidate") {
+        statusCell.append(
+          createElement(
+            "span",
+            "registry-identity-note",
+            entity.coverage_discontinuous ? "Source candidate · coverage gaps" : "Source candidate",
+          ),
+        );
+      }
+      row.append(
+        nameCell,
+        createElement("td", "registry-era", entityEra(entity)),
+        createElement("td", "registry-kind", entity.kind ? humanize(entity.kind) : "—"),
+        statusCell,
+      );
+      elements.registryBody.append(row);
+    }
+
+    elements.registryShowing.textContent = matches.length
+      ? `Showing ${formatInteger(visible.length)} of ${formatInteger(matches.length)} matching polities`
+      : "";
+    elements.registryShowMore.hidden = visible.length >= matches.length;
+    if (!elements.registryShowMore.hidden) {
+      const remaining = matches.length - visible.length;
+      elements.registryShowMore.textContent = `Show ${formatInteger(Math.min(REGISTRY_PAGE_SIZE, remaining))} more`;
+    }
+  }
+
+  function registryFilterSummary(matchCount, status, kind, query) {
+    const filters = [];
+    if (status !== "all") filters.push(`${humanize(status)} status`);
+    if (kind !== "all") filters.push(humanize(kind));
+    if (query) filters.push(`matching “${query}”`);
+    const scope = filters.length ? ` for ${filters.join(" · ")}` : " across the full registry";
+    return `${formatInteger(matchCount)} ${matchCount === 1 ? "polity" : "polities"}${scope}.`;
+  }
+
   function renderMetadata() {
     const meta = state.data.meta;
-    const demo = state.fallbackUsed || Boolean(meta.demo || meta.is_demo || /demo|preview/i.test(String(meta.status ?? "")));
+    const coverageStatus = `${meta.status ?? ""} ${meta.coverage_status ?? ""}`;
+    const demo =
+      state.fallbackUsed ||
+      Boolean(meta.demo || meta.is_demo || /demo|demonstration|preview/i.test(coverageStatus));
+    const limited = !demo && meta.comprehensive === false;
     const warnings = extractCoverageWarnings(meta);
 
-    elements.datasetBadge.classList.remove("is-live", "is-demo");
-    elements.datasetBadge.classList.add(demo ? "is-demo" : "is-live");
-    elements.datasetBadge.lastChild.textContent = demo ? " Demonstration data" : " Research dataset";
+    elements.datasetBadge.classList.remove("is-live", "is-demo", "is-limited");
+    elements.datasetBadge.classList.add(demo ? "is-demo" : limited ? "is-limited" : "is-live");
+    elements.datasetBadge.lastChild.textContent = demo
+      ? " Demonstration data"
+      : limited
+        ? " Limited dataset"
+        : " Research dataset";
 
     const generated = meta.generated_at ?? meta.generated ?? meta.as_of ?? null;
     elements.generatedLabel.textContent = generated ? `Updated ${formatDate(generated)}` : "";
 
-    elements.coverageEntities.textContent = formatInteger(state.data.entities.length);
-    elements.coverageEvents.textContent = formatInteger(state.data.events.length);
-    elements.coverageYears.textContent = `${formatYear(state.minYear)}–${formatYear(state.maxYear)}`;
-    elements.coverageSources.textContent = formatInteger(countUniqueSources(state.data.events));
+    const registryCoverage = state.data.registry.coverage;
+    elements.coverageRegistryPolities.textContent = formatInteger(registryCoverage.registry_polities);
+    elements.coverageRatedEntities.textContent = formatInteger(registryCoverage.rated_entities);
+    elements.coverageRatedEvents.textContent = formatInteger(registryCoverage.rated_events);
+    elements.coverageStagedRecords.textContent = formatInteger(registryCoverage.staged_source_records);
 
-    if (demo || warnings.length) {
+    if (demo || limited || warnings.length) {
       elements.datasetNotice.hidden = false;
       elements.noticeTitle.textContent = demo
         ? warnings.length
           ? "Demonstration data with coverage limits"
           : "Demonstration dataset"
-        : "Coverage and comparability warning";
+        : limited
+          ? "Incomplete research coverage"
+          : "Coverage and comparability warning";
 
       elements.noticeCopy.textContent = state.fallbackUsed
         ? "results.json was unavailable, so this page is showing a small built-in preview. Its scores are illustrative only."
@@ -503,6 +706,8 @@
           cleanOptionalText(meta.notice) ??
           (demo
             ? "Rankings are illustrative until the research dataset and its citations are complete."
+            : limited
+              ? "The registry and rated-event record are still incomplete; absence from either is not evidence of military inactivity."
             : "Some ratings are not directly comparable across the full dataset.");
 
       elements.noticeDetails.replaceChildren();
@@ -601,9 +806,13 @@
   function getSnapshotRows(year, metric) {
     const rows = [];
     for (const entity of state.data.entities) {
+      if (!state.ratedEntityIds.has(entity.id)) continue;
       if (!isEntityActive(entity, year)) continue;
       const point = pointAt(entity.id, year);
       if (!point || point[metric] === null) continue;
+
+      const eventCount = countAtOrBefore(state.entityEventYears.get(entity.id) ?? [], year);
+      if (eventCount < 1) continue;
 
       const points = state.data.series[entity.id] ?? [];
       const previous = point._index > 0 ? points[point._index - 1] : null;
@@ -615,7 +824,7 @@
         point,
         value: point[metric],
         lastMove,
-        events: countAtOrBefore(state.entityEventYears.get(entity.id) ?? [], year),
+        events: eventCount,
         summary,
         established: summary ? summary.established : true,
       });
@@ -628,7 +837,7 @@
     const ids = [];
     for (const row of snapshotRows.slice(0, state.topN)) ids.push(row.entity.id);
     for (const id of state.pinned) {
-      if (!ids.includes(id) && (state.data.series[id] ?? []).length) ids.push(id);
+      if (!ids.includes(id) && state.ratedEntityIds.has(id) && (state.data.series[id] ?? []).length) ids.push(id);
     }
     return ids;
   }
@@ -650,7 +859,7 @@
 
   function togglePin(entityId) {
     const entity = state.entityById.get(entityId);
-    if (!entity) return;
+    if (!entity || !state.ratedEntityIds.has(entityId)) return;
 
     if (state.pinned.has(entityId)) {
       state.pinned.delete(entityId);
@@ -674,6 +883,7 @@
     }
 
     state.searchMatches = state.data.entities
+      .filter((entity) => state.ratedEntityIds.has(entity.id))
       .map((entity) => ({
         entity,
         rank: searchRank(entity, query),
@@ -809,7 +1019,7 @@
         color: SERIES_COLORS[index % SERIES_COLORS.length],
         dash: DASH_PATTERNS[Math.floor(index / SERIES_COLORS.length) + (index % SERIES_COLORS.length === 0 ? 0 : 0)] ?? "7 4",
       }))
-      .filter((series) => series.entity && series.points.length);
+      .filter((series) => state.ratedEntityIds.has(series.id) && series.entity && series.points.length);
 
     elements.chartEmpty.hidden = chartSeries.length > 0;
     if (!chartSeries.length) {
@@ -1163,7 +1373,7 @@
       entityCell.append(entityButton);
 
       if (row.established === false) {
-        entityCell.append(createElement("span", "provisional-badge", "Provisional"));
+        entityCell.append(createElement("span", "provisional-badge", "Low coverage"));
       }
 
       const descriptorParts = [row.entity.kind, row.entity.region].filter(Boolean);
@@ -1194,7 +1404,11 @@
 
         const statusCell = createElement("td");
         statusCell.append(
-          createElement("span", row.established === false ? "status-text provisional" : "status-text established", row.established === false ? "Provisional" : "Established"),
+          createElement(
+            "span",
+            row.established === false ? "status-text provisional" : "status-text established",
+            row.established === false ? "Low coverage" : "Coverage threshold met",
+          ),
         );
         if (row.summary && row.summary.confidence !== null) {
           statusCell.append(createElement("span", "uncertainty-label", `${formatConfidence(row.summary.confidence)} confidence`));
@@ -1217,15 +1431,16 @@
           start_year: null,
           end_year: null,
         };
+        const events = summary.events ?? (state.entityEventYears.get(summary.entity_id) ?? []).length;
         return {
           entity,
           summary,
           value: summary[perspective],
-          events: summary.events ?? (state.entityEventYears.get(summary.entity_id) ?? []).length,
+          events,
           established: summary.established,
         };
       })
-      .filter((row) => row.value !== null && Number.isFinite(row.value))
+      .filter((row) => row.events > 0 && state.ratedEntityIds.has(row.entity.id) && row.value !== null && Number.isFinite(row.value))
       .sort((a, b) => b.value - a.value || a.entity.name.localeCompare(b.entity.name));
   }
 
@@ -1269,7 +1484,9 @@
 
     const movers = [];
     for (const entity of state.data.entities) {
+      if (!state.ratedEntityIds.has(entity.id)) continue;
       if (!isEntityActive(entity, state.selectedYear)) continue;
+      if (countAtOrBefore(state.entityEventYears.get(entity.id) ?? [], state.selectedYear) < 1) continue;
       const current = pointAt(entity.id, state.selectedYear);
       if (!current || current[state.metric] === null) continue;
 

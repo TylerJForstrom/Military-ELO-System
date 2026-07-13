@@ -52,20 +52,20 @@
 
           <dl class="coverage-strip" aria-label="Dataset coverage">
             <div>
-              <dt>Polities</dt>
-              <dd id="coverage-entities">—</dd>
+              <dt>Registry polities</dt>
+              <dd id="coverage-registry-polities">—</dd>
+            </div>
+            <div>
+              <dt>Entities with Elo</dt>
+              <dd id="coverage-rated-entities">—</dd>
             </div>
             <div>
               <dt>Rated events</dt>
-              <dd id="coverage-events">—</dd>
+              <dd id="coverage-rated-events">—</dd>
             </div>
             <div>
-              <dt>Time span</dt>
-              <dd id="coverage-years">—</dd>
-            </div>
-            <div>
-              <dt>Cited sources</dt>
-              <dd id="coverage-sources">—</dd>
+              <dt>Staged source records</dt>
+              <dd id="coverage-staged-records">—</dd>
             </div>
           </dl>
         </section>
@@ -83,10 +83,81 @@
           </div>
         </aside>
 
-        <section class="control-deck" aria-label="Timeline controls">
+        <section class="panel registry-section" aria-labelledby="registry-title">
+          <header class="section-heading registry-heading">
+            <div>
+              <p class="eyebrow">Historical polity registry</p>
+              <h2 id="registry-title">Countries, empires, states, and regimes in the source catalog</h2>
+              <p class="section-note">
+                Registry coverage is broader than the rating model. Unrated entries remain visible here but are
+                excluded from Elo rankings and charts. Source-candidate intervals are claims awaiting identity review,
+                not settled historical boundaries.
+              </p>
+            </div>
+            <span class="metric-chip" id="registry-count">— registered</span>
+          </header>
+
+          <div class="registry-controls" role="group" aria-label="Registry filters">
+            <label class="field registry-search-field" for="registry-search">
+              <span>Search registry</span>
+              <span class="search-control">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5"></circle>
+                  <path d="m16 16 4.2 4.2"></path>
+                </svg>
+                <input
+                  id="registry-search"
+                  type="search"
+                  placeholder="Search by name, kind, region, or era"
+                  autocomplete="off"
+                >
+              </span>
+            </label>
+
+            <label class="field" for="registry-status-filter">
+              <span>Elo status</span>
+              <select id="registry-status-filter">
+                <option value="all">All statuses</option>
+                <option value="rated">Rated</option>
+                <option value="provisional">Provisional</option>
+                <option value="unrated">Unrated</option>
+              </select>
+            </label>
+
+            <label class="field" for="registry-kind-filter">
+              <span>Polity kind</span>
+              <select id="registry-kind-filter">
+                <option value="all">All kinds</option>
+              </select>
+            </label>
+          </div>
+
+          <p class="registry-summary" id="registry-summary" aria-live="polite"></p>
+          <div class="table-wrap">
+            <table class="registry-table">
+              <caption class="sr-only">Searchable historical polity registry</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Era</th>
+                  <th scope="col">Kind</th>
+                  <th scope="col">Elo / identity status</th>
+                </tr>
+              </thead>
+              <tbody id="registry-body"></tbody>
+            </table>
+          </div>
+          <p class="empty-state" id="registry-empty" hidden>No registry entries match these filters.</p>
+          <div class="registry-footer">
+            <span id="registry-showing"></span>
+            <button class="text-button" id="registry-show-more" type="button" hidden>Show more</button>
+          </div>
+        </section>
+
+        <section class="control-deck" aria-label="Rated leaderboard and timeline controls">
           <div class="control-grid">
             <label class="field field-search" for="entity-search">
-              <span>Find and pin a polity</span>
+              <span>Find and pin a rated polity</span>
               <span class="search-control">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="11" cy="11" r="6.5"></circle>
@@ -95,7 +166,7 @@
                 <input
                   id="entity-search"
                   type="search"
-                  placeholder="Search countries or empires"
+                  placeholder="Search rated countries or empires"
                   autocomplete="off"
                   aria-autocomplete="list"
                   aria-controls="search-results"
@@ -209,6 +280,7 @@
               <div>
                 <p class="eyebrow">Snapshot</p>
                 <h2 id="leaderboard-title">Leaderboard</h2>
+                <p class="section-note">Includes only polities with at least one rated event.</p>
               </div>
               <span class="metric-chip" id="leaderboard-metric">Composite Elo</span>
             </header>
