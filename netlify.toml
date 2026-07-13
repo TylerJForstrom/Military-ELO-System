@@ -1,9 +1,9 @@
+# The committed web/data/results.json is the reviewed 1,000-simulation
+# artifact; deploys publish it verbatim instead of rebuilding, so the live
+# site always matches the audited build and cannot time out.
 [build]
-  command = "python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000"
+  command = "test -s web/data/results.json"
   publish = "web"
-
-[build.environment]
-  PYTHON_VERSION = "3.12"
 
 [[headers]]
   for = "/*"

@@ -33,16 +33,20 @@ Then open `http://127.0.0.1:8080`.
 ## Deploy on Netlify
 
 The repository includes `netlify.toml`. Import the GitHub repository into
-Netlify and the site will build with these settings automatically:
+Netlify and every push to the production branch publishes the `web/`
+directory as-is. The committed `web/data/results.json` is the reviewed
+1,000-simulation artifact, so the live site always matches the audited build;
+deploys do not rerun the model. No database, server process, or runtime API
+is required.
 
-```text
-Build command: python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000
-Publish directory: web
+To update the site, rebuild the artifact locally and commit it:
+
+```powershell
+python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000
 ```
 
-Every push to the selected production branch will rebuild the rating results
-and deploy the standalone static dashboard. No database, server process, or
-runtime API is required.
+The test suite cross-checks the committed artifact against the release and
+registry so a stale or partial rebuild fails before it ships.
 
 The dashboard deliberately separates the polity registry from the rating ledger. The 1,582-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 1,461-event ledger combines 40 manually curated seed events, 1,377 strictly filtered HCED tactical encounters, and 44 coalition-aggregated IWD strategic parent wars. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
