@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+
+# Reproducible source downloads and machine-generated review queues.
+data/raw/*
+!data/raw/.gitkeep
+data/review/*
+!data/review/.gitkeep

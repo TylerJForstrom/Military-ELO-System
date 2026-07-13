@@ -1,0 +1,123 @@
+{
+  "baseline": 1500.0,
+  "elo_scale": 400.0,
+  "tactical_k": 28.0,
+  "operational_k": 34.0,
+  "strategic_k": 42.0,
+  "min_k": 4.0,
+  "max_k": 96.0,
+  "min_uncertainty": 60.0,
+  "max_uncertainty": 350.0,
+  "uncertainty_drift_per_year": 2.5,
+  "uncertainty_information_gain": 0.16,
+  "home_advantage_points": 35.0,
+  "force_advantage_points_per_doubling": 45.0,
+  "max_context_adjustment": 180.0,
+  "tactical_composite_weight": 0.20,
+  "operational_composite_weight": 0.25,
+  "strategic_composite_weight": 0.55,
+  "tactical_full_evidence": 5,
+  "operational_full_evidence": 4,
+  "strategic_full_evidence": 3,
+  "scale_multipliers": {
+    "skirmish": 0.45,
+    "battle": 0.80,
+    "campaign": 1.05,
+    "theater": 1.25,
+    "major_war": 1.40,
+    "total_war": 1.65
+  },
+  "stakes_multipliers": {
+    "low": 0.65,
+    "limited": 0.90,
+    "major": 1.20,
+    "existential": 1.55
+  },
+  "role_multipliers": {
+    "primary": 1.0,
+    "coalition_lead": 1.0,
+    "major_ally": 0.78,
+    "supporting_ally": 0.48,
+    "expeditionary": 0.38,
+    "proxy_sponsor": 0.25
+  },
+  "tactical_weights": {
+    "battlefield_control": 0.45,
+    "mission_objective": 0.25,
+    "force_preservation": 0.20,
+    "positional_gain": 0.10
+  },
+  "operational_weights": {
+    "campaign_objective": 0.35,
+    "theater_control": 0.25,
+    "force_preservation": 0.15,
+    "tempo_initiative": 0.15,
+    "logistics_sustainment": 0.10
+  },
+  "strategic_weights": {
+    "interstate_limited": {
+      "battlefield_outcome": 0.15,
+      "political_objectives": 0.30,
+      "territorial_outcome": 0.20,
+      "sovereignty_survival": 0.10,
+      "settlement_durability": 0.15,
+      "force_preservation": 0.10
+    },
+    "conquest": {
+      "battlefield_outcome": 0.15,
+      "political_objectives": 0.15,
+      "territorial_outcome": 0.25,
+      "sovereignty_survival": 0.30,
+      "settlement_durability": 0.10,
+      "force_preservation": 0.05
+    },
+    "colonial_anti_colonial": {
+      "battlefield_outcome": 0.10,
+      "political_objectives": 0.35,
+      "territorial_outcome": 0.15,
+      "sovereignty_survival": 0.20,
+      "settlement_durability": 0.15,
+      "force_preservation": 0.05
+    },
+    "insurgency_intervention": {
+      "battlefield_outcome": 0.08,
+      "political_objectives": 0.40,
+      "territorial_outcome": 0.12,
+      "sovereignty_survival": 0.20,
+      "settlement_durability": 0.15,
+      "force_preservation": 0.05
+    },
+    "civil_war": {
+      "battlefield_outcome": 0.12,
+      "political_objectives": 0.30,
+      "territorial_outcome": 0.15,
+      "sovereignty_survival": 0.25,
+      "settlement_durability": 0.12,
+      "force_preservation": 0.06
+    },
+    "world_war": {
+      "battlefield_outcome": 0.18,
+      "political_objectives": 0.20,
+      "territorial_outcome": 0.17,
+      "sovereignty_survival": 0.25,
+      "settlement_durability": 0.10,
+      "force_preservation": 0.10
+    },
+    "punitive_expedition": {
+      "battlefield_outcome": 0.25,
+      "political_objectives": 0.30,
+      "territorial_outcome": 0.10,
+      "sovereignty_survival": 0.10,
+      "settlement_durability": 0.10,
+      "force_preservation": 0.15
+    },
+    "peace_enforcement": {
+      "battlefield_outcome": 0.08,
+      "political_objectives": 0.32,
+      "territorial_outcome": 0.05,
+      "sovereignty_survival": 0.15,
+      "settlement_durability": 0.30,
+      "force_preservation": 0.10
+    }
+  }
+}
