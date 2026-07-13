@@ -10,6 +10,7 @@
   "max_uncertainty": 350.0,
   "uncertainty_drift_per_year": 2.5,
   "uncertainty_information_gain": 0.16,
+  "cluster_decay_exponent": 0.5,
   "home_advantage_points": 35.0,
   "force_advantage_points_per_doubling": 45.0,
   "max_context_adjustment": 180.0,

@@ -127,6 +127,98 @@ class EloEngineTests(unittest.TestCase):
         low_gain = EloEngine().run(entities(), [low]).event_updates[0].participants[0].delta
         self.assertLess(low_gain, high_gain)
 
+    def test_explicit_zero_participant_confidence_is_preserved(self):
+        event = war(
+            "uncertain",
+            50,
+            [
+                Participant("old_empire", "a", outcome=outcome(1), evidence_confidence=0),
+                Participant("rival", "b", outcome=outcome(0), evidence_confidence=0),
+            ],
+            confidence=1.0,
+        )
+        update = EloEngine().run(entities(), [event]).event_updates[0]
+        self.assertAlmostEqual(update.participants[0].actual, 0.5)
+        self.assertAlmostEqual(update.participants[1].actual, 0.5)
+        self.assertAlmostEqual(update.participants[0].delta, 0)
+        self.assertAlmostEqual(update.participants[1].delta, 0)
+
+    def test_events_in_one_war_cluster_receive_diminishing_weight(self):
+        clustered = [
+            war(
+                f"clustered_{index}",
+                50 + index,
+                [
+                    Participant("old_empire", "a", outcome=outcome(1)),
+                    Participant("rival", "b", outcome=outcome(0)),
+                ],
+                cluster_id="same_war",
+            )
+            for index in range(3)
+        ]
+        independent = [
+            war(
+                f"independent_{index}",
+                50 + index,
+                [
+                    Participant("old_empire", "a", outcome=outcome(1)),
+                    Participant("rival", "b", outcome=outcome(0)),
+                ],
+                cluster_id=f"war_{index}",
+            )
+            for index in range(3)
+        ]
+
+        clustered_engine = EloEngine().run(entities(), clustered)
+        independent_engine = EloEngine().run(entities(), independent)
+        self.assertLess(
+            clustered_engine.states["old_empire"].strategic.rating,
+            independent_engine.states["old_empire"].strategic.rating,
+        )
+        clustered_weights = {
+            update.evidence_weight for update in clustered_engine.event_updates
+        }
+        self.assertEqual(len(clustered_weights), 1)
+        self.assertLess(next(iter(clustered_weights)), 1.0)
+        self.assertLess(
+            clustered_engine.states["old_empire"].strategic.evidence,
+            independent_engine.states["old_empire"].strategic.evidence,
+        )
+
+    def test_same_year_sequence_does_not_control_processing_order(self):
+        def same_year_events(first_sequence, second_sequence):
+            return [
+                war(
+                    "alpha",
+                    50,
+                    [
+                        Participant("old_empire", "a", outcome=outcome(1)),
+                        Participant("rival", "b", outcome=outcome(0)),
+                    ],
+                    sequence=first_sequence,
+                ),
+                war(
+                    "beta",
+                    50,
+                    [
+                        Participant("old_empire", "a", outcome=outcome(0)),
+                        Participant("rival", "b", outcome=outcome(1)),
+                    ],
+                    sequence=second_sequence,
+                ),
+            ]
+
+        forward = EloEngine().run(entities(), same_year_events(1, 2))
+        reversed_sequence = EloEngine().run(entities(), same_year_events(2, 1))
+        self.assertAlmostEqual(
+            forward.states["old_empire"].strategic.rating,
+            reversed_sequence.states["old_empire"].strategic.rating,
+        )
+        self.assertEqual(
+            [update.event.id for update in forward.event_updates],
+            ["alpha", "beta"],
+        )
+
     def test_vietnam_style_defeat_is_not_existential_by_dimensions(self):
         config = ModelConfig()
         event = war(

@@ -102,6 +102,7 @@ class ModelConfig:
     max_uncertainty: float = 350.0
     uncertainty_drift_per_year: float = 2.5
     uncertainty_information_gain: float = 0.16
+    cluster_decay_exponent: float = 0.5
     home_advantage_points: float = 35.0
     force_advantage_points_per_doubling: float = 45.0
     max_context_adjustment: float = 180.0
@@ -163,6 +164,8 @@ class ModelConfig:
     def validate(self) -> None:
         if self.baseline <= 0 or self.elo_scale <= 0:
             raise ValueError("baseline and elo_scale must be positive")
+        if not 0 <= self.cluster_decay_exponent <= 1:
+            raise ValueError("cluster_decay_exponent must be in [0, 1]")
         if not 0 < self.tactical_composite_weight <= 1:
             raise ValueError("tactical_composite_weight must be in (0, 1]")
         if not 0 < self.operational_composite_weight <= 1:

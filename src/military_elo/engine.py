@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import math
 import statistics
+from collections import Counter
 from dataclasses import dataclass, field
 from typing import Iterable
 
@@ -13,7 +14,7 @@ from .models import Entity, Event, Participant, Source
 class TrackState:
     rating: float
     uncertainty: float
-    evidence: int = 0
+    evidence: float = 0.0
     last_year: int | None = None
 
 
@@ -50,6 +51,7 @@ class EventUpdate:
     event: Event
     track: str
     k_factor: float
+    evidence_weight: float
     participants: tuple[ParticipantUpdate, ...]
 
 
@@ -66,11 +68,13 @@ class EloEngine:
         self.states: dict[str, EntityState] = {}
         self.history: dict[str, list[dict[str, float | int | str]]] = {}
         self.event_updates: list[EventUpdate] = []
+        self._event_evidence_weights: dict[str, float] = {}
 
     def initialize(self, entities: Iterable[Entity]) -> None:
         self.states = {}
         self.history = {}
         self.event_updates = []
+        self._event_evidence_weights = {}
         for entity in entities:
             if entity.id in self.states:
                 raise ValueError(f"Duplicate entity id: {entity.id}")
@@ -87,9 +91,22 @@ class EloEngine:
 
     def run(self, entities: Iterable[Entity], events: Iterable[Event]) -> "EloEngine":
         self.initialize(entities)
-        for event in sorted(events, key=lambda item: item.sort_key):
-            if event.status != "complete":
-                continue
+        completed = [event for event in events if event.status == "complete"]
+        cluster_counts = Counter(
+            (event.track, event.cluster_id or event.parent_event_id)
+            for event in completed
+            if event.cluster_id or event.parent_event_id
+        )
+        self._event_evidence_weights = {
+            event.id: (
+                cluster_counts[(event.track, event.cluster_id or event.parent_event_id)]
+                ** (-self.config.cluster_decay_exponent)
+                if event.cluster_id or event.parent_event_id
+                else 1.0
+            )
+            for event in completed
+        }
+        for event in sorted(completed, key=lambda item: (item.end_year, item.year, item.id)):
             self.apply_event(event)
         return self
 
@@ -118,7 +135,8 @@ class EloEngine:
         expected_weighted = {p.entity_id: 0.0 for p in event.participants}
         actual_weighted = {p.entity_id: 0.0 for p in event.participants}
         comparison_weight = {p.entity_id: 0.0 for p in event.participants}
-        k_factor = self._event_k(event)
+        evidence_weight = self._event_evidence_weights.get(event.id, 1.0)
+        k_factor = self._event_k(event) * evidence_weight
 
         participants = list(event.participants)
         importance = {
@@ -161,13 +179,22 @@ class EloEngine:
             track = self._track(state, track_name)
             delta = raw_deltas[participant.entity_id]
             track.rating += delta
-            confidence = participant.evidence_confidence or event.confidence
-            information = self.config.uncertainty_information_gain * confidence * min(1.0, exposures[participant.entity_id])
+            confidence = (
+                participant.evidence_confidence
+                if participant.evidence_confidence is not None
+                else event.confidence
+            )
+            information = (
+                self.config.uncertainty_information_gain
+                * confidence
+                * min(1.0, exposures[participant.entity_id])
+                * evidence_weight
+            )
             track.uncertainty = max(
                 self.config.min_uncertainty,
                 uncertainties[participant.entity_id] * math.sqrt(max(0.35, 1.0 - information)),
             )
-            track.evidence += 1
+            track.evidence += evidence_weight
             track.last_year = event.end_year
             state.events += 1
             if event.event_type == "war":
@@ -181,7 +208,8 @@ class EloEngine:
                 "strategic": self.config.strategic_composite_weight,
             }[track_name]
             state.achievement += (
-                layer_weight
+                evidence_weight
+                * layer_weight
                 * importance[participant.entity_id]
                 * exposures[participant.entity_id]
                 * (2.0 * actual - 1.0)
@@ -216,7 +244,7 @@ class EloEngine:
 
         if abs(sum(update.delta for update in updates)) > 1e-7:
             raise AssertionError(f"Event {event.id} did not conserve rating points")
-        event_update = EventUpdate(event, track_name, k_factor, tuple(updates))
+        event_update = EventUpdate(event, track_name, k_factor, evidence_weight, tuple(updates))
         self.event_updates.append(event_update)
         return event_update
 
@@ -234,7 +262,11 @@ class EloEngine:
             raise ValueError(f"{event.id}/{participant.entity_id} has no usable outcome dimensions")
         normalizer = sum(available.values())
         value = sum(participant.outcome[key] * weight for key, weight in available.items()) / normalizer
-        confidence = participant.evidence_confidence or event.confidence
+        confidence = (
+            participant.evidence_confidence
+            if participant.evidence_confidence is not None
+            else event.confidence
+        )
         # Uncertain evidence is conservatively pulled toward an inconclusive result.
         return 0.5 + (value - 0.5) * confidence
 
@@ -443,16 +475,32 @@ class EloEngine:
         for entity_id, state in self.states.items():
             total = state.wins + state.losses + state.draws
             component = components[entity_id]
+            effective_events = (
+                state.tactical.evidence
+                + state.operational.evidence
+                + state.strategic.evidence
+            )
+            effective_wars = state.strategic.evidence
             historical_success_raw = (
                 0.40 * peak_percentiles[component][entity_id]
                 + 0.35 * sustained_percentiles[component][entity_id]
                 + 0.25 * achievement_percentiles[component][entity_id]
             )
-            coverage = (
-                0.50 * min(1.0, state.events / 5.0)
-                + 0.30 * min(1.0, state.wars / 3.0)
+            evidence_coverage = (
+                0.50 * min(1.0, effective_events / 5.0)
+                + 0.30 * min(1.0, effective_wars / 3.0)
                 + 0.20 * min(1.0, math.log1p(component_sizes[component]) / math.log(10.0))
             )
+            uncertainty_reliability = max(
+                0.0,
+                min(
+                    1.0,
+                    1.0
+                    - self._composite_uncertainty(state)
+                    / self.config.max_uncertainty,
+                ),
+            )
+            coverage = evidence_coverage * uncertainty_reliability
             historical_success = 50.0 + (historical_success_raw - 50.0) * coverage
             rows.append(
                 {
@@ -470,8 +518,14 @@ class EloEngine:
                     "historical_success": round(historical_success, 2),
                     "historical_success_raw": round(historical_success_raw, 2),
                     "coverage_factor": round(coverage, 3),
+                    "effective_events": round(effective_events, 3),
+                    "effective_wars": round(effective_wars, 3),
                     "network_component": component,
-                    "established": state.events >= 5 and state.wars >= 3 and self._composite_uncertainty(state) <= 200,
+                    "established": (
+                        effective_events >= 5
+                        and effective_wars >= 3
+                        and self._composite_uncertainty(state) <= 200
+                    ),
                     "events": state.events,
                     "wars": state.wars,
                     "wins": state.wins,
@@ -504,6 +558,7 @@ class EloEngine:
                     "summary": event.summary,
                     "parent_event_id": event.parent_event_id,
                     "k_factor": round(update.k_factor, 3),
+                    "evidence_weight": round(update.evidence_weight, 4),
                     "participants": [
                         {
                             "entity_id": item.entity_id,
