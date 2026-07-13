@@ -792,7 +792,7 @@
     elements.eventsYear.textContent = formatYear(state.selectedYear);
 
     const snapshotRows = getSnapshotRows(state.selectedYear, state.metric);
-    state.visibleEntityIds = getTimelineEntityIds();
+    state.visibleEntityIds = getTimelineEntityIds(snapshotRows);
 
     renderPins();
     renderChart(state.visibleEntityIds);
@@ -833,14 +833,17 @@
     return rows;
   }
 
-  function getTimelineEntityIds() {
-    // "Leaders through time" draws the all-time leaders by historical success,
-    // not just the polities still active in the selected year; the year
-    // selector highlights values without changing which lines are shown.
+  function getTimelineEntityIds(snapshotRows) {
+    // "Leaders through time" first shows the leaders active in the selected
+    // year, so scrubbing into the past surfaces that era's polities, then
+    // fills the remaining slots with the all-time leaders by historical
+    // success so the default view is never limited to still-active states.
     const ids = [];
+    for (const row of snapshotRows.slice(0, state.topN)) ids.push(row.entity.id);
     for (const row of state.data.leaderboard) {
       if (ids.length >= state.topN) break;
       const id = row.entity_id;
+      if (ids.includes(id)) continue;
       if (!state.ratedEntityIds.has(id)) continue;
       if (!(state.data.series[id] ?? []).length) continue;
       ids.push(id);
