@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta
+      name="description"
+      content="Explore evidence-aware military Elo ratings for states and empires across history."
+    >
+    <title>Military Elo Atlas</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the ratings</a>
+
+    <div class="site-shell">
+      <header class="masthead">
+        <a class="brand" href="./" aria-label="Military Elo Atlas home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="presentation">
+              <path d="M20 3.5 24.2 15.8 36.5 20l-12.3 4.2L20 36.5l-4.2-12.3L3.5 20l12.3-4.2L20 3.5Z"></path>
+              <circle cx="20" cy="20" r="3.4"></circle>
+            </svg>
+          </span>
+          <span>
+            <span class="brand-kicker">Evidence-aware military ratings</span>
+            <span class="brand-name">Military Elo Atlas</span>
+          </span>
+        </a>
+
+        <div class="dataset-status" aria-live="polite">
+          <span class="status-pill" id="dataset-badge">
+            <span class="status-dot" aria-hidden="true"></span>
+            Loading dataset
+          </span>
+          <span class="generated-label" id="generated-label"></span>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="overview" aria-labelledby="overview-title">
+          <div>
+            <p class="eyebrow">Comparative history, with the caveats visible</p>
+            <h1 id="overview-title">Follow military power across centuries.</h1>
+            <p class="overview-copy">
+              Ratings update from recorded conflicts while keeping tactical performance,
+              strategic outcomes, event scale, and source uncertainty distinct.
+            </p>
+          </div>
+
+          <dl class="coverage-strip" aria-label="Dataset coverage">
+            <div>
+              <dt>Polities</dt>
+              <dd id="coverage-entities">—</dd>
+            </div>
+            <div>
+              <dt>Rated events</dt>
+              <dd id="coverage-events">—</dd>
+            </div>
+            <div>
+              <dt>Time span</dt>
+              <dd id="coverage-years">—</dd>
+            </div>
+            <div>
+              <dt>Cited sources</dt>
+              <dd id="coverage-sources">—</dd>
+            </div>
+          </dl>
+        </section>
+
+        <aside class="dataset-notice" id="dataset-notice" hidden role="status">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 2.7 20h18.6L12 3Zm0 5.7v5.6m0 3.2v.1"></path>
+          </svg>
+          <div>
+            <strong id="notice-title">Demonstration dataset</strong>
+            <span id="notice-copy">
+              Rankings are illustrative until the research dataset and its citations are complete.
+            </span>
+            <ul id="notice-details" class="notice-details" hidden></ul>
+          </div>
+        </aside>
+
+        <section class="control-deck" aria-label="Timeline controls">
+          <div class="control-grid">
+            <label class="field field-search" for="entity-search">
+              <span>Find and pin a polity</span>
+              <span class="search-control">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5"></circle>
+                  <path d="m16 16 4.2 4.2"></path>
+                </svg>
+                <input
+                  id="entity-search"
+                  type="search"
+                  placeholder="Search countries or empires"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-controls="search-results"
+                  aria-expanded="false"
+                >
+              </span>
+            </label>
+
+            <label class="field" for="metric-select">
+              <span>Rating lens</span>
+              <select id="metric-select">
+                <option value="composite">Composite</option>
+                <option value="strategic">Strategic</option>
+                <option value="operational">Operational</option>
+                <option value="tactical">Tactical</option>
+              </select>
+            </label>
+
+            <label class="field" for="perspective-select">
+              <span>Leaderboard view</span>
+              <select id="perspective-select">
+                <option value="historical_success" selected>Historical success</option>
+                <option value="current">Current composite</option>
+                <option value="peak">Peak</option>
+                <option value="sustained">Sustained</option>
+                <option value="achievement">Achievement</option>
+              </select>
+            </label>
+
+            <label class="field" for="top-n-select">
+              <span>Lines shown</span>
+              <select id="top-n-select">
+                <option value="5">Top 5</option>
+                <option value="8" selected>Top 8</option>
+                <option value="12">Top 12</option>
+                <option value="20">Top 20</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="search-results-wrap" id="search-results-wrap" hidden>
+            <ul id="search-results" class="search-results" role="listbox" aria-label="Matching polities"></ul>
+          </div>
+
+          <div class="pin-row" id="pin-row" hidden>
+            <span class="pin-label">Pinned</span>
+            <div class="pin-list" id="pin-list"></div>
+            <button class="text-button" id="clear-pins" type="button">Clear all</button>
+          </div>
+        </section>
+
+        <section class="timeline-section" aria-labelledby="timeline-title">
+          <header class="section-heading timeline-heading">
+            <div>
+              <p class="eyebrow">Rating history</p>
+              <h2 id="timeline-title">Leaders through time</h2>
+              <p class="section-note">
+                Elo is held between rated events. Shaded envelopes show model uncertainty.
+              </p>
+            </div>
+            <div class="year-readout">
+              <span>Viewing</span>
+              <output id="selected-year" for="year-slider">—</output>
+            </div>
+          </header>
+
+          <div class="time-control">
+            <button class="step-button" id="previous-event" type="button" aria-label="Go to previous recorded event">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"></path></svg>
+              <span>Previous event</span>
+            </button>
+            <label class="slider-label" for="year-slider">
+              <span class="sr-only">Selected historical year</span>
+              <span class="slider-range-labels" aria-hidden="true">
+                <span id="slider-min">—</span>
+                <span id="slider-max">—</span>
+              </span>
+              <input id="year-slider" type="range" min="0" max="1" value="1" step="1">
+            </label>
+            <button class="step-button" id="next-event" type="button" aria-label="Go to next recorded event">
+              <span>Next event</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"></path></svg>
+            </button>
+          </div>
+
+          <div class="chart-frame" id="chart-frame">
+            <svg
+              id="timeline-chart"
+              class="timeline-chart"
+              role="img"
+              aria-labelledby="chart-title chart-description"
+            >
+              <title id="chart-title">Historical military Elo rating timeline</title>
+              <desc id="chart-description">Loading rating history.</desc>
+            </svg>
+            <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+            <div class="chart-empty" id="chart-empty" hidden>
+              No rated polity is active at this date. Pin a polity to keep its full history visible.
+            </div>
+          </div>
+
+          <div class="chart-footer">
+            <ul class="chart-legend" id="chart-legend" aria-label="Visible rating lines"></ul>
+            <p class="chart-summary" id="chart-summary" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="rankings-grid" aria-label="Rankings at selected year">
+          <article class="panel leaderboard-panel">
+            <header class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">Snapshot</p>
+                <h2 id="leaderboard-title">Leaderboard</h2>
+              </div>
+              <span class="metric-chip" id="leaderboard-metric">Composite Elo</span>
+            </header>
+
+            <div class="table-wrap">
+              <table>
+                <caption class="sr-only" id="leaderboard-caption">
+                  Military Elo leaderboard at the selected year
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Polity</th>
+                    <th scope="col">Rating ± uncertainty</th>
+                    <th scope="col">Last move</th>
+                    <th scope="col">Events</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-body"></tbody>
+              </table>
+            </div>
+            <p class="empty-state" id="leaderboard-empty" hidden>No active ratings at this date.</p>
+          </article>
+
+          <article class="panel movers-panel">
+            <header class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">Momentum</p>
+                <h2>Risers &amp; fallers</h2>
+              </div>
+              <span class="metric-chip" id="momentum-window">25-year change</span>
+            </header>
+
+            <div class="movers-columns">
+              <section aria-labelledby="risers-title">
+                <h3 id="risers-title"><span class="direction up" aria-hidden="true">↑</span> Risers</h3>
+                <ol class="mover-list" id="risers-list"></ol>
+              </section>
+              <section aria-labelledby="fallers-title">
+                <h3 id="fallers-title"><span class="direction down" aria-hidden="true">↓</span> Fallers</h3>
+                <ol class="mover-list" id="fallers-list"></ol>
+              </section>
+            </div>
+            <p class="empty-state" id="movers-empty" hidden>No rating movement in this window.</p>
+            <p class="panel-footnote">Uses the nearest prior rated point when event coverage is sparse.</p>
+          </article>
+        </section>
+
+        <section class="events-section" aria-labelledby="events-title">
+          <header class="section-heading events-heading">
+            <div>
+              <p class="eyebrow">Evidence trail</p>
+              <h2 id="events-title">Events near <span id="events-year">—</span></h2>
+              <p class="section-note">Select an event to inspect its outcome class, weight, participants, and sources.</p>
+            </div>
+            <div class="event-heading-controls">
+              <label class="mini-field" for="event-domain-select">
+                <span>Domain</span>
+                <select id="event-domain-select">
+                  <option value="all">All domains</option>
+                </select>
+              </label>
+              <span class="confidence-key">
+                <span aria-hidden="true"></span>
+                Confidence reflects source agreement and completeness
+              </span>
+            </div>
+          </header>
+
+          <div class="event-workspace">
+            <nav class="event-browser" aria-label="Nearby military events">
+              <ol class="event-list" id="event-list"></ol>
+              <p class="empty-state" id="events-empty" hidden>No recorded events near this date.</p>
+            </nav>
+
+            <article class="event-detail" id="event-detail" aria-live="polite">
+              <div class="event-detail-placeholder">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M10 9h28v30H10zM16 16h16M16 23h16M16 30h10"></path>
+                </svg>
+                <p>Select an event to inspect its evidence record.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="reading-note" aria-labelledby="reading-note-title">
+          <div>
+            <p class="eyebrow">How to read this</p>
+            <h2 id="reading-note-title">A rating is an evidence-conditioned estimate, not a timeless verdict.</h2>
+          </div>
+          <p id="methodology-note">
+            New historical polities enter with a fresh prior. Tactical results, strategic results,
+            conflict scale, stakes, and confidence affect updates separately; missing evidence widens uncertainty.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <span>Military Elo Atlas</span>
+        <span id="footer-coverage">Coverage is only as complete as the cited record.</span>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>

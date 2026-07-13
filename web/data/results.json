@@ -1,0 +1,5304 @@
+{
+  "meta": {
+    "dataset_id": "military-elo-curated-demonstration-v0.1",
+    "title": "Curated demonstration data for the Military History Elo engine",
+    "version": "0.1.0",
+    "as_of": "2026-07-13",
+    "coverage_status": "demonstration_only",
+    "comprehensive": false,
+    "description": "A deliberately small, hand-curated seed spanning selected conflicts from the Late Bronze Age through 2021. It exists to exercise entity resets, tactical/operational/strategic layers, coalition participation, participant-specific stakes, and differentiated defeat types. It is not a ranking-ready census of all countries, empires, wars, campaigns, or battles.",
+    "record_counts_expected": {
+      "entities": 35,
+      "events": 40,
+      "sources": 39
+    },
+    "year_range": {
+      "start": -1274,
+      "end": 2021,
+      "calendar_note": "Negative integers denote BCE years using the project's integer-year convention; no claim of day-level precision is made."
+    },
+    "layer_policy": {
+      "engagement": "tactical",
+      "campaign": "operational",
+      "war": "strategic",
+      "double_counting_note": "Nested events update different rating tracks. A battle, campaign, and final war settlement must not all update one undifferentiated Elo stream."
+    },
+    "continuity_policy": {
+      "default": "A polity conventionally treated as a new country, empire, or regime-state receives a new entity ID and begins from the model baseline. Predecessor links are descriptive only.",
+      "roman_byzantine_convention": "For this project, the Roman Empire rating ends at 395 and the Byzantine Empire begins at 395 with a complete Elo reset. This is an explicit project convention, not a claim that scholarship supplies one uncontested Byzantine start date.",
+      "no_inheritance": true
+    },
+    "outcome_policy": {
+      "participant_specific": true,
+      "dimensions_required": true,
+      "stakes_and_scale": "Participant stakes and national_scale are coded separately from event-wide scope and scale.",
+      "termination_examples": {
+        "united_states_vietnam": "withdrawal_after_failed_intervention; major strategic defeat with homeland sovereignty preserved",
+        "south_vietnam": "capitulation_and_state_ceased; existential defeat",
+        "north_vietnam": "decisive_victory_and_reunification",
+        "nazi_germany_1945": "unconditional_surrender_occupation_and_regime_destroyed; existential defeat"
+      }
+    },
+    "source_policy": {
+      "purpose": "Stable academic, official-history, museum, structured-data, and edited general-reference links support this demonstration.",
+      "provenance_limit": "An event-level URL is not a substitute for claim-level citations, page references, source-family deduplication, or multilingual scholarly review in production data.",
+      "licensing": "Only original normalized seed assertions are stored. Linked copyrighted references are cited rather than copied. Government-work and open-data license labels should still be checked at item level before redistribution."
+    },
+    "known_limitations": [
+      "Selection is illustrative and strongly incomplete; absence of an entity or event is not evidence of military inactivity or failure.",
+      "Several coalition records intentionally rate a documented dyadic or principal-participant slice because the seed roster does not yet contain every ally, vassal, client, or non-state actor.",
+      "Ancient dates, force sizes, casualties, and even outcomes can be highly uncertain; this seed usually omits force_size rather than encode false precision.",
+      "Cross-era raw Elo values are not directly identifiable because opponent networks are disconnected and military technology changes radically.",
+      "The preferred cross-era display is contemporary-network percentile with uncertainty, not a literal claim that two entities separated by centuries could be compared as if they fought.",
+      "The source list is suitable for a demonstration build, not yet for the project's stated goal of maximum historical accuracy. Production ingestion requires claim-level provenance and expert adjudication."
+    ],
+    "recommended_use": [
+      "Engine and audit testing",
+      "Dashboard and graph demonstrations",
+      "Sensitivity examples",
+      "Human review of taxonomy and continuity rules"
+    ],
+    "prohibited_interpretation": "Do not publish this seed's leaderboard as a definitive ranking of the most militarily successful states or empires in history.",
+    "generated": "2026-07-13",
+    "model_version": "0.1.0",
+    "baseline": 1500.0,
+    "rated_events": 40,
+    "entities": 35,
+    "audit_warnings": 0,
+    "simulations": 1000,
+    "coverage": {
+      "event_types": {
+        "engagement": 12,
+        "war": 20,
+        "campaign": 8
+      },
+      "war_types": {
+        "interstate_limited": 18,
+        "conquest": 8,
+        "colonial_anti_colonial": 2,
+        "world_war": 8,
+        "insurgency_intervention": 4
+      },
+      "domains": {
+        "land": 16,
+        "mixed": 13,
+        "naval": 1,
+        "siege": 5,
+        "naval_air": 1,
+        "mixed_irregular": 3,
+        "land_irregular": 1
+      },
+      "confidence": {
+        "high_0.80_to_1.00": 35,
+        "medium_0.55_to_0.79": 5,
+        "low_below_0.55": 0
+      },
+      "by_century": {
+        "-1300": 1,
+        "-500": 3,
+        "-400": 2,
+        "-300": 3,
+        "-200": 1,
+        "200": 1,
+        "300": 1,
+        "600": 3,
+        "700": 2,
+        "1200": 1,
+        "1400": 2,
+        "1500": 1,
+        "1600": 2,
+        "1700": 2,
+        "1800": 3,
+        "1900": 10,
+        "2000": 2
+      }
+    },
+    "network_components": 6,
+    "component_sizes": {
+      "5": 2,
+      "1": 4,
+      "3": 2,
+      "2": 23,
+      "6": 2,
+      "4": 2
+    },
+    "comparison_warning": "Ratings in disconnected opponent networks are not directly identifiable; the historical-success index uses within-network percentiles."
+  },
+  "entities": [
+    {
+      "id": "egypt_new_kingdom",
+      "name": "New Kingdom of Egypt",
+      "kind": "empire",
+      "start_year": -1550,
+      "end_year": -1069,
+      "region": "North Africa",
+      "predecessors": [],
+      "continuity_note": "Curated demonstration boundary; dynastic precision is intentionally not implied.",
+      "network_component": 5
+    },
+    {
+      "id": "hittite_empire",
+      "name": "Hittite Empire",
+      "kind": "empire",
+      "start_year": -1650,
+      "end_year": -1180,
+      "region": "Anatolia",
+      "predecessors": [],
+      "continuity_note": "Broad conventional imperial period used for demonstration.",
+      "network_component": 5
+    },
+    {
+      "id": "achaemenid_empire",
+      "name": "Achaemenid Empire",
+      "kind": "empire",
+      "start_year": -550,
+      "end_year": -330,
+      "region": "West and Central Asia",
+      "predecessors": [],
+      "continuity_note": "Ends as a rated entity with the Macedonian conquest; successor regimes do not inherit its rating.",
+      "network_component": 1
+    },
+    {
+      "id": "athens",
+      "name": "Athens",
+      "kind": "city_state",
+      "start_year": -508,
+      "end_year": -322,
+      "region": "Southern Europe",
+      "predecessors": [],
+      "continuity_note": "Classical democratic and imperial-era Athens only.",
+      "network_component": 1
+    },
+    {
+      "id": "sparta",
+      "name": "Sparta",
+      "kind": "city_state",
+      "start_year": -650,
+      "end_year": -192,
+      "region": "Southern Europe",
+      "predecessors": [],
+      "continuity_note": "Conventional independent Spartan polity period for this demonstration.",
+      "network_component": 1
+    },
+    {
+      "id": "macedonian_empire",
+      "name": "Macedonian Empire of Alexander",
+      "kind": "empire",
+      "start_year": -336,
+      "end_year": -323,
+      "region": "Southern Europe and West Asia",
+      "predecessors": [],
+      "continuity_note": "Alexander's imperial polity; the Diadochi successor kingdoms require separate future entities.",
+      "network_component": 1
+    },
+    {
+      "id": "carthage",
+      "name": "Carthage",
+      "kind": "republic",
+      "start_year": -650,
+      "end_year": -146,
+      "region": "North Africa and Western Mediterranean",
+      "predecessors": [],
+      "continuity_note": "Ends with the destruction of Carthage in the Third Punic War.",
+      "network_component": 3
+    },
+    {
+      "id": "roman_republic",
+      "name": "Roman Republic",
+      "kind": "republic",
+      "start_year": -509,
+      "end_year": -27,
+      "region": "Southern Europe and Mediterranean",
+      "predecessors": [],
+      "continuity_note": "Separate rated polity from the Roman Empire under the project's historiographic-entity rule.",
+      "network_component": 3
+    },
+    {
+      "id": "roman_empire",
+      "name": "Roman Empire",
+      "kind": "empire",
+      "start_year": -27,
+      "end_year": 395,
+      "region": "Europe, North Africa, and West Asia",
+      "predecessors": [
+        "roman_republic"
+      ],
+      "continuity_note": "The project ends this rating line at the permanent 395 division. The Byzantine rating starts independently at baseline.",
+      "network_component": 2
+    },
+    {
+      "id": "byzantine_empire",
+      "name": "Byzantine Empire",
+      "kind": "empire",
+      "start_year": 395,
+      "end_year": 1453,
+      "region": "Eastern Mediterranean",
+      "predecessors": [
+        "roman_empire"
+      ],
+      "continuity_note": "Explicit project convention: new entity and full Elo reset at 395. The predecessor link is descriptive and transfers no rating.",
+      "network_component": 2
+    },
+    {
+      "id": "sasanian_empire",
+      "name": "Sasanian Empire",
+      "kind": "empire",
+      "start_year": 224,
+      "end_year": 651,
+      "region": "West and Central Asia",
+      "predecessors": [],
+      "continuity_note": "Ends as a polity after the Rashidun conquest; later Iranian states receive new IDs.",
+      "network_component": 2
+    },
+    {
+      "id": "rashidun_caliphate",
+      "name": "Rashidun Caliphate",
+      "kind": "caliphate",
+      "start_year": 632,
+      "end_year": 661,
+      "region": "West Asia and North Africa",
+      "predecessors": [],
+      "continuity_note": "Rated separately from the subsequent Umayyad Caliphate.",
+      "network_component": 2
+    },
+    {
+      "id": "umayyad_caliphate",
+      "name": "Umayyad Caliphate",
+      "kind": "caliphate",
+      "start_year": 661,
+      "end_year": 750,
+      "region": "West Asia, North Africa, and Iberia",
+      "predecessors": [
+        "rashidun_caliphate"
+      ],
+      "continuity_note": "New dynastic imperial entity and independent rating line.",
+      "network_component": 2
+    },
+    {
+      "id": "frankish_kingdom",
+      "name": "Frankish Kingdom",
+      "kind": "kingdom",
+      "start_year": 481,
+      "end_year": 843,
+      "region": "Western Europe",
+      "predecessors": [],
+      "continuity_note": "Broad Frankish polity used for the Tours demonstration record; later partitions are not merged into this rating.",
+      "network_component": 2
+    },
+    {
+      "id": "mongol_empire",
+      "name": "Mongol Empire",
+      "kind": "empire",
+      "start_year": 1206,
+      "end_year": 1294,
+      "region": "Eurasia",
+      "predecessors": [],
+      "continuity_note": "Unified imperial line only; khanates require separate future records.",
+      "network_component": 6
+    },
+    {
+      "id": "mamluk_sultanate",
+      "name": "Mamluk Sultanate",
+      "kind": "sultanate",
+      "start_year": 1250,
+      "end_year": 1517,
+      "region": "Egypt and the Levant",
+      "predecessors": [],
+      "continuity_note": "Cairo-based Mamluk Sultanate through Ottoman conquest.",
+      "network_component": 6
+    },
+    {
+      "id": "ottoman_empire",
+      "name": "Ottoman Empire",
+      "kind": "empire",
+      "start_year": 1299,
+      "end_year": 1922,
+      "region": "Southeastern Europe, West Asia, and North Africa",
+      "predecessors": [],
+      "continuity_note": "The Republic of Turkey would be a new entity and does not inherit this rating.",
+      "network_component": 2
+    },
+    {
+      "id": "safavid_empire",
+      "name": "Safavid Iran",
+      "kind": "empire",
+      "start_year": 1501,
+      "end_year": 1736,
+      "region": "West Asia",
+      "predecessors": [],
+      "continuity_note": "Distinct Safavid polity; later Iranian dynasties require separate ratings.",
+      "network_component": 2
+    },
+    {
+      "id": "mughal_empire",
+      "name": "Mughal Empire",
+      "kind": "empire",
+      "start_year": 1526,
+      "end_year": 1857,
+      "region": "South Asia",
+      "predecessors": [],
+      "continuity_note": "Conventional Mughal imperial span; periods of reduced control remain part of the same demonstration entity.",
+      "network_component": 2
+    },
+    {
+      "id": "spanish_empire",
+      "name": "Spanish Monarchy and Empire",
+      "kind": "empire",
+      "start_year": 1479,
+      "end_year": 1898,
+      "region": "Europe and overseas empire",
+      "predecessors": [],
+      "continuity_note": "Aggregated imperial Spanish polity for demonstration; future production data should adjudicate regime boundaries more finely.",
+      "network_component": 4
+    },
+    {
+      "id": "dutch_republic",
+      "name": "Dutch Revolt and Republic",
+      "kind": "republic",
+      "start_year": 1568,
+      "end_year": 1795,
+      "region": "Western Europe and overseas empire",
+      "predecessors": [],
+      "continuity_note": "Begins with the revolt for this demonstration so its independence war can be rated; the later Kingdom of the Netherlands is separate.",
+      "network_component": 4
+    },
+    {
+      "id": "kingdom_france",
+      "name": "Kingdom of France",
+      "kind": "kingdom",
+      "start_year": 987,
+      "end_year": 1792,
+      "region": "Western Europe",
+      "predecessors": [],
+      "continuity_note": "Ends before revolutionary and Napoleonic entities, which receive independent ratings.",
+      "network_component": 2
+    },
+    {
+      "id": "first_french_empire",
+      "name": "First French Empire",
+      "kind": "empire",
+      "start_year": 1804,
+      "end_year": 1815,
+      "region": "Western Europe",
+      "predecessors": [
+        "kingdom_france"
+      ],
+      "continuity_note": "Explicit new imperial entity; predecessor link is lineage metadata and transfers no Elo.",
+      "network_component": 2
+    },
+    {
+      "id": "united_kingdom",
+      "name": "United Kingdom",
+      "kind": "state_empire",
+      "start_year": 1707,
+      "end_year": null,
+      "region": "Western Europe and former overseas empire",
+      "predecessors": [],
+      "continuity_note": "The sovereign United Kingdom is the rated entity; imperial status is an era tag rather than a successor ID here.",
+      "network_component": 2
+    },
+    {
+      "id": "russian_empire",
+      "name": "Russian Empire",
+      "kind": "empire",
+      "start_year": 1721,
+      "end_year": 1917,
+      "region": "Eastern Europe and Northern Asia",
+      "predecessors": [],
+      "continuity_note": "Ends in 1917; the Soviet Union is independently initialized.",
+      "network_component": 2
+    },
+    {
+      "id": "german_empire",
+      "name": "German Empire",
+      "kind": "empire",
+      "start_year": 1871,
+      "end_year": 1918,
+      "region": "Central Europe",
+      "predecessors": [],
+      "continuity_note": "Ends with the imperial regime in 1918; Nazi Germany is a later, independently rated entity.",
+      "network_component": 2
+    },
+    {
+      "id": "nazi_germany",
+      "name": "Nazi Germany",
+      "kind": "regime_state",
+      "start_year": 1933,
+      "end_year": 1945,
+      "region": "Central Europe",
+      "predecessors": [
+        "german_empire"
+      ],
+      "continuity_note": "Treated as a distinct historiographic regime-state. It ends in terminal military defeat, occupation, and regime destruction in 1945.",
+      "network_component": 2
+    },
+    {
+      "id": "empire_japan",
+      "name": "Empire of Japan",
+      "kind": "empire",
+      "start_year": 1868,
+      "end_year": 1947,
+      "region": "East Asia and Pacific",
+      "predecessors": [],
+      "continuity_note": "Imperial constitutional and expansionist-era entity; postwar Japan requires a new record for future conflicts.",
+      "network_component": 2
+    },
+    {
+      "id": "soviet_union",
+      "name": "Soviet Union",
+      "kind": "union_state",
+      "start_year": 1922,
+      "end_year": 1991,
+      "region": "Eastern Europe and Northern Asia",
+      "predecessors": [
+        "russian_empire"
+      ],
+      "continuity_note": "New polity and baseline reset; no Russian Empire Elo is inherited.",
+      "network_component": 2
+    },
+    {
+      "id": "united_states",
+      "name": "United States",
+      "kind": "state",
+      "start_year": 1776,
+      "end_year": null,
+      "region": "North America",
+      "predecessors": [],
+      "continuity_note": "Continuous rated polity from the declaration-era independence struggle for this demonstration.",
+      "network_component": 2
+    },
+    {
+      "id": "north_vietnam",
+      "name": "Democratic Republic of Vietnam",
+      "kind": "state",
+      "start_year": 1945,
+      "end_year": 1976,
+      "region": "Southeast Asia",
+      "predecessors": [],
+      "continuity_note": "Distinct wartime state; unified post-1976 Vietnam would be a successor entity in expanded data.",
+      "network_component": 2
+    },
+    {
+      "id": "south_vietnam",
+      "name": "Republic of Vietnam",
+      "kind": "state",
+      "start_year": 1955,
+      "end_year": 1975,
+      "region": "Southeast Asia",
+      "predecessors": [],
+      "continuity_note": "Ends in existential defeat and state dissolution in 1975.",
+      "network_component": 2
+    },
+    {
+      "id": "peoples_republic_china",
+      "name": "People's Republic of China",
+      "kind": "state",
+      "start_year": 1949,
+      "end_year": null,
+      "region": "East Asia",
+      "predecessors": [],
+      "continuity_note": "Begins as a new polity in 1949; predecessor civil-war actors are outside this seed.",
+      "network_component": 2
+    },
+    {
+      "id": "islamic_republic_afghanistan",
+      "name": "Islamic Republic of Afghanistan",
+      "kind": "state",
+      "start_year": 2004,
+      "end_year": 2021,
+      "region": "South and Central Asia",
+      "predecessors": [],
+      "continuity_note": "Rated only for its 2004-2021 existence; it ends in state collapse during the Taliban offensive.",
+      "network_component": 2
+    },
+    {
+      "id": "taliban",
+      "name": "Taliban",
+      "kind": "armed_movement_de_facto_regime",
+      "start_year": 1994,
+      "end_year": null,
+      "region": "South and Central Asia",
+      "predecessors": [],
+      "continuity_note": "Included because state-versus-insurgent wars cannot be rated accurately without the opposing armed actor; governmental episodes are not treated as inherited from the Afghan Republic.",
+      "network_component": 2
+    }
+  ],
+  "series": {
+    "egypt_new_kingdom": [
+      {
+        "year": -1550,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -1274,
+        "event_id": "battle_kadesh_1274_bce",
+        "tactical": 1499.516,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.981,
+        "uncertainty": 350.0,
+        "delta": -0.484
+      }
+    ],
+    "hittite_empire": [
+      {
+        "year": -1650,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -1274,
+        "event_id": "battle_kadesh_1274_bce",
+        "tactical": 1500.484,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.019,
+        "uncertainty": 350.0,
+        "delta": 0.484
+      }
+    ],
+    "achaemenid_empire": [
+      {
+        "year": -550,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -480,
+        "event_id": "battle_salamis_480_bce",
+        "tactical": 1490.567,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.623,
+        "uncertainty": 350.0,
+        "delta": -9.433
+      },
+      {
+        "year": -449,
+        "event_id": "greco_persian_wars",
+        "tactical": 1490.567,
+        "operational": 1500.0,
+        "strategic": 1486.756,
+        "composite": 1497.195,
+        "uncertainty": 350.0,
+        "delta": -13.244
+      },
+      {
+        "year": -331,
+        "event_id": "battle_gaugamela_331_bce",
+        "tactical": 1472.969,
+        "operational": 1500.0,
+        "strategic": 1486.756,
+        "composite": 1495.409,
+        "uncertainty": 350.0,
+        "delta": -17.598
+      },
+      {
+        "year": -330,
+        "event_id": "macedonian_conquest_achaemenid",
+        "tactical": 1472.969,
+        "operational": 1500.0,
+        "strategic": 1449.327,
+        "composite": 1479.258,
+        "uncertainty": 350.0,
+        "delta": -37.428
+      }
+    ],
+    "athens": [
+      {
+        "year": -508,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -480,
+        "event_id": "battle_salamis_480_bce",
+        "tactical": 1507.589,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.304,
+        "uncertainty": 350.0,
+        "delta": 7.589
+      },
+      {
+        "year": -449,
+        "event_id": "greco_persian_wars",
+        "tactical": 1507.589,
+        "operational": 1500.0,
+        "strategic": 1508.72,
+        "composite": 1501.902,
+        "uncertainty": 350.0,
+        "delta": 8.72
+      },
+      {
+        "year": -404,
+        "event_id": "peloponnesian_war",
+        "tactical": 1507.589,
+        "operational": 1500.0,
+        "strategic": 1482.384,
+        "composite": 1493.844,
+        "uncertainty": 350.0,
+        "delta": -26.336
+      }
+    ],
+    "sparta": [
+      {
+        "year": -650,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -480,
+        "event_id": "battle_salamis_480_bce",
+        "tactical": 1501.845,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.074,
+        "uncertainty": 350.0,
+        "delta": 1.845
+      },
+      {
+        "year": -449,
+        "event_id": "greco_persian_wars",
+        "tactical": 1501.845,
+        "operational": 1500.0,
+        "strategic": 1504.524,
+        "composite": 1500.903,
+        "uncertainty": 350.0,
+        "delta": 4.524
+      },
+      {
+        "year": -404,
+        "event_id": "peloponnesian_war",
+        "tactical": 1501.845,
+        "operational": 1500.0,
+        "strategic": 1530.86,
+        "composite": 1511.389,
+        "uncertainty": 350.0,
+        "delta": 26.336
+      }
+    ],
+    "macedonian_empire": [
+      {
+        "year": -336,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -331,
+        "event_id": "battle_gaugamela_331_bce",
+        "tactical": 1517.598,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.704,
+        "uncertainty": 350.0,
+        "delta": 17.598
+      },
+      {
+        "year": -330,
+        "event_id": "macedonian_conquest_achaemenid",
+        "tactical": 1517.598,
+        "operational": 1500.0,
+        "strategic": 1537.428,
+        "composite": 1507.566,
+        "uncertainty": 350.0,
+        "delta": 37.428
+      }
+    ],
+    "carthage": [
+      {
+        "year": -650,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -216,
+        "event_id": "battle_cannae_216_bce",
+        "tactical": 1517.271,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.691,
+        "uncertainty": 350.0,
+        "delta": 17.271
+      },
+      {
+        "year": -202,
+        "event_id": "battle_zama_202_bce",
+        "tactical": 1500.014,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.001,
+        "uncertainty": 350.0,
+        "delta": -17.257
+      },
+      {
+        "year": -201,
+        "event_id": "second_punic_war",
+        "tactical": 1500.014,
+        "operational": 1500.0,
+        "strategic": 1471.873,
+        "composite": 1494.845,
+        "uncertainty": 350.0,
+        "delta": -28.127
+      },
+      {
+        "year": -146,
+        "event_id": "third_punic_war",
+        "tactical": 1500.014,
+        "operational": 1500.0,
+        "strategic": 1441.507,
+        "composite": 1478.554,
+        "uncertainty": 350.0,
+        "delta": -30.366
+      }
+    ],
+    "roman_republic": [
+      {
+        "year": -509,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": -216,
+        "event_id": "battle_cannae_216_bce",
+        "tactical": 1482.729,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.309,
+        "uncertainty": 350.0,
+        "delta": -17.271
+      },
+      {
+        "year": -202,
+        "event_id": "battle_zama_202_bce",
+        "tactical": 1499.986,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.999,
+        "uncertainty": 350.0,
+        "delta": 17.257
+      },
+      {
+        "year": -201,
+        "event_id": "second_punic_war",
+        "tactical": 1499.986,
+        "operational": 1500.0,
+        "strategic": 1528.127,
+        "composite": 1505.155,
+        "uncertainty": 350.0,
+        "delta": 28.127
+      },
+      {
+        "year": -146,
+        "event_id": "third_punic_war",
+        "tactical": 1499.986,
+        "operational": 1500.0,
+        "strategic": 1558.493,
+        "composite": 1521.446,
+        "uncertainty": 350.0,
+        "delta": 30.366
+      }
+    ],
+    "roman_empire": [
+      {
+        "year": -27,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 260,
+        "event_id": "battle_edessa_260",
+        "tactical": 1489.382,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.575,
+        "uncertainty": 350.0,
+        "delta": -10.618
+      },
+      {
+        "year": 363,
+        "event_id": "julian_persian_campaign_363",
+        "tactical": 1489.382,
+        "operational": 1490.476,
+        "strategic": 1500.0,
+        "composite": 1498.98,
+        "uncertainty": 350.0,
+        "delta": -9.524
+      }
+    ],
+    "byzantine_empire": [
+      {
+        "year": 395,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 628,
+        "event_id": "byzantine_sasanian_war_602_628",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1522.625,
+        "composite": 1504.148,
+        "uncertainty": 350.0,
+        "delta": 22.625
+      },
+      {
+        "year": 636,
+        "event_id": "battle_yarmouk_636",
+        "tactical": 1486.826,
+        "operational": 1500.0,
+        "strategic": 1522.625,
+        "composite": 1503.621,
+        "uncertainty": 350.0,
+        "delta": -13.174
+      },
+      {
+        "year": 718,
+        "event_id": "siege_constantinople_717_718",
+        "tactical": 1486.826,
+        "operational": 1517.48,
+        "strategic": 1522.625,
+        "composite": 1504.714,
+        "uncertainty": 350.0,
+        "delta": 17.48
+      },
+      {
+        "year": 1453,
+        "event_id": "siege_constantinople_1453",
+        "tactical": 1486.826,
+        "operational": 1485.433,
+        "strategic": 1522.625,
+        "composite": 1501.8,
+        "uncertainty": 350.0,
+        "delta": -32.047
+      },
+      {
+        "year": 1453,
+        "event_id": "final_ottoman_byzantine_war",
+        "tactical": 1486.826,
+        "operational": 1485.433,
+        "strategic": 1480.765,
+        "composite": 1490.599,
+        "uncertainty": 350.0,
+        "delta": -41.861
+      }
+    ],
+    "sasanian_empire": [
+      {
+        "year": 224,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 260,
+        "event_id": "battle_edessa_260",
+        "tactical": 1510.618,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.425,
+        "uncertainty": 350.0,
+        "delta": 10.618
+      },
+      {
+        "year": 363,
+        "event_id": "julian_persian_campaign_363",
+        "tactical": 1510.618,
+        "operational": 1509.524,
+        "strategic": 1500.0,
+        "composite": 1501.02,
+        "uncertainty": 350.0,
+        "delta": 9.524
+      },
+      {
+        "year": 628,
+        "event_id": "byzantine_sasanian_war_602_628",
+        "tactical": 1510.618,
+        "operational": 1509.524,
+        "strategic": 1477.375,
+        "composite": 1496.872,
+        "uncertainty": 350.0,
+        "delta": -22.625
+      },
+      {
+        "year": 651,
+        "event_id": "rashidun_conquest_sasanian",
+        "tactical": 1510.618,
+        "operational": 1509.524,
+        "strategic": 1442.338,
+        "composite": 1479.877,
+        "uncertainty": 350.0,
+        "delta": -35.036
+      }
+    ],
+    "rashidun_caliphate": [
+      {
+        "year": 632,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 636,
+        "event_id": "battle_yarmouk_636",
+        "tactical": 1513.174,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.527,
+        "uncertainty": 350.0,
+        "delta": 13.174
+      },
+      {
+        "year": 651,
+        "event_id": "rashidun_conquest_sasanian",
+        "tactical": 1513.174,
+        "operational": 1500.0,
+        "strategic": 1535.036,
+        "composite": 1506.95,
+        "uncertainty": 350.0,
+        "delta": 35.036
+      }
+    ],
+    "umayyad_caliphate": [
+      {
+        "year": 661,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 718,
+        "event_id": "siege_constantinople_717_718",
+        "tactical": 1500.0,
+        "operational": 1482.52,
+        "strategic": 1500.0,
+        "composite": 1498.908,
+        "uncertainty": 350.0,
+        "delta": -17.48
+      },
+      {
+        "year": 732,
+        "event_id": "battle_tours_732",
+        "tactical": 1495.914,
+        "operational": 1482.52,
+        "strategic": 1500.0,
+        "composite": 1498.744,
+        "uncertainty": 350.0,
+        "delta": -4.086
+      }
+    ],
+    "frankish_kingdom": [
+      {
+        "year": 481,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 732,
+        "event_id": "battle_tours_732",
+        "tactical": 1504.086,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.163,
+        "uncertainty": 350.0,
+        "delta": 4.086
+      }
+    ],
+    "mongol_empire": [
+      {
+        "year": 1206,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1260,
+        "event_id": "battle_ain_jalut_1260",
+        "tactical": 1493.245,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.73,
+        "uncertainty": 350.0,
+        "delta": -6.755
+      }
+    ],
+    "mamluk_sultanate": [
+      {
+        "year": 1250,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1260,
+        "event_id": "battle_ain_jalut_1260",
+        "tactical": 1506.755,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.27,
+        "uncertainty": 350.0,
+        "delta": 6.755
+      }
+    ],
+    "ottoman_empire": [
+      {
+        "year": 1299,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1453,
+        "event_id": "siege_constantinople_1453",
+        "tactical": 1500.0,
+        "operational": 1532.047,
+        "strategic": 1500.0,
+        "composite": 1502.003,
+        "uncertainty": 350.0,
+        "delta": 32.047
+      },
+      {
+        "year": 1453,
+        "event_id": "final_ottoman_byzantine_war",
+        "tactical": 1500.0,
+        "operational": 1532.047,
+        "strategic": 1541.861,
+        "composite": 1509.677,
+        "uncertainty": 350.0,
+        "delta": 41.861
+      },
+      {
+        "year": 1514,
+        "event_id": "battle_chaldiran_1514",
+        "tactical": 1511.411,
+        "operational": 1532.047,
+        "strategic": 1541.861,
+        "composite": 1510.134,
+        "uncertainty": 350.0,
+        "delta": 11.411
+      },
+      {
+        "year": 1856,
+        "event_id": "crimean_war",
+        "tactical": 1511.411,
+        "operational": 1532.047,
+        "strategic": 1546.254,
+        "composite": 1519.419,
+        "uncertainty": 350.0,
+        "delta": 4.393
+      }
+    ],
+    "safavid_empire": [
+      {
+        "year": 1501,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1514,
+        "event_id": "battle_chaldiran_1514",
+        "tactical": 1488.589,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1499.544,
+        "uncertainty": 350.0,
+        "delta": -11.411
+      },
+      {
+        "year": 1653,
+        "event_id": "mughal_safavid_war_kandahar_1649_1653",
+        "tactical": 1488.589,
+        "operational": 1500.0,
+        "strategic": 1508.492,
+        "composite": 1501.1,
+        "uncertainty": 350.0,
+        "delta": 8.492
+      }
+    ],
+    "mughal_empire": [
+      {
+        "year": 1526,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1653,
+        "event_id": "mughal_safavid_war_kandahar_1649_1653",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1491.508,
+        "composite": 1498.443,
+        "uncertainty": 350.0,
+        "delta": -8.492
+      }
+    ],
+    "spanish_empire": [
+      {
+        "year": 1479,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1648,
+        "event_id": "eighty_years_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1480.066,
+        "composite": 1496.345,
+        "uncertainty": 350.0,
+        "delta": -19.934
+      }
+    ],
+    "dutch_republic": [
+      {
+        "year": 1568,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1648,
+        "event_id": "eighty_years_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1519.934,
+        "composite": 1503.655,
+        "uncertainty": 350.0,
+        "delta": 19.934
+      }
+    ],
+    "kingdom_france": [
+      {
+        "year": 987,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1763,
+        "event_id": "seven_years_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1485.865,
+        "composite": 1497.409,
+        "uncertainty": 350.0,
+        "delta": -14.135
+      }
+    ],
+    "first_french_empire": [
+      {
+        "year": 1804,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1812,
+        "event_id": "french_invasion_russia_1812",
+        "tactical": 1500.0,
+        "operational": 1477.565,
+        "strategic": 1500.0,
+        "composite": 1498.598,
+        "uncertainty": 350.0,
+        "delta": -22.435
+      },
+      {
+        "year": 1815,
+        "event_id": "napoleonic_wars",
+        "tactical": 1500.0,
+        "operational": 1477.565,
+        "strategic": 1467.71,
+        "composite": 1492.678,
+        "uncertainty": 350.0,
+        "delta": -32.29
+      }
+    ],
+    "united_kingdom": [
+      {
+        "year": 1707,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1763,
+        "event_id": "seven_years_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1514.135,
+        "composite": 1502.591,
+        "uncertainty": 350.0,
+        "delta": 14.135
+      },
+      {
+        "year": 1783,
+        "event_id": "american_revolutionary_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1491.24,
+        "composite": 1496.788,
+        "uncertainty": 350.0,
+        "delta": -22.895
+      },
+      {
+        "year": 1815,
+        "event_id": "napoleonic_wars",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1510.42,
+        "composite": 1505.731,
+        "uncertainty": 350.0,
+        "delta": 19.18
+      },
+      {
+        "year": 1856,
+        "event_id": "crimean_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1514.216,
+        "composite": 1507.819,
+        "uncertainty": 350.0,
+        "delta": 3.796
+      },
+      {
+        "year": 1918,
+        "event_id": "first_world_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1539.217,
+        "composite": 1521.569,
+        "uncertainty": 350.0,
+        "delta": 25.001
+      },
+      {
+        "year": 1945,
+        "event_id": "pacific_war_1941_1945",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1547.644,
+        "composite": 1526.204,
+        "uncertainty": 350.0,
+        "delta": 8.427
+      },
+      {
+        "year": 1945,
+        "event_id": "second_world_war_europe",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1558.435,
+        "composite": 1532.139,
+        "uncertainty": 350.0,
+        "delta": 10.791
+      }
+    ],
+    "russian_empire": [
+      {
+        "year": 1721,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1812,
+        "event_id": "french_invasion_russia_1812",
+        "tactical": 1500.0,
+        "operational": 1522.435,
+        "strategic": 1500.0,
+        "composite": 1501.402,
+        "uncertainty": 350.0,
+        "delta": 22.435
+      },
+      {
+        "year": 1815,
+        "event_id": "napoleonic_wars",
+        "tactical": 1500.0,
+        "operational": 1522.435,
+        "strategic": 1513.11,
+        "composite": 1503.806,
+        "uncertainty": 350.0,
+        "delta": 13.11
+      },
+      {
+        "year": 1856,
+        "event_id": "crimean_war",
+        "tactical": 1500.0,
+        "operational": 1522.435,
+        "strategic": 1504.921,
+        "composite": 1503.206,
+        "uncertainty": 350.0,
+        "delta": -8.189
+      },
+      {
+        "year": 1905,
+        "event_id": "russo_japanese_war",
+        "tactical": 1500.0,
+        "operational": 1522.435,
+        "strategic": 1486.425,
+        "composite": 1493.936,
+        "uncertainty": 350.0,
+        "delta": -18.496
+      },
+      {
+        "year": 1914,
+        "event_id": "battle_tannenberg_1914",
+        "tactical": 1488.388,
+        "operational": 1522.435,
+        "strategic": 1486.425,
+        "composite": 1493.472,
+        "uncertainty": 348.615,
+        "delta": -11.612
+      }
+    ],
+    "german_empire": [
+      {
+        "year": 1871,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1914,
+        "event_id": "battle_tannenberg_1914",
+        "tactical": 1511.612,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.464,
+        "uncertainty": 350.0,
+        "delta": 11.612
+      },
+      {
+        "year": 1918,
+        "event_id": "first_world_war",
+        "tactical": 1511.612,
+        "operational": 1500.0,
+        "strategic": 1472.261,
+        "composite": 1495.379,
+        "uncertainty": 350.0,
+        "delta": -27.739
+      }
+    ],
+    "nazi_germany": [
+      {
+        "year": 1933,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1945,
+        "event_id": "eastern_front_1941_1945",
+        "tactical": 1500.0,
+        "operational": 1463.269,
+        "strategic": 1500.0,
+        "composite": 1497.704,
+        "uncertainty": 350.0,
+        "delta": -36.731
+      },
+      {
+        "year": 1945,
+        "event_id": "second_world_war_europe",
+        "tactical": 1500.0,
+        "operational": 1463.269,
+        "strategic": 1462.82,
+        "composite": 1490.888,
+        "uncertainty": 350.0,
+        "delta": -37.18
+      }
+    ],
+    "empire_japan": [
+      {
+        "year": 1868,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1905,
+        "event_id": "russo_japanese_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1518.496,
+        "composite": 1503.391,
+        "uncertainty": 350.0,
+        "delta": 18.496
+      },
+      {
+        "year": 1942,
+        "event_id": "battle_midway_1942",
+        "tactical": 1486.566,
+        "operational": 1500.0,
+        "strategic": 1518.496,
+        "composite": 1502.854,
+        "uncertainty": 350.0,
+        "delta": -13.434
+      },
+      {
+        "year": 1945,
+        "event_id": "pacific_war_1941_1945",
+        "tactical": 1486.566,
+        "operational": 1500.0,
+        "strategic": 1481.853,
+        "composite": 1492.809,
+        "uncertainty": 350.0,
+        "delta": -36.643
+      }
+    ],
+    "soviet_union": [
+      {
+        "year": 1922,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1945,
+        "event_id": "eastern_front_1941_1945",
+        "tactical": 1500.0,
+        "operational": 1536.731,
+        "strategic": 1500.0,
+        "composite": 1502.296,
+        "uncertainty": 350.0,
+        "delta": 36.731
+      },
+      {
+        "year": 1945,
+        "event_id": "second_world_war_europe",
+        "tactical": 1500.0,
+        "operational": 1536.731,
+        "strategic": 1516.044,
+        "composite": 1505.237,
+        "uncertainty": 350.0,
+        "delta": 16.044
+      }
+    ],
+    "united_states": [
+      {
+        "year": 1776,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1783,
+        "event_id": "american_revolutionary_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1522.895,
+        "composite": 1504.197,
+        "uncertainty": 350.0,
+        "delta": 22.895
+      },
+      {
+        "year": 1918,
+        "event_id": "first_world_war",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1525.633,
+        "composite": 1509.399,
+        "uncertainty": 350.0,
+        "delta": 2.738
+      },
+      {
+        "year": 1942,
+        "event_id": "battle_midway_1942",
+        "tactical": 1513.434,
+        "operational": 1500.0,
+        "strategic": 1525.633,
+        "composite": 1509.936,
+        "uncertainty": 350.0,
+        "delta": 13.434
+      },
+      {
+        "year": 1945,
+        "event_id": "pacific_war_1941_1945",
+        "tactical": 1513.434,
+        "operational": 1500.0,
+        "strategic": 1553.849,
+        "composite": 1530.154,
+        "uncertainty": 350.0,
+        "delta": 28.216
+      },
+      {
+        "year": 1945,
+        "event_id": "second_world_war_europe",
+        "tactical": 1513.434,
+        "operational": 1500.0,
+        "strategic": 1564.194,
+        "composite": 1535.844,
+        "uncertainty": 349.588,
+        "delta": 10.345
+      },
+      {
+        "year": 1950,
+        "event_id": "chosin_reservoir_campaign_1950",
+        "tactical": 1513.434,
+        "operational": 1495.853,
+        "strategic": 1564.194,
+        "composite": 1535.585,
+        "uncertainty": 338.044,
+        "delta": -4.147
+      },
+      {
+        "year": 1968,
+        "event_id": "tet_offensive_1968",
+        "tactical": 1513.434,
+        "operational": 1498.008,
+        "strategic": 1564.194,
+        "composite": 1535.595,
+        "uncertainty": 331.738,
+        "delta": 2.155
+      },
+      {
+        "year": 1975,
+        "event_id": "vietnam_war",
+        "tactical": 1513.434,
+        "operational": 1498.008,
+        "strategic": 1557.413,
+        "composite": 1531.866,
+        "uncertainty": 332.633,
+        "delta": -6.78
+      },
+      {
+        "year": 2021,
+        "event_id": "taliban_offensive_2021",
+        "tactical": 1513.434,
+        "operational": 1496.462,
+        "strategic": 1557.413,
+        "composite": 1531.451,
+        "uncertainty": 333.621,
+        "delta": -1.546
+      },
+      {
+        "year": 2021,
+        "event_id": "afghanistan_war_2001_2021",
+        "tactical": 1513.434,
+        "operational": 1496.462,
+        "strategic": 1550.801,
+        "composite": 1527.814,
+        "uncertainty": 340.642,
+        "delta": -6.613
+      }
+    ],
+    "north_vietnam": [
+      {
+        "year": 1945,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1968,
+        "event_id": "tet_offensive_1968",
+        "tactical": 1500.0,
+        "operational": 1492.515,
+        "strategic": 1500.0,
+        "composite": 1499.532,
+        "uncertainty": 350.0,
+        "delta": -7.485
+      },
+      {
+        "year": 1975,
+        "event_id": "vietnam_war",
+        "tactical": 1500.0,
+        "operational": 1492.515,
+        "strategic": 1542.591,
+        "composite": 1507.341,
+        "uncertainty": 350.0,
+        "delta": 42.591
+      }
+    ],
+    "south_vietnam": [
+      {
+        "year": 1955,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1968,
+        "event_id": "tet_offensive_1968",
+        "tactical": 1500.0,
+        "operational": 1505.33,
+        "strategic": 1500.0,
+        "composite": 1500.333,
+        "uncertainty": 350.0,
+        "delta": 5.33
+      },
+      {
+        "year": 1975,
+        "event_id": "vietnam_war",
+        "tactical": 1500.0,
+        "operational": 1505.33,
+        "strategic": 1464.189,
+        "composite": 1493.768,
+        "uncertainty": 350.0,
+        "delta": -35.811
+      }
+    ],
+    "peoples_republic_china": [
+      {
+        "year": 1949,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 1950,
+        "event_id": "chosin_reservoir_campaign_1950",
+        "tactical": 1500.0,
+        "operational": 1504.147,
+        "strategic": 1500.0,
+        "composite": 1500.259,
+        "uncertainty": 350.0,
+        "delta": 4.147
+      }
+    ],
+    "islamic_republic_afghanistan": [
+      {
+        "year": 2004,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 2021,
+        "event_id": "taliban_offensive_2021",
+        "tactical": 1500.0,
+        "operational": 1463.174,
+        "strategic": 1500.0,
+        "composite": 1497.698,
+        "uncertainty": 350.0,
+        "delta": -36.826
+      },
+      {
+        "year": 2021,
+        "event_id": "afghanistan_war_2001_2021",
+        "tactical": 1500.0,
+        "operational": 1463.174,
+        "strategic": 1465.199,
+        "composite": 1491.318,
+        "uncertainty": 350.0,
+        "delta": -34.801
+      }
+    ],
+    "taliban": [
+      {
+        "year": 1994,
+        "event_id": "origin",
+        "tactical": 1500.0,
+        "operational": 1500.0,
+        "strategic": 1500.0,
+        "composite": 1500.0,
+        "uncertainty": 350.0,
+        "delta": 0.0
+      },
+      {
+        "year": 2021,
+        "event_id": "taliban_offensive_2021",
+        "tactical": 1500.0,
+        "operational": 1538.372,
+        "strategic": 1500.0,
+        "composite": 1502.398,
+        "uncertainty": 350.0,
+        "delta": 38.372
+      },
+      {
+        "year": 2021,
+        "event_id": "afghanistan_war_2001_2021",
+        "tactical": 1500.0,
+        "operational": 1538.372,
+        "strategic": 1541.413,
+        "composite": 1509.991,
+        "uncertainty": 350.0,
+        "delta": 41.413
+      }
+    ]
+  },
+  "leaderboard": [
+    {
+      "entity_id": "united_states",
+      "name": "United States",
+      "composite": 1527.814,
+      "tactical": 1513.434,
+      "operational": 1496.462,
+      "strategic": 1550.801,
+      "uncertainty": 340.642,
+      "peak": 1535.844,
+      "peak_year": 1945,
+      "sustained": 1530.803,
+      "achievement": 3.021,
+      "historical_success": 98.86,
+      "historical_success_raw": 98.86,
+      "coverage_factor": 1.0,
+      "network_component": 2,
+      "established": false,
+      "events": 10,
+      "wars": 6,
+      "wins": 6,
+      "losses": 4,
+      "draws": 0,
+      "confidence": 0.027,
+      "sensitivity": {
+        "median": 1527.769,
+        "p10": 1527.38,
+        "p90": 1528.192,
+        "median_rank": 1.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "united_kingdom",
+      "name": "United Kingdom",
+      "composite": 1532.139,
+      "tactical": 1500.0,
+      "operational": 1500.0,
+      "strategic": 1558.435,
+      "uncertainty": 350.0,
+      "peak": 1532.139,
+      "peak_year": 1945,
+      "sustained": 1507.819,
+      "achievement": 3.248,
+      "historical_success": 95.0,
+      "historical_success_raw": 95.0,
+      "coverage_factor": 1.0,
+      "network_component": 2,
+      "established": false,
+      "events": 7,
+      "wars": 7,
+      "wins": 6,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1532.135,
+        "p10": 1531.666,
+        "p90": 1532.594,
+        "median_rank": 2.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "roman_republic",
+      "name": "Roman Republic",
+      "composite": 1521.446,
+      "tactical": 1499.986,
+      "operational": 1500.0,
+      "strategic": 1558.493,
+      "uncertainty": 350.0,
+      "peak": 1521.446,
+      "peak_year": -146,
+      "sustained": 1502.577,
+      "achievement": 1.488,
+      "historical_success": 84.77,
+      "historical_success_raw": 100.0,
+      "coverage_factor": 0.695,
+      "network_component": 3,
+      "established": false,
+      "events": 4,
+      "wars": 2,
+      "wins": 3,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1521.315,
+        "p10": 1521.039,
+        "p90": 1521.587,
+        "median_rank": 3.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "ottoman_empire",
+      "name": "Ottoman Empire",
+      "composite": 1519.419,
+      "tactical": 1511.411,
+      "operational": 1532.047,
+      "strategic": 1546.254,
+      "uncertainty": 350.0,
+      "peak": 1519.419,
+      "peak_year": 1856,
+      "sustained": 1509.905,
+      "achievement": 1.85,
+      "historical_success": 82.18,
+      "historical_success_raw": 90.23,
+      "coverage_factor": 0.8,
+      "network_component": 2,
+      "established": false,
+      "events": 4,
+      "wars": 2,
+      "wins": 4,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1519.291,
+        "p10": 1519.11,
+        "p90": 1519.459,
+        "median_rank": 4.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "sparta",
+      "name": "Sparta",
+      "composite": 1511.389,
+      "tactical": 1501.845,
+      "operational": 1500.0,
+      "strategic": 1530.86,
+      "uncertainty": 350.0,
+      "peak": 1511.389,
+      "peak_year": -404,
+      "sustained": 1500.903,
+      "achievement": 0.942,
+      "historical_success": 69.19,
+      "historical_success_raw": 80.0,
+      "coverage_factor": 0.64,
+      "network_component": 1,
+      "established": false,
+      "events": 3,
+      "wars": 2,
+      "wins": 3,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1511.385,
+        "p10": 1511.033,
+        "p90": 1511.753,
+        "median_rank": 5.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "taliban",
+      "name": "Taliban",
+      "composite": 1509.991,
+      "tactical": 1500.0,
+      "operational": 1538.372,
+      "strategic": 1541.413,
+      "uncertainty": 350.0,
+      "peak": 1509.991,
+      "peak_year": 2021,
+      "sustained": 1506.195,
+      "achievement": 1.888,
+      "historical_success": 68.18,
+      "historical_success_raw": 86.36,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 2,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1509.947,
+        "p10": 1509.891,
+        "p90": 1510.001,
+        "median_rank": 6.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "macedonian_empire",
+      "name": "Macedonian Empire of Alexander",
+      "composite": 1507.566,
+      "tactical": 1517.598,
+      "operational": 1500.0,
+      "strategic": 1537.428,
+      "uncertainty": 350.0,
+      "peak": 1507.566,
+      "peak_year": -330,
+      "sustained": 1504.135,
+      "achievement": 1.443,
+      "historical_success": 66.13,
+      "historical_success_raw": 86.67,
+      "coverage_factor": 0.44,
+      "network_component": 1,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 2,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1507.516,
+        "p10": 1507.39,
+        "p90": 1507.626,
+        "median_rank": 7.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "soviet_union",
+      "name": "Soviet Union",
+      "composite": 1505.237,
+      "tactical": 1500.0,
+      "operational": 1536.731,
+      "strategic": 1516.044,
+      "uncertainty": 350.0,
+      "peak": 1505.237,
+      "peak_year": 1945,
+      "sustained": 1503.767,
+      "achievement": 1.992,
+      "historical_success": 65.23,
+      "historical_success_raw": 80.45,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 2,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1505.23,
+        "p10": 1505.2,
+        "p90": 1505.26,
+        "median_rank": 8.0,
+        "top_10_probability": 0.999
+      }
+    },
+    {
+      "entity_id": "dutch_republic",
+      "name": "Dutch Revolt and Republic",
+      "composite": 1503.655,
+      "tactical": 1500.0,
+      "operational": 1500.0,
+      "strategic": 1519.934,
+      "uncertainty": 350.0,
+      "peak": 1503.655,
+      "peak_year": 1648,
+      "sustained": 1503.655,
+      "achievement": 0.763,
+      "historical_success": 64.77,
+      "historical_success_raw": 100.0,
+      "coverage_factor": 0.295,
+      "network_component": 4,
+      "established": false,
+      "events": 1,
+      "wars": 1,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1503.638,
+        "p10": 1503.495,
+        "p90": 1503.811,
+        "median_rank": 9.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "rashidun_caliphate",
+      "name": "Rashidun Caliphate",
+      "composite": 1506.95,
+      "tactical": 1513.174,
+      "operational": 1500.0,
+      "strategic": 1535.036,
+      "uncertainty": 350.0,
+      "peak": 1506.95,
+      "peak_year": 651,
+      "sustained": 1503.738,
+      "achievement": 1.313,
+      "historical_success": 63.64,
+      "historical_success_raw": 77.27,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 2,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1506.868,
+        "p10": 1506.72,
+        "p90": 1506.991,
+        "median_rank": 10.0,
+        "top_10_probability": 1.0
+      }
+    },
+    {
+      "entity_id": "north_vietnam",
+      "name": "Democratic Republic of Vietnam",
+      "composite": 1507.341,
+      "tactical": 1500.0,
+      "operational": 1492.515,
+      "strategic": 1542.591,
+      "uncertainty": 350.0,
+      "peak": 1507.341,
+      "peak_year": 1975,
+      "sustained": 1503.436,
+      "achievement": 1.157,
+      "historical_success": 62.39,
+      "historical_success_raw": 74.77,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1507.31,
+        "p10": 1507.25,
+        "p90": 1507.365,
+        "median_rank": 11.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "mamluk_sultanate",
+      "name": "Mamluk Sultanate",
+      "composite": 1500.27,
+      "tactical": 1506.755,
+      "operational": 1500.0,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.27,
+      "peak_year": 1260,
+      "sustained": 1500.27,
+      "achievement": 0.243,
+      "historical_success": 59.77,
+      "historical_success_raw": 100.0,
+      "coverage_factor": 0.195,
+      "network_component": 6,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1500.271,
+        "p10": 1500.257,
+        "p90": 1500.282,
+        "median_rank": 13.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "hittite_empire",
+      "name": "Hittite Empire",
+      "composite": 1500.019,
+      "tactical": 1500.484,
+      "operational": 1500.0,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.019,
+      "peak_year": -1274,
+      "sustained": 1500.019,
+      "achievement": 0.017,
+      "historical_success": 59.77,
+      "historical_success_raw": 100.0,
+      "coverage_factor": 0.195,
+      "network_component": 5,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 1,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1500.019,
+        "p10": 1500.004,
+        "p90": 1500.033,
+        "median_rank": 14.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "russian_empire",
+      "name": "Russian Empire",
+      "composite": 1493.472,
+      "tactical": 1488.388,
+      "operational": 1522.435,
+      "strategic": 1486.425,
+      "uncertainty": 348.615,
+      "peak": 1503.806,
+      "peak_year": 1815,
+      "sustained": 1501.402,
+      "achievement": 0.047,
+      "historical_success": 59.77,
+      "historical_success_raw": 59.77,
+      "coverage_factor": 1.0,
+      "network_component": 2,
+      "established": false,
+      "events": 5,
+      "wars": 3,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "confidence": 0.004,
+      "sensitivity": {
+        "median": 1493.436,
+        "p10": 1493.068,
+        "p90": 1493.834,
+        "median_rank": 14.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "byzantine_empire",
+      "name": "Byzantine Empire",
+      "composite": 1490.599,
+      "tactical": 1486.826,
+      "operational": 1485.433,
+      "strategic": 1480.765,
+      "uncertainty": 350.0,
+      "peak": 1504.714,
+      "peak_year": 718,
+      "sustained": 1503.621,
+      "achievement": -1.028,
+      "historical_success": 58.59,
+      "historical_success_raw": 59.55,
+      "coverage_factor": 0.9,
+      "network_component": 2,
+      "established": false,
+      "events": 5,
+      "wars": 2,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1490.75,
+        "p10": 1490.358,
+        "p90": 1491.146,
+        "median_rank": 15.0,
+        "top_10_probability": 0.001
+      }
+    },
+    {
+      "entity_id": "safavid_empire",
+      "name": "Safavid Iran",
+      "composite": 1501.1,
+      "tactical": 1488.589,
+      "operational": 1500.0,
+      "strategic": 1508.492,
+      "uncertainty": 350.0,
+      "peak": 1501.1,
+      "peak_year": 1653,
+      "sustained": 1500.322,
+      "achievement": 0.06,
+      "historical_success": 52.84,
+      "historical_success_raw": 55.68,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1501.1,
+        "p10": 1501.029,
+        "p90": 1501.172,
+        "median_rank": 16.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "empire_japan",
+      "name": "Empire of Japan",
+      "composite": 1492.809,
+      "tactical": 1486.566,
+      "operational": 1500.0,
+      "strategic": 1481.853,
+      "uncertainty": 350.0,
+      "peak": 1503.391,
+      "peak_year": 1905,
+      "sustained": 1502.854,
+      "achievement": -1.048,
+      "historical_success": 51.11,
+      "historical_success_raw": 51.59,
+      "coverage_factor": 0.7,
+      "network_component": 2,
+      "established": false,
+      "events": 3,
+      "wars": 2,
+      "wins": 1,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1492.818,
+        "p10": 1492.68,
+        "p90": 1492.944,
+        "median_rank": 17.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "peoples_republic_china",
+      "name": "People's Republic of China",
+      "composite": 1500.259,
+      "tactical": 1500.0,
+      "operational": 1504.147,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.259,
+      "peak_year": 1950,
+      "sustained": 1500.259,
+      "achievement": 0.107,
+      "historical_success": 49.39,
+      "historical_success_raw": 47.95,
+      "coverage_factor": 0.3,
+      "network_component": 2,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1500.261,
+        "p10": 1500.246,
+        "p90": 1500.273,
+        "median_rank": 18.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "frankish_kingdom",
+      "name": "Frankish Kingdom",
+      "composite": 1500.163,
+      "tactical": 1504.086,
+      "operational": 1500.0,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.163,
+      "peak_year": 732,
+      "sustained": 1500.163,
+      "achievement": 0.152,
+      "historical_success": 48.7,
+      "historical_success_raw": 45.68,
+      "coverage_factor": 0.3,
+      "network_component": 2,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1500.163,
+        "p10": 1500.151,
+        "p90": 1500.176,
+        "median_rank": 19.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "umayyad_caliphate",
+      "name": "Umayyad Caliphate",
+      "composite": 1498.744,
+      "tactical": 1495.914,
+      "operational": 1482.52,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 661,
+      "sustained": 1498.826,
+      "achievement": -0.272,
+      "historical_success": 44.45,
+      "historical_success_raw": 36.14,
+      "coverage_factor": 0.4,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 0,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1498.753,
+        "p10": 1498.709,
+        "p90": 1498.798,
+        "median_rank": 20.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "roman_empire",
+      "name": "Roman Empire",
+      "composite": 1498.98,
+      "tactical": 1489.382,
+      "operational": 1490.476,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": -27,
+      "sustained": 1499.278,
+      "achievement": -0.418,
+      "historical_success": 43.45,
+      "historical_success_raw": 33.64,
+      "coverage_factor": 0.4,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 0,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1498.981,
+        "p10": 1498.954,
+        "p90": 1499.008,
+        "median_rank": 21.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "german_empire",
+      "name": "German Empire",
+      "composite": 1495.379,
+      "tactical": 1511.612,
+      "operational": 1500.0,
+      "strategic": 1472.261,
+      "uncertainty": 350.0,
+      "peak": 1500.464,
+      "peak_year": 1914,
+      "sustained": 1497.921,
+      "achievement": -0.902,
+      "historical_success": 42.05,
+      "historical_success_raw": 34.09,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1495.384,
+        "p10": 1495.298,
+        "p90": 1495.471,
+        "median_rank": 22.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "mughal_empire",
+      "name": "Mughal Empire",
+      "composite": 1498.443,
+      "tactical": 1500.0,
+      "operational": 1500.0,
+      "strategic": 1491.508,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 1526,
+      "sustained": 1498.443,
+      "achievement": -0.294,
+      "historical_success": 40.55,
+      "historical_success_raw": 26.36,
+      "coverage_factor": 0.4,
+      "network_component": 2,
+      "established": false,
+      "events": 1,
+      "wars": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1498.444,
+        "p10": 1498.371,
+        "p90": 1498.516,
+        "median_rank": 23.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "egypt_new_kingdom",
+      "name": "New Kingdom of Egypt",
+      "composite": 1499.981,
+      "tactical": 1499.516,
+      "operational": 1500.0,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": -1550,
+      "sustained": 1499.981,
+      "achievement": -0.017,
+      "historical_success": 40.23,
+      "historical_success_raw": 0.0,
+      "coverage_factor": 0.195,
+      "network_component": 5,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 1,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1499.981,
+        "p10": 1499.967,
+        "p90": 1499.996,
+        "median_rank": 24.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "mongol_empire",
+      "name": "Mongol Empire",
+      "composite": 1499.73,
+      "tactical": 1493.245,
+      "operational": 1500.0,
+      "strategic": 1500.0,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 1206,
+      "sustained": 1499.73,
+      "achievement": -0.038,
+      "historical_success": 40.23,
+      "historical_success_raw": 0.0,
+      "coverage_factor": 0.195,
+      "network_component": 6,
+      "established": false,
+      "events": 1,
+      "wars": 0,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1499.729,
+        "p10": 1499.718,
+        "p90": 1499.743,
+        "median_rank": 25.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "athens",
+      "name": "Athens",
+      "composite": 1493.844,
+      "tactical": 1507.589,
+      "operational": 1500.0,
+      "strategic": 1482.384,
+      "uncertainty": 350.0,
+      "peak": 1501.902,
+      "peak_year": -449,
+      "sustained": 1500.304,
+      "achievement": -0.147,
+      "historical_success": 39.34,
+      "historical_success_raw": 33.33,
+      "coverage_factor": 0.64,
+      "network_component": 1,
+      "established": false,
+      "events": 3,
+      "wars": 2,
+      "wins": 2,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1493.842,
+        "p10": 1493.482,
+        "p90": 1494.203,
+        "median_rank": 26.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "south_vietnam",
+      "name": "Republic of Vietnam",
+      "composite": 1493.768,
+      "tactical": 1500.0,
+      "operational": 1505.33,
+      "strategic": 1464.189,
+      "uncertainty": 350.0,
+      "peak": 1500.333,
+      "peak_year": 1968,
+      "sustained": 1497.051,
+      "achievement": -1.27,
+      "historical_success": 37.84,
+      "historical_success_raw": 25.68,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1493.795,
+        "p10": 1493.758,
+        "p90": 1493.833,
+        "median_rank": 27.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "kingdom_france",
+      "name": "Kingdom of France",
+      "composite": 1497.409,
+      "tactical": 1500.0,
+      "operational": 1500.0,
+      "strategic": 1485.865,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 987,
+      "sustained": 1497.409,
+      "achievement": -0.475,
+      "historical_success": 37.64,
+      "historical_success_raw": 19.09,
+      "coverage_factor": 0.4,
+      "network_component": 2,
+      "established": false,
+      "events": 1,
+      "wars": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1497.401,
+        "p10": 1497.29,
+        "p90": 1497.514,
+        "median_rank": 28.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "sasanian_empire",
+      "name": "Sasanian Empire",
+      "composite": 1479.877,
+      "tactical": 1510.618,
+      "operational": 1509.524,
+      "strategic": 1442.338,
+      "uncertainty": 350.0,
+      "peak": 1501.02,
+      "peak_year": 363,
+      "sustained": 1498.649,
+      "achievement": -1.463,
+      "historical_success": 37.64,
+      "historical_success_raw": 34.55,
+      "coverage_factor": 0.8,
+      "network_component": 2,
+      "established": false,
+      "events": 4,
+      "wars": 2,
+      "wins": 2,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1480.053,
+        "p10": 1479.583,
+        "p90": 1480.511,
+        "median_rank": 29.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "spanish_empire",
+      "name": "Spanish Monarchy and Empire",
+      "composite": 1496.345,
+      "tactical": 1500.0,
+      "operational": 1500.0,
+      "strategic": 1480.066,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 1479,
+      "sustained": 1496.345,
+      "achievement": -0.438,
+      "historical_success": 35.23,
+      "historical_success_raw": 0.0,
+      "coverage_factor": 0.295,
+      "network_component": 4,
+      "established": false,
+      "events": 1,
+      "wars": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1496.362,
+        "p10": 1496.189,
+        "p90": 1496.505,
+        "median_rank": 30.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "nazi_germany",
+      "name": "Nazi Germany",
+      "composite": 1490.888,
+      "tactical": 1500.0,
+      "operational": 1463.269,
+      "strategic": 1462.82,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 1933,
+      "sustained": 1494.296,
+      "achievement": -2.095,
+      "historical_success": 28.64,
+      "historical_success_raw": 7.27,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1490.902,
+        "p10": 1490.856,
+        "p90": 1490.948,
+        "median_rank": 31.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "first_french_empire",
+      "name": "First French Empire",
+      "composite": 1492.678,
+      "tactical": 1500.0,
+      "operational": 1477.565,
+      "strategic": 1467.71,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 1804,
+      "sustained": 1495.638,
+      "achievement": -1.53,
+      "historical_success": 27.73,
+      "historical_success_raw": 5.45,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1492.695,
+        "p10": 1492.609,
+        "p90": 1492.777,
+        "median_rank": 32.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "islamic_republic_afghanistan",
+      "name": "Islamic Republic of Afghanistan",
+      "composite": 1491.318,
+      "tactical": 1500.0,
+      "operational": 1463.174,
+      "strategic": 1465.199,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": 2004,
+      "sustained": 1494.508,
+      "achievement": -1.998,
+      "historical_success": 27.27,
+      "historical_success_raw": 4.55,
+      "coverage_factor": 0.5,
+      "network_component": 2,
+      "established": false,
+      "events": 2,
+      "wars": 1,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1491.358,
+        "p10": 1491.323,
+        "p90": 1491.397,
+        "median_rank": 33.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "carthage",
+      "name": "Carthage",
+      "composite": 1478.554,
+      "tactical": 1500.014,
+      "operational": 1500.0,
+      "strategic": 1441.507,
+      "uncertainty": 350.0,
+      "peak": 1500.691,
+      "peak_year": -216,
+      "sustained": 1497.423,
+      "achievement": -2.253,
+      "historical_success": 15.23,
+      "historical_success_raw": 0.0,
+      "coverage_factor": 0.695,
+      "network_component": 3,
+      "established": false,
+      "events": 4,
+      "wars": 2,
+      "wins": 1,
+      "losses": 3,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1478.685,
+        "p10": 1478.413,
+        "p90": 1478.961,
+        "median_rank": 34.0,
+        "top_10_probability": 0.0
+      }
+    },
+    {
+      "entity_id": "achaemenid_empire",
+      "name": "Achaemenid Empire",
+      "composite": 1479.258,
+      "tactical": 1472.969,
+      "operational": 1500.0,
+      "strategic": 1449.327,
+      "uncertainty": 350.0,
+      "peak": 1500.0,
+      "peak_year": -550,
+      "sustained": 1496.302,
+      "achievement": -2.191,
+      "historical_success": 13.01,
+      "historical_success_raw": 0.0,
+      "coverage_factor": 0.74,
+      "network_component": 1,
+      "established": false,
+      "events": 4,
+      "wars": 2,
+      "wins": 0,
+      "losses": 4,
+      "draws": 0,
+      "confidence": 0.0,
+      "sensitivity": {
+        "median": 1479.378,
+        "p10": 1479.052,
+        "p90": 1479.707,
+        "median_rank": 35.0,
+        "top_10_probability": 0.0
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "battle_kadesh_1274_bce",
+      "name": "Battle of Kadesh",
+      "year": -1274,
+      "end_year": -1274,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "egypt_hittite_contest",
+      "confidence": 0.62,
+      "decisiveness": 0.35,
+      "summary": "A heavily propagandized battle generally treated as tactically inconclusive; the Hittites retained Kadesh, so mission and positional scores modestly favor them.",
+      "parent_event_id": null,
+      "k_factor": 17.778,
+      "participants": [
+        {
+          "entity_id": "egypt_new_kingdom",
+          "side": "egypt",
+          "result_class": "stalemate_or_inconclusive",
+          "utility": 0.484,
+          "actual": 0.47,
+          "expected": 0.5,
+          "delta": -0.484,
+          "importance": 1.43,
+          "termination": "inconclusive"
+        },
+        {
+          "entity_id": "hittite_empire",
+          "side": "hatti",
+          "result_class": "stalemate_or_inconclusive",
+          "utility": 0.543,
+          "actual": 0.53,
+          "expected": 0.5,
+          "delta": 0.484,
+          "importance": 1.43,
+          "termination": "inconclusive"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Kadesh",
+          "url": "https://www.worldhistory.org/Kadesh/"
+        }
+      ]
+    },
+    {
+      "id": "battle_salamis_480_bce",
+      "name": "Battle of Salamis",
+      "year": -480,
+      "end_year": -480,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "naval",
+      "geographic_scope": 0.25,
+      "cluster_id": "greco_persian_wars",
+      "confidence": 0.78,
+      "decisiveness": 0.88,
+      "summary": "A major Greek naval victory and turning point; exact fleet strengths and tactical details remain disputed.",
+      "parent_event_id": "greco_persian_wars",
+      "k_factor": 26.709,
+      "participants": [
+        {
+          "entity_id": "athens",
+          "side": "greek_coalition",
+          "result_class": "major_tactical_victory",
+          "utility": 0.825,
+          "actual": 0.794,
+          "expected": 0.5,
+          "delta": 7.589,
+          "importance": 2.415,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "sparta",
+          "side": "greek_coalition",
+          "result_class": "major_tactical_victory",
+          "utility": 0.767,
+          "actual": 0.764,
+          "expected": 0.5,
+          "delta": 1.845,
+          "importance": 2.055,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "achaemenid_empire",
+          "side": "persia",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.238,
+          "actual": 0.213,
+          "expected": 0.5,
+          "delta": -9.433,
+          "importance": 1.583,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Salamis",
+          "url": "https://www.iranicaonline.org/articles/salamis/"
+        }
+      ]
+    },
+    {
+      "id": "greco_persian_wars",
+      "name": "Greco-Persian Wars",
+      "year": -499,
+      "end_year": -449,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.45,
+      "cluster_id": "greco_persian_wars",
+      "confidence": 0.78,
+      "decisiveness": 0.78,
+      "summary": "The Greek coalition prevented Achaemenid conquest of mainland Greece and later secured an advantageous settlement; Persia remained a powerful sovereign empire.",
+      "parent_event_id": null,
+      "k_factor": 75.089,
+      "participants": [
+        {
+          "entity_id": "athens",
+          "side": "greek_coalition",
+          "result_class": "major_strategic_victory",
+          "utility": 0.782,
+          "actual": 0.704,
+          "expected": 0.5,
+          "delta": 8.72,
+          "importance": 2.41,
+          "termination": "favorable_settlement"
+        },
+        {
+          "entity_id": "sparta",
+          "side": "greek_coalition",
+          "result_class": "major_strategic_victory",
+          "utility": 0.751,
+          "actual": 0.688,
+          "expected": 0.5,
+          "delta": 4.524,
+          "importance": 2.32,
+          "termination": "favorable_settlement"
+        },
+        {
+          "entity_id": "achaemenid_empire",
+          "side": "persia",
+          "result_class": "limited_defeat",
+          "utility": 0.374,
+          "actual": 0.302,
+          "expected": 0.5,
+          "delta": -13.244,
+          "importance": 1.578,
+          "termination": "unfavorable_settlement"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Greco-Persian Wars",
+          "url": "https://www.britannica.com/event/Greco-Persian-Wars"
+        },
+        {
+          "title": "Salamis",
+          "url": "https://www.iranicaonline.org/articles/salamis/"
+        }
+      ]
+    },
+    {
+      "id": "peloponnesian_war",
+      "name": "Peloponnesian War",
+      "year": -431,
+      "end_year": -404,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.4,
+      "cluster_id": "peloponnesian_war",
+      "confidence": 0.86,
+      "decisiveness": 0.9,
+      "summary": "Sparta defeated Athens, dismantled the Athenian empire, and imposed a settlement, while Athens continued to exist as a polity.",
+      "parent_event_id": null,
+      "k_factor": 83.357,
+      "participants": [
+        {
+          "entity_id": "athens",
+          "side": "athenian_league",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.237,
+          "actual": 0.224,
+          "expected": 0.506,
+          "delta": -26.336,
+          "importance": 2.577,
+          "termination": "capitulation_and_imposed_settlement"
+        },
+        {
+          "entity_id": "sparta",
+          "side": "spartan_league",
+          "result_class": "major_strategic_victory",
+          "utility": 0.79,
+          "actual": 0.776,
+          "expected": 0.494,
+          "delta": 26.336,
+          "importance": 2.237,
+          "termination": "victory_and_imposed_settlement"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Peloponnesian War",
+          "url": "https://www.britannica.com/event/Peloponnesian-War"
+        }
+      ]
+    },
+    {
+      "id": "battle_gaugamela_331_bce",
+      "name": "Battle of Gaugamela",
+      "year": -331,
+      "end_year": -331,
+      "type": "engagement",
+      "war_type": "conquest",
+      "scale": "battle",
+      "stakes": "existential",
+      "domain": "land",
+      "geographic_scope": 0.3,
+      "cluster_id": "alexander_persia",
+      "confidence": 0.86,
+      "decisiveness": 0.97,
+      "summary": "Alexander won a decisive field victory over Darius III; ancient force totals are too uncertain for this seed to encode them.",
+      "parent_event_id": "macedonian_conquest_achaemenid",
+      "k_factor": 38.377,
+      "participants": [
+        {
+          "entity_id": "macedonian_empire",
+          "side": "macedon",
+          "result_class": "major_tactical_victory",
+          "utility": 0.884,
+          "actual": 0.878,
+          "expected": 0.514,
+          "delta": 17.598,
+          "importance": 2.303,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "achaemenid_empire",
+          "side": "persia",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.127,
+          "actual": 0.122,
+          "expected": 0.486,
+          "delta": -17.598,
+          "importance": 2.49,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Gaugamela",
+          "url": "https://www.iranicaonline.org/articles/gaugamela/"
+        },
+        {
+          "title": "Alexander the Great",
+          "url": "https://www.iranicaonline.org/articles/alexander-the-great-356-23-bc/"
+        }
+      ]
+    },
+    {
+      "id": "macedonian_conquest_achaemenid",
+      "name": "Macedonian Conquest of the Achaemenid Empire",
+      "year": -334,
+      "end_year": -330,
+      "type": "war",
+      "war_type": "conquest",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "land",
+      "geographic_scope": 0.7,
+      "cluster_id": "alexander_persia",
+      "confidence": 0.88,
+      "decisiveness": 0.98,
+      "summary": "Alexander's campaigns destroyed Achaemenid imperial sovereignty and transferred its principal territories to the Macedonian conqueror.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "macedonian_empire",
+          "side": "macedon",
+          "result_class": "existential_victory",
+          "utility": 0.893,
+          "actual": 0.906,
+          "expected": 0.519,
+          "delta": 37.428,
+          "importance": 2.507,
+          "termination": "conquest_victory"
+        },
+        {
+          "entity_id": "achaemenid_empire",
+          "side": "persia",
+          "result_class": "existential_defeat",
+          "utility": 0.081,
+          "actual": 0.094,
+          "expected": 0.481,
+          "delta": -37.428,
+          "importance": 2.82,
+          "termination": "state_ceased_after_conquest"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Alexander the Great",
+          "url": "https://www.iranicaonline.org/articles/alexander-the-great-356-23-bc/"
+        },
+        {
+          "title": "Gaugamela",
+          "url": "https://www.iranicaonline.org/articles/gaugamela/"
+        }
+      ]
+    },
+    {
+      "id": "battle_cannae_216_bce",
+      "name": "Battle of Cannae",
+      "year": -216,
+      "end_year": -216,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "second_punic_war",
+      "confidence": 0.9,
+      "decisiveness": 0.98,
+      "summary": "Hannibal's army destroyed a much larger Roman field force, a decisive Carthaginian tactical victory that did not by itself decide the war.",
+      "parent_event_id": "second_punic_war",
+      "k_factor": 30.831,
+      "participants": [
+        {
+          "entity_id": "carthage",
+          "side": "carthage",
+          "result_class": "major_tactical_victory",
+          "utility": 0.907,
+          "actual": 0.917,
+          "expected": 0.5,
+          "delta": 17.271,
+          "importance": 1.922,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "roman_republic",
+          "side": "rome",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.073,
+          "actual": 0.083,
+          "expected": 0.5,
+          "delta": -17.271,
+          "importance": 2.29,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Punic Wars",
+          "url": "https://www.britannica.com/event/Punic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "battle_zama_202_bce",
+      "name": "Battle of Zama",
+      "year": -202,
+      "end_year": -202,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "second_punic_war",
+      "confidence": 0.88,
+      "decisiveness": 0.94,
+      "summary": "Scipio's victory over Hannibal ended major resistance and led directly to the Carthaginian peace settlement.",
+      "parent_event_id": "second_punic_war",
+      "k_factor": 29.842,
+      "participants": [
+        {
+          "entity_id": "roman_republic",
+          "side": "rome",
+          "result_class": "major_tactical_victory",
+          "utility": 0.886,
+          "actual": 0.885,
+          "expected": 0.45,
+          "delta": 17.257,
+          "importance": 1.877,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "carthage",
+          "side": "carthage",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.117,
+          "actual": 0.115,
+          "expected": 0.55,
+          "delta": -17.257,
+          "importance": 2.308,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Punic Wars",
+          "url": "https://www.britannica.com/event/Punic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "second_punic_war",
+      "name": "Second Punic War",
+      "year": -218,
+      "end_year": -201,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.55,
+      "cluster_id": "second_punic_war",
+      "confidence": 0.88,
+      "decisiveness": 0.9,
+      "summary": "Rome survived severe battlefield defeats, ultimately defeated Carthage, and imposed a settlement that sharply reduced Carthaginian power without yet ending the state.",
+      "parent_event_id": null,
+      "k_factor": 83.733,
+      "participants": [
+        {
+          "entity_id": "roman_republic",
+          "side": "rome",
+          "result_class": "major_strategic_victory",
+          "utility": 0.811,
+          "actual": 0.785,
+          "expected": 0.5,
+          "delta": 28.127,
+          "importance": 2.605,
+          "termination": "victory_and_imposed_settlement"
+        },
+        {
+          "entity_id": "carthage",
+          "side": "carthage",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.24,
+          "actual": 0.215,
+          "expected": 0.5,
+          "delta": -28.127,
+          "importance": 2.667,
+          "termination": "capitulation_and_imposed_settlement"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Punic Wars",
+          "url": "https://www.britannica.com/event/Punic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "third_punic_war",
+      "name": "Third Punic War",
+      "year": -149,
+      "end_year": -146,
+      "type": "war",
+      "war_type": "conquest",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "siege",
+      "geographic_scope": 0.35,
+      "cluster_id": "third_punic_war",
+      "confidence": 0.92,
+      "decisiveness": 1.0,
+      "summary": "Rome destroyed Carthage as an independent polity; this is coded as terminal conquest rather than merely another loss.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "roman_republic",
+          "side": "rome",
+          "result_class": "existential_victory",
+          "utility": 0.947,
+          "actual": 0.951,
+          "expected": 0.58,
+          "delta": 30.366,
+          "importance": 1.643,
+          "termination": "conquest_victory"
+        },
+        {
+          "entity_id": "carthage",
+          "side": "carthage",
+          "result_class": "existential_defeat",
+          "utility": 0.044,
+          "actual": 0.049,
+          "expected": 0.42,
+          "delta": -30.366,
+          "importance": 2.61,
+          "termination": "state_destroyed"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Punic Wars",
+          "url": "https://www.britannica.com/event/Punic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "battle_edessa_260",
+      "name": "Battle of Edessa",
+      "year": 260,
+      "end_year": 260,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "roman_sasanian_wars",
+      "confidence": 0.86,
+      "decisiveness": 0.96,
+      "summary": "Shapur I defeated and captured the Roman emperor Valerian; the Sasanian victory was decisive although it did not end Roman sovereignty.",
+      "parent_event_id": null,
+      "k_factor": 29.591,
+      "participants": [
+        {
+          "entity_id": "roman_empire",
+          "side": "rome",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.107,
+          "actual": 0.116,
+          "expected": 0.5,
+          "delta": -10.618,
+          "importance": 1.492,
+          "termination": "engagement_defeat_and_emperor_captured"
+        },
+        {
+          "entity_id": "sasanian_empire",
+          "side": "sasanian",
+          "result_class": "major_tactical_victory",
+          "utility": 0.874,
+          "actual": 0.884,
+          "expected": 0.5,
+          "delta": 10.618,
+          "importance": 1.43,
+          "termination": "engagement_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Shapur I: History",
+          "url": "https://www.iranicaonline.org/articles/shapur-i/"
+        },
+        {
+          "title": "Edessa",
+          "url": "https://www.iranicaonline.org/articles/edessa/"
+        }
+      ]
+    },
+    {
+      "id": "julian_persian_campaign_363",
+      "name": "Julian's Persian Campaign",
+      "year": 363,
+      "end_year": 363,
+      "type": "campaign",
+      "war_type": "interstate_limited",
+      "scale": "campaign",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.35,
+      "cluster_id": "roman_sasanian_wars",
+      "confidence": 0.82,
+      "decisiveness": 0.82,
+      "summary": "The Roman invasion failed after Julian's death; Jovian withdrew and ceded strategic positions in the resulting peace.",
+      "parent_event_id": null,
+      "k_factor": 42.986,
+      "participants": [
+        {
+          "entity_id": "roman_empire",
+          "side": "rome",
+          "result_class": "major_operational_defeat",
+          "utility": 0.216,
+          "actual": 0.218,
+          "expected": 0.5,
+          "delta": -9.524,
+          "importance": 1.337,
+          "termination": "campaign_withdrawal_and_unfavorable_treaty"
+        },
+        {
+          "entity_id": "sasanian_empire",
+          "side": "sasanian",
+          "result_class": "major_operational_victory",
+          "utility": 0.781,
+          "actual": 0.782,
+          "expected": 0.5,
+          "delta": 9.524,
+          "importance": 1.57,
+          "termination": "campaign_victory_and_favorable_treaty"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Edessa",
+          "url": "https://www.iranicaonline.org/articles/edessa/"
+        }
+      ]
+    },
+    {
+      "id": "byzantine_sasanian_war_602_628",
+      "name": "Byzantine-Sasanian War of 602-628",
+      "year": 602,
+      "end_year": 628,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 0.58,
+      "cluster_id": "byzantine_sasanian_602_628",
+      "confidence": 0.82,
+      "decisiveness": 0.86,
+      "summary": "Heraclius reversed extensive Sasanian conquests and restored the prewar frontier, but both empires were badly exhausted and the settlement proved short-lived.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "byzantine_empire",
+          "side": "byzantine",
+          "result_class": "major_strategic_victory",
+          "utility": 0.71,
+          "actual": 0.728,
+          "expected": 0.5,
+          "delta": 22.625,
+          "importance": 2.748,
+          "termination": "victory_and_status_quo_restored"
+        },
+        {
+          "entity_id": "sasanian_empire",
+          "side": "sasanian",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.253,
+          "actual": 0.272,
+          "expected": 0.5,
+          "delta": -22.625,
+          "importance": 2.56,
+          "termination": "defeat_and_internal_regime_change"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Heraclius, Byzantine emperor",
+          "url": "https://www.britannica.com/biography/Heraclius-Byzantine-emperor"
+        },
+        {
+          "title": "Byzantine Empire",
+          "url": "https://www.britannica.com/place/Byzantine-Empire"
+        }
+      ]
+    },
+    {
+      "id": "battle_yarmouk_636",
+      "name": "Battle of Yarmouk",
+      "year": 636,
+      "end_year": 636,
+      "type": "engagement",
+      "war_type": "conquest",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.28,
+      "cluster_id": "early_muslim_conquests",
+      "confidence": 0.82,
+      "decisiveness": 0.96,
+      "summary": "A decisive Rashidun victory that broke the principal Byzantine field response in Syria and enabled durable regional conquest.",
+      "parent_event_id": null,
+      "k_factor": 28.599,
+      "participants": [
+        {
+          "entity_id": "rashidun_caliphate",
+          "side": "rashidun",
+          "result_class": "major_tactical_victory",
+          "utility": 0.862,
+          "actual": 0.864,
+          "expected": 0.5,
+          "delta": 13.174,
+          "importance": 1.94,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "byzantine_empire",
+          "side": "byzantine",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.135,
+          "actual": 0.136,
+          "expected": 0.5,
+          "delta": -13.174,
+          "importance": 2.066,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Battle of Yarmouk",
+          "url": "https://www.britannica.com/event/Battle-of-Yarmouk-636"
+        }
+      ]
+    },
+    {
+      "id": "rashidun_conquest_sasanian",
+      "name": "Rashidun Conquest of the Sasanian Empire",
+      "year": 633,
+      "end_year": 651,
+      "type": "war",
+      "war_type": "conquest",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "land",
+      "geographic_scope": 0.65,
+      "cluster_id": "early_muslim_conquests",
+      "confidence": 0.84,
+      "decisiveness": 0.98,
+      "summary": "Rashidun forces conquered the Sasanian realm, ending Sasanian imperial sovereignty in 651.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "rashidun_caliphate",
+          "side": "rashidun",
+          "result_class": "existential_victory",
+          "utility": 0.895,
+          "actual": 0.898,
+          "expected": 0.533,
+          "delta": 35.036,
+          "importance": 2.433,
+          "termination": "conquest_victory"
+        },
+        {
+          "entity_id": "sasanian_empire",
+          "side": "sasanian",
+          "result_class": "existential_defeat",
+          "utility": 0.098,
+          "actual": 0.102,
+          "expected": 0.467,
+          "delta": -35.036,
+          "importance": 2.79,
+          "termination": "state_ceased_after_conquest"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Arab conquest of Iran",
+          "url": "https://www.iranicaonline.org/articles/arab-ii/"
+        }
+      ]
+    },
+    {
+      "id": "siege_constantinople_717_718",
+      "name": "Umayyad Siege of Constantinople",
+      "year": 717,
+      "end_year": 718,
+      "type": "campaign",
+      "war_type": "conquest",
+      "scale": "theater",
+      "stakes": "existential",
+      "domain": "siege",
+      "geographic_scope": 0.38,
+      "cluster_id": "arab_byzantine_wars",
+      "confidence": 0.76,
+      "decisiveness": 0.92,
+      "summary": "The Byzantine defense defeated a major Umayyad land-and-sea siege; Bulgaria's important contribution is acknowledged but not separately rated in this limited seed.",
+      "parent_event_id": null,
+      "k_factor": 66.72,
+      "participants": [
+        {
+          "entity_id": "byzantine_empire",
+          "side": "defenders",
+          "result_class": "major_operational_victory",
+          "utility": 0.81,
+          "actual": 0.811,
+          "expected": 0.5,
+          "delta": 17.48,
+          "importance": 2.493,
+          "termination": "campaign_victory"
+        },
+        {
+          "entity_id": "umayyad_caliphate",
+          "side": "besiegers",
+          "result_class": "major_operational_defeat",
+          "utility": 0.188,
+          "actual": 0.189,
+          "expected": 0.5,
+          "delta": -17.48,
+          "importance": 1.581,
+          "termination": "campaign_withdrawal"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Byzantine Empire",
+          "url": "https://www.britannica.com/place/Byzantine-Empire"
+        },
+        {
+          "title": "Umayyad dynasty",
+          "url": "https://www.britannica.com/topic/Umayyad-dynasty-Islamic-history"
+        }
+      ]
+    },
+    {
+      "id": "battle_tours_732",
+      "name": "Battle of Tours",
+      "year": 732,
+      "end_year": 732,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.22,
+      "cluster_id": "umayyad_gaul_732",
+      "confidence": 0.74,
+      "decisiveness": 0.78,
+      "summary": "A Frankish battlefield victory that ended this Umayyad expedition; the seed avoids the older claim that one battle alone determined the future of Europe.",
+      "parent_event_id": null,
+      "k_factor": 24.668,
+      "participants": [
+        {
+          "entity_id": "frankish_kingdom",
+          "side": "franks",
+          "result_class": "major_tactical_victory",
+          "utility": 0.748,
+          "actual": 0.738,
+          "expected": 0.5,
+          "delta": 4.086,
+          "importance": 1.599,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "umayyad_caliphate",
+          "side": "umayyad_expedition",
+          "result_class": "limited_tactical_defeat",
+          "utility": 0.272,
+          "actual": 0.262,
+          "expected": 0.5,
+          "delta": -4.086,
+          "importance": 0.722,
+          "termination": "engagement_defeat_and_withdrawal"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Battle of Tours",
+          "url": "https://www.britannica.com/event/Battle-of-Tours-732"
+        }
+      ]
+    },
+    {
+      "id": "battle_ain_jalut_1260",
+      "name": "Battle of Ain Jalut",
+      "year": 1260,
+      "end_year": 1260,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "mongol_mamluk_conflict",
+      "confidence": 0.82,
+      "decisiveness": 0.84,
+      "summary": "A clear Mamluk victory over a Mongol field force that checked the immediate advance into Egypt; it is not coded as the destruction of the wider Mongol Empire.",
+      "parent_event_id": null,
+      "k_factor": 27.204,
+      "participants": [
+        {
+          "entity_id": "mamluk_sultanate",
+          "side": "mamluk",
+          "result_class": "major_tactical_victory",
+          "utility": 0.808,
+          "actual": 0.801,
+          "expected": 0.5,
+          "delta": 6.755,
+          "importance": 2.02,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "mongol_empire",
+          "side": "mongol",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.206,
+          "actual": 0.199,
+          "expected": 0.5,
+          "delta": -6.755,
+          "importance": 0.821,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Battle of Ayn Jalut",
+          "url": "https://www.britannica.com/event/Battle-of-Ayn-Jalut"
+        }
+      ]
+    },
+    {
+      "id": "siege_constantinople_1453",
+      "name": "Siege and Fall of Constantinople",
+      "year": 1453,
+      "end_year": 1453,
+      "type": "campaign",
+      "war_type": "conquest",
+      "scale": "theater",
+      "stakes": "existential",
+      "domain": "siege",
+      "geographic_scope": 0.28,
+      "cluster_id": "fall_constantinople_1453",
+      "confidence": 0.92,
+      "decisiveness": 1.0,
+      "summary": "The operational siege record is separate from the strategic state-extinction record, preventing tactical and strategic results from being conflated within one rating track.",
+      "parent_event_id": "final_ottoman_byzantine_war",
+      "k_factor": 77.403,
+      "participants": [
+        {
+          "entity_id": "ottoman_empire",
+          "side": "ottoman",
+          "result_class": "major_operational_victory",
+          "utility": 0.918,
+          "actual": 0.925,
+          "expected": 0.475,
+          "delta": 32.047,
+          "importance": 1.743,
+          "termination": "campaign_victory"
+        },
+        {
+          "entity_id": "byzantine_empire",
+          "side": "byzantine",
+          "result_class": "major_operational_defeat",
+          "utility": 0.069,
+          "actual": 0.075,
+          "expected": 0.525,
+          "delta": -32.047,
+          "importance": 2.568,
+          "termination": "campaign_defeat_and_capital_fell"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Fall of Constantinople",
+          "url": "https://www.britannica.com/event/Fall-of-Constantinople-1453"
+        }
+      ]
+    },
+    {
+      "id": "final_ottoman_byzantine_war",
+      "name": "Final Ottoman-Byzantine War",
+      "year": 1422,
+      "end_year": 1453,
+      "type": "war",
+      "war_type": "conquest",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "siege",
+      "geographic_scope": 0.42,
+      "cluster_id": "fall_constantinople_1453",
+      "confidence": 0.92,
+      "decisiveness": 1.0,
+      "summary": "The Ottoman conquest of Constantinople ended the Byzantine Empire as a sovereign polity; its Elo line terminates rather than transferring to the victor.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "ottoman_empire",
+          "side": "ottoman",
+          "result_class": "existential_victory",
+          "utility": 0.948,
+          "actual": 0.951,
+          "expected": 0.467,
+          "delta": 41.861,
+          "importance": 1.872,
+          "termination": "conquest_victory"
+        },
+        {
+          "entity_id": "byzantine_empire",
+          "side": "byzantine",
+          "result_class": "existential_defeat",
+          "utility": 0.046,
+          "actual": 0.049,
+          "expected": 0.533,
+          "delta": -41.861,
+          "importance": 2.652,
+          "termination": "state_destroyed"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Fall of Constantinople",
+          "url": "https://www.britannica.com/event/Fall-of-Constantinople-1453"
+        },
+        {
+          "title": "Byzantine Empire",
+          "url": "https://www.britannica.com/place/Byzantine-Empire"
+        }
+      ]
+    },
+    {
+      "id": "battle_chaldiran_1514",
+      "name": "Battle of Chaldiran",
+      "year": 1514,
+      "end_year": 1514,
+      "type": "engagement",
+      "war_type": "interstate_limited",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "ottoman_safavid_wars",
+      "confidence": 0.88,
+      "decisiveness": 0.92,
+      "summary": "A decisive Ottoman battlefield victory over the Safavids, aided by firearms and prepared defenses; it did not destroy Safavid sovereignty.",
+      "parent_event_id": null,
+      "k_factor": 29.598,
+      "participants": [
+        {
+          "entity_id": "ottoman_empire",
+          "side": "ottoman",
+          "result_class": "major_tactical_victory",
+          "utility": 0.861,
+          "actual": 0.851,
+          "expected": 0.5,
+          "delta": 11.411,
+          "importance": 1.583,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "safavid_empire",
+          "side": "safavid",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.159,
+          "actual": 0.149,
+          "expected": 0.5,
+          "delta": -11.411,
+          "importance": 1.86,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Chaldiran, Battle of",
+          "url": "https://www.iranicaonline.org/articles/calderan-battle/"
+        }
+      ]
+    },
+    {
+      "id": "eighty_years_war",
+      "name": "Eighty Years' War",
+      "year": 1568,
+      "end_year": 1648,
+      "type": "war",
+      "war_type": "colonial_anti_colonial",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 0.52,
+      "cluster_id": "eighty_years_war",
+      "confidence": 0.88,
+      "decisiveness": 0.88,
+      "summary": "The Dutch revolt secured durable independence recognized in 1648; Spain suffered a major anti-colonial loss but remained sovereign and retained other possessions.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "dutch_republic",
+          "side": "dutch",
+          "result_class": "existential_victory",
+          "utility": 0.879,
+          "actual": 0.756,
+          "expected": 0.5,
+          "delta": 19.934,
+          "importance": 2.712,
+          "termination": "independence_victory"
+        },
+        {
+          "entity_id": "spanish_empire",
+          "side": "spanish",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.367,
+          "actual": 0.244,
+          "expected": 0.5,
+          "delta": -19.934,
+          "importance": 1.557,
+          "termination": "recognized_opponent_independence"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Eighty Years' War",
+          "url": "https://www.britannica.com/event/Eighty-Years-War"
+        }
+      ]
+    },
+    {
+      "id": "mughal_safavid_war_kandahar_1649_1653",
+      "name": "Mughal-Safavid War over Kandahar",
+      "year": 1649,
+      "end_year": 1653,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "campaign",
+      "stakes": "major",
+      "domain": "siege",
+      "geographic_scope": 0.32,
+      "cluster_id": "kandahar_1649_1653",
+      "confidence": 0.84,
+      "decisiveness": 0.78,
+      "summary": "Safavid Iran captured and retained Kandahar despite repeated Mughal recovery attempts; both empires remained sovereign.",
+      "parent_event_id": null,
+      "k_factor": 55.653,
+      "participants": [
+        {
+          "entity_id": "safavid_empire",
+          "side": "safavid",
+          "result_class": "limited_victory",
+          "utility": 0.785,
+          "actual": 0.729,
+          "expected": 0.5,
+          "delta": 8.492,
+          "importance": 1.274,
+          "termination": "victory_and_territory_retained"
+        },
+        {
+          "entity_id": "mughal_empire",
+          "side": "mughal",
+          "result_class": "limited_defeat",
+          "utility": 0.327,
+          "actual": 0.271,
+          "expected": 0.5,
+          "delta": -8.492,
+          "importance": 1.167,
+          "termination": "failed_recovery_campaigns"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Kandahar: From the Mongol invasion through the Safavid era",
+          "url": "https://www.iranicaonline.org/articles/kandahar-from-the-mongol-invasion-through-the-safavid-era/"
+        }
+      ]
+    },
+    {
+      "id": "seven_years_war",
+      "name": "Seven Years' War",
+      "year": 1756,
+      "end_year": 1763,
+      "type": "war",
+      "war_type": "world_war",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.9,
+      "cluster_id": "seven_years_war",
+      "confidence": 0.9,
+      "decisiveness": 0.82,
+      "summary": "This seed records the British-French strategic dyad within a much larger coalition war; Britain made major imperial gains while France remained a sovereign great power.",
+      "parent_event_id": null,
+      "k_factor": 80.434,
+      "participants": [
+        {
+          "entity_id": "united_kingdom",
+          "side": "british_coalition",
+          "result_class": "major_strategic_victory",
+          "utility": 0.84,
+          "actual": 0.703,
+          "expected": 0.5,
+          "delta": 14.135,
+          "importance": 2.107,
+          "termination": "victory_and_favorable_treaty"
+        },
+        {
+          "entity_id": "kingdom_france",
+          "side": "french_coalition",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.434,
+          "actual": 0.297,
+          "expected": 0.5,
+          "delta": -14.135,
+          "importance": 2.126,
+          "termination": "defeat_and_unfavorable_treaty"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Seven Years' War",
+          "url": "https://www.britannica.com/event/Seven-Years-War"
+        }
+      ]
+    },
+    {
+      "id": "american_revolutionary_war",
+      "name": "American Revolutionary War",
+      "year": 1775,
+      "end_year": 1783,
+      "type": "war",
+      "war_type": "colonial_anti_colonial",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 0.65,
+      "cluster_id": "american_revolution",
+      "confidence": 0.92,
+      "decisiveness": 0.94,
+      "summary": "The United States secured recognized independence. Britain lost the colonies but neither its homeland sovereignty nor imperial state, distinguishing this from terminal defeat.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "united_states",
+          "side": "american_and_allies",
+          "result_class": "existential_victory",
+          "utility": 0.916,
+          "actual": 0.79,
+          "expected": 0.48,
+          "delta": 22.895,
+          "importance": 2.79,
+          "termination": "independence_victory"
+        },
+        {
+          "entity_id": "united_kingdom",
+          "side": "britain",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.335,
+          "actual": 0.21,
+          "expected": 0.52,
+          "delta": -22.895,
+          "importance": 1.438,
+          "termination": "recognized_opponent_independence"
+        }
+      ],
+      "sources": [
+        {
+          "title": "American Revolution",
+          "url": "https://www.britannica.com/event/American-Revolution"
+        }
+      ]
+    },
+    {
+      "id": "french_invasion_russia_1812",
+      "name": "French Invasion of Russia",
+      "year": 1812,
+      "end_year": 1812,
+      "type": "campaign",
+      "war_type": "interstate_limited",
+      "scale": "theater",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.48,
+      "cluster_id": "napoleonic_wars",
+      "confidence": 0.92,
+      "decisiveness": 0.96,
+      "summary": "Napoleon reached and occupied Moscow but failed to compel Russia and lost most of the invading army during retreat; this is an operational Russian victory despite battlefield ambiguity at individual engagements.",
+      "parent_event_id": "napoleonic_wars",
+      "k_factor": 58.966,
+      "participants": [
+        {
+          "entity_id": "first_french_empire",
+          "side": "french_coalition",
+          "result_class": "major_operational_defeat",
+          "utility": 0.153,
+          "actual": 0.164,
+          "expected": 0.5,
+          "delta": -22.435,
+          "importance": 2.223,
+          "termination": "campaign_withdrawal"
+        },
+        {
+          "entity_id": "russian_empire",
+          "side": "russia",
+          "result_class": "major_operational_victory",
+          "utility": 0.826,
+          "actual": 0.836,
+          "expected": 0.5,
+          "delta": 22.435,
+          "importance": 2.553,
+          "termination": "campaign_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Napoleonic Wars: The retreat from Moscow",
+          "url": "https://www.britannica.com/event/Napoleonic-Wars/The-retreat-from-Moscow"
+        },
+        {
+          "title": "Napoleonic Wars",
+          "url": "https://www.britannica.com/event/Napoleonic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "napoleonic_wars",
+      "name": "Napoleonic Wars",
+      "year": 1803,
+      "end_year": 1815,
+      "type": "war",
+      "war_type": "world_war",
+      "scale": "total_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 0.84,
+      "cluster_id": "napoleonic_wars",
+      "confidence": 0.92,
+      "decisiveness": 0.98,
+      "summary": "Coalition victory ended the First French Empire and restored the Bourbon monarchy; the French nation survived, but this rated imperial entity ceased.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "first_french_empire",
+          "side": "french_coalition",
+          "result_class": "existential_defeat",
+          "utility": 0.12,
+          "actual": 0.135,
+          "expected": 0.507,
+          "delta": -32.29,
+          "importance": 2.904,
+          "termination": "capitulation_and_regime_ceased"
+        },
+        {
+          "entity_id": "united_kingdom",
+          "side": "allied_coalitions",
+          "result_class": "major_strategic_victory",
+          "utility": 0.862,
+          "actual": 0.871,
+          "expected": 0.487,
+          "delta": 19.18,
+          "importance": 2.242,
+          "termination": "coalition_victory"
+        },
+        {
+          "entity_id": "russian_empire",
+          "side": "allied_coalitions",
+          "result_class": "major_strategic_victory",
+          "utility": 0.83,
+          "actual": 0.855,
+          "expected": 0.5,
+          "delta": 13.11,
+          "importance": 2.582,
+          "termination": "coalition_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Napoleonic Wars",
+          "url": "https://www.britannica.com/event/Napoleonic-Wars"
+        }
+      ]
+    },
+    {
+      "id": "crimean_war",
+      "name": "Crimean War",
+      "year": 1853,
+      "end_year": 1856,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.55,
+      "cluster_id": "crimean_war",
+      "confidence": 0.9,
+      "decisiveness": 0.72,
+      "summary": "The allied coalition compelled Russia to accept an unfavorable peace and checked its immediate objectives; no participant state was destroyed.",
+      "parent_event_id": null,
+      "k_factor": 75.46,
+      "participants": [
+        {
+          "entity_id": "united_kingdom",
+          "side": "allies",
+          "result_class": "limited_victory",
+          "utility": 0.707,
+          "actual": 0.668,
+          "expected": 0.496,
+          "delta": 3.796,
+          "importance": 1.333,
+          "termination": "victory_and_favorable_treaty"
+        },
+        {
+          "entity_id": "ottoman_empire",
+          "side": "allies",
+          "result_class": "limited_victory",
+          "utility": 0.679,
+          "actual": 0.654,
+          "expected": 0.541,
+          "delta": 4.393,
+          "importance": 2.228,
+          "termination": "victory_and_favorable_treaty"
+        },
+        {
+          "entity_id": "russian_empire",
+          "side": "russia",
+          "result_class": "limited_defeat",
+          "utility": 0.371,
+          "actual": 0.34,
+          "expected": 0.478,
+          "delta": -8.189,
+          "importance": 1.808,
+          "termination": "defeat_and_unfavorable_treaty"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Crimean War",
+          "url": "https://www.nam.ac.uk/explore/crimean-war"
+        }
+      ]
+    },
+    {
+      "id": "russo_japanese_war",
+      "name": "Russo-Japanese War",
+      "year": 1904,
+      "end_year": 1905,
+      "type": "war",
+      "war_type": "interstate_limited",
+      "scale": "major_war",
+      "stakes": "major",
+      "domain": "mixed",
+      "geographic_scope": 0.5,
+      "cluster_id": "russo_japanese_war",
+      "confidence": 0.94,
+      "decisiveness": 0.88,
+      "summary": "Japan won major land and naval victories and secured a favorable settlement; Russia's regime and core sovereignty survived.",
+      "parent_event_id": null,
+      "k_factor": 81.855,
+      "participants": [
+        {
+          "entity_id": "empire_japan",
+          "side": "japan",
+          "result_class": "major_strategic_victory",
+          "utility": 0.827,
+          "actual": 0.782,
+          "expected": 0.493,
+          "delta": 18.496,
+          "importance": 2.145,
+          "termination": "victory_and_favorable_treaty"
+        },
+        {
+          "entity_id": "russian_empire",
+          "side": "russia",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.264,
+          "actual": 0.218,
+          "expected": 0.507,
+          "delta": -18.496,
+          "importance": 1.393,
+          "termination": "defeat_and_unfavorable_treaty"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Russo-Japanese War",
+          "url": "https://www.britannica.com/event/Russo-Japanese-War"
+        }
+      ]
+    },
+    {
+      "id": "battle_tannenberg_1914",
+      "name": "Battle of Tannenberg",
+      "year": 1914,
+      "end_year": 1914,
+      "type": "engagement",
+      "war_type": "world_war",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.22,
+      "cluster_id": "first_world_war",
+      "confidence": 0.94,
+      "decisiveness": 0.98,
+      "summary": "German forces encircled and destroyed much of the Russian Second Army, a decisive tactical victory within a war Germany ultimately lost.",
+      "parent_event_id": "first_world_war",
+      "k_factor": 31.831,
+      "participants": [
+        {
+          "entity_id": "german_empire",
+          "side": "germany",
+          "result_class": "major_tactical_victory",
+          "utility": 0.929,
+          "actual": 0.937,
+          "expected": 0.5,
+          "delta": 11.612,
+          "importance": 1.322,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "russian_empire",
+          "side": "russia",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.056,
+          "actual": 0.063,
+          "expected": 0.5,
+          "delta": -11.612,
+          "importance": 1.26,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Battle of Tannenberg",
+          "url": "https://www.britannica.com/event/Battle-of-Tannenberg-World-War-I-1914"
+        }
+      ]
+    },
+    {
+      "id": "first_world_war",
+      "name": "First World War",
+      "year": 1914,
+      "end_year": 1918,
+      "type": "war",
+      "war_type": "world_war",
+      "scale": "total_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 1.0,
+      "cluster_id": "first_world_war",
+      "confidence": 0.96,
+      "decisiveness": 0.96,
+      "summary": "The German Empire was defeated, lost territory, and ceased as an imperial regime. This demonstration records Britain and the late-entering United States but does not pretend to represent the entire Allied coalition.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "german_empire",
+          "side": "central_powers",
+          "result_class": "existential_defeat",
+          "utility": 0.105,
+          "actual": 0.164,
+          "expected": 0.478,
+          "delta": -27.739,
+          "importance": 3.0,
+          "termination": "armistice_defeat_and_regime_ceased"
+        },
+        {
+          "entity_id": "united_kingdom",
+          "side": "allies",
+          "result_class": "major_strategic_victory",
+          "utility": 0.777,
+          "actual": 0.836,
+          "expected": 0.52,
+          "delta": 25.001,
+          "importance": 2.75,
+          "termination": "coalition_victory"
+        },
+        {
+          "entity_id": "united_states",
+          "side": "allies",
+          "result_class": "major_strategic_victory",
+          "utility": 0.772,
+          "actual": 0.833,
+          "expected": 0.533,
+          "delta": 2.738,
+          "importance": 1.414,
+          "termination": "coalition_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "First World War",
+          "url": "https://www.iwm.org.uk/history/first-world-war"
+        }
+      ]
+    },
+    {
+      "id": "battle_midway_1942",
+      "name": "Battle of Midway",
+      "year": 1942,
+      "end_year": 1942,
+      "type": "engagement",
+      "war_type": "world_war",
+      "scale": "battle",
+      "stakes": "major",
+      "domain": "naval_air",
+      "geographic_scope": 0.28,
+      "cluster_id": "pacific_war",
+      "confidence": 0.98,
+      "decisiveness": 0.94,
+      "summary": "A decisive U.S. carrier victory that halted the Japanese attempt to seize Midway and changed the naval balance, without by itself ending the war.",
+      "parent_event_id": "pacific_war_1941_1945",
+      "k_factor": 32.302,
+      "participants": [
+        {
+          "entity_id": "united_states",
+          "side": "united_states",
+          "result_class": "major_tactical_victory",
+          "utility": 0.924,
+          "actual": 0.93,
+          "expected": 0.5,
+          "delta": 13.434,
+          "importance": 1.545,
+          "termination": "engagement_victory"
+        },
+        {
+          "entity_id": "empire_japan",
+          "side": "japan",
+          "result_class": "major_tactical_defeat",
+          "utility": 0.064,
+          "actual": 0.07,
+          "expected": 0.5,
+          "delta": -13.434,
+          "importance": 1.51,
+          "termination": "engagement_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Battle of Midway",
+          "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1942/midway.html"
+        }
+      ]
+    },
+    {
+      "id": "eastern_front_1941_1945",
+      "name": "German-Soviet War and Eastern Front Campaign",
+      "year": 1941,
+      "end_year": 1945,
+      "type": "campaign",
+      "war_type": "world_war",
+      "scale": "theater",
+      "stakes": "existential",
+      "domain": "land",
+      "geographic_scope": 0.72,
+      "cluster_id": "second_world_war_europe",
+      "confidence": 0.97,
+      "decisiveness": 1.0,
+      "summary": "Germany failed to defeat the Soviet Union and was driven back to Berlin; this operational record is separate from the final strategic surrender record.",
+      "parent_event_id": "second_world_war_europe",
+      "k_factor": 84.377,
+      "participants": [
+        {
+          "entity_id": "nazi_germany",
+          "side": "axis",
+          "result_class": "major_operational_defeat",
+          "utility": 0.065,
+          "actual": 0.106,
+          "expected": 0.5,
+          "delta": -36.731,
+          "importance": 2.832,
+          "termination": "campaign_defeat"
+        },
+        {
+          "entity_id": "soviet_union",
+          "side": "soviet",
+          "result_class": "major_operational_victory",
+          "utility": 0.853,
+          "actual": 0.894,
+          "expected": 0.5,
+          "delta": 36.731,
+          "importance": 2.832,
+          "termination": "campaign_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Operation Barbarossa",
+          "url": "https://www.britannica.com/event/Operation-Barbarossa"
+        },
+        {
+          "title": "World War II in Europe",
+          "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-in-europe"
+        }
+      ]
+    },
+    {
+      "id": "pacific_war_1941_1945",
+      "name": "Pacific War",
+      "year": 1941,
+      "end_year": 1945,
+      "type": "war",
+      "war_type": "world_war",
+      "scale": "total_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 0.9,
+      "cluster_id": "pacific_war",
+      "confidence": 0.98,
+      "decisiveness": 1.0,
+      "summary": "Imperial Japan surrendered unconditionally, lost its conquests, was occupied, and its prewar imperial political-military order ended; the Japanese nation itself continued.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "empire_japan",
+          "side": "japan",
+          "result_class": "existential_defeat",
+          "utility": 0.045,
+          "actual": 0.056,
+          "expected": 0.485,
+          "delta": -36.643,
+          "importance": 2.94,
+          "termination": "unconditional_surrender_and_occupation"
+        },
+        {
+          "entity_id": "united_states",
+          "side": "allies",
+          "result_class": "existential_victory",
+          "utility": 0.95,
+          "actual": 0.953,
+          "expected": 0.51,
+          "delta": 28.216,
+          "importance": 2.368,
+          "termination": "unconditional_victory"
+        },
+        {
+          "entity_id": "united_kingdom",
+          "side": "allies",
+          "result_class": "major_strategic_victory",
+          "utility": 0.882,
+          "actual": 0.918,
+          "expected": 0.53,
+          "delta": 8.427,
+          "importance": 2.223,
+          "termination": "unconditional_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Pacific Strategy, 1941-1944",
+          "url": "https://www.nationalww2museum.org/war/articles/pacific-strategy-1941-1944"
+        }
+      ]
+    },
+    {
+      "id": "second_world_war_europe",
+      "name": "Second World War in Europe",
+      "year": 1939,
+      "end_year": 1945,
+      "type": "war",
+      "war_type": "world_war",
+      "scale": "total_war",
+      "stakes": "existential",
+      "domain": "mixed",
+      "geographic_scope": 1.0,
+      "cluster_id": "second_world_war_europe",
+      "confidence": 0.98,
+      "decisiveness": 1.0,
+      "summary": "Nazi Germany suffered unconditional military defeat, occupation, regime destruction, and territorial loss. It is therefore a terminal defeat, unlike an expeditionary withdrawal such as the United States in Vietnam.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "nazi_germany",
+          "side": "axis",
+          "result_class": "existential_defeat",
+          "utility": 0.014,
+          "actual": 0.054,
+          "expected": 0.455,
+          "delta": -37.18,
+          "importance": 3.0,
+          "termination": "unconditional_surrender_occupation_and_regime_destroyed"
+        },
+        {
+          "entity_id": "united_kingdom",
+          "side": "allies",
+          "result_class": "existential_victory",
+          "utility": 0.907,
+          "actual": 0.947,
+          "expected": 0.568,
+          "delta": 10.791,
+          "importance": 2.938,
+          "termination": "unconditional_victory"
+        },
+        {
+          "entity_id": "soviet_union",
+          "side": "allies",
+          "result_class": "existential_victory",
+          "utility": 0.883,
+          "actual": 0.935,
+          "expected": 0.5,
+          "delta": 16.044,
+          "importance": 3.0,
+          "termination": "unconditional_victory"
+        },
+        {
+          "entity_id": "united_states",
+          "side": "allies",
+          "result_class": "existential_victory",
+          "utility": 0.932,
+          "actual": 0.959,
+          "expected": 0.577,
+          "delta": 10.345,
+          "importance": 2.401,
+          "termination": "unconditional_victory"
+        }
+      ],
+      "sources": [
+        {
+          "title": "World War II in Europe",
+          "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-in-europe"
+        }
+      ]
+    },
+    {
+      "id": "chosin_reservoir_campaign_1950",
+      "name": "Chosin Reservoir Campaign",
+      "year": 1950,
+      "end_year": 1950,
+      "type": "campaign",
+      "war_type": "interstate_limited",
+      "scale": "campaign",
+      "stakes": "major",
+      "domain": "land",
+      "geographic_scope": 0.25,
+      "cluster_id": "korean_war",
+      "confidence": 0.9,
+      "decisiveness": 0.58,
+      "summary": "China forced a UN withdrawal from northeastern Korea, while U.S.-led forces preserved much of their combat power and completed an organized evacuation; the multidimensional record is intentionally mixed.",
+      "parent_event_id": null,
+      "k_factor": 41.212,
+      "participants": [
+        {
+          "entity_id": "peoples_republic_china",
+          "side": "china",
+          "result_class": "limited_operational_victory",
+          "utility": 0.684,
+          "actual": 0.632,
+          "expected": 0.5,
+          "delta": 4.147,
+          "importance": 1.617,
+          "termination": "campaign_objective_achieved_with_heavy_cost"
+        },
+        {
+          "entity_id": "united_states",
+          "side": "un_coalition",
+          "result_class": "limited_operational_defeat",
+          "utility": 0.419,
+          "actual": 0.368,
+          "expected": 0.5,
+          "delta": -4.147,
+          "importance": 1.143,
+          "termination": "organized_withdrawal_and_evacuation"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Chinese Intervention: Korea, 1950",
+          "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/K%20Pdf/CMH_Pub_19-8.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tet_offensive_1968",
+      "name": "Tet Offensive",
+      "year": 1968,
+      "end_year": 1968,
+      "type": "campaign",
+      "war_type": "insurgency_intervention",
+      "scale": "theater",
+      "stakes": "major",
+      "domain": "mixed_irregular",
+      "geographic_scope": 0.45,
+      "cluster_id": "vietnam_war",
+      "confidence": 0.92,
+      "decisiveness": 0.66,
+      "summary": "U.S. and South Vietnamese forces defeated the attacks militarily and inflicted heavy losses, while Tet had wider political-strategic effects represented by the separate war layer rather than reversing this operational coding.",
+      "parent_event_id": "vietnam_war",
+      "k_factor": 51.775,
+      "participants": [
+        {
+          "entity_id": "united_states",
+          "side": "south_and_allies",
+          "result_class": "limited_operational_victory",
+          "utility": 0.752,
+          "actual": 0.692,
+          "expected": 0.494,
+          "delta": 2.155,
+          "importance": 1.103,
+          "termination": "campaign_objectives_defended"
+        },
+        {
+          "entity_id": "south_vietnam",
+          "side": "south_and_allies",
+          "result_class": "limited_operational_victory",
+          "utility": 0.649,
+          "actual": 0.64,
+          "expected": 0.5,
+          "delta": 5.33,
+          "importance": 2.445,
+          "termination": "campaign_objectives_defended"
+        },
+        {
+          "entity_id": "north_vietnam",
+          "side": "north_and_allies",
+          "result_class": "limited_operational_defeat",
+          "utility": 0.369,
+          "actual": 0.344,
+          "expected": 0.502,
+          "delta": -7.485,
+          "importance": 1.953,
+          "termination": "campaign_military_defeat"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Turning Point, 1967-1968",
+          "url": "https://history.army.mil/Publications/Publications-Catalog/Turning-Point/"
+        },
+        {
+          "title": "The Paris Peace Accords and the end of the Vietnam War, 1969-1975",
+          "url": "https://history.state.gov/milestones/1969-1976/ending-vietnam"
+        }
+      ]
+    },
+    {
+      "id": "vietnam_war",
+      "name": "Vietnam War",
+      "year": 1955,
+      "end_year": 1975,
+      "type": "war",
+      "war_type": "insurgency_intervention",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "mixed_irregular",
+      "geographic_scope": 0.62,
+      "cluster_id": "vietnam_war",
+      "confidence": 0.94,
+      "decisiveness": 0.98,
+      "summary": "Participant-specific outcomes prevent false equivalence: the United States failed its intervention and withdrew without losing homeland sovereignty; South Vietnam ceased to exist; North Vietnam achieved decisive reunification.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "united_states",
+          "side": "south_and_allies",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.365,
+          "actual": 0.209,
+          "expected": 0.591,
+          "delta": -6.78,
+          "importance": 1.385,
+          "termination": "withdrawal_after_failed_intervention"
+        },
+        {
+          "entity_id": "south_vietnam",
+          "side": "south_and_allies",
+          "result_class": "existential_defeat",
+          "utility": 0.025,
+          "actual": 0.039,
+          "expected": 0.5,
+          "delta": -35.811,
+          "importance": 2.772,
+          "termination": "capitulation_and_state_ceased"
+        },
+        {
+          "entity_id": "north_vietnam",
+          "side": "north_and_allies",
+          "result_class": "existential_victory",
+          "utility": 0.948,
+          "actual": 0.92,
+          "expected": 0.478,
+          "delta": 42.591,
+          "importance": 2.772,
+          "termination": "decisive_victory_and_reunification"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Paris Peace Accords and the end of the Vietnam War, 1969-1975",
+          "url": "https://history.state.gov/milestones/1969-1976/ending-vietnam"
+        }
+      ]
+    },
+    {
+      "id": "taliban_offensive_2021",
+      "name": "Taliban Offensive of 2021",
+      "year": 2021,
+      "end_year": 2021,
+      "type": "campaign",
+      "war_type": "insurgency_intervention",
+      "scale": "theater",
+      "stakes": "existential",
+      "domain": "land_irregular",
+      "geographic_scope": 0.48,
+      "cluster_id": "afghanistan_2001_2021",
+      "confidence": 0.96,
+      "decisiveness": 1.0,
+      "summary": "The Taliban rapidly seized national control and Kabul as Afghan state forces disintegrated; the United States evacuated while acting as a withdrawing supporting participant.",
+      "parent_event_id": "afghanistan_war_2001_2021",
+      "k_factor": 79.873,
+      "participants": [
+        {
+          "entity_id": "taliban",
+          "side": "taliban",
+          "result_class": "major_operational_victory",
+          "utility": 0.945,
+          "actual": 0.946,
+          "expected": 0.5,
+          "delta": 38.372,
+          "importance": 2.688,
+          "termination": "campaign_victory_and_capital_seized"
+        },
+        {
+          "entity_id": "islamic_republic_afghanistan",
+          "side": "republic_and_allies",
+          "result_class": "major_operational_defeat",
+          "utility": 0.036,
+          "actual": 0.045,
+          "expected": 0.5,
+          "delta": -36.826,
+          "importance": 2.688,
+          "termination": "campaign_defeat_and_state_collapsed"
+        },
+        {
+          "entity_id": "united_states",
+          "side": "republic_and_allies",
+          "result_class": "major_operational_defeat",
+          "utility": 0.237,
+          "actual": 0.146,
+          "expected": 0.497,
+          "delta": -1.546,
+          "importance": 0.86,
+          "termination": "withdrawal_and_evacuation"
+        }
+      ],
+      "sources": [
+        {
+          "title": "What We Need to Learn: Lessons from Twenty Years of Afghanistan Reconstruction",
+          "url": "https://www.sigar.mil/Reports/Article-Display/Article/4000123/what-we-need-to-learn-lessons-from-twenty-years-of-afghanistan-reconstruction/"
+        },
+        {
+          "title": "Afghanistan: Background and U.S. Policy",
+          "url": "https://crsreports.congress.gov/product/pdf/R/R45122"
+        }
+      ]
+    },
+    {
+      "id": "afghanistan_war_2001_2021",
+      "name": "War in Afghanistan",
+      "year": 2001,
+      "end_year": 2021,
+      "type": "war",
+      "war_type": "insurgency_intervention",
+      "scale": "major_war",
+      "stakes": "existential",
+      "domain": "mixed_irregular",
+      "geographic_scope": 0.62,
+      "cluster_id": "afghanistan_2001_2021",
+      "confidence": 0.94,
+      "decisiveness": 0.96,
+      "summary": "The United States withdrew after failing to create a durable outcome, the Afghan Republic collapsed, and the Taliban returned to national power; participant consequences are scored separately.",
+      "parent_event_id": null,
+      "k_factor": 96.0,
+      "participants": [
+        {
+          "entity_id": "united_states",
+          "side": "republic_and_allies",
+          "result_class": "major_strategic_defeat",
+          "utility": 0.345,
+          "actual": 0.205,
+          "expected": 0.582,
+          "delta": -6.613,
+          "importance": 1.249,
+          "termination": "withdrawal_after_failed_intervention"
+        },
+        {
+          "entity_id": "islamic_republic_afghanistan",
+          "side": "republic_and_allies",
+          "result_class": "existential_defeat",
+          "utility": 0.025,
+          "actual": 0.045,
+          "expected": 0.5,
+          "delta": -34.801,
+          "importance": 2.772,
+          "termination": "state_collapsed_and_ceased"
+        },
+        {
+          "entity_id": "taliban",
+          "side": "taliban",
+          "result_class": "existential_victory",
+          "utility": 0.934,
+          "actual": 0.914,
+          "expected": 0.479,
+          "delta": 41.413,
+          "importance": 2.772,
+          "termination": "decisive_victory_and_return_to_power"
+        }
+      ],
+      "sources": [
+        {
+          "title": "What We Need to Learn: Lessons from Twenty Years of Afghanistan Reconstruction",
+          "url": "https://www.sigar.mil/Reports/Article-Display/Article/4000123/what-we-need-to-learn-lessons-from-twenty-years-of-afghanistan-reconstruction/"
+        },
+        {
+          "title": "Afghanistan: Background and U.S. Policy",
+          "url": "https://crsreports.congress.gov/product/pdf/R/R45122"
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "united_states": {
+      "median": 1527.769,
+      "p10": 1527.38,
+      "p90": 1528.192,
+      "median_rank": 1.0,
+      "top_10_probability": 1.0
+    },
+    "united_kingdom": {
+      "median": 1532.135,
+      "p10": 1531.666,
+      "p90": 1532.594,
+      "median_rank": 2.0,
+      "top_10_probability": 1.0
+    },
+    "roman_republic": {
+      "median": 1521.315,
+      "p10": 1521.039,
+      "p90": 1521.587,
+      "median_rank": 3.0,
+      "top_10_probability": 1.0
+    },
+    "ottoman_empire": {
+      "median": 1519.291,
+      "p10": 1519.11,
+      "p90": 1519.459,
+      "median_rank": 4.0,
+      "top_10_probability": 1.0
+    },
+    "sparta": {
+      "median": 1511.385,
+      "p10": 1511.033,
+      "p90": 1511.753,
+      "median_rank": 5.0,
+      "top_10_probability": 1.0
+    },
+    "taliban": {
+      "median": 1509.947,
+      "p10": 1509.891,
+      "p90": 1510.001,
+      "median_rank": 6.0,
+      "top_10_probability": 1.0
+    },
+    "macedonian_empire": {
+      "median": 1507.516,
+      "p10": 1507.39,
+      "p90": 1507.626,
+      "median_rank": 7.0,
+      "top_10_probability": 1.0
+    },
+    "soviet_union": {
+      "median": 1505.23,
+      "p10": 1505.2,
+      "p90": 1505.26,
+      "median_rank": 8.0,
+      "top_10_probability": 0.999
+    },
+    "dutch_republic": {
+      "median": 1503.638,
+      "p10": 1503.495,
+      "p90": 1503.811,
+      "median_rank": 9.0,
+      "top_10_probability": 1.0
+    },
+    "rashidun_caliphate": {
+      "median": 1506.868,
+      "p10": 1506.72,
+      "p90": 1506.991,
+      "median_rank": 10.0,
+      "top_10_probability": 1.0
+    },
+    "north_vietnam": {
+      "median": 1507.31,
+      "p10": 1507.25,
+      "p90": 1507.365,
+      "median_rank": 11.0,
+      "top_10_probability": 0.0
+    },
+    "russian_empire": {
+      "median": 1493.436,
+      "p10": 1493.068,
+      "p90": 1493.834,
+      "median_rank": 14.0,
+      "top_10_probability": 0.0
+    },
+    "mamluk_sultanate": {
+      "median": 1500.271,
+      "p10": 1500.257,
+      "p90": 1500.282,
+      "median_rank": 13.0,
+      "top_10_probability": 0.0
+    },
+    "hittite_empire": {
+      "median": 1500.019,
+      "p10": 1500.004,
+      "p90": 1500.033,
+      "median_rank": 14.0,
+      "top_10_probability": 0.0
+    },
+    "byzantine_empire": {
+      "median": 1490.75,
+      "p10": 1490.358,
+      "p90": 1491.146,
+      "median_rank": 15.0,
+      "top_10_probability": 0.001
+    },
+    "safavid_empire": {
+      "median": 1501.1,
+      "p10": 1501.029,
+      "p90": 1501.172,
+      "median_rank": 16.0,
+      "top_10_probability": 0.0
+    },
+    "empire_japan": {
+      "median": 1492.818,
+      "p10": 1492.68,
+      "p90": 1492.944,
+      "median_rank": 17.0,
+      "top_10_probability": 0.0
+    },
+    "peoples_republic_china": {
+      "median": 1500.261,
+      "p10": 1500.246,
+      "p90": 1500.273,
+      "median_rank": 18.0,
+      "top_10_probability": 0.0
+    },
+    "frankish_kingdom": {
+      "median": 1500.163,
+      "p10": 1500.151,
+      "p90": 1500.176,
+      "median_rank": 19.0,
+      "top_10_probability": 0.0
+    },
+    "umayyad_caliphate": {
+      "median": 1498.753,
+      "p10": 1498.709,
+      "p90": 1498.798,
+      "median_rank": 20.0,
+      "top_10_probability": 0.0
+    },
+    "roman_empire": {
+      "median": 1498.981,
+      "p10": 1498.954,
+      "p90": 1499.008,
+      "median_rank": 21.0,
+      "top_10_probability": 0.0
+    },
+    "german_empire": {
+      "median": 1495.384,
+      "p10": 1495.298,
+      "p90": 1495.471,
+      "median_rank": 22.0,
+      "top_10_probability": 0.0
+    },
+    "mughal_empire": {
+      "median": 1498.444,
+      "p10": 1498.371,
+      "p90": 1498.516,
+      "median_rank": 23.0,
+      "top_10_probability": 0.0
+    },
+    "egypt_new_kingdom": {
+      "median": 1499.981,
+      "p10": 1499.967,
+      "p90": 1499.996,
+      "median_rank": 24.0,
+      "top_10_probability": 0.0
+    },
+    "mongol_empire": {
+      "median": 1499.729,
+      "p10": 1499.718,
+      "p90": 1499.743,
+      "median_rank": 25.0,
+      "top_10_probability": 0.0
+    },
+    "athens": {
+      "median": 1493.842,
+      "p10": 1493.482,
+      "p90": 1494.203,
+      "median_rank": 26.0,
+      "top_10_probability": 0.0
+    },
+    "south_vietnam": {
+      "median": 1493.795,
+      "p10": 1493.758,
+      "p90": 1493.833,
+      "median_rank": 27.0,
+      "top_10_probability": 0.0
+    },
+    "kingdom_france": {
+      "median": 1497.401,
+      "p10": 1497.29,
+      "p90": 1497.514,
+      "median_rank": 28.0,
+      "top_10_probability": 0.0
+    },
+    "sasanian_empire": {
+      "median": 1480.053,
+      "p10": 1479.583,
+      "p90": 1480.511,
+      "median_rank": 29.0,
+      "top_10_probability": 0.0
+    },
+    "spanish_empire": {
+      "median": 1496.362,
+      "p10": 1496.189,
+      "p90": 1496.505,
+      "median_rank": 30.0,
+      "top_10_probability": 0.0
+    },
+    "nazi_germany": {
+      "median": 1490.902,
+      "p10": 1490.856,
+      "p90": 1490.948,
+      "median_rank": 31.0,
+      "top_10_probability": 0.0
+    },
+    "first_french_empire": {
+      "median": 1492.695,
+      "p10": 1492.609,
+      "p90": 1492.777,
+      "median_rank": 32.0,
+      "top_10_probability": 0.0
+    },
+    "islamic_republic_afghanistan": {
+      "median": 1491.358,
+      "p10": 1491.323,
+      "p90": 1491.397,
+      "median_rank": 33.0,
+      "top_10_probability": 0.0
+    },
+    "carthage": {
+      "median": 1478.685,
+      "p10": 1478.413,
+      "p90": 1478.961,
+      "median_rank": 34.0,
+      "top_10_probability": 0.0
+    },
+    "achaemenid_empire": {
+      "median": 1479.378,
+      "p10": 1479.052,
+      "p90": 1479.707,
+      "median_rank": 35.0,
+      "top_10_probability": 0.0
+    }
+  }
+}
