@@ -1,0 +1,476 @@
+# Data sources and ingestion policy
+
+Last verified: 2026-07-13.
+
+This document records the datasets evaluated for the Military History Elo
+system, what each source can establish, and what it cannot. The central rule is
+that an extracted record is a candidate assertion, not an automatically rated
+event. Entity identity, sides, participation roles, event scope, and outcomes
+must be adjudicated before a record can move from `data/review` into the rated
+dataset.
+
+No known dataset contains every polity or military encounter in history.
+Ancient, non-literate, non-European, defeated, small, and short-lived societies
+are systematically under-recorded. Coverage and evidence confidence therefore
+belong beside every rating.
+
+## What counts as evidence of a win
+
+The system separates three different questions:
+
+- **Tactical:** who controlled the battlefield, achieved the immediate mission,
+  preserved forces, or gained position in an engagement?
+- **Operational:** who achieved the campaign objective, controlled the theater,
+  sustained logistics, and retained initiative?
+- **Strategic:** who achieved the political objective, changed territory,
+  preserved sovereignty, obtained a durable settlement, and preserved usable
+  military force?
+
+A battle winner is not automatically the winner of its campaign or war. Deaths,
+force size, duration, intensity, or the fact that an actor initiated an attack do
+not by themselves identify a winner. A peace agreement, withdrawal, ceasefire,
+government overthrow, unconditional capitulation, occupation, annexation, and
+an actor merely falling below a fatality threshold are also different outcomes.
+
+| Source | Contains a purported winner? | What it means | Direct rating input? |
+|---|---|---|---|
+| HCED | Usually | Encounter-level `Winner` and `Loser` labels | No. Treat as a tactical proposal pending entity, side, scope, and confidence review. |
+| IWBD | Yes | Tactical victor under a strategic-objective standard; also attacker/defender and war-side role | No. Strong tactical evidence, but it does not establish the enclosing war's strategic outcome. |
+| UCDP conflict/dyadic/GED/deaths | No | Actors, conflict type, intensity, events, and deaths | No. Intensity and fatalities are not victory labels. |
+| UCDP Conflict Termination | Yes, for terminated episodes | Peace, ceasefire, government-side victory, non-state-side victory, low activity, or actor cessation | No automatic rating. It is strong strategic evidence but is episode-level and may not describe every supporter or coalition participant. |
+| Wikidata | Sometimes through `winner` (P1346) | A community-maintained sourced statement | No. Preserve statement references and qualifiers and verify against scholarly sources. |
+| Cliopatria | No | Polity identity, time, relationships, and geography | Identity evidence only. |
+| Pleiades / GeoNames | No | Place identity, aliases, and coordinates | Location evidence only. |
+| COW war data | Yes | Participant-level coded war outcome and battle deaths | Permission-gated and still requires scope/participant review. |
+| MIE | No general winner field | Directed military action, hostility, and fatality ranges | No. The codebook explicitly warns that an attacker may lose an attack. |
+| ACLED | No | Political-violence event type, actors, location, and reported fatalities | No, and its terms make this project an unsuitable use without written authorization. |
+| PA-X | No simple winner | Terms and provisions in peace agreements | Settlement evidence only and permission/reuse restricted. |
+| DBpedia | Sometimes an extracted value | Automatically extracted Wikipedia assertions | Discovery only; lower priority than Wikidata. |
+| Brecke Conflict Catalog | Not systematically | Participants, initiator where possible, dates, location, and fatalities | Gap discovery only; unfinished and no explicit reusable license. |
+
+## Open core sources
+
+### Historical Conflict Event Dataset (HCED)
+
+**Purpose:** the principal deep-history encounter inventory.
+
+- Dataset record and DOI:
+  <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6ZFC0V>
+- Current data file:
+  <https://dataverse.harvard.edu/api/access/datafile/13390255>
+- HCED-to-Seshat crosswalk:
+  <https://dataverse.harvard.edu/api/access/datafile/11018172?format=original>
+- Dataverse metadata API, including current license:
+  <https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/6ZFC0V>
+- Peer-reviewed article:
+  <https://doi.org/10.1177/00220027221119085>
+- Current repository version: Dataverse 5.0, updated 2026-01-21. The
+  principal file is labelled `HCED Data v3.csv`.
+- Coverage: 8,881 encounters from 1468 BCE through 2003 CE.
+- License: CC0 1.0.
+- Publisher MD5 for the current CSV:
+  `80f4e0631ed866a1ce4f59bc376783cb`.
+- Workspace snapshot SHA-256:
+  `92a22e49c20d02a1d7ecf3fbdbb5e3ca94b7327b7620ee79dd01909857805b79`.
+
+Useful fields include `ID`, `Battle`, `Year`, modern `Country`, latitude,
+longitude, `War`, `Participants`, `Winner`, `Loser`, `Participant 1`,
+`Participant 2`, `Lehmann Zhukov Scale`, `Theatre`, `Massacre`, inferred
+scale, and alternative sources consulted.
+
+In this system HCED creates engagement candidates. Its winner and loser are
+tactical proposals only. `Country` describes the modern geographic location,
+not a historical participant polity. HCED has no consistently usable
+participant-level casualty field, so its scale must not be interpreted as a
+casualty ratio or decisiveness score.
+
+#### Verified live HCED profile
+
+The snapshot downloaded on 2026-07-13 was parsed locally:
+
+- 17,762 physical data rows: 8,881 rows with an `ID` and 8,881 placeholder
+  rows without one.
+- 8,881 encounter records but only 8,878 unique `ID` values; three IDs are
+  duplicated.
+- 8,853 records have a nonblank winner and 8,606 have a nonblank loser.
+- 4,883 have a directly coded Lehmann-Zhukov scale and 870 have an inferred
+  scale value.
+- 184 records contain a year range, such as `1825-1826`, rather than one
+  integer year.
+- The single-year values span `-1468` through `2003`.
+- There are 11 raw theatre strings, including whitespace and spelling variants
+  that normalize to a smaller set such as land, sea, air, and combinations.
+- Participant strings are serialized lists and can contain locations, campaigns,
+  demonyms, or other non-polity text.
+
+The crosswalk contains 8,880 rows. A first-side Seshat code is present in 4,693
+rows, a second-side code in 3,811, and both sides are mapped in only 2,122.
+These mappings are useful seeds, not approved identities. The current
+Cliopatria release can connect many Seshat IDs onward to Wikidata IDs.
+
+The staging code correctly drops rows without an ID, parses year ranges into
+low/best/high candidates, marks duplicate IDs, preserves raw strings, and sets
+`do_not_rate_automatically`.
+
+### Interstate War Battle Dataset (IWBD)
+
+**Purpose:** high-quality validation of interstate battle dates, opposing sides,
+and tactical outcomes.
+
+- Dataset record and DOI:
+  <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KLQFAP>
+- Data:
+  <https://dataverse.harvard.edu/api/access/datafile/4435240?format=original>
+- Codebook:
+  <https://dataverse.harvard.edu/api/access/datafile/4435241>
+- Metadata API and license:
+  <https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/KLQFAP>
+- Peer-reviewed article:
+  <https://doi.org/10.1177/0022343320913305>
+- Version: 1.0.
+- Coverage: 1,708 battles in 97 interstate wars, 1823-2003.
+- License: CC0 1.0.
+- Publisher MD5 for the data file:
+  `3bdf22d6f8e58621abd6b3601806f642`.
+- Workspace snapshot SHA-256:
+  `fcf5747cf94b50de9b74c41da078444d05bc7992bf6949f0a71107407d52b534`.
+
+Fields are `cowNum`, `iwdNum`, `warName`, `battleName`, `attacker`,
+`defender`, start and end components/dates, `battleLength`, `victor`,
+`victorWarLevel`, and `victorBattleLevel`.
+
+The victor is coded by tactical control of the attacker's strategic objective:
+the attacker wins by taking it, the defender wins by retaining it, and cases
+without a clear result are inconclusive. This is strong tactical evidence. It
+does not describe casualties, the magnitude of a result, political goals, or
+the final settlement of the enclosing war.
+
+#### Verified live IWBD profile
+
+- 1,708 rows.
+- 1,145 attacker victories, 489 defender victories, and 74 inconclusive
+  battles.
+- 96 distinct `cowNum` values. `cowNum=-9` contains two separately named
+  wars, producing the published total of 97 wars.
+- 116 distinct `warName` strings because the world wars are divided into
+  theater labels such as Eastern Front, Western Front, Pacific, and War at Sea.
+- Campaigns and constituent battles may both appear. The event hierarchy and
+  `parent_event_id` must prevent double-counting.
+
+### Uppsala Conflict Data Program (UCDP)
+
+**Purpose:** the principal modern source for conflicts, dyads, actors, violence
+events, deaths, goals, and conflict termination.
+
+- Download center: <https://ucdp.uu.se/downloads/>
+- API documentation: <https://ucdp.uu.se/apidocs/>
+- License for all current downloads: CC BY 4.0.
+- Current annual version: 26.1.
+- Static files can be downloaded without an API token. The API requires a token
+  sent as `x-ucdp-access-token` and currently permits 5,000 requests per day.
+
+#### Files used or recommended
+
+| Dataset | Exact access URL | Coverage/use |
+|---|---|---|
+| UCDP/PRIO Armed Conflict v26.1 | <https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261-csv.zip> | Conflict-year, 1946-2025; at least one side is a state government. |
+| Dyadic v26.1 | <https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-261-csv.zip> | Opposing actor pair-year, 1946-2025. |
+| Actor v26.1 | <https://ucdp.uu.se/downloads/actor/ucdp-actor-261-csv.zip> | Actor identifiers, full and alternate names, origins, alliances, splits, conflicts, and dyads. |
+| GED v26.1 | <https://ucdp.uu.se/downloads/ged/ged261-csv.zip> | Georeferenced lethal events, 1989-2025. |
+| Non-State v26.1 | <https://ucdp.uu.se/downloads/nsos/ucdp-nonstate-261-csv.zip> | Conflict-year where neither primary party is a state, 1989-2025. |
+| One-Sided Violence v26.1 | <https://ucdp.uu.se/downloads/nsos/ucdp-onesided-261-csv.zip> | Intentional attacks on civilians by governments or organized groups, 1989-2025. |
+| Battle-Related Deaths, dyadic | <https://ucdp.uu.se/downloads/brd/ucdp-brd-dyadic-261-csv.zip> | Dyad-year fatality estimates. |
+| Battle-Related Deaths, conflict | <https://ucdp.uu.se/downloads/brd/ucdp-brd-conf-261-csv.zip> | Conflict-year fatality estimates. |
+| Conflict Termination v4-2024, conflict | <https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv> | Conflict episodes and termination categories; aligned to UCDP 25.1, not 26.1. |
+| Conflict Termination v4-2024, dyad | <https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv> | Dyad episodes, outcomes, ceasefire dates, and peace-agreement dates; aligned to 25.1. |
+| Conflict Issues v23.2, dyad-year | <https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadyear_232.csv> | Stated rebel goals and incompatibility issues, 1989-2017. |
+| Conflict Issues v23.2, dyad-issue-year | <https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadissueyear_232.csv> | One row per stated issue and dyad-year. |
+| Peace Agreements v22.2 | <https://ucdp.uu.se/downloads/peace/ucdp-peace-agreements-222.xlsx> | Agreements between primary warring parties, 1975-2021; links updated in 2026. |
+
+UCDP GED fields include event/conflict/dyad IDs, violence type, side IDs and
+names, source counts and citations, coordinate/location precision, latitude,
+longitude, country and region, event/date precision, start/end dates,
+`deaths_a`, `deaths_b`, civilian and unknown deaths, and `low`, `best`, and
+`high` estimates. The v26.1 API documentation currently reports 417,968 GED
+events.
+
+GED represents lethal organized-violence events, not necessarily named battles.
+Its violence types are state-based, non-state, and one-sided. One-sided violence
+must never be treated as a competitive match. GED has no winner field.
+
+The annual conflict/dyadic files identify incompatibility, territory, conflict
+type, intensity, secondary supporters, dates, and state/actor IDs. Intensity
+means 25-999 battle-related deaths or at least 1,000 in a calendar year; it does
+not establish victory.
+
+The termination data supplies six strategic categories:
+
+1. Peace agreement.
+2. Ceasefire agreement.
+3. Victory for Side A, the government side in internal conflict.
+4. Victory for Side B, the non-state side in internal conflict.
+5. Low activity below the UCDP threshold.
+6. Actor ceases to exist or becomes a different actor.
+
+These categories do not automatically determine outcomes for secondary
+supporters. For example, an intervening state can withdraw before the primary
+government or rebel side wins or loses. Participant entry/exit dates,
+contribution, objectives, and settlement effects still require review.
+
+#### Verified live UCDP profile
+
+The following counts come from the workspace snapshots retrieved on
+2026-07-13, not estimates:
+
+| Snapshot | Parsed rows | Unique units | Observed years |
+|---|---:|---:|---:|
+| UCDP/PRIO Conflict v26.1 | 2,816 | 303 conflicts | 1946-2025 |
+| Dyadic v26.1 | 3,518 | 697 dyads across 303 conflicts | 1946-2025 |
+| Actor v26.1 | 1,987 physical CSV rows | 1,928 nonblank actor records; 59 fully blank rows | Not an annual panel |
+| Termination conflict v4-2024 | 2,752 | 303 conflicts; 507 terminal episode rows | 1946-2024 in the file |
+| Termination dyad v4-2024 | 3,432 | 684 dyads; 923 terminal episode rows | Intended modern range through 2024 |
+
+Termination conflict outcomes among the 507 terminal rows are: 60 peace
+agreements, 67 ceasefires, 107 government-side victories, 44 non-state-side
+victories, 209 low-activity endings, and 20 actor-cessation endings.
+
+Termination dyad outcomes among 923 terminal rows are: 111 peace agreements,
+101 ceasefires, 150 government-side victories, 73 non-state-side victories, 399
+low-activity endings, 88 actor-cessation endings, and one terminal row with a
+blank outcome.
+
+Verified issues requiring quarantine or validation:
+
+- The termination files correspond to UCDP 25.1, while the current conflict,
+  dyadic, and actor files are 26.1. Join only through version-aware IDs and audit
+  missing/new dyads.
+- The dyadic termination snapshot contains an apparent corrupt source row for
+  dyad `16562` (Central African Republic government-CPC): `year=8` and
+  `d_ep_durcount=-2011`. The current v26.1 dyadic file shows that episode
+  beginning in 2020. Do not silently repair it; quarantine it until confirmed
+  against a corrected publisher release.
+- The Actor archive has 59 completely blank physical rows. Filter them before
+  producing review candidates.
+- The download-center heading presents Battle-Related Deaths as a 1989-2025
+  dataset while its current prose still says 1989-2023. Check the file and
+  codebook for the needed years rather than relying on the heading.
+- UCDP IDs changed in version 17.1. Use the official translation tables when
+  connecting older UCDP releases.
+
+### Cliopatria
+
+**Purpose:** time-bounded identity and geometry for historical polities.
+
+- Current release: v0.2.0, published 2026-05-16.
+- Zenodo: <https://zenodo.org/records/20274630>
+- Direct release archive:
+  <https://zenodo.org/records/20274630/files/Seshat-Global-History-Databank/cliopatria-v0.2.0.zip?download=1>
+- GitHub: <https://github.com/Seshat-Global-History-Databank/cliopatria>
+- Peer-reviewed data description:
+  <https://www.nature.com/articles/s41597-025-04516-9>
+- Coverage: more than 1,800 political entities from 3400 BCE through 2024 CE.
+- License: CC BY 4.0.
+- Release MD5: `6d573d5a07dfcd5a2c6c9933d6401d48`.
+
+The GeoJSON records provide entity name, polygon geometry in EPSG:4326, area,
+`FromYear`, `ToYear`, Wikipedia reference, Seshat ID, membership/components,
+and polity/relation type. Version 0.2.0 adds Wikidata IDs for all polities and
+supra-polity relations such as selected unions, vassalages, and alliances.
+
+Cliopatria seeds the internal `Entity` registry. A new internal entity receives
+a new baseline rating even when it has a predecessor. `predecessors` and
+`continuity_note` are descriptive relationships and never transfer rating.
+
+Cliopatria is not exhaustive. With rare exceptions it omits polities smaller
+than roughly 5,000 square kilometres or shorter than roughly 50 years. Temporal
+sampling is irregular, ancient changes are sparse, and historical boundary
+uncertainty is not numerically encoded. It reflects one reviewed interpretation,
+not a final ruling on succession or identity.
+
+### Wikidata
+
+**Purpose:** open entity IDs, aliases, discovery, cross-source links, and source
+references.
+
+- Data access: <https://www.wikidata.org/wiki/Wikidata:Data_access>
+- Licensing: <https://www.wikidata.org/wiki/Wikidata:Licensing>
+- SPARQL endpoint: <https://query.wikidata.org/sparql>
+- Entity dumps: <https://dumps.wikimedia.org/wikidatawiki/entities/>
+- License: structured data in the main, property, lexeme, and entity-schema
+  namespaces is CC0 1.0. Text in other namespaces is CC BY-SA.
+
+Relevant properties include instance/subclass (`P31`, `P279`), part of (`P361`),
+participant (`P710`), winner (`P1346`), conflict (`P607`), start/end/point in
+time (`P580`, `P582`, `P585`), location (`P276`), and coordinates (`P625`).
+
+Use QIDs as crosswalk identifiers, not as automatic polity boundaries or proof
+of victory. Preserve statement rank, qualifiers, references, and retrieval date.
+Missing `winner` is unknown, not a draw. The public query service is unsuitable
+for extracting the entire graph; use paged, bounded queries or a versioned dump.
+
+### Pleiades and GeoNames
+
+These are location resolvers, not conflict-outcome datasets.
+
+#### Pleiades
+
+- Downloads: <https://pleiades.stoa.org/downloads>
+- Current numbered release listed by the publisher: 4.1, 2025-05-28.
+- Coverage: ancient places, names, locations, connections, time periods, and
+  coordinates.
+- Preferred comprehensive format: daily JSON; quarterly numbered releases are
+  better for reproducible research.
+- License: CC BY 3.0.
+
+#### GeoNames
+
+- Download and service terms: <https://www.geonames.org/export/>
+- Daily worldwide dump: <https://download.geonames.org/export/dump/allCountries.zip>
+- Fields include stable place ID, names and aliases, coordinates, feature code,
+  administrative hierarchy, elevation, and population.
+- License: the publisher describes it as CC-BY and permits commercial use.
+
+Use Pleiades for ancient aliases and GeoNames for modern locations. Neither
+identifies the polity that fought at a place or the winner of an event.
+
+## Restricted, permission-gated, or secondary sources
+
+These sources may be consulted for validation, but their raw data must not enter
+the public distributable corpus under the current policy. See
+[`LICENSING.md`](LICENSING.md).
+
+### Correlates of War (COW)
+
+- Terms: <https://correlatesofwar.org/data-sets/>
+- War data: <https://correlatesofwar.org/data-sets/cow-war/>
+- Militarized Interstate Disputes v5:
+  <https://correlatesofwar.org/data-sets/MIDs/>
+- State System Membership v2024:
+  <https://correlatesofwar.org/data-sets/state-system-membership/>
+- Territorial Change v6:
+  <https://correlatesofwar.org/data-sets/territorial-change/>
+- National Material Capabilities v6:
+  <https://correlatesofwar.org/data-sets/national-material-capabilities/>
+
+COW covers interstate, extra-state, non-state, and intrastate wars generally
+from 1816-2007, with intrastate v5.1 through 2014; MIDs cover 1816-2014;
+state membership extends through December 2024; territorial change covers
+1816-2018; and material capabilities cover 1816-2016.
+
+War records include participant outcomes and battle deaths and are valuable for
+historical validation. Outcome categories remain coarse and do not by themselves
+distinguish limited withdrawal from capitulation, occupation, regime collapse,
+or dissolution. COW prohibits commercial use and third-party distribution
+without written permission, so public use is permission-gated.
+
+### Militarized Interstate Events (MIE)
+
+- Download page and user agreement:
+  <https://internationalconflict.ua.edu/data-download/>
+- Codebook:
+  <https://internationalconflict.ua.edu/wp-content/uploads/2023/07/MIEcodebook.pdf>
+- Coverage: daily interstate events, 1816-2014.
+
+Fields include confrontation/event IDs, COW state codes, dates, side, action,
+hostility level, and minimum/maximum military fatalities for each state. Its
+`war battle` events build on IWBD and add roughly 100 battles. It excludes
+non-state actors and non-COW-system participants. The user agreement prohibits
+commercial use and distribution other than replication, so ingestion is
+permission-gated.
+
+### ACLED
+
+- API documentation: <https://acleddata.com/api-documentation/getting-started>
+- Content usage terms: <https://acleddata.com/contentusage>
+- Attribution policy: <https://acleddata.com/attributionpolicy>
+- Country/time coverage: <https://acleddata.com/methodology/countrytime-period-coverage>
+
+ACLED is a living, weekly modern political-violence dataset with country-specific
+start dates. Fields include event/sub-event type, actors, location, sources,
+reported fatalities, civilian targeting, date and geolocation precision. It has
+no winner field and should not power Elo outcomes. Its current terms prohibit
+creating a competing or functionally substitutive dataset/product and impose
+strict reuse and attribution conditions. Exclude it unless ACLED provides
+specific written authorization for this project.
+
+### PA-X Peace Agreement Database
+
+- Downloads: <https://www.peaceagreements.org/downloads/>
+- Version 10 codebook:
+  <https://www.peaceagreements.org/cms/documents/3956/PA_X_codebook_v10.pdf>
+- Terms:
+  <https://www.peaceagreements.org/cms/documents/8/Terms_of_Use_updated_added_local.pdf>
+- Coverage: 2,257 agreements in more than 170 peace processes, 1990-2025.
+
+PA-X codes more than 225 substantive provision categories and can clarify
+territorial, institutional, military, and power-sharing settlement effects. It
+does not provide a simple military winner. Its terms prohibit commercial use
+and reusing a substantial portion to create a substantially similar database;
+the content is otherwise CC BY-NC-SA 4.0. Use only for bounded manual research
+or after receiving permission.
+
+### DBpedia
+
+- SPARQL access and limits: <https://www.dbpedia.org/resources/sparql/>
+- Monthly Latest Core: <https://www.dbpedia.org/resources/latest-core/>
+- License: <https://www.dbpedia.org/imprint/>
+
+DBpedia automatically extracts Wikipedia infobox and article data. Releases
+from 3.4 onward are dual-licensed CC BY-SA 3.0 and GFDL. The public endpoint
+limits results to 10,000 rows and execution to 120 seconds and may return
+partial data with HTTP 200 rather than an error. Wikidata is cleaner and CC0,
+so DBpedia is excluded from the initial merged corpus and may be used only as a
+separately attributed resolver after a license review.
+
+### Brecke Conflict Catalog
+
+- Project and downloads: <https://brecke.inta.gatech.edu/research/conflict/>
+- Author's notes:
+  <https://brecke.inta.gatech.edu/wp-content/uploads/sites/19/2018/09/Notes-about-Conflict-Catalog.pdf>
+
+The catalog aims to record conflicts since 1400 with at least 32 fatalities and
+has a European extension to 900. It includes participants, initiation where
+possible, dates, locations, and military/total fatalities. The author calls it
+unfinished, expects substantial growth, and warns that errors increase backward
+in time and in poorly documented regions. No explicit data license is stated.
+Do not redistribute or ingest it into the public corpus without permission.
+
+### Broader Seshat data
+
+Seshat warfare, social-complexity, and military-technology variables can provide
+context, but the general Seshat terms are CC BY-NC-SA and may require API
+credentials. They do not supply battle winners. Keep them separate from
+Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
+
+## Required ingestion order
+
+1. **License allowlist:** record the exact URL, version, license, access date,
+   and checksum before parsing. Permission-gated sources remain outside the
+   public raw-data directory.
+2. **Immutable snapshot:** download a versioned raw file and append its metadata
+   to `data/raw/manifest.jsonl`; never overwrite an earlier snapshot.
+3. **Polity registry:** seed time-bounded entities from Cliopatria and Wikidata,
+   then apply the project's historiographic continuity rule. A successor starts
+   at baseline even when linked to a predecessor.
+4. **Candidate staging:** stage HCED, IWBD, and UCDP records into
+   `data/review/*.jsonl` with raw labels, row location, source snapshot, and
+   `do_not_rate_automatically=true`.
+5. **Entity resolution:** resolve aliases to a polity that existed on the event
+   date. Preserve unresolved, coalition, rebel, colonial, and dependency actors
+   rather than forcing them into modern-country IDs.
+6. **Hierarchy and deduplication:** distinguish engagement, campaign, conflict
+   episode, and war; link nested records with `parent_event_id`; do not count a
+   campaign and each constituent battle as independent full-value evidence.
+7. **Outcome adjudication:** build tactical, operational, and strategic vectors
+   separately. Use UCDP goals/termination/agreements and independent historical
+   sources for strategic dimensions. Unknown remains unknown, not a draw.
+8. **Participation review:** code principal, coalition lead, major/supporting
+   ally, expeditionary force, or proxy sponsor and the actor's entry/exit dates
+   and contribution. Do not assign an entire coalition's outcome equally to
+   every participant.
+9. **Confidence and audit:** retain conflicting assertions, date/location
+   precision, casualty ranges, and confidence. Only reviewed, fully sourced
+   events may receive `status=complete` and enter the engine.
+10. **Restricted validation:** use COW, MIE, PA-X, ACLED, DBpedia, Brecke, or
+    broader Seshat data only within the limits in `LICENSING.md` and never copy
+    their raw records into a public release without the required permission.
