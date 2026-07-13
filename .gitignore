@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 build/
+.local-handoff/
 
 # Reproducible source downloads and machine-generated review queues.
 data/raw/*
