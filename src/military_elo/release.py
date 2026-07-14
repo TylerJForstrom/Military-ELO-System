@@ -146,9 +146,9 @@ IWD_COW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
 # Explicit, time-bounded identity policies for bare HCED side labels that lack
 # Seshat coding. A policy label is authoritative: outside its windows the side
 # stays staged instead of falling through to alias matching. Deliberate gaps
-# (France 1793-1803 and 1816-1957, Russia pre-1721 and 1918-1921, Persia
-# -329..223 and post-1736) keep events from eras without a curated identity
-# staged rather than attached to a neighboring regime.
+# (France 1816-1851 and 1941-1957, Russia pre-1721 and 1918-1921, Persia
+# -329..223, 652-1500, 1748-1793, and post-1925) keep events from eras without
+# a curated identity staged rather than attached to a neighboring regime.
 HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     # The "france" 1870 boundary year is contained by BOTH the Second Empire
     # and Third Republic windows, so 1870 rows are ambiguous by containment
@@ -255,10 +255,11 @@ HCED_FACTION_LABELS: frozenset[str] = frozenset({
 })
 
 # Genuine polity names whose only time-valid Cliopatria identity is a
-# multi-regime envelope (for example one Sweden identity spanning 980-2024):
-# full-interval containment is vacuous against such a span, so resolving the
-# label would manufacture rating continuity across regime boundaries. These
-# stay staged under their own counter until curated identity splits exist.
+# multi-regime envelope (for example one Swiss identity spanning 1294-2024,
+# across the 1798 Helvetic reset): full-interval containment is vacuous
+# against such a span, so resolving the label would manufacture rating
+# continuity across regime boundaries. These stay staged under their own
+# counter until curated identity splits exist.
 HCED_PENDING_SPLIT_LABELS: frozenset[str] = frozenset({
     "georgia",
     "champa",
