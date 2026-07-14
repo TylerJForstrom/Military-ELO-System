@@ -5,6 +5,7 @@ import json
 import re
 import unicodedata
 from collections import Counter
+from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -77,6 +78,196 @@ IWD_COW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     ),
 }
 
+# Explicit, time-bounded identity policies for bare HCED side labels that lack
+# Seshat coding. A policy label is authoritative: outside its windows the side
+# stays staged instead of falling through to alias matching. Deliberate gaps
+# (France 1793-1803 and 1816-1957, Russia pre-1721 and 1918-1921, Persia
+# -329..223 and post-1736) keep events from eras without a curated identity
+# staged rather than attached to a neighboring regime.
+HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
+    "france": (
+        (987, 1792, "kingdom_france"),
+        (1804, 1815, "first_french_empire"),
+        (1958, 2026, "french_fifth_republic"),
+    ),
+    "russia": (
+        (1721, 1917, "russian_empire"),
+        (1922, 1991, "soviet_union"),
+    ),
+    "spain": ((1479, 1898, "spanish_empire"),),
+    "rome": ((-509, -27, "roman_republic"), (-27, 394, "roman_empire")),
+    "romans": ((-509, -27, "roman_republic"), (-27, 394, "roman_empire")),
+    "byzantium": ((395, 1453, "byzantine_empire"),),
+    "byzantines": ((395, 1453, "byzantine_empire"),),
+    "persia": (
+        (-550, -330, "achaemenid_empire"),
+        (224, 651, "sasanian_empire"),
+        (1501, 1736, "safavid_empire"),
+    ),
+    "ottomans": ((1299, 1922, "ottoman_empire"),),
+}
+
+# Faction, party, movement, and collective-peoples labels are not time-bounded
+# polities (the rating unit is a versioned polity or autonomous military actor,
+# never a peoples name). The blocklist is checked before every alias tier so
+# these labels cannot resolve even when a source record carries a colliding
+# alias; promoting one later requires an explicit HCED_LABEL_POLICIES entry
+# mapping it to a curated identity.
+HCED_FACTION_LABELS: frozenset[str] = frozenset({
+    # war-faction / party / movement labels
+    "royalists", "parliamentarians", "carlists", "taiping", "indian rebels",
+    "chinese communists", "chinese nationalists", "kuomintang", "guomindang",
+    "spanish republicans", "spanish nationalists", "communists", "nationalists",
+    "republicans", "loyalists", "rebels", "insurgents", "jacobites",
+    "huguenots", "catholics", "protestants", "covenanters", "confederates",
+    "unionists", "boxers", "whites", "reds", "bolsheviks", "mujahideen",
+    # collective-peoples labels with no unique time-bounded polity referent
+    "vikings", "norsemen", "danes", "tatars", "crusaders", "moors",
+    "berbers", "cossacks", "palestinians", "barbary pirates", "pirates",
+    "saxons", "huns", "white huns", "mongols", "ostrogoths", "visigoths",
+    "goths", "vandals", "franks", "avars", "magyars", "gauls", "celts",
+    "slavs", "picts", "normans", "bulgars", "pechenegs", "cumans", "khazars",
+    "alans", "lombards", "angles", "jutes", "britons", "scythians",
+    "sarmatians", "xiongnu", "arabs", "turks", "germans", "greeks",
+    "zulus", "sikhs", "maori", "comanche", "sioux", "cherokee",
+    "apache", "seminole",
+})
+
+# Genuine polity names whose only time-valid Cliopatria identity is a
+# multi-regime envelope (for example one Sweden identity spanning 980-2024):
+# full-interval containment is vacuous against such a span, so resolving the
+# label would manufacture rating continuity across regime boundaries. These
+# stay staged under their own counter until curated identity splits exist.
+HCED_PENDING_SPLIT_LABELS: frozenset[str] = frozenset({
+    "sweden",
+    "georgia",
+    "champa",
+    "switzerland",
+    "swiss confederation",
+    "tibet",
+})
+
+# Coalition and composite battle-side labels are not rating units: coalition
+# sides need curated per-participant composition, and slash/comma/parenthesis
+# composites are ambiguous between alias and coalition — ambiguity always
+# stays staged.
+IWBD_COALITION_SIDE_LABELS: frozenset[str] = frozenset({
+    "allies",
+    "allied powers",
+    "axis",
+    "central powers",
+    "balkan league",
+    "coalition",
+    "nato",
+    "arab states",
+})
+
+# Declared identity deny windows for IWBD belligerent labels: within a window
+# the label is never resolved, because it denotes an actor distinct from the
+# identity the resolver would return. "Turkey" in 1920-1923 denotes the Ankara
+# (Kemalist) government fighting in parallel with the Istanbul government, and
+# must not attach to the ottoman_empire identity whose interval still covers
+# those years.
+IWBD_IDENTITY_DENY_WINDOWS: dict[str, tuple[tuple[int, int], ...]] = {
+    "turkey": ((1920, 1923),),
+}
+
+_IWBD_CANDIDATE_ID = re.compile(r"^iwbd-(-?\d+)-(-?\d+)-(\d+)$")
+
+# Every declared rejection counter per promotion path, including gates that
+# measure zero on the current snapshot: a zero gate is a declared guard, and
+# the published artifact must distinguish "declared and measured zero" from
+# "not implemented".
+HCED_LABEL_REJECTION_COUNTERS: tuple[str, ...] = (
+    "label_outcome_not_aligned",
+    "outside_continuity_policy",
+    "no_unique_time_valid_polity",
+    "blank_side_label",
+    "faction_label_not_a_polity",
+    "label_pending_identity_split",
+    "label_outside_policy_window",
+    "no_unique_time_valid_label_match",
+    "same_or_empty_opposing_side",
+    "duplicate_of_curated_seed",
+    "duplicate_of_promoted_event",
+)
+
+IWBD_REJECTION_COUNTERS: tuple[str, ...] = (
+    "missing_battle_name",
+    "missing_or_invalid_date",
+    "missing_belligerent_label",
+    "duplicate_within_iwbd",
+    "duplicate_of_curated_seed",
+    "duplicate_of_hced_battle",
+    "malformed_candidate_id",
+    "contains_constituent_iwbd_rows",
+    "outcome_not_aligned_to_battle_sides",
+    "coalition_or_composite_side",
+    "unresolved_time_bounded_belligerent",
+    "same_or_empty_opposing_side",
+)
+
+UCDP_REJECTION_COUNTERS: tuple[str, ...] = (
+    "malformed_source_row",
+    "not_terminal_episode",
+    "outcome_peace_agreement",
+    "outcome_ceasefire",
+    "outcome_low_activity",
+    "outcome_actor_ceased",
+    "outcome_missing_or_unknown",
+    "missing_or_invalid_episode_years",
+    "nonstate_primary_party",
+    "unresolved_time_bounded_party",
+    "same_or_empty_opposing_side",
+    "documented_side_attribution_dispute",
+    "duplicate_of_promoted_strategic_event",
+    "dyad_conflict_outcome_contradiction",
+    "contradictory_linked_episode_outcomes",
+)
+
+
+def _declared_rejections(
+    rejections: Counter[str], declared: tuple[str, ...]
+) -> dict[str, int]:
+    return {key: rejections.get(key, 0) for key in sorted({*rejections, *declared})}
+
+# Explicit, time-bounded identity policies for UCDP Gleditsch-Ward codes whose
+# label does not name the historical polity directly. A policy code is
+# authoritative: outside its windows the party stays unresolved instead of
+# falling back to name matching. Deliberate gaps: GW 365 omits 1918-1921 and
+# 1992+ (revolutionary era and the post-Soviet federation have no curated
+# identity); GW 816 omits post-unification years; GW 700 omits 1979-1995 and
+# 2002-2003 because the DRA and the transitional administrations have no
+# curated identity — Cliopatria's blanket "Afghanistan 1979-2024" polity would
+# bridge four regimes, which namesake continuity rules forbid.
+UCDP_GW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
+    "365": (
+        (1721, 1917, "russian_empire"),
+        (1922, 1991, "soviet_union"),
+    ),
+    "816": ((1945, 1976, "north_vietnam"),),
+    "817": ((1955, 1975, "south_vietnam"),),
+    "700": (
+        (1996, 2001, "taliban"),
+        (2004, 2021, "islamic_republic_afghanistan"),
+    ),
+}
+
+# Curated exclusions for UCDP termination episodes with a documented
+# side-attribution dispute: promoting the source's coding would assign a rated
+# outcome to a polity that may not have fought. Ambiguity between time-bounded
+# identities always stays staged for human review.
+UCDP_CURATED_EXCLUSIONS: dict[tuple[str, str], str] = {
+    ("334", "1"): (
+        "side_attribution_dispute: UCDP codes the 1974 episode (Battle of the "
+        "Paracel Islands) against the DRV (gwno 816, 'Government of Vietnam "
+        "(North Vietnam)'), but historical accounts attribute the engagement "
+        "to the Republic of Vietnam Navy (GW 817). Which registry identity "
+        "opposed China is ambiguous between two time-bounded identities; "
+        "ambiguity always fails. Staged for human review."
+    ),
+}
+
 
 def _cow_policy_seed_id(code: str, low_year: int, high_year: int) -> str | None:
     policies = IWD_COW_CODE_POLICIES.get(code)
@@ -85,6 +276,15 @@ def _cow_policy_seed_id(code: str, low_year: int, high_year: int) -> str | None:
     matches = [
         entity_id
         for start_year, end_year, entity_id in policies
+        if low_year >= start_year and high_year <= end_year
+    ]
+    return matches[0] if len(set(matches)) == 1 else None
+
+
+def _label_policy_seed_id(label: str, low_year: int, high_year: int) -> str | None:
+    matches = [
+        entity_id
+        for start_year, end_year, entity_id in HCED_LABEL_POLICIES.get(label, ())
         if low_year >= start_year and high_year <= end_year
     ]
     return matches[0] if len(set(matches)) == 1 else None
@@ -282,6 +482,7 @@ def _participants(
     draw: bool,
     confidence: float,
     scale_level: int,
+    note: str | None = None,
 ) -> list[dict[str, Any]]:
     if draw:
         winner_values = {
@@ -331,7 +532,8 @@ def _participants(
                     "evidence_confidence": confidence,
                     "result_class": result_class,
                     "outcome": outcome,
-                    "note": "Provisional HCED tactical coding; strategic war outcome is not inferred.",
+                    "note": note
+                    or "Provisional HCED tactical coding; strategic war outcome is not inferred.",
                 }
             )
     return output
@@ -342,6 +544,10 @@ def _strategic_participants(
     side_b: list[str],
     outcome: str,
     confidence: float,
+    *,
+    stakes: float = 0.72,
+    national_scale: float = 0.72,
+    note: str | None = None,
 ) -> list[dict[str, Any]]:
     draw_values = {
         "battlefield_outcome": 0.50,
@@ -390,13 +596,14 @@ def _strategic_participants(
                     "side": side,
                     "role": "primary" if len(entity_ids) == 1 else "major_ally",
                     "contribution": contribution,
-                    "stakes": 0.72,
-                    "national_scale": 0.72,
+                    "stakes": stakes,
+                    "national_scale": national_scale,
                     "termination": terminations[index],
                     "evidence_confidence": confidence,
                     "result_class": result_classes[index],
                     "outcome": side_values[index],
-                    "note": (
+                    "note": note
+                    or (
                         "Coalition-aggregated IWD parent-war outcome; existential or "
                         "regime-ending severity is never inferred from IWD outcome codes."
                     ),
@@ -733,6 +940,1143 @@ def _entity_covers(entity: dict[str, Any], low_year: int, high_year: int) -> boo
     )
 
 
+def _resolve_label_tiers(
+    normalized: str,
+    low_year: int,
+    high_year: int,
+    context: dict[str, Any],
+    require_observation_coherence: bool,
+) -> tuple[str | None, dict[str, Any] | None, str | None]:
+    """Exact-normalized label resolution: seed alias, then crosswalk
+    observations, then Cliopatria alias with the seed-mapping guards.
+
+    Every tier requires exactly one match that covers the full
+    ``[low_year, high_year]`` interval; ambiguity always fails. The
+    observation-coherence flag additionally requires an observed entity's own
+    labels to contain the queried label (guards against crosswalk
+    mis-pairings); the IWD caller keeps it off so the committed IWD promotion
+    stays pinned.
+    """
+    seed_matches = {
+        str(entity["id"])
+        for entity in context["seed_entities"]
+        if _entity_covers(entity, low_year, high_year)
+        and normalized
+        in {
+            normalize_label(entity.get("name")),
+            *[normalize_label(alias) for alias in entity.get("aliases", [])],
+        }
+    }
+    if len(seed_matches) == 1:
+        return next(iter(seed_matches)), None, "seed_alias"
+
+    release_entities = context["release_entities"]
+    entity_labels = context["entity_labels"]
+    observed_matches = {
+        entity_id
+        for _, _, entity_id in context["label_observations"].get(normalized, [])
+        if entity_id in release_entities
+        and _entity_covers(release_entities[entity_id], low_year, high_year)
+        and (
+            not require_observation_coherence
+            or normalized in entity_labels.get(entity_id, set())
+        )
+    }
+    if len(observed_matches) == 1:
+        return next(iter(observed_matches)), None, "crosswalk_observation"
+
+    seed_by_id = context["seed_by_id"]
+    candidate_matches = [
+        polity
+        for polity in context["polity_alias_index"].get(normalized, [])
+        if int(polity["start_year"]) <= low_year
+        and int(polity["end_year"]) >= high_year
+    ]
+    candidate_ids = {_candidate_entity_id(polity) for polity in candidate_matches}
+    if len(candidate_ids) == 1:
+        polity = candidate_matches[0]
+        # A candidate that maps onto a curated seed identity must resolve to
+        # the seed entity; otherwise one polity would hold two parallel
+        # rating identities.
+        mapped_seed = _candidate_policy_seed(polity, seed_by_id)
+        if not mapped_seed:
+            name_matches = context["seed_label_index"].get(
+                normalize_label(polity.get("canonical_name_candidate")), set()
+            )
+            if len(name_matches) == 1:
+                named_seed = next(iter(name_matches))
+                named_entity = seed_by_id.get(named_seed)
+                # A name match alone must not bridge eras: a same-named
+                # polity from a different century stays its own identity.
+                if named_entity and _candidate_overlaps_entity(polity, named_entity):
+                    mapped_seed = named_seed
+        if mapped_seed:
+            seed_entity = seed_by_id.get(mapped_seed)
+            if seed_entity and _entity_covers(seed_entity, low_year, high_year):
+                return mapped_seed, None, "cliopatria_alias_to_seed"
+            return None, None, None
+        return _candidate_entity_id(polity), polity, "cliopatria_alias"
+    return None, None, None
+
+
+def resolve_hced_side_label(
+    label: Any,
+    low_year: int,
+    high_year: int,
+    context: dict[str, Any],
+) -> tuple[str | None, dict[str, Any] | None, str | None, str | None]:
+    """Resolve a bare HCED side label to a unique time-bounded identity.
+
+    Returns ``(entity_id, polity, rejection_reason, tier)``. The three front
+    gates (faction blocklist, pending-split set, label-policy table) are
+    authoritative: a gated label never falls through to alias matching.
+    """
+    normalized = normalize_label(label)
+    if not normalized:
+        return None, None, "blank_side_label", None
+    if normalized in HCED_FACTION_LABELS:
+        return None, None, "faction_label_not_a_polity", None
+    if normalized in HCED_PENDING_SPLIT_LABELS:
+        return None, None, "label_pending_identity_split", None
+    if normalized in HCED_LABEL_POLICIES:
+        seed_id = _label_policy_seed_id(normalized, low_year, high_year)
+        if seed_id:
+            return seed_id, None, None, "label_policy"
+        return None, None, "label_outside_policy_window", None
+    entity_id, polity, tier = _resolve_label_tiers(
+        normalized, low_year, high_year, context, require_observation_coherence=True
+    )
+    if entity_id:
+        return entity_id, polity, None, tier
+    return None, None, "no_unique_time_valid_label_match", None
+
+
+def promote_hced_label_rows(
+    deferred_rows: list[dict[str, Any]],
+    curated_seed_keys: set[tuple[str, int]],
+    promoted_event_keys: set[tuple[str, int]],
+    resolve_code: Any,
+    resolve_side_label: Any,
+) -> dict[str, Any]:
+    """Second HCED promotion pass for rows lacking Seshat coding on a side.
+
+    Deferred rows re-enter through a declared label-resolution ruleset: the
+    coded side (if any) resolves through the unchanged Seshat-code path, the
+    uncoded side only through explicit time-bounded label policies or exact
+    time-valid alias matching with uniqueness. Label-resolved events carry
+    reduced identity confidence and an ``identity_resolution`` provenance
+    marker. Nothing here writes ``label_observations``: alias-derived
+    resolutions must never launder themselves into the higher-trust
+    observation tier, and results must not depend on row order.
+    """
+    events: list[dict[str, Any]] = []
+    rejections: Counter[str] = Counter()
+    resolved_polities: dict[str, dict[str, Any]] = {}
+    observation_resolutions: Counter[tuple[str, str]] = Counter()
+    cluster_spans: dict[str, list[Any]] = {}
+    accepted_keys = set(promoted_event_keys)
+
+    for candidate in deferred_rows:
+        low_year = int(candidate["year_low"])
+        best_year = int(candidate["year_best"])
+        high_year = int(candidate["year_high"])
+        winner = normalize_label(candidate.get("winner_raw"))
+        loser = normalize_label(candidate.get("loser_raw"))
+        side_a_label = normalize_label(candidate.get("side_1_raw"))
+        side_b_label = normalize_label(candidate.get("side_2_raw"))
+        draw = winner in {"draw", "inconclusive", "stalemate"}
+        # A blank winner is unknown, never a draw and never a vacuous match
+        # against a blank side label.
+        if not draw and (
+            not winner or not loser or winner != side_a_label or loser != side_b_label
+        ):
+            rejections["label_outcome_not_aligned"] += 1
+            continue
+
+        resolved_sides: list[list[str]] = []
+        side_tiers: list[str] = []
+        observation_hits: list[tuple[str, str]] = []
+        pending_polities: dict[str, dict[str, Any]] = {}
+        label_side_count = 0
+        resolution_failed = False
+        for codes, label in (
+            (
+                _deduplicate(map(str, candidate.get("seshat_side_1_candidates", []))),
+                candidate.get("side_1_raw"),
+            ),
+            (
+                _deduplicate(map(str, candidate.get("seshat_side_2_candidates", []))),
+                candidate.get("side_2_raw"),
+            ),
+        ):
+            resolved: list[str] = []
+            if codes:
+                for code in codes:
+                    entity_id, polity, reason = resolve_code(code, low_year, high_year)
+                    if not entity_id:
+                        rejections[reason or "unresolved_entity"] += 1
+                        resolution_failed = True
+                        break
+                    if polity:
+                        pending_polities[entity_id] = polity
+                    resolved.append(entity_id)
+                side_tiers.append("seshat_crosswalk")
+            else:
+                entity_id, polity, reason, tier = resolve_side_label(
+                    label, low_year, high_year
+                )
+                if not entity_id:
+                    rejections[reason or "no_unique_time_valid_label_match"] += 1
+                    resolution_failed = True
+                else:
+                    if polity:
+                        pending_polities[entity_id] = polity
+                    resolved.append(entity_id)
+                    side_tiers.append(str(tier))
+                    label_side_count += 1
+                    if tier == "crosswalk_observation":
+                        observation_hits.append((normalize_label(label), entity_id))
+            if resolution_failed:
+                break
+            resolved_sides.append(_deduplicate(resolved))
+        if resolution_failed:
+            continue
+        side_a, side_b = resolved_sides
+        if not side_a or not side_b or set(side_a) & set(side_b):
+            rejections["same_or_empty_opposing_side"] += 1
+            continue
+
+        event_name = str(
+            candidate.get("name") or candidate.get("source_record_id") or "Unnamed engagement"
+        )
+        event_key = _event_key(event_name, best_year)
+        if event_key in curated_seed_keys:
+            rejections["duplicate_of_curated_seed"] += 1
+            continue
+        if event_key in accepted_keys:
+            rejections["duplicate_of_promoted_event"] += 1
+            continue
+        accepted_keys.add(event_key)
+        resolved_polities.update(pending_polities)
+        observation_resolutions.update(observation_hits)
+
+        scale, scale_level = _scale(candidate)
+        confidence = 0.73 if candidate.get("consulted_source_raw") else 0.67
+        confidence -= 0.03 * label_side_count
+        if low_year != high_year:
+            confidence -= 0.03
+        confidence = round(confidence, 2)
+        war_names = list(map(str, candidate.get("war_names", [])))
+        cluster = _slug(war_names[0]) if war_names else None
+        if cluster:
+            span = cluster_spans.setdefault(
+                f"hced_war_{cluster}", [_war_tokens(war_names[0]), low_year, high_year]
+            )
+            span[1] = min(span[1], low_year)
+            span[2] = max(span[2], high_year)
+        source_ids = ["hced_dataset", "hced_seshat_crosswalk"]
+        if any(entity_id.startswith("clio_") for entity_id in (*side_a, *side_b)):
+            source_ids.append("cliopatria_v020")
+        events.append(
+            {
+                "id": f"hced_label_{_slug(str(candidate['candidate_id']), 74)}",
+                "name": event_name,
+                "year": low_year,
+                "end_year": high_year,
+                "event_type": "engagement",
+                "war_type": "interstate_limited",
+                "scale": scale,
+                "stakes": "major" if scale_level >= 4 else "limited",
+                "decisiveness": 0.32 if draw else round(min(0.90, 0.54 + 0.06 * scale_level), 2),
+                "confidence": confidence,
+                "geographic_scope": round(min(0.70, 0.08 + 0.09 * scale_level), 2),
+                "domain": _domain(candidate.get("theatre_raw")),
+                "cluster_id": f"hced_war_{cluster}" if cluster else None,
+                "date_precision": "range" if low_year != high_year else "year",
+                "sequence": int(candidate.get("source_row") or 0),
+                "summary": (
+                    "Provisional tactical result from HCED. At least one side lacked "
+                    "Seshat crosswalk coding and was resolved by a declared, "
+                    "time-bounded label policy or an exact time-valid alias match; "
+                    "this carries lower identity confidence than crosswalk "
+                    "resolution and does not infer the enclosing war's strategic "
+                    "outcome."
+                ),
+                "identity_resolution": "label",
+                "side_identity_resolution": {
+                    "side_a": side_tiers[0],
+                    "side_b": side_tiers[1],
+                },
+                "hced_candidate_id": str(candidate["candidate_id"]),
+                "participants": _participants(
+                    side_a,
+                    side_b,
+                    draw,
+                    confidence,
+                    scale_level,
+                ),
+                "source_ids": source_ids,
+                "status": "complete",
+            }
+        )
+
+    return {
+        "events": events,
+        "rejections": rejections,
+        "rows_total": len(deferred_rows),
+        "accepted": len(events),
+        "resolved_polities": resolved_polities,
+        "observation_resolutions": [
+            {"label": label, "entity_id": entity_id, "resolved_sides": count}
+            for (label, entity_id), count in sorted(observation_resolutions.items())
+        ],
+        "cluster_spans": cluster_spans,
+    }
+
+
+def _iwbd_id_parts(candidate_id: str) -> tuple[str, str, str] | None:
+    match = _IWBD_CANDIDATE_ID.match(candidate_id)
+    return (match.group(1), match.group(2), match.group(3)) if match else None
+
+
+def _iwbd_dates(row: dict[str, Any]) -> tuple[date, date] | None:
+    try:
+        start = date.fromisoformat(str(row.get("start_date")))
+        end = date.fromisoformat(str(row.get("end_date")))
+    except (TypeError, ValueError):
+        return None
+    return (start, end) if end >= start else None
+
+
+def _iwbd_base_war(row: dict[str, Any]) -> str:
+    return re.sub(r"\s*\(.*\)$", "", str(row.get("war_name") or ""))
+
+
+def promote_iwbd_battles(
+    candidates: list[dict[str, Any]],
+    curated_seed_keys: set[tuple[str, int]],
+    hced_event_keys: set[tuple[str, int]],
+    resolve_label: Any,
+    hced_war_cluster_spans: dict[str, list[Any]],
+    iwd_parent_ids: set[str],
+) -> dict[str, Any]:
+    """Promote non-duplicate IWBD battles as provisional tactical engagements.
+
+    A battle enters only when it is not a duplicate of any curated seed event,
+    any HCED candidate (promoted or staged), or an earlier IWBD row by
+    normalized battle name and year within one year; its date span does not
+    strictly contain a differently-named battle of the same war (campaign
+    umbrellas stay staged); its coded victor matches a named side (the
+    inconclusive pair is a coded tactical stalemate, never a guess); both
+    sides are single polities resolving to unique time-bounded identities
+    outside declared deny windows; and severity is capped at limited. The
+    war-level victor code is ignored entirely: battles never update the
+    strategic layer.
+    """
+    events: list[dict[str, Any]] = []
+    rejections: Counter[str] = Counter()
+    resolved_polities: dict[str, dict[str, Any]] = {}
+    seen_keys: set[tuple[str, int]] = set()
+
+    # Containment pre-pass over every row with a name and valid dates (not
+    # just survivors), so the umbrella gate is order-independent: an IWBD
+    # record whose span strictly contains a differently-named battle of the
+    # same war is a presumptive campaign umbrella and stays staged.
+    war_groups: dict[tuple[str, str], list[tuple[str, date, date]]] = {}
+    for row in candidates:
+        name = str(row.get("name") or "")
+        parsed = _iwbd_dates(row)
+        parts = _iwbd_id_parts(str(row.get("candidate_id") or ""))
+        if not name or parsed is None or parts is None:
+            continue
+        war_groups.setdefault(
+            (parts[0], str(row.get("war_name") or "")), []
+        ).append((name, parsed[0], parsed[1]))
+
+    accepted_rows: list[dict[str, Any]] = []
+    for row in sorted(candidates, key=lambda r: int(r.get("source_row") or 0)):
+        name = str(row.get("name") or "")
+        if not name:
+            rejections["missing_battle_name"] += 1
+            continue
+        parsed = _iwbd_dates(row)
+        if parsed is None:
+            rejections["missing_or_invalid_date"] += 1
+            continue
+        start, end = parsed
+        year_low, year_high = start.year, end.year
+        attacker = row.get("attacker_raw")
+        defender = row.get("defender_raw")
+        if not attacker or not defender:
+            rejections["missing_belligerent_label"] += 1
+            continue
+        attacker, defender = str(attacker), str(defender)
+
+        lookup_keys = {_event_key(name, year) for year in range(year_low - 1, year_high + 2)}
+        exact_keys = {_event_key(name, year) for year in range(year_low, year_high + 1)}
+        if lookup_keys & seen_keys:
+            rejections["duplicate_within_iwbd"] += 1
+            continue
+        if lookup_keys & curated_seed_keys:
+            rejections["duplicate_of_curated_seed"] += 1
+            seen_keys |= exact_keys
+            continue
+        if lookup_keys & hced_event_keys:
+            rejections["duplicate_of_hced_battle"] += 1
+            seen_keys |= exact_keys
+            continue
+        seen_keys |= exact_keys
+
+        parts = _iwbd_id_parts(str(row.get("candidate_id") or ""))
+        if parts is None:
+            rejections["malformed_candidate_id"] += 1
+            continue
+        cow_number = parts[0]
+        normalized_name = normalize_label(name)
+        span_days = (end - start).days
+        contained = False
+        for other_name, other_start, other_end in war_groups.get(
+            (cow_number, str(row.get("war_name") or "")), []
+        ):
+            if normalize_label(other_name) == normalized_name:
+                continue
+            if (
+                start <= other_start
+                and end >= other_end
+                and span_days > (other_end - other_start).days
+            ):
+                contained = True
+                break
+        if contained:
+            rejections["contains_constituent_iwbd_rows"] += 1
+            continue
+
+        winner = normalize_label(row.get("winner_raw"))
+        role = str(row.get("battle_level_victor_role") or "")
+        normalized_attacker = normalize_label(attacker)
+        normalized_defender = normalize_label(defender)
+        draw = winner == "inconclusive" and normalize_label(role) == "inconclusive"
+        if not draw and not (
+            (role == "Attacker" and winner == normalized_attacker)
+            or (role == "Defender" and winner == normalized_defender)
+        ):
+            rejections["outcome_not_aligned_to_battle_sides"] += 1
+            continue
+
+        if any(
+            "/" in label or "," in label or "(" in label
+            or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
+            for label in (attacker, defender)
+        ):
+            rejections["coalition_or_composite_side"] += 1
+            continue
+
+        denied = False
+        for label in (attacker, defender):
+            for deny_low, deny_high in IWBD_IDENTITY_DENY_WINDOWS.get(
+                normalize_label(label), ()
+            ):
+                if not (year_high < deny_low or year_low > deny_high):
+                    denied = True
+                    break
+            if denied:
+                break
+        if denied:
+            rejections["unresolved_time_bounded_belligerent"] += 1
+            continue
+        attacker_id, attacker_polity = resolve_label(attacker, year_low, year_high)
+        defender_id, defender_polity = resolve_label(defender, year_low, year_high)
+        if not attacker_id or not defender_id:
+            rejections["unresolved_time_bounded_belligerent"] += 1
+            continue
+        if attacker_id == defender_id:
+            rejections["same_or_empty_opposing_side"] += 1
+            continue
+        for entity_id, polity in (
+            (attacker_id, attacker_polity),
+            (defender_id, defender_polity),
+        ):
+            if polity is not None:
+                resolved_polities[entity_id] = polity
+
+        accepted_rows.append(
+            {
+                "row": row,
+                "name": name,
+                "start": start,
+                "end": end,
+                "attacker_id": attacker_id,
+                "defender_id": defender_id,
+                "draw": draw,
+                "victor_role": role,
+                "cow_number": cow_number,
+                "iwd_number": parts[1],
+                "base_war": _iwbd_base_war(row),
+            }
+        )
+
+    # Cluster assignment is per war, never per row: all accepted battles of
+    # one (cowNum, theater-stripped war) group share exactly one tactical
+    # down-weighting cluster — an existing HCED war cluster when the war-name
+    # tokens match exactly one with year overlap, else the IWD parent-war
+    # family for a joinable iwdNum (the parent war id itself, never a
+    # component id), else a distinct iwbd_war_* fallback.
+    group_rows: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for accepted in accepted_rows:
+        group_rows.setdefault((accepted["cow_number"], accepted["base_war"]), []).append(accepted)
+    group_clusters: dict[tuple[str, str], str] = {}
+    for (cow_number, base_war), rows in group_rows.items():
+        group_low = min(item["start"].year for item in rows)
+        group_high = max(item["end"].year for item in rows)
+        war_tokens = _war_tokens(base_war)
+        matches = [
+            cluster_id
+            for cluster_id, (tokens, span_low, span_high) in hced_war_cluster_spans.items()
+            if _war_tokens_match(war_tokens, tokens)
+            and group_low <= span_high
+            and group_high >= span_low
+        ]
+        if len(set(matches)) == 1:
+            group_clusters[(cow_number, base_war)] = matches[0]
+        elif rows[0]["iwd_number"] != "-9" and rows[0]["iwd_number"] in iwd_parent_ids:
+            group_clusters[(cow_number, base_war)] = (
+                f"iwd_parent_{_slug(rows[0]['iwd_number'], 24)}"
+            )
+        else:
+            group_clusters[(cow_number, base_war)] = (
+                f"iwbd_war_{cow_number}_{_slug(base_war, 40)}"
+            )
+
+    for accepted in accepted_rows:
+        row = accepted["row"]
+        name = accepted["name"]
+        start, end = accepted["start"], accepted["end"]
+        draw = accepted["draw"]
+        if draw or accepted["victor_role"] == "Attacker":
+            side_a, side_b = [accepted["attacker_id"]], [accepted["defender_id"]]
+        else:
+            side_a, side_b = [accepted["defender_id"]], [accepted["attacker_id"]]
+        candidate_id = str(row.get("candidate_id"))
+        events.append(
+            {
+                "id": f"iwbd_{_slug(candidate_id, 24)}_{_slug(name, 44)}",
+                "name": name,
+                "year": start.year,
+                "end_year": end.year,
+                "event_type": "engagement",
+                "war_type": "interstate_limited",
+                "scale": "battle",
+                "stakes": "limited",
+                "decisiveness": 0.32 if draw else 0.66,
+                "confidence": 0.70,
+                "geographic_scope": 0.26,
+                "domain": _domain(row.get("war_name")),
+                "cluster_id": group_clusters[(accepted["cow_number"], accepted["base_war"])],
+                "date_precision": "day",
+                "sequence": int(row.get("source_row") or 0),
+                "summary": (
+                    "Provisional tactical result from IWBD. The victor is coded by "
+                    "tactical control of the attacker's objective; this does not "
+                    "describe casualties, magnitude, or the enclosing war's "
+                    "strategic outcome, which is never inferred from battle results."
+                ),
+                "participants": _participants(
+                    side_a,
+                    side_b,
+                    draw,
+                    0.70,
+                    2,
+                    note=(
+                        "Provisional IWBD tactical coding; the enclosing war's "
+                        "strategic outcome is not inferred from battle results."
+                    ),
+                ),
+                "source_ids": ["iwbd_dataset", "cliopatria_v020"],
+                "status": "complete",
+                "iwbd_candidate_id": candidate_id,
+                "iwbd_war_name": str(row.get("war_name") or ""),
+                "iwbd_cow_war_number": accepted["cow_number"],
+                "iwbd_iwd_war_number": (
+                    accepted["iwd_number"] if accepted["iwd_number"] != "-9" else None
+                ),
+                "iwbd_battle_level_victor_role": str(row.get("battle_level_victor_role") or ""),
+                "iwbd_duration_days": row.get("duration_days"),
+            }
+        )
+
+    return {
+        "events": events,
+        "rejections": rejections,
+        "battles_total": len(candidates),
+        "battles_promoted": len(events),
+        "resolved_polities": resolved_polities,
+    }
+
+
+def _gw_policy_seed_id(code: str, low_year: int, high_year: int) -> str | None:
+    matches = [
+        entity_id
+        for start_year, end_year, entity_id in UCDP_GW_CODE_POLICIES.get(code, ())
+        if low_year >= start_year and high_year <= end_year
+    ]
+    return matches[0] if len(set(matches)) == 1 else None
+
+
+_UCDP_PARENTHETICAL = re.compile(r"^(.*?)\s*\((.*)\)\s*$")
+
+
+def _ucdp_label_variants(name: Any) -> list[str]:
+    label = str(name or "").strip()
+    if label.lower().startswith("government of "):
+        label = label[len("government of "):]
+    match = _UCDP_PARENTHETICAL.match(label)
+    variants = [label] if not match else [match.group(1), match.group(2)]
+    return [variant for variant in (v.strip() for v in variants) if variant]
+
+
+def resolve_ucdp_party(
+    name: Any,
+    gwno: Any,
+    low_year: int,
+    high_year: int,
+    context: dict[str, Any],
+) -> tuple[str | None, dict[str, Any] | None, str | None]:
+    """Resolve a UCDP party to a unique time-bounded identity.
+
+    A Gleditsch-Ward code with an explicit policy is authoritative: outside
+    its windows the party stays unresolved, never falling back to name
+    matching. Otherwise the label (stripped of "Government of ", with
+    parenthetical variants derived) resolves through the shared exact-alias
+    tiers; every derived variant must resolve, and to the same entity —
+    ambiguity always fails. Returns ``(entity_id, polity, method)``.
+    """
+    code = str(gwno or "").strip()
+    if code in UCDP_GW_CODE_POLICIES:
+        seed_id = _gw_policy_seed_id(code, low_year, high_year)
+        return seed_id, None, ("gw_code_policy" if seed_id else None)
+    variants = _ucdp_label_variants(name)
+    if not variants:
+        return None, None, None
+    entity_ids: set[str] = set()
+    polity: dict[str, Any] | None = None
+    tiers: list[str] = []
+    for variant in variants:
+        entity_id, variant_polity, tier = _resolve_label_tiers(
+            normalize_label(variant),
+            low_year,
+            high_year,
+            context,
+            require_observation_coherence=False,
+        )
+        if not entity_id:
+            return None, None, None
+        entity_ids.add(entity_id)
+        if variant_polity is not None:
+            polity = variant_polity
+        tiers.append(str(tier))
+    if len(entity_ids) != 1:
+        return None, None, None
+    method = {
+        "seed_alias": "seed_label",
+        "cliopatria_alias": "cliopatria_label",
+        "cliopatria_alias_to_seed": "cliopatria_label",
+    }.get(tiers[0], tiers[0])
+    return next(iter(entity_ids)), polity, method
+
+
+def _ucdp_split(value: Any) -> list[str]:
+    return [part.strip() for part in str(value or "").split(",") if part.strip()]
+
+
+def _ucdp_int(value: Any) -> int | None:
+    try:
+        return int(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def promote_ucdp_termination_episodes(
+    conflict_rows: list[dict[str, Any]],
+    dyad_rows: list[dict[str, Any]],
+    promoted_war_index: list[tuple[str, str | None, int, int, frozenset[str], dict[str, str]]],
+    resolver: Any,
+    curated_exclusions: dict[tuple[str, str], str] | None = None,
+) -> dict[str, Any]:
+    """Promote UCDP conflict-termination victory episodes as strategic events.
+
+    The promotion unit is the conflict-level terminal episode; the dyad file
+    is a consistency reference only and is never promoted. Only outcome codes
+    3 and 4 (victories) can produce events — peace agreements, ceasefires,
+    low activity, and actor cessation stay staged, because peace is not a
+    loss and unknown stays unknown. Both sides must consist entirely of
+    state primaries resolving to unique time-bounded identities; episodes
+    duplicating an already-promoted strategic event (shared entity on each
+    side with year overlap), contradicted by a terminal dyad row, or linked
+    by end date to an oppositely-oriented victory assertion (the Six-Day
+    rule) stay staged. Severity is capped at limited; secondary supporters
+    are recorded as provenance and never receive an outcome.
+    """
+    if curated_exclusions is None:
+        curated_exclusions = UCDP_CURATED_EXCLUSIONS
+    events: list[dict[str, Any]] = []
+    rejections: Counter[str] = Counter()
+    duplicate_details: list[dict[str, Any]] = []
+    resolved_polities: dict[str, dict[str, Any]] = {}
+
+    def parse_primaries(raw: dict[str, Any], side: str) -> list[tuple[str, str]] | None:
+        names = _ucdp_split(raw.get(f"side_{side}"))
+        codes = _ucdp_split(raw.get(f"gwno_{side}"))
+        if not names or len(names) != len(codes):
+            return None
+        if not all(name.lower().startswith("government of ") for name in names):
+            return None
+        return list(zip(names, codes))
+
+    def parse_secondaries(raw: dict[str, Any], side: str) -> list[tuple[str, str | None]]:
+        names = _ucdp_split(raw.get(f"side_{side}_2nd"))
+        codes = _ucdp_split(raw.get(f"gwno_{side}_2nd"))
+        if len(names) == len(codes):
+            return list(zip(names, codes))
+        return [(name, None) for name in names]
+
+    def best_effort_ids(
+        parties: list[tuple[str, str | None]], low_year: int, high_year: int
+    ) -> set[str]:
+        resolved: set[str] = set()
+        for name, code in parties:
+            entity_id, _, _ = resolver(name, code, low_year, high_year)
+            if entity_id:
+                resolved.add(entity_id)
+        return resolved
+
+    # Pre-pass over every terminal victory assertion in the file, independent
+    # of its own gate outcomes, resolved best-effort. Feeds the ledger-cluster
+    # map (an accepted episode of a conflict whose sibling deduplicates
+    # against ledger war W inherits W's cluster) and the linked-episode index
+    # (assertions sharing an exact end date and a resolved entity).
+    assertions: list[dict[str, Any]] = []
+    for candidate in conflict_rows:
+        raw = candidate.get("raw", {})
+        if str(raw.get("c_epterm", "")).strip() != "1":
+            continue
+        outcome_code = str(raw.get("c_outcome", "")).strip()
+        if outcome_code not in {"3", "4"}:
+            continue
+        start = _ucdp_int(raw.get("c_ep_startyear"))
+        end = _ucdp_int(raw.get("c_ep_endyear"))
+        if start is None or end is None:
+            continue
+        side_a = parse_primaries(raw, "a") or []
+        side_b = parse_primaries(raw, "b") or []
+        primary_a = best_effort_ids(side_a, start, end)
+        primary_b = best_effort_ids(side_b, start, end)
+        dedup_a = primary_a | best_effort_ids(parse_secondaries(raw, "a"), start, end)
+        dedup_b = primary_b | best_effort_ids(parse_secondaries(raw, "b"), start, end)
+        winners, losers = (
+            (primary_a, primary_b) if outcome_code == "3" else (primary_b, primary_a)
+        )
+        assertions.append(
+            {
+                "conflict_id": str(raw.get("conflict_id", "")).strip(),
+                "epno": str(raw.get("c_epno", "")).strip(),
+                "start": start,
+                "end": end,
+                "end_date": str(raw.get("c_ependdate", "")).strip(),
+                "winners": winners,
+                "losers": losers,
+                "dedup_a": dedup_a,
+                "dedup_b": dedup_b,
+            }
+        )
+
+    ledger_clusters: dict[str, dict[str, str]] = {}
+    for assertion in assertions:
+        for event_id, cluster_id, war_low, war_high, entities, _ in promoted_war_index:
+            if war_low > assertion["end"] or war_high < assertion["start"]:
+                continue
+            if assertion["dedup_a"] & entities and assertion["dedup_b"] & entities:
+                if cluster_id:
+                    ledger_clusters.setdefault(assertion["conflict_id"], {})[
+                        cluster_id
+                    ] = event_id
+    linked_by_date: dict[str, list[dict[str, Any]]] = {}
+    for assertion in assertions:
+        if assertion["end_date"]:
+            linked_by_date.setdefault(assertion["end_date"], []).append(assertion)
+
+    # Dyad reference file: quarantine rows failing year sanity (never silently
+    # repaired), count the blank-outcome terminal row, index the sane
+    # terminal remainder for the consistency scan.
+    dyad_rows_quarantined_corrupt = 0
+    dyad_terminal_blank_outcome = 0
+    dyads_by_conflict: dict[str, list[dict[str, Any]]] = {}
+    for candidate in dyad_rows:
+        raw = candidate.get("raw", {})
+        year = _ucdp_int(raw.get("year"))
+        if year is None or not 1900 <= year <= 2035:
+            dyad_rows_quarantined_corrupt += 1
+            continue
+        if str(raw.get("d_epterm", "")).strip() != "1":
+            # Non-terminal annual rows never gate a promotion; a blank
+            # episode-end year here just means the episode is ongoing.
+            continue
+        if not str(raw.get("d_outcome", "")).strip():
+            dyad_terminal_blank_outcome += 1
+            continue
+        start = _ucdp_int(raw.get("d_ep_startyear"))
+        end = _ucdp_int(raw.get("d_ep_endyear"))
+        if start is None or end is None:
+            # A terminal row without sane episode years cannot be scanned;
+            # quarantine it explicitly rather than silently repairing it.
+            dyad_rows_quarantined_corrupt += 1
+            continue
+        dyads_by_conflict.setdefault(str(raw.get("conflict_id", "")).strip(), []).append(raw)
+
+    def sort_key(candidate: dict[str, Any]) -> tuple[int, int, int]:
+        raw = candidate.get("raw", {})
+        return (
+            _ucdp_int(raw.get("c_ep_endyear")) or 0,
+            _ucdp_int(raw.get("conflict_id")) or 0,
+            _ucdp_int(raw.get("c_epno")) or 0,
+        )
+
+    accepted_index: list[tuple[str, str | None, int, int, frozenset[str], dict[str, str]]] = []
+
+    for candidate in sorted(conflict_rows, key=sort_key):
+        raw = candidate.get("raw", {})
+        conflict_id = str(raw.get("conflict_id", "")).strip()
+        year = _ucdp_int(raw.get("year"))
+        if not conflict_id or year is None or not 1900 <= year <= 2035:
+            rejections["malformed_source_row"] += 1
+            continue
+        if str(raw.get("c_epterm", "")).strip() != "1":
+            rejections["not_terminal_episode"] += 1
+            continue
+        outcome_code = str(raw.get("c_outcome", "")).strip()
+        if outcome_code == "1":
+            rejections["outcome_peace_agreement"] += 1
+            continue
+        if outcome_code == "2":
+            rejections["outcome_ceasefire"] += 1
+            continue
+        if outcome_code == "5":
+            rejections["outcome_low_activity"] += 1
+            continue
+        if outcome_code == "6":
+            rejections["outcome_actor_ceased"] += 1
+            continue
+        if outcome_code not in {"3", "4"}:
+            rejections["outcome_missing_or_unknown"] += 1
+            continue
+        low_year = _ucdp_int(raw.get("c_ep_startyear"))
+        high_year = _ucdp_int(raw.get("c_ep_endyear"))
+        if low_year is None or high_year is None:
+            rejections["missing_or_invalid_episode_years"] += 1
+            continue
+        side_a_parties = parse_primaries(raw, "a")
+        side_b_parties = parse_primaries(raw, "b")
+        if side_a_parties is None or side_b_parties is None:
+            rejections["nonstate_primary_party"] += 1
+            continue
+
+        party_resolutions: list[dict[str, Any]] = []
+        pending_polities: dict[str, dict[str, Any]] = {}
+        side_ids: list[list[str]] = []
+        side_codes: list[set[str]] = []
+        unresolved = False
+        for side_name, parties in (("side_a", side_a_parties), ("side_b", side_b_parties)):
+            resolved: list[str] = []
+            for name, code in parties:
+                entity_id, polity, method = resolver(name, code, low_year, high_year)
+                if not entity_id:
+                    unresolved = True
+                    break
+                if polity is not None:
+                    pending_polities[entity_id] = polity
+                resolved.append(entity_id)
+                party_resolutions.append(
+                    {
+                        "name": name,
+                        "gwno": code,
+                        "side": side_name,
+                        "entity_id": entity_id,
+                        "method": method,
+                    }
+                )
+            if unresolved:
+                break
+            side_ids.append(_deduplicate(resolved))
+            side_codes.append({code for _, code in parties})
+        if unresolved:
+            rejections["unresolved_time_bounded_party"] += 1
+            continue
+        side_a_ids, side_b_ids = side_ids
+        if not side_a_ids or not side_b_ids or set(side_a_ids) & set(side_b_ids):
+            rejections["same_or_empty_opposing_side"] += 1
+            continue
+
+        epno = str(raw.get("c_epno", "")).strip()
+        exclusion_reason = curated_exclusions.get((conflict_id, epno))
+        if exclusion_reason:
+            rejections["documented_side_attribution_dispute"] += 1
+            continue
+
+        winners_ids, losers_ids = (
+            (set(side_a_ids), set(side_b_ids))
+            if outcome_code == "3"
+            else (set(side_b_ids), set(side_a_ids))
+        )
+        winner_codes, loser_codes = (
+            (side_codes[0], side_codes[1])
+            if outcome_code == "3"
+            else (side_codes[1], side_codes[0])
+        )
+        primary_pair_codes = winner_codes | loser_codes
+
+        secondaries_a = parse_secondaries(raw, "a")
+        secondaries_b = parse_secondaries(raw, "b")
+        dedup_a = set(side_a_ids) | best_effort_ids(secondaries_a, low_year, high_year)
+        dedup_b = set(side_b_ids) | best_effort_ids(secondaries_b, low_year, high_year)
+        duplicate_event = None
+        for event_id, cluster_id, war_low, war_high, entities, terminations in (
+            *promoted_war_index,
+            *accepted_index,
+        ):
+            if war_low > high_year or war_high < low_year:
+                continue
+            if dedup_a & entities and dedup_b & entities:
+                duplicate_event = (event_id, terminations)
+                break
+        if duplicate_event is not None:
+            event_id, terminations = duplicate_event
+            agrees = contradicts = False
+            for entity_id in winners_ids:
+                termination = str(terminations.get(entity_id, ""))
+                if "victory" in termination:
+                    agrees = True
+                elif "defeat" in termination:
+                    contradicts = True
+            for entity_id in losers_ids:
+                termination = str(terminations.get(entity_id, ""))
+                if "defeat" in termination:
+                    agrees = True
+                elif "victory" in termination:
+                    contradicts = True
+            orientation = (
+                "contradicts" if contradicts else "agrees" if agrees else "undetermined"
+            )
+            duplicate_details.append(
+                {
+                    "conflict_id": conflict_id,
+                    "c_epno": epno,
+                    "matched_event_id": event_id,
+                    "orientation": orientation,
+                }
+            )
+            rejections["duplicate_of_promoted_strategic_event"] += 1
+            continue
+
+        dyad_checks: list[dict[str, Any]] = []
+        dyad_contradiction = False
+        for dyad_raw in dyads_by_conflict.get(conflict_id, []):
+            dyad_start = _ucdp_int(dyad_raw.get("d_ep_startyear"))
+            dyad_end = _ucdp_int(dyad_raw.get("d_ep_endyear"))
+            if dyad_start is None or dyad_end is None:
+                continue
+            if dyad_start > high_year or dyad_end < low_year:
+                continue
+            dyad_outcome = str(dyad_raw.get("d_outcome", "")).strip()
+            status = "nonvictory_terminal_ignored"
+            if dyad_outcome in {"3", "4"}:
+                dyad_a = set(_ucdp_split(dyad_raw.get("gwno_a")))
+                dyad_b = set(_ucdp_split(dyad_raw.get("gwno_b")))
+                dyad_winners, dyad_losers = (
+                    (dyad_a, dyad_b) if dyad_outcome == "3" else (dyad_b, dyad_a)
+                )
+                if dyad_winners & loser_codes or dyad_losers & winner_codes:
+                    dyad_contradiction = True
+                else:
+                    status = "consistent_victory"
+            elif dyad_outcome in {"1", "2"}:
+                dyad_pair = set(_ucdp_split(dyad_raw.get("gwno_a"))) | set(
+                    _ucdp_split(dyad_raw.get("gwno_b"))
+                )
+                # The same state pair the conflict level calls a victory is
+                # called a negotiated ending at the dyad level: mixed evidence
+                # quarantines the episode; nothing is rated.
+                if dyad_pair and dyad_pair <= primary_pair_codes:
+                    dyad_contradiction = True
+            dyad_checks.append(
+                {
+                    "dyad_id": str(dyad_raw.get("dyad_id", "")).strip(),
+                    "d_epid": str(dyad_raw.get("d_epid", "")).strip(),
+                    "d_ep_startyear": dyad_start,
+                    "d_ep_endyear": dyad_end,
+                    "d_outcome": dyad_outcome,
+                    "status": status,
+                }
+            )
+            if dyad_contradiction:
+                break
+        if dyad_contradiction:
+            rejections["dyad_conflict_outcome_contradiction"] += 1
+            continue
+
+        end_date = str(raw.get("c_ependdate", "")).strip()
+        linked_contradiction = False
+        linked_group = False
+        for assertion in linked_by_date.get(end_date, []) if end_date else []:
+            if assertion["conflict_id"] == conflict_id and assertion["epno"] == epno:
+                continue
+            assertion_entities = assertion["winners"] | assertion["losers"]
+            if not ((winners_ids | losers_ids) & assertion_entities):
+                continue
+            linked_group = True
+            if winners_ids & assertion["losers"] or losers_ids & assertion["winners"]:
+                linked_contradiction = True
+                break
+        if linked_contradiction:
+            rejections["contradictory_linked_episode_outcomes"] += 1
+            continue
+
+        intensity = str(raw.get("intensity_level", "")).strip()
+        incompatibility = str(raw.get("incompatibility", "")).strip()
+        scale = "major_war" if intensity == "2" else "campaign"
+        stakes = "major" if incompatibility in {"2", "3"} else "limited"
+        end_precision = str(raw.get("c_ependprec", "")).strip()
+        has_secondaries = bool(secondaries_a or secondaries_b)
+        confidence = 0.74
+        if has_secondaries:
+            confidence -= 0.05
+        if end_precision not in {"1", "2", "3"}:
+            confidence -= 0.03
+        confidence = round(confidence, 2)
+        participant_uniform = 0.72 if scale == "major_war" else 0.52
+
+        display_a = " & ".join(
+            name[len("Government of "):] if name.lower().startswith("government of ") else name
+            for name, _ in side_a_parties
+        )
+        display_b = " & ".join(
+            name[len("Government of "):] if name.lower().startswith("government of ") else name
+            for name, _ in side_b_parties
+        )
+        territory = str(raw.get("territory_name", "")).strip()
+        display_name = f"{display_a}–{display_b} conflict termination {low_year}"
+        if high_year != low_year:
+            display_name += f"–{high_year}"
+        if territory:
+            display_name += f" ({territory})"
+
+        conflict_ledger = ledger_clusters.get(conflict_id, {})
+        inherited_from = None
+        if len(conflict_ledger) == 1:
+            cluster_id, inherited_from = next(iter(conflict_ledger.items()))
+        elif linked_group and end_date:
+            cluster_id = f"ucdp_linked_{_slug(end_date, 24)}"
+        else:
+            cluster_id = f"ucdp_conflict_{_slug(conflict_id, 24)}"
+
+        resolved_polities.update(pending_polities)
+        epid = str(raw.get("c_epid", "")).strip()
+        event = {
+            "id": f"ucdp_term_{conflict_id}_ep{epno}_{_slug(display_name, 40)}",
+            "name": display_name,
+            "year": low_year,
+            "end_year": high_year,
+            "event_type": "war",
+            "war_type": "interstate_limited",
+            "scale": scale,
+            "stakes": stakes,
+            "decisiveness": 0.74,
+            "confidence": confidence,
+            "geographic_scope": 0.68 if scale == "major_war" else 0.44,
+            "domain": "mixed",
+            "cluster_id": cluster_id,
+            "date_precision": "year",
+            "sequence": int(epid) if epid.isdigit() else 0,
+            "summary": (
+                "Provisional strategic outcome promoted mechanically from UCDP "
+                "conflict-termination episode codes. Episode-level victory (code "
+                "3/4) only; severity capped at limited; secondary supporters "
+                "carry no outcome. Pending claim-level human review."
+            ),
+            "participants": _strategic_participants(
+                side_a_ids,
+                side_b_ids,
+                "side_a" if outcome_code == "3" else "side_b",
+                confidence,
+                stakes=participant_uniform,
+                national_scale=participant_uniform,
+                note=(
+                    "Episode-level UCDP conflict-termination outcome; existential "
+                    "or regime-ending severity is never inferred from UCDP "
+                    "termination codes."
+                ),
+            ),
+            "source_ids": ["ucdp_termination_conflict", "ucdp_termination_dyad"],
+            "status": "complete",
+            "ucdp_conflict_id": conflict_id,
+            "ucdp_episode_id": epid,
+            "ucdp_episode_number": epno,
+            "ucdp_outcome_code": outcome_code,
+            "ucdp_episode_end_date": end_date or None,
+            "ucdp_end_date_precision": end_precision or None,
+            "ucdp_incompatibility": incompatibility or None,
+            "ucdp_intensity_level_terminal_year": intensity or None,
+            "ucdp_territory_name": territory or None,
+            "candidate_id": str(candidate.get("candidate_id")),
+            "ucdp_party_resolutions": party_resolutions,
+            "ucdp_secondary_parties": {
+                "side_a": [
+                    {
+                        "name": name,
+                        "gwno": code,
+                        "resolved_entity_id": resolver(name, code, low_year, high_year)[0],
+                    }
+                    for name, code in secondaries_a
+                ],
+                "side_b": [
+                    {
+                        "name": name,
+                        "gwno": code,
+                        "resolved_entity_id": resolver(name, code, low_year, high_year)[0],
+                    }
+                    for name, code in secondaries_b
+                ],
+            },
+            "ucdp_dyad_checks": dyad_checks,
+        }
+        if inherited_from:
+            event["ucdp_cluster_inherited_from"] = inherited_from
+        events.append(event)
+        accepted_index.append(
+            (
+                event["id"],
+                cluster_id,
+                low_year,
+                high_year,
+                frozenset([*side_a_ids, *side_b_ids]),
+                {
+                    str(participant["entity_id"]): str(participant["termination"])
+                    for participant in event["participants"]
+                },
+            )
+        )
+
+    return {
+        "events": events,
+        "rejections": rejections,
+        "rows_total": len(conflict_rows),
+        "episodes_promoted": len(events),
+        "dyad_rows_total": len(dyad_rows),
+        "dyad_rows_quarantined_corrupt": dyad_rows_quarantined_corrupt,
+        "dyad_terminal_blank_outcome": dyad_terminal_blank_outcome,
+        "duplicate_details": duplicate_details,
+        "resolved_polities": resolved_polities,
+    }
+
+
 def _count_review_records(review_root: str | Path) -> dict[str, int]:
     counts: dict[str, int] = {}
     for path in sorted(Path(review_root).glob("*.jsonl")):
@@ -792,6 +2136,9 @@ def build_expanded_release(
     curated_seed_keys = {
         _event_key(str(event["name"]), int(event["year"])) for event in seed_events
     }
+    deferred_label_rows: list[dict[str, Any]] = []
+    promoted_hced_keys: set[tuple[str, int]] = set()
+    hced_cluster_spans: dict[str, list[Any]] = {}
 
     def ensure_candidate_entity(polity: dict[str, Any]) -> str:
         entity_id = _candidate_entity_id(polity)
@@ -834,7 +2181,9 @@ def build_expanded_release(
         side_a_codes = _deduplicate(map(str, candidate.get("seshat_side_1_candidates", [])))
         side_b_codes = _deduplicate(map(str, candidate.get("seshat_side_2_candidates", [])))
         if not side_a_codes or not side_b_codes:
-            rejections["uncoded_side"] += 1
+            # Rows lacking Seshat coding on a side are deferred to the second,
+            # label-resolution promotion pass instead of being rejected here.
+            deferred_label_rows.append(candidate)
             continue
 
         winner = normalize_label(candidate.get("winner_raw"))
@@ -842,7 +2191,11 @@ def build_expanded_release(
         side_a_label = normalize_label(candidate.get("side_1_raw"))
         side_b_label = normalize_label(candidate.get("side_2_raw"))
         draw = winner in {"draw", "inconclusive", "stalemate"}
-        if not draw and (winner != side_a_label or loser != side_b_label):
+        # A blank winner is unknown, never a draw and never a vacuous match
+        # against a blank side label.
+        if not draw and (
+            not winner or not loser or winner != side_a_label or loser != side_b_label
+        ):
             rejections["outcome_not_aligned_to_crosswalk_sides"] += 1
             continue
 
@@ -875,6 +2228,7 @@ def build_expanded_release(
         if event_key in curated_seed_keys:
             rejections["duplicate_of_curated_seed"] += 1
             continue
+        promoted_hced_keys.add(event_key)
 
         for polity in resolved_polities.values():
             ensure_candidate_entity(polity)
@@ -895,6 +2249,12 @@ def build_expanded_release(
         confidence = round(confidence, 2)
         war_names = list(map(str, candidate.get("war_names", [])))
         cluster = _slug(war_names[0]) if war_names else None
+        if cluster:
+            span = hced_cluster_spans.setdefault(
+                f"hced_war_{cluster}", [_war_tokens(war_names[0]), low_year, high_year]
+            )
+            span[1] = min(span[1], low_year)
+            span[2] = max(span[2], high_year)
         source_events.append(
             {
                 "id": f"hced_{_slug(str(candidate['candidate_id']), 80)}",
@@ -943,65 +2303,40 @@ def build_expanded_release(
             if normalized:
                 polity_alias_index.setdefault(normalized, []).append(polity)
 
+    # Own-label sets per entity, used by the observation-coherence guard in the
+    # HCED label pass (the IWD path keeps the tier unguarded so the committed
+    # IWD promotion stays pinned).
+    entity_labels: dict[str, set[str]] = {
+        str(entity["id"]): _seed_entity_labels(entity) for entity in seed_entities
+    }
+    for polity in polities:
+        entity_labels.setdefault(_candidate_entity_id(polity), set()).update(
+            _candidate_labels(polity)
+        )
+
+    label_context: dict[str, Any] = {
+        "seed_entities": seed_entities,
+        "seed_by_id": seed_by_id,
+        "seed_label_index": seed_label_index,
+        "label_observations": label_observations,
+        "release_entities": release_entities,
+        "entity_labels": entity_labels,
+        "polity_alias_index": polity_alias_index,
+    }
+
     def resolve_iwd_label(
         label: str,
         low_year: int,
         high_year: int,
     ) -> tuple[str | None, dict[str, Any] | None]:
-        normalized = normalize_label(label)
-        seed_matches = {
-            str(entity["id"])
-            for entity in seed_entities
-            if _entity_covers(entity, low_year, high_year)
-            and normalized
-            in {
-                normalize_label(entity.get("name")),
-                *[normalize_label(alias) for alias in entity.get("aliases", [])],
-            }
-        }
-        if len(seed_matches) == 1:
-            return next(iter(seed_matches)), None
-
-        observed_matches = {
-            entity_id
-            for _, _, entity_id in label_observations.get(normalized, [])
-            if entity_id in release_entities
-            and _entity_covers(release_entities[entity_id], low_year, high_year)
-        }
-        if len(observed_matches) == 1:
-            return next(iter(observed_matches)), None
-
-        candidate_matches = [
-            polity
-            for polity in polity_alias_index.get(normalized, [])
-            if int(polity["start_year"]) <= low_year
-            and int(polity["end_year"]) >= high_year
-        ]
-        candidate_ids = {_candidate_entity_id(polity) for polity in candidate_matches}
-        if len(candidate_ids) == 1:
-            polity = candidate_matches[0]
-            # A candidate that maps onto a curated seed identity must resolve to
-            # the seed entity; otherwise one polity would hold two parallel
-            # rating identities.
-            mapped_seed = _candidate_policy_seed(polity, seed_by_id)
-            if not mapped_seed:
-                name_matches = seed_label_index.get(
-                    normalize_label(polity.get("canonical_name_candidate")), set()
-                )
-                if len(name_matches) == 1:
-                    named_seed = next(iter(name_matches))
-                    named_entity = seed_by_id.get(named_seed)
-                    # A name match alone must not bridge eras: a same-named
-                    # polity from a different century stays its own identity.
-                    if named_entity and _candidate_overlaps_entity(polity, named_entity):
-                        mapped_seed = named_seed
-            if mapped_seed:
-                seed_entity = seed_by_id.get(mapped_seed)
-                if seed_entity and _entity_covers(seed_entity, low_year, high_year):
-                    return mapped_seed, None
-                return None, None
-            return _candidate_entity_id(polity), polity
-        return None, None
+        entity_id, polity, _ = _resolve_label_tiers(
+            normalize_label(label),
+            low_year,
+            high_year,
+            label_context,
+            require_observation_coherence=False,
+        )
+        return entity_id, polity
 
     def resolve_iwd_party(
         name: str,
@@ -1032,6 +2367,109 @@ def build_expanded_release(
     iwd_events.extend(iwd_aggregation["events"])
     iwd_rejections.update(iwd_aggregation["parent_rejections"])
     for polity in iwd_aggregation["resolved_polities"].values():
+        ensure_candidate_entity(polity)
+
+    # Second HCED pass: rows deferred for missing Seshat coding re-enter
+    # through the declared label-resolution ruleset. It runs after IWD
+    # aggregation so the IWD inputs are identical with or without the label
+    # pass, and entities materialize only after every gate has passed.
+    hced_label_pass = promote_hced_label_rows(
+        deferred_label_rows,
+        curated_seed_keys,
+        promoted_hced_keys,
+        lambda code, low_year, high_year: _resolve_code(code, low_year, high_year, owners),
+        lambda label, low_year, high_year: resolve_hced_side_label(
+            label, low_year, high_year, label_context
+        ),
+    )
+    label_events: list[dict[str, Any]] = hced_label_pass["events"]
+    hced_label_rejections: Counter[str] = hced_label_pass["rejections"]
+    for polity in hced_label_pass["resolved_polities"].values():
+        ensure_candidate_entity(polity)
+    for cluster_id, (tokens, low_year, high_year) in hced_label_pass["cluster_spans"].items():
+        span = hced_cluster_spans.setdefault(cluster_id, [tokens, low_year, high_year])
+        span[1] = min(span[1], low_year)
+        span[2] = max(span[2], high_year)
+
+    # IWBD battles are deduplicated against curated seed events and every
+    # HCED candidate — promoted or staged, over the candidate's full year
+    # range — because an HCED row rejected today may promote later and no
+    # event may ever enter the tactical stream twice.
+    hced_event_keys: set[tuple[str, int]] = set()
+    for candidate in hced:
+        name = str(candidate.get("name") or "")
+        if not name:
+            continue
+        year_low = candidate.get("year_low")
+        year_high = candidate.get("year_high")
+        if year_low is None or year_high is None:
+            for year in {
+                candidate.get("year_low"),
+                candidate.get("year_best"),
+                candidate.get("year_high"),
+            }:
+                if year is not None:
+                    hced_event_keys.add(_event_key(name, int(year)))
+            continue
+        for year in range(int(year_low), int(year_high) + 1):
+            hced_event_keys.add(_event_key(name, year))
+
+    iwbd_path = review / "iwbd-candidates.jsonl"
+    iwbd_candidates = read_jsonl(iwbd_path) if iwbd_path.exists() else []
+    iwd_parent_ids = {
+        str(candidate.get("parent_war_id"))
+        for candidate in iwd_candidates
+        if candidate.get("parent_war_id") is not None
+    }
+    iwbd_promotion = promote_iwbd_battles(
+        iwbd_candidates,
+        curated_seed_keys,
+        hced_event_keys,
+        resolve_iwd_label,
+        hced_cluster_spans,
+        iwd_parent_ids,
+    )
+    iwbd_events: list[dict[str, Any]] = iwbd_promotion["events"]
+    iwbd_rejections: Counter[str] = iwbd_promotion["rejections"]
+    for polity in iwbd_promotion["resolved_polities"].values():
+        ensure_candidate_entity(polity)
+
+    # UCDP conflict-termination episodes: the strategic-layer promotion path.
+    # The promoted-war index (curated seed wars plus IWD parents) drives the
+    # entity-and-year duplicate gate so an episode already represented in the
+    # ledger is never rated twice.
+    ucdp_conflict_path = review / "ucdp-termination-conflict-candidates.jsonl"
+    ucdp_dyad_path = review / "ucdp-termination-dyad-candidates.jsonl"
+    ucdp_conflict_rows = read_jsonl(ucdp_conflict_path) if ucdp_conflict_path.exists() else []
+    ucdp_dyad_rows = read_jsonl(ucdp_dyad_path) if ucdp_dyad_path.exists() else []
+    promoted_war_index = [
+        (
+            str(event["id"]),
+            event.get("cluster_id"),
+            int(event["year"]),
+            int(event.get("end_year", event["year"])),
+            frozenset(
+                str(participant["entity_id"]) for participant in event["participants"]
+            ),
+            {
+                str(participant["entity_id"]): str(participant.get("termination", ""))
+                for participant in event["participants"]
+            },
+        )
+        for event in (*seed_events, *iwd_events)
+        if event.get("event_type") == "war"
+    ]
+    ucdp_promotion = promote_ucdp_termination_episodes(
+        ucdp_conflict_rows,
+        ucdp_dyad_rows,
+        promoted_war_index,
+        lambda name, gwno, low_year, high_year: resolve_ucdp_party(
+            name, gwno, low_year, high_year, label_context
+        ),
+    )
+    ucdp_events: list[dict[str, Any]] = ucdp_promotion["events"]
+    ucdp_rejections: Counter[str] = ucdp_promotion["rejections"]
+    for polity in ucdp_promotion["resolved_polities"].values():
         ensure_candidate_entity(polity)
 
     sources_by_id = {str(source["id"]): source for source in sources}
@@ -1072,10 +2510,44 @@ def build_expanded_release(
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
         },
+        {
+            "id": "iwbd_dataset",
+            "title": "Interstate War Battle dataset (IWBD)",
+            "url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
+            "publisher": "Harvard Dataverse",
+            "license": "CC0-1.0",
+            "source_type": "structured_dataset",
+            "accessed": "2026-07-13",
+        },
+        {
+            "id": "ucdp_termination_conflict",
+            "title": "UCDP Conflict Termination Dataset v4-2024, conflict level",
+            "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+            "publisher": "Uppsala Conflict Data Program",
+            "license": "CC-BY-4.0",
+            "source_type": "structured_dataset",
+            "accessed": "2026-07-13",
+        },
+        {
+            "id": "ucdp_termination_dyad",
+            "title": "UCDP Conflict Termination Dataset v4-2024, dyad level",
+            "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+            "publisher": "Uppsala Conflict Data Program",
+            "license": "CC-BY-4.0",
+            "source_type": "structured_dataset",
+            "accessed": "2026-07-13",
+        },
     ):
         sources_by_id[source["id"]] = source
 
-    all_events = [*seed_events, *source_events, *iwd_events]
+    all_events = [
+        *seed_events,
+        *source_events,
+        *iwd_events,
+        *label_events,
+        *iwbd_events,
+        *ucdp_events,
+    ]
     used_entity_ids = {
         str(participant["entity_id"])
         for event in all_events
@@ -1154,6 +2626,9 @@ def build_expanded_release(
             if name not in identity_queue_names
         )
         - len(source_events)
+        - len(label_events)
+        - len(iwbd_events)
+        - len(ucdp_events)
         - iwd_aggregation["components_attached"],
     )
     latest_rated_event_year = max(int(event["end_year"]) for event in all_events)
@@ -1166,7 +2641,12 @@ def build_expanded_release(
         "latest_rated_event_year": latest_rated_event_year,
         "curated_seed_events": len(seed_events),
         "provisional_hced_events": len(source_events),
+        "provisional_hced_label_events": len(label_events),
         "provisional_iwd_wars": len(iwd_events),
+        "provisional_iwbd_battles": len(iwbd_events),
+        "iwbd_battles_total": iwbd_promotion["battles_total"],
+        "provisional_ucdp_events": len(ucdp_events),
+        "ucdp_termination_rows_total": ucdp_promotion["rows_total"],
         "iwd_parent_wars_total": iwd_aggregation["parents_total"],
         "iwd_component_records": iwd_aggregation["components_total"],
         "iwd_components_aggregated": iwd_aggregation["components_aggregated"],
@@ -1182,14 +2662,17 @@ def build_expanded_release(
         "coverage_status": "expanded_provisional",
         "comprehensive": False,
         "description": (
-            "The curated seed plus strict source-derived HCED tactical and IWD strategic tranches. "
+            "The curated seed plus source-derived tactical tranches (crosswalk-resolved and "
+            "label-resolved HCED engagements, deduplicated IWBD battles) and strategic "
+            "tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). "
             "The separate registry publishes time-bounded Cliopatria polity candidates, "
             "including unrated entries, without assigning them invented Elo results."
         ),
         "coverage_note": (
             "Registry coverage is much broader than rating coverage. Source-derived HCED "
-            "engagements remain provisional; IWD component wars enter only as one aggregated "
-            "coalition update per parent conflict, and unresolved records do not affect Elo. "
+            "and IWBD engagements remain provisional; IWD component wars enter only as one "
+            "aggregated coalition update per parent conflict, UCDP termination records only "
+            "as conflict-level terminal victory episodes, and unresolved records do not affect Elo. "
             f"The latest rated event ends in {latest_rated_event_year}; later timeline years carry ratings forward."
         ),
         "footer_note": (
@@ -1211,28 +2694,84 @@ def build_expanded_release(
             "policy": (
                 "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, "
                 "and unique time-valid polity identities enter the provisional tactical ledger. "
+                "Rows lacking Seshat coding on one or both sides are retried in a second, "
+                "declared label-resolution pass: sides resolve only through explicit "
+                "time-bounded label policies or exact-normalized alias matching with "
+                "uniqueness, full event-interval validity, and name-coherence for "
+                "observation-derived pairings; faction and collective-peoples labels never "
+                "resolve; polity labels pending identity splits never resolve; ambiguity "
+                "always stays staged. Label-resolved events carry reduced identity confidence "
+                "and an identity_resolution provenance marker. "
                 "IWD component wars never enter individually: each parent conflict is rated at "
                 "most once, as a coalition event aggregated from its component dyads, and only "
                 "when the reconstructed sides are consistent, the component outcomes are "
                 "unanimous, no curated seed war overlaps, and every belligerent resolves to a "
-                "unique time-bounded identity. All other parent wars stay staged."
+                "unique time-bounded identity. All other parent wars stay staged. "
+                "IWBD battles enter only when they are not a duplicate of any curated seed "
+                "event, any HCED candidate (promoted or staged), or an earlier IWBD row by "
+                "normalized battle name and year within one year; their date span does not "
+                "contain a differently-named battle of the same war (campaign umbrellas stay "
+                "staged); the coded victor matches a named side; both sides are single "
+                "polities resolving to unique time-bounded identities outside declared deny "
+                "windows; and severity is capped at limited. Duplicate matches are excluded, "
+                "never merged. "
+                "UCDP conflict-termination episodes promote only as conflict-level terminal "
+                "victory episodes (outcome codes 3/4): peace agreements, ceasefires, low "
+                "activity, and actor cessation stay staged; every primary party must be a "
+                "state resolving to a unique time-bounded identity through explicit "
+                "Gleditsch-Ward code policies or exact time-valid alias matching; episodes "
+                "duplicating an already-promoted strategic event, contradicted by a terminal "
+                "dyad row, linked by end date to an oppositely-oriented victory assertion, or "
+                "carrying a documented side-attribution dispute stay staged; severity is "
+                "capped at limited and secondary supporters carry no outcome."
             ),
             "accepted_hced_events": len(source_events),
+            "accepted_hced_label_events": len(label_events),
+            "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
             "iwd_components_aggregated": iwd_aggregation["components_aggregated"],
             "iwd_components_attached_to_rated_parents": iwd_aggregation["components_attached"],
             "hced_rejections": dict(sorted(rejections.items())),
+            "hced_label_rejections": _declared_rejections(
+                hced_label_rejections, HCED_LABEL_REJECTION_COUNTERS
+            ),
+            "hced_label_policy_labels": sorted(HCED_LABEL_POLICIES),
+            "hced_faction_labels_staged": sorted(HCED_FACTION_LABELS),
+            "hced_pending_split_labels": sorted(HCED_PENDING_SPLIT_LABELS),
+            "hced_label_observation_resolutions": hced_label_pass["observation_resolutions"],
             "iwd_rejections": dict(sorted(iwd_rejections.items())),
+            "accepted_iwbd_battles": len(iwbd_events),
+            "iwbd_battles_total": iwbd_promotion["battles_total"],
+            "iwbd_rejections": _declared_rejections(iwbd_rejections, IWBD_REJECTION_COUNTERS),
+            "accepted_ucdp_events": len(ucdp_events),
+            "ucdp_termination_rows_total": ucdp_promotion["rows_total"],
+            "ucdp_rejections": _declared_rejections(ucdp_rejections, UCDP_REJECTION_COUNTERS),
+            "ucdp_curated_exclusions": [
+                {"conflict_id": key[0], "episode_number": key[1], "reason": reason}
+                for key, reason in sorted(UCDP_CURATED_EXCLUSIONS.items())
+            ],
+            "ucdp_duplicate_details": ucdp_promotion["duplicate_details"],
+            "ucdp_dyad_rows_total": ucdp_promotion["dyad_rows_total"],
+            "ucdp_dyad_rows_quarantined_corrupt": ucdp_promotion[
+                "dyad_rows_quarantined_corrupt"
+            ],
+            "ucdp_dyad_terminal_blank_outcome": ucdp_promotion["dyad_terminal_blank_outcome"],
             "source_queue_counts": review_counts,
         },
         "known_limitations": [
             "The release is not a complete census and must not be presented as a definitive all-history ranking.",
             "Strategic war outcomes remain much less complete than tactical engagement outcomes.",
             "HCED winner labels and the Seshat crosswalk are source assertions pending claim-level human review.",
+            "Label-resolved HCED events rest on side-name identity policies and exact alias matches rather than the Seshat crosswalk; they carry lower confidence and remain source assertions pending claim-level human review, and the label-policy entries are entity-boundary decisions pending second-reviewer sign-off.",
             "Cliopatria intervals are split at temporal gaps; final historiographic continuity still requires explicit decisions.",
             "Some Cliopatria identity intervals span successive regimes (for example one Cambodia identity covering 1956-2024), so events resolved to them can share a rating line across regime changes until those identities receive explicit curated splits.",
             "Aggregated IWD coalition events use declared uniform defaults for contribution, role, scale, and stakes because the source carries no per-participant data.",
+            "IWBD events use declared uniform defaults for scale, stakes, contribution, and role because the source carries no per-battle magnitude data, and IWBD war-level victor codes are ignored: battle records never update strategic outcomes.",
+            "Coalition-labelled IWBD battles (notably both world wars) remain staged pending curated coalition composition, and IWBD rows whose date span contains a sibling battle are staged as presumptive campaign umbrellas, which also quarantines some genuinely distinct long engagements.",
+            "IWBD-HCED name and date matches are counted as exclusions only; they are not treated as independent corroboration and no HCED record is modified.",
+            "UCDP episode-level termination outcomes may not describe every supporter: secondary parties are recorded without outcomes, and uniform strategic vectors with scale-linked participant uniforms are declared defaults, as with IWD.",
+            "The 1967 Arab-Israeli fronts and the 1974 Paracel episode stay staged: the source carries mutually contradictory orientations for the former and a documented side-attribution dispute for the latter.",
             "Ancient, non-literate, small, defeated, and non-European polities remain systematically under-recorded.",
         ],
         "prohibited_interpretation": (
@@ -1251,10 +2790,18 @@ def build_expanded_release(
         "rated_entities": len(used_entity_ids),
         "events": len(all_events),
         "provisional_hced_events": len(source_events),
+        "provisional_hced_label_events": len(label_events),
         "provisional_iwd_wars": len(iwd_events),
+        "provisional_iwbd_battles": len(iwbd_events),
+        "provisional_ucdp_events": len(ucdp_events),
         "registry_polities": len(registry_rows),
         "staged_source_records": staged_source_records,
         "unresolved_event_candidates": unresolved_event_candidates,
         "hced_rejections": dict(sorted(rejections.items())),
+        "hced_label_rejections": _declared_rejections(
+            hced_label_rejections, HCED_LABEL_REJECTION_COUNTERS
+        ),
         "iwd_rejections": dict(sorted(iwd_rejections.items())),
+        "iwbd_rejections": _declared_rejections(iwbd_rejections, IWBD_REJECTION_COUNTERS),
+        "ucdp_rejections": _declared_rejections(ucdp_rejections, UCDP_REJECTION_COUNTERS),
     }
