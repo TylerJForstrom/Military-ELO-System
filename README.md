@@ -76,7 +76,7 @@ python scripts/verify_corpus_lock.py --inputs-only
 python scripts/stage_open_data.py corpus
 python scripts/verify_corpus_lock.py
 python scripts/build_release.py
-python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 200
+python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000
 ```
 
 The bounded Wikidata blob must also be obtained by its locked checksum before
