@@ -303,7 +303,7 @@
       "kind": "polity",
       "start_year": 1811,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -413,7 +413,7 @@
       "kind": "caliphate",
       "start_year": 750,
       "end_year": 1259,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -435,7 +435,7 @@
       "kind": "polity",
       "start_year": -279,
       "end_year": -145,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -467,7 +467,7 @@
       "kind": "polity",
       "start_year": -284,
       "end_year": -189,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -500,7 +500,7 @@
       "kind": "dynastic_state",
       "start_year": 800,
       "end_year": 910,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -808,7 +808,7 @@
       "kind": "polity",
       "start_year": 1918,
       "end_year": 1919,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -994,7 +994,7 @@
       "kind": "sultanate",
       "start_year": 1177,
       "end_year": 1249,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -1016,7 +1016,7 @@
       "kind": "polity",
       "start_year": 1429,
       "end_year": 1520,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -1390,7 +1390,7 @@
       "kind": "sultanate",
       "start_year": 1492,
       "end_year": 1686,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -1610,7 +1610,7 @@
       "kind": "polity",
       "start_year": 1820,
       "end_year": 1989,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -1982,7 +1982,7 @@
       "kind": "dynastic_state",
       "start_year": 561,
       "end_year": 591,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -2081,7 +2081,7 @@
       "kind": "polity",
       "start_year": -750,
       "end_year": -224,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -2268,7 +2268,7 @@
       "kind": "confederation",
       "start_year": 1861,
       "end_year": 1865,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -2290,7 +2290,7 @@
       "kind": "polity",
       "start_year": 710,
       "end_year": 946,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -2477,7 +2477,7 @@
       "kind": "polity",
       "start_year": 990,
       "end_year": 1384,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -2851,7 +2851,7 @@
       "kind": "polity",
       "start_year": 1919,
       "end_year": 1991,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -2884,7 +2884,7 @@
       "kind": "polity",
       "start_year": 878,
       "end_year": 959,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -3806,7 +3806,7 @@
       "kind": "polity",
       "start_year": 850,
       "end_year": 910,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -3927,7 +3927,7 @@
       "kind": "polity",
       "start_year": 534,
       "end_year": 554,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -4081,7 +4081,7 @@
       "kind": "polity",
       "start_year": 757,
       "end_year": 935,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -4158,7 +4158,7 @@
       "kind": "empire",
       "start_year": 1822,
       "end_year": 1889,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -4333,7 +4333,7 @@
       "kind": "caliphate",
       "start_year": 911,
       "end_year": 1176,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -4749,7 +4749,7 @@
       "kind": "polity",
       "start_year": 1856,
       "end_year": 1899,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -5297,7 +5297,7 @@
       "kind": "polity",
       "start_year": 1294,
       "end_year": 1695,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -5616,7 +5616,7 @@
       "kind": "polity",
       "start_year": 1976,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -5737,7 +5737,7 @@
       "kind": "dynastic_state",
       "start_year": 1236,
       "end_year": 1571,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -5770,7 +5770,7 @@
       "kind": "polity",
       "start_year": 936,
       "end_year": 1259,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -6187,7 +6187,7 @@
       "kind": "republic",
       "start_year": 1919,
       "end_year": 1943,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -6374,7 +6374,7 @@
       "kind": "empire",
       "start_year": 1440,
       "end_year": 1571,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -6868,7 +6868,7 @@
       "kind": "polity",
       "start_year": -750,
       "end_year": -405,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -7605,7 +7605,7 @@
       "kind": "kingdom",
       "start_year": 1830,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -7627,7 +7627,7 @@
       "kind": "kingdom",
       "start_year": 1636,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -8132,7 +8132,7 @@
       "kind": "kingdom",
       "start_year": 1099,
       "end_year": 1293,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -8363,7 +8363,7 @@
       "kind": "kingdom",
       "start_year": 534,
       "end_year": 925,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -8462,7 +8462,7 @@
       "kind": "kingdom",
       "start_year": 612,
       "end_year": 935,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -8473,7 +8473,7 @@
       "kind": "kingdom",
       "start_year": 1814,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -8737,7 +8737,7 @@
       "kind": "kingdom",
       "start_year": 1139,
       "end_year": 1384,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -8891,7 +8891,7 @@
       "kind": "kingdom",
       "start_year": 534,
       "end_year": 935,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -9331,7 +9331,7 @@
       "kind": "polity",
       "start_year": 1944,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -10263,7 +10263,7 @@
       "kind": "polity",
       "start_year": 1853,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -10624,7 +10624,7 @@
       "kind": "polity",
       "start_year": 1775,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -11140,7 +11140,7 @@
       "kind": "kingdom",
       "start_year": 500,
       "end_year": 560,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -11403,7 +11403,7 @@
       "kind": "republic",
       "start_year": 1963,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -11512,7 +11512,7 @@
       "kind": "confederation",
       "start_year": 1836,
       "end_year": 1839,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -11699,7 +11699,7 @@
       "kind": "republic",
       "start_year": 1911,
       "end_year": 1925,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -11963,7 +11963,7 @@
       "kind": "polity",
       "start_year": 1363,
       "end_year": 1858,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -12282,7 +12282,7 @@
       "kind": "polity",
       "start_year": 1314,
       "end_year": 1858,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -12513,7 +12513,7 @@
       "kind": "polity",
       "start_year": -750,
       "end_year": -204,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -12535,7 +12535,7 @@
       "kind": "polity",
       "start_year": -750,
       "end_year": -219,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -12886,7 +12886,7 @@
       "kind": "republic",
       "start_year": 1992,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -12941,7 +12941,7 @@
       "kind": "republic",
       "start_year": 1834,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -12952,7 +12952,7 @@
       "kind": "republic",
       "start_year": 1953,
       "end_year": 1957,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -13205,7 +13205,7 @@
       "kind": "republic",
       "start_year": 1905,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -13414,7 +13414,7 @@
       "kind": "republic",
       "start_year": 1963,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -14552,7 +14552,7 @@
       "kind": "caliphate",
       "start_year": 1805,
       "end_year": 1904,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -14901,7 +14901,7 @@
       "kind": "dynastic_state",
       "start_year": 587,
       "end_year": 627,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -15198,7 +15198,7 @@
       "kind": "sultanate",
       "start_year": 1094,
       "end_year": 1313,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -15473,7 +15473,7 @@
       "kind": "polity",
       "start_year": 1010,
       "end_year": 1151,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -15758,7 +15758,7 @@
       "kind": "polity",
       "start_year": 1961,
       "end_year": 2024,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -16459,7 +16459,7 @@
       "kind": "kingdom",
       "start_year": 439,
       "end_year": 533,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -16635,7 +16635,7 @@
       "kind": "polity",
       "start_year": -404,
       "end_year": -204,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -16657,7 +16657,7 @@
       "kind": "polity",
       "start_year": 850,
       "end_year": 989,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -16767,7 +16767,7 @@
       "kind": "empire",
       "start_year": 395,
       "end_year": 475,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -16789,7 +16789,7 @@
       "kind": "polity",
       "start_year": 534,
       "end_year": 560,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -16866,7 +16866,7 @@
       "kind": "polity",
       "start_year": -750,
       "end_year": -451,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -17064,7 +17064,7 @@
       "kind": "polity",
       "start_year": -500,
       "end_year": -334,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -17097,7 +17097,7 @@
       "kind": "polity",
       "start_year": 1919,
       "end_year": 1945,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -17218,7 +17218,7 @@
       "kind": "polity",
       "start_year": -404,
       "end_year": -226,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -17369,14 +17369,19 @@
   ],
   "coverage": {
     "registry_polities": 1582,
-    "rated_entities": 109,
-    "rated_events": 1461,
-    "staged_source_records": 27014,
-    "unresolved_event_candidates": 21941,
+    "rated_entities": 177,
+    "rated_events": 2620,
+    "staged_source_records": 27083,
+    "unresolved_event_candidates": 20851,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1377,
+    "provisional_hced_label_events": 1012,
     "provisional_iwd_wars": 44,
+    "provisional_iwbd_battles": 142,
+    "iwbd_battles_total": 1708,
+    "provisional_ucdp_events": 5,
+    "ucdp_termination_rows_total": 2752,
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
     "iwd_components_aggregated": 72,
@@ -17390,7 +17395,7 @@
       "ucdp-dyadic-26.1-candidates.jsonl": 3518,
       "ucdp-termination-conflict-candidates.jsonl": 2752,
       "ucdp-termination-dyad-candidates.jsonl": 3432,
-      "wikidata-candidates.jsonl": 18
+      "wikidata-candidates.jsonl": 87
     }
   }
 }

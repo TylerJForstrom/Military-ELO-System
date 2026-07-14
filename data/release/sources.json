@@ -306,6 +306,15 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "iwbd_dataset",
+    "title": "Interstate War Battle dataset (IWBD)",
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
+    "publisher": "Harvard Dataverse",
+    "license": "CC0-1.0",
+    "source_type": "structured_dataset",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "iwd_dataset",
     "title": "Interstate War Data v1.21",
     "url": "https://doi.org/10.7910/DVN/WGS1YX",
@@ -375,6 +384,24 @@
     "publisher": "U.S. Department of State, Office of the Historian",
     "license": "U.S. government work",
     "source_type": "official_history",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "ucdp_termination_conflict",
+    "title": "UCDP Conflict Termination Dataset v4-2024, conflict level",
+    "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+    "publisher": "Uppsala Conflict Data Program",
+    "license": "CC-BY-4.0",
+    "source_type": "structured_dataset",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "ucdp_termination_dyad",
+    "title": "UCDP Conflict Termination Dataset v4-2024, dyad level",
+    "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+    "publisher": "Uppsala Conflict Data Program",
+    "license": "CC-BY-4.0",
+    "source_type": "structured_dataset",
     "accessed": "2026-07-13"
   },
   {
