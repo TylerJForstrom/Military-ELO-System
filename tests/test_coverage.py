@@ -1,0 +1,754 @@
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+from typing import Any
+
+from military_elo.coverage import (
+    CoverageInputError,
+    build_coverage_report,
+    render_coverage_json,
+    render_coverage_markdown,
+    write_coverage_report,
+)
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _write_json(path: Path, value: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in rows),
+        encoding="utf-8",
+    )
+
+
+def _outcome(layer: str, *, omit: str | None = None) -> dict[str, float]:
+    dimensions = {
+        "tactical": (
+            "battlefield_control",
+            "mission_objective",
+            "force_preservation",
+            "positional_gain",
+        ),
+        "operational": (
+            "campaign_objective",
+            "theater_control",
+            "force_preservation",
+            "tempo_initiative",
+            "logistics_sustainment",
+        ),
+        "strategic": (
+            "battlefield_outcome",
+            "political_objectives",
+            "territorial_outcome",
+            "sovereignty_survival",
+            "settlement_durability",
+            "force_preservation",
+        ),
+    }[layer]
+    return {dimension: 0.5 for dimension in dimensions if dimension != omit}
+
+
+class CoverageFixture(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temporary = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary.name)
+        self.release = self.root / "release"
+        self.review = self.root / "review"
+        self.registry = self.root / "registry.json"
+        self.results = self.root / "results.json"
+
+        self.events = [
+            {
+                "id": "tactical_event",
+                "name": "Synthetic tactical event",
+                "year": -600,
+                "end_year": -599,
+                "event_type": "engagement",
+                "war_type": "interstate_limited",
+                "domain": "land",
+                "date_precision": "year",
+                "cluster_id": "cluster_one",
+                "participants": [
+                    {
+                        "entity_id": "entity_a",
+                        "side": "a",
+                        "role": "primary",
+                        "outcome": _outcome("tactical"),
+                    },
+                    {
+                        "entity_id": "entity_b",
+                        "side": "b",
+                        "role": "primary",
+                        "outcome": _outcome("tactical"),
+                    },
+                ],
+                "source_ids": ["generic_source"],
+            },
+            {
+                "id": "operational_event",
+                "name": "Synthetic operational event",
+                "year": 1800,
+                "end_year": 1801,
+                "event_type": "campaign",
+                "war_type": "",
+                "domain": "",
+                "date_precision": None,
+                "region": "Unclassified",
+                "location": {"name": "Synthetic place", "latitude": 1, "longitude": 2},
+                "cluster_id": "cluster_two",
+                "parent_event_id": "tactical_event",
+                "status": "complete",
+                "participants": [
+                    {
+                        "entity_id": "entity_b",
+                        "side": "a",
+                        "objective": "Synthetic documented objective",
+                        "outcome": _outcome("operational"),
+                    },
+                    {
+                        "entity_id": "entity_c",
+                        "side": "b",
+                        "role": "supporting_ally",
+                        "outcome": _outcome(
+                            "operational", omit="logistics_sustainment"
+                        ),
+                    },
+                ],
+                "source_ids": ["generic_source", "family_source"],
+            },
+            {
+                "id": "excluded_event",
+                "name": "Excluded synthetic record",
+                "year": 1900,
+                "end_year": 1900,
+                "event_type": "war",
+                "status": "excluded",
+                "participants": [
+                    {
+                        "entity_id": "entity_d",
+                        "side": "a",
+                        "role": "primary",
+                        "outcome": _outcome("strategic"),
+                    }
+                ],
+                "source_ids": ["generic_source"],
+            },
+        ]
+        self.entities = [
+            {
+                "id": "entity_a",
+                "name": "Entity A",
+                "region": "Region A",
+                "start_year": -1000,
+            },
+            {
+                "id": "entity_b",
+                "name": "Entity B",
+                "region": "Unclassified",
+                "start_year": -1000,
+            },
+            {
+                "id": "entity_c",
+                "name": "Entity C",
+                "start_year": 1700,
+            },
+        ]
+        self.sources = [
+            {
+                "id": "generic_source",
+                "title": "Generic source",
+                "url": "https://example.invalid/generic",
+                "source_family_id": "must_not_count_without_outcome_role",
+            },
+            {
+                "id": "family_source",
+                "title": "Family source",
+                "url": "https://example.invalid/family",
+                "source_family_id": "family_b",
+            },
+        ]
+        self.metadata = {
+            "dataset_id": "synthetic-coverage-test",
+            "version": "test",
+            "as_of": "2026-07-13",
+            "comprehensive": False,
+            "promotion": {
+                "source_queue_counts": {
+                    "cliopatria-entity-candidates.jsonl": 1,
+                    "hced-candidates.jsonl": 3,
+                },
+                "accepted_iwd_wars": 1,
+                "iwd_components_aggregated": 2,
+                "iwd_components_attached_to_rated_parents": 3,
+                "hced_rejections": {
+                    "missing_date": 1,
+                    "unknown_identity": 0,
+                },
+                "iwbd_rejections": {"duplicate": 2},
+            },
+        }
+        self.registry_document = {
+            "entities": [
+                {"id": "entity_a", "status": "rated", "identity_status": "curated"},
+                {
+                    "id": "entity_b",
+                    "status": "provisional",
+                    "identity_status": "source_candidate",
+                },
+                {
+                    "id": "entity_c",
+                    "status": "provisional",
+                    "identity_status": "source_candidate",
+                },
+                {"id": "entity_d", "status": "unrated", "identity_status": "curated"},
+            ],
+            "coverage": {
+                "registry_polities": 4,
+                "rated_entities": 3,
+                "rated_events": 2,
+                "staged_source_records": 4,
+                "unresolved_event_candidates": 2,
+                "curated_seed_events": 1,
+                "provisional_hced_events": 1,
+                "provisional_hced_label_events": 0,
+                "provisional_iwd_wars": 1,
+                "provisional_iwbd_battles": 0,
+                "provisional_ucdp_events": 0,
+                "iwd_components_aggregated": 2,
+                "source_queue_counts": {
+                    "cliopatria-entity-candidates.jsonl": 1,
+                    "hced-candidates.jsonl": 3,
+                },
+            },
+        }
+        self.results_document = {
+            "entities": [
+                {"id": "entity_a", "name": "Entity A", "network_component": 1},
+                {"id": "entity_b", "name": "Entity B", "network_component": 1},
+                {"id": "entity_c", "name": "Entity C", "network_component": 2},
+            ]
+        }
+        self.review_rows = [
+            {
+                "candidate_id": f"candidate-{index}",
+                "review_status": "needs_review",
+                "do_not_rate_automatically": True,
+            }
+            for index in range(3)
+        ]
+        self._write_fixture()
+
+    def tearDown(self) -> None:
+        self.temporary.cleanup()
+
+    def _write_fixture(self) -> None:
+        _write_json(self.release / "events.json", self.events)
+        _write_json(self.release / "entities.json", self.entities)
+        _write_json(self.release / "sources.json", self.sources)
+        _write_json(self.release / "metadata.json", self.metadata)
+        _write_json(self.registry, self.registry_document)
+        _write_json(self.results, self.results_document)
+        _write_jsonl(
+            self.review / "cliopatria-entity-candidates.jsonl",
+            [{"candidate_id": "identity-1", "review_status": "needs_review"}],
+        )
+        _write_jsonl(self.review / "hced-candidates.jsonl", self.review_rows)
+
+    def _report(self, *, review: bool = True) -> dict[str, Any]:
+        return build_coverage_report(
+            self.release,
+            review_dir=self.review if review else None,
+            registry_path=self.registry,
+            results_path=self.results,
+        )
+
+    def test_stage_scorecard_preserves_units_and_provisional_status(self) -> None:
+        funnel = self._report()["stage_funnel"]
+        self.assertEqual(funnel["raw"]["availability"], "not_available")
+        self.assertEqual(funnel["staged"]["count"], 4)
+        self.assertEqual(funnel["event_like"]["count"], 3)
+        self.assertEqual(funnel["unresolved"]["count"], 2)
+        self.assertEqual(funnel["curated_seed"]["count"], 1)
+        self.assertEqual(funnel["adjudicated"]["availability"], "not_available")
+        self.assertIsNone(funnel["adjudicated"]["count"])
+        self.assertIn("Curated seed membership", funnel["adjudicated"]["reason"])
+        self.assertEqual(funnel["rated_provisional"]["count"], 2)
+        self.assertEqual(funnel["rated"]["count"], 2)
+        self.assertFalse(funnel["is_strictly_nested"])
+        reconciliation = funnel["unit_reconciliation"]
+        self.assertEqual(reconciliation["availability"], "available")
+        self.assertEqual(reconciliation["iwd_components_aggregated"]["count"], 2)
+        self.assertEqual(
+            reconciliation["iwd_components_attached_to_rated_parents"]["count"], 3
+        )
+        self.assertEqual(reconciliation["iwd_parent_wars_rated"]["count"], 1)
+        self.assertEqual(
+            reconciliation["iwd_components_aggregated"]["source"],
+            "registry.coverage.iwd_components_aggregated",
+        )
+        self.assertEqual(
+            reconciliation["iwd_components_attached_to_rated_parents"]["source"],
+            "release.metadata.promotion.iwd_components_attached_to_rated_parents",
+        )
+        for metric in (
+            reconciliation["iwd_components_aggregated"],
+            reconciliation["iwd_components_attached_to_rated_parents"],
+            reconciliation["iwd_parent_wars_rated"],
+        ):
+            self.assertEqual(metric["availability"], "available")
+            self.assertTrue(metric["unit"])
+            self.assertTrue(metric["definition"])
+
+    def test_event_profile_and_field_completeness_keep_unknown_explicit(self) -> None:
+        report = self._report()
+        counts = report["event_counts"]
+        self.assertEqual(counts["total"], 2)
+        self.assertEqual(counts["by_layer"]["tactical"], 1)
+        self.assertEqual(counts["by_layer"]["operational"], 1)
+        self.assertEqual(counts["by_layer"]["unknown"], 0)
+        self.assertEqual(counts["by_domain"]["unknown"], 1)
+        self.assertEqual(counts["by_region"]["unknown"], 1)
+        self.assertEqual(counts["by_region"]["unclassified"], 1)
+        self.assertIn("unclassified", counts["by_participant_entity_region"])
+        self.assertIn("unknown", counts["by_participant_entity_region"])
+
+        field = report["field_completeness"]
+        self.assertEqual(field["locations"]["event_location_present"]["numerator"], 1)
+        self.assertEqual(field["dates"]["date_precision_explicit"]["numerator"], 1)
+        self.assertEqual(field["roles"]["explicit_role"]["numerator"], 3)
+        self.assertEqual(
+            field["objectives"]["documented_objective_statement"]["numerator"], 1
+        )
+        self.assertEqual(
+            field["objectives"]["objective_attainment_dimension"]["numerator"], 4
+        )
+        self.assertEqual(
+            field["outcome_dimensions"]["complete_expected_vector"]["numerator"], 3
+        )
+        self.assertEqual(field["hierarchy"]["parent_link_present"]["numerator"], 1)
+
+    def test_era_boundaries_match_their_labels(self) -> None:
+        self.events[0]["end_year"] = -500
+        self.events[1]["end_year"] = -499
+        self._write_fixture()
+        by_era = self._report()["event_counts"]["by_era"]
+        self.assertEqual(by_era["before_500_bce"], 0)
+        self.assertEqual(by_era["500_bce_to_499_ce"], 2)
+
+    def test_event_type_controls_layer_and_explicit_mismatch_is_reported(self) -> None:
+        self.events[0]["event_type"] = "war"
+        self.events[0]["layer"] = "tactical"
+        self._write_fixture()
+        counts = self._report()["event_counts"]
+        self.assertEqual(counts["by_layer"]["strategic"], 1)
+        self.assertEqual(counts["by_layer"]["tactical"], 0)
+        self.assertEqual(counts["explicit_layer_mismatch_count"], 1)
+        self.assertEqual(
+            counts["explicit_layer_mismatch_event_ids"], ["tactical_event"]
+        )
+        self.assertEqual(counts["explicit_layer_consistency"]["numerator"], 0)
+        self.assertEqual(counts["explicit_layer_consistency"]["denominator"], 1)
+
+    def test_blank_and_nonnumeric_coordinates_are_not_present(self) -> None:
+        self.events[1]["location"] = {"latitude": "", "longitude": ""}
+        self.events[0]["latitude"] = "north"
+        self.events[0]["longitude"] = "east"
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 0)
+        self.assertEqual(locations["event_location_present"]["numerator"], 0)
+
+    def test_out_of_range_coordinates_are_not_present(self) -> None:
+        self.events[1]["location"] = {"latitude": 91, "longitude": 181}
+        self.events[0]["coordinates"] = [181, 91]
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 0)
+        self.assertEqual(locations["event_location_present"]["numerator"], 0)
+
+    def test_source_ids_do_not_become_source_families(self) -> None:
+        families = self._report()["outcome_source_families"]
+        self.assertEqual(families["availability"], "not_available")
+        self.assertEqual(families["family_count_distribution"], {})
+        self.assertEqual(families["unmapped_event_count"], 2)
+        self.assertEqual(families["explicit_mapping_coverage"]["value"], 0.0)
+        self.assertEqual(families["multiple_family_coverage"]["value"], None)
+        self.assertIn("Source ID counts are not a substitute", families["reason"])
+
+    def test_explicit_outcome_family_mapping_is_deduplicated(self) -> None:
+        self.events[0]["outcome_source_family_ids"] = ["family_b", "family_a", "family_a"]
+        self.events[1]["outcome_source_ids"] = ["family_source"]
+        self._write_fixture()
+        families = self._report()["outcome_source_families"]
+        self.assertEqual(families["availability"], "available")
+        self.assertEqual(families["events_by_family"]["family_a"], 1)
+        self.assertEqual(families["events_by_family"]["family_b"], 2)
+        self.assertEqual(families["family_count_distribution"], {"1": 1, "2": 1})
+        self.assertEqual(families["multiple_family_coverage"]["numerator"], 1)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 2)
+
+    def test_partial_family_mapping_does_not_treat_unknown_as_zero(self) -> None:
+        self.events[0]["outcome_source_family_ids"] = ["family_a", "family_b"]
+        self._write_fixture()
+        families = self._report()["outcome_source_families"]
+        self.assertEqual(families["availability"], "partially_available")
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 1)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 2)
+        self.assertEqual(families["multiple_family_coverage"]["numerator"], 1)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 1)
+        self.assertEqual(families["family_count_distribution"], {"2": 1})
+        self.assertEqual(families["unmapped_event_count"], 1)
+        self.assertNotIn("0", families["family_count_distribution"])
+        self.assertNotIn("unknown", families["events_by_family"])
+
+    def test_unclassified_family_values_remain_explicitly_unusable(self) -> None:
+        self.events[0]["outcome_source_family_ids"] = ["family_a", "unclassified"]
+        self._write_fixture()
+        families = self._report()["outcome_source_families"]
+        self.assertEqual(families["events_with_explicit_family_data"], 1)
+        self.assertEqual(families["unusable_mapping_categories"]["unclassified"], 1)
+        self.assertNotIn("unclassified", families["events_by_family"])
+        markdown = render_coverage_markdown(self._report())
+        self.assertIn("events without a usable mapping: 1", markdown)
+        self.assertIn("mapping value: 1", markdown)
+        self.assertIn("| unclassified | 1 |", markdown)
+
+    def test_registry_coverage_uses_event_participants_not_registry_status(self) -> None:
+        report = self._report()
+        registry = report["registry_to_rating"]
+        self.assertEqual(registry["rated_entities_in_registry"], 3)
+        self.assertEqual(registry["registry_entities_total"], 4)
+        self.assertEqual(registry["registry_to_rating_ratio"]["value"], 0.75)
+        self.assertEqual(registry["registry_status_counts"]["rated"], 1)
+        self.assertEqual(registry["registry_status_counts"]["provisional"], 2)
+
+        network = report["network"]
+        self.assertEqual(network["component_sizes"], {"1": 2, "2": 1})
+        self.assertEqual(network["isolated_entity_count"], 1)
+        self.assertEqual(network["isolated_entities"][0]["entity_id"], "entity_c")
+
+    def test_queue_age_is_unavailable_without_disposition_and_timestamp(self) -> None:
+        aging = self._report()["unresolved_queue_aging"]
+        self.assertEqual(aging["availability"], "not_available")
+        self.assertIsNone(aging["timestamp_coverage"]["value"])
+        self.assertIn("not reinterpreted", aging["reason"])
+        self.assertIn("explicit queue timestamp", aging["reason"].casefold())
+
+    def test_queue_age_uses_only_explicit_unresolved_rows_and_timestamps(self) -> None:
+        self.review_rows = [
+            {
+                "candidate_id": "old",
+                "resolution_status": "unresolved",
+                "queued_at": "2026-01-01",
+            },
+            {
+                "candidate_id": "recent",
+                "resolution_status": "unresolved",
+                "queued_at": "2026-06-30T12:00:00Z",
+            },
+            {"candidate_id": "missing", "resolution_status": "unresolved"},
+            {
+                "candidate_id": "generic-needs-review",
+                "review_status": "needs_review",
+                "queued_at": "2025-01-01",
+            },
+        ]
+        self.registry_document["coverage"]["source_queue_counts"]["hced-candidates.jsonl"] = 4
+        self.metadata["promotion"]["source_queue_counts"]["hced-candidates.jsonl"] = 4
+        self._write_fixture()
+        aging = self._report()["unresolved_queue_aging"]
+        self.assertEqual(aging["availability"], "partially_available")
+        self.assertEqual(aging["timestamp_coverage"]["numerator"], 2)
+        self.assertEqual(aging["timestamp_coverage"]["denominator"], 3)
+        self.assertEqual(aging["age_buckets"]["0_to_30_days"], 1)
+        self.assertEqual(aging["age_buckets"]["181_to_365_days"], 1)
+        self.assertEqual(aging["missing_timestamp_count"], 1)
+        markdown = render_coverage_markdown(self._report())
+        self.assertIn("Missing timestamps: 1; invalid timestamps: 0", markdown)
+        self.assertIn("Queue-timestamp coverage", markdown)
+
+    def test_created_at_is_not_a_queue_entry_timestamp(self) -> None:
+        self.review_rows = [
+            {
+                "candidate_id": "created-assertion",
+                "resolution_status": "unresolved",
+                "created_at": "2026-01-01",
+            }
+        ]
+        self.registry_document["coverage"]["source_queue_counts"][
+            "hced-candidates.jsonl"
+        ] = 1
+        self.metadata["promotion"]["source_queue_counts"][
+            "hced-candidates.jsonl"
+        ] = 1
+        self._write_fixture()
+        aging = self._report()["unresolved_queue_aging"]
+        self.assertEqual(aging["availability"], "not_available")
+        self.assertEqual(aging["timestamp_coverage"]["numerator"], 0)
+        self.assertEqual(aging["timestamp_coverage"]["denominator"], 1)
+        self.assertIn("no explicit queue timestamp", aging["reason"].casefold())
+
+    def test_partial_network_coverage_stays_visible_in_markdown(self) -> None:
+        self.results_document["entities"].append(
+            {"id": "entity_d", "name": "Entity D", "network_component": None}
+        )
+        self._write_fixture()
+        report = self._report()
+        self.assertEqual(report["network"]["availability"], "partially_available")
+        self.assertEqual(report["network"]["entities_missing_component"], 1)
+        markdown = render_coverage_markdown(report)
+        self.assertIn("entities missing a component: 1", markdown)
+        self.assertIn("Opponent-network ratios", markdown)
+
+    def test_rejections_preserve_pipeline_units_and_zero_counters(self) -> None:
+        rejections = self._report()["rejections"]
+        self.assertEqual(rejections["availability"], "available")
+        self.assertEqual(rejections["pipelines"]["hced"]["total"], 1)
+        self.assertEqual(
+            rejections["pipelines"]["hced"]["reason_counts"]["unknown_identity"], 0
+        )
+        self.assertNotIn("global_total", rejections)
+
+    def test_renderers_are_deterministic_and_write_paired_outputs(self) -> None:
+        report = self._report()
+        first = render_coverage_json(report)
+        second = render_coverage_json(report)
+        self.assertEqual(first, second)
+        self.assertEqual(json.loads(first), report)
+        self.assertNotIn(str(self.root), first)
+        markdown = render_coverage_markdown(report)
+        self.assertEqual(markdown, render_coverage_markdown(report))
+        self.assertIn("# Military History Elo coverage and quality report", markdown)
+        self.assertIn("Observed corpus coverage is not an estimate", markdown)
+        self.assertIn(
+            "| Metric | Numerator | Denominator | Coverage | Unit | Availability | Definition | Reason |",
+            markdown,
+        )
+        self.assertIn("iwd_components_aggregated", markdown)
+        self.assertIn("iwd_components_attached_to_rated_parents", markdown)
+        self.assertIn("iwd_parent_wars_rated", markdown)
+        self.assertIn("Outcome-source family ratios", markdown)
+
+        output_dir = self.root / "paired-output"
+        json_path, markdown_path = write_coverage_report(report, output_dir)
+        self.assertEqual(json_path.read_text(encoding="utf-8"), first)
+        self.assertEqual(markdown_path.read_text(encoding="utf-8"), markdown)
+
+    def test_every_ratio_exposes_required_scientific_metadata(self) -> None:
+        report = self._report()
+
+        def visit(value: Any) -> None:
+            if isinstance(value, dict):
+                if "value" in value and "availability" in value:
+                    for key in (
+                        "numerator",
+                        "denominator",
+                        "unit",
+                        "definition",
+                        "availability",
+                    ):
+                        self.assertIn(key, value)
+                for child in value.values():
+                    visit(child)
+            elif isinstance(value, list):
+                for child in value:
+                    visit(child)
+
+        visit(report)
+
+    def test_cli_writes_only_the_requested_paired_artifacts(self) -> None:
+        destination = self.root / "cli-output"
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(PROJECT_ROOT / "scripts" / "report_coverage.py"),
+                "--data",
+                str(self.release),
+                "--review",
+                str(self.review),
+                "--registry",
+                str(self.registry),
+                "--results",
+                str(self.results),
+                "--output-dir",
+                str(destination),
+            ],
+            cwd=PROJECT_ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertEqual(
+            sorted(path.name for path in destination.iterdir()),
+            ["coverage.json", "coverage.md"],
+        )
+
+    def test_cli_rejects_basename_path_escape(self) -> None:
+        destination = self.root / "safe-output"
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(PROJECT_ROOT / "scripts" / "report_coverage.py"),
+                "--data",
+                str(self.release),
+                "--registry",
+                str(self.registry),
+                "--results",
+                str(self.results),
+                "--output-dir",
+                str(destination),
+                "--basename",
+                "../escaped",
+            ],
+            cwd=PROJECT_ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertFalse((self.root / "escaped.json").exists())
+        self.assertFalse((self.root / "escaped.md").exists())
+
+    def test_cli_rejects_explicitly_missing_optional_inputs(self) -> None:
+        valid_inputs = {
+            "--review": self.review,
+            "--registry": self.registry,
+            "--results": self.results,
+        }
+        for missing_flag in valid_inputs:
+            with self.subTest(flag=missing_flag):
+                arguments = [
+                    sys.executable,
+                    str(PROJECT_ROOT / "scripts" / "report_coverage.py"),
+                    "--data",
+                    str(self.release),
+                    "--format",
+                    "json",
+                ]
+                for flag, path in valid_inputs.items():
+                    arguments.extend(
+                        [
+                            flag,
+                            str(self.root / "missing-input")
+                            if flag == missing_flag
+                            else str(path),
+                        ]
+                    )
+                completed = subprocess.run(
+                    arguments,
+                    cwd=PROJECT_ROOT,
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                )
+                self.assertNotEqual(completed.returncode, 0)
+                self.assertIn("missing-input", completed.stderr)
+
+    def test_as_of_requires_an_exact_iso_date(self) -> None:
+        for value in (
+            "2026-07-13garbage",
+            "2026-07-13T00:00:00",
+            " 2026-07-13 ",
+            "",
+            "2026-02-30",
+        ):
+            with self.subTest(value=value), self.assertRaises(CoverageInputError):
+                build_coverage_report(
+                    self.release,
+                    registry_path=self.registry,
+                    as_of=value,
+                )
+
+    def test_cli_rejects_nonexact_as_of_date(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(PROJECT_ROOT / "scripts" / "report_coverage.py"),
+                "--data",
+                str(self.release),
+                "--review",
+                str(self.review),
+                "--registry",
+                str(self.registry),
+                "--results",
+                str(self.results),
+                "--as-of",
+                "2026-07-13T00:00:00",
+                "--format",
+                "json",
+            ],
+            cwd=PROJECT_ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("expected YYYY-MM-DD", completed.stderr)
+
+
+class CommittedCoverageArtifactTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.report = build_coverage_report(
+            PROJECT_ROOT / "data" / "release",
+            registry_path=PROJECT_ROOT / "data" / "catalog" / "registry.json",
+            results_path=PROJECT_ROOT / "web" / "data" / "results.json",
+        )
+        cls.events = json.loads(
+            (PROJECT_ROOT / "data" / "release" / "events.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+    def test_report_matches_release_without_new_count_pins(self) -> None:
+        rated_events = [
+            event
+            for event in self.events
+            if str(event.get("status", "complete")).casefold() == "complete"
+        ]
+        self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
+        self.assertEqual(
+            sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
+        )
+        self.assertEqual(
+            self.report["event_counts"]["by_region"]["unknown"], len(rated_events)
+        )
+        self.assertEqual(
+            self.report["historical_completeness"]["status"], "not_estimated"
+        )
+        self.assertEqual(
+            self.report["outcome_source_families"]["availability"],
+            "not_available",
+        )
+
+    def test_registry_coverage_is_an_observed_ratio_only(self) -> None:
+        ratio = self.report["registry_to_rating"]["registry_to_rating_ratio"]
+        self.assertEqual(
+            ratio["numerator"], self.report["registry_to_rating"]["rated_entities_in_registry"]
+        )
+        self.assertEqual(
+            ratio["denominator"], self.report["registry_to_rating"]["registry_entities_total"]
+        )
+        self.assertNotEqual(
+            ratio["value"], self.report["historical_completeness"]["value"]
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()
