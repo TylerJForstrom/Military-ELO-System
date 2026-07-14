@@ -1,7 +1,16 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any
+
+from .canonical import (
+    ParticipationEpisode,
+    UncertainDate,
+    UncertainDateInterval,
+    freeze_json,
+)
+from .claims import canonicalize_json
 
 
 TACTICAL_DIMENSIONS = {
@@ -29,6 +38,23 @@ STRATEGIC_DIMENSIONS = {
 }
 
 
+def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
+    if value == ():
+        return ()
+    if isinstance(value, (str, bytes)) or not isinstance(value, (list, tuple)):
+        raise TypeError(f"{field_name} must be an array of strings")
+    if any(not isinstance(item, str) for item in value):
+        raise TypeError(f"{field_name} must contain only strings")
+    return tuple(value)
+
+
+def _stable_id_tuple(value: Any, field_name: str) -> tuple[str, ...]:
+    result = _string_tuple(value, field_name)
+    if any(not item.strip() for item in result):
+        raise ValueError(f"{field_name} must contain only non-blank ids")
+    return result
+
+
 @dataclass(frozen=True)
 class Entity:
     id: str
@@ -41,6 +67,24 @@ class Entity:
     predecessors: tuple[str, ...] = ()
     continuity_note: str = ""
     source_ids: tuple[str, ...] = ()
+    claim_ids: tuple[str, ...] = ()
+    adjudication_ids: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "claim_ids",
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Entity.claim_ids")))),
+        )
+        object.__setattr__(
+            self,
+            "adjudication_ids",
+            tuple(
+                sorted(
+                    set(_stable_id_tuple(self.adjudication_ids, "Entity.adjudication_ids"))
+                )
+            ),
+        )
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Entity":
@@ -55,7 +99,34 @@ class Entity:
             predecessors=tuple(raw.get("predecessors", [])),
             continuity_note=str(raw.get("continuity_note", "")),
             source_ids=tuple(raw.get("source_ids", [])),
+            claim_ids=_stable_id_tuple(
+                raw["claim_ids"] if "claim_ids" in raw else [],
+                "Entity.claim_ids",
+            ),
+            adjudication_ids=_stable_id_tuple(
+                raw["adjudication_ids"] if "adjudication_ids" in raw else [],
+                "Entity.adjudication_ids",
+            ),
         )
+
+    def to_dict(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "id": self.id,
+            "name": self.name,
+            "kind": self.kind,
+            "start_year": self.start_year,
+            "end_year": self.end_year,
+            "region": self.region,
+            "aliases": list(self.aliases),
+            "predecessors": list(self.predecessors),
+            "continuity_note": self.continuity_note,
+            "source_ids": list(self.source_ids),
+        }
+        if self.claim_ids:
+            result["claim_ids"] = sorted(set(self.claim_ids))
+        if self.adjudication_ids:
+            result["adjudication_ids"] = sorted(set(self.adjudication_ids))
+        return result
 
 
 @dataclass(frozen=True)
@@ -80,6 +151,17 @@ class Source:
             accessed=str(raw.get("accessed", "")),
         )
 
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "title": self.title,
+            "url": self.url,
+            "publisher": self.publisher,
+            "license": self.license,
+            "source_type": self.source_type,
+            "accessed": self.accessed,
+        }
+
 
 @dataclass(frozen=True)
 class Participant:
@@ -96,9 +178,51 @@ class Participant:
     national_scale: float | None = None
     termination: str = "unknown"
     note: str = ""
+    entry: UncertainDate | None = None
+    exit: UncertainDate | None = None
+    objectives: tuple[str, ...] = ()
+    claim_ids: tuple[str, ...] = ()
+    adjudication_ids: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        for field_name in ("entry", "exit"):
+            value = getattr(self, field_name)
+            if value is not None and not isinstance(value, UncertainDate):
+                raise TypeError(
+                    f"Participant.{field_name} must be an UncertainDate or null"
+                )
+        object.__setattr__(
+            self,
+            "objectives",
+            _string_tuple(self.objectives, "Participant.objectives"),
+        )
+        object.__setattr__(
+            self,
+            "claim_ids",
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Participant.claim_ids")))),
+        )
+        object.__setattr__(
+            self,
+            "adjudication_ids",
+            tuple(
+                sorted(
+                    set(
+                        _stable_id_tuple(
+                            self.adjudication_ids, "Participant.adjudication_ids"
+                        )
+                    )
+                )
+            ),
+        )
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Participant":
+        if "entry" in raw and "entry_date" in raw:
+            raise ValueError("Participant cannot contain both entry and entry_date")
+        if "exit" in raw and "exit_date" in raw:
+            raise ValueError("Participant cannot contain both exit and exit_date")
+        entry_raw = raw.get("entry", raw.get("entry_date"))
+        exit_raw = raw.get("exit", raw.get("exit_date"))
         return cls(
             entity_id=str(raw["entity_id"]),
             side=str(raw["side"]),
@@ -121,7 +245,49 @@ class Participant:
             ),
             termination=str(raw.get("termination", "unknown")),
             note=str(raw.get("note", "")),
+            entry=UncertainDate.from_dict(entry_raw) if entry_raw is not None else None,
+            exit=UncertainDate.from_dict(exit_raw) if exit_raw is not None else None,
+            objectives=_string_tuple(
+                raw["objectives"] if "objectives" in raw else [],
+                "Participant.objectives",
+            ),
+            claim_ids=_stable_id_tuple(
+                raw["claim_ids"] if "claim_ids" in raw else [],
+                "Participant.claim_ids",
+            ),
+            adjudication_ids=_stable_id_tuple(
+                raw["adjudication_ids"] if "adjudication_ids" in raw else [],
+                "Participant.adjudication_ids",
+            ),
         )
+
+    def to_dict(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "entity_id": self.entity_id,
+            "side": self.side,
+            "role": self.role,
+            "contribution": self.contribution,
+            "outcome": dict(sorted(self.outcome.items())),
+            "result_class": self.result_class,
+            "force_size": self.force_size,
+            "home_advantage": self.home_advantage,
+            "evidence_confidence": self.evidence_confidence,
+            "stakes": self.stakes,
+            "national_scale": self.national_scale,
+            "termination": self.termination,
+            "note": self.note,
+        }
+        if self.entry is not None:
+            result["entry"] = self.entry.to_dict()
+        if self.exit is not None:
+            result["exit"] = self.exit.to_dict()
+        if self.objectives:
+            result["objectives"] = list(self.objectives)
+        if self.claim_ids:
+            result["claim_ids"] = sorted(set(self.claim_ids))
+        if self.adjudication_ids:
+            result["adjudication_ids"] = sorted(set(self.adjudication_ids))
+        return result
 
 
 @dataclass(frozen=True)
@@ -146,6 +312,81 @@ class Event:
     geographic_scope: float | None = None
     domain: str = "mixed"
     cluster_id: str | None = None
+    aliases: tuple[str, ...] = ()
+    parent_event_ids: tuple[str, ...] = ()
+    child_event_ids: tuple[str, ...] = ()
+    date_interval: UncertainDateInterval | None = None
+    geometry: Mapping[str, Any] | None = None
+    participation_episodes: tuple[ParticipationEpisode, ...] = ()
+    claim_ids: tuple[str, ...] = ()
+    adjudication_ids: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if self.parent_event_id is not None:
+            if not isinstance(self.parent_event_id, str):
+                raise TypeError("Event.parent_event_id must be a string or null")
+            if not self.parent_event_id.strip():
+                raise ValueError(
+                    "Event.parent_event_id must be non-blank when supplied"
+                )
+        if self.date_interval is not None and not isinstance(
+            self.date_interval, UncertainDateInterval
+        ):
+            raise TypeError(
+                "Event.date_interval must be an UncertainDateInterval or null"
+            )
+        object.__setattr__(
+            self,
+            "aliases",
+            tuple(sorted(set(_string_tuple(self.aliases, "Event.aliases")))),
+        )
+        object.__setattr__(
+            self,
+            "parent_event_ids",
+            tuple(
+                sorted(
+                    set(_stable_id_tuple(self.parent_event_ids, "Event.parent_event_ids"))
+                )
+            ),
+        )
+        object.__setattr__(
+            self,
+            "child_event_ids",
+            tuple(
+                sorted(
+                    set(_stable_id_tuple(self.child_event_ids, "Event.child_event_ids"))
+                )
+            ),
+        )
+        if not isinstance(self.participation_episodes, (list, tuple)):
+            raise TypeError("Event.participation_episodes must be an array")
+        if any(
+            not isinstance(item, ParticipationEpisode)
+            for item in self.participation_episodes
+        ):
+            raise TypeError(
+                "Event.participation_episodes must contain ParticipationEpisode objects"
+            )
+        object.__setattr__(self, "participation_episodes", tuple(self.participation_episodes))
+        object.__setattr__(
+            self,
+            "claim_ids",
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Event.claim_ids")))),
+        )
+        object.__setattr__(
+            self,
+            "adjudication_ids",
+            tuple(
+                sorted(
+                    set(_stable_id_tuple(self.adjudication_ids, "Event.adjudication_ids"))
+                )
+            ),
+        )
+        if self.geometry is not None:
+            geometry = freeze_json(self.geometry)
+            if not isinstance(geometry, Mapping):
+                raise TypeError("Event geometry must be a GeoJSON object")
+            object.__setattr__(self, "geometry", geometry)
 
     @property
     def track(self) -> str:
@@ -162,6 +403,11 @@ class Event:
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Event":
         year = int(raw["year"])
+        episodes_raw = (
+            raw["participation_episodes"] if "participation_episodes" in raw else []
+        )
+        if not isinstance(episodes_raw, (list, tuple)):
+            raise TypeError("Event.participation_episodes must be an array")
         return cls(
             id=str(raw["id"]),
             name=str(raw["name"]),
@@ -187,4 +433,75 @@ class Event:
             ),
             domain=str(raw.get("domain", "mixed")),
             cluster_id=raw.get("cluster_id"),
+            aliases=_string_tuple(
+                raw["aliases"] if "aliases" in raw else [], "Event.aliases"
+            ),
+            parent_event_ids=_stable_id_tuple(
+                raw["parent_event_ids"] if "parent_event_ids" in raw else [],
+                "Event.parent_event_ids",
+            ),
+            child_event_ids=_stable_id_tuple(
+                raw["child_event_ids"] if "child_event_ids" in raw else [],
+                "Event.child_event_ids",
+            ),
+            date_interval=(
+                UncertainDateInterval.from_dict(raw["date_interval"])
+                if raw.get("date_interval") is not None
+                else None
+            ),
+            geometry=raw["geometry"] if raw.get("geometry") is not None else None,
+            participation_episodes=tuple(
+                ParticipationEpisode.from_dict(item)
+                for item in episodes_raw
+            ),
+            claim_ids=_stable_id_tuple(
+                raw["claim_ids"] if "claim_ids" in raw else [], "Event.claim_ids"
+            ),
+            adjudication_ids=_stable_id_tuple(
+                raw["adjudication_ids"] if "adjudication_ids" in raw else [],
+                "Event.adjudication_ids",
+            ),
         )
+
+    def to_dict(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "id": self.id,
+            "name": self.name,
+            "year": self.year,
+            "end_year": self.end_year,
+            "event_type": self.event_type,
+            "war_type": self.war_type,
+            "scale": self.scale,
+            "stakes": self.stakes,
+            "decisiveness": self.decisiveness,
+            "confidence": self.confidence,
+            "participants": [participant.to_dict() for participant in self.participants],
+            "source_ids": list(self.source_ids),
+            "parent_event_id": self.parent_event_id,
+            "status": self.status,
+            "sequence": self.sequence,
+            "summary": self.summary,
+            "date_precision": self.date_precision,
+            "geographic_scope": self.geographic_scope,
+            "domain": self.domain,
+            "cluster_id": self.cluster_id,
+        }
+        if self.aliases:
+            result["aliases"] = sorted(set(self.aliases))
+        if self.parent_event_ids:
+            result["parent_event_ids"] = sorted(set(self.parent_event_ids))
+        if self.child_event_ids:
+            result["child_event_ids"] = sorted(set(self.child_event_ids))
+        if self.date_interval is not None:
+            result["date_interval"] = self.date_interval.to_dict()
+        if self.geometry is not None:
+            result["geometry"] = canonicalize_json(self.geometry)
+        if self.participation_episodes:
+            result["participation_episodes"] = [
+                episode.to_dict() for episode in self.participation_episodes
+            ]
+        if self.claim_ids:
+            result["claim_ids"] = sorted(set(self.claim_ids))
+        if self.adjudication_ids:
+            result["adjudication_ids"] = sorted(set(self.adjudication_ids))
+        return result

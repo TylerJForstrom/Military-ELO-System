@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://military-history-elo.example/schemas/adjudication.schema.json",
+  "title": "Military History Elo adjudication",
+  "description": "One immutable review decision. Parallel reviews remain separate; corrections append a new decision that supersedes earlier decision IDs. Acceptance alone never makes a claim rating-eligible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "claim_id",
+    "reviewer",
+    "decision",
+    "rationale",
+    "codebook_version",
+    "supersedes"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "claim_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "reviewer": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "description": "Stable reviewer identifier used to enforce independent review."
+    },
+    "decision": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "description": "Accepted and rejected are resolved states; other codebook values remain unresolved."
+    },
+    "rationale": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "codebook_version": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "supersedes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "reviewed_at": {"type": "string"},
+    "review_stage": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "evidence_ids_considered": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+      "uniqueItems": true
+    },
+    "blind_review": {"type": ["boolean", "null"]},
+    "confidence": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}
