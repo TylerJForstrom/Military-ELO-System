@@ -12,7 +12,9 @@ from military_elo.ingest.cow import import_cow_csv
 def main() -> int:
     parser = argparse.ArgumentParser(description="Stage a downloaded Correlates of War CSV for review")
     parser.add_argument("input")
-    parser.add_argument("--review", default="data/review/cow-candidates.jsonl")
+    parser.add_argument(
+        "--review", default="build/acquisition/cow/cow-candidates.jsonl"
+    )
     parser.add_argument("--dataset", default="cow-war")
     parser.add_argument("--version", default="user-supplied")
     args = parser.parse_args()

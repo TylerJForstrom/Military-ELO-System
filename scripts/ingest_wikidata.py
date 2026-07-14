@@ -11,8 +11,10 @@ from military_elo.ingest.wikidata import fetch_wikidata
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Stage Wikidata military-event candidates for review")
-    parser.add_argument("--raw-root", default="data/raw")
-    parser.add_argument("--review", default="data/review/wikidata-candidates.jsonl")
+    parser.add_argument("--raw-root", default="build/acquisition/wikidata/raw")
+    parser.add_argument(
+        "--review", default="build/acquisition/wikidata/wikidata-live.jsonl"
+    )
     parser.add_argument("--page-size", type=int, default=1000)
     parser.add_argument("--max-pages", type=int, default=None)
     args = parser.parse_args()

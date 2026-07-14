@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "corpus_id": "military-history-elo-2026-07-13",
+  "created_at": "2026-07-14T15:55:06Z",
+  "transformation_version": "open-data-review-v1",
+  "datasets": {
+    "cliopatria-0.2.0": {
+      "title": "Cliopatria historical polity registry",
+      "source_url": "https://raw.githubusercontent.com/Seshat-Global-History-Databank/cliopatria/v0.2.0/cliopatria.geojson.zip",
+      "dataset_version": "0.2.0 (3400 BCE-2024 CE)",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:40:25Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T164025Z-d01ae3a20d35.zip",
+          "sha256": "d01ae3a20d358cc5d54f69d9d725d390767d9c8759ac89ad6f90c58d106f3370",
+          "size_bytes": 44231317
+        }
+      ]
+    },
+    "hced": {
+      "title": "Historical Conflict Event Dataset",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/13390255",
+      "dataset_version": "Dataverse file 13390255",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:17Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161517Z-92a22e49c20d.csv",
+          "sha256": "92a22e49c20d02a1d7ecf3fbdbb5e3ca94b7327b7620ee79dd01909857805b79",
+          "size_bytes": 2171518
+        }
+      ]
+    },
+    "hced-seshat-crosswalk": {
+      "title": "HCED-Seshat polity crosswalk",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/11018172?format=original",
+      "dataset_version": "Dataverse file 11018172",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:17Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161517Z-8496aed0f194.csv",
+          "sha256": "8496aed0f194136ee2ff9c6f6536a776c0129e8e04fe5615ddee7af30d1e2c98",
+          "size_bytes": 2429390
+        }
+      ]
+    },
+    "iwbd": {
+      "title": "Interstate War Battle Dataset",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
+      "dataset_version": "Dataverse file 4435240",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:18Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161518Z-fcf5747cf94b.bin",
+          "sha256": "fcf5747cf94b50de9b74c41da078444d05bc7992bf6949f0a71107407d52b534",
+          "size_bytes": 248431
+        }
+      ]
+    },
+    "iwbd-codebook": {
+      "title": "Interstate War Battle Dataset codebook",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/4435241",
+      "dataset_version": "Dataverse file 4435241",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:19Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161519Z-1cd230bbd465.pdf",
+          "sha256": "1cd230bbd4654dac48765b1e3fd553a1abd4cd76807c11b7de2da6cf40ca40e5",
+          "size_bytes": 126129
+        }
+      ]
+    },
+    "iwd-1.21": {
+      "title": "Interstate War Data",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/5118363",
+      "dataset_version": "1.21 (1823-2003)",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T17:32:51Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T173251Z-fd6cfbcbebed.tsv",
+          "sha256": "fd6cfbcbebed2d31cc0aa8eaa417ec4b9d1514f9d0261cb843c153c05ba231ec",
+          "size_bytes": 307818
+        }
+      ]
+    },
+    "ucdp-conflict-26.1": {
+      "title": "UCDP/PRIO Armed Conflict Dataset",
+      "source_url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261-csv.zip",
+      "dataset_version": "26.1 (1946-2025)",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:19Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161519Z-5f9517432229.zip",
+          "sha256": "5f951743222964674a446e32a5a871077b29bd13349588d85fc59953d89c878a",
+          "size_bytes": 45955
+        }
+      ]
+    },
+    "ucdp-dyadic-26.1": {
+      "title": "UCDP Dyadic Dataset",
+      "source_url": "https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-261-csv.zip",
+      "dataset_version": "26.1 (1946-2025)",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:20Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161520Z-1f89ca62c828.zip",
+          "sha256": "1f89ca62c82819ecfcd8dd483826bc6760530118ddc63a191a9d4252a2174557",
+          "size_bytes": 49716
+        }
+      ]
+    },
+    "ucdp-actor-26.1": {
+      "title": "UCDP Actor Dataset",
+      "source_url": "https://ucdp.uu.se/downloads/actor/ucdp-actor-261-csv.zip",
+      "dataset_version": "26.1",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:20Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161520Z-4721c9cb1619.zip",
+          "sha256": "4721c9cb1619494094fe762a0a9ddf24b3d95c88de0abc14f69deb776c3a6c75",
+          "size_bytes": 77396
+        }
+      ]
+    },
+    "ucdp-termination-conflict": {
+      "title": "UCDP Conflict Termination Dataset",
+      "source_url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+      "dataset_version": "v4 2024",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:22Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161522Z-6f3a739fa5c6.csv",
+          "sha256": "6f3a739fa5c6e23ab3dde169d0d06f139677b7a9cf5ce5b2dcb3bf3ab39f9b7d",
+          "size_bytes": 545151
+        }
+      ]
+    },
+    "ucdp-termination-dyad": {
+      "title": "UCDP Dyadic Conflict Termination Dataset",
+      "source_url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+      "dataset_version": "v4 2024",
+      "license": {
+        "id": "CC-BY-4.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:15:23Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161523Z-37b250d228db.csv",
+          "sha256": "37b250d228db2ba51999debc93dd3cea3bdccb536d13b8dc21b9665f8d577ba9",
+          "size_bytes": 693520
+        }
+      ]
+    },
+    "wikidata": {
+      "title": "Wikidata bounded military-event discovery snapshot",
+      "source_url": "https://query.wikidata.org/sparql?query=%0ASELECT+%3Fevent+%3FeventLabel+%3Fkind+%3Fdate+%3FendDate+%3Fparticipant+%3FparticipantLabel%0A+++++++%3Fwinner+%3FwinnerLabel+%3FpartOf+%3FpartOfLabel+%3Flocation+%3FlocationLabel+WHERE+%7B%0A++VALUES+%3Fclass+%7B+wd%3AQ178561+wd%3AQ645883+wd%3AQ198+%7D%0A++%3Fevent+wdt%3AP31+%3Fclass+.%0A++BIND%28IF%28%3Fclass+%3D+wd%3AQ178561%2C+%22engagement%22%2C%0A+++++++IF%28%3Fclass+%3D+wd%3AQ645883%2C+%22campaign%22%2C+%22war%22%29%29+AS+%3Fkind%29%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP585+%3FpointInTime+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP580+%3FstartTime+.+%7D%0A++BIND%28COALESCE%28%3FpointInTime%2C+%3FstartTime%29+AS+%3Fdate%29%0A++FILTER%28BOUND%28%3Fdate%29%29%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP582+%3FendDate+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP710+%3Fparticipant+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP1346+%3Fwinner+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP361+%3FpartOf+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP276+%3Flocation+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%22.+%7D%0A%7D%0ALIMIT+50%0AOFFSET+0%0A&format=json",
+      "dataset_version": "bounded SPARQL page: limit 50, offset 0, retrieved 2026-07-13",
+      "license": {
+        "id": "CC0-1.0",
+        "classification": "open_core"
+      },
+      "retrieval": {
+        "retrieved_at": "2026-07-13T16:13:24Z",
+        "method": "https"
+      },
+      "files": [
+        {
+          "filename": "20260713T161324Z-3d6f3047aeb0.json",
+          "sha256": "3d6f3047aeb075a3e65ad87f18df8a40c7cd10c9a797c5d69f8e7c7499dbdfb1",
+          "size_bytes": 58339
+        }
+      ]
+    }
+  },
+  "transformations": {
+    "cliopatria-review": {
+      "transformer": "stage_cliopatria",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "cliopatria-0.2.0",
+          "filename": "20260713T164025Z-d01ae3a20d35.zip"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "cliopatria-entity-candidates.jsonl",
+        "sha256": "905b2d570bb5423d2576016f016b8c31850f9517fc55e58d63b831ad7ba2f289",
+        "size_bytes": 2357252,
+        "record_count": 1637
+      }
+    },
+    "hced-review": {
+      "transformer": "stage_hced",
+      "version": "1",
+      "inputs": {
+        "events": {
+          "dataset": "hced",
+          "filename": "20260713T161517Z-92a22e49c20d.csv"
+        },
+        "crosswalk": {
+          "dataset": "hced-seshat-crosswalk",
+          "filename": "20260713T161517Z-8496aed0f194.csv"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "hced-candidates.jsonl",
+        "sha256": "7466f5c9db3cde0d74ee39a4e0c209d9a397457435986a1ace156f9d6aa2aabf",
+        "size_bytes": 11009855,
+        "record_count": 8881
+      }
+    },
+    "iwbd-review": {
+      "transformer": "stage_iwbd",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "iwbd",
+          "filename": "20260713T161518Z-fcf5747cf94b.bin"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "iwbd-candidates.jsonl",
+        "sha256": "2ae0b16256c472c62a78f451b0532ff1676e37db35a8a8c6cd2519abe38e5fc7",
+        "size_bytes": 1199164,
+        "record_count": 1708
+      }
+    },
+    "iwd-review": {
+      "transformer": "stage_iwd",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "iwd-1.21",
+          "filename": "20260713T173251Z-fd6cfbcbebed.tsv"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "iwd-1.21-candidates.jsonl",
+        "sha256": "0867947dadfb29e93a4697efa308fcf1acd78f90c90f8d860d344ac12dd883fd",
+        "size_bytes": 318708,
+        "record_count": 265
+      }
+    },
+    "ucdp-conflict-review": {
+      "transformer": "stage_ucdp_archive",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "ucdp-conflict-26.1",
+          "filename": "20260713T161519Z-5f9517432229.zip"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "ucdp-conflict-26.1-candidates.jsonl",
+        "sha256": "cbc28e8d06b5fdd83b688ca0be45695e2d2d3bcc59b486d8f92522593ba619ee",
+        "size_bytes": 3375805,
+        "record_count": 2816
+      }
+    },
+    "ucdp-dyadic-review": {
+      "transformer": "stage_ucdp_archive",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "ucdp-dyadic-26.1",
+          "filename": "20260713T161520Z-1f89ca62c828.zip"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "ucdp-dyadic-26.1-candidates.jsonl",
+        "sha256": "c6e6f7deda305d38e78c987713817410ba3c4045904e22e86e12389fb4a622e4",
+        "size_bytes": 3925070,
+        "record_count": 3518
+      }
+    },
+    "ucdp-actor-review": {
+      "transformer": "stage_ucdp_archive",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "ucdp-actor-26.1",
+          "filename": "20260713T161520Z-4721c9cb1619.zip"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "ucdp-actor-26.1-candidates.jsonl",
+        "sha256": "3cc79938ebac46e1edd99d6116e50610b5753875c023b69128343be816c94788",
+        "size_bytes": 2576874,
+        "record_count": 1987
+      }
+    },
+    "ucdp-termination-conflict-review": {
+      "transformer": "stage_ucdp_csv",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "ucdp-termination-conflict",
+          "filename": "20260713T161522Z-6f3a739fa5c6.csv"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "ucdp-termination-conflict-candidates.jsonl",
+        "sha256": "4ce351ab0b0654b341ca8aba42ba82bd5a1955e7c6900351d0f179aae02a3219",
+        "size_bytes": 3335339,
+        "record_count": 2752
+      }
+    },
+    "ucdp-termination-dyad-review": {
+      "transformer": "stage_ucdp_csv",
+      "version": "1",
+      "inputs": {
+        "data": {
+          "dataset": "ucdp-termination-dyad",
+          "filename": "20260713T161523Z-37b250d228db.csv"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "ucdp-termination-dyad-candidates.jsonl",
+        "sha256": "49c8bead50aa966ee0c70ac023eca9dd81060668db180c1dcfd116c0e827218d",
+        "size_bytes": 4210656,
+        "record_count": 3432
+      }
+    },
+    "wikidata-review": {
+      "transformer": "stage_wikidata",
+      "version": "1",
+      "inputs": {
+        "page-0001": {
+          "dataset": "wikidata",
+          "filename": "20260713T161324Z-3d6f3047aeb0.json"
+        }
+      },
+      "output": {
+        "kind": "generated_review_queue",
+        "filename": "wikidata-candidates.jsonl",
+        "sha256": "39467451d913c11b197b7b9a0b4ed0c8cc203f3a213da4db377c0f877fbbcf85",
+        "size_bytes": 13415,
+        "record_count": 18
+      }
+    }
+  }
+}

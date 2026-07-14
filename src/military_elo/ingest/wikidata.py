@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .http import get_bytes
-from .provenance import write_review_candidates, write_snapshot
+from .provenance import validate_review_destination, write_review_candidates, write_snapshot
 
 
 ENDPOINT = "https://query.wikidata.org/sparql"
@@ -41,12 +41,15 @@ def _value(row: dict[str, Any], key: str) -> str | None:
 
 
 def fetch_wikidata(
-    raw_root: str | Path = "data/raw",
-    review_path: str | Path = "data/review/wikidata-candidates.jsonl",
+    raw_root: str | Path = "build/acquisition/wikidata/raw",
+    review_path: str | Path = "build/acquisition/wikidata/wikidata-live.jsonl",
     page_size: int = 1000,
     max_pages: int | None = None,
     pause_seconds: float = 1.0,
 ) -> list[dict[str, Any]]:
+    # The live endpoint is acquisition-only. Refuse a locked queue basename
+    # before the first request so a failed refresh has no raw/review side effects.
+    validate_review_destination(review_path)
     all_rows: list[dict[str, Any]] = []
     page = 0
     while max_pages is None or page < max_pages:

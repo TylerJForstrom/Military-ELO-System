@@ -4,7 +4,18 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from .http import get_bytes
-from .provenance import RawSnapshot, write_snapshot
+from .provenance import (
+    DEFAULT_CORPUS_LOCK,
+    CorpusLock,
+    CorpusLockError,
+    RawSnapshot,
+    append_snapshot_manifest,
+    install_locked_snapshot,
+    load_corpus_lock,
+    locked_file,
+    locked_snapshot_reference,
+    resolve_locked_snapshot,
+)
 
 
 @dataclass(frozen=True)
@@ -135,16 +146,78 @@ CORE_DATASETS = (
 )
 
 
-def download_dataset(dataset_id: str, raw_root: str | Path = "data/raw") -> RawSnapshot:
+def _coerce_lock(corpus_lock: CorpusLock | str | Path) -> CorpusLock:
+    return corpus_lock if isinstance(corpus_lock, CorpusLock) else load_corpus_lock(corpus_lock)
+
+
+def validate_dataset_lock(dataset: OpenDataset, corpus_lock: CorpusLock) -> None:
+    locked = corpus_lock.dataset(dataset.id)
+    expected = {
+        "title": dataset.title,
+        "source_url": dataset.url,
+        "dataset_version": dataset.version,
+        "license_id": dataset.license,
+        "license_classification": "open_core",
+    }
+    actual = {
+        "title": locked.title,
+        "source_url": locked.source_url,
+        "dataset_version": locked.dataset_version,
+        "license_id": locked.license_id,
+        "license_classification": locked.license_classification,
+    }
+    if actual != expected:
+        differences = ", ".join(
+            f"{key}: catalog={expected[key]!r}, lock={actual[key]!r}"
+            for key in expected
+            if expected[key] != actual[key]
+        )
+        raise CorpusLockError(f"Dataset catalog does not match corpus lock for {dataset.id}: {differences}")
+
+
+def download_dataset(
+    dataset_id: str,
+    raw_root: str | Path = "data/raw",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
+) -> RawSnapshot:
     dataset = DATASETS[dataset_id]
-    payload = get_bytes(dataset.url, accept="*/*")
-    return write_snapshot(
-        payload,
-        raw_root,
+    lock = _coerce_lock(corpus_lock)
+    validate_dataset_lock(dataset, lock)
+    locked_dataset = lock.dataset(dataset_id)
+    expected = locked_file(locked_dataset)
+    candidate = Path(raw_root) / dataset_id / expected.filename
+    already_present = candidate.exists()
+    if already_present:
+        resolve_locked_snapshot(lock, raw_root, dataset_id, expected.filename)
+    else:
+        if (
+            locked_dataset.license_classification != "open_core"
+            or locked_dataset.retrieval_method != "https"
+        ):
+            raise CorpusLockError(
+                f"Automatic download is disabled for {dataset_id}: lock class is "
+                f"{locked_dataset.license_classification} and retrieval method is "
+                f"{locked_dataset.retrieval_method}"
+            )
+        payload = get_bytes(
+            dataset.url,
+            accept="*/*",
+            expected_sha256=expected.sha256,
+            expected_size=expected.size_bytes,
+        )
+        install_locked_snapshot(payload, raw_root, locked_dataset, expected)
+
+    snapshot = RawSnapshot(
         source_id=dataset.id,
-        source_url=dataset.url,
-        license_name=dataset.license,
-        extension=dataset.extension,
-        source_version=dataset.version,
+        source_url=locked_dataset.source_url,
+        retrieved_at=locked_dataset.retrieved_at,
+        license=locked_dataset.license_id,
+        sha256=expected.sha256,
+        path=locked_snapshot_reference(dataset.id, expected.filename),
+        source_version=locked_dataset.dataset_version,
         notes=dataset.notes,
     )
+    if not already_present:
+        append_snapshot_manifest(snapshot, Path(raw_root) / "manifest.jsonl")
+    return snapshot

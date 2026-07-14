@@ -8,16 +8,194 @@ import re
 import zipfile
 from collections import Counter
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Mapping
 
-from .provenance import write_review_candidates
+from .provenance import (
+    DEFAULT_CORPUS_LOCK,
+    CorpusLock,
+    CorpusLockError,
+    LockedInput,
+    LockedTransformation,
+    load_corpus_lock,
+    locked_snapshot_reference,
+    resolve_locked_snapshot,
+    write_review_candidates,
+)
 
 
-def latest_snapshot(raw_root: str | Path, source_id: str) -> Path:
-    files = [path for path in (Path(raw_root) / source_id).glob("*") if path.is_file()]
-    if not files:
-        raise FileNotFoundError(f"No raw snapshot found for {source_id}")
-    return max(files, key=lambda path: path.stat().st_mtime_ns)
+TRANSFORMATION_IDS_BY_DATASET = {
+    "cliopatria-0.2.0": "cliopatria-review",
+    "hced": "hced-review",
+    "iwbd": "iwbd-review",
+    "iwd-1.21": "iwd-review",
+    "ucdp-conflict-26.1": "ucdp-conflict-review",
+    "ucdp-dyadic-26.1": "ucdp-dyadic-review",
+    "ucdp-actor-26.1": "ucdp-actor-review",
+    "ucdp-termination-conflict": "ucdp-termination-conflict-review",
+    "ucdp-termination-dyad": "ucdp-termination-dyad-review",
+    "wikidata": "wikidata-review",
+}
+
+TRANSFORMERS_BY_DATASET = {
+    "cliopatria-0.2.0": "stage_cliopatria",
+    "hced": "stage_hced",
+    "iwbd": "stage_iwbd",
+    "iwd-1.21": "stage_iwd",
+    "ucdp-conflict-26.1": "stage_ucdp_archive",
+    "ucdp-dyadic-26.1": "stage_ucdp_archive",
+    "ucdp-actor-26.1": "stage_ucdp_archive",
+    "ucdp-termination-conflict": "stage_ucdp_csv",
+    "ucdp-termination-dyad": "stage_ucdp_csv",
+    "wikidata": "stage_wikidata",
+}
+
+TRANSFORMATION_INPUT_DATASETS_BY_DATASET: dict[str, dict[str, str]] = {
+    "cliopatria-0.2.0": {"data": "cliopatria-0.2.0"},
+    "hced": {"events": "hced", "crosswalk": "hced-seshat-crosswalk"},
+    "iwbd": {"data": "iwbd"},
+    "iwd-1.21": {"data": "iwd-1.21"},
+    "ucdp-conflict-26.1": {"data": "ucdp-conflict-26.1"},
+    "ucdp-dyadic-26.1": {"data": "ucdp-dyadic-26.1"},
+    "ucdp-actor-26.1": {"data": "ucdp-actor-26.1"},
+    "ucdp-termination-conflict": {"data": "ucdp-termination-conflict"},
+    "ucdp-termination-dyad": {"data": "ucdp-termination-dyad"},
+}
+
+TRANSFORMER_VERSIONS = {
+    "stage_cliopatria": "1",
+    "stage_hced": "1",
+    "stage_iwbd": "1",
+    "stage_iwd": "1",
+    "stage_ucdp_archive": "1",
+    "stage_ucdp_csv": "1",
+    "stage_wikidata": "1",
+}
+
+
+def _coerce_lock(corpus_lock: CorpusLock | str | Path) -> CorpusLock:
+    return corpus_lock if isinstance(corpus_lock, CorpusLock) else load_corpus_lock(corpus_lock)
+
+
+def verify_transformation_contracts(
+    corpus_lock: CorpusLock,
+    transformation_ids: Iterable[str] | None = None,
+) -> None:
+    """Validate locked transformer identities, versions, and named input roles."""
+
+    dataset_by_transformation = {
+        transformation_id: dataset_id
+        for dataset_id, transformation_id in TRANSFORMATION_IDS_BY_DATASET.items()
+    }
+    selected = list(transformation_ids or corpus_lock.transformations.keys())
+    for transformation_id in selected:
+        try:
+            dataset_id = dataset_by_transformation[transformation_id]
+        except KeyError as exc:
+            raise CorpusLockError(
+                f"Locked transformation has no code contract: {transformation_id}"
+            ) from exc
+        transformation = corpus_lock.transformation(transformation_id)
+        expected_transformer = TRANSFORMERS_BY_DATASET[dataset_id]
+        expected_version = TRANSFORMER_VERSIONS[expected_transformer]
+        if (
+            transformation.transformer != expected_transformer
+            or transformation.version != expected_version
+        ):
+            raise CorpusLockError(
+                f"Transformation contract mismatch for {transformation_id}: lock has "
+                f"{transformation.transformer}@{transformation.version}, code requires "
+                f"{expected_transformer}@{expected_version}"
+            )
+
+        actual_inputs = {
+            role: locked_input.dataset_id
+            for role, locked_input in transformation.inputs.items()
+        }
+        if dataset_id == "wikidata":
+            page_numbers: set[int] = set()
+            for role, input_dataset_id in actual_inputs.items():
+                match = re.fullmatch(r"page-(\d+)", role)
+                if match is None or input_dataset_id != "wikidata":
+                    raise CorpusLockError(
+                        "wikidata-review requires numeric page-* roles from wikidata"
+                    )
+                page_number = int(match.group(1))
+                if page_number in page_numbers:
+                    raise CorpusLockError(
+                        f"wikidata-review repeats numeric page {page_number}"
+                    )
+                page_numbers.add(page_number)
+            if not page_numbers:
+                raise CorpusLockError("wikidata-review must lock at least one page")
+        else:
+            expected_inputs = TRANSFORMATION_INPUT_DATASETS_BY_DATASET[dataset_id]
+            if actual_inputs != expected_inputs:
+                raise CorpusLockError(
+                    f"Transformation input contract mismatch for {transformation_id}: "
+                    f"lock has {actual_inputs}, code requires {expected_inputs}"
+                )
+
+
+def _locked_transformation(
+    raw_root: str | Path,
+    corpus_lock: CorpusLock | str | Path,
+    transformation_id: str,
+    transformer: str,
+) -> tuple[CorpusLock, LockedTransformation, dict[str, Path]]:
+    lock = _coerce_lock(corpus_lock)
+    transformation = lock.transformation(transformation_id)
+    verify_transformation_contracts(lock, [transformation_id])
+    if transformation.transformer != transformer:
+        raise CorpusLockError(
+            f"Stager requested {transformer} for {transformation_id}, but its code contract "
+            f"uses {transformation.transformer}"
+        )
+    sources = {
+        role: resolve_locked_snapshot(
+            lock,
+            raw_root,
+            locked_input.dataset_id,
+            locked_input.filename,
+        )
+        for role, locked_input in transformation.inputs.items()
+    }
+    return lock, transformation, sources
+
+
+def _input_reference(locked_input: LockedInput) -> str:
+    return locked_snapshot_reference(locked_input.dataset_id, locked_input.filename)
+
+
+def latest_snapshot(
+    raw_root: str | Path,
+    source_id: str,
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
+) -> Path:
+    """Resolve the one content-locked snapshot; filesystem mtime is never authoritative."""
+
+    return resolve_locked_snapshot(_coerce_lock(corpus_lock), raw_root, source_id)
+
+
+def verify_staging_inputs(
+    raw_root: str | Path,
+    dataset_ids: Iterable[str],
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
+) -> CorpusLock:
+    lock = _coerce_lock(corpus_lock)
+    for dataset_id in dict.fromkeys(dataset_ids):
+        try:
+            transformation_id = TRANSFORMATION_IDS_BY_DATASET[dataset_id]
+        except KeyError as exc:
+            raise CorpusLockError(f"No locked stager is registered for {dataset_id}") from exc
+        _locked_transformation(
+            raw_root,
+            lock,
+            transformation_id,
+            TRANSFORMERS_BY_DATASET[dataset_id],
+        )
+    return lock
 
 
 def _clean(value: Any) -> str | None:
@@ -67,9 +245,17 @@ def _year_range(value: Any) -> tuple[int | None, int | None, int | None]:
 def stage_hced(
     raw_root: str | Path = "data/raw",
     destination: str | Path = "data/review/hced-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, "hced")
-    crosswalk_source = latest_snapshot(raw_root, "hced-seshat-crosswalk")
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, "hced-review", "stage_hced"
+    )
+    if set(sources) != {"events", "crosswalk"}:
+        raise CorpusLockError("hced-review must lock events and crosswalk input roles")
+    source = sources["events"]
+    crosswalk_source = sources["crosswalk"]
+    source_reference = _input_reference(transformation.inputs["events"])
     crosswalk: dict[str, dict[str, Any]] = {}
     with crosswalk_source.open("r", encoding="cp1252", errors="replace", newline="") as handle:
         for row in csv.DictReader(handle):
@@ -104,7 +290,7 @@ def stage_hced(
                     "candidate_id": f"hced-{event_id}-{seen_ids[event_id]}",
                     "source": "hced",
                     "source_record_id": event_id,
-                    "source_snapshot": source.as_posix(),
+                    "source_snapshot": source_reference,
                     "source_row": row_number,
                     "review_status": "needs_review",
                     "do_not_rate_automatically": True,
@@ -144,15 +330,25 @@ def stage_hced(
     for candidate in candidates:
         if candidate["source_record_id"] in duplicate_ids:
             candidate["duplicate_source_id"] = True
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
 
 
 def stage_iwbd(
     raw_root: str | Path = "data/raw",
     destination: str | Path = "data/review/iwbd-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, "iwbd")
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, "iwbd-review", "stage_iwbd"
+    )
+    if set(sources) != {"data"}:
+        raise CorpusLockError("iwbd-review must lock one data input role")
+    source = sources["data"]
+    source_reference = _input_reference(transformation.inputs["data"])
     candidates: list[dict[str, Any]] = []
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
         for row_number, row in enumerate(csv.DictReader(handle), start=2):
@@ -160,7 +356,7 @@ def stage_iwbd(
                 {
                     "candidate_id": f"iwbd-{row.get('cowNum')}-{row.get('iwdNum')}-{row_number}",
                     "source": "iwbd",
-                    "source_snapshot": source.as_posix(),
+                    "source_snapshot": source_reference,
                     "source_row": row_number,
                     "review_status": "needs_review",
                     "do_not_rate_automatically": True,
@@ -181,7 +377,9 @@ def stage_iwbd(
                     ],
                 }
             )
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
 
 
@@ -195,8 +393,16 @@ def _iwd_value(value: Any) -> str | None:
 def stage_iwd(
     raw_root: str | Path = "data/raw",
     destination: str | Path = "data/review/iwd-1.21-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, "iwd-1.21")
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, "iwd-review", "stage_iwd"
+    )
+    if set(sources) != {"data"}:
+        raise CorpusLockError("iwd-review must lock one data input role")
+    source = sources["data"]
+    source_reference = _input_reference(transformation.inputs["data"])
     grouped: dict[str, list[tuple[int, dict[str, str]]]] = {}
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
         for row_number, row in enumerate(csv.DictReader(handle, delimiter="\t"), start=2):
@@ -268,7 +474,7 @@ def stage_iwd(
             {
                 "candidate_id": f"iwd-{component_id}",
                 "source": "iwd-1.21",
-                "source_snapshot": source.as_posix(),
+                "source_snapshot": source_reference,
                 "source_rows": [row_number for row_number, _ in numbered_rows],
                 "source_component_id": component_id,
                 "review_status": "needs_review",
@@ -305,7 +511,9 @@ def stage_iwd(
                 ],
             }
         )
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
 
 
@@ -328,8 +536,20 @@ def stage_ucdp_archive(
     source_id: str,
     raw_root: str | Path = "data/raw",
     destination: str | Path | None = None,
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, source_id)
+    try:
+        transformation_id = TRANSFORMATION_IDS_BY_DATASET[source_id]
+    except KeyError as exc:
+        raise CorpusLockError(f"No locked archive stager for {source_id}") from exc
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, transformation_id, "stage_ucdp_archive"
+    )
+    if set(sources) != {"data"}:
+        raise CorpusLockError(f"{transformation_id} must lock one data input role")
+    source = sources["data"]
+    source_reference = _input_reference(transformation.inputs["data"])
     destination = destination or f"data/review/{source_id}-candidates.jsonl"
     candidates: list[dict[str, Any]] = []
     for member_name, row_number, row in _rows_from_zip(source):
@@ -344,7 +564,7 @@ def stage_ucdp_archive(
             {
                 "candidate_id": f"{source_id}-{record_id}-{row.get('year', '')}-{row_number}",
                 "source": source_id,
-                "source_snapshot": source.as_posix(),
+                "source_snapshot": source_reference,
                 "source_member": member_name,
                 "source_row": row_number,
                 "review_status": "needs_review",
@@ -357,7 +577,9 @@ def stage_ucdp_archive(
                 ],
             }
         )
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
 
 
@@ -365,8 +587,20 @@ def stage_ucdp_csv(
     source_id: str,
     raw_root: str | Path = "data/raw",
     destination: str | Path | None = None,
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, source_id)
+    try:
+        transformation_id = TRANSFORMATION_IDS_BY_DATASET[source_id]
+    except KeyError as exc:
+        raise CorpusLockError(f"No locked CSV stager for {source_id}") from exc
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, transformation_id, "stage_ucdp_csv"
+    )
+    if set(sources) != {"data"}:
+        raise CorpusLockError(f"{transformation_id} must lock one data input role")
+    source = sources["data"]
+    source_reference = _input_reference(transformation.inputs["data"])
     destination = destination or f"data/review/{source_id}-candidates.jsonl"
     candidates: list[dict[str, Any]] = []
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -376,7 +610,7 @@ def stage_ucdp_csv(
                 {
                     "candidate_id": f"{source_id}-{record_id}-{row_number}",
                     "source": source_id,
-                    "source_snapshot": source.as_posix(),
+                    "source_snapshot": source_reference,
                     "source_row": row_number,
                     "review_status": "needs_review",
                     "do_not_rate_automatically": True,
@@ -386,7 +620,97 @@ def stage_ucdp_csv(
                     ],
                 }
             )
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
+    return candidates
+
+
+def _wikidata_value(row: dict[str, Any], key: str) -> str | None:
+    item = row.get(key)
+    return str(item.get("value")) if isinstance(item, dict) and item.get("value") is not None else None
+
+
+def stage_wikidata(
+    raw_root: str | Path = "data/raw",
+    destination: str | Path = "data/review/wikidata-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
+) -> list[dict[str, Any]]:
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, "wikidata-review", "stage_wikidata"
+    )
+    numbered_pages: list[tuple[int, str]] = []
+    seen_page_numbers: set[int] = set()
+    for role in sources:
+        match = re.fullmatch(r"page-(\d+)", role)
+        if match is None:
+            raise CorpusLockError("wikidata-review inputs must use numeric page-* roles")
+        page_number = int(match.group(1))
+        if page_number in seen_page_numbers:
+            raise CorpusLockError(f"wikidata-review repeats numeric page {page_number}")
+        seen_page_numbers.add(page_number)
+        numbered_pages.append((page_number, role))
+    if not numbered_pages:
+        raise CorpusLockError("wikidata-review must lock at least one page")
+
+    all_rows: list[dict[str, Any]] = []
+    for _, role in sorted(numbered_pages):
+        with sources[role].open("r", encoding="utf-8") as handle:
+            document = json.load(handle)
+        rows = document.get("results", {}).get("bindings", [])
+        if not isinstance(rows, list):
+            raise ValueError(f"Wikidata snapshot {sources[role]} has invalid bindings")
+        all_rows.extend(rows)
+
+    grouped: dict[str, dict[str, Any]] = {}
+    for row in all_rows:
+        event_uri = _wikidata_value(row, "event")
+        if not event_uri:
+            continue
+        candidate = grouped.setdefault(
+            event_uri,
+            {
+                "candidate_id": event_uri.rsplit("/", 1)[-1],
+                "source": "wikidata",
+                "source_url": event_uri,
+                "review_status": "needs_review",
+                "do_not_rate_automatically": True,
+                "name": _wikidata_value(row, "eventLabel"),
+                "kind": _wikidata_value(row, "kind"),
+                "date": _wikidata_value(row, "date"),
+                "end_date": _wikidata_value(row, "endDate"),
+                "participants": {},
+                "winners": {},
+                "part_of": {},
+                "locations": {},
+                "extraction_notes": [
+                    "Identity aliases, opposing sides, objectives, outcome severity and entity continuity require review."
+                ],
+            },
+        )
+        for field, label_field, output_key in (
+            ("participant", "participantLabel", "participants"),
+            ("winner", "winnerLabel", "winners"),
+            ("partOf", "partOfLabel", "part_of"),
+            ("location", "locationLabel", "locations"),
+        ):
+            uri = _wikidata_value(row, field)
+            if uri:
+                candidate[output_key][uri] = _wikidata_value(row, label_field) or uri.rsplit(
+                    "/", 1
+                )[-1]
+
+    candidates: list[dict[str, Any]] = []
+    for candidate in grouped.values():
+        for key in ("participants", "winners", "part_of", "locations"):
+            candidate[key] = [
+                {"uri": uri, "label": label} for uri, label in candidate[key].items()
+            ]
+        candidates.append(candidate)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
 
 
@@ -412,8 +736,16 @@ def _cluster_temporal_segments(
 def stage_cliopatria(
     raw_root: str | Path = "data/raw",
     destination: str | Path = "data/review/cliopatria-entity-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
 ) -> list[dict[str, Any]]:
-    source = latest_snapshot(raw_root, "cliopatria-0.2.0")
+    lock, transformation, sources = _locked_transformation(
+        raw_root, corpus_lock, "cliopatria-review", "stage_cliopatria"
+    )
+    if set(sources) != {"data"}:
+        raise CorpusLockError("cliopatria-review must lock one data input role")
+    source = sources["data"]
+    source_reference = _input_reference(transformation.inputs["data"])
     with zipfile.ZipFile(source) as archive:
         names = [
             name
@@ -482,7 +814,7 @@ def stage_cliopatria(
             {
                 "candidate_id": f"cliopatria-{len(candidates) + 1}",
                 "source": "cliopatria-0.2.0",
-                "source_snapshot": source.as_posix(),
+                "source_snapshot": source_reference,
                 "review_status": "needs_review",
                 "do_not_rate_automatically": True,
                 "canonical_name_candidate": canonical_name,
@@ -529,5 +861,7 @@ def stage_cliopatria(
                 ],
             }
         )
-    write_review_candidates(candidates, destination)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
     return candidates
