@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://military-history-elo.example/schemas/event.schema.json",
+  "title": "Military History Elo canonical or legacy event",
+  "description": "Compatibility-oriented event schema. Canonical evidence fields are optional data only and do not imply rating eligibility. Signed BCE/CE dates have no year zero and use the proleptic Gregorian calendar as a machine-readable convention.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "name"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "name": {"type": "string", "minLength": 1},
+    "year": {"type": "integer"},
+    "end_year": {"type": "integer"},
+    "event_type": {"type": "string"},
+    "war_type": {"type": "string"},
+    "scale": {"type": "string"},
+    "stakes": {"type": "string"},
+    "decisiveness": {"type": "number"},
+    "confidence": {"type": "number"},
+    "participants": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/legacyParticipant"}
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "aliases": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "parent_event_id": {"type": ["string", "null"]},
+    "parent_event_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "child_event_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "date_interval": {"$ref": "#/$defs/uncertainDateInterval"},
+    "geometry": {"$ref": "#/$defs/geometry"},
+    "participation_episodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/participationEpisode"}
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "adjudication_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "layer": {"type": "string"},
+    "domain": {"type": "string"},
+    "region": {"type": "string"},
+    "status": {"type": "string"}
+  },
+  "$defs": {
+    "dateValue": {
+      "oneOf": [
+        {"type": "integer", "not": {"const": 0}},
+        {
+          "type": "string",
+          "pattern": "^-?(?!0+(?:-|$))[0-9]{1,6}(?:-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12][0-9]|3[01]))?)?$"
+        }
+      ]
+    },
+    "uncertainDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low", "best", "high", "precision"],
+      "properties": {
+        "low": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
+        "best": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
+        "high": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
+        "precision": {"type": "string", "minLength": 1}
+      },
+      "anyOf": [
+        {"properties": {"low": {"not": {"type": "null"}}}},
+        {"properties": {"best": {"not": {"type": "null"}}}},
+        {"properties": {"high": {"not": {"type": "null"}}}}
+      ]
+    },
+    "uncertainDateInterval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {"$ref": "#/$defs/uncertainDate"},
+        "end": {"$ref": "#/$defs/uncertainDate"}
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": ["Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection"]
+        },
+        "coordinates": {"type": "array"},
+        "geometries": {"type": "array"}
+      },
+      "additionalProperties": true
+    },
+    "participationEpisode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "entity_id", "side", "role"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "entity_id": {"type": "string", "minLength": 1},
+        "side": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "entry": {"$ref": "#/$defs/uncertainDate"},
+        "exit": {"$ref": "#/$defs/uncertainDate"},
+        "contribution": {"type": "number", "minimum": 0, "maximum": 1},
+        "objectives": {"type": "array", "items": {"type": "string"}},
+        "claim_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "legacyParticipant": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["entity_id", "side"],
+      "properties": {
+        "entity_id": {"type": "string"},
+        "side": {"type": "string"},
+        "role": {"type": "string"},
+        "entry": {"$ref": "#/$defs/uncertainDate"},
+        "exit": {"$ref": "#/$defs/uncertainDate"},
+        "objectives": {"type": "array", "items": {"type": "string"}},
+        "claim_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "adjudication_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://military-history-elo.example/schemas/claim.schema.json",
+  "title": "Military History Elo claim",
+  "description": "One immutable source assertion. Claim status is lifecycle metadata only; truth decisions live in append-only adjudications, and acceptance alone never makes a claim rating-eligible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "subject",
+    "predicate",
+    "value",
+    "precision",
+    "status",
+    "provenance"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "minLength": 1},
+    "predicate": {"type": "string", "minLength": 1},
+    "value": {},
+    "precision": {},
+    "status": {
+      "enum": ["active", "withdrawn", "superseded"],
+      "description": "Assertion-row lifecycle, never reviewer acceptance or rejection."
+    },
+    "provenance": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/sourceLocator"}
+    },
+    "contradicts": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "note": {"type": "string"},
+    "claim_group_id": {"type": ["string", "null"], "minLength": 1},
+    "exclusive": {
+      "type": ["boolean", "null"],
+      "description": "True marks a mutually exclusive claim group; competing members remain separate assertions."
+    },
+    "impact": {"type": ["string", "null"], "enum": ["ordinary", "high", null]},
+    "evidence_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "anyOf": [
+    {"properties": {"provenance": {"minItems": 1}}},
+    {"required": ["evidence_ids"], "properties": {"evidence_ids": {"minItems": 1}}}
+  ],
+  "$defs": {
+    "sourceLocator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "edition", "checksum", "language", "source_family"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "edition": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "page": {
+          "oneOf": [
+            {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+            {"type": "integer"}
+          ]
+        },
+        "row": {
+          "oneOf": [
+            {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+            {"type": "integer"}
+          ]
+        },
+        "url": {"type": "string", "minLength": 1, "pattern": "^https?://[^\\s]+$"},
+        "checksum": {
+          "type": "string",
+          "pattern": "^(sha256:)?[0-9A-Fa-f]{64}$"
+        },
+        "language": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "source_family": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "description": "Explicit independence/deduplication family; never inferred from a generic source label and never counted as a vote."
+        },
+        "creator": {"type": "string"},
+        "citation": {"type": "string"}
+      },
+      "anyOf": [
+        {"required": ["page"]},
+        {"required": ["row"]},
+        {"required": ["url"]}
+      ]
+    },
+    "evidenceLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "claim_id", "locator", "relationship", "source_family"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "claim_id": {"type": "string", "minLength": 1},
+        "locator": {"$ref": "#/$defs/sourceLocator"},
+        "relationship": {"enum": ["supports", "contradicts", "context"]},
+        "source_family": {"type": "string", "minLength": 1},
+        "note": {"type": "string"}
+      }
+    }
+  }
+}
