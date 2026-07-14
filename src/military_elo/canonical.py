@@ -177,11 +177,13 @@ _GEOJSON_TYPES = frozenset(
 
 
 def _is_finite_position_number(value: Any) -> bool:
-    return (
-        not isinstance(value, bool)
-        and isinstance(value, (int, float))
-        and math.isfinite(value)
-    )
+    if isinstance(value, bool):
+        return False
+    if isinstance(value, int):
+        return True
+    if isinstance(value, float):
+        return math.isfinite(value)
+    return False
 
 
 def _position_error(value: Any, label: str) -> str | None:

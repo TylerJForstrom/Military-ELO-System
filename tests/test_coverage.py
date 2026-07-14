@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import subprocess
 import sys
@@ -278,7 +279,8 @@ class CoverageFixture(unittest.TestCase):
         )
 
     def test_stage_scorecard_preserves_units_and_provisional_status(self) -> None:
-        funnel = self._report()["stage_funnel"]
+        report = self._report()
+        funnel = report["stage_funnel"]
         self.assertEqual(funnel["raw"]["availability"], "not_available")
         self.assertEqual(funnel["staged"]["count"], 4)
         self.assertEqual(funnel["event_like"]["count"], 3)
@@ -313,6 +315,175 @@ class CoverageFixture(unittest.TestCase):
             self.assertEqual(metric["availability"], "available")
             self.assertTrue(metric["unit"])
             self.assertTrue(metric["definition"])
+        self.assertTrue(report["consistency_checks"]["review_queue_counts"]["matches"])
+        self.assertTrue(report["scope"]["review_directory_supplied"])
+        self.assertTrue(report["scope"]["review_files_supplied"])
+
+    def test_registry_declared_empty_counts_override_metadata_and_physical_rows(self) -> None:
+        self.registry_document["coverage"]["source_queue_counts"] = {}
+        self.review_rows = [{"candidate_id": "physical-only"}]
+        self._write_fixture()
+        (self.review / "cliopatria-entity-candidates.jsonl").unlink()
+
+        report = self._report()
+        self.assertEqual(report["stage_funnel"]["staged"]["count"], 0)
+        self.assertEqual(report["stage_funnel"]["event_like"]["count"], 0)
+        self.assertEqual(
+            report["stage_funnel"]["staged"]["source"],
+            "registry.coverage.source_queue_counts",
+        )
+        self.assertEqual(
+            report["stage_funnel"]["event_like"]["source"],
+            "registry.coverage.source_queue_counts",
+        )
+        consistency = report["consistency_checks"]["review_queue_counts"]
+        self.assertEqual(consistency["availability"], "available")
+        self.assertFalse(consistency["matches"])
+        self.assertEqual(
+            consistency["mismatches"],
+            {"hced-candidates.jsonl": {"declared": 0, "observed": 1}},
+        )
+
+    def test_metadata_declared_empty_counts_match_supplied_empty_review(self) -> None:
+        self.registry_document["coverage"].pop("source_queue_counts")
+        self.metadata["promotion"]["source_queue_counts"] = {}
+        self._write_fixture()
+        empty_review = self.root / "empty-review"
+        empty_review.mkdir()
+
+        report = build_coverage_report(
+            self.release,
+            review_dir=empty_review,
+            registry_path=self.registry,
+            results_path=self.results,
+        )
+        self.assertEqual(report["stage_funnel"]["staged"]["count"], 0)
+        self.assertEqual(report["stage_funnel"]["event_like"]["count"], 0)
+        consistency = report["consistency_checks"]["review_queue_counts"]
+        self.assertEqual(consistency["availability"], "available")
+        self.assertTrue(consistency["matches"])
+        self.assertEqual(consistency["mismatches"], {})
+        aging = report["unresolved_queue_aging"]
+        self.assertEqual(aging["availability"], "not_applicable")
+        self.assertEqual(aging["timestamp_coverage"]["numerator"], 0)
+        self.assertEqual(aging["timestamp_coverage"]["denominator"], 0)
+        self.assertEqual(aging["timestamp_coverage"]["availability"], "not_applicable")
+        self.assertTrue(report["scope"]["review_directory_supplied"])
+        self.assertFalse(report["scope"]["review_files_supplied"])
+        markdown = render_coverage_markdown(report)
+        self.assertIn(
+            "Not applicable: The supplied review directory contains no event-like queue rows.",
+            markdown,
+        )
+        self.assertNotIn("None days", markdown)
+        self.assertNotIn("| Age bucket | Candidates |", markdown)
+        self.assertIn("Queue-timestamp coverage", markdown)
+
+    def test_declared_all_zero_counts_match_empty_review_corpora(self) -> None:
+        self.registry_document["coverage"]["source_queue_counts"] = {
+            "hced-candidates.jsonl": 0
+        }
+        self._write_fixture()
+        for with_empty_file in (False, True):
+            with self.subTest(with_empty_file=with_empty_file):
+                review = self.root / f"zero-review-{int(with_empty_file)}"
+                review.mkdir()
+                if with_empty_file:
+                    (review / "hced-candidates.jsonl").write_bytes(b"")
+                report = build_coverage_report(
+                    self.release,
+                    review_dir=review,
+                    registry_path=self.registry,
+                    results_path=self.results,
+                )
+                self.assertEqual(report["stage_funnel"]["staged"]["count"], 0)
+                self.assertEqual(report["stage_funnel"]["event_like"]["count"], 0)
+                consistency = report["consistency_checks"]["review_queue_counts"]
+                self.assertEqual(consistency["availability"], "available")
+                self.assertTrue(consistency["matches"])
+                self.assertEqual(consistency["mismatches"], {})
+                aging = report["unresolved_queue_aging"]
+                self.assertEqual(aging["availability"], "not_applicable")
+                self.assertEqual(aging["timestamp_coverage"]["numerator"], 0)
+                self.assertEqual(aging["timestamp_coverage"]["denominator"], 0)
+                self.assertEqual(
+                    report["scope"]["review_files_supplied"], with_empty_file
+                )
+
+    def test_identity_only_review_has_not_applicable_event_queue_aging(self) -> None:
+        self.registry_document["coverage"]["source_queue_counts"] = {
+            "cliopatria-entity-candidates.jsonl": 1
+        }
+        self._write_fixture()
+        review = self.root / "identity-only-review"
+        _write_jsonl(
+            review / "cliopatria-entity-candidates.jsonl",
+            [{"candidate_id": "identity-only", "review_status": "needs_review"}],
+        )
+        report = build_coverage_report(
+            self.release,
+            review_dir=review,
+            registry_path=self.registry,
+            results_path=self.results,
+        )
+        self.assertEqual(report["stage_funnel"]["staged"]["count"], 1)
+        self.assertEqual(report["stage_funnel"]["event_like"]["count"], 0)
+        self.assertTrue(report["consistency_checks"]["review_queue_counts"]["matches"])
+        aging = report["unresolved_queue_aging"]
+        self.assertEqual(aging["availability"], "not_applicable")
+        self.assertEqual(aging["timestamp_coverage"]["numerator"], 0)
+        self.assertEqual(aging["timestamp_coverage"]["denominator"], 0)
+        self.assertIn("no event-like queue rows", aging["reason"])
+
+    def test_absent_declarations_distinguish_empty_and_omitted_review(self) -> None:
+        self.registry_document["coverage"].pop("source_queue_counts")
+        self.metadata["promotion"].pop("source_queue_counts")
+        self._write_fixture()
+        empty_review = self.root / "empty-review"
+        empty_review.mkdir()
+
+        supplied = build_coverage_report(
+            self.release,
+            review_dir=empty_review,
+            registry_path=self.registry,
+            results_path=self.results,
+        )
+        self.assertEqual(supplied["stage_funnel"]["staged"]["count"], 0)
+        self.assertEqual(supplied["stage_funnel"]["event_like"]["count"], 0)
+        self.assertEqual(
+            supplied["consistency_checks"]["review_queue_counts"]["availability"],
+            "not_available",
+        )
+
+        omitted = build_coverage_report(
+            self.release,
+            registry_path=self.registry,
+            results_path=self.results,
+        )
+        self.assertEqual(omitted["stage_funnel"]["staged"]["availability"], "not_available")
+        self.assertEqual(omitted["stage_funnel"]["event_like"]["availability"], "not_available")
+        self.assertFalse(omitted["scope"]["review_directory_supplied"])
+        self.assertFalse(omitted["scope"]["review_files_supplied"])
+
+    def test_nonempty_metadata_declaration_is_used_without_review_input(self) -> None:
+        self.registry_document["coverage"].pop("source_queue_counts")
+        self._write_fixture()
+
+        report = self._report(review=False)
+        self.assertEqual(report["stage_funnel"]["staged"]["count"], 4)
+        self.assertEqual(report["stage_funnel"]["event_like"]["count"], 3)
+        self.assertEqual(
+            report["stage_funnel"]["staged"]["source"],
+            "release.metadata.promotion.source_queue_counts",
+        )
+        self.assertEqual(
+            report["stage_funnel"]["event_like"]["source"],
+            "release.metadata.promotion.source_queue_counts",
+        )
+        self.assertEqual(
+            report["consistency_checks"]["review_queue_counts"]["availability"],
+            "not_available",
+        )
 
     def test_event_profile_and_field_completeness_keep_unknown_explicit(self) -> None:
         report = self._report()
@@ -380,6 +551,177 @@ class CoverageFixture(unittest.TestCase):
         locations = self._report()["field_completeness"]["locations"]
         self.assertEqual(locations["coordinates_present"]["numerator"], 0)
         self.assertEqual(locations["event_location_present"]["numerator"], 0)
+
+    def test_geojson_point_counts_as_location_and_coordinates(self) -> None:
+        for coordinates in ([12.5, 48.1], [180, 90], [-180.0, -90.0]):
+            with self.subTest(coordinates=coordinates):
+                self.events[0]["geometry"] = {
+                    "type": "Point",
+                    "coordinates": coordinates,
+                }
+                self._write_fixture()
+                locations = self._report()["field_completeness"]["locations"]
+                self.assertEqual(locations["coordinates_present"]["numerator"], 2)
+                self.assertEqual(locations["event_location_present"]["numerator"], 2)
+
+    def test_every_supported_geojson_type_is_recognized(self) -> None:
+        ring = [[0, 0], [2, 0], [2, 2], [0, 0]]
+        geometries = {
+            "Point": {"type": "Point", "coordinates": [1, 1]},
+            "MultiPoint": {"type": "MultiPoint", "coordinates": [[1, 1]]},
+            "LineString": {
+                "type": "LineString",
+                "coordinates": [[0, 0], [1, 1]],
+            },
+            "MultiLineString": {
+                "type": "MultiLineString",
+                "coordinates": [[[0, 0], [1, 1]]],
+            },
+            "Polygon": {"type": "Polygon", "coordinates": [ring]},
+            "MultiPolygon": {
+                "type": "MultiPolygon",
+                "coordinates": [[ring]],
+            },
+            "GeometryCollection": {
+                "type": "GeometryCollection",
+                "geometries": [{"type": "Point", "coordinates": [1, 1]}],
+            },
+        }
+        for geometry_type, geometry in geometries.items():
+            with self.subTest(geometry_type=geometry_type):
+                self.events[0]["geometry"] = geometry
+                self._write_fixture()
+                locations = self._report()["field_completeness"]["locations"]
+                self.assertEqual(locations["coordinates_present"]["numerator"], 2)
+                self.assertEqual(locations["event_location_present"]["numerator"], 2)
+
+    def test_invalid_geojson_is_not_credited(self) -> None:
+        invalid_geometries = (
+            {"type": "Unsupported", "coordinates": [1, 2]},
+            {"type": "Point", "coordinates": [1]},
+            {"type": "Point", "coordinates": [True, 2]},
+            {"type": "Point", "coordinates": [float("nan"), 2]},
+            {"type": "Point", "coordinates": [float("inf"), 2]},
+            {"type": "Point", "coordinates": [181, 2]},
+            {"type": "Point", "coordinates": [2, 91]},
+            {"type": "Point", "coordinates": [10**400, 0]},
+            {"type": "Point", "coordinates": [-(10**400), 0]},
+            {
+                "type": "Polygon",
+                "coordinates": [[[0, 0], [1, 0], [1, 1], [0, 1]]],
+            },
+            {
+                "type": "GeometryCollection",
+                "geometries": [
+                    {"type": "Point", "coordinates": [1, 2]},
+                    {"type": "Point", "coordinates": [3]},
+                ],
+            },
+        )
+        self.events[1].pop("location")
+        for geometry in invalid_geometries:
+            with self.subTest(geometry=geometry):
+                self.events[0]["geometry"] = geometry
+                self._write_fixture()
+                locations = self._report()["field_completeness"]["locations"]
+                self.assertEqual(locations["coordinates_present"]["numerator"], 0)
+                self.assertEqual(locations["event_location_present"]["numerator"], 0)
+
+        self.events[0]["geometry"] = invalid_geometries[0]
+        self.events[0]["location_name"] = "Independent legacy location"
+        self.events[0]["coordinates"] = [12.5, 48.1]
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 1)
+        self.assertEqual(locations["event_location_present"]["numerator"], 1)
+
+    def test_nested_geojson_collection_is_recognized(self) -> None:
+        self.events[0]["geometry"] = {
+            "type": "GeometryCollection",
+            "geometries": [
+                {
+                    "type": "GeometryCollection",
+                    "geometries": [
+                        {
+                            "type": "MultiLineString",
+                            "coordinates": [[[0, 0], [1, 1]]],
+                        }
+                    ],
+                }
+            ],
+        }
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 2)
+        self.assertEqual(locations["event_location_present"]["numerator"], 2)
+
+        self.events[0]["geometry"] = {
+            "type": "GeometryCollection",
+            "geometries": [],
+        }
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 1)
+        self.assertEqual(locations["event_location_present"]["numerator"], 1)
+
+    def test_geojson_coordinate_presence_is_existential_after_validation(self) -> None:
+        self.events[0]["geometry"] = {
+            "type": "MultiPoint",
+            "coordinates": [[181, 91], [12.5, 48.1]],
+        }
+        self._write_fixture()
+        locations = self._report()["field_completeness"]["locations"]
+        self.assertEqual(locations["coordinates_present"]["numerator"], 2)
+        self.assertEqual(locations["event_location_present"]["numerator"], 2)
+
+    def test_plural_parent_only_resolves_within_ledger(self) -> None:
+        self.events[1].pop("parent_event_id")
+        self.events[1]["parent_event_ids"] = ["tactical_event"]
+        self._write_fixture()
+        hierarchy = self._report()["field_completeness"]["hierarchy"]
+        self.assertEqual(hierarchy["parent_link_present"]["numerator"], 1)
+        self.assertEqual(
+            hierarchy["parent_link_resolves_within_ledger"]["numerator"], 1
+        )
+        self.assertEqual(
+            hierarchy["parent_link_resolves_within_ledger"]["denominator"], 1
+        )
+
+    def test_singular_and_plural_parent_duplicates_count_once(self) -> None:
+        self.events[1]["parent_event_ids"] = ["tactical_event"]
+        self._write_fixture()
+        hierarchy = self._report()["field_completeness"]["hierarchy"]
+        self.assertEqual(hierarchy["parent_link_present"]["numerator"], 1)
+        self.assertEqual(
+            hierarchy["parent_link_resolves_within_ledger"]["numerator"], 1
+        )
+        self.assertEqual(
+            hierarchy["parent_link_resolves_within_ledger"]["denominator"], 1
+        )
+
+    def test_parent_reference_whitespace_is_not_normalized(self) -> None:
+        self.events[1]["parent_event_ids"] = [" tactical_event "]
+        self._write_fixture()
+        resolution = self._report()["field_completeness"]["hierarchy"][
+            "parent_link_resolves_within_ledger"
+        ]
+        self.assertEqual(resolution["numerator"], 1)
+        self.assertEqual(resolution["denominator"], 2)
+
+    def test_unresolved_plural_parent_is_denominator_only(self) -> None:
+        self.events[1].pop("parent_event_id")
+        self.events[1]["parent_event_ids"] = [
+            "tactical_event",
+            "operational_event",
+            "missing_event",
+        ]
+        self._write_fixture()
+        hierarchy = self._report()["field_completeness"]["hierarchy"]
+        resolution = hierarchy["parent_link_resolves_within_ledger"]
+        self.assertEqual(resolution["numerator"], 2)
+        self.assertEqual(resolution["denominator"], 3)
+        self.assertIn("parent_event_id", resolution["definition"])
+        self.assertIn("parent_event_ids", resolution["definition"])
 
     def test_source_ids_do_not_become_source_families(self) -> None:
         families = self._report()["outcome_source_families"]
@@ -544,10 +886,22 @@ class CoverageFixture(unittest.TestCase):
         self.assertIn("iwd_parent_wars_rated", markdown)
         self.assertIn("Outcome-source family ratios", markdown)
 
-        output_dir = self.root / "paired-output"
-        json_path, markdown_path = write_coverage_report(report, output_dir)
-        self.assertEqual(json_path.read_text(encoding="utf-8"), first)
-        self.assertEqual(markdown_path.read_text(encoding="utf-8"), markdown)
+        first_output = write_coverage_report(report, self.root / "paired-output-1")
+        second_output = write_coverage_report(report, self.root / "paired-output-2")
+        expected_bytes = (first.encode("utf-8"), markdown.encode("utf-8"))
+        for first_path, second_path, expected in zip(
+            first_output, second_output, expected_bytes, strict=True
+        ):
+            first_bytes = first_path.read_bytes()
+            second_bytes = second_path.read_bytes()
+            self.assertEqual(first_bytes, expected)
+            self.assertEqual(second_bytes, expected)
+            self.assertNotIn(b"\r\n", first_bytes)
+            self.assertNotIn(b"\r\n", second_bytes)
+            self.assertEqual(
+                hashlib.sha256(first_bytes).hexdigest(),
+                hashlib.sha256(second_bytes).hexdigest(),
+            )
 
     def test_every_ratio_exposes_required_scientific_metadata(self) -> None:
         report = self._report()

@@ -52,6 +52,13 @@ rated parent-war events. Attached and aggregated component counts can differ,
 and neither uses the parent-war event as its unit. The report never aliases or
 subtracts these counters as if they were interchangeable.
 
+A declared `source_queue_counts` field is authoritative by presence, including
+an empty object or an all-zero mapping; the registry declaration wins by
+presence over release metadata. An explicitly supplied empty review directory
+is an observed zero-record corpus, while an omitted review input is unavailable.
+Physical-versus-declared consistency is evaluated whenever both a review
+directory and a declaration are present, including these known-zero cases.
+
 ## Event profile
 
 Category counts apply to rated events only.
@@ -85,11 +92,11 @@ historical assertion is true.
 | Field group | Reported checks |
 |---|---|
 | Dates | Integer start and end years, ordered interval, and explicit date precision, each over rated events. |
-| Locations | Named or structured event location, valid numeric coordinate pair, and explicit event-region field. Latitude must be from -90 through 90 and longitude from -180 through 180. Blank, nonnumeric, non-finite, and out-of-range coordinates are absent. `geographic_scope` and entity region are not locations. |
+| Locations | Named or structured event location, valid numeric coordinate pair, supported GeoJSON geometry containing at least one valid position, and explicit event-region field. GeoJSON structure is validated recursively, including nested geometry collections and closed polygon rings. Positions use longitude then latitude; latitude must be from -90 through 90 and longitude from -180 through 180. Empty, malformed, unsupported, boolean, nonnumeric, non-finite, and wholly out-of-range geometry is absent. `geographic_scope` and entity region are not locations. |
 | Participants | At least two participant objects, nonblank entity IDs and sides, and at least two distinct sides. |
 | Roles | Explicit participant role presence and role-category counts. Model defaults are not inserted for this measurement. |
 | Objectives | Explicit participant objective statements, separately from the layer-specific numerical objective-attainment dimension. An attainment score does not document the objective itself. |
-| Hierarchy | Parent-link presence, parent links resolving inside the ledger, cluster-link presence, and either-link presence. A missing parent is not automatically an error for a top-level event. |
+| Hierarchy | Event-level parent-link presence unions `parent_event_id` with `parent_event_ids`; resolution counts distinct child-to-parent references from both fields, deduplicated within each child. Cluster-link presence and either-link presence remain event-based. A missing parent is not automatically an error for a top-level event. |
 | Outcomes | Every expected layer-specific dimension, measured by participant and by individual dimension. Missing and null slots remain missing; a value of `0.5` is data, not an unknown marker. |
 
 Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
@@ -198,10 +205,10 @@ Write paired artifacts only to an ignored `build/` or temporary directory:
 python scripts/report_coverage.py --output-dir build/coverage
 ```
 
-That command writes `coverage.json` and `coverage.md`. Output is deterministic:
-keys, category labels, component labels, IDs, and file scans are sorted; no
-generation timestamp, filesystem modification time, or absolute input path is
-embedded.
+That command writes `coverage.json` and `coverage.md` as exact UTF-8 bytes with
+LF line endings on every operating system. Output is deterministic: keys,
+category labels, component labels, IDs, and file scans are sorted; no generation
+timestamp, filesystem modification time, or absolute input path is embedded.
 
 `--as-of` accepts exactly one full `YYYY-MM-DD` calendar-date string. Datetimes,
 prefixes, suffixes, surrounding whitespace, empty values, and invalid dates are

@@ -9,6 +9,7 @@ from pathlib import Path
 from statistics import median
 from typing import Any, Iterable, Mapping
 
+from .canonical import geometry_validation_error
 from .models import OPERATIONAL_DIMENSIONS, STRATEGIC_DIMENSIONS, TACTICAL_DIMENSIONS
 
 
@@ -492,7 +493,9 @@ def _age_bucket(days: int) -> str:
 
 def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[str, Any]:
     empty = {
+        "directory_supplied": False,
         "files_present": False,
+        "queue_files_present": False,
         "counts_by_file": {},
         "event_like_count": None,
         "record_count": None,
@@ -519,13 +522,28 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
     paths = sorted(review_dir.glob("*.jsonl"), key=lambda path: path.name)
     if not paths:
         result = dict(empty)
-        result["aging"] = dict(empty["aging"])
-        result["aging"]["reason"] = "The supplied review directory contains no JSONL queues."
-        result["aging"]["timestamp_coverage"] = _unavailable_ratio(
-            unit="proportion_of_unresolved_candidates",
-            definition="Explicitly unresolved review candidates carrying a parseable queue timestamp.",
-            reason="The supplied review directory contains no JSONL queues.",
+        result.update(
+            {
+                "directory_supplied": True,
+                "event_like_count": 0,
+                "files_present": True,
+                "record_count": 0,
+            }
         )
+        result["aging"] = {
+            "availability": "not_applicable",
+            "age_buckets": {},
+            "definition": "Age of explicitly unresolved event-like review candidates from an explicit queue timestamp to the declared reference date.",
+            "reason": "The supplied review directory contains no event-like queue rows.",
+            "reference_date": reference_date.isoformat() if reference_date else None,
+            "timestamp_coverage": _ratio(
+                0,
+                0,
+                unit="proportion_of_unresolved_candidates",
+                definition="Explicitly unresolved review candidates carrying a parseable queue timestamp.",
+            ),
+            "unit": "days",
+        }
         return result
 
     counts_by_file: Counter[str] = Counter()
@@ -587,7 +605,22 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
         "Age of explicitly unresolved event-like review candidates from an explicit queue "
         "timestamp to the declared reference date. Retrieval and source-snapshot dates are excluded."
     )
-    if unresolved_count == 0:
+    if event_like_count == 0:
+        aging = {
+            "availability": "not_applicable",
+            "age_buckets": {},
+            "definition": aging_definition,
+            "reason": "The supplied review directory contains no event-like queue rows.",
+            "reference_date": reference_date.isoformat() if reference_date else None,
+            "timestamp_coverage": _ratio(
+                0,
+                0,
+                unit="proportion_of_unresolved_candidates",
+                definition="Explicitly unresolved review candidates carrying a parseable queue timestamp.",
+            ),
+            "unit": "days",
+        }
+    elif unresolved_count == 0:
         timestamp_note = (
             " No event-like review record has an explicit queue timestamp."
             if event_like_explicit_timestamp_count == 0
@@ -701,8 +734,10 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
         "counts_by_file": {
             key: int(counts_by_file[key]) for key in sorted(counts_by_file)
         },
+        "directory_supplied": True,
         "event_like_count": int(event_like_count),
         "files_present": True,
+        "queue_files_present": True,
         "record_count": int(record_count),
         "status_counts": _counts(status_counts),
     }
@@ -710,7 +745,7 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
 
 def _coverage_metadata(
     metadata: Mapping[str, Any], registry: Mapping[str, Any] | None
-) -> tuple[dict[str, Any], dict[str, int]]:
+) -> tuple[dict[str, Any], dict[str, int] | None, str | None]:
     registry_coverage = registry.get("coverage") if isinstance(registry, dict) else None
     if not isinstance(registry_coverage, dict):
         registry_coverage = {}
@@ -719,33 +754,42 @@ def _coverage_metadata(
         promotion = {}
 
     queue_counts_source = None
+    queue_counts_present = False
     if "source_queue_counts" in registry_coverage:
         queue_counts_raw = registry_coverage["source_queue_counts"]
         queue_counts_source = "registry.coverage.source_queue_counts"
+        queue_counts_present = True
     elif "source_queue_counts" in promotion:
         queue_counts_raw = promotion["source_queue_counts"]
         queue_counts_source = "release.metadata.promotion.source_queue_counts"
+        queue_counts_present = True
     else:
         queue_counts_raw = None
+    if not queue_counts_present:
+        return dict(registry_coverage), None, None
     queue_counts: dict[str, int] = {}
-    if queue_counts_raw is not None:
-        if not isinstance(queue_counts_raw, dict):
-            raise CoverageInputError(f"{queue_counts_source} must be an object of nonnegative integer counts")
-        for key, value in queue_counts_raw.items():
-            count = _as_nonnegative_int(value)
-            if count is None:
-                raise CoverageInputError(
-                    f"{queue_counts_source}.{key} must be a nonnegative integer"
-                )
-            queue_counts[str(key)] = count
-    return dict(registry_coverage), {key: queue_counts[key] for key in sorted(queue_counts)}
+    if not isinstance(queue_counts_raw, dict):
+        raise CoverageInputError(f"{queue_counts_source} must be an object of nonnegative integer counts")
+    for key, value in queue_counts_raw.items():
+        count = _as_nonnegative_int(value)
+        if count is None:
+            raise CoverageInputError(
+                f"{queue_counts_source}.{key} must be a nonnegative integer"
+            )
+        queue_counts[str(key)] = count
+    return (
+        dict(registry_coverage),
+        {key: queue_counts[key] for key in sorted(queue_counts)},
+        queue_counts_source,
+    )
 
 
 def _stage_funnel(
     events: list[dict[str, Any]],
     metadata: Mapping[str, Any],
     coverage: Mapping[str, Any],
-    metadata_queue_counts: Mapping[str, int],
+    metadata_queue_counts: Mapping[str, int] | None,
+    metadata_queue_counts_source: str | None,
     review_scan: Mapping[str, Any],
 ) -> dict[str, Any]:
     rated_count = len(events)
@@ -762,14 +806,14 @@ def _stage_funnel(
             raw_source = source_name
             break
 
-    if metadata_queue_counts:
+    if metadata_queue_counts is not None:
         staged_count = sum(metadata_queue_counts.values())
         event_like_count = sum(
             count
             for filename, count in metadata_queue_counts.items()
             if filename not in IDENTITY_QUEUE_FILES
         )
-        staged_source = "release-declared source_queue_counts"
+        staged_source = metadata_queue_counts_source or "declared source_queue_counts"
     elif review_scan.get("files_present"):
         staged_count = int(review_scan["record_count"])
         event_like_count = int(review_scan["event_like_count"])
@@ -1146,6 +1190,55 @@ def _event_counts(
     }
 
 
+def _valid_coordinate(value: Any, low: float, high: float) -> bool:
+    if isinstance(value, bool):
+        return False
+    if isinstance(value, int):
+        return low <= value <= high
+    if isinstance(value, float):
+        return math.isfinite(value) and low <= value <= high
+    return False
+
+
+def _geojson_positions(geometry: Mapping[str, Any]) -> list[Any]:
+    geometry_type = geometry.get("type")
+    if geometry_type == "GeometryCollection":
+        positions: list[Any] = []
+        for member in geometry["geometries"]:
+            positions.extend(_geojson_positions(member))
+        return positions
+
+    coordinates = geometry["coordinates"]
+    if geometry_type == "Point":
+        return [coordinates]
+    if geometry_type in {"MultiPoint", "LineString"}:
+        return list(coordinates)
+    if geometry_type == "MultiLineString":
+        return [position for line in coordinates for position in line]
+    if geometry_type == "Polygon":
+        return [position for ring in coordinates for position in ring]
+    return [
+        position
+        for polygon in coordinates
+        for ring in polygon
+        for position in ring
+    ]
+
+
+def _geojson_coverage(value: Any) -> tuple[bool, bool]:
+    if geometry_validation_error(value) is not None:
+        return False, False
+    positions = _geojson_positions(value)
+    has_in_range_position = any(
+        (
+            _valid_coordinate(position[0], -180, 180)
+            and _valid_coordinate(position[1], -90, 90)
+        )
+        for position in positions
+    )
+    return True, has_in_range_position
+
+
 def _has_location(event: Mapping[str, Any]) -> bool:
     for key in (
         "location_name",
@@ -1174,35 +1267,49 @@ def _has_location(event: Mapping[str, Any]) -> bool:
                 for key in ("name", "label", "place", "place_id", "country", "region")
             ):
                 return True
+    geometry_valid, has_position = _geojson_coverage(event.get("geometry"))
+    if geometry_valid and has_position:
+        return True
     return _has_coordinates(event)
 
 
 def _has_coordinates(event: Mapping[str, Any]) -> bool:
-    def valid(value: Any, low: float, high: float) -> bool:
-        return (
-            isinstance(value, (int, float))
-            and not isinstance(value, bool)
-            and math.isfinite(float(value))
-            and low <= float(value) <= high
-        )
-
-    if valid(event.get("latitude"), -90, 90) and valid(
+    if _valid_coordinate(event.get("latitude"), -90, 90) and _valid_coordinate(
         event.get("longitude"), -180, 180
     ):
         return True
     coordinates = event.get("coordinates")
     if isinstance(coordinates, (list, tuple)) and len(coordinates) >= 2:
-        return valid(coordinates[0], -180, 180) and valid(coordinates[1], -90, 90)
+        return _valid_coordinate(coordinates[0], -180, 180) and _valid_coordinate(
+            coordinates[1], -90, 90
+        )
     if isinstance(coordinates, dict):
-        return valid(coordinates.get("latitude"), -90, 90) and valid(
+        return _valid_coordinate(coordinates.get("latitude"), -90, 90) and _valid_coordinate(
             coordinates.get("longitude"), -180, 180
         )
     location = event.get("location")
     if isinstance(location, dict):
-        return valid(location.get("latitude"), -90, 90) and valid(
+        if _valid_coordinate(location.get("latitude"), -90, 90) and _valid_coordinate(
             location.get("longitude"), -180, 180
+        ):
+            return True
+    geometry_valid, has_position = _geojson_coverage(event.get("geometry"))
+    return geometry_valid and has_position
+
+
+def _parent_event_references(event: Mapping[str, Any]) -> set[str]:
+    references: set[str] = set()
+    singular = event.get("parent_event_id")
+    if isinstance(singular, str) and singular.strip():
+        references.add(singular)
+    plural = event.get("parent_event_ids")
+    if isinstance(plural, (list, tuple)):
+        references.update(
+            value
+            for value in plural
+            if isinstance(value, str) and value.strip()
         )
-    return False
+    return references
 
 
 def _has_objective_statement(participant: Mapping[str, Any]) -> bool:
@@ -1234,7 +1341,8 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
     at_least_two_participants = 0
     opposing_sides = 0
     parent_links = 0
-    resolvable_parent_links = 0
+    parent_reference_count = 0
+    resolvable_parent_references = 0
     cluster_links = 0
     any_hierarchy_links = 0
 
@@ -1265,14 +1373,14 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         }
         opposing_sides += int(len(sides) >= 2)
 
-        has_parent = _present(event.get("parent_event_id"))
+        parent_references = _parent_event_references(event)
+        has_parent = bool(parent_references)
         has_cluster = _present(event.get("cluster_id"))
         parent_links += int(has_parent)
+        parent_reference_count += len(parent_references)
         cluster_links += int(has_cluster)
         any_hierarchy_links += int(has_parent or has_cluster)
-        resolvable_parent_links += int(
-            has_parent and str(event.get("parent_event_id")) in event_ids
-        )
+        resolvable_parent_references += len(parent_references & event_ids)
 
     participant_count = len(participants)
     participant_entity_ids = sum(_present(row.get("entity_id")) for row, _ in participants)
@@ -1357,7 +1465,7 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 any_hierarchy_links,
                 event_count,
                 unit="proportion_of_rated_events",
-                definition="Rated events with parent_event_id or cluster_id. Absence can be legitimate for a top-level or unclustered event.",
+                definition="Rated events with at least one nonblank parent_event_id or parent_event_ids reference, or a nonblank cluster_id. Absence can be legitimate for a top-level or unclustered event.",
             ),
             "cluster_link_present": _ratio(
                 cluster_links,
@@ -1369,13 +1477,13 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 parent_links,
                 event_count,
                 unit="proportion_of_rated_events",
-                definition="Rated events with a nonblank parent_event_id. This is link coverage, not a claim every event needs a parent.",
+                definition="Rated events with at least one distinct nonblank parent reference from parent_event_id or parent_event_ids. This is link coverage, not a claim every event needs a parent.",
             ),
             "parent_link_resolves_within_ledger": _ratio(
-                resolvable_parent_links,
-                parent_links,
+                resolvable_parent_references,
+                parent_reference_count,
                 unit="proportion_of_parent_links",
-                definition="Nonblank parent_event_id values resolving to another rated event in this ledger.",
+                definition="Distinct parent references from parent_event_id and parent_event_ids resolving to rated event IDs in this ledger, deduplicated within each child event.",
             ),
         },
         "locations": {
@@ -1384,8 +1492,9 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 event_count,
                 unit="proportion_of_rated_events",
                 definition=(
-                    "Rated events with an explicit finite numeric latitude/longitude pair "
-                    "inside valid coordinate ranges; geographic_scope is not a location."
+                    "Rated events with an explicit finite numeric latitude/longitude pair or "
+                    "a structurally valid GeoJSON geometry containing such a longitude/latitude position; "
+                    "geographic_scope is not a location."
                 ),
             ),
             "event_location_present": _ratio(
@@ -1393,8 +1502,9 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 event_count,
                 unit="proportion_of_rated_events",
                 definition=(
-                    "Rated events with an explicit named/structured location or a valid "
-                    "numeric coordinate pair."
+                    "Rated events with an explicit named/structured location, a valid numeric "
+                    "coordinate pair, or a structurally valid supported GeoJSON geometry "
+                    "containing at least one in-range longitude/latitude position."
                 ),
             ),
             "event_region_present": _ratio(
@@ -1742,7 +1852,11 @@ def build_coverage_report(
         str(row.get("id")): row for row in source_rows if _present(row.get("id"))
     }
     review_scan = _scan_review(Path(review_dir) if review_dir is not None else None, reference_date)
-    coverage_metadata, metadata_queue_counts = _coverage_metadata(metadata, registry)
+    (
+        coverage_metadata,
+        metadata_queue_counts,
+        metadata_queue_counts_source,
+    ) = _coverage_metadata(metadata, registry)
     source_family_report = _outcome_source_family_report(rated_events, sources)
 
     # Prefer release entity regions, then fill only missing IDs from the wider
@@ -1763,12 +1877,13 @@ def build_coverage_report(
         metadata,
         coverage_metadata,
         metadata_queue_counts,
+        metadata_queue_counts_source,
         review_scan,
     )
     registry_report = _registry_coverage(registry, rated_events, results)
 
     consistency_checks: dict[str, Any] = {}
-    if review_scan.get("files_present") and metadata_queue_counts:
+    if review_scan.get("directory_supplied") and metadata_queue_counts is not None:
         actual = review_scan.get("counts_by_file", {})
         filenames = sorted(set(actual) | set(metadata_queue_counts))
         mismatches = {
@@ -1788,7 +1903,7 @@ def build_coverage_report(
         consistency_checks["review_queue_counts"] = {
             "availability": "not_available",
             "matches": None,
-            "reason": "Both physical review queues and release-declared queue counts are required.",
+            "reason": "Both physical review queues and declared queue counts are required.",
         }
 
     observed = {
@@ -1841,7 +1956,8 @@ def build_coverage_report(
             "release_version": metadata.get("version"),
             "registry_supplied": registry is not None,
             "results_supplied": results is not None,
-            "review_files_supplied": bool(review_scan.get("files_present")),
+            "review_directory_supplied": bool(review_scan.get("directory_supplied")),
+            "review_files_supplied": bool(review_scan.get("queue_files_present")),
         },
         "stage_funnel": stage_funnel,
         "unresolved_queue_aging": review_scan["aging"],
@@ -2221,7 +2337,10 @@ def render_markdown(report: Mapping[str, Any]) -> str:
 
     aging = report.get("unresolved_queue_aging", {})
     lines.extend(["## Unresolved queue aging", ""])
-    if isinstance(aging, dict) and aging.get("availability") != "not_available":
+    if isinstance(aging, dict) and aging.get("availability") in {
+        "available",
+        "partially_available",
+    }:
         lines.extend(
             [
                 f"Reference date: `{aging.get('reference_date')}`; median age: "
@@ -2236,6 +2355,10 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         for bucket, count in aging.get("age_buckets", {}).items():
             lines.append(f"| {_markdown_cell(bucket)} | {int(count):,} |")
         lines.append("")
+    elif isinstance(aging, dict) and aging.get("availability") == "not_applicable":
+        lines.extend(
+            [f"Not applicable: {_markdown_cell(aging.get('reason', ''))}", ""]
+        )
     else:
         lines.extend([f"Not available: {_markdown_cell(aging.get('reason', ''))}", ""])
     if isinstance(aging, dict):
@@ -2274,8 +2397,8 @@ def write_coverage_report(
     destination.mkdir(parents=True, exist_ok=True)
     json_path = destination / f"{basename}.json"
     markdown_path = destination / f"{basename}.md"
-    json_path.write_text(render_json(report), encoding="utf-8")
-    markdown_path.write_text(render_markdown(report), encoding="utf-8")
+    json_path.write_bytes(render_json(report).encode("utf-8"))
+    markdown_path.write_bytes(render_markdown(report).encode("utf-8"))
     return json_path, markdown_path
 
 

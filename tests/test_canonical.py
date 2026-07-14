@@ -11,6 +11,7 @@ from military_elo.canonical import (
     UncertainDateInterval,
     date_bounds,
     date_sort_key,
+    geometry_validation_error,
 )
 from military_elo.models import Entity, Event, Participant
 
@@ -450,6 +451,23 @@ class CanonicalEventTests(unittest.TestCase):
         exported["geometry"]["properties"]["labels"][0] = "output mutation"
         self.assertEqual(event.to_dict()["geometry"], expected)
         self.assertEqual(CanonicalEvent.from_dict(event.to_dict()), event)
+
+    def test_huge_integer_geometry_ordinates_do_not_overflow(self):
+        huge = 10**10000
+        for longitude in (huge, -huge):
+            with self.subTest(sign=1 if longitude > 0 else -1):
+                self.assertIsNone(
+                    geometry_validation_error(
+                        {"type": "Point", "coordinates": [longitude, 0]}
+                    )
+                )
+        for coordinates in ([180, 90], [-180.0, -90.0]):
+            with self.subTest(boundary=coordinates):
+                self.assertIsNone(
+                    geometry_validation_error(
+                        {"type": "Point", "coordinates": coordinates}
+                    )
+                )
 
     def test_legacy_event_geometry_is_detached_deeply_frozen_and_thawed(self):
         geometry = {
