@@ -2,7 +2,7 @@
 
 An auditable, uncertainty-aware system for exploring the military success of historical countries, empires and other autonomous actors.
 
-The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 1,582 catalogued, time-bounded polity identities, of which 109 have rateable evidence across 1,461 events. It currently includes:
+The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 1,582 catalogued, time-bounded polity identities, of which 177 have rateable evidence across 2,620 events. It currently includes:
 
 - separate tactical, operational and strategic ratings;
 - participant-specific outcome vectors, so limited withdrawals and terminal defeats are not equivalent;
@@ -48,7 +48,7 @@ python scripts/build_dashboard.py --data data/release --registry data/catalog/re
 The test suite cross-checks the committed artifact against the release and
 registry so a stale or partial rebuild fails before it ships.
 
-The dashboard deliberately separates the polity registry from the rating ledger. The 1,582-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 1,461-event ledger combines 40 manually curated seed events, 1,377 strictly filtered HCED tactical encounters, and 44 coalition-aggregated IWD strategic parent wars. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
+The dashboard deliberately separates the polity registry from the rating ledger. The 1,582-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 2,620-event ledger combines 40 manually curated seed events, 1,377 crosswalk-resolved and 1,012 label-resolved HCED tactical encounters, 44 coalition-aggregated IWD strategic parent wars, 142 IWBD tactical battles, and 5 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
 ## Data already staged
 
@@ -62,11 +62,11 @@ The live ingestion pipeline has immutable snapshots and review candidates from:
 - UCDP dyadic v26.1: 3,518 candidates;
 - UCDP actor v26.1: 1,987 identity candidates;
 - UCDP termination data: 2,752 conflict and 3,432 dyad candidates;
-- a tested Wikidata discovery page with 18 candidates.
+- a tested Wikidata discovery page, currently holding 87 candidates (up from the previously documented 18 through upstream drift in the discovery page).
 
 These records remain in `data/review/` and are not silently treated as accurate Elo matches.
 
-Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 44 currently pass those checks (72 of 265 component records); the rest stay staged. IWBD and UCDP also remain staged evidence because battle winners, conflict intensity, and deaths do not by themselves establish participant-specific strategic success.
+Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution; rows lacking Seshat coding are retried in a second, declared label-resolution pass in which a side promotes only through an explicit time-bounded label policy or an exact, uniquely matching, time-valid alias, and the resulting events carry visibly lower identity confidence. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 44 currently pass those checks (72 of 265 component records); the rest stay staged. IWBD battles enter only as tactical engagements, and only when they duplicate no seed event, HCED candidate, or earlier IWBD row by name and year, are not campaign umbrellas over sibling battles, carry a victor matching a named side, and resolve both sides to unique time-bounded identities; their war-level victor codes are ignored. UCDP termination records promote only as conflict-level terminal victory episodes (codes 3/4) between state parties with unique time-bounded identities, after cross-source deduplication and dyad- and linked-episode consistency checks; peace agreements, ceasefires, and low activity are never scored as outcomes, and secondary supporters receive no outcome. Battle winners, conflict intensity, and deaths still do not by themselves establish participant-specific strategic success, and every promoted event remains visibly provisional pending claim-level review.
 
 ## Refresh the open source corpus
 

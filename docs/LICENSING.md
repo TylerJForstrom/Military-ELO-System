@@ -34,6 +34,10 @@ Current sources:
   <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6ZFC0V>
 - Interstate War Battle Dataset:
   <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KLQFAP>
+  (CC0 1.0; the provisional release's IWBD-derived tactical events use Harvard
+  Dataverse datafile 4435240,
+  <https://dataverse.harvard.edu/api/access/datafile/4435240?format=original>,
+  accessed 2026-07-13)
 - Interstate War Data v1.21:
   <https://doi.org/10.7910/DVN/WGS1YX>
 - Wikidata structured data:
@@ -98,6 +102,25 @@ Therese Pettersson, and Magnus Oberg, "Organized violence 1989-2025, and
 violent political protests," *Journal of Peace Research* (2026),
 <https://doi.org/10.1093/jopres/xjag046>, plus the dataset-specific foundational
 paper where listed.
+
+The provisional release's UCDP-derived strategic events use both UCDP Conflict
+Termination v4-2024 files, each CC BY 4.0, accessed 2026-07-13:
+
+- Conflict Termination v4-2024, conflict-level:
+  <https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv>
+- Conflict Termination v4-2024, dyad-level:
+  <https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv>
+
+Their attribution follows the dataset-level template above:
+
+> Source data: Uppsala Conflict Data Program (UCDP), UCDP Conflict Termination
+> Dataset v4-2024, conflict-level and dyad-level files, accessed 2026-07-13,
+> <https://ucdp.uu.se/downloads/>, licensed CC BY 4.0. Historical Military Elo
+> normalized actor identities and independently coded rating outcomes; those
+> changes are not UCDP's analysis.
+
+Include the dataset-specific foundational-paper citation requested on the
+termination dataset's download page.
 
 A suitable Cliopatria attribution is:
 

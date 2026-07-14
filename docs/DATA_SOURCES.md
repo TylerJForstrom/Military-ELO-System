@@ -35,10 +35,10 @@ an actor merely falling below a fatality threshold are also different outcomes.
 | Source | Contains a purported winner? | What it means | Direct rating input? |
 |---|---|---|---|
 | HCED | Usually | Encounter-level `Winner` and `Loser` labels | No. Treat as a tactical proposal pending entity, side, scope, and confidence review. |
-| IWBD | Yes | Tactical victor under a strategic-objective standard; also attacker/defender and war-side role | No. Strong tactical evidence, but it does not establish the enclosing war's strategic outcome. |
+| IWBD | Yes | Tactical victor under a strategic-objective standard; also attacker/defender and war-side role | Rated only as tactical engagements through the declared IWBD promotion rule; duplicates, campaign umbrellas, coalition labels, and unresolved identities stay staged. It does not establish the enclosing war's strategic outcome, and its war-level victor code is ignored. |
 | IWD | Yes | Terminal component-war outcome from the initiator's perspective: victory, defeat, or draw | Rated only through parent-war coalition aggregation: at most one strategic update per parent conflict, with consistent sides, unanimous outcomes, and time-bounded identities; unresolved parents stay staged. |
 | UCDP conflict/dyadic/GED/deaths | No | Actors, conflict type, intensity, events, and deaths | No. Intensity and fatalities are not victory labels. |
-| UCDP Conflict Termination | Yes, for terminated episodes | Peace, ceasefire, government-side victory, non-state-side victory, low activity, or actor cessation | No automatic rating. It is strong strategic evidence but is episode-level and may not describe every supporter or coalition participant. |
+| UCDP Conflict Termination | Yes, for terminated episodes | Peace, ceasefire, government-side victory, non-state-side victory, low activity, or actor cessation | Rated only through the declared conflict-episode termination ruleset (victory codes 3/4, state primaries, time-bounded GW policies, cross-source dedup); all other rows stay staged. It is episode-level and may not describe every supporter or coalition participant, so secondary parties are recorded without outcomes. |
 | Wikidata | Sometimes through `winner` (P1346) | A community-maintained sourced statement | No. Preserve statement references and qualifiers and verify against scholarly sources. |
 | Cliopatria | No | Polity identity, time, relationships, and geography | Identity evidence only. |
 | Pleiades / GeoNames | No | Place identity, aliases, and coordinates | Location evidence only. |
@@ -145,6 +145,34 @@ the attacker wins by taking it, the defender wins by retaining it, and cases
 without a clear result are inconclusive. This is strong tactical evidence. It
 does not describe casualties, the magnitude of a result, political goals, or
 the final settlement of the enclosing war.
+
+In this system IWBD battles enter the provisional ledger only through a
+declared promotion rule, as tactical engagements. A row is excluded when its
+normalized battle name and year, with a ±1-year tolerance, match a curated
+seed event, any of the 8,881 HCED candidates (promoted or staged), or an
+earlier IWBD row: 1,189 IWBD records match an HCED candidate by normalized
+battle name and year (±1) and are excluded as presumptive duplicates. These
+matches are exclusions, not corroboration — a name/date intersection verifies
+neither outcome nor side agreement, and no HCED record is modified. A row
+whose date span strictly contains a differently-named battle of the same war
+is staged as a presumptive campaign umbrella (117 rows), so only battle-level
+granularity enters; the rule deliberately over-includes some genuinely
+distinct long engagements. The coded battle-level victor must match a named
+side with an agreeing attacker/defender role — the coded `inconclusive` value
+maps to a tactical stalemate, while a blank or mismatched victor is rejected —
+and the war-level victor code is ignored entirely. Coalition or composite side
+labels stay staged (182 rows), and both sides must resolve to unique
+time-bounded identities outside declared deny windows (66 side-resolution
+failures, including the declared "Turkey" 1920-1923 deny window). In the
+current build 142 of 1,708 battles pass; every other row stays staged under a
+named rejection counter.
+
+IWBD's `iwdNum` field is the IWD parent-war identifier (IWD's `largerwarid`
+numbering), not an IWD component (`initwarid`) identifier. Promoted IWBD
+battles use that join to share a war cluster with the corresponding IWD
+strategic parent for correlated-evidence down-weighting. Joining `iwdNum`
+through IWD component IDs would misfile battles: component 77 is a World War I
+dyad, while parent war 77 is Iran-Iraq.
 
 #### Verified live IWBD profile
 
@@ -266,6 +294,30 @@ These categories do not automatically determine outcomes for secondary
 supporters. For example, an intervening state can withdraw before the primary
 government or rebel side wins or loses. Participant entry/exit dates,
 contribution, objectives, and settlement effects still require review.
+
+In this system the termination data is the only UCDP data with a mechanical
+promotion rule, and that rule is declared and narrow. Promotion operates at
+the conflict-episode level only; the dyad-level termination file is never
+promoted and serves solely as a consistency cross-check. Only terminal
+episodes with victory outcome codes 3 or 4 can produce strategic events —
+peace agreements, ceasefires, low-activity endings, and actor cessation stay
+staged, because peace is not a loss and low activity is not an outcome. Every
+primary party on both sides must be a state (a `Government of ...` party with
+a Gleditsch-Ward code) resolving to a unique time-bounded identity for the
+full episode span, through explicit, authoritative GW-code policy windows or
+exact time-valid alias matching. An episode is rejected when it duplicates an
+already-promoted strategic event by shared entities and overlapping years,
+when a terminal dyad row of the same conflict contradicts it (an
+opposite-orientation victory or a same-pair negotiated termination), when a
+victory assertion elsewhere in the file with the same episode end date orients
+a shared entity oppositely (this quarantines the Israel-Jordan front of the
+mutually contradictory 1967 Six-Day complex; its Syria and Egypt fronts
+already fail identity resolution and stay staged as unresolved parties), or
+when it carries a documented side-attribution dispute
+recorded as a curated exclusion (the 1974 Paracel episode). Severity is capped
+at limited, and secondary supporters are recorded as provenance without
+outcomes. In the current build 5 of 2,752 conflict-level rows pass; the rest
+stay staged under named rejection counters.
 
 #### Verified live UCDP profile
 
@@ -531,15 +583,19 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 The 2026-07-13 build publishes three coverage numbers separately:
 
 - 1,582 time-bounded polity identities in the rated-and-unrated registry;
-- 109 entities with rateable evidence; and
-- 1,461 rating events: 40 manually curated events, 1,377 HCED tactical
-  encounters, and 44 coalition-aggregated IWD strategic parent wars.
+- 177 entities with rateable evidence; and
+- 2,620 rating events: 40 manually curated events, 1,377 crosswalk-resolved
+  HCED tactical encounters, 1,012 label-resolved HCED tactical encounters,
+  44 coalition-aggregated IWD strategic parent wars, 142 IWBD tactical
+  battles, and 5 UCDP conflict-termination strategic episodes.
 
-The review queues contain 27,014 staged source records across Cliopatria, HCED,
-IWD, IWBD, UCDP, and the small Wikidata discovery sample. That total includes
+The review queues contain 27,083 staged source records across Cliopatria, HCED,
+IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
+now holds 87 candidates rather than the previously documented 18, reflecting
+upstream drift in the discovery page between snapshots). That total includes
 identity records and the source-derived evidence promoted into this
-provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 21,941 remain outside the rating ledger because their layer,
+provisional release; it is not an unresolved-record count. Of 23,459 event-like
+candidates, 20,851 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
