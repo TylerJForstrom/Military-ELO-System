@@ -376,6 +376,8 @@ def build_expanded_release(
             "license": "CC0-1.0",
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
+            "source_family_id": "hced",
+            "evidence_roles": ["outcome"],
         },
         {
             "id": "hced_seshat_crosswalk",
@@ -385,6 +387,8 @@ def build_expanded_release(
             "license": "CC0-1.0",
             "source_type": "identity_crosswalk",
             "accessed": "2026-07-13",
+            "source_family_id": "hced_seshat_crosswalk_file_11018172",
+            "evidence_roles": ["identity_crosswalk"],
         },
         {
             "id": "cliopatria_v020",
@@ -394,6 +398,8 @@ def build_expanded_release(
             "license": "CC-BY-4.0",
             "source_type": "historical_polity_registry",
             "accessed": "2026-07-13",
+            "source_family_id": "cliopatria_v0_2_0",
+            "evidence_roles": ["identity_registry"],
         },
         {
             "id": "iwd_dataset",
@@ -403,6 +409,8 @@ def build_expanded_release(
             "license": "CC0-1.0",
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
+            "source_family_id": "iwd",
+            "evidence_roles": ["outcome"],
         },
         {
             "id": "iwbd_dataset",
@@ -412,6 +420,8 @@ def build_expanded_release(
             "license": "CC0-1.0",
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
+            "source_family_id": "iwbd",
+            "evidence_roles": ["outcome"],
         },
         {
             "id": "ucdp_termination_conflict",
@@ -421,6 +431,8 @@ def build_expanded_release(
             "license": "CC-BY-4.0",
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
+            "source_family_id": "ucdp_conflict_termination",
+            "evidence_roles": ["outcome"],
         },
         {
             "id": "ucdp_termination_dyad",
@@ -430,6 +442,8 @@ def build_expanded_release(
             "license": "CC-BY-4.0",
             "source_type": "structured_dataset",
             "accessed": "2026-07-13",
+            "source_family_id": "ucdp_conflict_termination",
+            "evidence_roles": ["outcome_consistency_crosscheck"],
         },
     ):
         sources_by_id[source["id"]] = source

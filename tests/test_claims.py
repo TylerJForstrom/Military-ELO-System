@@ -293,6 +293,21 @@ class ClaimModelTests(unittest.TestCase):
             adjudication_schema["properties"]["supersedes"]["items"]["pattern"],
             ".*\\S.*",
         )
+        event_schema = json.loads(
+            (ROOT / "schemas" / "event.schema.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(
+            event_schema["properties"]["outcome_source_ids"]["uniqueItems"]
+        )
+        family_items = event_schema["properties"]["outcome_source_family_ids"][
+            "items"
+        ]
+        self.assertEqual(family_items["pattern"], "^\\S(?:.*\\S)?$")
+        self.assertNotIn("enum", family_items)
+        self.assertEqual(
+            event_schema["dependentRequired"]["outcome_source_ids"],
+            ["outcome_source_family_ids"],
+        )
 
 
 class LegacyModelCompatibilityTests(unittest.TestCase):
@@ -349,6 +364,8 @@ class LegacyModelCompatibilityTests(unittest.TestCase):
             "date_interval",
             "geometry",
             "participation_episodes",
+            "outcome_source_ids",
+            "outcome_source_family_ids",
         ):
             self.assertNotIn(key, event_output)
 
@@ -356,6 +373,196 @@ class LegacyModelCompatibilityTests(unittest.TestCase):
         self.assertEqual(Source.from_dict(source.to_dict()), source)
         self.assertEqual(Participant.from_dict(participant_output), participant)
         self.assertEqual(Event.from_dict(event_output), event)
+
+    def test_source_family_metadata_round_trips_without_changing_legacy_sources(self):
+        legacy = Source("legacy", "Legacy source", "https://example.test/legacy")
+        self.assertNotIn("source_family_id", legacy.to_dict())
+        self.assertNotIn("evidence_roles", legacy.to_dict())
+
+        source = Source.from_dict(
+            {
+                "id": "dataset",
+                "title": "Dataset",
+                "url": "https://example.test/dataset",
+                "source_family_id": "hced",
+                "evidence_roles": ["outcome", "outcome"],
+            }
+        )
+        serialized = source.to_dict()
+        self.assertEqual(serialized["source_family_id"], "hced")
+        self.assertEqual(serialized["evidence_roles"], ["outcome"])
+        self.assertEqual(Source.from_dict(serialized), source)
+
+    def test_source_family_metadata_is_paired_nonblank_and_canonical(self):
+        base = {
+            "id": "dataset",
+            "title": "Dataset",
+            "url": "https://example.test/dataset",
+        }
+        for extra in (
+            {"source_family_id": "iwd"},
+            {"evidence_roles": ["outcome"]},
+        ):
+            with self.subTest(extra=extra), self.assertRaisesRegex(
+                ValueError, "must be supplied together"
+            ):
+                Source.from_dict({**base, **extra})
+
+        invalid_type_values = {
+            "source_family_id": 7,
+            "evidence_roles": "outcome",
+        }
+        for field_name, value in invalid_type_values.items():
+            with self.subTest(field=field_name), self.assertRaisesRegex(
+                TypeError, field_name
+            ):
+                Source.from_dict(
+                    {
+                        **base,
+                        "source_family_id": "iwbd",
+                        "evidence_roles": ["outcome"],
+                        field_name: value,
+                    }
+                )
+
+        with self.assertRaisesRegex(ValueError, "non-blank"):
+            Source.from_dict(
+                {
+                    **base,
+                    "source_family_id": " ",
+                    "evidence_roles": ["outcome"],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "non-blank"):
+            Source.from_dict(
+                {
+                    **base,
+                    "source_family_id": "ucdp_conflict_termination",
+                    "evidence_roles": [" "],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "non-empty"):
+            Source.from_dict(
+                {
+                    **base,
+                    "source_family_id": "ucdp_conflict_termination",
+                    "evidence_roles": [],
+                }
+            )
+
+        with self.assertRaisesRegex(ValueError, "non-canonical"):
+            Source.from_dict(
+                {
+                    **base,
+                    "source_family_id": "ucdp_conflict_termination",
+                    "evidence_roles": ["generic_reference"],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "must be supplied together"):
+            Source(
+                "dataset",
+                "Dataset",
+                "https://example.test/dataset",
+                source_family_id="iwd",
+            )
+
+    def test_event_outcome_source_metadata_round_trips_canonically(self):
+        raw = {
+            "id": "event-1",
+            "name": "Event",
+            "year": 5,
+            "event_type": "engagement",
+            "participants": [
+                {"entity_id": "a", "side": "one"},
+                {"entity_id": "b", "side": "two"},
+            ],
+            "source_ids": ["iwd_dataset", "context_source"],
+            "outcome_source_ids": ["iwd_dataset"],
+            "outcome_source_family_ids": ["iwd"],
+        }
+        event = Event.from_dict(raw)
+        serialized = event.to_dict()
+
+        self.assertEqual(event.outcome_source_ids, ("iwd_dataset",))
+        self.assertEqual(event.outcome_source_family_ids, ("iwd",))
+        self.assertEqual(serialized["outcome_source_ids"], ["iwd_dataset"])
+        self.assertEqual(serialized["outcome_source_family_ids"], ["iwd"])
+        self.assertEqual(Event.from_dict(serialized), event)
+
+    def test_event_outcome_source_metadata_is_paired_array_and_subset_checked(self):
+        base = {
+            "id": "event-1",
+            "name": "Event",
+            "year": 5,
+            "event_type": "engagement",
+            "participants": [
+                {"entity_id": "a", "side": "one"},
+                {"entity_id": "b", "side": "two"},
+            ],
+            "source_ids": ["ucdp_conflict"],
+        }
+        for one_sided_contract in (
+            {"outcome_source_ids": ["ucdp_conflict"]},
+            {"outcome_source_family_ids": ["ucdp_conflict_termination"]},
+        ):
+            with self.subTest(contract=one_sided_contract), self.assertRaisesRegex(
+                ValueError, "supplied together"
+            ):
+                Event.from_dict({**base, **one_sided_contract})
+        with self.assertRaisesRegex(ValueError, "populated together"):
+            Event.from_dict(
+                {
+                    **base,
+                    "outcome_source_ids": [],
+                    "outcome_source_family_ids": [],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "populated together"):
+            Event.from_dict(
+                {
+                    **base,
+                    "outcome_source_ids": ["ucdp_conflict"],
+                    "outcome_source_family_ids": [],
+                }
+            )
+        for field_name in ("outcome_source_ids", "outcome_source_family_ids"):
+            with self.subTest(field=field_name), self.assertRaisesRegex(
+                TypeError, "array of strings"
+            ):
+                Event.from_dict(
+                    {
+                        **base,
+                        "outcome_source_ids": ["ucdp_conflict"],
+                        "outcome_source_family_ids": [
+                            "ucdp_conflict_termination"
+                        ],
+                        field_name: "not-an-array",
+                    }
+                )
+        with self.assertRaisesRegex(ValueError, "subset"):
+            Event.from_dict(
+                {
+                    **base,
+                    "outcome_source_ids": ["other_source"],
+                    "outcome_source_family_ids": ["ucdp_conflict_termination"],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "sorted and deduplicated"):
+            Event.from_dict(
+                {
+                    **base,
+                    "outcome_source_ids": ["ucdp_conflict", "ucdp_conflict"],
+                    "outcome_source_family_ids": ["ucdp_conflict_termination"],
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "surrounding whitespace"):
+            Event.from_dict(
+                {
+                    **base,
+                    "outcome_source_ids": ["ucdp_conflict"],
+                    "outcome_source_family_ids": [" reviewed_family "],
+                }
+            )
 
     def test_optional_model_fields_round_trip_when_supplied(self):
         entity = Entity.from_dict(

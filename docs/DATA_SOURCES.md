@@ -49,6 +49,47 @@ an actor merely falling below a fatality threshold are also different outcomes.
 | DBpedia | Sometimes an extracted value | Automatically extracted Wikipedia assertions | Discovery only; lower priority than Wikidata. |
 | Brecke Conflict Catalog | Not systematically | Participants, initiator where possible, dates, location, and fatalities | Gap discovery only; unfinished and no explicit reusable license. |
 
+### Explicit source-family and outcome-role contract
+
+Every released source now carries a stable `source_family_id` and explicit
+`evidence_roles`. The family identifies a provenance and deduplication unit; it
+does not by itself establish that two sources are independent or that either
+supports a particular scored outcome. Mechanically promoted events identify
+their exact direct subset in `outcome_source_ids` and repeat the corresponding
+stable dependency families in `outcome_source_family_ids`. For legacy records
+with neither event-level field, a generic `source_ids` link can count only when
+the linked source explicitly includes `outcome` in `evidence_roles`; generic
+roles are never unioned into an event that already has an explicit mapping.
+Titles, URLs, publishers, source counts, and family labels are never used to
+infer an outcome role.
+
+Only four registered sources have the direct outcome role:
+
+| Source ID | Outcome family | Rated events mapped |
+|---|---|---:|
+| `hced_dataset` | `hced` | 4,012 |
+| `iwd_dataset` | `iwd` | 54 |
+| `iwbd_dataset` | `iwbd` | 121 |
+| `ucdp_termination_conflict` | `ucdp_conflict_termination` | 7 |
+
+This maps 4,194 of 4,234 rated events, and every mapped event has exactly one
+direct outcome family. Multiple-independent-family coverage is therefore zero.
+The 40 curated seed events remain explicitly unmapped: their generic reference
+URLs do not contain the claim-level outcome locator, edition/checksum context,
+or citation-lineage review needed to say which source supports each scored
+dimension. Future review may add paired event-level `outcome_source_ids` and
+`outcome_source_family_ids`; the registry does not apply a blanket outcome role
+to those manual references.
+
+The negative roles are equally important. `hced_seshat_crosswalk` is an
+identity crosswalk, both Cliopatria records are identity registries,
+`ucdp_termination_dyad` is a same-family outcome consistency cross-check, and
+curated/manual references remain pending claim-level locators. HCED's free-text
+list of consulted sources is not a registered locator and adds no family.
+Crosswalks, registry rows, dyad rows, components, mirrors, publisher pages, and
+generic consulted references can supply provenance or checks without supplying
+another outcome assertion.
+
 ## Open core sources
 
 ### Historical Conflict Event Dataset (HCED)
@@ -645,3 +686,9 @@ candidates, 19,163 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
+
+Outcome-family coverage uses a different denominator from corpus coverage.
+Exactly 4,194 rated events have an explicit direct-outcome mapping through the
+four dataset sources above; the remaining 40 are the curated seed events and
+stay unknown pending claim-level locator review. All 4,194 mapped events have
+one family and none has multiple independently established outcome families.

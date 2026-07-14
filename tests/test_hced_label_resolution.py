@@ -770,15 +770,23 @@ class ReleaseArtifactTests(unittest.TestCase):
             e for e in cls.events if str(e["id"]).startswith("hced_label_")
         ]
 
-    def test_existing_crosswalk_events_are_byte_identical(self) -> None:
+    def test_existing_crosswalk_event_payload_is_unchanged(self) -> None:
         # The first 1,863 events are the reviewed pre-label-pass block (40 seed +
-        # 1,769 crosswalk HCED + 54 IWD): the label pass is a pure append and
-        # adds no field to any block event. The digest pins the CONTENT of
-        # that block, not just its shape; this value was re-reviewed after the
-        # curated historical-adjudication tranche deliberately changed it.
+        # 1,769 crosswalk HCED + 54 IWD). The label pass is a pure append; this
+        # digest pins the legacy CONTENT of that block after stripping only the
+        # additive direct-outcome contract, which is pinned separately.
         legacy = self.events[:1863]
+        legacy_payload = [
+            {
+                key: value
+                for key, value in event.items()
+                if key
+                not in {"outcome_source_ids", "outcome_source_family_ids"}
+            }
+            for event in legacy
+        ]
         digest = hashlib.sha256(
-            json.dumps(legacy, sort_keys=True).encode("utf-8")
+            json.dumps(legacy_payload, sort_keys=True).encode("utf-8")
         ).hexdigest()
         self.assertEqual(
             digest,

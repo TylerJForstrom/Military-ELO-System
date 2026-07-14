@@ -37,6 +37,17 @@ STRATEGIC_DIMENSIONS = {
     "force_preservation",
 }
 
+SOURCE_EVIDENCE_ROLES = frozenset(
+    {
+        "curated_reference_pending_claim_level_outcome_locator",
+        "derived_project_continuity_convention",
+        "identity_boundary_or_context_reference",
+        "identity_crosswalk",
+        "identity_registry",
+        "outcome",
+        "outcome_consistency_crosscheck",
+    }
+)
 
 def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
     if value == ():
@@ -52,6 +63,15 @@ def _stable_id_tuple(value: Any, field_name: str) -> tuple[str, ...]:
     result = _string_tuple(value, field_name)
     if any(not item.strip() for item in result):
         raise ValueError(f"{field_name} must contain only non-blank ids")
+    return result
+
+
+def _canonical_stable_id_tuple(value: Any, field_name: str) -> tuple[str, ...]:
+    result = _stable_id_tuple(value, field_name)
+    if any(item != item.strip() for item in result):
+        raise ValueError(f"{field_name} must not contain surrounding whitespace")
+    if result != tuple(sorted(set(result))):
+        raise ValueError(f"{field_name} must be sorted and deduplicated")
     return result
 
 
@@ -138,9 +158,59 @@ class Source:
     license: str = ""
     source_type: str = "secondary"
     accessed: str = ""
+    source_family_id: str = ""
+    evidence_roles: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.source_family_id, str):
+            raise TypeError("Source.source_family_id must be a string")
+        roles = _stable_id_tuple(self.evidence_roles, "Source.evidence_roles")
+        has_family = bool(self.source_family_id)
+        has_roles = bool(roles)
+        if has_family != has_roles:
+            raise ValueError(
+                "Source.source_family_id and Source.evidence_roles must be supplied together"
+            )
+        if not has_family:
+            object.__setattr__(self, "evidence_roles", ())
+            return
+
+        if not self.source_family_id.strip():
+            raise ValueError("Source.source_family_id must be non-blank")
+        if self.source_family_id != self.source_family_id.strip():
+            raise ValueError(
+                "Source.source_family_id must not contain surrounding whitespace"
+            )
+        unknown_roles = sorted(set(roles) - SOURCE_EVIDENCE_ROLES)
+        if unknown_roles:
+            allowed = ", ".join(sorted(SOURCE_EVIDENCE_ROLES))
+            raise ValueError(
+                "Source.evidence_roles contains non-canonical role(s) "
+                f"{', '.join(unknown_roles)}; allowed roles: {allowed}"
+            )
+        object.__setattr__(self, "evidence_roles", tuple(sorted(set(roles))))
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Source":
+        has_family = "source_family_id" in raw
+        has_roles = "evidence_roles" in raw
+        if has_family != has_roles:
+            raise ValueError(
+                "Source.source_family_id and Source.evidence_roles must be supplied together"
+            )
+        source_family_id = raw.get("source_family_id", "")
+        evidence_roles = raw.get("evidence_roles", ())
+        if has_family:
+            if not isinstance(source_family_id, str):
+                raise TypeError("Source.source_family_id must be a string")
+            if not source_family_id.strip():
+                raise ValueError("Source.source_family_id must be non-blank")
+            parsed_roles = _stable_id_tuple(
+                evidence_roles, "Source.evidence_roles"
+            )
+            if not parsed_roles:
+                raise ValueError("Source.evidence_roles must be non-empty when supplied")
+            evidence_roles = parsed_roles
         return cls(
             id=str(raw["id"]),
             title=str(raw["title"]),
@@ -149,10 +219,12 @@ class Source:
             license=str(raw.get("license", "")),
             source_type=str(raw.get("source_type", "secondary")),
             accessed=str(raw.get("accessed", "")),
+            source_family_id=source_family_id,
+            evidence_roles=evidence_roles,
         )
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        result = {
             "id": self.id,
             "title": self.title,
             "url": self.url,
@@ -161,6 +233,10 @@ class Source:
             "source_type": self.source_type,
             "accessed": self.accessed,
         }
+        if self.source_family_id:
+            result["source_family_id"] = self.source_family_id
+            result["evidence_roles"] = list(self.evidence_roles)
+        return result
 
 
 @dataclass(frozen=True)
@@ -320,6 +396,8 @@ class Event:
     participation_episodes: tuple[ParticipationEpisode, ...] = ()
     claim_ids: tuple[str, ...] = ()
     adjudication_ids: tuple[str, ...] = ()
+    outcome_source_ids: tuple[str, ...] = ()
+    outcome_source_family_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         if self.parent_event_id is not None:
@@ -382,6 +460,31 @@ class Event:
                 )
             ),
         )
+        source_ids = _stable_id_tuple(self.source_ids, "Event.source_ids")
+        outcome_source_ids = _canonical_stable_id_tuple(
+            self.outcome_source_ids,
+            "Event.outcome_source_ids",
+        )
+        outcome_source_family_ids = _canonical_stable_id_tuple(
+            self.outcome_source_family_ids,
+            "Event.outcome_source_family_ids",
+        )
+        if bool(outcome_source_ids) != bool(outcome_source_family_ids):
+            raise ValueError(
+                "Event.outcome_source_ids and Event.outcome_source_family_ids "
+                "must be populated together"
+            )
+        missing_outcome_sources = sorted(set(outcome_source_ids) - set(source_ids))
+        if missing_outcome_sources:
+            raise ValueError(
+                "Event.outcome_source_ids must be a subset of Event.source_ids; "
+                f"missing: {', '.join(missing_outcome_sources)}"
+            )
+        object.__setattr__(self, "source_ids", source_ids)
+        object.__setattr__(self, "outcome_source_ids", outcome_source_ids)
+        object.__setattr__(
+            self, "outcome_source_family_ids", outcome_source_family_ids
+        )
         if self.geometry is not None:
             geometry = freeze_json(self.geometry)
             if not isinstance(geometry, Mapping):
@@ -403,6 +506,28 @@ class Event:
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Event":
         year = int(raw["year"])
+        has_outcome_sources = "outcome_source_ids" in raw
+        has_outcome_families = "outcome_source_family_ids" in raw
+        if has_outcome_sources != has_outcome_families:
+            raise ValueError(
+                "Event.outcome_source_ids and Event.outcome_source_family_ids "
+                "must be supplied together"
+            )
+        outcome_source_ids = _canonical_stable_id_tuple(
+            raw["outcome_source_ids"] if has_outcome_sources else [],
+            "Event.outcome_source_ids",
+        )
+        outcome_source_family_ids = _canonical_stable_id_tuple(
+            raw["outcome_source_family_ids"] if has_outcome_families else [],
+            "Event.outcome_source_family_ids",
+        )
+        if has_outcome_sources and (
+            not outcome_source_ids or not outcome_source_family_ids
+        ):
+            raise ValueError(
+                "Event.outcome_source_ids and Event.outcome_source_family_ids "
+                "must be populated together"
+            )
         episodes_raw = (
             raw["participation_episodes"] if "participation_episodes" in raw else []
         )
@@ -420,7 +545,10 @@ class Event:
             decisiveness=float(raw.get("decisiveness", 0.5)),
             confidence=float(raw.get("confidence", 0.5)),
             participants=tuple(Participant.from_dict(p) for p in raw["participants"]),
-            source_ids=tuple(raw.get("source_ids", [])),
+            source_ids=_stable_id_tuple(
+                raw["source_ids"] if "source_ids" in raw else [],
+                "Event.source_ids",
+            ),
             parent_event_id=raw.get("parent_event_id"),
             status=str(raw.get("status", "complete")),
             sequence=int(raw.get("sequence", 0)),
@@ -461,6 +589,8 @@ class Event:
                 raw["adjudication_ids"] if "adjudication_ids" in raw else [],
                 "Event.adjudication_ids",
             ),
+            outcome_source_ids=outcome_source_ids,
+            outcome_source_family_ids=outcome_source_family_ids,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -504,4 +634,9 @@ class Event:
             result["claim_ids"] = sorted(set(self.claim_ids))
         if self.adjudication_ids:
             result["adjudication_ids"] = sorted(set(self.adjudication_ids))
+        if self.outcome_source_ids:
+            result["outcome_source_ids"] = list(self.outcome_source_ids)
+            result["outcome_source_family_ids"] = list(
+                self.outcome_source_family_ids
+            )
         return result

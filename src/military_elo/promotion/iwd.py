@@ -288,6 +288,8 @@ def aggregate_iwd_parent_wars(
                 ),
                 "participants": _strategic_participants(side_a, side_b, outcome, confidence),
                 "source_ids": ["iwd_dataset"],
+                "outcome_source_ids": ["iwd_dataset"],
+                "outcome_source_family_ids": ["iwd"],
                 "status": "complete",
                 "iwd_parent_war_id": parent_id,
                 "iwd_parent_war_name": parent_name or None,

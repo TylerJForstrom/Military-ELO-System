@@ -110,7 +110,14 @@ same host can represent different datasets, while different URLs can copy one
 underlying work. Identity crosswalks also do not become outcome evidence merely
 because they appear in an event's `source_ids`.
 
-The reporter counts a family only through one of these explicit contracts:
+Likewise, `source_family_id` is first a provenance and deduplication unit. Its
+presence does not prove independent corroboration. Independence for a specific
+outcome still requires claim-level locators and citation-lineage review; a
+family contributes to this report only through the explicit outcome-role
+contract below.
+
+For backward-compatible reporting, the reporter recognizes these explicit
+inputs:
 
 1. an event supplies `outcome_source_family_ids` or
    `outcome_source_families`;
@@ -118,6 +125,13 @@ The reporter counts a family only through one of these explicit contracts:
    family identifier; or
 3. an event's generic source link points to a source carrying both an explicit
    family identifier and an explicit outcome-evidence role.
+
+The canonical current Event contract requires inputs 1 and 2 together, as
+nonempty deduplicated arrays whose declared family set exactly matches the
+families derived from the outcome-source subset. Inputs 1 or 2 by themselves
+remain readable only for legacy coverage reports. When either event-level input
+is present, it takes precedence and the reporter never unions generic source
+roles into it.
 
 Recognized family identifier fields are `source_family_id`, `source_family`,
 `family_id`, and `family`. Recognized outcome-role declarations include
@@ -130,9 +144,23 @@ mapped events as its denominator. Unmapped events are counted separately and
 are excluded from the family-count histogram; they are unknown, not observed
 zero-family events.
 
-The existing release schema has no such mapping. Its outcome-family metrics
-therefore report `not_available`, with no fallback to source IDs, URLs,
-publishers, titles, or crosswalk identifiers.
+The current release implements the first two contracts conservatively: each
+mechanically promoted event carries an exact `outcome_source_ids` subset and a
+matching stable `outcome_source_family_ids` array. Generic source-role fallback
+is considered only when neither event-level field is present and is never
+unioned into an explicit mapping. Exactly four sources advertise the direct
+`outcome` capability: HCED data, IWD data, IWBD data, and the UCDP
+conflict-level termination file. They map 4,194 of 4,234 rated events:
+4,012 HCED, 54 IWD, 121 IWBD, and 7 UCDP. Every mapped event has exactly one
+family, so multiple-independent-family coverage is 0 of 4,194 mapped events.
+
+The other 40 rated events are the curated seed. They remain explicitly
+unmapped, not observed zero-family events, because their generic URLs lack
+claim-level outcome locators and citation-lineage review. The HCED-to-Seshat
+crosswalk, Cliopatria registry records, UCDP termination dyad rows, HCED
+consulted-source text, and curated/manual references have explicit non-outcome
+roles. They never add an outcome family, even when they share a publisher,
+family, or event link with a direct source.
 
 ## Registry and network coverage
 

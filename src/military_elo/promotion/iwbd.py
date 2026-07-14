@@ -343,6 +343,8 @@ def promote_iwbd_battles(
                     ),
                 ),
                 "source_ids": ["iwbd_dataset", "cliopatria_v020"],
+                "outcome_source_ids": ["iwbd_dataset"],
+                "outcome_source_family_ids": ["iwbd"],
                 "status": "complete",
                 "iwbd_candidate_id": candidate_id,
                 "iwbd_war_name": str(row.get("war_name") or ""),

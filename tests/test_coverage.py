@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -1069,13 +1070,30 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
+        cls.seed_events = json.loads(
+            (PROJECT_ROOT / "data" / "seed" / "events.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        cls.sources = json.loads(
+            (PROJECT_ROOT / "data" / "release" / "sources.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        cls.results = json.loads(
+            (PROJECT_ROOT / "web" / "data" / "results.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        cls.sources_by_id = {source["id"]: source for source in cls.sources}
 
-    def test_report_matches_release_without_new_count_pins(self) -> None:
+    def test_report_matches_release_and_explicit_outcome_family_contract(self) -> None:
         rated_events = [
             event
             for event in self.events
             if str(event.get("status", "complete")).casefold() == "complete"
         ]
+        self.assertEqual(len(rated_events), 4_234)
         self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
         self.assertEqual(
             sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
@@ -1086,10 +1104,188 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         self.assertEqual(
             self.report["historical_completeness"]["status"], "not_estimated"
         )
+        families = self.report["outcome_source_families"]
+        self.assertEqual(families["availability"], "partially_available")
+        self.assertEqual(families["events_with_explicit_family_data"], 4_194)
+        self.assertEqual(families["events_without_explicit_family_data"], 40)
+        self.assertEqual(families["unmapped_event_count"], 40)
         self.assertEqual(
-            self.report["outcome_source_families"]["availability"],
-            "not_available",
+            families["events_by_family"],
+            {
+                "hced": 4_012,
+                "iwbd": 121,
+                "iwd": 54,
+                "ucdp_conflict_termination": 7,
+            },
         )
+        self.assertEqual(families["family_count_distribution"], {"1": 4_194})
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_194)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_234)
+        self.assertEqual(families["multiple_family_coverage"]["numerator"], 0)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_194)
+        self.assertEqual(set(families["per_event_counts"].values()), {1})
+
+        mapped_ids = set(families["per_event_counts"])
+        unmapped_ids = {event["id"] for event in rated_events} - mapped_ids
+        seed_ids = {event["id"] for event in self.seed_events}
+        self.assertEqual(unmapped_ids, seed_ids)
+        self.assertEqual(len(unmapped_ids), 40)
+        for event in rated_events:
+            with self.subTest(event_id=event["id"]):
+                if event["id"] in seed_ids:
+                    self.assertNotIn("outcome_source_ids", event)
+                    self.assertNotIn("outcome_source_family_ids", event)
+                else:
+                    self.assertEqual(len(event["outcome_source_ids"]), 1)
+                    self.assertEqual(len(event["outcome_source_family_ids"]), 1)
+                    self.assertTrue(
+                        set(event["outcome_source_ids"]).issubset(event["source_ids"])
+                    )
+
+    def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(self) -> None:
+        self.assertEqual(len(self.sources), 89)
+        manifest_contract = sorted(
+            (
+                source["id"],
+                source.get("source_family_id"),
+                source.get("evidence_roles"),
+            )
+            for source in self.sources
+        )
+        manifest_digest = hashlib.sha256(
+            json.dumps(
+                manifest_contract,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            ).encode("utf-8")
+        ).hexdigest()
+        self.assertEqual(
+            manifest_digest,
+            "a05e8b348b5251cd0da96f01e88cb573458647547d35d7ace12c14cce58ee27e",
+        )
+        self.assertTrue(
+            all(
+                source.get("source_family_id") and source.get("evidence_roles")
+                for source in self.sources
+            )
+        )
+        self.assertEqual(
+            Counter(
+                role
+                for source in self.sources
+                for role in source["evidence_roles"]
+            ),
+            {
+                "curated_reference_pending_claim_level_outcome_locator": 37,
+                "derived_project_continuity_convention": 1,
+                "identity_boundary_or_context_reference": 43,
+                "identity_crosswalk": 1,
+                "identity_registry": 2,
+                "outcome": 4,
+                "outcome_consistency_crosscheck": 1,
+            },
+        )
+        self.assertEqual(
+            len({source["source_family_id"] for source in self.sources}), 18
+        )
+        outcome_source_ids = {
+            source["id"]
+            for source in self.sources
+            if "outcome" in source["evidence_roles"]
+        }
+        self.assertEqual(
+            outcome_source_ids,
+            {
+                "hced_dataset",
+                "iwd_dataset",
+                "iwbd_dataset",
+                "ucdp_termination_conflict",
+            },
+        )
+        self.assertEqual(
+            {
+                source["id"]: source["source_family_id"]
+                for source in self.sources
+                if source["id"] in outcome_source_ids
+            },
+            {
+                "hced_dataset": "hced",
+                "iwd_dataset": "iwd",
+                "iwbd_dataset": "iwbd",
+                "ucdp_termination_conflict": "ucdp_conflict_termination",
+            },
+        )
+        expected_negative_controls = {
+            "hced_seshat_crosswalk": (
+                "hced_seshat_crosswalk_file_11018172",
+                "identity_crosswalk",
+            ),
+            "cliopatria_polities": ("cliopatria_v0_2_0", "identity_registry"),
+            "cliopatria_v020": ("cliopatria_v0_2_0", "identity_registry"),
+            "ucdp_termination_dyad": (
+                "ucdp_conflict_termination",
+                "outcome_consistency_crosscheck",
+            ),
+        }
+        for source_id, (family_id, evidence_role) in expected_negative_controls.items():
+            with self.subTest(source_id=source_id):
+                source = self.sources_by_id[source_id]
+                self.assertEqual(source["source_family_id"], family_id)
+                self.assertEqual(source["evidence_roles"], [evidence_role])
+                self.assertNotIn("outcome", source["evidence_roles"])
+
+        curated_references = [
+            source
+            for source in self.sources
+            if source["evidence_roles"]
+            == ["curated_reference_pending_claim_level_outcome_locator"]
+        ]
+        self.assertEqual(len(curated_references), 37)
+        self.assertTrue(
+            all(source["id"] not in outcome_source_ids for source in curated_references)
+        )
+
+    def test_dashboard_event_source_contract_matches_release_artifact(self) -> None:
+        release_by_id = {event["id"]: event for event in self.events}
+        dashboard_events = self.results["events"]
+        dashboard_by_id = {event["id"]: event for event in dashboard_events}
+
+        self.assertEqual(len(release_by_id), 4_234)
+        self.assertEqual(len(dashboard_by_id), 4_234)
+        self.assertEqual(set(dashboard_by_id), set(release_by_id))
+
+        mapped = 0
+        for event_id, release_event in release_by_id.items():
+            with self.subTest(event_id=event_id):
+                dashboard_event = dashboard_by_id[event_id]
+                self.assertEqual(
+                    dashboard_event["source_ids"], release_event["source_ids"]
+                )
+                for field_name in (
+                    "outcome_source_ids",
+                    "outcome_source_family_ids",
+                ):
+                    self.assertEqual(
+                        dashboard_event.get(field_name),
+                        release_event.get(field_name),
+                    )
+
+                expected_sources = [
+                    {
+                        "id": source["id"],
+                        "title": source["title"],
+                        "url": source["url"],
+                        "source_family_id": source["source_family_id"],
+                        "evidence_roles": source["evidence_roles"],
+                    }
+                    for source_id in release_event["source_ids"]
+                    for source in (self.sources_by_id[source_id],)
+                ]
+                self.assertEqual(dashboard_event["sources"], expected_sources)
+                mapped += "outcome_source_ids" in dashboard_event
+
+        self.assertEqual(mapped, 4_194)
+        self.assertEqual(len(dashboard_events) - mapped, 40)
 
     def test_registry_coverage_is_an_observed_ratio_only(self) -> None:
         ratio = self.report["registry_to_rating"]["registry_to_rating_ratio"]

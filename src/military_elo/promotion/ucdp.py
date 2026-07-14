@@ -549,6 +549,8 @@ def promote_ucdp_termination_episodes(
                 ),
             ),
             "source_ids": ["ucdp_termination_conflict", "ucdp_termination_dyad"],
+            "outcome_source_ids": ["ucdp_termination_conflict"],
+            "outcome_source_family_ids": ["ucdp_conflict_termination"],
             "status": "complete",
             "ucdp_conflict_id": conflict_id,
             "ucdp_episode_id": epid,

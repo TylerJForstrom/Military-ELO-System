@@ -50,6 +50,20 @@ registry so a stale or partial rebuild fails before it ships.
 
 The dashboard deliberately separates the polity registry from the rating ledger. The 1,590-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 4,234-event ledger combines 40 manually curated seed events, 1,769 crosswalk-resolved and 2,243 label-resolved HCED tactical encounters, 54 coalition-aggregated IWD strategic parent wars, 121 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
+The source registry also makes the outcome-provenance contract explicit. Of
+the 4,234 rated events, 4,194 map through explicit event outcome metadata to
+exactly one direct outcome family: 4,012 HCED events, 54 IWD parent wars, 121
+IWBD battles, and 7 UCDP conflict-termination episodes. The 40 curated seed
+events remain
+explicitly unknown until claim-level outcome locators and human review identify
+which linked sources support the scored assertions. No event currently has two
+independently established direct outcome families. A `source_family_id` is a
+provenance and deduplication label, while `evidence_roles` declares source
+capabilities; neither is proof of independent corroboration. URLs, publishers,
+identity crosswalks, polity registries, UCDP dyad checks, and
+generic consulted references do not become outcome evidence merely because an
+event links to them.
+
 ## Data already staged
 
 The live ingestion pipeline has immutable snapshots and review candidates from:

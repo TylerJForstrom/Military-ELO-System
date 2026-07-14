@@ -452,8 +452,11 @@
       ? event.sources
           .filter((source) => source && typeof source === "object")
           .map((source) => ({
+            id: cleanOptionalText(source.id ?? source.source_id),
             title: String(source.title ?? source.url ?? "Untitled source"),
             url: cleanOptionalText(source.url),
+            source_family_id: cleanOptionalText(source.source_family_id),
+            evidence_roles: cleanTextArray(source.evidence_roles),
           }))
       : [];
 
@@ -471,6 +474,9 @@
       domain: cleanOptionalText(event.domain),
       geographic_scope: cleanOptionalText(event.geographic_scope),
       participants,
+      source_ids: cleanTextArray(event.source_ids),
+      outcome_source_ids: cleanTextArray(event.outcome_source_ids),
+      outcome_source_family_ids: cleanTextArray(event.outcome_source_family_ids),
       sources,
     };
   }
@@ -1669,6 +1675,10 @@
     }
 
     elements.eventDetail.append(createElement("h4", "", `Sources (${event.sources.length})`));
+    const outcomeFamilySummary = event.outcome_source_family_ids.length
+      ? `Direct outcome family: ${event.outcome_source_family_ids.map((family) => humanize(family)).join(", ")}.`
+      : "Direct outcome family: unmapped pending claim-level locator review.";
+    elements.eventDetail.append(createElement("p", "source-contract", outcomeFamilySummary));
     const sources = createElement("ul", "source-list");
     if (!event.sources.length) {
       sources.append(createElement("li", "", "No linked source in this record."));
@@ -1687,6 +1697,22 @@
           const label = createElement("span");
           label.append(documentSmallIcon(), createElement("span", "", source.title));
           item.append(label);
+        }
+        const outcomeSubsetStatus = event.outcome_source_ids.includes(source.id)
+          ? "Outcome subset: direct"
+          : event.outcome_source_ids.length
+            ? "Outcome subset: provenance only"
+            : "Outcome subset: unmapped";
+        const sourceDetails = [
+          outcomeSubsetStatus,
+          source.id ? `Source ID: ${source.id}` : null,
+          source.source_family_id ? `Family: ${source.source_family_id}` : null,
+          source.evidence_roles.length
+            ? `Roles: ${source.evidence_roles.map((role) => humanize(role)).join(", ")}`
+            : null,
+        ].filter(Boolean);
+        if (sourceDetails.length) {
+          item.append(createElement("div", "source-metadata", sourceDetails.join(" · ")));
         }
         sources.append(item);
       }
@@ -2004,6 +2030,11 @@
     if (typeof value === "object") return null;
     const text = String(value).trim();
     return text || null;
+  }
+
+  function cleanTextArray(value) {
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map((item) => cleanOptionalText(item)).filter(Boolean))];
   }
 
   function safeHttpUrl(value) {

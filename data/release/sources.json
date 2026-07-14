@@ -6,7 +6,11 @@
     "publisher": "U.S. Army Center of Military History",
     "license": "U.S. government work",
     "source_type": "official_history",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "us_army_cmh_official_history_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "army_tet",
@@ -15,14 +19,22 @@
     "publisher": "U.S. Army Center of Military History",
     "license": "U.S. government work",
     "source_type": "official_history",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "us_army_cmh_official_history_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_26_july",
     "title": "26th of July Movement",
     "url": "https://www.britannica.com/topic/26th-of-July-Movement",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_acts_of_union",
@@ -31,7 +43,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_ain_jalut",
@@ -40,7 +56,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_american_revolution",
@@ -49,7 +69,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_argentina_history",
@@ -58,7 +82,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_austria_hungary",
@@ -67,7 +95,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_baltic_states",
@@ -76,7 +108,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_barbarossa",
@@ -85,7 +121,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_byzantine",
@@ -94,28 +134,44 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_carlism",
     "title": "Carlism",
     "url": "https://www.britannica.com/topic/Carlism",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_chinese_civil_war",
     "title": "Chinese Civil War",
     "url": "https://www.britannica.com/event/Chinese-Civil-War",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_cuban_independence",
     "title": "Cuban Independence Movement",
     "url": "https://www.britannica.com/topic/Cuban-Independence-Movement",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_durrani_dynasty",
@@ -124,7 +180,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_eighty_years",
@@ -133,7 +193,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_empire_brazil",
@@ -142,14 +206,22 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_english_civil_wars",
     "title": "English Civil Wars",
     "url": "https://www.britannica.com/event/English-Civil-Wars",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_ethiopia_history",
@@ -158,7 +230,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_fall_constantinople",
@@ -167,7 +243,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_fifth_republic",
@@ -176,7 +256,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_french_revolution",
@@ -185,7 +269,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_greco_persian",
@@ -194,7 +282,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_greece_history",
@@ -203,14 +295,22 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_greek_independence",
     "title": "War of Greek Independence",
     "url": "https://www.britannica.com/event/War-of-Greek-Independence",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_habsburg_monarchy",
@@ -219,7 +319,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_hashemite_iraq",
@@ -228,7 +332,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_heraclius",
@@ -237,7 +345,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_hungary_history",
@@ -246,7 +358,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_joseon",
@@ -255,7 +371,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_kalmar_union",
@@ -264,7 +384,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_maratha_confederacy",
@@ -273,7 +397,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_mexico_history",
@@ -282,7 +410,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_muhammad_ali_egypt",
@@ -291,7 +423,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_mysore_wars",
@@ -300,7 +436,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_nader_shah",
@@ -309,7 +449,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_napoleon_russia",
@@ -318,7 +462,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_napoleonic_wars",
@@ -327,7 +475,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_peloponnesian",
@@ -336,7 +488,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_prussia",
@@ -345,7 +501,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_punic_wars",
@@ -354,7 +514,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_qajar_dynasty",
@@ -363,7 +527,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_ranjit_singh",
@@ -372,14 +540,22 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_reform_war",
     "title": "La Reforma (Mexican history)",
     "url": "https://www.britannica.com/event/La-Reforma",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_republic_venice",
@@ -388,7 +564,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_romania_history",
@@ -397,7 +577,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_russo_japanese",
@@ -406,7 +590,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_second_empire",
@@ -415,7 +603,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_second_polish_republic",
@@ -424,7 +616,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_serbia_history",
@@ -433,7 +629,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_seven_years",
@@ -442,7 +642,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_south_african_republic",
@@ -451,21 +655,33 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_spanish_civil_war",
     "title": "Spanish Civil War",
     "url": "https://www.britannica.com/event/Spanish-Civil-War",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_taiping_rebellion",
     "title": "Taiping Rebellion",
     "url": "https://www.britannica.com/event/Taiping-Rebellion",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_tannenberg",
@@ -474,14 +690,22 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_ten_years_war",
     "title": "Ten Years' War",
     "url": "https://www.britannica.com/event/Ten-Years-War",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_third_republic",
@@ -490,7 +714,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_tours",
@@ -499,7 +727,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_umayyad",
@@ -508,7 +740,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "britannica_union_of_lublin",
@@ -517,7 +753,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_vasa_sweden",
@@ -526,14 +766,22 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "proprietary-reference",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_viet_cong",
     "title": "Viet Cong",
     "url": "https://www.britannica.com/topic/Viet-Cong",
     "publisher": "Encyclopaedia Britannica",
-    "source_type": "secondary"
+    "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "britannica_yarmouk",
@@ -542,7 +790,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "cliopatria_polities",
@@ -551,7 +803,11 @@
     "publisher": "Zenodo",
     "license": "CC BY 4.0",
     "source_type": "academic_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "cliopatria_v0_2_0",
+    "evidence_roles": [
+      "identity_registry"
+    ]
   },
   {
     "id": "cliopatria_v020",
@@ -560,7 +816,11 @@
     "publisher": "Seshat Global History Databank / Zenodo",
     "license": "CC-BY-4.0",
     "source_type": "historical_polity_registry",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "cliopatria_v0_2_0",
+    "evidence_roles": [
+      "identity_registry"
+    ]
   },
   {
     "id": "crs_taliban_takeover",
@@ -569,7 +829,11 @@
     "publisher": "Congressional Research Service",
     "license": "U.S. government work",
     "source_type": "official_government_report",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "crs_r45122",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "hced_dataset",
@@ -578,7 +842,11 @@
     "publisher": "Harvard Dataverse",
     "license": "CC0-1.0",
     "source_type": "structured_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "hced",
+    "evidence_roles": [
+      "outcome"
+    ]
   },
   {
     "id": "hced_seshat_crosswalk",
@@ -587,7 +855,11 @@
     "publisher": "Harvard Dataverse",
     "license": "CC0-1.0",
     "source_type": "identity_crosswalk",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "hced_seshat_crosswalk_file_11018172",
+    "evidence_roles": [
+      "identity_crosswalk"
+    ]
   },
   {
     "id": "iranica_alexander",
@@ -596,7 +868,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_arab_conquest",
@@ -605,7 +881,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_chaldiran",
@@ -614,7 +894,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_edessa",
@@ -623,7 +907,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_gaugamela",
@@ -632,7 +920,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_kandahar",
@@ -641,7 +933,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_salamis",
@@ -650,7 +946,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iranica_shapur",
@@ -659,7 +959,11 @@
     "publisher": "Encyclopaedia Iranica",
     "license": "Citation and link only",
     "source_type": "academic_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "iwbd_dataset",
@@ -668,7 +972,11 @@
     "publisher": "Harvard Dataverse",
     "license": "CC0-1.0",
     "source_type": "structured_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "iwbd",
+    "evidence_roles": [
+      "outcome"
+    ]
   },
   {
     "id": "iwd_dataset",
@@ -677,7 +985,11 @@
     "publisher": "Harvard Dataverse",
     "license": "CC0-1.0",
     "source_type": "structured_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "iwd",
+    "evidence_roles": [
+      "outcome"
+    ]
   },
   {
     "id": "iwm_first_world_war",
@@ -686,7 +998,11 @@
     "publisher": "Imperial War Museums",
     "license": "Citation and link only",
     "source_type": "museum_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "iwm_editorial_reference",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "nam_crimean",
@@ -695,7 +1011,11 @@
     "publisher": "National Army Museum",
     "license": "Citation and link only",
     "source_type": "museum_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "national_army_museum_editorial_reference",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "national_wwii_pacific",
@@ -704,7 +1024,11 @@
     "publisher": "The National WWII Museum",
     "license": "Citation and link only",
     "source_type": "museum_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "national_wwii_museum_editorial_reference",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "nhhc_midway",
@@ -713,7 +1037,11 @@
     "publisher": "U.S. Naval History and Heritage Command",
     "license": "U.S. government work; check item-level notices",
     "source_type": "official_history",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "nhhc_official_history",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "project_continuity_policy",
@@ -722,7 +1050,11 @@
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
     "source_type": "general_reference_and_project_convention",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "derived_project_continuity_convention"
+    ]
   },
   {
     "id": "sigar_afghanistan",
@@ -731,7 +1063,11 @@
     "publisher": "Special Inspector General for Afghanistan Reconstruction",
     "license": "U.S. government work",
     "source_type": "official_government_report",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "sigar_afghanistan_lessons_report",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "state_vietnam",
@@ -740,7 +1076,11 @@
     "publisher": "U.S. Department of State, Office of the Historian",
     "license": "U.S. government work",
     "source_type": "official_history",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "us_state_office_historian_editorial_reference",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "ucdp_termination_conflict",
@@ -749,7 +1089,11 @@
     "publisher": "Uppsala Conflict Data Program",
     "license": "CC-BY-4.0",
     "source_type": "structured_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "ucdp_conflict_termination",
+    "evidence_roles": [
+      "outcome"
+    ]
   },
   {
     "id": "ucdp_termination_dyad",
@@ -758,7 +1102,11 @@
     "publisher": "Uppsala Conflict Data Program",
     "license": "CC-BY-4.0",
     "source_type": "structured_dataset",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "ucdp_conflict_termination",
+    "evidence_roles": [
+      "outcome_consistency_crosscheck"
+    ]
   },
   {
     "id": "ushmm_wwii_europe",
@@ -767,7 +1115,11 @@
     "publisher": "United States Holocaust Memorial Museum",
     "license": "Citation and link only",
     "source_type": "museum_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "ushmm_holocaust_encyclopedia",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   },
   {
     "id": "whe_kadesh",
@@ -776,6 +1128,10 @@
     "publisher": "World History Encyclopedia",
     "license": "CC BY-NC-SA 4.0",
     "source_type": "edited_general_reference",
-    "accessed": "2026-07-13"
+    "accessed": "2026-07-13",
+    "source_family_id": "world_history_encyclopedia_editorial_reference",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
   }
 ]

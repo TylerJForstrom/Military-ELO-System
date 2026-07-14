@@ -1551,6 +1551,16 @@ tbody tr:hover {
   list-style: none;
 }
 
+.source-list li {
+  min-width: 0;
+}
+
+.source-contract {
+  margin: -2px 0 10px;
+  color: var(--ink-faint);
+  font-size: 0.7rem;
+}
+
 .source-list a,
 .source-list span {
   display: inline-flex;
@@ -1577,6 +1587,14 @@ tbody tr:hover {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.7;
+}
+
+.source-metadata {
+  margin: 4px 0 0 20px;
+  color: var(--ink-faint);
+  font-size: 0.64rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .reading-note {

@@ -230,10 +230,18 @@ def _source_family_value(
 
 
 def _has_outcome_role(source: Mapping[str, Any]) -> bool:
+    roles = source.get("evidence_roles")
+    if isinstance(roles, (list, tuple, set)) and any(
+        str(role).strip().casefold() == "outcome" for role in roles
+    ):
+        return True
+
+    # Preserve the reporter's legacy explicit contracts for older artifacts.
+    # Current Source records emit only canonical plural evidence_roles.
     if source.get("supports_outcome") is True or source.get("outcome_evidence") is True:
         return True
     values: list[Any] = []
-    for key in ("evidence_role", "evidence_roles", "claim_type", "claim_types"):
+    for key in ("evidence_role", "claim_type", "claim_types"):
         value = source.get(key)
         if isinstance(value, (list, tuple, set)):
             values.extend(value)
@@ -280,37 +288,46 @@ def _explicit_outcome_families(
     unusable: Counter[str] = Counter()
     explicit_contract = False
 
-    # A direct event-to-family assertion is the strongest and requires no
-    # interpretation of generic provenance links.
+    # An event-level outcome contract always wins. In particular, a malformed
+    # or intentionally empty explicit contract must remain visible as unusable;
+    # generic provenance links cannot silently fill it in.
+    family_contract_present = False
     for key in ("outcome_source_family_ids", "outcome_source_families"):
         if key in event:
+            family_contract_present = True
             explicit_contract = True
             values, unusable_values = _family_values(event.get(key))
             families.update(values)
             unusable.update(unusable_values)
 
-    # An explicit event list of outcome-supporting source IDs is safe only
-    # when each source also supplies an explicit family identifier.
+    # Older event-level contracts that carry only outcome source IDs remain
+    # readable. The canonical paired contract also declares family IDs, whose
+    # exact agreement with the source-derived set is enforced by the audit.
     outcome_source_ids = event.get("outcome_source_ids")
-    if "outcome_source_ids" in event:
+    outcome_source_contract_present = "outcome_source_ids" in event
+    if outcome_source_contract_present:
         explicit_contract = True
-    if isinstance(outcome_source_ids, (list, tuple, set)) and outcome_source_ids:
-        for source_id in outcome_source_ids:
-            source = sources.get(str(source_id))
-            if source:
-                family, unusable_value, _ = _source_family_value(source)
-                if family:
-                    families.add(family)
+    if not family_contract_present and outcome_source_contract_present:
+        if isinstance(outcome_source_ids, (list, tuple, set)) and outcome_source_ids:
+            for source_id in outcome_source_ids:
+                source = sources.get(str(source_id))
+                if source:
+                    family, unusable_value, _ = _source_family_value(source)
+                    if family:
+                        families.add(family)
+                    else:
+                        unusable[unusable_value or "missing"] += 1
                 else:
-                    unusable[unusable_value or "missing"] += 1
-            else:
-                unusable["missing_source"] += 1
-    elif "outcome_source_ids" in event:
-        unusable["missing"] += 1
+                    unusable["missing_source"] += 1
+        else:
+            unusable["missing"] += 1
+
+    if explicit_contract:
+        return families, unusable, True
 
     # Generic source_ids are eligible only when source metadata explicitly
-    # labels both its family and its outcome-evidence role. IDs, publishers,
-    # titles and URLs are never used to guess a family.
+    # labels both its family and the canonical plural outcome-evidence role.
+    # IDs, publishers, titles and URLs are never used to guess a family.
     source_ids = event.get("source_ids")
     if isinstance(source_ids, (list, tuple, set)):
         for source_id in source_ids:

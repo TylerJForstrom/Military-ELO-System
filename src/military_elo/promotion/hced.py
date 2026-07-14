@@ -193,6 +193,8 @@ def promote_hced_crosswalk_rows(
                     "hced_seshat_crosswalk",
                     "cliopatria_v020",
                 ],
+                "outcome_source_ids": ["hced_dataset"],
+                "outcome_source_family_ids": ["hced"],
                 "status": "complete",
             }
         )
@@ -417,6 +419,8 @@ def promote_hced_label_rows(
                     scale_level,
                 ),
                 "source_ids": source_ids,
+                "outcome_source_ids": ["hced_dataset"],
+                "outcome_source_family_ids": ["hced"],
                 "status": "complete",
             }
         )

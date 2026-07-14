@@ -1,8 +1,9 @@
+import json
 import unittest
 
 from military_elo.config import ModelConfig
 from military_elo.engine import EloEngine
-from military_elo.models import Entity, Event, Participant
+from military_elo.models import Entity, Event, Participant, Source
 
 
 def entities():
@@ -293,6 +294,75 @@ class EloEngineTests(unittest.TestCase):
         intervention_loss = EloEngine().run(entities(), [intervention]).event_updates[0].participants[0].delta
         terminal_loss = EloEngine().run(entities(), [terminal]).event_updates[0].participants[0].delta
         self.assertGreater(abs(terminal_loss), abs(intervention_loss) * 1.5)
+
+    def test_dashboard_source_export_round_trips_family_and_role_metadata(self):
+        event = war(
+            "sourced_event",
+            50,
+            [
+                Participant("old_empire", "a", outcome=outcome(1)),
+                Participant("rival", "b", outcome=outcome(0)),
+            ],
+            outcome_source_ids=("source",),
+            outcome_source_family_ids=("iwbd",),
+        )
+        source = Source(
+            "source",
+            "Outcome dataset",
+            "https://example.test/outcomes",
+            source_family_id="iwbd",
+            evidence_roles=("outcome",),
+        )
+        engine = EloEngine().run(entities(), [event])
+        ratings_before = {
+            entity_id: state.strategic.rating
+            for entity_id, state in engine.states.items()
+        }
+
+        dashboard = json.loads(json.dumps(engine.export({source.id: source})))
+        exported_event = dashboard["events"][0]
+        exported_source = exported_event["sources"][0]
+
+        self.assertEqual(exported_event["source_ids"], ["source"])
+        self.assertEqual(exported_event["outcome_source_ids"], ["source"])
+        self.assertEqual(exported_event["outcome_source_family_ids"], ["iwbd"])
+        self.assertEqual(
+            exported_source,
+            {
+                "id": "source",
+                "title": "Outcome dataset",
+                "url": "https://example.test/outcomes",
+                "source_family_id": "iwbd",
+                "evidence_roles": ["outcome"],
+            },
+        )
+        self.assertEqual(Source.from_dict(exported_source), source)
+        self.assertEqual(
+            {
+                entity_id: state.strategic.rating
+                for entity_id, state in engine.states.items()
+            },
+            ratings_before,
+        )
+
+        legacy_event = war(
+            "legacy_source_event",
+            51,
+            [
+                Participant("old_empire", "a", outcome=outcome(1)),
+                Participant("rival", "b", outcome=outcome(0)),
+            ],
+        )
+        legacy_source = Source(
+            "source", "Legacy source", "https://example.test/legacy"
+        )
+        legacy_export = EloEngine().run(entities(), [legacy_event]).export(
+            {legacy_source.id: legacy_source}
+        )["events"][0]
+        self.assertNotIn("outcome_source_ids", legacy_export)
+        self.assertNotIn("outcome_source_family_ids", legacy_export)
+        self.assertNotIn("source_family_id", legacy_export["sources"][0])
+        self.assertNotIn("evidence_roles", legacy_export["sources"][0])
 
 
 if __name__ == "__main__":

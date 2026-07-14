@@ -557,6 +557,17 @@ class EloEngine:
                     "decisiveness": event.decisiveness,
                     "summary": event.summary,
                     "parent_event_id": event.parent_event_id,
+                    "source_ids": list(event.source_ids),
+                    **(
+                        {
+                            "outcome_source_ids": list(event.outcome_source_ids),
+                            "outcome_source_family_ids": list(
+                                event.outcome_source_family_ids
+                            ),
+                        }
+                        if event.outcome_source_ids
+                        else {}
+                    ),
                     "k_factor": round(update.k_factor, 3),
                     "evidence_weight": round(update.evidence_weight, 4),
                     "participants": [
@@ -581,7 +592,23 @@ class EloEngine:
                         for item in update.participants
                     ],
                     "sources": [
-                        {"title": sources[source_id].title, "url": sources[source_id].url}
+                        {
+                            "id": sources[source_id].id,
+                            "title": sources[source_id].title,
+                            "url": sources[source_id].url,
+                            **(
+                                {
+                                    "source_family_id": sources[
+                                        source_id
+                                    ].source_family_id,
+                                    "evidence_roles": list(
+                                        sources[source_id].evidence_roles
+                                    ),
+                                }
+                                if sources[source_id].source_family_id
+                                else {}
+                            ),
+                        }
                         for source_id in event.source_ids
                         if source_id in sources
                     ],

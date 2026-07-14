@@ -58,6 +58,133 @@ class AuditIssue:
         }
 
 
+def _audit_outcome_source_contract(
+    event: Event, sources: Mapping[str, Source]
+) -> list[AuditIssue]:
+    """Validate the explicit event-to-outcome-source contract when supplied."""
+
+    raw_source_ids = getattr(event, "outcome_source_ids", ())
+    raw_family_ids = getattr(event, "outcome_source_family_ids", ())
+    source_contract_supplied = bool(raw_source_ids)
+    family_contract_supplied = bool(raw_family_ids)
+    if not source_contract_supplied and not family_contract_supplied:
+        return []
+
+    issues: list[AuditIssue] = []
+    if source_contract_supplied != family_contract_supplied:
+        issues.append(
+            AuditIssue(
+                "error",
+                "unpaired_outcome_source_contract",
+                event.id,
+                "outcome_source_ids and outcome_source_family_ids must be supplied together",
+            )
+        )
+
+    def canonical_values(value: object, field_name: str) -> tuple[str, ...]:
+        if not isinstance(value, (list, tuple)):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    f"noncanonical_{field_name}",
+                    event.id,
+                    f"{field_name} must be an exact deduplicated array of stable IDs",
+                )
+            )
+            return ()
+        values = tuple(
+            item
+            for item in value
+            if isinstance(item, str) and item and item == item.strip()
+        )
+        if len(values) != len(value) or values != tuple(sorted(set(values))):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    f"noncanonical_{field_name}",
+                    event.id,
+                    f"{field_name} must be sorted, non-blank, and deduplicated exactly",
+                )
+            )
+        return values
+
+    outcome_source_ids = canonical_values(raw_source_ids, "outcome_source_ids")
+    declared_family_ids = canonical_values(
+        raw_family_ids, "outcome_source_family_ids"
+    )
+    declared_family_set = set(declared_family_ids)
+
+    linked_source_ids = set(event.source_ids)
+    derived_family_ids: set[str] = set()
+    for source_id in outcome_source_ids:
+        if source_id not in linked_source_ids:
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "outcome_source_not_linked",
+                    event.id,
+                    f"Outcome source {source_id} is not present in event.source_ids",
+                )
+            )
+
+        source = sources.get(source_id)
+        if source is None:
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "unknown_outcome_source",
+                    event.id,
+                    f"Unknown outcome source id {source_id}",
+                )
+            )
+            continue
+
+        evidence_roles = getattr(source, "evidence_roles", ())
+        if not isinstance(evidence_roles, (list, tuple, set)) or "outcome" not in {
+            str(role).strip().casefold() for role in evidence_roles
+        }:
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "outcome_source_missing_outcome_role",
+                    event.id,
+                    f"Outcome source {source_id} must declare outcome in evidence_roles",
+                )
+            )
+
+        source_family_id = getattr(source, "source_family_id", "")
+        if (
+            isinstance(source_family_id, str)
+            and source_family_id.strip()
+            and source_family_id == source_family_id.strip()
+        ):
+            derived_family_ids.add(source_family_id)
+        else:
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "outcome_source_missing_family",
+                    event.id,
+                    f"Outcome source {source_id} must declare source_family_id",
+                )
+            )
+
+    if declared_family_set != derived_family_ids:
+        issues.append(
+            AuditIssue(
+                "error",
+                "outcome_source_family_set_mismatch",
+                event.id,
+                (
+                    "Declared outcome_source_family_ids must exactly equal the "
+                    "families derived from outcome_source_ids"
+                ),
+            )
+        )
+
+    return issues
+
+
 def audit_dataset(
     entities: Iterable[Entity],
     events: Iterable[Event],
@@ -236,6 +363,7 @@ def audit_dataset(
                 issues.append(
                     AuditIssue("error", "unknown_source", event.id, f"Unknown source id {source_id}")
                 )
+        issues.extend(_audit_outcome_source_contract(event, sources))
         expected_dimensions = {
             "tactical": TACTICAL_DIMENSIONS,
             "operational": OPERATIONAL_DIMENSIONS,
