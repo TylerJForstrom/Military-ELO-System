@@ -72,20 +72,25 @@ Promotion into the provisional ledger is conservative and reproducible. HCED rec
 
 ```powershell
 python scripts/download_open_data.py core
-python scripts/stage_open_data.py core
+python scripts/verify_corpus_lock.py --inputs-only
+python scripts/stage_open_data.py corpus
+python scripts/verify_corpus_lock.py
 python scripts/build_release.py
 python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 200
 ```
 
-Wikidata discovery is paged and resumable:
+The bounded Wikidata blob must also be obtained by its locked checksum before
+staging `corpus`; see [corpus reproducibility](docs/CORPUS_REPRODUCIBILITY.md).
+Live Wikidata discovery is paged and resumable, but it is acquisition-only and
+now defaults to ignored `build/acquisition/` paths:
 
 ```powershell
 python scripts/ingest_wikidata.py --max-pages 10
 ```
 
-UCDP's API now requires a free access token in the `x-ucdp-access-token` header. Versioned CSV downloads work without it. If a token is obtained, set `UCDP_API_TOKEN` and run `scripts/ingest_ucdp.py`.
+UCDP's API now requires a free access token in the `x-ucdp-access-token` header. Versioned CSV downloads work without it. If a token is obtained, set `UCDP_API_TOKEN` and run `scripts/ingest_ucdp.py`; its live acquisition also defaults to `build/acquisition/` and does not alter the locked review queues.
 
-Correlates of War import is supported for a locally supplied CSV, but COW's redistribution/commercial terms require permission before it becomes a public-product dependency.
+Correlates of War import is supported for a locally supplied CSV, but COW's redistribution/commercial terms require permission before it becomes a public-product dependency. `python scripts/import_cow.py PATH_TO_AUTHORIZED_CSV` defaults to `build/acquisition/cow/`, outside the locked review queues.
 
 ## Project map
 

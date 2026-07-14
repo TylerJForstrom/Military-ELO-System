@@ -5,8 +5,11 @@ __pycache__/
 build/
 .local-handoff/
 
-# Reproducible source downloads and machine-generated review queues.
+# Content-locked source blobs and replaceable generated review queues.
 data/raw/*
 !data/raw/.gitkeep
 data/review/*
 !data/review/.gitkeep
+
+# Append-only human decisions are local state, separate from generated queues.
+data/review/decisions/
