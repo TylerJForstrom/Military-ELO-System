@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import math
 import re
 from collections import Counter
-from dataclasses import dataclass
+from collections.abc import Mapping
+from dataclasses import dataclass, replace
 from typing import Iterable
 from urllib.parse import urlparse
 
@@ -12,6 +14,7 @@ from .canonical import (
     UncertainDate,
     UncertainDateInterval,
     date_bounds,
+    geometry_validation_error,
 )
 from .claims import (
     CLAIM_STATUSES,
@@ -34,6 +37,7 @@ from .review import (
     Adjudication,
     active_adjudications,
     adjudication_history_errors,
+    locator_url_is_valid,
     resolve_claims,
 )
 
@@ -76,12 +80,15 @@ def audit_dataset(
     for canonical_event in canonical_event_list:
         explicit_canonical_by_id.setdefault(canonical_event.id, canonical_event)
     embedded_canonical_events: list[CanonicalEvent] = []
+    legacy_intervals_by_id: dict[str, UncertainDateInterval] = {}
     issues: list[AuditIssue] = []
     entity_map = {item.id: item for item in entity_list}
     event_ids = {item.id for item in event_list}
     known_event_ids = event_ids | explicit_canonical_ids
     claim_ids = {item.id for item in claim_list}
-    adjudication_ids = {item.id for item in adjudication_list}
+    adjudication_by_id: dict[str, Adjudication] = {}
+    for adjudication in adjudication_list:
+        adjudication_by_id.setdefault(adjudication.id, adjudication)
 
     if len(entity_map) != len(entity_list):
         issues.append(AuditIssue("error", "duplicate_entity", "entities", "Entity ids must be unique"))
@@ -117,7 +124,8 @@ def audit_dataset(
                     )
                 )
         for adjudication_id in entity.adjudication_ids:
-            if adjudication_id not in adjudication_ids:
+            adjudication = adjudication_by_id.get(adjudication_id)
+            if adjudication is None:
                 issues.append(
                     AuditIssue(
                         "error",
@@ -126,21 +134,51 @@ def audit_dataset(
                         f"Unknown adjudication {adjudication_id}",
                     )
                 )
+            elif adjudication.claim_id not in entity.claim_ids:
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "entity_adjudication_claim_mismatch",
+                        entity.id,
+                        (
+                            f"Adjudication {adjudication_id} resolves claim "
+                            f"{adjudication.claim_id}, which is not attached to this entity"
+                        ),
+                    )
+                )
 
     valid_event_types = {"engagement", "campaign", "war"}
     valid_statuses = {"complete", "ongoing", "disputed", "excluded"}
     for event in event_list:
-        if event.parent_event_id == event.id:
+        event_attachment_claim_ids = set(event.claim_ids)
+        for episode in event.participation_episodes:
+            event_attachment_claim_ids.update(episode.claim_ids)
+        valid_parent_event_id: str | None = None
+        if event.parent_event_id is not None and (
+            not isinstance(event.parent_event_id, str)
+            or not event.parent_event_id.strip()
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "invalid_parent_event_id",
+                    event.id,
+                    "parent_event_id must be a non-blank string or null",
+                )
+            )
+        elif isinstance(event.parent_event_id, str):
+            valid_parent_event_id = event.parent_event_id
+        if valid_parent_event_id == event.id:
             issues.append(
                 AuditIssue("error", "self_parent_event", event.id, "Event cannot be its own parent")
             )
-        elif event.parent_event_id and event.parent_event_id not in known_event_ids:
+        elif valid_parent_event_id and valid_parent_event_id not in known_event_ids:
             issues.append(
                 AuditIssue(
                     "warning",
                     "unknown_parent_event",
                     event.id,
-                    f"Unknown parent {event.parent_event_id}",
+                    f"Unknown parent {valid_parent_event_id}",
                 )
             )
         for claim_id in event.claim_ids:
@@ -151,13 +189,26 @@ def audit_dataset(
                     )
                 )
         for adjudication_id in event.adjudication_ids:
-            if adjudication_id not in adjudication_ids:
+            adjudication = adjudication_by_id.get(adjudication_id)
+            if adjudication is None:
                 issues.append(
                     AuditIssue(
                         "error",
                         "unknown_event_adjudication",
                         event.id,
                         f"Unknown adjudication {adjudication_id}",
+                    )
+                )
+            elif adjudication.claim_id not in event_attachment_claim_ids:
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "event_adjudication_claim_mismatch",
+                        event.id,
+                        (
+                            f"Adjudication {adjudication_id} resolves claim "
+                            f"{adjudication.claim_id}, which is not attached to this event"
+                        ),
                     )
                 )
         if event.event_type not in valid_event_types:
@@ -203,6 +254,7 @@ def audit_dataset(
             end=UncertainDate.exact(event.end_year, "year"),
         )
         audit_event_interval = event.date_interval or legacy_event_interval
+        legacy_intervals_by_id.setdefault(event.id, audit_event_interval)
         if event.date_interval is not None:
             legacy_bounds = _interval_envelope(legacy_event_interval)
             evidence_bounds = _interval_envelope(event.date_interval)
@@ -228,14 +280,14 @@ def audit_dataset(
             else None
         )
         if explicit_interval is not None:
-            legacy_bounds = _interval_envelope(legacy_event_interval)
+            effective_bounds = _interval_envelope(audit_event_interval)
             explicit_bounds = _interval_envelope(explicit_interval)
             if (
-                legacy_bounds is not None
+                effective_bounds is not None
                 and explicit_bounds is not None
                 and (
-                    explicit_bounds[1] < legacy_bounds[0]
-                    or explicit_bounds[0] > legacy_bounds[1]
+                    explicit_bounds[1] < effective_bounds[0]
+                    or explicit_bounds[0] > effective_bounds[1]
                 )
             ):
                 issues.append(
@@ -243,7 +295,7 @@ def audit_dataset(
                         "error",
                         "event_date_interval_mismatch",
                         event.id,
-                        "Explicit canonical date_interval does not overlap legacy year/end_year",
+                        "Explicit canonical date_interval does not overlap the Event's effective interval",
                     )
                 )
         for participant_index, participant in enumerate(event.participants):
@@ -258,7 +310,8 @@ def audit_dataset(
                         )
                     )
             for adjudication_id in participant.adjudication_ids:
-                if adjudication_id not in adjudication_ids:
+                adjudication = adjudication_by_id.get(adjudication_id)
+                if adjudication is None:
                     issues.append(
                         AuditIssue(
                             "error",
@@ -267,37 +320,48 @@ def audit_dataset(
                             f"{participant.entity_id} references unknown adjudication {adjudication_id}",
                         )
                     )
-            if participant.entry is not None or participant.exit is not None:
-                interval_episode = ParticipationEpisode(
-                    id=f"{event.id}:participant:{participant_index}",
-                    entity_id=participant.entity_id,
-                    side=participant.side,
-                    role=participant.role,
-                    entry=participant.entry,
-                    exit=participant.exit,
-                )
-                for message in interval_episode.validation_errors():
+                elif adjudication.claim_id not in participant.claim_ids:
                     issues.append(
                         AuditIssue(
                             "error",
-                            "invalid_participant_interval",
+                            "participant_adjudication_claim_mismatch",
                             event.id,
-                            f"{participant.entity_id}: {message}",
+                            (
+                                f"{participant.entity_id} attaches adjudication {adjudication_id} "
+                                f"for unattached claim {adjudication.claim_id}"
+                            ),
                         )
                     )
-                entity_for_interval = entity_map.get(participant.entity_id)
-                issues.extend(
-                    _audit_episode_context(
+            interval_episode = ParticipationEpisode(
+                id=f"{event.id}:participant:{participant_index}",
+                entity_id=participant.entity_id,
+                side=participant.side,
+                role=participant.role,
+                entry=participant.entry,
+                exit=participant.exit,
+            )
+            for message in interval_episode.validation_errors():
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "invalid_participant_interval",
                         event.id,
-                        interval_episode,
-                        audit_event_interval,
-                        (
-                            (entity_for_interval.start_year, entity_for_interval.end_year)
-                            if entity_for_interval is not None
-                            else None
-                        ),
+                        f"{participant.entity_id}: {message}",
                     )
                 )
+            entity_for_interval = entity_map.get(participant.entity_id)
+            issues.extend(
+                _audit_episode_context(
+                    event.id,
+                    interval_episode,
+                    audit_event_interval,
+                    (
+                        (entity_for_interval.start_year, entity_for_interval.end_year)
+                        if entity_for_interval is not None
+                        else None
+                    ),
+                )
+            )
             entity = entity_map.get(participant.entity_id)
             if entity is None:
                 issues.append(
@@ -368,7 +432,7 @@ def audit_dataset(
 
         has_canonical_evidence = any(
             (
-                event.parent_event_id is not None,
+                valid_parent_event_id is not None,
                 event.aliases,
                 event.parent_event_ids,
                 event.child_event_ids,
@@ -382,7 +446,7 @@ def audit_dataset(
             parent_ids = tuple(
                 sorted(
                     set(event.parent_event_ids)
-                    | ({event.parent_event_id} if event.parent_event_id else set())
+                    | ({valid_parent_event_id} if valid_parent_event_id else set())
                 )
             )
             embedded_event = CanonicalEvent(
@@ -403,6 +467,12 @@ def audit_dataset(
             )
             embedded_canonical_events.append(embedded_event)
 
+    canonical_event_list = [
+        replace(event, date_interval=legacy_intervals_by_id[event.id])
+        if event.date_interval is None and event.id in legacy_intervals_by_id
+        else event
+        for event in canonical_event_list
+    ]
     canonical_event_list.extend(embedded_canonical_events)
     issues.extend(
         audit_evidence(
@@ -440,6 +510,10 @@ _GEOJSON_TYPES = {
 }
 
 
+def _is_blank_text(value: object) -> bool:
+    return not isinstance(value, str) or not value.strip()
+
+
 def _audit_source_locator(
     locator: SourceLocator,
     record_id: str,
@@ -462,6 +536,16 @@ def _audit_source_locator(
                     f"missing_locator_{field_name}",
                     record_id,
                     f"Source locator requires {field_name}",
+                )
+            )
+    for field_name in ("creator", "citation"):
+        if not isinstance(getattr(locator, field_name), str):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    f"invalid_locator_{field_name}",
+                    record_id,
+                    f"Source locator {field_name} must be a string",
                 )
             )
     for field_name, value, allowed_types in (
@@ -493,7 +577,11 @@ def _audit_source_locator(
                 "Source locator requires a page, row, or URL",
             )
         )
-    if locator.checksum and not _SHA256_PATTERN.fullmatch(locator.checksum):
+    if (
+        isinstance(locator.checksum, str)
+        and locator.checksum.strip()
+        and not _SHA256_PATTERN.fullmatch(locator.checksum)
+    ):
         issues.append(
             AuditIssue(
                 "error",
@@ -503,8 +591,7 @@ def _audit_source_locator(
             )
         )
     if isinstance(locator.url, str) and locator.url.strip():
-        parsed_url = urlparse(locator.url)
-        if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
+        if not locator_url_is_valid(locator.url):
             issues.append(
                 AuditIssue(
                     "error",
@@ -513,7 +600,12 @@ def _audit_source_locator(
                     "Source locator URL must be an absolute HTTP(S) URL",
                 )
             )
-    if sources is not None and locator.source_id and locator.source_id not in sources:
+    if (
+        sources is not None
+        and isinstance(locator.source_id, str)
+        and locator.source_id.strip()
+        and locator.source_id not in sources
+    ):
         issues.append(
             AuditIssue(
                 "error",
@@ -528,48 +620,37 @@ def _audit_source_locator(
 def _audit_geometry(event: CanonicalEvent) -> list[AuditIssue]:
     if event.geometry is None:
         return []
-    geometry = event.geometry
-    geometry_type = geometry.get("type")
-    if geometry_type not in _GEOJSON_TYPES:
-        return [
-            AuditIssue(
-                "error",
-                "invalid_event_geometry",
-                event.id,
-                f"Unknown GeoJSON geometry type {geometry_type!r}",
-            )
-        ]
-    if geometry_type == "GeometryCollection":
-        if not isinstance(geometry.get("geometries"), list):
-            return [
-                AuditIssue(
-                    "error",
-                    "invalid_event_geometry",
-                    event.id,
-                    "GeometryCollection requires a geometries array",
-                )
-            ]
+    error = geometry_validation_error(event.geometry)
+    if error is None:
         return []
-    coordinates = geometry.get("coordinates")
-    if not isinstance(coordinates, list):
+    return [
+        AuditIssue(
+            "error",
+            "invalid_event_geometry",
+            event.id,
+            error,
+        )
+    ]
+def _audit_parent_child_dates(
+    parent: CanonicalEvent,
+    child: CanonicalEvent,
+) -> list[AuditIssue]:
+    if parent.date_interval is None or child.date_interval is None:
+        return []
+    parent_bounds = _interval_envelope(parent.date_interval)
+    child_bounds = _interval_envelope(child.date_interval)
+    if parent_bounds is None or child_bounds is None:
+        return []
+    if parent_bounds[1] < child_bounds[0] or child_bounds[1] < parent_bounds[0]:
         return [
             AuditIssue(
                 "error",
-                "invalid_event_geometry",
-                event.id,
-                f"{geometry_type} requires a coordinates array",
-            )
-        ]
-    if geometry_type == "Point" and (
-        len(coordinates) < 2
-        or any(not isinstance(value, (int, float)) for value in coordinates[:2])
-    ):
-        return [
-            AuditIssue(
-                "error",
-                "invalid_event_geometry",
-                event.id,
-                "Point coordinates require numeric longitude and latitude",
+                "parent_child_date_mismatch",
+                child.id,
+                (
+                    f"Child event {child.id} has no possible date overlap with "
+                    f"parent event {parent.id}"
+                ),
             )
         ]
     return []
@@ -583,8 +664,29 @@ def _audit_episode_context(
 ) -> list[AuditIssue]:
     issues: list[AuditIssue] = []
     points = (("entry", episode.entry), ("exit", episode.exit))
+    event_bounds = _interval_envelope(event_interval) if event_interval is not None else None
+    entity_low: tuple[int, int, int] | None = None
+    entity_high: tuple[int, int, int] | None = None
+    if entity_lifespan is not None:
+        entity_start, entity_end = entity_lifespan
+        entity_low = (entity_start, 1, 1)
+        entity_high = (entity_end, 12, 31) if entity_end is not None else None
+        if event_bounds is not None and (
+            event_bounds[1] < entity_low
+            or (entity_high is not None and event_bounds[0] > entity_high)
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "episode_outside_entity_lifespan",
+                    event_id,
+                    (
+                        f"Episode {episode.id}'s enclosing event interval does not overlap "
+                        f"{episode.entity_id}'s lifespan"
+                    ),
+                )
+            )
     if event_interval is not None:
-        event_bounds = _interval_envelope(event_interval)
         for label, point in points:
             if point is None:
                 continue
@@ -601,15 +703,13 @@ def _audit_episode_context(
                     )
                 )
     if entity_lifespan is not None:
-        entity_start, entity_end = entity_lifespan
         for label, point in points:
             if point is None:
                 continue
             point_bounds = _uncertain_date_envelope(point)
             if point_bounds is None:
                 continue
-            entity_low = (entity_start, 1, 1)
-            entity_high = (entity_end, 12, 31) if entity_end is not None else None
+            assert entity_low is not None
             if point_bounds[1] < entity_low or (
                 entity_high is not None and point_bounds[0] > entity_high
             ):
@@ -666,7 +766,7 @@ def audit_evidence(
 
     claim_map: dict[str, Claim] = {}
     for claim in claim_list:
-        if not claim.id:
+        if _is_blank_text(claim.id):
             issues.append(
                 AuditIssue("error", "missing_claim_id", "claims", "Claims require stable ids")
             )
@@ -676,11 +776,11 @@ def audit_evidence(
             )
         else:
             claim_map[claim.id] = claim
-        if not claim.subject:
+        if _is_blank_text(claim.subject):
             issues.append(
                 AuditIssue("error", "missing_claim_subject", claim.id, "Claim subject is required")
             )
-        if not claim.predicate:
+        if _is_blank_text(claim.predicate):
             issues.append(
                 AuditIssue("error", "missing_claim_predicate", claim.id, "Claim predicate is required")
             )
@@ -709,6 +809,15 @@ def audit_evidence(
                     "exclusive_claim_without_group",
                     claim.id,
                     "Mutually exclusive claims require claim_group_id",
+                )
+            )
+        if claim.claim_group_id is not None and _is_blank_text(claim.claim_group_id):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "invalid_claim_group_id",
+                    claim.id,
+                    "claim_group_id must be a non-blank string when supplied",
                 )
             )
         try:
@@ -740,7 +849,7 @@ def audit_evidence(
 
     link_map: dict[str, EvidenceLink] = {}
     for link in link_list:
-        if not link.id:
+        if _is_blank_text(link.id):
             issues.append(
                 AuditIssue(
                     "error", "missing_evidence_id", "evidence", "Evidence links require stable ids"
@@ -754,7 +863,16 @@ def audit_evidence(
             )
         else:
             link_map[link.id] = link
-        if link.claim_id not in claim_map:
+        if _is_blank_text(link.claim_id):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "missing_evidence_claim",
+                    link.id,
+                    "Evidence link requires a stable claim_id",
+                )
+            )
+        elif link.claim_id not in claim_map:
             issues.append(
                 AuditIssue(
                     "error",
@@ -781,7 +899,7 @@ def audit_evidence(
                     "Evidence relationship must be supports, contradicts, or context",
                 )
             )
-        if not link.source_family:
+        if _is_blank_text(link.source_family):
             issues.append(
                 AuditIssue(
                     "error",
@@ -832,7 +950,16 @@ def audit_evidence(
                 )
             )
         for other_id in claim.contradicts:
-            if other_id == claim.id:
+            if _is_blank_text(other_id):
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "invalid_contradictory_claim",
+                        claim.id,
+                        "Contradictory claim references require stable non-blank ids",
+                    )
+                )
+            elif other_id == claim.id:
                 issues.append(
                     AuditIssue(
                         "error",
@@ -868,7 +995,7 @@ def audit_evidence(
 
     decision_map: dict[str, Adjudication] = {}
     for decision in decision_list:
-        if not decision.id:
+        if _is_blank_text(decision.id):
             issues.append(
                 AuditIssue(
                     "error",
@@ -888,7 +1015,7 @@ def audit_evidence(
             )
         else:
             decision_map[decision.id] = decision
-        if decision.claim_id not in claim_map:
+        if _is_blank_text(decision.claim_id) or decision.claim_id not in claim_map:
             issues.append(
                 AuditIssue(
                     "error",
@@ -898,7 +1025,7 @@ def audit_evidence(
                 )
             )
         for field_name in ("reviewer", "decision", "rationale", "codebook_version"):
-            if not getattr(decision, field_name):
+            if _is_blank_text(getattr(decision, field_name)):
                 issues.append(
                     AuditIssue(
                         "error",
@@ -993,7 +1120,7 @@ def audit_evidence(
     event_map: dict[str, CanonicalEvent] = {}
     overlay_allowance = Counter(allowed_event_overlays or {})
     for event in event_list:
-        if not event.id:
+        if _is_blank_text(event.id):
             issues.append(
                 AuditIssue(
                     "error", "missing_canonical_event_id", "events", "Canonical events require ids"
@@ -1013,7 +1140,7 @@ def audit_evidence(
                 )
         else:
             event_map[event.id] = event
-        if not event.name:
+        if _is_blank_text(event.name):
             issues.append(
                 AuditIssue(
                     "error", "missing_canonical_event_name", event.id, "Canonical event name is required"
@@ -1027,7 +1154,7 @@ def audit_evidence(
         issues.extend(_audit_geometry(event))
         episode_ids: set[str] = set()
         for episode in event.participation_episodes:
-            if not episode.id:
+            if _is_blank_text(episode.id):
                 issues.append(
                     AuditIssue(
                         "error",
@@ -1046,7 +1173,7 @@ def audit_evidence(
                     )
                 )
             episode_ids.add(episode.id)
-            if not episode.entity_id:
+            if _is_blank_text(episode.entity_id):
                 issues.append(
                     AuditIssue(
                         "error",
@@ -1064,13 +1191,13 @@ def audit_evidence(
                         f"Unknown entity {episode.entity_id}",
                     )
                 )
-            if not episode.side:
+            if _is_blank_text(episode.side):
                 issues.append(
                     AuditIssue(
                         "error", "missing_episode_side", event.id, f"Episode {episode.id} requires side"
                     )
                 )
-            if not episode.role:
+            if _is_blank_text(episode.role):
                 issues.append(
                     AuditIssue(
                         "error", "missing_episode_role", event.id, f"Episode {episode.id} requires role"
@@ -1114,8 +1241,12 @@ def audit_evidence(
                         f"Unknown claim {claim_id}",
                     )
                 )
+        event_attachment_claim_ids = set(event.claim_ids)
+        for episode in event.participation_episodes:
+            event_attachment_claim_ids.update(episode.claim_ids)
         for adjudication_id in event.adjudication_ids:
-            if adjudication_id not in decision_map:
+            adjudication = decision_map.get(adjudication_id)
+            if adjudication is None:
                 issues.append(
                     AuditIssue(
                         "error",
@@ -1124,14 +1255,36 @@ def audit_evidence(
                         f"Unknown adjudication {adjudication_id}",
                     )
                 )
+            elif adjudication.claim_id not in event_attachment_claim_ids:
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "canonical_event_adjudication_claim_mismatch",
+                        event.id,
+                        (
+                            f"Adjudication {adjudication_id} resolves claim "
+                            f"{adjudication.claim_id}, which is not attached to this canonical event"
+                        ),
+                    )
+                )
 
     known_hierarchy_ids = set(event_map)
     if known_event_ids is not None:
         known_hierarchy_ids.update(known_event_ids)
-    graph: dict[str, set[str]] = {event.id: set() for event in event_list if event.id}
+    graph: dict[str, set[str]] = {event_id: set() for event_id in event_map}
+    temporal_pairs_checked: set[tuple[str, str]] = set()
     for event in event_list:
         for parent_id in event.parent_event_ids:
-            if parent_id == event.id:
+            if _is_blank_text(parent_id):
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "invalid_parent_event_id",
+                        event.id,
+                        "Parent event references require stable non-blank ids",
+                    )
+                )
+            elif parent_id == event.id:
                 issues.append(
                     AuditIssue(
                         "error", "self_parent_event", event.id, "Event cannot be its own parent"
@@ -1144,7 +1297,14 @@ def audit_evidence(
                     )
                 )
             elif parent_id in event_map:
-                graph[parent_id].add(event.id)
+                if event.id in event_map:
+                    graph[parent_id].add(event.id)
+                    pair = (parent_id, event.id)
+                    if pair not in temporal_pairs_checked:
+                        temporal_pairs_checked.add(pair)
+                        issues.extend(
+                            _audit_parent_child_dates(event_map[parent_id], event)
+                        )
                 if event.id not in event_map[parent_id].child_event_ids:
                     issues.append(
                         AuditIssue(
@@ -1155,7 +1315,16 @@ def audit_evidence(
                         )
                     )
         for child_id in event.child_event_ids:
-            if child_id == event.id:
+            if _is_blank_text(child_id):
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "invalid_child_event_id",
+                        event.id,
+                        "Child event references require stable non-blank ids",
+                    )
+                )
+            elif child_id == event.id:
                 issues.append(
                     AuditIssue(
                         "error", "self_child_event", event.id, "Event cannot be its own child"
@@ -1168,7 +1337,14 @@ def audit_evidence(
                     )
                 )
             elif child_id in event_map:
-                graph[event.id].add(child_id)
+                if event.id in event_map:
+                    graph[event.id].add(child_id)
+                    pair = (event.id, child_id)
+                    if pair not in temporal_pairs_checked:
+                        temporal_pairs_checked.add(pair)
+                        issues.extend(
+                            _audit_parent_child_dates(event, event_map[child_id])
+                        )
                 if event.id not in event_map[child_id].parent_event_ids:
                     issues.append(
                         AuditIssue(

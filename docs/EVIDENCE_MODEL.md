@@ -66,11 +66,18 @@ does not interpret them in this workstream.
 
 ## Sampling and review packets
 
-Gold-set samples use an explicit seed and may stratify by era, region, layer,
+Gold-set samples use an explicit integer seed and may stratify by era, region, layer,
 domain, and source family. Their population manifest and digest bind the seed to
 the exact stable IDs and strata that were sampled.
 
-Review packets expose selected event context, claims, exact evidence, and
+Review packets are internally complete for selected claims, their competing
+claim groups, exact evidence links, and any included prior decisions. Event
+hierarchy and source metadata remain external references so selecting a battle
+does not silently pull an entire parent conflict into scope. Unselected parent
+and child references are listed deterministically as `external_event_ids`; the
+packet never claims that its event hierarchy is a closed world.
+
+Packets expose selected event context, claims, exact evidence, and
 unresolved disagreements while excluding Elo, rating, rank, leaderboard, and
 other model effects. Prior adjudications are omitted by default for independent
 review. If an operator explicitly includes them, append/supersession order is

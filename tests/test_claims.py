@@ -4,6 +4,7 @@ from pathlib import Path
 
 from military_elo.claims import Claim, EvidenceLink, SourceLocator, canonical_json
 from military_elo.models import Entity, Event, Participant, Source
+from military_elo.review import Adjudication
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,6 +105,7 @@ class ClaimModelTests(unittest.TestCase):
             "subject": "event-1",
             "predicate": "winner",
             "precision": None,
+            "status": "active",
             "provenance": [locator().to_dict()],
         }
         with self.assertRaises(ValueError):
@@ -118,6 +120,157 @@ class ClaimModelTests(unittest.TestCase):
                     {**base, "value": "side-a", "evidence_ids": invalid_ids}
                 )
 
+    def test_evidence_parsers_reject_mixed_decisions_and_unknown_fields(self):
+        claim_raw = Claim(
+            "claim-1",
+            "event-1",
+            "winner",
+            "side-a",
+            "categorical",
+            provenance=(locator(),),
+        ).to_dict()
+        with self.assertRaisesRegex(ValueError, "unknown field.*decision"):
+            Claim.from_dict({**claim_raw, "decision": "accepted"})
+
+        link_raw = EvidenceLink(
+            "evidence-1",
+            "claim-1",
+            locator(),
+            "supports",
+            "monograph-family-1",
+        ).to_dict()
+        adjudication_raw = Adjudication(
+            "decision-1",
+            "claim-1",
+            "reviewer-1",
+            "accepted",
+            "The cited evidence supports the assertion.",
+            "1.0",
+        ).to_dict()
+        cases = (
+            (SourceLocator.from_dict, {**locator().to_dict(), "extra": True}),
+            (EvidenceLink.from_dict, {**link_raw, "extra": True}),
+            (Claim.from_dict, {**claim_raw, "extra": True}),
+            (Adjudication.from_dict, {**adjudication_raw, "extra": True}),
+        )
+        for parser, raw in cases:
+            with self.subTest(parser=parser.__qualname__), self.assertRaisesRegex(
+                ValueError, "unknown field"
+            ):
+                parser(raw)
+
+    def test_evidence_parsers_require_every_canonical_schema_field(self):
+        locator_raw = locator().to_dict()
+        link_raw = EvidenceLink(
+            "evidence-1",
+            "claim-1",
+            locator(),
+            "supports",
+            "monograph-family-1",
+        ).to_dict()
+        claim_raw = Claim(
+            "claim-1",
+            "event-1",
+            "winner",
+            "side-a",
+            "categorical",
+            provenance=(locator(),),
+        ).to_dict()
+        adjudication_raw = Adjudication(
+            "decision-1",
+            "claim-1",
+            "reviewer-1",
+            "accepted",
+            "The cited evidence supports the assertion.",
+            "1.0",
+        ).to_dict()
+        cases = (
+            (
+                SourceLocator.from_dict,
+                locator_raw,
+                ("source_id", "edition", "checksum", "language", "source_family"),
+            ),
+            (
+                EvidenceLink.from_dict,
+                link_raw,
+                ("id", "claim_id", "locator", "relationship", "source_family"),
+            ),
+            (
+                Claim.from_dict,
+                claim_raw,
+                ("id", "subject", "predicate", "value", "precision", "status", "provenance"),
+            ),
+            (
+                Adjudication.from_dict,
+                adjudication_raw,
+                (
+                    "id",
+                    "claim_id",
+                    "reviewer",
+                    "decision",
+                    "rationale",
+                    "codebook_version",
+                    "supersedes",
+                ),
+            ),
+        )
+        for parser, raw, required_fields in cases:
+            for field_name in required_fields:
+                with self.subTest(
+                    parser=parser.__qualname__, missing=field_name
+                ), self.assertRaisesRegex(ValueError, "missing required field"):
+                    parser({key: value for key, value in raw.items() if key != field_name})
+
+        without_anchor = {
+            key: value
+            for key, value in locator_raw.items()
+            if key not in {"page", "row", "url"}
+        }
+        with self.assertRaisesRegex(ValueError, "requires page, row, or url"):
+            SourceLocator.from_dict(without_anchor)
+        with self.assertRaisesRegex(ValueError, "provenance locator or evidence id"):
+            Claim.from_dict({**claim_raw, "provenance": []})
+
+    def test_evidence_parsers_reject_blank_stable_ids_and_references(self):
+        claim_raw = Claim(
+            "claim-1",
+            "event-1",
+            "winner",
+            "side-a",
+            "categorical",
+            provenance=(locator(),),
+        ).to_dict()
+        link_raw = EvidenceLink(
+            "evidence-1",
+            "claim-1",
+            locator(),
+            "supports",
+            "monograph-family-1",
+        ).to_dict()
+        adjudication_raw = Adjudication(
+            "decision-1",
+            "claim-1",
+            "reviewer-1",
+            "accepted",
+            "The cited evidence supports the assertion.",
+            "1.0",
+        ).to_dict()
+        cases = (
+            (SourceLocator.from_dict, {**locator().to_dict(), "source_id": "  "}),
+            (EvidenceLink.from_dict, {**link_raw, "claim_id": "  "}),
+            (Claim.from_dict, {**claim_raw, "id": "  "}),
+            (Claim.from_dict, {**claim_raw, "contradicts": ["  "]}),
+            (
+                Adjudication.from_dict,
+                {**adjudication_raw, "supersedes": ["  "]},
+            ),
+        )
+        for parser, raw in cases:
+            with self.subTest(parser=parser.__qualname__), self.assertRaisesRegex(
+                ValueError, "non-blank"
+            ):
+                parser(raw)
+
     def test_claim_schema_is_draft_2020_12_and_lifecycle_constrained(self):
         schema = json.loads((ROOT / "schemas" / "claim.schema.json").read_text(encoding="utf-8"))
         self.assertEqual(schema["$schema"], "https://json-schema.org/draft/2020-12/schema")
@@ -126,6 +279,20 @@ class ClaimModelTests(unittest.TestCase):
             ["active", "withdrawn", "superseded"],
         )
         self.assertIn("evidenceLink", schema["$defs"])
+        self.assertEqual(schema["properties"]["id"]["pattern"], ".*\\S.*")
+        self.assertEqual(
+            schema["properties"]["evidence_ids"]["items"]["pattern"],
+            ".*\\S.*",
+        )
+        adjudication_schema = json.loads(
+            (ROOT / "schemas" / "adjudication.schema.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(
+            adjudication_schema["properties"]["supersedes"]["items"]["pattern"],
+            ".*\\S.*",
+        )
 
 
 class LegacyModelCompatibilityTests(unittest.TestCase):

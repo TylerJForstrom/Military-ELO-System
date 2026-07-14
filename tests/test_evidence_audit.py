@@ -1,6 +1,7 @@
 import json
 import unittest
 from pathlib import Path
+from types import MappingProxyType
 
 from military_elo.audit import audit_dataset, audit_evidence, has_errors
 from military_elo.canonical import (
@@ -131,8 +132,117 @@ class EvidenceAuditTests(unittest.TestCase):
         unknown = next(item for item in issues if item.code == "unknown_locator_source")
         self.assertEqual(unknown.severity, "error")
 
+    def test_locator_url_rejects_whitespace_and_malformed_host_or_port(self):
+        for raw_url in (
+            "https://example.test/source page",
+            "http://[::1",
+            "https://example.test:not-a-port/source",
+            "https://.",
+            "https://-",
+            "https://example.test/a\x00b",
+        ):
+            with self.subTest(raw_url=raw_url):
+                locator = SourceLocator(
+                    source_id="source-a",
+                    edition="v1",
+                    url=raw_url,
+                    checksum=CHECKSUM,
+                    language="en",
+                    source_family="family-a",
+                )
+                issues = audit_evidence(
+                    [claim("claim-a", "side-a", provenance=(locator,))]
+                )
+                self.assertIn("invalid_locator_url", {item.code for item in issues})
+
+    def test_direct_malformed_locator_fields_report_errors_without_crashing(self):
+        malformed = SourceLocator(
+            source_id=[],
+            edition=[],
+            row=7,
+            checksum=[],
+            language=[],
+            source_family=[],
+            creator=[],
+            citation=[],
+        )
+        issues = audit_evidence(
+            [claim("claim-a", "side-a", provenance=(malformed,))],
+            sources={"source-a": Source("source-a", "Source", "https://example.test")},
+        )
+        codes = {item.code for item in issues}
+        for expected in (
+            "missing_locator_source_id",
+            "missing_locator_edition",
+            "missing_locator_checksum",
+            "missing_locator_language",
+            "missing_locator_source_family",
+            "invalid_locator_creator",
+            "invalid_locator_citation",
+        ):
+            self.assertIn(expected, codes)
+
+    def test_evidence_required_text_rejects_whitespace_only_values(self):
+        blank_claim = claim(
+            " ",
+            "side-a",
+            subject=" ",
+            predicate=" ",
+        )
+        blank_link = EvidenceLink(
+            id=" ",
+            claim_id=" ",
+            locator=source_locator(),
+            relationship=" ",
+            source_family=" ",
+        )
+        blank_episode = ParticipationEpisode(
+            "episode-a", "entity-a", "a", "primary"
+        )
+        for field_name in ("id", "entity_id", "side", "role"):
+            object.__setattr__(blank_episode, field_name, " ")
+        blank_event = CanonicalEvent(
+            "event-a",
+            "Event",
+            participation_episodes=(blank_episode,),
+        )
+        object.__setattr__(blank_event, "id", " ")
+        object.__setattr__(blank_event, "name", " ")
+        codes = {
+            item.code
+            for item in audit_evidence(
+                claims=[blank_claim],
+                evidence_links=[blank_link],
+                canonical_events=[blank_event],
+            )
+        }
+        for expected in (
+            "missing_claim_id",
+            "missing_claim_subject",
+            "missing_claim_predicate",
+            "missing_evidence_id",
+            "missing_evidence_claim",
+            "invalid_evidence_relationship",
+            "missing_evidence_source_family",
+            "missing_canonical_event_id",
+            "missing_canonical_event_name",
+            "missing_participation_episode_id",
+            "missing_episode_entity",
+            "missing_episode_side",
+            "missing_episode_role",
+        ):
+            self.assertIn(expected, codes)
+
 
 class AdjudicationResolutionTests(unittest.TestCase):
+    def test_append_and_resolution_reject_unordered_decision_sets(self):
+        assertion = claim("claim-a", "side-a")
+        first = decision("decision-a", "claim-a")
+        with self.assertRaises(TypeError):
+            append_adjudication({first}, decision("decision-b", "claim-a"))
+        with self.assertRaises(TypeError):
+            resolve_claims([assertion], {first})
+
     def test_append_only_supersession_preserves_prior_decisions(self):
         first = decision("decision-1", "claim-a", "needs_more_evidence")
         second = decision(
@@ -192,6 +302,41 @@ class AdjudicationResolutionTests(unittest.TestCase):
                 {**decision("typed", high.id).to_dict(), "review_stage": 2}
             )
 
+    def test_direct_adjudications_cannot_bypass_workflow_validation(self):
+        ordinary = claim("claim-ordinary", "side-a")
+        valid = decision(
+            "decision-valid",
+            ordinary.id,
+            reviewed_at="2026-07-14T12:00:00Z",
+            review_stage="primary",
+            confidence=0.5,
+        )
+        self.assertEqual(append_adjudication((), valid), (valid,))
+        self.assertEqual(
+            resolve_claims([ordinary], [valid])[ordinary.id].state,
+            "accepted",
+        )
+
+        invalid_decisions = (
+            decision("confidence-high", ordinary.id, confidence=2),
+            decision("confidence-nan", ordinary.id, confidence=float("nan")),
+            decision("confidence-inf", ordinary.id, confidence=float("inf")),
+            decision("blank-stage", ordinary.id, review_stage="  "),
+            decision("blank-supersedes", ordinary.id, supersedes=("  ",)),
+            decision(
+                "blank-evidence",
+                ordinary.id,
+                evidence_ids_considered=("  ",),
+            ),
+            decision("typed-reviewed-at", ordinary.id, reviewed_at=123),
+        )
+        for invalid in invalid_decisions:
+            with self.subTest(decision=invalid.id):
+                with self.assertRaises(ValueError):
+                    append_adjudication((), invalid)
+                with self.assertRaises(ValueError):
+                    resolve_claims([ordinary], [invalid])
+
     def test_high_impact_acceptance_requires_distinct_active_secondary_review(self):
         high = claim("claim-high", "side-a", impact="high")
         primary = decision(
@@ -238,6 +383,84 @@ class AdjudicationResolutionTests(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             resolve_claims([blank_group], [decision("decision-exclusive", blank_group.id)])
+
+        meaningless = Claim(
+            " ",
+            " ",
+            " ",
+            "side-a",
+            "categorical",
+            provenance=(source_locator(),),
+        )
+        with self.assertRaises(ValueError):
+            resolve_claims([meaningless], [])
+
+        evidence_free = Claim(
+            "claim-without-evidence",
+            "event-1",
+            "winner",
+            "side-a",
+            "categorical",
+        )
+        with self.assertRaises(ValueError):
+            resolve_claims([evidence_free], [])
+
+    def test_resolution_rejects_blank_claim_refs_and_invalid_direct_locators(self):
+        blank_reference_claims = (
+            claim("claim-blank-contradiction", "side-a", contradicts=("  ",)),
+            claim(
+                "claim-blank-evidence",
+                "side-a",
+                provenance=(),
+                evidence_ids=("  ",),
+            ),
+        )
+        for malformed in blank_reference_claims:
+            with self.subTest(claim=malformed.id), self.assertRaises(ValueError):
+                resolve_claims([malformed], [])
+
+        invalid_locators = (
+            SourceLocator(
+                source_id="  ",
+                edition="v1",
+                row=7,
+                checksum=CHECKSUM,
+                language="en",
+                source_family="family-a",
+            ),
+            SourceLocator(
+                source_id="source-a",
+                edition="v1",
+                page=True,
+                checksum=CHECKSUM,
+                language="en",
+                source_family="family-a",
+            ),
+            SourceLocator(
+                source_id="source-a",
+                edition="v1",
+                row=7,
+                checksum="not-a-checksum",
+                language="en",
+                source_family="family-a",
+            ),
+            SourceLocator(
+                source_id="source-a",
+                edition="v1",
+                url="relative/source",
+                checksum=CHECKSUM,
+                language="en",
+                source_family="family-a",
+            ),
+        )
+        for index, locator in enumerate(invalid_locators):
+            malformed = claim(
+                f"claim-invalid-locator-{index}",
+                "side-a",
+                provenance=(locator,),
+            )
+            with self.subTest(locator=index), self.assertRaises(ValueError):
+                resolve_claims([malformed], [])
 
     def test_superseded_secondary_acceptance_cannot_authorize_high_impact_claim(self):
         high = claim("claim-high", "side-a", impact="high")
@@ -336,6 +559,54 @@ class AdjudicationResolutionTests(unittest.TestCase):
 
 
 class CanonicalEvidenceAuditTests(unittest.TestCase):
+    def test_dataset_audit_reports_corrupted_singular_parent_without_crashing(self):
+        base = Event.from_dict(
+            {
+                "id": "event-1",
+                "name": "Event",
+                "year": 1914,
+                "event_type": "engagement",
+                "participants": [
+                    {"entity_id": "a", "side": "one"},
+                    {"entity_id": "b", "side": "two"},
+                ],
+                "source_ids": [],
+            }
+        )
+        for invalid in (123, " ", [], {}):
+            event = Event.from_dict(base.to_dict())
+            object.__setattr__(event, "parent_event_id", invalid)
+            with self.subTest(parent_event_id=invalid):
+                codes = {
+                    item.code
+                    for item in audit_dataset([], [event], {}, ModelConfig())
+                }
+                self.assertIn("invalid_parent_event_id", codes)
+
+    def test_legacy_participant_without_endpoints_uses_event_lifespan_overlap(self):
+        entities = [
+            Entity("dead", "Dead", "state", 1800, 1900),
+            Entity("active", "Active", "state", 1800, 2000),
+        ]
+        event = Event.from_dict(
+            {
+                "id": "event-1920",
+                "name": "Event",
+                "year": 1920,
+                "event_type": "engagement",
+                "participants": [
+                    {"entity_id": "dead", "side": "one"},
+                    {"entity_id": "active", "side": "two"},
+                ],
+                "source_ids": [],
+            }
+        )
+        codes = {
+            item.code
+            for item in audit_dataset(entities, [event], {}, ModelConfig())
+        }
+        self.assertIn("episode_outside_entity_lifespan", codes)
+
     def test_invalid_event_dates_geometry_and_episode_are_reported(self):
         event = CanonicalEvent(
             id="event-1",
@@ -362,11 +633,152 @@ class CanonicalEvidenceAuditTests(unittest.TestCase):
         self.assertIn("invalid_event_geometry", codes)
         self.assertIn("invalid_participation_episode", codes)
 
+    def test_geometry_rejects_boolean_and_non_finite_coordinates(self):
+        valid_geometry = CanonicalEvent(
+            "event-valid",
+            "Valid geometry",
+            geometry={"type": "Point", "coordinates": [1, 5]},
+        )
+        valid_collection = CanonicalEvent(
+            "event-collection",
+            "Valid collection",
+            geometry={
+                "type": "GeometryCollection",
+                "geometries": [{"type": "Point", "coordinates": [1, 5]}],
+            },
+        )
+        boolean_geometry = CanonicalEvent(
+            "event-bool",
+            "Boolean geometry",
+            geometry={"type": "Point", "coordinates": [True, 5]},
+        )
+        non_finite_geometry = CanonicalEvent(
+            "event-infinite",
+            "Infinite geometry",
+            geometry={"type": "Point", "coordinates": [1, 5]},
+        )
+        object.__setattr__(
+            non_finite_geometry,
+            "geometry",
+            MappingProxyType(
+                {"type": "Point", "coordinates": (float("inf"), 5)}
+            ),
+        )
+        nested_point = CanonicalEvent(
+            "event-nested-point",
+            "Nested point",
+            geometry={"type": "Point", "coordinates": [[1], [5]]},
+        )
+        malformed_shapes = [
+            CanonicalEvent(
+                "event-point-extra",
+                "Point",
+                geometry={"type": "Point", "coordinates": [1, 2, [3]]},
+            ),
+            CanonicalEvent(
+                "event-multipoint-flat",
+                "MultiPoint",
+                geometry={"type": "MultiPoint", "coordinates": [1, 2]},
+            ),
+            CanonicalEvent(
+                "event-line-empty",
+                "Line",
+                geometry={"type": "LineString", "coordinates": []},
+            ),
+            CanonicalEvent(
+                "event-polygon-empty",
+                "Polygon",
+                geometry={"type": "Polygon", "coordinates": []},
+            ),
+            CanonicalEvent(
+                "event-polygon-open",
+                "Polygon",
+                geometry={
+                    "type": "Polygon",
+                    "coordinates": [[[0, 0], [1, 0], [1, 1], [0, 1]]],
+                },
+            ),
+            CanonicalEvent(
+                "event-multiline-flat",
+                "MultiLine",
+                geometry={"type": "MultiLineString", "coordinates": [1, 2]},
+            ),
+            CanonicalEvent(
+                "event-multipolygon-flat",
+                "MultiPolygon",
+                geometry={"type": "MultiPolygon", "coordinates": [1, 2]},
+            ),
+        ]
+        invalid_records = {
+            item.record_id
+            for item in audit_evidence(
+                canonical_events=[
+                    valid_geometry,
+                    valid_collection,
+                    boolean_geometry,
+                    non_finite_geometry,
+                    nested_point,
+                    *malformed_shapes,
+                ]
+            )
+            if item.code == "invalid_event_geometry"
+        }
+        self.assertEqual(
+            invalid_records,
+            {
+                "event-bool",
+                "event-infinite",
+                "event-nested-point",
+                *(item.id for item in malformed_shapes),
+            },
+        )
+
     def test_event_hierarchy_cycle_is_an_error(self):
         first = CanonicalEvent("event-a", "A", child_event_ids=("event-b",))
         second = CanonicalEvent("event-b", "B", child_event_ids=("event-a",))
         codes = {item.code for item in audit_evidence(canonical_events=[first, second])}
         self.assertIn("event_hierarchy_cycle", codes)
+
+    def test_parent_and_child_intervals_must_have_possible_overlap(self):
+        parent = CanonicalEvent(
+            "event-parent",
+            "Parent",
+            child_event_ids=("event-child",),
+            date_interval=UncertainDateInterval(
+                UncertainDate.exact(1914, "year"),
+                UncertainDate.exact(1914, "year"),
+            ),
+        )
+        child = CanonicalEvent(
+            "event-child",
+            "Child",
+            parent_event_ids=("event-parent",),
+            date_interval=UncertainDateInterval(
+                UncertainDate.exact(1920, "year"),
+                UncertainDate.exact(1920, "year"),
+            ),
+        )
+        mismatches = [
+            item
+            for item in audit_evidence(canonical_events=[parent, child])
+            if item.code == "parent_child_date_mismatch"
+        ]
+        self.assertEqual(len(mismatches), 1)
+
+        uncertain_child = CanonicalEvent(
+            "event-child",
+            "Child",
+            parent_event_ids=("event-parent",),
+            date_interval=UncertainDateInterval(
+                UncertainDate(1913, 1914, 1920, "range"),
+                UncertainDate(1914, 1920, 1921, "range"),
+            ),
+        )
+        overlap_codes = {
+            item.code
+            for item in audit_evidence(canonical_events=[parent, uncertain_child])
+        }
+        self.assertNotIn("parent_child_date_mismatch", overlap_codes)
 
     def test_episode_context_uses_uncertainty_overlap_and_precision_bounds(self):
         event = CanonicalEvent(
@@ -403,6 +815,76 @@ class CanonicalEvidenceAuditTests(unittest.TestCase):
         self.assertEqual(len(outside), 1)
         self.assertIn("outside", outside[0].message)
         self.assertIn("episode_outside_entity_lifespan", {item.code for item in issues})
+
+    def test_episode_without_endpoints_still_requires_event_lifespan_overlap(self):
+        event = CanonicalEvent(
+            "event-1920",
+            "Event",
+            date_interval=UncertainDateInterval(
+                UncertainDate.exact(1920, "year"),
+                UncertainDate.exact(1920, "year"),
+            ),
+            participation_episodes=(
+                ParticipationEpisode(
+                    "episode-dead-entity",
+                    "entity-dead",
+                    "a",
+                    "primary",
+                ),
+            ),
+        )
+        codes = {
+            item.code
+            for item in audit_evidence(
+                canonical_events=[event],
+                entity_ids={"entity-dead"},
+                entity_lifespans={"entity-dead": (1800, 1900)},
+            )
+        }
+        self.assertIn("episode_outside_entity_lifespan", codes)
+
+    def test_same_id_canonical_overlay_inherits_legacy_event_envelope(self):
+        entities = [
+            Entity("dead", "Dead", "state", 1800, 1900),
+            Entity("active-a", "Active A", "state", 1800, 2000),
+            Entity("active-b", "Active B", "state", 1800, 2000),
+        ]
+        legacy = Event.from_dict(
+            {
+                "id": "event-1920",
+                "name": "Legacy event",
+                "year": 1920,
+                "event_type": "engagement",
+                "participants": [
+                    {"entity_id": "active-a", "side": "one"},
+                    {"entity_id": "active-b", "side": "two"},
+                ],
+                "source_ids": [],
+            }
+        )
+        overlay = CanonicalEvent(
+            "event-1920",
+            "Canonical overlay",
+            participation_episodes=(
+                ParticipationEpisode(
+                    "episode-dead", "dead", "one", "supporting"
+                ),
+            ),
+        )
+        issues = audit_dataset(
+            entities,
+            [legacy],
+            {},
+            ModelConfig(),
+            canonical_events=[overlay],
+        )
+        matching = [
+            item
+            for item in issues
+            if item.code == "episode_outside_entity_lifespan"
+            and "episode-dead" in item.message
+        ]
+        self.assertEqual(len(matching), 1)
 
     def test_legacy_years_must_overlap_optional_date_interval(self):
         entities = [
@@ -467,12 +949,17 @@ class CanonicalEvidenceAuditTests(unittest.TestCase):
             Entity("entity-b", "B", "state", 1900, 2000, source_ids=("source-a",)),
         ]
         participants = (Participant("entity-a", "a"), Participant("entity-b", "b"))
+        invalid_episode = ParticipationEpisode(
+            "episode-a", "entity-a", "a", "primary"
+        )
+        for field_name in ("id", "entity_id", "side", "role"):
+            object.__setattr__(invalid_episode, field_name, "")
         legacy = [
             Event(
                 "event-a", "A", 1914, 1914, "war", "interstate_limited", "war",
                 "limited", 0.5, 0.8, participants, ("source-a",),
                 parent_event_ids=("event-b",),
-                participation_episodes=(ParticipationEpisode("", "", "", ""),),
+                participation_episodes=(invalid_episode,),
             ),
             Event(
                 "event-b", "B", 1914, 1914, "war", "interstate_limited", "war",
@@ -561,6 +1048,195 @@ class CanonicalEvidenceAuditTests(unittest.TestCase):
         self.assertIn("invalid_participant_interval", codes)
         self.assertIn("invalid_uncertain_date", codes)
         self.assertIn("invalid_participation_episode", codes)
+
+    def test_attached_adjudications_must_resolve_record_attached_claims(self):
+        claims = [
+            claim("claim-a", "side-a"),
+            claim("claim-b", "side-b", subject="event-2"),
+        ]
+        decisions = [decision("decision-b", "claim-b")]
+        entities = [
+            Entity(
+                "entity-a",
+                "A",
+                "state",
+                1900,
+                2000,
+                source_ids=("source-a",),
+                claim_ids=("claim-a",),
+                adjudication_ids=("decision-b",),
+            ),
+            Entity("entity-b", "B", "state", 1900, 2000, source_ids=("source-a",)),
+        ]
+        tactical_a = {
+            "battlefield_control": 1.0,
+            "mission_objective": 1.0,
+            "force_preservation": 1.0,
+            "positional_gain": 1.0,
+        }
+        tactical_b = {key: 0.0 for key in tactical_a}
+        event = Event(
+            "event-attachments",
+            "Event",
+            1914,
+            1914,
+            "engagement",
+            "interstate_limited",
+            "battle",
+            "limited",
+            0.5,
+            0.8,
+            (
+                Participant(
+                    "entity-a",
+                    "a",
+                    outcome=tactical_a,
+                    claim_ids=("claim-a",),
+                    adjudication_ids=("decision-b",),
+                ),
+                Participant("entity-b", "b", outcome=tactical_b),
+            ),
+            ("source-a",),
+            claim_ids=("claim-a",),
+            adjudication_ids=("decision-b",),
+        )
+        canonical_event = CanonicalEvent(
+            "canonical-attachments",
+            "Canonical event",
+            claim_ids=("claim-a",),
+            adjudication_ids=("decision-b",),
+        )
+        sources = {"source-a": Source("source-a", "Source", "https://example.test")}
+        codes = {
+            item.code
+            for item in audit_dataset(
+                entities,
+                [event],
+                sources,
+                ModelConfig(),
+                claims=claims,
+                adjudications=decisions,
+                canonical_events=[canonical_event],
+            )
+        }
+        for expected in (
+            "entity_adjudication_claim_mismatch",
+            "event_adjudication_claim_mismatch",
+            "participant_adjudication_claim_mismatch",
+            "canonical_event_adjudication_claim_mismatch",
+        ):
+            self.assertIn(expected, codes)
+
+        clean_entities = [
+            Entity(
+                "entity-a",
+                "A",
+                "state",
+                1900,
+                2000,
+                source_ids=("source-a",),
+                claim_ids=("claim-a",),
+            ),
+            entities[1],
+        ]
+        clean_event = Event(
+            "event-clean",
+            "Event",
+            1914,
+            1914,
+            "engagement",
+            "interstate_limited",
+            "battle",
+            "limited",
+            0.5,
+            0.8,
+            (
+                Participant(
+                    "entity-a", "a", outcome=tactical_a, claim_ids=("claim-a",)
+                ),
+                Participant("entity-b", "b", outcome=tactical_b),
+            ),
+            ("source-a",),
+            claim_ids=("claim-a",),
+        )
+        clean_issues = audit_dataset(
+            clean_entities,
+            [clean_event],
+            sources,
+            ModelConfig(),
+            claims=[claims[0]],
+            canonical_events=[
+                CanonicalEvent(
+                    "canonical-clean",
+                    "Canonical event",
+                    claim_ids=("claim-a",),
+                )
+            ],
+        )
+        self.assertFalse(has_errors(clean_issues))
+
+    def test_event_level_adjudication_accepts_participation_episode_claim(self):
+        attached_claim = claim("claim-a", "side-a")
+        attached_decision = decision("decision-a", "claim-a")
+        entities = [
+            Entity("entity-a", "A", "state", 1900, 2000, source_ids=("source-a",)),
+            Entity("entity-b", "B", "state", 1900, 2000, source_ids=("source-a",)),
+        ]
+        tactical_a = {
+            "battlefield_control": 1.0,
+            "mission_objective": 1.0,
+            "force_preservation": 1.0,
+            "positional_gain": 1.0,
+        }
+        episode = ParticipationEpisode(
+            "episode-a",
+            "entity-a",
+            "a",
+            "primary",
+            claim_ids=("claim-a",),
+        )
+        event = Event(
+            "event-episode-attachment",
+            "Event",
+            1914,
+            1914,
+            "engagement",
+            "interstate_limited",
+            "battle",
+            "limited",
+            0.5,
+            0.8,
+            (
+                Participant("entity-a", "a", outcome=tactical_a),
+                Participant(
+                    "entity-b", "b", outcome={key: 0.0 for key in tactical_a}
+                ),
+            ),
+            ("source-a",),
+            participation_episodes=(episode,),
+            adjudication_ids=("decision-a",),
+        )
+        sources = {"source-a": Source("source-a", "Source", "https://example.test")}
+        issues = audit_dataset(
+            entities,
+            [event],
+            sources,
+            ModelConfig(),
+            claims=[attached_claim],
+            adjudications=[attached_decision],
+            canonical_events=[
+                CanonicalEvent(
+                    "canonical-episode-attachment",
+                    "Canonical event",
+                    participation_episodes=(episode,),
+                    adjudication_ids=("decision-a",),
+                )
+            ],
+        )
+        codes = {item.code for item in issues}
+        self.assertNotIn("event_adjudication_claim_mismatch", codes)
+        self.assertNotIn("canonical_event_adjudication_claim_mismatch", codes)
+        self.assertFalse(has_errors(issues))
 
     def test_dataset_audits_all_new_entity_event_and_participant_references(self):
         entities = [

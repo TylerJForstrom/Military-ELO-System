@@ -23,6 +23,132 @@ CLAIM_STATUSES = {
     "superseded",
 }
 
+_SOURCE_LOCATOR_FIELDS = frozenset(
+    {
+        "source_id",
+        "edition",
+        "page",
+        "row",
+        "url",
+        "checksum",
+        "language",
+        "source_family",
+        "creator",
+        "citation",
+    }
+)
+_SOURCE_LOCATOR_REQUIRED_FIELDS = frozenset(
+    {"source_id", "edition", "checksum", "language", "source_family"}
+)
+_EVIDENCE_LINK_FIELDS = frozenset(
+    {"id", "claim_id", "locator", "relationship", "source_family", "note"}
+)
+_EVIDENCE_LINK_REQUIRED_FIELDS = frozenset(
+    {"id", "claim_id", "locator", "relationship", "source_family"}
+)
+_CLAIM_FIELDS = frozenset(
+    {
+        "id",
+        "subject",
+        "predicate",
+        "value",
+        "precision",
+        "status",
+        "provenance",
+        "contradicts",
+        "note",
+        "claim_group_id",
+        "exclusive",
+        "impact",
+        "evidence_ids",
+    }
+)
+_CLAIM_REQUIRED_FIELDS = frozenset(
+    {"id", "subject", "predicate", "value", "precision", "status", "provenance"}
+)
+_EVIDENCE_RELATIONSHIPS = frozenset({"supports", "contradicts", "context"})
+
+
+def _validate_object_shape(
+    raw: Any,
+    *,
+    model_name: str,
+    allowed_fields: frozenset[str],
+    required_fields: frozenset[str],
+) -> dict[str, Any]:
+    if not isinstance(raw, dict):
+        raise TypeError(f"{model_name} must be a JSON object")
+    if any(not isinstance(key, str) for key in raw):
+        raise TypeError(f"{model_name} object keys must be strings")
+    unknown = sorted(set(raw) - allowed_fields)
+    if unknown:
+        raise ValueError(
+            f"{model_name} contains unknown field(s): {', '.join(unknown)}"
+        )
+    missing = sorted(required_fields - set(raw))
+    if missing:
+        raise ValueError(
+            f"{model_name} is missing required field(s): {', '.join(missing)}"
+        )
+    return raw
+
+
+def _required_nonblank_text(
+    raw: dict[str, Any], name: str, *, model_name: str
+) -> str:
+    value = raw[name]
+    if not isinstance(value, str):
+        raise TypeError(f"{model_name}.{name} must be a string")
+    if not value.strip():
+        raise ValueError(f"{model_name}.{name} must be non-blank")
+    return value
+
+
+def _optional_text(
+    raw: dict[str, Any], name: str, *, model_name: str, default: str = ""
+) -> str:
+    value = raw[name] if name in raw else default
+    if not isinstance(value, str):
+        raise TypeError(f"{model_name}.{name} must be a string")
+    return value
+
+
+def _optional_nonblank_text_or_none(
+    raw: dict[str, Any], name: str, *, model_name: str
+) -> str | None:
+    value = raw.get(name)
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        raise TypeError(f"{model_name}.{name} must be a string or null")
+    if not value.strip():
+        raise ValueError(f"{model_name}.{name} must be non-blank when supplied")
+    return value
+
+
+def _nonblank_string_array(
+    raw: dict[str, Any],
+    name: str,
+    *,
+    model_name: str,
+    required: bool = False,
+) -> list[str]:
+    if name not in raw:
+        if required:
+            raise ValueError(f"{model_name}.{name} is required")
+        return []
+    value = raw[name]
+    if not isinstance(value, list):
+        raise TypeError(f"{model_name}.{name} must be an array of stable ids")
+    for item in value:
+        if not isinstance(item, str):
+            raise TypeError(f"{model_name}.{name} must contain string ids")
+        if not item.strip():
+            raise ValueError(f"{model_name}.{name} must contain non-blank ids")
+    if len(value) != len(set(value)):
+        raise ValueError(f"{model_name}.{name} must contain unique ids")
+    return value
+
 
 def canonicalize_json(value: Any) -> Any:
     """Return a detached, JSON-safe value with deterministic object-key order.
@@ -138,33 +264,49 @@ class SourceLocator:
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "SourceLocator":
-        def text_field(name: str, *, alias: str | None = None) -> str:
-            value = raw.get(name, raw.get(alias, "") if alias else "")
-            if not isinstance(value, str):
-                raise TypeError(f"SourceLocator.{name} must be a string")
-            return value
+        raw = _validate_object_shape(
+            raw,
+            model_name="SourceLocator",
+            allowed_fields=_SOURCE_LOCATOR_FIELDS,
+            required_fields=_SOURCE_LOCATOR_REQUIRED_FIELDS,
+        )
+        if not any(name in raw for name in ("page", "row", "url")):
+            raise ValueError("SourceLocator requires page, row, or url")
 
         page = raw.get("page")
-        row = raw.get("row", raw.get("source_row"))
+        row = raw.get("row")
         for name, value in (("page", page), ("row", row)):
-            if value is not None and (
-                isinstance(value, bool) or not isinstance(value, (str, int))
-            ):
-                raise TypeError(f"SourceLocator.{name} must be a string, integer, or null")
-        url = raw["url"] if raw.get("url") is not None else raw.get("source_url")
-        if url is not None and not isinstance(url, str):
-            raise TypeError("SourceLocator.url must be a string or null")
+            if name not in raw:
+                continue
+            if isinstance(value, bool) or not isinstance(value, (str, int)):
+                raise TypeError(f"SourceLocator.{name} must be a string or integer")
+            if isinstance(value, str) and not value.strip():
+                raise ValueError(f"SourceLocator.{name} must be non-blank")
+        url = raw.get("url")
+        if "url" in raw:
+            if not isinstance(url, str):
+                raise TypeError("SourceLocator.url must be a string")
+            if not url.strip():
+                raise ValueError("SourceLocator.url must be non-blank")
         return cls(
-            edition=text_field("edition"),
+            edition=_required_nonblank_text(raw, "edition", model_name="SourceLocator"),
             page=page,
             row=row,
             url=url,
-            checksum=text_field("checksum"),
-            language=text_field("language"),
-            source_family=text_field("source_family", alias="family"),
-            source_id=text_field("source_id", alias="source"),
-            creator=text_field("creator", alias="author"),
-            citation=text_field("citation"),
+            checksum=_required_nonblank_text(
+                raw, "checksum", model_name="SourceLocator"
+            ),
+            language=_required_nonblank_text(
+                raw, "language", model_name="SourceLocator"
+            ),
+            source_family=_required_nonblank_text(
+                raw, "source_family", model_name="SourceLocator"
+            ),
+            source_id=_required_nonblank_text(
+                raw, "source_id", model_name="SourceLocator"
+            ),
+            creator=_optional_text(raw, "creator", model_name="SourceLocator"),
+            citation=_optional_text(raw, "citation", model_name="SourceLocator"),
         )
 
 
@@ -204,22 +346,33 @@ class EvidenceLink:
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "EvidenceLink":
-        def text_field(name: str, *, alias: str | None = None) -> str:
-            value = raw.get(name, raw.get(alias, "") if alias else "")
-            if not isinstance(value, str):
-                raise TypeError(f"EvidenceLink.{name} must be a string")
-            return value
-
-        locator_raw = raw.get("locator")
+        raw = _validate_object_shape(
+            raw,
+            model_name="EvidenceLink",
+            allowed_fields=_EVIDENCE_LINK_FIELDS,
+            required_fields=_EVIDENCE_LINK_REQUIRED_FIELDS,
+        )
+        locator_raw = raw["locator"]
         if not isinstance(locator_raw, dict):
             raise TypeError("EvidenceLink.locator must be a SourceLocator object")
+        relationship = _required_nonblank_text(
+            raw, "relationship", model_name="EvidenceLink"
+        )
+        if relationship not in _EVIDENCE_RELATIONSHIPS:
+            raise ValueError(
+                "EvidenceLink.relationship must be supports, contradicts, or context"
+            )
         return cls(
-            id=text_field("id", alias="evidence_id"),
-            claim_id=text_field("claim_id"),
+            id=_required_nonblank_text(raw, "id", model_name="EvidenceLink"),
+            claim_id=_required_nonblank_text(
+                raw, "claim_id", model_name="EvidenceLink"
+            ),
             locator=SourceLocator.from_dict(locator_raw),
-            relationship=text_field("relationship", alias="relation"),
-            source_family=text_field("source_family"),
-            note=text_field("note"),
+            relationship=relationship,
+            source_family=_required_nonblank_text(
+                raw, "source_family", model_name="EvidenceLink"
+            ),
+            note=_optional_text(raw, "note", model_name="EvidenceLink"),
         )
 
 
@@ -309,44 +462,55 @@ class Claim:
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Claim":
-        def text_field(name: str, *, alias: str | None = None, default: str = "") -> str:
-            value = raw.get(name, raw.get(alias, default) if alias else default)
-            if not isinstance(value, str):
-                raise TypeError(f"Claim.{name} must be a string")
-            return value
-
-        if "value" not in raw:
-            raise ValueError("Claim.value is required; explicit null remains a valid assertion")
-        provenance_raw = raw["provenance"] if "provenance" in raw else []
-        if not isinstance(provenance_raw, (list, tuple)):
+        raw = _validate_object_shape(
+            raw,
+            model_name="Claim",
+            allowed_fields=_CLAIM_FIELDS,
+            required_fields=_CLAIM_REQUIRED_FIELDS,
+        )
+        provenance_raw = raw["provenance"]
+        if not isinstance(provenance_raw, list):
             raise TypeError("Claim.provenance must be an array of source locators")
-        contradicts_raw = raw["contradicts"] if "contradicts" in raw else []
-        if not isinstance(contradicts_raw, (list, tuple)):
-            raise TypeError("Claim.contradicts must be an array of stable claim ids")
-        evidence_ids_raw = raw["evidence_ids"] if "evidence_ids" in raw else []
-        if not isinstance(evidence_ids_raw, (list, tuple)):
-            raise TypeError("Claim.evidence_ids must be an array of stable evidence ids")
-        if any(not isinstance(item, str) for item in contradicts_raw):
-            raise TypeError("Claim.contradicts must contain string ids")
-        if any(not isinstance(item, str) for item in evidence_ids_raw):
-            raise TypeError("Claim.evidence_ids must contain string ids")
+        if any(not isinstance(item, dict) for item in provenance_raw):
+            raise TypeError("Claim.provenance must contain source locator objects")
+        contradicts_raw = _nonblank_string_array(
+            raw, "contradicts", model_name="Claim"
+        )
+        evidence_ids_raw = _nonblank_string_array(
+            raw, "evidence_ids", model_name="Claim"
+        )
+        if not provenance_raw and not evidence_ids_raw:
+            raise ValueError(
+                "Claim requires at least one provenance locator or evidence id"
+            )
         exclusive_raw = raw.get("exclusive")
         if exclusive_raw is not None and not isinstance(exclusive_raw, bool):
             raise TypeError("Claim.exclusive must be a boolean or null")
+        claim_group_id = _optional_nonblank_text_or_none(
+            raw, "claim_group_id", model_name="Claim"
+        )
+        impact = _optional_nonblank_text_or_none(raw, "impact", model_name="Claim")
+        if impact not in (None, "ordinary", "high"):
+            raise ValueError("Claim.impact must be ordinary, high, or null")
+        status = _required_nonblank_text(raw, "status", model_name="Claim")
+        if status not in CLAIM_STATUSES:
+            raise ValueError(
+                "Claim.status must be active, withdrawn, or superseded"
+            )
         return cls(
-            id=text_field("id", alias="claim_id"),
-            subject=text_field("subject"),
-            predicate=text_field("predicate"),
-            value=raw.get("value"),
-            precision=raw.get("precision"),
-            status=text_field("status", default="active"),
+            id=_required_nonblank_text(raw, "id", model_name="Claim"),
+            subject=_required_nonblank_text(raw, "subject", model_name="Claim"),
+            predicate=_required_nonblank_text(raw, "predicate", model_name="Claim"),
+            value=raw["value"],
+            precision=raw["precision"],
+            status=status,
             provenance=tuple(SourceLocator.from_dict(item) for item in provenance_raw),
-            contradicts=tuple(str(item) for item in contradicts_raw),
-            note=text_field("note"),
-            claim_group_id=raw.get("claim_group_id"),
+            contradicts=tuple(contradicts_raw),
+            note=_optional_text(raw, "note", model_name="Claim"),
+            claim_group_id=claim_group_id,
             exclusive=exclusive_raw,
-            impact=raw.get("impact"),
-            evidence_ids=tuple(str(item) for item in evidence_ids_raw),
+            impact=impact,
+            evidence_ids=tuple(evidence_ids_raw),
         )
 
 

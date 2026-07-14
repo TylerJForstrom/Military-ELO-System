@@ -7,8 +7,8 @@
   "additionalProperties": true,
   "required": ["id", "name"],
   "properties": {
-    "id": {"type": "string", "minLength": 1},
-    "name": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "name": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
     "year": {"type": "integer"},
     "end_year": {"type": "integer"},
     "event_type": {"type": "string"},
@@ -23,22 +23,27 @@
     },
     "source_ids": {
       "type": "array",
-      "items": {"type": "string"}
+      "items": {"type": "string", "pattern": ".*\\S.*"}
     },
     "aliases": {
       "type": "array",
       "items": {"type": "string"},
       "uniqueItems": true
     },
-    "parent_event_id": {"type": ["string", "null"]},
+    "parent_event_id": {
+      "anyOf": [
+        {"type": "string", "pattern": ".*\\S.*"},
+        {"type": "null"}
+      ]
+    },
     "parent_event_ids": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     },
     "child_event_ids": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     },
     "date_interval": {"$ref": "#/$defs/uncertainDateInterval"},
@@ -49,12 +54,12 @@
     },
     "claim_ids": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     },
     "adjudication_ids": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     },
     "layer": {"type": "string"},
@@ -80,7 +85,7 @@
         "low": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
         "best": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
         "high": {"anyOf": [{"$ref": "#/$defs/dateValue"}, {"type": "null"}]},
-        "precision": {"type": "string", "minLength": 1}
+        "precision": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"}
       },
       "anyOf": [
         {"properties": {"low": {"not": {"type": "null"}}}},
@@ -98,33 +103,120 @@
       }
     },
     "geometry": {
-      "type": "object",
-      "required": ["type"],
-      "properties": {
-        "type": {
-          "enum": ["Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection"]
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "Point"},
+            "coordinates": {"$ref": "#/$defs/position"}
+          },
+          "additionalProperties": true
         },
-        "coordinates": {"type": "array"},
-        "geometries": {"type": "array"}
-      },
-      "additionalProperties": true
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "MultiPoint"},
+            "coordinates": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/position"}
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "LineString"},
+            "coordinates": {"$ref": "#/$defs/lineStringCoordinates"}
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "MultiLineString"},
+            "coordinates": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/lineStringCoordinates"}
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "Polygon"},
+            "coordinates": {"$ref": "#/$defs/polygonCoordinates"}
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "MultiPolygon"},
+            "coordinates": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/polygonCoordinates"}
+            }
+          },
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "required": ["type", "geometries"],
+          "properties": {
+            "type": {"const": "GeometryCollection"},
+            "geometries": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/geometry"}
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "position": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "number"}
+    },
+    "lineStringCoordinates": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/position"}
+    },
+    "linearRing": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"$ref": "#/$defs/position"}
+    },
+    "polygonCoordinates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/linearRing"}
     },
     "participationEpisode": {
       "type": "object",
       "additionalProperties": false,
       "required": ["id", "entity_id", "side", "role"],
       "properties": {
-        "id": {"type": "string", "minLength": 1},
-        "entity_id": {"type": "string", "minLength": 1},
-        "side": {"type": "string", "minLength": 1},
-        "role": {"type": "string", "minLength": 1},
+        "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "entity_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "side": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "role": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
         "entry": {"$ref": "#/$defs/uncertainDate"},
         "exit": {"$ref": "#/$defs/uncertainDate"},
         "contribution": {"type": "number", "minimum": 0, "maximum": 1},
         "objectives": {"type": "array", "items": {"type": "string"}},
         "claim_ids": {
           "type": "array",
-          "items": {"type": "string", "minLength": 1},
+          "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
           "uniqueItems": true
         }
       }
@@ -134,20 +226,20 @@
       "additionalProperties": true,
       "required": ["entity_id", "side"],
       "properties": {
-        "entity_id": {"type": "string"},
-        "side": {"type": "string"},
+        "entity_id": {"type": "string", "pattern": ".*\\S.*"},
+        "side": {"type": "string", "pattern": ".*\\S.*"},
         "role": {"type": "string"},
         "entry": {"$ref": "#/$defs/uncertainDate"},
         "exit": {"$ref": "#/$defs/uncertainDate"},
         "objectives": {"type": "array", "items": {"type": "string"}},
         "claim_ids": {
           "type": "array",
-          "items": {"type": "string", "minLength": 1},
+          "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
           "uniqueItems": true
         },
         "adjudication_ids": {
           "type": "array",
-          "items": {"type": "string", "minLength": 1},
+          "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
           "uniqueItems": true
         }
       }

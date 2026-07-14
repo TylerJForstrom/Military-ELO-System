@@ -8,9 +8,11 @@ evidence data only; the rating engine does not interpret them in this workstream
 
 from __future__ import annotations
 
+import math
 import re
-from copy import deepcopy
+from collections.abc import Mapping
 from dataclasses import dataclass, field
+from types import MappingProxyType
 from typing import Any
 
 from .claims import canonicalize_json
@@ -24,6 +26,103 @@ _DATE_PATTERN = re.compile(
     r"(?P<year>-?[0-9]{1,6})(?:-(?P<month>[0-9]{2})(?:-(?P<day>[0-9]{2}))?)?"
 )
 
+_UNCERTAIN_DATE_FIELDS = frozenset(
+    {"low", "best", "high", "precision", "earliest", "latest"}
+)
+_INTERVAL_FIELDS = frozenset(
+    {
+        "start",
+        "end",
+        "start_low",
+        "start_best",
+        "start_high",
+        "start_precision",
+        "end_low",
+        "end_best",
+        "end_high",
+        "end_precision",
+        "precision",
+    }
+)
+_INTERVAL_FLAT_FIELDS = _INTERVAL_FIELDS - {"start", "end"}
+_PARTICIPATION_EPISODE_FIELDS = frozenset(
+    {
+        "id",
+        "episode_id",
+        "entity_id",
+        "side",
+        "role",
+        "entry",
+        "entry_date",
+        "exit",
+        "exit_date",
+        "contribution",
+        "objectives",
+        "claim_ids",
+    }
+)
+
+
+def _validate_known_fields(
+    raw: Any, *, model_name: str, allowed_fields: frozenset[str]
+) -> dict[str, Any]:
+    if not isinstance(raw, dict):
+        raise TypeError(f"{model_name} must be a JSON object")
+    unknown = sorted(set(raw) - allowed_fields)
+    if unknown:
+        raise ValueError(
+            f"{model_name} contains unknown field(s): {', '.join(unknown)}"
+        )
+    return raw
+
+
+def _required_nonblank_text(
+    raw: dict[str, Any],
+    name: str,
+    *,
+    model_name: str,
+    alias: str | None = None,
+) -> str:
+    if alias is not None and name in raw and alias in raw:
+        raise ValueError(f"{model_name} cannot contain both {name} and {alias}")
+    if name in raw:
+        value = raw[name]
+    elif alias is not None and alias in raw:
+        value = raw[alias]
+    else:
+        raise ValueError(f"{model_name}.{name} is required")
+    if not isinstance(value, str):
+        raise TypeError(f"{model_name}.{name} must be a string")
+    if not value.strip():
+        raise ValueError(f"{model_name}.{name} must be non-blank")
+    return value
+
+
+def _require_nonblank_text_value(value: Any, field_name: str) -> None:
+    if not isinstance(value, str):
+        raise TypeError(f"{field_name} must be a string")
+    if not value.strip():
+        raise ValueError(f"{field_name} must be non-blank")
+
+
+def _optional_text_or_none(
+    raw: dict[str, Any], name: str, *, model_name: str
+) -> str | None:
+    value = raw.get(name)
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        raise TypeError(f"{model_name}.{name} must be a string or null")
+    return value
+
+
+def _aliased_value(
+    raw: dict[str, Any], name: str, alias: str, *, model_name: str
+) -> Any:
+    if name in raw and alias in raw:
+        raise ValueError(f"{model_name} cannot contain both {name} and {alias}")
+    return raw[name] if name in raw else raw.get(alias)
+
 
 def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
     if value == ():
@@ -33,6 +132,149 @@ def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
     if any(not isinstance(item, str) for item in value):
         raise TypeError(f"{field_name} must contain only strings")
     return tuple(value)
+
+
+def _stable_id_tuple(value: Any, field_name: str) -> tuple[str, ...]:
+    result = _string_tuple(value, field_name)
+    if any(not item.strip() for item in result):
+        raise ValueError(f"{field_name} must contain only non-blank ids")
+    return result
+
+
+def freeze_json(value: Any) -> Any:
+    """Return a detached, deeply immutable canonical JSON value.
+
+    Objects become read-only mappings and arrays become tuples.  Passing the
+    result back through ``canonicalize_json`` restores ordinary deterministic
+    JSON dictionaries and lists for serialization.
+    """
+
+    normalized = canonicalize_json(value)
+
+    def freeze(item: Any) -> Any:
+        if isinstance(item, dict):
+            return MappingProxyType(
+                {key: freeze(item[key]) for key in sorted(item)}
+            )
+        if isinstance(item, list):
+            return tuple(freeze(child) for child in item)
+        return item
+
+    return freeze(normalized)
+
+
+_GEOJSON_TYPES = frozenset(
+    {
+        "Point",
+        "MultiPoint",
+        "LineString",
+        "MultiLineString",
+        "Polygon",
+        "MultiPolygon",
+        "GeometryCollection",
+    }
+)
+
+
+def _is_finite_position_number(value: Any) -> bool:
+    return (
+        not isinstance(value, bool)
+        and isinstance(value, (int, float))
+        and math.isfinite(value)
+    )
+
+
+def _position_error(value: Any, label: str) -> str | None:
+    if not isinstance(value, (list, tuple)) or len(value) < 2:
+        return f"{label} must be a position with at least two ordinates"
+    if not all(_is_finite_position_number(item) for item in value):
+        return f"{label} ordinates must be finite non-boolean numbers"
+    return None
+
+
+def _line_string_error(value: Any, label: str) -> str | None:
+    if not isinstance(value, (list, tuple)) or len(value) < 2:
+        return f"{label} must contain at least two positions"
+    for index, position in enumerate(value):
+        error = _position_error(position, f"{label}[{index}]")
+        if error is not None:
+            return error
+    return None
+
+
+def _linear_ring_error(value: Any, label: str) -> str | None:
+    if not isinstance(value, (list, tuple)) or len(value) < 4:
+        return f"{label} must contain at least four positions"
+    for index, position in enumerate(value):
+        error = _position_error(position, f"{label}[{index}]")
+        if error is not None:
+            return error
+    if tuple(value[0]) != tuple(value[-1]):
+        return f"{label} must be closed (first and last positions must match)"
+    return None
+
+
+def _polygon_error(value: Any, label: str) -> str | None:
+    if not isinstance(value, (list, tuple)) or not value:
+        return f"{label} must contain at least one linear ring"
+    for index, ring in enumerate(value):
+        error = _linear_ring_error(ring, f"{label}[{index}]")
+        if error is not None:
+            return error
+    return None
+
+
+def geometry_validation_error(geometry: Any) -> str | None:
+    """Return the first strict GeoJSON geometry error, or ``None``.
+
+    The evidence model accepts the seven GeoJSON geometry types and validates
+    their coordinate nesting and minimum structural requirements.  Position
+    ordinates must be finite JSON numbers; booleans are never coordinates.
+    """
+
+    if not isinstance(geometry, Mapping):
+        return "Geometry must be a GeoJSON object"
+    geometry_type = geometry.get("type")
+    if geometry_type not in _GEOJSON_TYPES:
+        return f"Unknown GeoJSON geometry type {geometry_type!r}"
+    if geometry_type == "GeometryCollection":
+        geometries = geometry.get("geometries")
+        if not isinstance(geometries, (list, tuple)):
+            return "GeometryCollection requires a geometries array"
+        for index, member in enumerate(geometries):
+            error = geometry_validation_error(member)
+            if error is not None:
+                return f"GeometryCollection member {index} is invalid: {error}"
+        return None
+
+    coordinates = geometry.get("coordinates")
+    if not isinstance(coordinates, (list, tuple)):
+        return f"{geometry_type} requires a coordinates array"
+    if geometry_type == "Point":
+        return _position_error(coordinates, "Point coordinates")
+    if geometry_type == "MultiPoint":
+        for index, position in enumerate(coordinates):
+            error = _position_error(position, f"MultiPoint coordinates[{index}]")
+            if error is not None:
+                return error
+        return None
+    if geometry_type == "LineString":
+        return _line_string_error(coordinates, "LineString coordinates")
+    if geometry_type == "MultiLineString":
+        for index, line in enumerate(coordinates):
+            error = _line_string_error(
+                line, f"MultiLineString coordinates[{index}]"
+            )
+            if error is not None:
+                return error
+        return None
+    if geometry_type == "Polygon":
+        return _polygon_error(coordinates, "Polygon coordinates")
+    for index, polygon in enumerate(coordinates):
+        error = _polygon_error(polygon, f"MultiPolygon coordinates[{index}]")
+        if error is not None:
+            return error
+    return None
 
 
 def _date_key(value: DateValue | None) -> DateKey | None:
@@ -111,7 +353,9 @@ def _is_leap_year(year: int) -> bool:
     )
 
 
-def _date_validation_error(value: DateValue) -> str | None:
+def _date_validation_error(value: Any) -> str | None:
+    if isinstance(value, bool) or not isinstance(value, (str, int)):
+        return "must be a signed year, YYYY-MM, or YYYY-MM-DD"
     if isinstance(value, int):
         return "year zero is invalid under the BCE/CE convention" if value == 0 else None
     match = _DATE_PATTERN.fullmatch(value)
@@ -217,14 +461,23 @@ class UncertainDate:
 
     @classmethod
     def from_dict(cls, raw: Any) -> "UncertainDate":
+        """Parse a date, retaining ``earliest``/``latest`` only as aliases."""
+
         if isinstance(raw, (str, int)) and not isinstance(raw, bool):
             return cls.exact(raw)
-        if not isinstance(raw, dict):
-            raise TypeError("UncertainDate must be an object, signed year, or date string")
+        raw = _validate_known_fields(
+            raw,
+            model_name="UncertainDate",
+            allowed_fields=_UNCERTAIN_DATE_FIELDS,
+        )
         return cls(
-            low=raw.get("low", raw.get("earliest")),
+            low=_aliased_value(
+                raw, "low", "earliest", model_name="UncertainDate"
+            ),
             best=raw.get("best"),
-            high=raw.get("high", raw.get("latest")),
+            high=_aliased_value(
+                raw, "high", "latest", model_name="UncertainDate"
+            ),
             precision=raw.get("precision", "unknown"),
         )
 
@@ -235,6 +488,13 @@ class UncertainDateInterval:
 
     start: UncertainDate
     end: UncertainDate
+
+    def __post_init__(self) -> None:
+        for field_name in ("start", "end"):
+            if not isinstance(getattr(self, field_name), UncertainDate):
+                raise TypeError(
+                    f"UncertainDateInterval.{field_name} must be an UncertainDate"
+                )
 
     def validation_errors(self) -> list[str]:
         errors = [f"start {item}" for item in self.start.validation_errors()]
@@ -257,10 +517,23 @@ class UncertainDateInterval:
         return {"start": self.start.to_dict(), "end": self.end.to_dict()}
 
     @classmethod
-    def from_dict(cls, raw: dict[str, Any]) -> "UncertainDateInterval":
+    def from_dict(cls, raw: Any) -> "UncertainDateInterval":
+        """Parse canonical bounds or the explicit legacy flat-bound aliases."""
+
+        raw = _validate_known_fields(
+            raw,
+            model_name="UncertainDateInterval",
+            allowed_fields=_INTERVAL_FIELDS,
+        )
         if "start" in raw or "end" in raw:
             if "start" not in raw or "end" not in raw:
                 raise ValueError("date_interval requires both start and end")
+            mixed = sorted(set(raw) & _INTERVAL_FLAT_FIELDS)
+            if mixed:
+                raise ValueError(
+                    "UncertainDateInterval cannot mix start/end objects with "
+                    f"flat compatibility fields: {', '.join(mixed)}"
+                )
             return cls(
                 start=UncertainDate.from_dict(raw["start"]),
                 end=UncertainDate.from_dict(raw["end"]),
@@ -296,6 +569,16 @@ class ParticipationEpisode:
     claim_ids: tuple[str, ...] = field(default_factory=tuple)
 
     def __post_init__(self) -> None:
+        for field_name in ("id", "entity_id", "side", "role"):
+            _require_nonblank_text_value(
+                getattr(self, field_name), f"ParticipationEpisode.{field_name}"
+            )
+        for field_name in ("entry", "exit"):
+            value = getattr(self, field_name)
+            if value is not None and not isinstance(value, UncertainDate):
+                raise TypeError(
+                    f"ParticipationEpisode.{field_name} must be an UncertainDate or null"
+                )
         if self.contribution is not None and (
             isinstance(self.contribution, bool)
             or not isinstance(self.contribution, (int, float))
@@ -311,7 +594,7 @@ class ParticipationEpisode:
             "claim_ids",
             tuple(
                 sorted(
-                    set(_string_tuple(self.claim_ids, "ParticipationEpisode.claim_ids"))
+                    set(_stable_id_tuple(self.claim_ids, "ParticipationEpisode.claim_ids"))
                 )
             ),
         )
@@ -363,14 +646,41 @@ class ParticipationEpisode:
         return errors
 
     @classmethod
-    def from_dict(cls, raw: dict[str, Any]) -> "ParticipationEpisode":
-        entry_raw = raw.get("entry", raw.get("entry_date"))
-        exit_raw = raw.get("exit", raw.get("exit_date"))
+    def from_dict(cls, raw: Any) -> "ParticipationEpisode":
+        """Parse one episode, retaining only documented compatibility aliases.
+
+        ``episode_id``, ``entry_date``, and ``exit_date`` remain accepted as
+        legacy aliases.  All other unknown fields fail closed, matching the
+        nested event schema's ``additionalProperties: false`` contract.
+        """
+
+        raw = _validate_known_fields(
+            raw,
+            model_name="ParticipationEpisode",
+            allowed_fields=_PARTICIPATION_EPISODE_FIELDS,
+        )
+        entry_raw = _aliased_value(
+            raw, "entry", "entry_date", model_name="ParticipationEpisode"
+        )
+        exit_raw = _aliased_value(
+            raw, "exit", "exit_date", model_name="ParticipationEpisode"
+        )
         return cls(
-            id=str(raw.get("id", raw.get("episode_id", ""))),
-            entity_id=str(raw.get("entity_id", "")),
-            side=str(raw.get("side", "")),
-            role=str(raw.get("role", "unknown")),
+            id=_required_nonblank_text(
+                raw,
+                "id",
+                alias="episode_id",
+                model_name="ParticipationEpisode",
+            ),
+            entity_id=_required_nonblank_text(
+                raw, "entity_id", model_name="ParticipationEpisode"
+            ),
+            side=_required_nonblank_text(
+                raw, "side", model_name="ParticipationEpisode"
+            ),
+            role=_required_nonblank_text(
+                raw, "role", model_name="ParticipationEpisode"
+            ),
             entry=UncertainDate.from_dict(entry_raw) if entry_raw is not None else None,
             exit=UncertainDate.from_dict(exit_raw) if exit_raw is not None else None,
             contribution=(
@@ -382,7 +692,7 @@ class ParticipationEpisode:
                 raw["objectives"] if "objectives" in raw else [],
                 "ParticipationEpisode.objectives",
             ),
-            claim_ids=_string_tuple(
+            claim_ids=_stable_id_tuple(
                 raw["claim_ids"] if "claim_ids" in raw else [],
                 "ParticipationEpisode.claim_ids",
             ),
@@ -403,7 +713,7 @@ class CanonicalEvent:
     parent_event_ids: tuple[str, ...] = field(default_factory=tuple)
     child_event_ids: tuple[str, ...] = field(default_factory=tuple)
     date_interval: UncertainDateInterval | None = None
-    geometry: dict[str, Any] | None = None
+    geometry: Mapping[str, Any] | None = None
     participation_episodes: tuple[ParticipationEpisode, ...] = field(default_factory=tuple)
     claim_ids: tuple[str, ...] = field(default_factory=tuple)
     adjudication_ids: tuple[str, ...] = field(default_factory=tuple)
@@ -414,6 +724,22 @@ class CanonicalEvent:
     status: str = "proposed"
 
     def __post_init__(self) -> None:
+        for field_name in ("id", "name", "status"):
+            _require_nonblank_text_value(
+                getattr(self, field_name), f"CanonicalEvent.{field_name}"
+            )
+        for field_name in ("event_type", "layer", "domain", "region"):
+            value = getattr(self, field_name)
+            if value is not None and not isinstance(value, str):
+                raise TypeError(
+                    f"CanonicalEvent.{field_name} must be a string or null"
+                )
+        if self.date_interval is not None and not isinstance(
+            self.date_interval, UncertainDateInterval
+        ):
+            raise TypeError(
+                "CanonicalEvent.date_interval must be an UncertainDateInterval or null"
+            )
         object.__setattr__(
             self,
             "aliases",
@@ -425,7 +751,7 @@ class CanonicalEvent:
             tuple(
                 sorted(
                     set(
-                        _string_tuple(
+                        _stable_id_tuple(
                             self.parent_event_ids, "CanonicalEvent.parent_event_ids"
                         )
                     )
@@ -438,7 +764,7 @@ class CanonicalEvent:
             tuple(
                 sorted(
                     set(
-                        _string_tuple(
+                        _stable_id_tuple(
                             self.child_event_ids, "CanonicalEvent.child_event_ids"
                         )
                     )
@@ -447,11 +773,18 @@ class CanonicalEvent:
         )
         if not isinstance(self.participation_episodes, (list, tuple)):
             raise TypeError("CanonicalEvent.participation_episodes must be an array")
+        if any(
+            not isinstance(item, ParticipationEpisode)
+            for item in self.participation_episodes
+        ):
+            raise TypeError(
+                "CanonicalEvent.participation_episodes must contain ParticipationEpisode objects"
+            )
         object.__setattr__(self, "participation_episodes", tuple(self.participation_episodes))
         object.__setattr__(
             self,
             "claim_ids",
-            tuple(sorted(set(_string_tuple(self.claim_ids, "CanonicalEvent.claim_ids")))),
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "CanonicalEvent.claim_ids")))),
         )
         object.__setattr__(
             self,
@@ -459,7 +792,7 @@ class CanonicalEvent:
             tuple(
                 sorted(
                     set(
-                        _string_tuple(
+                        _stable_id_tuple(
                             self.adjudication_ids, "CanonicalEvent.adjudication_ids"
                         )
                     )
@@ -467,8 +800,8 @@ class CanonicalEvent:
             ),
         )
         if self.geometry is not None:
-            geometry = canonicalize_json(deepcopy(self.geometry))
-            if not isinstance(geometry, dict):
+            geometry = freeze_json(self.geometry)
+            if not isinstance(geometry, Mapping):
                 raise TypeError("Canonical event geometry must be a GeoJSON object")
             object.__setattr__(self, "geometry", geometry)
 
@@ -497,13 +830,19 @@ class CanonicalEvent:
         return result
 
     @classmethod
-    def from_dict(cls, raw: dict[str, Any]) -> "CanonicalEvent":
+    def from_dict(cls, raw: Any) -> "CanonicalEvent":
+        if not isinstance(raw, dict):
+            raise TypeError("CanonicalEvent must be a JSON object")
         parent_raw = raw["parent_event_ids"] if "parent_event_ids" in raw else []
         if isinstance(parent_raw, (str, bytes)) or not isinstance(parent_raw, (list, tuple)):
             raise TypeError("CanonicalEvent.parent_event_ids must be an array of strings")
         if raw.get("parent_event_id") is not None:
             if not isinstance(raw["parent_event_id"], str):
                 raise TypeError("CanonicalEvent.parent_event_id must be a string or null")
+            if not raw["parent_event_id"].strip():
+                raise ValueError(
+                    "CanonicalEvent.parent_event_id must be non-blank when supplied"
+                )
             parent_raw = [*parent_raw, raw["parent_event_id"]]
         child_raw = raw["child_event_ids"] if "child_event_ids" in raw else []
         if isinstance(child_raw, (str, bytes)) or not isinstance(child_raw, (list, tuple)):
@@ -513,16 +852,23 @@ class CanonicalEvent:
         )
         if not isinstance(episodes_raw, (list, tuple)):
             raise TypeError("CanonicalEvent.participation_episodes must be an array")
+        status = raw["status"] if "status" in raw else "proposed"
+        if not isinstance(status, str):
+            raise TypeError("CanonicalEvent.status must be a string")
         return cls(
-            id=str(raw.get("id", raw.get("event_id", ""))),
-            name=str(raw.get("name", raw.get("canonical_name", ""))),
+            id=_required_nonblank_text(
+                raw, "id", alias="event_id", model_name="CanonicalEvent"
+            ),
+            name=_required_nonblank_text(
+                raw, "name", alias="canonical_name", model_name="CanonicalEvent"
+            ),
             aliases=_string_tuple(
                 raw["aliases"] if "aliases" in raw else [], "CanonicalEvent.aliases"
             ),
-            parent_event_ids=_string_tuple(
+            parent_event_ids=_stable_id_tuple(
                 parent_raw, "CanonicalEvent.parent_event_ids"
             ),
-            child_event_ids=_string_tuple(
+            child_event_ids=_stable_id_tuple(
                 child_raw, "CanonicalEvent.child_event_ids"
             ),
             date_interval=(
@@ -535,17 +881,25 @@ class CanonicalEvent:
                 ParticipationEpisode.from_dict(item)
                 for item in episodes_raw
             ),
-            claim_ids=_string_tuple(
+            claim_ids=_stable_id_tuple(
                 raw["claim_ids"] if "claim_ids" in raw else [],
                 "CanonicalEvent.claim_ids",
             ),
-            adjudication_ids=_string_tuple(
+            adjudication_ids=_stable_id_tuple(
                 raw["adjudication_ids"] if "adjudication_ids" in raw else [],
                 "CanonicalEvent.adjudication_ids",
             ),
-            event_type=str(raw["event_type"]) if raw.get("event_type") is not None else None,
-            layer=str(raw["layer"]) if raw.get("layer") is not None else None,
-            domain=str(raw["domain"]) if raw.get("domain") is not None else None,
-            region=str(raw["region"]) if raw.get("region") is not None else None,
-            status=str(raw.get("status", "proposed")),
+            event_type=_optional_text_or_none(
+                raw, "event_type", model_name="CanonicalEvent"
+            ),
+            layer=_optional_text_or_none(
+                raw, "layer", model_name="CanonicalEvent"
+            ),
+            domain=_optional_text_or_none(
+                raw, "domain", model_name="CanonicalEvent"
+            ),
+            region=_optional_text_or_none(
+                raw, "region", model_name="CanonicalEvent"
+            ),
+            status=status,
         )

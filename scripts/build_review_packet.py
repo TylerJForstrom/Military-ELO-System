@@ -67,9 +67,11 @@ def _selection_ids(path: str | Path) -> list[str]:
     ids: list[str] = []
     for record in records:
         value = record.get("id", record.get("candidate_id", record.get("event_id")))
-        if value in (None, ""):
-            raise ValueError(f"Selection record in {path} has no stable event id")
-        ids.append(str(value))
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(
+                f"Selection record in {path} requires a non-blank string event id"
+            )
+        ids.append(value)
     return ids
 
 

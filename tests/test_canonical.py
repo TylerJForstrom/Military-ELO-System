@@ -1,6 +1,7 @@
 import json
 import re
 import unittest
+from dataclasses import replace
 from pathlib import Path
 
 from military_elo.canonical import (
@@ -9,7 +10,9 @@ from military_elo.canonical import (
     UncertainDate,
     UncertainDateInterval,
     date_bounds,
+    date_sort_key,
 )
+from military_elo.models import Entity, Event, Participant
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +65,91 @@ class UncertainDateTests(unittest.TestCase):
         )
         self.assertTrue(any("start" in item for item in interval.validation_errors()))
 
+    def test_interval_constructor_requires_uncertain_date_endpoints(self):
+        with self.assertRaises(TypeError):
+            UncertainDateInterval(
+                start={"best": 1914},
+                end=UncertainDate.exact(1915),
+            )
+        with self.assertRaises(TypeError):
+            UncertainDateInterval(
+                start=UncertainDate.exact(1914),
+                end=1915,
+            )
+
+    def test_boolean_dates_never_alias_integer_years(self):
+        self.assertIsNone(date_bounds(True))
+        with self.assertRaises(TypeError):
+            UncertainDate(best=True, precision="year")
+        with self.assertRaises(TypeError):
+            UncertainDateInterval.from_dict(
+                {
+                    "start": {
+                        "low": None,
+                        "best": True,
+                        "high": None,
+                        "precision": "year",
+                    },
+                    "end": UncertainDate.exact(2, "year").to_dict(),
+                }
+            )
+
+    def test_date_helpers_fail_closed_for_arbitrary_runtime_types(self):
+        for malformed in (1.5, {}, [], object()):
+            with self.subTest(value=type(malformed).__name__):
+                self.assertIsNone(date_bounds(malformed))
+                self.assertIsNone(date_sort_key(malformed))
+
+    def test_nested_date_parsers_reject_unknown_keys_but_keep_bounded_aliases(self):
+        with self.assertRaisesRegex(ValueError, "unknown field"):
+            UncertainDate.from_dict(
+                {
+                    "low": 1914,
+                    "best": 1914,
+                    "high": 1914,
+                    "precision": "year",
+                    "calendar_guess": "Julian",
+                }
+            )
+        with self.assertRaisesRegex(ValueError, "unknown field"):
+            UncertainDateInterval.from_dict(
+                {
+                    "start": UncertainDate.exact(1914, "year").to_dict(),
+                    "end": UncertainDate.exact(1915, "year").to_dict(),
+                    "end_guess": 1916,
+                }
+            )
+
+        aliased = UncertainDate.from_dict(
+            {
+                "earliest": 1914,
+                "best": 1915,
+                "latest": 1916,
+                "precision": "range",
+            }
+        )
+        self.assertEqual((aliased.low, aliased.high), (1914, 1916))
+        flat_interval = UncertainDateInterval.from_dict(
+            {
+                "start_low": 1914,
+                "start_best": 1914,
+                "start_high": 1915,
+                "end_low": 1915,
+                "end_best": 1916,
+                "end_high": 1916,
+                "precision": "year",
+            }
+        )
+        self.assertEqual(flat_interval.start.low, 1914)
+        with self.assertRaisesRegex(ValueError, "cannot mix"):
+            UncertainDateInterval.from_dict(
+                {
+                    "start": UncertainDate.exact(1914).to_dict(),
+                    "end": UncertainDate.exact(1915).to_dict(),
+                    "start_low": 1914,
+                }
+            )
+
 
 class ParticipationEpisodeTests(unittest.TestCase):
     def test_unknown_contribution_is_not_fabricated(self):
@@ -105,6 +193,95 @@ class ParticipationEpisodeTests(unittest.TestCase):
                     "side": "a",
                     "role": "primary",
                     "contribution": "0.5",
+                }
+            )
+
+    def test_parser_requires_nonblank_typed_identity_fields(self):
+        base = {
+            "id": "episode-1",
+            "entity_id": "entity-1",
+            "side": "a",
+            "role": "primary",
+        }
+        for field_name in ("id", "entity_id", "side", "role"):
+            with self.subTest(field=field_name, case="missing"):
+                malformed = dict(base)
+                malformed.pop(field_name)
+                with self.assertRaises(ValueError):
+                    ParticipationEpisode.from_dict(malformed)
+            with self.subTest(field=field_name, case="blank"):
+                with self.assertRaises(ValueError):
+                    ParticipationEpisode.from_dict({**base, field_name: " \t"})
+            with self.subTest(field=field_name, case="type"):
+                with self.assertRaises(TypeError):
+                    ParticipationEpisode.from_dict({**base, field_name: 7})
+
+        with self.assertRaisesRegex(ValueError, "unknown field"):
+            ParticipationEpisode.from_dict({**base, "objective": "hold"})
+        with self.assertRaises(ValueError):
+            ParticipationEpisode.from_dict({**base, "claim_ids": [" "]})
+
+    def test_parser_keeps_only_explicit_episode_aliases(self):
+        episode = ParticipationEpisode.from_dict(
+            {
+                "episode_id": "episode-legacy",
+                "entity_id": "entity-1",
+                "side": "a",
+                "role": "primary",
+                "entry_date": 1914,
+                "exit_date": 1915,
+            }
+        )
+        self.assertEqual(episode.id, "episode-legacy")
+        self.assertEqual(episode.entry.best, 1914)
+        with self.assertRaisesRegex(ValueError, "both id and episode_id"):
+            ParticipationEpisode.from_dict(
+                {
+                    "id": "episode-1",
+                    "episode_id": "episode-legacy",
+                    "entity_id": "entity-1",
+                    "side": "a",
+                    "role": "primary",
+                }
+            )
+
+    def test_direct_constructor_enforces_required_text_and_date_types(self):
+        for field_name in ("id", "entity_id", "side", "role"):
+            values = {
+                "id": "episode-1",
+                "entity_id": "entity-1",
+                "side": "a",
+                "role": "primary",
+            }
+            with self.subTest(field=field_name, case="blank"), self.assertRaises(
+                ValueError
+            ):
+                ParticipationEpisode(**{**values, field_name: " "})
+            with self.subTest(field=field_name, case="type"), self.assertRaises(
+                TypeError
+            ):
+                ParticipationEpisode(**{**values, field_name: 7})
+        with self.assertRaises(TypeError):
+            ParticipationEpisode("episode-1", "entity-1", "a", "primary", entry=1914)
+        with self.assertRaises(TypeError):
+            ParticipationEpisode("episode-1", "entity-1", "a", "primary", exit={})
+        with self.assertRaises(ValueError):
+            ParticipationEpisode(
+                "episode-1",
+                "entity-1",
+                "a",
+                "primary",
+                claim_ids=(" ",),
+            )
+        with self.assertRaisesRegex(ValueError, "both entry and entry_date"):
+            ParticipationEpisode.from_dict(
+                {
+                    "id": "episode-1",
+                    "entity_id": "entity-1",
+                    "side": "a",
+                    "role": "primary",
+                    "entry": 1914,
+                    "entry_date": 1914,
                 }
             )
 
@@ -176,6 +353,197 @@ class CanonicalEventTests(unittest.TestCase):
                 },
             )
 
+    def test_parser_rejects_type_laundering_and_blank_stable_references(self):
+        base = {"id": "event-1", "name": "Event"}
+        for field_name in ("id", "name"):
+            with self.subTest(field=field_name, case="missing"):
+                malformed = dict(base)
+                malformed.pop(field_name)
+                with self.assertRaises(ValueError):
+                    CanonicalEvent.from_dict(malformed)
+            with self.subTest(field=field_name, case="blank"):
+                with self.assertRaises(ValueError):
+                    CanonicalEvent.from_dict({**base, field_name: " \n"})
+            with self.subTest(field=field_name, case="type"):
+                with self.assertRaises(TypeError):
+                    CanonicalEvent.from_dict({**base, field_name: 7})
+
+        for field_name in ("event_type", "layer", "domain", "region"):
+            with self.subTest(optional=field_name), self.assertRaises(TypeError):
+                CanonicalEvent.from_dict({**base, field_name: 7})
+        with self.assertRaises(TypeError):
+            CanonicalEvent.from_dict({**base, "status": None})
+        for field_name in (
+            "parent_event_ids",
+            "child_event_ids",
+            "claim_ids",
+            "adjudication_ids",
+        ):
+            with self.subTest(reference=field_name), self.assertRaises(ValueError):
+                CanonicalEvent.from_dict({**base, field_name: [" "]})
+        with self.assertRaises(ValueError):
+            CanonicalEvent.from_dict({**base, "parent_event_id": " "})
+
+        compatible = CanonicalEvent.from_dict(
+            {
+                "event_id": "event-legacy",
+                "canonical_name": "Legacy alias",
+                "future_compatibility_field": {"kept_by_source": True},
+            }
+        )
+        self.assertEqual((compatible.id, compatible.name), ("event-legacy", "Legacy alias"))
+        for canonical, alias in (("id", "event_id"), ("name", "canonical_name")):
+            with self.subTest(alias=alias), self.assertRaisesRegex(
+                ValueError, f"both {canonical} and {alias}"
+            ):
+                CanonicalEvent.from_dict({**base, alias: f"duplicate-{alias}"})
+
+    def test_direct_constructor_enforces_event_component_types(self):
+        for field_name in ("id", "name", "status"):
+            values = {"id": "event-1", "name": "Event", "status": "proposed"}
+            with self.subTest(field=field_name, case="blank"), self.assertRaises(
+                ValueError
+            ):
+                CanonicalEvent(**{**values, field_name: " "})
+            with self.subTest(field=field_name, case="type"), self.assertRaises(
+                TypeError
+            ):
+                CanonicalEvent(**{**values, field_name: 7})
+        for field_name in ("event_type", "layer", "domain", "region"):
+            with self.subTest(optional=field_name), self.assertRaises(TypeError):
+                CanonicalEvent("event-1", "Event", **{field_name: 7})
+        with self.assertRaises(TypeError):
+            CanonicalEvent("event-1", "Event", date_interval={})
+        with self.assertRaises(TypeError):
+            CanonicalEvent("event-1", "Event", participation_episodes=({},))
+        for field_name in (
+            "parent_event_ids",
+            "child_event_ids",
+            "claim_ids",
+            "adjudication_ids",
+        ):
+            with self.subTest(reference=field_name), self.assertRaises(ValueError):
+                CanonicalEvent("event-1", "Event", **{field_name: (" ",)})
+
+    def test_canonical_geometry_is_detached_deeply_frozen_and_thawed(self):
+        geometry = {
+            "type": "GeometryCollection",
+            "geometries": [
+                {"type": "Point", "coordinates": [6.1, 50.7]},
+            ],
+            "properties": {"labels": ["original"]},
+        }
+        event = CanonicalEvent("event-1", "Event", geometry=geometry)
+        expected = event.to_dict()["geometry"]
+
+        geometry["geometries"][0]["coordinates"][0] = 99.0
+        geometry["properties"]["labels"][0] = "mutated"
+        self.assertEqual(event.to_dict()["geometry"], expected)
+        with self.assertRaises(TypeError):
+            event.geometry["type"] = "Point"
+        with self.assertRaises(TypeError):
+            event.geometry["properties"]["labels"][0] = "mutated"
+
+        exported = event.to_dict()
+        self.assertIsInstance(exported["geometry"], dict)
+        self.assertIsInstance(exported["geometry"]["geometries"], list)
+        exported["geometry"]["properties"]["labels"][0] = "output mutation"
+        self.assertEqual(event.to_dict()["geometry"], expected)
+        self.assertEqual(CanonicalEvent.from_dict(event.to_dict()), event)
+
+    def test_legacy_event_geometry_is_detached_deeply_frozen_and_thawed(self):
+        geometry = {
+            "type": "Point",
+            "coordinates": [10.0, 20.0],
+            "properties": {"labels": ["original"]},
+        }
+        raw = {
+            "id": "event-legacy",
+            "name": "Legacy event",
+            "year": 1914,
+            "event_type": "engagement",
+            "participants": [
+                {"entity_id": "a", "side": "one"},
+                {"entity_id": "b", "side": "two"},
+            ],
+            "source_ids": [],
+            "geometry": geometry,
+        }
+        event = Event.from_dict(raw)
+        expected = event.to_dict()["geometry"]
+        geometry["coordinates"][0] = 99.0
+        geometry["properties"]["labels"][0] = "mutated"
+        self.assertEqual(event.to_dict()["geometry"], expected)
+        with self.assertRaises(TypeError):
+            event.geometry["properties"]["labels"][0] = "mutated"
+        exported = event.to_dict()
+        exported["geometry"]["coordinates"][0] = 88.0
+        self.assertEqual(event.to_dict()["geometry"], expected)
+        self.assertEqual(Event.from_dict(event.to_dict()), event)
+
+    def test_legacy_direct_constructors_guard_new_evidence_components(self):
+        participant = Participant("entity-a", "a")
+        with self.assertRaises(TypeError):
+            replace(participant, entry=1914)
+        with self.assertRaises(TypeError):
+            replace(participant, exit={})
+        for field_name in ("claim_ids", "adjudication_ids"):
+            with self.subTest(participant_ref=field_name), self.assertRaises(ValueError):
+                replace(participant, **{field_name: (" ",)})
+
+        entity = Entity("entity-a", "A", "state", 1900)
+        for field_name in ("claim_ids", "adjudication_ids"):
+            with self.subTest(entity_ref=field_name), self.assertRaises(ValueError):
+                replace(entity, **{field_name: (" ",)})
+
+        event = Event.from_dict(
+            {
+                "id": "event-legacy",
+                "name": "Legacy event",
+                "year": 1914,
+                "event_type": "engagement",
+                "participants": [
+                    {"entity_id": "a", "side": "one"},
+                    {"entity_id": "b", "side": "two"},
+                ],
+                "source_ids": [],
+            }
+        )
+        with self.assertRaises(TypeError):
+            replace(event, date_interval={})
+        with self.assertRaises(TypeError):
+            replace(event, participation_episodes=({},))
+        for invalid_parent in (123, " ", [], {}):
+            with self.subTest(parent_event_id=invalid_parent), self.assertRaises(
+                (TypeError, ValueError)
+            ):
+                replace(event, parent_event_id=invalid_parent)
+            with self.subTest(parsed_parent=invalid_parent), self.assertRaises(
+                (TypeError, ValueError)
+            ):
+                Event.from_dict({**event.to_dict(), "parent_event_id": invalid_parent})
+        for field_name in (
+            "parent_event_ids",
+            "child_event_ids",
+            "claim_ids",
+            "adjudication_ids",
+        ):
+            with self.subTest(event_ref=field_name), self.assertRaises(ValueError):
+                replace(event, **{field_name: (" ",)})
+
+        for canonical, alias in (("entry", "entry_date"), ("exit", "exit_date")):
+            with self.subTest(alias=alias), self.assertRaisesRegex(
+                ValueError, f"both {canonical} and {alias}"
+            ):
+                Participant.from_dict(
+                    {
+                        "entity_id": "entity-a",
+                        "side": "a",
+                        canonical: 1914,
+                        alias: 1914,
+                    }
+                )
+
     def test_event_schema_is_compatibility_oriented(self):
         schema = json.loads((ROOT / "schemas" / "event.schema.json").read_text(encoding="utf-8"))
         self.assertTrue(schema["additionalProperties"])
@@ -185,6 +553,25 @@ class CanonicalEventTests(unittest.TestCase):
         pattern = re.compile(schema["$defs"]["dateValue"]["oneOf"][1]["pattern"])
         for zero in ("0", "00", "0000", "-0", "-0000-01"):
             self.assertIsNone(pattern.fullmatch(zero))
+        nonblank_definitions = [
+            schema["properties"]["id"],
+            schema["properties"]["name"],
+            schema["properties"]["source_ids"]["items"],
+            schema["properties"]["parent_event_id"]["anyOf"][0],
+            schema["properties"]["parent_event_ids"]["items"],
+            schema["properties"]["child_event_ids"]["items"],
+            schema["properties"]["claim_ids"]["items"],
+            schema["properties"]["adjudication_ids"]["items"],
+            schema["$defs"]["participationEpisode"]["properties"]["id"],
+            schema["$defs"]["participationEpisode"]["properties"]["entity_id"],
+            schema["$defs"]["participationEpisode"]["properties"]["side"],
+            schema["$defs"]["participationEpisode"]["properties"]["role"],
+            schema["$defs"]["participationEpisode"]["properties"]["claim_ids"]["items"],
+            schema["$defs"]["legacyParticipant"]["properties"]["entity_id"],
+            schema["$defs"]["legacyParticipant"]["properties"]["side"],
+        ]
+        for definition in nonblank_definitions:
+            self.assertEqual(definition["pattern"], r".*\S.*")
 
 
 if __name__ == "__main__":

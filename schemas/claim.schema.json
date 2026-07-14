@@ -15,9 +15,9 @@
     "provenance"
   ],
   "properties": {
-    "id": {"type": "string", "minLength": 1},
-    "subject": {"type": "string", "minLength": 1},
-    "predicate": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "subject": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "predicate": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
     "value": {},
     "precision": {},
     "status": {
@@ -30,11 +30,15 @@
     },
     "contradicts": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     },
     "note": {"type": "string"},
-    "claim_group_id": {"type": ["string", "null"], "minLength": 1},
+    "claim_group_id": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
     "exclusive": {
       "type": ["boolean", "null"],
       "description": "True marks a mutually exclusive claim group; competing members remain separate assertions."
@@ -42,7 +46,7 @@
     "impact": {"type": ["string", "null"], "enum": ["ordinary", "high", null]},
     "evidence_ids": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
       "uniqueItems": true
     }
   },
@@ -96,11 +100,15 @@
       "additionalProperties": false,
       "required": ["id", "claim_id", "locator", "relationship", "source_family"],
       "properties": {
-        "id": {"type": "string", "minLength": 1},
-        "claim_id": {"type": "string", "minLength": 1},
+        "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "claim_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
         "locator": {"$ref": "#/$defs/sourceLocator"},
         "relationship": {"enum": ["supports", "contradicts", "context"]},
-        "source_family": {"type": "string", "minLength": 1},
+        "source_family": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
         "note": {"type": "string"}
       }
     }

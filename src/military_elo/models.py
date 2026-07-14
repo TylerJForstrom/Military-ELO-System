@@ -1,9 +1,15 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any
 
-from .canonical import ParticipationEpisode, UncertainDate, UncertainDateInterval
+from .canonical import (
+    ParticipationEpisode,
+    UncertainDate,
+    UncertainDateInterval,
+    freeze_json,
+)
 from .claims import canonicalize_json
 
 
@@ -42,6 +48,13 @@ def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
     return tuple(value)
 
 
+def _stable_id_tuple(value: Any, field_name: str) -> tuple[str, ...]:
+    result = _string_tuple(value, field_name)
+    if any(not item.strip() for item in result):
+        raise ValueError(f"{field_name} must contain only non-blank ids")
+    return result
+
+
 @dataclass(frozen=True)
 class Entity:
     id: str
@@ -61,14 +74,14 @@ class Entity:
         object.__setattr__(
             self,
             "claim_ids",
-            tuple(sorted(set(_string_tuple(self.claim_ids, "Entity.claim_ids")))),
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Entity.claim_ids")))),
         )
         object.__setattr__(
             self,
             "adjudication_ids",
             tuple(
                 sorted(
-                    set(_string_tuple(self.adjudication_ids, "Entity.adjudication_ids"))
+                    set(_stable_id_tuple(self.adjudication_ids, "Entity.adjudication_ids"))
                 )
             ),
         )
@@ -86,8 +99,11 @@ class Entity:
             predecessors=tuple(raw.get("predecessors", [])),
             continuity_note=str(raw.get("continuity_note", "")),
             source_ids=tuple(raw.get("source_ids", [])),
-            claim_ids=_string_tuple(raw["claim_ids"] if "claim_ids" in raw else [], "Entity.claim_ids"),
-            adjudication_ids=_string_tuple(
+            claim_ids=_stable_id_tuple(
+                raw["claim_ids"] if "claim_ids" in raw else [],
+                "Entity.claim_ids",
+            ),
+            adjudication_ids=_stable_id_tuple(
                 raw["adjudication_ids"] if "adjudication_ids" in raw else [],
                 "Entity.adjudication_ids",
             ),
@@ -169,6 +185,12 @@ class Participant:
     adjudication_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
+        for field_name in ("entry", "exit"):
+            value = getattr(self, field_name)
+            if value is not None and not isinstance(value, UncertainDate):
+                raise TypeError(
+                    f"Participant.{field_name} must be an UncertainDate or null"
+                )
         object.__setattr__(
             self,
             "objectives",
@@ -177,7 +199,7 @@ class Participant:
         object.__setattr__(
             self,
             "claim_ids",
-            tuple(sorted(set(_string_tuple(self.claim_ids, "Participant.claim_ids")))),
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Participant.claim_ids")))),
         )
         object.__setattr__(
             self,
@@ -185,7 +207,7 @@ class Participant:
             tuple(
                 sorted(
                     set(
-                        _string_tuple(
+                        _stable_id_tuple(
                             self.adjudication_ids, "Participant.adjudication_ids"
                         )
                     )
@@ -195,6 +217,10 @@ class Participant:
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Participant":
+        if "entry" in raw and "entry_date" in raw:
+            raise ValueError("Participant cannot contain both entry and entry_date")
+        if "exit" in raw and "exit_date" in raw:
+            raise ValueError("Participant cannot contain both exit and exit_date")
         entry_raw = raw.get("entry", raw.get("entry_date"))
         exit_raw = raw.get("exit", raw.get("exit_date"))
         return cls(
@@ -225,11 +251,11 @@ class Participant:
                 raw["objectives"] if "objectives" in raw else [],
                 "Participant.objectives",
             ),
-            claim_ids=_string_tuple(
+            claim_ids=_stable_id_tuple(
                 raw["claim_ids"] if "claim_ids" in raw else [],
                 "Participant.claim_ids",
             ),
-            adjudication_ids=_string_tuple(
+            adjudication_ids=_stable_id_tuple(
                 raw["adjudication_ids"] if "adjudication_ids" in raw else [],
                 "Participant.adjudication_ids",
             ),
@@ -290,12 +316,25 @@ class Event:
     parent_event_ids: tuple[str, ...] = ()
     child_event_ids: tuple[str, ...] = ()
     date_interval: UncertainDateInterval | None = None
-    geometry: dict[str, Any] | None = None
+    geometry: Mapping[str, Any] | None = None
     participation_episodes: tuple[ParticipationEpisode, ...] = ()
     claim_ids: tuple[str, ...] = ()
     adjudication_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
+        if self.parent_event_id is not None:
+            if not isinstance(self.parent_event_id, str):
+                raise TypeError("Event.parent_event_id must be a string or null")
+            if not self.parent_event_id.strip():
+                raise ValueError(
+                    "Event.parent_event_id must be non-blank when supplied"
+                )
+        if self.date_interval is not None and not isinstance(
+            self.date_interval, UncertainDateInterval
+        ):
+            raise TypeError(
+                "Event.date_interval must be an UncertainDateInterval or null"
+            )
         object.__setattr__(
             self,
             "aliases",
@@ -306,7 +345,7 @@ class Event:
             "parent_event_ids",
             tuple(
                 sorted(
-                    set(_string_tuple(self.parent_event_ids, "Event.parent_event_ids"))
+                    set(_stable_id_tuple(self.parent_event_ids, "Event.parent_event_ids"))
                 )
             ),
         )
@@ -315,30 +354,37 @@ class Event:
             "child_event_ids",
             tuple(
                 sorted(
-                    set(_string_tuple(self.child_event_ids, "Event.child_event_ids"))
+                    set(_stable_id_tuple(self.child_event_ids, "Event.child_event_ids"))
                 )
             ),
         )
         if not isinstance(self.participation_episodes, (list, tuple)):
             raise TypeError("Event.participation_episodes must be an array")
+        if any(
+            not isinstance(item, ParticipationEpisode)
+            for item in self.participation_episodes
+        ):
+            raise TypeError(
+                "Event.participation_episodes must contain ParticipationEpisode objects"
+            )
         object.__setattr__(self, "participation_episodes", tuple(self.participation_episodes))
         object.__setattr__(
             self,
             "claim_ids",
-            tuple(sorted(set(_string_tuple(self.claim_ids, "Event.claim_ids")))),
+            tuple(sorted(set(_stable_id_tuple(self.claim_ids, "Event.claim_ids")))),
         )
         object.__setattr__(
             self,
             "adjudication_ids",
             tuple(
                 sorted(
-                    set(_string_tuple(self.adjudication_ids, "Event.adjudication_ids"))
+                    set(_stable_id_tuple(self.adjudication_ids, "Event.adjudication_ids"))
                 )
             ),
         )
         if self.geometry is not None:
-            geometry = canonicalize_json(self.geometry)
-            if not isinstance(geometry, dict):
+            geometry = freeze_json(self.geometry)
+            if not isinstance(geometry, Mapping):
                 raise TypeError("Event geometry must be a GeoJSON object")
             object.__setattr__(self, "geometry", geometry)
 
@@ -390,11 +436,11 @@ class Event:
             aliases=_string_tuple(
                 raw["aliases"] if "aliases" in raw else [], "Event.aliases"
             ),
-            parent_event_ids=_string_tuple(
+            parent_event_ids=_stable_id_tuple(
                 raw["parent_event_ids"] if "parent_event_ids" in raw else [],
                 "Event.parent_event_ids",
             ),
-            child_event_ids=_string_tuple(
+            child_event_ids=_stable_id_tuple(
                 raw["child_event_ids"] if "child_event_ids" in raw else [],
                 "Event.child_event_ids",
             ),
@@ -403,19 +449,15 @@ class Event:
                 if raw.get("date_interval") is not None
                 else None
             ),
-            geometry=(
-                canonicalize_json(raw["geometry"])
-                if raw.get("geometry") is not None
-                else None
-            ),
+            geometry=raw["geometry"] if raw.get("geometry") is not None else None,
             participation_episodes=tuple(
                 ParticipationEpisode.from_dict(item)
                 for item in episodes_raw
             ),
-            claim_ids=_string_tuple(
+            claim_ids=_stable_id_tuple(
                 raw["claim_ids"] if "claim_ids" in raw else [], "Event.claim_ids"
             ),
-            adjudication_ids=_string_tuple(
+            adjudication_ids=_stable_id_tuple(
                 raw["adjudication_ids"] if "adjudication_ids" in raw else [],
                 "Event.adjudication_ids",
             ),
