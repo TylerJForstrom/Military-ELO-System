@@ -7,7 +7,7 @@ from pathlib import Path
 from military_elo.models import TACTICAL_DIMENSIONS
 from military_elo.release import (
     IWBD_COALITION_SIDE_LABELS,
-    IWBD_IDENTITY_DENY_WINDOWS,
+    IDENTITY_DENY_WINDOWS,
     _event_key,
     _war_tokens,
     _war_tokens_match,
@@ -406,7 +406,7 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(result["events"], [])
 
     def test_deny_window_beats_the_resolver(self) -> None:
-        self.assertEqual(IWBD_IDENTITY_DENY_WINDOWS["turkey"], ((1920, 1923),))
+        self.assertEqual(IDENTITY_DENY_WINDOWS["turkey"], ((1920, 1923),))
 
         def resolver(label, low_year, high_year):
             # This stub WOULD resolve "Turkey" in 1921 (to the identity the

@@ -1018,7 +1018,19 @@ class ReleaseArtifactTests(unittest.TestCase):
     def test_ucdp_events_never_claim_existential_outcomes(self) -> None:
         for event in self.ucdp_events:
             self.assertLessEqual(event["confidence"], 0.74)
-            self.assertEqual(event["war_type"], "interstate_limited")
+            # war_type follows the source's type_of_conflict under the
+            # exhaustive declared mapping; absence of the provenance field
+            # means type 2 (interstate).
+            conflict_type = event.get("ucdp_type_of_conflict", "2")
+            self.assertEqual(
+                event["war_type"],
+                {
+                    "1": "colonial_anti_colonial",
+                    "2": "interstate_limited",
+                    "3": "civil_war",
+                    "4": "insurgency_intervention",
+                }[conflict_type],
+            )
             sides = {p["side"] for p in event["participants"]}
             self.assertGreaterEqual(len(sides), 2)
             for participant in event["participants"]:
@@ -1081,7 +1093,7 @@ class ReleaseArtifactTests(unittest.TestCase):
     def test_promotion_accounting_matches_events(self) -> None:
         promotion = self.metadata["promotion"]
         self.assertEqual(promotion["accepted_ucdp_events"], len(self.ucdp_events))
-        self.assertEqual(len(self.ucdp_events), 5)
+        self.assertEqual(len(self.ucdp_events), 7)
         self.assertEqual(
             sum(promotion["ucdp_rejections"].values())
             + promotion["accepted_ucdp_events"],

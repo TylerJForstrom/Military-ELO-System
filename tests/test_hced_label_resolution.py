@@ -169,9 +169,15 @@ def _resolve_label_stub(label, low_year, high_year):
 class LabelPolicyTests(unittest.TestCase):
     def test_france_label_resolves_by_era_and_never_bridges_1793_or_1816(self) -> None:
         self.assertEqual(_label_policy_seed_id("france", 1650, 1650), "kingdom_france")
+        self.assertEqual(_label_policy_seed_id("france", 1795, 1795), "french_first_republic")
         self.assertEqual(_label_policy_seed_id("france", 1809, 1809), "first_french_empire")
+        self.assertEqual(_label_policy_seed_id("france", 1860, 1860), "second_french_empire")
+        self.assertEqual(_label_policy_seed_id("france", 1915, 1915), "french_third_republic")
         self.assertEqual(_label_policy_seed_id("france", 1960, 1960), "french_fifth_republic")
-        for year in (1795, 1830, 1915):
+        # 1816-1851 (Restoration through Second Republic) and 1941-1957 are
+        # deliberate gaps; 1870 sits inside BOTH the Second Empire and Third
+        # Republic windows, so the boundary year is ambiguous and fails.
+        for year in (1830, 1870, 1945):
             with self.subTest(year=year):
                 self.assertIsNone(_label_policy_seed_id("france", year, year))
         # A span crossing a policy gap never resolves to either neighbor.
@@ -230,12 +236,12 @@ class FactionLabelTests(unittest.TestCase):
     def test_faction_labels_never_resolve_even_with_a_colliding_polity_alias(self) -> None:
         context = _context(
             polities=[
-                _polity("Taiping Heavenly Kingdom", 1851, 1864, aliases=("Taiping",)),
+                _polity("Mujahideen", 1987, 2024, aliases=("Mujahideen",)),
                 # The Cliopatria polity file carries the party record itself.
                 _polity("Kuomintang", 1917, 1929, wikidata_ids=("Q31113",)),
             ]
         )
-        for label, year in (("Taiping", 1855), ("Kuomintang", 1925)):
+        for label, year in (("Mujahideen", 1990), ("Kuomintang", 1925)):
             with self.subTest(label=label):
                 entity_id, polity, reason, tier = resolve_hced_side_label(
                     label, year, year, context
@@ -274,10 +280,12 @@ class PendingSplitTests(unittest.TestCase):
         self,
     ) -> None:
         context = _context(
-            polities=[_polity("Kingdom of Sweden", 980, 2024, wikidata_ids=("Q34",))]
+            polities=[
+                _polity("Swiss Confederation", 1294, 2024, wikidata_ids=("Q39",))
+            ]
         )
         entity_id, polity, reason, tier = resolve_hced_side_label(
-            "Sweden", 1700, 1700, context
+            "Swiss Confederation", 1700, 1700, context
         )
         self.assertIsNone(entity_id)
         self.assertIsNone(polity)
@@ -292,11 +300,11 @@ class PendingSplitTests(unittest.TestCase):
         )
         # Even a covering curated seed alias cannot outrank the pending gate.
         context = _context(
-            seeds=[_seed("modern_sweden", "Sweden", 1523, None)],
-            polities=[_polity("Kingdom of Sweden", 980, 2024)],
+            seeds=[_seed("modern_switzerland", "Switzerland", 1523, None)],
+            polities=[_polity("Swiss Confederation", 1294, 2024)],
         )
         entity_id, _, reason, tier = resolve_hced_side_label(
-            "Sweden", 1700, 1700, context
+            "Switzerland", 1700, 1700, context
         )
         self.assertIsNone(entity_id)
         self.assertEqual(reason, "label_pending_identity_split")
@@ -758,26 +766,27 @@ class ReleaseArtifactTests(unittest.TestCase):
         ]
 
     def test_existing_crosswalk_events_are_byte_identical(self) -> None:
-        # The first 1,461 events are the committed pre-label-pass block (40
-        # seed + 1,377 crosswalk HCED + 44 IWD): the label pass is a pure
-        # append and adds no field to any legacy event. The digest pins the
-        # CONTENT of that block, not just its shape; it changes only when the
-        # upstream snapshot legitimately re-stages, which is exactly when the
+        # The first 1,893 events are the pre-label-pass block (40 seed +
+        # 1,798 crosswalk HCED + 55 IWD): the label pass is a pure append and
+        # adds no field to any block event. The digest pins the CONTENT of
+        # that block, not just its shape; it changes only when the upstream
+        # snapshot legitimately re-stages or a curated identity tranche
+        # deliberately extends the policy tables, which is exactly when the
         # pin must be re-reviewed.
-        legacy = self.events[:1461]
+        legacy = self.events[:1893]
         digest = hashlib.sha256(
             json.dumps(legacy, sort_keys=True).encode("utf-8")
         ).hexdigest()
         self.assertEqual(
             digest,
-            "cd7c7bfb486fc0278afb75e3e2c949b17656f3cb5f4fccd479a301e18219f416",
-            "legacy pre-label-pass event block changed content",
+            "519787298b0b3cec64ef18c63a4e5cc44ae6966f084f694aa6043dbf71ceb50a",
+            "pre-label-pass event block changed content",
         )
-        self.assertEqual(len(self.events) > 1461, True)
+        self.assertEqual(len(self.events) > 1893, True)
         for event in legacy:
             self.assertNotIn("identity_resolution", event)
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
-        self.assertEqual(len(hced_legacy), 1377)
+        self.assertEqual(len(hced_legacy), 1798)
         for event in hced_legacy:
             self.assertTrue(
                 str(event["id"]).startswith("hced_hced_"),
@@ -790,11 +799,11 @@ class ReleaseArtifactTests(unittest.TestCase):
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
-        self.assertEqual(len(iwd_events), 44)
+        self.assertEqual(len(iwd_events), 55)
         promotion = self.metadata["promotion"]
-        self.assertEqual(promotion["accepted_iwd_wars"], 44)
+        self.assertEqual(promotion["accepted_iwd_wars"], 55)
         self.assertEqual(
-            sum(promotion["iwd_rejections"].values()) + 44,
+            sum(promotion["iwd_rejections"].values()) + 55,
             promotion["iwd_parent_wars_total"],
         )
         for event in iwd_events:
@@ -929,22 +938,27 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 754 + 5,738 + 1,377 + 1,012 == 8,881.
+        # Pinned measured funnel: 342 + 4,467 + 1,798 + 2,274 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (754, 5738, 1377, 1012, 8881),
+            (342, 4467, 1798, 2274, 8881),
         )
-        # Label-pass identity: rejections + accepted == deferred input rows.
+        # Label-pass identity: rejections + accepted == deferred input rows
+        # (nine former uncoded_side rows are now curated pass-1 exclusions).
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6750)
-        # All eleven declared counters are present, including the pinned zero.
-        self.assertEqual(len(promotion["hced_label_rejections"]), 11)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 6741)
+        # All twelve declared counters are present, including the zeros.
+        self.assertEqual(len(promotion["hced_label_rejections"]), 12)
         self.assertEqual(
-            promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
+            promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 7
         )
+        self.assertEqual(
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 8
+        )
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 10)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -953,7 +967,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 1012)
+        self.assertEqual(len(label_events), 2274)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)
