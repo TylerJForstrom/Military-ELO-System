@@ -99,7 +99,7 @@ SEED_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "dk_danish_k_modern": ((1523, 2026, "kingdom_denmark"),),
     "eg_egypt_modern_1": ((1805, 1882, "egypt_muhammad_ali"),),
     "et_ethiopian_k": ((1855, 1936, "ethiopian_empire"),),
-    "fr_france_modern_1": ((1870, 1940, "french_third_republic"),),
+    "fr_france_modern_1": ((1871, 1940, "french_third_republic"),),
     "fr_france_napoleonic": ((1852, 1869, "second_french_empire"),),
     "gb_england_plantagenet": _ENGLAND_WINDOWS,
     "gb_england_tudor_and_early_stuart": _ENGLAND_WINDOWS,
@@ -197,7 +197,10 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1569, 1795, "polish_lithuanian_commonwealth"),
         (1918, 1939, "second_polish_republic"),
     ),
-    "prussia": ((1701, 1871, "kingdom_prussia"),),
+    # Year-only sources cannot split the 18 January 1871 imperial
+    # proclamation. Use one reproducible convention in every pipeline:
+    # bare 1871 records enter the German Empire identity.
+    "prussia": ((1701, 1870, "kingdom_prussia"), (1871, 1871, "german_empire")),
     # A label policy only, deliberately not a seed alias: in HCED's 1799-1849
     # rows the bare region name denotes the Lahore state.
     "punjab": ((1799, 1849, "sikh_empire"),),
@@ -285,12 +288,13 @@ IWBD_COALITION_SIDE_LABELS: frozenset[str] = frozenset({
 
 # Declared identity deny windows, enforced in every label-resolution pipeline:
 # within a window the label is never resolved, because it denotes an actor
-# distinct from the identity the resolver would return. "Turkey" in 1920-1923
-# denotes the Ankara (Kemalist) government fighting in parallel with the
-# Istanbul government, and must not attach to the ottoman_empire identity
+# distinct from the identity the resolver would return. "Turkey" in 1919-1923
+# denotes the nationalist/Kemalist movement and then the Ankara government,
+# fighting in parallel with the Istanbul government; it must not attach to the
+# ottoman_empire identity
 # whose interval still covers those years.
 IDENTITY_DENY_WINDOWS: dict[str, tuple[tuple[int, int], ...]] = {
-    "turkey": ((1920, 1923),),
+    "turkey": ((1919, 1923),),
 }
 
 # Curated row exclusions (second reviewer pending), mirroring
@@ -320,9 +324,96 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
         "fought by Habsburg Spain after Charles V's abdication; the Danubian "
         "monarchy was not a belligerent"
     ),
+    # Historical-adjudication tranche. The immutable HCED source assertions
+    # remain in data/raw; these rows stay staged because the asserted outcome,
+    # actor, date, or granularity is not defensible for rating.
+    "hced-Andalsnes1940-1": (
+        "wrong belligerent: Andalsnes was a British-Norwegian operation, not French"
+    ),
+    "hced-Brusilov Offensive1916-1": (
+        "inverted outcome: the Brusilov Offensive was a Russian victory over the Central Powers"
+    ),
+    "hced-Changsha1942II-1": (
+        "duplicate of Changsha 1941-1942: both rows cite the same Third Battle of "
+        "Changsha account and assert the same Chinese victory over Japan"
+    ),
+    "hced-Duppel1849-1": (
+        "wrong belligerent and outcome: Austria did not fight at Dybbol; Denmark won the action"
+    ),
+    "hced-France1940-1": (
+        "campaign envelope duplicates separately rated Fall of France component engagements"
+    ),
+    "hced-Galicia1914-1": (
+        "campaign envelope duplicates separately rated Galicia component engagements"
+    ),
+    "hced-Grol1627-1": (
+        "wrong principal belligerent: the Dutch States Army, not England and France, took Grol"
+    ),
+    "hced-Hadad1562-1": (
+        "inverted outcome and branch confusion: Habsburg forces defeated Ottoman-vassal Transylvania"
+    ),
+    "hced-Hanoi1873-1": (
+        "wrong belligerent: Nguyen Vietnam and the Black Flags fought France, not Qing state forces"
+    ),
+    "hced-Isola del Giglio1646-1": (
+        "Habsburg branch confusion: the defending fleet belonged to Habsburg Spain"
+    ),
+    "hced-Kaiserswerth1702-1": (
+        "inverted outcome: the French garrison capitulated to the Allied besiegers"
+    ),
+    "hced-Kemmel1918-1": "inverted outcome: German forces captured Mont Kemmel",
+    "hced-Lepanto1571-1": (
+        "wrong belligerent: the Danubian Habsburg monarchy did not fight at Lepanto"
+    ),
+    "hced-Maastricht1632-1": (
+        "wrong principal belligerent: the Dutch States Army, not England and France, took Maastricht"
+    ),
+    "hced-Martinesti1789-1": "duplicate of Rimnik/Rymnik 1789 under the battlefield place name",
+    "hced-Messina1718-1": (
+        "wrong opposing sides: Spain captured Messina while France and Austria were allies"
+    ),
+    "hced-Monte Grappa1917-1": (
+        "wrong principal belligerent: the 1917 defense was an Italian operation"
+    ),
+    "hced-Monte Grappa1918-1": (
+        "wrong principal belligerent: Italy is omitted from its own Monte Grappa battle"
+    ),
+    "hced-Nivelle Offensive1917-1": (
+        "campaign envelope duplicates the separately rated Aisne 1917 offensive"
+    ),
+    "hced-Norway1940-1": (
+        "campaign envelope duplicates separately rated Norwegian Campaign engagements"
+    ),
+    "hced-Rheims1359-1360-1": (
+        "inverted siege assertion: Edward III abandoned the siege without taking Rheims"
+    ),
+    "hced-Rocoux1747-1": "date error: Rocoux was fought in 1746",
+    "hced-Rosas1645-1": (
+        "Habsburg branch confusion: the defense belonged to Habsburg Spain"
+    ),
+    "hced-Sevastopol1854-1855-1": (
+        "campaign envelope duplicates separately rated Crimean War siege components"
+    ),
+    "hced-St Augustine1702-1": (
+        "inverted outcome: the English siege failed and the attackers withdrew"
+    ),
+    "hced-St Quentin1914-1": "duplicate of the Battle of Guise/Saint-Quentin 1914",
+    "hced-Trebizond1916-1": (
+        "wrong belligerents: the campaign was exclusively Russian, not French or British"
+    ),
+    "hced-Trentino1917-1": (
+        "date/granularity ambiguity: likely duplicates the 1916 Asiago offensive or 1917 Ortigara"
+    ),
+    "hced-Vittorio Veneto1918-1": (
+        "wrong principal belligerent: Italy is omitted from the Vittorio Veneto victory"
+    ),
 }
 
 IWBD_CURATED_EXCLUSIONS: dict[str, str] = {
+    "iwbd-13-5-51": (
+        "wrong outcome at Duppel/Dybbol on 1849-04-13: Denmark, not Prussia, "
+        "won the action"
+    ),
     "iwbd-55-19-188": "duplicate of HCED Liebenau 1866 (spelling variant 'Liebnau')",
     "iwbd-58-20-268": "duplicate of HCED Dijon 1871 (IWBD 'Dijon 3')",
     "iwbd-76-28-346": "duplicate of HCED Velestino (1st) 1897 (IWBD 'Velestino 1')",
@@ -331,6 +422,10 @@ IWBD_CURATED_EXCLUSIONS: dict[str, str] = {
 }
 
 IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
+    "5": (
+        "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the "
+        "First Schleswig War; the source assertion stays staged rather than being inverted"
+    ),
     "10": (
         "Italian Unification 1859: belligerent was the Kingdom of Sardinia; the "
         "'Kingdom of Italy' [587,1946] envelope is not the 1859 actor (identity pending)"
@@ -360,6 +455,116 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Con Thien (1st)1967-1": "side-misattributed: PAVN engagement coded as 'Viet Cong'",
     "hced-Con Thien (2nd)1967-1": "side-misattributed: PAVN engagement coded as 'Viet Cong'",
     "hced-Hue1968-1": "side-misattributed: predominantly PAVN engagement coded as 'Viet Cong'",
+    "hced-1stDragasani1821-1": (
+        "inverted outcome: Ottoman forces destroyed the Sacred Band at Dragasani"
+    ),
+    "hced-A Shau1966-1": (
+        "inverted outcome and actor error: PAVN overran the camp but is coded as defeated Viet Cong"
+    ),
+    "hced-Arcis-sur-Aube1814-1": (
+        "inverted outcome: Napoleon withdrew before Schwarzenberg's Allied army"
+    ),
+    "hced-Barcelona, Spain1936-1": (
+        "inverted outcome: Republican and anarchist forces defeated the July uprising"
+    ),
+    "hced-Barcelona, Spain1705-1706-1": (
+        "incompatible envelope: combines the distinct 1705 capture and 1706 defense "
+        "while the 1705 siege is already rated separately"
+    ),
+    "hced-Bautzen1813-1": (
+        "wrong belligerent: Austria was neutral; the defeated Allies were Prussian and Russian"
+    ),
+    "hced-Beijing-Tianjin1948-1": (
+        "campaign envelope duplicates separately rated Tianjin and related component battles"
+    ),
+    "hced-Brest1513-1": "inverted outcome: Howard's English attack on Brest failed",
+    "hced-Brienne1814-1": (
+        "wrong belligerent: the action was fought against Russian and Prussian forces, not Austria"
+    ),
+    "hced-Cadore1508-1": (
+        "wrong Habsburg branch: Maximilian's Imperial-Tyrolean army is coded as Spain"
+    ),
+    "hced-Coatit1895-1": "inverted outcome: Baratieri's Italian force defeated Ras Mengesha",
+    "hced-Dardanelles1654-1": "inverted outcome: the first 1654 Dardanelles battle was Ottoman",
+    "hced-Dembeguina1935-1": (
+        "inverted outcome: Ethiopian forces won the Dembeguina Pass action"
+    ),
+    "hced-Dong Xoai1965-1": (
+        "inverted outcome: Viet Cong forces overran Dong Xoai and mauled the relief force"
+    ),
+    "hced-Dragasani1821-1": (
+        "duplicate source row with the same inverted Dragasani outcome"
+    ),
+    "hced-Huaihai1948-1": (
+        "campaign envelope duplicates separately rated Huaihai component battles"
+    ),
+    "hced-Kalat1839-1": (
+        "wrong actor: the defender was the independent Khanate of Kalat, not the Kabul emirate"
+    ),
+    "hced-Kehl1797-1": "inverted outcome: the French garrison capitulated to Austria",
+    "hced-Kolin1756-1": "date error: Kolin was fought in 1757",
+    "hced-Kolberg1760-1": "inverted outcome: the Russian siege of Kolberg failed in 1760",
+    "hced-Kolberg1774-1": (
+        "phantom engagement: no Russo-Prussian battle or war occurred at Kolberg in 1774"
+    ),
+    "hced-Liaoshen1948-1": (
+        "campaign envelope duplicates separately rated Liaoshen component battles"
+    ),
+    "hced-Longwy1792-1": "wrong belligerent: the siege was conducted by Prussian forces",
+    "hced-Lvov1675-1": "inverted outcome: Sobieski defeated the Ottoman-Crimean force",
+    "hced-Marstrand-1": (
+        "inverted outcome: Danish-Norwegian forces captured Marstrand and Carlsten"
+    ),
+    "hced-Mewe1626-1": "inverted outcome: the Battle of Gniew/Mewe was a Swedish victory",
+    "hced-Mockern (1st)1813-1": (
+        "wrong belligerent: Austria was neutral during the April action"
+    ),
+    "hced-Mojkovac1916-1": "inverted outcome: Montenegro won the defensive action at Mojkovac",
+    "hced-Montmirail1814-1": (
+        "wrong belligerent: Russian and Prussian corps, not Austria, fought at Montmirail"
+    ),
+    "hced-Parwan Durrah1840-1": "inverted outcome: Dost Mohammad's Afghan force won the action",
+    "hced-Poland1939-1": (
+        "campaign envelope duplicates separately rated invasion-of-Poland components"
+    ),
+    "hced-Rippach1813-1": "wrong belligerent: Austria was neutral during the May action",
+    "hced-Tournai1794-1": "duplicate of Pont-a-Chin 1794, the same 22 May engagement",
+    "hced-Tutrakan1916-1": (
+        "wrong victor: Bulgarian forces led the assault; Ottoman troops were absent"
+    ),
+    "hced-Ushant1794-1": "duplicate of the Glorious First of June 1794",
+    "hced-Valmy1792-1": "wrong principal opponent: the field army was Prussian",
+    "hced-Vauchamps1814-1": (
+        "wrong belligerent: the defeated force was Russian-Prussian, not Austrian"
+    ),
+    "hced-Verdun1792-1": "wrong belligerent: the siege was conducted by Prussian forces",
+}
+
+# Seed events are curated strategic envelopes. These three intentionally begin
+# before a participant identity's formal entry year; every other seed-event
+# participant must be fully contained by its identity interval.
+SEED_EVENT_INTERVAL_EXEMPTIONS: dict[tuple[str, str], dict[str, Any]] = {
+    ("american_revolutionary_war", "united_states"): {
+        "event_interval": (1775, 1783),
+        "entity_interval": (1776, None),
+        "reason": (
+            "the curated war envelope begins in 1775; the United States identity begins in 1776"
+        ),
+    },
+    ("napoleonic_wars", "first_french_empire"): {
+        "event_interval": (1803, 1815),
+        "entity_interval": (1804, 1815),
+        "reason": (
+            "the curated coalition-war envelope begins in 1803; the Empire identity begins in 1804"
+        ),
+    },
+    ("afghanistan_war_2001_2021", "islamic_republic_afghanistan"): {
+        "event_interval": (2001, 2021),
+        "entity_interval": (2004, 2021),
+        "reason": (
+            "the curated war envelope includes the 2001-2003 transition before the 2004 republic"
+        ),
+    },
 }
 
 # Conflict-scoped identity policies for curated non-state UCDP primary
@@ -535,10 +740,78 @@ def _slug(value: str, maximum: int = 54) -> str:
     return (slug or "polity")[:maximum].rstrip("_")
 
 
-def _event_key(name: str, year: int) -> tuple[str, int]:
+_EVENT_ORDINAL_WORDS: dict[str, str] = {
+    "first": "1",
+    "second": "2",
+    "third": "3",
+    "fourth": "4",
+    "fifth": "5",
+    "sixth": "6",
+    "seventh": "7",
+    "eighth": "8",
+    "ninth": "9",
+    "tenth": "10",
+}
+
+
+def _normalized_event_name(name: str) -> str:
     normalized = normalize_label(name)
     normalized = re.sub(r"^(battle|siege|campaign|war) (of |at )?", "", normalized)
-    return normalized, year
+    normalized = re.sub(r"\b(\d+)(?:st|nd|rd|th)\b", r"\1", normalized)
+    for word, number in _EVENT_ORDINAL_WORDS.items():
+        normalized = re.sub(rf"\b{word}\b", number, normalized)
+    return normalized
+
+
+def _event_key(name: str, year: int) -> tuple[str, int]:
+    return _normalized_event_name(name), year
+
+
+def _cross_source_event_keys(
+    name: str, year: int, *, lookup: bool = False
+) -> set[tuple[str, int]]:
+    """Directional keys for compatible HCED/IWBD event-name suffix paths.
+
+    Exact names are handled separately. Recognized terminal suffixes form a
+    path, so ``Plevna 1 a`` can match its parent ``Plevna 1`` and either can
+    match bare ``Plevna``. Different branches (``1``/``2`` or ``1 a``/``1 b``)
+    never share a fuzzy key. Bare numeric suffixes are recognized only from 1
+    through 10, avoiding false bases for names such as ``Hill 203``.
+    ``lookup=True`` emits keys compatible with the indexed HCED path.
+    """
+    normalized = _normalized_event_name(name)
+    tokens = normalized.split()
+    suffix_reversed: list[str] = []
+    while len(tokens) > 1 and re.fullmatch(r"10|[1-9]|[ab]", tokens[-1]):
+        suffix_reversed.append(tokens.pop())
+    base = " ".join(tokens)
+    suffix = tuple(reversed(suffix_reversed))
+
+    def key(kind: str, path: tuple[str, ...]) -> tuple[str, int]:
+        return (f"\x00fuzzy:{kind}:{base}:{'/'.join(path)}", year)
+
+    prefixes = [suffix[:length] for length in range(len(suffix))]
+    if lookup:
+        # Match a less-specific indexed HCED path via its exact-path key, or a
+        # more-specific indexed path via its declared-prefix key.
+        return {key("actual", prefix) for prefix in prefixes} | {
+            key("extends", suffix)
+        }
+    # The HCED index records its actual path and every strict parent it extends.
+    return {key("actual", suffix)} | {
+        key("extends", prefix) for prefix in prefixes
+    }
+
+
+def _hced_label_row_key(
+    candidate: dict[str, Any], event_name: str, year: int
+) -> tuple[str, int, str]:
+    """Order-independent label-pass key with a source-row disambiguator."""
+    source_identity = normalize_label(
+        candidate.get("source_record_id") or candidate.get("candidate_id")
+    )
+    normalized_name, normalized_year = _event_key(event_name, year)
+    return normalized_name, normalized_year, source_identity
 
 
 def _candidate_entity_id(candidate: dict[str, Any]) -> str:
@@ -1164,6 +1437,57 @@ def _entity_covers(entity: dict[str, Any], low_year: int, high_year: int) -> boo
     )
 
 
+def _validate_seed_event_intervals(
+    seed_events: list[dict[str, Any]],
+    seed_by_id: dict[str, dict[str, Any]],
+) -> None:
+    """Enforce full seed-event containment except for declared envelopes."""
+    used_exemptions: set[tuple[str, str]] = set()
+    violations: list[str] = []
+    for event in seed_events:
+        low_year = int(event["year"])
+        high_year = int(event.get("end_year", low_year))
+        for participant in event.get("participants", []):
+            entity_id = str(participant.get("entity_id") or "")
+            entity = seed_by_id.get(entity_id)
+            if entity is None:
+                violations.append(f"{event['id']} references missing entity {entity_id}")
+                continue
+            if _entity_covers(entity, low_year, high_year):
+                continue
+            key = (str(event["id"]), entity_id)
+            exemption = SEED_EVENT_INTERVAL_EXEMPTIONS.get(key)
+            if exemption is not None:
+                used_exemptions.add(key)
+                actual_event_interval = (low_year, high_year)
+                actual_entity_interval = (
+                    int(entity["start_year"]),
+                    int(entity["end_year"])
+                    if entity.get("end_year") is not None
+                    else None,
+                )
+                if (
+                    actual_event_interval != exemption["event_interval"]
+                    or actual_entity_interval != exemption["entity_interval"]
+                ):
+                    violations.append(
+                        f"{event['id']} / {entity_id} interval exemption expected "
+                        f"event {exemption['event_interval']} and entity "
+                        f"{exemption['entity_interval']}, got event "
+                        f"{actual_event_interval} and entity {actual_entity_interval}"
+                    )
+                continue
+            violations.append(
+                f"{event['id']} [{low_year},{high_year}] exceeds {entity_id} "
+                f"[{entity['start_year']},{entity.get('end_year')}]"
+            )
+    stale_exemptions = set(SEED_EVENT_INTERVAL_EXEMPTIONS) - used_exemptions
+    if stale_exemptions:
+        violations.append(f"stale seed interval exemptions: {sorted(stale_exemptions)}")
+    if violations:
+        raise ValueError("Seed event interval validation failed: " + "; ".join(violations))
+
+
 def _resolve_label_tiers(
     normalized: str,
     low_year: int,
@@ -1305,7 +1629,8 @@ def promote_hced_label_rows(
     resolved_polities: dict[str, dict[str, Any]] = {}
     observation_resolutions: Counter[tuple[str, str]] = Counter()
     cluster_spans: dict[str, list[Any]] = {}
-    accepted_keys = set(promoted_event_keys)
+    promoted_keys = set(promoted_event_keys)
+    accepted_label_keys: set[tuple[str, int, str]] = set()
 
     for candidate in deferred_rows:
         if str(candidate.get("candidate_id")) in curated_exclusions:
@@ -1389,10 +1714,14 @@ def promote_hced_label_rows(
         if event_key in curated_seed_keys:
             rejections["duplicate_of_curated_seed"] += 1
             continue
-        if event_key in accepted_keys:
+        if event_key in promoted_keys:
             rejections["duplicate_of_promoted_event"] += 1
             continue
-        accepted_keys.add(event_key)
+        label_row_key = _hced_label_row_key(candidate, event_name, best_year)
+        if label_row_key in accepted_label_keys:
+            rejections["duplicate_of_promoted_event"] += 1
+            continue
+        accepted_label_keys.add(label_row_key)
         resolved_polities.update(pending_polities)
         observation_resolutions.update(observation_hits)
 
@@ -1488,10 +1817,37 @@ def _iwbd_base_war(row: dict[str, Any]) -> str:
     return re.sub(r"\s*\(.*\)$", "", str(row.get("war_name") or ""))
 
 
+def _matches_hced_exact(
+    hced_event_keys: set[tuple[str, int]] | dict[tuple[str, int], dict[str, Any]],
+    exact_lookup_keys: set[tuple[str, int]],
+) -> bool:
+    if isinstance(hced_event_keys, dict):
+        return any(
+            bool(hced_event_keys.get(key, {}).get("exact"))
+            for key in exact_lookup_keys
+        )
+    # Set input remains supported for focused callers that exercise only the
+    # exact name/year gate. Production builds pass the orientation-aware index.
+    return bool(exact_lookup_keys & hced_event_keys)
+
+
+def _matches_hced_fuzzy(
+    hced_event_keys: set[tuple[str, int]] | dict[tuple[str, int], dict[str, Any]],
+    cross_source_lookup_keys: set[tuple[str, int]],
+    outcome_signature: tuple[frozenset[str], frozenset[str]],
+) -> bool:
+    if not isinstance(hced_event_keys, dict):
+        return False
+    return any(
+        outcome_signature in hced_event_keys.get(key, {}).get("outcomes", set())
+        for key in cross_source_lookup_keys
+    )
+
+
 def promote_iwbd_battles(
     candidates: list[dict[str, Any]],
     curated_seed_keys: set[tuple[str, int]],
-    hced_event_keys: set[tuple[str, int]],
+    hced_event_keys: set[tuple[str, int]] | dict[tuple[str, int], dict[str, Any]],
     resolve_label: Any,
     hced_war_cluster_spans: dict[str, list[Any]],
     iwd_parent_ids: set[str],
@@ -1500,15 +1856,17 @@ def promote_iwbd_battles(
     """Promote non-duplicate IWBD battles as provisional tactical engagements.
 
     A battle enters only when it is not a duplicate of any curated seed event,
-    any HCED candidate (promoted or staged), or an earlier IWBD row by
-    normalized battle name and year within one year; its date span does not
-    strictly contain a differently-named battle of the same war (campaign
-    umbrellas stay staged); its coded victor matches a named side (the
-    inconclusive pair is a coded tactical stalemate, never a guess); both
-    sides are single polities resolving to unique time-bounded identities
-    outside declared deny windows; and severity is capped at limited. The
-    war-level victor code is ignored entirely: battles never update the
-    strategic layer.
+    any non-curated-excluded HCED candidate (promoted or staged), or an earlier
+    accepted IWBD row. Exact normalized names use a one-year tolerance;
+    base-name fuzzy matches require one recognized suffix path to extend the
+    other, in the same year with an agreeing oriented outcome. Its
+    date span must not strictly contain a differently-named battle of the same
+    war (campaign umbrellas stay staged); its coded victor must match a named
+    side (the inconclusive pair is a coded tactical stalemate, never a guess);
+    both sides must be single polities resolving to unique time-bounded
+    identities outside declared deny windows; and severity is capped at
+    limited. The war-level victor code is ignored entirely: battles never
+    update the strategic layer.
     """
     events: list[dict[str, Any]] = []
     rejections: Counter[str] = Counter()
@@ -1557,19 +1915,18 @@ def promote_iwbd_battles(
         attacker, defender = str(attacker), str(defender)
 
         lookup_keys = {_event_key(name, year) for year in range(year_low - 1, year_high + 2)}
+        hced_fuzzy_lookup_keys = {
+            key
+            for year in range(year_low, year_high + 1)
+            for key in _cross_source_event_keys(name, year, lookup=True)
+        }
         exact_keys = {_event_key(name, year) for year in range(year_low, year_high + 1)}
         if lookup_keys & seen_keys:
             rejections["duplicate_within_iwbd"] += 1
             continue
         if lookup_keys & curated_seed_keys:
             rejections["duplicate_of_curated_seed"] += 1
-            seen_keys |= exact_keys
             continue
-        if lookup_keys & hced_event_keys:
-            rejections["duplicate_of_hced_battle"] += 1
-            seen_keys |= exact_keys
-            continue
-        seen_keys |= exact_keys
 
         parts = _iwbd_id_parts(str(row.get("candidate_id") or ""))
         if parts is None:
@@ -1607,6 +1964,10 @@ def promote_iwbd_battles(
             rejections["outcome_not_aligned_to_battle_sides"] += 1
             continue
 
+        if _matches_hced_exact(hced_event_keys, lookup_keys):
+            rejections["duplicate_of_hced_battle"] += 1
+            continue
+
         if any(
             "/" in label or "," in label or "(" in label
             or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
@@ -1636,6 +1997,25 @@ def promote_iwbd_battles(
         if attacker_id == defender_id:
             rejections["same_or_empty_opposing_side"] += 1
             continue
+        if draw:
+            fuzzy_signature = (
+                frozenset({attacker_id, defender_id}),
+                frozenset(),
+            )
+        elif winner == normalized_attacker:
+            fuzzy_signature = (frozenset({attacker_id}), frozenset({defender_id}))
+        else:
+            fuzzy_signature = (frozenset({defender_id}), frozenset({attacker_id}))
+        if _matches_hced_fuzzy(
+            hced_event_keys, hced_fuzzy_lookup_keys, fuzzy_signature
+        ):
+            rejections["duplicate_of_hced_battle"] += 1
+            continue
+        # Only an eligible row claims its exact name/year keys. A malformed or
+        # otherwise rejected earlier copy must not suppress a later valid row;
+        # source-row order remains the deterministic tie-break between valid
+        # duplicates.
+        seen_keys |= exact_keys
         for entity_id, polity in (
             (attacker_id, attacker_polity),
             (defender_id, defender_polity),
@@ -2399,6 +2779,7 @@ def build_expanded_release(
         (seed_root / "metadata.json").read_text(encoding="utf-8")
     )
     seed_by_id = {str(entity["id"]): entity for entity in seed_entities}
+    _validate_seed_event_intervals(seed_events, seed_by_id)
     seed_label_index: dict[str, set[str]] = {}
     for entity in seed_entities:
         for label in [entity.get("name"), *entity.get("aliases", [])]:
@@ -2687,12 +3068,19 @@ def build_expanded_release(
         span[2] = max(span[2], high_year)
 
     # IWBD battles are deduplicated against curated seed events and every
-    # HCED candidate — promoted or staged, over the candidate's full year
-    # range — because an HCED row rejected today may promote later and no
-    # event may ever enter the tactical stream twice.
-    hced_event_keys: set[tuple[str, int]] = set()
+    # non-curated-excluded HCED candidate — promoted or staged, over the
+    # candidate's full year range — because a mechanically rejected HCED row
+    # may promote later and no event may ever enter the tactical stream twice.
+    hced_event_keys: dict[tuple[str, int], dict[str, Any]] = {}
+
+    def hced_index_entry(key: tuple[str, int]) -> dict[str, Any]:
+        return hced_event_keys.setdefault(key, {"exact": False, "outcomes": set()})
+
     for candidate in hced:
-        if str(candidate.get("candidate_id")) in HCED_CURATED_EXCLUSIONS:
+        if str(candidate.get("candidate_id")) in {
+            *HCED_CURATED_EXCLUSIONS,
+            *HCED_LABEL_CURATED_EXCLUSIONS,
+        }:
             continue
         name = str(candidate.get("name") or "")
         if not name:
@@ -2706,10 +3094,37 @@ def build_expanded_release(
                 candidate.get("year_high"),
             }:
                 if year is not None:
-                    hced_event_keys.add(_event_key(name, int(year)))
+                    hced_index_entry(_event_key(name, int(year)))["exact"] = True
             continue
         for year in range(int(year_low), int(year_high) + 1):
-            hced_event_keys.add(_event_key(name, year))
+            hced_index_entry(_event_key(name, year))["exact"] = True
+
+    # Fuzzy ordinal/base-name matches require one recognized suffix path to be
+    # a strict extension of the other in the same year, with the same resolved
+    # sides and outcome orientation. Different suffix branches never share a
+    # key. Only promoted HCED rows can supply that identity signature; exact
+    # names above continue to block against staged rows.
+    for event in (*source_events, *label_events):
+        winners = frozenset(
+            str(participant["entity_id"])
+            for participant in event["participants"]
+            if "victory" in str(participant.get("termination", ""))
+        )
+        losers = frozenset(
+            str(participant["entity_id"])
+            for participant in event["participants"]
+            if "defeat" in str(participant.get("termination", ""))
+        )
+        if winners or losers:
+            outcome_signature = (winners, losers)
+        else:
+            outcome_signature = (
+                frozenset(str(p["entity_id"]) for p in event["participants"]),
+                frozenset(),
+            )
+        for year in range(int(event["year"]), int(event["end_year"]) + 1):
+            for key in _cross_source_event_keys(str(event["name"]), year):
+                hced_index_entry(key)["outcomes"].add(outcome_signature)
 
     iwbd_path = review / "iwbd-candidates.jsonl"
     iwbd_candidates = read_jsonl(iwbd_path) if iwbd_path.exists() else []
@@ -3005,8 +3420,12 @@ def build_expanded_release(
                 "unanimous, no curated seed war overlaps, and every belligerent resolves to a "
                 "unique time-bounded identity. All other parent wars stay staged. "
                 "IWBD battles enter only when they are not a duplicate of any curated seed "
-                "event, any HCED candidate (promoted or staged), or an earlier IWBD row by "
-                "normalized battle name and year within one year; their date span does not "
+                "event, any non-curated-excluded HCED candidate (promoted or staged), or an "
+                "earlier accepted IWBD row by exact normalized battle name and year within "
+                "one year; "
+                "broader ordinal/part matches require one recognized suffix path to extend "
+                "the other in the same year with the same resolved outcome sides; "
+                "their date span does not "
                 "contain a differently-named battle of the same war (campaign umbrellas stay "
                 "staged); the coded victor matches a named side; both sides are single "
                 "polities resolving to unique time-bounded identities outside declared deny "
@@ -3026,8 +3445,9 @@ def build_expanded_release(
                 "and orphaned source codes era-correctly, with deliberate gaps for eras "
                 "without a defensible single identity, and enumerated curated row exclusions "
                 "for known wrong-actor and variant-spelling records - counted, never merged. "
-                "A declared set of curated non-state actor identities resolves twelve former "
-                "faction labels through authoritative time-bounded policies; labels for "
+                "A declared set of curated non-state actor identities moves seven former "
+                "blocklist labels to authoritative time-bounded policies and covers five "
+                "additional labels that were never blocklisted; labels for "
                 "umbrella movements without unified command stay blocked. UCDP "
                 "terminal-victory episodes may include a curated non-state primary party "
                 "only through conflict-scoped actor policies whose windows are the actor's "
@@ -3065,6 +3485,16 @@ def build_expanded_release(
             "iwd_curated_parent_exclusions": [
                 {"parent_war_id": key, "reason": reason}
                 for key, reason in sorted(IWD_CURATED_PARENT_EXCLUSIONS.items())
+            ],
+            "seed_event_interval_exemptions": [
+                {
+                    "event_id": key[0],
+                    "entity_id": key[1],
+                    "event_interval": list(exemption["event_interval"]),
+                    "entity_interval": list(exemption["entity_interval"]),
+                    "reason": exemption["reason"],
+                }
+                for key, exemption in sorted(SEED_EVENT_INTERVAL_EXEMPTIONS.items())
             ],
             "ucdp_actor_party_policies": [
                 {

@@ -1,12 +1,28 @@
-# Handoff: M4/M5 follow-ups done; adversarial-review triage is the next milestone
+# Handoff: M4/M5 adversarial-review triage completed
 
-State as of this commit: items 1 and 2 of `HANDOFF-M4-M5.md` are complete and
-committed — every count-bearing document carries the tranche numbers (4,341 /
-226 / 1,590 / 27,083 / 19,125), ENTITY_POLICY documents the full tranche
-record, and the two identity test suites exist (218/218 tests green). Item 3,
-the adversarial review, ran to ~95% completion: five reviewers produced 61
-findings and 57 of them received adversarial verification before the run was
-cut short. The findings are the next milestone's work list.
+Current implementation state (2026-07-14): the policy, pipeline, historical
+adjudication, and test-gap work below is complete in the working tree. The
+coordinated machine-local build contains 1,590 registry identities, 226 rated
+entities, and 4,234 events: 40 seed, 1,769 crosswalk HCED, 2,243 label HCED,
+54 IWD, 121 IWBD, and 7 UCDP. It reports 27,014 staged source records and
+19,163 unresolved event-like candidates from a 23,390-candidate event queue.
+The dashboard is the 1,000-simulation build and its embedded audit reports zero
+warnings. All 241 tests pass. The rendered browser check confirmed the four
+headline counters, the 1871-1918 German Empire registry boundary, working
+registry filtering, and no console warnings or errors.
+
+The original adversarial review ran to ~95% completion: five reviewers
+produced 61 findings and 57 received adversarial verification before the run
+was cut short. This document preserves that inventory below as the decision
+record; it is no longer an open pickup list. The post-fix adversarial sweep
+also found and excluded two additional granularity duplicates: the redundant
+`Changsha1942II` assertion and the `Barcelona, Spain1705-1706` envelope.
+The final ULTRA re-review restored the distinct 1999 Badme 2(a) battle that a
+cross-year fuzzy match had suppressed, excluded the wrong-outcome IWBD Duppel
+fallback exposed by the HCED exclusion, made suffix-path matching preserve
+different ordinal/part branches, and narrowed the three seed interval
+exemptions to their exact approved bounds. These corrections offset in the
+headline totals.
 
 ## Where the findings live
 
@@ -19,13 +35,13 @@ cut short. The findings are the next milestone's work list.
   historical-accuracy reviewer sampled only part of the ledger — assume the
   confirmed list below is a floor, not a ceiling.
 
-Already fixed in this commit (verified-confirmed doc/comment defects): the
+Already fixed in the working tree (verified-confirmed doc/comment defects): the
 stale France/Persia gap inventory in the `HCED_LABEL_POLICIES` header comment,
 the Sweden example in the pending-split comment, the stale France-gap sentence
 and the "twelve former faction labels" migration claim in METHODOLOGY, and the
 README "thirty others" arithmetic.
 
-## Confirmed findings to fix (in priority order)
+## Original work list preserved verbatim
 
 ### A. Policy and pipeline defects (code + rebuild + doc/test sync)
 
@@ -119,29 +135,27 @@ Basing House range-truncation claim, and the empire_brazil 23-event pin.
   method; pin the two enumerated episodes (conflict 202 ep1, conflict 242
   ep2) directly.
 
-## Machine-local warning (read before rebuilding)
+## Machine-local rebuild record
 
-The committed release was built on a machine whose Wikidata discovery queue
-held 87 candidates; this machine's queue holds 18, so `build_release.py` here
-reproduces every promoted count exactly but yields staged/unresolved totals of
-27,014/19,056 instead of 27,083/19,125. Any fix that touches the release
-requires rebuilding release + registry + dashboard (`--simulations 1000`)
-in one commit and re-syncing every count-bearing doc and test pin to the
-newly measured values — do not mix the two machines' totals. Optionally rerun
-`python scripts/ingest_wikidata.py --max-pages 10` first, but upstream drift
-means 87 is not guaranteed to come back.
+This release was rebuilt with the 18-candidate Wikidata discovery queue on
+this machine. The resulting totals are 27,014 staged source records, 23,390
+event-like candidates, and 19,163 unresolved candidates. Future
+release-touching work must again rebuild release + registry + dashboard
+(`--simulations 1000`) together and re-sync every current count-bearing doc
+and test pin to that machine's measured values. Do not combine counts from a
+different discovery queue.
 
-## Definition of done for the triage milestone
+## Definition-of-done status
 
-1. Every category-A defect fixed with tests, or explicitly deferred with a
-   documented reason.
-2. Every category-B item dispositioned (exclusion, policy fix, or documented
-   source assertion) in `ENTITY_POLICY.md`/`DATA_SOURCES.md`; curated
-   exclusions counted; no silent edits of source assertions.
-3. Category-C tests added; full suite green.
-4. Release + registry + dashboard rebuilt together (1,000 simulations),
-   audit clean, all counts re-synced across artifacts, README, docs, and
-   test pins; browser check.
-5. A fresh adversarial sweep of the historical-accuracy dimension (the first
-   one was cut short and is a floor).
-6. Coherent conventional commits; push after review.
+1. Complete: every category-A defect is fixed and tested.
+2. Complete: every category-B item has an explicit exclusion, policy fix,
+   retained-source-assertion disposition, or documented modeling limitation.
+3. Complete: every category-C test gap is covered.
+4. Complete: release, registry, and 1,000-simulation dashboard were rebuilt
+   together; audit, browser verification, and count synchronization are clean.
+5. Complete: the fresh historical-accuracy sweep checked exclusions, interval
+   containment, cross-source duplicates, every residual exact same-name/year
+   HCED collision, and the IWBD fallbacks exposed by HCED exclusions; it added
+   the exclusions and Badme/dedup hardening noted above.
+6. Pending user review: split the reviewed working tree into coherent
+   conventional commits and push only after that review.

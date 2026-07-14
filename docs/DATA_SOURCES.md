@@ -104,6 +104,24 @@ The snapshot downloaded on 2026-07-13 was parsed locally:
 - Participant strings are serialized lists and can contain locations, campaigns,
   demonyms, or other non-polity text.
 
+The 2026-07 historical-adjudication pass therefore stages enumerated HCED
+assertions with verified inverted outcomes, wrong principal belligerents,
+date errors, or duplicate campaign/battle granularity. Raw HCED rows are never
+edited; candidate IDs and reasons are counted in release metadata, with the
+full disposition groups documented in `ENTITY_POLICY.md`. Diamond Hill 1900
+and the six adversarially refuted project-defect claims remain provisional
+source assertions rather than being silently "corrected." Dyadic rows that
+omit co-belligerents remain a documented source-model limitation pending a
+curated composition table. A post-fix same-name/year collision sweep also
+staged `Changsha1942II` as a duplicate of the 1941-42 Third Battle of
+Changsha and the `Barcelona, Spain1705-1706` envelope, which conflates the
+separately represented 1705 capture with the distinct 1706 defense.
+The chronology was cross-checked against the Republic of China Ministry of
+National Defense's [Third Battle of Changsha history](https://www.mnd.gov.tw/en/informationservices/publication/69595)
+and Barcelona City Council's [Montjuïc Castle historical guide](https://ajuntament.barcelona.cat/castelldemontjuic/sites/default/files/fitxers/biblioteca/cmj_guia_20oct14_eng.pdf),
+which describes the 1705 Allied capture and the separate Bourbon siege in
+April 1706.
+
 The crosswalk contains 8,880 rows. A first-side Seshat code is present in 4,693
 rows, a second-side code in 3,811, and both sides are mapped in only 2,122.
 These mappings are useful seeds, not approved identities. The current
@@ -147,24 +165,31 @@ does not describe casualties, the magnitude of a result, political goals, or
 the final settlement of the enclosing war.
 
 In this system IWBD battles enter the provisional ledger only through a
-declared promotion rule, as tactical engagements. A row is excluded when its
-normalized battle name and year, with a ±1-year tolerance, match a curated
-seed event, any of the 8,881 HCED candidates (promoted or staged), or an
-earlier IWBD row: 1,189 IWBD records match an HCED candidate by normalized
-battle name and year (±1) and are excluded as presumptive duplicates. These
-matches are exclusions, not corroboration — a name/date intersection verifies
-neither outcome nor side agreement, and no HCED record is modified. A row
+declared promotion rule, as tactical engagements. Exact normalized battle
+names use a ±1-year window against curated seed events, non-curated-excluded
+HCED candidates (promoted or staged), and earlier accepted IWBD rows. In the
+current release, 1,010 IWBD records are excluded as presumptive HCED
+duplicates. Exact canonical name/year matches remain exclusions rather than
+corroboration and do not require side agreement; no HCED record is modified.
+Cross-source matching canonicalizes numeric, suffixed, and word ordinals. A
+broader base-name match is allowed only when one recognized terminal
+ordinal/part path is a strict extension of the other (for example `Plevna 1`
+and `Plevna 1(a)`), and a promoted HCED event has the same resolved winning
+and losing sides in the same calendar year. Different suffix branches,
+adjacent-year battles, and arbitrary terminal numbers are not collapsed merely
+because they share a possible base.
+Within-IWBD matching always retains the exact canonical ordinal. A row
 whose date span strictly contains a differently-named battle of the same war
-is staged as a presumptive campaign umbrella (117 rows), so only battle-level
+is staged as a presumptive campaign umbrella (382 rows), so only battle-level
 granularity enters; the rule deliberately over-includes some genuinely
 distinct long engagements. The coded battle-level victor must match a named
 side with an agreeing attacker/defender role — the coded `inconclusive` value
 maps to a tactical stalemate, while a blank or mismatched victor is rejected —
 and the war-level victor code is ignored entirely. Coalition or composite side
-labels stay staged (182 rows), and both sides must resolve to unique
-time-bounded identities outside declared deny windows (38 side-resolution
-failures, including the declared "Turkey" 1920-1923 deny window). In the
-current build 167 of 1,708 battles pass; every other row stays staged under a
+labels stay staged (147 rows), and both sides must resolve to unique
+time-bounded identities outside declared deny windows (36 side-resolution
+failures, including the declared "Turkey" 1919-1923 deny window). In the
+current build 121 of 1,708 battles pass; every other row stays staged under a
 named rejection counter.
 
 IWBD's `iwdNum` field is the IWD parent-war identifier (IWD's `largerwarid`
@@ -221,13 +246,14 @@ resolved by explicit era policies: code 365 maps to the Russian Empire through
 deliberately stay unresolved), code 255 to the Kingdom of Prussia through 1870
 and the German Empire from 1871, code 300 to the Austrian Empire through 1866
 and Austria-Hungary from 1867, and code 345 to the Kingdom of Serbia
-(1882-1918, the interval COW labels "Yugoslavia"). Two parent wars are held on
-a curated exclusion list because the source's belligerent envelope is not the
-historical actor (Italian Unification 1859, fought by the Kingdom of Sardinia;
-Hungarian-Allies 1919, fought by the Hungarian Soviet Republic).
+(1882-1918, the interval COW labels "Yugoslavia"). Three parent wars are held
+on a curated exclusion list: Germany-Denmark 1848 because the source asserts a
+Prussian victory although Denmark won the First Schleswig War; Italian
+Unification 1859 because it was fought by the Kingdom of Sardinia; and
+Hungarian-Allies 1919 because it was fought by the Hungarian Soviet Republic.
 Event confidence is reduced when some component rows could not contribute, and
 all component rows are attached to the emitted event as provenance. In the
-current build, 55 of 93 parent wars pass (88 of 265 component records); the
+current build, 54 of 93 parent wars pass (87 of 265 component records); the
 rest stay staged. IWD also cannot by itself establish that a defeat was
 existential, regime-ending, or equivalent to surrender, so aggregated outcomes
 are never coded above limited victory or defeat.
@@ -594,13 +620,13 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 ## Current expanded provisional release
 
-The 2026-07-13 build publishes three coverage numbers separately:
+The current release publishes three coverage numbers separately:
 
 - 1,590 time-bounded polity identities in the rated-and-unrated registry;
 - 226 entities with rateable evidence; and
-- 4,341 rating events: 40 manually curated events, 1,798 crosswalk-resolved
-  HCED tactical encounters, 2,274 label-resolved HCED tactical encounters,
-  55 coalition-aggregated IWD strategic parent wars, 167 IWBD tactical
+- 4,234 rating events: 40 manually curated events, 1,769 crosswalk-resolved
+  HCED tactical encounters, 2,243 label-resolved HCED tactical encounters,
+  54 coalition-aggregated IWD strategic parent wars, 121 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
 
 The curated state and non-state actor identity tranches raised the totals
@@ -610,13 +636,12 @@ previously staged for lack of a defensible time-bounded identity, and the
 registry consolidates 40 absorbed source-candidate rows into 48 curated
 records (1,582 to 1,590 net).
 
-The review queues contain 27,083 staged source records across Cliopatria, HCED,
+The review queues contain 27,014 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
-now holds 87 candidates rather than the previously documented 18, reflecting
-upstream drift in the discovery page between snapshots). That total includes
+holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
-provisional release; it is not an unresolved-record count. Of 23,459 event-like
-candidates, 19,125 remain outside the rating ledger because their layer,
+provisional release; it is not an unresolved-record count. Of 23,390 event-like
+candidates, 19,163 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.

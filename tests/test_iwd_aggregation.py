@@ -497,6 +497,27 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         ):
             self.assertEqual(results_coverage[key], coverage[key], key)
 
+    def test_operational_document_count_pins_match_artifacts(self) -> None:
+        coverage = self.registry["coverage"]
+        values = {
+            "registry": int(coverage["registry_polities"]),
+            "rated_entities": int(coverage["rated_entities"]),
+            "events": len(self.events),
+            "staged": int(coverage["staged_source_records"]),
+            "unresolved": int(coverage["unresolved_event_candidates"]),
+        }
+        documents = {
+            PROJECT_ROOT / "README.md": ("registry", "rated_entities", "events"),
+            PROJECT_ROOT / "docs" / "METHODOLOGY.md": tuple(values),
+            PROJECT_ROOT / "docs" / "DATA_SOURCES.md": tuple(values),
+            PROJECT_ROOT / "docs" / "REVIEW_WORKFLOW.md": tuple(values),
+        }
+        for path, keys in documents.items():
+            text = path.read_text(encoding="utf-8")
+            for key in keys:
+                with self.subTest(document=path.name, count=key):
+                    self.assertIn(f"{values[key]:,}", text)
+
     def test_promotion_accounting_matches_events(self) -> None:
         promotion = self.metadata["promotion"]
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]

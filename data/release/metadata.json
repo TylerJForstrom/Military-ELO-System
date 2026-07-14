@@ -8,7 +8,7 @@
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
     "entities": 226,
-    "events": 4341,
+    "events": 4234,
     "sources": 89,
     "registry_polities": 1590
   },
@@ -69,16 +69,16 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any HCED candidate (promoted or staged), or an earlier IWBD row by normalized battle name and year within one year; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; both sides are single polities resolving to unique time-bounded identities outside declared deny windows; and severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities resolves twelve former faction labels through authoritative time-bounded policies; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
-    "accepted_hced_events": 1798,
-    "accepted_hced_label_events": 2274,
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; both sides are single polities resolving to unique time-bounded identities outside declared deny windows; and severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "accepted_hced_events": 1769,
+    "accepted_hced_label_events": 2243,
     "hced_label_pass_input_rows": 6741,
-    "accepted_iwd_wars": 55,
+    "accepted_iwd_wars": 54,
     "iwd_parent_wars_total": 93,
-    "iwd_components_aggregated": 88,
-    "iwd_components_attached_to_rated_parents": 88,
+    "iwd_components_aggregated": 87,
+    "iwd_components_attached_to_rated_parents": 87,
     "hced_rejections": {
-      "curated_exclusion": 10,
+      "curated_exclusion": 39,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 3,
@@ -89,16 +89,16 @@
     },
     "hced_label_rejections": {
       "blank_side_label": 0,
-      "curated_row_exclusion": 8,
+      "curated_row_exclusion": 46,
       "duplicate_of_curated_seed": 1,
-      "duplicate_of_promoted_event": 7,
+      "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 484,
       "label_outcome_not_aligned": 87,
-      "label_outside_policy_window": 196,
+      "label_outside_policy_window": 197,
       "label_pending_identity_split": 34,
       "no_unique_time_valid_label_match": 3274,
       "no_unique_time_valid_polity": 254,
-      "outside_continuity_policy": 119,
+      "outside_continuity_policy": 118,
       "same_or_empty_opposing_side": 3
     },
     "hced_label_policy_labels": [
@@ -249,8 +249,44 @@
         "reason": "Afonso I of Portugal's conquest; England was not a belligerent in 1158"
       },
       {
+        "candidate_id": "hced-Andalsnes1940-1",
+        "reason": "wrong belligerent: Andalsnes was a British-Norwegian operation, not French"
+      },
+      {
+        "candidate_id": "hced-Brusilov Offensive1916-1",
+        "reason": "inverted outcome: the Brusilov Offensive was a Russian victory over the Central Powers"
+      },
+      {
+        "candidate_id": "hced-Changsha1942II-1",
+        "reason": "duplicate of Changsha 1941-1942: both rows cite the same Third Battle of Changsha account and assert the same Chinese victory over Japan"
+      },
+      {
+        "candidate_id": "hced-Duppel1849-1",
+        "reason": "wrong belligerent and outcome: Austria did not fight at Dybbol; Denmark won the action"
+      },
+      {
+        "candidate_id": "hced-France1940-1",
+        "reason": "campaign envelope duplicates separately rated Fall of France component engagements"
+      },
+      {
+        "candidate_id": "hced-Galicia1914-1",
+        "reason": "campaign envelope duplicates separately rated Galicia component engagements"
+      },
+      {
+        "candidate_id": "hced-Grol1627-1",
+        "reason": "wrong principal belligerent: the Dutch States Army, not England and France, took Grol"
+      },
+      {
         "candidate_id": "hced-Gustalla1734-1",
         "reason": "duplicate of Guastalla 1734 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Hadad1562-1",
+        "reason": "inverted outcome and branch confusion: Habsburg forces defeated Ottoman-vassal Transylvania"
+      },
+      {
+        "candidate_id": "hced-Hanoi1873-1",
+        "reason": "wrong belligerent: Nguyen Vietnam and the Black Flags fought France, not Qing state forces"
       },
       {
         "candidate_id": "hced-Herat1837-1838-1",
@@ -265,30 +301,154 @@
         "reason": "Dost Mohammad's siege of Sultan Ahmad Khan's Herat; Persia fielded no army"
       },
       {
+        "candidate_id": "hced-Isola del Giglio1646-1",
+        "reason": "Habsburg branch confusion: the defending fleet belonged to Habsburg Spain"
+      },
+      {
         "candidate_id": "hced-Juthas1808-1",
         "reason": "duplicate of Jutas 1808 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Kaiserswerth1702-1",
+        "reason": "inverted outcome: the French garrison capitulated to the Allied besiegers"
+      },
+      {
+        "candidate_id": "hced-Kemmel1918-1",
+        "reason": "inverted outcome: German forces captured Mont Kemmel"
+      },
+      {
+        "candidate_id": "hced-Lepanto1571-1",
+        "reason": "wrong belligerent: the Danubian Habsburg monarchy did not fight at Lepanto"
       },
       {
         "candidate_id": "hced-Libertwolkwitz1813-1",
         "reason": "duplicate of Liebertwolkwitz 1813 under a variant spelling"
       },
       {
+        "candidate_id": "hced-Maastricht1632-1",
+        "reason": "wrong principal belligerent: the Dutch States Army, not England and France, took Maastricht"
+      },
+      {
+        "candidate_id": "hced-Martinesti1789-1",
+        "reason": "duplicate of Rimnik/Rymnik 1789 under the battlefield place name"
+      },
+      {
+        "candidate_id": "hced-Messina1718-1",
+        "reason": "wrong opposing sides: Spain captured Messina while France and Austria were allies"
+      },
+      {
+        "candidate_id": "hced-Monte Grappa1917-1",
+        "reason": "wrong principal belligerent: the 1917 defense was an Italian operation"
+      },
+      {
+        "candidate_id": "hced-Monte Grappa1918-1",
+        "reason": "wrong principal belligerent: Italy is omitted from its own Monte Grappa battle"
+      },
+      {
+        "candidate_id": "hced-Nivelle Offensive1917-1",
+        "reason": "campaign envelope duplicates the separately rated Aisne 1917 offensive"
+      },
+      {
+        "candidate_id": "hced-Norway1940-1",
+        "reason": "campaign envelope duplicates separately rated Norwegian Campaign engagements"
+      },
+      {
         "candidate_id": "hced-Pandjeh1885-1",
         "reason": "duplicate of Penjdeh 1885 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Rheims1359-1360-1",
+        "reason": "inverted siege assertion: Edward III abandoned the siege without taking Rheims"
+      },
+      {
+        "candidate_id": "hced-Rocoux1747-1",
+        "reason": "date error: Rocoux was fought in 1746"
+      },
+      {
+        "candidate_id": "hced-Rosas1645-1",
+        "reason": "Habsburg branch confusion: the defense belonged to Habsburg Spain"
+      },
+      {
+        "candidate_id": "hced-Sevastopol1854-1855-1",
+        "reason": "campaign envelope duplicates separately rated Crimean War siege components"
+      },
+      {
+        "candidate_id": "hced-St Augustine1702-1",
+        "reason": "inverted outcome: the English siege failed and the attackers withdrew"
       },
       {
         "candidate_id": "hced-St Quentin1557-1",
         "reason": "fought by Habsburg Spain after Charles V's abdication; the Danubian monarchy was not a belligerent"
       },
       {
+        "candidate_id": "hced-St Quentin1914-1",
+        "reason": "duplicate of the Battle of Guise/Saint-Quentin 1914"
+      },
+      {
+        "candidate_id": "hced-Trebizond1916-1",
+        "reason": "wrong belligerents: the campaign was exclusively Russian, not French or British"
+      },
+      {
+        "candidate_id": "hced-Trentino1917-1",
+        "reason": "date/granularity ambiguity: likely duplicates the 1916 Asiago offensive or 1917 Ortigara"
+      },
+      {
         "candidate_id": "hced-Truillas1793-1",
         "reason": "duplicate of Trouillas 1793 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Vittorio Veneto1918-1",
+        "reason": "wrong principal belligerent: Italy is omitted from the Vittorio Veneto victory"
       }
     ],
     "hced_label_curated_exclusions": [
       {
+        "candidate_id": "hced-1stDragasani1821-1",
+        "reason": "inverted outcome: Ottoman forces destroyed the Sacred Band at Dragasani"
+      },
+      {
+        "candidate_id": "hced-A Shau1966-1",
+        "reason": "inverted outcome and actor error: PAVN overran the camp but is coded as defeated Viet Cong"
+      },
+      {
+        "candidate_id": "hced-Arcis-sur-Aube1814-1",
+        "reason": "inverted outcome: Napoleon withdrew before Schwarzenberg's Allied army"
+      },
+      {
+        "candidate_id": "hced-Barcelona, Spain1705-1706-1",
+        "reason": "incompatible envelope: combines the distinct 1705 capture and 1706 defense while the 1705 siege is already rated separately"
+      },
+      {
+        "candidate_id": "hced-Barcelona, Spain1936-1",
+        "reason": "inverted outcome: Republican and anarchist forces defeated the July uprising"
+      },
+      {
+        "candidate_id": "hced-Bautzen1813-1",
+        "reason": "wrong belligerent: Austria was neutral; the defeated Allies were Prussian and Russian"
+      },
+      {
+        "candidate_id": "hced-Beijing-Tianjin1948-1",
+        "reason": "campaign envelope duplicates separately rated Tianjin and related component battles"
+      },
+      {
         "candidate_id": "hced-Binh Gia1964-1",
         "reason": "duplicate of iwbd_iwbd_163_62_1468/1469 (Binh Gia a/b, 1964)"
+      },
+      {
+        "candidate_id": "hced-Brest1513-1",
+        "reason": "inverted outcome: Howard's English attack on Brest failed"
+      },
+      {
+        "candidate_id": "hced-Brienne1814-1",
+        "reason": "wrong belligerent: the action was fought against Russian and Prussian forces, not Austria"
+      },
+      {
+        "candidate_id": "hced-Cadore1508-1",
+        "reason": "wrong Habsburg branch: Maximilian's Imperial-Tyrolean army is coded as Spain"
+      },
+      {
+        "candidate_id": "hced-Coatit1895-1",
+        "reason": "inverted outcome: Baratieri's Italian force defeated Ras Mengesha"
       },
       {
         "candidate_id": "hced-Con Thien (1st)1967-1",
@@ -299,6 +459,26 @@
         "reason": "side-misattributed: PAVN engagement coded as 'Viet Cong'"
       },
       {
+        "candidate_id": "hced-Dardanelles1654-1",
+        "reason": "inverted outcome: the first 1654 Dardanelles battle was Ottoman"
+      },
+      {
+        "candidate_id": "hced-Dembeguina1935-1",
+        "reason": "inverted outcome: Ethiopian forces won the Dembeguina Pass action"
+      },
+      {
+        "candidate_id": "hced-Dong Xoai1965-1",
+        "reason": "inverted outcome: Viet Cong forces overran Dong Xoai and mauled the relief force"
+      },
+      {
+        "candidate_id": "hced-Dragasani1821-1",
+        "reason": "duplicate source row with the same inverted Dragasani outcome"
+      },
+      {
+        "candidate_id": "hced-Huaihai1948-1",
+        "reason": "campaign envelope duplicates separately rated Huaihai component battles"
+      },
+      {
         "candidate_id": "hced-Hue1968-1",
         "reason": "side-misattributed: predominantly PAVN engagement coded as 'Viet Cong'"
       },
@@ -307,16 +487,104 @@
         "reason": "side-misattributed: PAVN regulars coded as 'Viet Cong'; north_vietnam is separately rated"
       },
       {
+        "candidate_id": "hced-Kalat1839-1",
+        "reason": "wrong actor: the defender was the independent Khanate of Kalat, not the Kabul emirate"
+      },
+      {
+        "candidate_id": "hced-Kehl1797-1",
+        "reason": "inverted outcome: the French garrison capitulated to Austria"
+      },
+      {
         "candidate_id": "hced-Khe Sanh1967-1",
         "reason": "duplicate of iwbd_iwbd_163_62_1489 (Khe Sanh 1, 1967)"
+      },
+      {
+        "candidate_id": "hced-Kolberg1760-1",
+        "reason": "inverted outcome: the Russian siege of Kolberg failed in 1760"
+      },
+      {
+        "candidate_id": "hced-Kolberg1774-1",
+        "reason": "phantom engagement: no Russo-Prussian battle or war occurred at Kolberg in 1774"
+      },
+      {
+        "candidate_id": "hced-Kolin1756-1",
+        "reason": "date error: Kolin was fought in 1757"
+      },
+      {
+        "candidate_id": "hced-Liaoshen1948-1",
+        "reason": "campaign envelope duplicates separately rated Liaoshen component battles"
       },
       {
         "candidate_id": "hced-Long Tan, Vietnam1966-1",
         "reason": "duplicate of iwbd_iwbd_163_62_1485 (Long Tan, 1966)"
       },
       {
+        "candidate_id": "hced-Longwy1792-1",
+        "reason": "wrong belligerent: the siege was conducted by Prussian forces"
+      },
+      {
+        "candidate_id": "hced-Lvov1675-1",
+        "reason": "inverted outcome: Sobieski defeated the Ottoman-Crimean force"
+      },
+      {
+        "candidate_id": "hced-Marstrand-1",
+        "reason": "inverted outcome: Danish-Norwegian forces captured Marstrand and Carlsten"
+      },
+      {
+        "candidate_id": "hced-Mewe1626-1",
+        "reason": "inverted outcome: the Battle of Gniew/Mewe was a Swedish victory"
+      },
+      {
+        "candidate_id": "hced-Mockern (1st)1813-1",
+        "reason": "wrong belligerent: Austria was neutral during the April action"
+      },
+      {
+        "candidate_id": "hced-Mojkovac1916-1",
+        "reason": "inverted outcome: Montenegro won the defensive action at Mojkovac"
+      },
+      {
+        "candidate_id": "hced-Montmirail1814-1",
+        "reason": "wrong belligerent: Russian and Prussian corps, not Austria, fought at Montmirail"
+      },
+      {
         "candidate_id": "hced-Nam Dong1964-1",
         "reason": "mis-crosswalked participant: 'Australia' coded ko_korean_rep (no ROK forces at Nam Dong)"
+      },
+      {
+        "candidate_id": "hced-Parwan Durrah1840-1",
+        "reason": "inverted outcome: Dost Mohammad's Afghan force won the action"
+      },
+      {
+        "candidate_id": "hced-Poland1939-1",
+        "reason": "campaign envelope duplicates separately rated invasion-of-Poland components"
+      },
+      {
+        "candidate_id": "hced-Rippach1813-1",
+        "reason": "wrong belligerent: Austria was neutral during the May action"
+      },
+      {
+        "candidate_id": "hced-Tournai1794-1",
+        "reason": "duplicate of Pont-a-Chin 1794, the same 22 May engagement"
+      },
+      {
+        "candidate_id": "hced-Tutrakan1916-1",
+        "reason": "wrong victor: Bulgarian forces led the assault; Ottoman troops were absent"
+      },
+      {
+        "candidate_id": "hced-Ushant1794-1",
+        "reason": "duplicate of the Glorious First of June 1794"
+      },
+      {
+        "candidate_id": "hced-Valmy1792-1",
+        "reason": "wrong principal opponent: the field army was Prussian"
+      },
+      {
+        "candidate_id": "hced-Vauchamps1814-1",
+        "reason": "wrong belligerent: the defeated force was Russian-Prussian, not Austrian"
+      },
+      {
+        "candidate_id": "hced-Verdun1792-1",
+        "reason": "wrong belligerent: the siege was conducted by Prussian forces"
       }
     ],
     "iwbd_curated_exclusions": [
@@ -327,6 +595,10 @@
       {
         "candidate_id": "iwbd-127-49-879",
         "reason": "duplicate of HCED Tembien (2nd) 1936 (IWBD 'Tembien 2')"
+      },
+      {
+        "candidate_id": "iwbd-13-5-51",
+        "reason": "wrong outcome at Duppel/Dybbol on 1849-04-13: Denmark, not Prussia, won the action"
       },
       {
         "candidate_id": "iwbd-55-19-188",
@@ -349,6 +621,51 @@
       {
         "parent_war_id": "42",
         "reason": "Hungarian-Allies 1919: fought principally by the Hungarian Soviet Republic; the [1919,1943] Hungary interval bridges the 1919 regime resets (identity pending)"
+      },
+      {
+        "parent_war_id": "5",
+        "reason": "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the First Schleswig War; the source assertion stays staged rather than being inverted"
+      }
+    ],
+    "seed_event_interval_exemptions": [
+      {
+        "event_id": "afghanistan_war_2001_2021",
+        "entity_id": "islamic_republic_afghanistan",
+        "event_interval": [
+          2001,
+          2021
+        ],
+        "entity_interval": [
+          2004,
+          2021
+        ],
+        "reason": "the curated war envelope includes the 2001-2003 transition before the 2004 republic"
+      },
+      {
+        "event_id": "american_revolutionary_war",
+        "entity_id": "united_states",
+        "event_interval": [
+          1775,
+          1783
+        ],
+        "entity_interval": [
+          1776,
+          null
+        ],
+        "reason": "the curated war envelope begins in 1775; the United States identity begins in 1776"
+      },
+      {
+        "event_id": "napoleonic_wars",
+        "entity_id": "first_french_empire",
+        "event_interval": [
+          1803,
+          1815
+        ],
+        "entity_interval": [
+          1804,
+          1815
+        ],
+        "reason": "the curated coalition-war envelope begins in 1803; the Empire identity begins in 1804"
       }
     ],
     "ucdp_actor_party_policies": [
@@ -382,21 +699,21 @@
       "4": "insurgency_intervention"
     },
     "iwd_rejections": {
-      "curated_exclusion": 2,
+      "curated_exclusion": 3,
       "inconsistent_coalition_sides": 1,
       "mixed_component_outcomes": 2,
       "overlaps_curated_strategic_event": 6,
       "unresolved_time_bounded_party": 27
     },
-    "accepted_iwbd_battles": 167,
+    "accepted_iwbd_battles": 121,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
-      "coalition_or_composite_side": 182,
-      "contains_constituent_iwbd_rows": 117,
-      "curated_exclusion": 5,
+      "coalition_or_composite_side": 147,
+      "contains_constituent_iwbd_rows": 382,
+      "curated_exclusion": 6,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 1189,
-      "duplicate_within_iwbd": 6,
+      "duplicate_of_hced_battle": 1010,
+      "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,
       "missing_belligerent_label": 1,
@@ -501,7 +818,7 @@
       "ucdp-dyadic-26.1-candidates.jsonl": 3518,
       "ucdp-termination-conflict-candidates.jsonl": 2752,
       "ucdp-termination-dyad-candidates.jsonl": 3432,
-      "wikidata-candidates.jsonl": 87
+      "wikidata-candidates.jsonl": 18
     }
   }
 }

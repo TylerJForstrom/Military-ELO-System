@@ -195,6 +195,65 @@ class UcdpActorPolicyTests(unittest.TestCase):
         self.assertEqual(by_entity["gov_710"]["termination"], "defeat")
         self.assertEqual(event["war_type"], "civil_war")
 
+    def test_actor_policy_is_side_symmetric(self) -> None:
+        result = promote_ucdp_termination_episodes(
+            [
+                _ucdp_conflict_row(
+                    side_a="PLA",
+                    gwno_a="",
+                    side_b="Government of China",
+                    gwno_b="710",
+                    c_outcome="3",
+                )
+            ],
+            [],
+            [],
+            _government_resolver,
+        )
+        self.assertEqual(len(result["events"]), 1)
+        event = result["events"][0]
+        by_entity = {p["entity_id"]: p for p in event["participants"]}
+        self.assertEqual(by_entity["chinese_communist_forces"]["termination"], "victory")
+        self.assertEqual(by_entity["gov_710"]["termination"], "defeat")
+
+    def test_mixed_government_and_actor_primary_side_is_rejected(self) -> None:
+        result = promote_ucdp_termination_episodes(
+            [
+                _ucdp_conflict_row(
+                    side_a="Government of Nationalist China, PLA",
+                    gwno_a="713",
+                )
+            ],
+            [],
+            [],
+            _government_resolver,
+        )
+        self.assertEqual(result["events"], [])
+        self.assertEqual(result["rejections"]["nonstate_primary_party"], 1)
+
+    def test_actor_policy_secondary_is_provenance_only(self) -> None:
+        result = promote_ucdp_termination_episodes(
+            [
+                _ucdp_conflict_row(
+                    side_b="Government of Other China",
+                    gwno_b="711",
+                    side_b_2nd="PLA",
+                    gwno_b_2nd="",
+                )
+            ],
+            [],
+            [],
+            _government_resolver,
+        )
+        self.assertEqual(len(result["events"]), 1)
+        event = result["events"][0]
+        rated = {p["entity_id"] for p in event["participants"]}
+        self.assertNotIn("chinese_communist_forces", rated)
+        self.assertEqual(
+            event["ucdp_secondary_parties"]["side_b"][0]["resolved_entity_id"],
+            "chinese_communist_forces",
+        )
+
     def test_homonymous_pla_in_another_conflict_never_resolves(self) -> None:
         result = promote_ucdp_termination_episodes(
             [_ucdp_conflict_row(conflict_id="347")], [], [], _government_resolver
@@ -248,7 +307,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if e.get("identity_resolution") == "label"
         ]
-        self.assertEqual(len(label_events), 2274)
+        self.assertEqual(len(label_events), 2243)
         for event in label_events:
             tiers = event.get("side_identity_resolution")
             self.assertIsInstance(tiers, dict, event["id"])
@@ -285,13 +344,22 @@ class ActorReleaseArtifactTests(unittest.TestCase):
                 )
 
     def test_ucdp_events_use_actor_policies_only_in_scope(self) -> None:
+        actor_policy_events = set()
         for event in self.events:
             if not str(event["id"]).startswith("ucdp_term_"):
                 continue
             for row in event.get("ucdp_party_resolutions", []):
                 if row["method"] == "actor_party_policy":
+                    actor_policy_events.add(str(event["id"]))
                     key = (str(event["ucdp_conflict_id"]), normalize_label(row["name"]))
                     self.assertIn(key, UCDP_ACTOR_PARTY_POLICIES, event["id"])
+        self.assertEqual(
+            actor_policy_events,
+            {
+                "ucdp_term_202_ep1_china_pla_conflict_termination_1946_1949",
+                "ucdp_term_242_ep2_cuba_m_26_7_conflict_termination_1956_19",
+            },
+        )
 
 
 if __name__ == "__main__":

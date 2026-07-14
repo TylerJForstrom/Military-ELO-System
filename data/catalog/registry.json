@@ -17410,21 +17410,21 @@
   "coverage": {
     "registry_polities": 1590,
     "rated_entities": 226,
-    "rated_events": 4341,
-    "staged_source_records": 27083,
-    "unresolved_event_candidates": 19125,
+    "rated_events": 4234,
+    "staged_source_records": 27014,
+    "unresolved_event_candidates": 19163,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
-    "provisional_hced_events": 1798,
-    "provisional_hced_label_events": 2274,
-    "provisional_iwd_wars": 55,
-    "provisional_iwbd_battles": 167,
+    "provisional_hced_events": 1769,
+    "provisional_hced_label_events": 2243,
+    "provisional_iwd_wars": 54,
+    "provisional_iwbd_battles": 121,
     "iwbd_battles_total": 1708,
     "provisional_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
-    "iwd_components_aggregated": 88,
+    "iwd_components_aggregated": 87,
     "source_queue_counts": {
       "cliopatria-entity-candidates.jsonl": 1637,
       "hced-candidates.jsonl": 8881,
@@ -17435,7 +17435,7 @@
       "ucdp-dyadic-26.1-candidates.jsonl": 3518,
       "ucdp-termination-conflict-candidates.jsonl": 2752,
       "ucdp-termination-dyad-candidates.jsonl": 3432,
-      "wikidata-candidates.jsonl": 87
+      "wikidata-candidates.jsonl": 18
     }
   }
 }

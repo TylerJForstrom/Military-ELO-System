@@ -10,6 +10,7 @@ from military_elo.release import (
     _candidate_entity_id,
     _event_key,
     _label_policy_seed_id,
+    _normalized_event_name,
     _resolve_label_tiers,
     normalize_label,
     promote_hced_label_rows,
@@ -666,16 +667,17 @@ class TwoPassStructureTests(unittest.TestCase):
         self.assertIn("lower identity confidence", event["summary"])
         self.assertEqual(event["event_type"], "engagement")
 
-    def test_duplicate_of_promoted_event_gate_fires_on_a_constructed_duplicate(
+    def test_same_name_year_label_rows_use_source_disambiguation(
         self,
     ) -> None:
         promoted = {_event_key("Battle of Foo", 1800)}
         rows = [
             # duplicates a pass-1 promoted event
             _row("d-1", "Battle of Foo", 1800, "A1", "B1", "A1", "B1"),
-            # accepted, then duplicated within pass 2 itself
+            # Distinct source assertions with one display name and year both
+            # survive; source order must not choose a winner.
             _row("d-2", "Battle of Bar", 1801, "A2", "B2", "A2", "B2"),
-            _row("d-3", "Battle of Bar", 1801, "A2", "B2", "A2", "B2"),
+            _row("d-3", "Battle of Bar", 1801, "B2", "A2", "B2", "A2"),
             # duplicates a curated seed event
             _row("d-4", "Battle of Seed", 1802, "A3", "B3", "A3", "B3"),
         ]
@@ -686,9 +688,12 @@ class TwoPassStructureTests(unittest.TestCase):
             _resolve_code_stub,
             _resolve_label_stub,
         )
-        self.assertEqual(result["accepted"], 1)
-        self.assertEqual(result["events"][0]["hced_candidate_id"], "d-2")
-        self.assertEqual(result["rejections"]["duplicate_of_promoted_event"], 2)
+        self.assertEqual(result["accepted"], 2)
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in result["events"]},
+            {"d-2", "d-3"},
+        )
+        self.assertEqual(result["rejections"]["duplicate_of_promoted_event"], 1)
         self.assertEqual(result["rejections"]["duplicate_of_curated_seed"], 1)
 
     def test_source_ids_include_cliopatria_only_when_a_clio_entity_participates(
@@ -766,27 +771,25 @@ class ReleaseArtifactTests(unittest.TestCase):
         ]
 
     def test_existing_crosswalk_events_are_byte_identical(self) -> None:
-        # The first 1,893 events are the pre-label-pass block (40 seed +
-        # 1,798 crosswalk HCED + 55 IWD): the label pass is a pure append and
+        # The first 1,863 events are the reviewed pre-label-pass block (40 seed +
+        # 1,769 crosswalk HCED + 54 IWD): the label pass is a pure append and
         # adds no field to any block event. The digest pins the CONTENT of
-        # that block, not just its shape; it changes only when the upstream
-        # snapshot legitimately re-stages or a curated identity tranche
-        # deliberately extends the policy tables, which is exactly when the
-        # pin must be re-reviewed.
-        legacy = self.events[:1893]
+        # that block, not just its shape; this value was re-reviewed after the
+        # curated historical-adjudication tranche deliberately changed it.
+        legacy = self.events[:1863]
         digest = hashlib.sha256(
             json.dumps(legacy, sort_keys=True).encode("utf-8")
         ).hexdigest()
         self.assertEqual(
             digest,
-            "519787298b0b3cec64ef18c63a4e5cc44ae6966f084f694aa6043dbf71ceb50a",
+            "28ffede846d16472061fa91043eeb2360fd51cf197c39aaf27886c7c8984e49d",
             "pre-label-pass event block changed content",
         )
-        self.assertEqual(len(self.events) > 1893, True)
+        self.assertEqual(len(self.events) > 1863, True)
         for event in legacy:
             self.assertNotIn("identity_resolution", event)
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
-        self.assertEqual(len(hced_legacy), 1798)
+        self.assertEqual(len(hced_legacy), 1769)
         for event in hced_legacy:
             self.assertTrue(
                 str(event["id"]).startswith("hced_hced_"),
@@ -799,15 +802,51 @@ class ReleaseArtifactTests(unittest.TestCase):
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
-        self.assertEqual(len(iwd_events), 55)
+        self.assertEqual(len(iwd_events), 54)
         promotion = self.metadata["promotion"]
-        self.assertEqual(promotion["accepted_iwd_wars"], 55)
+        self.assertEqual(promotion["accepted_iwd_wars"], 54)
         self.assertEqual(
-            sum(promotion["iwd_rejections"].values()) + 55,
+            sum(promotion["iwd_rejections"].values()) + 54,
             promotion["iwd_parent_wars_total"],
         )
         for event in iwd_events:
             self.assertNotIn("identity_resolution", event)
+
+    def test_same_name_year_hced_collisions_are_enumerated(self) -> None:
+        groups: dict[tuple[str, int], list[str]] = {}
+        for event in self.events:
+            if not str(event["id"]).startswith("hced_"):
+                continue
+            key = (_normalized_event_name(event["name"]), int(event["year"]))
+            groups.setdefault(key, []).append(str(event["id"]))
+        collisions = {
+            tuple(sorted(ids)) for ids in groups.values() if len(ids) > 1
+        }
+        self.assertEqual(
+            collisions,
+            {
+                (
+                    "hced_label_hced_second_arlon1794_1",
+                    "hced_label_hced_third_arlon1794_1",
+                ),
+                (
+                    "hced_label_hced_2ndbreslau1757_1",
+                    "hced_label_hced_breslau1757_1",
+                ),
+                (
+                    "hced_label_hced_corfuland1716_1",
+                    "hced_label_hced_corfusea1716_1",
+                ),
+                (
+                    "hced_hced_1stgiurgevo1811_1",
+                    "hced_hced_2ndgiurgevo1811_1",
+                ),
+                (
+                    "hced_label_hced_2ndschweidnitz1757_1",
+                    "hced_label_hced_schweidnitz1757_1",
+                ),
+            },
+        )
 
     def test_label_events_all_carry_marker_and_reduced_confidence(self) -> None:
         self.assertEqual(
@@ -938,13 +977,12 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 342 + 4,467 + 1,798 + 2,274 == 8,881.
+        # Pinned measured funnel: 371 + 4,498 + 1,769 + 2,243 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (342, 4467, 1798, 2274, 8881),
+            (371, 4498, 1769, 2243, 8881),
         )
-        # Label-pass identity: rejections + accepted == deferred input rows
-        # (nine former uncoded_side rows are now curated pass-1 exclusions).
+        # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
@@ -953,12 +991,12 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         # All twelve declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 12)
         self.assertEqual(
-            promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 7
+            promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 8
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 46
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 10)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 39)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -967,7 +1005,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2274)
+        self.assertEqual(len(label_events), 2243)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

@@ -6,8 +6,12 @@ from pathlib import Path
 
 from military_elo.models import TACTICAL_DIMENSIONS
 from military_elo.release import (
+    HCED_CURATED_EXCLUSIONS,
+    HCED_LABEL_CURATED_EXCLUSIONS,
     IWBD_COALITION_SIDE_LABELS,
+    IWBD_CURATED_EXCLUSIONS,
     IDENTITY_DENY_WINDOWS,
+    _cross_source_event_keys,
     _event_key,
     _war_tokens,
     _war_tokens_match,
@@ -144,6 +148,199 @@ class DedupTests(unittest.TestCase):
         self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 1)
         self.assertEqual(result["events"], [])
 
+    def test_cross_source_ordinal_spellings_are_canonicalized(self) -> None:
+        candidate = _battle(
+            "iwbd-1-1-101",
+            "Plevna 1",
+            "Example War",
+            "1900-01-01",
+            "1900-01-02",
+            "A",
+            "B",
+            "A",
+            "Attacker",
+        )
+        hced_key = _event_key("Plevna (1st)", 1900)
+        result = _promote(
+            [candidate],
+            hced_event_keys={hced_key: {"exact": True, "outcomes": set()}},
+        )
+        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 1)
+        self.assertEqual(result["events"], [])
+
+    def test_cross_source_compatible_suffix_paths_are_canonicalized(self) -> None:
+        cases = (
+            ("Al Faw 2", "Al Faw"),
+            ("Binh Gia (a)", "Binh Gia"),
+            ("Plevna 1 (a)", "Plevna (1st)"),
+        )
+        for index, (iwbd_name, hced_name) in enumerate(cases, start=1):
+            with self.subTest(iwbd=iwbd_name, hced=hced_name):
+                candidate = _battle(
+                    f"iwbd-1-1-{100 + index}",
+                    iwbd_name,
+                    "Example War",
+                    "1900-01-01",
+                    "1900-01-02",
+                    "A",
+                    "B",
+                    "A",
+                    "Attacker",
+                )
+                result = _promote(
+                    [candidate],
+                    hced_event_keys={
+                        key: {
+                            "exact": False,
+                            "outcomes": {
+                                (frozenset({"entity_a"}), frozenset({"entity_b"}))
+                            },
+                        }
+                        for key in _cross_source_event_keys(hced_name, 1900)
+                    },
+                )
+                self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 1)
+                self.assertEqual(result["events"], [])
+
+    def test_different_explicit_suffix_branches_do_not_share_a_fuzzy_key(self) -> None:
+        cases = (
+            ("Plevna 2", "Plevna 1"),
+            ("Plevna 1 (b)", "Plevna 1 (a)"),
+        )
+        outcome = (frozenset({"entity_a"}), frozenset({"entity_b"}))
+        for index, (iwbd_name, hced_name) in enumerate(cases, start=1):
+            with self.subTest(iwbd=iwbd_name, hced=hced_name):
+                candidate = _battle(
+                    f"iwbd-1-1-{103 + index}",
+                    iwbd_name,
+                    "Example War",
+                    "1900-01-01",
+                    "1900-01-02",
+                    "A",
+                    "B",
+                    "A",
+                    "Attacker",
+                )
+                hced_index = {
+                    _event_key(hced_name, 1900): {
+                        "exact": True,
+                        "outcomes": set(),
+                    },
+                    **{
+                        key: {"exact": False, "outcomes": {outcome}}
+                        for key in _cross_source_event_keys(hced_name, 1900)
+                    },
+                }
+                result = _promote([candidate], hced_event_keys=hced_index)
+                self.assertEqual(
+                    result["rejections"]["duplicate_of_hced_battle"], 0
+                )
+                self.assertEqual(len(result["events"]), 1)
+
+    def test_arbitrary_terminal_number_is_not_treated_as_an_ordinal(self) -> None:
+        candidate = _battle(
+            "iwbd-1-1-105",
+            "Hill 203",
+            "Example War",
+            "1900-01-01",
+            "1900-01-02",
+            "A",
+            "B",
+            "A",
+            "Attacker",
+        )
+        outcome = (frozenset({"entity_a"}), frozenset({"entity_b"}))
+        hced_index = {
+            key: {"exact": False, "outcomes": {outcome}}
+            for key in _cross_source_event_keys("Hill", 1900)
+        }
+        result = _promote([candidate], hced_event_keys=hced_index)
+        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 0)
+        self.assertEqual(len(result["events"]), 1)
+
+    def test_unsuffixed_name_does_not_dedup_different_outcome_sides(self) -> None:
+        candidate = _battle(
+            "iwbd-1-1-104",
+            "Al Faw 2",
+            "Example War",
+            "1900-01-01",
+            "1900-01-02",
+            "A",
+            "B",
+            "A",
+            "Attacker",
+        )
+        hced_index = {
+            key: {
+                "exact": False,
+                "outcomes": {
+                    (frozenset({"entity_c"}), frozenset({"entity_d"}))
+                },
+            }
+            for key in _cross_source_event_keys("Al Faw", 1900)
+        }
+        result = _promote([candidate], hced_event_keys=hced_index)
+        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 0)
+        self.assertEqual(len(result["events"]), 1)
+
+    def test_unsuffixed_name_does_not_use_exact_match_year_tolerance(self) -> None:
+        candidate = _battle(
+            "iwbd-219-84-1692",
+            "Badme 2 (a)",
+            "Badme Border",
+            "1999-02-06",
+            "1999-02-10",
+            "Ethiopia",
+            "Eritrea",
+            "Eritrea",
+            "Defender",
+        )
+        same_orientation_previous_year = (
+            frozenset({"entity_eritrea"}),
+            frozenset({"entity_ethiopia"}),
+        )
+        opposite_orientation_same_year = (
+            frozenset({"entity_ethiopia"}),
+            frozenset({"entity_eritrea"}),
+        )
+        hced_index = {}
+        for year, outcome in (
+            (1998, same_orientation_previous_year),
+            (1999, opposite_orientation_same_year),
+        ):
+            hced_index[_event_key("Badme", year)] = {
+                "exact": True,
+                "outcomes": set(),
+            }
+            for key in _cross_source_event_keys("Badme", year):
+                hced_index[key] = {"exact": False, "outcomes": {outcome}}
+        result = _promote([candidate], hced_event_keys=hced_index)
+        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 0)
+        self.assertEqual(
+            [event["iwbd_candidate_id"] for event in result["events"]],
+            ["iwbd-219-84-1692"],
+        )
+
+    def test_curated_iwbd_exclusion_is_counted_before_other_gates(self) -> None:
+        candidate_id = next(iter(IWBD_CURATED_EXCLUSIONS))
+        result = _promote(
+            [
+                _battle(
+                    candidate_id,
+                    "Excluded battle",
+                    "Example War",
+                    "1900-01-01",
+                    "1900-01-02",
+                    "A",
+                    "B",
+                    "A",
+                    "Attacker",
+                )
+            ]
+        )
+        self.assertEqual(result["rejections"]["curated_exclusion"], 1)
+        self.assertEqual(result["events"], [])
+
     def test_curated_seed_battle_is_excluded(self) -> None:
         candidates = [
             _battle("iwbd-139-53-700", "Midway", "World War II (Pacific)",
@@ -168,9 +365,9 @@ class DedupTests(unittest.TestCase):
         self.assertEqual(len(result["events"]), 1)
         self.assertEqual(result["events"][0]["iwbd_candidate_id"], "iwbd-103-41-610")
 
-    def test_second_copy_of_an_hced_duplicate_counts_as_within_iwbd(self) -> None:
-        # The HCED-duplicate row's exact keys still enter the seen set, so a
-        # second IWBD copy of the same battle lands in the within-IWBD lane.
+    def test_each_hced_duplicate_is_counted_in_its_source_lane(self) -> None:
+        # Rejected rows do not claim within-IWBD keys; both copies therefore
+        # receive the accurate HCED-duplicate disposition.
         rows = [
             _battle("iwbd-1-1-3", "Cadiz", "Franco-Spanish", "1823-08-31",
                     "1823-09-23", "France", "Spain", "France", "Attacker"),
@@ -178,9 +375,28 @@ class DedupTests(unittest.TestCase):
                     "1823-09-23", "France", "Spain", "France", "Attacker"),
         ]
         result = _promote(rows, hced_event_keys={_event_key("Cadiz", 1823)})
-        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 1)
-        self.assertEqual(result["rejections"]["duplicate_within_iwbd"], 1)
+        self.assertEqual(result["rejections"]["duplicate_of_hced_battle"], 2)
+        self.assertEqual(result["rejections"]["duplicate_within_iwbd"], 0)
         self.assertEqual(result["events"], [])
+
+    def test_rejected_earlier_copy_does_not_suppress_valid_later_copy(self) -> None:
+        rows = [
+            _battle(
+                "iwbd-1-1-1", "Example", "Example War", "1900-01-01",
+                "1900-01-02", "A", "B", "C", "Attacker",
+            ),
+            _battle(
+                "iwbd-1-1-2", "Example", "Example War", "1900-01-01",
+                "1900-01-02", "A", "B", "A", "Attacker",
+            ),
+        ]
+        result = _promote(rows)
+        self.assertEqual(result["rejections"]["outcome_not_aligned_to_battle_sides"], 1)
+        self.assertEqual(result["rejections"]["duplicate_within_iwbd"], 0)
+        self.assertEqual(
+            [event["iwbd_candidate_id"] for event in result["events"]],
+            ["iwbd-1-1-2"],
+        )
 
 
 class ContainmentTests(unittest.TestCase):
@@ -406,7 +622,7 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(result["events"], [])
 
     def test_deny_window_beats_the_resolver(self) -> None:
-        self.assertEqual(IDENTITY_DENY_WINDOWS["turkey"], ((1920, 1923),))
+        self.assertEqual(IDENTITY_DENY_WINDOWS["turkey"], ((1919, 1923),))
 
         def resolver(label, low_year, high_year):
             # This stub WOULD resolve "Turkey" in 1921 (to the identity the
@@ -421,6 +637,14 @@ class IdentityTests(unittest.TestCase):
         result = _promote(inside, resolve_label=resolver)
         self.assertEqual(result["rejections"]["unresolved_time_bounded_belligerent"], 1)
         self.assertEqual(result["events"], [])
+
+        opening_year = [
+            _battle("iwbd-115-43-809", "Aydin", "Greco-Turkish",
+                    "1919-06-27", "1919-07-04", "Greece", "Turkey",
+                    "Turkey", "Defender"),
+        ]
+        result = _promote(opening_year, resolve_label=resolver)
+        self.assertEqual(result["rejections"]["unresolved_time_bounded_belligerent"], 1)
 
         outside = [
             _battle("iwbd-158--9-1500", "Post-window Clash", "Turco-Cypriot",
@@ -746,13 +970,21 @@ class ReleaseArtifactTests(unittest.TestCase):
         # keys over all staged HCED candidates (promoted or rejected), not
         # just the promoted events — a wide-span candidate's interior years
         # must also block.
-        hced_keys = set()
+        hced_keys = {}
+
+        def entry(key):
+            return hced_keys.setdefault(key, {"exact": False, "outcomes": set()})
         review_path = PROJECT_ROOT / "data" / "review" / "hced-candidates.jsonl"
         with review_path.open("r", encoding="utf-8") as handle:
             for line in handle:
                 if not line.strip():
                     continue
                 row = json.loads(line)
+                if str(row.get("candidate_id")) in {
+                    *HCED_CURATED_EXCLUSIONS,
+                    *HCED_LABEL_CURATED_EXCLUSIONS,
+                }:
+                    continue
                 name = str(row.get("name") or "")
                 if not name:
                     continue
@@ -760,40 +992,136 @@ class ReleaseArtifactTests(unittest.TestCase):
                 if year_low is None or year_high is None:
                     for year in {row.get("year_low"), row.get("year_best"), row.get("year_high")}:
                         if year is not None:
-                            hced_keys.add(_event_key(name, int(year)))
+                            entry(_event_key(name, int(year)))["exact"] = True
                     continue
                 for year in range(int(year_low), int(year_high) + 1):
-                    hced_keys.add(_event_key(name, year))
+                    entry(_event_key(name, year))["exact"] = True
+
+        def oriented_signature(event):
+            winners = frozenset(
+                p["entity_id"]
+                for p in event["participants"]
+                if "victory" in p.get("termination", "")
+            )
+            losers = frozenset(
+                p["entity_id"]
+                for p in event["participants"]
+                if "defeat" in p.get("termination", "")
+            )
+            if winners or losers:
+                return winners, losers
+            return frozenset(p["entity_id"] for p in event["participants"]), frozenset()
+
+        for event in self.hced_events:
+            for year in range(int(event["year"]), int(event["end_year"]) + 1):
+                for key in _cross_source_event_keys(event["name"], year):
+                    entry(key)["outcomes"].add(oriented_signature(event))
         self.assertTrue(hced_keys)
         for event in self.iwbd_events:
-            lookup = {
+            exact_lookup = {
                 _event_key(str(event["name"]), year)
                 for year in range(int(event["year"]) - 1, int(event["end_year"]) + 2)
             }
+            fuzzy_lookup = {
+                key
+                for year in range(int(event["year"]), int(event["end_year"]) + 1)
+                for key in _cross_source_event_keys(
+                    str(event["name"]), year, lookup=True
+                )
+            }
             self.assertFalse(
-                lookup & hced_keys,
+                any(hced_keys.get(key, {}).get("exact") for key in exact_lookup)
+                or any(
+                    oriented_signature(event)
+                    in hced_keys.get(key, {}).get("outcomes", set())
+                    for key in fuzzy_lookup
+                ),
                 f"promoted IWBD event {event['id']} matches a staged HCED candidate",
             )
 
     def test_no_battle_appears_in_both_hced_and_iwbd_streams(self) -> None:
         self.assertTrue(self.iwbd_events)
         self.assertTrue(self.hced_events)
-        hced_keys = {
-            _event_key(str(event["name"]), year)
-            for event in self.hced_events
+        def signature(event):
+            return frozenset(
+                (participant["entity_id"], participant["termination"])
+                for participant in event["participants"]
+            )
+
+        hced_exact_index = set()
+        hced_fuzzy_index = {}
+        for event in self.hced_events:
             for year in range(
                 int(event["year"]), int(event.get("end_year", event["year"])) + 1
+            ):
+                hced_exact_index.add(_event_key(str(event["name"]), year))
+                for key in _cross_source_event_keys(str(event["name"]), year):
+                    hced_fuzzy_index.setdefault(key, set()).add(signature(event))
+        for event in self.iwbd_events:
+            exact_lookup = {
+                _event_key(str(event["name"]), year)
+                for year in range(
+                    int(event["year"]) - 1,
+                    int(event.get("end_year", event["year"])) + 2,
+                )
+            }
+            fuzzy_lookup = {
+                key
+                for year in range(
+                    int(event["year"]),
+                    int(event.get("end_year", event["year"])) + 1,
+                )
+                for key in _cross_source_event_keys(
+                    str(event["name"]), year, lookup=True
+                )
+            }
+            self.assertFalse(
+                bool(exact_lookup & hced_exact_index)
+                or any(
+                    signature(event) in hced_fuzzy_index.get(key, set())
+                    for key in fuzzy_lookup
+                ),
+                event["id"],
             )
+
+    def test_badme_2a_survives_cross_year_fuzzy_match(self) -> None:
+        promoted = {
+            str(event.get("iwbd_candidate_id")): event for event in self.iwbd_events
         }
-        iwbd_keys = {
-            _event_key(str(event["name"]), year)
-            for event in self.iwbd_events
-            for year in range(
-                int(event["year"]) - 1,
-                int(event.get("end_year", event["year"])) + 2,
-            )
+        self.assertIn("iwbd-219-84-1692", promoted)
+        event = promoted["iwbd-219-84-1692"]
+        self.assertEqual((event["year"], event["end_year"]), (1999, 1999))
+
+    def test_compound_suffix_hced_duplicates_stay_staged(self) -> None:
+        promoted = {
+            str(event.get("iwbd_candidate_id")) for event in self.iwbd_events
         }
-        self.assertEqual(hced_keys & iwbd_keys, set())
+        self.assertTrue(
+            {
+                "iwbd-61-22-282",   # Plevna 1(a)
+                "iwbd-61-22-283",   # Plevna 1(b)
+                "iwbd-199-77-1626", # Mehran 2(b)
+                "iwbd-199-77-1628", # Basra 4(b)
+                "iwbd-219-84-1693", # Badme 2(b)
+            }.isdisjoint(promoted)
+        )
+
+    def test_verification_refuted_assertions_remain_in_the_ledger(self) -> None:
+        retained_ids = {
+            "hced_label_hced_newbury1643_1",
+            "hced_label_hced_gainsborough1643_1",
+            "hced_label_hced_bizani1913_1",
+            "hced_label_hced_jannina1912_1",
+            "hced_hced_isonzo_1st_1916_1",
+            "hced_hced_isonzo_2nd_1916_1",
+            "iwbd_iwbd_117_9_828_nieman_river",
+        }
+        event_ids = {str(event["id"]) for event in self.events}
+        self.assertLessEqual(retained_ids, event_ids)
+
+    def test_curated_iwbd_candidates_never_enter_the_ledger(self) -> None:
+        promoted = {str(event.get("iwbd_candidate_id")) for event in self.iwbd_events}
+        self.assertEqual(promoted & set(IWBD_CURATED_EXCLUSIONS), set())
 
     def test_no_iwbd_event_contains_a_sibling_iwbd_event(self) -> None:
         groups = {}
@@ -898,18 +1226,23 @@ class ReleaseArtifactTests(unittest.TestCase):
                 self.assertIn(participant["result_class"], LIMITED_RESULT_CLASSES)
                 self.assertLessEqual(set(participant["outcome"]), TACTICAL_DIMENSIONS)
 
-    def test_no_iwbd_event_attaches_ottoman_empire_after_1919(self) -> None:
-        # Deny-window pin: "Turkey" in 1920-1923 denotes the Ankara (Kemalist)
-        # government and must never attach to the ottoman_empire identity.
+    def test_no_iwbd_turkey_label_intersects_the_deny_window(self) -> None:
+        # The deny window is label-specific: a genuine "Ottoman Empire" row
+        # is not the same assertion as bare "Turkey" during 1919-1923.
         for event in self.iwbd_events:
-            if any(
-                participant["entity_id"] == "ottoman_empire"
-                for participant in event["participants"]
-            ):
-                self.assertLessEqual(
-                    int(event.get("end_year", event["year"])),
-                    1919,
-                    f"{event['id']} attaches ottoman_empire after 1919",
+            candidate = self.iwbd_candidates[event["iwbd_candidate_id"]]
+            labels = {
+                normalize_label(candidate.get("attacker_raw")),
+                normalize_label(candidate.get("defender_raw")),
+            }
+            if "turkey" in labels:
+                intersects = not (
+                    int(event.get("end_year", event["year"])) < 1919
+                    or int(event["year"]) > 1923
+                )
+                self.assertFalse(
+                    intersects,
+                    f"{event['id']} promotes bare Turkey inside 1919-1923",
                 )
 
     def test_japan_label_era_pins(self) -> None:

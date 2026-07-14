@@ -88,7 +88,7 @@ State polity labels:
 | `austria hungary` | 1804-1866 Austrian Empire; 1867-1918 Austria-Hungary | outside | Source rows sometimes apply the Dual-Monarchy name to pre-Compromise events; the split keeps each row era-correct. |
 | `england` | 927-1648 and 1661-1706 Kingdom of England | 1649-1660 Interregnum; 1707 onward | The Commonwealth and Protectorate are conventionally a distinct republic (mirroring the French First Republic reset) and await a curated identity; the United Kingdom begins 1707 and inherits no rating. |
 | `scotland` | 843-1706 Kingdom of Scotland | 1707 onward | Ends at the Acts of Union. |
-| `prussia` | 1701-1871 Kingdom of Prussia | pre-1701; post-1871 | Brandenburg-Prussia stays staged; imperial-era forces fight under the German Empire identity. |
+| `prussia` | 1701-1870 Kingdom of Prussia; bare 1871 German Empire | pre-1701; post-1871 | Year-only sources cannot split the 18 January 1871 proclamation, so all bare-1871 records use the German Empire in agreement with COW code 255. Later labels that still say Prussia stay staged. |
 | `poland` | 1569-1795 Polish-Lithuanian Commonwealth; 1918-1939 Second Polish Republic | medieval Poland; 1796-1917; post-1939 | The partitions era and the People's Republic have no curated identities. |
 | `sweden` | 1523-present Kingdom of Sweden | pre-1523 | The modern kingdom from Gustav Vasa; medieval and Kalmar-era Sweden stays staged. This policy replaces the former pending-split quarantine of the bare label. |
 | `denmark` | 1523-present Kingdom of Denmark | pre-1523 | Same Kalmar-dissolution boundary as Sweden; the Danish-Norwegian personal union is not a separate rating identity. |
@@ -120,7 +120,7 @@ Non-state actor labels (see the non-state actor policy below):
 
 Labels deliberately **not** given policy entries — for example `netherlands`
 (resolves through the curated Dutch Republic's alias for 1568-1795 only),
-`turkey` (deny-windowed 1920-1923 and otherwise resolved by era-valid alias
+`turkey` (deny-windowed 1919-1923 and otherwise resolved by era-valid alias
 matching), pre-1948 `israel`, and pre-1949 `china` — stay staged mechanically
 until curated identities exist.
 
@@ -219,7 +219,7 @@ record or confirm UCDP's coding. Promoting the source's coding while
 footnoting the dispute would assign a rated defeat to a polity that likely did
 not fight the battle.
 
-### Identity deny windows: "Turkey", 1920-1923
+### Identity deny windows: "Turkey", 1919-1923
 
 Every label-resolution pipeline (HCED label pass, IWBD, IWD, UCDP) checks the
 declared `IDENTITY_DENY_WINDOWS` table before consulting any resolver tier:
@@ -227,13 +227,14 @@ within a deny window the label never resolves, because it denotes an actor
 distinct from the identity the resolver would return. The table was
 originally IWBD-scoped and was renamed and lifted into the shared resolver so
 one declaration covers every pipeline. Its single entry: the label "Turkey"
-never resolves for events intersecting 1920-1923. In those years the label
-denotes the Ankara (Grand National Assembly/Kemalist) government — a distinct
-actor fighting in parallel with, and against the treaty of, the Istanbul
-government — while the Ottoman Empire's 1299-1922 interval still covers the
-span, so without the window the resolver would attach Kemalist-era battles
-such as Sakarya 1921 to `ottoman_empire`, crossing a regime boundary exactly
-as this policy forbids. The window claims no authority outside 1920-1923:
+never resolves for events intersecting 1919-1923. From the May 1919 opening
+of the Greco-Turkish fighting the label denotes the nationalist/Kemalist
+movement and then the Ankara government — a distinct actor fighting in
+parallel with, and against the treaty of, the Istanbul government — while
+the Ottoman Empire's 1299-1922 interval still covers the
+span, so without the window the resolver would attach Aydin 1919 and Sakarya
+1921 to `ottoman_empire`, crossing a regime boundary exactly as this policy
+forbids. The window claims no authority outside 1919-1923:
 post-1924 "Turkey" labels resolve to the Republic of Turkey identity.
 
 ## Curated state identity tranche (second reviewer pending)
@@ -340,32 +341,46 @@ conflict ID, and the window is the actor's attested existence bounds, so the
 Communist Forces while the homonymous "PLA" of conflict 347 resolves to
 nothing. The government side of such an episode must independently resolve.
 
-## Curated row exclusions (second reviewer pending)
+## Curated row exclusions and historical adjudications
 
-Known wrong-actor, variant-spelling, and cross-source-duplicate records are
-excluded by enumerated candidate ID with a documented reason, counted under a
-curated-exclusion rejection counter in the owning pipeline, and never merged
-or fuzzy-matched:
+Known wrong-actor, wrong-outcome, variant-spelling, date-error, and duplicate
+records are excluded by enumerated candidate ID with a documented reason,
+counted under a curated-exclusion rejection counter in the owning pipeline,
+and never merged, rewritten, or fuzzy-matched. The immutable source assertions
+remain in `data/raw`; every exact ID and reason is emitted in release metadata.
 
-- **HCED coded pass (10):** five variant-spelling duplicates (Pandjeh 1885,
-  Gustalla 1734, Truillas 1793, Juthas 1808, Libertwolkwitz 1813), three
-  Herat-principality rows whose defender was not the Kabul emirate (1837-38,
-  1856, 1863), one wrong-belligerent row (Alcacer do Sol 1158, which England
-  did not fight), and one branch-misattribution (St Quentin 1557, fought by
-  Habsburg Spain after Charles V's abdication).
-- **HCED label pass (8):** four PAVN engagements mislabelled "Viet Cong" (Ia
-  Drang 1965, both Con Thien 1967 rows, Hue 1968), three duplicates of
-  promoted IWBD battles (Binh Gia 1964, Long Tan 1966, Khe Sanh 1967), and one
-  mis-crosswalked participant (Nam Dong 1964, "Australia" coded as the Republic
-  of Korea).
-- **IWBD (5):** cross-source spelling-twin duplicates of HCED battles
-  (Tembien 1 and 2 1936, Liebenau 1866, Dijon 3 1871, Velestino 1 1897).
-- **IWD parents (2):** Italian Unification 1859 (fought by the Kingdom of
-  Sardinia, which has no curated identity yet — the "Kingdom of Italy"
-  envelope is not the 1859 actor) and Hungarian-Allies 1919 (fought
-  principally by the Hungarian Soviet Republic; the available Hungary interval
-  bridges the 1919 regime resets).
+- **HCED coded pass (39):** the original ten variant-spelling,
+  Herat-principality, Alcacer do Sol, and St Quentin 1557 adjudications plus
+  29 historical-review exclusions.
+- **HCED label pass (46):** the original eight PAVN/IWBD/crosswalk
+  adjudications plus 38 historical-review exclusions.
+- **IWBD (6):** the wrong-outcome Duppel/Dybbol 1849 fallback plus five
+  cross-source spelling-twin duplicates of HCED battles (Tembien 1 and 2 1936,
+  Liebenau 1866, Dijon 3 1871, Velestino 1 1897).
+- **IWD parents (3):** Germany-Denmark 1848 (the source asserts a Prussian
+  win, but Denmark won the First Schleswig War), Italian Unification 1859
+  (fought by the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought
+  principally by the Hungarian Soviet Republic).
 - **UCDP (1):** the 1974 Paracel Islands episode, documented above.
+
+Historical-review dispositions are explicit:
+
+| Disposition | Records |
+|---|---|
+| Excluded: inverted or indefensible result | Brusilov Offensive; Coatit; Dembeguina; A Shau and Dong Xoai; Dragasani; Barcelona 1936; Kemmel; Kaiserswerth; Lvov; Parwan Durrah; Mojkovac; Brest 1513; St Augustine 1702; Kolberg 1760; and the lower-weight Rheims, Dardanelles 1654, Marstrand, Mewe, Arcis-sur-Aube, and Kehl assertions. |
+| Excluded: wrong principal belligerent or Habsburg branch | Lepanto; Valmy, Verdun, and Longwy; Duppel; Kolberg 1774; Bautzen, Rippach, and First Mockern; Montmirail, Brienne, and Vauchamps; Messina; Trebizond; Hanoi; Cadore and Hadad; Grol and Maastricht; Tutrakan; Andalsnes; Kalat; Monte Grappa 1917/1918; Vittorio Veneto; Rosas 1645; and Isola del Giglio 1646. |
+| Excluded: duplicate or incompatible granularity | Martinesti (Rimnik duplicate); Tournai (Pont-a-Chin duplicate); St Quentin 1914 (Guise duplicate); Changsha 1942II (duplicate of the 1941-42 Third Battle); Barcelona 1705-06 (envelope over the separately rated 1705 capture and the distinct 1706 defense); Nivelle Offensive (Aisne 1917 envelope); Ushant 1794 (First of June duplicate); and the Liaoshen, Huaihai, Beijing-Tianjin, Poland 1939, France 1940, Norway 1940, Sevastopol 1854-55, and Galicia 1914 campaign envelopes. |
+| Excluded: date cannot support chronological rating | Trentino 1917, Kolin 1756, and Rocoux 1747. No replacement date is silently invented. |
+| Retained as provisional source assertions | Diamond Hill 1900 remains because HCED itself asserts a Boer success and all HCED outcomes are labelled provisional. Newbury/Gainsborough 1643, Bizani/Jannina, the two 1916 Isonzo rows, and Nieman River 1920 were adversarially refuted as project defects and remain unchanged. The Basing House range claim was also refuted: staging already preserves ranges. |
+| Documented modeling limitation | Dyadic HCED rows can omit principal co-belligerents (for example Germany at Caporetto, France at Rossbach, the Polish-Lithuanian Commonwealth at Vienna, or the BEF at the Marne). Participants are not silently added without a curated composition source; these rows remain provisional pending a co-belligerent table. |
+
+Three curated seed war envelopes intentionally begin before one participant's
+formal identity entry year: American Revolutionary War/United States,
+Napoleonic Wars/First French Empire, and Afghanistan War 2001-2021/Islamic
+Republic of Afghanistan. They are enumerated exemptions checked by the build,
+and each exemption pins the exact event and entity intervals so widening an
+approved envelope also fails. Any fourth containment exception fails unless it
+is explicitly documented.
 
 ## Rome and Byzantium project convention
 

@@ -1,4 +1,11 @@
-# Handoff: M4/M5 identity tranches — implementation committed, follow-up work listed
+# Archived handoff: M4/M5 identity-tranche snapshot
+
+This is a historical snapshot of the pre-triage release, retained for its
+design rationale. Its 4,341-event counts and “what remains” list describe that
+earlier commit and are not current. The completed triage release is recorded
+in `HANDOFF-REVIEW-TRIAGE.md`: 1,590 registry identities, 226 rated entities,
+4,234 events, 27,014 staged source records, and 19,163 unresolved event-like
+candidates on the 18-row machine-local Wikidata queue.
 
 State as of this commit: the M4 (curated state identities) and M5 (non-state
 actor policy) tranches are fully implemented, built, and green (187/187
@@ -39,7 +46,7 @@ docs/test obligations below.
   measured combined values (pre-label block digest `51978729…`, funnel
   342 + 4,467 + 1,798 + 2,274 = 8,881).
 
-## What remains (in order)
+## What remained at that historical snapshot
 
 1. **Docs update** — all count-bearing docs still carry the pre-M4/M5
    numbers (2,620 / 177 / 20,851). Update per design-m4 §E and design-m5 §E:
