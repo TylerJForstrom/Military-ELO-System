@@ -162,9 +162,9 @@ side with an agreeing attacker/defender role — the coded `inconclusive` value
 maps to a tactical stalemate, while a blank or mismatched victor is rejected —
 and the war-level victor code is ignored entirely. Coalition or composite side
 labels stay staged (182 rows), and both sides must resolve to unique
-time-bounded identities outside declared deny windows (66 side-resolution
+time-bounded identities outside declared deny windows (38 side-resolution
 failures, including the declared "Turkey" 1920-1923 deny window). In the
-current build 142 of 1,708 battles pass; every other row stays staged under a
+current build 167 of 1,708 battles pass; every other row stays staged under a
 named rejection counter.
 
 IWBD's `iwdNum` field is the IWD parent-war identifier (IWD's `largerwarid`
@@ -215,12 +215,19 @@ entity coded on both sides quarantines the parent, because no explicit
 time-bounded side-switch policy is defined), the component outcomes are
 unanimous once oriented to the reconstructed sides, no curated seed war
 overlaps (naming variants such as `WorldWarI` are canonicalized), and every
-belligerent resolves to a unique time-bounded identity. COW code 365 is
-resolved by an explicit era policy — Russian Empire through 1917, Soviet Union
-from 1922 — and the 1918-1921 revolutionary years deliberately stay unresolved.
+belligerent resolves to a unique time-bounded identity. COW-coded parties are
+resolved by explicit era policies: code 365 maps to the Russian Empire through
+1917 and the Soviet Union from 1922 (the 1918-1921 revolutionary years
+deliberately stay unresolved), code 255 to the Kingdom of Prussia through 1870
+and the German Empire from 1871, code 300 to the Austrian Empire through 1866
+and Austria-Hungary from 1867, and code 345 to the Kingdom of Serbia
+(1882-1918, the interval COW labels "Yugoslavia"). Two parent wars are held on
+a curated exclusion list because the source's belligerent envelope is not the
+historical actor (Italian Unification 1859, fought by the Kingdom of Sardinia;
+Hungarian-Allies 1919, fought by the Hungarian Soviet Republic).
 Event confidence is reduced when some component rows could not contribute, and
 all component rows are attached to the emitted event as provenance. In the
-current build, 44 of 93 parent wars pass (72 of 265 component records); the
+current build, 55 of 93 parent wars pass (88 of 265 component records); the
 rest stay staged. IWD also cannot by itself establish that a defeat was
 existential, regime-ending, or equivalent to surrender, so aggregated outcomes
 are never coded above limited victory or defeat.
@@ -302,10 +309,17 @@ promoted and serves solely as a consistency cross-check. Only terminal
 episodes with victory outcome codes 3 or 4 can produce strategic events —
 peace agreements, ceasefires, low-activity endings, and actor cessation stay
 staged, because peace is not a loss and low activity is not an outcome. Every
-primary party on both sides must be a state (a `Government of ...` party with
-a Gleditsch-Ward code) resolving to a unique time-bounded identity for the
-full episode span, through explicit, authoritative GW-code policy windows or
-exact time-valid alias matching. An episode is rejected when it duplicates an
+primary party on both sides must resolve to a unique time-bounded identity for
+the full episode span: state parties (a `Government of ...` party with a
+Gleditsch-Ward code) through explicit, authoritative GW-code policy windows or
+exact time-valid alias matching, and non-state primaries only through
+conflict-scoped curated actor policies (`UCDP_ACTOR_PARTY_POLICIES`), whose
+windows are the actor's attested existence bounds and whose keys are bound to
+one conflict ID so a homonymous actor label in another conflict (for example
+the "PLA" of conflict 347) never resolves; the government side must
+independently resolve. The event's `war_type` follows the source's
+`type_of_conflict` under an exhaustive declared mapping, and unmapped types
+are rejected rather than coerced. An episode is rejected when it duplicates an
 already-promoted strategic event by shared entities and overlapping years,
 when a terminal dyad row of the same conflict contradicts it (an
 opposite-orientation victory or a same-pair negotiated termination), when a
@@ -316,7 +330,7 @@ already fail identity resolution and stay staged as unresolved parties), or
 when it carries a documented side-attribution dispute
 recorded as a curated exclusion (the 1974 Paracel episode). Severity is capped
 at limited, and secondary supporters are recorded as provenance without
-outcomes. In the current build 5 of 2,752 conflict-level rows pass; the rest
+outcomes. In the current build 7 of 2,752 conflict-level rows pass; the rest
 stay staged under named rejection counters.
 
 #### Verified live UCDP profile
@@ -582,12 +596,19 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The 2026-07-13 build publishes three coverage numbers separately:
 
-- 1,582 time-bounded polity identities in the rated-and-unrated registry;
-- 177 entities with rateable evidence; and
-- 2,620 rating events: 40 manually curated events, 1,377 crosswalk-resolved
-  HCED tactical encounters, 1,012 label-resolved HCED tactical encounters,
-  44 coalition-aggregated IWD strategic parent wars, 142 IWBD tactical
-  battles, and 5 UCDP conflict-termination strategic episodes.
+- 1,590 time-bounded polity identities in the rated-and-unrated registry;
+- 226 entities with rateable evidence; and
+- 4,341 rating events: 40 manually curated events, 1,798 crosswalk-resolved
+  HCED tactical encounters, 2,274 label-resolved HCED tactical encounters,
+  55 coalition-aggregated IWD strategic parent wars, 167 IWBD tactical
+  battles, and 7 UCDP conflict-termination strategic episodes.
+
+The curated state and non-state actor identity tranches raised the totals
+from the previous build (177 rated entities across 2,620 events): the new
+seed identities and their code/label policy windows resolve rows that were
+previously staged for lack of a defensible time-bounded identity, and the
+registry consolidates 40 absorbed source-candidate rows into 48 curated
+records (1,582 to 1,590 net).
 
 The review queues contain 27,083 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
@@ -595,7 +616,7 @@ now holds 87 candidates rather than the previously documented 18, reflecting
 upstream drift in the discovery page between snapshots). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,459 event-like
-candidates, 20,851 remain outside the rating ledger because their layer,
+candidates, 19,125 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
