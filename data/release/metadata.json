@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 177,
-    "events": 2620,
-    "sources": 47,
-    "registry_polities": 1582
+    "entities": 226,
+    "events": 4341,
+    "sources": 89,
+    "registry_polities": 1590
   },
   "year_range": {
     "start": -1274,
@@ -69,46 +69,78 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any HCED candidate (promoted or staged), or an earlier IWBD row by normalized battle name and year within one year; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; both sides are single polities resolving to unique time-bounded identities outside declared deny windows; and severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome.",
-    "accepted_hced_events": 1377,
-    "accepted_hced_label_events": 1012,
-    "hced_label_pass_input_rows": 6750,
-    "accepted_iwd_wars": 44,
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any HCED candidate (promoted or staged), or an earlier IWBD row by normalized battle name and year within one year; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; both sides are single polities resolving to unique time-bounded identities outside declared deny windows; and severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities resolves twelve former faction labels through authoritative time-bounded policies; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "accepted_hced_events": 1798,
+    "accepted_hced_label_events": 2274,
+    "hced_label_pass_input_rows": 6741,
+    "accepted_iwd_wars": 55,
     "iwd_parent_wars_total": 93,
-    "iwd_components_aggregated": 72,
-    "iwd_components_attached_to_rated_parents": 72,
+    "iwd_components_aggregated": 88,
+    "iwd_components_attached_to_rated_parents": 88,
     "hced_rejections": {
+      "curated_exclusion": 10,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 3,
-      "no_unique_time_valid_polity": 657,
+      "no_unique_time_valid_polity": 211,
       "outcome_not_aligned_to_crosswalk_sides": 8,
-      "outside_continuity_policy": 61,
-      "same_or_empty_opposing_side": 14
+      "outside_continuity_policy": 82,
+      "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
       "blank_side_label": 0,
+      "curated_row_exclusion": 8,
       "duplicate_of_curated_seed": 1,
-      "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 583,
+      "duplicate_of_promoted_event": 7,
+      "faction_label_not_a_polity": 484,
       "label_outcome_not_aligned": 87,
-      "label_outside_policy_window": 261,
-      "label_pending_identity_split": 66,
-      "no_unique_time_valid_label_match": 4028,
-      "no_unique_time_valid_polity": 685,
-      "outside_continuity_policy": 24,
+      "label_outside_policy_window": 196,
+      "label_pending_identity_split": 34,
+      "no_unique_time_valid_label_match": 3274,
+      "no_unique_time_valid_polity": 254,
+      "outside_continuity_policy": 119,
       "same_or_empty_opposing_side": 3
     },
     "hced_label_policy_labels": [
+      "afghanistan",
+      "austria",
+      "austria hungary",
       "byzantines",
       "byzantium",
+      "carlists",
+      "chinese communists",
+      "cuban rebels",
+      "denmark",
+      "england",
       "france",
+      "greek rebels",
+      "habsburg empire",
+      "korea",
+      "maratha empire",
+      "marathas",
+      "mexican conservatives",
+      "mexican liberals",
+      "muslim caliphate",
+      "mysore",
       "ottomans",
+      "parliamentarians",
       "persia",
+      "poland",
+      "prussia",
+      "punjab",
       "romans",
       "rome",
+      "royalists",
       "russia",
-      "spain"
+      "scotland",
+      "spain",
+      "spanish nationalists",
+      "spanish republicans",
+      "sweden",
+      "taiping",
+      "transvaal",
+      "venice",
+      "viet cong"
     ],
     "hced_faction_labels_staged": [
       "alans",
@@ -122,17 +154,16 @@
       "boxers",
       "britons",
       "bulgars",
-      "carlists",
       "catholics",
       "celts",
       "cherokee",
-      "chinese communists",
       "chinese nationalists",
       "comanche",
       "communists",
       "confederates",
       "cossacks",
       "covenanters",
+      "cristinos",
       "crusaders",
       "cumans",
       "danes",
@@ -146,6 +177,7 @@
       "huns",
       "indian rebels",
       "insurgents",
+      "irish rebels",
       "jacobites",
       "jutes",
       "khazars",
@@ -154,6 +186,7 @@
       "loyalists",
       "magyars",
       "maori",
+      "mexican rebels",
       "mongols",
       "moors",
       "mujahideen",
@@ -162,7 +195,6 @@
       "norsemen",
       "ostrogoths",
       "palestinians",
-      "parliamentarians",
       "pechenegs",
       "picts",
       "pirates",
@@ -170,24 +202,24 @@
       "rebels",
       "reds",
       "republicans",
-      "royalists",
+      "russian whites",
       "sarmatians",
       "saxons",
       "scythians",
       "seminole",
+      "seminole indians",
       "sikhs",
       "sioux",
       "slavs",
-      "spanish nationalists",
-      "spanish republicans",
-      "taiping",
       "tatars",
       "turks",
       "unionists",
       "vandals",
+      "vendeen rebels",
       "vikings",
       "visigoths",
       "white huns",
+      "white russians",
       "whites",
       "xiongnu",
       "zulus"
@@ -195,7 +227,6 @@
     "hced_pending_split_labels": [
       "champa",
       "georgia",
-      "sweden",
       "swiss confederation",
       "switzerland",
       "tibet"
@@ -212,17 +243,157 @@
         "resolved_sides": 1
       }
     ],
+    "hced_curated_exclusions": [
+      {
+        "candidate_id": "hced-Alcacer do Sol1158-1",
+        "reason": "Afonso I of Portugal's conquest; England was not a belligerent in 1158"
+      },
+      {
+        "candidate_id": "hced-Gustalla1734-1",
+        "reason": "duplicate of Guastalla 1734 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Herat1837-1838-1",
+        "reason": "defender was the independent Sadozai principality of Herat, not the Kabul emirate"
+      },
+      {
+        "candidate_id": "hced-Herat1856-1",
+        "reason": "defender was the independent principality of Herat; Kabul was aligned with Britain against Persia"
+      },
+      {
+        "candidate_id": "hced-Herat1863-1",
+        "reason": "Dost Mohammad's siege of Sultan Ahmad Khan's Herat; Persia fielded no army"
+      },
+      {
+        "candidate_id": "hced-Juthas1808-1",
+        "reason": "duplicate of Jutas 1808 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Libertwolkwitz1813-1",
+        "reason": "duplicate of Liebertwolkwitz 1813 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Pandjeh1885-1",
+        "reason": "duplicate of Penjdeh 1885 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-St Quentin1557-1",
+        "reason": "fought by Habsburg Spain after Charles V's abdication; the Danubian monarchy was not a belligerent"
+      },
+      {
+        "candidate_id": "hced-Truillas1793-1",
+        "reason": "duplicate of Trouillas 1793 under a variant spelling"
+      }
+    ],
+    "hced_label_curated_exclusions": [
+      {
+        "candidate_id": "hced-Binh Gia1964-1",
+        "reason": "duplicate of iwbd_iwbd_163_62_1468/1469 (Binh Gia a/b, 1964)"
+      },
+      {
+        "candidate_id": "hced-Con Thien (1st)1967-1",
+        "reason": "side-misattributed: PAVN engagement coded as 'Viet Cong'"
+      },
+      {
+        "candidate_id": "hced-Con Thien (2nd)1967-1",
+        "reason": "side-misattributed: PAVN engagement coded as 'Viet Cong'"
+      },
+      {
+        "candidate_id": "hced-Hue1968-1",
+        "reason": "side-misattributed: predominantly PAVN engagement coded as 'Viet Cong'"
+      },
+      {
+        "candidate_id": "hced-Ia Drang1965-1",
+        "reason": "side-misattributed: PAVN regulars coded as 'Viet Cong'; north_vietnam is separately rated"
+      },
+      {
+        "candidate_id": "hced-Khe Sanh1967-1",
+        "reason": "duplicate of iwbd_iwbd_163_62_1489 (Khe Sanh 1, 1967)"
+      },
+      {
+        "candidate_id": "hced-Long Tan, Vietnam1966-1",
+        "reason": "duplicate of iwbd_iwbd_163_62_1485 (Long Tan, 1966)"
+      },
+      {
+        "candidate_id": "hced-Nam Dong1964-1",
+        "reason": "mis-crosswalked participant: 'Australia' coded ko_korean_rep (no ROK forces at Nam Dong)"
+      }
+    ],
+    "iwbd_curated_exclusions": [
+      {
+        "candidate_id": "iwbd-127-49-877",
+        "reason": "duplicate of HCED Tembien (1st) 1936 (IWBD 'Tembien 1')"
+      },
+      {
+        "candidate_id": "iwbd-127-49-879",
+        "reason": "duplicate of HCED Tembien (2nd) 1936 (IWBD 'Tembien 2')"
+      },
+      {
+        "candidate_id": "iwbd-55-19-188",
+        "reason": "duplicate of HCED Liebenau 1866 (spelling variant 'Liebnau')"
+      },
+      {
+        "candidate_id": "iwbd-58-20-268",
+        "reason": "duplicate of HCED Dijon 1871 (IWBD 'Dijon 3')"
+      },
+      {
+        "candidate_id": "iwbd-76-28-346",
+        "reason": "duplicate of HCED Velestino (1st) 1897 (IWBD 'Velestino 1')"
+      }
+    ],
+    "iwd_curated_parent_exclusions": [
+      {
+        "parent_war_id": "10",
+        "reason": "Italian Unification 1859: belligerent was the Kingdom of Sardinia; the 'Kingdom of Italy' [587,1946] envelope is not the 1859 actor (identity pending)"
+      },
+      {
+        "parent_war_id": "42",
+        "reason": "Hungarian-Allies 1919: fought principally by the Hungarian Soviet Republic; the [1919,1943] Hungary interval bridges the 1919 regime resets (identity pending)"
+      }
+    ],
+    "ucdp_actor_party_policies": [
+      {
+        "conflict_id": "202",
+        "party_label": "pla",
+        "windows": [
+          [
+            1927,
+            1949,
+            "chinese_communist_forces"
+          ]
+        ]
+      },
+      {
+        "conflict_id": "242",
+        "party_label": "m 26 7",
+        "windows": [
+          [
+            1955,
+            1959,
+            "cuban_26_july_movement"
+          ]
+        ]
+      }
+    ],
+    "ucdp_war_types": {
+      "1": "colonial_anti_colonial",
+      "2": "interstate_limited",
+      "3": "civil_war",
+      "4": "insurgency_intervention"
+    },
     "iwd_rejections": {
+      "curated_exclusion": 2,
       "inconsistent_coalition_sides": 1,
       "mixed_component_outcomes": 2,
       "overlaps_curated_strategic_event": 6,
-      "unresolved_time_bounded_party": 40
+      "unresolved_time_bounded_party": 27
     },
-    "accepted_iwbd_battles": 142,
+    "accepted_iwbd_battles": 167,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
       "coalition_or_composite_side": 182,
       "contains_constituent_iwbd_rows": 117,
+      "curated_exclusion": 5,
       "duplicate_of_curated_seed": 3,
       "duplicate_of_hced_battle": 1189,
       "duplicate_within_iwbd": 6,
@@ -232,9 +403,9 @@
       "missing_or_invalid_date": 0,
       "outcome_not_aligned_to_battle_sides": 0,
       "same_or_empty_opposing_side": 2,
-      "unresolved_time_bounded_belligerent": 66
+      "unresolved_time_bounded_belligerent": 36
     },
-    "accepted_ucdp_events": 5,
+    "accepted_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "ucdp_rejections": {
       "contradictory_linked_episode_outcomes": 1,
@@ -243,7 +414,7 @@
       "dyad_conflict_outcome_contradiction": 0,
       "malformed_source_row": 0,
       "missing_or_invalid_episode_years": 0,
-      "nonstate_primary_party": 130,
+      "nonstate_primary_party": 127,
       "not_terminal_episode": 2245,
       "outcome_actor_ceased": 20,
       "outcome_ceasefire": 67,
@@ -251,7 +422,8 @@
       "outcome_missing_or_unknown": 0,
       "outcome_peace_agreement": 60,
       "same_or_empty_opposing_side": 0,
-      "unresolved_time_bounded_party": 5
+      "unmapped_type_of_conflict": 0,
+      "unresolved_time_bounded_party": 6
     },
     "ucdp_curated_exclusions": [
       {

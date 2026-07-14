@@ -144,17 +144,6 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_fr_bourbon_k_2_1791_2395ea0c",
-      "name": "(French First Republic)",
-      "kind": "republic",
-      "start_year": 1791,
-      "end_year": 1795,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
       "id": "clio_fr_france_modern_2_1945_5a002fa8",
       "name": "(French Fourth Republic)",
       "kind": "republic",
@@ -171,28 +160,6 @@
       "kind": "republic",
       "start_year": 1848,
       "end_year": 1852,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_fr_france_modern_1_1871_3398703f",
-      "name": "(French Third Republic)",
-      "kind": "republic",
-      "start_year": 1871,
-      "end_year": 1939,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_at_habsburg_1_1459_c1ed9b2d",
-      "name": "(Habsburg Monarchy)",
-      "kind": "polity",
-      "start_year": 1459,
-      "end_year": 1805,
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
@@ -237,17 +204,6 @@
       "kind": "kingdom",
       "start_year": 936,
       "end_year": 1406,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_gb_anglo_saxon_2_936_38f63b7e",
-      "name": "(Kingdom of England)",
-      "kind": "kingdom",
-      "start_year": 936,
-      "end_year": 1708,
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
@@ -353,17 +309,6 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_fr_france_napoleonic_1853_2839195e",
-      "name": "(Second French Empire)",
-      "kind": "empire",
-      "start_year": 1853,
-      "end_year": 1870,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
       "id": "clio_q185047_bce750_bf187a5e",
       "name": "(Spring and Autumn States)",
       "kind": "polity",
@@ -406,6 +351,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "cuban_26_july_movement",
+      "name": "26th of July Movement",
+      "kind": "revolutionary_movement",
+      "start_year": 1955,
+      "end_year": 1959,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Caribbean"
     },
     {
       "id": "clio_iq_abbasid_cal_1_750_82ab6afc",
@@ -484,15 +439,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q63149558_1734_1da9c25c",
+      "id": "afsharid_iran",
       "name": "Afsharid Iran",
-      "kind": "polity",
-      "start_year": 1734,
-      "end_year": 1756,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "kind": "empire",
+      "start_year": 1736,
+      "end_year": 1747,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West and Central Asia"
     },
     {
       "id": "clio_tn_aghlabid_dyn_800_09c96b01",
@@ -781,15 +735,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q832554_1834_e1b7dce9",
+      "id": "argentine_confederation",
       "name": "Argentine Confederation",
       "kind": "confederation",
-      "start_year": 1834,
-      "end_year": 1929,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1831,
+      "end_year": 1861,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
     },
     {
       "id": "clio_q414_1930_5e281b3e",
@@ -934,26 +887,24 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_at_habsburg_2_1868_e0fe97e9",
+      "id": "austria_hungary",
       "name": "Austria-Hungary",
-      "kind": "polity",
-      "start_year": 1868,
+      "kind": "union_state",
+      "start_year": 1867,
       "end_year": 1918,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
-      "id": "clio_at_habsburg_2_1806_562a6348",
+      "id": "austrian_empire",
       "name": "Austrian Empire",
       "kind": "empire",
-      "start_year": 1806,
+      "start_year": 1804,
       "end_year": 1867,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_mm_ava_k_1375_7191e32c",
@@ -1758,6 +1709,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "carlist_army_first_war",
+      "name": "Carlist Forces (First Carlist War)",
+      "kind": "civil_war_faction",
+      "start_year": 1833,
+      "end_year": 1840,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_in_carnatic_sul_1713_80e63d27",
       "name": "Carnatic Sultanate",
       "kind": "sultanate",
@@ -2041,6 +2002,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "chinese_communist_forces",
+      "name": "Chinese Communist Forces",
+      "kind": "revolutionary_movement",
+      "start_year": 1927,
+      "end_year": 1949,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Asia"
     },
     {
       "id": "clio_q17427_1928_bcfd3fa3",
@@ -2769,6 +2740,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "cuban_insurgent_army_1868",
+      "name": "Cuban Insurgent Army (Ten Years' War)",
+      "kind": "insurgent_army",
+      "start_year": 1868,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Caribbean"
+    },
+    {
+      "id": "cuban_liberation_army_1895",
+      "name": "Cuban Liberation Army (War of Independence)",
+      "kind": "insurgent_army",
+      "start_year": 1895,
+      "end_year": 1898,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Caribbean"
+    },
+    {
       "id": "clio_q11256_1895_4760f864",
       "name": "Cuban Nationalists",
       "kind": "polity",
@@ -2977,33 +2968,11 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_dk_danish_k_modern_1945_c5c2ba82",
-      "name": "Denmark",
-      "kind": "polity",
-      "start_year": 1945,
-      "end_year": 2024,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
       "id": "clio_q111953993_1040_c6c97cd2",
       "name": "Denmark-England",
       "kind": "polity",
       "start_year": 1040,
       "end_year": 1045,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_dk_denmark_norway_1526_a78942c1",
-      "name": "Denmark-Norway",
-      "kind": "polity",
-      "start_year": 1526,
-      "end_year": 1940,
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
@@ -3576,7 +3545,7 @@
       "kind": "polity",
       "start_year": 1809,
       "end_year": 1870,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -3637,15 +3606,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_af_durrani_emp_1748_ece76378",
+      "id": "durrani_empire",
       "name": "Durrani Empire",
       "kind": "empire",
-      "start_year": 1748,
-      "end_year": 1827,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1747,
+      "end_year": 1823,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South and Central Asia"
     },
     {
       "id": "clio_nl_dutch_emp_1_1653_98e6beae",
@@ -3944,6 +3912,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "egypt_muhammad_ali",
+      "name": "Egypt (Muhammad Ali dynasty)",
+      "kind": "dynastic_state",
+      "start_year": 1805,
+      "end_year": 1882,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Egypt and the Levant"
+    },
+    {
       "id": "clio_ir_elam_2_bce3200_3ae02065",
       "name": "Elam",
       "kind": "polity",
@@ -4043,15 +4021,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_af_afghanistan_emirate_1828_83607dad",
+      "id": "emirate_afghanistan",
       "name": "Emirate of Afghanistan",
-      "kind": "polity",
-      "start_year": 1828,
-      "end_year": 1925,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "kind": "emirate",
+      "start_year": 1823,
+      "end_year": 1926,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South and Central Asia"
     },
     {
       "id": "clio_q746558_1788_48653bac",
@@ -4153,15 +4130,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_br_brazil_emp_1822_57868202",
+      "id": "empire_brazil",
       "name": "Empire of Brazil",
       "kind": "empire",
       "start_year": 1822,
       "end_year": 1889,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
     },
     {
       "id": "clio_q175379_1916_12e01ace",
@@ -4306,15 +4282,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_et_ethiopian_k_1272_654cac97",
+      "id": "ethiopian_empire",
       "name": "Ethiopian Empire",
       "kind": "empire",
-      "start_year": 1272,
-      "end_year": 1935,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1855,
+      "end_year": 1936,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northeast Africa"
     },
     {
       "id": "clio_q17161_bce750_5d71ef0b",
@@ -4842,15 +4817,14 @@
       "region": "Western Europe"
     },
     {
-      "id": "clio_fr_bourbon_k_2_1792_7a354c31",
+      "id": "french_first_republic",
       "name": "French First Republic",
       "kind": "republic",
       "start_year": 1792,
-      "end_year": 1795,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1804,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_fr_france_modern_2_1945_396ed149",
@@ -4919,15 +4893,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_fr_france_modern_1_1871_481653f2",
+      "id": "french_third_republic",
       "name": "French Third Republic",
       "kind": "republic",
-      "start_year": 1871,
-      "end_year": 1939,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1870,
+      "end_year": 1940,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe and overseas empire"
     },
     {
       "id": "clio_q4492881_783_eaee3400",
@@ -5589,6 +5562,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "greek_revolutionaries_1821",
+      "name": "Greek Revolutionary Forces (War of Independence)",
+      "kind": "revolutionary_government",
+      "start_year": 1821,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q504081_1967_8c8c1c4d",
       "name": "Greek junta",
       "kind": "polity",
@@ -5710,15 +5693,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_at_habsburg_1_1487_c1fe559b",
+      "id": "habsburg_monarchy",
       "name": "Habsburg Monarchy",
-      "kind": "polity",
-      "start_year": 1487,
-      "end_year": 1805,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "kind": "dynastic_state",
+      "start_year": 1526,
+      "end_year": 1804,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q1517159_bce700_d2877f9d",
@@ -6907,15 +6889,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_kr_joseon_1395_d951d10e",
+      "id": "joseon",
       "name": "Joseon",
-      "kind": "polity",
-      "start_year": 1395,
+      "kind": "kingdom",
+      "start_year": 1392,
       "end_year": 1897,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Asia"
     },
     {
       "id": "clio_il_judea_bce144_794f2fad",
@@ -7363,17 +7344,6 @@
       "kind": "polity",
       "start_year": 630,
       "end_year": 979,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_eg_egypt_modern_1_1866_090fd1f4",
-      "name": "Khedivate of Egypt",
-      "kind": "polity",
-      "start_year": 1866,
-      "end_year": 1884,
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
@@ -7831,6 +7801,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_denmark",
+      "name": "Kingdom of Denmark",
+      "kind": "kingdom",
+      "start_year": 1523,
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Europe"
+    },
+    {
       "id": "clio_q1252942_1072_ec6093a6",
       "name": "Kingdom of Duklja",
       "kind": "kingdom",
@@ -7875,15 +7855,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_gb_anglo_saxon_2_936_ae2f8a2e",
+      "id": "kingdom_england",
       "name": "Kingdom of England",
       "kind": "kingdom",
-      "start_year": 936,
-      "end_year": 1708,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 927,
+      "end_year": 1707,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_gb_anglo_saxon_1_534_deb9137b",
@@ -7973,6 +7952,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_greece",
+      "name": "Kingdom of Greece",
+      "kind": "kingdom",
+      "start_year": 1832,
+      "end_year": 1924,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_q209065_1945_89b16c65",
       "name": "Kingdom of Greece",
       "kind": "kingdom",
@@ -8050,15 +8039,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_hu_arpad_dyn_1000_d910ced6",
+      "id": "kingdom_hungary",
       "name": "Kingdom of Hungary",
       "kind": "kingdom",
       "start_year": 1000,
-      "end_year": 1546,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "end_year": 1526,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q62567_1918_31f3335e",
@@ -8083,15 +8071,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q149805_1932_c78ec5b9",
+      "id": "kingdom_iraq",
       "name": "Kingdom of Iraq",
       "kind": "kingdom",
       "start_year": 1932,
-      "end_year": 1957,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "end_year": 1958,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Asia"
     },
     {
       "id": "clio_il_yisrael_bce1000_e697a3a1",
@@ -8402,15 +8389,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_in_mysore_k_1572_24ee3da2",
+      "id": "kingdom_mysore",
       "name": "Kingdom of Mysore",
       "kind": "kingdom",
       "start_year": 1572,
       "end_year": 1799,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South Asia"
     },
     {
       "id": "clio_it_naples_k_1285_4659acff",
@@ -8622,15 +8608,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q27306_1702_ef3a0094",
+      "id": "kingdom_prussia",
       "name": "Kingdom of Prussia",
       "kind": "kingdom",
-      "start_year": 1702,
-      "end_year": 1863,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1701,
+      "end_year": 1871,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_gb_brythonic_k_592_02deb8dc",
@@ -8644,15 +8629,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q203493_1919_74ed3bd6",
+      "id": "kingdom_romania",
       "name": "Kingdom of Romania",
       "kind": "kingdom",
-      "start_year": 1919,
+      "start_year": 1881,
       "end_year": 1947,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q1658411_1842_47c9e0dd",
@@ -8699,15 +8683,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_gb_scotland_k_1294_e807243c",
+      "id": "kingdom_scotland",
       "name": "Kingdom of Scotland",
       "kind": "kingdom",
-      "start_year": 1294,
-      "end_year": 1608,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 843,
+      "end_year": 1707,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_gb_brythonic_k_878_8d77e475",
@@ -8721,15 +8704,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_rs_serbia_k_1188_20387628",
+      "id": "kingdom_serbia",
       "name": "Kingdom of Serbia",
       "kind": "kingdom",
-      "start_year": 1188,
-      "end_year": 1884,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1882,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_it_sicily_k_1_1139_c1640de5",
@@ -8809,15 +8791,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_sv_sweden_k_modern_980_1d685013",
+      "id": "kingdom_sweden",
       "name": "Kingdom of Sweden",
       "kind": "kingdom",
-      "start_year": 980,
-      "end_year": 2024,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1523,
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Europe"
     },
     {
       "id": "clio_q1309492_1285_501ccbb3",
@@ -9863,15 +9844,14 @@
       "region": "Egypt and the Levant"
     },
     {
-      "id": "clio_in_maratha_emp_1677_bf16ec7e",
-      "name": "Maratha Empire",
-      "kind": "empire",
-      "start_year": 1677,
-      "end_year": 1845,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "id": "maratha_confederacy",
+      "name": "Maratha Confederacy",
+      "kind": "confederation",
+      "start_year": 1674,
+      "end_year": 1818,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South Asia"
     },
     {
       "id": "clio_de_empire_3_1260_6d5cc343",
@@ -10050,6 +10030,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "mexican_conservative_forces",
+      "name": "Mexican Conservative Forces",
+      "kind": "civil_war_faction",
+      "start_year": 1857,
+      "end_year": 1861,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "mexican_liberal_forces",
+      "name": "Mexican Liberal (Constitutionalist) Forces",
+      "kind": "civil_war_faction",
+      "start_year": 1857,
+      "end_year": 1861,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q15984928_1864_52da63da",
       "name": "Mexican Monarchists",
       "kind": "polity",
@@ -10059,6 +10059,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "mexican_republic",
+      "name": "Mexican Republic",
+      "kind": "republic",
+      "start_year": 1824,
+      "end_year": 1863,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q1209676_1811_83c07d87",
@@ -10508,6 +10518,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "viet_cong",
+      "name": "National Liberation Front of South Vietnam",
+      "kind": "insurgent_front",
+      "start_year": 1960,
+      "end_year": 1976,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeast Asia"
     },
     {
       "id": "clio_q2614237_1727_d8d537c1",
@@ -11096,7 +11116,7 @@
       "kind": "kingdom",
       "start_year": 866,
       "end_year": 1401,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -11354,6 +11374,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "english_parliamentarians",
+      "name": "Parliamentarian Forces (Wars of the Three Kingdoms)",
+      "kind": "civil_war_faction",
+      "start_year": 1642,
+      "end_year": 1651,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
+    },
+    {
       "id": "clio_iq_parthian_emp_2_bce239_14e14c59",
       "name": "Parthian Empire",
       "kind": "empire",
@@ -11595,15 +11625,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_pl_poland_lithuania_commonwealth_1572_be086198",
+      "id": "polish_lithuanian_commonwealth",
       "name": "Polish-Lithuanian Commonwealth",
-      "kind": "polity",
-      "start_year": 1572,
-      "end_year": 1793,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "kind": "union_state",
+      "start_year": 1569,
+      "end_year": 1795,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
     },
     {
       "id": "clio_q312008_bce318_57cb3557",
@@ -12398,15 +12427,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_ir_qajar_dyn_1788_ccb19019",
-      "name": "Qajar Dynasty",
+      "id": "qajar_iran",
+      "name": "Qajar Iran",
       "kind": "dynastic_state",
-      "start_year": 1788,
-      "end_year": 1923,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1794,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West and Central Asia"
     },
     {
       "id": "clio_tr_qara_qoyunlu_1375_f326d63b",
@@ -12897,7 +12925,7 @@
       "kind": "republic",
       "start_year": 1905,
       "end_year": 1959,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
@@ -13154,6 +13182,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "lithuania_interwar",
+      "name": "Republic of Lithuania",
+      "kind": "republic",
+      "start_year": 1918,
+      "end_year": 1940,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
     },
     {
       "id": "clio_q37_1990_ecec9a2c",
@@ -13453,15 +13491,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_it_venetian_rep_3_705_341001f5",
+      "id": "republic_venice",
       "name": "Republic of Venice",
       "kind": "republic",
-      "start_year": 705,
-      "end_year": 1796,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 697,
+      "end_year": 1797,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and Mediterranean"
     },
     {
       "id": "south_vietnam",
@@ -13679,6 +13716,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "english_royalists",
+      "name": "Royalist Forces (Wars of the Three Kingdoms)",
+      "kind": "civil_war_faction",
+      "start_year": 1642,
+      "end_year": 1651,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_q872644_455_7bb6951b",
@@ -14118,15 +14165,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_fr_france_napoleonic_1853_aaaacd27",
+      "id": "second_french_empire",
       "name": "Second French Empire",
       "kind": "empire",
-      "start_year": 1853,
+      "start_year": 1852,
       "end_year": 1870,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_mx_mexico_1_1865_32fcb4a0",
@@ -14140,15 +14186,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_pl_polish_rep_1_1919_0e31de39",
+      "id": "second_polish_republic",
       "name": "Second Polish Republic",
       "kind": "republic",
-      "start_year": 1919,
+      "start_year": 1918,
       "end_year": 1939,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
     },
     {
       "id": "clio_at_austrian_rep_2_1946_db656ae4",
@@ -14162,15 +14207,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q178038_1932_cfb76b57",
+      "id": "second_spanish_republic",
       "name": "Second Spanish Republic",
       "kind": "republic",
-      "start_year": 1932,
-      "end_year": 1938,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1931,
+      "end_year": 1939,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_sy_syria_modern_1946_86597c89",
@@ -14222,17 +14266,6 @@
       "kind": "republic",
       "start_year": 1800,
       "end_year": 1819,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
-    },
-    {
-      "id": "clio_q1311990_1918_51182bef",
-      "name": "Serbia",
-      "kind": "polity",
-      "start_year": 1918,
-      "end_year": 1918,
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
@@ -14404,15 +14437,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q83572_1799_ca0a7ace",
+      "id": "sikh_empire",
       "name": "Sikh Empire",
       "kind": "empire",
       "start_year": 1799,
-      "end_year": 1848,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1849,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South Asia"
     },
     {
       "id": "clio_q582779_1709_74207982",
@@ -14613,15 +14645,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q550374_1856_6bee81c8",
+      "id": "south_african_republic",
       "name": "South African Republic",
       "kind": "republic",
-      "start_year": 1856,
-      "end_year": 1899,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1852,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_q958_2014_9e72d4ed",
@@ -14774,6 +14805,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Europe and overseas empire"
+    },
+    {
+      "id": "spanish_nationalist_faction",
+      "name": "Spanish Nationalist Faction (1936-1939)",
+      "kind": "civil_war_faction",
+      "start_year": 1936,
+      "end_year": 1939,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q2742116_1936_e1c52f77",
@@ -15677,15 +15718,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q3486676_1853_20a6838a",
+      "id": "taiping_heavenly_kingdom",
       "name": "Taiping Heavenly Kingdom",
-      "kind": "kingdom",
-      "start_year": 1853,
+      "kind": "proto_state",
+      "start_year": 1851,
       "end_year": 1864,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Asia"
     },
     {
       "id": "clio_q2272880_1040_2b4b4dbf",
@@ -17368,23 +17408,23 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1582,
-    "rated_entities": 177,
-    "rated_events": 2620,
+    "registry_polities": 1590,
+    "rated_entities": 226,
+    "rated_events": 4341,
     "staged_source_records": 27083,
-    "unresolved_event_candidates": 20851,
+    "unresolved_event_candidates": 19125,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
-    "provisional_hced_events": 1377,
-    "provisional_hced_label_events": 1012,
-    "provisional_iwd_wars": 44,
-    "provisional_iwbd_battles": 142,
+    "provisional_hced_events": 1798,
+    "provisional_hced_label_events": 2274,
+    "provisional_iwd_wars": 55,
+    "provisional_iwbd_battles": 167,
     "iwbd_battles_total": 1708,
-    "provisional_ucdp_events": 5,
+    "provisional_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
-    "iwd_components_aggregated": 72,
+    "iwd_components_aggregated": 88,
     "source_queue_counts": {
       "cliopatria-entity-candidates.jsonl": 1637,
       "hced-candidates.jsonl": 8881,

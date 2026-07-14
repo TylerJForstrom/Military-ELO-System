@@ -18,6 +18,22 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_26_july",
+    "title": "26th of July Movement",
+    "url": "https://www.britannica.com/topic/26th-of-July-Movement",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_acts_of_union",
+    "title": "Act of Union (Great Britain, 1707)",
+    "url": "https://www.britannica.com/event/Act-of-Union-Great-Britain-1707",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_ain_jalut",
     "title": "Battle of Ayn Jalut",
     "url": "https://www.britannica.com/event/Battle-of-Ayn-Jalut",
@@ -32,6 +48,33 @@
     "url": "https://www.britannica.com/event/American-Revolution",
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_argentina_history",
+    "title": "Argentina: History",
+    "url": "https://www.britannica.com/place/Argentina/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_austria_hungary",
+    "title": "Austria-Hungary",
+    "url": "https://www.britannica.com/place/Austria-Hungary",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_baltic_states",
+    "title": "Baltic states: Independence and the 20th century",
+    "url": "https://www.britannica.com/place/Baltic-states",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
   },
@@ -54,11 +97,66 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_carlism",
+    "title": "Carlism",
+    "url": "https://www.britannica.com/topic/Carlism",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_chinese_civil_war",
+    "title": "Chinese Civil War",
+    "url": "https://www.britannica.com/event/Chinese-Civil-War",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_cuban_independence",
+    "title": "Cuban Independence Movement",
+    "url": "https://www.britannica.com/topic/Cuban-Independence-Movement",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_durrani_dynasty",
+    "title": "Durrani dynasty",
+    "url": "https://www.britannica.com/topic/Durrani-dynasty",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_eighty_years",
     "title": "Eighty Years' War",
     "url": "https://www.britannica.com/event/Eighty-Years-War",
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_empire_brazil",
+    "title": "Brazil: The empire",
+    "url": "https://www.britannica.com/place/Brazil/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_english_civil_wars",
+    "title": "English Civil Wars",
+    "url": "https://www.britannica.com/event/English-Civil-Wars",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_ethiopia_history",
+    "title": "Ethiopia: History",
+    "url": "https://www.britannica.com/place/Ethiopia/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
   },
@@ -81,6 +179,15 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_french_revolution",
+    "title": "French Revolution: The First Republic",
+    "url": "https://www.britannica.com/event/French-Revolution",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_greco_persian",
     "title": "Greco-Persian Wars",
     "url": "https://www.britannica.com/event/Greco-Persian-Wars",
@@ -90,11 +197,117 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_greece_history",
+    "title": "Greece: The Kingdom of Greece",
+    "url": "https://www.britannica.com/place/Greece/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_greek_independence",
+    "title": "War of Greek Independence",
+    "url": "https://www.britannica.com/event/War-of-Greek-Independence",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_habsburg_monarchy",
+    "title": "House of Habsburg: The Habsburg Monarchy",
+    "url": "https://www.britannica.com/topic/house-of-Habsburg",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_hashemite_iraq",
+    "title": "Iraq: The Hashemite monarchy",
+    "url": "https://www.britannica.com/place/Iraq/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_heraclius",
     "title": "Heraclius, Byzantine emperor",
     "url": "https://www.britannica.com/biography/Heraclius-Byzantine-emperor",
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_hungary_history",
+    "title": "Hungary: History",
+    "url": "https://www.britannica.com/place/Hungary/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_joseon",
+    "title": "Choson dynasty",
+    "url": "https://www.britannica.com/topic/Choson-dynasty",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_kalmar_union",
+    "title": "Kalmar Union",
+    "url": "https://www.britannica.com/event/Kalmar-Union",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_maratha_confederacy",
+    "title": "Maratha confederacy",
+    "url": "https://www.britannica.com/topic/Maratha-confederacy",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_mexico_history",
+    "title": "Mexico: History",
+    "url": "https://www.britannica.com/place/Mexico/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_muhammad_ali_egypt",
+    "title": "Muhammad Ali (pasha and viceroy of Egypt)",
+    "url": "https://www.britannica.com/biography/Muhammad-Ali-pasha-and-viceroy-of-Egypt",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_mysore_wars",
+    "title": "Mysore Wars",
+    "url": "https://www.britannica.com/event/Mysore-Wars",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_nader_shah",
+    "title": "Nader Shah",
+    "url": "https://www.britannica.com/biography/Nader-Shah",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
   },
@@ -126,11 +339,63 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_prussia",
+    "title": "Prussia",
+    "url": "https://www.britannica.com/place/Prussia",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_punic_wars",
     "title": "Punic Wars",
     "url": "https://www.britannica.com/event/Punic-Wars",
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_qajar_dynasty",
+    "title": "Qajar dynasty",
+    "url": "https://www.britannica.com/topic/Qajar-dynasty",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_ranjit_singh",
+    "title": "Ranjit Singh",
+    "url": "https://www.britannica.com/biography/Ranjit-Singh-Sikh-maharaja",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_reform_war",
+    "title": "La Reforma (Mexican history)",
+    "url": "https://www.britannica.com/event/La-Reforma",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_republic_venice",
+    "title": "Republic of Venice",
+    "url": "https://www.britannica.com/place/Venice/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_romania_history",
+    "title": "Romania: History",
+    "url": "https://www.britannica.com/place/Romania/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
   },
@@ -144,6 +409,33 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_second_empire",
+    "title": "Second Empire (French history)",
+    "url": "https://www.britannica.com/topic/Second-Empire",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_second_polish_republic",
+    "title": "Poland: The Second Republic",
+    "url": "https://www.britannica.com/place/Poland/The-Second-Republic",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_serbia_history",
+    "title": "Serbia: History",
+    "url": "https://www.britannica.com/place/Serbia/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
     "id": "britannica_seven_years",
     "title": "Seven Years' War",
     "url": "https://www.britannica.com/event/Seven-Years-War",
@@ -153,11 +445,50 @@
     "accessed": "2026-07-13"
   },
   {
+    "id": "britannica_south_african_republic",
+    "title": "South African Republic",
+    "url": "https://www.britannica.com/place/South-African-Republic",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_spanish_civil_war",
+    "title": "Spanish Civil War",
+    "url": "https://www.britannica.com/event/Spanish-Civil-War",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_taiping_rebellion",
+    "title": "Taiping Rebellion",
+    "url": "https://www.britannica.com/event/Taiping-Rebellion",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
     "id": "britannica_tannenberg",
     "title": "Battle of Tannenberg",
     "url": "https://www.britannica.com/event/Battle-of-Tannenberg-World-War-I-1914",
     "publisher": "Encyclopaedia Britannica",
     "license": "Citation and link only",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_ten_years_war",
+    "title": "Ten Years' War",
+    "url": "https://www.britannica.com/event/Ten-Years-War",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
+  },
+  {
+    "id": "britannica_third_republic",
+    "title": "Third Republic (French history)",
+    "url": "https://www.britannica.com/topic/Third-Republic-French-history",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
   },
@@ -178,6 +509,31 @@
     "license": "Citation and link only",
     "source_type": "general_reference",
     "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_union_of_lublin",
+    "title": "Union of Lublin",
+    "url": "https://www.britannica.com/event/Union-of-Lublin",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_vasa_sweden",
+    "title": "Gustav I Vasa",
+    "url": "https://www.britannica.com/biography/Gustav-I-Vasa",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-13"
+  },
+  {
+    "id": "britannica_viet_cong",
+    "title": "Viet Cong",
+    "url": "https://www.britannica.com/topic/Viet-Cong",
+    "publisher": "Encyclopaedia Britannica",
+    "source_type": "secondary"
   },
   {
     "id": "britannica_yarmouk",

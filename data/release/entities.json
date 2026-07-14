@@ -658,6 +658,24 @@
     ]
   },
   {
+    "id": "republic_venice",
+    "name": "Republic of Venice",
+    "kind": "republic",
+    "start_year": 697,
+    "end_year": 1797,
+    "region": "Southern Europe and Mediterranean",
+    "aliases": [
+      "Venetian Republic"
+    ],
+    "predecessors": [],
+    "continuity_note": "The Most Serene Republic from the traditional first doge (697, a convention) to Napoleon's abolition (12 May 1797). Retained as a single continuous institution per the long-envelope audit convention.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_republic_venice",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_gb_brythonic_k_710_8a147c4d",
     "name": "Cornwall",
     "kind": "polity",
@@ -738,6 +756,24 @@
     ]
   },
   {
+    "id": "kingdom_scotland",
+    "name": "Kingdom of Scotland",
+    "kind": "kingdom",
+    "start_year": 843,
+    "end_year": 1707,
+    "region": "Western Europe",
+    "aliases": [
+      "Alba"
+    ],
+    "predecessors": [],
+    "continuity_note": "Conventional founding under Kenneth MacAlpin (843) to the Acts of Union (1707). The 843 start is a convention; ninth-century precision is not implied.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_acts_of_union",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_de_east_francia_850_a4270f4a",
     "name": "East Franks",
     "kind": "polity",
@@ -762,6 +798,22 @@
     "region": "Unclassified",
     "aliases": [
       "West Francia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_no_norway_k_1_866_77eccf52",
+    "name": "Old Kingdom of Norway",
+    "kind": "kingdom",
+    "start_year": 866,
+    "end_year": 1401,
+    "region": "Unclassified",
+    "aliases": [
+      "Norway"
     ],
     "predecessors": [],
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
@@ -815,6 +867,22 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_england",
+    "name": "Kingdom of England",
+    "kind": "kingdom",
+    "start_year": 927,
+    "end_year": 1707,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "From AEthelstan's unification (927) to the Acts of Union (1 May 1707). The Commonwealth and Protectorate (1649-1660) are conventionally catalogued as a distinct republic, so - mirroring the French First Republic reset - label and code windows gap 1649-1660 and Interregnum rows stay staged pending a curated Commonwealth identity. The United Kingdom identity begins at 1707 and inherits no rating; labels naming England after 1706 stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_acts_of_union",
+      "project_continuity_policy"
     ]
   },
   {
@@ -880,6 +948,24 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_hungary",
+    "name": "Kingdom of Hungary",
+    "kind": "kingdom",
+    "start_year": 1000,
+    "end_year": 1526,
+    "region": "Central Europe",
+    "aliases": [
+      "Hungary"
+    ],
+    "predecessors": [],
+    "continuity_note": "From Stephen I's coronation (1000/1001) to the defeat at Mohacs (29 August 1526) and the kingdom's trisection. Habsburg Royal Hungary thereafter fights under the Habsburg identity; Ottoman Hungary under the Ottoman identity.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_hungary_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1159,6 +1245,24 @@
     ]
   },
   {
+    "id": "joseon",
+    "name": "Joseon",
+    "kind": "kingdom",
+    "start_year": 1392,
+    "end_year": 1897,
+    "region": "East Asia",
+    "aliases": [
+      "Joseon dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "The Yi dynasty kingdom from 1392 to the proclamation of the Korean Empire (October 1897). The Korean Empire (1897-1910) and the modern Korean states stay staged under this label.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_joseon",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_mx_aztec_emp_1429_ad90ec62",
     "name": "Aztec Triple Alliance",
     "kind": "polity",
@@ -1308,6 +1412,62 @@
     ]
   },
   {
+    "id": "kingdom_denmark",
+    "name": "Kingdom of Denmark",
+    "kind": "kingdom",
+    "start_year": 1523,
+    "end_year": null,
+    "region": "Northern Europe",
+    "aliases": [
+      "Denmark",
+      "Denmark-Norway"
+    ],
+    "predecessors": [],
+    "continuity_note": "The Danish kingdom from the effective end of the Kalmar Union (1523). The personal union with Norway (to 1814) is not a separate rating identity; medieval Denmark stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_kalmar_union",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_sweden",
+    "name": "Kingdom of Sweden",
+    "kind": "kingdom",
+    "start_year": 1523,
+    "end_year": null,
+    "region": "Northern Europe",
+    "aliases": [
+      "Sweden"
+    ],
+    "predecessors": [],
+    "continuity_note": "The modern Swedish state from Gustav Vasa's election (6 June 1523) after the breakup of the Kalmar Union. Historiography treats later constitutional changes (1611, 1721, 1809) as the same continuing kingdom. Medieval and Kalmar-era Sweden stays staged; this identity replaces the pending-split quarantine of the bare label.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_vasa_sweden",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "habsburg_monarchy",
+    "name": "Habsburg Monarchy",
+    "kind": "dynastic_state",
+    "start_year": 1526,
+    "end_year": 1804,
+    "region": "Central Europe",
+    "aliases": [
+      "Habsburg Empire",
+      "Austrian Habsburg Monarchy"
+    ],
+    "predecessors": [],
+    "continuity_note": "The composite Danubian monarchy dated from Ferdinand I's election to the Bohemian and Hungarian crowns after Mohacs (1526) to the proclamation of the Empire of Austria (11 August 1804). Until Charles V's abdications (1556) the dynasty's Danubian and Spanish-Imperial branches shared the 'Habsburg' label in the sources, so label and code windows begin 1556 and 1526-1555 rows stay staged; the identity record starts 1526 because the Danubian monarchy itself dates from Ferdinand's election. Pre-1526 Habsburg hereditary lands stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_habsburg_monarchy",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "mughal_empire",
     "name": "Mughal Empire",
     "kind": "empire",
@@ -1349,13 +1509,52 @@
     "region": "Western Europe and overseas empire",
     "aliases": [
       "United Provinces",
-      "Dutch Republic"
+      "Dutch Republic",
+      "Netherlands"
     ],
     "predecessors": [],
     "continuity_note": "Begins with the revolt for this demonstration so its independence war can be rated; the later Kingdom of the Netherlands is separate.",
     "source_ids": [
       "cliopatria_polities",
       "britannica_eighty_years"
+    ]
+  },
+  {
+    "id": "polish_lithuanian_commonwealth",
+    "name": "Polish-Lithuanian Commonwealth",
+    "kind": "union_state",
+    "start_year": 1569,
+    "end_year": 1795,
+    "region": "Eastern Europe",
+    "aliases": [
+      "Poland",
+      "Poland-Lithuania"
+    ],
+    "predecessors": [],
+    "continuity_note": "From the Union of Lublin (1 July 1569) to the Third Partition (October 1795). The pre-1569 Jagiellonian personal union and the medieval Kingdom of Poland stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_union_of_lublin",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_mysore",
+    "name": "Kingdom of Mysore",
+    "kind": "kingdom",
+    "start_year": 1572,
+    "end_year": 1799,
+    "region": "South Asia",
+    "aliases": [
+      "Mysore",
+      "Sultanate of Mysore"
+    ],
+    "predecessors": [],
+    "continuity_note": "Independent Mysore from the post-Vijayanagara consolidation (Cliopatria's 1572 interval) to the fall of Seringapatam (4 May 1799). The Hyder Ali/Tipu Sultan takeover is a dynastic change within the same polity, not a reset. The post-1799 princely state stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_mysore_wars",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1391,6 +1590,36 @@
     ]
   },
   {
+    "id": "english_parliamentarians",
+    "name": "Parliamentarian Forces (Wars of the Three Kingdoms)",
+    "kind": "civil_war_faction",
+    "start_year": 1642,
+    "end_year": 1651,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated civil-war belligerent 1642-1651 (Edgehill to Worcester). From May 1649 the same army served the Commonwealth state; the 1649-1651 tail is kept inside this faction identity as an explicit contested-boundary decision (conventional single-belligerent treatment of the Wars of the Three Kingdoms), flagged for second review. A future Commonwealth state identity supersedes those rows only through review; no rating transfers in either direction.",
+    "source_ids": [
+      "britannica_english_civil_wars",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "english_royalists",
+    "name": "Royalist Forces (Wars of the Three Kingdoms)",
+    "kind": "civil_war_faction",
+    "start_year": 1642,
+    "end_year": 1651,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated civil-war belligerent: the field armies raised for the King from the royal standard at Nottingham (August 1642) to Worcester (September 1651), including the 1650-1651 Scottish-raised army of Charles II (a contested-boundary inclusion following the conventional 'English Civil Wars 1642-51' envelope; flagged for second review). The restored monarchy of 1660 is a continuation of the English crown, not of this faction identity; no rating is inherited in either direction.",
+    "source_ids": [
+      "britannica_english_civil_wars",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_cn_qing_dyn_1_1645_8a50480c",
     "name": "Qing Dynasty",
     "kind": "dynastic_state",
@@ -1420,6 +1649,43 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "maratha_confederacy",
+    "name": "Maratha Confederacy",
+    "kind": "confederation",
+    "start_year": 1674,
+    "end_year": 1818,
+    "region": "South Asia",
+    "aliases": [
+      "Marathas",
+      "Maratha Empire"
+    ],
+    "predecessors": [],
+    "continuity_note": "From Shivaji's coronation at Raigad (6 June 1674) to the abolition of the Peshwa after the Third Anglo-Maratha War (June 1818). Post-1818 princely successor states (Gwalior, Indore, Baroda) stay staged. Supersedes the Cliopatria 'Maratha Empire' 1677-1845 interval as the rating identity.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_maratha_confederacy",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_prussia",
+    "name": "Kingdom of Prussia",
+    "kind": "kingdom",
+    "start_year": 1701,
+    "end_year": 1871,
+    "region": "Central Europe",
+    "aliases": [
+      "Prussia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Coronation of Frederick I on 18 January 1701 to the proclamation of the German Empire on 18 January 1871, after which Prussian forces fight under the imperial identity. Brandenburg-Prussia stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_prussia",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1476,6 +1742,26 @@
     ]
   },
   {
+    "id": "afsharid_iran",
+    "name": "Afsharid Iran",
+    "kind": "empire",
+    "start_year": 1736,
+    "end_year": 1747,
+    "region": "West and Central Asia",
+    "aliases": [
+      "Afsharid Persia"
+    ],
+    "predecessors": [
+      "safavid_empire"
+    ],
+    "continuity_note": "Nader Shah's coronation (March 1736) to his assassination (June 1747), after which the empire fragments. The label window starts 1737 so 1736 events keep the committed Safavid attribution. The Zand era stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_nader_shah",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_om_busaidi_imamate_1_1744_c23501c3",
     "name": "Sultanate of Oman",
     "kind": "sultanate",
@@ -1489,6 +1775,22 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "durrani_empire",
+    "name": "Durrani Empire",
+    "kind": "empire",
+    "start_year": 1747,
+    "end_year": 1823,
+    "region": "South and Central Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Ahmad Shah Durrani's election at Kandahar (1747) to the deposition of the last Sadozai ruler of Kabul (1823). The Hotak era (1709-1738) stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_durrani_dynasty",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1544,19 +1846,84 @@
     ]
   },
   {
-    "id": "clio_ir_qajar_dyn_1788_ccb19019",
-    "name": "Qajar Dynasty",
-    "kind": "dynastic_state",
-    "start_year": 1788,
-    "end_year": 1923,
-    "region": "Unclassified",
+    "id": "french_first_republic",
+    "name": "French First Republic",
+    "kind": "republic",
+    "start_year": 1792,
+    "end_year": 1804,
+    "region": "Western Europe",
     "aliases": [
-      "Qajar dynasty"
+      "First French Republic",
+      "Revolutionary France"
+    ],
+    "predecessors": [
+      "kingdom_france"
+    ],
+    "continuity_note": "Proclaimed 21-22 September 1792 after the fall of the monarchy; ends with the proclamation of the First Empire on 18 May 1804. New identity at baseline; no rating crosses 1792 or 1804. Label windows use 1793-1803 so boundary-year events stay with the adjacent convention already committed.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_french_revolution",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "qajar_iran",
+    "name": "Qajar Iran",
+    "kind": "dynastic_state",
+    "start_year": 1794,
+    "end_year": 1925,
+    "region": "West and Central Asia",
+    "aliases": [
+      "Qajar Dynasty",
+      "Persia",
+      "Iran"
     ],
     "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "From Agha Mohammad Khan's defeat of the last Zand ruler at Kerman (1794, the Britannica dating; his unification campaign began 1789 and he was crowned 1796) to the deposition of Ahmad Shah and the Pahlavi accession (December 1925). Supersedes the Cliopatria 'Qajar Dynasty' 1788-1923 interval as the rating identity.",
     "source_ids": [
-      "cliopatria_v020"
+      "cliopatria_polities",
+      "britannica_qajar_dynasty",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "sikh_empire",
+    "name": "Sikh Empire",
+    "kind": "empire",
+    "start_year": 1799,
+    "end_year": 1849,
+    "region": "South Asia",
+    "aliases": [
+      "Lahore State"
+    ],
+    "predecessors": [],
+    "continuity_note": "Ranjit Singh's capture of Lahore (July 1799) to the British annexation of the Punjab after the Second Anglo-Sikh War (29 March 1849). The pre-1799 misl confederacy stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_ranjit_singh",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "austrian_empire",
+    "name": "Austrian Empire",
+    "kind": "empire",
+    "start_year": 1804,
+    "end_year": 1867,
+    "region": "Central Europe",
+    "aliases": [
+      "Austria",
+      "Empire of Austria",
+      "Habsburg Empire"
+    ],
+    "predecessors": [
+      "habsburg_monarchy"
+    ],
+    "continuity_note": "Proclaimed 11 August 1804; transformed by the Austro-Hungarian Compromise of March-June 1867. New identity at baseline; no rating crosses 1804 or 1867.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_habsburg_monarchy",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1579,6 +1946,26 @@
     ]
   },
   {
+    "id": "egypt_muhammad_ali",
+    "name": "Egypt (Muhammad Ali dynasty)",
+    "kind": "dynastic_state",
+    "start_year": 1805,
+    "end_year": 1882,
+    "region": "Egypt and the Levant",
+    "aliases": [
+      "Egypt",
+      "Khedivate of Egypt",
+      "Egypt of the Muhammad Ali dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Muhammad Ali's investiture as wali (1805) to the British occupation (September 1882); autonomous Egyptian command under nominal Ottoman suzerainty (vassal rule: rated separately because it fielded forces under materially autonomous command, including against the Ottomans). The formal Khedivate title dates from 1867; the record uses the conventional dynasty-era window. Post-1882 Egypt under British occupation stays staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_muhammad_ali_egypt",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q600524_1805_f3208b01",
     "name": "Sokoto Caliphate",
     "kind": "caliphate",
@@ -1587,6 +1974,22 @@
     "region": "Unclassified",
     "aliases": [
       "Sokoto Caliphate"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q152115_1809_3106574e",
+    "name": "Duchy of Warsaw",
+    "kind": "polity",
+    "start_year": 1809,
+    "end_year": 1870,
+    "region": "Unclassified",
+    "aliases": [
+      "Duchy of Warsaw"
     ],
     "predecessors": [],
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
@@ -1675,19 +2078,36 @@
     ]
   },
   {
-    "id": "clio_br_brazil_emp_1822_57868202",
+    "id": "greek_revolutionaries_1821",
+    "name": "Greek Revolutionary Forces (War of Independence)",
+    "kind": "revolutionary_government",
+    "start_year": 1821,
+    "end_year": 1832,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Revolutionary belligerent from the outbreak of March 1821 through the provisional administrations (Epidaurus 1822) and the Kapodistrian Hellenic State, ending with the establishment of the Kingdom of Greece (1832). Includes Ypsilantis's 1821 Danubian campaign under the conventional single-war treatment (declared criterion-1 exception, flagged for second review). The Kingdom is a separate future identity; no rating transfers.",
+    "source_ids": [
+      "britannica_greek_independence",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "empire_brazil",
     "name": "Empire of Brazil",
     "kind": "empire",
     "start_year": 1822,
     "end_year": 1889,
-    "region": "Unclassified",
+    "region": "South America",
     "aliases": [
-      "Empire of Brazil"
+      "Brazil"
     ],
     "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Independence proclaimed 7 September 1822; the republic proclaimed 15 November 1889. Supersedes the identically-windowed Cliopatria 'Empire of Brazil' interval as the rating identity; the republic eras stay on their Cliopatria intervals.",
     "source_ids": [
-      "cliopatria_v020"
+      "cliopatria_polities",
+      "britannica_empire_brazil",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1723,6 +2143,43 @@
     ]
   },
   {
+    "id": "emirate_afghanistan",
+    "name": "Emirate of Afghanistan",
+    "kind": "emirate",
+    "start_year": 1823,
+    "end_year": 1926,
+    "region": "South and Central Asia",
+    "aliases": [],
+    "predecessors": [
+      "durrani_empire"
+    ],
+    "continuity_note": "Barakzai rule from the fall of the Sadozais (1823) to Amanullah's proclamation of the Kingdom (1926). Covers all three Anglo-Afghan wars. Until Dost Mohammad's annexations (Kandahar 1855, Herat June 1863) Afghanistan was fragmented among Kabul, Kandahar, and the Sadozai principality of Herat; records naming those rivals as belligerents are curated exclusions, not this identity. The 1926-1973 Kingdom and the post-1979 regimes (already policy-gated) stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_durrani_dynasty",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "mexican_republic",
+    "name": "Mexican Republic",
+    "kind": "republic",
+    "start_year": 1824,
+    "end_year": 1863,
+    "region": "North America",
+    "aliases": [
+      "Mexico",
+      "United Mexican States"
+    ],
+    "predecessors": [],
+    "continuity_note": "From the 1824 federal constitution (after the First Empire) to the French installation of the Second Empire (regency proclaimed 1863, Maximilian crowned 1864). Federalist/centralist constitutional swings are the same polity by convention. The 1864-1867 Second Empire and the restored republic stay on their Cliopatria intervals.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_mexico_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_bo_bolivia_modern_1825_016dfcaa",
     "name": "Bolivia",
     "kind": "polity",
@@ -1752,6 +2209,57 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "argentine_confederation",
+    "name": "Argentine Confederation",
+    "kind": "confederation",
+    "start_year": 1831,
+    "end_year": 1861,
+    "region": "South America",
+    "aliases": [
+      "Argentina"
+    ],
+    "predecessors": [],
+    "continuity_note": "From the Federal Pact (January 1831) to the Battle of Pavon and national reunification under Buenos Aires (1861). The 1810-1831 United Provinces era and the post-1862 unified republic stay staged (the republic's Cliopatria interval begins 1930).",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_argentina_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_greece",
+    "name": "Kingdom of Greece",
+    "kind": "kingdom",
+    "start_year": 1832,
+    "end_year": 1924,
+    "region": "Southeastern Europe",
+    "aliases": [
+      "Greece"
+    ],
+    "predecessors": [],
+    "continuity_note": "From the Treaty of Constantinople (July 1832) establishing the independent kingdom to the proclamation of the Second Hellenic Republic (25 March 1924). The independence-war provisional governments and the interwar republic stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_greece_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "carlist_army_first_war",
+    "name": "Carlist Forces (First Carlist War)",
+    "kind": "civil_war_faction",
+    "start_year": 1833,
+    "end_year": 1840,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The pretender Don Carlos's army from the 1833 rising to the Convention of Vergara and the fall of Morella (1839-1840). The later Carlist risings of 1846-1849 and 1872-1876 are separate movements requiring their own identities; no rating transfers.",
+    "source_ids": [
+      "britannica_carlism",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1867,6 +2375,58 @@
     ]
   },
   {
+    "id": "taiping_heavenly_kingdom",
+    "name": "Taiping Heavenly Kingdom",
+    "kind": "proto_state",
+    "start_year": 1851,
+    "end_year": 1864,
+    "region": "East Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Rebel proto-state from the Jintian uprising and proclamation of the Heavenly Kingdom (January 1851) to the fall of Tianjing (July 1864). Remnant forces after 1864 are outside the identity. No successor inherits its rating.",
+    "source_ids": [
+      "britannica_taiping_rebellion",
+      "cliopatria_polities"
+    ]
+  },
+  {
+    "id": "second_french_empire",
+    "name": "Second French Empire",
+    "kind": "empire",
+    "start_year": 1852,
+    "end_year": 1870,
+    "region": "Western Europe",
+    "aliases": [
+      "France"
+    ],
+    "predecessors": [],
+    "continuity_note": "Proclaimed 2 December 1852; ends with the capitulation at Sedan and the proclamation of the Third Republic on 4 September 1870. New identity at baseline; the Second Republic (1848-1852) has no curated identity and stays a deliberate gap.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_second_empire",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "south_african_republic",
+    "name": "South African Republic",
+    "kind": "republic",
+    "start_year": 1852,
+    "end_year": 1902,
+    "region": "Southern Africa",
+    "aliases": [
+      "Transvaal",
+      "Transvaal Republic"
+    ],
+    "predecessors": [],
+    "continuity_note": "Recognized at the Sand River Convention (January 1852); extinguished at the Treaty of Vereeniging (31 May 1902). The 1877-1881 British annexation is treated as an interruption of the same polity per convention, not a reset.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_south_african_republic",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q236_1853_31d59baa",
     "name": "Montenegro",
     "kind": "polity",
@@ -1880,6 +2440,25 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "ethiopian_empire",
+    "name": "Ethiopian Empire",
+    "kind": "empire",
+    "start_year": 1855,
+    "end_year": 1936,
+    "region": "Northeast Africa",
+    "aliases": [
+      "Ethiopia",
+      "Abyssinia"
+    ],
+    "predecessors": [],
+    "continuity_note": "The modern Ethiopian Empire from Tewodros II's unification ending the Zemene Mesafint (February 1855) to the Italian occupation (May 1936). The medieval and Gondarine Solomonic eras stay staged pending their own identities; the 1941 restoration and the modern state stay on the 1942-2024 Cliopatria interval.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_ethiopia_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1899,6 +2478,36 @@
     ]
   },
   {
+    "id": "mexican_conservative_forces",
+    "name": "Mexican Conservative Forces",
+    "kind": "civil_war_faction",
+    "start_year": 1857,
+    "end_year": 1861,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conservative side of the War of the Reform 1857-1861. Conservative collaboration with the French Intervention and the Second Mexican Empire (1862-1867) is a different era and belligerent structure, deliberately outside this identity.",
+    "source_ids": [
+      "britannica_reform_war",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "mexican_liberal_forces",
+    "name": "Mexican Liberal (Constitutionalist) Forces",
+    "kind": "civil_war_faction",
+    "start_year": 1857,
+    "end_year": 1861,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Constitutionalist side of the War of the Reform, from the Plan of Tacubaya coup (December 1857) to the liberal entry into Mexico City (January 1861). The restored constitutional government of Mexico is a state identity outside this faction window; no rating transfers.",
+    "source_ids": [
+      "britannica_reform_war",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q81931_1861_f3bc20bd",
     "name": "Confederate States of America",
     "kind": "confederation",
@@ -1912,6 +2521,43 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "austria_hungary",
+    "name": "Austria-Hungary",
+    "kind": "union_state",
+    "start_year": 1867,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [
+      "Austria",
+      "Austro-Hungarian Empire",
+      "Habsburg Empire"
+    ],
+    "predecessors": [
+      "austrian_empire"
+    ],
+    "continuity_note": "The Dual Monarchy from the 1867 Compromise to its dissolution in October-November 1918. Successor republics receive no inherited rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_austria_hungary",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "cuban_insurgent_army_1868",
+    "name": "Cuban Insurgent Army (Ten Years' War)",
+    "kind": "insurgent_army",
+    "start_year": 1868,
+    "end_year": 1878,
+    "region": "Caribbean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Mambi insurgency from the Grito de Yara (October 1868) to the Pact of Zanjon (February 1878). The 1895 Liberation Army is a separate later identity; namesake continuity is forbidden.",
+    "source_ids": [
+      "britannica_ten_years_war",
+      "project_continuity_policy"
     ]
   },
   {
@@ -1949,6 +2595,26 @@
     ]
   },
   {
+    "id": "french_third_republic",
+    "name": "French Third Republic",
+    "kind": "republic",
+    "start_year": 1870,
+    "end_year": 1940,
+    "region": "Western Europe and overseas empire",
+    "aliases": [
+      "France"
+    ],
+    "predecessors": [
+      "second_french_empire"
+    ],
+    "continuity_note": "Proclaimed 4 September 1870; ends with the vote of full powers to Petain on 10 July 1940. Events dated only '1870' are ambiguous between Empire and Republic and deliberately stay staged. Vichy France and Free France (1940-1944) have no curated identity.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_third_republic",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "german_empire",
     "name": "German Empire",
     "kind": "empire",
@@ -1967,6 +2633,58 @@
     ]
   },
   {
+    "id": "kingdom_romania",
+    "name": "Kingdom of Romania",
+    "kind": "kingdom",
+    "start_year": 1881,
+    "end_year": 1947,
+    "region": "Southeastern Europe",
+    "aliases": [
+      "Romania",
+      "Rumania"
+    ],
+    "predecessors": [],
+    "continuity_note": "Proclaimed a kingdom (March 1881, independent since 1878) to the forced abdication of Michael I (30 December 1947). The pre-1881 United Principalities and the People's Republic stay staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_romania_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_serbia",
+    "name": "Kingdom of Serbia",
+    "kind": "kingdom",
+    "start_year": 1882,
+    "end_year": 1918,
+    "region": "Southeastern Europe",
+    "aliases": [
+      "Serbia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Proclaimed a kingdom (March 1882, independent since the 1878 Treaty of Berlin) until absorption into the Kingdom of Serbs, Croats and Slovenes (1 December 1918). COW/IWD label this polity 'Yugoslavia' under code 345; the code policy maps 1882-1918 records here and leaves interwar and later Yugoslavia staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_serbia_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "cuban_liberation_army_1895",
+    "name": "Cuban Liberation Army (War of Independence)",
+    "kind": "insurgent_army",
+    "start_year": 1895,
+    "end_year": 1898,
+    "region": "Caribbean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Liberation Army from the Grito de Baire (February 1895) to the armistice of August 1898. The Republic of Cuba (1902) is a separate polity; no rating transfers.",
+    "source_ids": [
+      "britannica_cuban_independence",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q408_1905_c58c97bb",
     "name": "Commonwealth of Australia",
     "kind": "polity",
@@ -1975,6 +2693,22 @@
     "region": "Unclassified",
     "aliases": [
       "Australia"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_cu_cuba_rep_1_1905_9c789e65",
+    "name": "Republic of Cuba",
+    "kind": "republic",
+    "start_year": 1905,
+    "end_year": 1959,
+    "region": "Unclassified",
+    "aliases": [
+      "Cuba"
     ],
     "predecessors": [],
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
@@ -2079,6 +2813,42 @@
     ]
   },
   {
+    "id": "lithuania_interwar",
+    "name": "Republic of Lithuania",
+    "kind": "republic",
+    "start_year": 1918,
+    "end_year": 1940,
+    "region": "Eastern Europe",
+    "aliases": [
+      "Lithuania"
+    ],
+    "predecessors": [],
+    "continuity_note": "Independence declared 16 February 1918; Soviet annexation June-August 1940. The medieval Grand Duchy and the post-1990 restored republic stay staged; no rating crosses 1940.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_baltic_states",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "second_polish_republic",
+    "name": "Second Polish Republic",
+    "kind": "republic",
+    "start_year": 1918,
+    "end_year": 1939,
+    "region": "Eastern Europe",
+    "aliases": [
+      "Poland"
+    ],
+    "predecessors": [],
+    "continuity_note": "Independence declared November 1918; destroyed by the German-Soviet invasion of September-October 1939. The government-in-exile and People's Republic receive no inherited rating.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_second_polish_republic",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_cz_czechoslovakia_1919_5eb09851",
     "name": "Czechoslovakia",
     "kind": "polity",
@@ -2163,6 +2933,21 @@
     ]
   },
   {
+    "id": "chinese_communist_forces",
+    "name": "Chinese Communist Forces",
+    "kind": "revolutionary_movement",
+    "start_year": 1927,
+    "end_year": 1949,
+    "region": "East Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "CCP-commanded forces (Red Army, later People's Liberation Army) from the Nanchang uprising (1 August 1927) to the proclamation of the People's Republic (1949). The People's Republic of China is a separate curated polity and inherits no rating from this actor.",
+    "source_ids": [
+      "britannica_chinese_civil_war",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q414_1930_5e281b3e",
     "name": "Argentine Republic",
     "kind": "republic",
@@ -2179,6 +2964,21 @@
     ]
   },
   {
+    "id": "second_spanish_republic",
+    "name": "Second Spanish Republic",
+    "kind": "republic",
+    "start_year": 1931,
+    "end_year": 1939,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Proclaimed 14 April 1931; ends with the surrender of Madrid and the end of the Civil War (1 April 1939). Francoist Spain is a distinct successor regime and inherits no rating. State identity created inside the actor tranche under the incumbent-side carve-out (reopens no declared gap; sole opposing side of a curated actor; attested conventional boundaries).",
+    "source_ids": [
+      "britannica_spanish_civil_war",
+      "cliopatria_polities"
+    ]
+  },
+  {
     "id": "clio_ca_canada_dominion_1932_4993f47a",
     "name": "Canada",
     "kind": "polity",
@@ -2192,6 +2992,25 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_iraq",
+    "name": "Kingdom of Iraq",
+    "kind": "kingdom",
+    "start_year": 1932,
+    "end_year": 1958,
+    "region": "West Asia",
+    "aliases": [
+      "Iraq",
+      "Hashemite Kingdom of Iraq"
+    ],
+    "predecessors": [],
+    "continuity_note": "Independent from the end of the British mandate (3 October 1932) to the 14 July 1958 revolution. The republic eras stay on their Cliopatria intervals; no rating crosses 1958.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_hashemite_iraq",
+      "project_continuity_policy"
     ]
   },
   {
@@ -2243,6 +3062,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "spanish_nationalist_faction",
+    "name": "Spanish Nationalist Faction (1936-1939)",
+    "kind": "civil_war_faction",
+    "start_year": 1936,
+    "end_year": 1939,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Insurgent civil-war belligerent from the July 1936 rising to victory on 1 April 1939. Its succession into Francoist Spain (a registry identity) is an explicit continuity decision that transfers no rating.",
+    "source_ids": [
+      "britannica_spanish_civil_war",
+      "project_continuity_policy"
     ]
   },
   {
@@ -2474,6 +3308,21 @@
     ]
   },
   {
+    "id": "cuban_26_july_movement",
+    "name": "26th of July Movement",
+    "kind": "revolutionary_movement",
+    "start_year": 1955,
+    "end_year": 1959,
+    "region": "Caribbean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Organized as a movement in 1955; fielded force from the Granma landing (December 1956) to victory in January 1959. The 1953 Moncada attack predates the movement's organized existence and stays staged. The post-1959 Cuban state is a separate identity; no rating transfers.",
+    "source_ids": [
+      "britannica_26_july",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "south_vietnam",
     "name": "Republic of Vietnam",
     "kind": "state",
@@ -2587,6 +3436,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "viet_cong",
+    "name": "National Liberation Front of South Vietnam",
+    "kind": "insurgent_front",
+    "start_year": 1960,
+    "end_year": 1976,
+    "region": "Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Southern insurgent front founded 20 December 1960, dissolved into the unified Vietnamese state in 1976. Operationally aligned with the DRV but rated separately as a materially distinct fielded force; neither the DRV nor unified Vietnam inherits its rating. HCED rows labelling PAVN engagements as 'Viet Cong' are held on the curated exclusion list, not absorbed.",
+    "source_ids": [
+      "britannica_viet_cong",
+      "project_continuity_policy"
     ]
   },
   {
