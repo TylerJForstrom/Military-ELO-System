@@ -129,6 +129,7 @@ def promote_hced_crosswalk_rows(
     reviewed_identity_bindings: dict[str, dict[str, Any]] | None = None,
     resolve_reviewed_id: Any | None = None,
     require_complete_reviewed_identity_bindings: bool = False,
+    reserved_candidate_ids: set[str] | frozenset[str] | None = None,
 ) -> dict[str, Any]:
     """Promote HCED rows whose opposing sides both have Seshat codes.
 
@@ -145,6 +146,8 @@ def promote_hced_crosswalk_rows(
     cluster_spans: dict[str, list[Any]] = {}
     if reviewed_identity_bindings is None:
         reviewed_identity_bindings = {}
+    if reserved_candidate_ids is None:
+        reserved_candidate_ids = frozenset()
     _validate_hced_crosswalk_review_bindings(
         candidates,
         reviewed_identity_bindings,
@@ -154,6 +157,11 @@ def promote_hced_crosswalk_rows(
     for candidate in candidates:
         candidate_id = hced_candidate_id(candidate)
         identity_policy = reviewed_identity_bindings.get(candidate_id)
+        if candidate_id in reserved_candidate_ids:
+            # A separately audited candidate-keyed lane owns this exact row.
+            # It must never enter the generic crosswalk or label universes.
+            rejections["reserved_candidate_contract"] += 1
+            continue
         if candidate_id in HCED_CURATED_EXCLUSIONS:
             # Curated adjudications run before every other gate; the row is
             # counted, stays staged, and leaves every promotion universe

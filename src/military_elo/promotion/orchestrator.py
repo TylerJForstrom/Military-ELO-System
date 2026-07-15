@@ -25,6 +25,7 @@ from .common import (
     _resolve_label_tiers,
     _seed_entity_labels,
     _validate_seed_event_intervals,
+    _war_tokens,
     _write_json,
     normalize_label,
     read_jsonl,
@@ -78,6 +79,23 @@ from .policy import (
     _cow_policy_seed_id,
 )
 from .ucdp import promote_ucdp_termination_episodes, resolve_ucdp_party
+from .wave6_1500_1799 import (
+    WAVE6_HCED_CONTRACT_IDS,
+    WAVE6_HCED_NONPROMOTED_IDS,
+    WAVE6_HCED_RESERVED_IDS,
+    install_wave6_entities,
+    install_wave6_sources,
+    promote_wave6_hced_contracts,
+    validate_wave6_queue_contracts,
+    wave6_cohort_counts,
+)
+from .wave6_1500_1799_data import (
+    WAVE6_ENTITIES,
+    WAVE6_HCED_CONTRACTS,
+    WAVE6_HCED_EXCLUSIONS,
+    WAVE6_HCED_HOLDS,
+    WAVE6_WIKIDATA_EXCLUSIONS,
+)
 
 
 def _sorted_newline_sha256(values: list[str]) -> str:
@@ -196,6 +214,7 @@ def _validate_hced_event_source_parity(
 def _validate_hced_location_release(
     hced_events: list[dict[str, Any]],
     hced_candidates_by_id: dict[str, dict[str, Any]],
+    reviewed_candidate_ids: frozenset[str] = frozenset(),
 ) -> dict[str, Any]:
     """Fail closed unless the audited HCED location release is exact."""
 
@@ -208,6 +227,7 @@ def _validate_hced_location_release(
     provenance_count = 0
     crosswalk_count = 0
     label_count = 0
+    reviewed_event_candidate_ids: set[str] = set()
 
     for event in hced_events:
         event_id = event.get("id")
@@ -224,6 +244,12 @@ def _validate_hced_location_release(
         ):
             raise ValueError("Every promoted HCED event must carry an exact candidate ID")
         candidate_ids.append(candidate_id)
+        if candidate_id in reviewed_candidate_ids:
+            reviewed_event_candidate_ids.add(candidate_id)
+            if not event_id.startswith("hced_wave6_"):
+                raise ValueError(
+                    f"Reviewed HCED candidate {candidate_id} has a non-lane event ID"
+                )
         candidate = hced_candidates_by_id.get(candidate_id)
         if candidate is None:
             raise ValueError(
@@ -313,22 +339,61 @@ def _validate_hced_location_release(
         provenance_keys.add(provenance_key)
         provenance_count += 1
 
-    if len(candidate_ids) != HCED_EXPECTED_CANDIDATE_BINDINGS:
+    if reviewed_event_candidate_ids != reviewed_candidate_ids:
+        missing = sorted(reviewed_candidate_ids - reviewed_event_candidate_ids)
+        unexpected = sorted(reviewed_event_candidate_ids - reviewed_candidate_ids)
+        raise ValueError(
+            "Reviewed HCED candidate/location bijection changed: "
+            f"missing={missing}, unexpected={unexpected}"
+        )
+    expected_candidate_bindings = (
+        HCED_EXPECTED_CANDIDATE_BINDINGS + len(reviewed_candidate_ids)
+    )
+    if len(candidate_ids) != expected_candidate_bindings:
         raise ValueError(
             "HCED candidate binding count changed: "
-            f"{len(candidate_ids)} != {HCED_EXPECTED_CANDIDATE_BINDINGS}"
+            f"{len(candidate_ids)} != {expected_candidate_bindings}"
         )
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
-    if (crosswalk_count, label_count) != (1_824, 2_328):
+    if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
+        1_824,
+        2_328,
+        len(reviewed_candidate_ids),
+    ):
         raise ValueError(
             "HCED promotion tranche counts changed: "
-            f"{crosswalk_count} crosswalk and {label_count} label"
+            f"{crosswalk_count} crosswalk, {label_count} label, and "
+            f"{len(reviewed_event_candidate_ids)} candidate-keyed reviewed"
         )
+    extra_point_count = 0
+    extra_country_count = 0
+    extra_provenance_count = 0
+    for candidate_id in reviewed_candidate_ids:
+        candidate = hced_candidates_by_id.get(candidate_id)
+        if candidate is None:
+            raise ValueError(f"Reviewed HCED candidate is missing: {candidate_id}")
+        has_point = (
+            candidate_id not in HCED_POINT_QUARANTINE_IDS
+            and parse_hced_point(
+                candidate.get("latitude"), candidate.get("longitude")
+            )
+            is not None
+        )
+        country = candidate.get("modern_location_country")
+        has_country = (
+            candidate_id
+            not in (HCED_COUNTRY_QUARANTINE_IDS | HCED_SOURCE_BLANK_COUNTRY_IDS)
+            and isinstance(country, str)
+            and bool(country.strip())
+        )
+        extra_point_count += int(has_point)
+        extra_country_count += int(has_country)
+        extra_provenance_count += int(has_point or has_country)
     if (point_count, country_count, provenance_count) != (
-        HCED_EXPECTED_POINT_ASSERTIONS,
-        HCED_EXPECTED_COUNTRY_ASSERTIONS,
-        HCED_EXPECTED_PROVENANCE_OBJECTS,
+        HCED_EXPECTED_POINT_ASSERTIONS + extra_point_count,
+        HCED_EXPECTED_COUNTRY_ASSERTIONS + extra_country_count,
+        HCED_EXPECTED_PROVENANCE_OBJECTS + extra_provenance_count,
     ):
         raise ValueError(
             "HCED location assertion counts changed: "
@@ -359,6 +424,7 @@ def _validate_hced_location_release(
 
     return {
         "hced_candidate_bindings": len(candidate_ids),
+        "candidate_keyed_reviewed_contracts": len(reviewed_event_candidate_ids),
         "geojson_points": point_count,
         "modern_location_country_assertions": country_count,
         "location_provenance_objects": provenance_count,
@@ -428,6 +494,12 @@ def build_expanded_release(
     polities = [row for row in cliopatria if row.get("record_type") == "POLITY"]
     hced = read_jsonl(review / "hced-candidates.jsonl")
     hced_candidates_by_id = _index_hced_candidates(hced)
+    wikidata_path = review / "wikidata-candidates.jsonl"
+    wikidata_candidates = read_jsonl(wikidata_path) if wikidata_path.exists() else []
+    wave6_queue_validation = validate_wave6_queue_contracts(
+        hced,
+        wikidata_candidates,
+    )
     owners: dict[str, list[dict[str, Any]]] = {}
     for candidate in polities:
         for code in candidate.get("seshat_ids", []):
@@ -491,6 +563,7 @@ def build_expanded_release(
         reviewed_identity_bindings=HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
+        reserved_candidate_ids=WAVE6_HCED_RESERVED_IDS,
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
     rejections: Counter[str] = hced_crosswalk_pass["rejections"]
@@ -611,6 +684,30 @@ def build_expanded_release(
         span[1] = min(span[1], low_year)
         span[2] = max(span[2], high_year)
 
+    # Install the lane identities only after the generic HCED label pass, so
+    # their names cannot become fallback mappings for unrelated rows. The
+    # exact events then join the one global HCED stream before IWBD dedup.
+    install_wave6_entities(release_entities)
+    wave6_events = promote_wave6_hced_contracts(
+        hced,
+        release_entities,
+        [*seed_events, *source_events, *iwd_events, *label_events],
+    )
+    for event in wave6_events:
+        candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
+        war_names = list(map(str, candidate.get("war_names", [])))
+        if not war_names or event.get("cluster_id") is None:
+            continue
+        cluster_id = str(event["cluster_id"])
+        low_year = int(event["year"])
+        high_year = int(event["end_year"])
+        span = hced_cluster_spans.setdefault(
+            cluster_id,
+            [_war_tokens(war_names[0]), low_year, high_year],
+        )
+        span[1] = min(span[1], low_year)
+        span[2] = max(span[2], high_year)
+
     # IWBD battles are deduplicated against curated seed events and every
     # non-curated-excluded HCED candidate — promoted or staged, over the
     # candidate's full year range — because a mechanically rejected HCED row
@@ -624,6 +721,7 @@ def build_expanded_release(
         if str(candidate.get("candidate_id")) in {
             *HCED_CURATED_EXCLUSIONS,
             *HCED_LABEL_CURATED_EXCLUSIONS,
+            *WAVE6_HCED_NONPROMOTED_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -648,7 +746,7 @@ def build_expanded_release(
     # sides and outcome orientation. Different suffix branches never share a
     # key. Only promoted HCED rows can supply that identity signature; exact
     # names above continue to block against staged rows.
-    for event in (*source_events, *label_events):
+    for event in (*source_events, *label_events, *wave6_events):
         winners = frozenset(
             str(participant["entity_id"])
             for participant in event["participants"]
@@ -814,18 +912,22 @@ def build_expanded_release(
     ):
         sources_by_id[source["id"]] = source
 
+    install_wave6_sources(sources_by_id)
+
     all_events = [
         *seed_events,
         *source_events,
         *iwd_events,
         *label_events,
+        *wave6_events,
         *iwbd_events,
         *ucdp_events,
     ]
-    hced_events = [*source_events, *label_events]
+    hced_events = [*source_events, *label_events, *wave6_events]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
         hced_candidates_by_id,
+        reviewed_candidate_ids=WAVE6_HCED_CONTRACT_IDS,
     )
     used_entity_ids = {
         str(participant["entity_id"])
@@ -851,6 +953,18 @@ def build_expanded_release(
         }
         for entity in seed_entities
     }
+    for entity in WAVE6_ENTITIES:
+        entity_id = str(entity["id"])
+        registry_entities[entity_id] = {
+            "id": entity_id,
+            "name": str(entity["name"]),
+            "kind": str(entity["kind"]),
+            "start_year": int(entity["start_year"]),
+            "end_year": int(entity["end_year"]),
+            "status": "rated" if entity_id in used_entity_ids else "unrated",
+            "identity_status": "curated",
+            "region": str(entity["region"]),
+        }
     used_candidate_ids = {
         str(candidate["candidate_id"]) for candidate in candidate_by_release_id.values()
     }
@@ -906,6 +1020,7 @@ def build_expanded_release(
         )
         - len(source_events)
         - len(label_events)
+        - len(wave6_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -921,6 +1036,7 @@ def build_expanded_release(
         "curated_seed_events": len(seed_events),
         "provisional_hced_events": len(source_events),
         "provisional_hced_label_events": len(label_events),
+        "candidate_keyed_wave6_hced_events": len(wave6_events),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
         "iwbd_battles_total": iwbd_promotion["battles_total"],
@@ -996,6 +1112,13 @@ def build_expanded_release(
                 "HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint "
                 "and exact-ID binding to cross an otherwise fail-closed within-year Portugal "
                 "boundary; it does not populate a generic label observation. "
+                "The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED "
+                "contracts whose complete raw rows, canonical event keys, outcomes, "
+                "participant rosters, and entity windows are pinned. Seventy-six are "
+                "active and four exact coalition-evidence holds remain staged. Its 39 "
+                "HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and "
+                "fingerprinted; none creates a label fallback, and all generic Holy "
+                "Roman Empire rows remain staged. "
                 "IWD component wars never enter individually: each parent conflict is rated at "
                 "most once, as a coalition event aggregated from its component dyads, and only "
                 "when the reconstructed sides are consistent, the component outcomes are "
@@ -1048,6 +1171,39 @@ def build_expanded_release(
             ),
             "accepted_hced_events": len(source_events),
             "accepted_hced_label_events": len(label_events),
+            "accepted_wave6_1500_1799_hced_events": len(wave6_events),
+            "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
+            "wave6_1500_1799_queue_validation": wave6_queue_validation,
+            "wave6_1500_1799_candidate_ids": sorted(WAVE6_HCED_CONTRACTS),
+            "wave6_1500_1799_hced_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE6_HCED_HOLDS.items())
+            ],
+            "wave6_1500_1799_hced_exclusions": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["category"],
+                    "reason": contract["reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE6_HCED_EXCLUSIONS.items())
+            ],
+            "wave6_1500_1799_wikidata_exclusions": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["category"],
+                    "reason": contract["reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE6_WIKIDATA_EXCLUSIONS.items()
+                )
+            ],
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -1163,6 +1319,7 @@ def build_expanded_release(
         "events": len(all_events),
         "provisional_hced_events": len(source_events),
         "provisional_hced_label_events": len(label_events),
+        "candidate_keyed_wave6_hced_events": len(wave6_events),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
         "provisional_ucdp_events": len(ucdp_events),
