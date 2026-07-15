@@ -1,5 +1,45 @@
 [
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ahmadnagar_chronology",
+    "license": "Citation and link only",
+    "publisher": "Maharashtra State Gazetteers",
+    "source_family_id": "maharashtra_state_gazetteers",
+    "source_type": "official_or_academic_reference",
+    "title": "Maharashtra historical chronology",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_II/Chrono.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ahmadnagar_gazetteer",
+    "license": "Citation and link only",
+    "publisher": "Maharashtra State Gazetteers",
+    "source_family_id": "maharashtra_state_gazetteers",
+    "source_type": "official_or_academic_reference",
+    "title": "Chand Bibi's Defence of Ahmadnagar and later Nizam Shahi wars",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Ahmednagar%20District/histroy_early.html"
+  },
+  {
+    "id": "arab_israeli_1948_state",
+    "title": "1948 Arab-Israeli War parties and strategic result",
+    "url": "https://history.state.gov/milestones/1945-1952/arab-israeli-war",
+    "publisher": "U.S. Department of State Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_arab_israeli_1948_state",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "army_chosin",
     "title": "The Chinese Intervention: Korea, 1950",
     "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/K%20Pdf/CMH_Pub_19-8.pdf",
@@ -24,6 +64,45 @@
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
     ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "banglapedia_mir_qasim",
+    "license": "Citation and link only",
+    "publisher": "Banglapedia, Asiatic Society of Bangladesh",
+    "source_family_id": "banglapedia",
+    "source_type": "official_or_academic_reference",
+    "title": "Mir Qasim",
+    "url": "https://en.banglapedia.org/index.php/Mir_Qasim"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "bijapur_dynasty",
+    "license": "Citation and link only",
+    "publisher": "Maharashtra State Gazetteers",
+    "source_family_id": "maharashtra_state_gazetteers",
+    "source_type": "official_or_academic_reference",
+    "title": "Dynastic chronology of Maharashtra",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_II/dynastic.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "brandenburg_fehrbellin",
+    "license": "Citation and link only",
+    "publisher": "Land Brandenburg",
+    "source_family_id": "land_brandenburg_publications",
+    "source_type": "official_or_academic_reference",
+    "title": "Jahrbuch für das Land Brandenburg 2012",
+    "url": "https://mleuv.brandenburg.de/sixcms/media.php/9/Jahrbuch-fuer-das-Land_2012.pdf"
   },
   {
     "id": "brazil_chamber_united_kingdom_1815",
@@ -823,6 +902,76 @@
     ]
   },
   {
+    "id": "bulgaria_iwm",
+    "title": "Salonika campaign parties and outcomes",
+    "url": "https://www.iwm.org.uk/history/a-short-history-of-the-salonika-campaign",
+    "publisher": "Imperial War Museums",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_bulgaria_iwm",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "bulgaria_usni",
+    "title": "First Balkan War parties and chronology",
+    "url": "https://www.usni.org/magazines/proceedings/1913/march/notes-balkan-war",
+    "publisher": "U.S. Naval Institute",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_bulgaria_usni",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "carlist_governments",
+    "title": "Spanish government transitions during the Third Carlist War",
+    "url": "https://ejercito.defensa.gob.es/Galerias/Descarga_pdf/Unidades/Madrid/rinf1/LIBRO_HISTORIA_DEL_INMEMORIAL_DEL_REY_NUEVO_-_DR.GUILLERMO_CALLEJA_LEAL.pdf",
+    "publisher": "Spanish Army",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_carlist_governments",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "carlist_spanish_army",
+    "title": "Third Carlist War chronology",
+    "url": "https://ejercito.defensa.gob.es/en/unidades/Cordoba/brimzx_guzmanelbueno/Organizacion/RI_N.2/index.html",
+    "publisher": "Spanish Army",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_carlist_spanish_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "chad_un_yearbook",
+    "title": "1987 Chad-Libya conflict chronology and outcomes",
+    "url": "https://digitallibrary.un.org/nanna/record/143313/files/278477-EN.pdf?registerDownload=1&version=1&withMetadata=0&withWatermark=0",
+    "publisher": "United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_chad_un_yearbook",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "cliopatria_polities",
     "title": "Cliopatria: a geospatial knowledge graph of historical polities, version 0.2.0",
     "url": "https://zenodo.org/records/20274630",
@@ -849,6 +998,19 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "clodfelter_worldcat",
+    "license": "Citation and link only",
+    "publisher": "WorldCat bibliographic record",
+    "source_family_id": "clodfelter_warfare_armed_conflicts",
+    "source_type": "official_or_academic_reference",
+    "title": "Warfare and Armed Conflicts, 1492–2015",
+    "url": "https://search.worldcat.org/title/warfare-and-armed-conflicts-a-statistical-encyclopedia-of-casualty-and-other-figures-1492-2015/oclc/965194724"
+  },
+  {
     "id": "colombia_constitution_1863",
     "title": "Constitucion politica de los Estados Unidos de Colombia, 1863",
     "url": "https://www.archivogeneral.gov.co/sites/default/files/exposiciones_patrimonio/ConstitucionesColombia/1863/Texto1863.pdf",
@@ -873,6 +1035,32 @@
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
     ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ddb_fehrbellin_rathenow",
+    "license": "Citation and link only",
+    "publisher": "Deutsche Digitale Bibliothek / Bayerische Staatsbibliothek",
+    "source_family_id": "deutsche_digitale_bibliothek",
+    "source_type": "official_or_academic_reference",
+    "title": "Rathenow and Fehrbellin collection record",
+    "url": "https://www.deutsche-digitale-bibliothek.de/item/YMATAKBNXAHV44NYNFXEZD4ZZKRA7P7U"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "eaton_deccan",
+    "license": "Citation and link only",
+    "publisher": "Cambridge University Press",
+    "source_family_id": "cambridge_new_india_history",
+    "source_type": "official_or_academic_reference",
+    "title": "A Social History of the Deccan, 1300–1761",
+    "url": "https://the-deccan.in/wp-content/uploads/2019/10/cambridge_history_eaton_deccan_social_history.pdf"
   },
   {
     "id": "estonia_government_independence_1918",
@@ -914,6 +1102,19 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "harbottle_worldcat",
+    "license": "Citation and link only",
+    "publisher": "WorldCat bibliographic record",
+    "source_family_id": "harbottle_bruce_dictionary",
+    "source_type": "official_or_academic_reference",
+    "title": "Dictionary of Battles",
+    "url": "https://search.worldcat.org/title/Dictionary-of-battles/oclc/161214"
+  },
+  {
     "id": "hced_dataset",
     "title": "Historical Conflict Event Dataset (HCED), version 5.0 / data v3",
     "url": "https://doi.org/10.7910/DVN/6ZFC0V",
@@ -938,6 +1139,84 @@
     "evidence_roles": [
       "identity_crosswalk"
     ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "heritage_boyne",
+    "license": "Citation and link only",
+    "publisher": "Heritage Ireland",
+    "source_family_id": "heritage_ireland",
+    "source_type": "official_or_academic_reference",
+    "title": "Battle of the Boyne Visitor Centre",
+    "url": "https://heritageireland.ie/places-to-visit/battle-of-the-boyne-visitor-centre-oldbridge-estate/"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "historial_vendee",
+    "license": "Citation and link only",
+    "publisher": "Historial de la Vendée / Département de la Vendée",
+    "source_family_id": "department_vendee_historial",
+    "source_type": "official_or_academic_reference",
+    "title": "La Guerre de Vendée (teaching dossier)",
+    "url": "https://edap.vendee.fr/fileadmin/user_upload/activites_EDAP/animations_pedagogiques/pdf_preparer_visite/8_03.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ignca_house_shivaji",
+    "license": "Citation and link only",
+    "publisher": "Indira Gandhi National Centre for the Arts",
+    "source_family_id": "ignca_asi_books",
+    "source_type": "official_or_academic_reference",
+    "title": "House of Shivaji",
+    "url": "https://ignca.gov.in/Asi_data/35126.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ignca_tipu_sultan",
+    "license": "Citation and link only",
+    "publisher": "Indira Gandhi National Centre for the Arts digital archive",
+    "source_family_id": "ignca_asi_books",
+    "source_type": "official_or_academic_reference",
+    "title": "Tipu Sultan (Rulers of India)",
+    "url": "https://ignca.gov.in/Asi_data/47736.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ignca_undwah",
+    "license": "Citation and link only",
+    "publisher": "Indira Gandhi National Centre for the Arts",
+    "source_family_id": "ignca_asi_books",
+    "source_type": "official_or_academic_reference",
+    "title": "Undwah Nala historical account",
+    "url": "https://ignca.gov.in/Asi_data/9996.pdf"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "india_culture_patna",
+    "license": "Citation and link only",
+    "publisher": "Ministry of Culture, Government of India",
+    "source_family_id": "india_culture_portal",
+    "source_type": "official_or_academic_reference",
+    "title": "Patna Massacre of 1763",
+    "url": "https://cmsadmin.amritmahotsav.nic.in/district-reopsitory-detail.htm?7067="
   },
   {
     "id": "iranica_alexander",
@@ -1044,6 +1323,19 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "isc_vendee",
+    "license": "Citation and link only",
+    "publisher": "Institut de Stratégie Comparée",
+    "source_family_id": "isc_vendee_proceedings",
+    "source_type": "official_or_academic_reference",
+    "title": "Histoire militaire des guerres de Vendée",
+    "url": "https://www.institut-strategie.fr/histoire-militaire-des-guerres-de-vendee/"
+  },
+  {
     "id": "iwbd_dataset",
     "title": "Interstate War Battle dataset (IWBD)",
     "url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
@@ -1083,6 +1375,142 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "koppal_official",
+    "license": "Citation and link only",
+    "publisher": "Koppal District, Government of Karnataka",
+    "source_family_id": "karnataka_district_history",
+    "source_type": "official_or_academic_reference",
+    "title": "Koppal Fort",
+    "url": "https://koppal.nic.in/en/tourist-place/koppal-fort/"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "landers_oup",
+    "license": "Citation and link only",
+    "publisher": "Oxford University Press",
+    "source_family_id": "landers_field_forge",
+    "source_type": "official_or_academic_reference",
+    "title": "The Field and the Forge",
+    "url": "https://academic.oup.com/book/1842"
+  },
+  {
+    "id": "mahdist_bm",
+    "title": "Mahdiya identity context",
+    "url": "https://www.britishmuseum.org/collection/term/x105338",
+    "publisher": "British Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mahdist_bm",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "mahdist_nam",
+    "title": "British, Egyptian, and Mahdist party distinctions",
+    "url": "https://www.nam.ac.uk/explore/egypt-and-sudan",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mahdist_nam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "marathi_nizam",
+    "license": "Citation and link only",
+    "publisher": "Marathi Vishwakosh",
+    "source_family_id": "marathi_vishwakosh",
+    "source_type": "official_or_academic_reference",
+    "title": "Maratha–Nizam relations",
+    "url": "https://vishwakosh.marathi.gov.in/28442/"
+  },
+  {
+    "id": "mexico_constitutionalists",
+    "title": "Constitutionalist movement from Guadalupe to Teoloyucan",
+    "url": "https://www.constitucion1917.gob.mx/es/Constitucion1917/Revolucion_Constitucionalista",
+    "publisher": "Government of Mexico",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mexico_constitutionalists",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "mexico_orendain",
+    "title": "Orendain parties and Constitutionalist victory",
+    "url": "https://www.cultura.gob.mx/centenario-ejercito/batalla_orendain.php/batalla_cd_juarez.php",
+    "publisher": "Mexico Secretariat of Culture",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mexico_orendain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "mexico_torreon",
+    "title": "1914 Torreon parties and outcome",
+    "url": "https://www.cultura.gob.mx/centenario-ejercito/batalla_torreon.php",
+    "publisher": "Mexico Secretariat of Culture",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mexico_torreon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "mexico_zacatecas",
+    "title": "Zacatecas battle outcome",
+    "url": "https://www.gob.mx/defensa/documentos/23-de-junio-de-1914-batalla-de-zacatecas",
+    "publisher": "Mexico Secretariat of National Defense",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_mexico_zacatecas",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "mumbai_medieval_india",
+    "license": "Citation and link only",
+    "publisher": "University of Mumbai",
+    "source_family_id": "university_mumbai_history",
+    "source_type": "official_or_academic_reference",
+    "title": "Medieval India",
+    "url": "https://old.mu.ac.in/wp-content/uploads/2021/04/TYBA-Medieval-India.pdf"
+  },
+  {
     "id": "nam_crimean",
     "title": "The Crimean War",
     "url": "https://www.nam.ac.uk/explore/crimean-war",
@@ -1096,6 +1524,45 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "nam_jacobites",
+    "license": "Citation and link only",
+    "publisher": "National Army Museum",
+    "source_family_id": "national_army_museum_editorial",
+    "source_type": "official_or_academic_reference",
+    "title": "The Jacobites",
+    "url": "https://www.nam.ac.uk/explore/jacobites"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "nam_nine_years",
+    "license": "Citation and link only",
+    "publisher": "National Army Museum",
+    "source_family_id": "national_army_museum_editorial",
+    "source_type": "official_or_academic_reference",
+    "title": "The Nine Years War",
+    "url": "https://www.nam.ac.uk/explore/nine-years-war"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "nam_sheriffmuir",
+    "license": "Citation and link only",
+    "publisher": "National Army Museum",
+    "source_family_id": "national_army_museum_collection",
+    "source_type": "official_or_academic_reference",
+    "title": "Battle of Sheriffmuir collection record",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-152-1"
+  },
+  {
     "id": "national_wwii_pacific",
     "title": "The Pacific Strategy, 1941-1944",
     "url": "https://www.nationalww2museum.org/war/articles/pacific-strategy-1941-1944",
@@ -1106,6 +1573,34 @@
     "source_family_id": "national_wwii_museum_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "nguyen_musee_armee",
+    "title": "French conquest chronology in Vietnam",
+    "url": "https://www.musee-armee.fr/ExpoIndochine/1859-1907.html",
+    "publisher": "Musee de l'Armee",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_nguyen_musee_armee",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "nguyen_vnmh",
+    "title": "Nguyen state boundary and colonial transition",
+    "url": "https://vnmh.com.vn/en/Articles/4205/the-nguyen-dynasty-1802-1945-ad",
+    "publisher": "Vietnam National Museum of History",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_nguyen_vnmh",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -1133,6 +1628,116 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "persee_vendee",
+    "license": "Citation and link only",
+    "publisher": "Annales historiques de la Révolution française / Persée",
+    "source_family_id": "persee_ahrf",
+    "source_type": "official_or_academic_reference",
+    "title": "La Vendée en l'an II : défaite et répression",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1995_num_300_1_1780"
+  },
+  {
+    "id": "philippines_army_cmh",
+    "title": "Philippine-American War campaign chronology",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Philippine-Insurrection/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_army_cmh",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "philippines_loc_chronology",
+    "title": "Philippine conflict chronology, 1896-1902",
+    "url": "https://guides.loc.gov/world-of-1898/chronology",
+    "publisher": "Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_loc_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "philippines_nhcp_binakayan",
+    "title": "Binakayan and Zapote actions",
+    "url": "https://nhcp.gov.ph/meseums/mba/",
+    "publisher": "National Historical Commission of the Philippines",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_nhcp_binakayan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "philippines_nhcp_imus",
+    "title": "Imus revolutionary occupation and Spanish recapture",
+    "url": "https://philhistoricsites.nhcp.gov.ph/registry_database/imus/",
+    "publisher": "National Historical Commission of the Philippines",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_nhcp_imus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "philippines_nhcp_tirad",
+    "title": "Tirad Pass parties, date, and result",
+    "url": "https://philhistoricsites.nhcp.gov.ph/registry_database/battle-of-tirad-pass/",
+    "publisher": "National Historical Commission of the Philippines",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_nhcp_tirad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "philippines_nhcp_zapote",
+    "title": "Zapote identity and outcome",
+    "url": "https://philhistoricsites.nhcp.gov.ph/registry_database/labanan-sa-zapote/",
+    "publisher": "National Historical Commission of the Philippines",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_philippines_nhcp_zapote",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "polish_history_rakoczi",
+    "license": "Citation and link only",
+    "publisher": "Polish History Museum",
+    "source_family_id": "polish_history_museum",
+    "source_type": "official_or_academic_reference",
+    "title": "Capitulation of George II Rákóczi",
+    "url": "https://muzhp.pl/en/calendar/kapitulacja-jerzego-ii-rakoczego-en"
   },
   {
     "id": "portugal_mne_foundation_1143",
@@ -1174,6 +1779,32 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "portuguese_ceylon",
+    "license": "Citation and link only",
+    "publisher": "Encyclopaedia of Portuguese Expansion, NOVA FCSH",
+    "source_family_id": "nova_portuguese_expansion",
+    "source_type": "official_or_academic_reference",
+    "title": "Ceylon",
+    "url": "https://eve.fcsh.unl.pt/en/places/ceylon"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "portuguese_maratha_relations",
+    "license": "Citation and link only",
+    "publisher": "Directorate of Literature and Culture, Government of Maharashtra",
+    "source_family_id": "maharashtra_literature_directorate",
+    "source_type": "official_or_academic_reference",
+    "title": "Portuguese–Maratha Relations",
+    "url": "https://sahitya.marathi.gov.in/ebooks/Portuguese%20Mahratta%20Relations.pdf"
+  },
+  {
     "id": "project_continuity_policy",
     "title": "Byzantine Empire overview (used with the project's explicit 395 reset convention)",
     "url": "https://www.britannica.com/place/Byzantine-Empire",
@@ -1185,6 +1816,46 @@
     "evidence_roles": [
       "derived_project_continuity_convention"
     ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "pultusk_history_service",
+    "license": "Citation and link only",
+    "publisher": "Polish History service dzieje.pl",
+    "source_family_id": "dzieje_pl",
+    "source_type": "official_or_academic_reference",
+    "title": "Pułtusk 1703. Mazowsze w czasie wojny północnej",
+    "url": "https://dzieje.pl/ksiazki/pultusk-1703-mazowsze-w-czasie-wojny-polnocnej-1702-1704"
+  },
+  {
+    "id": "roman_republic_italian_army",
+    "title": "Roman Republic, Palestrina, and Rome actors and results",
+    "url": "https://www.esercito.difesa.it/storia/giuseppe-garibaldi/83206.html",
+    "publisher": "Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_roman_republic_italian_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "roy_pre_british",
+    "license": "Citation and link only",
+    "publisher": "Routledge",
+    "source_family_id": "roy_pre_british_india",
+    "source_type": "official_or_academic_reference",
+    "title": "Warfare in Pre-British India, 1500 BCE to 1740 CE",
+    "url": "https://www.routledge.com/Warfare-in-Pre-British-India---1500BCE-to-1740CE/Roy/p/book/9780415529792"
   },
   {
     "id": "russian_presidential_library_empire_1721",
@@ -1226,6 +1897,19 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "sarkar_shivaji",
+    "license": "Citation and link only",
+    "publisher": "public-domain edition (Jadunath Sarkar)",
+    "source_family_id": "sarkar_shivaji_times",
+    "source_type": "official_or_academic_reference",
+    "title": "Shivaji and His Times",
+    "url": "https://en.wikisource.org/wiki/Page:Shivaji_and_His_Times.djvu/362"
+  },
+  {
     "id": "saudi_mofa_history",
     "title": "History of the Kingdom of Saudi Arabia",
     "url": "https://mofa.gov.sa/en/ksa/Pages/history.aspx",
@@ -1239,6 +1923,73 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "saxony_archive_pirna",
+    "license": "Citation and link only",
+    "publisher": "Sächsisches Staatsarchiv",
+    "source_family_id": "saxon_state_archive",
+    "source_type": "official_or_academic_reference",
+    "title": "Kapitulation der kursächsischen Armee bei Pirna",
+    "url": "https://www.archiv.sachsen.de/archiv/bestand.jsp?guid=f63143ae-71f3-4dea-89fa-2b4c792764cf"
+  },
+  {
+    "id": "saxony_kobryn",
+    "title": "Kobryn Russian victory over Saxon forces",
+    "url": "https://www.1812panorama.ru/hg/hg_hist13.html",
+    "publisher": "Borodino Panorama Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_saxony_kobryn",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "saxony_maubeuge",
+    "title": "Maubeuge siege chronology",
+    "url": "https://www.napoleon-series.org/military-info/battles/1814/Weil/Volume4/Weil19b.pdf",
+    "publisher": "Napoleon Series academic edition",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_saxony_maubeuge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "saxony_state_history",
+    "license": "Citation and link only",
+    "publisher": "Freistaat Sachsen",
+    "source_family_id": "saxony_state_history",
+    "source_type": "official_or_academic_reference",
+    "title": "Kurfürstentum und Frühbarock",
+    "url": "https://www.geschichte.sachsen.de/kurfuerstentum-und-fruehbarock-6798.html"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "selimbar_official",
+    "license": "Citation and link only",
+    "publisher": "Comuna Șelimbăr",
+    "source_family_id": "selimbar_municipal_history",
+    "source_type": "official_or_academic_reference",
+    "title": "Scurt istoric",
+    "url": "https://primariaselimbar.ro/cultura/scurt-istoric/"
+  },
+  {
     "id": "sigar_afghanistan",
     "title": "What We Need to Learn: Lessons from Twenty Years of Afghanistan Reconstruction",
     "url": "https://www.sigar.mil/Reports/Article-Display/Article/4000123/what-we-need-to-learn-lessons-from-twenty-years-of-afghanistan-reconstruction/",
@@ -1250,6 +2001,33 @@
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
     ]
+  },
+  {
+    "id": "six_day_state",
+    "title": "Six-Day War parties, fronts, and outcome",
+    "url": "https://history.state.gov/historicaldocuments/frus1964-68v19/summary",
+    "publisher": "U.S. Department of State Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_six_day_state",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "sri_lanka_textbook",
+    "license": "Citation and link only",
+    "publisher": "Department of Education, Sri Lanka",
+    "source_family_id": "sri_lanka_education",
+    "source_type": "official_or_academic_reference",
+    "title": "Sri Lankan history textbook chronology",
+    "url": "https://govdoc.lk/downloadFile/6943"
   },
   {
     "id": "state_department_colombia_history",
@@ -1278,6 +2056,58 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "telangana_asaf_jahi",
+    "license": "Citation and link only",
+    "publisher": "Government of Telangana",
+    "source_family_id": "telangana_district_history",
+    "source_type": "official_or_academic_reference",
+    "title": "History of Ranga Reddy district",
+    "url": "https://rangareddy.telangana.gov.in/history/"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "thornton_atlantic_africa",
+    "license": "Citation and link only",
+    "publisher": "Routledge",
+    "source_family_id": "thornton_atlantic_africa",
+    "source_type": "official_or_academic_reference",
+    "title": "Warfare in Atlantic Africa, 1500–1800",
+    "url": "https://www.routledge.com/Warfare-in-Atlantic-Africa-1500-1800/Thornton/p/book/9781857283921"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "tondibi_cambridge",
+    "license": "Citation and link only",
+    "publisher": "The Journal of African History, Cambridge University Press",
+    "source_family_id": "journal_african_history",
+    "source_type": "official_or_academic_reference",
+    "title": "Archers, Musketeers and Mosquitoes",
+    "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/archers-musketeers-and-mosquitoes-the-moroccan-invasion-of-the-sudan-and-the-songhay-resistance-15911612/7BE695BFE53648CF3324ED70F40512D6"
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "transylvania_history",
+    "license": "Citation and link only",
+    "publisher": "Hungarian Academy of Sciences / Columbia University Press",
+    "source_family_id": "history_transylvania_mek",
+    "source_type": "official_or_academic_reference",
+    "title": "History of Transylvania",
+    "url": "https://mek.oszk.hu/03400/03407/html/"
+  },
+  {
     "id": "turkey_culture_ataturk_independence_1919_1922",
     "title": "Biography of Ataturk",
     "url": "https://www.ktb.gov.tr/EN-103908/biography-of-ataturk.html",
@@ -1288,6 +2118,20 @@
     "source_family_id": "turkiye_ministry_culture_tourism",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "turkiye_culture_adrianople_1913",
+    "title": "Ottoman recapture of Edirne in July 1913",
+    "url": "https://www.ktb.gov.tr/EN-117904/edirne.html",
+    "publisher": "Republic of Turkiye Ministry of Culture and Tourism",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_turkiye_culture_adrianople_1913",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -1317,6 +2161,19 @@
     ]
   },
   {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "ucl_champaner",
+    "license": "Citation and link only",
+    "publisher": "University College London",
+    "source_family_id": "ucl_south_asian_archaeology",
+    "source_type": "official_or_academic_reference",
+    "title": "Pre-Mughal Champaner",
+    "url": "https://www.ucl.ac.uk/southasianarchaeology/Pre-Mughal.pdf"
+  },
+  {
     "id": "uk_archives_yemen_1918",
     "title": "The Arabian Peninsula",
     "url": "https://www.nationalarchives.gov.uk/the-middle-east/arabian-peninsula/",
@@ -1343,6 +2200,466 @@
     ]
   },
   {
+    "id": "wave6_ads_northumberland",
+    "title": "The Wars of the Roses in Northumberland",
+    "url": "https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-3433-1/dissemination/AASeries2/AA214new/archael214-428-448-Appendix_L.pdf",
+    "publisher": "Archaeology Data Service / Archaeologia Aeliana",
+    "license": "Citation and link only",
+    "source_type": "academic_article",
+    "accessed": "2026-07-15",
+    "source_family_id": "archaeologia_aeliana_northumberland",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_appian_mithridatic",
+    "title": "Appian, The Mithridatic Wars",
+    "url": "https://www.livius.org/sources/content/appian/appian-the-mithridatic-wars/",
+    "publisher": "Livius.org primary-source edition",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-15",
+    "source_family_id": "appian_mithridatic_wars",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_attaleiates_history",
+    "title": "Michael Attaleiates, The History",
+    "url": "https://www.hup.harvard.edu/books/9780674057999",
+    "publisher": "Harvard University Press",
+    "license": "Citation and link only",
+    "source_type": "primary_source_critical_edition",
+    "accessed": "2026-07-15",
+    "source_family_id": "attaleiates_history",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_black_milan",
+    "title": "Jane Black, Absolutism in Renaissance Milan",
+    "url": "https://academic.oup.com/book/4274",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "black_renaissance_milan",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_cambridge_mortimers_stalbans",
+    "title": "The battles of Mortimer's Cross and Second St Albans: the regional dimension",
+    "url": "https://www.cambridge.org/core/books/abs/fifteenth-century-xiv/battles-of-mortimers-cross-and-second-st-albans-the-regional-dimension/32DB7AC978B866AB5F17EF451D635408",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-15",
+    "source_family_id": "cambridge_mortimers_stalbans",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_carpenter_roses",
+    "title": "Christine Carpenter, The Wars of the Roses",
+    "url": "https://www.cambridge.org/core/books/wars-of-the-roses/9EEFF52224669EB59CA404CD53D02106",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "carpenter_wars_roses",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_castilla_alarcos",
+    "title": "Castillo de Alarcos and the battle of 1195",
+    "url": "https://www.turismocastillalamancha.es/es/cultura-y-patrimonio/castillos/ciudad-real/castillo-de-alarcos",
+    "publisher": "Junta de Comunidades de Castilla-La Mancha",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "castilla_la_mancha_alarcos",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_curta_southeastern",
+    "title": "Florin Curta, Southeastern Europe in the Middle Ages, 500-1250",
+    "url": "https://www.cambridge.org/core/books/southeastern-europe-in-the-middle-ages-5001250/7D99C2C9FC2A9DFE404BDB3AE6182E1A",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "curta_southeastern_europe",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_cushway_winchelsea",
+    "title": "Graham Cushway, The Battle of Winchelsea (1350)",
+    "url": "https://www.cambridge.org/core/books/abs/edward-iii-and-the-war-at-sea/battle-of-winchelsea-1350/59AB97A8DF09285D60BCCD3F8DFD9D4C",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-15",
+    "source_family_id": "cushway_edward_iii_sea",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_diodorus_sicily",
+    "title": "Diodorus Siculus, Library of History, Books 11 and 13-20",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/home.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-15",
+    "source_family_id": "diodorus_siculus_library",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_dotson_medieval_seas",
+    "title": "John E. Dotson, Venice, Genoa and Control of the Seas in the Thirteenth and Fourteenth Centuries",
+    "url": "https://boydellandbrewer.com/9781843830726/war-at-sea-in-the-middle-ages-and-the-renaissance/",
+    "publisher": "Boydell & Brewer",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "dotson_medieval_seas",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_he_barnet",
+    "title": "Battle of Barnet 1471",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000001",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_he_blore",
+    "title": "Battle of Blore Heath 1459",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000002",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_he_northampton",
+    "title": "Battle of Northampton 1460",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000028",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_he_stoke",
+    "title": "Battle of Stoke Field 1487",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000036",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_he_tewkesbury",
+    "title": "Battle of Tewkesbury 1471",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000039",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_he_towton",
+    "title": "Battle of Towton 1461",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000040",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_register",
+    "accessed": "2026-07-15",
+    "source_family_id": "historic_england_battlefields_register",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_iranica_dandanqan",
+    "title": "C. E. Bosworth, Dandanqan",
+    "url": "https://www.iranicaonline.org/articles/dandanqan-a-small-town-of-medieval-khorasan-in-the-qara-qum-or-sandy-desert-between-marv-and-saraks-10-farsaks-from/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_iranica_pontus",
+    "title": "Brian McGing, Pontus",
+    "url": "https://www.iranicaonline.org/articles/pontus/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_livy_syracuse",
+    "title": "Livy, History of Rome, Books 24-25",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0159",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-15",
+    "source_family_id": "livy_history_rome",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_moro_venice_rivers",
+    "title": "Federico Moro, Venice Rules the Rivers",
+    "url": "https://www.nam-sism.org/Articoli/articoli%20approvati%20NAM/NAM%20Articoli%20approvati/b%29%20Storia%20militare%20moderna/NAM%20n.%207.%201.%20MORO%20Venice%20Rules%20the%20Rivers.pdf",
+    "publisher": "Nuova Antologia Militare",
+    "license": "Citation and link only",
+    "source_type": "academic_article",
+    "accessed": "2026-07-15",
+    "source_family_id": "moro_venice_rivers",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_ocallaghan_iberia",
+    "title": "Joseph F. O'Callaghan, Reconquest and Crusade in Medieval Spain",
+    "url": "https://www.pennpress.org/9780812218898/reconquest-and-crusade-in-medieval-spain/",
+    "publisher": "University of Pennsylvania Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "ocallaghan_reconquest_crusade",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_peacock_seljuk",
+    "title": "A. C. S. Peacock, The Great Seljuk Empire",
+    "url": "https://edinburghuniversitypress.com/book-the-great-seljuk-empire.html",
+    "publisher": "Edinburgh University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "peacock_great_seljuk",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_plutarch_lives",
+    "title": "Plutarch, Lives of Sulla, Lucullus, and Pompey",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/home.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-15",
+    "source_family_id": "plutarch_parallel_lives",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_reilly_castile",
+    "title": "Bernard F. Reilly, The Kingdom of Leon-Castilla under King Alfonso VI, 1065-1109",
+    "url": "https://libro.uca.edu/alfonso6/alfonso.htm",
+    "publisher": "Library of Iberian Resources Online",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "reilly_leon_castile",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_saxo_denmark",
+    "title": "Saxo Grammaticus, Gesta Danorum, Book 16",
+    "url": "https://global.oup.com/academic/product/saxo-grammaticus-gesta-danorum-9780198205234",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "primary_source_critical_edition",
+    "accessed": "2026-07-15",
+    "source_family_id": "saxo_gesta_danorum",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_stephenson_balkans",
+    "title": "Paul Stephenson, Byzantium's Balkan Frontier, 900-1204",
+    "url": "https://doi.org/10.1017/CBO9780511496615",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "stephenson_balkan_frontier",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_thucydides_sicily",
+    "title": "Thucydides, History of the Peloponnesian War, Books 6-7",
+    "url": "https://classics.mit.edu/Thucydides/pelopwar.html",
+    "publisher": "MIT Classics Archive",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-15",
+    "source_family_id": "thucydides_peloponnesian_war",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_treccani_ambrosian",
+    "title": "Repubblica Ambrosiana",
+    "url": "https://www.treccani.it/enciclopedia/repubblica-ambrosiana/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_treccani_genoa",
+    "title": "Genova",
+    "url": "https://www.treccani.it/enciclopedia/genova_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave6_treccani_maclodio",
+    "title": "Maclodio and the battle of 11 October 1427",
+    "url": "https://www.treccani.it/enciclopedia/maclodio_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_treccani_terraferma",
+    "title": "La conquista della terraferma",
+    "url": "https://www.treccani.it/enciclopedia/la-conquista-della-terraferma_%28Storia-di-Venezia%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wave6_watts_roses",
+    "title": "John Watts, The Wars of the Roses",
+    "url": "https://assets.cambridge.org/97810094/22161/frontmatter/9781009422161_frontmatter.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-15",
+    "source_family_id": "watts_wars_roses",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "accessed": "2026-07-15",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "west_bengal_katwa",
+    "license": "Citation and link only",
+    "publisher": "Purba Bardhaman District, Government of West Bengal",
+    "source_family_id": "west_bengal_district_history",
+    "source_type": "official_or_academic_reference",
+    "title": "History and Background: Marathas' Attack",
+    "url": "https://purbabardhaman.gov.in/history/"
+  },
+  {
     "id": "whe_kadesh",
     "title": "Kadesh",
     "url": "https://www.worldhistory.org/Kadesh/",
@@ -1353,6 +2670,20 @@
     "source_family_id": "world_history_encyclopedia_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "zulu_nam",
+    "title": "Anglo-Zulu War parties and outcomes",
+    "url": "https://www.nam.ac.uk/explore/zulu-war",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "wave6_1800_2021_zulu_nam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
     ]
   }
 ]

@@ -849,6 +849,17 @@ WAVE6_PRE1500_REUSED_ENTITY_IDS: frozenset[str] = frozenset(
 WAVE6_PRE1500_NEW_ENTITY_IDS: frozenset[str] = (
     WAVE6_PRE1500_ENTITY_IDS - WAVE6_PRE1500_REUSED_ENTITY_IDS
 )
+
+# These Wave 5 registry-only Cliopatria proposals describe the same historical
+# identities as the more tightly sourced Wave 6 rows. Preserve their IDs as
+# explicit superseded registry records instead of silently deleting them.
+WAVE6_PRE1500_REGISTRY_SUPERSESSIONS: dict[str, str] = {
+    "clio_it_genoa_rep_1_1010_1f45e325": "republic_genoa",
+    "clio_es_aragon_crown_1169_c7578dd4": "crown_aragon_1164",
+    "clio_es_castile_crown_1236_3d7ab7f9": "crown_castile_1230",
+    "clio_es_castile_k_961_1a0a2c11": "kingdom_castile_1065",
+    "clio_q420759_1188_a85604b2": "second_bulgarian_empire",
+}
 WAVE6_PRE1500_REUSED_BASELINE_ENTITY_BY_CANDIDATE_ID: dict[str, str] = {
     "hced-Adrianople718-1": "clio_bg_bulgaria_early_682_95daf02a",
     "hced-Anchialus708-1": "clio_bg_bulgaria_early_682_95daf02a",
@@ -1257,6 +1268,8 @@ assert len(WAVE6_PRE1500_ENTITIES) == 15
 assert len(WAVE6_PRE1500_ENTITY_IDS) == 15
 assert len(WAVE6_PRE1500_REUSED_ENTITY_IDS) == 2
 assert len(WAVE6_PRE1500_NEW_ENTITY_IDS) == 13
+assert len(WAVE6_PRE1500_REGISTRY_SUPERSESSIONS) == 5
+assert set(WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.values()) <= WAVE6_PRE1500_NEW_ENTITY_IDS
 assert len(WAVE6_PRE1500_REUSED_BASELINE_ENTITY_BY_CANDIDATE_ID) == 8
 assert set(WAVE6_PRE1500_EXPECTED_TARGET_ENTITY_IDS_BY_CANDIDATE) == set(
     WAVE6_PRE1500_SAFE_CANDIDATE_IDS

@@ -2,10 +2,12 @@ from __future__ import annotations
 
 """Exact, lane-local policy contracts for the Wave 6 modern-history audit.
 
-The Phase 1 package proposed 105 rows.  Phase 2's source/coalition and
-cross-lane rechecks remove fifteen rather than rewriting their reviewed
-meaning.  The implemented inventory is therefore 90 exact contracts
-(74 HCED, one IWD parent, and 15 IWBD battles).
+The Phase 1 package proposed 105 rows. Source/coalition, cross-lane, and
+identity-boundary rechecks hold 37 rather than rewriting their reviewed
+meaning. The implemented inventory is therefore 68 exact contracts
+(60 HCED and eight IWBD battles). Egypt, Syria, and transitional Spanish
+governments remain held until an atomic, time-bounded identity migration is
+reviewed; their events must not be attached to a wider existing Elo series.
 """
 
 from typing import Any
@@ -794,6 +796,100 @@ WAVE6_IWBD_REVIEWED_IDENTITY_COHORTS: dict[str, tuple[str, ...]] = {
     "chad_libya_1987": ("iwbd-207-80-1652", "iwbd-207-80-1653", "iwbd-207-80-1655"),
 }
 
+# These exact contracts passed source-row review but failed the independent
+# identity-boundary audit. Keep their fingerprints as holds so source drift is
+# still detected, while ensuring none can reach a generic fallback path.
+WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS = {
+    **{
+        candidate_id: (
+            "identity_boundary: post-1882 Egyptian events require sequential, "
+            "time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+        )
+        for candidate_id in (
+            "hced-El Teb (1st)1884-1",
+            "hced-Ginniss1885-1",
+            "hced-Gemaizeh1888-1",
+            "hced-Toski1889-1",
+            "hced-Tokar1891-1",
+            "hced-Firket1896-1",
+            "hced-Hafir, Sudan1896-1",
+            "hced-Um Diwaykarat1899-1",
+        )
+    },
+    **{
+        candidate_id: (
+            "identity_boundary: transitional Spanish government requires an atomic "
+            "split from the existing Spanish Empire Elo series"
+        )
+        for candidate_id in (
+            "hced-Saigon1859-1",
+            "hced-Oroquieta1872-1",
+            "hced-Maneru1873-1",
+            "hced-Montejurra1873-1",
+            "hced-Somorrostro (1st)1874-1",
+            "hced-Somorrostro (2nd)1874-1",
+        )
+    },
+}
+WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
+    candidate_id: WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS.pop(candidate_id)
+    for candidate_id in WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS
+}
 
-WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 74, "iwd": 1, "iwbd": 15, "total": 90}
-WAVE6_EXPECTED_HELD_COUNTS = {"hced": 28, "iwd": 14, "iwbd": 219}
+WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS = {
+    "55": (
+        "identity_boundary: the 1948 coalition crosses unresolved Egypt, Syria, and "
+        "Lebanon polity boundaries"
+    )
+}
+WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
+    parent_id: WAVE6_IWD_REVIEWED_PARENT_CONTRACTS.pop(parent_id)
+    for parent_id in WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS
+}
+
+WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS = {
+    **{
+        candidate_id: (
+            "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; "
+            "do not widen the 1805-1882 Muhammad Ali series"
+        )
+        for candidate_id in (
+            "iwbd-169-64-1523",
+            "iwbd-169-64-1524",
+            "iwbd-169-64-1527",
+            "iwbd-169-64-1529",
+            "iwbd-169-64-1530",
+            "iwbd-169-64-1531",
+        )
+    },
+    "iwbd-169-64-1532": (
+        "identity_boundary: 1967 Syria requires a post-UAR identity; do not widen "
+        "the existing 1973-open series backward across the 1958-1961 UAR"
+    ),
+}
+WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
+    candidate_id: WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS.pop(candidate_id)
+    for candidate_id in WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS
+}
+WAVE6_IWBD_REVIEWED_IDENTITY_COHORTS = {
+    cohort: tuple(
+        candidate_id
+        for candidate_id in candidate_ids
+        if candidate_id in WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS
+    )
+    for cohort, candidate_ids in WAVE6_IWBD_REVIEWED_IDENTITY_COHORTS.items()
+    if any(
+        candidate_id in WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS
+        for candidate_id in candidate_ids
+    )
+}
+
+# Montenegro is already represented by this rated, time-valid Cliopatria
+# identity. Reuse it instead of creating a parallel Kingdom-of-Montenegro line.
+WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS["iwbd-100-36-422"]["attacker"] = (
+    ("clio_q236_1853_31d59baa", "clio_q236_1853_31d59baa"),
+    ("kingdom_serbia", "kingdom_serbia"),
+)
+
+WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 60, "iwd": 0, "iwbd": 8, "total": 68}
+WAVE6_EXPECTED_HELD_COUNTS = {"hced": 42, "iwd": 15, "iwbd": 226}

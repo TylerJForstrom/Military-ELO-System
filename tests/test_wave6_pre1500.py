@@ -16,6 +16,7 @@ from military_elo.promotion.wave6_pre1500 import (
     WAVE6_PRE1500_HOLD_REASONS,
     WAVE6_PRE1500_LABEL_POLICIES,
     WAVE6_PRE1500_NEW_ENTITY_IDS,
+    WAVE6_PRE1500_REGISTRY_SUPERSESSIONS,
     WAVE6_PRE1500_REUSED_BASELINE_ENTITY_BY_CANDIDATE_ID,
     WAVE6_PRE1500_REUSED_ENTITY_IDS,
     WAVE6_PRE1500_SAFE_CANDIDATE_IDS,
@@ -78,6 +79,22 @@ def _valid_event_inventories() -> tuple[list[dict], list[dict]]:
 
 
 class Wave6Pre1500ManifestTests(unittest.TestCase):
+    def test_registry_supersessions_are_explicit_and_exact(self) -> None:
+        self.assertEqual(
+            WAVE6_PRE1500_REGISTRY_SUPERSESSIONS,
+            {
+                "clio_it_genoa_rep_1_1010_1f45e325": "republic_genoa",
+                "clio_es_aragon_crown_1169_c7578dd4": "crown_aragon_1164",
+                "clio_es_castile_crown_1236_3d7ab7f9": "crown_castile_1230",
+                "clio_es_castile_k_961_1a0a2c11": "kingdom_castile_1065",
+                "clio_q420759_1188_a85604b2": "second_bulgarian_empire",
+            },
+        )
+        self.assertLessEqual(
+            set(WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.values()),
+            WAVE6_PRE1500_NEW_ENTITY_IDS,
+        )
+
     def test_exact_frozen_inventory_and_fingerprints(self) -> None:
         rows = _manifest_rows()
         by_id = {row["candidate_id"]: row for row in rows}

@@ -114,6 +114,22 @@
     ]
   },
   {
+    "id": "syracuse_city_state",
+    "name": "Syracuse",
+    "kind": "city_state",
+    "start_year": -734,
+    "end_year": -212,
+    "region": "Sicily",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Continuous Syracusan city-polity identity through Roman capture; internal constitutional changes do not attach Carthaginian or Roman successors.",
+    "source_ids": [
+      "wave6_diodorus_sicily",
+      "wave6_thucydides_sicily",
+      "wave6_livy_syracuse"
+    ]
+  },
+  {
     "id": "carthage",
     "name": "Carthage",
     "kind": "republic",
@@ -300,6 +316,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mithridatid_kingdom_pontus",
+    "name": "Mithridatid Kingdom of Pontus",
+    "kind": "kingdom",
+    "start_year": -281,
+    "end_year": -63,
+    "region": "Anatolia and the Black Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Ends with Mithridates VI and Pompey's settlement; Pharnaces II's later Bosporan reconquest receives no inherited rating.",
+    "source_ids": [
+      "wave6_iranica_pontus"
     ]
   },
   {
@@ -645,15 +675,14 @@
     "id": "clio_bg_bulgaria_early_682_95daf02a",
     "name": "First Bulgarian Empire",
     "kind": "empire",
-    "start_year": 682,
-    "end_year": 1017,
-    "region": "Unclassified",
-    "aliases": [
-      "First Bulgarian Empire"
-    ],
+    "start_year": 681,
+    "end_year": 1018,
+    "region": "Southeastern Europe",
+    "aliases": [],
     "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Ends with Byzantine conquest; the Second Bulgarian Empire starts a new rating.",
     "source_ids": [
+      "wave6_stephenson_balkans",
       "cliopatria_v020"
     ]
   },
@@ -918,6 +947,36 @@
     ]
   },
   {
+    "id": "kingdom_denmark_medieval",
+    "name": "Kingdom of Denmark (medieval)",
+    "kind": "kingdom",
+    "start_year": 936,
+    "end_year": 1396,
+    "region": "Northern Europe and the Baltic",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Stops before the Kalmar Union and remains distinct from the modern Denmark identity beginning in 1523.",
+    "source_ids": [
+      "wave6_saxo_denmark"
+    ]
+  },
+  {
+    "id": "clio_af_ghaznavid_emp_962_f3ec953c",
+    "name": "Ghaznavid Empire",
+    "kind": "empire",
+    "start_year": 962,
+    "end_year": 1209,
+    "region": "Unclassified",
+    "aliases": [
+      "Ghaznavids"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
     "id": "kingdom_france",
     "name": "Kingdom of France",
     "kind": "kingdom",
@@ -989,14 +1048,16 @@
     "name": "Great Seljuk Empire",
     "kind": "empire",
     "start_year": 1040,
-    "end_year": 1201,
-    "region": "Unclassified",
+    "end_year": 1194,
+    "region": "Iran, Iraq, and adjacent regions",
     "aliases": [
       "Seljuk Empire"
     ],
     "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Bare HCED label promotion ends at Malik-Shah's death in 1092; Rum, Syria, Iraq, and Kirman Seljuks require separate identities.",
     "source_ids": [
+      "wave6_iranica_dandanqan",
+      "wave6_peacock_seljuk",
       "cliopatria_v020"
     ]
   },
@@ -1014,6 +1075,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_castile_1065",
+    "name": "Kingdom of Castile",
+    "kind": "kingdom",
+    "start_year": 1065,
+    "end_year": 1230,
+    "region": "Iberian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Does not back-extend to the County of Castile; the 1230 union is handled by a distinct Crown identity.",
+    "source_ids": [
+      "wave6_reilly_castile",
+      "wave6_ocallaghan_iberia"
     ]
   },
   {
@@ -1049,6 +1125,36 @@
     ]
   },
   {
+    "id": "republic_genoa",
+    "name": "Republic of Genoa",
+    "kind": "republic",
+    "start_year": 1099,
+    "end_year": 1797,
+    "region": "Liguria and Genoese maritime possessions",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Republic identity only; separately administered Bank of Saint George colonies do not automatically inherit it.",
+    "source_ids": [
+      "wave6_treccani_genoa"
+    ]
+  },
+  {
+    "id": "clio_ma_almohad_emp_1139_2bb98e8d",
+    "name": "Almohad Caliphate",
+    "kind": "caliphate",
+    "start_year": 1139,
+    "end_year": 1343,
+    "region": "Unclassified",
+    "aliases": [
+      "Almohad Caliphate"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
     "id": "clio_it_sicily_k_1_1139_c1640de5",
     "name": "Kingdom of Sicily",
     "kind": "kingdom",
@@ -1057,6 +1163,22 @@
     "region": "Unclassified",
     "aliases": [
       "Kingdom of Sicily"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_q104520_1139_48a6cee2",
+    "name": "Pomerania",
+    "kind": "polity",
+    "start_year": 1139,
+    "end_year": 1187,
+    "region": "Unclassified",
+    "aliases": [
+      "Pomerania"
     ],
     "predecessors": [],
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
@@ -1080,6 +1202,20 @@
     ]
   },
   {
+    "id": "crown_aragon_1164",
+    "name": "Crown of Aragon",
+    "kind": "composite_monarchy",
+    "start_year": 1164,
+    "end_year": 1715,
+    "region": "Western Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Distinct Crown identity; generic promotion stops before the 1479 dynastic union and never becomes a Spain alias.",
+    "source_ids": [
+      "wave6_ocallaghan_iberia"
+    ]
+  },
+  {
     "id": "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
     "name": "Ayyubid Sultanate",
     "kind": "sultanate",
@@ -1093,6 +1229,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "second_bulgarian_empire",
+    "name": "Second Bulgarian Empire",
+    "kind": "empire",
+    "start_year": 1185,
+    "end_year": 1396,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "New polity after the Asen revolt; no rating is inherited from the First Bulgarian Empire.",
+    "source_ids": [
+      "wave6_stephenson_balkans",
+      "wave6_curta_southeastern"
     ]
   },
   {
@@ -1110,6 +1261,20 @@
     "source_ids": [
       "cliopatria_polities",
       "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "crown_castile_1230",
+    "name": "Crown of Castile",
+    "kind": "composite_monarchy",
+    "start_year": 1230,
+    "end_year": 1715,
+    "region": "Iberian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Distinct Crown identity; generic promotion stops before the 1479 dynastic union to avoid collision with the project Spain policy.",
+    "source_ids": [
+      "wave6_ocallaghan_iberia"
     ]
   },
   {
@@ -1212,6 +1377,34 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Independent sultanate ending with the Mughal conquest at Rajmahal; distinct from the eighteenth-century Nawabate. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1576,
+    "id": "bengal_sultanate_1352",
+    "kind": "sultanate",
+    "name": "Bengal Sultanate",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "roy_pre_british"
+    ],
+    "start_year": 1352
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Golden Bull electoral era through proclamation of the Kingdom of Saxony; no broad 'Saxony' fallback across 1806. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1806,
+    "id": "electorate_saxony_1356",
+    "kind": "electorate",
+    "name": "Electorate of Saxony",
+    "predecessors": [],
+    "region": "Central Europe",
+    "source_ids": [
+      "saxony_state_history"
+    ],
+    "start_year": 1356
+  },
+  {
     "id": "clio_md_moldavia_principality_1_1363_8e8b23d1",
     "name": "Principality of Moldavia",
     "kind": "polity",
@@ -1294,6 +1487,36 @@
     ]
   },
   {
+    "id": "duchy_milan_visconti",
+    "name": "Duchy of Milan (Visconti)",
+    "kind": "duchy",
+    "start_year": 1395,
+    "end_year": 1447,
+    "region": "Northern Italy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Ends with Filippo Maria Visconti; no rating crosses the Golden Ambrosian Republic to the Sforza duchy.",
+    "source_ids": [
+      "wave6_black_milan",
+      "wave6_treccani_ambrosian"
+    ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Independent sultanate through Mughal annexation; no transfer to later Gujarat polities. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1573,
+    "id": "gujarat_sultanate_1407",
+    "kind": "sultanate",
+    "name": "Gujarat Sultanate",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "mumbai_medieval_india",
+      "ucl_champaner"
+    ],
+    "start_year": 1407
+  },
+  {
     "id": "clio_mx_aztec_emp_1429_ad90ec62",
     "name": "Aztec Triple Alliance",
     "kind": "polity",
@@ -1358,6 +1581,51 @@
     ]
   },
   {
+    "id": "lancastrian_faction_1455",
+    "name": "Lancastrian Forces (Wars of the Roses)",
+    "kind": "civil_war_faction",
+    "start_year": 1455,
+    "end_year": 1471,
+    "region": "England and Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Faction actor ends in 1471; Henry Tudor's composite 1485 army is not automatic continuation.",
+    "source_ids": [
+      "wave6_watts_roses",
+      "wave6_carpenter_roses"
+    ]
+  },
+  {
+    "id": "yorkist_faction_1455",
+    "name": "Yorkist Forces (Wars of the Roses)",
+    "kind": "civil_war_faction",
+    "start_year": 1455,
+    "end_year": 1471,
+    "region": "England and Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Faction actor through 1471; Tudor-era pretender rebellions receive no inherited rating.",
+    "source_ids": [
+      "wave6_watts_roses",
+      "wave6_carpenter_roses"
+    ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Imperial identity through Tondibi; later decentralized resistance is outside this event contract. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1591,
+    "id": "songhai_empire_1464",
+    "kind": "empire",
+    "name": "Songhai Empire",
+    "predecessors": [],
+    "region": "West Africa",
+    "source_ids": [
+      "tondibi_cambridge",
+      "thornton_atlantic_africa"
+    ],
+    "start_year": 1464
+  },
+  {
     "id": "clio_jp_azuchi_momoyama_1468_686ae822",
     "name": "Warring States Japan",
     "kind": "polity",
@@ -1372,6 +1640,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "warwick_readeption_army_1471",
+    "name": "Warwick's Readeption Army",
+    "kind": "rebel_coalition",
+    "start_year": 1471,
+    "end_year": 1471,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "One-campaign mixed Readeption coalition at Barnet; it is not coerced into either faction identity.",
+    "source_ids": [
+      "wave6_he_barnet",
+      "wave6_watts_roses"
     ]
   },
   {
@@ -1391,6 +1674,36 @@
       "cliopatria_polities",
       "britannica_eighty_years"
     ]
+  },
+  {
+    "id": "simnel_yorkist_rebellion_1487",
+    "name": "Simnel Yorkist Rebellion",
+    "kind": "rebel_coalition",
+    "start_year": 1487,
+    "end_year": 1487,
+    "region": "England and Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "One-campaign rebel coalition; no rating is inherited from the 1455-1471 Yorkist faction.",
+    "source_ids": [
+      "wave6_he_stoke",
+      "wave6_watts_roses"
+    ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Nizam Shahi state through final absorption in 1636; Daulatabad 1633 is not used as an automatic endpoint for all remnant forces. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1636,
+    "id": "ahmadnagar_sultanate_1490",
+    "kind": "sultanate",
+    "name": "Ahmadnagar Sultanate",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "ahmadnagar_chronology",
+      "eaton_deccan"
+    ],
+    "start_year": 1490
   },
   {
     "id": "clio_in_bijapur_sultanate_1492_49a19c59",
@@ -1516,6 +1829,20 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Distinct principality; claimant armies and the post-1691 Habsburg administration are outside this identity. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1691,
+    "id": "principality_transylvania_1541",
+    "kind": "principality",
+    "name": "Principality of Transylvania",
+    "predecessors": [],
+    "region": "Eastern Europe",
+    "source_ids": [
+      "transylvania_history"
+    ],
+    "start_year": 1541
+  },
+  {
     "id": "clio_ru_moskva_rurik_dyn_1547_93deb0e2",
     "name": "Tsardom of Russia",
     "kind": "tsardom",
@@ -1530,6 +1857,21 @@
       "russian_presidential_library_empire_1721",
       "cliopatria_polities"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Saadi state only; the current broad Morocco candidate beginning in 1670 cannot be back-projected to Tondibi. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1659,
+    "id": "saadi_morocco_1549",
+    "kind": "sultanate",
+    "name": "Saadi Sultanate of Morocco",
+    "predecessors": [],
+    "region": "North Africa",
+    "source_ids": [
+      "tondibi_cambridge",
+      "thornton_atlantic_africa"
+    ],
+    "start_year": 1549
   },
   {
     "id": "dutch_republic",
@@ -1589,6 +1931,21 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Kandyan state; Portuguese-employed Indian and African troops are command components, not extra sovereign participants. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1815,
+    "id": "kingdom_kandy_1590",
+    "kind": "kingdom",
+    "name": "Kingdom of Kandy",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "sri_lanka_textbook",
+      "portuguese_ceylon"
+    ],
+    "start_year": 1590
+  },
+  {
     "id": "clio_mn_zungharian_emp_1609_f84aab9a",
     "name": "Dzungar Khanate",
     "kind": "khanate",
@@ -1603,6 +1960,21 @@
     "source_ids": [
       "cliopatria_v020"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Composite Hohenzollern state through 1700; the Kingdom of Prussia begins in 1701, and neither identity inherits the other's rating across that reset. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1700,
+    "id": "brandenburg_prussia_1618",
+    "kind": "composite_monarchy",
+    "name": "Brandenburg-Prussia",
+    "predecessors": [],
+    "region": "Central Europe",
+    "source_ids": [
+      "brandenburg_fehrbellin",
+      "ddb_fehrbellin_rathenow"
+    ],
+    "start_year": 1618
   },
   {
     "id": "clio_q917_1636_f706aa87",
@@ -1702,6 +2074,64 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Irish claimant army; French state contingents remain separately represented where present. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1691,
+    "id": "irish_jacobite_army_1689",
+    "kind": "claimant_army",
+    "name": "Irish Jacobite Army of James II",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_nine_years",
+      "heritage_boyne"
+    ],
+    "start_year": 1689
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Separate from Irish Jacobite forces and from the 1715 and 1745 risings. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1690,
+    "id": "scottish_jacobite_army_1689",
+    "kind": "insurgent_army",
+    "name": "Scottish Jacobite Army (1689 rising)",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_nine_years"
+    ],
+    "start_year": 1689
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Scottish campaign force only; no automatic transfer to Irish Williamite or later British government armies. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1690,
+    "id": "scottish_williamite_army_1689",
+    "kind": "state_army",
+    "name": "Scottish Williamite Government Army",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_nine_years"
+    ],
+    "start_year": 1689
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Multinational Williamite campaign army in Ireland, not an anachronistic United Kingdom polity label. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1691,
+    "id": "irish_williamite_army_1689",
+    "kind": "claimant_army",
+    "name": "Williamite Army in Ireland",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_nine_years",
+      "heritage_boyne"
+    ],
+    "start_year": 1689
+  },
+  {
     "id": "kingdom_prussia",
     "name": "Kingdom of Prussia",
     "kind": "kingdom",
@@ -1755,6 +2185,49 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Campaign-bounded government force; kept separate from the later 1745–46 force. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1716,
+    "id": "british_government_army_1715",
+    "kind": "state_army",
+    "name": "British Government Army (1715 rising)",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_jacobites"
+    ],
+    "start_year": 1715
+  },
+  {
+    "aliases": [],
+    "continuity_note": "No rating transfer from 1689–91 or to 1745–46. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1716,
+    "id": "jacobite_army_1715",
+    "kind": "insurgent_army",
+    "name": "Jacobite Army of the 1715 Rising",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_jacobites"
+    ],
+    "start_year": 1715
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Bengal's nawabi state through the 1765 Diwani settlement; East India Company forces are a separate actor even when backing a rival nawab. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1765,
+    "id": "bengal_nawabate_1717",
+    "kind": "subah_state",
+    "name": "Nawabate of Bengal",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "west_bengal_katwa",
+      "banglapedia_mir_qasim"
+    ],
+    "start_year": 1717
+  },
+  {
     "id": "russian_empire",
     "name": "Russian Empire",
     "kind": "empire",
@@ -1771,6 +2244,20 @@
       "britannica_napoleon_russia",
       "britannica_russo_japanese"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Begins with the autonomous Asaf Jahi settlement after Shakar Kheda; does not back-project to Nizam-al-Mulk's pre-1724 Mughal office. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1948,
+    "id": "hyderabad_asaf_jahi_state_1724",
+    "kind": "princely_state",
+    "name": "Asaf Jahi State of Hyderabad",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "telangana_asaf_jahi"
+    ],
+    "start_year": 1724
   },
   {
     "id": "afsharid_iran",
@@ -1809,6 +2296,34 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Campaign-bounded government force; Hanoverian is treated as a dynastic descriptor, not a separate polity. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1746,
+    "id": "british_government_army_1745",
+    "kind": "state_army",
+    "name": "British Government Army (1745–46 rising)",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_jacobites"
+    ],
+    "start_year": 1745
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Campaign-bounded army; no namesake continuity from the 1715 rising. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1746,
+    "id": "jacobite_army_1745",
+    "kind": "insurgent_army",
+    "name": "Jacobite Army of the 1745 Rising",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "nam_jacobites"
+    ],
+    "start_year": 1745
+  },
+  {
     "id": "durrani_empire",
     "name": "Durrani Empire",
     "kind": "empire",
@@ -1823,6 +2338,21 @@
       "britannica_durrani_dynasty",
       "project_continuity_policy"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Corporate-state military actor; no automatic rating transfer to the United Kingdom or post-1858 Crown forces. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1858,
+    "id": "east_india_company_forces_1757",
+    "kind": "company_state_army",
+    "name": "British East India Company Forces",
+    "predecessors": [],
+    "region": "South Asia",
+    "source_ids": [
+      "banglapedia_mir_qasim",
+      "india_culture_patna"
+    ],
+    "start_year": 1757
   },
   {
     "id": "clio_q817_1757_7fca26e3",
@@ -1898,6 +2428,21 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Ends with destruction of the 1793 field army at Savenay; later Vendéan guerrilla forces do not inherit its rating. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "end_year": 1793,
+    "id": "vendee_catholic_royal_army_1793",
+    "kind": "insurgent_army",
+    "name": "Catholic and Royal Army of the Vendée (1793 field army)",
+    "predecessors": [],
+    "region": "Western Europe",
+    "source_ids": [
+      "historial_vendee",
+      "persee_vendee"
+    ],
+    "start_year": 1793
+  },
+  {
     "id": "qajar_iran",
     "name": "Qajar Iran",
     "kind": "dynastic_state",
@@ -1933,6 +2478,20 @@
       "cliopatria_polities",
       "britannica_ranjit_singh",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "nguyen_dai_nam",
+    "name": "Nguyen Dai Nam",
+    "kind": "dynastic_state",
+    "start_year": 1802,
+    "end_year": 1885,
+    "region": "Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "nguyen_vnmh"
     ]
   },
   {
@@ -2010,6 +2569,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_saxony",
+    "name": "Kingdom of Saxony",
+    "kind": "kingdom",
+    "start_year": 1806,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "saxony_kobryn",
+      "saxony_maubeuge"
     ]
   },
   {
@@ -2121,6 +2695,34 @@
     "source_ids": [
       "brazil_chamber_united_kingdom_1815",
       "brazil_government_independence_timeline"
+    ]
+  },
+  {
+    "id": "kingdom_two_sicilies",
+    "name": "Kingdom of the Two Sicilies",
+    "kind": "kingdom",
+    "start_year": 1816,
+    "end_year": 1861,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "roman_republic_italian_army"
+    ]
+  },
+  {
+    "id": "zulu_kingdom",
+    "name": "Zulu Kingdom",
+    "kind": "kingdom",
+    "start_year": 1816,
+    "end_year": 1897,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "zulu_nam"
     ]
   },
   {
@@ -2454,6 +3056,34 @@
     ]
   },
   {
+    "id": "second_french_republic",
+    "name": "French Second Republic",
+    "kind": "republic",
+    "start_year": 1848,
+    "end_year": 1852,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "roman_republic_italian_army"
+    ]
+  },
+  {
+    "id": "roman_republic_1849",
+    "name": "Roman Republic of 1849",
+    "kind": "republic",
+    "start_year": 1849,
+    "end_year": 1849,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "roman_republic_italian_army"
+    ]
+  },
+  {
     "id": "taiping_heavenly_kingdom",
     "name": "Taiping Heavenly Kingdom",
     "kind": "proto_state",
@@ -2727,6 +3357,34 @@
     ]
   },
   {
+    "id": "third_carlist_army",
+    "name": "Third Carlist Army",
+    "kind": "civil_war_faction",
+    "start_year": 1872,
+    "end_year": 1876,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "carlist_spanish_army"
+    ]
+  },
+  {
+    "id": "principality_bulgaria",
+    "name": "Principality of Bulgaria",
+    "kind": "principality",
+    "start_year": 1878,
+    "end_year": 1908,
+    "region": "Southeast Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "bulgaria_usni"
+    ]
+  },
+  {
     "id": "kingdom_romania",
     "name": "Kingdom of Romania",
     "kind": "kingdom",
@@ -2743,6 +3401,21 @@
       "cliopatria_polities",
       "britannica_romania_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "mahdist_ansar_forces",
+    "name": "Mahdist Ansar Forces",
+    "kind": "state_force",
+    "start_year": 1881,
+    "end_year": 1899,
+    "region": "Northeast Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "mahdist_nam",
+      "mahdist_bm"
     ]
   },
   {
@@ -2776,6 +3449,35 @@
     "source_ids": [
       "britannica_cuban_independence",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "philippine_revolutionary_forces",
+    "name": "Philippine Revolutionary Forces",
+    "kind": "revolutionary_force",
+    "start_year": 1896,
+    "end_year": 1898,
+    "region": "Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "philippines_loc_chronology"
+    ]
+  },
+  {
+    "id": "first_philippine_republic",
+    "name": "First Philippine Republic",
+    "kind": "republic",
+    "start_year": 1899,
+    "end_year": 1902,
+    "region": "Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "philippines_loc_chronology",
+      "philippines_army_cmh"
     ]
   },
   {
@@ -2827,6 +3529,21 @@
     ]
   },
   {
+    "id": "kingdom_bulgaria",
+    "name": "Kingdom of Bulgaria",
+    "kind": "kingdom",
+    "start_year": 1908,
+    "end_year": 1946,
+    "region": "Southeast Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "bulgaria_usni",
+      "bulgaria_iwm"
+    ]
+  },
+  {
     "id": "portuguese_first_republic",
     "name": "First Portuguese Republic",
     "kind": "republic",
@@ -2872,6 +3589,34 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "constitutionalist_army_mexico",
+    "name": "Constitutionalist Army of Mexico",
+    "kind": "revolutionary_force",
+    "start_year": 1913,
+    "end_year": 1914,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "mexico_constitutionalists"
+    ]
+  },
+  {
+    "id": "huerta_federal_army",
+    "name": "Mexican Federal Army under Huerta",
+    "kind": "state_force",
+    "start_year": 1913,
+    "end_year": 1914,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "mexico_constitutionalists"
     ]
   },
   {
@@ -3604,6 +4349,20 @@
     ]
   },
   {
+    "id": "republic_chad",
+    "name": "Republic of Chad",
+    "kind": "republic",
+    "start_year": 1960,
+    "end_year": null,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "chad_un_yearbook"
+    ]
+  },
+  {
     "id": "clio_q229_1961_530bc70e",
     "name": "Republic of Cyprus",
     "kind": "republic",
@@ -3809,6 +4568,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "libyan_arab_jamahiriya",
+    "name": "Libyan Arab Jamahiriya",
+    "kind": "state",
+    "start_year": 1977,
+    "end_year": 2011,
+    "region": "North Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "source_ids": [
+      "chad_un_yearbook"
     ]
   },
   {

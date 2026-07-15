@@ -39,10 +39,10 @@ from .hced_location import (
     HCED_COUNTRY_QUARANTINE_EVENT_SHA256,
     HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256,
     HCED_COUNTRY_QUARANTINE_IDS,
-    HCED_EXPECTED_CANDIDATE_BINDINGS,
-    HCED_EXPECTED_COUNTRY_ASSERTIONS,
-    HCED_EXPECTED_POINT_ASSERTIONS,
-    HCED_EXPECTED_PROVENANCE_OBJECTS,
+    HCED_WAVE5_CANDIDATE_BINDINGS,
+    HCED_WAVE5_COUNTRY_ASSERTIONS,
+    HCED_WAVE5_POINT_ASSERTIONS,
+    HCED_WAVE5_PROVENANCE_OBJECTS,
     HCED_EXPECTED_QUARANTINE_OVERLAP,
     HCED_EXPECTED_QUARANTINE_UNION,
     HCED_LOCATION_WARNING,
@@ -101,6 +101,8 @@ from .wave6_pre1500 import (
     WAVE6_PRE1500_CURATED_EXCLUSIONS,
     WAVE6_PRE1500_ENTITY_IDS,
     WAVE6_PRE1500_HOLD_REASONS,
+    WAVE6_PRE1500_REGISTRY_SUPERSESSIONS,
+    WAVE6_PRE1500_REUSED_ENTITY_IDS,
     WAVE6_PRE1500_SAFE_CANDIDATE_IDS,
     WAVE6_PRE1500_SOURCE_FAMILY_METADATA,
     WAVE6_PRE1500_SOURCES,
@@ -143,8 +145,10 @@ EFFECTIVE_IWD_REVIEWED_PARENT_CONTRACTS = {
     **WAVE6_IWD_HELD_PARENT_CONTRACTS,
 }
 EFFECTIVE_IWBD_CURATED_EXCLUSIONS = {
-    **IWBD_CURATED_EXCLUSIONS,
     **WAVE6_IWBD_CURATED_EXCLUSIONS,
+    # Preserve the older candidate-specific adjudication when a Wave 6 audit
+    # fingerprints the same row under a broader hold inventory.
+    **IWBD_CURATED_EXCLUSIONS,
 }
 EFFECTIVE_IWBD_REVIEWED_IDENTITY_BINDINGS = {
     **IWBD_REVIEWED_IDENTITY_BINDINGS,
@@ -445,7 +449,7 @@ def _validate_hced_location_release(
                 f"Wave 6 {lane_name} HCED location bindings are incomplete: "
                 f"missing={sorted(lane_ids - promoted_candidate_ids)}"
             )
-    expected_candidate_bindings = HCED_EXPECTED_CANDIDATE_BINDINGS + len(
+    expected_candidate_bindings = HCED_WAVE5_CANDIDATE_BINDINGS + len(
         additional_candidate_ids
     )
     if len(candidate_ids) != expected_candidate_bindings:
@@ -490,9 +494,9 @@ def _validate_hced_location_release(
         extra_country_count += int(has_country)
         extra_provenance_count += int(has_point or has_country)
     if (point_count, country_count, provenance_count) != (
-        HCED_EXPECTED_POINT_ASSERTIONS + extra_point_count,
-        HCED_EXPECTED_COUNTRY_ASSERTIONS + extra_country_count,
-        HCED_EXPECTED_PROVENANCE_OBJECTS + extra_provenance_count,
+        HCED_WAVE5_POINT_ASSERTIONS + extra_point_count,
+        HCED_WAVE5_COUNTRY_ASSERTIONS + extra_country_count,
+        HCED_WAVE5_PROVENANCE_OBJECTS + extra_provenance_count,
     ):
         raise ValueError(
             "HCED location assertion counts changed: "
@@ -640,6 +644,15 @@ def build_expanded_release(
             owners.setdefault(str(code), []).append(candidate)
 
     release_entities = {str(entity["id"]): dict(entity) for entity in seed_entities}
+    modern_override_ids = {
+        str(entity["id"]) for entity in WAVE6_1800_2021_ENTITY_OVERRIDES
+    }
+    modern_entity_collisions = sorted(modern_override_ids & release_entities.keys())
+    if modern_entity_collisions:
+        raise ValueError(
+            "Wave 6 modern entity overrides collide with existing identities: "
+            f"{modern_entity_collisions}"
+        )
     release_entities.update(
         {str(entity["id"]): dict(entity) for entity in WAVE6_1800_2021_ENTITY_OVERRIDES}
     )
@@ -668,6 +681,34 @@ def build_expanded_release(
         entity_id = _candidate_entity_id(polity)
         candidate_by_release_id[entity_id] = polity
         if entity_id in release_entities:
+            if entity_id in WAVE6_PRE1500_REUSED_ENTITY_IDS:
+                # Wave 6 supplies a stronger curated boundary for two already
+                # rated Cliopatria identities. Preserve the source-candidate
+                # provenance and aliases while keeping the reviewed boundary;
+                # replacing the payload outright would erase its lineage.
+                entity = release_entities[entity_id]
+                candidate_aliases = [
+                    *map(str, polity.get("aliases", [])),
+                    *map(str, polity.get("wikipedia_titles", [])),
+                ]
+                entity["aliases"] = list(
+                    dict.fromkeys(
+                        [
+                            *map(str, entity.get("aliases", [])),
+                            *(
+                                alias
+                                for alias in candidate_aliases
+                                if normalize_label(alias)
+                                != normalize_label(entity.get("name"))
+                            ),
+                        ]
+                    )
+                )
+                entity["source_ids"] = list(
+                    dict.fromkeys(
+                        [*map(str, entity.get("source_ids", [])), "cliopatria_v020"]
+                    )
+                )
             return entity_id
         canonical_name = str(polity["canonical_name_candidate"])
         release_entities[entity_id] = {
@@ -1110,37 +1151,75 @@ def build_expanded_release(
     )
     review_counts = _count_review_records(review)
 
-    registry_entities: dict[str, dict[str, Any]] = {
-        str(entity["id"]): {
-            "id": str(entity["id"]),
-            "name": str(entity["name"]),
-            "kind": str(entity.get("kind") or "polity"),
-            "start_year": int(entity["start_year"]),
-            "end_year": int(entity["end_year"])
-            if entity.get("end_year") is not None
-            else None,
-            "status": "rated" if str(entity["id"]) in used_entity_ids else "unrated",
-            "identity_status": "curated",
-            "region": str(entity.get("region") or "Unclassified"),
-        }
-        for entity in seed_entities
+    curated_release_entity_ids = {
+        *map(lambda entity: str(entity["id"]), seed_entities),
+        *map(lambda entity: str(entity["id"]), WAVE6_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE6_1800_2021_ENTITY_OVERRIDES),
     }
-    for entity in WAVE6_ENTITIES:
+    registry_entities: dict[str, dict[str, Any]] = {}
+    for entity in release_entity_rows:
         entity_id = str(entity["id"])
+        is_curated = entity_id in curated_release_entity_ids
         registry_entities[entity_id] = {
             "id": entity_id,
             "name": str(entity["name"]),
-            "kind": str(entity["kind"]),
+            "kind": str(entity.get("kind") or "polity"),
             "start_year": int(entity["start_year"]),
-            "end_year": int(entity["end_year"]),
-            "status": "rated" if entity_id in used_entity_ids else "unrated",
-            "identity_status": "curated",
-            "region": str(entity["region"]),
+            "end_year": (
+                int(entity["end_year"])
+                if entity.get("end_year") is not None
+                else None
+            ),
+            "status": (
+                "rated"
+                if is_curated and entity_id in used_entity_ids
+                else "unrated"
+                if is_curated or entity_id not in used_entity_ids
+                else "provisional"
+            ),
+            "identity_status": "curated" if is_curated else "source_candidate",
+            "region": str(entity.get("region") or "Unclassified"),
         }
     used_candidate_ids = {
         str(candidate["candidate_id"]) for candidate in candidate_by_release_id.values()
     }
     for candidate in polities:
+        entity_id = _candidate_entity_id(candidate)
+        superseded_by = WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.get(entity_id)
+        if superseded_by:
+            replacement = registry_entities.get(superseded_by)
+            if replacement is None:
+                raise ValueError(
+                    f"registry supersession target is missing: {entity_id} -> "
+                    f"{superseded_by}"
+                )
+            if (
+                normalize_label(candidate.get("canonical_name_candidate"))
+                != normalize_label(replacement.get("name"))
+                or not _candidate_overlaps_entity(candidate, replacement)
+            ):
+                raise ValueError(
+                    f"registry supersession identity drift: {entity_id} -> "
+                    f"{superseded_by}"
+                )
+            registry_entities[entity_id] = {
+                "id": entity_id,
+                "name": str(candidate["canonical_name_candidate"]),
+                "kind": _infer_kind(str(candidate["canonical_name_candidate"])),
+                "start_year": int(candidate["start_year"]),
+                "end_year": int(candidate["end_year"]),
+                "status": "unrated",
+                "identity_status": "superseded",
+                "superseded_by": superseded_by,
+                "coverage_discontinuous": len(
+                    candidate.get("temporal_coverage_groups", [])
+                )
+                > 1,
+                "region": "Unclassified",
+            }
+            continue
+        if entity_id in registry_entities:
+            continue
         mapped_seed = _candidate_policy_seed(candidate, seed_by_id)
         if not mapped_seed:
             name_matches = seed_label_index.get(
@@ -1155,7 +1234,6 @@ def build_expanded_release(
                     mapped_seed = named_seed
         if mapped_seed and mapped_seed in registry_entities:
             continue
-        entity_id = _candidate_entity_id(candidate)
         registry_entities[entity_id] = {
             "id": entity_id,
             "name": str(candidate["canonical_name_candidate"]),

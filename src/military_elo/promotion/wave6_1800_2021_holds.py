@@ -7,6 +7,12 @@ from typing import Any
 from .wave6_1800_2021_policy import (
     HCED_SOURCE_CONTRACT_FIELDS,
     IWD_SOURCE_CONTRACT_FIELDS,
+    WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_CONTRACTS,
+    WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS,
+    WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_CONTRACTS,
+    WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS,
+    WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_CONTRACTS,
+    WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS,
 )
 from .wave6_1800_2021_iwbd_holds_1 import WAVE6_IWBD_HELD_SHA256_PART_1
 from .wave6_1800_2021_iwbd_holds_2 import WAVE6_IWBD_HELD_SHA256_PART_2
@@ -44,7 +50,7 @@ WAVE6_HCED_AUDITED_HOLD_IDS = frozenset(
         "hced-Vardar1918-1",
         "hced-Zapote Bridge1896-1",
     }
-)
+) | frozenset(WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS)
 
 WAVE6_HCED_COMPANION_EXCLUSION_IDS = frozenset(
     {
@@ -116,6 +122,12 @@ WAVE6_HCED_HELD_SOURCE_CONTRACTS: dict[str, dict[str, Any]] = {
     candidate_id: {"field_names": HCED_SOURCE_CONTRACT_FIELDS, "sha256": sha256}
     for candidate_id, sha256 in _HCED_HOLD_SHA256.items()
 }
+WAVE6_HCED_HELD_SOURCE_CONTRACTS.update(
+    {
+        candidate_id: contract["source_contract"]
+        for candidate_id, contract in WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_CONTRACTS.items()
+    }
+)
 
 WAVE6_HCED_CURATED_EXCLUSIONS = {
     candidate_id: (
@@ -132,6 +144,7 @@ WAVE6_HCED_CURATED_EXCLUSIONS.update(
         "hced-Khartoum1884-1": "wrong date envelope: siege terminated 26 January 1885",
     }
 )
+WAVE6_HCED_CURATED_EXCLUSIONS.update(WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS)
 
 _IWD_HELD_COMPONENT_SHA256 = {
     "4": {
@@ -227,6 +240,7 @@ WAVE6_IWD_HELD_PARENT_CONTRACTS = {
     }
     for parent_id, components in _IWD_HELD_COMPONENT_SHA256.items()
 }
+WAVE6_IWD_HELD_PARENT_CONTRACTS.update(WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_CONTRACTS)
 
 WAVE6_IWD_CURATED_PARENT_EXCLUSIONS = {
     parent_id: reason
@@ -247,6 +261,7 @@ WAVE6_IWD_CURATED_PARENT_EXCLUSIONS = {
         "85": "coalition_incomplete_and_envelope: USA cannot stand for NATO and the single IWBD row duplicates the whole campaign",
     }.items()
 }
+WAVE6_IWD_CURATED_PARENT_EXCLUSIONS.update(WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS)
 
 _IWBD_HELD_SHA256 = {
     **WAVE6_IWBD_HELD_SHA256_PART_1,
@@ -257,6 +272,12 @@ WAVE6_IWBD_HELD_SOURCE_CONTRACTS: dict[str, dict[str, Any]] = {
     candidate_id: {"field_names": IWBD_SOURCE_CONTRACT_FIELDS, "sha256": sha256}
     for candidate_id, sha256 in _IWBD_HELD_SHA256.items()
 }
+WAVE6_IWBD_HELD_SOURCE_CONTRACTS.update(
+    {
+        candidate_id: contract["source_contract"]
+        for candidate_id, contract in WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_CONTRACTS.items()
+    }
+)
 
 # These rows were already published at the audited Wave 5 checkpoint.  They
 # remain fingerprinted audit concerns, but Wave 6 may not turn that broad audit
@@ -317,6 +338,7 @@ WAVE6_IWBD_CURATED_EXCLUSIONS = {
 WAVE6_IWBD_CURATED_EXCLUSIONS["iwbd-100-36-421"] = (
     "cross_source_duplicate: Wave 5 already rates Sarandaporon from HCED"
 )
+WAVE6_IWBD_CURATED_EXCLUSIONS.update(WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS)
 
 WAVE6_CROSS_LANE_B_OMISSIONS = (
     "hced-Palkhed1728-1",

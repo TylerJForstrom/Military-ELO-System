@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 236,
-    "events": 4406,
-    "sources": 106,
-    "registry_polities": 1598
+    "entities": 289,
+    "events": 4605,
+    "sources": 205,
+    "registry_polities": 1648
   },
   "year_range": {
     "start": -1274,
@@ -72,22 +72,435 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
-    "accepted_hced_events": 1824,
-    "accepted_hced_label_events": 2328,
-    "hced_label_pass_input_rows": 6734,
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "accepted_hced_events": 1884,
+    "accepted_hced_label_events": 2383,
+    "accepted_wave6_1500_1799_hced_events": 76,
+    "wave6_1500_1799_cohort_counts": {
+      "ahmadnagar_sultanate": 6,
+      "bengal_states": 8,
+      "bijapur_sultanate": 4,
+      "brandenburg_prussia": 2,
+      "electorate_saxony": 6,
+      "gujarat_sultanate": 3,
+      "hyderabad_asaf_jahi": 6,
+      "jacobite_campaign_forces": 14,
+      "kingdom_kandy": 2,
+      "principality_transylvania": 6,
+      "songhai_morocco": 1,
+      "vendee_1793": 18
+    },
+    "wave6_1500_1799_queue_validation": {
+      "promotion_contracts": 76,
+      "hced_holds": 4,
+      "hced_exclusions": 39,
+      "hced_held_total": 43,
+      "wikidata_exclusions": 8
+    },
+    "wave6_1500_1799_candidate_ids": [
+      "hced-Ahmadnagar1596-1",
+      "hced-Ahmadnagar1600-1",
+      "hced-Angers1793-1",
+      "hced-Athlone1691-1",
+      "hced-Aughrim1691-1",
+      "hced-Bhatavadi1624-1",
+      "hced-Champaner1535-1",
+      "hced-Chatillon-sur-Sevre1793-1",
+      "hced-Cholet1793-1",
+      "hced-Clifton Moor1745-1",
+      "hced-Cromdale1690-1",
+      "hced-Daulatabad1633-1",
+      "hced-Dol-de-Bretagne1793-1",
+      "hced-Domitz1635-1",
+      "hced-Dunkeld1689-1",
+      "hced-Entrammes1793-1",
+      "hced-Fehrbellin1675-1",
+      "hced-Fontenay1793-1",
+      "hced-Fougeres1793-1",
+      "hced-Gannoruwa1638-1",
+      "hced-Granville1793-1",
+      "hced-Inverurie1745-1",
+      "hced-Jungfernhof1700-1",
+      "hced-Katwa1742-1",
+      "hced-Katwa1745-1",
+      "hced-Katwa1763-1",
+      "hced-Killiecrankie1689-1",
+      "hced-Koppal1790-1791-1",
+      "hced-Kyritz1635-1",
+      "hced-Laval1793-1",
+      "hced-Le Mans1793-1",
+      "hced-Limerick1691-1",
+      "hced-Lippa1658-1",
+      "hced-Littleferry1746-1",
+      "hced-Londonderry1689-1",
+      "hced-Lucon1793-1",
+      "hced-Mandu1535-1",
+      "hced-Montaigu1793-1",
+      "hced-Nagyvarad1660-1",
+      "hced-Nantes1793-1",
+      "hced-Nesri1674-1",
+      "hced-Newtown Butler1689-1",
+      "hced-Palkhed1728-1",
+      "hced-Patna (1st)1763-1",
+      "hced-Pirna1756-1",
+      "hced-Ponda1675-1",
+      "hced-Preston1715-1",
+      "hced-Prestonpans1745-1",
+      "hced-Pultusk1703-1",
+      "hced-Radenivela1630-1",
+      "hced-Rajmahal, Bengal1576-1",
+      "hced-Rakshasbhuvan1763-1",
+      "hced-Rathenow1675-1",
+      "hced-Roshangaon1616-1",
+      "hced-Salonta1636-1",
+      "hced-San Petru1611-1",
+      "hced-Sarnal1572-1",
+      "hced-Saumur1793-1",
+      "hced-Savenay1793-1",
+      "hced-Schweidnitz1642-1",
+      "hced-Selimbar1599-1",
+      "hced-Sheriffmuir1715-1",
+      "hced-Sindkhed1757-1",
+      "hced-Sooty1763-1",
+      "hced-St Fulgent1793-1",
+      "hced-Supa1596-1",
+      "hced-Thouars1793-1",
+      "hced-Tiruvadi1677-1",
+      "hced-Tondibi1591-1",
+      "hced-Torfou1793-1",
+      "hced-Trembowla1657-1",
+      "hced-Trichinopoly1743-1",
+      "hced-Tukaroi1575-1",
+      "hced-Udaynala1763-1",
+      "hced-Udgir1760-1",
+      "hced-Vellore1677-1678-1"
+    ],
+    "wave6_1500_1799_hced_holds": [
+      {
+        "candidate_id": "hced-Boyne1690-1",
+        "category": "coalition_incomplete_mandatory",
+        "reason": "National Army Museum evidence records large French contingents on the Jacobite side in Ireland; the reviewed row names only the Irish Jacobite actor, so France must be reconstructed consistently with Aughrim first.",
+        "raw_row_sha256": "335ca218b72a9c289566e2a841d309c8cbaf7d2e6272635a77abd83466c51002"
+      },
+      {
+        "candidate_id": "hced-Culloden1746-1",
+        "category": "coalition_incomplete_mandatory",
+        "reason": "The current Culloden roster omits regular Scots and Irish units in French service; an exact France-participation and contribution contract is required before it can rate.",
+        "raw_row_sha256": "181799b83304da99c02beb65c316054b77efb7b8323f806c063c159e55f6b59f"
+      },
+      {
+        "candidate_id": "hced-Falkirk1746-1",
+        "category": "coalition_incomplete_mandatory",
+        "reason": "National Army Museum evidence shows that the Jacobite army had received French troops before Falkirk; the current roster omits those French-service regular units.",
+        "raw_row_sha256": "6d5c23ebe08dabbc4ee30def40af4b5cc6d4dca266b2f0d524e6cb6ad60b36fd"
+      },
+      {
+        "candidate_id": "hced-Stirling1745-1746-1",
+        "category": "coalition_incomplete_mandatory",
+        "reason": "The reviewed Stirling operation is bounded to 1746, and its attached French-service regular and artillery contingent is absent from the current exact roster.",
+        "raw_row_sha256": "0e01af963811b6a386c7e9719af439fa6b759161ca203fcdb658367156c8c0fd"
+      }
+    ],
+    "wave6_1500_1799_hced_exclusions": [
+      {
+        "candidate_id": "hced-Ahmadabad1572-1",
+        "category": "competitive_granularity",
+        "reason": "The row is a city occupation/campaign milestone without a sufficiently bounded competitive engagement.",
+        "raw_row_sha256": "9965c780d1770e277ce0ed8ddfe65dedae14037a5c0cacaf58eb17e0001041d4"
+      },
+      {
+        "candidate_id": "hced-Alte Veste1632-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "3d84223f0361ca2543f4a9e381cd99390ecb2f66eda6d08a3bd594b69e09840d"
+      },
+      {
+        "candidate_id": "hced-Ambur1749-1",
+        "category": "wrong_actor",
+        "reason": "HCED reverses/confuses the Carnatic claimants and French-allied side; do not rate Hyderabad from this row.",
+        "raw_row_sha256": "6956732e069f0e6632329f2a5d3094fa2b93c16ce9cb7bb6db4b243be527931c"
+      },
+      {
+        "candidate_id": "hced-Asirgarh1600-1601-1",
+        "category": "wrong_actor",
+        "reason": "Asirgarh was a Khandesh fort; Ahmadnagar is the wrong defending polity.",
+        "raw_row_sha256": "8532446aeb3430ed3ab23f9b0498535dbcce593151c90e0016641cd9ad0128be"
+      },
+      {
+        "candidate_id": "hced-Balane1594-1",
+        "category": "wrong_name_date",
+        "reason": "Sri Lankan official chronology identifies Danture in 1594 and Balana in 1602; the HCED compound is not safe.",
+        "raw_row_sha256": "e14e69e8f7ad0e4d9c2308b6459685213dcf404474113591d745ef23388fa2b7"
+      },
+      {
+        "candidate_id": "hced-Boulay1635-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "9b1351036631ba9f457f4aa128ff310244995fa339bfe86c58fa2a08d7aa6597"
+      },
+      {
+        "candidate_id": "hced-Brandeis1639-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "61c49e604e4c63812faf10db462cca9a3bbbd4d0fd2dd882e33ca490f7899d88"
+      },
+      {
+        "candidate_id": "hced-Breisach1638-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "afa6d0eb0b529017f6fa7a31e6a2e143db480d605a3803e0a2d1e8c90613eeb4"
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1631-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "ccdd4b35b10d763020bc9f953e6e5fad178e237ad189fedfbc9a3b4bdd945ac1"
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1642-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "832ca5f2b2b09b54a51a0533f3ed0b79dd1b51738572bb9eccedb1c6764189fc"
+      },
+      {
+        "candidate_id": "hced-Brema1638-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "ad7a64519a559623db8adeb4735e311542d9339822941af07242dbc1f3fdb0ba"
+      },
+      {
+        "candidate_id": "hced-Carlisle1745-1",
+        "category": "same_name_multiple_actions",
+        "reason": "The row does not distinguish the Jacobite capture from the later government recapture.",
+        "raw_row_sha256": "d076e29fb5c303664e247152aa474f668c46469f9af4f5bca77eec39d13ca614"
+      },
+      {
+        "candidate_id": "hced-Chemille1793-1",
+        "category": "wrong_outcome",
+        "reason": "Authoritative Vendée chronology records a Vendéan capture; the HCED draw is not defensible.",
+        "raw_row_sha256": "4b1e08eb5fa33b2b0f06f86b1d654a0795393af4b4cddcb858570f714396ec64"
+      },
+      {
+        "candidate_id": "hced-Chitor1534-1",
+        "category": "wrong_actor",
+        "reason": "Chitor in 1534–35 was a Gujarat–Mewar siege, not a Mughal–Gujarat victory.",
+        "raw_row_sha256": "32f72cc5646a4afaed31f2e0889359be64506c49488ef53cd1b57b2e0d210a46"
+      },
+      {
+        "candidate_id": "hced-Diu1546-1",
+        "category": "coalition_incomplete",
+        "reason": "Gujarati and Ottoman personnel/command relationships need exact reconstruction before promotion.",
+        "raw_row_sha256": "943a8392fc79a11172b375f63fdd50df089927e3f3324d1a6f7a8ecb03f375b9"
+      },
+      {
+        "candidate_id": "hced-Frankenhausen1525-1",
+        "category": "coalition_incomplete",
+        "reason": "Requires exact Saxon, Hessian, and peasant-faction reconstruction outside the clean Saxony state cohort.",
+        "raw_row_sha256": "3befbdbf64b6105fa2e3fea14b4cdd57c01bfd900869fe172e140c624a7cdfdb"
+      },
+      {
+        "candidate_id": "hced-Genoa1684-1",
+        "category": "competitive_granularity",
+        "reason": "The French bombardment and coerced submission require an operational-event policy, not a bare battle label.",
+        "raw_row_sha256": "60c65919fcb08a18fdd98c39725469766d6733cbc48b86687416fa8d845d7e05"
+      },
+      {
+        "candidate_id": "hced-Gheria, Bengal1740-1",
+        "category": "claimant_collapse",
+        "reason": "Alivardi Khan versus Sarfaraz Khan is an intra-Nawabate succession conflict requiring claimant-army identities.",
+        "raw_row_sha256": "99b5740300311e8d059728d0cdb2a452f1411af2897845d502d45828e48d4007"
+      },
+      {
+        "candidate_id": "hced-Goldberg1635-1",
+        "category": "coalition_incomplete",
+        "reason": "The raw 'German Allies' component is not reconstructable exactly from the candidate row.",
+        "raw_row_sha256": "ad6e508e6b54260d8597db421bab6389cc4f8ce50de33474f373cf651b3a08a1"
+      },
+      {
+        "candidate_id": "hced-Harkany1687-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "7744fc23f6056a8c7c17b5d895f45411945a9b1a40c6058ec9ebeade37515b93"
+      },
+      {
+        "candidate_id": "hced-Humenne1619-1",
+        "category": "wrong_actor",
+        "reason": "The victorious force was the Lisowczycy/Habsburg-paid irregular formation, not the Polish state as a simple polity.",
+        "raw_row_sha256": "ec4dc9cda06c813461a6c8d741691b5d581f485ba17c648d8b1c73a5a3053b70"
+      },
+      {
+        "candidate_id": "hced-Jamkhed1560-1",
+        "category": "coalition_incomplete",
+        "reason": "Multi-sultanate and Vijayanagara participation requires a separate exact-force contract.",
+        "raw_row_sha256": "e85f13acf6175bf14ade7ab383c7b0384cb98c02dbcfabce98e707cb4df60ccb"
+      },
+      {
+        "candidate_id": "hced-Kaifeng1642-1",
+        "category": "outcome_causation_ambiguity",
+        "reason": "Siege, deliberate flood, mass civilian deaths, and responsibility are not reducible to the HCED Ming victory.",
+        "raw_row_sha256": "1be842cf7274b75df8174d6f74d123620b7bda9530eae65bd5d53f1485cf0d4e"
+      },
+      {
+        "candidate_id": "hced-Kesseldorf1745-1",
+        "category": "coalition_incomplete",
+        "reason": "HCED omits the Austrian component of the Austro-Saxon army; exact contribution weights remain unresolved.",
+        "raw_row_sha256": "a7b098c8b4e9dd47d14ed6c9a84f46dfb1db07ab5b947fc29fcc3948a048c4cc"
+      },
+      {
+        "candidate_id": "hced-Koppal1677-1",
+        "category": "date_conflict",
+        "reason": "Authoritative chronologies place the Maratha acquisition in 1674 or 1679, not the HCED year 1677.",
+        "raw_row_sha256": "09da0a1a08158c6fd2a36ac7f794867a0023cd82aab879f744035221fbc1516f"
+      },
+      {
+        "candidate_id": "hced-Limerick1690-1",
+        "category": "wrong_outcome",
+        "reason": "The first siege ended in Williamite withdrawal, so the HCED Williamite victory is inverted.",
+        "raw_row_sha256": "81df76324af0055e269022d1863be38e1193397a78196b9dcb7f20b01b9e30ee"
+      },
+      {
+        "candidate_id": "hced-Masumpur1760-1",
+        "category": "unresolved_locator",
+        "reason": "The candidate lacks a reliable exact engagement locator and actor reconstruction.",
+        "raw_row_sha256": "12512550d35f505ca6bd401e065930544953b6f0521abe49a31150da7dce6c24"
+      },
+      {
+        "candidate_id": "hced-Mirischlau1600-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "604d63b9f7140ebec48d3289e435ac3241c8f5ae51d791ff90cc58d3b9aebde3"
+      },
+      {
+        "candidate_id": "hced-Muhlberg1547-1",
+        "category": "coalition_incomplete",
+        "reason": "Habsburg, Saxon, and Schmalkaldic member forces cannot be collapsed to a generic imperial side.",
+        "raw_row_sha256": "8bd5a65b0f2b8fd04725540c2bbaa2885bb83d072037e209d42a9140b18a50d8"
+      },
+      {
+        "candidate_id": "hced-Nagyszollos1662-1",
+        "category": "claimant_collapse",
+        "reason": "Ottoman-backed Apafi forces fought Kemény's rival Transylvanian claimant army; a single Transylvania entity would self-collapse the conflict.",
+        "raw_row_sha256": "015095891d9b60983f1d9d0f3f1dc4d9afcd3e8a62c4e6ab075414910f518b51"
+      },
+      {
+        "candidate_id": "hced-Neubrandenburg1631-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "1e296a47886e6b162ac007b8e82be3771ef88efc8ae2dff2b0dfe36602731140"
+      },
+      {
+        "candidate_id": "hced-Pallet1793-1",
+        "category": "unresolved_locator",
+        "reason": "No exact authoritative event locator was found for this spelling/row; retain staged.",
+        "raw_row_sha256": "3f60e6e0f81ae61b2ba07087b85dfcfbe0c8f2b27c9cfbb34be75feacb31ca2a"
+      },
+      {
+        "candidate_id": "hced-Patna (2nd)1763-1",
+        "category": "source_family_duplicate",
+        "reason": "The candidate participant text points back to Udaynala and does not cleanly delimit a second Patna engagement.",
+        "raw_row_sha256": "56c9f341ba31b666226d3126a1cd1d6f4603870d5520420716a2ca87cf5056eb"
+      },
+      {
+        "candidate_id": "hced-Pont de Gravereau1793-1",
+        "category": "granularity_ambiguity",
+        "reason": "The row cannot yet be cleanly distinguished from nearby Pont-Barré/Pont-de-Cé operations.",
+        "raw_row_sha256": "afee2aa4ef64e2f3c84ad1b2b3512ad4786cb69e549a453a2cf9acb2dfb68d55"
+      },
+      {
+        "candidate_id": "hced-Pornic1793-1",
+        "category": "same_name_multiple_actions",
+        "reason": "Multiple Pornic actions in March 1793 have opposing outcomes and the row has no consulted locator.",
+        "raw_row_sha256": "ad3770c513dbed346e3499c039c523556ab9050c17dd176b3e110ec6f3cd9aac"
+      },
+      {
+        "candidate_id": "hced-Sieveshausen1553-1",
+        "category": "wrong_actor",
+        "reason": "The opponent was Brandenburg-Kulmbach, not Electoral Brandenburg/Brandenburg-Prussia.",
+        "raw_row_sha256": "76b3254a15097d291885d46fa38421e566920943885f381196b38f3574d75e2f"
+      },
+      {
+        "candidate_id": "hced-Tiffauges1793-1",
+        "category": "source_family_duplicate",
+        "reason": "Tiffauges is an alias/location duplicate of the selected Torfou action on 19 September 1793.",
+        "raw_row_sha256": "625dfc8a1c92fdda477fb96985155c7687fe42b6d9569384fac3a877b0ebe786"
+      },
+      {
+        "candidate_id": "hced-Warsaw1657-1",
+        "category": "outcome_event_ambiguity",
+        "reason": "The name/year collides with the Transylvanian-Swedish capture; the HCED Polish victory lacks an exact recapture locator.",
+        "raw_row_sha256": "d88f185e8bb17e346e68a6b57ec1ec37a5a546aa4710b58bbfd696ef5e315156"
+      },
+      {
+        "candidate_id": "hced-Wittenweier1638-1",
+        "category": "unsafe_imperial_collapse",
+        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "976fc416e82951776c1ea277c3532a0d431845d059a7454ed30fd5c0e0da7084"
+      }
+    ],
+    "wave6_1500_1799_wikidata_exclusions": [
+      {
+        "candidate_id": "Q1419229",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "549e6a9c3d4af8e5aea09bdee896e9b242027f49550c4cb007329454712b99fd"
+      },
+      {
+        "candidate_id": "Q1426479",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "a4b74fa7ce93b5a7656e7f6ae3940f083d965c6c78451386c1e1ab3f617ba720"
+      },
+      {
+        "candidate_id": "Q1429256",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "b8e0b1d69c3a6f2be5ebcfb768a2943f678be0ba460e85151f6c56ec8a992d0d"
+      },
+      {
+        "candidate_id": "Q1441223",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "bcfbef034921f4bdc6fc9731acd201f5e648ec2e668882b42b185a54be33a919"
+      },
+      {
+        "candidate_id": "Q1445426",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "f4150007c730848e15f93b74743cc0a452865d31ee5ffad8100c95c34f8c87ba"
+      },
+      {
+        "candidate_id": "Q1456170",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "924e4ae9e7bf17163f3528c3d6560ef6e6291f28051142f3333fd35b8964d822"
+      },
+      {
+        "candidate_id": "Q1478075",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "f5b05ae830cc5d95fa95832abf6daa7c39943fa132b922054f1b0253406d0f2e"
+      },
+      {
+        "candidate_id": "Q1485320",
+        "category": "war_umbrella_no_result",
+        "reason": "War-level Wikidata item lacks a reviewed engagement result and exact two-sided event contract.",
+        "raw_row_sha256": "3f98b6dfd3ab14f0740daa0cf17cd1a2eebaf519998dc5686cc5cc105d462cc0"
+      }
+    ],
+    "hced_label_pass_input_rows": 6496,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
     "iwd_components_attached_to_rated_parents": 100,
     "hced_rejections": {
-      "curated_exclusion": 62,
+      "curated_exclusion": 147,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 3,
-      "no_unique_time_valid_polity": 188,
+      "no_unique_time_valid_polity": 162,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 33,
+      "reserved_candidate_contract": 119,
       "same_or_empty_opposing_side": 18
     },
     "hced_label_rejections": {
@@ -95,14 +508,15 @@
       "curated_row_exclusion": 53,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 488,
-      "label_outcome_not_aligned": 86,
-      "label_outside_policy_window": 199,
+      "faction_label_not_a_polity": 461,
+      "label_outcome_not_aligned": 85,
+      "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 3253,
-      "no_unique_time_valid_polity": 184,
-      "outside_continuity_policy": 104,
-      "same_or_empty_opposing_side": 3
+      "no_unique_time_valid_label_match": 2971,
+      "no_unique_time_valid_polity": 178,
+      "outside_continuity_policy": 102,
+      "same_or_empty_opposing_side": 3,
+      "wave6_pre1500_candidate_not_in_manifest": 44
     },
     "hced_label_policy_labels": [
       "afghanistan",
@@ -254,16 +668,36 @@
     ],
     "hced_curated_exclusions": [
       {
+        "candidate_id": "hced-Aasle1389-1",
+        "reason": "duplicate of the same Asle/Falkoping action"
+      },
+      {
+        "candidate_id": "hced-Abu Ageila1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
         "candidate_id": "hced-Aden1513-1",
         "reason": "anachronistic principal actor: Aden was Tahirid in 1513; Ottoman conquest did not occur until 1538"
+      },
+      {
+        "candidate_id": "hced-Adrianople1912-1913-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
       },
       {
         "candidate_id": "hced-Alcacer do Sol1158-1",
         "reason": "Afonso I of Portugal's conquest; England was not a belligerent in 1158"
       },
       {
+        "candidate_id": "hced-Aljubarrota1385-1",
+        "reason": "winning-side crosswalk retains England but omits the principal Portuguese actor"
+      },
+      {
         "candidate_id": "hced-Altona1714-1",
         "reason": "phantom/misdated action with the wrong actor: the documented Altona action was Sweden burning Danish Altona in January 1713, not a Russian victory over Sweden in 1714"
+      },
+      {
+        "candidate_id": "hced-Ambur1749-1",
+        "reason": "Wave 6 evidence audit hold"
       },
       {
         "candidate_id": "hced-Andalsnes1940-1",
@@ -274,12 +708,32 @@
         "reason": "conflates opposite-result campaigns: the source dates the event only to 1695, when the Russian siege failed, while the 1696 campaign won"
       },
       {
+        "candidate_id": "hced-Balangiga1900-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Baler1896-1",
+        "reason": "wrong opponent: Spanish garrison fought Filipino revolutionary forces"
+      },
+      {
+        "candidate_id": "hced-Bamburgh1464-1",
+        "reason": "outcome reversed: Bamburgh fell to Yorkist royal forces"
+      },
+      {
         "candidate_id": "hced-Barrosa1811-1",
         "reason": "incomplete principal side: the Spanish army is omitted from the Allied force at Barrosa"
       },
       {
         "candidate_id": "hced-Beachy Head1707-1",
         "reason": "wrong opposing actor: the Action of 2 May 1707 was fought by a French squadron against a British convoy and escorts; Portugal did not fight"
+      },
+      {
+        "candidate_id": "hced-Bir Gafgafa1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Bosworth Field1485-1",
+        "reason": "Henry Tudor's composite army cannot reopen the Lancastrian faction after 1471"
       },
       {
         "candidate_id": "hced-Bronnitsa1614-1",
@@ -294,28 +748,88 @@
         "reason": "incomplete principal side and campaign envelope: Spanish defenders are omitted from the two-year siege of Cadiz"
       },
       {
+        "candidate_id": "hced-Caister Castle1469-1",
+        "reason": "Norfolk versus Paston retainers, not Yorkists versus Lancastrians"
+      },
+      {
+        "candidate_id": "hced-Caloocan1899-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "hced-Campo1811-1",
         "reason": "duplicate/ambiguous Campo Maior record: it shares the retained siege row's exact coordinates and French-victory assertion, while the separate 25 March combat was an Anglo-Portuguese victory"
+      },
+      {
+        "candidate_id": "hced-Caravaggio1448-1",
+        "reason": "Golden Ambrosian Republic actor after the Visconti duchy ended in 1447"
       },
       {
         "candidate_id": "hced-Changsha1942II-1",
         "reason": "duplicate of Changsha 1941-1942: both rows cite the same Third Battle of Changsha account and assert the same Chinese victory over Japan"
       },
       {
+        "candidate_id": "hced-Chi Hoa1860-1861-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Chihuahua1913-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Chioggia1379-1",
+        "reason": "compressed 1379-1380 siege with changing control and a Genoese-Paduan-Hungarian coalition"
+      },
+      {
         "candidate_id": "hced-Colonia do Sacrimento1735-1",
         "reason": "source outcome is reversed: the Portuguese fortress withstood the Spanish siege of 1735-1737"
+      },
+      {
+        "candidate_id": "hced-Danang1858-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Doiran1917-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Doiran1918-1",
+        "reason": "Wave 6 evidence audit hold"
       },
       {
         "candidate_id": "hced-Dunamunde1701-1",
         "reason": "variant duplicate of hced-Riga1701-1 for the 1701 Crossing of the Duna/Battle of Riga; both stay staged because the crosswalk omits the principal Saxon opponent"
       },
       {
+        "candidate_id": "hced-Dunstable1461-1",
+        "reason": "Warwick outpost action immediately before Second St Albans; component inflation"
+      },
+      {
         "candidate_id": "hced-Duppel1849-1",
         "reason": "wrong belligerent and outcome: Austria did not fight at Dybbol; Denmark won the action"
       },
       {
+        "candidate_id": "hced-El Teb (1st)1884-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
         "candidate_id": "hced-Elba1811-1",
         "reason": "misnamed El Bodon action with a reversed outcome: French forces won and the Anglo-Portuguese force withdrew"
+      },
+      {
+        "candidate_id": "hced-Fada1987-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Falkoping1389-1",
+        "reason": "duplicate of the same Asle/Falkoping action"
+      },
+      {
+        "candidate_id": "hced-Ferrybridge1461-1",
+        "reason": "changing bridge action immediately before Towton, not a clean standalone victory"
+      },
+      {
+        "candidate_id": "hced-Firket1896-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
       },
       {
         "candidate_id": "hced-France1940-1",
@@ -324,6 +838,30 @@
       {
         "candidate_id": "hced-Galicia1914-1",
         "reason": "campaign envelope duplicates separately rated Galicia component engagements"
+      },
+      {
+        "candidate_id": "hced-Gaza1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Gemaizeh1888-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Gia Cuc1883-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Ginniss1885-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Golan Heights1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Gottolengo1427-1",
+        "reason": "outcome conflict: HCED says draw while historical accounts describe a Visconti success or successful check"
       },
       {
         "candidate_id": "hced-Grol1627-1",
@@ -336,6 +874,10 @@
       {
         "candidate_id": "hced-Hadad1562-1",
         "reason": "inverted outcome and branch confusion: Habsburg forces defeated Ottoman-vassal Transylvania"
+      },
+      {
+        "candidate_id": "hced-Hafir, Sudan1896-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
       },
       {
         "candidate_id": "hced-Hanoi1873-1",
@@ -354,12 +896,28 @@
         "reason": "Dost Mohammad's siege of Sultan Ahmad Khan's Herat; Persia fielded no army"
       },
       {
+        "candidate_id": "hced-Himera-409-1",
+        "reason": "principal-actor omission: Himera was the defeated polity, while much of the Syracusan and Agrigentine aid withdrew before the city's fall"
+      },
+      {
+        "candidate_id": "hced-Hung Hoa1884-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "hced-Isola del Giglio1646-1",
         "reason": "Habsburg branch confusion: the defending fleet belonged to Habsburg Spain"
       },
       {
+        "candidate_id": "hced-Jebel Libni1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
         "candidate_id": "hced-Juthas1808-1",
         "reason": "duplicate of Jutas 1808 under a variant spelling"
+      },
+      {
+        "candidate_id": "hced-Kaffa1475-1",
+        "reason": "wrong governing actor: Caffa had been administered by the Bank of Saint George since 1453"
       },
       {
         "candidate_id": "hced-Kaiserswerth1702-1",
@@ -368,6 +926,14 @@
       {
         "candidate_id": "hced-Kemmel1918-1",
         "reason": "inverted outcome: German forces captured Mont Kemmel"
+      },
+      {
+        "candidate_id": "hced-Khartoum1884-1",
+        "reason": "wrong date envelope: siege terminated 26 January 1885"
+      },
+      {
+        "candidate_id": "hced-Kresna1913-1",
+        "reason": "Wave 6 evidence audit hold"
       },
       {
         "candidate_id": "hced-Lepanto1571-1",
@@ -382,8 +948,16 @@
         "reason": "duplicate of Liebertwolkwitz 1813 under a variant spelling"
       },
       {
+        "candidate_id": "hced-Lose-Coat Field1470-1",
+        "reason": "Welles's rebels and the Warwick-Clarence alignment are not a clean Lancastrian side"
+      },
+      {
         "candidate_id": "hced-Maastricht1632-1",
         "reason": "wrong principal belligerent: the Dutch States Army, not England and France, took Maastricht"
+      },
+      {
+        "candidate_id": "hced-Maaten-as-Sarra1987-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
       },
       {
         "candidate_id": "hced-Majadahonda1812-1",
@@ -392,6 +966,10 @@
       {
         "candidate_id": "hced-Malacca1606-1",
         "reason": "source outcome is reversed: the first VOC siege of Portuguese Malacca failed after a Portuguese relief force arrived"
+      },
+      {
+        "candidate_id": "hced-Maneru1873-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
       },
       {
         "candidate_id": "hced-Marbella1705-1",
@@ -406,6 +984,18 @@
         "reason": "wrong opposing sides: Spain captured Messina while France and Austria were allies"
       },
       {
+        "candidate_id": "hced-Milan1449-1",
+        "reason": "Francesco Sforza versus the Golden Ambrosian Republic, not Visconti Milan"
+      },
+      {
+        "candidate_id": "hced-Mitla Pass1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Monastir1916-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "hced-Monte Grappa1917-1",
         "reason": "wrong principal belligerent: the 1917 defense was an Italian operation"
       },
@@ -414,12 +1004,44 @@
         "reason": "wrong principal belligerent: Italy is omitted from its own Monte Grappa battle"
       },
       {
+        "candidate_id": "hced-Montejurra1873-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
+      },
+      {
         "candidate_id": "hced-Montijo1644-1",
         "reason": "wrong opposing actor: the Restoration War battle was Portugal versus Spain, while the source row incorrectly codes England"
       },
       {
+        "candidate_id": "hced-Mortlack1010-1",
+        "reason": "late or legendary tradition with unstable chronology and participants"
+      },
+      {
+        "candidate_id": "hced-Motya-397-1",
+        "reason": "outcome reversed: Diodorus reports Dionysius and Syracuse captured Motya"
+      },
+      {
+        "candidate_id": "hced-Myriocephalum1176-1",
+        "reason": "the Turkish actor was the Sultanate of Rum, not the Great Seljuk Empire"
+      },
+      {
+        "candidate_id": "hced-Naic1897-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Nairn1009-1",
+        "reason": "late or legendary tradition with unstable date and participants"
+      },
+      {
+        "candidate_id": "hced-Nam Dinh1883-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "hced-Napue1714-1",
         "reason": "duplicate wrong-orientation record for the Russian victory at Storkyro/Isokyro; hced-Storkyro1714-1 is the retained source row"
+      },
+      {
+        "candidate_id": "hced-Nesjar1016-1",
+        "reason": "wrong actors: Olav Haraldsson fought Sveinn Hakonarson and allied Norwegian magnates"
       },
       {
         "candidate_id": "hced-Nivelle Offensive1917-1",
@@ -430,12 +1052,48 @@
         "reason": "campaign envelope duplicates separately rated Norwegian Campaign engagements"
       },
       {
+        "candidate_id": "hced-Ojinaga1913-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Oroquieta1872-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
+      },
+      {
+        "candidate_id": "hced-Ouadi Doum1987-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Palan1883-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Palanan1901-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Palestrina1849-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
         "candidate_id": "hced-Pandjeh1885-1",
         "reason": "duplicate of Penjdeh 1885 under a variant spelling"
       },
       {
         "candidate_id": "hced-Punitz1704-1",
         "reason": "wrong opposing actor after composite-side collapse: the opposing army at Punitz was Saxon under Schulenburg, not Russian"
+      },
+      {
+        "candidate_id": "hced-Puray1897-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Quinqua1899-1",
+        "reason": "likely reversed outcome; no authoritative Philippine-victory contract"
+      },
+      {
+        "candidate_id": "hced-Rafa1967-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
       },
       {
         "candidate_id": "hced-Reval1719-1",
@@ -454,8 +1112,16 @@
         "reason": "date error: Rocoux was fought in 1746"
       },
       {
+        "candidate_id": "hced-Rome1849-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
         "candidate_id": "hced-Rosas1645-1",
         "reason": "Habsburg branch confusion: the defense belonged to Habsburg Spain"
+      },
+      {
+        "candidate_id": "hced-Saigon1859-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
       },
       {
         "candidate_id": "hced-Salvador1638-1",
@@ -466,8 +1132,44 @@
         "reason": "cross-boundary campaign envelope: the Salvador campaign began before Brazilian independence on 7 September 1822 and continued to July 1823, so one year-level Portuguese identity cannot represent it"
       },
       {
+        "candidate_id": "hced-San Isidro1896-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-San Mateo, Philippines1899-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Scutari1912-1913-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Sebastia1070-1",
+        "reason": "wrong state attribution: the victorious Turkoman commander Chrysoskoulos/Arisighi was a rebel or fugitive whom Sultan Alp Arslan sent Afshin to hunt, not an army of the Great Seljuk central state"
+      },
+      {
+        "candidate_id": "hced-Selinus-409-1",
+        "reason": "wrong-actor substitution: Selinus fell before Syracusan relief arrived; Syracuse was not the defeated polity"
+      },
+      {
         "candidate_id": "hced-Sevastopol1854-1855-1",
         "reason": "campaign envelope duplicates separately rated Crimean War siege components"
+      },
+      {
+        "candidate_id": "hced-Silang1897-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Somorrostro (1st)1874-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
+      },
+      {
+        "candidate_id": "hced-Somorrostro (2nd)1874-1",
+        "reason": "identity_boundary: transitional Spanish government requires an atomic split from the existing Spanish Empire Elo series"
+      },
+      {
+        "candidate_id": "hced-Spercheios996-1",
+        "reason": "unresolved chronology: strong scholarship divides between 996 and 997"
       },
       {
         "candidate_id": "hced-St Augustine1702-1",
@@ -482,6 +1184,34 @@
         "reason": "duplicate of the Battle of Guise/Saint-Quentin 1914"
       },
       {
+        "candidate_id": "hced-Sucat1899-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Syracuse-213-1",
+        "reason": "date-envelope error: the terminal siege and fall spans 213-212 BCE in the cited chronology, not a defensible 213 BCE point event"
+      },
+      {
+        "candidate_id": "hced-Tamaron1037-1",
+        "reason": "Ferdinand was Count of Castile; the Kingdom of Castile begins in 1065"
+      },
+      {
+        "candidate_id": "hced-Tarq1002-1",
+        "reason": "Ghazni versus Buyid/Persian context decades before the Great Seljuk state"
+      },
+      {
+        "candidate_id": "hced-Tenedos-85-1",
+        "reason": "chronology unresolved: reputable accounts differ between 86 and 85 BCE, and the reviewed primary texts do not pin the selected year"
+      },
+      {
+        "candidate_id": "hced-Tokar1891-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Toski1889-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
         "candidate_id": "hced-Trebizond1916-1",
         "reason": "wrong belligerents: the campaign was exclusively Russian, not French or British"
       },
@@ -494,16 +1224,505 @@
         "reason": "duplicate of Trouillas 1793 under a variant spelling"
       },
       {
+        "candidate_id": "hced-Twt Hill1463-1",
+        "reason": "date error: the action occurred on 16 October 1461"
+      },
+      {
+        "candidate_id": "hced-Um Diwaykarat1899-1",
+        "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Vardar1915-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Vardar1918-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Velletri1849-1",
+        "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
         "candidate_id": "hced-Vittorio Veneto1918-1",
         "reason": "wrong principal belligerent: Italy is omitted from the Vittorio Veneto victory"
       },
       {
         "candidate_id": "hced-Wofla1542-1",
         "reason": "incomplete principal side: the Adal Sultanate fielded the army at Wofla, but the crosswalk retains Ottoman support alone"
+      },
+      {
+        "candidate_id": "hced-Zapote Bridge1896-1",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Zela-47-1",
+        "reason": "identity discontinuity: Pharnaces II attacked from the Bosporan kingdom after Pompey's 63 BCE destruction of the Mithridatid kingdom"
+      }
+    ],
+    "wave6_pre1500_safe_candidate_ids": [
+      "hced-Acragas-406-1",
+      "hced-Alarcos1195-1",
+      "hced-Antium1378-1",
+      "hced-Arcadiopolis1194-1",
+      "hced-Barnet1471-1",
+      "hced-Blore Heath1459-1",
+      "hced-Cabala-383-1",
+      "hced-Cabira-72-1",
+      "hced-Carthage, Tunisia-310-1",
+      "hced-Chaeronea-86-1",
+      "hced-Chalcedon-74-1",
+      "hced-Cremona1431-1",
+      "hced-Cronium-383-1",
+      "hced-Curzola1298-1",
+      "hced-Cyzicus-73-1",
+      "hced-Dandanaqan1040-1",
+      "hced-Gerona1285-1",
+      "hced-Halys-82-1",
+      "hced-Hedgeley Moor1464-1",
+      "hced-Hexham1464-1",
+      "hced-Himera-480-1",
+      "hced-Kaffa1296-1",
+      "hced-Laiazzo1294-1",
+      "hced-Lantada1068-1",
+      "hced-Las Hormigas1285-1",
+      "hced-Lemnos-73-1",
+      "hced-Lilybaeum-368-1",
+      "hced-Ludford Bridge1459-1",
+      "hced-Lycus-66-1",
+      "hced-Maclodio1427-1",
+      "hced-Maderno1439-1",
+      "hced-Manzikert1054-1",
+      "hced-Manzikert1071-1",
+      "hced-Miletopolis-85-1",
+      "hced-Mortimers Cross1461-1",
+      "hced-Northampton1460-1",
+      "hced-Orchomenus-86-1",
+      "hced-Pula1379-1",
+      "hced-Sandwich1460-1",
+      "hced-Sapienza1354-1",
+      "hced-Saseno1264-1",
+      "hced-St Albans1455-1",
+      "hced-St Albans1461-1",
+      "hced-Stoke1487-1",
+      "hced-Stralsund1184-1",
+      "hced-Syracuse-311-1",
+      "hced-Syracuse-396-1",
+      "hced-Syracuse-415-1",
+      "hced-Tewkesbury1471-1",
+      "hced-Towton1461-1",
+      "hced-Trajans Gate986-1",
+      "hced-Trapani1266-1",
+      "hced-Wakefield1460-1",
+      "hced-Winchelsea1350-1",
+      "hced-Zela-67-1"
+    ],
+    "wave6_pre1500_holds": [
+      {
+        "candidate_id": "hced-Aasle1389-1",
+        "reason": "duplicate of the same Asle/Falkoping action"
+      },
+      {
+        "candidate_id": "hced-Aljubarrota1385-1",
+        "reason": "winning-side crosswalk retains England but omits the principal Portuguese actor"
+      },
+      {
+        "candidate_id": "hced-Bamburgh1464-1",
+        "reason": "outcome reversed: Bamburgh fell to Yorkist royal forces"
+      },
+      {
+        "candidate_id": "hced-Bosworth Field1485-1",
+        "reason": "Henry Tudor's composite army cannot reopen the Lancastrian faction after 1471"
+      },
+      {
+        "candidate_id": "hced-Caister Castle1469-1",
+        "reason": "Norfolk versus Paston retainers, not Yorkists versus Lancastrians"
+      },
+      {
+        "candidate_id": "hced-Caravaggio1448-1",
+        "reason": "Golden Ambrosian Republic actor after the Visconti duchy ended in 1447"
+      },
+      {
+        "candidate_id": "hced-Chioggia1379-1",
+        "reason": "compressed 1379-1380 siege with changing control and a Genoese-Paduan-Hungarian coalition"
+      },
+      {
+        "candidate_id": "hced-Dunstable1461-1",
+        "reason": "Warwick outpost action immediately before Second St Albans; component inflation"
+      },
+      {
+        "candidate_id": "hced-Falkoping1389-1",
+        "reason": "duplicate of the same Asle/Falkoping action"
+      },
+      {
+        "candidate_id": "hced-Ferrybridge1461-1",
+        "reason": "changing bridge action immediately before Towton, not a clean standalone victory"
+      },
+      {
+        "candidate_id": "hced-Genoa1684-1",
+        "reason": "outside this lane's 1499 cutoff; reserved for later review"
+      },
+      {
+        "candidate_id": "hced-Gottolengo1427-1",
+        "reason": "outcome conflict: HCED says draw while historical accounts describe a Visconti success or successful check"
+      },
+      {
+        "candidate_id": "hced-Himera-409-1",
+        "reason": "principal-actor omission: Himera was the defeated polity, while much of the Syracusan and Agrigentine aid withdrew before the city's fall"
+      },
+      {
+        "candidate_id": "hced-Kaffa1475-1",
+        "reason": "wrong governing actor: Caffa had been administered by the Bank of Saint George since 1453"
+      },
+      {
+        "candidate_id": "hced-Lose-Coat Field1470-1",
+        "reason": "Welles's rebels and the Warwick-Clarence alignment are not a clean Lancastrian side"
+      },
+      {
+        "candidate_id": "hced-Milan1449-1",
+        "reason": "Francesco Sforza versus the Golden Ambrosian Republic, not Visconti Milan"
+      },
+      {
+        "candidate_id": "hced-Mortlack1010-1",
+        "reason": "late or legendary tradition with unstable chronology and participants"
+      },
+      {
+        "candidate_id": "hced-Motya-397-1",
+        "reason": "outcome reversed: Diodorus reports Dionysius and Syracuse captured Motya"
+      },
+      {
+        "candidate_id": "hced-Myriocephalum1176-1",
+        "reason": "the Turkish actor was the Sultanate of Rum, not the Great Seljuk Empire"
+      },
+      {
+        "candidate_id": "hced-Nairn1009-1",
+        "reason": "late or legendary tradition with unstable date and participants"
+      },
+      {
+        "candidate_id": "hced-Nesjar1016-1",
+        "reason": "wrong actors: Olav Haraldsson fought Sveinn Hakonarson and allied Norwegian magnates"
+      },
+      {
+        "candidate_id": "hced-Sebastia1070-1",
+        "reason": "wrong state attribution: the victorious Turkoman commander Chrysoskoulos/Arisighi was a rebel or fugitive whom Sultan Alp Arslan sent Afshin to hunt, not an army of the Great Seljuk central state"
+      },
+      {
+        "candidate_id": "hced-Selinus-409-1",
+        "reason": "wrong-actor substitution: Selinus fell before Syracusan relief arrived; Syracuse was not the defeated polity"
+      },
+      {
+        "candidate_id": "hced-Spercheios996-1",
+        "reason": "unresolved chronology: strong scholarship divides between 996 and 997"
+      },
+      {
+        "candidate_id": "hced-Syracuse-213-1",
+        "reason": "date-envelope error: the terminal siege and fall spans 213-212 BCE in the cited chronology, not a defensible 213 BCE point event"
+      },
+      {
+        "candidate_id": "hced-Tamaron1037-1",
+        "reason": "Ferdinand was Count of Castile; the Kingdom of Castile begins in 1065"
+      },
+      {
+        "candidate_id": "hced-Tarq1002-1",
+        "reason": "Ghazni versus Buyid/Persian context decades before the Great Seljuk state"
+      },
+      {
+        "candidate_id": "hced-Tenedos-85-1",
+        "reason": "chronology unresolved: reputable accounts differ between 86 and 85 BCE, and the reviewed primary texts do not pin the selected year"
+      },
+      {
+        "candidate_id": "hced-Twt Hill1463-1",
+        "reason": "date error: the action occurred on 16 October 1461"
+      },
+      {
+        "candidate_id": "hced-Zela-47-1",
+        "reason": "identity discontinuity: Pharnaces II attacked from the Bosporan kingdom after Pompey's 63 BCE destruction of the Mithridatid kingdom"
+      }
+    ],
+    "wave6_pre1500_target_entity_ids": [
+      "clio_bg_bulgaria_early_682_95daf02a",
+      "clio_ir_seljuk_sultanate_1040_577da931",
+      "crown_aragon_1164",
+      "crown_castile_1230",
+      "duchy_milan_visconti",
+      "kingdom_castile_1065",
+      "kingdom_denmark_medieval",
+      "lancastrian_faction_1455",
+      "mithridatid_kingdom_pontus",
+      "republic_genoa",
+      "second_bulgarian_empire",
+      "simnel_yorkist_rebellion_1487",
+      "syracuse_city_state",
+      "warwick_readeption_army_1471",
+      "yorkist_faction_1455"
+    ],
+    "wave6_pre1500_source_families": [
+      {
+        "source_family_id": "appian_mithridatic_wars",
+        "source_ids": [
+          "wave6_appian_mithridatic"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "archaeologia_aeliana_northumberland",
+        "source_ids": [
+          "wave6_ads_northumberland"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "attaleiates_history",
+        "source_ids": [
+          "wave6_attaleiates_history"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "black_renaissance_milan",
+        "source_ids": [
+          "wave6_black_milan"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "cambridge_mortimers_stalbans",
+        "source_ids": [
+          "wave6_cambridge_mortimers_stalbans"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "carpenter_wars_roses",
+        "source_ids": [
+          "wave6_carpenter_roses"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "castilla_la_mancha_alarcos",
+        "source_ids": [
+          "wave6_castilla_alarcos"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "curta_southeastern_europe",
+        "source_ids": [
+          "wave6_curta_southeastern"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "cushway_edward_iii_sea",
+        "source_ids": [
+          "wave6_cushway_winchelsea"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "diodorus_siculus_library",
+        "source_ids": [
+          "wave6_diodorus_sicily"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "dotson_medieval_seas",
+        "source_ids": [
+          "wave6_dotson_medieval_seas"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "encyclopaedia_iranica_editorial_corpus",
+        "source_ids": [
+          "wave6_iranica_dandanqan",
+          "wave6_iranica_pontus"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "historic_england_battlefields_register",
+        "source_ids": [
+          "wave6_he_barnet",
+          "wave6_he_blore",
+          "wave6_he_northampton",
+          "wave6_he_stoke",
+          "wave6_he_tewkesbury",
+          "wave6_he_towton"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "livy_history_rome",
+        "source_ids": [
+          "wave6_livy_syracuse"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "moro_venice_rivers",
+        "source_ids": [
+          "wave6_moro_venice_rivers"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "ocallaghan_reconquest_crusade",
+        "source_ids": [
+          "wave6_ocallaghan_iberia"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "peacock_great_seljuk",
+        "source_ids": [
+          "wave6_peacock_seljuk"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "plutarch_parallel_lives",
+        "source_ids": [
+          "wave6_plutarch_lives"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "reilly_leon_castile",
+        "source_ids": [
+          "wave6_reilly_castile"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "saxo_gesta_danorum",
+        "source_ids": [
+          "wave6_saxo_denmark"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "stephenson_balkan_frontier",
+        "source_ids": [
+          "wave6_stephenson_balkans"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "thucydides_peloponnesian_war",
+        "source_ids": [
+          "wave6_thucydides_sicily"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "treccani_editorial_corpus",
+        "source_ids": [
+          "wave6_treccani_ambrosian",
+          "wave6_treccani_genoa",
+          "wave6_treccani_maclodio",
+          "wave6_treccani_terraferma"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
+      },
+      {
+        "source_family_id": "watts_wars_roses",
+        "source_ids": [
+          "wave6_watts_roses"
+        ],
+        "deduplication_unit": "source_family_id",
+        "independence_credit": "at_most_one_per_claim"
       }
     ],
     "hced_reviewed_crosswalk_identity_candidate_ids": [
       "hced-Piraja1822-1"
+    ],
+    "hced_wave6_reviewed_candidate_ids": [
+      "hced-Adrianople (2nd)1913-1",
+      "hced-Bagbag1899-1",
+      "hced-Binakayan1896-1",
+      "hced-Bregalnica1913-1",
+      "hced-Bulair1913-1",
+      "hced-Calumpit1899-1",
+      "hced-Chataldja1912-1",
+      "hced-Ciudad Juarez1913-1",
+      "hced-Ciudad Victoria1913-1",
+      "hced-Dobro Polje1918-1",
+      "hced-Durango1913-1",
+      "hced-El Teb (2nd)1884-1",
+      "hced-Eshowe1879-1",
+      "hced-Gingindlovu1879-1",
+      "hced-Hanoi1882-1",
+      "hced-Hashin1885-1",
+      "hced-Hlobane1879-1",
+      "hced-Hue1883-1",
+      "hced-Iloilo1899-1",
+      "hced-Imus1896-1",
+      "hced-Imus1897-1",
+      "hced-Kalisch1813-1",
+      "hced-Khambula1879-1",
+      "hced-Kilkis1913-1",
+      "hced-Kirk Kilissa1912-1",
+      "hced-Kobryn1812-1",
+      "hced-Kosturino1915-1",
+      "hced-Luleburgaz1912-1",
+      "hced-Malolos1899-1",
+      "hced-Manila1899-1",
+      "hced-Matamaros1913-1",
+      "hced-Maubeuge1814-1",
+      "hced-Montejurra1876-1",
+      "hced-Myers Drift1879-1",
+      "hced-Nyezane1879-1",
+      "hced-Orendain1914-1",
+      "hced-Paredon1914-1",
+      "hced-Pirot1885-1",
+      "hced-Polo1899-1",
+      "hced-Rorkes Drift1879-1",
+      "hced-San Andres1913-1",
+      "hced-San Isidro1899-1",
+      "hced-Santa Maria1913-1",
+      "hced-Santa Rosa1913-1",
+      "hced-Satillo1913-1",
+      "hced-Sihayos Kraal1879-1",
+      "hced-Slivnitza1885-1",
+      "hced-Tamai1884-1",
+      "hced-Tampico1914-1",
+      "hced-Tierra Blanca1913-1",
+      "hced-Tirad Pass1899-1",
+      "hced-Tofrek1885-1",
+      "hced-Torreon1913-1",
+      "hced-Torreon1914-1",
+      "hced-Trevino1875-1",
+      "hced-Ulundi1879-1",
+      "hced-Vigan1899-1",
+      "hced-Zacatecas1914-1",
+      "hced-Zapote Bridge1897-1",
+      "hced-Zapote River1899-1"
     ],
     "hced_label_curated_exclusions": [
       {
@@ -721,6 +1940,118 @@
     ],
     "iwbd_curated_exclusions": [
       {
+        "candidate_id": "iwbd-10-4-37",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-38",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-39",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-40",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-41",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-42",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-43",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-44",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-45",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-46",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-10-4-47",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-421",
+        "reason": "cross_source_duplicate: Wave 5 already rates Sarandaporon from HCED"
+      },
+      {
+        "candidate_id": "iwbd-100-36-423",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-424",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-425",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-426",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-428",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-429",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-430",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-100-36-431",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-432",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-433",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-434",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-435",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-436",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-437",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-438",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-103-37-439",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "iwbd-108-40-788",
         "reason": "wrong principal belligerent at Riga 2 in October 1919: Latvian forces fought the Bermondt/West Russian Volunteer Army, not the Russian SFSR"
       },
@@ -749,12 +2080,708 @@
         "reason": "wrong outcome at Duppel/Dybbol on 1849-04-13: Denmark, not Prussia, won the action"
       },
       {
+        "candidate_id": "iwbd-148-55-1377",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1378",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1379",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1380",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1381",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1382",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1383",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1384",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1385",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1386",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1387",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1388",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1389",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1390",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1391",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1392",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1393",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1394",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1395",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1396",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1397",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1398",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1399",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1400",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1401",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1404",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1405",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1407",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1408",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1409",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1410",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1411",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1412",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1413",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1414",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1415",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1416",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1417",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1419",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1420",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1421",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1422",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1423",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1424",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1425",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1427",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1428",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1429",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1430",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1432",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1433",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1437",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1438",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1439",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1440",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1443",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-151-56-1444",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1523",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1524",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1525",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1526",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1527",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1528",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1529",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1530",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1531",
+        "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1532",
+        "reason": "identity_boundary: 1967 Syria requires a post-UAR identity; do not widen the existing 1973-open series backward across the 1958-1961 UAR"
+      },
+      {
+        "candidate_id": "iwbd-170-65-1533",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1534",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1535",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1536",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1537",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1538",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1539",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1540",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1541",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1542",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-172-66-1543",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1577",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1578",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1579",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1582",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1584",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-186-72-1586",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-207-80-1650",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-207-80-1651",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-207-80-1654",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-221-85-1696",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-111",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-112",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-113",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-114",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-115",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-116",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-37-13-117",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "iwbd-55-19-188",
         "reason": "duplicate of HCED Liebenau 1866 (spelling variant 'Liebnau')"
       },
       {
+        "candidate_id": "iwbd-55-19-189",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-190",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-191",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-192",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-193",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-194",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-195",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-196",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-197",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-198",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-199",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-200",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-201",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-202",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-203",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-204",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-205",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-206",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-207",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-208",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-209",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-210",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-211",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-55-19-212",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-213",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-214",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-215",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-216",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-217",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-218",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-219",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-220",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-221",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-222",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-223",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-224",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-225",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-226",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-227",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-228",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-229",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-230",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-231",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-232",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-233",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-234",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-235",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-236",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-237",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-238",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-239",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-240",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-241",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-242",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-243",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-244",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-245",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-246",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-247",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-248",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-249",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-250",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-251",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-252",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-253",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-254",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-255",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-256",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-258",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-259",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-260",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-261",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-262",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-263",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-264",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-265",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-266",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-58-20-267",
+        "reason": "Wave 6 evidence audit hold"
+      },
+      {
         "candidate_id": "iwbd-58-20-268",
         "reason": "duplicate of HCED Dijon 1871 (IWBD 'Dijon 3')"
+      },
+      {
+        "candidate_id": "iwbd-58-20-269",
+        "reason": "Wave 6 evidence audit hold"
       },
       {
         "candidate_id": "iwbd-76-28-346",
@@ -767,28 +2794,105 @@
         "reason": "Italian Unification 1859: belligerent was the Kingdom of Sardinia; the 'Kingdom of Italy' [587,1946] envelope is not the 1859 actor (identity pending)"
       },
       {
+        "parent_war_id": "13",
+        "reason": "actor_transition: Garibaldi's volunteer army and later Sardinian regular forces cannot be one Italy identity"
+      },
+      {
+        "parent_war_id": "19",
+        "reason": "coalition incomplete (independent German belligerents omitted)"
+      },
+      {
+        "parent_war_id": "20",
+        "reason": "regime_and_coalition_transition: France changes regime in September 1870 and Prussia is not the entire German coalition"
+      },
+      {
+        "parent_war_id": "36",
+        "reason": "coalition_incomplete: Montenegro is absent from the First Balkan War parent components"
+      },
+      {
+        "parent_war_id": "37",
+        "reason": "coalition incomplete (Montenegro omitted)"
+      },
+      {
+        "parent_war_id": "4",
+        "reason": "coalition_incomplete: Papal and revolutionary contingents are absent and COW Italy is not an exact Sardinian identity"
+      },
+      {
         "parent_war_id": "42",
         "reason": "Hungarian-Allies 1919: fought principally by the Hungarian Soviet Republic; the [1919,1943] Hungary interval bridges the 1919 regime resets (identity pending)"
       },
       {
         "parent_war_id": "5",
         "reason": "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the First Schleswig War; the source assertion stays staged rather than being inverted"
+      },
+      {
+        "parent_war_id": "55",
+        "reason": "identity_boundary: the 1948 coalition crosses unresolved Egypt, Syria, and Lebanon polity boundaries"
+      },
+      {
+        "parent_war_id": "56",
+        "reason": "party_semantics_wrong: UN and Chinese forces are repeatedly substituted by South and North Korea; Soviet component is not a combatant contract"
+      },
+      {
+        "parent_war_id": "6",
+        "reason": "coalition_incomplete: Spain is absent and the target must be the short-lived Roman Republic, not Papal States"
+      },
+      {
+        "parent_war_id": "64",
+        "reason": "coalition incomplete (Iraq omitted)"
+      },
+      {
+        "parent_war_id": "65",
+        "reason": "outcome_and_actor_ambiguous: the Second Laotian umbrella cannot be reduced to Vietnam versus Laos with a draw"
+      },
+      {
+        "parent_war_id": "66",
+        "reason": "FRUS supports a standstill cease-fire, not Israeli strategic victory"
+      },
+      {
+        "parent_war_id": "72",
+        "reason": "domestic_principals_omitted: FNLA/UNITA and MPLA are essential parties to the internationalized Angolan conflict"
+      },
+      {
+        "parent_war_id": "80",
+        "reason": "coalition incomplete (direct French combat intervention omitted)"
+      },
+      {
+        "parent_war_id": "85",
+        "reason": "coalition_incomplete_and_envelope: USA cannot stand for NATO and the single IWBD row duplicates the whole campaign"
       }
     ],
     "iwd_reviewed_parent_contract_ids": [
       "1",
+      "4",
+      "6",
+      "13",
+      "19",
+      "20",
+      "36",
+      "37",
       "39",
       "41",
       "43",
       "44",
+      "55",
+      "56",
       "57",
       "60",
+      "64",
+      "65",
+      "66",
+      "72",
+      "80",
+      "85",
       "91"
     ],
     "iwbd_reviewed_identity_candidate_ids": [
       "iwbd--9-91-1402",
       "iwbd--9-91-1403",
       "iwbd-1-1-2",
+      "iwbd-100-36-422",
+      "iwbd-100-36-427",
       "iwbd-115-43-802",
       "iwbd-115-43-803",
       "iwbd-115-43-804",
@@ -805,11 +2909,26 @@
       "iwbd-153-57-1446",
       "iwbd-153-57-1447",
       "iwbd-159-60-1460",
+      "iwbd-16-6-55",
+      "iwbd-16-6-56",
+      "iwbd-16-6-57",
+      "iwbd-207-80-1652",
+      "iwbd-207-80-1653",
+      "iwbd-207-80-1655",
       "iwbd-58-20-257"
     ],
     "iwbd_reviewed_identity_cohorts": {
       "bourbon_restoration_1823": [
         "iwbd-1-1-2"
+      ],
+      "chad_libya_1987": [
+        "iwbd-207-80-1652",
+        "iwbd-207-80-1653",
+        "iwbd-207-80-1655"
+      ],
+      "first_balkan_reviewed_parties": [
+        "iwbd-100-36-422",
+        "iwbd-100-36-427"
       ],
       "orleans_third_republic": [
         "iwbd-58-20-257"
@@ -825,6 +2944,11 @@
       ],
       "roc_taiwan_1958": [
         "iwbd-159-60-1460"
+      ],
+      "roman_republic_1849": [
+        "iwbd-16-6-55",
+        "iwbd-16-6-56",
+        "iwbd-16-6-57"
       ],
       "turkish_national_movement_franco_turkish": [
         "iwbd-116-44-820",
@@ -915,20 +3039,20 @@
       "4": "insurgency_intervention"
     },
     "iwd_rejections": {
-      "curated_exclusion": 3,
+      "curated_exclusion": 18,
       "inconsistent_coalition_sides": 1,
       "mixed_component_outcomes": 2,
       "overlaps_curated_strategic_event": 6,
-      "unresolved_time_bounded_party": 17
+      "unresolved_time_bounded_party": 2
     },
-    "accepted_iwbd_battles": 143,
+    "accepted_iwbd_battles": 151,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
-      "coalition_or_composite_side": 146,
-      "contains_constituent_iwbd_rows": 381,
-      "curated_exclusion": 10,
+      "coalition_or_composite_side": 129,
+      "contains_constituent_iwbd_rows": 322,
+      "curated_exclusion": 212,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 1010,
+      "duplicate_of_hced_battle": 876,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

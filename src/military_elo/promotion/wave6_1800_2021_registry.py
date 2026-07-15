@@ -20,7 +20,10 @@ def _source(
         "source_type": "official_or_academic_reference",
         "accessed": "2026-07-15",
         "source_family_id": f"wave6_1800_2021_{source_id}",
-        "evidence_roles": ["identity_boundary", "party_and_outcome_adjudication"],
+        "evidence_roles": [
+            "identity_boundary_or_context_reference",
+            "outcome_consistency_crosscheck",
+        ],
     }
 
 
@@ -276,33 +279,6 @@ WAVE6_1800_2021_ENTITY_OVERRIDES = [
         ("nguyen_vnmh",),
     ),
     _entity(
-        "spanish_isabelline_monarchy",
-        "Spanish Monarchy under Isabella II",
-        "kingdom",
-        1833,
-        1868,
-        "Southern Europe",
-        ("carlist_governments",),
-    ),
-    _entity(
-        "kingdom_spain_amadeo_i",
-        "Kingdom of Spain under Amadeo I",
-        "kingdom",
-        1870,
-        1873,
-        "Southern Europe",
-        ("carlist_governments",),
-    ),
-    _entity(
-        "first_spanish_republic",
-        "First Spanish Republic",
-        "republic",
-        1873,
-        1874,
-        "Southern Europe",
-        ("carlist_governments",),
-    ),
-    _entity(
         "third_carlist_army",
         "Third Carlist Army",
         "civil_war_faction",
@@ -366,24 +342,6 @@ WAVE6_1800_2021_ENTITY_OVERRIDES = [
         ("roman_republic_italian_army",),
     ),
     _entity(
-        "kingdom_montenegro",
-        "Kingdom of Montenegro",
-        "kingdom",
-        1910,
-        1918,
-        "Southeast Europe",
-        ("bulgaria_usni",),
-    ),
-    _entity(
-        "lebanese_republic",
-        "Lebanese Republic",
-        "republic",
-        1943,
-        None,
-        "West Asia",
-        ("arab_israeli_1948_state",),
-    ),
-    _entity(
         "republic_chad",
         "Republic of Chad",
         "republic",
@@ -401,53 +359,11 @@ WAVE6_1800_2021_ENTITY_OVERRIDES = [
         "North Africa",
         ("chad_un_yearbook",),
     ),
-    # Existing Wave 5 series are reused and widened atomically; no parallel line is created.
-    _entity(
-        "egypt_muhammad_ali",
-        "Egypt",
-        "state",
-        1805,
-        None,
-        "North Africa",
-        ("mahdist_nam", "arab_israeli_1948_state", "six_day_state"),
-    ),
-    _entity(
-        "clio_q801_1948_5abea45e",
-        "State of Israel",
-        "state",
-        1948,
-        None,
-        "West Asia",
-        ("arab_israeli_1948_state", "six_day_state"),
-    ),
-    _entity(
-        "clio_q810_1947_98de647a",
-        "Jordan",
-        "state",
-        1947,
-        None,
-        "West Asia",
-        ("arab_israeli_1948_state",),
-    ),
-    _entity(
-        "clio_q41137_1973_b05dea50",
-        "Syria",
-        "state",
-        1946,
-        None,
-        "West Asia",
-        ("arab_israeli_1948_state", "six_day_state"),
-    ),
 ]
 
 WAVE6_REUSED_CANONICAL_ENTITY_IDS = frozenset(
     {
-        "clio_it_italian_k_587_7218f0c7",
-        "clio_q801_1948_5abea45e",
-        "clio_q810_1947_98de647a",
-        "clio_q41137_1973_b05dea50",
-        "egypt_muhammad_ali",
-        "kingdom_iraq",
+        "clio_q236_1853_31d59baa",
         "spanish_empire",
     }
 )
