@@ -29,6 +29,7 @@ from .policy import (
     HCED_LABEL_CURATED_EXCLUSIONS,
     HCED_LABEL_POLICIES,
     HCED_PENDING_SPLIT_LABELS,
+    HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
     _label_policy_seed_id,
 )
 
@@ -43,22 +44,116 @@ def _hced_label_row_key(
     return normalized_name, normalized_year, source_identity
 
 
+def _hced_crosswalk_review_fingerprint(
+    candidate: dict[str, Any],
+) -> dict[str, str | tuple[str, ...]]:
+    """Return semantic fields pinned by one candidate-specific review."""
+
+    scalar_fields = (
+        "source_row",
+        "source_record_id",
+        "name",
+        "year_low",
+        "year_best",
+        "year_high",
+        "side_1_raw",
+        "side_2_raw",
+        "winner_raw",
+        "loser_raw",
+    )
+    result: dict[str, str | tuple[str, ...]] = {
+        field: "" if candidate.get(field) is None else str(candidate.get(field))
+        for field in scalar_fields
+    }
+    for field in (
+        "seshat_side_1_candidates",
+        "seshat_side_2_candidates",
+        "war_names",
+    ):
+        result[field] = tuple(map(str, candidate.get(field, ())))
+    return result
+
+
+def _validate_hced_crosswalk_review_bindings(
+    candidates: list[dict[str, Any]],
+    reviewed_identity_bindings: dict[str, dict[str, Any]],
+    require_complete: bool,
+) -> None:
+    """Fail closed when an exact reviewed HCED target or fingerprint drifts."""
+
+    rows_by_id: dict[str, list[dict[str, Any]]] = {}
+    for candidate in candidates:
+        rows_by_id.setdefault(str(candidate.get("candidate_id") or ""), []).append(
+            candidate
+        )
+    for candidate_id, contract in reviewed_identity_bindings.items():
+        expected = contract["fingerprint"]
+        expected_codes = {
+            *expected["seshat_side_1_candidates"],
+            *expected["seshat_side_2_candidates"],
+        }
+        unexpected_bindings = set(contract["code_bindings"]) - expected_codes
+        if unexpected_bindings:
+            raise ValueError(
+                f"invalid HCED reviewed policy for {candidate_id}: bindings name "
+                f"unpinned code(s) {sorted(unexpected_bindings)}"
+            )
+        rows = rows_by_id.get(candidate_id, [])
+        if not rows:
+            if require_complete:
+                raise ValueError(
+                    f"stale HCED reviewed policy for {candidate_id}: target row is missing"
+                )
+            continue
+        if len(rows) != 1:
+            raise ValueError(
+                f"stale HCED reviewed policy for {candidate_id}: expected exactly "
+                f"one target row, found {len(rows)}"
+            )
+        actual = _hced_crosswalk_review_fingerprint(rows[0])
+        if actual != expected:
+            changed = ", ".join(
+                field for field in expected if actual.get(field) != expected.get(field)
+            )
+            raise ValueError(
+                f"stale HCED reviewed policy for {candidate_id}: source "
+                f"fingerprint changed ({changed})"
+            )
+
+
 def promote_hced_crosswalk_rows(
     candidates: list[dict[str, Any]],
     owners: dict[str, list[dict[str, Any]]],
     curated_seed_keys: set[tuple[str, int]],
     ensure_candidate_entity: Any,
+    reviewed_identity_bindings: dict[str, dict[str, Any]] | None = None,
+    resolve_reviewed_id: Any | None = None,
+    require_complete_reviewed_identity_bindings: bool = False,
 ) -> dict[str, Any]:
-    """Promote HCED rows whose opposing sides both have Seshat codes."""
+    """Promote HCED rows whose opposing sides both have Seshat codes.
+
+    Candidate-specific reviewed bindings may override one otherwise unresolved
+    code only when the complete source fingerprint matches and an exact-ID
+    resolver confirms the target identity. They never populate the generic
+    label-observation fallback.
+    """
     events: list[dict[str, Any]] = []
     label_observations: dict[str, list[tuple[int, int, str]]] = {}
     rejections: Counter[str] = Counter()
     deferred_label_rows: list[dict[str, Any]] = []
     promoted_event_keys: set[tuple[str, int]] = set()
     cluster_spans: dict[str, list[Any]] = {}
+    if reviewed_identity_bindings is None:
+        reviewed_identity_bindings = {}
+    _validate_hced_crosswalk_review_bindings(
+        candidates,
+        reviewed_identity_bindings,
+        require_complete_reviewed_identity_bindings,
+    )
 
     for candidate in candidates:
         candidate_id = hced_candidate_id(candidate)
+        identity_policy = reviewed_identity_bindings.get(candidate_id)
         if candidate_id in HCED_CURATED_EXCLUSIONS:
             # Curated adjudications run before every other gate; the row is
             # counted, stays staged, and leaves every promotion universe
@@ -105,9 +200,31 @@ def promote_hced_crosswalk_rows(
         for codes in (side_a_codes, side_b_codes):
             resolved: list[str] = []
             for code in codes:
-                entity_id, polity, reason = _resolve_code(
-                    code, low_year, high_year, owners
+                expected_id = (
+                    identity_policy["code_bindings"].get(code)
+                    if identity_policy is not None
+                    else None
                 )
+                if expected_id is not None:
+                    if resolve_reviewed_id is None:
+                        raise ValueError(
+                            f"reviewed HCED candidate {candidate_id} requires an "
+                            "exact-ID resolver"
+                        )
+                    entity_id, polity = resolve_reviewed_id(
+                        expected_id, low_year, high_year
+                    )
+                    if entity_id != expected_id:
+                        raise ValueError(
+                            f"stale HCED reviewed policy for {candidate_id}: exact-ID "
+                            f"resolver returned {entity_id!r} for {code!r}; "
+                            f"expected {expected_id!r}"
+                        )
+                    reason = None
+                else:
+                    entity_id, polity, reason = _resolve_code(
+                        code, low_year, high_year, owners
+                    )
                 if not entity_id:
                     rejections[reason or "unresolved_entity"] += 1
                     resolution_failed = True
@@ -143,6 +260,13 @@ def promote_hced_crosswalk_rows(
             (side_a_label, side_a),
             (side_b_label, side_b),
         ):
+            reviewed_target_ids = (
+                set(identity_policy["code_bindings"].values())
+                if identity_policy is not None
+                else set()
+            )
+            if reviewed_target_ids & set(entity_ids):
+                continue
             if label and len(entity_ids) == 1:
                 label_observations.setdefault(label, []).append(
                     (low_year, high_year, entity_ids[0])

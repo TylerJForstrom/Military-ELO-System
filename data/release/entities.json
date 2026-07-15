@@ -1001,6 +1001,22 @@
     ]
   },
   {
+    "id": "clio_ma_almoravid_dyn_1056_65925ca9",
+    "name": "Almoravid Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 1056,
+    "end_year": 1205,
+    "region": "Unclassified",
+    "aliases": [
+      "Almoravid dynasty"
+    ],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "source_ids": [
+      "cliopatria_v020"
+    ]
+  },
+  {
     "id": "clio_tr_rum_sultanate_1094_835c76cf",
     "name": "Sultanate of Rum",
     "kind": "sultanate",
@@ -1046,6 +1062,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_portugal",
+    "name": "Kingdom of Portugal",
+    "kind": "kingdom",
+    "start_year": 1143,
+    "end_year": 1814,
+    "region": "Southwestern Europe and Portuguese overseas possessions",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated kingdom beginning with the 1143 Treaty of Zamora recognition and ending before Brazil's 1815 elevation created the United Kingdom of Portugal, Brazil and the Algarves. The later union and restored kingdom inherit no rating.",
+    "source_ids": [
+      "portugal_mne_foundation_1143",
+      "brazil_chamber_united_kingdom_1815"
     ]
   },
   {
@@ -1487,17 +1518,17 @@
   {
     "id": "clio_ru_moskva_rurik_dyn_1547_93deb0e2",
     "name": "Tsardom of Russia",
-    "kind": "polity",
+    "kind": "tsardom",
     "start_year": 1547,
     "end_year": 1720,
-    "region": "Unclassified",
-    "aliases": [
-      "Tsardom of Russia"
-    ],
+    "region": "Eastern Europe and Northern Asia",
+    "aliases": [],
     "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Existing time-bounded Cliopatria identity, curated from Ivan IV's coronation as the first Russian tsar in 1547 through the last complete pre-imperial year in 1720. The Russian Empire begins a new rating in 1721 and inherits nothing.",
     "source_ids": [
-      "cliopatria_v020"
+      "russian_presidential_library_ivan_iv_1547",
+      "russian_presidential_library_empire_1721",
+      "cliopatria_polities"
     ]
   },
   {
@@ -2062,6 +2093,37 @@
     ]
   },
   {
+    "id": "bourbon_restoration_france",
+    "name": "Bourbon Restoration France",
+    "kind": "constitutional_monarchy",
+    "start_year": 1815,
+    "end_year": 1830,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Second Bourbon Restoration is rated as a separate polity from 1815 through the 1830 regime change. It is available only to exact reviewed source contracts; bare France labels remain unresolved in this interval and no rating transfers from the First Empire or to the July Monarchy.",
+    "source_ids": [
+      "france_assembly_bourbon_restoration_1815_1830"
+    ]
+  },
+  {
+    "id": "united_kingdom_portugal_brazil_algarves",
+    "name": "United Kingdom of Portugal, Brazil and the Algarves",
+    "kind": "united_kingdom",
+    "start_year": 1815,
+    "end_year": 1822,
+    "region": "Portugal, Brazil, and Portuguese overseas possessions",
+    "aliases": [],
+    "predecessors": [
+      "kingdom_portugal"
+    ],
+    "continuity_note": "Separate pluricontinental sovereign polity created by the 16 December 1815 elevation of Brazil and ending with Brazilian independence in 1822. Generic year-only policy begins in 1816 and ends in 1821, leaving both transition years unresolved; no rating transfers across either boundary.",
+    "source_ids": [
+      "brazil_chamber_united_kingdom_1815",
+      "brazil_government_independence_timeline"
+    ]
+  },
+  {
     "id": "clio_q836_1820_f17c2530",
     "name": "Burma",
     "kind": "polity",
@@ -2124,6 +2186,23 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "kingdom_portugal_restored",
+    "name": "Kingdom of Portugal (restored)",
+    "kind": "constitutional_monarchy",
+    "start_year": 1822,
+    "end_year": 1910,
+    "region": "Southwestern Europe and Portuguese overseas possessions",
+    "aliases": [],
+    "predecessors": [
+      "united_kingdom_portugal_brazil_algarves"
+    ],
+    "continuity_note": "Separate post-union Portuguese kingdom beginning with Brazil's 1822 separation and ending with the republican revolution of 5 October 1910. Generic year-only policy runs from 1823 through 1909, leaving both transition years unresolved; independently dated 1822 actions require exact candidate contracts, and no rating is inherited from the pre-1815 kingdom or the union.",
+    "source_ids": [
+      "brazil_government_independence_timeline",
+      "portugal_parliament_monarchy_1910"
     ]
   },
   {
@@ -2748,19 +2827,19 @@
     ]
   },
   {
-    "id": "clio_q45_1911_e3bf6349",
-    "name": "Portuguese Republic",
+    "id": "portuguese_first_republic",
+    "name": "First Portuguese Republic",
     "kind": "republic",
-    "start_year": 1911,
-    "end_year": 1925,
-    "region": "Unclassified",
-    "aliases": [
-      "Portugal"
+    "start_year": 1910,
+    "end_year": 1926,
+    "region": "Southwestern Europe and Portuguese overseas possessions",
+    "aliases": [],
+    "predecessors": [
+      "kingdom_portugal_restored"
     ],
-    "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Republic proclaimed on 5 October 1910 and ended by the military coup of 28 May 1926. Year-only source policies use the unambiguous complete years 1911-1925; neither boundary year is assigned, and the republic inherits no rating from the monarchy.",
     "source_ids": [
-      "cliopatria_v020"
+      "portugal_parliament_first_republic"
     ]
   },
   {
@@ -2809,6 +2888,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "first_republic_estonia",
+    "name": "First Republic of Estonia",
+    "kind": "republic",
+    "start_year": 1918,
+    "end_year": 1940,
+    "region": "Northern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Separate first-republic rating identity from the February 1918 proclamation to the 1940 Soviet occupation. The restored republic receives no inherited rating, and this identity is attached only by exact reviewed contracts.",
+    "source_ids": [
+      "estonia_government_independence_1918",
+      "estonia_government_occupation_1940"
     ]
   },
   {
@@ -2861,6 +2955,20 @@
     ]
   },
   {
+    "id": "russian_sfsr",
+    "name": "Russian Soviet Federative Socialist Republic",
+    "kind": "socialist_federative_republic",
+    "start_year": 1918,
+    "end_year": 1922,
+    "region": "Eastern Europe and Northern Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated revolutionary Russian actor from the 1918 RSFSR constitutional settlement through the 1922 formation of the USSR. It is available only to exact reviewed IWD/IWBD contracts; the generic Russia 1918-1921 resolver gap remains closed and no rating transfers to the Soviet Union.",
+    "source_ids": [
+      "russian_presidential_library_rsfsr_1918_1922"
+    ]
+  },
+  {
     "id": "second_polish_republic",
     "name": "Second Polish Republic",
     "kind": "republic",
@@ -2908,6 +3016,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "turkish_national_movement",
+    "name": "Turkish National Movement",
+    "kind": "national_movement_and_ankara_government",
+    "start_year": 1919,
+    "end_year": 1922,
+    "region": "Anatolia and Eastern Thrace",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Autonomous national movement and Ankara government rated for the 1919-1922 military struggle, distinct from the contemporaneous Ottoman government and the later Republic of Turkey. Only exact reviewed contracts may bind bare Turkey to this identity; the general 1919-1923 deny window remains in force.",
+    "source_ids": [
+      "turkey_culture_ataturk_independence_1919_1922"
     ]
   },
   {

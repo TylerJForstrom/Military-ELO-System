@@ -15,6 +15,84 @@ from .common import (
     normalize_label,
 )
 
+
+def _iwd_party_fingerprint(row: dict[str, Any], field: str) -> tuple[tuple[str, str], ...]:
+    return tuple(
+        (str(party.get("cow_code") or ""), str(party.get("name") or ""))
+        for party in row.get(field, [])
+    )
+
+
+def _iwd_review_fingerprint(row: dict[str, Any]) -> dict[str, Any]:
+    """Return every source semantic pinned by an exact parent review."""
+
+    return {
+        "source_component_id": str(row.get("source_component_id") or ""),
+        "parent_war_name": str(row.get("parent_war_name") or ""),
+        "name": str(row.get("name") or ""),
+        "start_year": "" if row.get("start_year") is None else str(row["start_year"]),
+        "end_year": "" if row.get("end_year") is None else str(row["end_year"]),
+        "initiators": _iwd_party_fingerprint(row, "initiators"),
+        "targets": _iwd_party_fingerprint(row, "targets"),
+        "allies": _iwd_party_fingerprint(row, "allies"),
+        "adversaries": _iwd_party_fingerprint(row, "adversaries"),
+        "terminal_outcome_code": str(row.get("terminal_outcome_code") or ""),
+        "terminal_outcome": str(row.get("terminal_outcome") or ""),
+        "joiner_decision": str(bool(row.get("joiner_decision"))).lower(),
+        "source_rows": tuple(str(value) for value in row.get("source_rows", [])),
+    }
+
+
+def _validate_iwd_parent_contracts(
+    candidates: list[dict[str, Any]],
+    contracts: dict[str, dict[str, Any]],
+    require_complete: bool = False,
+) -> None:
+    """Fail closed if a reviewed parent, component set, or source field drifts."""
+
+    rows_by_parent: dict[str, list[dict[str, Any]]] = {}
+    for row in candidates:
+        rows_by_parent.setdefault(str(row.get("parent_war_id") or ""), []).append(row)
+
+    for parent_id, contract in contracts.items():
+        rows = rows_by_parent.get(parent_id, [])
+        if not rows:
+            if require_complete:
+                raise ValueError(
+                    f"stale IWD reviewed contract for parent {parent_id}: "
+                    "complete parent is missing"
+                )
+            # Focused callers may omit a reviewed parent entirely. Once any
+            # row of that parent is present, however, its complete component
+            # set and every pinned semantic are mandatory.
+            continue
+        expected = contract["components"]
+        actual_by_id: dict[str, list[dict[str, Any]]] = {}
+        for row in rows:
+            actual_by_id.setdefault(str(row.get("candidate_id") or ""), []).append(row)
+        if set(actual_by_id) != set(expected):
+            raise ValueError(
+                f"stale IWD reviewed contract for parent {parent_id}: "
+                f"component set changed; expected {sorted(expected)}, "
+                f"found {sorted(actual_by_id)}"
+            )
+        for candidate_id, fingerprint in expected.items():
+            matching = actual_by_id[candidate_id]
+            if len(matching) != 1:
+                raise ValueError(
+                    f"stale IWD reviewed contract for parent {parent_id}: "
+                    f"expected exactly one {candidate_id}, found {len(matching)}"
+                )
+            actual = _iwd_review_fingerprint(matching[0])
+            if actual != fingerprint:
+                changed = ", ".join(
+                    field for field in fingerprint if actual.get(field) != fingerprint[field]
+                )
+                raise ValueError(
+                    f"stale IWD reviewed contract for parent {parent_id}: "
+                    f"{candidate_id} source fingerprint changed ({changed})"
+                )
+
 def _seed_war_token_spans(
     seed_events: list[dict[str, Any]],
 ) -> list[tuple[int, int, tuple[frozenset[str], ...]]]:
@@ -68,6 +146,9 @@ def aggregate_iwd_parent_wars(
     seed_war_spans: list[tuple[int, int, tuple[frozenset[str], ...]]],
     resolve_party: Any,
     curated_parent_exclusions: dict[str, str] | None = None,
+    reviewed_parent_contracts: dict[str, dict[str, Any]] | None = None,
+    resolve_reviewed_party: Any | None = None,
+    require_complete_reviewed_parents: bool = False,
 ) -> dict[str, Any]:
     """Aggregate IWD component wars into at most one strategic event per parent.
 
@@ -91,6 +172,13 @@ def aggregate_iwd_parent_wars(
     """
     if curated_parent_exclusions is None:
         curated_parent_exclusions = {}
+    if reviewed_parent_contracts is None:
+        reviewed_parent_contracts = {}
+    _validate_iwd_parent_contracts(
+        candidates,
+        reviewed_parent_contracts,
+        require_complete_reviewed_parents,
+    )
     grouped: dict[str, list[dict[str, Any]]] = {}
     for candidate in candidates:
         parent_id = str(
@@ -114,6 +202,7 @@ def aggregate_iwd_parent_wars(
             rejections["curated_exclusion"] += 1
             continue
         components = sorted(grouped[parent_id], key=lambda row: str(row.get("candidate_id")))
+        parent_contract = reviewed_parent_contracts.get(parent_id)
         parent_name = next(
             (str(row["parent_war_name"]) for row in components if row.get("parent_war_name")),
             "",
@@ -231,11 +320,36 @@ def aggregate_iwd_parent_wars(
         resolution: dict[str, str] = {}
         pending_polities: dict[str, dict[str, Any]] = {}
         unresolved = False
+        if parent_contract is not None:
+            actual_codes = set(parties)
+            expected_codes = set(parent_contract["party_bindings"])
+            if actual_codes != expected_codes:
+                raise ValueError(
+                    f"stale IWD reviewed contract for parent {parent_id}: "
+                    f"party-code set changed; expected {sorted(expected_codes)}, "
+                    f"found {sorted(actual_codes)}"
+                )
+            if resolve_reviewed_party is None:
+                raise ValueError(
+                    f"reviewed IWD parent {parent_id} requires an exact-ID resolver"
+                )
         for key in sorted(parties):
             info = parties[key]
-            entity_id, polity = resolve_party(
-                info["name"], info["cow_code"], min(info["years"]), max(info["years"])
-            )
+            low = min(info["years"])
+            high = max(info["years"])
+            if parent_contract is None:
+                entity_id, polity = resolve_party(
+                    info["name"], info["cow_code"], low, high
+                )
+            else:
+                expected_id = parent_contract["party_bindings"][key]
+                entity_id, polity = resolve_reviewed_party(expected_id, low, high)
+                if entity_id != expected_id:
+                    raise ValueError(
+                        f"stale IWD reviewed contract for parent {parent_id}: "
+                        f"exact-ID resolver returned {entity_id!r} for COW {key}; "
+                        f"expected {expected_id!r}"
+                    )
             if not entity_id:
                 unresolved = True
                 break

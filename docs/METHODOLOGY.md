@@ -15,12 +15,12 @@ Each layer starts at 1500 with high uncertainty. A successor or newly recognized
 
 ## Coverage and evidence tiers
 
-The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,591 time-bounded polity identities, but only 228 have accepted rating evidence. Its 4,245 events consist of 40 manually curated events, 1,769 crosswalk-resolved HCED tactical encounters, 2,250 label-resolved HCED tactical encounters, 56 coalition-aggregated IWD strategic parent wars, 123 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The review queues hold 27,014 staged source records, of which 23,390 are event-like candidates; 19,152 of those remain outside the rating ledger. An unrated registry entry has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
+The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,598 time-bounded polity identities. Its entity file contains 236 release records, while 235 distinct entity IDs actually participate in accepted rating evidence; the remaining boundary identity has no promoted event. Its 4,406 events consist of 40 manually curated events, 1,824 crosswalk-resolved HCED tactical encounters, 2,328 label-resolved HCED tactical encounters, 64 coalition-aggregated IWD strategic parent wars, 143 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The review queues hold 27,014 staged source records, of which 23,390 are event-like candidates; 18,988 of those remain outside the rating ledger. An unrated registry entry or release entity record has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
 
 Location coverage is status-aware. Every rated HCED event is bound to exactly
 one stable source candidate ID, but a location field is published only when it
-survives the frozen candidate-ID quarantine. The release contains 3,982 strict
-GeoJSON Points, 3,939 exact `modern_location_country` transcriptions, and 3,986
+survives the frozen candidate-ID quarantine. The release contains 4,115 strict
+GeoJSON Points, 4,072 exact `modern_location_country` transcriptions, and 4,119
 provenance-bound events with at least one of those fields. Each provenance
 object is closed to `source_id: hced_dataset`, the exact source record ID,
 `assertion_status: unreviewed_source_assertion`, and
@@ -55,6 +55,18 @@ pending-split set, and observation-coherence guard. This preserves their
 established promotion contract but can resolve a broad Cliopatria envelope
 where HCED would stage the same bare label (for example `Spain` in 1909). The
 asymmetry is regression-tested and must not change incidentally in a refactor.
+
+Wave 5 adds a still narrower exception mechanism for reviewed transitional
+records. Eight IWD parents are bound by complete parent/component fingerprints,
+and 20 IWBD battles are bound by exact candidate fingerprints and exact entity
+IDs. The complete cohort must be present and unchanged; a missing sibling,
+source drift, or identity drift makes the build fail. These contracts cover the
+Bourbon Restoration, the Russian SFSR with the first Estonian republic and
+Poland, the Turkish National Movement, the Republic of China on Taiwan, and
+one 1870 Orleans battle. They do not become aliases or generic country windows.
+In particular, an exact reviewed Turkish contract may name the Turkish
+National Movement while uncontracted `Turkey` records intersecting 1919-1923
+remain denied.
 
 IWBD battle rows enter only as tactical engagements. Exact normalized names
 are compared with curated seed events, non-curated-excluded HCED candidates,

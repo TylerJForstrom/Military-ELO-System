@@ -85,16 +85,23 @@ def _validate_iwbd_review_fingerprint(
     )
 
 
-def _validate_iwbd_review_policies(candidates: list[dict[str, Any]]) -> None:
+def _validate_iwbd_review_policies(
+    candidates: list[dict[str, Any]],
+    reviewed_identity_bindings: dict[str, dict[str, Any]] | None = None,
+    reviewed_identity_cohorts: dict[str, tuple[str, ...]] | None = None,
+    require_complete_identity_cohorts: bool = False,
+) -> None:
     """Fail closed when a present reviewed target or its pinned sibling drifts."""
     rows_by_id: dict[str, list[dict[str, Any]]] = {}
     for row in candidates:
         rows_by_id.setdefault(str(row.get("candidate_id") or ""), []).append(row)
 
-    review_tables = (
+    review_tables = [
         IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS,
         IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS,
-    )
+    ]
+    if reviewed_identity_bindings is not None:
+        review_tables.append(reviewed_identity_bindings)
     for table in review_tables:
         for candidate_id, policy in table.items():
             rows = rows_by_id.get(candidate_id, [])
@@ -123,6 +130,31 @@ def _validate_iwbd_review_policies(candidates: list[dict[str, Any]]) -> None:
                 _validate_iwbd_review_fingerprint(
                     sibling_id, sibling_rows[0], fingerprint
                 )
+
+    if reviewed_identity_cohorts is None:
+        return
+    cohort_members = [
+        candidate_id
+        for candidate_ids in reviewed_identity_cohorts.values()
+        for candidate_id in candidate_ids
+    ]
+    if len(cohort_members) != len(set(cohort_members)):
+        raise ValueError("IWBD reviewed identity cohorts contain duplicate candidates")
+    if (
+        reviewed_identity_bindings is not None
+        and set(cohort_members) != set(reviewed_identity_bindings)
+    ):
+        raise ValueError(
+            "IWBD reviewed identity cohort inventory does not match binding inventory"
+        )
+    for cohort_name, candidate_ids in reviewed_identity_cohorts.items():
+        expected = set(candidate_ids)
+        present = expected & set(rows_by_id)
+        if (require_complete_identity_cohorts or present) and present != expected:
+            raise ValueError(
+                f"stale IWBD reviewed cohort {cohort_name}: candidate set incomplete; "
+                f"expected {sorted(expected)}, found {sorted(present)}"
+            )
 
 
 def _matches_hced_exact(
@@ -160,6 +192,10 @@ def promote_iwbd_battles(
     hced_war_cluster_spans: dict[str, list[Any]],
     iwd_parent_ids: set[str],
     curated_exclusions: dict[str, str] | None = None,
+    reviewed_identity_bindings: dict[str, dict[str, Any]] | None = None,
+    reviewed_identity_cohorts: dict[str, tuple[str, ...]] | None = None,
+    resolve_reviewed_id: Any | None = None,
+    require_complete_reviewed_identity_cohorts: bool = False,
 ) -> dict[str, Any]:
     """Promote non-duplicate IWBD battles as provisional tactical engagements.
 
@@ -189,7 +225,22 @@ def promote_iwbd_battles(
     # same war is a presumptive campaign umbrella and stays staged.
     if curated_exclusions is None:
         curated_exclusions = IWBD_CURATED_EXCLUSIONS
-    _validate_iwbd_review_policies(candidates)
+    if reviewed_identity_bindings is None:
+        reviewed_identity_bindings = {}
+    overlap = set(reviewed_identity_bindings) & set(
+        IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS
+    )
+    if overlap:
+        raise ValueError(
+            "IWBD candidates cannot have both identity and composition reviews: "
+            f"{sorted(overlap)}"
+        )
+    _validate_iwbd_review_policies(
+        candidates,
+        reviewed_identity_bindings,
+        reviewed_identity_cohorts,
+        require_complete_reviewed_identity_cohorts,
+    )
     war_groups: dict[tuple[str, str], list[tuple[str, str, date, date]]] = {}
     for row in candidates:
         if str(row.get("candidate_id")) in curated_exclusions:
@@ -295,6 +346,7 @@ def promote_iwbd_battles(
         composition_policy = IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS.get(
             candidate_id
         )
+        identity_policy = reviewed_identity_bindings.get(candidate_id)
         if composition_policy is None and any(
             "/" in label or "," in label or "(" in label
             or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
@@ -303,7 +355,10 @@ def promote_iwbd_battles(
             rejections["coalition_or_composite_side"] += 1
             continue
 
-        if composition_policy is None:
+        if identity_policy is not None:
+            attacker_specs = identity_policy["attacker"]
+            defender_specs = identity_policy["defender"]
+        elif composition_policy is None:
             attacker_specs = ((attacker, None),)
             defender_specs = ((defender, None),)
         else:
@@ -312,6 +367,11 @@ def promote_iwbd_battles(
 
         denied = False
         for label, _ in (*attacker_specs, *defender_specs):
+            # An exact candidate fingerprint plus an exact-ID binding is the
+            # only path through a deny window. Uncontracted uses (especially
+            # bare Turkey in 1919-1923) remain denied below.
+            if identity_policy is not None:
+                continue
             for deny_low, deny_high in IDENTITY_DENY_WINDOWS.get(
                 normalize_label(label), ()
             ):
@@ -329,7 +389,17 @@ def promote_iwbd_battles(
         ) -> list[tuple[str | None, dict[str, Any] | None]]:
             resolved: list[tuple[str | None, dict[str, Any] | None]] = []
             for label, expected_id in specs:
-                entity_id, polity = resolve_label(label, year_low, year_high)
+                if identity_policy is not None:
+                    if resolve_reviewed_id is None:
+                        raise ValueError(
+                            f"reviewed IWBD candidate {candidate_id} requires "
+                            "an exact-ID resolver"
+                        )
+                    entity_id, polity = resolve_reviewed_id(
+                        expected_id, year_low, year_high
+                    )
+                else:
+                    entity_id, polity = resolve_label(label, year_low, year_high)
                 if expected_id is not None and entity_id != expected_id:
                     raise ValueError(
                         f"stale IWBD reviewed policy for {candidate_id}: "

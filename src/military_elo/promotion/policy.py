@@ -2,6 +2,8 @@ from __future__ import annotations
 
 """Curated identity, exclusion, and rejection policies for release promotion."""
 
+from typing import Any
+
 # Shared era-window sequences for the Habsburg and English identity chains.
 # Habsburg windows start 1556: until Charles V's abdications the dynasty's
 # Danubian and Spanish-Imperial branches shared the "Habsburg" label in the
@@ -18,6 +20,20 @@ _HABSBURG_WINDOWS: tuple[tuple[int, int, str], ...] = (
 _ENGLAND_WINDOWS: tuple[tuple[int, int, str], ...] = (
     (927, 1648, "kingdom_england"),
     (1661, 1706, "kingdom_england"),
+)
+
+
+# The 16 December 1815 elevation of Brazil created a new pluricontinental
+# sovereign polity; its September 1822 dissolution therefore resets the
+# restored Portuguese kingdom instead of carrying the earlier kingdom's rating
+# through the union. Year-only 1815, 1822, and 1910 rows stay unresolved because
+# each transition occurred within the year. Exact candidate contracts may bind
+# an independently dated action on the correct side of a boundary.
+_PORTUGAL_WINDOWS: tuple[tuple[int, int, str], ...] = (
+    (1147, 1814, "kingdom_portugal"),
+    (1816, 1821, "united_kingdom_portugal_brazil_algarves"),
+    (1823, 1909, "kingdom_portugal_restored"),
+    (1911, 1925, "portuguese_first_republic"),
 )
 
 
@@ -63,7 +79,13 @@ SEED_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     ),
     "gb_british_emp_1": (*_ENGLAND_WINDOWS, (1707, 2026, "united_kingdom")),
     "gb_british_emp_2": ((1707, 2026, "united_kingdom"),),
-    "ru_romanov_dyn_1": ((1721, 1917, "russian_empire"),),
+    # Cliopatria's first Romanov-series code also covers the preceding
+    # Tsardom.  Split it at Peter I's 1721 imperial proclamation so the two
+    # conventionally distinct polities never share a rating.
+    "ru_romanov_dyn_1": (
+        (1547, 1720, "clio_ru_moskva_rurik_dyn_1547_93deb0e2"),
+        (1721, 1917, "russian_empire"),
+    ),
     "ru_romanov_dyn_2": ((1721, 1917, "russian_empire"),),
     "de_german_reich_2": ((1871, 1918, "german_empire"),),
     "de_third_reich": ((1933, 1945, "nazi_germany"),),
@@ -116,6 +138,8 @@ SEED_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "sv_swedish_k": ((1523, 2026, "kingdom_sweden"),),
     "sv_swedish_k_1": ((1523, 2026, "kingdom_sweden"),),
     "sv_swedish_k_2": ((1523, 2026, "kingdom_sweden"),),
+    "pt_portuguese_emp_1": _PORTUGAL_WINDOWS,
+    "pt_portuguese_emp_2": _PORTUGAL_WINDOWS,
 }
 
 
@@ -145,6 +169,192 @@ IWD_COW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
 }
 
 
+def _iwd_component_contract(
+    source_component_id: str,
+    parent_war_name: str,
+    name: str,
+    start_year: int,
+    end_year: int,
+    initiators: tuple[tuple[str, str], ...],
+    targets: tuple[tuple[str, str], ...],
+    terminal_outcome_code: str,
+    terminal_outcome: str,
+    source_rows: tuple[str, ...],
+    *,
+    allies: tuple[tuple[str, str], ...] = (),
+    adversaries: tuple[tuple[str, str], ...] = (),
+    joiner_decision: bool = False,
+) -> dict[str, Any]:
+    return {
+        "source_component_id": source_component_id,
+        "parent_war_name": parent_war_name,
+        "name": name,
+        "start_year": str(start_year),
+        "end_year": str(end_year),
+        "initiators": initiators,
+        "targets": targets,
+        "allies": allies,
+        "adversaries": adversaries,
+        "terminal_outcome_code": terminal_outcome_code,
+        "terminal_outcome": terminal_outcome,
+        "joiner_decision": str(joiner_decision).lower(),
+        "source_rows": source_rows,
+    }
+
+
+# Parent-keyed contracts for rows whose source labels cross disputed or
+# transitional identity boundaries. They do not create a generic COW fallback:
+# once one reviewed parent is present, its complete component set, source
+# semantics, party codes, and exact target IDs must all remain unchanged.
+IWD_REVIEWED_PARENT_CONTRACTS: dict[str, dict[str, Any]] = {
+    "1": {
+        "components": {
+            "iwd-1": _iwd_component_contract(
+                "1", "Franco-Spanish1823", "Franco-Spanish1823", 1823, 1823,
+                (("220", "France"),), (("230", "Spain"),),
+                "1", "initiator_victory", ("2",),
+            ),
+        },
+        "party_bindings": {
+            "220": "bourbon_restoration_france",
+            "230": "spanish_empire",
+        },
+    },
+    "39": {
+        "components": {
+            "iwd-88": _iwd_component_contract(
+                "88", "EstonianWar1918-1920", "EstonianWar_Russia_1918-1920",
+                1918, 1920, (("365", "Russia"),), (("366", "Estonia"),),
+                "2", "initiator_defeat", ("173", "174", "175"),
+                adversaries=(
+                    ("375", "Finland"),
+                    ("220", "France"),
+                    ("200", "United Kingdom"),
+                ),
+            ),
+            "iwd-89": _iwd_component_contract(
+                "89", "EstonianWar1918-1920", "EstonianWar_Finland_1918-1920",
+                1918, 1920, (("375", "Finland"),), (("365", "Russia"),),
+                "1", "initiator_victory", ("176", "177", "178"),
+                allies=(
+                    ("366", "Estonia"),
+                    ("220", "France"),
+                    ("200", "United Kingdom"),
+                ),
+                joiner_decision=True,
+            ),
+            "iwd-90": _iwd_component_contract(
+                "90", "EstonianWar1918-1920", "EstonianWar_UK_1918-1920",
+                1918, 1920, (("200", "United Kingdom"),), (("365", "Russia"),),
+                "1", "initiator_victory", ("179", "180", "181"),
+                allies=(
+                    ("366", "Estonia"),
+                    ("375", "Finland"),
+                    ("220", "France"),
+                ),
+                joiner_decision=True,
+            ),
+            "iwd-91": _iwd_component_contract(
+                "91", "EstonianWar1918-1920", "EstonianWar_France_1918-1920",
+                1918, 1920, (("220", "France"),), (("365", "Russia"),),
+                "1", "initiator_victory", ("182", "183", "184"),
+                allies=(
+                    ("366", "Estonia"),
+                    ("375", "Finland"),
+                    ("200", "United Kingdom"),
+                ),
+                joiner_decision=True,
+            ),
+        },
+        "party_bindings": {
+            "365": "russian_sfsr",
+            "366": "first_republic_estonia",
+            "375": "clio_su_finland_rep_1918_31f8394b",
+            "220": "french_third_republic",
+            "200": "united_kingdom",
+        },
+    },
+    "41": {
+        "components": {
+            "iwd-99": _iwd_component_contract(
+                "99", "Poland-USSR", "Poland-USSR", 1920, 1920,
+                (("290", "Poland"),), (("365", "Russia"),),
+                "1", "initiator_victory", ("195",),
+            ),
+        },
+        "party_bindings": {
+            "290": "second_polish_republic",
+            "365": "russian_sfsr",
+        },
+    },
+    "43": {
+        "components": {
+            "iwd-102": _iwd_component_contract(
+                "102", "Greco-Turkish1919-1922", "Greco-Turkish1919-1922",
+                1919, 1922, (("350", "Greece"),), (("640", "Turkey"),),
+                "2", "initiator_defeat", ("198", "199", "200", "201"),
+            ),
+        },
+        "party_bindings": {
+            "350": "kingdom_greece",
+            "640": "turkish_national_movement",
+        },
+    },
+    "44": {
+        "components": {
+            "iwd-103": _iwd_component_contract(
+                "103", "France-Turkey 1919-21", "France-Turkey 1919-21",
+                1919, 1921, (("220", "France"),), (("640", "Turkey"),),
+                "3", "draw", ("202", "203", "204"),
+            ),
+        },
+        "party_bindings": {
+            "220": "french_third_republic",
+            "640": "turkish_national_movement",
+        },
+    },
+    "57": {
+        "components": {
+            "iwd-181": _iwd_component_contract(
+                "181", "OffShoreIslands_1954-55", "OffShoreIslands_1954-55",
+                1954, 1955, (("710", "China"),), (("713", "Taiwan"),),
+                "1", "initiator_victory", ("466", "467"),
+            ),
+        },
+        "party_bindings": {
+            "710": "peoples_republic_china",
+            "713": "clio_cn_chinese_rep_1912_970b7032",
+        },
+    },
+    "60": {
+        "components": {
+            "iwd-186": _iwd_component_contract(
+                "186", "TaiwanStraits_1958", "TaiwanStraits_1958", 1958, 1958,
+                (("710", "China"),), (("713", "Taiwan"),),
+                "3", "draw", ("472",),
+            ),
+        },
+        "party_bindings": {
+            "710": "peoples_republic_china",
+            "713": "clio_cn_chinese_rep_1912_970b7032",
+        },
+    },
+    "91": {
+        "components": {
+            "iwd-258": _iwd_component_contract(
+                "258", "China-Taiwan_1950", "China-Taiwan_1950", 1950, 1950,
+                (("710", "China"),), (("713", "Taiwan"),),
+                "1", "initiator_victory", ("400",),
+            ),
+        },
+        "party_bindings": {
+            "710": "peoples_republic_china",
+            "713": "clio_cn_chinese_rep_1912_970b7032",
+        },
+    },
+}
+
+
 # Explicit, time-bounded identity policies for bare HCED side labels that lack
 # Seshat coding. A policy label is authoritative: outside its windows the side
 # stays staged instead of falling through to alias matching. Deliberate gaps
@@ -164,9 +374,11 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1958, 2026, "french_fifth_republic"),
     ),
     "russia": (
+        (1547, 1720, "clio_ru_moskva_rurik_dyn_1547_93deb0e2"),
         (1721, 1917, "russian_empire"),
         (1922, 1991, "soviet_union"),
     ),
+    "portugal": _PORTUGAL_WINDOWS,
     "spain": ((1479, 1898, "spanish_empire"),),
     "rome": ((-509, -27, "roman_republic"), (-27, 394, "roman_empire")),
     "romans": ((-509, -27, "roman_republic"), (-27, 394, "roman_empire")),
@@ -364,14 +576,213 @@ IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS: dict[str, dict[str, Any]] = {
 }
 
 
+# Candidate-keyed HCED crosswalk exception for an action independently dated
+# to the post-independence side of an otherwise fail-closed year boundary. The
+# complete semantic fingerprint prevents this binding from applying to a
+# changed source row, and the code override never becomes a generic code or
+# label window.
+HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
+    "hced-Piraja1822-1": {
+        "fingerprint": {
+            "source_row": "12561",
+            "source_record_id": "Piraja1822",
+            "name": "Piraja",
+            "year_low": "1822",
+            "year_best": "1822",
+            "year_high": "1822",
+            "side_1_raw": "Brazilian Rebels",
+            "side_2_raw": "Portugal",
+            "winner_raw": "Brazilian Rebels",
+            "loser_raw": "Portugal",
+            "seshat_side_1_candidates": ("br_brazil_emp",),
+            "seshat_side_2_candidates": ("pt_portuguese_emp_2",),
+            "war_names": ("Brazilian War of Independence",),
+        },
+        "code_bindings": {
+            "pt_portuguese_emp_2": "kingdom_portugal_restored",
+        },
+        "review": {
+            "event_date": "1822-11-08",
+            "source_urls": (
+                "https://al.ba.gov.br/historia-do-legislativo/batalha-piraja",
+                "https://www.gov.br/mast/pt-br/assuntos/noticias/2022/julho/as-independencias-do-brasil",
+            ),
+        },
+    },
+}
+
+
+def _iwbd_identity_contract(
+    source_row: str,
+    name: str,
+    war_name: str,
+    start_date: str,
+    end_date: str,
+    duration_days: str,
+    attacker_raw: str,
+    defender_raw: str,
+    winner_raw: str,
+    battle_level_victor_role: str,
+    attacker_id: str,
+    defender_id: str,
+) -> dict[str, Any]:
+    return {
+        "fingerprint": {
+            "source_row": source_row,
+            "name": name,
+            "war_name": war_name,
+            "start_date": start_date,
+            "end_date": end_date,
+            "duration_days": duration_days,
+            "attacker_raw": attacker_raw,
+            "defender_raw": defender_raw,
+            "winner_raw": winner_raw,
+            "battle_level_victor_role": battle_level_victor_role,
+        },
+        "attacker": ((attacker_raw, attacker_id),),
+        "defender": ((defender_raw, defender_id),),
+    }
+
+
+# Candidate-keyed identity contracts for labels that are ambiguous outside the
+# reviewed battle itself. These records never become aliases or generic label
+# windows. Both sides are exact-ID bound so an identity or source drift raises
+# instead of silently selecting a neighboring regime.
+IWBD_REVIEWED_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
+    "iwbd-1-1-2": _iwbd_identity_contract(
+        "2", "Trocadero", "Franco-Spanish", "1823-08-31", "1823-08-31", "1",
+        "France", "Spain", "France", "Attacker",
+        "bourbon_restoration_france", "spanish_empire",
+    ),
+    "iwbd-58-20-257": _iwbd_identity_contract(
+        "257", "Orleans", "Franco-Prussian", "1870-12-04", "1870-12-05", "2",
+        "Prussia", "France", "Prussia", "Attacker",
+        "kingdom_prussia", "french_third_republic",
+    ),
+    "iwbd-115-43-802": _iwbd_identity_contract(
+        "802", "Smyrna 1", "Second Greco-Turkish", "1919-05-15", "1919-05-15", "1",
+        "Greece", "Turkey", "Greece", "Attacker",
+        "kingdom_greece", "turkish_national_movement",
+    ),
+    "iwbd-115-43-803": _iwbd_identity_contract(
+        "803", "Urla", "Second Greco-Turkish", "1919-05-16", "1919-05-17", "2",
+        "Greece", "Turkey", "Greece", "Attacker",
+        "kingdom_greece", "turkish_national_movement",
+    ),
+    "iwbd-115-43-804": _iwbd_identity_contract(
+        "804", "Malgac", "Second Greco-Turkish", "1919-06-15", "1919-06-16", "2",
+        "Turkey", "Greece", "Turkey", "Attacker",
+        "turkish_national_movement", "kingdom_greece",
+    ),
+    "iwbd-115-43-806": _iwbd_identity_contract(
+        "806", "Erbeyli", "Second Greco-Turkish", "1919-06-20", "1919-06-21", "2",
+        "Turkey", "Greece", "Inconclusive", "Inconclusive",
+        "turkish_national_movement", "kingdom_greece",
+    ),
+    "iwbd-115-43-807": _iwbd_identity_contract(
+        "807", "Erikli", "Second Greco-Turkish", "1919-06-21", "1919-06-22", "2",
+        "Turkey", "Greece", "Turkey", "Attacker",
+        "turkish_national_movement", "kingdom_greece",
+    ),
+    "iwbd-115-43-808": _iwbd_identity_contract(
+        "808", "Tellidede", "Second Greco-Turkish", "1919-06-25", "1919-06-26", "2",
+        "Greece", "Turkey", "Greece", "Attacker",
+        "kingdom_greece", "turkish_national_movement",
+    ),
+    "iwbd-115-43-809": _iwbd_identity_contract(
+        "809", "Aydin", "Second Greco-Turkish", "1919-06-27", "1919-07-04", "8",
+        "Greece", "Turkey", "Greece", "Attacker",
+        "kingdom_greece", "turkish_national_movement",
+    ),
+    "iwbd-115-43-819": _iwbd_identity_contract(
+        "819", "Smyrna 2", "Second Greco-Turkish", "1922-09-09", "1922-09-11", "3",
+        "Turkey", "Greece", "Turkey", "Attacker",
+        "turkish_national_movement", "kingdom_greece",
+    ),
+    "iwbd-116-44-820": _iwbd_identity_contract(
+        "820", "Marash", "Franco-Turkish", "1920-01-21", "1920-02-13", "24",
+        "Turkey", "France", "Turkey", "Attacker",
+        "turkish_national_movement", "french_third_republic",
+    ),
+    "iwbd-116-44-821": _iwbd_identity_contract(
+        "821", "Urfa", "Franco-Turkish", "1920-02-09", "1920-04-11", "63",
+        "Turkey", "France", "Turkey", "Attacker",
+        "turkish_national_movement", "french_third_republic",
+    ),
+    "iwbd-116-44-823": _iwbd_identity_contract(
+        "823", "Karbogazi", "Franco-Turkish", "1920-05-27", "1920-05-28", "2",
+        "Turkey", "France", "Turkey", "Attacker",
+        "turkish_national_movement", "french_third_republic",
+    ),
+    "iwbd-116-44-824": _iwbd_identity_contract(
+        "824", "Kanli Gecit", "Franco-Turkish", "1920-11-01", "1920-11-09", "9",
+        "Turkey", "France", "Turkey", "Attacker",
+        "turkish_national_movement", "french_third_republic",
+    ),
+    "iwbd--9-91-1402": _iwbd_identity_contract(
+        "1402", "Hainan", "China-Taiwan Islands", "1950-03-05", "1950-04-22", "49",
+        "China", "Taiwan", "China", "Attacker",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+    "iwbd--9-91-1403": _iwbd_identity_contract(
+        "1403", "Wanshan", "China-Taiwan Islands", "1950-05-25", "1950-06-27", "34",
+        "China", "Taiwan", "China", "Attacker",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+    "iwbd-153-57-1445": _iwbd_identity_contract(
+        "1445", "September Third", "Off-shore Islands", "1954-09-03", "1954-09-03", "1",
+        "China", "Taiwan", "Inconclusive", "Inconclusive",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+    "iwbd-153-57-1446": _iwbd_identity_contract(
+        "1446", "Yijiangshan Islands", "Off-shore Islands", "1955-01-18", "1955-01-20", "3",
+        "China", "Taiwan", "China", "Attacker",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+    "iwbd-153-57-1447": _iwbd_identity_contract(
+        "1447", "Dachen Archipelago", "Off-shore Islands", "1955-01-19", "1955-02-26", "39",
+        "China", "Taiwan", "China", "Attacker",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+    "iwbd-159-60-1460": _iwbd_identity_contract(
+        "1460", "Kinmen", "Taiwan Straits", "1958-08-23", "1958-10-06", "45",
+        "China", "Taiwan", "Inconclusive", "Inconclusive",
+        "peoples_republic_china", "clio_cn_chinese_rep_1912_970b7032",
+    ),
+}
+
+
+IWBD_REVIEWED_IDENTITY_COHORTS: dict[str, tuple[str, ...]] = {
+    "bourbon_restoration_1823": ("iwbd-1-1-2",),
+    "orleans_third_republic": ("iwbd-58-20-257",),
+    "turkish_national_movement_greco_turkish": (
+        "iwbd-115-43-802", "iwbd-115-43-803", "iwbd-115-43-804",
+        "iwbd-115-43-806", "iwbd-115-43-807", "iwbd-115-43-808",
+        "iwbd-115-43-809", "iwbd-115-43-819",
+    ),
+    "turkish_national_movement_franco_turkish": (
+        "iwbd-116-44-820", "iwbd-116-44-821",
+        "iwbd-116-44-823", "iwbd-116-44-824",
+    ),
+    "roc_taiwan_1950": ("iwbd--9-91-1402", "iwbd--9-91-1403"),
+    "roc_taiwan_1954_1955": (
+        "iwbd-153-57-1445", "iwbd-153-57-1446", "iwbd-153-57-1447",
+    ),
+    "roc_taiwan_1958": ("iwbd-159-60-1460",),
+}
+
+
 # Declared identity deny windows, enforced in every label-resolution pipeline:
 # within a window the label is never resolved, because it denotes an actor
-# distinct from the identity the resolver would return. "Turkey" in 1919-1923
-# denotes the nationalist/Kemalist movement and then the Ankara government,
-# fighting in parallel with the Istanbul government; it must not attach to the
-# ottoman_empire identity
-# whose interval still covers those years.
+# distinct from the identity the resolver would return. The Latvia envelope
+# bridges separate regimes; "Turkey" in 1919-1923 denotes the nationalist/
+# Kemalist movement and then the Ankara government, fighting in parallel with
+# the Istanbul government, and must not attach to the Ottoman identity.
 IDENTITY_DENY_WINDOWS: dict[str, tuple[tuple[int, int], ...]] = {
+    # Cliopatria's Latvia envelope bridges the first republic, Soviet
+    # occupation, and restored republic. Until those identities are split,
+    # generic Latvia labels before the 1991 restoration stay fail-closed.
+    "latvia": ((1918, 1991),),
     "turkey": ((1919, 1923),),
 }
 
@@ -381,6 +792,102 @@ IDENTITY_DENY_WINDOWS: dict[str, tuple[tuple[int, int], ...]] = {
 # curated-exclusion rejection counter in the owning pipeline, never merged
 # and never fuzzy-matched.
 HCED_CURATED_EXCLUSIONS: dict[str, str] = {
+    "hced-Dunamunde1701-1": (
+        "variant duplicate of hced-Riga1701-1 for the 1701 Crossing of the "
+        "Duna/Battle of Riga; both stay staged because the crosswalk omits "
+        "the principal Saxon opponent"
+    ),
+    "hced-Lesnaya1708-1": (
+        "source outcome is reversed: Lesnaya was a Russian victory over the "
+        "Swedish column, not a Swedish victory"
+    ),
+    "hced-Napue1714-1": (
+        "duplicate wrong-orientation record for the Russian victory at "
+        "Storkyro/Isokyro; hced-Storkyro1714-1 is the retained source row"
+    ),
+    "hced-Montijo1644-1": (
+        "wrong opposing actor: the Restoration War battle was Portugal versus "
+        "Spain, while the source row incorrectly codes England"
+    ),
+    "hced-Altona1714-1": (
+        "phantom/misdated action with the wrong actor: the documented Altona "
+        "action was Sweden burning Danish Altona in January 1713, not a "
+        "Russian victory over Sweden in 1714"
+    ),
+    "hced-Bronnitsa1614-1": (
+        "source outcome is reversed: Swedish forces under De la Gardie drove "
+        "the Russian forces from Bronnitsy in July 1614"
+    ),
+    "hced-Punitz1704-1": (
+        "wrong opposing actor after composite-side collapse: the opposing army "
+        "at Punitz was Saxon under Schulenburg, not Russian"
+    ),
+    "hced-Salvador1638-1": (
+        "source outcome is reversed: the Dutch assault on Portuguese Salvador "
+        "failed and the besiegers withdrew"
+    ),
+    "hced-Malacca1606-1": (
+        "source outcome is reversed: the first VOC siege of Portuguese Malacca "
+        "failed after a Portuguese relief force arrived"
+    ),
+    "hced-Beachy Head1707-1": (
+        "wrong opposing actor: the Action of 2 May 1707 was fought by a French "
+        "squadron against a British convoy and escorts; Portugal did not fight"
+    ),
+    "hced-Colonia do Sacrimento1735-1": (
+        "source outcome is reversed: the Portuguese fortress withstood the "
+        "Spanish siege of 1735-1737"
+    ),
+    "hced-Reval1719-1": (
+        "departure-port duplicate/mislabel of hced-Osel Island1719-1: the "
+        "Russian squadron sailed from Reval for the single Osel naval action"
+    ),
+    "hced-Majadahonda1812-1": (
+        "source outcome is reversed: French cavalry defeated the Anglo-"
+        "Portuguese cavalry at Majadahonda"
+    ),
+    "hced-Elba1811-1": (
+        "misnamed El Bodon action with a reversed outcome: French forces won "
+        "and the Anglo-Portuguese force withdrew"
+    ),
+    "hced-Campo1811-1": (
+        "duplicate/ambiguous Campo Maior record: it shares the retained siege "
+        "row's exact coordinates and French-victory assertion, while the "
+        "separate 25 March combat was an Anglo-Portuguese victory"
+    ),
+    "hced-Azov1695-1696-1": (
+        "conflates opposite-result campaigns: the source dates the event only "
+        "to 1695, when the Russian siege failed, while the 1696 campaign won"
+    ),
+    "hced-Salvador1822-1823-1": (
+        "cross-boundary campaign envelope: the Salvador campaign began before "
+        "Brazilian independence on 7 September 1822 and continued to July "
+        "1823, so one year-level Portuguese identity cannot represent it"
+    ),
+    "hced-Aden1513-1": (
+        "anachronistic principal actor: Aden was Tahirid in 1513; Ottoman "
+        "conquest did not occur until 1538"
+    ),
+    "hced-Wofla1542-1": (
+        "incomplete principal side: the Adal Sultanate fielded the army at "
+        "Wofla, but the crosswalk retains Ottoman support alone"
+    ),
+    "hced-Marbella1705-1": (
+        "incomplete principal side: the opposing squadron was principally "
+        "French, but the crosswalk retains Spain alone"
+    ),
+    "hced-Cadiz1810-1812-1": (
+        "incomplete principal side and campaign envelope: Spanish defenders "
+        "are omitted from the two-year siege of Cadiz"
+    ),
+    "hced-Barrosa1811-1": (
+        "incomplete principal side: the Spanish army is omitted from the "
+        "Allied force at Barrosa"
+    ),
+    "hced-Riga1701-1": (
+        "incomplete principal side at the Crossing of the Duna: the principal "
+        "opponent was Saxony, but the crosswalk retains Russian auxiliaries alone"
+    ),
     "hced-Pandjeh1885-1": "duplicate of Penjdeh 1885 under a variant spelling",
     "hced-Gustalla1734-1": "duplicate of Guastalla 1734 under a variant spelling",
     "hced-Truillas1793-1": "duplicate of Trouillas 1793 under a variant spelling",
@@ -497,17 +1004,28 @@ IWBD_CURATED_EXCLUSIONS: dict[str, str] = {
     "iwbd-55-19-188": "duplicate of HCED Liebenau 1866 (spelling variant 'Liebnau')",
     "iwbd-58-20-268": "duplicate of HCED Dijon 1871 (IWBD 'Dijon 3')",
     "iwbd-76-28-346": "duplicate of HCED Velestino (1st) 1897 (IWBD 'Velestino 1')",
+    "iwbd-108-40-788": (
+        "wrong principal belligerent at Riga 2 in October 1919: Latvian forces "
+        "fought the Bermondt/West Russian Volunteer Army, not the Russian SFSR"
+    ),
+    "iwbd-115-43-810": (
+        "wrong opposing belligerent at Akbas on 1920-01-26/27: Turkish National "
+        "Forces raided a French-guarded ammunition store, not Greek forces"
+    ),
+    "iwbd-115-43-811": (
+        "unsafe event granularity: the 93-day Summer Offensive is an operational "
+        "campaign umbrella, not one independently rateable tactical battle"
+    ),
+    "iwbd-115-43-812": (
+        "wrong outcome at Gediz in October-November 1920: Turkish National "
+        "Forces were defeated, not tactically inconclusive"
+    ),
     "iwbd-127-49-877": "duplicate of HCED Tembien (1st) 1936 (IWBD 'Tembien 1')",
     "iwbd-127-49-879": "duplicate of HCED Tembien (2nd) 1936 (IWBD 'Tembien 2')",
 }
 
 
 IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
-    "1": (
-        "requires a new Bourbon Restoration identity and review of the proposed "
-        "COW 220 continuity window; keep the parent staged rather than broadening "
-        "France or Spain continuity"
-    ),
     "5": (
         "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the "
         "First Schleswig War; the source assertion stays staged rather than being inverted"

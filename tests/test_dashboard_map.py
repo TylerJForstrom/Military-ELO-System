@@ -203,7 +203,7 @@ const fs = require('node:fs');
 const map = require('./web/map.js');
 const results = JSON.parse(fs.readFileSync('./web/data/results.json', 'utf8'));
 const index = map.createMapIndex(results.events);
-assert.equal(index.length, 3982);
+assert.equal(index.length, 4115);
 assert.equal(index.every((event) => event.geometry && event.location_provenance), true);
 assert.equal(index.every((event) => event.location_status === 'unreviewed_source_assertion'), true);
 assert.equal(index.every((event) => event.layer === 'tactical'), true);

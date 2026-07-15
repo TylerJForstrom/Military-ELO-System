@@ -542,7 +542,7 @@
       "kind": "dynastic_state",
       "start_year": 1056,
       "end_year": 1205,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -1411,6 +1411,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bourbon_restoration_france",
+      "name": "Bourbon Restoration France",
+      "kind": "constitutional_monarchy",
+      "start_year": 1815,
+      "end_year": 1830,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_de_hohenzollern_2_1619_90cd2ba4",
@@ -4476,6 +4486,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "portuguese_first_republic",
+      "name": "First Portuguese Republic",
+      "kind": "republic",
+      "start_year": 1910,
+      "end_year": 1926,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southwestern Europe and Portuguese overseas possessions"
+    },
+    {
+      "id": "first_republic_estonia",
+      "name": "First Republic of Estonia",
+      "kind": "republic",
+      "start_year": 1918,
+      "end_year": 1940,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Europe"
     },
     {
       "id": "clio_q7440601_bce1700_152e94d5",
@@ -8564,15 +8594,24 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_pt_portugal_k_1147_6acd4c38",
+      "id": "kingdom_portugal",
       "name": "Kingdom of Portugal",
       "kind": "kingdom",
-      "start_year": 1147,
-      "end_year": 1911,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1143,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southwestern Europe and Portuguese overseas possessions"
+    },
+    {
+      "id": "kingdom_portugal_restored",
+      "name": "Kingdom of Portugal (restored)",
+      "kind": "constitutional_monarchy",
+      "start_year": 1822,
+      "end_year": 1910,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southwestern Europe and Portuguese overseas possessions"
     },
     {
       "id": "clio_gb_brythonic_k_540_db40f683",
@@ -11737,7 +11776,7 @@
       "kind": "republic",
       "start_year": 1911,
       "end_year": 1925,
-      "status": "provisional",
+      "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
@@ -13789,6 +13828,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "russian_sfsr",
+      "name": "Russian Soviet Federative Socialist Republic",
+      "kind": "socialist_federative_republic",
+      "start_year": 1918,
+      "end_year": 1922,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe and Northern Asia"
     },
     {
       "id": "clio_ru_russian_federation_1992_7bfc74d1",
@@ -16101,13 +16150,12 @@
     {
       "id": "clio_ru_moskva_rurik_dyn_1547_93deb0e2",
       "name": "Tsardom of Russia",
-      "kind": "polity",
+      "kind": "tsardom",
       "start_year": 1547,
       "end_year": 1720,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe and Northern Asia"
     },
     {
       "id": "clio_in_delhi_sultanate_1326_5db7fe40",
@@ -16141,6 +16189,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "turkish_national_movement",
+      "name": "Turkish National Movement",
+      "kind": "national_movement_and_ankara_government",
+      "start_year": 1919,
+      "end_year": 1922,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anatolia and Eastern Thrace"
     },
     {
       "id": "clio_q23681_1976_69b0fe0a",
@@ -16370,6 +16428,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Western Europe and former overseas empire"
+    },
+    {
+      "id": "united_kingdom_portugal_brazil_algarves",
+      "name": "United Kingdom of Portugal, Brazil and the Algarves",
+      "kind": "united_kingdom",
+      "start_year": 1815,
+      "end_year": 1822,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Portugal, Brazil, and Portuguese overseas possessions"
     },
     {
       "id": "clio_sv_united_k_sweden_and_norway_1815_6f35fcd2",
@@ -17416,28 +17484,28 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1591,
-    "rated_entities": 228,
-    "rated_events": 4245,
+    "registry_polities": 1598,
+    "rated_entities": 235,
+    "rated_events": 4406,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 19152,
+    "unresolved_event_candidates": 18988,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
-    "provisional_hced_events": 1769,
-    "provisional_hced_label_events": 2250,
-    "provisional_iwd_wars": 56,
-    "provisional_iwbd_battles": 123,
+    "provisional_hced_events": 1824,
+    "provisional_hced_label_events": 2328,
+    "provisional_iwd_wars": 64,
+    "provisional_iwbd_battles": 143,
     "iwbd_battles_total": 1708,
     "provisional_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
-    "iwd_components_aggregated": 89,
+    "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4019,
-      "geojson_points": 3982,
-      "modern_location_country_assertions": 3939,
-      "location_provenance_objects": 3986,
+      "hced_candidate_bindings": 4152,
+      "geojson_points": 4115,
+      "modern_location_country_assertions": 4072,
+      "location_provenance_objects": 4119,
       "point_fields_withheld_by_quarantine": 37,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
@@ -17447,7 +17515,7 @@
       "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
       "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 3986
+        "unreviewed_source_assertion": 4119
       },
       "verified_location_assertions": {
         "availability": "not_available",

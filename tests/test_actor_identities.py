@@ -307,7 +307,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if e.get("identity_resolution") == "label"
         ]
-        self.assertEqual(len(label_events), 2250)
+        self.assertEqual(len(label_events), 2_328)
         for event in label_events:
             tiers = event.get("side_identity_resolution")
             self.assertIsInstance(tiers, dict, event["id"])

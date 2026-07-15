@@ -23,6 +23,9 @@ RELEASE_EVENTS = PROJECT_ROOT / "data" / "release" / "events.json"
 RELEASE_ENTITIES = PROJECT_ROOT / "data" / "release" / "entities.json"
 RELEASE_METADATA = PROJECT_ROOT / "data" / "release" / "metadata.json"
 REGISTRY = PROJECT_ROOT / "data" / "catalog" / "registry.json"
+WAVE4_PRE_LABEL_EVENT_IDS = (
+    PROJECT_ROOT / "tests" / "fixtures" / "wave4_pre_label_event_ids.txt"
+)
 
 LABEL_TIERS = {
     "label_policy",
@@ -184,12 +187,15 @@ class LabelPolicyTests(unittest.TestCase):
         # A span crossing a policy gap never resolves to either neighbor.
         self.assertIsNone(_label_policy_seed_id("france", 1790, 1810))
 
-    def test_russia_label_mirrors_cow_365_and_the_1918_1921_gap(self) -> None:
+    def test_russia_label_splits_tsardom_empire_and_soviet_eras(self) -> None:
+        self.assertEqual(
+            _label_policy_seed_id("russia", 1700, 1700),
+            "clio_ru_moskva_rurik_dyn_1547_93deb0e2",
+        )
         self.assertEqual(_label_policy_seed_id("russia", 1877, 1878), "russian_empire")
         self.assertEqual(_label_policy_seed_id("russia", 1939, 1940), "soviet_union")
         self.assertIsNone(_label_policy_seed_id("russia", 1918, 1921))
         self.assertIsNone(_label_policy_seed_id("russia", 1917, 1922))
-        self.assertIsNone(_label_policy_seed_id("russia", 1700, 1700))
         self.assertIsNone(_label_policy_seed_id("russia", 1992, 1992))
 
     def test_rome_and_byzantium_split_at_395_with_boundary_ambiguity_failing(self) -> None:
@@ -771,11 +777,19 @@ class ReleaseArtifactTests(unittest.TestCase):
         ]
 
     def test_existing_crosswalk_event_payload_is_unchanged(self) -> None:
-        # The first 1,865 events are the reviewed pre-label-pass block (40 seed +
-        # 1,769 crosswalk HCED + 56 IWD). The label pass is a pure append; this
-        # digest pins the legacy CONTENT of that block after stripping only the
-        # additive direct-outcome contract, which is pinned separately.
-        legacy = self.events[:1865]
+        # Pin Wave 4's reviewed pre-label-pass events by stable ID, not by their
+        # positions in the rebuilt ledger. Later promotion waves may insert new
+        # crosswalk or strategic rows ahead of the label pass without changing
+        # the content of this baseline cohort.
+        baseline_ids = WAVE4_PRE_LABEL_EVENT_IDS.read_text(
+            encoding="utf-8"
+        ).splitlines()
+        self.assertEqual(len(baseline_ids), 1_865)
+        self.assertEqual(len(baseline_ids), len(set(baseline_ids)))
+        events_by_id = {str(event["id"]): event for event in self.events}
+        missing_ids = set(baseline_ids) - set(events_by_id)
+        self.assertEqual(missing_ids, set(), "Wave 4 baseline event IDs disappeared")
+        legacy = [events_by_id[event_id] for event_id in baseline_ids]
         legacy_payload = []
         for event in legacy:
             additive_fields = {
@@ -806,7 +820,7 @@ class ReleaseArtifactTests(unittest.TestCase):
             "c45990dc61157f50ae1713b1ae6b3dbbbdbfc2f66282c5d314cc28675c4f3be7",
             "pre-label-pass event block changed content",
         )
-        self.assertEqual(len(self.events) > 1865, True)
+        self.assertGreater(len(self.events), len(legacy))
         for event in legacy:
             self.assertNotIn("identity_resolution", event)
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
@@ -823,11 +837,11 @@ class ReleaseArtifactTests(unittest.TestCase):
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
-        self.assertEqual(len(iwd_events), 56)
+        self.assertEqual(len(iwd_events), 64)
         promotion = self.metadata["promotion"]
-        self.assertEqual(promotion["accepted_iwd_wars"], 56)
+        self.assertEqual(promotion["accepted_iwd_wars"], 64)
         self.assertEqual(
-            sum(promotion["iwd_rejections"].values()) + 56,
+            sum(promotion["iwd_rejections"].values()) + 64,
             promotion["iwd_parent_wars_total"],
         )
         for event in iwd_events:
@@ -998,17 +1012,17 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 371 + 4,491 + 1,769 + 2,250 == 8,881.
+        # Pinned measured funnel: 323 + 4,406 + 1,824 + 2,328 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (371, 4491, 1769, 2250, 8881),
+            (323, 4406, 1824, 2328, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6741)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 6734)
         # All twelve declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 12)
         self.assertEqual(
@@ -1017,7 +1031,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             promotion["hced_label_rejections"]["curated_row_exclusion"], 53
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 39)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 62)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -1026,7 +1040,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2250)
+        self.assertEqual(len(label_events), 2_328)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

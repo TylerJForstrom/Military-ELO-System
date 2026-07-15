@@ -933,5 +933,137 @@
     "accessed": "2026-07-15",
     "source_family_id": "austrian_academy_sciences",
     "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "russian_presidential_library_ivan_iv_1547",
+    "title": "Ivan IV was crowned the first Russian tsar",
+    "url": "https://www.prlib.ru/history/1902481",
+    "publisher": "Boris Yeltsin Presidential Library",
+    "license": "Citation and link only",
+    "source_type": "official_library_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "russian_presidential_library",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "russian_presidential_library_empire_1721",
+    "title": "Peter I assumed the imperial title; Russia became an empire",
+    "url": "https://www.prlib.ru/node/619684",
+    "publisher": "Boris Yeltsin Presidential Library",
+    "license": "Citation and link only",
+    "source_type": "official_library_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "russian_presidential_library",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "portugal_mne_foundation_1143",
+    "title": "History - About Portugal",
+    "url": "https://onu.missaoportugal.mne.gov.pt/en/about-portugal/history",
+    "publisher": "Permanent Mission of Portugal to the United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "portugal_ministry_foreign_affairs",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "brazil_chamber_united_kingdom_1815",
+    "title": "Reino Unido (1815-1822)",
+    "url": "https://www2.camara.leg.br/a-camara/conheca/presidentes/conteudo-antigo/reinounido.html",
+    "publisher": "Chamber of Deputies, Brazil",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "brazil_chamber_deputies",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "brazil_government_independence_timeline",
+    "title": "Linha do Tempo da Independencia",
+    "url": "https://www.gov.br/pt-br/campanhas/bicentenario./linha-do-tempo-da-independencia",
+    "publisher": "Government of Brazil",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "brazil_federal_government",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "portugal_parliament_monarchy_1910",
+    "title": "Monarquia",
+    "url": "https://www.parlamento.pt/Parlamento/Paginas/monarquia.aspx",
+    "publisher": "Assembly of the Republic, Portugal",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "portugal_parliament",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "portugal_parliament_first_republic",
+    "title": "1.a Republica",
+    "url": "https://www.parlamento.pt/Parlamento/Paginas/republica.aspx",
+    "publisher": "Assembly of the Republic, Portugal",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "portugal_parliament",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "france_assembly_bourbon_restoration_1815_1830",
+    "title": "1814-1848: de la Restauration a la monarchie de Juillet - les faits",
+    "url": "https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/juniors/histoire/1814-1848-de-la-restauration-a-la-monarchie-de-juillet/les-faits",
+    "publisher": "Assemblee nationale, France",
+    "license": "Citation and link only",
+    "source_type": "official_parliamentary_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "france_national_assembly",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "russian_presidential_library_rsfsr_1918_1922",
+    "title": "The first Constitution of the RSFSR was adopted",
+    "url": "https://www.prlib.ru/node/619373",
+    "publisher": "Boris Yeltsin Presidential Library",
+    "license": "Citation and link only",
+    "source_type": "official_library_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "russian_presidential_library",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "estonia_government_independence_1918",
+    "title": "Speech on the 99th anniversary of the Estonian Republic",
+    "url": "https://valitsus.ee/en/news/speech-prime-minister-juri-ratas-vanemuine-concert-hall-tartu-celebration-99th-anniversary",
+    "publisher": "Government of the Republic of Estonia",
+    "license": "Citation and link only",
+    "source_type": "official_government_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "estonia_government",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "estonia_government_occupation_1940",
+    "title": "Statement by the Government of the Republic of Estonia",
+    "url": "https://www.valitsus.ee/en/news/statement-government-republic-estonia",
+    "publisher": "Government of the Republic of Estonia",
+    "license": "Citation and link only",
+    "source_type": "official_government_statement",
+    "accessed": "2026-07-15",
+    "source_family_id": "estonia_government",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "turkey_culture_ataturk_independence_1919_1922",
+    "title": "Biography of Ataturk",
+    "url": "https://www.ktb.gov.tr/EN-103908/biography-of-ataturk.html",
+    "publisher": "Republic of Turkiye Ministry of Culture and Tourism",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "turkiye_ministry_culture_tourism",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
   }
 ]

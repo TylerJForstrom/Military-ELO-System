@@ -322,7 +322,62 @@ omit broad modern-country aliases:
 Two exact-name Cliopatria envelopes are absorbed by the normal overlap rule,
 while the broader North Yemen envelopes remain separate. The three additions
 therefore move the registry from the earlier tranche's 1,590 entries to 1,591
-net, without widening a generic code or label resolver.
+net in Wave 4, without widening a generic code or label resolver.
+
+### Wave 5 era boundaries and reviewed identity contracts
+
+Wave 5 adds explicit Portuguese regime boundaries and a canonical Tsardom of
+Russia policy for the HCED tranche. All identities start from the normal prior;
+no rating crosses a predecessor/successor boundary.
+
+| Source label or code | Accepted complete-year windows | Rating identity |
+|---|---|---|
+| Portuguese kingdom/empire labels | 1147-1814 | Kingdom of Portugal (`kingdom_portugal`) |
+| Portuguese kingdom/empire labels | 1816-1821 | United Kingdom of Portugal, Brazil and the Algarves (`united_kingdom_portugal_brazil_algarves`) |
+| Portuguese kingdom/empire labels | 1823-1909 | Kingdom of Portugal (restored) (`kingdom_portugal_restored`) |
+| Portuguese kingdom/empire labels | 1911-1925 | First Portuguese Republic (`portuguese_first_republic`) |
+| Romanov/Russia labels | 1547-1720 | Tsardom of Russia (`clio_ru_moskva_rurik_dyn_1547_93deb0e2`) |
+| Romanov/Russia labels | 1721-1917 | Russian Empire (`russian_empire`) |
+
+The Portuguese identity records use the broader attested boundaries 1143-1814,
+1815-1822, 1822-1910, and 1910-1926. The narrower source-policy windows leave
+the year-only 1815, 1822, and 1910 transitions unresolved and avoid assigning
+the First Republic's 1926 transition year. The independently dated 8 November
+1822 Battle of Piraja is the sole exact candidate contract through the 1822
+gap; a changed fingerprint fails closed. No event currently lands in the
+1816-1821 union window, so that identity is a release record but has no rated
+evidence. The Tsardom is curated onto the existing canonical Cliopatria ID;
+there is deliberately no second `tsardom_russia` identity. Its rating ends
+before the Russian Empire begins in 1721.
+
+The strategic tranche uses complete, fail-closed source contracts rather than
+broad country aliases. Eight IWD parents and 20 IWBD battles add exactly 28
+events:
+
+| Reviewed cohort | IWD | IWBD | Total |
+|---|---:|---:|---:|
+| Bourbon Restoration France / Spain, 1823 | 1 | 1 | 2 |
+| Russian SFSR with first-republic Estonia or Poland | 2 | 0 | 2 |
+| Turkish National Movement, 1919-1922 | 2 | 12 | 14 |
+| Republic of China on Taiwan | 3 | 6 | 9 |
+| Orleans / French Third Republic, 1870 | 0 | 1 | 1 |
+| **Total** | **8** | **20** | **28** |
+
+Each IWD contract pins a complete parent/component inventory and exact party
+IDs. Each IWBD contract pins one complete candidate fingerprint and exact IDs
+for both sides, and each named cohort is complete-or-fail. These bindings do
+not become aliases. The Turkish National Movement contracts therefore do not
+open the general `Turkey` resolver: all uncontracted Turkey records
+intersecting 1919-1923 remain denied. The tranche adds separate identities for
+Bourbon Restoration France, the Russian SFSR, the first Estonian republic,
+and the Turkish National Movement; the Republic of China on Taiwan,
+French Third Republic, Spain, Poland, Greece, and the other opposing identities
+reuse their established canonical records.
+
+After canonical consolidation, the measured registry contains 1,598 identities.
+The release entity file contains 236 records, while 235 distinct IDs actually
+participate in rated events; the unrated Portuguese union identity explains the
+one-record difference.
 
 ## Non-state autonomous military actors (second reviewer pending)
 
@@ -380,20 +435,25 @@ counted under a curated-exclusion rejection counter in the owning pipeline,
 and never merged, rewritten, or fuzzy-matched. The immutable source assertions
 remain in `data/raw`; every exact ID and reason is emitted in release metadata.
 
-- **HCED coded pass (39):** the original ten variant-spelling,
-  Herat-principality, Alcacer do Sol, and St Quentin 1557 adjudications plus
-  29 historical-review exclusions.
+- **HCED coded pass (62):** the 39 Wave 4 exclusions plus 23 Wave 5
+  candidate-ID exclusions found during row-level review of the Portugal,
+  Tsardom, and boundary cohorts. These cover wrong or omitted principal actors,
+  reversed outcomes, duplicates, malformed campaign envelopes, and one
+  campaign crossing the September 1822 Portuguese identity reset.
 - **HCED label pass (53):** the original eight PAVN/IWBD/crosswalk
   adjudications, 38 historical-review exclusions, and seven Wave 4 candidates
   retained in staging after focused review.
-- **IWBD (6):** the wrong-outcome Duppel/Dybbol 1849 fallback plus five
+- **IWBD (10):** the wrong-outcome Duppel/Dybbol 1849 fallback plus five
   cross-source spelling-twin duplicates of HCED battles (Tembien 1 and 2 1936,
-  Liebenau 1866, Dijon 3 1871, Velestino 1 1897).
-- **IWD parents (4):** parent 1 (requires a Bourbon Restoration identity and a
-  reviewed COW-220 continuity window), Germany-Denmark 1848 (the source asserts
-  a Prussian win, but Denmark won the First Schleswig War), Italian Unification
-  1859 (fought by the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought
-  principally by the Hungarian Soviet Republic).
+  Liebenau 1866, Dijon 3 1871, Velestino 1 1897), and four Wave 5 rows: Riga 2
+  assigns the Bermondtian action to the Russian SFSR; Akbas names Greece instead
+  of the French guards; Summer Offensive is a campaign umbrella; and Gediz has
+  the wrong result.
+- **IWD parents (3):** Germany-Denmark 1848 (the source asserts a Prussian win,
+  but Denmark won the First Schleswig War), Italian Unification 1859 (fought by
+  the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought principally by
+  the Hungarian Soviet Republic). Parent 1 now promotes only through its exact
+  reviewed Bourbon-Restoration contract.
 - **UCDP (1):** the 1974 Paracel Islands episode, documented above.
 
 Historical-review dispositions are explicit:
@@ -404,6 +464,7 @@ Historical-review dispositions are explicit:
 | Excluded: wrong principal belligerent or Habsburg branch | Lepanto; Valmy, Verdun, and Longwy; Duppel; Kolberg 1774; Bautzen, Rippach, and First Mockern; Montmirail, Brienne, and Vauchamps; Messina; Trebizond; Hanoi; Cadore and Hadad; Grol and Maastricht; Tutrakan; Andalsnes; Kalat; Monte Grappa 1917/1918; Vittorio Veneto; Rosas 1645; and Isola del Giglio 1646. |
 | Excluded: duplicate or incompatible granularity | Martinesti (Rimnik duplicate); Tournai (Pont-a-Chin duplicate); St Quentin 1914 (Guise duplicate); Changsha 1942II (duplicate of the 1941-42 Third Battle); Barcelona 1705-06 (envelope over the separately rated 1705 capture and the distinct 1706 defense); Nivelle Offensive (Aisne 1917 envelope); Ushant 1794 (First of June duplicate); and the Liaoshen, Huaihai, Beijing-Tianjin, Poland 1939, France 1940, Norway 1940, Sevastopol 1854-55, and Galicia 1914 campaign envelopes. |
 | Excluded: date cannot support chronological rating | Trentino 1917, Kolin 1756, and Rocoux 1747. No replacement date is silently invented. |
+| Wave 5 HCED proposal withheld before release | Dunamunde and Riga 1701; Lesnaya; Napue; Montijo; Altona; Bronnitsa; Punitz; Salvador 1638; Malacca 1606; Beachy Head 1707; Colonia do Sacramento 1735; Reval; Majadahonda; Elba/El Bodon; Campo Maior; Azov 1695-96; Salvador 1822-23; Aden 1513; Wofla; Marbella; Cadiz 1810-12; and Barrosa. The exact candidate IDs and reasons are emitted in metadata and summarized in the Wave 5 review record. |
 | Retained in staging after Wave 4 review | Megalopolis 331 BCE and Jaxartes 329 BCE lack a fully adjudicated chronology or specific coalition identity; Antioch 1268 has an unresolved identity boundary; Mons 1572, Steenwijk 1592, and Abensberg 1809 omit principal co-belligerents; Amjhera 1728 has conflicting chronology. |
 | Retained as provisional source assertions | Diamond Hill 1900 remains because HCED itself asserts a Boer success and all HCED outcomes are labelled provisional. Newbury/Gainsborough 1643, Bizani/Jannina, the two 1916 Isonzo rows, and Nieman River 1920 were adversarially refuted as project defects and remain unchanged. The Basing House range claim was also refuted: staging already preserves ranges. |
 | Documented modeling limitation | Dyadic HCED rows can omit principal co-belligerents (for example Germany at Caporetto, France at Rossbach, the Polish-Lithuanian Commonwealth at Vienna, or the BEF at the Marne). Participants are not silently added without a curated composition source; these rows remain provisional pending a co-belligerent table. |

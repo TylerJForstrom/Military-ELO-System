@@ -304,7 +304,8 @@ class StateCodePolicyTests(unittest.TestCase):
 
 class IdentityDenyWindowTests(unittest.TestCase):
     def test_turkey_deny_window_blocks_every_tier(self) -> None:
-        self.assertEqual(IDENTITY_DENY_WINDOWS, {"turkey": ((1919, 1923),)})
+        self.assertEqual(IDENTITY_DENY_WINDOWS["turkey"], ((1919, 1923),))
+        self.assertEqual(IDENTITY_DENY_WINDOWS["latvia"], ((1918, 1991),))
         context = _empty_tier_context()
         context["seed_entities"] = [
             {
@@ -357,9 +358,9 @@ class PipelineAsymmetryTests(unittest.TestCase):
 
 class CuratedExclusionTableTests(unittest.TestCase):
     def test_exclusion_tables_are_enumerated_and_documented(self) -> None:
-        self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 39)
+        self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 62)
         self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 53)
-        self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"1", "5", "10", "42"})
+        self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "10", "42"})
         self.assertLessEqual(
             {
                 "hced-Megalopolis-331-1",
@@ -371,6 +372,30 @@ class CuratedExclusionTableTests(unittest.TestCase):
                 "hced-Abensberg1809-1",
             },
             set(HCED_LABEL_CURATED_EXCLUSIONS),
+        )
+        self.assertLessEqual(
+            {
+                "hced-Altona1714-1",
+                "hced-Bronnitsa1614-1",
+                "hced-Punitz1704-1",
+                "hced-Salvador1638-1",
+                "hced-Malacca1606-1",
+                "hced-Beachy Head1707-1",
+                "hced-Colonia do Sacrimento1735-1",
+                "hced-Reval1719-1",
+                "hced-Majadahonda1812-1",
+                "hced-Elba1811-1",
+                "hced-Campo1811-1",
+                "hced-Azov1695-1696-1",
+                "hced-Salvador1822-1823-1",
+                "hced-Aden1513-1",
+                "hced-Wofla1542-1",
+                "hced-Marbella1705-1",
+                "hced-Cadiz1810-1812-1",
+                "hced-Barrosa1811-1",
+                "hced-Riga1701-1",
+            },
+            set(HCED_CURATED_EXCLUSIONS),
         )
         for table in (HCED_CURATED_EXCLUSIONS, HCED_LABEL_CURATED_EXCLUSIONS):
             for candidate_id, reason in table.items():
@@ -413,20 +438,20 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 4245)
+        self.assertEqual(len(self.events), 4_406)
         label = [e for e in self.events if e.get("identity_resolution") == "label"]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2250)
-        self.assertEqual(len(crosswalk), 1769)
-        self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 56)
-        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 123)
+        self.assertEqual(len(label), 2_328)
+        self.assertEqual(len(crosswalk), 1_824)
+        self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64)
+        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 143)
         self.assertEqual(sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7)
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 228)
+        self.assertEqual(len(rated), 235)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -441,9 +466,9 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
             for e in self.events
             if any(p["entity_id"] == "empire_brazil" for p in e["participants"])
         ]
-        # 23 rated events total; 18 of them are the enumerated Paraguayan-war
+        # 26 rated events total; 18 of them are the enumerated Paraguayan-war
         # supersessions from the previous build's Cliopatria envelope.
-        self.assertEqual(len(brazil_events), 23)
+        self.assertEqual(len(brazil_events), 26)
         paraguayan_war = [
             e for e in brazil_events if not (e["end_year"] < 1864 or e["year"] > 1870)
         ]
@@ -458,7 +483,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 1591)
+        self.assertEqual(len(self.registry["entities"]), 1_598)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

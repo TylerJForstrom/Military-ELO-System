@@ -18,6 +18,7 @@ from .common import (
     _cross_source_event_keys,
     _declared_rejections,
     _deduplicate,
+    _entity_covers,
     _event_key,
     _infer_kind,
     _resolve_code,
@@ -61,10 +62,14 @@ from .policy import (
     HCED_LABEL_POLICIES,
     HCED_LABEL_REJECTION_COUNTERS,
     HCED_PENDING_SPLIT_LABELS,
+    HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
     IWBD_CURATED_EXCLUSIONS,
     IWBD_REJECTION_COUNTERS,
+    IWBD_REVIEWED_IDENTITY_BINDINGS,
+    IWBD_REVIEWED_IDENTITY_COHORTS,
     IWD_COW_CODE_POLICIES,
     IWD_CURATED_PARENT_EXCLUSIONS,
+    IWD_REVIEWED_PARENT_CONTRACTS,
     SEED_EVENT_INTERVAL_EXEMPTIONS,
     UCDP_ACTOR_PARTY_POLICIES,
     UCDP_CURATED_EXCLUSIONS,
@@ -315,7 +320,7 @@ def _validate_hced_location_release(
         )
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
-    if (crosswalk_count, label_count) != (1_769, 2_250):
+    if (crosswalk_count, label_count) != (1_824, 2_328):
         raise ValueError(
             "HCED promotion tranche counts changed: "
             f"{crosswalk_count} crosswalk and {label_count} label"
@@ -436,6 +441,20 @@ def build_expanded_release(
         _event_key(str(event["name"]), int(event["year"])) for event in seed_events
     }
 
+    def resolve_reviewed_identity(
+        entity_id: str | None,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, None]:
+        """Resolve one contract-pinned ID without opening a label fallback."""
+
+        if entity_id is None:
+            return None, None
+        entity = release_entities.get(entity_id)
+        if entity is None or not _entity_covers(entity, low_year, high_year):
+            return None, None
+        return entity_id, None
+
     def ensure_candidate_entity(polity: dict[str, Any]) -> str:
         entity_id = _candidate_entity_id(polity)
         candidate_by_release_id[entity_id] = polity
@@ -469,6 +488,9 @@ def build_expanded_release(
         owners,
         curated_seed_keys,
         ensure_candidate_entity,
+        reviewed_identity_bindings=HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
+        resolve_reviewed_id=resolve_reviewed_identity,
+        require_complete_reviewed_identity_bindings=True,
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
     rejections: Counter[str] = hced_crosswalk_pass["rejections"]
@@ -558,6 +580,9 @@ def build_expanded_release(
         _seed_war_token_spans(seed_events),
         resolve_iwd_party,
         curated_parent_exclusions=IWD_CURATED_PARENT_EXCLUSIONS,
+        reviewed_parent_contracts=IWD_REVIEWED_PARENT_CONTRACTS,
+        resolve_reviewed_party=resolve_reviewed_identity,
+        require_complete_reviewed_parents=True,
     )
     iwd_events.extend(iwd_aggregation["events"])
     iwd_rejections.update(iwd_aggregation["parent_rejections"])
@@ -659,6 +684,10 @@ def build_expanded_release(
         resolve_iwd_label,
         hced_cluster_spans,
         iwd_parent_ids,
+        reviewed_identity_bindings=IWBD_REVIEWED_IDENTITY_BINDINGS,
+        reviewed_identity_cohorts=IWBD_REVIEWED_IDENTITY_COHORTS,
+        resolve_reviewed_id=resolve_reviewed_identity,
+        require_complete_reviewed_identity_cohorts=True,
     )
     iwbd_events: list[dict[str, Any]] = iwbd_promotion["events"]
     iwbd_rejections: Counter[str] = iwbd_promotion["rejections"]
@@ -963,12 +992,18 @@ def build_expanded_release(
                 "observation-derived pairings; faction and collective-peoples labels never "
                 "resolve; polity labels pending identity splits never resolve; ambiguity "
                 "always stays staged. Label-resolved events carry reduced identity confidence "
-                "and an identity_resolution provenance marker. "
+                "and an identity_resolution provenance marker. One independently dated "
+                "HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint "
+                "and exact-ID binding to cross an otherwise fail-closed within-year Portugal "
+                "boundary; it does not populate a generic label observation. "
                 "IWD component wars never enter individually: each parent conflict is rated at "
                 "most once, as a coalition event aggregated from its component dyads, and only "
                 "when the reconstructed sides are consistent, the component outcomes are "
                 "unanimous, no curated seed war overlaps, and every belligerent resolves to a "
-                "unique time-bounded identity. All other parent wars stay staged. "
+                "unique time-bounded identity. Eight transition-era parents use exact "
+                "parent-keyed contracts that pin the complete component set, source "
+                "semantics, party codes, and target IDs; they do not open generic COW-code "
+                "fallbacks. All other parent wars stay staged. "
                 "IWBD battles enter only when they are not a duplicate of any curated seed "
                 "event, any non-curated-excluded HCED candidate (promoted or staged), or an "
                 "earlier accepted IWBD row by exact normalized battle name and year within "
@@ -978,7 +1013,10 @@ def build_expanded_release(
                 "their date span does not contain a differently-named battle of the same "
                 "war (campaign umbrellas stay staged); the coded victor matches a named "
                 "side; and both sides resolve to unique time-bounded identities outside "
-                "declared deny windows. Two candidate-keyed reviewed contracts are narrow "
+                "declared deny windows. Twenty transition-era candidates use exact "
+                "source fingerprints and exact-ID bindings; only those contracts can pass "
+                "an otherwise applicable deny window, so bare Turkey remains denied in "
+                "1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow "
                 "exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan "
                 "may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both "
                 "contracts fail closed on source, sibling-set, or resolver drift and do not "
@@ -1027,6 +1065,9 @@ def build_expanded_release(
                 {"candidate_id": key, "reason": reason}
                 for key, reason in sorted(HCED_CURATED_EXCLUSIONS.items())
             ],
+            "hced_reviewed_crosswalk_identity_candidate_ids": sorted(
+                HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS
+            ),
             "hced_label_curated_exclusions": [
                 {"candidate_id": key, "reason": reason}
                 for key, reason in sorted(HCED_LABEL_CURATED_EXCLUSIONS.items())
@@ -1039,6 +1080,19 @@ def build_expanded_release(
                 {"parent_war_id": key, "reason": reason}
                 for key, reason in sorted(IWD_CURATED_PARENT_EXCLUSIONS.items())
             ],
+            "iwd_reviewed_parent_contract_ids": sorted(
+                IWD_REVIEWED_PARENT_CONTRACTS,
+                key=int,
+            ),
+            "iwbd_reviewed_identity_candidate_ids": sorted(
+                IWBD_REVIEWED_IDENTITY_BINDINGS
+            ),
+            "iwbd_reviewed_identity_cohorts": {
+                cohort: list(candidate_ids)
+                for cohort, candidate_ids in sorted(
+                    IWBD_REVIEWED_IDENTITY_COHORTS.items()
+                )
+            },
             "seed_event_interval_exemptions": [
                 {
                     "event_id": key[0],
