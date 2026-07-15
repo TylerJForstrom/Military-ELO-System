@@ -267,19 +267,31 @@ class FactionLabelTests(unittest.TestCase):
                 self.assertIsNone(entity_id)
                 self.assertEqual(reason, "faction_label_not_a_polity")
 
-    def test_confederate_states_is_not_a_faction_label(self) -> None:
+    def test_confederate_states_is_a_time_bounded_polity_alias(self) -> None:
         self.assertNotIn("confederate states of america", HCED_FACTION_LABELS)
         self.assertIn("confederates", HCED_FACTION_LABELS)
         csa = _polity(
             "Confederate States of America", 1861, 1865, wikidata_ids=("Q81931",)
         )
+        context = _context(polities=[csa])
         entity_id, polity, reason, tier = resolve_hced_side_label(
-            "Confederate States of America", 1863, 1863, _context(polities=[csa])
+            "Confederate States of America", 1861, 1865, context
         )
+        self.assertEqual(entity_id, "clio_q81931_1861_f3bc20bd")
         self.assertEqual(entity_id, _candidate_entity_id(csa))
         self.assertIs(polity, csa)
         self.assertIsNone(reason)
         self.assertEqual(tier, "cliopatria_alias")
+
+        for year in (1860, 1866):
+            with self.subTest(year=year):
+                entity_id, polity, reason, tier = resolve_hced_side_label(
+                    "Confederate States of America", year, year, context
+                )
+                self.assertIsNone(entity_id)
+                self.assertIsNone(polity)
+                self.assertEqual(reason, "no_unique_time_valid_label_match")
+                self.assertIsNone(tier)
 
 
 class PendingSplitTests(unittest.TestCase):
