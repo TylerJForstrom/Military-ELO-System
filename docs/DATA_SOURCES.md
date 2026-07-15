@@ -1,6 +1,6 @@
 # Data sources and ingestion policy
 
-Last verified: 2026-07-13.
+Last verified: 2026-07-15.
 
 This document records the datasets evaluated for the Military History Elo
 system, what each source can establish, and what it cannot. The central rule is
@@ -125,6 +125,18 @@ tactical proposals only. `Country` describes the modern geographic location,
 not a historical participant polity. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
+
+For the 4,012 already-rated HCED events, the release-to-candidate join is an
+exact bijection: 1,769 crosswalk-resolved events and 2,243 label-resolved
+events, with no missing, ambiguous, or colliding bindings. After a fail-closed
+quarantine, 3,978 events carry an exact source-transcribed Point, 3,934 carry
+the source's modern country/geographic-jurisdiction string, and 3,980 carry at
+least one location field plus provenance. Every published value remains an
+`unreviewed_source_assertion` with `coordinate_precision: unknown`; a retained
+jurisdiction string is not a sovereign-country claim. Quarantined values are
+withheld rather than corrected, swapped, normalized, inferred, reverse-geocoded,
+or exposed through release provenance. This location metadata does not affect
+event eligibility, participants, outcomes, or Elo.
 
 #### Verified live HCED profile
 

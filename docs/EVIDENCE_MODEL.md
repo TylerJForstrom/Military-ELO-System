@@ -1,5 +1,14 @@
 # Evidence model contract
 
+> **Implementation boundary:** The generic claim and adjudication types in this
+> repository are not authorization to load the machine-local historical
+> research packets. A claim-bearing store remains blocked until each source is
+> available as an immutable artifact bound to an authenticated,
+> content-derived source version, every assertion has an exact typed
+> page/span/cell locator, and the loader verifies an expected manifest digest
+> supplied outside the store. No packet claim rows are part of the current
+> release.
+
 This workstream stores historical assertions and review decisions without
 changing source promotion, event eligibility, rating calculations, or published
 results. Evidence records use explicit stable IDs and deterministic JSON forms.

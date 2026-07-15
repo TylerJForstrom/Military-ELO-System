@@ -92,7 +92,7 @@ historical assertion is true.
 | Field group | Reported checks |
 |---|---|
 | Dates | Integer start and end years, ordered interval, and explicit date precision, each over rated events. |
-| Locations | Named or structured event location, valid numeric coordinate pair, supported GeoJSON geometry containing at least one valid position, and explicit event-region field. GeoJSON structure is validated recursively, including nested geometry collections and closed polygon rings. Positions use longitude then latitude; latitude must be from -90 through 90 and longitude from -180 through 180. Empty, malformed, unsupported, boolean, nonnumeric, non-finite, and wholly out-of-range geometry is absent. `geographic_scope` and entity region are not locations. |
+| Locations | Named or structured event-location presence; valid coordinate presence; modern country/geographic-jurisdiction-label presence; provenance-object presence; closed-contract validity; provenance-bound unreviewed HCED Point, jurisdiction-label, and either-field presence; and explicit event-region presence are reported separately. Verified-location coverage is `not_available`, never inferred as zero. Generic GeoJSON structure is validated recursively, including nested geometry collections and closed polygon rings. Positions use longitude then latitude; latitude must be from -90 through 90 and longitude from -180 through 180. The stricter HCED source contract permits only a two-ordinate Point and rejects the source's `(0,0)` sentinel without globally outlawing valid GeoJSON at that coordinate. Empty, malformed, unsupported, boolean, nonnumeric, non-finite, and wholly out-of-range geometry is absent. `geographic_scope` and entity region are not locations. |
 | Participants | At least two participant objects, nonblank entity IDs and sides, and at least two distinct sides. |
 | Roles | Explicit participant role presence and role-category counts. Model defaults are not inserted for this measurement. |
 | Objectives | Explicit participant objective statements, separately from the layer-specific numerical objective-attainment dimension. An attainment score does not document the objective itself. |
@@ -102,6 +102,14 @@ historical assertion is true.
 Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
+
+The HCED location-policy section reports frozen manifest counts separately
+from observed field presence: 34 Point fields withheld, 77
+country/jurisdiction fields withheld, 32 events in both quarantine manifests,
+and 79 unique quarantine-manifest events. One additional event has a
+source-blank country field and is outside both manifests. These values describe
+an audited publication policy; they must not be reverse-engineered from absent
+release fields or relabelled as verified-location accuracy.
 
 ## Independent outcome-source families
 
