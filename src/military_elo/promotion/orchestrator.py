@@ -78,6 +78,18 @@ from .policy import (
     _cow_policy_seed_id,
 )
 from .ucdp import promote_ucdp_termination_episodes, resolve_ucdp_party
+from .wave6_pre1500 import (
+    WAVE6_PRE1500_ENTITIES,
+    WAVE6_PRE1500_CURATED_EXCLUSIONS,
+    WAVE6_PRE1500_ENTITY_IDS,
+    WAVE6_PRE1500_HOLD_REASONS,
+    WAVE6_PRE1500_SAFE_CANDIDATE_IDS,
+    WAVE6_PRE1500_SOURCE_FAMILY_METADATA,
+    WAVE6_PRE1500_SOURCES,
+    annotate_and_validate_wave6_pre1500_events,
+    resolve_wave6_pre1500_candidate_side_label,
+    validate_wave6_pre1500_candidates,
+)
 
 
 def _sorted_newline_sha256(values: list[str]) -> str:
@@ -313,27 +325,51 @@ def _validate_hced_location_release(
         provenance_keys.add(provenance_key)
         provenance_count += 1
 
-    if len(candidate_ids) != HCED_EXPECTED_CANDIDATE_BINDINGS:
+    wave6_candidate_ids = set(WAVE6_PRE1500_SAFE_CANDIDATE_IDS)
+    wave6_location_exceptions = wave6_candidate_ids & (
+        HCED_POINT_QUARANTINE_IDS
+        | HCED_COUNTRY_QUARANTINE_IDS
+        | HCED_SOURCE_BLANK_COUNTRY_IDS
+    )
+    if wave6_location_exceptions:
         raise ValueError(
-            "HCED candidate binding count changed: "
-            f"{len(candidate_ids)} != {HCED_EXPECTED_CANDIDATE_BINDINGS}"
+            "Wave 6 pre-1500 location delta requires explicit quarantine accounting: "
+            f"{sorted(wave6_location_exceptions)}"
+        )
+    promoted_wave6_ids = set(candidate_ids) & wave6_candidate_ids
+    if promoted_wave6_ids != wave6_candidate_ids:
+        raise ValueError(
+            "Wave 6 pre-1500 HCED location bindings are incomplete: "
+            f"missing={sorted(wave6_candidate_ids - promoted_wave6_ids)}"
+        )
+    if len(candidate_ids) - len(wave6_candidate_ids) != HCED_EXPECTED_CANDIDATE_BINDINGS:
+        raise ValueError(
+            "Pre-Wave 6 HCED candidate binding count changed: "
+            f"{len(candidate_ids) - len(wave6_candidate_ids)} != "
+            f"{HCED_EXPECTED_CANDIDATE_BINDINGS}"
         )
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
-    if (crosswalk_count, label_count) != (1_824, 2_328):
+    if (crosswalk_count, label_count - len(wave6_candidate_ids)) != (1_824, 2_328):
         raise ValueError(
-            "HCED promotion tranche counts changed: "
-            f"{crosswalk_count} crosswalk and {label_count} label"
+            "Pre-Wave 6 HCED promotion tranche counts changed: "
+            f"{crosswalk_count} crosswalk and "
+            f"{label_count - len(wave6_candidate_ids)} label"
         )
-    if (point_count, country_count, provenance_count) != (
+    if (
+        point_count - len(wave6_candidate_ids),
+        country_count - len(wave6_candidate_ids),
+        provenance_count - len(wave6_candidate_ids),
+    ) != (
         HCED_EXPECTED_POINT_ASSERTIONS,
         HCED_EXPECTED_COUNTRY_ASSERTIONS,
         HCED_EXPECTED_PROVENANCE_OBJECTS,
     ):
         raise ValueError(
-            "HCED location assertion counts changed: "
-            f"{point_count} Points, {country_count} jurisdiction labels, "
-            f"{provenance_count} provenance objects"
+            "Pre-Wave 6 HCED location assertion counts changed: "
+            f"{point_count - len(wave6_candidate_ids)} Points, "
+            f"{country_count - len(wave6_candidate_ids)} jurisdiction labels, "
+            f"{provenance_count - len(wave6_candidate_ids)} provenance objects"
         )
     if _sorted_newline_sha256(point_event_ids) != HCED_POINT_QUARANTINE_EVENT_SHA256:
         raise ValueError("HCED point-quarantine event binding hash changed")
@@ -415,6 +451,36 @@ def build_expanded_release(
     seed_metadata: dict[str, Any] = json.loads(
         (seed_root / "metadata.json").read_text(encoding="utf-8")
     )
+    seed_entity_ids = {str(entity["id"]) for entity in seed_entities}
+    wave6_entity_ids = {str(entity["id"]) for entity in WAVE6_PRE1500_ENTITIES}
+    entity_id_collisions = sorted(seed_entity_ids & wave6_entity_ids)
+    if entity_id_collisions:
+        raise ValueError(
+            "Wave 6 pre-1500 entity IDs collide with the seed: "
+            f"{entity_id_collisions}"
+        )
+    seed_entities.extend(dict(entity) for entity in WAVE6_PRE1500_ENTITIES)
+
+    seed_source_ids = {str(source["id"]) for source in sources}
+    wave6_source_ids = {str(source["id"]) for source in WAVE6_PRE1500_SOURCES}
+    if len(wave6_source_ids) != len(WAVE6_PRE1500_SOURCES):
+        raise ValueError("Wave 6 pre-1500 source IDs are not unique")
+    if any(
+        not str(source.get("source_family_id") or "").strip()
+        or not source.get("evidence_roles")
+        for source in WAVE6_PRE1500_SOURCES
+    ):
+        raise ValueError(
+            "Wave 6 pre-1500 sources require explicit family and evidence-role metadata"
+        )
+    source_id_collisions = sorted(seed_source_ids & wave6_source_ids)
+    if source_id_collisions:
+        raise ValueError(
+            "Wave 6 pre-1500 source IDs collide with the seed: "
+            f"{source_id_collisions}"
+        )
+    sources.extend(dict(source) for source in WAVE6_PRE1500_SOURCES)
+
     seed_by_id = {str(entity["id"]): entity for entity in seed_entities}
     _validate_seed_event_intervals(seed_events, seed_by_id)
     seed_label_index: dict[str, set[str]] = {}
@@ -427,6 +493,7 @@ def build_expanded_release(
     cliopatria = read_jsonl(review / "cliopatria-entity-candidates.jsonl")
     polities = [row for row in cliopatria if row.get("record_type") == "POLITY"]
     hced = read_jsonl(review / "hced-candidates.jsonl")
+    validate_wave6_pre1500_candidates(hced)
     hced_candidates_by_id = _index_hced_candidates(hced)
     owners: dict[str, list[dict[str, Any]]] = {}
     for candidate in polities:
@@ -491,6 +558,10 @@ def build_expanded_release(
         reviewed_identity_bindings=HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
+        curated_exclusions={
+            **HCED_CURATED_EXCLUSIONS,
+            **WAVE6_PRE1500_CURATED_EXCLUSIONS,
+        },
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
     rejections: Counter[str] = hced_crosswalk_pass["rejections"]
@@ -601,8 +672,26 @@ def build_expanded_release(
         lambda label, low_year, high_year: resolve_hced_side_label(
             label, low_year, high_year, label_context
         ),
+        resolve_candidate_side_label=lambda candidate, label, low_year, high_year: (
+            resolve_wave6_pre1500_candidate_side_label(
+                candidate,
+                label,
+                low_year,
+                high_year,
+                label_context,
+                lambda generic_label, generic_low, generic_high: (
+                    resolve_hced_side_label(
+                        generic_label,
+                        generic_low,
+                        generic_high,
+                        label_context,
+                    )
+                ),
+            )
+        ),
     )
     label_events: list[dict[str, Any]] = hced_label_pass["events"]
+    annotate_and_validate_wave6_pre1500_events(source_events, label_events)
     hced_label_rejections: Counter[str] = hced_label_pass["rejections"]
     for polity in hced_label_pass["resolved_polities"].values():
         ensure_candidate_entity(polity)
@@ -1065,6 +1154,17 @@ def build_expanded_release(
                 {"candidate_id": key, "reason": reason}
                 for key, reason in sorted(HCED_CURATED_EXCLUSIONS.items())
             ],
+            "wave6_pre1500_safe_candidate_ids": list(
+                WAVE6_PRE1500_SAFE_CANDIDATE_IDS
+            ),
+            "wave6_pre1500_holds": [
+                {"candidate_id": key, "reason": reason}
+                for key, reason in sorted(WAVE6_PRE1500_HOLD_REASONS.items())
+            ],
+            "wave6_pre1500_target_entity_ids": sorted(WAVE6_PRE1500_ENTITY_IDS),
+            "wave6_pre1500_source_families": list(
+                WAVE6_PRE1500_SOURCE_FAMILY_METADATA
+            ),
             "hced_reviewed_crosswalk_identity_candidate_ids": sorted(
                 HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS
             ),
