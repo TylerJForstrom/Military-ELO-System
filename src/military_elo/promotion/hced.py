@@ -130,6 +130,7 @@ def promote_hced_crosswalk_rows(
     resolve_reviewed_id: Any | None = None,
     require_complete_reviewed_identity_bindings: bool = False,
     reserved_candidate_ids: set[str] | frozenset[str] | None = None,
+    curated_exclusions: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     """Promote HCED rows whose opposing sides both have Seshat codes.
 
@@ -148,6 +149,8 @@ def promote_hced_crosswalk_rows(
         reviewed_identity_bindings = {}
     if reserved_candidate_ids is None:
         reserved_candidate_ids = frozenset()
+    if curated_exclusions is None:
+        curated_exclusions = HCED_CURATED_EXCLUSIONS
     _validate_hced_crosswalk_review_bindings(
         candidates,
         reviewed_identity_bindings,
@@ -162,7 +165,7 @@ def promote_hced_crosswalk_rows(
             # It must never enter the generic crosswalk or label universes.
             rejections["reserved_candidate_contract"] += 1
             continue
-        if candidate_id in HCED_CURATED_EXCLUSIONS:
+        if candidate_id in curated_exclusions:
             # Curated adjudications run before every other gate; the row is
             # counted, stays staged, and leaves every promotion universe
             # (including the IWBD dedup keys and label observations).
@@ -392,6 +395,7 @@ def promote_hced_label_rows(
     resolve_code: Any,
     resolve_side_label: Any,
     curated_exclusions: dict[str, str] | None = None,
+    resolve_candidate_side_label: Any | None = None,
 ) -> dict[str, Any]:
     """Second HCED promotion pass for rows lacking Seshat coding on a side.
 
@@ -466,9 +470,14 @@ def promote_hced_label_rows(
                     resolved.append(entity_id)
                 side_tiers.append("seshat_crosswalk")
             else:
-                entity_id, polity, reason, tier = resolve_side_label(
-                    label, low_year, high_year
-                )
+                if resolve_candidate_side_label is None:
+                    entity_id, polity, reason, tier = resolve_side_label(
+                        label, low_year, high_year
+                    )
+                else:
+                    entity_id, polity, reason, tier = resolve_candidate_side_label(
+                        candidate, label, low_year, high_year
+                    )
                 if not entity_id:
                     rejections[reason or "no_unique_time_valid_label_match"] += 1
                     resolution_failed = True
