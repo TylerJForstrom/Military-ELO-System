@@ -6,6 +6,7 @@ from .hced import (
     promote_hced_label_rows,
     resolve_hced_side_label,
 )
+from .hced_location import build_hced_location_fields, parse_hced_point
 from .iwd import aggregate_iwd_parent_wars
 from .iwbd import promote_iwbd_battles
 from .orchestrator import build_expanded_release
@@ -14,11 +15,13 @@ from .ucdp import promote_ucdp_termination_episodes, resolve_ucdp_party
 __all__ = [
     "aggregate_iwd_parent_wars",
     "build_expanded_release",
+    "build_hced_location_fields",
     "normalize_label",
     "promote_hced_crosswalk_rows",
     "promote_hced_label_rows",
     "promote_iwbd_battles",
     "promote_ucdp_termination_episodes",
+    "parse_hced_point",
     "read_jsonl",
     "resolve_hced_side_label",
     "resolve_ucdp_party",

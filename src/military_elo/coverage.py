@@ -9,8 +9,24 @@ from pathlib import Path
 from statistics import median
 from typing import Any, Iterable, Mapping
 
-from .canonical import geometry_validation_error
+from .canonical import (
+    geometry_validation_error,
+    hced_point_geometry_validation_error,
+)
 from .models import OPERATIONAL_DIMENSIONS, STRATEGIC_DIMENSIONS, TACTICAL_DIMENSIONS
+from .promotion.hced_location import (
+    HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256,
+    HCED_COUNTRY_QUARANTINE_IDS,
+    HCED_EXPECTED_CANDIDATE_BINDINGS,
+    HCED_EXPECTED_COUNTRY_ASSERTIONS,
+    HCED_EXPECTED_POINT_ASSERTIONS,
+    HCED_EXPECTED_PROVENANCE_OBJECTS,
+    HCED_EXPECTED_QUARANTINE_OVERLAP,
+    HCED_EXPECTED_QUARANTINE_UNION,
+    HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
+    HCED_POINT_QUARANTINE_IDS,
+    HCED_SOURCE_BLANK_COUNTRY_IDS,
+)
 
 
 REPORT_SCHEMA_VERSION = "1.0"
@@ -801,6 +817,113 @@ def _coverage_metadata(
     )
 
 
+def _hced_location_policy_report(
+    coverage_metadata: Mapping[str, Any],
+    *,
+    required: bool = False,
+) -> dict[str, Any]:
+    raw = coverage_metadata.get("hced_location_assertions")
+    if raw is None:
+        if required:
+            raise CoverageInputError(
+                "registry.coverage.hced_location_assertions is required for "
+                "candidate-bound HCED events"
+            )
+        return {
+            "availability": "not_available",
+            "reason": "Registry coverage does not declare an HCED location policy.",
+        }
+    if not isinstance(raw, Mapping):
+        raise CoverageInputError(
+            "registry.coverage.hced_location_assertions must be an object"
+        )
+    expected_counts = {
+        "hced_candidate_bindings": HCED_EXPECTED_CANDIDATE_BINDINGS,
+        "geojson_points": HCED_EXPECTED_POINT_ASSERTIONS,
+        "modern_location_country_assertions": HCED_EXPECTED_COUNTRY_ASSERTIONS,
+        "location_provenance_objects": HCED_EXPECTED_PROVENANCE_OBJECTS,
+        "point_fields_withheld_by_quarantine": len(HCED_POINT_QUARANTINE_IDS),
+        "country_or_jurisdiction_fields_withheld_by_quarantine": len(
+            HCED_COUNTRY_QUARANTINE_IDS
+        ),
+        "source_blank_country_fields": len(HCED_SOURCE_BLANK_COUNTRY_IDS),
+        "point_country_quarantine_overlap": HCED_EXPECTED_QUARANTINE_OVERLAP,
+        "unique_events_with_any_quarantined_field": HCED_EXPECTED_QUARANTINE_UNION,
+    }
+    counts: dict[str, int] = {}
+    for field_name, expected_count in expected_counts.items():
+        count = _as_nonnegative_int(raw.get(field_name))
+        if count != expected_count:
+            raise CoverageInputError(
+                "registry.coverage.hced_location_assertions."
+                f"{field_name} must equal the final audited count {expected_count}"
+            )
+        counts[field_name] = count
+    expected_hashes = {
+        "point_quarantine_candidate_manifest_sha256": (
+            HCED_POINT_QUARANTINE_CANDIDATE_SHA256
+        ),
+        "country_quarantine_candidate_manifest_sha256": (
+            HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
+        ),
+    }
+    hashes: dict[str, str] = {}
+    for field_name, expected_hash in expected_hashes.items():
+        value = raw.get(field_name)
+        if value != expected_hash:
+            raise CoverageInputError(
+                "registry.coverage.hced_location_assertions."
+                f"{field_name} must equal the final audited digest {expected_hash}"
+            )
+        hashes[field_name] = value
+    assertion_status = raw.get("assertion_status")
+    expected_assertion_status = {
+        "unreviewed_source_assertion": HCED_EXPECTED_PROVENANCE_OBJECTS,
+    }
+    if assertion_status != expected_assertion_status:
+        raise CoverageInputError(
+            "registry.coverage.hced_location_assertions.assertion_status "
+            f"must equal {expected_assertion_status!r}"
+        )
+    verified = raw.get("verified_location_assertions")
+    verified_reason = verified.get("reason") if isinstance(verified, Mapping) else None
+    if (
+        not isinstance(verified, Mapping)
+        or set(verified) != {"availability", "count", "reason"}
+        or verified.get("availability") != "not_available"
+        or verified.get("count") is not None
+        or not isinstance(verified_reason, str)
+        or not verified_reason.strip()
+        or verified_reason != verified_reason.strip()
+    ):
+        raise CoverageInputError(
+            "registry HCED verified-location coverage must be declared "
+            "not_available with null count and a nonblank exact reason"
+        )
+    expected_fields = {
+        *expected_counts,
+        *expected_hashes,
+        "assertion_status",
+        "verified_location_assertions",
+    }
+    if set(raw) != expected_fields:
+        raise CoverageInputError(
+            "registry.coverage.hced_location_assertions must contain exactly "
+            "the final audited policy fields"
+        )
+    return {
+        "availability": "available",
+        "definition": (
+            "Declared frozen HCED quarantine-policy counts. These values come from "
+            "the audited candidate-ID manifests and are not inferred from absent fields."
+        ),
+        **counts,
+        **hashes,
+        "assertion_status": dict(assertion_status),
+        "verified_location_assertions": dict(verified),
+    }
+
+
 def _stage_funnel(
     events: list[dict[str, Any]],
     metadata: Mapping[str, Any],
@@ -1314,6 +1437,58 @@ def _has_coordinates(event: Mapping[str, Any]) -> bool:
     return geometry_valid and has_position
 
 
+def _unreviewed_hced_location_flags(
+    event: Mapping[str, Any],
+) -> tuple[bool, bool, bool]:
+    """Return strict ``(point, jurisdiction_label, any_location)`` flags."""
+
+    provenance = event.get("location_provenance")
+    if not isinstance(provenance, Mapping):
+        return False, False, False
+    if set(provenance) != {
+        "source_id",
+        "source_record_id",
+        "assertion_status",
+        "coordinate_precision",
+    }:
+        return False, False, False
+    candidate_id = event.get("hced_candidate_id")
+    source_ids = event.get("source_ids")
+    source_record_id = provenance.get("source_record_id")
+    valid_binding = (
+        isinstance(candidate_id, str)
+        and bool(candidate_id.strip())
+        and candidate_id == candidate_id.strip()
+        and isinstance(source_ids, (list, tuple))
+        and "hced_dataset" in source_ids
+        and provenance.get("source_id") == "hced_dataset"
+        and isinstance(source_record_id, str)
+        and bool(source_record_id.strip())
+        and source_record_id == source_record_id.strip()
+        and provenance.get("assertion_status")
+        == "unreviewed_source_assertion"
+        and provenance.get("coordinate_precision") == "unknown"
+    )
+    if not valid_binding:
+        return False, False, False
+    country = event.get("modern_location_country")
+    has_country = (
+        isinstance(country, str)
+        and bool(country.strip())
+        and country == country.strip()
+    )
+    geometry = event.get("geometry")
+    has_point = hced_point_geometry_validation_error(geometry) is None
+    if has_point:
+        longitude, latitude = geometry["coordinates"]
+        has_point = not (longitude == 0 and latitude == 0)
+    return has_point, has_country, has_point or has_country
+
+
+def _valid_unreviewed_hced_location_provenance(event: Mapping[str, Any]) -> bool:
+    return _unreviewed_hced_location_flags(event)[2]
+
+
 def _parent_event_references(event: Mapping[str, Any]) -> set[str]:
     references: set[str] = set()
     singular = event.get("parent_event_id")
@@ -1354,6 +1529,11 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
     valid_intervals = 0
     locations = 0
     coordinates = 0
+    modern_location_countries = 0
+    location_provenance_objects = 0
+    valid_unreviewed_location_provenance = 0
+    unreviewed_source_locations = 0
+    unreviewed_source_points = 0
     explicit_location_region = 0
     at_least_two_participants = 0
     opposing_sides = 0
@@ -1370,8 +1550,24 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         dates_end += int(_is_int(end))
         precision += int(_category(event.get("date_precision")) != UNKNOWN)
         valid_intervals += int(_is_int(start) and _is_int(end) and end >= start)
-        locations += int(_has_location(event))
+        has_location = _has_location(event)
+        locations += int(has_location)
         coordinates += int(_has_coordinates(event))
+        has_location_provenance = isinstance(
+            event.get("location_provenance"), Mapping
+        )
+        location_provenance_objects += int(has_location_provenance)
+        (
+            has_unreviewed_point,
+            has_unreviewed_country,
+            has_unreviewed_location,
+        ) = _unreviewed_hced_location_flags(event)
+        modern_location_countries += int(has_unreviewed_country)
+        unreviewed_source_points += int(has_unreviewed_point)
+        valid_unreviewed_location_provenance += int(
+            has_unreviewed_location
+        )
+        unreviewed_source_locations += int(has_unreviewed_location)
         explicit_location_region += int(_category(event.get("region")) not in {UNKNOWN, UNCLASSIFIED})
 
         raw_participants = event.get("participants")
@@ -1511,7 +1707,8 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 definition=(
                     "Rated events with an explicit finite numeric latitude/longitude pair or "
                     "a structurally valid GeoJSON geometry containing such a longitude/latitude position; "
-                    "geographic_scope is not a location."
+                    "geographic_scope is not a location. This measures field presence, not "
+                    "verified geographic truth."
                 ),
             ),
             "event_location_present": _ratio(
@@ -1521,7 +1718,8 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 definition=(
                     "Rated events with an explicit named/structured location, a valid numeric "
                     "coordinate pair, or a structurally valid supported GeoJSON geometry "
-                    "containing at least one in-range longitude/latitude position."
+                    "containing at least one in-range longitude/latitude position. This is a "
+                    "presence-only aggregate and does not classify the assertion as verified."
                 ),
             ),
             "event_region_present": _ratio(
@@ -1529,6 +1727,86 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
                 event_count,
                 unit="proportion_of_rated_events",
                 definition="Rated events with an explicit classified event-region field; participant entity regions are not substituted.",
+            ),
+            "location_provenance_contract_valid": _ratio(
+                valid_unreviewed_location_provenance,
+                location_provenance_objects,
+                unit="proportion_of_location_provenance_objects",
+                definition=(
+                    "Location-provenance objects matching the closed HCED transcription "
+                    "contract: source hced_dataset, a nonblank exact source record ID, "
+                    "unreviewed_source_assertion status, and unknown coordinate precision."
+                ),
+            ),
+            "location_provenance_present": _ratio(
+                location_provenance_objects,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events carrying a location_provenance object. Object presence "
+                    "alone is not verification."
+                ),
+            ),
+            "modern_location_country_present": _ratio(
+                modern_location_countries,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events carrying a provenance-bound, nonblank HCED "
+                    "modern_location_country source field. The value is a source-transcribed "
+                    "geographic-jurisdiction label, not inferred sovereign-country truth."
+                ),
+            ),
+            "hced_unreviewed_point_assertion_present": _ratio(
+                unreviewed_source_points,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events carrying an exact provenance-bound HCED GeoJSON Point. "
+                    "These source-transcribed Points are unreviewed and have unknown precision."
+                ),
+            ),
+            "hced_unreviewed_geographic_jurisdiction_label_present": _ratio(
+                modern_location_countries,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events carrying a provenance-bound HCED geographic-jurisdiction "
+                    "label transcribed from modern_location_country; this is not sovereign-country truth."
+                ),
+            ),
+            "hced_unreviewed_location_assertion_present": _ratio(
+                unreviewed_source_locations,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events carrying at least one provenance-bound HCED location field "
+                    "(strict Point or geographic-jurisdiction label), classified as an unreviewed "
+                    "source assertion with unknown coordinate precision."
+                ),
+            ),
+            "unreviewed_source_assertion_present": _ratio(
+                unreviewed_source_locations,
+                event_count,
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events with an exact HCED candidate binding, linked hced_dataset "
+                    "source, closed provenance, and at least one strict HCED Point or "
+                    "geographic-jurisdiction label. This is unreviewed source transcription, "
+                    "not verification."
+                ),
+            ),
+            "verified_location_assertion_present": _unavailable_ratio(
+                unit="proportion_of_rated_events",
+                definition=(
+                    "Rated events whose event location is explicitly established as verified "
+                    "under a reviewed-location provenance contract."
+                ),
+                reason=(
+                    "The supplied release has no reviewed-location provenance contract; "
+                    "unreviewed HCED transcriptions and locations with unknown status cannot "
+                    "be reclassified as verified."
+                ),
             ),
         },
         "objectives": {
@@ -1961,6 +2239,13 @@ def build_coverage_report(
             "estimate": None,
             "status": "not_estimated",
         },
+        "hced_location_policy": _hced_location_policy_report(
+            coverage_metadata,
+            required=(
+                registry is not None
+                and any(_present(event.get("hced_candidate_id")) for event in rated_events)
+            ),
+        ),
         "network": _network_report(results),
         "observed_coverage": observed,
         "outcome_source_families": source_family_report,
@@ -1984,6 +2269,7 @@ def build_coverage_report(
             "Rated provisional source assertions are not equivalent to human-adjudicated events.",
             "Unknown and unclassified values are retained as explicit categories.",
             "Participant-region counts describe represented actors, not event locations.",
+            "Location field-presence totals can include modern, unreviewed source assertions; verified event-location coverage is unavailable.",
         ],
     }
 
@@ -2235,6 +2521,52 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             by_dimension = outcome.get("by_dimension")
             if isinstance(by_dimension, dict):
                 _append_ratio_group(lines, "Outcome dimensions by layer and field", by_dimension)
+
+    hced_policy = report.get("hced_location_policy", {})
+    lines.extend(["## Declared HCED location quarantine policy", ""])
+    if (
+        isinstance(hced_policy, dict)
+        and hced_policy.get("availability") == "available"
+    ):
+        lines.extend(
+            [
+                str(hced_policy.get("definition", "")),
+                "",
+                "| Declared policy field | Value |",
+                "|---|---:|",
+            ]
+        )
+        for field_name in (
+            "point_fields_withheld_by_quarantine",
+            "country_or_jurisdiction_fields_withheld_by_quarantine",
+            "source_blank_country_fields",
+            "point_country_quarantine_overlap",
+            "unique_events_with_any_quarantined_field",
+        ):
+            lines.append(
+                f"| {_markdown_cell(field_name)} | {int(hced_policy[field_name]):,} |"
+            )
+        lines.extend(
+            [
+                "",
+                "Point candidate-manifest SHA-256: "
+                f"`{hced_policy['point_quarantine_candidate_manifest_sha256']}`.",
+                "",
+                "Country/jurisdiction candidate-manifest SHA-256: "
+                f"`{hced_policy['country_quarantine_candidate_manifest_sha256']}`.",
+                "",
+                "Verified location coverage: `not_available`.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "Not available: "
+                f"{_markdown_cell(hced_policy.get('reason', 'no declared policy'))}",
+                "",
+            ]
+        )
 
     families = report.get("outcome_source_families", {})
     lines.extend(["## Independent outcome-source families", ""])

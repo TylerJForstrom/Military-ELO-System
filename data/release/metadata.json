@@ -66,6 +66,9 @@
     "Human review of taxonomy and continuity rules"
   ],
   "prohibited_interpretation": "Do not treat provisional ratings or unrated registry entries as a definitive ranking of every country and empire in history.",
+  "coverage_warnings": [
+    "HCED location fields are unreviewed source assertions. Quarantined values are withheld, not corrected. Coordinate precision is unknown."
+  ],
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {

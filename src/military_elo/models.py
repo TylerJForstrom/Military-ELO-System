@@ -5,10 +5,12 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from .canonical import (
+    LocationProvenance,
     ParticipationEpisode,
     UncertainDate,
     UncertainDateInterval,
     freeze_json,
+    hced_point_geometry_validation_error,
 )
 from .claims import canonicalize_json
 
@@ -398,6 +400,9 @@ class Event:
     adjudication_ids: tuple[str, ...] = ()
     outcome_source_ids: tuple[str, ...] = ()
     outcome_source_family_ids: tuple[str, ...] = ()
+    hced_candidate_id: str | None = None
+    modern_location_country: str | None = None
+    location_provenance: LocationProvenance | None = None
 
     def __post_init__(self) -> None:
         if self.parent_event_id is not None:
@@ -485,6 +490,57 @@ class Event:
         object.__setattr__(
             self, "outcome_source_family_ids", outcome_source_family_ids
         )
+        for field_name in ("hced_candidate_id", "modern_location_country"):
+            value = getattr(self, field_name)
+            if value is None:
+                continue
+            if not isinstance(value, str):
+                raise TypeError(f"Event.{field_name} must be a string or null")
+            if not value.strip():
+                raise ValueError(f"Event.{field_name} must be non-blank")
+            if value != value.strip():
+                raise ValueError(
+                    f"Event.{field_name} must not contain surrounding whitespace"
+                )
+        if (
+            self.hced_candidate_id is not None
+            and "hced_dataset" not in self.source_ids
+        ):
+            raise ValueError(
+                "Event.hced_candidate_id requires hced_dataset in source_ids"
+            )
+        if (
+            "hced_dataset" in self.outcome_source_ids
+            and self.hced_candidate_id is None
+        ):
+            raise ValueError(
+                "Event HCED outcome source requires an exact hced_candidate_id"
+            )
+        if self.location_provenance is not None and not isinstance(
+            self.location_provenance, LocationProvenance
+        ):
+            raise TypeError(
+                "Event.location_provenance must be a LocationProvenance or null"
+            )
+        if self.modern_location_country is not None and self.location_provenance is None:
+            raise ValueError("Event.modern_location_country requires location_provenance")
+        if self.location_provenance is not None:
+            if self.hced_candidate_id is None:
+                raise ValueError("Event.location_provenance requires hced_candidate_id")
+            if self.modern_location_country is None and self.geometry is None:
+                raise ValueError(
+                    "Event.location_provenance requires a location assertion"
+                )
+        if (
+            self.hced_candidate_id is not None
+            and self.geometry is not None
+            and self.location_provenance is None
+        ):
+            raise ValueError("Event HCED geometry requires location_provenance")
+        if self.hced_candidate_id is not None and self.geometry is not None:
+            geometry_error = hced_point_geometry_validation_error(self.geometry)
+            if geometry_error is not None:
+                raise ValueError(geometry_error)
         if self.geometry is not None:
             geometry = freeze_json(self.geometry)
             if not isinstance(geometry, Mapping):
@@ -591,6 +647,19 @@ class Event:
             ),
             outcome_source_ids=outcome_source_ids,
             outcome_source_family_ids=outcome_source_family_ids,
+            hced_candidate_id=(
+                raw["hced_candidate_id"] if "hced_candidate_id" in raw else None
+            ),
+            modern_location_country=(
+                raw["modern_location_country"]
+                if "modern_location_country" in raw
+                else None
+            ),
+            location_provenance=(
+                LocationProvenance.from_dict(raw["location_provenance"])
+                if raw.get("location_provenance") is not None
+                else None
+            ),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -639,4 +708,10 @@ class Event:
             result["outcome_source_family_ids"] = list(
                 self.outcome_source_family_ids
             )
+        if self.hced_candidate_id is not None:
+            result["hced_candidate_id"] = self.hced_candidate_id
+        if self.modern_location_country is not None:
+            result["modern_location_country"] = self.modern_location_country
+        if self.location_provenance is not None:
+            result["location_provenance"] = self.location_provenance.to_dict()
         return result

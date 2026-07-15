@@ -17,6 +17,22 @@ Each layer starts at 1500 with high uncertainty. A successor or newly recognized
 
 The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,590 time-bounded polity identities, but only 226 have accepted rating evidence. Its 4,234 events consist of 40 manually curated events, 1,769 crosswalk-resolved HCED tactical encounters, 2,243 label-resolved HCED tactical encounters, 54 coalition-aggregated IWD strategic parent wars, 121 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The review queues hold 27,014 staged source records, of which 23,390 are event-like candidates; 19,163 of those remain outside the rating ledger. An unrated registry entry has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
 
+Location coverage is status-aware. Every rated HCED event is bound to exactly
+one stable source candidate ID, but a location field is published only when it
+survives the frozen candidate-ID quarantine. The release contains 3,978 strict
+GeoJSON Points, 3,934 exact `modern_location_country` transcriptions, and 3,980
+provenance-bound events with at least one of those fields. Each provenance
+object is closed to `source_id: hced_dataset`, the exact source record ID,
+`assertion_status: unreviewed_source_assertion`, and
+`coordinate_precision: unknown`. The Point and label quarantines contain 34
+and 77 candidates respectively, overlap on 32 events, and affect 79 unique
+events; one additional candidate has a source-blank country field. Values are
+withheld, not corrected. The retained country field is a source-transcribed
+geographic-jurisdiction label. Of 47 separately audited disputed or
+non-sovereign jurisdiction rows, 45 remain verbatim and 2 are already withheld
+under independent quarantine criteria. None is normalized into
+sovereign-country truth. Verified-location coverage is unavailable, not zero.
+
 Source-derived events enter only through declared mechanical promotion rules and remain provisional. HCED promotion requires nonduplicate records, an outcome aligned to both crosswalk sides, and a unique polity identity valid for the entire event date range. IWD component rows are never promoted individually, because they can repeat one larger war across many dyads. Instead, each IWD parent conflict is reconstructed as two coalitions from its component initiator/target pairs and rated at most once, and only when the reconstruction is defensible: sides must be consistent (an entity coded on both sides quarantines the parent, since no explicit time-bounded side-switch policy exists), component outcomes must be unanimous once oriented to the reconstructed sides (draws and mixed dyad results are never forced into one binary umbrella outcome), no curated seed war may overlap (naming variants are canonicalized so `WorldWarI` matches `First World War`), and every belligerent must resolve to a unique time-bounded identity. Aggregated confidence is reduced when component rows could not contribute, component rows are attached to the event as provenance, and existential or regime-ending severity is never inferred from IWD's outcome codes. Because IWD supplies no per-participant contribution or stakes data, these events use declared uniform defaults — equal contribution shares within each coalition side, the `major_ally` role for every coalition member, one shared outcome vector per side, and `major_war` scale with `major` stakes for every parent — rather than invented differentiation.
 
 HCED rows lacking Seshat coding on one or both sides are retried in a second,

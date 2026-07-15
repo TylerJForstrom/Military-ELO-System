@@ -288,6 +288,42 @@ class ParticipationEpisodeTests(unittest.TestCase):
 
 
 class CanonicalEventTests(unittest.TestCase):
+    def test_baseline_positional_constructor_order_is_unchanged(self):
+        interval = UncertainDateInterval(
+            UncertainDate.exact(1900, "year"),
+            UncertainDate.exact(1901, "year"),
+        )
+        episode = ParticipationEpisode(
+            "episode-1",
+            "entity-1",
+            "a",
+            "primary",
+        )
+        event = CanonicalEvent(
+            "event-positional",
+            "Positional Event",
+            ("Alias",),
+            ("parent-1",),
+            ("child-1",),
+            interval,
+            {"type": "Point", "coordinates": [1, 2]},
+            (episode,),
+            ("claim-1",),
+            ("decision-1",),
+            "engagement",
+            "tactical",
+            "land",
+            "Region",
+            "accepted",
+        )
+        self.assertEqual(event.participation_episodes, (episode,))
+        self.assertEqual(event.claim_ids, ("claim-1",))
+        self.assertEqual(event.adjudication_ids, ("decision-1",))
+        self.assertEqual(event.event_type, "engagement")
+        self.assertEqual(event.status, "accepted")
+        self.assertIsNone(event.hced_candidate_id)
+        self.assertEqual(CanonicalEvent.from_dict(event.to_dict()), event)
+
     def test_aliases_hierarchy_date_geometry_and_episodes_round_trip(self):
         event = CanonicalEvent(
             id="event-1",

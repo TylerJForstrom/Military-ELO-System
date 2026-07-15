@@ -61,6 +61,14 @@ _PARTICIPATION_EPISODE_FIELDS = frozenset(
         "claim_ids",
     }
 )
+_LOCATION_PROVENANCE_FIELDS = frozenset(
+    {
+        "source_id",
+        "source_record_id",
+        "assertion_status",
+        "coordinate_precision",
+    }
+)
 
 
 def _validate_known_fields(
@@ -277,6 +285,93 @@ def geometry_validation_error(geometry: Any) -> str | None:
         if error is not None:
             return error
     return None
+
+
+def hced_point_geometry_validation_error(geometry: Any) -> str | None:
+    """Return an error unless an HCED assertion is an exact GeoJSON Point.
+
+    This contract is intentionally narrower than the generic geometry model.
+    It validates exactly two finite, non-boolean ordinates in GeoJSON order
+    and does not apply the source-ingest ``(0, 0)`` sentinel rule.
+    """
+
+    if not isinstance(geometry, Mapping):
+        return "HCED location geometry must be a GeoJSON object"
+    if set(geometry) != {"type", "coordinates"}:
+        return "HCED location geometry must contain exactly type and coordinates"
+    if geometry.get("type") != "Point":
+        return "HCED location geometry type must be exactly 'Point'"
+    coordinates = geometry.get("coordinates")
+    if not isinstance(coordinates, (list, tuple)) or len(coordinates) != 2:
+        return "HCED Point coordinates must contain exactly two ordinates"
+    if not all(_is_finite_position_number(value) for value in coordinates):
+        return "HCED Point ordinates must be finite non-boolean numbers"
+    longitude, latitude = coordinates
+    if not -180 <= longitude <= 180:
+        return "HCED Point longitude must be between -180 and 180"
+    if not -90 <= latitude <= 90:
+        return "HCED Point latitude must be between -90 and 90"
+    return None
+
+
+@dataclass(frozen=True)
+class LocationProvenance:
+    """Closed provenance for the source-transcribed HCED location assertion."""
+
+    source_id: str
+    source_record_id: str
+    assertion_status: str
+    coordinate_precision: str
+
+    def __post_init__(self) -> None:
+        for field_name in _LOCATION_PROVENANCE_FIELDS:
+            value = getattr(self, field_name)
+            _require_nonblank_text_value(
+                value, f"LocationProvenance.{field_name}"
+            )
+            if value != value.strip():
+                raise ValueError(
+                    f"LocationProvenance.{field_name} must not contain "
+                    "surrounding whitespace"
+                )
+        expected = {
+            "source_id": "hced_dataset",
+            "assertion_status": "unreviewed_source_assertion",
+            "coordinate_precision": "unknown",
+        }
+        for field_name, expected_value in expected.items():
+            if getattr(self, field_name) != expected_value:
+                raise ValueError(
+                    f"LocationProvenance.{field_name} must be {expected_value!r}"
+                )
+
+    def to_dict(self) -> dict[str, str]:
+        return {
+            "source_id": self.source_id,
+            "source_record_id": self.source_record_id,
+            "assertion_status": self.assertion_status,
+            "coordinate_precision": self.coordinate_precision,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: Any) -> "LocationProvenance":
+        raw = _validate_known_fields(
+            raw,
+            model_name="LocationProvenance",
+            allowed_fields=_LOCATION_PROVENANCE_FIELDS,
+        )
+        missing = sorted(_LOCATION_PROVENANCE_FIELDS - set(raw))
+        if missing:
+            raise ValueError(
+                "LocationProvenance is missing required field(s): "
+                + ", ".join(missing)
+            )
+        return cls(
+            source_id=raw["source_id"],
+            source_record_id=raw["source_record_id"],
+            assertion_status=raw["assertion_status"],
+            coordinate_precision=raw["coordinate_precision"],
+        )
 
 
 def _date_key(value: DateValue | None) -> DateKey | None:
@@ -724,6 +819,10 @@ class CanonicalEvent:
     domain: str | None = None
     region: str | None = None
     status: str = "proposed"
+    hced_candidate_id: str | None = None
+    modern_location_country: str | None = None
+    location_provenance: LocationProvenance | None = None
+    source_ids: tuple[str, ...] = field(default_factory=tuple)
 
     def __post_init__(self) -> None:
         for field_name in ("id", "name", "status"):
@@ -742,6 +841,61 @@ class CanonicalEvent:
             raise TypeError(
                 "CanonicalEvent.date_interval must be an UncertainDateInterval or null"
             )
+        source_ids = tuple(
+            sorted(set(_stable_id_tuple(self.source_ids, "CanonicalEvent.source_ids")))
+        )
+        if any(source_id != source_id.strip() for source_id in source_ids):
+            raise ValueError(
+                "CanonicalEvent.source_ids must not contain surrounding whitespace"
+            )
+        object.__setattr__(self, "source_ids", source_ids)
+        for field_name in ("hced_candidate_id", "modern_location_country"):
+            value = getattr(self, field_name)
+            if value is None:
+                continue
+            _require_nonblank_text_value(value, f"CanonicalEvent.{field_name}")
+            if value != value.strip():
+                raise ValueError(
+                    f"CanonicalEvent.{field_name} must not contain surrounding whitespace"
+                )
+        if self.location_provenance is not None and not isinstance(
+            self.location_provenance, LocationProvenance
+        ):
+            raise TypeError(
+                "CanonicalEvent.location_provenance must be a LocationProvenance or null"
+            )
+        if (
+            self.hced_candidate_id is not None
+            and "hced_dataset" not in self.source_ids
+        ):
+            raise ValueError(
+                "CanonicalEvent.hced_candidate_id requires hced_dataset in source_ids"
+            )
+        if self.modern_location_country is not None and self.location_provenance is None:
+            raise ValueError(
+                "CanonicalEvent.modern_location_country requires location_provenance"
+            )
+        if self.location_provenance is not None:
+            if self.hced_candidate_id is None:
+                raise ValueError(
+                    "CanonicalEvent.location_provenance requires hced_candidate_id"
+                )
+            if self.modern_location_country is None and self.geometry is None:
+                raise ValueError(
+                    "CanonicalEvent.location_provenance requires a location assertion"
+                )
+        if (
+            self.hced_candidate_id is not None
+            and self.geometry is not None
+            and self.location_provenance is None
+        ):
+            raise ValueError(
+                "CanonicalEvent HCED geometry requires location_provenance"
+            )
+        if self.hced_candidate_id is not None and self.geometry is not None:
+            geometry_error = hced_point_geometry_validation_error(self.geometry)
+            if geometry_error is not None:
+                raise ValueError(geometry_error)
         object.__setattr__(
             self,
             "aliases",
@@ -825,6 +979,14 @@ class CanonicalEvent:
             result["date_interval"] = self.date_interval.to_dict()
         if self.geometry is not None:
             result["geometry"] = canonicalize_json(self.geometry)
+        if self.hced_candidate_id is not None:
+            result["hced_candidate_id"] = self.hced_candidate_id
+        if self.modern_location_country is not None:
+            result["modern_location_country"] = self.modern_location_country
+        if self.location_provenance is not None:
+            result["location_provenance"] = self.location_provenance.to_dict()
+        if self.source_ids:
+            result["source_ids"] = list(self.source_ids)
         for name in ("event_type", "layer", "domain", "region"):
             value = getattr(self, name)
             if value is not None:
@@ -879,6 +1041,21 @@ class CanonicalEvent:
                 else None
             ),
             geometry=raw.get("geometry"),
+            hced_candidate_id=_optional_text_or_none(
+                raw, "hced_candidate_id", model_name="CanonicalEvent"
+            ),
+            modern_location_country=_optional_text_or_none(
+                raw, "modern_location_country", model_name="CanonicalEvent"
+            ),
+            location_provenance=(
+                LocationProvenance.from_dict(raw["location_provenance"])
+                if raw.get("location_provenance") is not None
+                else None
+            ),
+            source_ids=_stable_id_tuple(
+                raw["source_ids"] if "source_ids" in raw else [],
+                "CanonicalEvent.source_ids",
+            ),
             participation_episodes=tuple(
                 ParticipationEpisode.from_dict(item)
                 for item in episodes_raw

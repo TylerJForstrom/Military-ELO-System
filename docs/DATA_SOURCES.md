@@ -121,10 +121,26 @@ longitude, `War`, `Participants`, `Winner`, `Loser`, `Participant 1`,
 scale, and alternative sources consulted.
 
 In this system HCED creates engagement candidates. Its winner and loser are
-tactical proposals only. `Country` describes the modern geographic location,
-not a historical participant polity. HCED has no consistently usable
+tactical proposals only. `Country` is retained, when publishable, as the exact
+source-transcribed geographic-jurisdiction label
+`modern_location_country`; it is neither a historical participant polity nor
+normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
+
+The audited location tranche is metadata-only and covers the same 4,012 rated
+HCED candidates without adding events or changing outcomes, participants,
+entities, or Elo. Candidate-ID-only policy manifests withhold 34 Point fields
+and 77 country/jurisdiction fields, with 32 overlapping and 79 unique affected
+events. The remaining release contains 3,978 strict GeoJSON Points, 3,934
+country/jurisdiction labels, and 3,980 events with at least one publishable
+location plus closed HCED provenance. One rated candidate has a source-blank
+country. Of 47 separately reviewed disputed or non-sovereign jurisdiction
+rows, 45 are deliberately retained verbatim and 2 are already withheld under
+independent quarantine criteria. They are source geography labels, not
+sovereignty determinations. Every published location is explicitly an
+`unreviewed_source_assertion` with unknown coordinate precision. Verified
+historical-location coverage is unavailable.
 
 #### Verified live HCED profile
 

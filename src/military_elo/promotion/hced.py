@@ -17,6 +17,12 @@ from .common import (
     _war_tokens,
     normalize_label,
 )
+from .hced_location import (
+    HCED_COUNTRY_QUARANTINE_IDS,
+    HCED_POINT_QUARANTINE_IDS,
+    build_hced_location_fields,
+    hced_candidate_id,
+)
 from .policy import (
     HCED_CURATED_EXCLUSIONS,
     HCED_FACTION_LABELS,
@@ -52,7 +58,8 @@ def promote_hced_crosswalk_rows(
     cluster_spans: dict[str, list[Any]] = {}
 
     for candidate in candidates:
-        if str(candidate.get("candidate_id")) in HCED_CURATED_EXCLUSIONS:
+        candidate_id = hced_candidate_id(candidate)
+        if candidate_id in HCED_CURATED_EXCLUSIONS:
             # Curated adjudications run before every other gate; the row is
             # counted, stays staged, and leaves every promotion universe
             # (including the IWBD dedup keys and label observations).
@@ -157,7 +164,7 @@ def promote_hced_crosswalk_rows(
             span[2] = max(span[2], high_year)
         events.append(
             {
-                "id": f"hced_{_slug(str(candidate['candidate_id']), 80)}",
+                "id": f"hced_{_slug(candidate_id, 80)}",
                 "name": event_name,
                 "year": low_year,
                 "end_year": high_year,
@@ -195,6 +202,11 @@ def promote_hced_crosswalk_rows(
                 ],
                 "outcome_source_ids": ["hced_dataset"],
                 "outcome_source_family_ids": ["hced"],
+                **build_hced_location_fields(
+                    candidate,
+                    point_quarantine_ids=HCED_POINT_QUARANTINE_IDS,
+                    country_quarantine_ids=HCED_COUNTRY_QUARANTINE_IDS,
+                ),
                 "status": "complete",
             }
         )
@@ -271,7 +283,8 @@ def promote_hced_label_rows(
     accepted_label_keys: set[tuple[str, int, str]] = set()
 
     for candidate in deferred_rows:
-        if str(candidate.get("candidate_id")) in curated_exclusions:
+        candidate_id = hced_candidate_id(candidate)
+        if candidate_id in curated_exclusions:
             # Curated adjudications run before every other gate: the row is
             # counted, never merged, and stays staged for human review.
             rejections["curated_row_exclusion"] += 1
@@ -382,7 +395,7 @@ def promote_hced_label_rows(
             source_ids.append("cliopatria_v020")
         events.append(
             {
-                "id": f"hced_label_{_slug(str(candidate['candidate_id']), 74)}",
+                "id": f"hced_label_{_slug(candidate_id, 74)}",
                 "name": event_name,
                 "year": low_year,
                 "end_year": high_year,
@@ -410,7 +423,6 @@ def promote_hced_label_rows(
                     "side_a": side_tiers[0],
                     "side_b": side_tiers[1],
                 },
-                "hced_candidate_id": str(candidate["candidate_id"]),
                 "participants": _participants(
                     side_a,
                     side_b,
@@ -421,6 +433,11 @@ def promote_hced_label_rows(
                 "source_ids": source_ids,
                 "outcome_source_ids": ["hced_dataset"],
                 "outcome_source_family_ids": ["hced"],
+                **build_hced_location_fields(
+                    candidate,
+                    point_quarantine_ids=HCED_POINT_QUARANTINE_IDS,
+                    country_quarantine_ids=HCED_COUNTRY_QUARANTINE_IDS,
+                ),
                 "status": "complete",
             }
         )

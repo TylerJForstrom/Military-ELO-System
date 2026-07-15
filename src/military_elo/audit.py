@@ -15,6 +15,7 @@ from .canonical import (
     UncertainDateInterval,
     date_bounds,
     geometry_validation_error,
+    hced_point_geometry_validation_error,
 )
 from .claims import (
     CLAIM_STATUSES,
@@ -221,6 +222,47 @@ def audit_dataset(
         issues.append(AuditIssue("error", "duplicate_entity", "entities", "Entity ids must be unique"))
     if len({item.id for item in event_list}) != len(event_list):
         issues.append(AuditIssue("error", "duplicate_event", "events", "Event ids must be unique"))
+    hced_candidate_event: dict[str, str] = {}
+    location_provenance_event: dict[tuple[str, str], str] = {}
+    for event in event_list:
+        candidate_id = event.hced_candidate_id
+        if candidate_id is not None:
+            previous_event_id = hced_candidate_event.get(candidate_id)
+            if previous_event_id is not None:
+                issues.append(
+                    AuditIssue(
+                        "error",
+                        "duplicate_hced_candidate_binding",
+                        event.id,
+                        (
+                            f"HCED candidate {candidate_id} is already bound to "
+                            f"event {previous_event_id}"
+                        ),
+                    )
+                )
+            else:
+                hced_candidate_event[candidate_id] = event.id
+        provenance = event.location_provenance
+        if provenance is None:
+            continue
+        provenance_key = (provenance.source_id, provenance.source_record_id)
+        previous_provenance_event_id = location_provenance_event.get(
+            provenance_key
+        )
+        if previous_provenance_event_id is not None:
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "duplicate_location_provenance_binding",
+                    event.id,
+                    (
+                        f"Location provenance {provenance_key!r} is already "
+                        f"bound to event {previous_provenance_event_id}"
+                    ),
+                )
+            )
+        else:
+            location_provenance_event[provenance_key] = event.id
 
     for entity in entity_list:
         if entity.end_year is not None and entity.end_year < entity.start_year:
@@ -363,6 +405,42 @@ def audit_dataset(
                 issues.append(
                     AuditIssue("error", "unknown_source", event.id, f"Unknown source id {source_id}")
                 )
+        if (
+            event.hced_candidate_id is not None
+            and "hced_dataset" not in event.source_ids
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "hced_candidate_without_source",
+                    event.id,
+                    "hced_candidate_id requires hced_dataset in source_ids",
+                )
+            )
+        if (
+            "hced_dataset" in event.outcome_source_ids
+            and event.hced_candidate_id is None
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "hced_outcome_without_candidate_binding",
+                    event.id,
+                    "HCED outcome-source events require an exact hced_candidate_id",
+                )
+            )
+        if (
+            event.location_provenance is not None
+            and event.location_provenance.source_id not in event.source_ids
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "location_provenance_source_not_linked",
+                    event.id,
+                    "location_provenance.source_id must be linked from source_ids",
+                )
+            )
         issues.extend(_audit_outcome_source_contract(event, sources))
         expected_dimensions = {
             "tactical": TACTICAL_DIMENSIONS,
@@ -566,6 +644,9 @@ def audit_dataset(
                 event.child_event_ids,
                 event.date_interval is not None,
                 event.geometry is not None,
+                event.hced_candidate_id is not None,
+                event.modern_location_country is not None,
+                event.location_provenance is not None,
                 event.participation_episodes,
                 event.claim_ids,
             )
@@ -585,6 +666,10 @@ def audit_dataset(
                 child_event_ids=event.child_event_ids,
                 date_interval=audit_event_interval,
                 geometry=event.geometry,
+                hced_candidate_id=event.hced_candidate_id,
+                modern_location_country=event.modern_location_country,
+                location_provenance=event.location_provenance,
+                source_ids=event.source_ids,
                 participation_episodes=event.participation_episodes,
                 claim_ids=(),
                 adjudication_ids=(),
@@ -748,13 +833,18 @@ def _audit_source_locator(
 def _audit_geometry(event: CanonicalEvent) -> list[AuditIssue]:
     if event.geometry is None:
         return []
-    error = geometry_validation_error(event.geometry)
+    if event.hced_candidate_id is not None:
+        error = hced_point_geometry_validation_error(event.geometry)
+        code = "invalid_hced_location_geometry"
+    else:
+        error = geometry_validation_error(event.geometry)
+        code = "invalid_event_geometry"
     if error is None:
         return []
     return [
         AuditIssue(
             "error",
-            "invalid_event_geometry",
+            code,
             event.id,
             error,
         )
@@ -1272,6 +1362,29 @@ def audit_evidence(
             issues.append(
                 AuditIssue(
                     "error", "missing_canonical_event_name", event.id, "Canonical event name is required"
+                )
+            )
+        if sources is not None:
+            for source_id in event.source_ids:
+                if source_id not in sources:
+                    issues.append(
+                        AuditIssue(
+                            "error",
+                            "unknown_canonical_event_source",
+                            event.id,
+                            f"Canonical event source {source_id} is not registered",
+                        )
+                    )
+        if (
+            event.location_provenance is not None
+            and event.location_provenance.source_id not in event.source_ids
+        ):
+            issues.append(
+                AuditIssue(
+                    "error",
+                    "canonical_location_provenance_source_not_linked",
+                    event.id,
+                    "Canonical location provenance must be linked in source_ids",
                 )
             )
         if event.date_interval is not None:

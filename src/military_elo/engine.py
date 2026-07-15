@@ -6,6 +6,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from typing import Iterable
 
+from .claims import canonicalize_json
 from .config import ModelConfig
 from .models import Entity, Event, Participant, Source
 
@@ -566,6 +567,30 @@ class EloEngine:
                             ),
                         }
                         if event.outcome_source_ids
+                        else {}
+                    ),
+                    **(
+                        {"hced_candidate_id": event.hced_candidate_id}
+                        if event.hced_candidate_id is not None
+                        else {}
+                    ),
+                    **(
+                        {
+                            "modern_location_country": event.modern_location_country
+                        }
+                        if event.modern_location_country is not None
+                        else {}
+                    ),
+                    **(
+                        {"geometry": canonicalize_json(event.geometry)}
+                        if event.geometry is not None
+                        else {}
+                    ),
+                    **(
+                        {
+                            "location_provenance": event.location_provenance.to_dict()
+                        }
+                        if event.location_provenance is not None
                         else {}
                     ),
                     "k_factor": round(update.k_factor, 3),

@@ -92,7 +92,7 @@ historical assertion is true.
 | Field group | Reported checks |
 |---|---|
 | Dates | Integer start and end years, ordered interval, and explicit date precision, each over rated events. |
-| Locations | Named or structured event location, valid numeric coordinate pair, supported GeoJSON geometry containing at least one valid position, and explicit event-region field. GeoJSON structure is validated recursively, including nested geometry collections and closed polygon rings. Positions use longitude then latitude; latitude must be from -90 through 90 and longitude from -180 through 180. Empty, malformed, unsupported, boolean, nonnumeric, non-finite, and wholly out-of-range geometry is absent. `geographic_scope` and entity region are not locations. |
+| Locations | Generic presence reports named or structured event location, valid numeric coordinate pair, supported GeoJSON geometry containing at least one valid position, and explicit event-region fields. This presence-only aggregate is separate from the HCED status-aware metrics. Provenance-bound HCED coverage reports strict source Points, exact source-transcribed geographic-jurisdiction labels, and any surviving HCED location separately; it requires an exact candidate binding, linked `hced_dataset` source, and closed unreviewed provenance. GeoJSON positions use longitude then latitude. `geographic_scope` and entity region are not locations. |
 | Participants | At least two participant objects, nonblank entity IDs and sides, and at least two distinct sides. |
 | Roles | Explicit participant role presence and role-category counts. Model defaults are not inserted for this measurement. |
 | Objectives | Explicit participant objective statements, separately from the layer-specific numerical objective-attainment dimension. An attainment score does not document the objective itself. |
@@ -102,6 +102,16 @@ historical assertion is true.
 Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
+
+The current status-aware HCED numerators are 3,978 unreviewed source Points,
+3,934 source-transcribed geographic-jurisdiction labels, and 3,980 events with
+at least one provenance-bound HCED location, all over 4,234 rated events.
+Verified-location coverage is `not_available`. The report separately publishes
+the frozen policy counts rather than inferring policy from absence: 34 Point
+fields withheld by quarantine, 77 country/jurisdiction fields withheld, one
+source-blank country field, 32 events in both quarantines, and 79 unique events
+with any quarantined field. Retained disputed or non-sovereign labels describe
+source geography and are not sovereign-country truth.
 
 ## Independent outcome-source families
 

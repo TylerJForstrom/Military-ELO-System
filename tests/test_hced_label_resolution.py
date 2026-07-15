@@ -776,15 +776,28 @@ class ReleaseArtifactTests(unittest.TestCase):
         # digest pins the legacy CONTENT of that block after stripping only the
         # additive direct-outcome contract, which is pinned separately.
         legacy = self.events[:1863]
-        legacy_payload = [
-            {
-                key: value
-                for key, value in event.items()
-                if key
-                not in {"outcome_source_ids", "outcome_source_family_ids"}
+        legacy_payload = []
+        for event in legacy:
+            additive_fields = {
+                "outcome_source_ids",
+                "outcome_source_family_ids",
             }
-            for event in legacy
-        ]
+            if str(event["id"]).startswith("hced_hced_"):
+                additive_fields.update(
+                    {
+                        "hced_candidate_id",
+                        "modern_location_country",
+                        "geometry",
+                        "location_provenance",
+                    }
+                )
+            legacy_payload.append(
+                {
+                    key: value
+                    for key, value in event.items()
+                    if key not in additive_fields
+                }
+            )
         digest = hashlib.sha256(
             json.dumps(legacy_payload, sort_keys=True).encode("utf-8")
         ).hexdigest()
