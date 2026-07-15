@@ -137,6 +137,11 @@ IWD_COW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "255": ((1701, 1870, "kingdom_prussia"), (1871, 1918, "german_empire")),
     "300": ((1804, 1866, "austrian_empire"), (1867, 1918, "austria_hungary")),
     "345": ((1882, 1918, "kingdom_serbia"),),
+    # Curated Wave 4 identities. The 2026 endpoint is the policy-table
+    # representation of an open/current seed identity (whose end_year is null).
+    "100": ((1863, 1885, "united_states_colombia"),),
+    "670": ((1932, 2026, "kingdom_saudi_arabia"),),
+    "678": ((1918, 1961, "mutawakkilite_kingdom_yemen"),),
 }
 
 
@@ -176,6 +181,13 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1794, 1925, "qajar_iran"),
     ),
     "ottomans": ((1299, 1922, "ottoman_empire"),),
+    # Exact source spellings, including two upstream misspellings. These are
+    # policy keys only and are deliberately not broad seed aliases.
+    "macedonia": ((-336, -323, "macedonian_empire"),),
+    "ummayyad caliphate": ((661, 750, "umayyad_caliphate"),),
+    "mamluks": ((1250, 1517, "mamluk_sultanate"),),
+    "dutch rebels": ((1568, 1795, "dutch_republic"),),
+    "untied kingdom": ((1707, 2026, "united_kingdom"),),
     # ---- M4 curated state identities (second reviewer pending) ----
     "afghanistan": ((1747, 1822, "durrani_empire"), (1823, 1926, "emirate_afghanistan")),
     "austria": _HABSBURG_WINDOWS,
@@ -285,6 +297,71 @@ IWBD_COALITION_SIDE_LABELS: frozenset[str] = frozenset({
     "nato",
     "arab states",
 })
+
+
+# Candidate-keyed exceptions to IWBD's otherwise fail-closed composite-side
+# and containment gates. Each exception carries an exact semantic fingerprint;
+# iwbd.py raises on source or resolver drift instead of silently broadening it.
+# The Abtao side reconstruction is uniquely reviewed: Spain opposed the exact
+# Chile-Peru coalition and the result is inconclusive. No generic slash parsing
+# is enabled by this policy.
+IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS: dict[str, dict[str, Any]] = {
+    "iwbd-52-18-185": {
+        "fingerprint": {
+            "source_row": "185",
+            "name": "Abtao",
+            "war_name": "Naval War",
+            "start_date": "1866-02-07",
+            "end_date": "1866-02-07",
+            "duration_days": "1",
+            "attacker_raw": "Spain",
+            "defender_raw": "Chile/Peru",
+            "winner_raw": "Inconclusive",
+            "battle_level_victor_role": "Inconclusive",
+        },
+        "attacker": (("Spain", "spanish_empire"),),
+        "defender": (
+            ("Chile", "clio_ch_chile_rep_1_1812_3b31ba25"),
+            ("Peru", "clio_q419_1822_a6e12c5b"),
+        ),
+    },
+}
+
+
+# Mishan (17-18 November 1929) overlaps Chalainor 2 on the first day but the
+# reviewed operations are concurrent and geographically distinct. The target
+# may bypass containment only while the exact sibling set and both source
+# fingerprints remain unchanged.
+IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS: dict[str, dict[str, Any]] = {
+    "iwbd-118-45-842": {
+        "fingerprint": {
+            "source_row": "842",
+            "name": "Mishan",
+            "war_name": "Manchurian",
+            "start_date": "1929-11-17",
+            "end_date": "1929-11-18",
+            "duration_days": "2",
+            "attacker_raw": "USSR",
+            "defender_raw": "China",
+            "winner_raw": "USSR",
+            "battle_level_victor_role": "Attacker",
+        },
+        "contained_candidates": {
+            "iwbd-118-45-840": {
+                "source_row": "840",
+                "name": "Chalainor 2",
+                "war_name": "Manchurian",
+                "start_date": "1929-11-17",
+                "end_date": "1929-11-17",
+                "duration_days": "1",
+                "attacker_raw": "USSR",
+                "defender_raw": "China",
+                "winner_raw": "USSR",
+                "battle_level_victor_role": "Attacker",
+            },
+        },
+    },
+}
 
 
 # Declared identity deny windows, enforced in every label-resolution pipeline:
@@ -426,6 +503,11 @@ IWBD_CURATED_EXCLUSIONS: dict[str, str] = {
 
 
 IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
+    "1": (
+        "requires a new Bourbon Restoration identity and review of the proposed "
+        "COW 220 continuity window; keep the parent staged rather than broadening "
+        "France or Spain continuity"
+    ),
     "5": (
         "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the "
         "First Schleswig War; the source assertion stays staged rather than being inverted"
@@ -446,6 +528,23 @@ IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
 # variants exact-key dedup cannot catch, one measured crosswalk error, and
 # rows whose "Viet Cong" side labels PAVN engagements.
 HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
+    "hced-Megalopolis-331-1": (
+        "chronology and the incomplete Macedonian coalition were not independently adjudicated"
+    ),
+    "hced-Jaxartes-329-1": (
+        "the broad Scythia label does not identify the specific Saka force"
+    ),
+    "hced-Antioch1268-1": (
+        "the Principality of Antioch interval ends at its 1268 destruction, not 1271; "
+        "the boundary remains unadjudicated"
+    ),
+    "hced-Mons1572-1": "source-side reconstruction omits the Huguenot co-belligerent",
+    "hced-Steenwijk1592-1": "source-side reconstruction omits the English co-belligerent",
+    "hced-Amjhera1728-1": "conflicting source chronology remains unresolved",
+    "hced-Abensberg1809-1": (
+        "incomplete coalition reconstruction: the proposed two-polity rating omits "
+        "principal Bavarian and other Confederation forces"
+    ),
     "hced-Binh Gia1964-1": "duplicate of iwbd_iwbd_163_62_1468/1469 (Binh Gia a/b, 1964)",
     "hced-Khe Sanh1967-1": "duplicate of iwbd_iwbd_163_62_1489 (Khe Sanh 1, 1967)",
     "hced-Long Tan, Vietnam1966-1": "duplicate of iwbd_iwbd_163_62_1485 (Long Tan, 1966)",

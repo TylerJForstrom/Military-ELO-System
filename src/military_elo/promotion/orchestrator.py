@@ -44,6 +44,7 @@ from .hced_location import (
     HCED_EXPECTED_QUARANTINE_OVERLAP,
     HCED_EXPECTED_QUARANTINE_UNION,
     HCED_LOCATION_WARNING,
+    HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     HCED_POINT_QUARANTINE_EVENT_SHA256,
     HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
     HCED_POINT_QUARANTINE_IDS,
@@ -314,7 +315,7 @@ def _validate_hced_location_release(
         )
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
-    if (crosswalk_count, label_count) != (1_769, 2_243):
+    if (crosswalk_count, label_count) != (1_769, 2_250):
         raise ValueError(
             "HCED promotion tranche counts changed: "
             f"{crosswalk_count} crosswalk and {label_count} label"
@@ -337,8 +338,8 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 34
-        or len(HCED_COUNTRY_QUARANTINE_IDS) != 77
+        len(HCED_POINT_QUARANTINE_IDS) != 37
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 79
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
         != HCED_EXPECTED_QUARANTINE_OVERLAP
@@ -373,6 +374,7 @@ def _validate_hced_location_release(
         "country_quarantine_candidate_manifest_sha256": (
             HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
         ),
+        "quarantine_policy_sha256": HCED_LOCATION_QUARANTINE_POLICY_SHA256,
         "assertion_status": {
             "unreviewed_source_assertion": provenance_count,
         },
@@ -973,12 +975,15 @@ def build_expanded_release(
                 "one year; "
                 "broader ordinal/part matches require one recognized suffix path to extend "
                 "the other in the same year with the same resolved outcome sides; "
-                "their date span does not "
-                "contain a differently-named battle of the same war (campaign umbrellas stay "
-                "staged); the coded victor matches a named side; both sides are single "
-                "polities resolving to unique time-bounded identities outside declared deny "
-                "windows; and severity is capped at limited. Duplicate matches are excluded, "
-                "never merged. "
+                "their date span does not contain a differently-named battle of the same "
+                "war (campaign umbrellas stay staged); the coded victor matches a named "
+                "side; and both sides resolve to unique time-bounded identities outside "
+                "declared deny windows. Two candidate-keyed reviewed contracts are narrow "
+                "exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan "
+                "may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both "
+                "contracts fail closed on source, sibling-set, or resolver drift and do not "
+                "enable generic punctuation splitting or containment bypasses. Severity is "
+                "capped at limited. Duplicate matches are excluded, never merged. "
                 "UCDP conflict-termination episodes promote only as conflict-level terminal "
                 "victory episodes (outcome codes 3/4): peace agreements, ceasefires, low "
                 "activity, and actor cessation stay staged; every primary party must be a "
@@ -1081,7 +1086,7 @@ def build_expanded_release(
             "Some Cliopatria identity intervals span successive regimes (for example one Cambodia identity covering 1956-2024), so events resolved to them can share a rating line across regime changes until those identities receive explicit curated splits.",
             "Aggregated IWD coalition events use declared uniform defaults for contribution, role, scale, and stakes because the source carries no per-participant data.",
             "IWBD events use declared uniform defaults for scale, stakes, contribution, and role because the source carries no per-battle magnitude data, and IWBD war-level victor codes are ignored: battle records never update strategic outcomes.",
-            "Coalition-labelled IWBD battles (notably both world wars) remain staged pending curated coalition composition, and IWBD rows whose date span contains a sibling battle are staged as presumptive campaign umbrellas, which also quarantines some genuinely distinct long engagements.",
+            "Coalition-labelled IWBD battles and sibling-containing spans remain staged unless an exact candidate-keyed reviewed composition or concurrent-distinct relation is present; the current exceptions are Abtao and Mishan only, and both fail closed on source or resolver drift.",
             "IWBD-HCED name and date matches are counted as exclusions only; they are not treated as independent corroboration and no HCED record is modified.",
             "UCDP episode-level termination outcomes may not describe every supporter: secondary parties are recorded without outcomes, and uniform strategic vectors with scale-linked participant uniforms are declared defaults, as with IWD.",
             "The 1967 Arab-Israeli fronts and the 1974 Paracel episode stay staged: the source carries mutually contradictory orientations for the former and a documented side-attribution dispute for the latter.",

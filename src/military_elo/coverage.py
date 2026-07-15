@@ -23,6 +23,7 @@ from .promotion.hced_location import (
     HCED_EXPECTED_PROVENANCE_OBJECTS,
     HCED_EXPECTED_QUARANTINE_OVERLAP,
     HCED_EXPECTED_QUARANTINE_UNION,
+    HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
     HCED_POINT_QUARANTINE_IDS,
     HCED_SOURCE_BLANK_COUNTRY_IDS,
@@ -866,6 +867,7 @@ def _hced_location_policy_report(
         "country_quarantine_candidate_manifest_sha256": (
             HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
         ),
+        "quarantine_policy_sha256": HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     }
     hashes: dict[str, str] = {}
     for field_name, expected_hash in expected_hashes.items():

@@ -21,6 +21,7 @@ from .promotion.hced_location import (
     HCED_EXPECTED_QUARANTINE_OVERLAP,
     HCED_EXPECTED_QUARANTINE_UNION,
     HCED_LOCATION_WARNING,
+    HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     HCED_POINT_QUARANTINE_IDS,
     HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
     HCED_SOURCE_BLANK_COUNTRY_IDS,
@@ -148,9 +149,11 @@ def _validate_hced_registry_coupling(
         "geojson_points": HCED_EXPECTED_POINT_ASSERTIONS,
         "modern_location_country_assertions": HCED_EXPECTED_COUNTRY_ASSERTIONS,
         "location_provenance_objects": HCED_EXPECTED_PROVENANCE_OBJECTS,
-        "point_fields_withheld_by_quarantine": 34,
-        "country_or_jurisdiction_fields_withheld_by_quarantine": 77,
-        "source_blank_country_fields": 1,
+        "point_fields_withheld_by_quarantine": len(HCED_POINT_QUARANTINE_IDS),
+        "country_or_jurisdiction_fields_withheld_by_quarantine": len(
+            HCED_COUNTRY_QUARANTINE_IDS
+        ),
+        "source_blank_country_fields": len(HCED_SOURCE_BLANK_COUNTRY_IDS),
         "point_country_quarantine_overlap": HCED_EXPECTED_QUARANTINE_OVERLAP,
         "unique_events_with_any_quarantined_field": HCED_EXPECTED_QUARANTINE_UNION,
         "point_quarantine_candidate_manifest_sha256": (
@@ -159,6 +162,7 @@ def _validate_hced_registry_coupling(
         "country_quarantine_candidate_manifest_sha256": (
             HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
         ),
+        "quarantine_policy_sha256": HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     }
     if len(candidate_ids) != len(set(candidate_ids)):
         raise ValueError("HCED registry coupling: candidate bindings are not unique")

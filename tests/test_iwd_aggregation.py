@@ -103,6 +103,18 @@ class CowCodePolicyTests(unittest.TestCase):
         self.assertIsNone(_cow_policy_seed_id("365", 1917, 1922))
         self.assertIsNone(_cow_policy_seed_id("220", 1991, 1991))
 
+    def test_wave4_identity_windows_fail_closed_at_both_edges(self) -> None:
+        cases = (
+            ("100", 1863, 1885, "united_states_colombia"),
+            ("670", 1932, 2026, "kingdom_saudi_arabia"),
+            ("678", 1918, 1961, "mutawakkilite_kingdom_yemen"),
+        )
+        for code, low, high, entity_id in cases:
+            with self.subTest(code=code):
+                self.assertEqual(_cow_policy_seed_id(code, low, high), entity_id)
+                self.assertIsNone(_cow_policy_seed_id(code, low - 1, low))
+                self.assertIsNone(_cow_policy_seed_id(code, high, high + 1))
+
 
 class CandidateSeedMappingTests(unittest.TestCase):
     SEED_BY_ID = {
@@ -164,6 +176,49 @@ class CandidateSeedMappingTests(unittest.TestCase):
 
 
 class IwdAggregationTests(unittest.TestCase):
+    @staticmethod
+    def _resolve_wave4_policy(name, cow_code, low_year, high_year):
+        entity_id = _cow_policy_seed_id(str(cow_code), low_year, high_year)
+        if entity_id:
+            return entity_id, None
+        return f"entity_{name.lower().replace(' ', '_')}", None
+
+    def test_colombia_ecuador_parent_uses_the_1863_federal_identity(self) -> None:
+        component = _component(
+            "iwd-23", "15", "Ecuadorian-Colombian1863",
+            "Ecuadorian-Colombian1863", 1863, 1863, "1",
+            [("Colombia", "100")], [("Ecuador", "130")],
+        )
+        result = aggregate_iwd_parent_wars(
+            [component], [], self._resolve_wave4_policy
+        )
+        self.assertEqual(result["parent_rejections"], {})
+        self.assertEqual(len(result["events"]), 1)
+        participants = result["events"][0]["participants"]
+        winner = next(p for p in participants if "victory" in p["termination"])
+        self.assertEqual(winner["entity_id"], "united_states_colombia")
+
+    def test_saudi_yemen_parent_uses_both_curated_1934_identities(self) -> None:
+        component = _component(
+            "iwd-107", "48", "SaudiArabia-Yemen1934",
+            "SaudiArabia-Yemen1934", 1934, 1934, "1",
+            [("Saudi Arabia", "670")], [("Yemen", "678")],
+        )
+        result = aggregate_iwd_parent_wars(
+            [component], [], self._resolve_wave4_policy
+        )
+        self.assertEqual(result["parent_rejections"], {})
+        self.assertEqual(len(result["events"]), 1)
+        participants = result["events"][0]["participants"]
+        by_termination = {p["termination"]: p["entity_id"] for p in participants}
+        self.assertEqual(
+            by_termination,
+            {
+                "victory": "kingdom_saudi_arabia",
+                "defeat": "mutawakkilite_kingdom_yemen",
+            },
+        )
+
     def _gulf_components(self, coalition_size=16):
         return [
             _component(

@@ -771,11 +771,11 @@ class ReleaseArtifactTests(unittest.TestCase):
         ]
 
     def test_existing_crosswalk_event_payload_is_unchanged(self) -> None:
-        # The first 1,863 events are the reviewed pre-label-pass block (40 seed +
-        # 1,769 crosswalk HCED + 54 IWD). The label pass is a pure append; this
+        # The first 1,865 events are the reviewed pre-label-pass block (40 seed +
+        # 1,769 crosswalk HCED + 56 IWD). The label pass is a pure append; this
         # digest pins the legacy CONTENT of that block after stripping only the
         # additive direct-outcome contract, which is pinned separately.
-        legacy = self.events[:1863]
+        legacy = self.events[:1865]
         legacy_payload = []
         for event in legacy:
             additive_fields = {
@@ -803,10 +803,10 @@ class ReleaseArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             digest,
-            "28ffede846d16472061fa91043eeb2360fd51cf197c39aaf27886c7c8984e49d",
+            "c45990dc61157f50ae1713b1ae6b3dbbbdbfc2f66282c5d314cc28675c4f3be7",
             "pre-label-pass event block changed content",
         )
-        self.assertEqual(len(self.events) > 1863, True)
+        self.assertEqual(len(self.events) > 1865, True)
         for event in legacy:
             self.assertNotIn("identity_resolution", event)
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
@@ -823,11 +823,11 @@ class ReleaseArtifactTests(unittest.TestCase):
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
-        self.assertEqual(len(iwd_events), 54)
+        self.assertEqual(len(iwd_events), 56)
         promotion = self.metadata["promotion"]
-        self.assertEqual(promotion["accepted_iwd_wars"], 54)
+        self.assertEqual(promotion["accepted_iwd_wars"], 56)
         self.assertEqual(
-            sum(promotion["iwd_rejections"].values()) + 54,
+            sum(promotion["iwd_rejections"].values()) + 56,
             promotion["iwd_parent_wars_total"],
         )
         for event in iwd_events:
@@ -998,10 +998,10 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 371 + 4,498 + 1,769 + 2,243 == 8,881.
+        # Pinned measured funnel: 371 + 4,491 + 1,769 + 2,250 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (371, 4498, 1769, 2243, 8881),
+            (371, 4491, 1769, 2250, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
@@ -1015,7 +1015,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 46
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 53
         )
         self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 39)
         # uncoded_side is gone from pass 1: replaced by the deferral.
@@ -1026,7 +1026,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2243)
+        self.assertEqual(len(label_events), 2250)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

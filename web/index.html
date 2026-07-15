@@ -11,6 +11,8 @@
     <title>Military Elo Atlas</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./location.js" defer></script>
+    <script src="./map.js" defer></script>
+    <script src="./horizon.js" defer></script>
     <script src="./app.js" defer></script>
   </head>
   <body>
@@ -225,9 +227,9 @@
               <p class="eyebrow">Rating history</p>
               <h2 id="timeline-title">Leaders through time</h2>
               <p class="section-note">
-                Lines show the leaders active in the viewed year, filled out with the all-time
-                leaders by historical success, plus any pinned polities. Elo is held between
-                rated events. Shaded envelopes show model uncertainty.
+                Lines and rankings use only outcomes known by the viewed year. Elo is held between
+                rated events, and shaded envelopes show model uncertainty. Pinned polities appear
+                once they have rated evidence within the selected horizon.
               </p>
             </div>
             <div class="year-readout">
@@ -255,26 +257,154 @@
             </button>
           </div>
 
-          <div class="chart-frame" id="chart-frame">
-            <svg
-              id="timeline-chart"
-              class="timeline-chart"
-              role="img"
-              aria-labelledby="chart-title chart-description"
-            >
-              <title id="chart-title">Historical military Elo rating timeline</title>
-              <desc id="chart-description">Loading rating history.</desc>
-            </svg>
-            <div class="chart-tooltip" id="chart-tooltip" hidden></div>
-            <div class="chart-empty" id="chart-empty" hidden>
-              No rated polity is active at this date. Pin a polity to keep its full history visible.
+          <div class="timeline-workspace">
+            <div class="chart-frame" id="chart-frame">
+              <svg
+                id="timeline-chart"
+                class="timeline-chart"
+                role="img"
+                aria-labelledby="chart-title chart-description"
+              >
+                <title id="chart-title">Historical military Elo rating timeline</title>
+                <desc id="chart-description">Loading rating history.</desc>
+              </svg>
+              <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+              <div class="chart-empty" id="chart-empty" hidden>
+                No rated polity is active at this date.
+              </div>
             </div>
+
+            <aside class="timeline-ranking" aria-labelledby="timeline-ranking-title">
+              <header>
+                <div>
+                  <p class="eyebrow">Same-year standings</p>
+                  <h3 id="timeline-ranking-title">Top rated at selected year</h3>
+                </div>
+                <span class="metric-chip" id="timeline-ranking-metric">Composite Elo</span>
+              </header>
+              <ol id="timeline-ranking-list" class="timeline-ranking-list" role="list"></ol>
+              <p id="timeline-ranking-empty" class="empty-state" hidden>
+                No active ratings are available at this date.
+              </p>
+            </aside>
           </div>
 
           <div class="chart-footer">
             <ul class="chart-legend" id="chart-legend" aria-label="Visible rating lines"></ul>
             <p class="chart-summary" id="chart-summary" aria-live="polite"></p>
           </div>
+        </section>
+
+        <section class="map-section" aria-labelledby="battle-map-title">
+          <header class="section-heading map-heading">
+            <div>
+              <p class="eyebrow">Geographic event explorer</p>
+              <h2 id="battle-map-title">Battles across the map</h2>
+              <p class="section-note">
+                The map follows the timeline year above and never shows an outcome before its event
+                ends. Hover or focus a marker for participant outcomes and track-specific Elo changes;
+                select one to open its evidence record.
+              </p>
+            </div>
+            <div class="year-readout map-year-readout">
+              <span>Map centered on</span>
+              <output id="map-year" for="year-slider">&mdash;</output>
+            </div>
+          </header>
+
+          <div class="map-controls" role="group" aria-label="Historical battle map filters">
+            <label class="mini-field" for="map-window-select">
+              <span>Time window</span>
+              <select id="map-window-select">
+                <option value="year">Ending in selected year</option>
+                <option value="5">Past 5 years</option>
+                <option value="25" selected>Past 25 years</option>
+                <option value="50">Past 50 years</option>
+                <option value="all">All through selected year</option>
+              </select>
+            </label>
+
+            <label class="mini-field" for="map-domain-select">
+              <span>Domain</span>
+              <select id="map-domain-select">
+                <option value="all">All domains</option>
+              </select>
+            </label>
+
+            <label class="mini-field" for="map-layer-select">
+              <span>Rating layer</span>
+              <select id="map-layer-select">
+                <option value="all">All layers</option>
+                <option value="tactical">Tactical</option>
+                <option value="operational">Operational</option>
+                <option value="strategic">Strategic</option>
+              </select>
+            </label>
+
+            <label class="mini-field" for="map-confidence-select">
+              <span>Event confidence</span>
+              <select id="map-confidence-select">
+                <option value="all">All confidence bands</option>
+                <option value="high">High (80%+)</option>
+                <option value="medium">Medium (55&ndash;79%)</option>
+                <option value="low">Low (below 55%)</option>
+              </select>
+            </label>
+
+            <label class="mini-field" for="map-location-status-select">
+              <span>Location status</span>
+              <select id="map-location-status-select">
+                <option value="all">All publishable Points</option>
+                <option value="unreviewed_source_assertion">Unreviewed source assertions</option>
+              </select>
+            </label>
+          </div>
+
+          <p class="map-location-warning" role="note">
+            Points shown here are unreviewed source assertions with unknown coordinate precision.
+            Quarantined, invalid, and missing Points are never plotted. The schematic land outline
+            is a modern geographic reference, not a historical border map.
+          </p>
+
+          <div class="map-frame" id="battle-map-frame">
+            <svg
+              id="battle-map"
+              class="battle-map"
+              role="img"
+              aria-labelledby="battle-map-svg-title battle-map-svg-description"
+            >
+              <title id="battle-map-svg-title">Historical military event map</title>
+              <desc id="battle-map-svg-description">Loading publishable event Points.</desc>
+            </svg>
+            <div
+              class="map-marker-layer"
+              id="map-marker-layer"
+              role="group"
+              aria-label="Publishable mapped military events"
+            ></div>
+            <div class="map-tooltip" id="map-tooltip" role="tooltip" hidden></div>
+            <div class="map-zoom-controls" aria-label="Map view controls">
+              <button id="map-zoom-in" type="button" aria-label="Zoom map in">+</button>
+              <button id="map-zoom-out" type="button" aria-label="Zoom map out">&minus;</button>
+              <button id="map-reset-view" type="button">Reset</button>
+            </div>
+          </div>
+
+          <div class="map-footer">
+            <p class="map-summary" id="map-summary" aria-live="polite">Loading mapped events.</p>
+            <p class="map-legend" aria-label="Map marker legend">
+              <span><i class="map-legend-point" aria-hidden="true"></i> Source-transcribed Point</span>
+              <span><i class="map-legend-cluster" aria-hidden="true">3</i> Clustered events</span>
+            </p>
+          </div>
+
+          <section class="map-cluster-panel" id="map-cluster-panel" aria-labelledby="map-cluster-title" hidden>
+            <header>
+              <h3 id="map-cluster-title">Events in this map cluster</h3>
+              <button id="map-cluster-close" type="button" aria-label="Close clustered event list">Close</button>
+            </header>
+            <ol id="map-cluster-list" class="map-cluster-list"></ol>
+          </section>
         </section>
 
         <section class="rankings-grid" aria-label="Rankings at selected year">

@@ -2524,6 +2524,21 @@
     ]
   },
   {
+    "id": "united_states_colombia",
+    "name": "United States of Colombia",
+    "kind": "federal_republic",
+    "start_year": 1863,
+    "end_year": 1885,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated identity beginning with the 1863 federal constitution and ending before the Republic of Colombia identity took effect in 1886. Generic 'Colombia' is deliberately not an alias, and no rating crosses the constitutional reset.",
+    "source_ids": [
+      "colombia_constitution_1863",
+      "state_department_colombia_history"
+    ]
+  },
+  {
     "id": "austria_hungary",
     "name": "Austria-Hungary",
     "kind": "union_state",
@@ -2797,6 +2812,21 @@
     ]
   },
   {
+    "id": "mutawakkilite_kingdom_yemen",
+    "name": "Mutawakkilite Kingdom of Yemen",
+    "kind": "kingdom",
+    "start_year": 1918,
+    "end_year": 1961,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated post-Ottoman kingdom beginning in 1918. The policy stops at the last complete pre-coup year, 1961, so the 1962 transition is not assigned by a year-only source. Generic 'Yemen' and the broader North Yemen envelope are deliberately excluded.",
+    "source_ids": [
+      "uk_archives_yemen_1918",
+      "oeaw_mutawakkilite_yemen"
+    ]
+  },
+  {
     "id": "clio_su_finland_rep_1918_31f8394b",
     "name": "Republic of Finland",
     "kind": "republic",
@@ -3014,6 +3044,20 @@
     ]
   },
   {
+    "id": "kingdom_saudi_arabia",
+    "name": "Kingdom of Saudi Arabia",
+    "kind": "kingdom",
+    "start_year": 1932,
+    "end_year": null,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated identity beginning with the proclamation effective 23 September 1932. Generic 'Saudi Arabia' is deliberately not an alias; COW 670 reaches this identity only through its exact time-bounded code policy.",
+    "source_ids": [
+      "saudi_mofa_history"
+    ]
+  },
+  {
     "id": "clio_sa_south_africa_rep_1932_8a5c7c70",
     "name": "South Africa",
     "kind": "polity",
@@ -3046,22 +3090,6 @@
     "source_ids": [
       "cliopatria_polities",
       "ushmm_wwii_europe"
-    ]
-  },
-  {
-    "id": "clio_q851_1936_a94f117c",
-    "name": "Kingdom of Saudi Arabia",
-    "kind": "kingdom",
-    "start_year": 1936,
-    "end_year": 2024,
-    "region": "Unclassified",
-    "aliases": [
-      "Saudi Arabia"
-    ],
-    "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
-    "source_ids": [
-      "cliopatria_v020"
     ]
   },
   {

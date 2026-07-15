@@ -2,6 +2,7 @@ import json
 import hashlib
 import math
 import unittest
+from collections import Counter
 from pathlib import Path
 
 from military_elo.audit import audit_dataset, audit_evidence
@@ -23,7 +24,8 @@ from military_elo.promotion.hced_location import (
     HCED_COUNTRY_QUARANTINE_IDS,
     HCED_EXPECTED_QUARANTINE_OVERLAP,
     HCED_EXPECTED_QUARANTINE_UNION,
-    HCED_LOCATION_QUARANTINE_AUDIT_SHA256,
+    HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256,
+    HCED_LOCATION_QUARANTINE_POLICY_SHA256,
     HCED_POINT_QUARANTINE_CANDIDATE_IDS,
     HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
     HCED_POINT_QUARANTINE_EVENT_SHA256,
@@ -102,17 +104,57 @@ def _rating_event(*, with_location: bool) -> Event:
 
 class HcedPointParserTests(unittest.TestCase):
     def test_quarantine_module_imports_with_final_manifest_sizes(self) -> None:
-        self.assertEqual(len(HCED_POINT_QUARANTINE_CANDIDATE_IDS), 34)
-        self.assertEqual(len(HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS), 77)
+        self.assertEqual(len(HCED_POINT_QUARANTINE_CANDIDATE_IDS), 37)
+        self.assertEqual(len(HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS), 79)
 
-    def test_frozen_manifest_hashes_duplicates_overlap_and_audit_digest(self) -> None:
+    def test_tracked_policy_hashes_duplicates_overlap_and_snapshot_provenance(self) -> None:
         def sorted_newline_hash(values: tuple[str, ...]) -> str:
             payload = "".join(f"{value}\n" for value in sorted(values))
             return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
         self.assertEqual(
-            HCED_LOCATION_QUARANTINE_AUDIT_SHA256,
+            HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256,
             "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954",
+        )
+        policy_path = ROOT / "data" / "policy" / "hced-location-quarantine.tsv"
+        policy_bytes = policy_path.read_bytes()
+        self.assertTrue(policy_bytes.endswith(b"\n"))
+        self.assertEqual(
+            hashlib.sha256(policy_bytes).hexdigest(),
+            HCED_LOCATION_QUARANTINE_POLICY_SHA256,
+        )
+        lines = policy_bytes.decode("utf-8").splitlines()
+        self.assertEqual(
+            lines[0],
+            "candidate_id\tevent_id\tfield\treason_codes",
+        )
+        rows = [line.split("\t") for line in lines[1:]]
+        self.assertEqual(len(rows), 116)
+        self.assertTrue(all(len(row) == 4 and all(row) for row in rows))
+        self.assertEqual(rows, sorted(rows))
+        self.assertEqual(
+            Counter(row[2] for row in rows),
+            {"geometry": 37, "modern_location_country": 79},
+        )
+        point_rows = [row for row in rows if row[2] == "geometry"]
+        country_rows = [
+            row for row in rows if row[2] == "modern_location_country"
+        ]
+        self.assertEqual(
+            tuple(row[0] for row in point_rows),
+            HCED_POINT_QUARANTINE_CANDIDATE_IDS,
+        )
+        self.assertEqual(
+            tuple(row[0] for row in country_rows),
+            HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS,
+        )
+        self.assertEqual(
+            sorted_newline_hash(tuple(row[1] for row in point_rows)),
+            HCED_POINT_QUARANTINE_EVENT_SHA256,
+        )
+        self.assertEqual(
+            sorted_newline_hash(tuple(row[1] for row in country_rows)),
+            HCED_COUNTRY_QUARANTINE_EVENT_SHA256,
         )
         self.assertEqual(
             len(HCED_POINT_QUARANTINE_CANDIDATE_IDS),
@@ -148,11 +190,11 @@ class HcedPointParserTests(unittest.TestCase):
         )
         self.assertEqual(
             HCED_POINT_QUARANTINE_EVENT_SHA256,
-            "1242f6799d4416664211e83e308397cf0be3eb0190282d157cdf405e330083dd",
+            "5e6fe80636a9e4d08cf9047b8fdb2c7e97812f6d522534123651863b79ecbc71",
         )
         self.assertEqual(
             HCED_COUNTRY_QUARANTINE_EVENT_SHA256,
-            "25800d4bfb5a844ecc48123d48ad1e9fafb38ce5d3dadb5c7773cea62611d11a",
+            "f87948f9740690c660907a6fbf37531f556e77aeba43815d0213d8f707dab251",
         )
 
     def test_valid_pair_is_emitted_in_longitude_latitude_order(self) -> None:

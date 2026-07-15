@@ -118,12 +118,17 @@ for (const coordinates of [[0, 12], [12, 0], [-180, -90], [180, 90]]) {
 """
         )
 
-    def test_dashboard_loads_contract_and_renders_text_warning_without_a_map(self) -> None:
+    def test_dashboard_loads_contract_before_the_fail_closed_map(self) -> None:
         index = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+        map_source = (ROOT / "web" / "map.js").read_text(encoding="utf-8")
         location = (ROOT / "web" / "location.js").read_text(encoding="utf-8")
-        self.assertLess(index.index("./location.js"), index.index("./app.js"))
+        self.assertLess(index.index("./location.js"), index.index("./map.js"))
+        self.assertLess(index.index("./map.js"), index.index("./horizon.js"))
+        self.assertLess(index.index("./horizon.js"), index.index("./app.js"))
         self.assertIn("locationContract.normalizeEventLocation(event)", app)
+        self.assertIn("locationContract.normalizeEventLocation(event)", map_source)
+        self.assertIn("if (!location.geometry || !location.location_provenance) return null", map_source)
         self.assertIn("Source-transcribed location", app)
         self.assertIn("Source geographic-jurisdiction label", app)
         self.assertIn("Point [longitude, latitude]", app)
@@ -136,7 +141,8 @@ for (const coordinates of [[0, 12], [12, 0], [-180, -90], [180, 90]]) {
             location,
         )
         self.assertNotIn("location_name", app)
-        self.assertNotIn("L.map", app)
+        self.assertNotIn("location_name", map_source)
+        self.assertNotIn("L.map", app + map_source)
 
 
 if __name__ == "__main__":

@@ -7,9 +7,11 @@
   const REGISTRY_PAGE_SIZE = 40;
   const REGISTRY_STATUSES = new Set(["rated", "unrated", "provisional"]);
   const locationContract = window.MilitaryEloLocation;
+  const mapContract = window.MilitaryEloMap;
+  const horizonContract = window.MilitaryEloHorizon;
 
-  if (!locationContract) {
-    throw new Error("The dashboard location contract failed to load.");
+  if (!locationContract || !mapContract || !horizonContract) {
+    throw new Error("A required dashboard location, map, or information-horizon contract failed to load.");
   }
 
   const METRIC_LABELS = {
@@ -84,6 +86,28 @@
     chartEmpty: document.getElementById("chart-empty"),
     chartLegend: document.getElementById("chart-legend"),
     chartSummary: document.getElementById("chart-summary"),
+    timelineRankingTitle: document.getElementById("timeline-ranking-title"),
+    timelineRankingMetric: document.getElementById("timeline-ranking-metric"),
+    timelineRankingList: document.getElementById("timeline-ranking-list"),
+    timelineRankingEmpty: document.getElementById("timeline-ranking-empty"),
+    mapYear: document.getElementById("map-year"),
+    mapWindow: document.getElementById("map-window-select"),
+    mapDomain: document.getElementById("map-domain-select"),
+    mapLayer: document.getElementById("map-layer-select"),
+    mapConfidence: document.getElementById("map-confidence-select"),
+    mapLocationStatus: document.getElementById("map-location-status-select"),
+    mapFrame: document.getElementById("battle-map-frame"),
+    mapSvg: document.getElementById("battle-map"),
+    mapMarkerLayer: document.getElementById("map-marker-layer"),
+    mapTooltip: document.getElementById("map-tooltip"),
+    mapSummary: document.getElementById("map-summary"),
+    mapZoomIn: document.getElementById("map-zoom-in"),
+    mapZoomOut: document.getElementById("map-zoom-out"),
+    mapResetView: document.getElementById("map-reset-view"),
+    mapClusterPanel: document.getElementById("map-cluster-panel"),
+    mapClusterTitle: document.getElementById("map-cluster-title"),
+    mapClusterList: document.getElementById("map-cluster-list"),
+    mapClusterClose: document.getElementById("map-cluster-close"),
     leaderboardTitle: document.getElementById("leaderboard-title"),
     leaderboardMetric: document.getElementById("leaderboard-metric"),
     leaderboardCaption: document.getElementById("leaderboard-caption"),
@@ -109,8 +133,10 @@
     leaderboardById: new Map(),
     eventById: new Map(),
     entityEventYears: new Map(),
+    entityEvents: new Map(),
     ratedEntityIds: new Set(),
     eventYears: [],
+    latestRatedEventYear: -Infinity,
     minYear: 0,
     maxYear: 1,
     selectedYear: 1,
@@ -120,6 +146,12 @@
     pinned: new Set(),
     selectedEventId: null,
     eventDomain: "all",
+    mapWindow: "25",
+    mapDomain: "all",
+    mapLayer: "all",
+    mapConfidence: "all",
+    mapLocationStatus: "all",
+    battleMap: null,
     visibleEntityIds: [],
     searchMatches: [],
     searchIndex: -1,
@@ -158,6 +190,7 @@
 
     buildIndexes();
     configureTimeline();
+    configureMap();
     configureRegistry();
     renderMetadata();
     renderRegistry();
@@ -188,6 +221,30 @@
 
     elements.previousEvent.addEventListener("click", () => jumpToAdjacentEvent(-1));
     elements.nextEvent.addEventListener("click", () => jumpToAdjacentEvent(1));
+
+    elements.mapWindow.addEventListener("change", () => {
+      state.mapWindow = elements.mapWindow.value;
+      scheduleRender();
+    });
+    elements.mapDomain.addEventListener("change", () => {
+      state.mapDomain = elements.mapDomain.value;
+      scheduleRender();
+    });
+    elements.mapLayer.addEventListener("change", () => {
+      state.mapLayer = elements.mapLayer.value;
+      scheduleRender();
+    });
+    elements.mapConfidence.addEventListener("change", () => {
+      state.mapConfidence = elements.mapConfidence.value;
+      scheduleRender();
+    });
+    elements.mapLocationStatus.addEventListener("change", () => {
+      state.mapLocationStatus = elements.mapLocationStatus.value;
+      scheduleRender();
+    });
+    elements.mapZoomIn.addEventListener("click", () => state.battleMap && state.battleMap.zoomIn());
+    elements.mapZoomOut.addEventListener("click", () => state.battleMap && state.battleMap.zoomOut());
+    elements.mapResetView.addEventListener("click", () => state.battleMap && state.battleMap.resetView());
 
     elements.eventDomain.addEventListener("change", () => {
       state.eventDomain = elements.eventDomain.value;
@@ -478,6 +535,7 @@
       summary: cleanOptionalText(event.summary),
       domain: cleanOptionalText(event.domain),
       geographic_scope: cleanOptionalText(event.geographic_scope),
+      evidence_weight: nonNegativeNumber(event.evidence_weight) ?? 1,
       participants,
       source_ids: cleanTextArray(event.source_ids),
       outcome_source_ids: cleanTextArray(event.outcome_source_ids),
@@ -551,18 +609,32 @@
     state.maxYear = Math.ceil(Math.max(...allYears));
     if (state.minYear === state.maxYear) state.maxYear += 1;
     state.selectedYear = state.maxYear;
-    state.eventYears = [...new Set(state.data.events.map((event) => event.year))].sort((a, b) => a - b);
+    state.eventYears = [...new Set(state.data.events.map(horizonContract.eventAvailabilityYear).filter(Number.isFinite))].sort(
+      (a, b) => a - b,
+    );
+    state.latestRatedEventYear = state.eventYears.length ? state.eventYears[state.eventYears.length - 1] : -Infinity;
 
     state.entityEventYears = new Map();
+    state.entityEvents = new Map();
     for (const event of state.data.events) {
+      const availableYear = horizonContract.eventAvailabilityYear(event);
+      if (!Number.isFinite(availableYear)) continue;
+      const indexedParticipants = new Set();
       for (const participant of event.participants) {
+        if (indexedParticipants.has(participant.entity_id)) continue;
+        indexedParticipants.add(participant.entity_id);
         if (!state.entityEventYears.has(participant.entity_id)) {
           state.entityEventYears.set(participant.entity_id, []);
+          state.entityEvents.set(participant.entity_id, []);
         }
-        state.entityEventYears.get(participant.entity_id).push(event.year);
+        state.entityEventYears.get(participant.entity_id).push(availableYear);
+        state.entityEvents.get(participant.entity_id).push(event);
       }
     }
     for (const years of state.entityEventYears.values()) years.sort((a, b) => a - b);
+    for (const events of state.entityEvents.values()) {
+      events.sort((left, right) => horizonContract.eventAvailabilityYear(left) - horizonContract.eventAvailabilityYear(right));
+    }
   }
 
   function configureTimeline() {
@@ -590,6 +662,50 @@
       state.perspective = "current";
       elements.perspective.value = "current";
     }
+  }
+
+  function configureMap() {
+    state.battleMap = mapContract.createBattleMap({
+      frame: elements.mapFrame,
+      svg: elements.mapSvg,
+      markerLayer: elements.mapMarkerLayer,
+      tooltip: elements.mapTooltip,
+      summary: elements.mapSummary,
+      clusterPanel: elements.mapClusterPanel,
+      clusterTitle: elements.mapClusterTitle,
+      clusterList: elements.mapClusterList,
+      clusterClose: elements.mapClusterClose,
+      entityName: (entityId) => state.entityById.get(entityId)?.name ?? entityId,
+      formatYear,
+      formatConfidence: (value) => formatConfidence(value) || "Confidence unavailable",
+      formatSigned,
+      onSelectEvent: (event) => {
+        state.selectedEventId = event.id;
+        state.eventDomain = "all";
+        elements.eventDomain.value = "all";
+        jumpToYear(horizonContract.eventAvailabilityYear(event));
+        showToast(`${event.name} opened in the evidence trail.`);
+        requestAnimationFrame(() => {
+          elements.eventDetail.tabIndex = -1;
+          elements.eventDetail.focus({ preventScroll: true });
+        });
+      },
+    });
+    state.battleMap.setEvents(state.data.events);
+
+    const mapDomains = [
+      ...new Set(state.battleMap.getIndex().map((event) => event.domain).filter(Boolean)),
+    ].sort((left, right) => left.localeCompare(right));
+    elements.mapDomain.replaceChildren();
+    const allDomains = createElement("option", "", "All domains");
+    allDomains.value = "all";
+    elements.mapDomain.append(allDomains);
+    for (const domain of mapDomains) {
+      const option = createElement("option", "", humanize(domain));
+      option.value = domain;
+      elements.mapDomain.append(option);
+    }
+    elements.mapDomain.disabled = mapDomains.length < 2;
   }
 
   function configureRegistry() {
@@ -799,6 +915,7 @@
   function renderAll() {
     if (!state.data) return;
 
+    updatePerspectiveAvailability();
     elements.selectedYear.textContent = formatYear(state.selectedYear);
     elements.slider.value = String(state.selectedYear);
     elements.eventsYear.textContent = formatYear(state.selectedYear);
@@ -809,74 +926,122 @@
     renderPins();
     renderChart(state.visibleEntityIds);
     renderLegend(state.visibleEntityIds);
+    renderTimelineRanking(snapshotRows);
     renderLeaderboard(snapshotRows);
     renderMovers();
     renderEvents();
+    renderMap();
     updateTimelineButtons();
+    if (!elements.searchResultsWrap.hidden && elements.search.value.trim()) renderSearchResults();
+  }
+
+  function renderMap() {
+    elements.mapYear.textContent = formatYear(state.selectedYear);
+    if (!state.battleMap) return;
+    state.battleMap.update({
+      selectedYear: state.selectedYear,
+      window: state.mapWindow,
+      domain: state.mapDomain,
+      layer: state.mapLayer,
+      confidence: state.mapConfidence,
+      locationStatus: state.mapLocationStatus,
+      selectedEventId: state.selectedEventId,
+    });
+  }
+
+  function isFullRatingHorizon() {
+    return state.selectedYear >= state.latestRatedEventYear;
+  }
+
+  function updatePerspectiveAvailability() {
+    const unavailable = !isFullRatingHorizon();
+    for (const value of ["historical_success", "achievement"]) {
+      const option = elements.perspective.querySelector(`option[value="${value}"]`);
+      if (!option) continue;
+      option.disabled = unavailable;
+      option.title = unavailable ? "Available only when the selected year includes the complete rating ledger." : "";
+    }
+    if (unavailable && (state.perspective === "historical_success" || state.perspective === "achievement")) {
+      state.perspective = "current";
+      elements.perspective.value = "current";
+    }
+  }
+
+  function entityHasRatedEventAsOf(entityId, year) {
+    return countAtOrBefore(state.entityEventYears.get(entityId) ?? [], year) > 0;
+  }
+
+  function eventTrack(event) {
+    const type = String(event && event.type ? event.type : "").toLocaleLowerCase();
+    if (type.includes("engagement") || type.includes("battle") || type.includes("siege") || type.includes("raid")) {
+      return "tactical";
+    }
+    if (type.includes("campaign")) return "operational";
+    return "strategic";
+  }
+
+  function asOfEvidence(entityId, year, point) {
+    let effectiveEvents = 0;
+    let effectiveWars = 0;
+    for (const event of state.entityEvents.get(entityId) ?? []) {
+      if (!horizonContract.eventIsAvailable(event, year)) break;
+      const weight = finiteNumber(event.evidence_weight) ?? 1;
+      effectiveEvents += weight;
+      if (eventTrack(event) === "strategic") effectiveWars += weight;
+    }
+    const uncertainty = finiteNumber(point && point.uncertainty);
+    return {
+      effectiveEvents,
+      effectiveWars,
+      established: effectiveEvents >= 5 && effectiveWars >= 3 && uncertainty !== null && uncertainty <= 200,
+    };
   }
 
   function getSnapshotRows(year, metric) {
-    const rows = [];
-    for (const entity of state.data.entities) {
-      if (!state.ratedEntityIds.has(entity.id)) continue;
-      if (!isEntityActive(entity, year)) continue;
-      const point = pointAt(entity.id, year);
-      if (!point || point[metric] === null) continue;
-
-      const eventCount = countAtOrBefore(state.entityEventYears.get(entity.id) ?? [], year);
-      if (eventCount < 1) continue;
-
-      const points = state.data.series[entity.id] ?? [];
-      const previous = point._index > 0 ? points[point._index - 1] : null;
-      const lastMove = previous && previous[metric] !== null ? point[metric] - previous[metric] : point.delta;
-      const summary = state.leaderboardById.get(entity.id);
-
-      rows.push({
-        entity,
-        point,
-        value: point[metric],
-        lastMove,
-        events: eventCount,
-        summary,
-        established: summary ? summary.established : true,
-      });
-    }
-    rows.sort((a, b) => b.value - a.value || a.entity.name.localeCompare(b.entity.name));
-    return rows;
+    return horizonContract
+      .rankAtYear({
+        entities: state.data.entities,
+        series: state.data.series,
+        events: state.data.events,
+        year,
+        metric,
+        activeOnly: true,
+      })
+      .map((row) => ({ ...row, established: asOfEvidence(row.entity.id, year, row.point).established }));
   }
 
   function getTimelineEntityIds(snapshotRows) {
-    // "Leaders through time" first shows the leaders active in the selected
-    // year, so scrubbing into the past surfaces that era's polities, then
-    // fills the remaining slots with the all-time leaders by historical
-    // success so the default view is never limited to still-active states.
     const ids = [];
     for (const row of snapshotRows.slice(0, state.topN)) ids.push(row.entity.id);
-    for (const row of state.data.leaderboard) {
-      if (ids.length >= state.topN) break;
-      const id = row.entity_id;
-      if (ids.includes(id)) continue;
-      if (!state.ratedEntityIds.has(id)) continue;
-      if (!(state.data.series[id] ?? []).length) continue;
-      ids.push(id);
-    }
     for (const id of state.pinned) {
-      if (!ids.includes(id) && state.ratedEntityIds.has(id) && (state.data.series[id] ?? []).length) ids.push(id);
+      if (!ids.includes(id) && entityHasRatedEventAsOf(id, state.selectedYear)) ids.push(id);
     }
     return ids;
   }
 
   function renderPins() {
     elements.pinList.replaceChildren();
+    let visiblePins = 0;
     for (const id of state.pinned) {
       const entity = state.entityById.get(id);
-      if (!entity) continue;
+      if (!entity || !entityHasRatedEventAsOf(id, state.selectedYear)) continue;
+      visiblePins += 1;
       const button = createElement("button", "pin-chip");
       button.type = "button";
       button.setAttribute("aria-label", `Unpin ${entity.name}`);
       button.append(createElement("span", "", entity.name), closeIcon());
       button.addEventListener("click", () => togglePin(id));
       elements.pinList.append(button);
+    }
+    const hiddenPins = state.pinned.size - visiblePins;
+    if (hiddenPins > 0) {
+      elements.pinList.append(
+        createElement(
+          "span",
+          "pin-hidden-count",
+          `${hiddenPins} pin${hiddenPins === 1 ? " is" : "s are"} outside this information horizon.`,
+        ),
+      );
     }
     elements.pinRow.hidden = state.pinned.size === 0;
   }
@@ -889,6 +1054,10 @@
       state.pinned.delete(entityId);
       showToast(`${entity.name} unpinned.`);
     } else {
+      if (!entityHasRatedEventAsOf(entityId, state.selectedYear)) {
+        showToast(`${entity.name} has no rated evidence by ${formatYear(state.selectedYear)}.`);
+        return;
+      }
       if (state.pinned.size >= MAX_PINNED) {
         showToast(`You can pin up to ${MAX_PINNED} polities at once.`);
         return;
@@ -907,7 +1076,7 @@
     }
 
     state.searchMatches = state.data.entities
-      .filter((entity) => state.ratedEntityIds.has(entity.id))
+      .filter((entity) => entityHasRatedEventAsOf(entity.id, state.selectedYear))
       .map((entity) => ({
         entity,
         rank: searchRank(entity, query),
@@ -1011,6 +1180,7 @@
   function renderChart(entityIds) {
     if (!state.data) return;
 
+    hideChartTooltip();
     const svg = elements.chart;
     const width = Math.max(240, Math.round(elements.chartFrame.clientWidth || 900));
     const height = width <= 640 ? 350 : 430;
@@ -1023,6 +1193,8 @@
     const plotWidth = width - margins.left - margins.right;
     const plotHeight = height - margins.top - margins.bottom;
     const metric = state.metric;
+    const chartMinYear = state.selectedYear <= state.minYear ? state.selectedYear - 1 : state.minYear;
+    const chartMaxYear = state.selectedYear;
 
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.replaceChildren();
@@ -1031,7 +1203,7 @@
       svgElement(
         "desc",
         { id: "chart-description" },
-        `Step-line ratings for ${entityIds.length} visible polities from ${formatYear(state.minYear)} to ${formatYear(state.maxYear)}. The selection is ${formatYear(state.selectedYear)}.`,
+        `Step-line ratings for ${entityIds.length} visible polities through ${formatYear(chartMaxYear)}. No later outcomes are included.`,
       ),
     );
 
@@ -1039,7 +1211,9 @@
       .map((id, index) => ({
         id,
         entity: state.entityById.get(id),
-        points: (state.data.series[id] ?? []).filter((point) => point[metric] !== null),
+        points: horizonContract
+          .authorizedSeriesThrough(state.data.series[id] ?? [], state.eventById, id, chartMaxYear)
+          .filter((point) => point[metric] !== null),
         color: SERIES_COLORS[index % SERIES_COLORS.length],
         dash: DASH_PATTERNS[Math.floor(index / SERIES_COLORS.length) + (index % SERIES_COLORS.length === 0 ? 0 : 0)] ?? "7 4",
       }))
@@ -1074,9 +1248,9 @@
     yMin -= yPadding;
     yMax += yPadding;
 
-    const xScale = (year) => margins.left + ((year - state.minYear) / (state.maxYear - state.minYear)) * plotWidth;
+    const xScale = (year) => margins.left + ((year - chartMinYear) / (chartMaxYear - chartMinYear)) * plotWidth;
     const yScale = (value) => margins.top + ((yMax - value) / (yMax - yMin)) * plotHeight;
-    const xInvert = (pixel) => state.minYear + ((pixel - margins.left) / plotWidth) * (state.maxYear - state.minYear);
+    const xInvert = (pixel) => chartMinYear + ((pixel - margins.left) / plotWidth) * (chartMaxYear - chartMinYear);
 
     const gridGroup = svgElement("g", { "aria-hidden": "true" });
     const yTicks = numericTicks(yMin, yMax, 6);
@@ -1098,7 +1272,7 @@
       );
     }
 
-    const xTicks = yearTicks(state.minYear, state.maxYear, width < 360 ? 3 : width <= 520 ? 4 : 7);
+    const xTicks = yearTicks(chartMinYear, chartMaxYear, width < 360 ? 3 : width <= 520 ? 4 : 7);
     for (const tick of xTicks) {
       const x = xScale(tick);
       gridGroup.append(
@@ -1140,7 +1314,8 @@
     svg.append(gridGroup);
 
     const rugGroup = svgElement("g", { "aria-hidden": "true" });
-    const rugYears = state.eventYears.length > 500 ? sampleEvenly(state.eventYears, 500) : state.eventYears;
+    const availableEventYears = state.eventYears.filter((year) => year <= chartMaxYear);
+    const rugYears = availableEventYears.length > 500 ? sampleEvenly(availableEventYears, 500) : availableEventYears;
     for (const year of rugYears) {
       const x = xScale(year);
       rugGroup.append(
@@ -1254,7 +1429,7 @@
     if (!points.length) return [];
     const extended = points.map((point) => ({ ...point }));
     const last = extended[extended.length - 1];
-    const endYear = Math.min(state.maxYear, entity.end_year ?? state.maxYear);
+    const endYear = Math.min(state.selectedYear, entity.end_year ?? state.selectedYear);
     if (endYear > last.year) {
       extended.push({ ...last, year: endYear, _synthetic: true });
     }
@@ -1359,10 +1534,50 @@
     });
   }
 
+  function renderTimelineRanking(snapshotRows) {
+    const rows = snapshotRows.slice(0, state.topN);
+    elements.timelineRankingTitle.textContent = `Top ${state.topN} at ${formatYear(state.selectedYear)}`;
+    elements.timelineRankingMetric.textContent = `${METRIC_LABELS[state.metric]} Elo`;
+    elements.timelineRankingList.replaceChildren();
+    elements.timelineRankingEmpty.hidden = rows.length > 0;
+
+    rows.forEach((row, index) => {
+      const item = createElement("li", "timeline-ranking-item");
+      const rank = createElement("span", "timeline-ranking-rank", String(index + 1));
+      rank.setAttribute("aria-hidden", "true");
+
+      const identity = createElement("div", "timeline-ranking-identity");
+      const button = createElement("button", "timeline-ranking-name", row.entity.name);
+      button.type = "button";
+      button.setAttribute("aria-pressed", String(state.pinned.has(row.entity.id)));
+      button.setAttribute("aria-label", `${state.pinned.has(row.entity.id) ? "Unpin" : "Pin"} ${row.entity.name}`);
+      button.addEventListener("click", () => togglePin(row.entity.id));
+
+      const movement = finiteNumber(row.lastMove);
+      const details = [
+        movement === null ? "no prior move" : `last move ${formatSigned(movement, Math.abs(movement) < 10 ? 1 : 0)}`,
+        row.established === false ? "low coverage" : "coverage threshold met",
+      ];
+      identity.append(button, createElement("span", "timeline-ranking-status", details.join(" · ")));
+
+      const score = createElement("div", "timeline-ranking-score");
+      score.append(
+        createElement("strong", "", formatRating(row.value)),
+        createElement("span", "", METRIC_LABELS[state.metric]),
+      );
+      item.append(rank, identity, score);
+      elements.timelineRankingList.append(item);
+    });
+  }
+
   function renderLeaderboard(snapshotRows) {
     const perspective = state.perspective;
     const isCurrent = perspective === "current";
-    const rows = isCurrent ? getSnapshotRows(state.selectedYear, "composite") : getPerspectiveRows(perspective);
+    const rows = isCurrent
+      ? state.metric === "composite"
+        ? snapshotRows
+        : getSnapshotRows(state.selectedYear, "composite")
+      : getPerspectiveRows(perspective, state.selectedYear);
     const visibleRows = rows.slice(0, Math.max(10, state.topN));
     const headers = elements.leaderboardBody.closest("table").querySelectorAll("thead th");
 
@@ -1373,9 +1588,9 @@
       headers[2].textContent = "Rating ± uncertainty";
       headers[3].textContent = "Last move";
     } else {
-      elements.leaderboardTitle.textContent = "All-time leaderboard";
+      elements.leaderboardTitle.textContent = `Leaderboard through ${formatYear(state.selectedYear)}`;
       elements.leaderboardMetric.textContent = PERSPECTIVE_LABELS[perspective];
-      elements.leaderboardCaption.textContent = `All-time military leaderboard by ${PERSPECTIVE_LABELS[perspective].toLowerCase()}`;
+      elements.leaderboardCaption.textContent = `Military leaderboard through ${formatYear(state.selectedYear)} by ${PERSPECTIVE_LABELS[perspective].toLowerCase()}`;
       headers[2].textContent = PERSPECTIVE_LABELS[perspective];
       headers[3].textContent = "Evidence status";
     }
@@ -1404,7 +1619,7 @@
       if (row.summary && row.summary.network_component !== null && hasMultipleNetworkComponents()) {
         descriptorParts.push(`network ${row.summary.network_component}`);
       }
-      entityCell.append(createElement("span", "entity-subline", descriptorParts.join(" · ") || entityEra(row.entity)));
+      entityCell.append(createElement("span", "entity-subline", descriptorParts.join(" · ") || entityEraThrough(row.entity, state.selectedYear)));
       tr.append(entityCell);
 
       if (isCurrent) {
@@ -1444,36 +1659,59 @@
     });
   }
 
-  function getPerspectiveRows(perspective) {
-    return state.data.leaderboard
-      .map((summary) => {
-        const entity = state.entityById.get(summary.entity_id) ?? {
-          id: summary.entity_id,
-          name: summary.name,
-          kind: null,
-          region: null,
-          start_year: null,
-          end_year: null,
-        };
-        const events = summary.events ?? (state.entityEventYears.get(summary.entity_id) ?? []).length;
-        return {
-          entity,
-          summary,
-          value: summary[perspective],
-          events,
-          established: summary.established,
-        };
-      })
-      .filter((row) => row.events > 0 && state.ratedEntityIds.has(row.entity.id) && row.value !== null && Number.isFinite(row.value))
-      .sort((a, b) => b.value - a.value || a.entity.name.localeCompare(b.entity.name));
+  function getPerspectiveRows(perspective, year) {
+    if ((perspective === "historical_success" || perspective === "achievement") && !isFullRatingHorizon()) return [];
+
+    const rows = [];
+    for (const entity of state.data.entities) {
+      const events = countAtOrBefore(state.entityEventYears.get(entity.id) ?? [], year);
+      if (events < 1) continue;
+      const points = horizonContract.authorizedSeriesThrough(
+        state.data.series[entity.id] ?? [],
+        state.eventById,
+        entity.id,
+        year,
+      );
+      const point = points[points.length - 1] ?? null;
+      if (!point) continue;
+
+      let value = null;
+      let peakYear = null;
+      let summary = null;
+      if (perspective === "peak") {
+        for (const candidate of points) {
+          if (!Number.isFinite(candidate.composite)) continue;
+          if (value === null || candidate.composite > value) {
+            value = candidate.composite;
+            peakYear = candidate.year;
+          }
+        }
+      } else if (perspective === "sustained") {
+        value = median(horizonContract.ratedSeriesThrough(points, year).map((candidate) => candidate.composite));
+      } else {
+        summary = state.leaderboardById.get(entity.id) ?? null;
+        value = finiteNumber(summary && summary[perspective]);
+      }
+
+      if (!Number.isFinite(value)) continue;
+      rows.push({
+        entity,
+        point,
+        summary,
+        value,
+        peak_year: peakYear,
+        events,
+        established: asOfEvidence(entity.id, year, point).established,
+      });
+    }
+    return rows.sort((left, right) => right.value - left.value || left.entity.name.localeCompare(right.entity.name));
   }
 
   function perspectiveContext(perspective, row) {
-    const summary = row.summary;
-    if (perspective === "peak" && summary.peak_year !== null) return `reached ${formatYear(summary.peak_year)}`;
-    if (summary.uncertainty !== null) return `model uncertainty ± ${formatCompactNumber(summary.uncertainty)}`;
+    if (perspective === "peak" && row.peak_year !== null) return `reached ${formatYear(row.peak_year)}`;
+    if (row.point && row.point.uncertainty !== null) return `model uncertainty ± ${formatCompactNumber(row.point.uncertainty)}`;
     if (perspective === "historical_success") return "normalized 0–100 index";
-    return "all-time modeled measure";
+    return `modeled through ${formatYear(state.selectedYear)}`;
   }
 
   function formatPerspectiveValue(perspective, value) {
@@ -1501,7 +1739,7 @@
   }
 
   function renderMovers() {
-    const span = state.maxYear - state.minYear;
+    const span = state.selectedYear - state.minYear;
     const windowYears = span > 3000 ? 50 : span > 1000 ? 30 : 25;
     const baselineYear = Math.max(state.minYear, state.selectedYear - windowYears);
     elements.momentumWindow.textContent = `${windowYears}-year change`;
@@ -1515,7 +1753,15 @@
       if (!current || current[state.metric] === null) continue;
 
       let baseline = pointAt(entity.id, baselineYear);
-      if (!baseline && current._index > 0) baseline = state.data.series[entity.id][current._index - 1];
+      if (!baseline) {
+        const availablePoints = horizonContract.authorizedSeriesThrough(
+          state.data.series[entity.id] ?? [],
+          state.eventById,
+          entity.id,
+          current.year,
+        );
+        if (availablePoints.length > 1) baseline = availablePoints[availablePoints.length - 2];
+      }
       if (!baseline || baseline === current || baseline[state.metric] === null) continue;
       const change = current[state.metric] - baseline[state.metric];
       if (Math.abs(change) < 0.05) continue;
@@ -1542,7 +1788,19 @@
   }
 
   function renderEvents() {
-    const events = nearestEvents(state.selectedYear, 9);
+    let events = nearestEvents(state.selectedYear, 9);
+    const selectedEvent = state.eventById.get(state.selectedEventId);
+    const selectedMatchesDomain =
+      selectedEvent &&
+      horizonContract.eventIsAvailable(selectedEvent, state.selectedYear) &&
+      (state.eventDomain === "all" || selectedEvent.domain === state.eventDomain);
+    if (
+      selectedMatchesDomain &&
+      horizonContract.eventAvailabilityYear(selectedEvent) === state.selectedYear &&
+      !events.some((event) => event.id === selectedEvent.id)
+    ) {
+      events = [selectedEvent, ...events.filter((event) => event.id !== selectedEvent.id)].slice(0, 9);
+    }
     elements.eventList.replaceChildren();
     elements.eventsEmpty.hidden = events.length > 0;
 
@@ -1552,7 +1810,7 @@
     }
 
     if (!state.selectedEventId || !events.some((event) => event.id === state.selectedEventId)) {
-      const prior = events.find((event) => event.year <= state.selectedYear);
+      const prior = events.find((event) => horizonContract.eventIsAvailable(event, state.selectedYear));
       state.selectedEventId = (prior ?? events[0]).id;
     }
 
@@ -1562,7 +1820,7 @@
       button.type = "button";
       button.setAttribute("aria-current", String(event.id === state.selectedEventId));
       button.append(
-        createElement("span", "event-item-year", formatYear(event.year)),
+        createElement("span", "event-item-year", formatEventDate(event)),
         eventListText(event),
       );
       button.addEventListener("click", () => {
@@ -1586,7 +1844,7 @@
         [
           humanize(event.domain),
           humanize(event.war_type ?? event.type),
-          relativeYearLabel(event.year, state.selectedYear),
+          relativeYearLabel(horizonContract.eventAvailabilityYear(event), state.selectedYear),
           formatConfidence(event.confidence),
         ]
           .filter(Boolean)
@@ -1598,7 +1856,7 @@
 
   function renderEventDetail(event) {
     elements.eventDetail.replaceChildren();
-    if (!event) {
+    if (!event || !horizonContract.eventIsAvailable(event, state.selectedYear)) {
       const placeholder = createElement("div", "event-detail-placeholder");
       placeholder.append(documentIcon(), createElement("p", "", "No event record is available near this date."));
       elements.eventDetail.append(placeholder);
@@ -1760,27 +2018,16 @@
   }
 
   function nearestEvents(year, count) {
-    const events =
-      state.eventDomain === "all"
-        ? state.data.events
-        : state.data.events.filter((event) => event.domain === state.eventDomain);
-    if (!events.length) return [];
-    let right = lowerBound(events, year, (event) => event.year);
-    let left = right - 1;
-    const nearest = [];
-
-    while (nearest.length < count && (left >= 0 || right < events.length)) {
-      const leftDistance = left >= 0 ? Math.abs(events[left].year - year) : Infinity;
-      const rightDistance = right < events.length ? Math.abs(events[right].year - year) : Infinity;
-      if (leftDistance <= rightDistance) {
-        nearest.push(events[left]);
-        left -= 1;
-      } else {
-        nearest.push(events[right]);
-        right += 1;
-      }
-    }
-    return nearest;
+    return state.data.events
+      .filter((event) => state.eventDomain === "all" || event.domain === state.eventDomain)
+      .filter((event) => horizonContract.eventIsAvailable(event, year))
+      .sort(
+        (left, right) =>
+          horizonContract.eventAvailabilityYear(right) - horizonContract.eventAvailabilityYear(left) ||
+          right.year - left.year ||
+          left.name.localeCompare(right.name),
+      )
+      .slice(0, count);
   }
 
   function jumpToAdjacentEvent(direction) {
@@ -1810,15 +2057,8 @@
 
   function pointAt(entityId, year) {
     const points = state.data.series[entityId] ?? [];
-    if (!points.length || points[0].year > year) return null;
-    let low = 0;
-    let high = points.length;
-    while (low < high) {
-      const middle = (low + high) >>> 1;
-      if (points[middle].year <= year) low = middle + 1;
-      else high = middle;
-    }
-    return points[low - 1] ?? null;
+    const available = horizonContract.authorizedSeriesThrough(points, state.eventById, entityId, year);
+    return available[available.length - 1] ?? null;
   }
 
   function isEntityActive(entity, year) {
@@ -1943,7 +2183,9 @@
   }
 
   function entityDescriptor(entity) {
-    return [entity.kind && humanize(entity.kind), entity.region, entityEra(entity)].filter(Boolean).join(" · ");
+    return [entity.kind && humanize(entity.kind), entity.region, entityEraThrough(entity, state.selectedYear)]
+      .filter(Boolean)
+      .join(" · ");
   }
 
   function entityEra(entity) {
@@ -1951,6 +2193,12 @@
     const start = entity.start_year === null ? "?" : formatYear(entity.start_year);
     const end = entity.end_year === null ? "present" : formatYear(entity.end_year);
     return `${start}–${end}`;
+  }
+
+  function entityEraThrough(entity, year) {
+    if (entity.start_year === null) return `Rated by ${formatYear(year)}`;
+    const knownEnd = entity.end_year !== null && entity.end_year <= year ? formatYear(entity.end_year) : formatYear(year);
+    return `${formatYear(entity.start_year)}–${knownEnd}`;
   }
 
   function formatEventDate(event) {
@@ -2100,6 +2348,13 @@
   function average(values) {
     const finite = values.filter((value) => Number.isFinite(value));
     return finite.length ? finite.reduce((sum, value) => sum + value, 0) / finite.length : null;
+  }
+
+  function median(values) {
+    const finite = values.filter((value) => Number.isFinite(value)).sort((left, right) => left - right);
+    if (!finite.length) return null;
+    const middle = Math.floor(finite.length / 2);
+    return finite.length % 2 ? finite[middle] : (finite[middle - 1] + finite[middle]) / 2;
   }
 
   function clamp(value, min, max) {

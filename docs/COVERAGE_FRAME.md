@@ -103,13 +103,13 @@ Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
 
-The current status-aware HCED numerators are 3,978 unreviewed source Points,
-3,934 source-transcribed geographic-jurisdiction labels, and 3,980 events with
-at least one provenance-bound HCED location, all over 4,234 rated events.
+The current status-aware HCED numerators are 3,982 unreviewed source Points,
+3,939 source-transcribed geographic-jurisdiction labels, and 3,986 events with
+at least one provenance-bound HCED location, all over 4,245 rated events.
 Verified-location coverage is `not_available`. The report separately publishes
-the frozen policy counts rather than inferring policy from absence: 34 Point
-fields withheld by quarantine, 77 country/jurisdiction fields withheld, 32
-events in both quarantine manifests, and 79 unique quarantine-manifest events.
+the frozen policy counts rather than inferring policy from absence: 37 Point
+fields withheld by quarantine, 79 country/jurisdiction fields withheld, 33
+events in both quarantine manifests, and 83 unique quarantine-manifest events.
 One additional event has a source-blank country field and is outside both
 manifests. These values describe an audited publication policy; they must not
 be reverse-engineered from absent release fields or relabelled as
@@ -163,9 +163,9 @@ matching stable `outcome_source_family_ids` array. Generic source-role fallback
 is considered only when neither event-level field is present and is never
 unioned into an explicit mapping. Exactly four sources advertise the direct
 `outcome` capability: HCED data, IWD data, IWBD data, and the UCDP
-conflict-level termination file. They map 4,194 of 4,234 rated events:
-4,012 HCED, 54 IWD, 121 IWBD, and 7 UCDP. Every mapped event has exactly one
-family, so multiple-independent-family coverage is 0 of 4,194 mapped events.
+conflict-level termination file. They map 4,205 of 4,245 rated events:
+4,019 HCED, 56 IWD, 123 IWBD, and 7 UCDP. Every mapped event has exactly one
+family, so multiple-independent-family coverage is 0 of 4,205 mapped events.
 
 The other 40 rated events are the curated seed. They remain explicitly
 unmapped, not observed zero-family events, because their generic URLs lack

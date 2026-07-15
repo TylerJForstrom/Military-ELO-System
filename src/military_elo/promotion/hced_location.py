@@ -15,35 +15,40 @@ from typing import AbstractSet, Any
 
 _PLAIN_NUMBER = re.compile(r"^[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)$")
 
-HCED_LOCATION_QUARANTINE_AUDIT_SHA256 = (
+HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
+HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
+    "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367"
+)
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "0f41aba5dda824cabdca7da7f0d6c156489e3a16397ad70187b23bccd013fdb2"
+    "a24351d3a330f97007f55825ef251b76046b884ca12c9580bc6e08c24e3e17cf"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
-    "ea6e8ac15e6e8426a574471cb4e30dc050eb8bef3f11589a44a4487d24f5dd6d"
+    "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "1242f6799d4416664211e83e308397cf0be3eb0190282d157cdf405e330083dd"
+    "5e6fe80636a9e4d08cf9047b8fdb2c7e97812f6d522534123651863b79ecbc71"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
-    "25800d4bfb5a844ecc48123d48ad1e9fafb38ce5d3dadb5c7773cea62611d11a"
+    "f87948f9740690c660907a6fbf37531f556e77aeba43815d0213d8f707dab251"
 )
-HCED_EXPECTED_CANDIDATE_BINDINGS = 4_012
-HCED_EXPECTED_POINT_ASSERTIONS = 3_978
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 3_934
-HCED_EXPECTED_PROVENANCE_OBJECTS = 3_980
-HCED_EXPECTED_QUARANTINE_UNION = 79
-HCED_EXPECTED_QUARANTINE_OVERLAP = 32
+HCED_EXPECTED_CANDIDATE_BINDINGS = 4_019
+HCED_EXPECTED_POINT_ASSERTIONS = 3_982
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 3_939
+HCED_EXPECTED_PROVENANCE_OBJECTS = 3_986
+HCED_EXPECTED_QUARANTINE_UNION = 83
+HCED_EXPECTED_QUARANTINE_OVERLAP = 33
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
     "HCED location fields are unreviewed source assertions. Quarantined values "
     "are withheld, not corrected. Coordinate precision is unknown."
 )
 
-# Mechanically copied from the frozen audit JSON above after checksum
-# verification. Runtime decisions use these exact stable candidate IDs only.
+# Mechanically copied from data/policy/hced-location-quarantine.tsv after
+# checksum verification. Runtime decisions use these exact stable candidate
+# IDs only. The machine-local audit snapshot digest above is provenance for
+# the original Wave 3 review, not a clean-checkout release gate.
 HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Aleutians1942-1",
     "hced-Ap Bac1963-1",
@@ -60,6 +65,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Freeman's Farm1776-1",
     "hced-Gilbert Islands1943-1",
     "hced-Huon Peninsula1943-1",
+    "hced-Issus-333-1",
     "hced-Iwo Jima1945-1",
     "hced-Kagul Lagoon1574-1",
     "hced-Komandorski Islands1943-1",
@@ -74,6 +80,8 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Rennell Island1943-1",
     "hced-Riviera1944-1",
     "hced-Santa Rosa Island1861-1",
+    "hced-Sas van Gent1644-1",
+    "hced-Slaak1631-1",
     "hced-St Pierre and Miquelon1793-1",
     "hced-Tristan de Cunha1815-1",
     "hced-Wake1941-1",
@@ -144,7 +152,9 @@ HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS = (
     "hced-Rymenant1578-1",
     "hced-Sachon1592-1",
     "hced-Sachon1598-1",
+    "hced-Saints1782-1",
     "hced-Santa Rosa Island1861-1",
+    "hced-Sas van Gent1644-1",
     "hced-St Kitts1782-1",
     "hced-St Kitts1805-1",
     "hced-St Lucia1778-1",

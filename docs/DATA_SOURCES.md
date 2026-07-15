@@ -67,12 +67,12 @@ Only four registered sources have the direct outcome role:
 
 | Source ID | Outcome family | Rated events mapped |
 |---|---|---:|
-| `hced_dataset` | `hced` | 4,012 |
-| `iwd_dataset` | `iwd` | 54 |
-| `iwbd_dataset` | `iwbd` | 121 |
+| `hced_dataset` | `hced` | 4,019 |
+| `iwd_dataset` | `iwd` | 56 |
+| `iwbd_dataset` | `iwbd` | 123 |
 | `ucdp_termination_conflict` | `ucdp_conflict_termination` | 7 |
 
-This maps 4,194 of 4,234 rated events, and every mapped event has exactly one
+This maps 4,205 of 4,245 rated events, and every mapped event has exactly one
 direct outcome family. Multiple-independent-family coverage is therefore zero.
 The 40 curated seed events remain explicitly unmapped: their generic reference
 URLs do not contain the claim-level outcome locator, edition/checksum context,
@@ -128,24 +128,26 @@ normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
-For the 4,012 already-rated HCED events, the release-to-candidate join is an
-exact bijection: 1,769 crosswalk-resolved events and 2,243 label-resolved
+For the 4,019 already-rated HCED events, the release-to-candidate join is an
+exact bijection: 1,769 crosswalk-resolved events and 2,250 label-resolved
 events, with no missing, ambiguous, or colliding bindings. This metadata-only
 tranche adds no event and changes no outcome, participant, entity, or Elo.
-Candidate-ID-only policy manifests withhold 34 Point fields and 77
-country/jurisdiction fields, with 32 overlapping and 79 unique
+Candidate-ID-only policy manifests withhold 37 Point fields and 79
+country/jurisdiction fields, with 33 overlapping and 83 unique
 quarantine-manifest events. One additional rated candidate has a source-blank
-country. After fail-closed quarantine, 3,978 events carry an exact
-source-transcribed Point, 3,934 carry the source's modern
-country/geographic-jurisdiction string, and 3,980 carry at least one location
-field plus closed provenance. Of 47 separately reviewed disputed or
-non-sovereign jurisdiction rows, 45 are deliberately retained verbatim and 2
+country. After fail-closed quarantine, 3,982 events carry an exact
+source-transcribed Point, 3,939 carry the source's modern
+country/geographic-jurisdiction string, and 3,986 carry at least one location
+field plus closed provenance. Of 49 separately reviewed disputed or
+non-sovereign jurisdiction rows, 46 are deliberately retained verbatim and 3
 are already withheld under independent quarantine criteria. They are source
 geography labels, not sovereignty determinations. Every published value remains
 an `unreviewed_source_assertion` with `coordinate_precision: unknown`;
 verified historical-location coverage is unavailable. Quarantined values are
 withheld rather than corrected, swapped, normalized, inferred,
 reverse-geocoded, or exposed through release provenance.
+The frozen 49-row jurisdiction review contract has SHA-256
+`b209a0cc8d308d56d74012b53ea72bd29df34c4ac8a773b3602b38558c085b5e`.
 
 #### Verified live HCED profile
 
@@ -242,16 +244,16 @@ adjacent-year battles, and arbitrary terminal numbers are not collapsed merely
 because they share a possible base.
 Within-IWBD matching always retains the exact canonical ordinal. A row
 whose date span strictly contains a differently-named battle of the same war
-is staged as a presumptive campaign umbrella (382 rows), so only battle-level
+is staged as a presumptive campaign umbrella (381 rows), so only battle-level
 granularity enters; the rule deliberately over-includes some genuinely
 distinct long engagements. The coded battle-level victor must match a named
 side with an agreeing attacker/defender role — the coded `inconclusive` value
 maps to a tactical stalemate, while a blank or mismatched victor is rejected —
 and the war-level victor code is ignored entirely. Coalition or composite side
-labels stay staged (147 rows), and both sides must resolve to unique
+labels stay staged (146 rows), and both sides must resolve to unique
 time-bounded identities outside declared deny windows (36 side-resolution
 failures, including the declared "Turkey" 1919-1923 deny window). In the
-current build 121 of 1,708 battles pass; every other row stays staged under a
+current build 123 of 1,708 battles pass; every other row stays staged under a
 named rejection counter.
 
 IWBD's `iwdNum` field is the IWD parent-war identifier (IWD's `largerwarid`
@@ -307,15 +309,19 @@ resolved by explicit era policies: code 365 maps to the Russian Empire through
 1917 and the Soviet Union from 1922 (the 1918-1921 revolutionary years
 deliberately stay unresolved), code 255 to the Kingdom of Prussia through 1870
 and the German Empire from 1871, code 300 to the Austrian Empire through 1866
-and Austria-Hungary from 1867, and code 345 to the Kingdom of Serbia
-(1882-1918, the interval COW labels "Yugoslavia"). Three parent wars are held
-on a curated exclusion list: Germany-Denmark 1848 because the source asserts a
-Prussian victory although Denmark won the First Schleswig War; Italian
-Unification 1859 because it was fought by the Kingdom of Sardinia; and
+and Austria-Hungary from 1867, code 345 to the Kingdom of Serbia (1882-1918,
+the interval COW labels "Yugoslavia"), code 100 to the United States of
+Colombia for 1863-1885, code 670 to the Kingdom of Saudi Arabia from 1932
+through the current snapshot, and code 678 to the Mutawakkilite Kingdom of
+Yemen for 1918-1961. Four parent wars are held on a curated exclusion list:
+parent 1 because promotion requires a Bourbon Restoration identity and a
+reviewed COW-220 continuity window; Germany-Denmark 1848 because the source
+asserts a Prussian victory although Denmark won the First Schleswig War;
+Italian Unification 1859 because it was fought by the Kingdom of Sardinia; and
 Hungarian-Allies 1919 because it was fought by the Hungarian Soviet Republic.
 Event confidence is reduced when some component rows could not contribute, and
 all component rows are attached to the emitted event as provenance. In the
-current build, 54 of 93 parent wars pass (87 of 265 component records); the
+current build, 56 of 93 parent wars pass (89 of 265 component records); the
 rest stay staged. IWD also cannot by itself establish that a defeat was
 existential, regime-ending, or equivalent to surrender, so aggregated outcomes
 are never coded above limited victory or defeat.
@@ -684,32 +690,34 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The current release publishes three coverage numbers separately:
 
-- 1,590 time-bounded polity identities in the rated-and-unrated registry;
-- 226 entities with rateable evidence; and
-- 4,234 rating events: 40 manually curated events, 1,769 crosswalk-resolved
-  HCED tactical encounters, 2,243 label-resolved HCED tactical encounters,
-  54 coalition-aggregated IWD strategic parent wars, 121 IWBD tactical
+- 1,591 time-bounded polity identities in the rated-and-unrated registry;
+- 228 entities with rateable evidence;
+- 94 registered provenance sources across 23 source families; and
+- 4,245 rating events: 40 manually curated events, 1,769 crosswalk-resolved
+  HCED tactical encounters, 2,250 label-resolved HCED tactical encounters,
+  56 coalition-aggregated IWD strategic parent wars, 123 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
 
-The curated state and non-state actor identity tranches raised the totals
+The earlier curated state and non-state actor identity tranches raised the totals
 from the previous build (177 rated entities across 2,620 events): the new
 seed identities and their code/label policy windows resolve rows that were
 previously staged for lack of a defensible time-bounded identity, and the
 registry consolidates 40 absorbed source-candidate rows into 48 curated
-records (1,582 to 1,590 net).
+records (1,582 to 1,590 net). Wave 4 then added three narrow identities while
+absorbing two exact-name Cliopatria envelopes, producing the current 1,591.
 
 The review queues contain 27,014 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
 holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 19,163 remain outside the rating ledger because their layer,
+candidates, 19,152 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
 
 Outcome-family coverage uses a different denominator from corpus coverage.
-Exactly 4,194 rated events have an explicit direct-outcome mapping through the
+Exactly 4,205 rated events have an explicit direct-outcome mapping through the
 four dataset sources above; the remaining 40 are the curated seed events and
-stay unknown pending claim-level locator review. All 4,194 mapped events have
+stay unknown pending claim-level locator review. All 4,205 mapped events have
 one family and none has multiple independently established outcome families.

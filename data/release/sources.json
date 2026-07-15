@@ -823,6 +823,19 @@
     ]
   },
   {
+    "id": "colombia_constitution_1863",
+    "title": "Constitucion politica de los Estados Unidos de Colombia, 1863",
+    "url": "https://www.archivogeneral.gov.co/sites/default/files/exposiciones_patrimonio/ConstitucionesColombia/1863/Texto1863.pdf",
+    "publisher": "Archivo General de la Nacion, Colombia",
+    "license": "Citation and link only",
+    "source_type": "primary_legal_document",
+    "accessed": "2026-07-15",
+    "source_family_id": "archivo_general_colombia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "crs_taliban_takeover",
     "title": "Afghanistan: Background and U.S. Policy",
     "url": "https://crsreports.congress.gov/product/pdf/R/R45122",
@@ -1044,6 +1057,19 @@
     ]
   },
   {
+    "id": "oeaw_mutawakkilite_yemen",
+    "title": "The Foreign Relations of the Mutawakkilite Kingdom of Yemen 1918-1962",
+    "url": "https://epub.oeaw.ac.at/0xc1aa5576_0x003ac93e.pdf",
+    "publisher": "Austrian Academy of Sciences Press",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-15",
+    "source_family_id": "austrian_academy_sciences",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "project_continuity_policy",
     "title": "Byzantine Empire overview (used with the project's explicit 395 reset convention)",
     "url": "https://www.britannica.com/place/Byzantine-Empire",
@@ -1057,6 +1083,19 @@
     ]
   },
   {
+    "id": "saudi_mofa_history",
+    "title": "History of the Kingdom of Saudi Arabia",
+    "url": "https://mofa.gov.sa/en/ksa/Pages/history.aspx",
+    "publisher": "Ministry of Foreign Affairs, Kingdom of Saudi Arabia",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "saudi_ministry_foreign_affairs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "sigar_afghanistan",
     "title": "What We Need to Learn: Lessons from Twenty Years of Afghanistan Reconstruction",
     "url": "https://www.sigar.mil/Reports/Article-Display/Article/4000123/what-we-need-to-learn-lessons-from-twenty-years-of-afghanistan-reconstruction/",
@@ -1067,6 +1106,19 @@
     "source_family_id": "sigar_afghanistan_lessons_report",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "state_department_colombia_history",
+    "title": "A Guide to the United States' History of Recognition, Diplomatic, and Consular Relations, by Country, since 1776: Colombia",
+    "url": "https://history.state.gov/countries/colombia",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "us_state_department_office_historian",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1106,6 +1158,19 @@
     "source_family_id": "ucdp_conflict_termination",
     "evidence_roles": [
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "uk_archives_yemen_1918",
+    "title": "The Arabian Peninsula",
+    "url": "https://www.nationalarchives.gov.uk/the-middle-east/arabian-peninsula/",
+    "publisher": "The National Archives, United Kingdom",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-15",
+    "source_family_id": "uk_national_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {

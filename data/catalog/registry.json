@@ -8661,15 +8661,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q851_1936_a94f117c",
+      "id": "kingdom_saudi_arabia",
       "name": "Kingdom of Saudi Arabia",
       "kind": "kingdom",
-      "start_year": 1936,
-      "end_year": 2024,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1932,
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_q153015_1806_35cdc15e",
@@ -10342,6 +10341,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "mutawakkilite_kingdom_yemen",
+      "name": "Mutawakkilite Kingdom of Yemen",
+      "kind": "kingdom",
+      "start_year": 1918,
+      "end_year": 1961,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_q6944360_1344_e6afb1d1",
@@ -16406,15 +16415,14 @@
       "region": "North America"
     },
     {
-      "id": "clio_q1061488_1863_68491004",
+      "id": "united_states_colombia",
       "name": "United States of Colombia",
-      "kind": "polity",
+      "kind": "federal_republic",
       "start_year": 1863,
-      "end_year": 1865,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1885,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
     },
     {
       "id": "clio_fr_carolingian_emp_2_887_65bdfb75",
@@ -17408,37 +17416,38 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1590,
-    "rated_entities": 226,
-    "rated_events": 4234,
+    "registry_polities": 1591,
+    "rated_entities": 228,
+    "rated_events": 4245,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 19163,
+    "unresolved_event_candidates": 19152,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1769,
-    "provisional_hced_label_events": 2243,
-    "provisional_iwd_wars": 54,
-    "provisional_iwbd_battles": 121,
+    "provisional_hced_label_events": 2250,
+    "provisional_iwd_wars": 56,
+    "provisional_iwbd_battles": 123,
     "iwbd_battles_total": 1708,
     "provisional_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
-    "iwd_components_aggregated": 87,
+    "iwd_components_aggregated": 89,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4012,
-      "geojson_points": 3978,
-      "modern_location_country_assertions": 3934,
-      "location_provenance_objects": 3980,
-      "point_fields_withheld_by_quarantine": 34,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 77,
+      "hced_candidate_bindings": 4019,
+      "geojson_points": 3982,
+      "modern_location_country_assertions": 3939,
+      "location_provenance_objects": 3986,
+      "point_fields_withheld_by_quarantine": 37,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 32,
-      "unique_events_with_any_quarantined_field": 79,
-      "point_quarantine_candidate_manifest_sha256": "0f41aba5dda824cabdca7da7f0d6c156489e3a16397ad70187b23bccd013fdb2",
-      "country_quarantine_candidate_manifest_sha256": "ea6e8ac15e6e8426a574471cb4e30dc050eb8bef3f11589a44a4487d24f5dd6d",
+      "point_country_quarantine_overlap": 33,
+      "unique_events_with_any_quarantined_field": 83,
+      "point_quarantine_candidate_manifest_sha256": "a24351d3a330f97007f55825ef251b76046b884ca12c9580bc6e08c24e3e17cf",
+      "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
+      "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 3980
+        "unreviewed_source_assertion": 3986
       },
       "verified_location_assertions": {
         "availability": "not_available",

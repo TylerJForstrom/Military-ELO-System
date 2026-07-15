@@ -18,6 +18,10 @@ from military_elo.release import (
     normalize_label,
     promote_iwbd_battles,
 )
+from military_elo.promotion.policy import (
+    IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS,
+    IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -476,6 +480,49 @@ class ContainmentTests(unittest.TestCase):
         self.assertEqual(result["rejections"]["contains_constituent_iwbd_rows"], 1)
         self.assertEqual(result["events"], [])
 
+    @staticmethod
+    def _reviewed_mishan_rows():
+        chalainor = _battle(
+            "iwbd-118-45-840", "Chalainor 2", "Manchurian",
+            "1929-11-17", "1929-11-17", "USSR", "China", "USSR", "Attacker",
+        )
+        chalainor["duration_days"] = "1"
+        mishan = _battle(
+            "iwbd-118-45-842", "Mishan", "Manchurian",
+            "1929-11-17", "1929-11-18", "USSR", "China", "USSR", "Attacker",
+        )
+        mishan["duration_days"] = "2"
+        return chalainor, mishan
+
+    def test_reviewed_mishan_relation_promotes_both_distinct_operations(self) -> None:
+        chalainor, mishan = self._reviewed_mishan_rows()
+        result = _promote([mishan, chalainor])
+        self.assertEqual(result["rejections"]["contains_constituent_iwbd_rows"], 0)
+        self.assertEqual(
+            {event["iwbd_candidate_id"] for event in result["events"]},
+            {"iwbd-118-45-840", "iwbd-118-45-842"},
+        )
+
+    def test_reviewed_mishan_relation_fails_on_missing_sibling(self) -> None:
+        _, mishan = self._reviewed_mishan_rows()
+        with self.assertRaisesRegex(ValueError, "pinned sibling iwbd-118-45-840"):
+            _promote([mishan])
+
+    def test_reviewed_mishan_relation_fails_on_fingerprint_drift(self) -> None:
+        chalainor, mishan = self._reviewed_mishan_rows()
+        chalainor["name"] = "Dalainor 2"
+        with self.assertRaisesRegex(ValueError, "source fingerprint changed"):
+            _promote([chalainor, mishan])
+
+    def test_reviewed_mishan_relation_fails_on_new_contained_sibling(self) -> None:
+        chalainor, mishan = self._reviewed_mishan_rows()
+        extra = _battle(
+            "iwbd-118-45-999", "Unreviewed operation", "Manchurian",
+            "1929-11-18", "1929-11-18", "USSR", "China", "USSR", "Attacker",
+        )
+        with self.assertRaisesRegex(ValueError, "contained sibling set changed"):
+            _promote([chalainor, mishan, extra])
+
 
 class OutcomeTests(unittest.TestCase):
     def test_inconclusive_is_a_coded_stalemate_not_unknown(self) -> None:
@@ -596,6 +643,73 @@ class IdentityTests(unittest.TestCase):
         result = _promote(rows)
         self.assertEqual(result["rejections"]["coalition_or_composite_side"], 2)
         self.assertEqual(result["events"], [])
+
+    @staticmethod
+    def _reviewed_abtao():
+        row = _battle(
+            "iwbd-52-18-185", "Abtao", "Naval War",
+            "1866-02-07", "1866-02-07", "Spain", "Chile/Peru",
+            "Inconclusive", "Inconclusive", war_level_role="Inconclusive",
+        )
+        row["duration_days"] = "1"
+        return row
+
+    @staticmethod
+    def _abtao_resolver(label, low_year, high_year):
+        entity_ids = {
+            "Spain": "spanish_empire",
+            "Chile": "clio_ch_chile_rep_1_1812_3b31ba25",
+            "Peru": "clio_q419_1822_a6e12c5b",
+        }
+        entity_id = entity_ids.get(label)
+        return entity_id, ({"id": entity_id} if entity_id else None)
+
+    def test_reviewed_abtao_composition_is_exact_and_weighted(self) -> None:
+        result = _promote(
+            [self._reviewed_abtao()], resolve_label=self._abtao_resolver
+        )
+        self.assertEqual(result["rejections"]["coalition_or_composite_side"], 0)
+        self.assertEqual(len(result["events"]), 1)
+        participants = {
+            participant["entity_id"]: participant
+            for participant in result["events"][0]["participants"]
+        }
+        self.assertEqual(
+            set(participants),
+            {
+                "spanish_empire",
+                "clio_ch_chile_rep_1_1812_3b31ba25",
+                "clio_q419_1822_a6e12c5b",
+            },
+        )
+        self.assertEqual(participants["spanish_empire"]["contribution"], 1.0)
+        self.assertEqual(
+            participants["clio_ch_chile_rep_1_1812_3b31ba25"]["contribution"],
+            0.5,
+        )
+        self.assertEqual(
+            participants["clio_q419_1822_a6e12c5b"]["contribution"], 0.5
+        )
+        self.assertEqual(
+            {participant["result_class"] for participant in participants.values()},
+            {"stalemate_or_inconclusive"},
+        )
+
+    def test_reviewed_abtao_fails_on_source_fingerprint_drift(self) -> None:
+        row = self._reviewed_abtao()
+        row["defender_raw"] = "Chile / Peru"
+        with self.assertRaisesRegex(ValueError, "source fingerprint changed"):
+            _promote([row], resolve_label=self._abtao_resolver)
+
+    def test_reviewed_abtao_fails_on_resolver_drift(self) -> None:
+        def stale_resolver(label, low_year, high_year):
+            entity_id, polity = self._abtao_resolver(label, low_year, high_year)
+            if label == "Peru":
+                return "generic_peru", polity
+            return entity_id, polity
+
+        with self.assertRaisesRegex(ValueError, "resolver returned 'generic_peru'"):
+            _promote([self._reviewed_abtao()], resolve_label=stale_resolver)
 
     def test_parenthesized_faction_labels_stay_staged(self) -> None:
         candidates = [
@@ -1130,10 +1244,12 @@ class ReleaseArtifactTests(unittest.TestCase):
             start = date.fromisoformat(candidate["start_date"])
             end = date.fromisoformat(candidate["end_date"])
             key = (event["iwbd_cow_war_number"], event["iwbd_war_name"])
-            groups.setdefault(key, []).append((event["name"], start, end))
+            groups.setdefault(key, []).append(
+                (event["iwbd_candidate_id"], event["name"], start, end)
+            )
         for key, rows in groups.items():
-            for name, start, end in rows:
-                for other_name, other_start, other_end in rows:
+            for candidate_id, name, start, end in rows:
+                for other_id, other_name, other_start, other_end in rows:
                     if normalize_label(other_name) == normalize_label(name):
                         continue
                     contains = (
@@ -1141,10 +1257,18 @@ class ReleaseArtifactTests(unittest.TestCase):
                         and end >= other_end
                         and (end - start).days > (other_end - other_start).days
                     )
-                    self.assertFalse(
-                        contains,
-                        f"{name} strictly contains sibling {other_name} in {key}",
-                    )
+                    if contains:
+                        reviewed = set(
+                            IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS.get(
+                                candidate_id, {}
+                            ).get("contained_candidates", {})
+                        )
+                        self.assertIn(
+                            other_id,
+                            reviewed,
+                            f"{name} strictly contains unreviewed sibling "
+                            f"{other_name} in {key}",
+                        )
 
     def test_iwbd_war_groups_never_split_clusters(self) -> None:
         clusters_by_group = {}

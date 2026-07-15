@@ -51,6 +51,15 @@ time-bounded policies, never through loose name similarity:
   1882-1918 — the interval COW files label "Yugoslavia" before the South Slav
   state existed. Interwar and later Yugoslavia have no curated identity and
   stay staged.
+- **COW code 100 ("Colombia"):** resolves to the United States of Colombia for
+  1863-1885 only. The broader `Colombia` label is deliberately not an alias,
+  so neighboring regimes do not inherit this federal identity's rating.
+- **COW code 670 ("Saudi Arabia"):** resolves to the Kingdom of Saudi Arabia
+  from 1932 through the current 2026 source snapshot. Earlier Arabian polities
+  stay staged rather than being folded into the kingdom.
+- **COW code 678 ("Yemen Arab Republic"):** resolves to the Mutawakkilite
+  Kingdom of Yemen for 1918-1961 only. The policy stops before the 1962 coup
+  and does not bridge into the republican regime.
 - **The label "France":** resolves through six approved windows — the Kingdom
   of France (987-1792), the French First Republic (1793-1803), the First
   French Empire (1804-1815), the Second French Empire (1852-1870), the French
@@ -100,6 +109,11 @@ State polity labels:
 | `punjab` | 1799-1849 Sikh Empire | outside | The pre-1799 misl confederacy stays staged. |
 | `transvaal` | 1852-1902 South African Republic | outside | The 1877-1881 British annexation is treated as an interruption of the same polity, not a reset. |
 | `muslim caliphate` | 632-660 Rashidun Caliphate; 661-750 Umayyad Caliphate | after 750 | Era-correct split at the Umayyad accession; the Abbasid era resolves through its own Cliopatria identity. |
+| `macedonia` | 336-323 BCE Macedonian Empire | outside | Exact source-label policy for Alexander's reign; it does not turn the generic label into a resolver alias. |
+| `ummayyad caliphate` | 661-750 Umayyad Caliphate | outside | Exact upstream misspelling, constrained to the same historical interval as the canonical identity. |
+| `mamluks` | 1250-1517 Mamluk Sultanate | outside | Exact collective source label for the sultanate; later Mamluk forces do not inherit the identity. |
+| `dutch rebels` | 1568-1795 Dutch Republic | outside | Exact source label for the Dutch Revolt and continuing republic, with no generic rebel fallback. |
+| `untied kingdom` | 1707-2026 United Kingdom | outside | Exact upstream typo, bounded by the current source snapshot and never generalized into typo correction. |
 
 Non-state actor labels (see the non-state actor policy below):
 
@@ -293,6 +307,23 @@ pairings used by the label pass were individually reviewed and approved:
 "north korea" observed against the DPRK candidate (ten resolved sides) and
 "timurid empire" observed against the Timurid candidate (one resolved side).
 
+### Wave 4 narrow state identity additions
+
+Wave 4 adds three separately sourced identities needed by two IWD parent wars.
+They start at the normal baseline, carry no predecessor rating, and intentionally
+omit broad modern-country aliases:
+
+| Identity | Window | Boundary rationale |
+|---|---|---|
+| United States of Colombia | 1863-1885 | The federal constitution through the 1886 constitutional replacement; no generic `Colombia` alias. |
+| Kingdom of Saudi Arabia | 1932-present | Proclamation of the unified kingdom; the COW policy is additionally capped at the current 2026 source snapshot. |
+| Mutawakkilite Kingdom of Yemen | 1918-1961 | Independence from Ottoman rule through the last full pre-coup year; no generic `Yemen` alias and no continuity into the republic. |
+
+Two exact-name Cliopatria envelopes are absorbed by the normal overlap rule,
+while the broader North Yemen envelopes remain separate. The three additions
+therefore move the registry from the earlier tranche's 1,590 entries to 1,591
+net, without widening a generic code or label resolver.
+
 ## Non-state autonomous military actors (second reviewer pending)
 
 The rating unit has always been a polity **or autonomous military actor**; this
@@ -352,14 +383,16 @@ remain in `data/raw`; every exact ID and reason is emitted in release metadata.
 - **HCED coded pass (39):** the original ten variant-spelling,
   Herat-principality, Alcacer do Sol, and St Quentin 1557 adjudications plus
   29 historical-review exclusions.
-- **HCED label pass (46):** the original eight PAVN/IWBD/crosswalk
-  adjudications plus 38 historical-review exclusions.
+- **HCED label pass (53):** the original eight PAVN/IWBD/crosswalk
+  adjudications, 38 historical-review exclusions, and seven Wave 4 candidates
+  retained in staging after focused review.
 - **IWBD (6):** the wrong-outcome Duppel/Dybbol 1849 fallback plus five
   cross-source spelling-twin duplicates of HCED battles (Tembien 1 and 2 1936,
   Liebenau 1866, Dijon 3 1871, Velestino 1 1897).
-- **IWD parents (3):** Germany-Denmark 1848 (the source asserts a Prussian
-  win, but Denmark won the First Schleswig War), Italian Unification 1859
-  (fought by the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought
+- **IWD parents (4):** parent 1 (requires a Bourbon Restoration identity and a
+  reviewed COW-220 continuity window), Germany-Denmark 1848 (the source asserts
+  a Prussian win, but Denmark won the First Schleswig War), Italian Unification
+  1859 (fought by the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought
   principally by the Hungarian Soviet Republic).
 - **UCDP (1):** the 1974 Paracel Islands episode, documented above.
 
@@ -371,6 +404,7 @@ Historical-review dispositions are explicit:
 | Excluded: wrong principal belligerent or Habsburg branch | Lepanto; Valmy, Verdun, and Longwy; Duppel; Kolberg 1774; Bautzen, Rippach, and First Mockern; Montmirail, Brienne, and Vauchamps; Messina; Trebizond; Hanoi; Cadore and Hadad; Grol and Maastricht; Tutrakan; Andalsnes; Kalat; Monte Grappa 1917/1918; Vittorio Veneto; Rosas 1645; and Isola del Giglio 1646. |
 | Excluded: duplicate or incompatible granularity | Martinesti (Rimnik duplicate); Tournai (Pont-a-Chin duplicate); St Quentin 1914 (Guise duplicate); Changsha 1942II (duplicate of the 1941-42 Third Battle); Barcelona 1705-06 (envelope over the separately rated 1705 capture and the distinct 1706 defense); Nivelle Offensive (Aisne 1917 envelope); Ushant 1794 (First of June duplicate); and the Liaoshen, Huaihai, Beijing-Tianjin, Poland 1939, France 1940, Norway 1940, Sevastopol 1854-55, and Galicia 1914 campaign envelopes. |
 | Excluded: date cannot support chronological rating | Trentino 1917, Kolin 1756, and Rocoux 1747. No replacement date is silently invented. |
+| Retained in staging after Wave 4 review | Megalopolis 331 BCE and Jaxartes 329 BCE lack a fully adjudicated chronology or specific coalition identity; Antioch 1268 has an unresolved identity boundary; Mons 1572, Steenwijk 1592, and Abensberg 1809 omit principal co-belligerents; Amjhera 1728 has conflicting chronology. |
 | Retained as provisional source assertions | Diamond Hill 1900 remains because HCED itself asserts a Boer success and all HCED outcomes are labelled provisional. Newbury/Gainsborough 1643, Bizani/Jannina, the two 1916 Isonzo rows, and Nieman River 1920 were adversarially refuted as project defects and remain unchanged. The Basing House range claim was also refuted: staging already preserves ranges. |
 | Documented modeling limitation | Dyadic HCED rows can omit principal co-belligerents (for example Germany at Caporetto, France at Rossbach, the Polish-Lithuanian Commonwealth at Vienna, or the BEF at the Marne). Participants are not silently added without a curated composition source; these rows remain provisional pending a co-belligerent table. |
 

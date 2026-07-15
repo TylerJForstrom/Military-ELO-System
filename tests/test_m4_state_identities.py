@@ -131,6 +131,22 @@ class StateLabelWindowTests(unittest.TestCase):
         self.assertEqual(_label_policy_seed_id("muslim caliphate", 636, 636), "rashidun_caliphate")
         self.assertEqual(_label_policy_seed_id("muslim caliphate", 717, 718), "umayyad_caliphate")
 
+    def test_wave4_exact_source_label_windows(self) -> None:
+        cases = (
+            ("macedonia", -336, -323, "macedonian_empire"),
+            ("ummayyad caliphate", 661, 750, "umayyad_caliphate"),
+            ("mamluks", 1250, 1517, "mamluk_sultanate"),
+            ("dutch rebels", 1568, 1795, "dutch_republic"),
+            ("untied kingdom", 1707, 2026, "united_kingdom"),
+        )
+        for label, low, high, entity_id in cases:
+            with self.subTest(label=label, edge="low"):
+                self.assertEqual(_label_policy_seed_id(label, low, low), entity_id)
+                self.assertIsNone(_label_policy_seed_id(label, low - 1, low - 1))
+            with self.subTest(label=label, edge="high"):
+                self.assertEqual(_label_policy_seed_id(label, high, high), entity_id)
+                self.assertIsNone(_label_policy_seed_id(label, high + 1, high + 1))
+
 
 class StateCodePolicyTests(unittest.TestCase):
     def test_cow_code_policies_resolve_by_era(self) -> None:
@@ -147,6 +163,55 @@ class StateCodePolicyTests(unittest.TestCase):
             with self.subTest(year=year):
                 self.assertEqual(_label_policy_seed_id("prussia", year, year), entity_id)
                 self.assertEqual(_cow_policy_seed_id("255", year, year), entity_id)
+
+    def test_wave4_cow_identity_windows_are_exact(self) -> None:
+        cases = (
+            ("100", 1863, 1885, "united_states_colombia"),
+            ("670", 1932, 2026, "kingdom_saudi_arabia"),
+            ("678", 1918, 1961, "mutawakkilite_kingdom_yemen"),
+        )
+        for code, low, high, entity_id in cases:
+            with self.subTest(code=code, edge="low"):
+                self.assertEqual(_cow_policy_seed_id(code, low, low), entity_id)
+                self.assertIsNone(_cow_policy_seed_id(code, low - 1, low - 1))
+            with self.subTest(code=code, edge="high"):
+                self.assertEqual(_cow_policy_seed_id(code, high, high), entity_id)
+                self.assertIsNone(_cow_policy_seed_id(code, high + 1, high + 1))
+
+    def test_wave4_seed_identities_are_narrow_and_directly_sourced(self) -> None:
+        seed_root = PROJECT_ROOT / "data" / "seed"
+        entities = {
+            entity["id"]: entity
+            for entity in json.loads((seed_root / "entities.json").read_text(encoding="utf-8"))
+        }
+        source_ids = {
+            source["id"]
+            for source in json.loads((seed_root / "sources.json").read_text(encoding="utf-8"))
+        }
+        expected = {
+            "united_states_colombia": (
+                "United States of Colombia", 1863, 1885, "colombia"
+            ),
+            "kingdom_saudi_arabia": (
+                "Kingdom of Saudi Arabia", 1932, None, "saudi arabia"
+            ),
+            "mutawakkilite_kingdom_yemen": (
+                "Mutawakkilite Kingdom of Yemen", 1918, 1961, "yemen"
+            ),
+        }
+        for entity_id, (name, low, high, forbidden_alias) in expected.items():
+            with self.subTest(entity=entity_id):
+                entity = entities[entity_id]
+                self.assertEqual(
+                    (entity["name"], entity["start_year"], entity["end_year"]),
+                    (name, low, high),
+                )
+                self.assertNotIn(
+                    forbidden_alias,
+                    {str(alias).casefold() for alias in entity["aliases"]},
+                )
+                self.assertTrue(entity["source_ids"])
+                self.assertLessEqual(set(entity["source_ids"]), source_ids)
 
     def test_extended_seed_code_windows(self) -> None:
         self.assertEqual(_policy_seed_id("fr_bourbon_k_2", 1795, 1800), "french_first_republic")
@@ -293,8 +358,20 @@ class PipelineAsymmetryTests(unittest.TestCase):
 class CuratedExclusionTableTests(unittest.TestCase):
     def test_exclusion_tables_are_enumerated_and_documented(self) -> None:
         self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 39)
-        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 46)
-        self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "10", "42"})
+        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 53)
+        self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"1", "5", "10", "42"})
+        self.assertLessEqual(
+            {
+                "hced-Megalopolis-331-1",
+                "hced-Jaxartes-329-1",
+                "hced-Antioch1268-1",
+                "hced-Mons1572-1",
+                "hced-Steenwijk1592-1",
+                "hced-Amjhera1728-1",
+                "hced-Abensberg1809-1",
+            },
+            set(HCED_LABEL_CURATED_EXCLUSIONS),
+        )
         for table in (HCED_CURATED_EXCLUSIONS, HCED_LABEL_CURATED_EXCLUSIONS):
             for candidate_id, reason in table.items():
                 with self.subTest(candidate=candidate_id):
@@ -336,20 +413,20 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 4234)
+        self.assertEqual(len(self.events), 4245)
         label = [e for e in self.events if e.get("identity_resolution") == "label"]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2243)
+        self.assertEqual(len(label), 2250)
         self.assertEqual(len(crosswalk), 1769)
-        self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 54)
-        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 121)
+        self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 56)
+        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 123)
         self.assertEqual(sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7)
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 226)
+        self.assertEqual(len(rated), 228)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -381,7 +458,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 1590)
+        self.assertEqual(len(self.registry["entities"]), 1591)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

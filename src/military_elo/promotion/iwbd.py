@@ -21,6 +21,8 @@ from .policy import (
     IDENTITY_DENY_WINDOWS,
     IWBD_COALITION_SIDE_LABELS,
     IWBD_CURATED_EXCLUSIONS,
+    IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS,
+    IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS,
 )
 
 _IWBD_CANDIDATE_ID = re.compile(r"^iwbd-(-?\d+)-(-?\d+)-(\d+)$")
@@ -42,6 +44,85 @@ def _iwbd_dates(row: dict[str, Any]) -> tuple[date, date] | None:
 
 def _iwbd_base_war(row: dict[str, Any]) -> str:
     return re.sub(r"\s*\(.*\)$", "", str(row.get("war_name") or ""))
+
+
+def _iwbd_review_fingerprint(row: dict[str, Any]) -> dict[str, str]:
+    """Return the semantic fields pinned by a candidate-specific review."""
+    fields = (
+        "source_row",
+        "name",
+        "war_name",
+        "start_date",
+        "end_date",
+        "duration_days",
+        "attacker_raw",
+        "defender_raw",
+        "winner_raw",
+        "battle_level_victor_role",
+    )
+    return {
+        field: "" if row.get(field) is None else str(row.get(field))
+        for field in fields
+    }
+
+
+def _validate_iwbd_review_fingerprint(
+    candidate_id: str,
+    row: dict[str, Any],
+    expected: dict[str, str],
+) -> None:
+    actual = _iwbd_review_fingerprint(row)
+    if actual == expected:
+        return
+    changed = ", ".join(
+        field
+        for field in expected
+        if actual.get(field) != expected.get(field)
+    )
+    raise ValueError(
+        f"stale IWBD reviewed policy for {candidate_id}: "
+        f"source fingerprint changed ({changed})"
+    )
+
+
+def _validate_iwbd_review_policies(candidates: list[dict[str, Any]]) -> None:
+    """Fail closed when a present reviewed target or its pinned sibling drifts."""
+    rows_by_id: dict[str, list[dict[str, Any]]] = {}
+    for row in candidates:
+        rows_by_id.setdefault(str(row.get("candidate_id") or ""), []).append(row)
+
+    review_tables = (
+        IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS,
+        IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS,
+    )
+    for table in review_tables:
+        for candidate_id, policy in table.items():
+            rows = rows_by_id.get(candidate_id, [])
+            if not rows:
+                # Focused callers may pass a subset of IWBD. Once the reviewed
+                # target is present, however, every pinned dependency is strict.
+                continue
+            if len(rows) != 1:
+                raise ValueError(
+                    f"stale IWBD reviewed policy for {candidate_id}: "
+                    f"expected exactly one target row, found {len(rows)}"
+                )
+            _validate_iwbd_review_fingerprint(
+                candidate_id, rows[0], policy["fingerprint"]
+            )
+            for sibling_id, fingerprint in policy.get(
+                "contained_candidates", {}
+            ).items():
+                sibling_rows = rows_by_id.get(sibling_id, [])
+                if len(sibling_rows) != 1:
+                    raise ValueError(
+                        f"stale IWBD reviewed policy for {candidate_id}: "
+                        f"expected exactly one pinned sibling {sibling_id}, "
+                        f"found {len(sibling_rows)}"
+                    )
+                _validate_iwbd_review_fingerprint(
+                    sibling_id, sibling_rows[0], fingerprint
+                )
 
 
 def _matches_hced_exact(
@@ -90,10 +171,12 @@ def promote_iwbd_battles(
     date span must not strictly contain a differently-named battle of the same
     war (campaign umbrellas stay staged); its coded victor must match a named
     side (the inconclusive pair is a coded tactical stalemate, never a guess);
-    both sides must be single polities resolving to unique time-bounded
-    identities outside declared deny windows; and severity is capped at
-    limited. The war-level victor code is ignored entirely: battles never
-    update the strategic layer.
+    both sides must resolve to unique time-bounded identities outside declared
+    deny windows. The sole reviewed composite-side policy reconstructs an exact
+    candidate-keyed coalition, and the sole reviewed containment relation
+    permits an exact concurrent-distinct sibling pair; both raise on source or
+    resolver drift. Severity is capped at limited. The war-level victor code is
+    ignored entirely: battles never update the strategic layer.
     """
     events: list[dict[str, Any]] = []
     rejections: Counter[str] = Counter()
@@ -106,7 +189,8 @@ def promote_iwbd_battles(
     # same war is a presumptive campaign umbrella and stays staged.
     if curated_exclusions is None:
         curated_exclusions = IWBD_CURATED_EXCLUSIONS
-    war_groups: dict[tuple[str, str], list[tuple[str, date, date]]] = {}
+    _validate_iwbd_review_policies(candidates)
+    war_groups: dict[tuple[str, str], list[tuple[str, str, date, date]]] = {}
     for row in candidates:
         if str(row.get("candidate_id")) in curated_exclusions:
             continue
@@ -117,7 +201,7 @@ def promote_iwbd_battles(
             continue
         war_groups.setdefault(
             (parts[0], str(row.get("war_name") or "")), []
-        ).append((name, parsed[0], parsed[1]))
+        ).append((str(row.get("candidate_id")), name, parsed[0], parsed[1]))
 
     accepted_rows: list[dict[str, Any]] = []
     for row in sorted(candidates, key=lambda r: int(r.get("source_row") or 0)):
@@ -162,10 +246,13 @@ def promote_iwbd_battles(
         cow_number = parts[0]
         normalized_name = normalize_label(name)
         span_days = (end - start).days
-        contained = False
-        for other_name, other_start, other_end in war_groups.get(
+        candidate_id = str(row.get("candidate_id") or "")
+        contained_ids: set[str] = set()
+        for other_id, other_name, other_start, other_end in war_groups.get(
             (cow_number, str(row.get("war_name") or "")), []
         ):
+            if other_id == candidate_id:
+                continue
             if normalize_label(other_name) == normalized_name:
                 continue
             if (
@@ -173,9 +260,19 @@ def promote_iwbd_battles(
                 and end >= other_end
                 and span_days > (other_end - other_start).days
             ):
-                contained = True
-                break
-        if contained:
+                contained_ids.add(other_id)
+        relation_policy = IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS.get(
+            candidate_id
+        )
+        if relation_policy is not None:
+            expected_contained = set(relation_policy["contained_candidates"])
+            if contained_ids != expected_contained:
+                raise ValueError(
+                    f"stale IWBD reviewed policy for {candidate_id}: "
+                    f"contained sibling set changed; expected "
+                    f"{sorted(expected_contained)}, found {sorted(contained_ids)}"
+                )
+        elif contained_ids:
             rejections["contains_constituent_iwbd_rows"] += 1
             continue
 
@@ -195,7 +292,10 @@ def promote_iwbd_battles(
             rejections["duplicate_of_hced_battle"] += 1
             continue
 
-        if any(
+        composition_policy = IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS.get(
+            candidate_id
+        )
+        if composition_policy is None and any(
             "/" in label or "," in label or "(" in label
             or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
             for label in (attacker, defender)
@@ -203,8 +303,15 @@ def promote_iwbd_battles(
             rejections["coalition_or_composite_side"] += 1
             continue
 
+        if composition_policy is None:
+            attacker_specs = ((attacker, None),)
+            defender_specs = ((defender, None),)
+        else:
+            attacker_specs = composition_policy["attacker"]
+            defender_specs = composition_policy["defender"]
+
         denied = False
-        for label in (attacker, defender):
+        for label, _ in (*attacker_specs, *defender_specs):
             for deny_low, deny_high in IDENTITY_DENY_WINDOWS.get(
                 normalize_label(label), ()
             ):
@@ -216,23 +323,44 @@ def promote_iwbd_battles(
         if denied:
             rejections["unresolved_time_bounded_belligerent"] += 1
             continue
-        attacker_id, attacker_polity = resolve_label(attacker, year_low, year_high)
-        defender_id, defender_polity = resolve_label(defender, year_low, year_high)
-        if not attacker_id or not defender_id:
+
+        def resolve_side(
+            specs: tuple[tuple[str, str | None], ...],
+        ) -> list[tuple[str | None, dict[str, Any] | None]]:
+            resolved: list[tuple[str | None, dict[str, Any] | None]] = []
+            for label, expected_id in specs:
+                entity_id, polity = resolve_label(label, year_low, year_high)
+                if expected_id is not None and entity_id != expected_id:
+                    raise ValueError(
+                        f"stale IWBD reviewed policy for {candidate_id}: "
+                        f"resolver returned {entity_id!r} for {label!r}; "
+                        f"expected {expected_id!r}"
+                    )
+                resolved.append((entity_id, polity))
+            return resolved
+
+        attacker_resolved = resolve_side(attacker_specs)
+        defender_resolved = resolve_side(defender_specs)
+        attacker_ids = [entity_id for entity_id, _ in attacker_resolved if entity_id]
+        defender_ids = [entity_id for entity_id, _ in defender_resolved if entity_id]
+        if (
+            len(attacker_ids) != len(attacker_specs)
+            or len(defender_ids) != len(defender_specs)
+        ):
             rejections["unresolved_time_bounded_belligerent"] += 1
             continue
-        if attacker_id == defender_id:
+        if set(attacker_ids) & set(defender_ids):
             rejections["same_or_empty_opposing_side"] += 1
             continue
         if draw:
             fuzzy_signature = (
-                frozenset({attacker_id, defender_id}),
+                frozenset({*attacker_ids, *defender_ids}),
                 frozenset(),
             )
         elif winner == normalized_attacker:
-            fuzzy_signature = (frozenset({attacker_id}), frozenset({defender_id}))
+            fuzzy_signature = (frozenset(attacker_ids), frozenset(defender_ids))
         else:
-            fuzzy_signature = (frozenset({defender_id}), frozenset({attacker_id}))
+            fuzzy_signature = (frozenset(defender_ids), frozenset(attacker_ids))
         if _matches_hced_fuzzy(
             hced_event_keys, hced_fuzzy_lookup_keys, fuzzy_signature
         ):
@@ -243,10 +371,7 @@ def promote_iwbd_battles(
         # source-row order remains the deterministic tie-break between valid
         # duplicates.
         seen_keys |= exact_keys
-        for entity_id, polity in (
-            (attacker_id, attacker_polity),
-            (defender_id, defender_polity),
-        ):
+        for entity_id, polity in (*attacker_resolved, *defender_resolved):
             if polity is not None:
                 resolved_polities[entity_id] = polity
 
@@ -256,8 +381,8 @@ def promote_iwbd_battles(
                 "name": name,
                 "start": start,
                 "end": end,
-                "attacker_id": attacker_id,
-                "defender_id": defender_id,
+                "attacker_ids": attacker_ids,
+                "defender_ids": defender_ids,
                 "draw": draw,
                 "victor_role": role,
                 "cow_number": cow_number,
@@ -304,9 +429,9 @@ def promote_iwbd_battles(
         start, end = accepted["start"], accepted["end"]
         draw = accepted["draw"]
         if draw or accepted["victor_role"] == "Attacker":
-            side_a, side_b = [accepted["attacker_id"]], [accepted["defender_id"]]
+            side_a, side_b = accepted["attacker_ids"], accepted["defender_ids"]
         else:
-            side_a, side_b = [accepted["defender_id"]], [accepted["attacker_id"]]
+            side_a, side_b = accepted["defender_ids"], accepted["attacker_ids"]
         candidate_id = str(row.get("candidate_id"))
         events.append(
             {
