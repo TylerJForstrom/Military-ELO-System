@@ -16,6 +16,7 @@ from .common import (
     _slug,
     _war_tokens,
     normalize_label,
+    validate_exact_candidate_contracts,
 )
 from .hced_location import (
     HCED_COUNTRY_QUARANTINE_IDS,
@@ -29,9 +30,9 @@ from .policy import (
     HCED_LABEL_CURATED_EXCLUSIONS,
     HCED_LABEL_POLICIES,
     HCED_PENDING_SPLIT_LABELS,
-    HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
     _label_policy_seed_id,
 )
+
 
 def _hced_label_row_key(
     candidate: dict[str, Any], event_name: str, year: int
@@ -131,6 +132,8 @@ def promote_hced_crosswalk_rows(
     require_complete_reviewed_identity_bindings: bool = False,
     reserved_candidate_ids: set[str] | frozenset[str] | None = None,
     curated_exclusions: dict[str, str] | None = None,
+    reviewed_candidate_contracts: dict[str, dict[str, Any]] | None = None,
+    validated_source_contracts: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Promote HCED rows whose opposing sides both have Seshat codes.
 
@@ -149,8 +152,21 @@ def promote_hced_crosswalk_rows(
         reviewed_identity_bindings = {}
     if reserved_candidate_ids is None:
         reserved_candidate_ids = frozenset()
+    if reviewed_candidate_contracts is None:
+        reviewed_candidate_contracts = {}
+    if validated_source_contracts is None:
+        validated_source_contracts = {
+            candidate_id: contract["source_contract"]
+            for candidate_id, contract in reviewed_candidate_contracts.items()
+        }
     if curated_exclusions is None:
         curated_exclusions = HCED_CURATED_EXCLUSIONS
+    validate_exact_candidate_contracts(
+        candidates,
+        validated_source_contracts,
+        description="HCED Wave 6 contract",
+        require_complete=require_complete_reviewed_identity_bindings,
+    )
     _validate_hced_crosswalk_review_bindings(
         candidates,
         reviewed_identity_bindings,
@@ -165,6 +181,7 @@ def promote_hced_crosswalk_rows(
             # It must never enter the generic crosswalk or label universes.
             rejections["reserved_candidate_contract"] += 1
             continue
+        candidate_contract = reviewed_candidate_contracts.get(candidate_id)
         if candidate_id in curated_exclusions:
             # Curated adjudications run before every other gate; the row is
             # counted, stays staged, and leaves every promotion universe
@@ -186,7 +203,7 @@ def promote_hced_crosswalk_rows(
         side_b_codes = _deduplicate(
             map(str, candidate.get("seshat_side_2_candidates", []))
         )
-        if not side_a_codes or not side_b_codes:
+        if candidate_contract is None and (not side_a_codes or not side_b_codes):
             # Rows lacking Seshat coding on a side are deferred to the second,
             # label-resolution promotion pass instead of being rejected here.
             deferred_label_rows.append(candidate)
@@ -205,11 +222,40 @@ def promote_hced_crosswalk_rows(
             rejections["outcome_not_aligned_to_crosswalk_sides"] += 1
             continue
 
+        if candidate_contract is not None:
+            expected_outcome = str(candidate_contract["outcome"])
+            actual_outcome = "draw" if draw else "side_1"
+            if actual_outcome != expected_outcome:
+                raise ValueError(
+                    f"stale HCED Wave 6 contract {candidate_id}: outcome changed; "
+                    f"expected {expected_outcome}, found {actual_outcome}"
+                )
+
         resolved_sides: list[list[str]] = []
         resolved_polities: dict[str, dict[str, Any]] = {}
         resolution_failed = False
-        for codes in (side_a_codes, side_b_codes):
+        exact_sides = (
+            (tuple(candidate_contract["side_1"]), tuple(candidate_contract["side_2"]))
+            if candidate_contract is not None
+            else None
+        )
+        for side_index, codes in enumerate((side_a_codes, side_b_codes)):
             resolved: list[str] = []
+            if exact_sides is not None:
+                if resolve_reviewed_id is None:
+                    raise ValueError(
+                        f"reviewed HCED candidate {candidate_id} requires an exact-ID resolver"
+                    )
+                for expected_id in exact_sides[side_index]:
+                    entity_id, _ = resolve_reviewed_id(expected_id, low_year, high_year)
+                    if entity_id != expected_id:
+                        raise ValueError(
+                            f"stale HCED Wave 6 contract {candidate_id}: exact-ID "
+                            f"resolver returned {entity_id!r}; expected {expected_id!r}"
+                        )
+                    resolved.append(entity_id)
+                resolved_sides.append(_deduplicate(resolved))
+                continue
             for code in codes:
                 expected_id = (
                     identity_policy["code_bindings"].get(code)
@@ -276,6 +322,10 @@ def promote_hced_crosswalk_rows(
                 if identity_policy is not None
                 else set()
             )
+            if candidate_contract is not None:
+                reviewed_target_ids.update(
+                    {*candidate_contract["side_1"], *candidate_contract["side_2"]}
+                )
             if reviewed_target_ids & set(entity_ids):
                 continue
             if label and len(entity_ids) == 1:
@@ -284,7 +334,13 @@ def promote_hced_crosswalk_rows(
                 )
 
         scale, scale_level = _scale(candidate)
-        confidence = 0.73 if candidate.get("consulted_source_raw") else 0.67
+        confidence = (
+            0.78
+            if candidate_contract is not None
+            else 0.73
+            if candidate.get("consulted_source_raw")
+            else 0.67
+        )
         if low_year != high_year:
             confidence -= 0.03
         confidence = round(confidence, 2)
@@ -311,9 +367,7 @@ def promote_hced_crosswalk_rows(
                 if draw
                 else round(min(0.90, 0.54 + 0.06 * scale_level), 2),
                 "confidence": confidence,
-                "geographic_scope": round(
-                    min(0.70, 0.08 + 0.09 * scale_level), 2
-                ),
+                "geographic_scope": round(min(0.70, 0.08 + 0.09 * scale_level), 2),
                 "domain": _domain(candidate.get("theatre_raw")),
                 "cluster_id": f"hced_war_{cluster}" if cluster else None,
                 "date_precision": "range" if low_year != high_year else "year",
@@ -332,8 +386,11 @@ def promote_hced_crosswalk_rows(
                 ),
                 "source_ids": [
                     "hced_dataset",
-                    "hced_seshat_crosswalk",
-                    "cliopatria_v020",
+                    *(
+                        candidate_contract["evidence_source_ids"]
+                        if candidate_contract is not None
+                        else ("hced_seshat_crosswalk", "cliopatria_v020")
+                    ),
                 ],
                 "outcome_source_ids": ["hced_dataset"],
                 "outcome_source_family_ids": ["hced"],
@@ -343,6 +400,11 @@ def promote_hced_crosswalk_rows(
                     country_quarantine_ids=HCED_COUNTRY_QUARANTINE_IDS,
                 ),
                 "status": "complete",
+                **(
+                    {"identity_resolution": "exact_reviewed_candidate_contract"}
+                    if candidate_contract is not None
+                    else {}
+                ),
             }
         )
 
@@ -500,7 +562,9 @@ def promote_hced_label_rows(
             continue
 
         event_name = str(
-            candidate.get("name") or candidate.get("source_record_id") or "Unnamed engagement"
+            candidate.get("name")
+            or candidate.get("source_record_id")
+            or "Unnamed engagement"
         )
         event_key = _event_key(event_name, best_year)
         if event_key in curated_seed_keys:
@@ -544,7 +608,9 @@ def promote_hced_label_rows(
                 "war_type": "interstate_limited",
                 "scale": scale,
                 "stakes": "major" if scale_level >= 4 else "limited",
-                "decisiveness": 0.32 if draw else round(min(0.90, 0.54 + 0.06 * scale_level), 2),
+                "decisiveness": 0.32
+                if draw
+                else round(min(0.90, 0.54 + 0.06 * scale_level), 2),
                 "confidence": confidence,
                 "geographic_scope": round(min(0.70, 0.08 + 0.09 * scale_level), 2),
                 "domain": _domain(candidate.get("theatre_raw")),

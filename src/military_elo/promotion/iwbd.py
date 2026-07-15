@@ -16,6 +16,8 @@ from .common import (
     _war_tokens,
     _war_tokens_match,
     normalize_label,
+    validate_exact_candidate_contracts,
+    validate_exact_source_contract,
 )
 from .policy import (
     IDENTITY_DENY_WINDOWS,
@@ -61,8 +63,7 @@ def _iwbd_review_fingerprint(row: dict[str, Any]) -> dict[str, str]:
         "battle_level_victor_role",
     )
     return {
-        field: "" if row.get(field) is None else str(row.get(field))
-        for field in fields
+        field: "" if row.get(field) is None else str(row.get(field)) for field in fields
     }
 
 
@@ -75,9 +76,7 @@ def _validate_iwbd_review_fingerprint(
     if actual == expected:
         return
     changed = ", ".join(
-        field
-        for field in expected
-        if actual.get(field) != expected.get(field)
+        field for field in expected if actual.get(field) != expected.get(field)
     )
     raise ValueError(
         f"stale IWBD reviewed policy for {candidate_id}: "
@@ -114,9 +113,16 @@ def _validate_iwbd_review_policies(
                     f"stale IWBD reviewed policy for {candidate_id}: "
                     f"expected exactly one target row, found {len(rows)}"
                 )
-            _validate_iwbd_review_fingerprint(
-                candidate_id, rows[0], policy["fingerprint"]
-            )
+            if "source_contract" in policy:
+                validate_exact_source_contract(
+                    rows[0],
+                    policy["source_contract"],
+                    description=f"IWBD reviewed policy {candidate_id}",
+                )
+            else:
+                _validate_iwbd_review_fingerprint(
+                    candidate_id, rows[0], policy["fingerprint"]
+                )
             for sibling_id, fingerprint in policy.get(
                 "contained_candidates", {}
             ).items():
@@ -140,9 +146,8 @@ def _validate_iwbd_review_policies(
     ]
     if len(cohort_members) != len(set(cohort_members)):
         raise ValueError("IWBD reviewed identity cohorts contain duplicate candidates")
-    if (
-        reviewed_identity_bindings is not None
-        and set(cohort_members) != set(reviewed_identity_bindings)
+    if reviewed_identity_bindings is not None and set(cohort_members) != set(
+        reviewed_identity_bindings
     ):
         raise ValueError(
             "IWBD reviewed identity cohort inventory does not match binding inventory"
@@ -163,8 +168,7 @@ def _matches_hced_exact(
 ) -> bool:
     if isinstance(hced_event_keys, dict):
         return any(
-            bool(hced_event_keys.get(key, {}).get("exact"))
-            for key in exact_lookup_keys
+            bool(hced_event_keys.get(key, {}).get("exact")) for key in exact_lookup_keys
         )
     # Set input remains supported for focused callers that exercise only the
     # exact name/year gate. Production builds pass the orientation-aware index.
@@ -193,6 +197,7 @@ def promote_iwbd_battles(
     iwd_parent_ids: set[str],
     curated_exclusions: dict[str, str] | None = None,
     reviewed_identity_bindings: dict[str, dict[str, Any]] | None = None,
+    validated_source_contracts: dict[str, dict[str, Any]] | None = None,
     reviewed_identity_cohorts: dict[str, tuple[str, ...]] | None = None,
     resolve_reviewed_id: Any | None = None,
     require_complete_reviewed_identity_cohorts: bool = False,
@@ -227,6 +232,18 @@ def promote_iwbd_battles(
         curated_exclusions = IWBD_CURATED_EXCLUSIONS
     if reviewed_identity_bindings is None:
         reviewed_identity_bindings = {}
+    if validated_source_contracts is None:
+        validated_source_contracts = {
+            candidate_id: contract["source_contract"]
+            for candidate_id, contract in reviewed_identity_bindings.items()
+            if "source_contract" in contract
+        }
+    validate_exact_candidate_contracts(
+        candidates,
+        validated_source_contracts,
+        description="IWBD Wave 6 contract",
+        require_complete=require_complete_reviewed_identity_cohorts,
+    )
     overlap = set(reviewed_identity_bindings) & set(
         IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS
     )
@@ -250,9 +267,9 @@ def promote_iwbd_battles(
         parts = _iwbd_id_parts(str(row.get("candidate_id") or ""))
         if not name or parsed is None or parts is None:
             continue
-        war_groups.setdefault(
-            (parts[0], str(row.get("war_name") or "")), []
-        ).append((str(row.get("candidate_id")), name, parsed[0], parsed[1]))
+        war_groups.setdefault((parts[0], str(row.get("war_name") or "")), []).append(
+            (str(row.get("candidate_id")), name, parsed[0], parsed[1])
+        )
 
     accepted_rows: list[dict[str, Any]] = []
     for row in sorted(candidates, key=lambda r: int(r.get("source_row") or 0)):
@@ -276,7 +293,9 @@ def promote_iwbd_battles(
             continue
         attacker, defender = str(attacker), str(defender)
 
-        lookup_keys = {_event_key(name, year) for year in range(year_low - 1, year_high + 2)}
+        lookup_keys = {
+            _event_key(name, year) for year in range(year_low - 1, year_high + 2)
+        }
         hced_fuzzy_lookup_keys = {
             key
             for year in range(year_low, year_high + 1)
@@ -312,8 +331,11 @@ def promote_iwbd_battles(
                 and span_days > (other_end - other_start).days
             ):
                 contained_ids.add(other_id)
-        relation_policy = IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS.get(
-            candidate_id
+        relation_policy = IWBD_REVIEWED_CONCURRENT_DISTINCT_RELATIONS.get(candidate_id)
+        reviewed_relation_ids = set(
+            reviewed_identity_bindings.get(candidate_id, {}).get(
+                "contained_candidate_ids", ()
+            )
         )
         if relation_policy is not None:
             expected_contained = set(relation_policy["contained_candidates"])
@@ -322,6 +344,13 @@ def promote_iwbd_battles(
                     f"stale IWBD reviewed policy for {candidate_id}: "
                     f"contained sibling set changed; expected "
                     f"{sorted(expected_contained)}, found {sorted(contained_ids)}"
+                )
+        elif reviewed_relation_ids:
+            if contained_ids != reviewed_relation_ids:
+                raise ValueError(
+                    f"stale IWBD reviewed policy for {candidate_id}: "
+                    f"contained sibling set changed; expected "
+                    f"{sorted(reviewed_relation_ids)}, found {sorted(contained_ids)}"
                 )
         elif contained_ids:
             rejections["contains_constituent_iwbd_rows"] += 1
@@ -343,14 +372,18 @@ def promote_iwbd_battles(
             rejections["duplicate_of_hced_battle"] += 1
             continue
 
-        composition_policy = IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS.get(
-            candidate_id
-        )
+        composition_policy = IWBD_REVIEWED_PARTICIPANT_COMPOSITIONS.get(candidate_id)
         identity_policy = reviewed_identity_bindings.get(candidate_id)
-        if composition_policy is None and any(
-            "/" in label or "," in label or "(" in label
-            or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
-            for label in (attacker, defender)
+        if (
+            composition_policy is None
+            and identity_policy is None
+            and any(
+                "/" in label
+                or "," in label
+                or "(" in label
+                or normalize_label(label) in IWBD_COALITION_SIDE_LABELS
+                for label in (attacker, defender)
+            )
         ):
             rejections["coalition_or_composite_side"] += 1
             continue
@@ -413,9 +446,8 @@ def promote_iwbd_battles(
         defender_resolved = resolve_side(defender_specs)
         attacker_ids = [entity_id for entity_id, _ in attacker_resolved if entity_id]
         defender_ids = [entity_id for entity_id, _ in defender_resolved if entity_id]
-        if (
-            len(attacker_ids) != len(attacker_specs)
-            or len(defender_ids) != len(defender_specs)
+        if len(attacker_ids) != len(attacker_specs) or len(defender_ids) != len(
+            defender_specs
         ):
             rejections["unresolved_time_bounded_belligerent"] += 1
             continue
@@ -458,6 +490,11 @@ def promote_iwbd_battles(
                 "cow_number": cow_number,
                 "iwd_number": parts[1],
                 "base_war": _iwbd_base_war(row),
+                "evidence_source_ids": (
+                    tuple(identity_policy.get("evidence_source_ids", ()))
+                    if identity_policy is not None
+                    else ()
+                ),
             }
         )
 
@@ -469,7 +506,9 @@ def promote_iwbd_battles(
     # component id), else a distinct iwbd_war_* fallback.
     group_rows: dict[tuple[str, str], list[dict[str, Any]]] = {}
     for accepted in accepted_rows:
-        group_rows.setdefault((accepted["cow_number"], accepted["base_war"]), []).append(accepted)
+        group_rows.setdefault(
+            (accepted["cow_number"], accepted["base_war"]), []
+        ).append(accepted)
     group_clusters: dict[tuple[str, str], str] = {}
     for (cow_number, base_war), rows in group_rows.items():
         group_low = min(item["start"].year for item in rows)
@@ -477,7 +516,11 @@ def promote_iwbd_battles(
         war_tokens = _war_tokens(base_war)
         matches = [
             cluster_id
-            for cluster_id, (tokens, span_low, span_high) in hced_war_cluster_spans.items()
+            for cluster_id, (
+                tokens,
+                span_low,
+                span_high,
+            ) in hced_war_cluster_spans.items()
             if _war_tokens_match(war_tokens, tokens)
             and group_low <= span_high
             and group_high >= span_low
@@ -517,7 +560,9 @@ def promote_iwbd_battles(
                 "confidence": 0.70,
                 "geographic_scope": 0.26,
                 "domain": _domain(row.get("war_name")),
-                "cluster_id": group_clusters[(accepted["cow_number"], accepted["base_war"])],
+                "cluster_id": group_clusters[
+                    (accepted["cow_number"], accepted["base_war"])
+                ],
                 "date_precision": "day",
                 "sequence": int(row.get("source_row") or 0),
                 "summary": (
@@ -537,7 +582,11 @@ def promote_iwbd_battles(
                         "strategic outcome is not inferred from battle results."
                     ),
                 ),
-                "source_ids": ["iwbd_dataset", "cliopatria_v020"],
+                "source_ids": [
+                    "iwbd_dataset",
+                    "cliopatria_v020",
+                    *accepted["evidence_source_ids"],
+                ],
                 "outcome_source_ids": ["iwbd_dataset"],
                 "outcome_source_family_ids": ["iwbd"],
                 "status": "complete",
@@ -547,7 +596,9 @@ def promote_iwbd_battles(
                 "iwbd_iwd_war_number": (
                     accepted["iwd_number"] if accepted["iwd_number"] != "-9" else None
                 ),
-                "iwbd_battle_level_victor_role": str(row.get("battle_level_victor_role") or ""),
+                "iwbd_battle_level_victor_role": str(
+                    row.get("battle_level_victor_role") or ""
+                ),
                 "iwbd_duration_days": row.get("duration_days"),
             }
         )

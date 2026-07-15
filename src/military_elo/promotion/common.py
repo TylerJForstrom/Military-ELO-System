@@ -17,6 +17,7 @@ from .policy import (
     _policy_seed_id,
 )
 
+
 def _declared_rejections(
     rejections: Counter[str], declared: tuple[str, ...]
 ) -> dict[str, int]:
@@ -32,6 +33,66 @@ def read_jsonl(path: str | Path) -> list[dict[str, Any]]:
     return records
 
 
+def validate_exact_source_contract(
+    row: dict[str, Any],
+    contract: dict[str, Any],
+    *,
+    description: str,
+) -> None:
+    """Fail closed unless every declared source semantic matches its audit hash."""
+
+    field_names = tuple(contract.get("field_names", ()))
+    expected_sha256 = str(contract.get("sha256") or "")
+    if not field_names or len(field_names) != len(set(field_names)):
+        raise ValueError(
+            f"invalid {description}: source contract fields are empty or duplicated"
+        )
+    if not re.fullmatch(r"[0-9a-f]{64}", expected_sha256):
+        raise ValueError(f"invalid {description}: source contract SHA-256 is malformed")
+    value = {field: row.get(field) for field in field_names}
+    payload = json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    actual_sha256 = hashlib.sha256(payload).hexdigest()
+    if actual_sha256 != expected_sha256:
+        raise ValueError(f"stale {description}: source fingerprint changed")
+
+
+def validate_exact_candidate_contracts(
+    candidates: list[dict[str, Any]],
+    contracts: dict[str, dict[str, Any]],
+    *,
+    description: str,
+    require_complete: bool = False,
+) -> None:
+    """Validate exact candidate IDs, uniqueness, and full semantic hashes."""
+
+    rows_by_id: dict[str, list[dict[str, Any]]] = {}
+    for row in candidates:
+        rows_by_id.setdefault(str(row.get("candidate_id") or ""), []).append(row)
+    for candidate_id, contract in contracts.items():
+        rows = rows_by_id.get(candidate_id, [])
+        if not rows:
+            if require_complete:
+                raise ValueError(
+                    f"stale {description} {candidate_id}: target row is missing"
+                )
+            continue
+        if len(rows) != 1:
+            raise ValueError(
+                f"stale {description} {candidate_id}: expected exactly one target row, "
+                f"found {len(rows)}"
+            )
+        validate_exact_source_contract(
+            rows[0],
+            contract,
+            description=f"{description} {candidate_id}",
+        )
+
+
 def _write_json(path: str | Path, value: object) -> None:
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -43,7 +104,9 @@ def _write_json(path: str | Path, value: object) -> None:
 
 def normalize_label(value: Any) -> str:
     text = unicodedata.normalize("NFKD", str(value or ""))
-    text = "".join(character for character in text if not unicodedata.combining(character))
+    text = "".join(
+        character for character in text if not unicodedata.combining(character)
+    )
     return re.sub(r"[^a-z0-9]+", " ", text.casefold()).strip()
 
 
@@ -106,13 +169,9 @@ def _cross_source_event_keys(
     if lookup:
         # Match a less-specific indexed HCED path via its exact-path key, or a
         # more-specific indexed path via its declared-prefix key.
-        return {key("actual", prefix) for prefix in prefixes} | {
-            key("extends", suffix)
-        }
+        return {key("actual", prefix) for prefix in prefixes} | {key("extends", suffix)}
     # The HCED index records its actual path and every strict parent it extends.
-    return {key("actual", suffix)} | {
-        key("extends", prefix) for prefix in prefixes
-    }
+    return {key("actual", suffix)} | {key("extends", prefix) for prefix in prefixes}
 
 
 def _candidate_entity_id(candidate: dict[str, Any]) -> str:
@@ -173,7 +232,9 @@ def _seed_entity_labels(entity: dict[str, Any]) -> set[str]:
     return _normalized_labels([entity.get("name"), *entity.get("aliases", [])])
 
 
-def _candidate_overlaps_entity(candidate: dict[str, Any], entity: dict[str, Any]) -> bool:
+def _candidate_overlaps_entity(
+    candidate: dict[str, Any], entity: dict[str, Any]
+) -> bool:
     entity_end = entity.get("end_year")
     return int(candidate["end_year"]) >= int(entity["start_year"]) and (
         entity_end is None or int(candidate["start_year"]) <= int(entity_end)
@@ -201,7 +262,9 @@ def _candidate_policy_seed(
     # a code-window match alone must not merge a distinct polity (for example
     # the Duchy of Burgundy) into the seed identity; the candidate also has to
     # share one of the seed's names.
-    if not seed_entity or not (_candidate_labels(candidate) & _seed_entity_labels(seed_entity)):
+    if not seed_entity or not (
+        _candidate_labels(candidate) & _seed_entity_labels(seed_entity)
+    ):
         return None
     return mapped_seed
 
@@ -281,7 +344,9 @@ def _participants(
             "positional_gain": 0.48 + margin * 0.75,
         }
         loser_values = {key: 1.0 - value for key, value in winner_values.items()}
-        winner_class = "major_tactical_victory" if scale_level >= 4 else "limited_victory"
+        winner_class = (
+            "major_tactical_victory" if scale_level >= 4 else "limited_victory"
+        )
         loser_class = "major_tactical_defeat" if scale_level >= 4 else "limited_defeat"
         termination = "engagement_victory"
 
@@ -365,7 +430,9 @@ def _strategic_participants(
         terminations = ("defeat", "victory")
 
     output: list[dict[str, Any]] = []
-    for index, (side, entity_ids) in enumerate((("side_a", side_a), ("side_b", side_b))):
+    for index, (side, entity_ids) in enumerate(
+        (("side_a", side_a), ("side_b", side_b))
+    ):
         contribution = round(1.0 / len(entity_ids), 4)
         for entity_id in entity_ids:
             output.append(
@@ -450,7 +517,9 @@ def _validate_seed_event_intervals(
             entity_id = str(participant.get("entity_id") or "")
             entity = seed_by_id.get(entity_id)
             if entity is None:
-                violations.append(f"{event['id']} references missing entity {entity_id}")
+                violations.append(
+                    f"{event['id']} references missing entity {entity_id}"
+                )
                 continue
             if _entity_covers(entity, low_year, high_year):
                 continue
@@ -484,7 +553,9 @@ def _validate_seed_event_intervals(
     if stale_exemptions:
         violations.append(f"stale seed interval exemptions: {sorted(stale_exemptions)}")
     if violations:
-        raise ValueError("Seed event interval validation failed: " + "; ".join(violations))
+        raise ValueError(
+            "Seed event interval validation failed: " + "; ".join(violations)
+        )
 
 
 def _resolve_label_tiers(
