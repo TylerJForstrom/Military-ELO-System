@@ -8,8 +8,48 @@
   "required": ["id", "name"],
   "dependentRequired": {
     "outcome_source_ids": ["outcome_source_family_ids"],
-    "outcome_source_family_ids": ["outcome_source_ids"]
+    "outcome_source_family_ids": ["outcome_source_ids"],
+    "modern_location_country": ["location_provenance"],
+    "location_provenance": ["hced_candidate_id"]
   },
+  "allOf": [
+    {
+      "if": {"required": ["location_provenance"]},
+      "then": {
+        "anyOf": [
+          {"required": ["modern_location_country"]},
+          {"required": ["geometry"]}
+        ]
+      }
+    },
+    {
+      "if": {"required": ["hced_candidate_id", "geometry"]},
+      "then": {
+        "required": ["location_provenance"],
+        "properties": {
+          "geometry": {"$ref": "#/$defs/hcedLocationPoint"}
+        }
+      }
+    },
+    {
+      "if": {"required": ["hced_candidate_id"]},
+      "then": {
+        "required": ["source_ids"],
+        "properties": {
+          "source_ids": {"contains": {"const": "hced_dataset"}}
+        }
+      }
+    },
+    {
+      "if": {
+        "required": ["outcome_source_ids"],
+        "properties": {
+          "outcome_source_ids": {"contains": {"const": "hced_dataset"}}
+        }
+      },
+      "then": {"required": ["hced_candidate_id"]}
+    }
+  ],
   "properties": {
     "id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
     "name": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
@@ -49,6 +89,17 @@
         "pattern": "^\\S(?:.*\\S)?$"
       }
     },
+    "hced_candidate_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "modern_location_country": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "location_provenance": {"$ref": "#/$defs/locationProvenance"},
     "aliases": {
       "type": "array",
       "items": {"type": "string"},
@@ -92,6 +143,44 @@
     "status": {"type": "string"}
   },
   "$defs": {
+    "locationProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_record_id",
+        "assertion_status",
+        "coordinate_precision"
+      ],
+      "properties": {
+        "source_id": {"const": "hced_dataset"},
+        "source_record_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "assertion_status": {"const": "unreviewed_source_assertion"},
+        "coordinate_precision": {"const": "unknown"}
+      }
+    },
+    "hcedLocationPoint": {
+      "type": "object",
+      "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"const": "Point"},
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {"type": "number", "minimum": -180, "maximum": 180},
+            {"type": "number", "minimum": -90, "maximum": 90}
+          ],
+          "items": false
+        }
+      },
+      "additionalProperties": false
+    },
     "dateValue": {
       "oneOf": [
         {"type": "integer", "not": {"const": 0}},

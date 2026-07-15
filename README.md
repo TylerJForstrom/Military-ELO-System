@@ -50,15 +50,22 @@ registry so a stale or partial rebuild fails before it ships.
 
 The dashboard deliberately separates the polity registry from the rating ledger. The 1,590-entry registry includes unrated source candidates; absence from the ledger is not a defeat. The 4,234-event ledger combines 40 manually curated seed events, 1,769 crosswalk-resolved and 2,243 label-resolved HCED tactical encounters, 54 coalition-aggregated IWD strategic parent wars, 121 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
-The rated HCED events also carry source-transcribed location metadata after
-fail-closed quarantine where available: 3,978 GeoJSON Points, 3,934 modern
-country/geographic-jurisdiction labels, and 3,980 events with at least one
-location field and its closed provenance object. These are unreviewed source
+The 4,012 already-rated HCED events also carry an audited, rating-neutral
+location tranche where the source assertion survives fail-closed quarantine:
+3,978 exact GeoJSON Points, 3,934 source-transcribed
+geographic-jurisdiction labels in `modern_location_country`, and 3,980 closed
+`location_provenance` objects. These are modern, unreviewed HCED source
 assertions with unknown coordinate precision, not verified historical
-locations or sovereign-country classifications. This metadata-only tranche
-adds no rated event and deliberately leaves every participant, outcome, rating,
-leaderboard value, and sensitivity result unchanged. Outcome validation and
-promotion are separate, score-changing workflows.
+locations or sovereign-country truth. Candidate-ID manifests withhold 34 Point
+fields and 77 jurisdiction-label fields; 32 events overlap and 79 unique events
+have at least one quarantined field. Quarantined values are omitted, never
+corrected. Of 47 separately reviewed disputed or non-sovereign jurisdiction
+rows, 45 remain exact source transcriptions and 2 are already withheld under
+independent quarantine criteria. None may be normalized into sovereign-country
+truth. This metadata-only tranche adds no rated event and leaves every
+participant, outcome, rating, leaderboard value, and sensitivity result
+unchanged. Outcome validation and promotion are separate, score-changing
+workflows.
 
 The source registry also makes the outcome-provenance contract explicit. Of
 the 4,234 rated events, 4,194 map through explicit event outcome metadata to

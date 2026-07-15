@@ -17425,6 +17425,27 @@
     "iwd_parent_wars_total": 93,
     "iwd_component_records": 265,
     "iwd_components_aggregated": 87,
+    "hced_location_assertions": {
+      "hced_candidate_bindings": 4012,
+      "geojson_points": 3978,
+      "modern_location_country_assertions": 3934,
+      "location_provenance_objects": 3980,
+      "point_fields_withheld_by_quarantine": 34,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 77,
+      "source_blank_country_fields": 1,
+      "point_country_quarantine_overlap": 32,
+      "unique_events_with_any_quarantined_field": 79,
+      "point_quarantine_candidate_manifest_sha256": "0f41aba5dda824cabdca7da7f0d6c156489e3a16397ad70187b23bccd013fdb2",
+      "country_quarantine_candidate_manifest_sha256": "ea6e8ac15e6e8426a574471cb4e30dc050eb8bef3f11589a44a4487d24f5dd6d",
+      "assertion_status": {
+        "unreviewed_source_assertion": 3980
+      },
+      "verified_location_assertions": {
+        "availability": "not_available",
+        "count": null,
+        "reason": "HCED location fields are source transcriptions pending review; the release has no reviewed-location provenance contract."
+      }
+    },
     "source_queue_counts": {
       "cliopatria-entity-candidates.jsonl": 1637,
       "hced-candidates.jsonl": 8881,

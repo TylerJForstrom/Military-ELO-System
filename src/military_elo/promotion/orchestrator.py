@@ -2,11 +2,13 @@ from __future__ import annotations
 
 """Deterministic orchestration for the expanded provisional release."""
 
+import hashlib
 import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from ..canonical import hced_point_geometry_validation_error
 from .common import (
     _candidate_entity_id,
     _candidate_labels,
@@ -31,6 +33,24 @@ from .hced import (
     promote_hced_label_rows,
     resolve_hced_side_label,
 )
+from .hced_location import (
+    HCED_COUNTRY_QUARANTINE_EVENT_SHA256,
+    HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256,
+    HCED_COUNTRY_QUARANTINE_IDS,
+    HCED_EXPECTED_CANDIDATE_BINDINGS,
+    HCED_EXPECTED_COUNTRY_ASSERTIONS,
+    HCED_EXPECTED_POINT_ASSERTIONS,
+    HCED_EXPECTED_PROVENANCE_OBJECTS,
+    HCED_EXPECTED_QUARANTINE_OVERLAP,
+    HCED_EXPECTED_QUARANTINE_UNION,
+    HCED_LOCATION_WARNING,
+    HCED_POINT_QUARANTINE_EVENT_SHA256,
+    HCED_POINT_QUARANTINE_CANDIDATE_SHA256,
+    HCED_POINT_QUARANTINE_IDS,
+    HCED_SOURCE_BLANK_COUNTRY_IDS,
+    hced_candidate_id,
+    parse_hced_point,
+)
 from .iwd import aggregate_iwd_parent_wars, _seed_war_token_spans
 from .iwbd import promote_iwbd_battles
 from .policy import (
@@ -52,6 +72,320 @@ from .policy import (
     _cow_policy_seed_id,
 )
 from .ucdp import promote_ucdp_termination_episodes, resolve_ucdp_party
+
+
+def _sorted_newline_sha256(values: list[str]) -> str:
+    payload = "".join(f"{value}\n" for value in sorted(values))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _index_hced_candidates(
+    candidates: list[dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    indexed: dict[str, dict[str, Any]] = {}
+    for candidate in candidates:
+        candidate_id = hced_candidate_id(candidate)
+        if candidate_id in indexed:
+            raise ValueError(
+                f"Duplicate HCED candidate_id in authoritative queue: {candidate_id}"
+            )
+        indexed[candidate_id] = candidate
+    return indexed
+
+
+def _validate_hced_event_source_parity(
+    event: dict[str, Any],
+    candidate: dict[str, Any],
+) -> None:
+    """Require one event's published location values to equal its source row."""
+
+    candidate_id = hced_candidate_id(candidate)
+    event_id = event.get("id")
+    if event.get("hced_candidate_id") != candidate_id:
+        raise ValueError(
+            f"HCED event {event_id} does not match its exact candidate binding"
+        )
+    source_ids = event.get("source_ids")
+    if not isinstance(source_ids, list) or "hced_dataset" not in source_ids:
+        raise ValueError(f"HCED event {event_id} must link hced_dataset")
+
+    source_point = parse_hced_point(
+        candidate.get("latitude"), candidate.get("longitude")
+    )
+    if source_point is None:
+        raise ValueError(
+            f"Rated HCED candidate {candidate_id} lacks a strict source Point"
+        )
+    expected_point = (
+        None if candidate_id in HCED_POINT_QUARANTINE_IDS else source_point
+    )
+    if expected_point is None:
+        if "geometry" in event:
+            raise ValueError(
+                f"HCED event {event_id} must withhold its quarantined Point"
+            )
+    elif event.get("geometry") != expected_point:
+        raise ValueError(
+            f"HCED event {event_id} Point differs from its exact source ordinates"
+        )
+
+    source_country = candidate.get("modern_location_country")
+    if source_country is not None and not isinstance(source_country, str):
+        raise TypeError(
+            f"HCED candidate {candidate_id} modern_location_country must be text or null"
+        )
+    if (
+        isinstance(source_country, str)
+        and source_country.strip()
+        and source_country != source_country.strip()
+    ):
+        raise ValueError(
+            f"HCED candidate {candidate_id} country assertion has surrounding whitespace"
+        )
+    expected_country = (
+        source_country
+        if candidate_id not in HCED_COUNTRY_QUARANTINE_IDS
+        and isinstance(source_country, str)
+        and bool(source_country.strip())
+        else None
+    )
+    if expected_country is None:
+        if "modern_location_country" in event:
+            raise ValueError(
+                f"HCED event {event_id} must withhold its country assertion"
+            )
+    elif event.get("modern_location_country") != expected_country:
+        raise ValueError(
+            f"HCED event {event_id} jurisdiction label differs from its exact source text"
+        )
+
+    has_location = expected_point is not None or expected_country is not None
+    if not has_location:
+        if "location_provenance" in event:
+            raise ValueError(
+                f"HCED event {event_id} must omit provenance when all locations are withheld"
+            )
+        return
+    source_record_id = candidate.get("source_record_id")
+    if (
+        not isinstance(source_record_id, str)
+        or not source_record_id.strip()
+        or source_record_id != source_record_id.strip()
+    ):
+        raise ValueError(
+            f"HCED candidate {candidate_id} has an invalid source_record_id"
+        )
+    expected_provenance = {
+        "source_id": "hced_dataset",
+        "source_record_id": source_record_id,
+        "assertion_status": "unreviewed_source_assertion",
+        "coordinate_precision": "unknown",
+    }
+    if event.get("location_provenance") != expected_provenance:
+        raise ValueError(
+            f"HCED event {event_id} location provenance differs from its exact source row"
+        )
+
+
+def _validate_hced_location_release(
+    hced_events: list[dict[str, Any]],
+    hced_candidates_by_id: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    """Fail closed unless the audited HCED location release is exact."""
+
+    candidate_ids: list[str] = []
+    point_event_ids: list[str] = []
+    country_event_ids: list[str] = []
+    provenance_keys: set[tuple[str, str]] = set()
+    point_count = 0
+    country_count = 0
+    provenance_count = 0
+    crosswalk_count = 0
+    label_count = 0
+
+    for event in hced_events:
+        event_id = event.get("id")
+        if not isinstance(event_id, str) or not event_id.strip():
+            raise ValueError("Every promoted HCED event must carry a stable event ID")
+        crosswalk_count += int(event_id.startswith("hced_hced_"))
+        label_count += int(event_id.startswith("hced_label_"))
+
+        candidate_id = event.get("hced_candidate_id")
+        if (
+            not isinstance(candidate_id, str)
+            or not candidate_id.strip()
+            or candidate_id != candidate_id.strip()
+        ):
+            raise ValueError("Every promoted HCED event must carry an exact candidate ID")
+        candidate_ids.append(candidate_id)
+        candidate = hced_candidates_by_id.get(candidate_id)
+        if candidate is None:
+            raise ValueError(
+                f"HCED event {event_id} has no exact authoritative candidate row"
+            )
+        _validate_hced_event_source_parity(event, candidate)
+        source_ids = event.get("source_ids")
+        if not isinstance(source_ids, list) or "hced_dataset" not in source_ids:
+            raise ValueError(
+                f"HCED event {event_id} must link the hced_dataset source"
+            )
+        if "location_name" in event:
+            raise ValueError(f"HCED event {event_id} must never publish location_name")
+
+        has_point = "geometry" in event
+        expected_point = candidate_id not in HCED_POINT_QUARANTINE_IDS
+        if has_point != expected_point:
+            raise ValueError(
+                f"HCED event {event_id} violates the point quarantine manifest"
+            )
+        if has_point:
+            geometry_error = hced_point_geometry_validation_error(event["geometry"])
+            if geometry_error is not None:
+                raise ValueError(f"HCED event {event_id}: {geometry_error}")
+            point_count += 1
+        if candidate_id in HCED_POINT_QUARANTINE_IDS:
+            point_event_ids.append(event_id)
+
+        has_country = "modern_location_country" in event
+        expected_country = candidate_id not in (
+            HCED_COUNTRY_QUARANTINE_IDS | HCED_SOURCE_BLANK_COUNTRY_IDS
+        )
+        if has_country != expected_country:
+            raise ValueError(
+                f"HCED event {event_id} violates the country quarantine manifest"
+            )
+        if has_country:
+            country = event["modern_location_country"]
+            if (
+                not isinstance(country, str)
+                or not country.strip()
+                or country != country.strip()
+            ):
+                raise ValueError(
+                    f"HCED event {event_id} has an invalid source-transcribed jurisdiction label"
+                )
+            country_count += 1
+        if candidate_id in HCED_COUNTRY_QUARANTINE_IDS:
+            country_event_ids.append(event_id)
+
+        has_location = has_point or has_country
+        has_provenance = "location_provenance" in event
+        if has_provenance != has_location:
+            raise ValueError(
+                f"HCED event {event_id} must publish provenance exactly when a location survives"
+            )
+        if not has_provenance:
+            continue
+        provenance = event["location_provenance"]
+        if not isinstance(provenance, dict) or set(provenance) != {
+            "source_id",
+            "source_record_id",
+            "assertion_status",
+            "coordinate_precision",
+        }:
+            raise ValueError(
+                f"HCED event {event_id} has noncanonical location provenance"
+            )
+        source_record_id = provenance.get("source_record_id")
+        if (
+            provenance.get("source_id") != "hced_dataset"
+            or not isinstance(source_record_id, str)
+            or not source_record_id.strip()
+            or source_record_id != source_record_id.strip()
+            or provenance.get("assertion_status")
+            != "unreviewed_source_assertion"
+            or provenance.get("coordinate_precision") != "unknown"
+        ):
+            raise ValueError(
+                f"HCED event {event_id} has invalid location provenance values"
+            )
+        provenance_key = ("hced_dataset", source_record_id)
+        if provenance_key in provenance_keys:
+            raise ValueError(
+                "HCED publishable location provenance must be unique by source record"
+            )
+        provenance_keys.add(provenance_key)
+        provenance_count += 1
+
+    if len(candidate_ids) != HCED_EXPECTED_CANDIDATE_BINDINGS:
+        raise ValueError(
+            "HCED candidate binding count changed: "
+            f"{len(candidate_ids)} != {HCED_EXPECTED_CANDIDATE_BINDINGS}"
+        )
+    if len(set(candidate_ids)) != len(candidate_ids):
+        raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
+    if (crosswalk_count, label_count) != (1_769, 2_243):
+        raise ValueError(
+            "HCED promotion tranche counts changed: "
+            f"{crosswalk_count} crosswalk and {label_count} label"
+        )
+    if (point_count, country_count, provenance_count) != (
+        HCED_EXPECTED_POINT_ASSERTIONS,
+        HCED_EXPECTED_COUNTRY_ASSERTIONS,
+        HCED_EXPECTED_PROVENANCE_OBJECTS,
+    ):
+        raise ValueError(
+            "HCED location assertion counts changed: "
+            f"{point_count} Points, {country_count} jurisdiction labels, "
+            f"{provenance_count} provenance objects"
+        )
+    if _sorted_newline_sha256(point_event_ids) != HCED_POINT_QUARANTINE_EVENT_SHA256:
+        raise ValueError("HCED point-quarantine event binding hash changed")
+    if (
+        _sorted_newline_sha256(country_event_ids)
+        != HCED_COUNTRY_QUARANTINE_EVENT_SHA256
+    ):
+        raise ValueError("HCED country-quarantine event binding hash changed")
+    if (
+        len(HCED_POINT_QUARANTINE_IDS) != 34
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 77
+        or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
+        or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
+        != HCED_EXPECTED_QUARANTINE_OVERLAP
+        or len(HCED_POINT_QUARANTINE_IDS | HCED_COUNTRY_QUARANTINE_IDS)
+        != HCED_EXPECTED_QUARANTINE_UNION
+        or _sorted_newline_sha256(list(HCED_POINT_QUARANTINE_IDS))
+        != HCED_POINT_QUARANTINE_CANDIDATE_SHA256
+        or _sorted_newline_sha256(list(HCED_COUNTRY_QUARANTINE_IDS))
+        != HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
+    ):
+        raise ValueError("HCED location quarantine policy constants changed")
+
+    return {
+        "hced_candidate_bindings": len(candidate_ids),
+        "geojson_points": point_count,
+        "modern_location_country_assertions": country_count,
+        "location_provenance_objects": provenance_count,
+        "point_fields_withheld_by_quarantine": len(HCED_POINT_QUARANTINE_IDS),
+        "country_or_jurisdiction_fields_withheld_by_quarantine": len(
+            HCED_COUNTRY_QUARANTINE_IDS
+        ),
+        "source_blank_country_fields": len(HCED_SOURCE_BLANK_COUNTRY_IDS),
+        "point_country_quarantine_overlap": len(
+            HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS
+        ),
+        "unique_events_with_any_quarantined_field": len(
+            HCED_POINT_QUARANTINE_IDS | HCED_COUNTRY_QUARANTINE_IDS
+        ),
+        "point_quarantine_candidate_manifest_sha256": (
+            HCED_POINT_QUARANTINE_CANDIDATE_SHA256
+        ),
+        "country_quarantine_candidate_manifest_sha256": (
+            HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256
+        ),
+        "assertion_status": {
+            "unreviewed_source_assertion": provenance_count,
+        },
+        "verified_location_assertions": {
+            "availability": "not_available",
+            "count": None,
+            "reason": (
+                "HCED location fields are source transcriptions pending review; "
+                "the release has no reviewed-location provenance contract."
+            ),
+        },
+    }
+
 
 def build_expanded_release(
     seed_dir: str | Path,
@@ -86,6 +420,7 @@ def build_expanded_release(
     cliopatria = read_jsonl(review / "cliopatria-entity-candidates.jsonl")
     polities = [row for row in cliopatria if row.get("record_type") == "POLITY"]
     hced = read_jsonl(review / "hced-candidates.jsonl")
+    hced_candidates_by_id = _index_hced_candidates(hced)
     owners: dict[str, list[dict[str, Any]]] = {}
     for candidate in polities:
         for code in candidate.get("seshat_ids", []):
@@ -456,6 +791,11 @@ def build_expanded_release(
         *iwbd_events,
         *ucdp_events,
     ]
+    hced_events = [*source_events, *label_events]
+    hced_location_coverage = _validate_hced_location_release(
+        hced_events,
+        hced_candidates_by_id,
+    )
     used_entity_ids = {
         str(participant["entity_id"])
         for event in all_events
@@ -558,9 +898,20 @@ def build_expanded_release(
         "iwd_parent_wars_total": iwd_aggregation["parents_total"],
         "iwd_component_records": iwd_aggregation["components_total"],
         "iwd_components_aggregated": iwd_aggregation["components_aggregated"],
+        "hced_location_assertions": hced_location_coverage,
         "source_queue_counts": review_counts,
     }
     registry = {"entities": registry_rows, "coverage": coverage}
+
+    existing_coverage_warnings = seed_metadata.get("coverage_warnings")
+    if existing_coverage_warnings is None:
+        coverage_warnings: list[Any] = []
+    elif isinstance(existing_coverage_warnings, list):
+        coverage_warnings = list(existing_coverage_warnings)
+    else:
+        coverage_warnings = [existing_coverage_warnings]
+    if HCED_LOCATION_WARNING not in coverage_warnings:
+        coverage_warnings.append(HCED_LOCATION_WARNING)
 
     metadata = {
         **seed_metadata,
@@ -569,6 +920,7 @@ def build_expanded_release(
         "version": "0.2.0",
         "coverage_status": "expanded_provisional",
         "comprehensive": False,
+        "coverage_warnings": coverage_warnings,
         "description": (
             "The curated seed plus source-derived tactical tranches (crosswalk-resolved and "
             "label-resolved HCED engagements, deduplicated IWBD battles) and strategic "

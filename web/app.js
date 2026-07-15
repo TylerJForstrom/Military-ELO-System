@@ -6,6 +6,11 @@
   const MAX_PINNED = 10;
   const REGISTRY_PAGE_SIZE = 40;
   const REGISTRY_STATUSES = new Set(["rated", "unrated", "provisional"]);
+  const locationContract = window.MilitaryEloLocation;
+
+  if (!locationContract) {
+    throw new Error("The dashboard location contract failed to load.");
+  }
 
   const METRIC_LABELS = {
     composite: "Composite",
@@ -478,6 +483,7 @@
       outcome_source_ids: cleanTextArray(event.outcome_source_ids),
       outcome_source_family_ids: cleanTextArray(event.outcome_source_family_ids),
       sources,
+      ...locationContract.normalizeEventLocation(event),
     };
   }
 
@@ -1621,6 +1627,39 @@
         event.summary ?? "This event record does not yet include a narrative summary.",
       ),
     );
+
+    if (event.hced_candidate_id) {
+      elements.eventDetail.append(
+        createElement(
+          "p",
+          "hced-candidate-binding",
+          `HCED candidate ID: ${event.hced_candidate_id}`,
+        ),
+      );
+    }
+
+    if (event.location_provenance) {
+      const location = createElement("section", "location-assertion");
+      location.append(createElement("h4", "", "Source-transcribed location"));
+      const values = createElement("dl", "location-values");
+      if (event.modern_location_country) {
+        addFact(values, "Source geographic-jurisdiction label", event.modern_location_country);
+      }
+      const point = locationContract.formatPoint(event.geometry);
+      if (point) {
+        addFact(values, "Point [longitude, latitude]", point);
+      }
+      addFact(values, "HCED source record", event.location_provenance.source_record_id);
+      location.append(
+        values,
+        createElement(
+          "p",
+          "location-warning",
+          "Modern HCED location notice — " + locationContract.LOCATION_WARNING,
+        ),
+      );
+      elements.eventDetail.append(location);
+    }
 
     const facts = createElement("dl", "event-facts");
     addFact(facts, "Event type", humanize(event.type) || "Not classified");

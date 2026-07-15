@@ -1454,6 +1454,59 @@ tbody tr:hover {
   font-size: 0.9rem;
 }
 
+.hced-candidate-binding {
+  margin: -12px 0 20px;
+  color: var(--ink-faint);
+  font-size: 0.68rem;
+  overflow-wrap: anywhere;
+}
+
+.location-assertion {
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  border: 1px solid rgba(241, 189, 112, 0.32);
+  border-radius: var(--radius-sm);
+  background: var(--warning-soft);
+}
+
+.location-assertion h4 {
+  color: var(--warning);
+}
+
+.location-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+}
+
+.location-values div {
+  min-width: min(100%, 180px);
+}
+
+.location-values dt {
+  color: var(--ink-faint);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.location-values dd {
+  margin: 3px 0 0;
+  color: var(--ink);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.location-warning {
+  margin: 12px 0 0;
+  color: var(--warning);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .event-facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

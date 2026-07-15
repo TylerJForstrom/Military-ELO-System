@@ -121,22 +121,31 @@ longitude, `War`, `Participants`, `Winner`, `Loser`, `Participant 1`,
 scale, and alternative sources consulted.
 
 In this system HCED creates engagement candidates. Its winner and loser are
-tactical proposals only. `Country` describes the modern geographic location,
-not a historical participant polity. HCED has no consistently usable
+tactical proposals only. `Country` is retained, when publishable, as the exact
+source-transcribed geographic-jurisdiction label
+`modern_location_country`; it is neither a historical participant polity nor
+normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
 For the 4,012 already-rated HCED events, the release-to-candidate join is an
 exact bijection: 1,769 crosswalk-resolved events and 2,243 label-resolved
-events, with no missing, ambiguous, or colliding bindings. After a fail-closed
-quarantine, 3,978 events carry an exact source-transcribed Point, 3,934 carry
-the source's modern country/geographic-jurisdiction string, and 3,980 carry at
-least one location field plus provenance. Every published value remains an
-`unreviewed_source_assertion` with `coordinate_precision: unknown`; a retained
-jurisdiction string is not a sovereign-country claim. Quarantined values are
-withheld rather than corrected, swapped, normalized, inferred, reverse-geocoded,
-or exposed through release provenance. This location metadata does not affect
-event eligibility, participants, outcomes, or Elo.
+events, with no missing, ambiguous, or colliding bindings. This metadata-only
+tranche adds no event and changes no outcome, participant, entity, or Elo.
+Candidate-ID-only policy manifests withhold 34 Point fields and 77
+country/jurisdiction fields, with 32 overlapping and 79 unique
+quarantine-manifest events. One additional rated candidate has a source-blank
+country. After fail-closed quarantine, 3,978 events carry an exact
+source-transcribed Point, 3,934 carry the source's modern
+country/geographic-jurisdiction string, and 3,980 carry at least one location
+field plus closed provenance. Of 47 separately reviewed disputed or
+non-sovereign jurisdiction rows, 45 are deliberately retained verbatim and 2
+are already withheld under independent quarantine criteria. They are source
+geography labels, not sovereignty determinations. Every published value remains
+an `unreviewed_source_assertion` with `coordinate_precision: unknown`;
+verified historical-location coverage is unavailable. Quarantined values are
+withheld rather than corrected, swapped, normalized, inferred,
+reverse-geocoded, or exposed through release provenance.
 
 #### Verified live HCED profile
 
