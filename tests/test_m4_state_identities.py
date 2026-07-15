@@ -438,20 +438,20 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 4_406)
+        self.assertEqual(len(self.events), 4_605)
         label = [e for e in self.events if e.get("identity_resolution") == "label"]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2_328)
+        self.assertEqual(len(label), 2_383)
         self.assertEqual(len(crosswalk), 1_824)
         self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64)
-        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 143)
+        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 151)
         self.assertEqual(sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7)
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 235)
+        self.assertEqual(len(rated), 288)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -483,7 +483,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 1_598)
+        self.assertEqual(len(self.registry["entities"]), 1_648)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

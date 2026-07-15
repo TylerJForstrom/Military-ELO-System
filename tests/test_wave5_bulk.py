@@ -347,6 +347,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             event
             for event in self.events
             if self._participants(event) & PORTUGAL_IDS
+            and event.get("identity_resolution") != "candidate_keyed_exact"
         ]
         tsardom = [
             event

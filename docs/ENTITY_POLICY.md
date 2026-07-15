@@ -374,10 +374,28 @@ and the Turkish National Movement; the Republic of China on Taiwan,
 French Third Republic, Spain, Poland, Greece, and the other opposing identities
 reuse their established canonical records.
 
-After canonical consolidation, the measured registry contains 1,598 identities.
-The release entity file contains 236 records, while 235 distinct IDs actually
+After canonical consolidation, the measured registry contains 1,648 identities.
+The release entity file contains 289 records, while 288 distinct IDs actually
 participate in rated events; the unrated Portuguese union identity explains the
 one-record difference.
+
+### Wave 6 identity-bound contracts and holds
+
+Wave 6 adds 199 events through three candidate-keyed chronological lanes while
+preserving every Wave 5 event payload. The modern lane initially proposed 90
+events, but an independent boundary audit moved 22 exact contracts to
+fingerprinted holds: 14 HCED rows involving post-1882 Egypt or transitional
+Spanish governments, the 1948 IWD parent, and seven 1967 IWBD rows involving
+Egypt or Syria. The build must not widen `egypt_muhammad_ali` beyond 1882 or
+the existing Syria identity backward before 1973. The First Balkan War row
+reuses the already-rated, time-valid Montenegro identity instead of opening a
+parallel series.
+
+Five registry-only Cliopatria proposals for Genoa, Aragon, Castile, and the
+Second Bulgarian Empire remain published with `identity_status: superseded`
+and an exact `superseded_by` target. The two reused Bulgarian/Seljuk release
+identities preserve their Cliopatria provenance and aliases. Supersession is
+therefore explicit and reversible; no registry ID silently disappears.
 
 ## Non-state autonomous military actors (second reviewer pending)
 

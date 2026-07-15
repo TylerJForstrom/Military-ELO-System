@@ -909,9 +909,17 @@ class ReleaseArtifactTests(unittest.TestCase):
             tiers = event["side_identity_resolution"]
             self.assertEqual(set(tiers), {"side_a", "side_b"})
             for tier in tiers.values():
-                self.assertIn(tier, LABEL_TIERS | {"seshat_crosswalk"})
-            # At least one side is label-resolved on every label event.
-            self.assertTrue(set(tiers.values()) & LABEL_TIERS)
+                self.assertIn(
+                    tier,
+                    LABEL_TIERS
+                    | {"seshat_crosswalk", "wave6_pre1500_candidate_policy"},
+                )
+            # At least one side is label- or reviewed-candidate-resolved on
+            # every event emitted through this pass.
+            self.assertTrue(
+                set(tiers.values())
+                & (LABEL_TIERS | {"wave6_pre1500_candidate_policy"})
+            )
 
     def test_no_faction_or_pending_split_label_entity_in_any_label_event(self) -> None:
         names_by_id = {str(row["id"]): str(row["name"]) for row in self.entities}
@@ -1024,26 +1032,26 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 323 + 4,406 + 1,824 + 2,328 == 8,881.
+        # Pinned measured funnel: 501 + 4,113 + 1,884 + 2,383 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (323, 4406, 1824, 2328, 8881),
+            (501, 4113, 1884, 2383, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6734)
-        # All twelve declared counters are present, including the zeros.
-        self.assertEqual(len(promotion["hced_label_rejections"]), 12)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_496)
+        # All thirteen declared counters are present, including the zeros.
+        self.assertEqual(len(promotion["hced_label_rejections"]), 13)
         self.assertEqual(
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
             promotion["hced_label_rejections"]["curated_row_exclusion"], 53
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 62)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 147)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -1052,7 +1060,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_328)
+        self.assertEqual(len(label_events), 2_383)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)
@@ -1073,6 +1081,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             event_like
             - coverage["provisional_hced_events"]
             - coverage["provisional_hced_label_events"]
+            - coverage["candidate_keyed_wave6_hced_events"]
             - coverage["iwd_components_aggregated"]
             - coverage["provisional_iwbd_battles"]
             - coverage["provisional_ucdp_events"]

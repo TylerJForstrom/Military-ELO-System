@@ -259,7 +259,11 @@ class Wave6EarlyModernPromotionTests(unittest.TestCase):
             row["id"]: row for row in _json(ROOT / "data" / "release" / "entities.json")
         }
         install_wave6_entities(cls.entities)
-        cls.base_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.base_events = [
+            event
+            for event in _json(ROOT / "data" / "release" / "events.json")
+            if event.get("hced_candidate_id") not in WAVE6_HCED_CONTRACT_IDS
+        ]
         cls.events = promote_wave6_hced_contracts(
             _embedded_hced_rows(),
             cls.entities,

@@ -40,7 +40,7 @@ curated boundary record with no promoted event and therefore has no rating.
 
 ## Portugal and Tsardom HCED tranche
 
-The final release contains 79 Portugal-linked events: 78 new events plus the
+The Wave 5 cohort contains 79 Portugal-linked events: 78 new events plus the
 previously rated Estaires event, split 16 crosswalk-resolved and 63
 label-resolved. It contains 58 Tsardom-linked events: 55 new events plus three
 previously rated events, split 41 crosswalk-resolved and 17 label-resolved.

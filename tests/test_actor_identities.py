@@ -297,6 +297,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         "cliopatria_alias",
         "cliopatria_alias_to_seed",
         "seshat_crosswalk",
+        "wave6_pre1500_candidate_policy",
     }
 
     @classmethod
@@ -307,7 +308,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if e.get("identity_resolution") == "label"
         ]
-        self.assertEqual(len(label_events), 2_328)
+        self.assertEqual(len(label_events), 2_383)
         for event in label_events:
             tiers = event.get("side_identity_resolution")
             self.assertIsInstance(tiers, dict, event["id"])

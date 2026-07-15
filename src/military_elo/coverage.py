@@ -18,6 +18,7 @@ from .promotion.hced_location import (
     HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256,
     HCED_COUNTRY_QUARANTINE_IDS,
     HCED_EXPECTED_CANDIDATE_BINDINGS,
+    HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS,
     HCED_EXPECTED_COUNTRY_ASSERTIONS,
     HCED_EXPECTED_POINT_ASSERTIONS,
     HCED_EXPECTED_PROVENANCE_OBJECTS,
@@ -840,6 +841,9 @@ def _hced_location_policy_report(
         )
     expected_counts = {
         "hced_candidate_bindings": HCED_EXPECTED_CANDIDATE_BINDINGS,
+        "candidate_keyed_reviewed_contracts": (
+            HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS
+        ),
         "geojson_points": HCED_EXPECTED_POINT_ASSERTIONS,
         "modern_location_country_assertions": HCED_EXPECTED_COUNTRY_ASSERTIONS,
         "location_provenance_objects": HCED_EXPECTED_PROVENANCE_OBJECTS,
