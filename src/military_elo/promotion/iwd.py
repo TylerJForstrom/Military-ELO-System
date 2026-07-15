@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 from collections import Counter
-from typing import Any
+from typing import Any, Iterable
 
 from .common import (
     _deduplicate,
@@ -13,10 +13,13 @@ from .common import (
     _war_tokens,
     _war_tokens_match,
     normalize_label,
+    validate_exact_source_contract,
 )
 
 
-def _iwd_party_fingerprint(row: dict[str, Any], field: str) -> tuple[tuple[str, str], ...]:
+def _iwd_party_fingerprint(
+    row: dict[str, Any], field: str
+) -> tuple[tuple[str, str], ...]:
     return tuple(
         (str(party.get("cow_code") or ""), str(party.get("name") or ""))
         for party in row.get(field, [])
@@ -66,7 +69,8 @@ def _validate_iwd_parent_contracts(
             # row of that parent is present, however, its complete component
             # set and every pinned semantic are mandatory.
             continue
-        expected = contract["components"]
+        exact_source_contracts = contract.get("component_source_contracts")
+        expected = exact_source_contracts or contract["components"]
         actual_by_id: dict[str, list[dict[str, Any]]] = {}
         for row in rows:
             actual_by_id.setdefault(str(row.get("candidate_id") or ""), []).append(row)
@@ -83,15 +87,25 @@ def _validate_iwd_parent_contracts(
                     f"stale IWD reviewed contract for parent {parent_id}: "
                     f"expected exactly one {candidate_id}, found {len(matching)}"
                 )
-            actual = _iwd_review_fingerprint(matching[0])
-            if actual != fingerprint:
-                changed = ", ".join(
-                    field for field in fingerprint if actual.get(field) != fingerprint[field]
+            if exact_source_contracts is not None:
+                validate_exact_source_contract(
+                    matching[0],
+                    fingerprint,
+                    description=f"IWD reviewed parent {parent_id} component {candidate_id}",
                 )
-                raise ValueError(
-                    f"stale IWD reviewed contract for parent {parent_id}: "
-                    f"{candidate_id} source fingerprint changed ({changed})"
-                )
+            else:
+                actual = _iwd_review_fingerprint(matching[0])
+                if actual != fingerprint:
+                    changed = ", ".join(
+                        field
+                        for field in fingerprint
+                        if actual.get(field) != fingerprint[field]
+                    )
+                    raise ValueError(
+                        f"stale IWD reviewed contract for parent {parent_id}: "
+                        f"{candidate_id} source fingerprint changed ({changed})"
+                    )
+
 
 def _seed_war_token_spans(
     seed_events: list[dict[str, Any]],
@@ -201,10 +215,16 @@ def aggregate_iwd_parent_wars(
             # for human review; components stay staged, never merged.
             rejections["curated_exclusion"] += 1
             continue
-        components = sorted(grouped[parent_id], key=lambda row: str(row.get("candidate_id")))
+        components = sorted(
+            grouped[parent_id], key=lambda row: str(row.get("candidate_id"))
+        )
         parent_contract = reviewed_parent_contracts.get(parent_id)
         parent_name = next(
-            (str(row["parent_war_name"]) for row in components if row.get("parent_war_name")),
+            (
+                str(row["parent_war_name"])
+                for row in components
+                if row.get("parent_war_name")
+            ),
             "",
         )
         usable: list[dict[str, Any]] = []
@@ -213,7 +233,9 @@ def aggregate_iwd_parent_wars(
             outcome_code = str(component.get("terminal_outcome_code") or "")
             if outcome_code not in {"1", "2", "3"}:
                 status = "not_aggregated_missing_terminal_outcome"
-            elif component.get("start_year") is None or component.get("end_year") is None:
+            elif (
+                component.get("start_year") is None or component.get("end_year") is None
+            ):
                 status = "not_aggregated_missing_year"
             elif not component.get("initiators") or not component.get("targets"):
                 status = "not_aggregated_missing_principal_side"
@@ -249,12 +271,22 @@ def aggregate_iwd_parent_wars(
             for field in ("initiators", "targets"):
                 side_keys = []
                 for party in component[field]:
-                    key = str(party.get("cow_code") or f"name:{normalize_label(party.get('name'))}")
+                    key = str(
+                        party.get("cow_code")
+                        or f"name:{normalize_label(party.get('name'))}"
+                    )
                     info = parties.setdefault(
                         key,
-                        {"name": str(party.get("name") or ""), "cow_code": party.get("cow_code"), "years": []},
+                        {
+                            "name": str(party.get("name") or ""),
+                            "cow_code": party.get("cow_code"),
+                            "years": [],
+                        },
                     )
-                    info["years"] += [int(component["start_year"]), int(component["end_year"])]
+                    info["years"] += [
+                        int(component["start_year"]),
+                        int(component["end_year"]),
+                    ]
                     side_keys.append(key)
                 component_sides.append(side_keys)
             initiator_keys, target_keys = component_sides
@@ -285,7 +317,9 @@ def aggregate_iwd_parent_wars(
                         break
                     continue
                 colors[node] = color
-                stack.extend((neighbor, 1 - color) for neighbor in opposed.get(node, ()))
+                stack.extend(
+                    (neighbor, 1 - color) for neighbor in opposed.get(node, ())
+                )
                 stack.extend((neighbor, color) for neighbor in allied.get(node, ()))
             if conflict:
                 break
@@ -383,7 +417,9 @@ def aggregate_iwd_parent_wars(
                 "year": low_year,
                 "end_year": high_year,
                 "event_type": "war",
-                "war_type": "world_war" if "world" in _war_tokens(parent_name) else "interstate_limited",
+                "war_type": "world_war"
+                if "world" in _war_tokens(parent_name)
+                else "interstate_limited",
                 "scale": "major_war",
                 "stakes": "major",
                 "decisiveness": 0.44 if outcome == "draw" else 0.74,
@@ -400,8 +436,17 @@ def aggregate_iwd_parent_wars(
                     "side-oriented outcome. Component rows are retained as provenance, and "
                     "existential severity is never inferred from IWD outcome codes."
                 ),
-                "participants": _strategic_participants(side_a, side_b, outcome, confidence),
-                "source_ids": ["iwd_dataset"],
+                "participants": _strategic_participants(
+                    side_a, side_b, outcome, confidence
+                ),
+                "source_ids": [
+                    "iwd_dataset",
+                    *(
+                        parent_contract.get("evidence_source_ids", ())
+                        if parent_contract
+                        else ()
+                    ),
+                ],
                 "outcome_source_ids": ["iwd_dataset"],
                 "outcome_source_family_ids": ["iwd"],
                 "status": "complete",

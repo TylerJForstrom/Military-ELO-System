@@ -78,6 +78,65 @@ from .policy import (
     _cow_policy_seed_id,
 )
 from .ucdp import promote_ucdp_termination_episodes, resolve_ucdp_party
+from .wave6_1800_2021_holds import (
+    WAVE6_HCED_CURATED_EXCLUSIONS,
+    WAVE6_HCED_HELD_SOURCE_CONTRACTS,
+    WAVE6_IWBD_CURATED_EXCLUSIONS,
+    WAVE6_IWBD_HELD_SOURCE_CONTRACTS,
+    WAVE6_IWD_CURATED_PARENT_EXCLUSIONS,
+    WAVE6_IWD_HELD_PARENT_CONTRACTS,
+)
+from .wave6_1800_2021_policy import (
+    WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS,
+    WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS,
+    WAVE6_IWBD_REVIEWED_IDENTITY_COHORTS,
+    WAVE6_IWD_REVIEWED_PARENT_CONTRACTS,
+)
+from .wave6_1800_2021_registry import (
+    WAVE6_1800_2021_ENTITY_OVERRIDES,
+    WAVE6_1800_2021_SOURCES,
+)
+
+
+EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
+    **HCED_CURATED_EXCLUSIONS,
+    **WAVE6_HCED_CURATED_EXCLUSIONS,
+}
+EFFECTIVE_IWD_CURATED_PARENT_EXCLUSIONS = {
+    **IWD_CURATED_PARENT_EXCLUSIONS,
+    **WAVE6_IWD_CURATED_PARENT_EXCLUSIONS,
+}
+EFFECTIVE_IWD_REVIEWED_PARENT_CONTRACTS = {
+    **IWD_REVIEWED_PARENT_CONTRACTS,
+    **WAVE6_IWD_REVIEWED_PARENT_CONTRACTS,
+    **WAVE6_IWD_HELD_PARENT_CONTRACTS,
+}
+EFFECTIVE_IWBD_CURATED_EXCLUSIONS = {
+    **IWBD_CURATED_EXCLUSIONS,
+    **WAVE6_IWBD_CURATED_EXCLUSIONS,
+}
+EFFECTIVE_IWBD_REVIEWED_IDENTITY_BINDINGS = {
+    **IWBD_REVIEWED_IDENTITY_BINDINGS,
+    **WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS,
+}
+EFFECTIVE_IWBD_REVIEWED_IDENTITY_COHORTS = {
+    **IWBD_REVIEWED_IDENTITY_COHORTS,
+    **WAVE6_IWBD_REVIEWED_IDENTITY_COHORTS,
+}
+WAVE6_HCED_VALIDATED_SOURCE_CONTRACTS = {
+    **{
+        candidate_id: contract["source_contract"]
+        for candidate_id, contract in WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS.items()
+    },
+    **WAVE6_HCED_HELD_SOURCE_CONTRACTS,
+}
+WAVE6_IWBD_VALIDATED_SOURCE_CONTRACTS = {
+    **{
+        candidate_id: contract["source_contract"]
+        for candidate_id, contract in WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS.items()
+    },
+    **WAVE6_IWBD_HELD_SOURCE_CONTRACTS,
+}
 
 
 def _sorted_newline_sha256(values: list[str]) -> str:
@@ -122,9 +181,7 @@ def _validate_hced_event_source_parity(
         raise ValueError(
             f"Rated HCED candidate {candidate_id} lacks a strict source Point"
         )
-    expected_point = (
-        None if candidate_id in HCED_POINT_QUARANTINE_IDS else source_point
-    )
+    expected_point = None if candidate_id in HCED_POINT_QUARANTINE_IDS else source_point
     if expected_point is None:
         if "geometry" in event:
             raise ValueError(
@@ -222,7 +279,9 @@ def _validate_hced_location_release(
             or not candidate_id.strip()
             or candidate_id != candidate_id.strip()
         ):
-            raise ValueError("Every promoted HCED event must carry an exact candidate ID")
+            raise ValueError(
+                "Every promoted HCED event must carry an exact candidate ID"
+            )
         candidate_ids.append(candidate_id)
         candidate = hced_candidates_by_id.get(candidate_id)
         if candidate is None:
@@ -232,9 +291,7 @@ def _validate_hced_location_release(
         _validate_hced_event_source_parity(event, candidate)
         source_ids = event.get("source_ids")
         if not isinstance(source_ids, list) or "hced_dataset" not in source_ids:
-            raise ValueError(
-                f"HCED event {event_id} must link the hced_dataset source"
-            )
+            raise ValueError(f"HCED event {event_id} must link the hced_dataset source")
         if "location_name" in event:
             raise ValueError(f"HCED event {event_id} must never publish location_name")
 
@@ -298,8 +355,7 @@ def _validate_hced_location_release(
             or not isinstance(source_record_id, str)
             or not source_record_id.strip()
             or source_record_id != source_record_id.strip()
-            or provenance.get("assertion_status")
-            != "unreviewed_source_assertion"
+            or provenance.get("assertion_status") != "unreviewed_source_assertion"
             or provenance.get("coordinate_precision") != "unknown"
         ):
             raise ValueError(
@@ -313,22 +369,46 @@ def _validate_hced_location_release(
         provenance_keys.add(provenance_key)
         provenance_count += 1
 
-    if len(candidate_ids) != HCED_EXPECTED_CANDIDATE_BINDINGS:
+    wave6_candidate_ids = set(WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS)
+    if not wave6_candidate_ids <= set(candidate_ids):
+        raise ValueError(
+            "HCED Wave 6 reviewed inventory is incomplete: "
+            f"missing {sorted(wave6_candidate_ids - set(candidate_ids))}"
+        )
+    expected_candidate_bindings = HCED_EXPECTED_CANDIDATE_BINDINGS + len(
+        wave6_candidate_ids
+    )
+    if len(candidate_ids) != expected_candidate_bindings:
         raise ValueError(
             "HCED candidate binding count changed: "
-            f"{len(candidate_ids)} != {HCED_EXPECTED_CANDIDATE_BINDINGS}"
+            f"{len(candidate_ids)} != {expected_candidate_bindings}"
         )
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
-    if (crosswalk_count, label_count) != (1_824, 2_328):
+    if (crosswalk_count, label_count) != (1_824 + len(wave6_candidate_ids), 2_328):
         raise ValueError(
             "HCED promotion tranche counts changed: "
             f"{crosswalk_count} crosswalk and {label_count} label"
         )
+    wave6_point_delta = sum(
+        candidate_id not in HCED_POINT_QUARANTINE_IDS
+        for candidate_id in wave6_candidate_ids
+    )
+    wave6_country_delta = sum(
+        candidate_id
+        not in (HCED_COUNTRY_QUARANTINE_IDS | HCED_SOURCE_BLANK_COUNTRY_IDS)
+        for candidate_id in wave6_candidate_ids
+    )
+    wave6_provenance_delta = sum(
+        candidate_id not in HCED_POINT_QUARANTINE_IDS
+        or candidate_id
+        not in (HCED_COUNTRY_QUARANTINE_IDS | HCED_SOURCE_BLANK_COUNTRY_IDS)
+        for candidate_id in wave6_candidate_ids
+    )
     if (point_count, country_count, provenance_count) != (
-        HCED_EXPECTED_POINT_ASSERTIONS,
-        HCED_EXPECTED_COUNTRY_ASSERTIONS,
-        HCED_EXPECTED_PROVENANCE_OBJECTS,
+        HCED_EXPECTED_POINT_ASSERTIONS + wave6_point_delta,
+        HCED_EXPECTED_COUNTRY_ASSERTIONS + wave6_country_delta,
+        HCED_EXPECTED_PROVENANCE_OBJECTS + wave6_provenance_delta,
     ):
         raise ValueError(
             "HCED location assertion counts changed: "
@@ -415,6 +495,11 @@ def build_expanded_release(
     seed_metadata: dict[str, Any] = json.loads(
         (seed_root / "metadata.json").read_text(encoding="utf-8")
     )
+    source_rows = {str(source["id"]): source for source in sources}
+    source_rows.update(
+        {str(source["id"]): source for source in WAVE6_1800_2021_SOURCES}
+    )
+    sources = list(source_rows.values())
     seed_by_id = {str(entity["id"]): entity for entity in seed_entities}
     _validate_seed_event_intervals(seed_events, seed_by_id)
     seed_label_index: dict[str, set[str]] = {}
@@ -434,6 +519,9 @@ def build_expanded_release(
             owners.setdefault(str(code), []).append(candidate)
 
     release_entities = {str(entity["id"]): dict(entity) for entity in seed_entities}
+    release_entities.update(
+        {str(entity["id"]): dict(entity) for entity in WAVE6_1800_2021_ENTITY_OVERRIDES}
+    )
     candidate_by_release_id: dict[str, dict[str, Any]] = {}
     iwd_events: list[dict[str, Any]] = []
     iwd_rejections: Counter[str] = Counter()
@@ -489,6 +577,9 @@ def build_expanded_release(
         curated_seed_keys,
         ensure_candidate_entity,
         reviewed_identity_bindings=HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
+        reviewed_candidate_contracts=WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS,
+        validated_source_contracts=WAVE6_HCED_VALIDATED_SOURCE_CONTRACTS,
+        curated_exclusions=EFFECTIVE_HCED_CURATED_EXCLUSIONS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
     )
@@ -579,8 +670,8 @@ def build_expanded_release(
         iwd_candidates,
         _seed_war_token_spans(seed_events),
         resolve_iwd_party,
-        curated_parent_exclusions=IWD_CURATED_PARENT_EXCLUSIONS,
-        reviewed_parent_contracts=IWD_REVIEWED_PARENT_CONTRACTS,
+        curated_parent_exclusions=EFFECTIVE_IWD_CURATED_PARENT_EXCLUSIONS,
+        reviewed_parent_contracts=EFFECTIVE_IWD_REVIEWED_PARENT_CONTRACTS,
         resolve_reviewed_party=resolve_reviewed_identity,
         require_complete_reviewed_parents=True,
     )
@@ -597,7 +688,9 @@ def build_expanded_release(
         deferred_label_rows,
         curated_seed_keys,
         promoted_hced_keys,
-        lambda code, low_year, high_year: _resolve_code(code, low_year, high_year, owners),
+        lambda code, low_year, high_year: _resolve_code(
+            code, low_year, high_year, owners
+        ),
         lambda label, low_year, high_year: resolve_hced_side_label(
             label, low_year, high_year, label_context
         ),
@@ -606,7 +699,9 @@ def build_expanded_release(
     hced_label_rejections: Counter[str] = hced_label_pass["rejections"]
     for polity in hced_label_pass["resolved_polities"].values():
         ensure_candidate_entity(polity)
-    for cluster_id, (tokens, low_year, high_year) in hced_label_pass["cluster_spans"].items():
+    for cluster_id, (tokens, low_year, high_year) in hced_label_pass[
+        "cluster_spans"
+    ].items():
         span = hced_cluster_spans.setdefault(cluster_id, [tokens, low_year, high_year])
         span[1] = min(span[1], low_year)
         span[2] = max(span[2], high_year)
@@ -622,7 +717,7 @@ def build_expanded_release(
 
     for candidate in hced:
         if str(candidate.get("candidate_id")) in {
-            *HCED_CURATED_EXCLUSIONS,
+            *EFFECTIVE_HCED_CURATED_EXCLUSIONS,
             *HCED_LABEL_CURATED_EXCLUSIONS,
         }:
             continue
@@ -684,8 +779,10 @@ def build_expanded_release(
         resolve_iwd_label,
         hced_cluster_spans,
         iwd_parent_ids,
-        reviewed_identity_bindings=IWBD_REVIEWED_IDENTITY_BINDINGS,
-        reviewed_identity_cohorts=IWBD_REVIEWED_IDENTITY_COHORTS,
+        curated_exclusions=EFFECTIVE_IWBD_CURATED_EXCLUSIONS,
+        reviewed_identity_bindings=EFFECTIVE_IWBD_REVIEWED_IDENTITY_BINDINGS,
+        validated_source_contracts=WAVE6_IWBD_VALIDATED_SOURCE_CONTRACTS,
+        reviewed_identity_cohorts=EFFECTIVE_IWBD_REVIEWED_IDENTITY_COHORTS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_cohorts=True,
     )
@@ -700,7 +797,9 @@ def build_expanded_release(
     # ledger is never rated twice.
     ucdp_conflict_path = review / "ucdp-termination-conflict-candidates.jsonl"
     ucdp_dyad_path = review / "ucdp-termination-dyad-candidates.jsonl"
-    ucdp_conflict_rows = read_jsonl(ucdp_conflict_path) if ucdp_conflict_path.exists() else []
+    ucdp_conflict_rows = (
+        read_jsonl(ucdp_conflict_path) if ucdp_conflict_path.exists() else []
+    )
     ucdp_dyad_rows = read_jsonl(ucdp_dyad_path) if ucdp_dyad_path.exists() else []
     promoted_war_index = [
         (
@@ -834,7 +933,11 @@ def build_expanded_release(
     }
     release_entity_rows = sorted(
         release_entities.values(),
-        key=lambda entity: (int(entity["start_year"]), str(entity["name"]), str(entity["id"])),
+        key=lambda entity: (
+            int(entity["start_year"]),
+            str(entity["name"]),
+            str(entity["id"]),
+        ),
     )
     review_counts = _count_review_records(review)
 
@@ -844,7 +947,9 @@ def build_expanded_release(
             "name": str(entity["name"]),
             "kind": str(entity.get("kind") or "polity"),
             "start_year": int(entity["start_year"]),
-            "end_year": int(entity["end_year"]) if entity.get("end_year") is not None else None,
+            "end_year": int(entity["end_year"])
+            if entity.get("end_year") is not None
+            else None,
             "status": "rated" if str(entity["id"]) in used_entity_ids else "unrated",
             "identity_status": "curated",
             "region": str(entity.get("region") or "Unclassified"),
@@ -882,15 +987,18 @@ def build_expanded_release(
                 else "unrated"
             ),
             "identity_status": "source_candidate",
-            "coverage_discontinuous": len(
-                candidate.get("temporal_coverage_groups", [])
-            ) > 1,
+            "coverage_discontinuous": len(candidate.get("temporal_coverage_groups", []))
+            > 1,
             "region": "Unclassified",
         }
 
     registry_rows = sorted(
         registry_entities.values(),
-        key=lambda entity: (str(entity["name"]), int(entity["start_year"]), str(entity["id"])),
+        key=lambda entity: (
+            str(entity["name"]),
+            int(entity["start_year"]),
+            str(entity["id"]),
+        ),
     )
     staged_source_records = sum(review_counts.values())
     identity_queue_names = {
@@ -979,7 +1087,9 @@ def build_expanded_release(
         "year_range": {
             "start": min(int(event["year"]) for event in all_events),
             "end": max(int(event["end_year"]) for event in all_events),
-            "calendar_note": seed_metadata.get("year_range", {}).get("calendar_note", ""),
+            "calendar_note": seed_metadata.get("year_range", {}).get(
+                "calendar_note", ""
+            ),
         },
         "promotion": {
             "policy": (
@@ -1052,7 +1162,9 @@ def build_expanded_release(
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
             "iwd_components_aggregated": iwd_aggregation["components_aggregated"],
-            "iwd_components_attached_to_rated_parents": iwd_aggregation["components_attached"],
+            "iwd_components_attached_to_rated_parents": iwd_aggregation[
+                "components_attached"
+            ],
             "hced_rejections": dict(sorted(rejections.items())),
             "hced_label_rejections": _declared_rejections(
                 hced_label_rejections, HCED_LABEL_REJECTION_COUNTERS
@@ -1060,13 +1172,18 @@ def build_expanded_release(
             "hced_label_policy_labels": sorted(HCED_LABEL_POLICIES),
             "hced_faction_labels_staged": sorted(HCED_FACTION_LABELS),
             "hced_pending_split_labels": sorted(HCED_PENDING_SPLIT_LABELS),
-            "hced_label_observation_resolutions": hced_label_pass["observation_resolutions"],
+            "hced_label_observation_resolutions": hced_label_pass[
+                "observation_resolutions"
+            ],
             "hced_curated_exclusions": [
                 {"candidate_id": key, "reason": reason}
-                for key, reason in sorted(HCED_CURATED_EXCLUSIONS.items())
+                for key, reason in sorted(EFFECTIVE_HCED_CURATED_EXCLUSIONS.items())
             ],
             "hced_reviewed_crosswalk_identity_candidate_ids": sorted(
                 HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS
+            ),
+            "hced_wave6_reviewed_candidate_ids": sorted(
+                WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS
             ),
             "hced_label_curated_exclusions": [
                 {"candidate_id": key, "reason": reason}
@@ -1074,23 +1191,25 @@ def build_expanded_release(
             ],
             "iwbd_curated_exclusions": [
                 {"candidate_id": key, "reason": reason}
-                for key, reason in sorted(IWBD_CURATED_EXCLUSIONS.items())
+                for key, reason in sorted(EFFECTIVE_IWBD_CURATED_EXCLUSIONS.items())
             ],
             "iwd_curated_parent_exclusions": [
                 {"parent_war_id": key, "reason": reason}
-                for key, reason in sorted(IWD_CURATED_PARENT_EXCLUSIONS.items())
+                for key, reason in sorted(
+                    EFFECTIVE_IWD_CURATED_PARENT_EXCLUSIONS.items()
+                )
             ],
             "iwd_reviewed_parent_contract_ids": sorted(
-                IWD_REVIEWED_PARENT_CONTRACTS,
+                EFFECTIVE_IWD_REVIEWED_PARENT_CONTRACTS,
                 key=int,
             ),
             "iwbd_reviewed_identity_candidate_ids": sorted(
-                IWBD_REVIEWED_IDENTITY_BINDINGS
+                EFFECTIVE_IWBD_REVIEWED_IDENTITY_BINDINGS
             ),
             "iwbd_reviewed_identity_cohorts": {
                 cohort: list(candidate_ids)
                 for cohort, candidate_ids in sorted(
-                    IWBD_REVIEWED_IDENTITY_COHORTS.items()
+                    EFFECTIVE_IWBD_REVIEWED_IDENTITY_COHORTS.items()
                 )
             },
             "seed_event_interval_exemptions": [
@@ -1109,16 +1228,22 @@ def build_expanded_release(
                     "party_label": party,
                     "windows": [list(window) for window in windows],
                 }
-                for (conflict_id, party), windows in sorted(UCDP_ACTOR_PARTY_POLICIES.items())
+                for (conflict_id, party), windows in sorted(
+                    UCDP_ACTOR_PARTY_POLICIES.items()
+                )
             ],
             "ucdp_war_types": UCDP_WAR_TYPES,
             "iwd_rejections": dict(sorted(iwd_rejections.items())),
             "accepted_iwbd_battles": len(iwbd_events),
             "iwbd_battles_total": iwbd_promotion["battles_total"],
-            "iwbd_rejections": _declared_rejections(iwbd_rejections, IWBD_REJECTION_COUNTERS),
+            "iwbd_rejections": _declared_rejections(
+                iwbd_rejections, IWBD_REJECTION_COUNTERS
+            ),
             "accepted_ucdp_events": len(ucdp_events),
             "ucdp_termination_rows_total": ucdp_promotion["rows_total"],
-            "ucdp_rejections": _declared_rejections(ucdp_rejections, UCDP_REJECTION_COUNTERS),
+            "ucdp_rejections": _declared_rejections(
+                ucdp_rejections, UCDP_REJECTION_COUNTERS
+            ),
             "ucdp_curated_exclusions": [
                 {"conflict_id": key[0], "episode_number": key[1], "reason": reason}
                 for key, reason in sorted(UCDP_CURATED_EXCLUSIONS.items())
@@ -1128,7 +1253,9 @@ def build_expanded_release(
             "ucdp_dyad_rows_quarantined_corrupt": ucdp_promotion[
                 "dyad_rows_quarantined_corrupt"
             ],
-            "ucdp_dyad_terminal_blank_outcome": ucdp_promotion["dyad_terminal_blank_outcome"],
+            "ucdp_dyad_terminal_blank_outcome": ucdp_promotion[
+                "dyad_terminal_blank_outcome"
+            ],
             "source_queue_counts": review_counts,
         },
         "known_limitations": [
@@ -1154,7 +1281,10 @@ def build_expanded_release(
 
     _write_json(release / "entities.json", release_entity_rows)
     _write_json(release / "events.json", all_events)
-    _write_json(release / "sources.json", sorted(sources_by_id.values(), key=lambda row: row["id"]))
+    _write_json(
+        release / "sources.json",
+        sorted(sources_by_id.values(), key=lambda row: row["id"]),
+    )
     _write_json(release / "metadata.json", metadata)
     _write_json(registry_path, registry)
     return {
@@ -1174,6 +1304,10 @@ def build_expanded_release(
             hced_label_rejections, HCED_LABEL_REJECTION_COUNTERS
         ),
         "iwd_rejections": dict(sorted(iwd_rejections.items())),
-        "iwbd_rejections": _declared_rejections(iwbd_rejections, IWBD_REJECTION_COUNTERS),
-        "ucdp_rejections": _declared_rejections(ucdp_rejections, UCDP_REJECTION_COUNTERS),
+        "iwbd_rejections": _declared_rejections(
+            iwbd_rejections, IWBD_REJECTION_COUNTERS
+        ),
+        "ucdp_rejections": _declared_rejections(
+            ucdp_rejections, UCDP_REJECTION_COUNTERS
+        ),
     }
