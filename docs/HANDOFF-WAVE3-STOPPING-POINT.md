@@ -53,6 +53,8 @@ inferred value.
   `ea6e8ac15e6e8426a574471cb4e30dc050eb8bef3f11589a44a4487d24f5dd6d`
 - Combined candidate/field/reason policy digest:
   `3cde3666cdb5ced040306cc25cba153b9f73fe49f04703ac864e889a1399dc7d`
+- Full sorted 4,012-event HCED binding/location projection SHA-256:
+  `6b83fd50b4e71a038f76406d98a7efd4ae6594eed67f2a57dacb45f3e622fb00`
 
 The authoritative HCED review queue SHA-256 remains
 `7466f5c9db3cde0d74ee39a4e0c209d9a397457435986a1ace156f9d6aa2aabf`.
@@ -120,21 +122,41 @@ change is independently explained and reviewed.
 
 ## Verification record
 
-The final coupled release must record all of these gates before this handoff is
-published:
+The final coupled release passed all required gates:
 
-- corpus lock: 12 raw snapshots and 10 review queues verified;
+- corpus lock: 12 raw snapshots and 10 review queues verified from the explicit
+  machine-local paths;
 - release audit: `[]`;
-- full test suite: final measured pass/skip counts;
-- dashboard: 1,000 simulations and release parity clean;
-- rating projection: exact equality with the Wave 2 baseline after removing
-  only the new HCED binding/location/provenance fields and allowed coverage
-  metadata;
-- deterministic rebuild: byte-identical generated artifacts from identical
-  inputs; and
-- browser: real data loaded, the visible HCED warning appeared, representative
-  quarantine values stayed withheld, interactions worked, and the console was
-  clean.
+- full test suite: 499 tests run, 15 skipped, zero failures;
+- dashboard: 1,000 simulations, 226 entities, 4,234 events, and exact
+  release-to-dashboard location-field and warning parity;
+- rating oracle: zero numeric drift against Wave 2. The canonical release event
+  projection remains
+  `3356acd7e4f530312729fce8bf93b6815834e86528a356919d1214d0f4442d46`,
+  the dashboard event projection remains
+  `430840e9955d1f9dabcd2be8a0656662e89a0572be0a1f94c03192e61dd63c98`,
+  and the full rating bundle remains
+  `6337b6620afb196d67636cb71fb9ec13daae21f12d77c968736249b23fecffce`;
+- deterministic rebuild: independent writer and integration builds produced
+  byte-identical generated artifacts on this machine. SHA-256 values were
+  `60d350477ff1073312953bcbc840bd73cc11e37e56fac060a43001f3c080269e`
+  for `entities.json`,
+  `eb641de1f6a4919d2344464f9feaf7df2ec8fdb5a287e10b61f49590aad18661`
+  for `events.json`,
+  `abaceb260379305877b22d4c5307e273c3fcc1c67ca9a04ba91e42805894d5e2`
+  for `metadata.json`,
+  `58193c30b9df0019b6445ec293b7924b04c557dfba3227d4700169846374cd14`
+  for `sources.json`,
+  `46c7674a186e5e0d4cbcc5c5a6c676a3b7f934fd99f5e3a459f36bcf0334ebd8`
+  for `registry.json`, and
+  `8013b51830a675639a261bebc5629d7cb2ac24279673d5db37c5c987da34359a`
+  for `results.json`; and
+- browser: real data loaded; the global warning appeared exactly once;
+  Kandahar displayed a Point and jurisdiction label; Focchies displayed no
+  quarantined Point; Atlantic displayed no quarantined jurisdiction label;
+  Amadiye displayed its Point and no source-blank jurisdiction label;
+  timeline and event-detail interactions worked; no map or map library was
+  introduced; and the console had no warnings or errors.
 
 ## Machine-local rebuild warning
 
