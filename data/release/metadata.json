@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 568,
-    "events": 5066,
-    "sources": 658,
-    "registry_polities": 1924
+    "entities": 587,
+    "events": 5078,
+    "sources": 684,
+    "registry_polities": 1943
   },
   "year_range": {
     "start": -1274,
@@ -107,7 +107,8 @@
     "accepted_wave8_moros_hced_events": 6,
     "accepted_wave8_manchus_hced_events": 5,
     "accepted_wave8_peruvian_rebels_hced_events": 5,
-    "accepted_wave8_seljuks_hced_events": 6,
+    "accepted_wave8_germany_hced_events": 13,
+    "accepted_wave8_seljuks_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -3633,43 +3634,312 @@
     "wave8_peruvian_rebels_outcome_overrides": [],
     "wave8_peruvian_rebels_entities_added": 8,
     "wave8_peruvian_rebels_sources_added": 13,
-    "wave8_seljuks_counts": {
+    "wave8_germany_counts": {
       "country_quarantine_additions": 0,
       "cross_lane_hced_dispositions": 0,
+      "holds": 2,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 2,
+      "iwbd_zero_overlap_candidates": 16,
+      "new_entities": 21,
+      "new_sources": 27,
+      "newly_rated_events": 13,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 13,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 1
+    },
+    "wave8_germany_cohort_counts": {
+      "baltic_independence_wars_1919": 1,
+      "east_frankish_magyar_war_907": 1,
+      "east_frankish_magyar_war_933": 1,
+      "east_frankish_viking_campaign_891": 2,
+      "great_northern_war_riga_1709_1710": 1,
+      "henry_iii_hungarian_intervention_1044": 1,
+      "lombard_league_wars_1176": 1,
+      "odo_mieszko_border_conflict_972": 1,
+      "otto_ii_calabrian_campaign_982": 1,
+      "otto_iii_roman_intervention_998": 1,
+      "salian_saxon_conflict_1113": 1,
+      "second_crusade_1147": 1
+    },
+    "wave8_germany_queue_validation": {
+      "promotion_contracts": 13,
+      "holds": 2,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 1
+    },
+    "wave8_germany_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 2,
+      "iwbd_zero_overlap_candidates": 16
+    },
+    "wave8_germany_candidate_ids": [
+      "hced-Cedynia972-1",
+      "hced-Cesis1919-1",
+      "hced-Cotrone982-1",
+      "hced-Dorylaeum1147-1",
+      "hced-Dyle891-1",
+      "hced-La Gueule891-1",
+      "hced-Legnano1176-1",
+      "hced-Pressburg907-1",
+      "hced-Raab1044-1",
+      "hced-Riade933-1",
+      "hced-Riga1709-1710-1",
+      "hced-SantAngelo998-1",
+      "hced-Warmstadt1113-1"
+    ],
+    "wave8_germany_holds": [
+      {
+        "candidate_id": "hced-Cassano1158-1",
+        "raw_row_sha256": "6dffa003740e174c3ab83a37cf7788c99ee02b453cf4679d1e995f8740b98123",
+        "canonical_event": {
+          "canonical_key": "cassano_d_adda_crossing_action:1158:1158",
+          "date_precision": "month_range",
+          "date_text": "July-August 1158",
+          "granularity": "engagement",
+          "name": "Cassano d'Adda crossing action",
+          "year_low": 1158,
+          "year_high": 1158
+        },
+        "disposition": "hold",
+        "hold_category": "irreconcilable_tactical_outcome",
+        "hold_reason": "Treccani says the Milanese so strongly held the Cassano crossing that Frederick did not attempt it, while the regional heritage narrative calls the episode a battle connected with the destruction of Fara. Those claims do not establish one stable tactical German victory.",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Frederick I's second Italian expedition",
+          "Milanese crossing defenders"
+        ],
+        "reviewed_granularity": "engagement",
+        "evidence_refs": [
+          "wave8_germany_ecomuseo_cassano_1158",
+          "wave8_germany_treccani_cassano_1158"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_germany",
+          "status": "held_hced_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Psie Pole1109-1",
+        "raw_row_sha256": "8ef7c2c52798ce733edc88c78eb594978c63d59adcda980af5431f4815cbd606",
+        "canonical_event": {
+          "canonical_key": "purported_battle_of_psie_pole:1109:1109",
+          "date_precision": "traditional_day",
+          "date_text": "traditionally 24 August 1109",
+          "granularity": "engagement",
+          "name": "Purported Battle of Psie Pole",
+          "year_low": 1109,
+          "year_high": 1109
+        },
+        "disposition": "hold",
+        "hold_category": "historicity_and_tactical_outcome_unresolved",
+        "hold_reason": "The 1109 expedition is historical, but the named Psie Pole battle and its decisive outcome rest on later tradition rather than a sufficiently secure contemporary engagement record. The uncertainty remains unknown and is never converted into a draw.",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Bolesław III's Polish forces",
+          "Henry V's imperial-Bohemian expedition"
+        ],
+        "reviewed_granularity": "engagement",
+        "evidence_refs": [
+          "wave8_germany_psie_pole_source_study",
+          "wave8_germany_wroclaw_psie_pole_legend"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_germany",
+          "status": "held_hced_owner"
+        }
+      }
+    ],
+    "wave8_germany_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Sidon1196-1",
+        "raw_row_sha256": "12176aceb6dcb654acbd9f0c442aa643d4eb150b3ebfe37ff3c88ea211a1defc",
+        "canonical_event": {
+          "canonical_key": "misdated_sidon_occupation_assertion:1196:1196",
+          "date_precision": "year_conflict",
+          "date_text": "HCED year 1196; documented German arrival and occupation in 1197",
+          "granularity": "engagement",
+          "name": "Misdated Sidon occupation assertion",
+          "year_low": 1196,
+          "year_high": 1196
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "wrong_year_campaign_and_no_tactical_battle",
+        "hold_reason": "The German crusading army reached the Levant in September 1197 and occupied already abandoned and damaged Sidon before advancing to Beirut. The row's 1196 date, Fourth Crusade label, and opposed Ayyubid battle cannot be reconciled without inventing an engagement.",
+        "reviewed_actor_description": [
+          "German Crusade of 1197",
+          "Ayyubid-held but abandoned Sidon"
+        ],
+        "reviewed_granularity": "misdated_nonbattle_occupation",
+        "evidence_refs": [
+          "wave8_germany_leeds_crusade_1197"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_germany",
+          "status": "terminal_hced_owner"
+        }
+      }
+    ],
+    "wave8_germany_iwbd_duplicate_dispositions": [
+      {
+        "disposition_id": "iwbd-107-39-783",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Cesis1919-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_same_dates_matching_outcome",
+        "fingerprint": {
+          "source_row": "783",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Cesis",
+          "war_name": "Estonian Liberation",
+          "start_date": "1919-06-19",
+          "end_date": "1919-06-23",
+          "duration_days": "5",
+          "attacker_raw": "Estonia",
+          "defender_raw": "Russia",
+          "winner_raw": "Estonia",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "This is the Estonian-source twin of the Cēsis engagement. Its Russia defender is overbroad; the source-reviewed HCED owner uses the Landeswehr/Iron Division and the joint Estonian-Latvian victor."
+      },
+      {
+        "disposition_id": "iwbd-108-40-787",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Cesis1919-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_same_dates_matching_outcome",
+        "fingerprint": {
+          "source_row": "787",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Cesis",
+          "war_name": "Latvian Liberation",
+          "start_date": "1919-06-19",
+          "end_date": "1919-06-23",
+          "duration_days": "5",
+          "attacker_raw": "Latvia",
+          "defender_raw": "Russia",
+          "winner_raw": "Latvia",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "This is the Latvian-source twin of the same Cēsis engagement. It is not a second Elo event, and its Russia defender is corrected by the candidate-keyed HCED contract."
+      }
+    ],
+    "wave8_germany_cross_lane_dispositions": [],
+    "wave8_germany_integration_dispositions": [
+      {
+        "disposition_id": "iwbd-107-39-783",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Cesis1919-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_same_dates_matching_outcome",
+        "fingerprint": {
+          "source_row": "783",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Cesis",
+          "war_name": "Estonian Liberation",
+          "start_date": "1919-06-19",
+          "end_date": "1919-06-23",
+          "duration_days": "5",
+          "attacker_raw": "Estonia",
+          "defender_raw": "Russia",
+          "winner_raw": "Estonia",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "This is the Estonian-source twin of the Cēsis engagement. Its Russia defender is overbroad; the source-reviewed HCED owner uses the Landeswehr/Iron Division and the joint Estonian-Latvian victor."
+      },
+      {
+        "disposition_id": "iwbd-108-40-787",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Cesis1919-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_same_dates_matching_outcome",
+        "fingerprint": {
+          "source_row": "787",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Cesis",
+          "war_name": "Latvian Liberation",
+          "start_date": "1919-06-19",
+          "end_date": "1919-06-23",
+          "duration_days": "5",
+          "attacker_raw": "Latvia",
+          "defender_raw": "Russia",
+          "winner_raw": "Latvia",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "This is the Latvian-source twin of the same Cēsis engagement. It is not a second Elo event, and its Russia defender is corrected by the candidate-keyed HCED contract."
+      }
+    ],
+    "wave8_germany_outcome_overrides": [
+      {
+        "candidate_id": "hced-Riga1709-1710-1",
+        "raw_winner_label": "Germany",
+        "raw_loser_label": "Russia",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "clio_ru_moskva_rurik_dyn_1547_93deb0e2"
+        ],
+        "corrected_loser_entity_ids": [
+          "kingdom_sweden"
+        ],
+        "outcome_source_ids": [
+          "wave8_germany_harvard_riga_1710",
+          "wave8_germany_springer_riga_capitulation"
+        ],
+        "outcome_source_family_ids": [
+          "harvard_imperiia_riga",
+          "springer_riga_capitulation"
+        ],
+        "correction_note": "The locked years identify the Great Northern War siege: Russia captured the Swedish fortress. The row's Germany winner and World War I campaign label are incompatible with the event."
+      }
+    ],
+    "wave8_germany_entities_added": 21,
+    "wave8_germany_sources_added": 27,
+    "wave8_seljuks_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "external_owner_hced_dispositions": 1,
       "holds": 3,
-      "integration_dispositions": 0,
+      "integration_dispositions": 1,
       "iwbd_duplicate_dispositions": 0,
-      "new_entities": 9,
-      "new_sources": 17,
-      "newly_rated_events": 6,
+      "new_entities": 7,
+      "new_sources": 16,
+      "newly_rated_events": 5,
       "outcome_overrides": 1,
       "point_quarantine_additions": 2,
-      "promotion_contracts": 6,
+      "promotion_contracts": 5,
       "reviewed_hced_rows": 9,
       "terminal_exclusions": 1
     },
     "wave8_seljuks_cohort_counts": {
       "bayju_rum_campaign_1243": 1,
       "kilij_arslan_peoples_crusade_1096": 1,
-      "mesud_second_crusade_1147": 1,
       "nur_al_din_edessa_1146": 1,
       "tughril_basasiri_iraq_1060": 1,
       "zengid_edessa_1144": 1
     },
     "wave8_seljuks_queue_validation": {
-      "promotion_contracts": 6,
+      "external_owner_contracts": 1,
       "holds": 3,
+      "promotion_contracts": 5,
       "reviewed_hced_rows": 9
     },
     "wave8_seljuks_integration_validation": {
-      "cross_lane_hced_dispositions": 0,
-      "integration_dispositions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "external_owner_hced_dispositions": 1,
+      "integration_dispositions": 1,
       "iwbd_duplicate_dispositions": 0,
       "iwbd_probable_twins": 0
     },
     "wave8_seljuks_candidate_ids": [
       "hced-Civetot1096-1",
-      "hced-Dorylaeum1147-1",
       "hced-Edessa1144-1",
       "hced-Edessa1146-1",
       "hced-Kose Dagh1243-1",
@@ -3738,8 +4008,30 @@
       }
     ],
     "wave8_seljuks_iwbd_duplicate_dispositions": [],
-    "wave8_seljuks_cross_lane_dispositions": [],
-    "wave8_seljuks_integration_dispositions": [],
+    "wave8_seljuks_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Dorylaeum1147-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "19eeb036de9ac497b6d3e99856e5a6e7627fec13e2a47b8802b21d977e918b43",
+        "canonical_event_name": "Battle of Dorylaeum (1147)",
+        "year": 1147,
+        "reason": "The Germany audit owns the exact candidate, direct Oxford and St Andrews evidence, the 25 October date, and Conrad III's bounded host. Emitting it here would double-rate one battle."
+      }
+    ],
+    "wave8_seljuks_integration_dispositions": [
+      {
+        "disposition_id": "hced-Dorylaeum1147-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "19eeb036de9ac497b6d3e99856e5a6e7627fec13e2a47b8802b21d977e918b43",
+        "canonical_event_name": "Battle of Dorylaeum (1147)",
+        "year": 1147,
+        "reason": "The Germany audit owns the exact candidate, direct Oxford and St Andrews evidence, the 25 October date, and Conrad III's bounded host. Emitting it here would double-rate one battle."
+      }
+    ],
     "wave8_seljuks_outcome_overrides": [
       {
         "candidate_id": "hced-Kufah1060-1",
@@ -3760,9 +4052,9 @@
         "correction_note": "The translated chronicle and TDV biography agree that Seljuk cavalry defeated al-Basasiri near Kufa and that he was killed."
       }
     ],
-    "wave8_seljuks_entities_added": 9,
-    "wave8_seljuks_sources_added": 17,
-    "hced_label_pass_input_rows": 5937,
+    "wave8_seljuks_entities_added": 7,
+    "wave8_seljuks_sources_added": 16,
+    "hced_label_pass_input_rows": 5922,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -3775,7 +4067,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 667,
+      "reserved_candidate_contract": 682,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -3783,11 +4075,11 @@
       "curated_row_exclusion": 71,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 461,
+      "faction_label_not_a_polity": 460,
       "label_outcome_not_aligned": 81,
-      "label_outside_policy_window": 180,
+      "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2415,
+      "no_unique_time_valid_label_match": 2403,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,
@@ -5525,6 +5817,14 @@
         "reason": "IWBD spans a broad Delville Wood campaign envelope containing the 15–20 July HCED engagement; stage the envelope to prevent double rating."
       },
       {
+        "candidate_id": "iwbd-107-39-783",
+        "reason": "This is the Estonian-source twin of the Cēsis engagement. Its Russia defender is overbroad; the source-reviewed HCED owner uses the Landeswehr/Iron Division and the joint Estonian-Latvian victor."
+      },
+      {
+        "candidate_id": "iwbd-108-40-787",
+        "reason": "This is the Latvian-source twin of the same Cēsis engagement. It is not a second Elo event, and its Russia defender is corrected by the candidate-keyed HCED contract."
+      },
+      {
         "candidate_id": "iwbd-108-40-788",
         "reason": "wrong principal belligerent at Riga 2 in October 1919: Latvian forces fought the Bermondt/West Russian Volunteer Army, not the Russian SFSR"
       },
@@ -6543,9 +6843,9 @@
     "iwbd_rejections": {
       "coalition_or_composite_side": 139,
       "contains_constituent_iwbd_rows": 320,
-      "curated_exclusion": 220,
+      "curated_exclusion": 222,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 858,
+      "duplicate_of_hced_battle": 856,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

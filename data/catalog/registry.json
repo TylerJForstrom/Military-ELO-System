@@ -423,6 +423,16 @@
       "region": "East Africa"
     },
     {
+      "id": "kalbid_sicilian_army_capo_colonna_982",
+      "name": "Abū al-Qāsim's Kalbid Sicilian army at Capo Colonna (982)",
+      "kind": "event_bounded_emiral_field_army",
+      "start_year": 982,
+      "end_year": 982,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q244796_bce279_0be1ca53",
       "name": "Achaean League",
       "kind": "polity",
@@ -957,6 +967,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "arnulf_east_frankish_royal_army_dyle_891",
+      "name": "Arnulf's East Frankish royal army at the Dyle (891)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 891,
+      "end_year": 891,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
+    },
+    {
       "id": "arsacid_empire",
       "name": "Arsacid Empire",
       "kind": "empire",
@@ -1338,6 +1358,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "landeswehr_iron_division_cesis_force_1919",
+      "name": "Baltische Landeswehr and Iron Division at Cēsis (1919)",
+      "kind": "event_bounded_baltic_german_formation",
+      "start_year": 1919,
+      "end_year": 1919,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Europe"
     },
     {
       "id": "bam_shah_nepalese_kumaon_force_1815",
@@ -2832,9 +2862,9 @@
       "region": "Unclassified"
     },
     {
-      "id": "conrad_iii_german_crusader_army_1147",
-      "name": "Conrad III's German crusader army",
-      "kind": "campaign_force",
+      "id": "conrad_iii_german_crusader_host_dorylaeum_1147",
+      "name": "Conrad III's German crusader host at Dorylaeum (1147)",
+      "kind": "event_bounded_crusader_host",
       "start_year": 1147,
       "end_year": 1147,
       "status": "rated",
@@ -3307,6 +3337,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "crescentius_castel_santangelo_defenders_998",
+      "name": "Crescentius II's Castel Sant'Angelo defenders (998)",
+      "kind": "event_bounded_urban_fortress_force",
+      "start_year": 998,
+      "end_year": 998,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q72785_1898_ff285b75",
@@ -5067,6 +5107,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "estonian_latvian_cesis_field_coalition_1919",
+      "name": "Estonian 3rd Division and Northern Latvian Brigade at Cēsis (1919)",
+      "kind": "event_bounded_independence_coalition",
+      "start_year": 1919,
+      "end_year": 1919,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Europe"
+    },
+    {
       "id": "clio_q1050_1969_d7100f72",
       "name": "Eswatini",
       "kind": "polity",
@@ -5538,6 +5588,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Western Europe"
+    },
+    {
+      "id": "frederick_i_imperial_field_army_legnano_1176",
+      "name": "Frederick I's imperial field army at Legnano (1176)",
+      "kind": "event_bounded_imperial_field_army",
+      "start_year": 1176,
+      "end_year": 1176,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q474779_1806_5c48ad4e",
@@ -7044,6 +7104,26 @@
       "region": "Ireland and the Irish Sea"
     },
     {
+      "id": "henry_i_east_frankish_royal_army_riade_933",
+      "name": "Henry I's East Frankish royal army at Riade (933)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 933,
+      "end_year": 933,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
+      "id": "henry_iii_imperial_army_menfo_1044",
+      "name": "Henry III's imperial army at Ménfő (1044)",
+      "kind": "event_bounded_imperial_field_army",
+      "start_year": 1044,
+      "end_year": 1044,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "ireton_new_model_army_limerick_1651",
       "name": "Henry Ireton’s New Model Army at Limerick (1651)",
       "kind": "siege_army",
@@ -7291,6 +7371,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hoyer_imperial_loyalist_force_warnstedt_1113",
+      "name": "Hoyer of Mansfeld's imperial loyalist force at Warnstedt (1113)",
+      "kind": "event_bounded_imperial_loyalist_force",
+      "start_year": 1113,
+      "end_year": 1113,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_in_hoysala_k_1111_89e053ce",
@@ -11045,6 +11135,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "liutpold_bavarian_east_frankish_army_pressburg_907",
+      "name": "Liutpold's Bavarian-East Frankish army at Pressburg (907)",
+      "kind": "event_bounded_ducal_royal_army",
+      "start_year": 907,
+      "end_year": 907,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q157605_1202_2d48b7b8",
       "name": "Livonian Brothers of the Sword",
       "kind": "polity",
@@ -11097,6 +11197,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "lombard_league_field_army_legnano_1176",
+      "name": "Lombard League field army at Legnano (1176)",
+      "kind": "event_bounded_urban_league_army",
+      "start_year": 1176,
+      "end_year": 1176,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q130900_480_e0d6874d",
@@ -11301,6 +11411,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "magyar_conquest_army_pressburg_907",
+      "name": "Magyar conquest-period army at Pressburg (907)",
+      "kind": "event_bounded_steppe_field_army",
+      "start_year": 907,
+      "end_year": 907,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
+      "id": "magyar_raiding_army_riade_933",
+      "name": "Magyar raiding army at Riade (933)",
+      "kind": "event_bounded_raiding_army",
+      "start_year": 933,
+      "end_year": 933,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q133032_840_a9b86a6c",
@@ -11558,6 +11688,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "South Asia"
+    },
+    {
+      "id": "odo_lusatian_march_force_cedynia_972",
+      "name": "Margrave Odo's Lusatian march force at Cedynia (972)",
+      "kind": "event_bounded_march_force",
+      "start_year": 972,
+      "end_year": 972,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_de_empire_3_1260_6d5cc343",
@@ -11940,6 +12080,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "mieszko_i_polans_field_army_cedynia_972",
+      "name": "Mieszko I's Polans field army at Cedynia (972)",
+      "kind": "event_bounded_dynastic_field_army",
+      "start_year": 972,
+      "end_year": 972,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_cn_five_dyn_911_de49523f",
@@ -13193,6 +13343,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Kyiv Voivodeship"
+    },
+    {
+      "id": "otto_ii_imperial_calabrian_army_982",
+      "name": "Otto II's imperial Calabrian army (982)",
+      "kind": "event_bounded_imperial_field_army",
+      "start_year": 982,
+      "end_year": 982,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
+      "id": "otto_iii_imperial_roman_expedition_998",
+      "name": "Otto III's imperial Roman expedition (998)",
+      "kind": "event_bounded_imperial_expedition",
+      "start_year": 998,
+      "end_year": 998,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "ottoman_empire",
@@ -16663,6 +16833,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "saxon_princely_opposition_warnstedt_1113",
+      "name": "Saxon princely opposition at Warnstedt (1113)",
+      "kind": "event_bounded_princely_coalition",
+      "start_year": 1113,
+      "end_year": 1113,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q101985_283_a7036aa8",
       "name": "Saxons",
       "kind": "polity",
@@ -18060,16 +18240,6 @@
       "region": "Anatolia"
     },
     {
-      "id": "rum_sultanate_mesud_i_1116_1156",
-      "name": "Sultanate of Rum under Mesud I",
-      "kind": "sultanate_regime",
-      "start_year": 1116,
-      "end_year": 1156,
-      "status": "rated",
-      "identity_status": "curated",
-      "region": "Anatolia"
-    },
-    {
       "id": "clio_q19727688_1830_564cbebc",
       "name": "Sultanate of Sambaliung",
       "kind": "sultanate",
@@ -18167,6 +18337,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "sunderold_east_frankish_force_geul_891",
+      "name": "Sunderold's East Frankish force at the Geul (891)",
+      "kind": "event_bounded_royal_detachment",
+      "start_year": 891,
+      "end_year": 891,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
     },
     {
       "id": "clio_in_sur_emp_1540_86155323",
@@ -19687,6 +19867,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "viking_lotharingian_campaign_army_891",
+      "name": "Viking army in the Lotharingian campaign (891)",
+      "kind": "campaign_bounded_raiding_army",
+      "start_year": 891,
+      "end_year": 891,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe"
+    },
+    {
       "id": "clio_no_viking_settlements_793_9843c645",
       "name": "Viking settlements",
       "kind": "polity",
@@ -20614,11 +20804,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1924,
-    "rated_entities": 561,
-    "rated_events": 5066,
+    "registry_polities": 1943,
+    "rated_entities": 580,
+    "rated_events": 5078,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18328,
+    "unresolved_event_candidates": 18316,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20655,7 +20845,8 @@
     "candidate_keyed_wave8_moros_hced_events": 6,
     "candidate_keyed_wave8_manchus_hced_events": 5,
     "candidate_keyed_wave8_peruvian_rebels_hced_events": 5,
-    "candidate_keyed_wave8_seljuks_hced_events": 6,
+    "candidate_keyed_wave8_germany_hced_events": 13,
+    "candidate_keyed_wave8_seljuks_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20666,21 +20857,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4802,
-      "candidate_keyed_reviewed_contracts": 492,
-      "geojson_points": 4716,
-      "modern_location_country_assertions": 4715,
-      "location_provenance_objects": 4764,
-      "point_fields_withheld_by_quarantine": 86,
+      "hced_candidate_bindings": 4814,
+      "candidate_keyed_reviewed_contracts": 504,
+      "geojson_points": 4725,
+      "modern_location_country_assertions": 4727,
+      "location_provenance_objects": 4776,
+      "point_fields_withheld_by_quarantine": 89,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 134,
-      "point_quarantine_candidate_manifest_sha256": "3a606fb5d0ef73b62c34353344b27467ed5402a58f85a1652ffaf2c981ecf8a9",
+      "unique_events_with_any_quarantined_field": 137,
+      "point_quarantine_candidate_manifest_sha256": "1ec44f2b18828e2ded546d5ce7789c86189800a19958c96fb63a9ca6bc03ca44",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "93a280d9f179c98c0b58b0f337ad5345d333ca6594b19ef551bc84285217a37e",
+      "quarantine_policy_sha256": "d288bcf00bed5735b8d79f0719f8a1eca812ee0b2eec102fcbd949efe426e71b",
       "assertion_status": {
-        "unreviewed_source_assertion": 4764
+        "unreviewed_source_assertion": 4776
       },
       "verified_location_assertions": {
         "availability": "not_available",

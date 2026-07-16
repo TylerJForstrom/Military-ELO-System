@@ -6595,6 +6595,394 @@
     ]
   },
   {
+    "id": "wave8_germany_1914_1918_cesis",
+    "title": "Cēsis, Battle of",
+    "url": "https://encyclopedia.1914-1918-online.net/article/cesis-battle-of/",
+    "publisher": "1914-1918-online: International Encyclopedia of the First World War",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "international_encyclopedia_first_world_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_bern_geul_dyle",
+    "title": "Carolingian battle evidence: the Geule and Dyle actions of 891",
+    "url": "https://bop.unibe.ch/apd/article/download/6866/9751/",
+    "publisher": "Acta Periodica Duellatorum / University of Bern",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "acta_periodica_duellatorum_carolingian_battles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_cambridge_riade",
+    "title": "The Cambridge Medieval History: the battle at Riade",
+    "url": "https://en.wikisource.org/wiki/Page:Cambridge_Medieval_History_Volume_3.pdf/228",
+    "publisher": "Cambridge University Press (public-domain scan)",
+    "license": "Citation and link only",
+    "source_type": "academic_history_primary_scan",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_medieval_history_riade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_deutsche_biographie_hoyer",
+    "title": "Hoyer I. von Mansfeld",
+    "url": "https://www.deutsche-biographie.de/sfz57862.html",
+    "publisher": "Deutsche Biographie / Bayerische Staatsbibliothek",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsche_biographie_hoyer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_deutsche_biographie_siegfried",
+    "title": "Siegfried I, Pfalzgraf bei Rhein",
+    "url": "https://www.deutsche-biographie.de/downloadPDF?url=sfz121686.pdf",
+    "publisher": "Deutsche Biographie / Bayerische Staatsbibliothek",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsche_biographie_siegfried",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_ecomuseo_cassano_1158",
+    "title": "Cassano d'Adda, il castello",
+    "url": "https://www.ecomuseoaddadileonardo.it/cassano-castello/",
+    "publisher": "Ecomuseo Adda di Leonardo",
+    "license": "Citation and link only",
+    "source_type": "regional_heritage_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecomuseo_adda_leonardo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_harvard_riga_1710",
+    "title": "Vignette 1: Siege of Riga 1710",
+    "url": "https://scalar.fas.harvard.edu/imperiia/vignette-1-siege-of-riga-1710",
+    "publisher": "Harvard University, Imperiia project",
+    "license": "Citation and link only",
+    "source_type": "university_digital_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "harvard_imperiia_riga",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_indiana_riade_review",
+    "title": "Review of The Battle of Lechfeld and its antecedents",
+    "url": "https://scholarworks.iu.edu/journals/index.php/tmr/article/view/16527",
+    "publisher": "The Medieval Review / Indiana University",
+    "license": "Citation and link only",
+    "source_type": "academic_book_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "medieval_review_riade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_italian_culture_legnano",
+    "title": "Palio di Legnano - Rievocazioni Storiche",
+    "url": "https://rievocazionistoriche.cultura.gov.it/places/italy/lombardia/legnano/palio-di-legnano/",
+    "publisher": "Italian Ministry of Culture",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_ministry_culture_legnano",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_latvia_estonia_cesis",
+    "title": "Battle of Cēsis (Võnnu lahing)",
+    "url": "https://militaryheritagetourism.info/en/military/topics/view/19",
+    "publisher": "Latvia-Estonia Military Heritage Programme",
+    "license": "Citation and link only",
+    "source_type": "public_military_heritage_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "latvia_estonia_military_heritage",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_leeds_crusade_1197",
+    "title": "The German Crusade of 1197-1198",
+    "url": "https://eprints.whiterose.ac.uk/id/eprint/82933/",
+    "publisher": "University of Leeds / White Rose Research Online",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "leeds_loud_german_crusade_1197",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_lingvaria_cedynia",
+    "title": "Gdzie walczył i jak miał na imię brat Mieszka I?",
+    "url": "https://journals.akademicka.pl/lv/article/view/2667",
+    "publisher": "LingVaria / Księgarnia Akademicka",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "lingvaria_cedynia_thietmar",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_lvr_vikings_rhine",
+    "title": "Wikinger am Mittelrhein",
+    "url": "https://www.rheinische-geschichte.lvr.de/Epochen-und-Themen/Themen/wikinger-am-mittelrhein/DE-2086/lido/57d11ffb5b1dd7.60977295",
+    "publisher": "Portal Rheinische Geschichte / Landschaftsverband Rheinland",
+    "license": "Citation and link only",
+    "source_type": "public_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "lvr_portal_rheinische_geschichte",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_newadvent_crescentius",
+    "title": "Crescentius",
+    "url": "https://www.newadvent.org/cathen/04484c.htm",
+    "publisher": "Catholic Encyclopedia (New Advent transcription)",
+    "license": "Citation and link only",
+    "source_type": "historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "catholic_encyclopedia_crescentius",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_newadvent_frederick_i",
+    "title": "Frederick I (Barbarossa)",
+    "url": "https://www.newadvent.org/cathen/06252b.htm",
+    "publisher": "Catholic Encyclopedia (New Advent transcription)",
+    "license": "Citation and link only",
+    "source_type": "historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "catholic_encyclopedia_frederick_i",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_oszk_pressburg_907",
+    "title": "1111 years ago: The Battle in Pressburg in 907",
+    "url": "https://vmek.oszk.hu/18400/18400/18400.pdf",
+    "publisher": "Hungarian Electronic Library, National Széchényi Library",
+    "license": "Citation and link only",
+    "source_type": "academic_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "oszk_pressburg_907",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_oxford_dorylaeum",
+    "title": "Social Unrest and the Failure of Conrad III's March Through Anatolia, 1147",
+    "url": "https://academic.oup.com/gh/article-abstract/28/2/125/558523",
+    "publisher": "German History / Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_german_history_kostick",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_polish_land_forces_cedynia",
+    "title": "Military Land Forces: Medieval Times (Cedynia, 24 June 972)",
+    "url": "https://muzeumwl.pl/en/medieval-times/",
+    "publisher": "Muzeum Wojsk Lądowych (Polish Land Forces Museum)",
+    "license": "Citation and link only",
+    "source_type": "official_military_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "polish_land_forces_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_pressburg_academic_crosscheck",
+    "title": "The Battle of Pressburg and early Hungarian military history",
+    "url": "https://epa.oszk.hu/00600/00617/00052/pdf/EPA00617_tortenelmi_szemle_2007_01_001-017.pdf",
+    "publisher": "Történelmi Szemle",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "tortenelmi_szemle_pressburg",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_germany_psie_pole_source_study",
+    "title": "Czech involvement in King Henry V's expedition against Poland in 1109",
+    "url": "https://ejournals.eu/pliki_artykulu_czasopisma/pelny_tekst/677e21f4-6405-44f2-857c-05ef30c13370/pobierz",
+    "publisher": "Studia z Dziejów Średniowiecza / Jagiellonian University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "studia_sredniowiecza_henry_v_poland",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_springer_riga_capitulation",
+    "title": "The Negotiations of the Riga Capitulation and the Adventus of 1710",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-030-98527-1_7",
+    "publisher": "Palgrave Macmillan / Springer",
+    "license": "Citation and link only",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "springer_riga_capitulation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_st_andrews_dorylaeum",
+    "title": "Conrad III and the Second Crusade in the Byzantine Empire and Anatolia, 1147",
+    "url": "https://research-repository.st-andrews.ac.uk/handle/10023/524",
+    "publisher": "University of St Andrews research repository",
+    "license": "Citation and link only",
+    "source_type": "doctoral_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "st_andrews_roche_second_crusade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_st_andrews_stilo",
+    "title": "The Battle of Stilo, July 982",
+    "url": "https://arts.st-andrews.ac.uk/after-empire/2018/01/23/the-battle-of-stilo-july-982/",
+    "publisher": "University of St Andrews, After Empire project",
+    "license": "Citation and link only",
+    "source_type": "university_research_project",
+    "accessed": "2026-07-16",
+    "source_family_id": "st_andrews_after_empire",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_transmed_thietmar_stilo",
+    "title": "982: Thietmar of Merseburg on the Battle at Capo Colonna",
+    "url": "https://ojs.ub.uni-konstanz.de/transmed/index.php/tmh/en/article/view/71",
+    "publisher": "Transmediterranean History / University of Konstanz",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_primary_source_edition",
+    "accessed": "2026-07-16",
+    "source_family_id": "transmediterranean_history_thietmar",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_treccani_cassano_1158",
+    "title": "Cassano d'Adda",
+    "url": "https://www.treccani.it/enciclopedia/cassano-d-adda_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_cassano_adda",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_trinity_menfo_primary",
+    "title": "Herman of Reichenau, Chronicle 1044: Henry III and Hungary",
+    "url": "https://www.tcd.ie/history/assets/pdf/ug/ModuleHI1200handbook.pdf",
+    "publisher": "Trinity College Dublin, Department of History",
+    "license": "Citation and link only",
+    "source_type": "university_primary_source_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "trinity_herman_reichenau_1044",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_germany_wroclaw_psie_pole_legend",
+    "title": "Silesia and its past",
+    "url": "https://nowezycie.archidiecezja.wroc.pl/index.php/2019/12/03/silesia-and-its-past/",
+    "publisher": "Archdiocese of Wrocław, New Life",
+    "license": "Citation and link only",
+    "source_type": "regional_historical_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "wroclaw_psie_pole_memory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_gilder_algiers_attack_orders_1824",
     "title": "British orders concerning the 1824 expedition to Algiers",
     "url": "https://www.gilderlehrman.org/collection/glc07895",
@@ -8578,21 +8966,6 @@
     "source_type": "scholarly_encyclopedia",
     "accessed": "2026-07-16",
     "source_family_id": "tdv_islam_encyclopedia_besasiri",
-    "evidence_roles": [
-      "identity_boundary_or_context_reference",
-      "outcome",
-      "outcome_consistency_crosscheck"
-    ]
-  },
-  {
-    "id": "wave8_seljuks_tdv_mesud",
-    "title": "Mesud I",
-    "url": "https://islamansiklopedisi.org.tr/mesud-i",
-    "publisher": "TDV Encyclopedia of Islam",
-    "license": "Citation and link only",
-    "source_type": "scholarly_encyclopedia",
-    "accessed": "2026-07-16",
-    "source_family_id": "tdv_islam_encyclopedia_mesud",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome",

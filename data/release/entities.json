@@ -1176,6 +1176,80 @@
     ]
   },
   {
+    "id": "arnulf_east_frankish_royal_army_dyle_891",
+    "name": "Arnulf's East Frankish royal army at the Dyle (891)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 891,
+    "end_year": 891,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Arnulf's royal army at Leuven/Dyle, distinct from the force defeated at the Geul. This identity is confined to 891; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_bern_geul_dyle",
+      "wave8_germany_lvr_vikings_rhine"
+    ]
+  },
+  {
+    "id": "sunderold_east_frankish_force_geul_891",
+    "name": "Sunderold's East Frankish force at the Geul (891)",
+    "kind": "event_bounded_royal_detachment",
+    "start_year": 891,
+    "end_year": 891,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the East Frankish detachment defeated at the Geul before Arnulf's later royal counterstroke. This identity is confined to 891; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_bern_geul_dyle"
+    ]
+  },
+  {
+    "id": "viking_lotharingian_campaign_army_891",
+    "name": "Viking army in the Lotharingian campaign (891)",
+    "kind": "campaign_bounded_raiding_army",
+    "start_year": 891,
+    "end_year": 891,
+    "region": "Western Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the 891 campaigning army attested at the Geul and Dyle, not a timeless Danish or Viking identity. This identity is confined to 891; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_bern_geul_dyle",
+      "wave8_germany_lvr_vikings_rhine"
+    ]
+  },
+  {
+    "id": "liutpold_bavarian_east_frankish_army_pressburg_907",
+    "name": "Liutpold's Bavarian-East Frankish army at Pressburg (907)",
+    "kind": "event_bounded_ducal_royal_army",
+    "start_year": 907,
+    "end_year": 907,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the predominantly Bavarian East Frankish expedition led by Liutpold. This identity is confined to 907; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_oszk_pressburg_907",
+      "wave8_germany_pressburg_academic_crosscheck"
+    ]
+  },
+  {
+    "id": "magyar_conquest_army_pressburg_907",
+    "name": "Magyar conquest-period army at Pressburg (907)",
+    "kind": "event_bounded_steppe_field_army",
+    "start_year": 907,
+    "end_year": 907,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the conquest-period Magyar army at Pressburg, not a timeless ethnic label. This identity is confined to 907; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_oszk_pressburg_907",
+      "wave8_germany_pressburg_academic_crosscheck"
+    ]
+  },
+  {
     "id": "clio_tn_fatimid_cal_911_d329b0b3",
     "name": "Fatimid Caliphate",
     "kind": "caliphate",
@@ -1221,6 +1295,36 @@
       "cliopatria_polities",
       "britannica_acts_of_union",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "henry_i_east_frankish_royal_army_riade_933",
+    "name": "Henry I's East Frankish royal army at Riade (933)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 933,
+    "end_year": 933,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Henry I's assembled royal field army at Riade, not a later German empire. This identity is confined to 933; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_cambridge_riade",
+      "wave8_germany_indiana_riade_review"
+    ]
+  },
+  {
+    "id": "magyar_raiding_army_riade_933",
+    "name": "Magyar raiding army at Riade (933)",
+    "kind": "event_bounded_raiding_army",
+    "start_year": 933,
+    "end_year": 933,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the particular Magyar raiding army defeated at Riade. This identity is confined to 933; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_cambridge_riade",
+      "wave8_germany_indiana_riade_review"
     ]
   },
   {
@@ -1315,6 +1419,36 @@
     ]
   },
   {
+    "id": "odo_lusatian_march_force_cedynia_972",
+    "name": "Margrave Odo's Lusatian march force at Cedynia (972)",
+    "kind": "event_bounded_march_force",
+    "start_year": 972,
+    "end_year": 972,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Odo's independently led march force, not an undifferentiated German or imperial state. This identity is confined to 972; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_lingvaria_cedynia",
+      "wave8_germany_polish_land_forces_cedynia"
+    ]
+  },
+  {
+    "id": "mieszko_i_polans_field_army_cedynia_972",
+    "name": "Mieszko I's Polans field army at Cedynia (972)",
+    "kind": "event_bounded_dynastic_field_army",
+    "start_year": 972,
+    "end_year": 972,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Mieszko I's force attested at Cedynia, not every later polity called Poland. This identity is confined to 972; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_lingvaria_cedynia",
+      "wave8_germany_polish_land_forces_cedynia"
+    ]
+  },
+  {
     "id": "hamdanid_mosul_amida_relief_force_973",
     "name": "Hamdanid Mosul relief force at Amida in 973",
     "kind": "event_bounded_relief_army",
@@ -1359,6 +1493,36 @@
     ]
   },
   {
+    "id": "kalbid_sicilian_army_capo_colonna_982",
+    "name": "Abū al-Qāsim's Kalbid Sicilian army at Capo Colonna (982)",
+    "kind": "event_bounded_emiral_field_army",
+    "start_year": 982,
+    "end_year": 982,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the Kalbid field army that fought Otto II, without adding Byzantium to the victorious side. This identity is confined to 982; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_st_andrews_stilo",
+      "wave8_germany_transmed_thietmar_stilo"
+    ]
+  },
+  {
+    "id": "otto_ii_imperial_calabrian_army_982",
+    "name": "Otto II's imperial Calabrian army (982)",
+    "kind": "event_bounded_imperial_field_army",
+    "start_year": 982,
+    "end_year": 982,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Otto II's mixed imperial and Italo-Lombard expedition at Capo Colonna, not Germany across eras. This identity is confined to 982; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_st_andrews_stilo",
+      "wave8_germany_transmed_thietmar_stilo"
+    ]
+  },
+  {
     "id": "kingdom_france",
     "name": "Kingdom of France",
     "kind": "kingdom",
@@ -1389,6 +1553,34 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "crescentius_castel_santangelo_defenders_998",
+    "name": "Crescentius II's Castel Sant'Angelo defenders (998)",
+    "kind": "event_bounded_urban_fortress_force",
+    "start_year": 998,
+    "end_year": 998,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Crescentius II's fortress party; the already-fled antipope John XVI is not merged into it. This identity is confined to 998; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_newadvent_crescentius"
+    ]
+  },
+  {
+    "id": "otto_iii_imperial_roman_expedition_998",
+    "name": "Otto III's imperial Roman expedition (998)",
+    "kind": "event_bounded_imperial_expedition",
+    "start_year": 998,
+    "end_year": 998,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Otto III's force restoring Gregory V in Rome and besieging Castel Sant'Angelo. This identity is confined to 998; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_newadvent_crescentius"
     ]
   },
   {
@@ -1471,6 +1663,20 @@
       "wave6_iranica_dandanqan",
       "wave6_peacock_seljuk",
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "henry_iii_imperial_army_menfo_1044",
+    "name": "Henry III's imperial army at Ménfő (1044)",
+    "kind": "event_bounded_imperial_field_army",
+    "start_year": 1044,
+    "end_year": 1044,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Henry III's 1044 intervention force, not a generic Germany identity. This identity is confined to 1044; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_trinity_menfo_primary"
     ]
   },
   {
@@ -1756,18 +1962,33 @@
     ]
   },
   {
-    "id": "rum_sultanate_mesud_i_1116_1156",
-    "name": "Sultanate of Rum under Mesud I",
-    "kind": "sultanate_regime",
-    "start_year": 1116,
-    "end_year": 1156,
-    "region": "Anatolia",
+    "id": "hoyer_imperial_loyalist_force_warnstedt_1113",
+    "name": "Hoyer of Mansfeld's imperial loyalist force at Warnstedt (1113)",
+    "kind": "event_bounded_imperial_loyalist_force",
+    "start_year": 1113,
+    "end_year": 1113,
+    "region": "Central Europe",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Reign-bounded Rum identity used for Mesud's Second Crusade campaign. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "continuity_note": "The rated actor is Hoyer's loyalist force acting for Henry V, not an all-regime Germany identity. This identity is confined to 1113; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
     "source_ids": [
-      "wave8_seljuks_iranica_rum",
-      "wave8_seljuks_tdv_mesud"
+      "wave8_germany_deutsche_biographie_hoyer",
+      "wave8_germany_deutsche_biographie_siegfried"
+    ]
+  },
+  {
+    "id": "saxon_princely_opposition_warnstedt_1113",
+    "name": "Saxon princely opposition at Warnstedt (1113)",
+    "kind": "event_bounded_princely_coalition",
+    "start_year": 1113,
+    "end_year": 1113,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the meeting force around Siegfried, Wiprecht, and their Saxon-Thuringian allies. This identity is confined to 1113; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_deutsche_biographie_hoyer",
+      "wave8_germany_deutsche_biographie_siegfried"
     ]
   },
   {
@@ -1878,17 +2099,18 @@
     ]
   },
   {
-    "id": "conrad_iii_german_crusader_army_1147",
-    "name": "Conrad III's German crusader army",
-    "kind": "campaign_force",
+    "id": "conrad_iii_german_crusader_host_dorylaeum_1147",
+    "name": "Conrad III's German crusader host at Dorylaeum (1147)",
+    "kind": "event_bounded_crusader_host",
     "start_year": 1147,
     "end_year": 1147,
     "region": "Anatolia",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Campaign-bounded German royal army in the Anatolian phase of the Second Crusade. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "continuity_note": "The rated actor is Conrad III's Second Crusade host in Anatolia, not a German state or later crusader contingent. This identity is confined to 1147; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
     "source_ids": [
-      "wave8_seljuks_tdv_mesud"
+      "wave8_germany_oxford_dorylaeum",
+      "wave8_germany_st_andrews_dorylaeum"
     ]
   },
   {
@@ -1963,6 +2185,36 @@
       "wave8_irish_dublin_city_walls",
       "wave8_irish_oxford_martin_1169_1172",
       "wave8_irish_ucc_annals_tigernach_1171"
+    ]
+  },
+  {
+    "id": "frederick_i_imperial_field_army_legnano_1176",
+    "name": "Frederick I's imperial field army at Legnano (1176)",
+    "kind": "event_bounded_imperial_field_army",
+    "start_year": 1176,
+    "end_year": 1176,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is Barbarossa's Legnano army, not every Holy Roman or German polity. This identity is confined to 1176; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_italian_culture_legnano",
+      "wave8_germany_newadvent_frederick_i"
+    ]
+  },
+  {
+    "id": "lombard_league_field_army_legnano_1176",
+    "name": "Lombard League field army at Legnano (1176)",
+    "kind": "event_bounded_urban_league_army",
+    "start_year": 1176,
+    "end_year": 1176,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the allied northern Italian communal field army at Legnano. This identity is confined to 1176; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_italian_culture_legnano",
+      "wave8_germany_newadvent_frederick_i"
     ]
   },
   {
@@ -7663,6 +7915,21 @@
     ]
   },
   {
+    "id": "landeswehr_iron_division_cesis_force_1919",
+    "name": "Baltische Landeswehr and Iron Division at Cēsis (1919)",
+    "kind": "event_bounded_baltic_german_formation",
+    "start_year": 1919,
+    "end_year": 1919,
+    "region": "Northern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the Baltic-German Landeswehr/Iron Division formation, not Weimar Germany or a timeless German people. This identity is confined to 1919; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_1914_1918_cesis",
+      "wave8_germany_latvia_estonia_cesis"
+    ]
+  },
+  {
     "id": "clio_cz_czechoslovakia_1919_5eb09851",
     "name": "Czechoslovakia",
     "kind": "polity",
@@ -7676,6 +7943,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "estonian_latvian_cesis_field_coalition_1919",
+    "name": "Estonian 3rd Division and Northern Latvian Brigade at Cēsis (1919)",
+    "kind": "event_bounded_independence_coalition",
+    "start_year": 1919,
+    "end_year": 1919,
+    "region": "Northern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The rated actor is the joint Estonian-Latvian field coalition in the June Cēsis fighting. This identity is confined to 1919; no rating is inherited by a predecessor, successor, ethnic label, state namesake, or another field formation.",
+    "source_ids": [
+      "wave8_germany_1914_1918_cesis",
+      "wave8_germany_latvia_estonia_cesis"
     ]
   },
   {
