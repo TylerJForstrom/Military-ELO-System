@@ -429,6 +429,20 @@ from .wave8_ecuador_independence import (
     wave8_ecuador_independence_cohort_counts,
     wave8_ecuador_independence_counts,
 )
+from .wave8_comanche import (
+    WAVE8_COMANCHE_CONTRACT_IDS,
+    WAVE8_COMANCHE_ENTITIES,
+    WAVE8_COMANCHE_HOLD_IDS,
+    WAVE8_COMANCHE_HOLDS,
+    WAVE8_COMANCHE_RESERVED_IDS,
+    WAVE8_COMANCHE_SOURCES,
+    install_wave8_comanche_entities,
+    install_wave8_comanche_sources,
+    promote_wave8_comanche_contracts,
+    validate_wave8_comanche_queue_contracts,
+    wave8_comanche_cohort_counts,
+    wave8_comanche_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -471,6 +485,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_SOMALI_IRISH_SA_RESERVED_IDS
     | WAVE8_ARGENTINE_INDEPENDENCE_RESERVED_IDS
     | WAVE8_ECUADOR_INDEPENDENCE_RESERVED_IDS
+    | WAVE8_COMANCHE_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1029,6 +1044,7 @@ def build_expanded_release(
     wave8_ecuador_independence_queue_validation = (
         validate_wave8_ecuador_independence_queue_contracts(hced)
     )
+    wave8_comanche_queue_validation = validate_wave8_comanche_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1358,6 +1374,7 @@ def build_expanded_release(
     install_wave8_somali_irish_sa_entities(release_entities)
     install_wave8_argentine_independence_entities(release_entities)
     install_wave8_ecuador_independence_entities(release_entities)
+    install_wave8_comanche_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.

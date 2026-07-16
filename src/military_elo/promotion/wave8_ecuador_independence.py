@@ -71,11 +71,7 @@ WAVE8_ECUADOR_INDEPENDENCE_SOURCES: tuple[dict[str, Any], ...] = (
     _source(
         "wave8_ecuador_army_independence_arms_history",
         "Ecuadorian Army arms history: independence campaigns",
-        (
-            "https://mail.ejercitoecuatoriano.mil.ec/contact-us/categoria/"
-            "139-sistema-de-armas/images/IMAGENES/RENDICION_2025/13BI/"
-            "procesos_de_contratacin_2024.pdf"
-        ),
+        "https://ejercitoecuatoriano.mil.ec/en/component/k2/caballeria",
         "Ecuadorian Army",
         "official_military_history",
         "ecuadorian_army_history",
@@ -334,7 +330,7 @@ def _signature() -> str:
 
 
 WAVE8_ECUADOR_INDEPENDENCE_FINAL_AUDIT_SIGNATURE = (
-    "7e364e908ab81cf894016b216d169c02178c22a63ef42ab10f49433d93c9fc75"
+    "54baafbcec5bc62ef91de85a326aa30c0e6a5c66b2da947a0adf65f30cc8a960"
 )
 
 
