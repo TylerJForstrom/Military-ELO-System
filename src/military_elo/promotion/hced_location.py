@@ -19,16 +19,16 @@ HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
 HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
-    "813e2f79d5a3fbc906c4732d84dae9a13ae786cb24eb81708e1d5fffb49be376"
+    "72c9686c4a749b6e5eda2de3ec100f5d0742e1aa1f20fe4c6aeaf14f7aa13e74"
 )
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "cbc70c0532b6670c7688a73d90cd35910b24d5364cc28640daed0638bbba2c8f"
+    "de4f4c7c8b2e54db0d241ea9b4a8493e9c45ebc965f7042eeb02bfc93e115b2e"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
     "6783605f9063b67956fd416a954aa9f84124388c843a0cbad16b24abcd90d75e"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "af90226f0168aea08ef3c9c3dc5040b8898eabbc8c1af35f3894ca17b64a7ad2"
+    "2462fb9965e178a89dda45f353b439d0bd08560a01c6fa95fa937991e408d18e"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
     "bde9fef40f273d1a2fa4a7113a6df7d5d38a3cd9f762bba2bffae511ff472c77"
@@ -41,12 +41,12 @@ HCED_WAVE5_CANDIDATE_BINDINGS = 4_195
 HCED_WAVE5_POINT_ASSERTIONS = 4_158
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_115
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_162
-HCED_EXPECTED_CANDIDATE_BINDINGS = 4_758
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 448
+HCED_EXPECTED_CANDIDATE_BINDINGS = 4_766
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 456
 HCED_EXPECTED_POINT_ASSERTIONS = 4_699
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_672
-HCED_EXPECTED_PROVENANCE_OBJECTS = 4_721
-HCED_EXPECTED_QUARANTINE_UNION = 107
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_680
+HCED_EXPECTED_PROVENANCE_OBJECTS = 4_729
+HCED_EXPECTED_QUARANTINE_UNION = 115
 HCED_EXPECTED_QUARANTINE_OVERLAP = 37
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
@@ -70,12 +70,18 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Balkans1944-1",
     "hced-Belfast1900-1",
     "hced-Belfast1901-1",
+    "hced-Blackwater1598-1",
     "hced-Burtinah1839-1",
     "hced-Cape St Vincent1797-1",
+    "hced-Clontarf1014-1",
+    "hced-Clontibret1595-1",
     "hced-Crazy Woman Creek1876-1",
     "hced-Crooked Creek1859-1",
+    "hced-Dublin (2nd)1171-1",
+    "hced-Dysert ODea1318-1",
     "hced-Empress Augusta Bay1943-1",
     "hced-Focchies1649-1",
+    "hced-Ford of the Biscuits1594-1",
     "hced-Freeman's Farm1776-1",
     "hced-Gilbert Islands1943-1",
     "hced-Girgil1847-1",
@@ -87,6 +93,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Kagul Lagoon1574-1",
     "hced-Komandorski Islands1943-1",
     "hced-Kota Bharu1941-1",
+    "hced-Limerick1651-1",
     "hced-Lizard1707-1",
     "hced-Mitla Pass1956-1",
     "hced-Monte Suella1866-1",
@@ -109,6 +116,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Slaak1631-1",
     "hced-Solomon Forks1857-1",
     "hced-St Pierre and Miquelon1793-1",
+    "hced-Tara980-1",
     "hced-Tatishchevo1774-1",
     "hced-Tristan de Cunha1815-1",
     "hced-Vaal Kranz1900-1",
@@ -133,8 +141,8 @@ HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS = (
     "hced-Balkans1944-1",
     "hced-Belfast1900-1",
     "hced-Belfast1901-1",
-    "hced-Burtinah1839-1",
     "hced-Bismarck1941-1",
+    "hced-Burtinah1839-1",
     "hced-Cape Engano1944-1",
     "hced-Cape St Vincent1797-1",
     "hced-Chieveley1899-1",

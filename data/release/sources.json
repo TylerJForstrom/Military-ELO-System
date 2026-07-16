@@ -6650,6 +6650,227 @@
     ]
   },
   {
+    "id": "wave8_irish_aia_tara_landscape",
+    "title": "The Impact of the Proposed M3 Motorway on Tara and its Cultural Landscape",
+    "url": "https://www.archaeological.org/pdfs/archaeologywatch/Tara/Tara_statement.pdf",
+    "publisher": "Archaeological Institute of America",
+    "license": "linked_reference",
+    "source_type": "academic_heritage_statement",
+    "accessed": "2026-07-16",
+    "source_family_id": "aia_tara_cultural_landscape",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_irish_askaboutireland_docwra",
+    "title": "Sir Henry Dowcra",
+    "url": "https://www.askaboutireland.ie/reading-room/history-heritage/history-of-ireland/the-ulster-plantation/sir-henry-dowcra/",
+    "publisher": "AskAboutIreland / Irish public libraries",
+    "license": "linked_reference",
+    "source_type": "national_heritage_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "askaboutireland_ulster_plantation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_irish_cambridge_strategy_tactics",
+    "title": "Strategy and Tactics in Irish Warfare, 1593–1601",
+    "url": "https://www.cambridge.org/core/journals/irish-historical-studies/article/abs/strategy-and-tactics-in-irish-warfare-15931601/6E8AF18F2C9485861A4494C3A6097531",
+    "publisher": "Irish Historical Studies / Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "irish_historical_studies_warfare_1593_1601",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_dublin_city_walls",
+    "title": "Dublin City Walls and Defences",
+    "url": "https://www.dublincity.ie/sites/default/files/media/file-uploads/2018-06/City_Walls_booklet_17_6_10.pdf",
+    "publisher": "Dublin City Council",
+    "license": "linked_reference",
+    "source_type": "municipal_heritage_publication",
+    "accessed": "2026-07-16",
+    "source_family_id": "dublin_city_walls_heritage",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_oxford_martin_1169_1172",
+    "title": "Allies and an Overlord, 1169–72",
+    "url": "https://academic.oup.com/book/26629/chapter-abstract/195321249",
+    "publisher": "Oxford University Press",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_new_history_ireland_volume_2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_irish_rct_limerick_1651",
+    "title": "Map of the siege of Limerick, 1651",
+    "url": "https://militarymaps.rct.uk/other-17th-century-conflicts/map-of-the-siege-of-limerick-1651-limerick-munster-ireland-52deg3953n-08deg3723w",
+    "publisher": "Royal Collection Trust",
+    "license": "linked_reference",
+    "source_type": "royal_collection_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "royal_collection_military_maps_limerick",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ria_oneill_nine_years_war",
+    "title": "Spouses, spies and subterfuge: the role and experience of women during the Nine Years War (1593–1603)",
+    "url": "https://hdl.handle.net/10468/11583",
+    "publisher": "Proceedings of the Royal Irish Academy; UCC CORA repository",
+    "license": "linked_reference",
+    "source_type": "peer_reviewed_academic_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "ria_proceedings_oneill_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_simms_dysert_odea",
+    "title": "The Battle of Dysert O’Dea and the Gaelic Resurgence in Thomond",
+    "url": "https://clarelibraries.ie/localstudies/history/battles-and-fortifications-in-clare/the-battle-of-dysert-odea-and-the-gaelic-resurgence-in-thomond/",
+    "publisher": "Clare County Library; originally Dál gCais 5 (1979)",
+    "license": "linked_reference",
+    "source_type": "reproduced_academic_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "simms_dysert_odea_1979",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_tcd_clontarf_combat",
+    "title": "‘Emperor of the Irish’: Brian Boru and the Battle of Clontarf 1014 — The Combat",
+    "url": "https://www.tcd.ie/library/exhibitions/boru/combat.php",
+    "publisher": "Trinity College Dublin Library",
+    "license": "linked_reference",
+    "source_type": "university_library_exhibition",
+    "accessed": "2026-07-16",
+    "source_family_id": "tcd_clontarf_1014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_annals_tigernach_1171",
+    "title": "The Annals of Tigernach, T1171.7–T1171.10",
+    "url": "https://celt.ucc.ie/published/T100002A/text024.html",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_annals_tigernach",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_annals_ulster_1014",
+    "title": "The Annals of Ulster, U1014",
+    "url": "https://celt.ucc.ie/published/T100001A/text585.html",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_annals_ulster",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_annals_ulster_980",
+    "title": "The Annals of Ulster, U980",
+    "url": "https://celt.ucc.ie/published/T100001A/text550.html",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_annals_ulster",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_beatha_aodha_ruaidh",
+    "title": "Beatha Aodha Ruaidh Uí Dhomhnaill",
+    "url": "https://celt.ucc.ie/document/T100080/",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_beatha_aodha_ruaidh",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_four_masters_1594_1598",
+    "title": "Annala Rioghachta Eireann: Annals of the Kingdom of Ireland, volume 6",
+    "url": "https://celt.ucc.ie/document/T100005F/",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_four_masters",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_hanmer_yellow_ford",
+    "title": "Portions of a manuscript history relating to Ireland",
+    "url": "https://celt.ucc.ie/document/E590002/",
+    "publisher": "University College Cork, CELT edition of The National Archives State Papers",
+    "license": "linked_reference",
+    "source_type": "edited_archival_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "tna_state_papers_hanmer_yellow_ford",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_ucc_ireton_limerick_1651",
+    "title": "A Letter from the Lord Deputy-General of Ireland upon the Surrender of Limerick, 1651",
+    "url": "https://celt.ucc.ie/document/E650001-024/",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_celt_ireton_limerick_1651",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_judean_1_maccabees_4",
     "title": "The Book of Maccabees I, chapter 4",
     "url": "https://www.sefaria.org/The_Book_of_Maccabees_I.4.1-35",

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 502,
-    "events": 5022,
-    "sources": 566,
-    "registry_polities": 1858
+    "entities": 519,
+    "events": 5030,
+    "sources": 582,
+    "registry_polities": 1875
   },
   "year_range": {
     "start": -1274,
@@ -102,6 +102,7 @@
     "accepted_wave8_garibaldi_hced_events": 4,
     "accepted_wave8_algiers_cheyenne_hced_events": 8,
     "accepted_wave8_dagestan_hced_events": 6,
+    "accepted_wave8_irish_history_hced_events": 8,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2632,7 +2633,98 @@
     ],
     "wave8_dagestan_entities_added": 2,
     "wave8_dagestan_sources_added": 8,
-    "hced_label_pass_input_rows": 5996,
+    "wave8_irish_history_counts": {
+      "country_quarantine_additions": 0,
+      "cross_source_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 1,
+      "new_entities": 17,
+      "new_sources": 16,
+      "newly_rated_events": 8,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 8,
+      "promotion_contracts": 8,
+      "related_hced_dispositions": 1,
+      "reviewed_hced_rows": 9,
+      "terminal_exclusions": 1
+    },
+    "wave8_irish_history_cohort_counts": {
+      "anglo_norman_dublin_1171": 1,
+      "battle_of_clontarf_1014": 1,
+      "battle_of_tara_980": 1,
+      "nine_years_war_1594_1603": 3,
+      "thomond_de_clare_conflict_1318": 1,
+      "wars_of_three_kingdoms_1651": 1
+    },
+    "wave8_irish_history_queue_validation": {
+      "promotion_contracts": 8,
+      "holds": 1,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_irish_history_integration_validation": {
+      "cross_source_duplicate_dispositions": 0,
+      "integration_dispositions": 1,
+      "related_hced_dispositions": 1
+    },
+    "wave8_irish_history_candidate_ids": [
+      "hced-Blackwater1598-1",
+      "hced-Clontarf1014-1",
+      "hced-Clontibret1595-1",
+      "hced-Dublin (2nd)1171-1",
+      "hced-Dysert ODea1318-1",
+      "hced-Ford of the Biscuits1594-1",
+      "hced-Limerick1651-1",
+      "hced-Tara980-1"
+    ],
+    "wave8_irish_history_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Derry1600-1",
+        "raw_row_sha256": "31ae2b15b65e5d5bf9822002ccc1dc9ba9dafe81eac6a06512b30b27f37eeede",
+        "canonical_event": {
+          "name": "Unopposed occupation of Derry",
+          "year_low": 1600,
+          "year_high": 1600,
+          "date_text": "1600",
+          "date_precision": "year",
+          "granularity": "unopposed_occupation",
+          "canonical_key": "unopposed_occupation_of_derry:1600:1600"
+        },
+        "disposition": "terminal_exclusion",
+        "hold_category": "not_an_engagement_unopposed_occupation",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "side_1_entity_ids": [
+          "docwra_lough_foyle_expedition_1600"
+        ],
+        "side_2_entity_ids": [],
+        "opposing_force_status": "none_evidenced",
+        "actor_override": true,
+        "evidence_refs": [
+          "wave8_irish_askaboutireland_docwra"
+        ],
+        "hold_reason": "The national heritage account states that Henry Docwra occupied Derry without opposition. No opposing Tyrone, Gaelic, Irish, or other formation is evidenced for this occupation, so there is no competitive tactical result to rate. Unknown is excluded and never encoded as a draw."
+      }
+    ],
+    "wave8_irish_history_integration_dispositions": [
+      {
+        "candidate_id": "hced-Dublin (1st)1171-1",
+        "source_dataset": "hced",
+        "hced_candidate_id": "hced-Dublin (2nd)1171-1",
+        "disposition": "distinct_same_year_engagement",
+        "relationship": "earlier_Ascall_counterattack_not_Ruaidri_siege",
+        "raw_row_sha256": "8e0dfd1b4fca7a7bc416fd2fcddb7c8e200cbea30e822dbc51374268e5549e2f",
+        "evidence_refs": [
+          "wave8_irish_dublin_city_walls",
+          "wave8_irish_oxford_martin_1169_1172",
+          "wave8_irish_ucc_annals_tigernach_1171"
+        ],
+        "reason": "Dublin (1st) is Ascall mac Ragnaill’s failed sea-borne counterattack; Dublin (2nd) is Ruaidrí Ua Conchobair’s later siege and the garrison sortie against its camp. Same city and year do not make them duplicates."
+      }
+    ],
+    "wave8_irish_history_entities_added": 17,
+    "wave8_irish_history_sources_added": 16,
+    "hced_label_pass_input_rows": 5987,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2645,7 +2737,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 608,
+      "reserved_candidate_contract": 617,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2657,9 +2749,9 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2470,
+      "no_unique_time_valid_label_match": 2462,
       "no_unique_time_valid_polity": 89,
-      "outside_continuity_policy": 102,
+      "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 42
     },

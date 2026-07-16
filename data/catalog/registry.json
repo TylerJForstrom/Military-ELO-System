@@ -662,6 +662,16 @@
       "region": "North America"
     },
     {
+      "id": "amlaib_cuaran_dublin_isles_tara_host_980",
+      "name": "Amlaíb Cúarán’s Dublin-and-Isles Host at Tara (980)",
+      "kind": "engagement_force",
+      "start_year": 980,
+      "end_year": 980,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
       "id": "clio_fr_capetian_k_1_1147_adac4a51",
       "name": "Angevin Empire",
       "kind": "empire",
@@ -1698,6 +1708,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "brian_boruma_clontarf_field_coalition_1014",
+      "name": "Brian Bóruma’s Clontarf Field Coalition (1014)",
+      "kind": "engagement_coalition",
+      "start_year": 1014,
+      "end_year": 1014,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "clio_gb_british_emp_2_1885_21fa9278",
@@ -3198,6 +3218,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "crown_enniskillen_relief_column_1594",
+      "name": "Crown Enniskillen Relief Column at Ford of the Biscuits (1594)",
+      "kind": "relief_column",
+      "start_year": 1594,
+      "end_year": 1594,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "crown_aragon_1164",
@@ -6794,6 +6824,46 @@
       "region": "Southern Africa"
     },
     {
+      "id": "bagenal_blackwater_relief_army_1598",
+      "name": "Henry Bagenal’s Blackwater Relief Army (1598)",
+      "kind": "relief_army",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "bagenal_monaghan_relief_column_1595",
+      "name": "Henry Bagenal’s Monaghan Relief Column (1595)",
+      "kind": "relief_column",
+      "start_year": 1595,
+      "end_year": 1595,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "docwra_lough_foyle_expedition_1600",
+      "name": "Henry Docwra’s Lough Foyle Expeditionary Force (1600)",
+      "kind": "expeditionary_force",
+      "start_year": 1600,
+      "end_year": 1600,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "ireton_new_model_army_limerick_1651",
+      "name": "Henry Ireton’s New Model Army at Limerick (1651)",
+      "kind": "siege_army",
+      "start_year": 1651,
+      "end_year": 1651,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
       "id": "tudor_lancastrian_army_1485",
       "name": "Henry Tudor's Army at Bosworth",
       "kind": "campaign_army",
@@ -7053,6 +7123,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hugh_dubh_oneill_limerick_garrison_1651",
+      "name": "Hugh Dubh O’Neill’s Confederate–Royalist Limerick Garrison (1651)",
+      "kind": "siege_garrison",
+      "start_year": 1651,
+      "end_year": 1651,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "hugh_oneill_clontibret_force_1595",
+      "name": "Hugh O’Neill’s Clontibret Force (1595)",
+      "kind": "engagement_force",
+      "start_year": 1595,
+      "end_year": 1595,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "clio_q101935_1622_f39be6a0",
@@ -10626,6 +10716,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "leinster_dublin_overseas_clontarf_coalition_1014",
+      "name": "Leinster–Dublin–Overseas Coalition at Clontarf (1014)",
+      "kind": "engagement_coalition",
+      "start_year": 1014,
+      "end_year": 1014,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
       "id": "clio_q1013_1967_31d0196b",
       "name": "Lesotho",
       "kind": "polity",
@@ -10981,6 +11081,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "maguire_allied_ford_biscuits_force_1594",
+      "name": "Maguire’s Allied Force at Ford of the Biscuits (1594)",
+      "kind": "engagement_coalition",
+      "start_year": 1594,
+      "end_year": 1594,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "clio_q133032_840_a9b86a6c",
@@ -11835,6 +11945,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "muircheartach_obrien_thomond_dysert_coalition_1318",
+      "name": "Muircheartach O’Brien’s Thomond Coalition at Dysert O’Dea (1318)",
+      "kind": "engagement_coalition",
+      "start_year": 1318,
+      "end_year": 1318,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
       "id": "clio_q42759_1987_9495bc48",
       "name": "Mujahideen",
       "kind": "polity",
@@ -11897,6 +12017,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "mael_sechnaill_clann_cholmain_tara_host_980",
+      "name": "Máel Sechnaill’s Clann Cholmáin Host at Tara (980)",
+      "kind": "engagement_force",
+      "start_year": 980,
+      "end_year": 980,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "metis_provisional_government_saskatchewan_1885",
@@ -12895,6 +13025,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "oneill_odonnell_yellow_ford_host_1598",
+      "name": "O’Neill–O’Donnell Yellow Ford Host (1598)",
+      "kind": "engagement_coalition",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "clio_mm_bagan_850_595ecb9e",
@@ -15598,6 +15738,16 @@
       "region": "England"
     },
     {
+      "id": "richard_de_clare_dysert_army_1318",
+      "name": "Richard de Clare’s Army at Dysert O’Dea (1318)",
+      "kind": "engagement_force",
+      "start_year": 1318,
+      "end_year": 1318,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
+    },
+    {
       "id": "clio_q162192_1836_494dcd9f",
       "name": "Riograndense Republic",
       "kind": "republic",
@@ -15701,6 +15851,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Western Europe"
+    },
+    {
+      "id": "ruaidri_ua_conchobair_dublin_siege_coalition_1171",
+      "name": "Ruaidrí Ua Conchobair’s Dublin Siege Coalition (1171)",
+      "kind": "siege_coalition",
+      "start_year": 1171,
+      "end_year": 1171,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "clio_q872644_455_7bb6951b",
@@ -17153,6 +17313,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "strongbow_cogan_dublin_garrison_1171",
+      "name": "Strongbow and Miles de Cogan’s Dublin Garrison (1171)",
+      "kind": "siege_garrison",
+      "start_year": 1171,
+      "end_year": 1171,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland and the Irish Sea"
     },
     {
       "id": "sucre_quito_liberating_army_1821_1822",
@@ -19954,11 +20124,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1858,
-    "rated_entities": 496,
-    "rated_events": 5022,
+    "registry_polities": 1875,
+    "rated_entities": 512,
+    "rated_events": 5030,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18372,
+    "unresolved_event_candidates": 18364,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19990,6 +20160,7 @@
     "candidate_keyed_wave8_garibaldi_hced_events": 4,
     "candidate_keyed_wave8_algiers_cheyenne_hced_events": 8,
     "candidate_keyed_wave8_dagestan_hced_events": 6,
+    "candidate_keyed_wave8_irish_history_hced_events": 8,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20000,21 +20171,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4758,
-      "candidate_keyed_reviewed_contracts": 448,
+      "hced_candidate_bindings": 4766,
+      "candidate_keyed_reviewed_contracts": 456,
       "geojson_points": 4699,
-      "modern_location_country_assertions": 4672,
-      "location_provenance_objects": 4721,
-      "point_fields_withheld_by_quarantine": 59,
+      "modern_location_country_assertions": 4680,
+      "location_provenance_objects": 4729,
+      "point_fields_withheld_by_quarantine": 67,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 85,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 37,
-      "unique_events_with_any_quarantined_field": 107,
-      "point_quarantine_candidate_manifest_sha256": "cbc70c0532b6670c7688a73d90cd35910b24d5364cc28640daed0638bbba2c8f",
+      "unique_events_with_any_quarantined_field": 115,
+      "point_quarantine_candidate_manifest_sha256": "de4f4c7c8b2e54db0d241ea9b4a8493e9c45ebc965f7042eeb02bfc93e115b2e",
       "country_quarantine_candidate_manifest_sha256": "6783605f9063b67956fd416a954aa9f84124388c843a0cbad16b24abcd90d75e",
-      "quarantine_policy_sha256": "813e2f79d5a3fbc906c4732d84dae9a13ae786cb24eb81708e1d5fffb49be376",
+      "quarantine_policy_sha256": "72c9686c4a749b6e5eda2de3ec100f5d0742e1aa1f20fe4c6aeaf14f7aa13e74",
       "assertion_status": {
-        "unreviewed_source_assertion": 4721
+        "unreviewed_source_assertion": 4729
       },
       "verified_location_assertions": {
         "availability": "not_available",

@@ -1212,6 +1212,36 @@
     ]
   },
   {
+    "id": "amlaib_cuaran_dublin_isles_tara_host_980",
+    "name": "Amlaíb Cúarán’s Dublin-and-Isles Host at Tara (980)",
+    "kind": "engagement_force",
+    "start_year": 980,
+    "end_year": 980,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Dublin-and-Isles force opposed at Tara. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_aia_tara_landscape",
+      "wave8_irish_ucc_annals_ulster_980"
+    ]
+  },
+  {
+    "id": "mael_sechnaill_clann_cholmain_tara_host_980",
+    "name": "Máel Sechnaill’s Clann Cholmáin Host at Tara (980)",
+    "kind": "engagement_force",
+    "start_year": 980,
+    "end_year": 980,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Máel Sechnaill mac Domnaill’s Tara field force. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_aia_tara_landscape",
+      "wave8_irish_ucc_annals_ulster_980"
+    ]
+  },
+  {
     "id": "kingdom_france",
     "name": "Kingdom of France",
     "kind": "kingdom",
@@ -1276,6 +1306,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "brian_boruma_clontarf_field_coalition_1014",
+    "name": "Brian Bóruma’s Clontarf Field Coalition (1014)",
+    "kind": "engagement_coalition",
+    "start_year": 1014,
+    "end_year": 1014,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Brian Bóruma’s field coalition at Clontarf. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_tcd_clontarf_combat",
+      "wave8_irish_ucc_annals_ulster_1014"
+    ]
+  },
+  {
+    "id": "leinster_dublin_overseas_clontarf_coalition_1014",
+    "name": "Leinster–Dublin–Overseas Coalition at Clontarf (1014)",
+    "kind": "engagement_coalition",
+    "start_year": 1014,
+    "end_year": 1014,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Leinster, Dublin, and overseas contingents at Clontarf. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_tcd_clontarf_combat",
+      "wave8_irish_ucc_annals_ulster_1014"
     ]
   },
   {
@@ -1476,6 +1536,38 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
+    "id": "ruaidri_ua_conchobair_dublin_siege_coalition_1171",
+    "name": "Ruaidrí Ua Conchobair’s Dublin Siege Coalition (1171)",
+    "kind": "siege_coalition",
+    "start_year": 1171,
+    "end_year": 1171,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Ruaidrí Ua Conchobair and the named allied forces besieging Dublin. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_dublin_city_walls",
+      "wave8_irish_oxford_martin_1169_1172",
+      "wave8_irish_ucc_annals_tigernach_1171"
+    ]
+  },
+  {
+    "id": "strongbow_cogan_dublin_garrison_1171",
+    "name": "Strongbow and Miles de Cogan’s Dublin Garrison (1171)",
+    "kind": "siege_garrison",
+    "start_year": 1171,
+    "end_year": 1171,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Dublin garrison that sortied against Ruaidrí’s siege coalition. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_dublin_city_walls",
+      "wave8_irish_oxford_martin_1169_1172",
+      "wave8_irish_ucc_annals_tigernach_1171"
     ]
   },
   {
@@ -1711,6 +1803,34 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "muircheartach_obrien_thomond_dysert_coalition_1318",
+    "name": "Muircheartach O’Brien’s Thomond Coalition at Dysert O’Dea (1318)",
+    "kind": "engagement_coalition",
+    "start_year": 1318,
+    "end_year": 1318,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the O’Brien, O’Dea, O’Connor, and O’Hehir coalition at Dysert O’Dea. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_simms_dysert_odea"
+    ]
+  },
+  {
+    "id": "richard_de_clare_dysert_army_1318",
+    "name": "Richard de Clare’s Army at Dysert O’Dea (1318)",
+    "kind": "engagement_force",
+    "start_year": 1318,
+    "end_year": 1318,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Richard de Clare’s divided field army at Dysert O’Dea. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_simms_dysert_odea"
     ]
   },
   {
@@ -2507,6 +2627,114 @@
     "start_year": 1590
   },
   {
+    "id": "crown_enniskillen_relief_column_1594",
+    "name": "Crown Enniskillen Relief Column at Ford of the Biscuits (1594)",
+    "kind": "relief_column",
+    "start_year": 1594,
+    "end_year": 1594,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Crown column carrying supplies toward the Enniskillen garrison. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_ria_oneill_nine_years_war",
+      "wave8_irish_ucc_beatha_aodha_ruaidh",
+      "wave8_irish_ucc_four_masters_1594_1598"
+    ]
+  },
+  {
+    "id": "maguire_allied_ford_biscuits_force_1594",
+    "name": "Maguire’s Allied Force at Ford of the Biscuits (1594)",
+    "kind": "engagement_coalition",
+    "start_year": 1594,
+    "end_year": 1594,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Hugh Maguire’s force with Cormac MacBaron, Cenél Eóghain, and O’Donnell contingents at the ford. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_ria_oneill_nine_years_war",
+      "wave8_irish_ucc_beatha_aodha_ruaidh",
+      "wave8_irish_ucc_four_masters_1594_1598"
+    ]
+  },
+  {
+    "id": "bagenal_monaghan_relief_column_1595",
+    "name": "Henry Bagenal’s Monaghan Relief Column (1595)",
+    "kind": "relief_column",
+    "start_year": 1595,
+    "end_year": 1595,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Bagenal’s Crown column returning from provisioning Monaghan. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_cambridge_strategy_tactics",
+      "wave8_irish_ucc_four_masters_1594_1598"
+    ]
+  },
+  {
+    "id": "hugh_oneill_clontibret_force_1595",
+    "name": "Hugh O’Neill’s Clontibret Force (1595)",
+    "kind": "engagement_force",
+    "start_year": 1595,
+    "end_year": 1595,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Hugh O’Neill’s force in the Clontibret action. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_cambridge_strategy_tactics",
+      "wave8_irish_ucc_four_masters_1594_1598"
+    ]
+  },
+  {
+    "id": "bagenal_blackwater_relief_army_1598",
+    "name": "Henry Bagenal’s Blackwater Relief Army (1598)",
+    "kind": "relief_army",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Crown army sent to relieve the Blackwater fort in August 1598. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_ucc_beatha_aodha_ruaidh",
+      "wave8_irish_ucc_four_masters_1594_1598",
+      "wave8_irish_ucc_hanmer_yellow_ford"
+    ]
+  },
+  {
+    "id": "oneill_odonnell_yellow_ford_host_1598",
+    "name": "O’Neill–O’Donnell Yellow Ford Host (1598)",
+    "kind": "engagement_coalition",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the O’Neill, O’Donnell, and allied Ulster host at the Yellow Ford. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_ucc_beatha_aodha_ruaidh",
+      "wave8_irish_ucc_four_masters_1594_1598",
+      "wave8_irish_ucc_hanmer_yellow_ford"
+    ]
+  },
+  {
+    "id": "docwra_lough_foyle_expedition_1600",
+    "name": "Henry Docwra’s Lough Foyle Expeditionary Force (1600)",
+    "kind": "expeditionary_force",
+    "start_year": 1600,
+    "end_year": 1600,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to Docwra’s Lough Foyle expedition and unopposed occupation of Derry. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_askaboutireland_docwra"
+    ]
+  },
+  {
     "id": "guzow_rokosz_forces_1607",
     "name": "Rokosz forces at Guzów (1607)",
     "kind": "confederate_forces",
@@ -2669,6 +2897,36 @@
     "continuity_note": "Event-bounded force under Mykhailo Krychevsky in the 1649 Loyew campaign. No rating is inherited by the Zaporozhian Host generally, modern Ukraine, or unrelated Cossack rebellions.",
     "source_ids": [
       "wave8_nas_ukraine_loyew_1649"
+    ]
+  },
+  {
+    "id": "ireton_new_model_army_limerick_1651",
+    "name": "Henry Ireton’s New Model Army at Limerick (1651)",
+    "kind": "siege_army",
+    "start_year": 1651,
+    "end_year": 1651,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the English Parliamentarian besieging army at Limerick. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_rct_limerick_1651",
+      "wave8_irish_ucc_ireton_limerick_1651"
+    ]
+  },
+  {
+    "id": "hugh_dubh_oneill_limerick_garrison_1651",
+    "name": "Hugh Dubh O’Neill’s Confederate–Royalist Limerick Garrison (1651)",
+    "kind": "siege_garrison",
+    "start_year": 1651,
+    "end_year": 1651,
+    "region": "Ireland and the Irish Sea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Irish Confederate Catholic and English Royalist garrison defending Limerick. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
+    "source_ids": [
+      "wave8_irish_rct_limerick_1651",
+      "wave8_irish_ucc_ireton_limerick_1651"
     ]
   },
   {
