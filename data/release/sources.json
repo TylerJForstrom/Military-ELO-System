@@ -6197,6 +6197,126 @@
     ]
   },
   {
+    "id": "wave8_dagestan_bre_akhulgo",
+    "title": "Storming of Akhulgo, 1839",
+    "url": "https://old.bigenc.ru/domestic_history/text/1842769",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_akhulgo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_bse_caucasian_war",
+    "title": "Caucasian War, 1817-1864",
+    "url": "https://www.booksite.ru/fulltext/1/001/008/057/377.htm",
+    "publisher": "Great Soviet Encyclopedia digital transcription",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_soviet_encyclopedia_caucasian_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_gammer_muslim_resistance",
+    "title": "Muslim Resistance to the Tsar: Shamil and the Conquest of Chechnia and Daghestan",
+    "url": "https://api.pageplace.de/preview/DT0400.9781135308988_A24427534/preview-9781135308988_A24427534.pdf",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_preview",
+    "accessed": "2026-07-16",
+    "source_family_id": "gammer_muslim_resistance_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_hadji_ali_eyewitness",
+    "title": "Hadji-Ali: An Eyewitness Account of Shamil's Gazavat",
+    "url": "https://www.historycaucasus.com/blog/hadji-ali-an-eyewitness-account-of-shamils-gazavat",
+    "publisher": "Historical Memory of the North Caucasus; translated primary account",
+    "license": "Citation and link only",
+    "source_type": "translated_near_contemporary_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "hadji_ali_eyewitness_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_milyutin_1839",
+    "title": "Description of the Military Operations of 1839 in Northern Dagestan",
+    "url": "https://rusneb.ru/catalog/000199_000009_003542331/",
+    "publisher": "National Electronic Library of Russia; 1850 Military Educational Press edition",
+    "license": "Citation and link only",
+    "source_type": "digitized_participant_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "milyutin_north_dagestan_1839",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_nplg_orbeliani_chronology",
+    "title": "The Chronology of Grigol Orbeliani's Life and Work",
+    "url": "https://dspace.nplg.gov.ge/bitstream/1234/327868/1/TheChronologyOfGrigolOrbelianisLifeAndWork.pdf",
+    "publisher": "National Parliamentary Library of Georgia",
+    "license": "Citation and link only",
+    "source_type": "institutional_historical_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "nplg_orbeliani_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_takhnaeva_akhulgo",
+    "title": "Akhulgo: On the Failed Peace Negotiations According to Local Chronicles and Official Russian Sources",
+    "url": "https://doi.org/10.32653/CH16185-103",
+    "publisher": "History, Archeology and Ethnography of the Caucasus",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "takhnaeva_akhulgo_2020",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dagestan_tdv_shamil",
+    "title": "Seyh Samil",
+    "url": "https://islamansiklopedisi.org.tr/seyh-samil",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_islam_encyclopedia_shamil",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_ecuador_anh_guayaquil_flags",
     "title": "The flags of Guayaquil in the independence process, 1820-1822",
     "url": "https://www.academiahistoria.org.ec/index.php/boletinesANHE/article/download/313/598",

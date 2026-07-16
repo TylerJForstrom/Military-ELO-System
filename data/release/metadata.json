@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 500,
-    "events": 5016,
-    "sources": 558,
-    "registry_polities": 1856
+    "entities": 502,
+    "events": 5022,
+    "sources": 566,
+    "registry_polities": 1858
   },
   "year_range": {
     "start": -1274,
@@ -101,6 +101,7 @@
     "accepted_wave8_comanche_hced_events": 4,
     "accepted_wave8_garibaldi_hced_events": 4,
     "accepted_wave8_algiers_cheyenne_hced_events": 8,
+    "accepted_wave8_dagestan_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2569,7 +2570,69 @@
     ],
     "wave8_algiers_cheyenne_entities_added": 10,
     "wave8_algiers_cheyenne_sources_added": 25,
-    "hced_label_pass_input_rows": 6002,
+    "wave8_dagestan_counts": {
+      "country_quarantine_additions": 2,
+      "cross_lane_hced_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 2,
+      "new_sources": 8,
+      "newly_rated_events": 6,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_dagestan_cohort_counts": {
+      "ghazi_muhammad_northern_dagestan_campaign_1831": 1,
+      "grabbe_northern_dagestan_campaign_1839": 2,
+      "shamil_zaqatala_campaign_1853": 1,
+      "vorontsov_dagestan_campaign_1847": 2
+    },
+    "wave8_dagestan_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_dagestan_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_dagestan_candidate_ids": [
+      "hced-Aghdash Awkh1831-1",
+      "hced-Akhulgo1839-1",
+      "hced-Burtinah1839-1",
+      "hced-Girgil1847-1",
+      "hced-Saltah1847-1",
+      "hced-Zakataly1853-1"
+    ],
+    "wave8_dagestan_holds": [],
+    "wave8_dagestan_outcome_overrides": [
+      {
+        "candidate_id": "hced-Girgil1847-1",
+        "raw_winner_label": "Russia",
+        "raw_loser_label": "Dagestan",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "caucasian_imamate_shamil_1834_1859"
+        ],
+        "outcome_source_ids": [
+          "wave8_dagestan_gammer_muslim_resistance",
+          "wave8_dagestan_tdv_shamil"
+        ],
+        "outcome_source_family_ids": [
+          "gammer_muslim_resistance_monograph",
+          "tdv_islam_encyclopedia_shamil"
+        ],
+        "correction_note": "Gammer and the TDV Encyclopedia both describe Vorontsov's June 1847 assault on Girgil/Gergebil as repulsed."
+      }
+    ],
+    "wave8_dagestan_entities_added": 2,
+    "wave8_dagestan_sources_added": 8,
+    "hced_label_pass_input_rows": 5996,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2582,7 +2645,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 602,
+      "reserved_candidate_contract": 608,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2594,7 +2657,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2476,
+      "no_unique_time_valid_label_match": 2470,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,

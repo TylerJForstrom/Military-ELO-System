@@ -4410,6 +4410,20 @@
     ]
   },
   {
+    "id": "dagestani_imamate_ghazi_muhammad_1829_1832",
+    "name": "Dagestani Imamate under Ghazi Muhammad",
+    "kind": "theocratic_imamate",
+    "start_year": 1829,
+    "end_year": 1832,
+    "region": "Northeastern Caucasus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Regime-bounded imamate from Ghazi Muhammad's proclamation as imam of Dagestan in 1829 through his death at Gimrah in 1832. No rating is inherited by a generic Dagestan label, Hamza Bek's intervening regime, Shamil's later imamate, any ethnic community, or a modern state.",
+    "source_ids": [
+      "wave8_dagestan_gammer_muslim_resistance"
+    ]
+  },
+  {
     "id": "clio_q31_1830_244be2c4",
     "name": "Kingdom of Belgium",
     "kind": "kingdom",
@@ -4488,6 +4502,22 @@
     "source_ids": [
       "britannica_carlism",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "caucasian_imamate_shamil_1834_1859",
+    "name": "Caucasian Imamate under Imam Shamil",
+    "kind": "theocratic_imamate",
+    "start_year": 1834,
+    "end_year": 1859,
+    "region": "Northeastern Caucasus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Regime-bounded Caucasian Imamate from Shamil's proclamation in September 1834 through his surrender in 1859. No rating is inherited by a generic Dagestan or Murid label, either earlier imam, Chechnya, any constituent people, or a modern state.",
+    "source_ids": [
+      "wave8_dagestan_gammer_muslim_resistance",
+      "wave8_dagestan_hadji_ali_eyewitness",
+      "wave8_dagestan_tdv_shamil"
     ]
   },
   {

@@ -2157,6 +2157,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "caucasian_imamate_shamil_1834_1859",
+      "name": "Caucasian Imamate under Imam Shamil",
+      "kind": "theocratic_imamate",
+      "start_year": 1834,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northeastern Caucasus"
+    },
+    {
       "id": "clio_q929_1961_2742f300",
       "name": "Central African Republic",
       "kind": "republic",
@@ -3371,6 +3381,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Wales"
+    },
+    {
+      "id": "dagestani_imamate_ghazi_muhammad_1829_1832",
+      "name": "Dagestani Imamate under Ghazi Muhammad",
+      "kind": "theocratic_imamate",
+      "start_year": 1829,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northeastern Caucasus"
     },
     {
       "id": "clio_q5349053_bce208_9c485fc7",
@@ -19934,11 +19954,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1856,
-    "rated_entities": 494,
-    "rated_events": 5016,
+    "registry_polities": 1858,
+    "rated_entities": 496,
+    "rated_events": 5022,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18378,
+    "unresolved_event_candidates": 18372,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19969,6 +19989,7 @@
     "candidate_keyed_wave8_comanche_hced_events": 4,
     "candidate_keyed_wave8_garibaldi_hced_events": 4,
     "candidate_keyed_wave8_algiers_cheyenne_hced_events": 8,
+    "candidate_keyed_wave8_dagestan_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19979,21 +20000,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4752,
-      "candidate_keyed_reviewed_contracts": 442,
-      "geojson_points": 4697,
-      "modern_location_country_assertions": 4668,
-      "location_provenance_objects": 4717,
-      "point_fields_withheld_by_quarantine": 55,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
+      "hced_candidate_bindings": 4758,
+      "candidate_keyed_reviewed_contracts": 448,
+      "geojson_points": 4699,
+      "modern_location_country_assertions": 4672,
+      "location_provenance_objects": 4721,
+      "point_fields_withheld_by_quarantine": 59,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 85,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 35,
-      "unique_events_with_any_quarantined_field": 103,
-      "point_quarantine_candidate_manifest_sha256": "c562d57cb3e5d4c3daa82aa949064e0f157b0fdd31fbbae109f78c7908e56a62",
-      "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
-      "quarantine_policy_sha256": "dc3a141be33d26f8ce06a72d18782592d58caebcfd438384393ea9f6a7801e34",
+      "point_country_quarantine_overlap": 37,
+      "unique_events_with_any_quarantined_field": 107,
+      "point_quarantine_candidate_manifest_sha256": "cbc70c0532b6670c7688a73d90cd35910b24d5364cc28640daed0638bbba2c8f",
+      "country_quarantine_candidate_manifest_sha256": "6783605f9063b67956fd416a954aa9f84124388c843a0cbad16b24abcd90d75e",
+      "quarantine_policy_sha256": "813e2f79d5a3fbc906c4732d84dae9a13ae786cb24eb81708e1d5fffb49be376",
       "assertion_status": {
-        "unreviewed_source_assertion": 4717
+        "unreviewed_source_assertion": 4721
       },
       "verified_location_assertions": {
         "availability": "not_available",
