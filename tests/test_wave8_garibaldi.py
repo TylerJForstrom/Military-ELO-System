@@ -194,7 +194,7 @@ class Wave8GaribaldiTests(unittest.TestCase):
                 "new_sources": 9,
                 "newly_rated_events": 4,
                 "outcome_overrides": 1,
-                "point_quarantine_additions": 3,
+                "point_quarantine_additions": 2,
                 "promotion_contracts": 4,
                 "reviewed_hced_rows": 6,
             },
@@ -514,7 +514,6 @@ class Wave8GaribaldiTests(unittest.TestCase):
 
         expected_points = {
             "hced-Monte Suella1866-1",
-            "hced-Tre Ponti1859-1",
             "hced-Villa Glori1867-1",
         }
         self.assertEqual(WAVE8_GARIBALDI_POINT_QUARANTINE_ADDITIONS, expected_points)

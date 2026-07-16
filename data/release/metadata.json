@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 490,
-    "events": 5008,
-    "sources": 533,
-    "registry_polities": 1846
+    "entities": 500,
+    "events": 5016,
+    "sources": 558,
+    "registry_polities": 1856
   },
   "year_range": {
     "start": -1274,
@@ -100,6 +100,7 @@
     "accepted_wave8_ecuador_independence_hced_events": 6,
     "accepted_wave8_comanche_hced_events": 4,
     "accepted_wave8_garibaldi_hced_events": 4,
+    "accepted_wave8_algiers_cheyenne_hced_events": 8,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2250,7 +2251,7 @@
       "new_sources": 9,
       "newly_rated_events": 4,
       "outcome_overrides": 1,
-      "point_quarantine_additions": 3,
+      "point_quarantine_additions": 2,
       "promotion_contracts": 4,
       "reviewed_hced_rows": 6
     },
@@ -2382,7 +2383,193 @@
     ],
     "wave8_garibaldi_entities_added": 5,
     "wave8_garibaldi_sources_added": 9,
-    "hced_label_pass_input_rows": 6016,
+    "wave8_algiers_cheyenne_counts": {
+      "holds": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 10,
+      "new_sources": 25,
+      "newly_rated_events": 8,
+      "outcome_overrides": 0,
+      "promotion_contracts": 8,
+      "reviewed_hced_rows": 14,
+      "terminal_exclusions": 3
+    },
+    "wave8_algiers_cheyenne_cohort_counts": {
+      "algiers": 4,
+      "cheyenne_indians": 4
+    },
+    "wave8_algiers_cheyenne_queue_validation": {
+      "promotion_contracts": 8,
+      "holds": 3,
+      "reviewed_hced_rows": 14,
+      "terminal_exclusions": 3
+    },
+    "wave8_algiers_cheyenne_candidate_ids": [
+      "hced-Algiers1775-1",
+      "hced-Bougie1671-1",
+      "hced-Cabo de Gata1815-1",
+      "hced-Crazy Woman Creek1876-1",
+      "hced-Plum Creek, Nebraska1867-1",
+      "hced-Solomon Forks1857-1",
+      "hced-Tripoli, Libya1803-1",
+      "hced-War Bonnet Creek1876-1"
+    ],
+    "wave8_algiers_cheyenne_holds": [
+      {
+        "candidate_id": "hced-Algiers1688-1",
+        "raw_row_sha256": "1a297c79891c7464e6b6d6517460c4a28f147c0bcf442695a9d5ce41f2402b22",
+        "canonical_event": {
+          "canonical_key": "bombardment_of_algiers:1688:1688",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Bombardment of Algiers",
+          "year_low": 1688,
+          "year_high": 1688
+        },
+        "disposition": "hold",
+        "hold_category": "tactical_outcome_not_directly_adjudicated",
+        "reviewed_actor_entity_ids": [
+          "dey_regency_of_algiers_1671_1830",
+          "kingdom_france"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The sources verify the 1688 French bombardment and the opposing dey-ruled Regency, but do not support converting survival, damage, or withdrawal into a mechanically defensible tactical victor.",
+        "evidence_refs": [
+          "wave8_cambridge_algeria_dey_regency",
+          "wave8_louvre_algiers_1688",
+          "wave8_pur_algiers_bombardments_1688"
+        ]
+      },
+      {
+        "candidate_id": "hced-Algiers1783-1",
+        "raw_row_sha256": "5ed467957ba6db9d8305d7014d916391c7c530bf4dae7356b2126e85ed9cd017",
+        "canonical_event": {
+          "canonical_key": "bombardment_of_algiers:1783:1783",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Bombardment of Algiers",
+          "year_low": 1783,
+          "year_high": 1783
+        },
+        "disposition": "hold",
+        "hold_category": "tactical_outcome_not_directly_adjudicated",
+        "reviewed_actor_entity_ids": [
+          "dey_regency_of_algiers_1671_1830",
+          "spanish_empire"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The source confirms Barceló's 1783 bombardment against the Regency, but the available evidence does not adjudicate the engagement as the categorical Algerine win asserted by HCED.",
+        "evidence_refs": [
+          "wave8_armada_algiers_bombardment_1783",
+          "wave8_cambridge_algeria_dey_regency"
+        ]
+      },
+      {
+        "candidate_id": "hced-Algiers1824-1",
+        "raw_row_sha256": "a1fa47e450c07dbac57d041d7f2081b8d879a92d7da485ffe741ab3533351800",
+        "canonical_event": {
+          "canonical_key": "british_attack_on_algiers:1824:1824",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "British Attack on Algiers",
+          "year_low": 1824,
+          "year_high": 1824
+        },
+        "disposition": "hold",
+        "hold_category": "event_boundary_and_outcome_unresolved",
+        "reviewed_actor_entity_ids": [
+          "united_kingdom",
+          "dey_regency_of_algiers_1671_1830"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The reviewed sources attest British coercive operations against Algiers in 1824, but the locked row does not delimit one competitive engagement whose tactical result can be rated without invention.",
+        "evidence_refs": [
+          "wave8_cambridge_algeria_dey_regency",
+          "wave8_cambridge_menacing_tides_algiers_1824",
+          "wave8_gilder_algiers_attack_orders_1824"
+        ]
+      }
+    ],
+    "wave8_algiers_cheyenne_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Ash Creek1864-1",
+        "raw_row_sha256": "2a706c4dce2542b5feefdb936f8dab26dcdcf18332cd9b283ce678d963805c5e",
+        "canonical_event": {
+          "canonical_key": "attack_on_lean_bear_s_village:1864:1864",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Attack on Lean Bear's Village",
+          "year_low": 1864,
+          "year_high": 1864
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "noncompetitive_attack_on_peace_village",
+        "reviewed_actor_description": [
+          "United States troops",
+          "Lean Bear's Cheyenne peace village"
+        ],
+        "reviewed_granularity": "non_ratable_attack",
+        "hold_reason": "The reviewed episode was an attack on Lean Bear's peace village/delegation context rather than an opposing-force engagement. Civilian vulnerability is not converted into a Cheyenne tactical defeat.",
+        "evidence_refs": [
+          "wave8_nps_black_kettle",
+          "wave8_nps_sand_creek_timeline"
+        ]
+      },
+      {
+        "candidate_id": "hced-Powder1865-1",
+        "raw_row_sha256": "550c63cb09262c4751beedc76402ad14a15f4c6b0a5f75f93ec87f21d37bf89c",
+        "canonical_event": {
+          "canonical_key": "powder_river_village_attack:1865:1865",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Powder River Village Attack",
+          "year_low": 1865,
+          "year_high": 1865
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "village_attack_without_competitive_outcome",
+        "reviewed_actor_description": [
+          "United States expeditionary force and scouts",
+          "Indigenous village or camp force"
+        ],
+        "reviewed_granularity": "non_ratable_attack",
+        "hold_reason": "The row conflates a Powder River/Sawyers-expedition village-attack setting with a generic Cheyenne loser. The evidence does not establish the exact competitive sides and result required for Elo.",
+        "evidence_refs": [
+          "wave8_oupress_war_party_in_blue",
+          "wave8_wyohistory_powder_1865"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sappa Creek1875-1",
+        "raw_row_sha256": "0be149e65e633b40df14e940665d4660ae9aa671e7692616ec4d603bba0660af",
+        "canonical_event": {
+          "canonical_key": "sappa_creek_massacre:1875:1875",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Sappa Creek Massacre",
+          "year_low": 1875,
+          "year_high": 1875
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "massacre_with_civilian_camp",
+        "reviewed_actor_description": [
+          "United States troops and scouts",
+          "Cheyenne camp including civilians"
+        ],
+        "reviewed_granularity": "non_ratable_attack",
+        "hold_reason": "The National Register evidence classifies Sappa Creek as a massacre involving a Cheyenne camp with civilians, not a clean competitive engagement. It is permanently excluded from Elo.",
+        "evidence_refs": [
+          "wave8_kansas_shpo_sappa_1875",
+          "wave8_nps_sand_creek_timeline"
+        ]
+      }
+    ],
+    "wave8_algiers_cheyenne_entities_added": 10,
+    "wave8_algiers_cheyenne_sources_added": 25,
+    "hced_label_pass_input_rows": 6002,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2395,7 +2582,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 588,
+      "reserved_candidate_contract": 602,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2407,7 +2594,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2490,
+      "no_unique_time_valid_label_match": 2476,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,

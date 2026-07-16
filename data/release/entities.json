@@ -2688,6 +2688,34 @@
     ]
   },
   {
+    "id": "algerine_corsair_squadron_bugia_1671",
+    "name": "Algerine corsair squadron and Bugia garrison (1671)",
+    "kind": "state_naval_garrison_force",
+    "start_year": 1671,
+    "end_year": 1671,
+    "region": "Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Algerine squadron and Bugia garrison opposed in the 1671 action. No rating is inherited by the city, all corsairs, or another Algerine formation.",
+    "source_ids": [
+      "wave8_rmg_bugia_bay_1671"
+    ]
+  },
+  {
+    "id": "dey_regency_of_algiers_1671_1830",
+    "name": "Dey-ruled Regency of Algiers (1671–1830)",
+    "kind": "state",
+    "start_year": 1671,
+    "end_year": 1830,
+    "region": "North Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The dey-ruled state is bounded from 1671 to the French conquest in 1830; it is neither the city of Algiers nor a timeless corsair label. No rating is inherited by colonial or modern Algeria.",
+    "source_ids": [
+      "wave8_cambridge_algeria_dey_regency"
+    ]
+  },
+  {
     "id": "maratha_confederacy",
     "name": "Maratha Confederacy",
     "kind": "confederation",
@@ -3106,6 +3134,21 @@
     ]
   },
   {
+    "id": "tuscan_naval_contingent_algiers_1775",
+    "name": "Tuscan naval contingent at Algiers (1775)",
+    "kind": "state_naval_force",
+    "start_year": 1775,
+    "end_year": 1775,
+    "region": "Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Tuscan naval contingent serving with the Spanish expedition of 1775. No rating is inherited by Tuscany outside this expedition or by a later Italian state.",
+    "source_ids": [
+      "wave8_armada_algiers_expedition_1775",
+      "wave8_treccani_acton_algiers_1775"
+    ]
+  },
+  {
     "id": "united_states",
     "name": "United States",
     "kind": "state",
@@ -3236,6 +3279,21 @@
     "continuity_note": "Bounded to the Batavian Republic before the Kingdom of Holland. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "source_ids": [
       "wave7_west_royal_house_netherlands"
+    ]
+  },
+  {
+    "id": "yusuf_karamanli_regency_of_tripoli_1795_1832",
+    "name": "Yusuf Karamanli's Regency of Tripoli (1795–1832)",
+    "kind": "state",
+    "start_year": 1795,
+    "end_year": 1832,
+    "region": "North Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The state identity is bounded to Yusuf Karamanli's rule and corrects HCED's Algiers label for the 1803 Tripoli action. No rating is inherited by the city, Ottoman Tripolitan formations outside the window, or modern Libya.",
+    "source_ids": [
+      "wave8_cambridge_yusuf_karamanli_1795",
+      "wave8_cambridge_yusuf_karamanli_1832"
     ]
   },
   {
@@ -5043,6 +5101,21 @@
     ]
   },
   {
+    "id": "sumner_cheyenne_field_force_solomons_fork_1857",
+    "name": "Cheyenne field force opposed by Sumner at Solomon's Fork (1857)",
+    "kind": "indigenous_field_force",
+    "start_year": 1857,
+    "end_year": 1857,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Cheyenne field force in Sumner's 1857 Solomon's Fork action. No rating is inherited by Cheyenne ethnicity, another band, or a modern tribal government.",
+    "source_ids": [
+      "wave8_kshs_solomons_fork_1857",
+      "wave8_nps_sand_creek_timeline"
+    ]
+  },
+  {
     "id": "mexican_conservative_forces",
     "name": "Mexican Conservative Forces",
     "kind": "civil_war_faction",
@@ -5385,6 +5458,20 @@
     ]
   },
   {
+    "id": "davis_murie_pawnee_scout_detachments_plum_creek_1867",
+    "name": "Davis and Murie Pawnee scout detachments at Plum Creek (1867)",
+    "kind": "indigenous_auxiliary_force",
+    "start_year": 1867,
+    "end_year": 1867,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Pawnee scout detachments led by Davis and Murie in the Plum Creek fight. No rating is inherited by the Pawnee people, another scout formation, or a modern tribal government.",
+    "source_ids": [
+      "wave8_oupress_war_party_in_blue"
+    ]
+  },
+  {
     "id": "dominion_canada_1867_1931",
     "name": "Dominion of Canada (1867–1931)",
     "kind": "dominion",
@@ -5442,6 +5529,20 @@
       "nzhistory_titokowaru_1868",
       "nzhistory_te_kooti_war",
       "nzpolice_te_kooti_campaign"
+    ]
+  },
+  {
+    "id": "turkey_leg_northern_cheyenne_band_plum_creek_1867",
+    "name": "Turkey Leg's Northern Cheyenne band at Plum Creek (1867)",
+    "kind": "indigenous_war_band",
+    "start_year": 1867,
+    "end_year": 1867,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Northern Cheyenne band under Turkey Leg in the Plum Creek fight. No rating is inherited by Cheyenne ethnicity, another band, or a modern tribal government.",
+    "source_ids": [
+      "wave8_oupress_war_party_in_blue"
     ]
   },
   {
@@ -5660,6 +5761,51 @@
     "source_ids": [
       "army_indian_wars_summary",
       "nps_great_sioux_war"
+    ]
+  },
+  {
+    "id": "mackenzie_scout_coalition_red_fork_1876",
+    "name": "Mackenzie's scout coalition at Red Fork (1876)",
+    "kind": "indigenous_auxiliary_coalition",
+    "start_year": 1876,
+    "end_year": 1876,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Indigenous scout coalition serving Mackenzie's column at Red Fork. No rating is inherited by any member people, later scout unit, or modern tribal government.",
+    "source_ids": [
+      "wave8_nps_dull_knife_nrhp",
+      "wave8_wyohistory_dull_knife_1876"
+    ]
+  },
+  {
+    "id": "red_fork_northern_cheyenne_camp_defenders_1876",
+    "name": "Northern Cheyenne camp defenders at Red Fork (1876)",
+    "kind": "indigenous_camp_force",
+    "start_year": 1876,
+    "end_year": 1876,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defenders of the Northern Cheyenne camp at Red Fork. No rating is inherited by Cheyenne ethnicity, another band, or a modern tribal government.",
+    "source_ids": [
+      "wave8_nps_dull_knife_nrhp",
+      "wave8_wyohistory_dull_knife_1876"
+    ]
+  },
+  {
+    "id": "red_cloud_agency_cheyenne_war_party_warbonnet_1876",
+    "name": "Red Cloud Agency Cheyenne war party at Warbonnet Creek (1876)",
+    "kind": "indigenous_war_party",
+    "start_year": 1876,
+    "end_year": 1876,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Cheyenne war party from the Red Cloud Agency at Warbonnet Creek. No rating is inherited by Cheyenne ethnicity, another war party, or a modern tribal government.",
+    "source_ids": [
+      "wave8_history_nebraska_warbonnet_1876",
+      "wave8_nps_black_kettle"
     ]
   },
   {

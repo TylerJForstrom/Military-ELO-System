@@ -5881,6 +5881,99 @@
     ]
   },
   {
+    "id": "wave8_armada_algiers_bombardment_1783",
+    "title": "El bombardeo de Argel de 1783",
+    "url": "https://armada.defensa.gob.es/archivo/mardigitalrevistas/cuadernosihcn/88cuaderno/Cuaderno88Cap03.pdf",
+    "publisher": "Spanish Navy",
+    "license": "linked_reference",
+    "source_type": "official_naval_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "spanish_navy_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_armada_algiers_expedition_1775",
+    "title": "La expedición española contra Argel de 1775",
+    "url": "https://armada.defensa.gob.es/archivo/mardigitalrevistas/rhn/2018/2018n142.pdf",
+    "publisher": "Spanish Navy",
+    "license": "linked_reference",
+    "source_type": "official_naval_history_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "spanish_navy_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_boe_algiers_expedition_1775",
+    "title": "Historical account of the expedition against Algiers in 1775",
+    "url": "https://www.boe.es/gazeta/dias/1857/11/29/pdfs/GMD-1857-1790.pdf",
+    "publisher": "Gaceta de Madrid / Boletín Oficial del Estado",
+    "license": "linked_reference",
+    "source_type": "government_historical_periodical",
+    "accessed": "2026-07-16",
+    "source_family_id": "boe_gaceta_madrid",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cambridge_algeria_dey_regency",
+    "title": "Ecologies, Societies, Cultures and the State, 1516–1830",
+    "url": "https://www.cambridge.org/core/books/history-of-algeria/ecologies-societies-cultures-and-the-state-15161830/6C59DEAD9F70913EC060EDD1465FA6A5",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_algeria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_cambridge_menacing_tides_algiers_1824",
+    "title": "To Give Law to the World",
+    "url": "https://www.cambridge.org/core/books/menacing-tides/to-give-law-to-the-world/FC7703CC1A5129829598EDC7C1025BA2",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_menacing_tides",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_cambridge_yusuf_karamanli_1795",
+    "title": "Introduction: Tripoli and Yusuf Karamanli",
+    "url": "https://www.cambridge.org/core/journals/royal-historical-society-camden-fifth-series/article/introduction/711BCC84C67DDBD1C2CDCAEA59D8C04D",
+    "publisher": "Cambridge University Press / Royal Historical Society",
+    "license": "linked_reference",
+    "source_type": "academic_critical_edition",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_camden_fifth_series",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_cambridge_yusuf_karamanli_1832",
+    "title": "Memoir of George Grey, 1809–1833",
+    "url": "https://www.cambridge.org/core/journals/royal-historical-society-camden-fifth-series/article/memoir-of-george-grey-18091833/A88A8E97EA795D967778D10F2473F570",
+    "publisher": "Cambridge University Press / Royal Historical Society",
+    "license": "linked_reference",
+    "source_type": "academic_critical_edition",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_camden_fifth_series",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_canada_batoche_history",
     "title": "History of Batoche National Historic Site",
     "url": "https://parks.canada.ca/lhn-nhs/sk/batoche/culture/histoire-history",
@@ -6382,6 +6475,19 @@
     ]
   },
   {
+    "id": "wave8_gilder_algiers_attack_orders_1824",
+    "title": "British orders concerning the 1824 expedition to Algiers",
+    "url": "https://www.gilderlehrman.org/collection/glc07895",
+    "publisher": "Gilder Lehrman Institute of American History",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_document",
+    "accessed": "2026-07-16",
+    "source_family_id": "gilder_lehrman",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_great_russian_encyclopedia_pugachev",
     "title": "Pugachev Uprising, 1773-1775",
     "url": "https://old.bigenc.ru/domestic_history/text/3172674",
@@ -6404,6 +6510,20 @@
     "source_type": "academic_public_history",
     "accessed": "2026-07-16",
     "source_family_id": "harvard_imperiia_pugachev",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_history_nebraska_warbonnet_1876",
+    "title": "Skirmish at Warbonnet Creek",
+    "url": "https://history.nebraska.gov/publications_section/skirmish-at-warbonnet-creek/",
+    "publisher": "Nebraska State Historical Society",
+    "license": "linked_reference",
+    "source_type": "state_historical_society_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nebraska_state_historical_society",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -6475,6 +6595,46 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_kansas_shpo_sappa_1875",
+    "title": "Sappa Creek Battlefield National Register nomination",
+    "url": "https://khri.kansasgis.org/photos_docs/153-31_4.pdf",
+    "publisher": "Kansas State Historic Preservation Office / National Register",
+    "license": "U.S. Government work",
+    "source_type": "national_register_nomination",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_register_kansas",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kshs_solomons_fork_1857",
+    "title": "The Kiowa and Comanche Campaign of 1860",
+    "url": "https://www.kansashistory.gov/p/the-kiowa-and-comanche-campaign-of-1860/13142",
+    "publisher": "Kansas Historical Society",
+    "license": "linked_reference",
+    "source_type": "state_historical_society_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "kansas_historical_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_louvre_algiers_1688",
+    "title": "Le bombardement d'Alger par le maréchal d'Estrées, 1er juillet 1688",
+    "url": "https://arts-graphiques.louvre.fr/detail/oeuvres/0/536169-Le-bombardement-dAlger-par-le-marechal-dEstrees-le-1er-juillet-1688",
+    "publisher": "Musée du Louvre",
+    "license": "linked_reference",
+    "source_type": "museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "musee_du_louvre",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -6782,6 +6942,103 @@
     ]
   },
   {
+    "id": "wave8_nhhc_macedonian_1815",
+    "title": "Macedonian I",
+    "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/m/macedonian-i.html",
+    "publisher": "Naval History and Heritage Command",
+    "license": "U.S. Government work",
+    "source_type": "official_ship_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_naval_history_heritage_command",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_nhhc_mashouda_1815",
+    "title": "Capture of the Algerine frigate Mashouda, 17 June 1815",
+    "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-c/uss-constellation-frigate-1797-1853/kn-3489.html",
+    "publisher": "Naval History and Heritage Command",
+    "license": "U.S. Government work",
+    "source_type": "government_museum_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_naval_history_heritage_command",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_nhhc_philadelphia_1803",
+    "title": "Capture of the Frigate USS Philadelphia",
+    "url": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/c/capture-of-the-frigate-uss-philadelphia.html",
+    "publisher": "Naval History and Heritage Command",
+    "license": "U.S. Government work",
+    "source_type": "digitized_primary_documents",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_naval_history_heritage_command",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_nps_black_kettle",
+    "title": "Black Kettle",
+    "url": "https://www.nps.gov/waba/learn/historyculture/black-kettle.htm",
+    "publisher": "National Park Service",
+    "license": "U.S. Government work",
+    "source_type": "government_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_nps_dull_knife_nrhp",
+    "title": "Dull Knife Battlefield National Register nomination",
+    "url": "https://npgallery.nps.gov/NRHP/GetAsset/NRHP/79002609_text",
+    "publisher": "National Park Service",
+    "license": "U.S. Government work",
+    "source_type": "national_register_nomination",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_nps_sand_creek_timeline",
+    "title": "Sand Creek Massacre National Historic Site timeline",
+    "url": "https://www.nps.gov/sand/learn/timeline.htm",
+    "publisher": "National Park Service",
+    "license": "U.S. Government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oupress_war_party_in_blue",
+    "title": "War Party in Blue: Pawnee Scouts in the U.S. Army",
+    "url": "https://www.oupress.com/9780806184418/war-party-in-blue/",
+    "publisher": "University of Oklahoma Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_oklahoma_press",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_polish_czech_statistics_domazlice",
     "title": "Domažlice and the Hussite victory of 1431",
     "url": "https://csu.gov.cz/produkty/13-3231-06-za_rok_2005-domazlice",
@@ -6877,6 +7134,47 @@
     ]
   },
   {
+    "id": "wave8_pur_algiers_bombardments_1688",
+    "title": "Les bombardements d'Alger de 1682, 1683 et 1688",
+    "url": "https://books.openedition.org/pur/129300?lang=fr",
+    "publisher": "Presses universitaires de Rennes",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "presses_universitaires_rennes",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_rah_algiers_landing_1775",
+    "title": "Desembarco español en Argel (8 July 1775)",
+    "url": "https://historia-hispanica.rah.es/hechos/1386877-1775-8-vii",
+    "publisher": "Real Academia de la Historia",
+    "license": "linked_reference",
+    "source_type": "scholarly_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "real_academia_historia_spain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rmg_bugia_bay_1671",
+    "title": "Action at Bugia Bay, 8 May 1671",
+    "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-141785",
+    "publisher": "Royal Museums Greenwich",
+    "license": "linked_reference",
+    "source_type": "museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "royal_museums_greenwich",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_ssau_campaign_kazan_pugachev",
     "title": "Campaign against Kazan: the fatal misadventure of Pugachev's Rebellion",
     "url": "https://journals.ssau.ru/hpp/article/view/29591",
@@ -6888,6 +7186,19 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_treccani_acton_algiers_1775",
+    "title": "John Francis Edward Acton",
+    "url": "https://www.treccani.it/enciclopedia/john-francis-edward-acton_%28Dizionario-Biografico%29/",
+    "publisher": "Treccani",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -7033,6 +7344,33 @@
     "source_type": "archaeological_assessment",
     "accessed": "2026-07-16",
     "source_family_id": "cotswold_archaeology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wyohistory_dull_knife_1876",
+    "title": "The Dull Knife Fight of 1876",
+    "url": "https://www.wyohistory.org/encyclopedia/dull-knife-fight-1876-troops-attack-cheyenne-village-red-fork-powder-river",
+    "publisher": "Wyoming State Historical Society",
+    "license": "linked_reference",
+    "source_type": "state_historical_society_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "wyoming_state_historical_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wyohistory_powder_1865",
+    "title": "The Battle of Bonepile Creek, 1865: The Sawyers Expedition",
+    "url": "https://www.wyohistory.org/encyclopedia/battle-bonepile-creek-1865-sawyers-expedition",
+    "publisher": "Wyoming State Historical Society",
+    "license": "linked_reference",
+    "source_type": "state_historical_society_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "wyoming_state_historical_society",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]

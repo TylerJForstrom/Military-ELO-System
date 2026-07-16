@@ -559,7 +559,6 @@ WAVE8_GARIBALDI_EXPECTED_CANDIDATE_IDS = frozenset(_ROW_HASHES)
 WAVE8_GARIBALDI_POINT_QUARANTINE_ADDITIONS = frozenset(
     {
         "hced-Monte Suella1866-1",
-        "hced-Tre Ponti1859-1",
         "hced-Villa Glori1867-1",
     }
 )
@@ -711,7 +710,7 @@ def wave8_garibaldi_audit_signature() -> str:
 
 # Patched to the measured payload after the fixtures and dispositions are final.
 WAVE8_GARIBALDI_FINAL_AUDIT_SIGNATURE = (
-    "8cbd1ae341dd7056a626d973622fb3876b03c7da0f73563137ad5e77623d9c98"
+    "c6f6d64b4f1535295fb07248edd0618d5c7616b9c9ec1bd8e41fc50dfc9d93f3"
 )
 
 
@@ -853,15 +852,14 @@ def _validate_static() -> None:
 
     expected_points = {
         "hced-Monte Suella1866-1",
-        "hced-Tre Ponti1859-1",
         "hced-Villa Glori1867-1",
     }
     if WAVE8_GARIBALDI_POINT_QUARANTINE_ADDITIONS != expected_points:
         raise ValueError(f"{_LANE_NAME} point quarantine contract changed")
     if WAVE8_GARIBALDI_COUNTRY_QUARANTINE_ADDITIONS:
         raise ValueError(f"{_LANE_NAME} invented a country quarantine")
-    if not WAVE8_GARIBALDI_POINT_QUARANTINE_ADDITIONS <= WAVE8_GARIBALDI_RESERVED_IDS:
-        raise ValueError(f"{_LANE_NAME} point quarantine references an unowned row")
+    if not WAVE8_GARIBALDI_POINT_QUARANTINE_ADDITIONS <= WAVE8_GARIBALDI_CONTRACT_IDS:
+        raise ValueError(f"{_LANE_NAME} point quarantine references an unrated row")
 
     if set(WAVE8_GARIBALDI_CROSS_LANE_DISPOSITIONS) != {_PALERMO_NAPLES_OWNER_ID}:
         raise ValueError(f"{_LANE_NAME} cross-lane boundary changed")

@@ -461,6 +461,22 @@ from .wave8_garibaldi import (
     wave8_garibaldi_cohort_counts,
     wave8_garibaldi_counts,
 )
+from .wave8_algiers_cheyenne import (
+    WAVE8_ALGIERS_CHEYENNE_CONTRACT_IDS,
+    WAVE8_ALGIERS_CHEYENNE_ENTITIES,
+    WAVE8_ALGIERS_CHEYENNE_HOLD_IDS,
+    WAVE8_ALGIERS_CHEYENNE_HOLDS,
+    WAVE8_ALGIERS_CHEYENNE_RESERVED_IDS,
+    WAVE8_ALGIERS_CHEYENNE_SOURCES,
+    WAVE8_ALGIERS_CHEYENNE_TERMINAL_EXCLUSION_IDS,
+    WAVE8_ALGIERS_CHEYENNE_TERMINAL_EXCLUSIONS,
+    install_wave8_algiers_cheyenne_entities,
+    install_wave8_algiers_cheyenne_sources,
+    promote_wave8_algiers_cheyenne_contracts,
+    validate_wave8_algiers_cheyenne_queue_contracts,
+    wave8_algiers_cheyenne_cohort_counts,
+    wave8_algiers_cheyenne_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -505,6 +521,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ECUADOR_INDEPENDENCE_RESERVED_IDS
     | WAVE8_COMANCHE_RESERVED_IDS
     | WAVE8_GARIBALDI_RESERVED_IDS
+    | WAVE8_ALGIERS_CHEYENNE_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -903,7 +920,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 53
+        len(HCED_POINT_QUARANTINE_IDS) != 55
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 83
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1071,6 +1088,9 @@ def build_expanded_release(
     )
     wave8_comanche_queue_validation = validate_wave8_comanche_queue_contracts(hced)
     wave8_garibaldi_queue_validation = validate_wave8_garibaldi_queue_contracts(hced)
+    wave8_algiers_cheyenne_queue_validation = (
+        validate_wave8_algiers_cheyenne_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1402,6 +1422,7 @@ def build_expanded_release(
     install_wave8_ecuador_independence_entities(release_entities)
     install_wave8_comanche_entities(release_entities)
     install_wave8_garibaldi_entities(release_entities)
+    install_wave8_algiers_cheyenne_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -1954,6 +1975,41 @@ def build_expanded_release(
             *wave8_comanche_events,
         ],
     )
+    wave8_algiers_cheyenne_events = promote_wave8_algiers_cheyenne_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+            *wave8_fast17_events,
+            *wave8_naples_events,
+            *wave8_somali_irish_sa_events,
+            *wave8_argentine_independence_events,
+            *wave8_ecuador_independence_events,
+            *wave8_comanche_events,
+            *wave8_garibaldi_events,
+        ],
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -1980,6 +2036,7 @@ def build_expanded_release(
         *wave8_ecuador_independence_events,
         *wave8_comanche_events,
         *wave8_garibaldi_events,
+        *wave8_algiers_cheyenne_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -2032,6 +2089,8 @@ def build_expanded_release(
             *WAVE8_ECUADOR_INDEPENDENCE_HOLD_IDS,
             *WAVE8_COMANCHE_HOLD_IDS,
             *WAVE8_GARIBALDI_HOLD_IDS,
+            *WAVE8_ALGIERS_CHEYENNE_HOLD_IDS,
+            *WAVE8_ALGIERS_CHEYENNE_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -2084,6 +2143,7 @@ def build_expanded_release(
         *wave8_ecuador_independence_events,
         *wave8_comanche_events,
         *wave8_garibaldi_events,
+        *wave8_algiers_cheyenne_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -2282,6 +2342,7 @@ def build_expanded_release(
     install_wave8_ecuador_independence_sources(sources_by_id)
     install_wave8_comanche_sources(sources_by_id)
     install_wave8_garibaldi_sources(sources_by_id)
+    install_wave8_algiers_cheyenne_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -2313,6 +2374,7 @@ def build_expanded_release(
         *wave8_ecuador_independence_events,
         *wave8_comanche_events,
         *wave8_garibaldi_events,
+        *wave8_algiers_cheyenne_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -2344,6 +2406,7 @@ def build_expanded_release(
         *wave8_ecuador_independence_events,
         *wave8_comanche_events,
         *wave8_garibaldi_events,
+        *wave8_algiers_cheyenne_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -2374,6 +2437,7 @@ def build_expanded_release(
             | WAVE8_ECUADOR_INDEPENDENCE_CONTRACT_IDS
             | WAVE8_COMANCHE_CONTRACT_IDS
             | WAVE8_GARIBALDI_CONTRACT_IDS
+            | WAVE8_ALGIERS_CHEYENNE_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -2437,6 +2501,10 @@ def build_expanded_release(
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_COMANCHE_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_GARIBALDI_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_ALGIERS_CHEYENNE_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -2636,6 +2704,7 @@ def build_expanded_release(
         - len(wave8_ecuador_independence_events)
         - len(wave8_comanche_events)
         - len(wave8_garibaldi_events)
+        - len(wave8_algiers_cheyenne_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -2702,6 +2771,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_comanche_hced_events": len(wave8_comanche_events),
         "candidate_keyed_wave8_garibaldi_hced_events": len(wave8_garibaldi_events),
+        "candidate_keyed_wave8_algiers_cheyenne_hced_events": len(
+            wave8_algiers_cheyenne_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -2912,6 +2984,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_comanche_hced_events": len(wave8_comanche_events),
             "accepted_wave8_garibaldi_hced_events": len(wave8_garibaldi_events),
+            "accepted_wave8_algiers_cheyenne_hced_events": len(
+                wave8_algiers_cheyenne_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -3453,6 +3528,34 @@ def build_expanded_release(
             ],
             "wave8_garibaldi_entities_added": len(WAVE8_GARIBALDI_ENTITIES),
             "wave8_garibaldi_sources_added": len(WAVE8_GARIBALDI_SOURCES),
+            "wave8_algiers_cheyenne_counts": wave8_algiers_cheyenne_counts(),
+            "wave8_algiers_cheyenne_cohort_counts": (
+                wave8_algiers_cheyenne_cohort_counts()
+            ),
+            "wave8_algiers_cheyenne_queue_validation": (
+                wave8_algiers_cheyenne_queue_validation
+            ),
+            "wave8_algiers_cheyenne_candidate_ids": sorted(
+                WAVE8_ALGIERS_CHEYENNE_CONTRACT_IDS
+            ),
+            "wave8_algiers_cheyenne_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ALGIERS_CHEYENNE_HOLDS.items()
+                )
+            ],
+            "wave8_algiers_cheyenne_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ALGIERS_CHEYENNE_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_algiers_cheyenne_entities_added": len(
+                WAVE8_ALGIERS_CHEYENNE_ENTITIES
+            ),
+            "wave8_algiers_cheyenne_sources_added": len(
+                WAVE8_ALGIERS_CHEYENNE_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -3646,6 +3749,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_comanche_hced_events": len(wave8_comanche_events),
         "candidate_keyed_wave8_garibaldi_hced_events": len(wave8_garibaldi_events),
+        "candidate_keyed_wave8_algiers_cheyenne_hced_events": len(
+            wave8_algiers_cheyenne_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

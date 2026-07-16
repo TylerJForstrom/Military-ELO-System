@@ -590,6 +590,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "algerine_corsair_squadron_bugia_1671",
+      "name": "Algerine corsair squadron and Bugia garrison (1671)",
+      "kind": "state_naval_garrison_force",
+      "start_year": 1671,
+      "end_year": 1671,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mediterranean"
+    },
+    {
       "id": "clio_ma_almohad_emp_1139_2bb98e8d",
       "name": "Almohad Caliphate",
       "kind": "caliphate",
@@ -2321,6 +2331,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sumner_cheyenne_field_force_solomons_fork_1857",
+      "name": "Cheyenne field force opposed by Sumner at Solomon's Fork (1857)",
+      "kind": "indigenous_field_force",
+      "start_year": 1857,
+      "end_year": 1857,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q52028_1775_dced8253",
       "name": "Chiangmai",
       "kind": "polity",
@@ -3428,6 +3448,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "davis_murie_pawnee_scout_detachments_plum_creek_1867",
+      "name": "Davis and Murie Pawnee scout detachments at Plum Creek (1867)",
+      "kind": "indigenous_auxiliary_force",
+      "start_year": 1867,
+      "end_year": 1867,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q49322_1475_9f103b95",
       "name": "Demak Sultanate",
       "kind": "sultanate",
@@ -3523,6 +3553,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "dey_regency_of_algiers_1671_1830",
+      "name": "Dey-ruled Regency of Algiers (1671–1830)",
+      "kind": "state",
+      "start_year": 1671,
+      "end_year": 1830,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
     },
     {
       "id": "clio_q43048_1206_80d83511",
@@ -10858,6 +10898,16 @@
       "region": "Upper Canada"
     },
     {
+      "id": "mackenzie_scout_coalition_red_fork_1876",
+      "name": "Mackenzie's scout coalition at Red Fork (1876)",
+      "kind": "indigenous_auxiliary_coalition",
+      "start_year": 1876,
+      "end_year": 1876,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q1019_1960_4e595f87",
       "name": "Madagascar",
       "kind": "polity",
@@ -12493,6 +12543,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "red_fork_northern_cheyenne_camp_defenders_1876",
+      "name": "Northern Cheyenne camp defenders at Red Fork (1876)",
+      "kind": "indigenous_camp_force",
+      "start_year": 1876,
+      "end_year": 1876,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q1050942_1094_32d11861",
@@ -14441,6 +14501,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "red_cloud_agency_cheyenne_war_party_warbonnet_1876",
+      "name": "Red Cloud Agency Cheyenne war party at Warbonnet Creek (1876)",
+      "kind": "indigenous_war_party",
+      "start_year": 1876,
+      "end_year": 1876,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "red_cloud_plains_coalition_1866",
@@ -18353,6 +18423,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "turkey_leg_northern_cheyenne_band_plum_creek_1867",
+      "name": "Turkey Leg's Northern Cheyenne band at Plum Creek (1867)",
+      "kind": "indigenous_war_band",
+      "start_year": 1867,
+      "end_year": 1867,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "turkish_national_movement",
       "name": "Turkish National Movement",
       "kind": "national_movement_and_ankara_government",
@@ -18394,6 +18474,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "tuscan_naval_contingent_algiers_1775",
+      "name": "Tuscan naval contingent at Algiers (1775)",
+      "kind": "state_naval_force",
+      "start_year": 1775,
+      "end_year": 1775,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mediterranean"
     },
     {
       "id": "clio_cn_tuyuhun_287_2956d70f",
@@ -19560,6 +19650,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "yusuf_karamanli_regency_of_tripoli_1795_1832",
+      "name": "Yusuf Karamanli's Regency of Tripoli (1795–1832)",
+      "kind": "state",
+      "start_year": 1795,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
+    },
+    {
       "id": "clio_et_zagwe_947_848572a4",
       "name": "Zagwe dynasty",
       "kind": "dynastic_state",
@@ -19834,11 +19934,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1846,
-    "rated_entities": 484,
-    "rated_events": 5008,
+    "registry_polities": 1856,
+    "rated_entities": 494,
+    "rated_events": 5016,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18386,
+    "unresolved_event_candidates": 18378,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19868,6 +19968,7 @@
     "candidate_keyed_wave8_ecuador_independence_hced_events": 6,
     "candidate_keyed_wave8_comanche_hced_events": 4,
     "candidate_keyed_wave8_garibaldi_hced_events": 4,
+    "candidate_keyed_wave8_algiers_cheyenne_hced_events": 8,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19878,21 +19979,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4744,
-      "candidate_keyed_reviewed_contracts": 434,
-      "geojson_points": 4692,
-      "modern_location_country_assertions": 4660,
-      "location_provenance_objects": 4709,
-      "point_fields_withheld_by_quarantine": 53,
+      "hced_candidate_bindings": 4752,
+      "candidate_keyed_reviewed_contracts": 442,
+      "geojson_points": 4697,
+      "modern_location_country_assertions": 4668,
+      "location_provenance_objects": 4717,
+      "point_fields_withheld_by_quarantine": 55,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 35,
-      "unique_events_with_any_quarantined_field": 101,
-      "point_quarantine_candidate_manifest_sha256": "5f0803d3e5c935514787a80e5896976c75700a741ba042aa6dffb8e9d8d9b5ef",
+      "unique_events_with_any_quarantined_field": 103,
+      "point_quarantine_candidate_manifest_sha256": "c562d57cb3e5d4c3daa82aa949064e0f157b0fdd31fbbae109f78c7908e56a62",
       "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
-      "quarantine_policy_sha256": "73a4075894dd5fd1f021c8cca8fe188b79df73f4353eb5b13a3174e211f7d6fd",
+      "quarantine_policy_sha256": "dc3a141be33d26f8ce06a72d18782592d58caebcfd438384393ea9f6a7801e34",
       "assertion_status": {
-        "unreviewed_source_assertion": 4709
+        "unreviewed_source_assertion": 4717
       },
       "verified_location_assertions": {
         "availability": "not_available",
