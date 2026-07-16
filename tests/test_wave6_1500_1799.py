@@ -2,7 +2,6 @@ import hashlib
 import inspect
 import json
 import unittest
-from collections import Counter
 from pathlib import Path
 
 from military_elo.models import Entity, Event, Source
@@ -49,9 +48,7 @@ def _embedded_hced_rows():
 
 
 def _embedded_wikidata_rows():
-    return [
-        contract["raw_row"] for contract in WAVE6_WIKIDATA_EXCLUSIONS.values()
-    ]
+    return [contract["raw_row"] for contract in WAVE6_WIKIDATA_EXCLUSIONS.values()]
 
 
 class Wave6EarlyModernInventoryTests(unittest.TestCase):
@@ -132,9 +129,7 @@ class Wave6EarlyModernInventoryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "raw-row fingerprint changed"):
             validate_wave6_queue_contracts(changed, _embedded_wikidata_rows())
 
-        missing = [
-            row for row in hced if row["candidate_id"] != "hced-Tondibi1591-1"
-        ]
+        missing = [row for row in hced if row["candidate_id"] != "hced-Tondibi1591-1"]
         with self.assertRaisesRegex(ValueError, "expected exactly one queue row"):
             validate_wave6_queue_contracts(missing, _embedded_wikidata_rows())
 
@@ -217,7 +212,9 @@ class Wave6EarlyModernInventoryTests(unittest.TestCase):
             },
         )
 
-    def test_reserved_rows_never_enter_generic_crosswalk_or_label_fallback(self) -> None:
+    def test_reserved_rows_never_enter_generic_crosswalk_or_label_fallback(
+        self,
+    ) -> None:
         row = WAVE6_HCED_CONTRACTS["hced-Tondibi1591-1"]["raw_row"]
         result = promote_hced_crosswalk_rows(
             [row],
@@ -275,9 +272,7 @@ class Wave6EarlyModernPromotionTests(unittest.TestCase):
         self.assertEqual(len(self.events), 76)
         self.assertEqual(set(self.by_candidate), WAVE6_HCED_CONTRACT_IDS)
         self.assertEqual(len({row["id"] for row in self.events}), 76)
-        self.assertEqual(
-            len({row["canonical_event_key"] for row in self.events}), 76
-        )
+        self.assertEqual(len({row["canonical_event_key"] for row in self.events}), 76)
         self.assertFalse(WAVE6_HCED_EXCLUSION_IDS & set(self.by_candidate))
         self.assertFalse(WAVE6_HCED_HOLD_IDS & set(self.by_candidate))
         for event in self.events:
@@ -293,7 +288,9 @@ class Wave6EarlyModernPromotionTests(unittest.TestCase):
                 _embedded_hced_rows(), self.entities, [collision]
             )
 
-    def test_entity_windows_are_exact_non_inheriting_and_cover_every_event(self) -> None:
+    def test_entity_windows_are_exact_non_inheriting_and_cover_every_event(
+        self,
+    ) -> None:
         expected_windows = {
             "electorate_saxony_1356": (1356, 1806),
             "principality_transylvania_1541": (1541, 1691),
@@ -352,18 +349,29 @@ class Wave6EarlyModernPromotionTests(unittest.TestCase):
             source.index("wave6_events = promote_wave6_hced_contracts"),
             source.index("iwbd_promotion = promote_iwbd_battles"),
         )
-        self.assertIn(
-            "hced_events = [*source_events, *label_events, *wave6_events]",
-            source,
-        )
-        self.assertIn(
-            "reviewed_candidate_ids=WAVE6_HCED_CONTRACT_IDS",
-            source,
-        )
-        self.assertIn(
-            "for event in (*source_events, *label_events, *wave6_events)",
-            source,
-        )
+        hced_release_block = source[
+            source.index("hced_events = [") : source.index(
+                "hced_location_coverage = _validate_hced_location_release"
+            )
+        ]
+        dedup_block = source[
+            source.index("# Fuzzy ordinal/base-name matches") : source.index(
+                "iwbd_promotion = promote_iwbd_battles"
+            )
+        ]
+        for event_list in (
+            "source_events",
+            "label_events",
+            "wave6_events",
+            "wave7_root_events",
+            "wave7_central_events",
+            "wave7_central_pass2_events",
+            "wave7_global_events",
+            "wave7_west_events",
+        ):
+            self.assertIn(f"*{event_list}", hced_release_block)
+            self.assertIn(f"*{event_list}", dedup_block)
+        self.assertIn("WAVE6_HCED_CONTRACT_IDS", source)
 
     def test_bengal_company_and_jacobite_identities_never_collapse(self) -> None:
         bengal_ids = {

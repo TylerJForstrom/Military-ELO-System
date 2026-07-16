@@ -383,6 +383,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "abushiri_revolt_forces",
+      "name": "Abushiri Revolt Forces",
+      "kind": "rebel_forces",
+      "start_year": 1888,
+      "end_year": 1890,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Africa"
+    },
+    {
       "id": "clio_q244796_bce279_0be1ca53",
       "name": "Achaean League",
       "kind": "polity",
@@ -401,6 +411,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "West and Central Asia"
+    },
+    {
+      "id": "adal_campaign_forces_1531",
+      "name": "Adal Campaign Forces (1531–1543)",
+      "kind": "state_campaign_army",
+      "start_year": 1531,
+      "end_year": 1543,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Horn of Africa"
     },
     {
       "id": "clio_so_adal_sultanate_1415_5686dcdc",
@@ -572,6 +592,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "american_revolutionary_forces_1775",
+      "name": "American Revolutionary Forces (1775-1776)",
+      "kind": "revolutionary_force",
+      "start_year": 1775,
+      "end_year": 1776,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_fr_capetian_k_1_1147_adac4a51",
       "name": "Angevin Empire",
       "kind": "empire",
@@ -713,6 +743,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "arab_legion_transjordan",
+      "name": "Arab Legion of Transjordan",
+      "kind": "state_force",
+      "start_year": 1923,
+      "end_year": 1956,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Middle East"
     },
     {
       "id": "clio_eg_egypt_modern_2_1973_e01853c2",
@@ -1001,6 +1041,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "baden_imperial_forces_1704",
+      "name": "Baden-led Imperial Forces at Schellenberg",
+      "kind": "campaign_force",
+      "start_year": 1704,
+      "end_year": 1704,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q28428_347_8fbb055b",
       "name": "Baekje",
       "kind": "polity",
@@ -1122,6 +1172,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "bar_confederation_forces",
+      "name": "Bar Confederation Forces",
+      "kind": "confederate_forces",
+      "start_year": 1768,
+      "end_year": 1772,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
+    },
+    {
       "id": "clio_q244_1967_ea7211c8",
       "name": "Barbados",
       "kind": "polity",
@@ -1142,6 +1202,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "batavian_republic_1795",
+      "name": "Batavian Republic",
+      "kind": "republic",
+      "start_year": 1795,
+      "end_year": 1806,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe and overseas possessions"
     },
     {
       "id": "clio_q188553_1796_d8e9212e",
@@ -3685,6 +3755,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "duke_norfolk_forces_1469",
+      "name": "Duke of Norfolk's Forces at Caister",
+      "kind": "campaign_force",
+      "start_year": 1469,
+      "end_year": 1469,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England"
+    },
+    {
       "id": "clio_gb_brythonic_k_602_b7c40724",
       "name": "Dumnonia",
       "kind": "polity",
@@ -4010,6 +4090,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "edward_iv_royal_army_1470",
+      "name": "Edward IV's Royal Army at Losecoat Field",
+      "kind": "campaign_army",
+      "start_year": 1470,
+      "end_year": 1470,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England"
+    },
+    {
       "id": "egypt_muhammad_ali",
       "name": "Egypt (Muhammad Ali dynasty)",
       "kind": "dynastic_state",
@@ -4040,6 +4130,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "electorate_bavaria_1623",
+      "name": "Electorate of Bavaria",
+      "kind": "electorate",
+      "start_year": 1623,
+      "end_year": 1805,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_de_hohenzollern_1_1422_38f41152",
@@ -4388,6 +4488,22 @@
       "region": "Unclassified"
     },
     {
+      "id": "clio_et_ethiopian_k_1272_654cac97",
+      "name": "Ethiopian Empire",
+      "kind": "empire",
+      "start_year": 1272,
+      "end_year": 1935,
+      "status": "unrated",
+      "identity_status": "superseded",
+      "superseded_by_ids": [
+        "solomonic_ethiopian_empire_pre1855",
+        "ethiopian_empire"
+      ],
+      "supersession_note": "The 1272?1935 raw envelope is split at the project's reviewed 1855 reset; the pre-1855 and post-1855 entities never inherit one another's rating.",
+      "coverage_discontinuous": false,
+      "region": "Unclassified"
+    },
+    {
       "id": "ethiopian_empire",
       "name": "Ethiopian Empire",
       "kind": "empire",
@@ -4644,6 +4760,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "balsa_ii_forces_savra_1385",
+      "name": "Forces of Balsha II at Savra",
+      "kind": "dynastic_forces",
+      "start_year": 1385,
+      "end_year": 1385,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_cn_five_dyn_922_6600b27c",
       "name": "Former Jin",
       "kind": "polity",
@@ -4852,14 +4978,30 @@
       "region": "Unclassified"
     },
     {
+      "id": "free_french_forces",
+      "name": "Free French Forces",
+      "kind": "government_in_exile_force",
+      "start_year": 1940,
+      "end_year": 1944,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Europe and French colonial territories"
+    },
+    {
       "id": "clio_q218023_1856_cfb4e08e",
       "name": "Free Orange State",
       "kind": "polity",
       "start_year": 1856,
       "end_year": 1899,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "region": "Unclassified"
+      "status": "unrated",
+      "identity_status": "superseded",
+      "superseded_by_ids": [
+        "orange_free_state_1854"
+      ],
+      "supersession_note": "The raw 1856?1899 candidate is superseded by the reviewed 1854?1902 republic; only the five enumerated event migrations move existing history.",
+      "coverage_discontinuous": false,
+      "region": "Unclassified",
+      "superseded_by": "orange_free_state_1854"
     },
     {
       "id": "clio_gb_british_emp_1_1788_e4a0a7a5",
@@ -5979,6 +6121,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "hashemite_arab_revolt_forces",
+      "name": "Hashemite Arab Revolt Forces",
+      "kind": "rebel_forces",
+      "start_year": 1916,
+      "end_year": 1919,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "clio_us_haudenosaunee_1_1450_0f51fc43",
       "name": "Haudenosaunee",
       "kind": "polity",
@@ -5998,6 +6150,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hellenic_coalition_artemisium_480_bce",
+      "name": "Hellenic Coalition Fleet at Artemisium",
+      "kind": "military_coalition",
+      "start_year": -480,
+      "end_year": -480,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Mediterranean"
     },
     {
       "id": "clio_q206696_1799_7a47f3b2",
@@ -6020,6 +6182,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "tudor_lancastrian_army_1485",
+      "name": "Henry Tudor's Army at Bosworth",
+      "kind": "campaign_army",
+      "start_year": 1485,
+      "end_year": 1485,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England and Wales"
     },
     {
       "id": "clio_ye_himyar_1_bce110_8dfe05b7",
@@ -6284,6 +6456,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "hungarian_honved_army_1848",
+      "name": "Hungarian Honved Army (1848-1849)",
+      "kind": "revolutionary_state_force",
+      "start_year": 1848,
+      "end_year": 1849,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q28513_1849_014ee8e0",
       "name": "Hungarian Nationalists",
       "kind": "polity",
@@ -6489,6 +6671,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "imperial_state_iran_pahlavi",
+      "name": "Imperial State of Iran under the Pahlavi Dynasty",
+      "kind": "monarchy",
+      "start_year": 1925,
+      "end_year": 1979,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Asia"
     },
     {
       "id": "clio_pe_inca_emp_1440_816cd40c",
@@ -7734,6 +7926,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_bavaria_1806",
+      "name": "Kingdom of Bavaria",
+      "kind": "kingdom",
+      "start_year": 1806,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q31_1830_244be2c4",
       "name": "Kingdom of Belgium",
       "kind": "kingdom",
@@ -8045,6 +8247,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kingdom_egypt_1922",
+      "name": "Kingdom of Egypt",
+      "kind": "kingdom",
+      "start_year": 1922,
+      "end_year": 1952,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
     },
     {
       "id": "kingdom_england",
@@ -8618,6 +8830,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "murat_kingdom_naples",
+      "name": "Kingdom of Naples under Joachim Murat",
+      "kind": "kingdom",
+      "start_year": 1808,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q200262_1139_6346c3fe",
       "name": "Kingdom of Navarre",
       "kind": "kingdom",
@@ -8861,6 +9083,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kingdom_sardinia_piedmont",
+      "name": "Kingdom of Sardinia (Piedmont)",
+      "kind": "kingdom",
+      "start_year": 1720,
+      "end_year": 1861,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "kingdom_saudi_arabia",
@@ -9141,6 +9373,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_netherlands_1815",
+      "name": "Kingdom of the Netherlands",
+      "kind": "kingdom",
+      "start_year": 1815,
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Europe and overseas possessions"
+    },
+    {
       "id": "clio_pt_suebi_k_414_d350b1d8",
       "name": "Kingdom of the Suebi",
       "kind": "kingdom",
@@ -9204,6 +9446,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kosciuszko_uprising_forces",
+      "name": "Kosciuszko Uprising Forces",
+      "kind": "revolutionary_forces",
+      "start_year": 1794,
+      "end_year": 1794,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
     },
     {
       "id": "clio_q1246_2000_ac4e4222",
@@ -9532,6 +9784,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "league_lezhe_forces",
+      "name": "League of Lezhe Forces",
+      "kind": "military_league",
+      "start_year": 1444,
+      "end_year": 1468,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q139708_1944_bc8bee86",
@@ -10079,6 +10341,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "mamluk_egyptian_forces_1798",
+      "name": "Mamluk Egyptian Forces (1798)",
+      "kind": "campaign_force",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
+    },
+    {
       "id": "mamluk_sultanate",
       "name": "Mamluk Sultanate",
       "kind": "sultanate",
@@ -10251,6 +10523,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kingdom_serbia_medieval",
+      "name": "Medieval Kingdom of Serbia",
+      "kind": "kingdom",
+      "start_year": 1217,
+      "end_year": 1346,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q1071439_1792_b788c6eb",
@@ -11104,6 +11386,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "nigerian_federal_military_forces",
+      "name": "Nigerian Federal Military Government Forces",
+      "kind": "state_force",
+      "start_year": 1966,
+      "end_year": 1979,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Africa"
+    },
+    {
       "id": "clio_q26397_898_3abb2f15",
       "name": "Nitra",
       "kind": "polity",
@@ -11432,6 +11724,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "orange_free_state_1854",
+      "name": "Orange Free State",
+      "kind": "republic",
+      "start_year": 1854,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q77_1828_6883b112",
       "name": "Oriental Republic of Uruguay",
       "kind": "republic",
@@ -11538,6 +11840,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "palatine_protestant_forces_1622",
+      "name": "Palatine Protestant Forces at Heidelberg",
+      "kind": "campaign_force",
+      "start_year": 1622,
+      "end_year": 1622,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q695_1996_1a16da82",
@@ -11680,6 +11992,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "paston_retainers_1469",
+      "name": "Paston Retainers at Caister Castle",
+      "kind": "garrison",
+      "start_year": 1469,
+      "end_year": 1469,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England"
+    },
+    {
       "id": "clio_q584435_1572_f335df2e",
       "name": "Patani Kingdom",
       "kind": "kingdom",
@@ -11700,6 +12022,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "rio_de_la_plata_patriot_army_1810",
+      "name": "Patriot Army of the Río de la Plata (1810–1816)",
+      "kind": "revolutionary_army",
+      "start_year": 1810,
+      "end_year": 1816,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
     },
     {
       "id": "clio_q208742_bce550_fcd70391",
@@ -11917,11 +12249,41 @@
       "region": "Unclassified"
     },
     {
+      "id": "november_uprising_polish_forces",
+      "name": "Polish Forces of the November Uprising",
+      "kind": "revolutionary_government_forces",
+      "start_year": 1830,
+      "end_year": 1831,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
+    },
+    {
+      "id": "warsaw_uprising_polish_forces_1944",
+      "name": "Polish Warsaw Uprising Forces",
+      "kind": "resistance_forces",
+      "start_year": 1944,
+      "end_year": 1944,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
+    },
+    {
       "id": "polish_lithuanian_commonwealth",
       "name": "Polish-Lithuanian Commonwealth",
       "kind": "union_state",
       "start_year": 1569,
       "end_year": 1795,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
+    },
+    {
+      "id": "polish_lithuanian_commonwealth_army_1792",
+      "name": "Polish-Lithuanian Commonwealth Army (1792)",
+      "kind": "state_armed_forces",
+      "start_year": 1792,
+      "end_year": 1792,
       "status": "rated",
       "identity_status": "curated",
       "region": "Eastern Europe"
@@ -12452,6 +12814,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "principality_serbia_1815",
+      "name": "Principality of Serbia",
+      "kind": "principality",
+      "start_year": 1815,
+      "end_year": 1882,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_q1483495_1056_9de61e96",
       "name": "Principality of Smolensk",
       "kind": "polity",
@@ -12701,6 +13073,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "ptolemaic_egypt_305_bce",
+      "name": "Ptolemaic Kingdom of Egypt",
+      "kind": "hellenistic_kingdom",
+      "start_year": -305,
+      "end_year": -30,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
     },
     {
       "id": "clio_us_aztec_puebloan_1152_4f2384fb",
@@ -12973,6 +13355,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "red_stick_creek_forces",
+      "name": "Red Stick Creek Forces",
+      "kind": "indigenous_faction",
+      "start_year": 1813,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q3045696_1706_f947a194",
       "name": "Regency of Algiers",
       "kind": "polity",
@@ -13090,6 +13482,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "republic_biafra",
+      "name": "Republic of Biafra",
+      "kind": "secessionist_state",
+      "start_year": 1967,
+      "end_year": 1970,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Africa"
     },
     {
       "id": "clio_q963_1967_7d892344",
@@ -13635,6 +14037,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "republic_serbian_krajina_forces",
+      "name": "Republic of Serbian Krajina Forces",
+      "kind": "de_facto_state_forces",
+      "start_year": 1991,
+      "end_year": 1995,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_q334_1967_e0123c3d",
       "name": "Republic of Singapore",
       "kind": "republic",
@@ -13905,6 +14317,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_greece_restored",
+      "name": "Restored Kingdom of Greece",
+      "kind": "kingdom",
+      "start_year": 1935,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q175881_1799_b720cd63",
       "name": "Revolutionary Roman Republic",
       "kind": "republic",
@@ -13947,6 +14369,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "yorkist_royal_army_1485",
+      "name": "Richard III's Royal Army at Bosworth",
+      "kind": "campaign_army",
+      "start_year": 1485,
+      "end_year": 1485,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England"
     },
     {
       "id": "clio_q162192_1836_494dcd9f",
@@ -14293,6 +14725,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "saite_egypt_664_bce",
+      "name": "Saite Egypt (Twenty-sixth Dynasty)",
+      "kind": "dynastic_kingdom",
+      "start_year": -664,
+      "end_year": -525,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
+    },
+    {
       "id": "clio_q3432153_898_48760e37",
       "name": "Sajid Dynasty",
       "kind": "dynastic_state",
@@ -14324,6 +14766,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "samnite_confederation_wars",
+      "name": "Samnite Confederation of the Samnite Wars",
+      "kind": "tribal_confederation",
+      "start_year": -343,
+      "end_year": -290,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Italian Peninsula"
+    },
+    {
+      "id": "samnite_social_war_insurgents",
+      "name": "Samnite Insurgents of the Social War",
+      "kind": "insurgent_forces",
+      "start_year": -91,
+      "end_year": -88,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Italian Peninsula"
     },
     {
       "id": "clio_cz_samo_emp_623_f7daff5a",
@@ -14649,6 +15111,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "serbian_despotate",
+      "name": "Serbian Despotate",
+      "kind": "despotate",
+      "start_year": 1402,
+      "end_year": 1459,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_q878319_1375_d39703e4",
       "name": "Serbian Despots",
       "kind": "polity",
@@ -14660,6 +15132,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "serbian_empire_medieval",
+      "name": "Serbian Empire",
+      "kind": "empire",
+      "start_year": 1346,
+      "end_year": 1371,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
       "id": "clio_rs_serbia_k_1352_2ea1d6e8",
       "name": "Serbian Empire",
       "kind": "empire",
@@ -14669,6 +15151,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "serbian_grand_principality_nemanjic",
+      "name": "Serbian Grand Principality under the Nemanjić Dynasty",
+      "kind": "grand_principality",
+      "start_year": 1166,
+      "end_year": 1217,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
+    },
+    {
+      "id": "serbian_revolutionary_forces_1804_1815",
+      "name": "Serbian Revolutionary Forces (1804-1815)",
+      "kind": "revolutionary_forces",
+      "start_year": 1804,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q127885_1805_9523c86a",
@@ -14975,6 +15477,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "solomonic_ethiopian_empire_pre1855",
+      "name": "Solomonic Ethiopian Empire (pre-1855)",
+      "kind": "empire",
+      "start_year": 1270,
+      "end_year": 1854,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northeast Africa"
+    },
+    {
       "id": "clio_q7462_bce750_7c1bc513",
       "name": "Song",
       "kind": "polity",
@@ -15241,6 +15753,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "stanley_forces_1485",
+      "name": "Stanley Forces at Bosworth",
+      "kind": "campaign_army",
+      "start_year": 1485,
+      "end_year": 1485,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England and Wales"
     },
     {
       "id": "clio_q6553448_1853_5c760366",
@@ -16688,6 +17210,16 @@
       "region": "West Asia, North Africa, and Iberia"
     },
     {
+      "id": "duchy_bavaria_unified_1506",
+      "name": "Unified Duchy of Bavaria",
+      "kind": "duchy",
+      "start_year": 1506,
+      "end_year": 1622,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
+    },
+    {
       "id": "clio_q715257_682_563736f2",
       "name": "Unified Silla",
       "kind": "polity",
@@ -16967,6 +17499,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "vichy_french_forces",
+      "name": "Vichy French Forces",
+      "kind": "state_force",
+      "start_year": 1940,
+      "end_year": 1944,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Europe and French colonial territories"
+    },
+    {
       "id": "clio_q9326_1709_6fad0a09",
       "name": "Vientiane",
       "kind": "polity",
@@ -17105,6 +17647,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "welles_rebel_army_1470",
+      "name": "Welles Rebel Army at Losecoat Field",
+      "kind": "rebel_army",
+      "start_year": 1470,
+      "end_year": 1470,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "England"
     },
     {
       "id": "clio_fr_carolingian_emp_2_850_933e3e71",
@@ -17846,16 +18398,22 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1648,
-    "rated_entities": 288,
-    "rated_events": 4605,
+    "registry_polities": 1702,
+    "rated_entities": 340,
+    "rated_events": 4797,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18789,
+    "unresolved_event_candidates": 18597,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1884,
     "provisional_hced_label_events": 2383,
     "candidate_keyed_wave6_hced_events": 76,
+    "candidate_keyed_wave7_root_hced_events": 62,
+    "candidate_keyed_wave7_central_hced_events": 33,
+    "candidate_keyed_wave7_central_pass2_hced_events": 31,
+    "candidate_keyed_wave7_global_hced_events": 37,
+    "candidate_keyed_wave7_west_hced_events": 29,
+    "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 151,
     "iwbd_battles_total": 1708,
@@ -17865,11 +18423,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4343,
-      "candidate_keyed_reviewed_contracts": 76,
-      "geojson_points": 4306,
-      "modern_location_country_assertions": 4263,
-      "location_provenance_objects": 4310,
+      "hced_candidate_bindings": 4535,
+      "candidate_keyed_reviewed_contracts": 268,
+      "geojson_points": 4498,
+      "modern_location_country_assertions": 4455,
+      "location_provenance_objects": 4502,
       "point_fields_withheld_by_quarantine": 37,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
@@ -17879,7 +18437,7 @@
       "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
       "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 4310
+        "unreviewed_source_assertion": 4502
       },
       "verified_location_assertions": {
         "availability": "not_available",

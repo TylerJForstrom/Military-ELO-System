@@ -33,7 +33,9 @@ def _write_json(path: Path, value: Any) -> None:
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in rows),
+        "".join(
+            json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in rows
+        ),
         encoding="utf-8",
     )
 
@@ -320,7 +322,9 @@ class CoverageFixture(unittest.TestCase):
         self.assertTrue(report["scope"]["review_directory_supplied"])
         self.assertTrue(report["scope"]["review_files_supplied"])
 
-    def test_registry_declared_empty_counts_override_metadata_and_physical_rows(self) -> None:
+    def test_registry_declared_empty_counts_override_metadata_and_physical_rows(
+        self,
+    ) -> None:
         self.registry_document["coverage"]["source_queue_counts"] = {}
         self.review_rows = [{"candidate_id": "physical-only"}]
         self._write_fixture()
@@ -461,8 +465,12 @@ class CoverageFixture(unittest.TestCase):
             registry_path=self.registry,
             results_path=self.results,
         )
-        self.assertEqual(omitted["stage_funnel"]["staged"]["availability"], "not_available")
-        self.assertEqual(omitted["stage_funnel"]["event_like"]["availability"], "not_available")
+        self.assertEqual(
+            omitted["stage_funnel"]["staged"]["availability"], "not_available"
+        )
+        self.assertEqual(
+            omitted["stage_funnel"]["event_like"]["availability"], "not_available"
+        )
         self.assertFalse(omitted["scope"]["review_directory_supplied"])
         self.assertFalse(omitted["scope"]["review_files_supplied"])
 
@@ -734,7 +742,11 @@ class CoverageFixture(unittest.TestCase):
         self.assertIn("Source ID counts are not a substitute", families["reason"])
 
     def test_explicit_outcome_family_mapping_is_deduplicated(self) -> None:
-        self.events[0]["outcome_source_family_ids"] = ["family_b", "family_a", "family_a"]
+        self.events[0]["outcome_source_family_ids"] = [
+            "family_b",
+            "family_a",
+            "family_a",
+        ]
         self.events[1]["outcome_source_ids"] = ["family_source"]
         self._write_fixture()
         families = self._report()["outcome_source_families"]
@@ -771,7 +783,9 @@ class CoverageFixture(unittest.TestCase):
         self.assertIn("mapping value: 1", markdown)
         self.assertIn("| unclassified | 1 |", markdown)
 
-    def test_registry_coverage_uses_event_participants_not_registry_status(self) -> None:
+    def test_registry_coverage_uses_event_participants_not_registry_status(
+        self,
+    ) -> None:
         report = self._report()
         registry = report["registry_to_rating"]
         self.assertEqual(registry["rated_entities_in_registry"], 3)
@@ -811,7 +825,9 @@ class CoverageFixture(unittest.TestCase):
                 "queued_at": "2025-01-01",
             },
         ]
-        self.registry_document["coverage"]["source_queue_counts"]["hced-candidates.jsonl"] = 4
+        self.registry_document["coverage"]["source_queue_counts"][
+            "hced-candidates.jsonl"
+        ] = 4
         self.metadata["promotion"]["source_queue_counts"]["hced-candidates.jsonl"] = 4
         self._write_fixture()
         aging = self._report()["unresolved_queue_aging"]
@@ -836,9 +852,7 @@ class CoverageFixture(unittest.TestCase):
         self.registry_document["coverage"]["source_queue_counts"][
             "hced-candidates.jsonl"
         ] = 1
-        self.metadata["promotion"]["source_queue_counts"][
-            "hced-candidates.jsonl"
-        ] = 1
+        self.metadata["promotion"]["source_queue_counts"]["hced-candidates.jsonl"] = 1
         self._write_fixture()
         aging = self._report()["unresolved_queue_aging"]
         self.assertEqual(aging["availability"], "not_available")
@@ -1071,9 +1085,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             )
         )
         cls.seed_events = json.loads(
-            (PROJECT_ROOT / "data" / "seed" / "events.json").read_text(
-                encoding="utf-8"
-            )
+            (PROJECT_ROOT / "data" / "seed" / "events.json").read_text(encoding="utf-8")
         )
         cls.sources = json.loads(
             (PROJECT_ROOT / "data" / "release" / "sources.json").read_text(
@@ -1081,9 +1093,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             )
         )
         cls.results = json.loads(
-            (PROJECT_ROOT / "web" / "data" / "results.json").read_text(
-                encoding="utf-8"
-            )
+            (PROJECT_ROOT / "web" / "data" / "results.json").read_text(encoding="utf-8")
         )
         cls.sources_by_id = {source["id"]: source for source in cls.sources}
 
@@ -1093,7 +1103,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             for event in self.events
             if str(event.get("status", "complete")).casefold() == "complete"
         ]
-        self.assertEqual(len(rated_events), 4_605)
+        self.assertEqual(len(rated_events), 4_797)
         self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
         self.assertEqual(
             sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
@@ -1106,23 +1116,31 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         families = self.report["outcome_source_families"]
         self.assertEqual(families["availability"], "partially_available")
-        self.assertEqual(families["events_with_explicit_family_data"], 4_565)
+        self.assertEqual(families["events_with_explicit_family_data"], 4_757)
         self.assertEqual(families["events_without_explicit_family_data"], 40)
         self.assertEqual(families["unmapped_event_count"], 40)
         self.assertEqual(
             families["events_by_family"],
             {
-                "hced": 4_343,
+                "english_historical_review": 1,
+                "founders_online_jefferson_papers": 2,
+                "hced": 4_523,
+                "historic_england": 3,
+                "hungarian_military_history_institute": 2,
                 "iwbd": 151,
                 "iwd": 64,
+                "national_park_service_creek_war": 1,
+                "national_park_service_revolution": 1,
+                "nigeria_national_library_civil_war": 1,
+                "rcahmw_coflein": 1,
                 "ucdp_conflict_termination": 7,
             },
         )
-        self.assertEqual(families["family_count_distribution"], {"1": 4_565})
-        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_565)
-        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_605)
+        self.assertEqual(families["family_count_distribution"], {"1": 4_757})
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_757)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_797)
         self.assertEqual(families["multiple_family_coverage"]["numerator"], 0)
-        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_565)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_757)
         self.assertEqual(set(families["per_event_counts"].values()), {1})
 
         mapped_ids = set(families["per_event_counts"])
@@ -1142,8 +1160,10 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                         set(event["outcome_source_ids"]).issubset(event["source_ids"])
                     )
 
-    def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(self) -> None:
-        self.assertEqual(len(self.sources), 205)
+    def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(
+        self,
+    ) -> None:
+        self.assertEqual(len(self.sources), 284)
         manifest_contract = sorted(
             (
                 source["id"],
@@ -1161,7 +1181,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             manifest_digest,
-            "c996b2f7e57bdfd8c685504e9298d311d520cc3f92b516fad20f792f52bfd302",
+            "4b9e0458ae2dc5ae3ccf6900e60cf51c0a59fe517f6135cbf3cb80fe8cd4aa81",
         )
         self.assertTrue(
             all(
@@ -1171,22 +1191,20 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         self.assertEqual(
             Counter(
-                role
-                for source in self.sources
-                for role in source["evidence_roles"]
+                role for source in self.sources for role in source["evidence_roles"]
             ),
             {
                 "curated_reference_pending_claim_level_outcome_locator": 70,
                 "derived_project_continuity_convention": 1,
-                "identity_boundary_or_context_reference": 144,
+                "identity_boundary_or_context_reference": 223,
                 "identity_crosswalk": 1,
                 "identity_registry": 2,
-                "outcome": 4,
-                "outcome_consistency_crosscheck": 27,
+                "outcome": 14,
+                "outcome_consistency_crosscheck": 47,
             },
         )
         self.assertEqual(
-            len({source["source_family_id"] for source in self.sources}), 115
+            len({source["source_family_id"] for source in self.sources}), 176
         )
         outcome_source_ids = {
             source["id"]
@@ -1200,6 +1218,16 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 "iwd_dataset",
                 "iwbd_dataset",
                 "ucdp_termination_conflict",
+                "wave7_founders_emuckfaw",
+                "wave7_hungary_military_museum",
+                "wave7_nigeria_civil_war_history",
+                "wave7_nps_creek_war",
+                "wave7_nps_revolution_timeline",
+                "wave7_west_ehr_lincolnshire_1470",
+                "wave7_west_he_bamburgh",
+                "wave7_west_he_bosworth",
+                "wave7_west_he_caister",
+                "wave7_west_rcahmw_twt",
             },
         )
         self.assertEqual(
@@ -1213,6 +1241,16 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 "iwd_dataset": "iwd",
                 "iwbd_dataset": "iwbd",
                 "ucdp_termination_conflict": "ucdp_conflict_termination",
+                "wave7_founders_emuckfaw": "founders_online_jefferson_papers",
+                "wave7_hungary_military_museum": "hungarian_military_history_institute",
+                "wave7_nigeria_civil_war_history": "nigeria_national_library_civil_war",
+                "wave7_nps_creek_war": "national_park_service_creek_war",
+                "wave7_nps_revolution_timeline": "national_park_service_revolution",
+                "wave7_west_ehr_lincolnshire_1470": "english_historical_review",
+                "wave7_west_he_bamburgh": "historic_england",
+                "wave7_west_he_bosworth": "historic_england",
+                "wave7_west_he_caister": "historic_england",
+                "wave7_west_rcahmw_twt": "rcahmw_coflein",
             },
         )
         expected_negative_controls = {
@@ -1250,8 +1288,8 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         dashboard_events = self.results["events"]
         dashboard_by_id = {event["id"]: event for event in dashboard_events}
 
-        self.assertEqual(len(release_by_id), 4_605)
-        self.assertEqual(len(dashboard_by_id), 4_605)
+        self.assertEqual(len(release_by_id), 4_797)
+        self.assertEqual(len(dashboard_by_id), 4_797)
         self.assertEqual(set(dashboard_by_id), set(release_by_id))
 
         mapped = 0
@@ -1276,7 +1314,9 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                         "title": source["title"],
                         "url": source["url"],
                         "source_family_id": source["source_family_id"],
-                        "evidence_roles": source["evidence_roles"],
+                        # The dashboard round-trips Source through its
+                        # canonical model, which sorts this set-like field.
+                        "evidence_roles": sorted(source["evidence_roles"]),
                     }
                     for source_id in release_event["source_ids"]
                     for source in (self.sources_by_id[source_id],)
@@ -1284,16 +1324,18 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 self.assertEqual(dashboard_event["sources"], expected_sources)
                 mapped += "outcome_source_ids" in dashboard_event
 
-        self.assertEqual(mapped, 4_565)
+        self.assertEqual(mapped, 4_757)
         self.assertEqual(len(dashboard_events) - mapped, 40)
 
     def test_registry_coverage_is_an_observed_ratio_only(self) -> None:
         ratio = self.report["registry_to_rating"]["registry_to_rating_ratio"]
         self.assertEqual(
-            ratio["numerator"], self.report["registry_to_rating"]["rated_entities_in_registry"]
+            ratio["numerator"],
+            self.report["registry_to_rating"]["rated_entities_in_registry"],
         )
         self.assertEqual(
-            ratio["denominator"], self.report["registry_to_rating"]["registry_entities_total"]
+            ratio["denominator"],
+            self.report["registry_to_rating"]["registry_entities_total"],
         )
         self.assertNotEqual(
             ratio["value"], self.report["historical_completeness"]["value"]

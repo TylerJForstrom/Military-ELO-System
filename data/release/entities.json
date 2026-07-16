@@ -130,6 +130,20 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Dynasty 26 (Saite) identity only, through the Persian conquest in 525 BCE. No rating crosses into earlier Egyptian kingdoms, Persian rule, or later Egyptian regimes.",
+    "end_year": -525,
+    "id": "saite_egypt_664_bce",
+    "kind": "dynastic_kingdom",
+    "name": "Saite Egypt (Twenty-sixth Dynasty)",
+    "predecessors": [],
+    "region": "North Africa",
+    "source_ids": [
+      "met_saite_egypt"
+    ],
+    "start_year": -664
+  },
+  {
     "id": "carthage",
     "name": "Carthage",
     "kind": "republic",
@@ -236,6 +250,20 @@
     ]
   },
   {
+    "id": "hellenic_coalition_artemisium_480_bce",
+    "name": "Hellenic Coalition Fleet at Artemisium",
+    "kind": "military_coalition",
+    "start_year": -480,
+    "end_year": -480,
+    "region": "Eastern Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_artemisium_perseus"
+    ]
+  },
+  {
     "id": "clio_cn_wei_dyn_warring_states_bce404_8cec0006",
     "name": "Wei",
     "kind": "polity",
@@ -266,6 +294,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "samnite_confederation_wars",
+    "name": "Samnite Confederation of the Samnite Wars",
+    "kind": "tribal_confederation",
+    "start_year": -343,
+    "end_year": -290,
+    "region": "Italian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_samnium_cambridge"
     ]
   },
   {
@@ -301,6 +343,20 @@
     "source_ids": [
       "cliopatria_v020"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Ptolemaic dynastic kingdom from 305 to 30 BCE. No rating crosses into Macedonian administration, pharaonic predecessor periods, or Roman Egypt.",
+    "end_year": -30,
+    "id": "ptolemaic_egypt_305_bce",
+    "kind": "hellenistic_kingdom",
+    "name": "Ptolemaic Kingdom of Egypt",
+    "predecessors": [],
+    "region": "North Africa",
+    "source_ids": [
+      "met_ptolemaic_egypt"
+    ],
+    "start_year": -305
   },
   {
     "id": "clio_q245273_bce284_abebfa72",
@@ -378,6 +434,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "samnite_social_war_insurgents",
+    "name": "Samnite Insurgents of the Social War",
+    "kind": "insurgent_forces",
+    "start_year": -91,
+    "end_year": -88,
+    "region": "Italian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_social_war_appian"
     ]
   },
   {
@@ -1216,6 +1286,20 @@
     ]
   },
   {
+    "id": "serbian_grand_principality_nemanjic",
+    "name": "Serbian Grand Principality under the Nemanjić Dynasty",
+    "kind": "grand_principality",
+    "start_year": 1166,
+    "end_year": 1217,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
     "id": "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
     "name": "Ayyubid Sultanate",
     "kind": "sultanate",
@@ -1261,6 +1345,20 @@
     "source_ids": [
       "cliopatria_polities",
       "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "kingdom_serbia_medieval",
+    "name": "Medieval Kingdom of Serbia",
+    "kind": "kingdom",
+    "start_year": 1217,
+    "end_year": 1346,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_medieval_museum"
     ]
   },
   {
@@ -1327,6 +1425,21 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Solomonic imperial identity beginning with Yekuno Amlak in 1270 and ending before Tewodros II's 1855 restoration. No rating extends into the existing post-1855 Ethiopian Empire seed.",
+    "end_year": 1854,
+    "id": "solomonic_ethiopian_empire_pre1855",
+    "kind": "empire",
+    "name": "Solomonic Ethiopian Empire (pre-1855)",
+    "predecessors": [],
+    "region": "Northeast Africa",
+    "source_ids": [
+      "loc_ethiopia_country_study",
+      "met_ethiopian_christianity"
+    ],
+    "start_year": 1270
+  },
+  {
     "id": "clio_ru_golden_horde_1294_e1cd03b8",
     "name": "Golden Horde",
     "kind": "polity",
@@ -1374,6 +1487,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "serbian_empire_medieval",
+    "name": "Serbian Empire",
+    "kind": "empire",
+    "start_year": 1346,
+    "end_year": 1371,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_medieval_museum"
     ]
   },
   {
@@ -1469,6 +1596,20 @@
     ]
   },
   {
+    "id": "balsa_ii_forces_savra_1385",
+    "name": "Forces of Balsha II at Savra",
+    "kind": "dynastic_forces",
+    "start_year": 1385,
+    "end_year": 1385,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_savra_elsie"
+    ]
+  },
+  {
     "id": "joseon",
     "name": "Joseon",
     "kind": "kingdom",
@@ -1499,6 +1640,20 @@
     "source_ids": [
       "wave6_black_milan",
       "wave6_treccani_ambrosian"
+    ]
+  },
+  {
+    "id": "serbian_despotate",
+    "name": "Serbian Despotate",
+    "kind": "despotate",
+    "start_year": 1402,
+    "end_year": 1459,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_medieval_museum"
     ]
   },
   {
@@ -1546,6 +1701,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "league_lezhe_forces",
+    "name": "League of Lezhe Forces",
+    "kind": "military_league",
+    "start_year": 1444,
+    "end_year": 1468,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_lezhe_albania_mod"
     ]
   },
   {
@@ -1643,6 +1812,62 @@
     ]
   },
   {
+    "id": "duke_norfolk_forces_1469",
+    "name": "Duke of Norfolk's Forces at Caister",
+    "kind": "campaign_force",
+    "start_year": 1469,
+    "end_year": 1469,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific force in the private ownership war at Caister Castle. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_he_caister"
+    ]
+  },
+  {
+    "id": "paston_retainers_1469",
+    "name": "Paston Retainers at Caister Castle",
+    "kind": "garrison",
+    "start_year": 1469,
+    "end_year": 1469,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific defending garrison in the private war at Caister. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_he_caister"
+    ]
+  },
+  {
+    "id": "edward_iv_royal_army_1470",
+    "name": "Edward IV's Royal Army at Losecoat Field",
+    "kind": "campaign_army",
+    "start_year": 1470,
+    "end_year": 1470,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific royal army opposing the Lincolnshire rebellion. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_ehr_lincolnshire_1470"
+    ]
+  },
+  {
+    "id": "welles_rebel_army_1470",
+    "name": "Welles Rebel Army at Losecoat Field",
+    "kind": "rebel_army",
+    "start_year": 1470,
+    "end_year": 1470,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific Lincolnshire rebel army led by Sir Robert Welles. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_ehr_lincolnshire_1470"
+    ]
+  },
+  {
     "id": "warwick_readeption_army_1471",
     "name": "Warwick's Readeption Army",
     "kind": "rebel_coalition",
@@ -1673,6 +1898,48 @@
     "source_ids": [
       "cliopatria_polities",
       "britannica_eighty_years"
+    ]
+  },
+  {
+    "id": "tudor_lancastrian_army_1485",
+    "name": "Henry Tudor's Army at Bosworth",
+    "kind": "campaign_army",
+    "start_year": 1485,
+    "end_year": 1485,
+    "region": "England and Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific composite army including Henry Tudor's French mercenaries. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_he_bosworth"
+    ]
+  },
+  {
+    "id": "yorkist_royal_army_1485",
+    "name": "Richard III's Royal Army at Bosworth",
+    "kind": "campaign_army",
+    "start_year": 1485,
+    "end_year": 1485,
+    "region": "England",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific royal army; it is not the 1455-1471 Yorkist faction. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_he_bosworth"
+    ]
+  },
+  {
+    "id": "stanley_forces_1485",
+    "name": "Stanley Forces at Bosworth",
+    "kind": "campaign_army",
+    "start_year": 1485,
+    "end_year": 1485,
+    "region": "England and Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific force whose intervention supported Henry Tudor. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_he_bosworth"
     ]
   },
   {
@@ -1737,6 +2004,20 @@
       "cliopatria_polities",
       "iranica_chaldiran",
       "iranica_kandahar"
+    ]
+  },
+  {
+    "id": "duchy_bavaria_unified_1506",
+    "name": "Unified Duchy of Bavaria",
+    "kind": "duchy",
+    "start_year": 1506,
+    "end_year": 1622,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Begins with the 1506 inheritance statute and ends before electoral status. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_hdbg_duchy"
     ]
   },
   {
@@ -1827,6 +2108,20 @@
       "cliopatria_polities",
       "iranica_kandahar"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Campaign-bounded Adal forces for the 1531–1543 invasion period identified by the reviewed source. No rating is inherited from a broader or namesake Adal polity.",
+    "end_year": 1543,
+    "id": "adal_campaign_forces_1531",
+    "kind": "state_campaign_army",
+    "name": "Adal Campaign Forces (1531–1543)",
+    "predecessors": [],
+    "region": "Horn of Africa",
+    "source_ids": [
+      "met_ethiopian_christianity"
+    ],
+    "start_year": 1531
   },
   {
     "aliases": [],
@@ -1975,6 +2270,34 @@
       "ddb_fehrbellin_rathenow"
     ],
     "start_year": 1618
+  },
+  {
+    "id": "palatine_protestant_forces_1622",
+    "name": "Palatine Protestant Forces at Heidelberg",
+    "kind": "campaign_force",
+    "start_year": 1622,
+    "end_year": 1622,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific German Protestant component of the Heidelberg defence. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_ukna_palatinate"
+    ]
+  },
+  {
+    "id": "electorate_bavaria_1623",
+    "name": "Electorate of Bavaria",
+    "kind": "electorate",
+    "start_year": 1623,
+    "end_year": 1805,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Begins with the electoral dignity in 1623 and ends before the 1806 kingdom. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_hdbg_electorate"
+    ]
   },
   {
     "id": "clio_q917_1636_f706aa87",
@@ -2166,6 +2489,20 @@
     ]
   },
   {
+    "id": "baden_imperial_forces_1704",
+    "name": "Baden-led Imperial Forces at Schellenberg",
+    "kind": "campaign_force",
+    "start_year": 1704,
+    "end_year": 1704,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-specific Imperial and Reich force under Ludwig of Baden. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_hdbg_schellenberg"
+    ]
+  },
+  {
     "id": "united_kingdom",
     "name": "United Kingdom",
     "kind": "state_empire",
@@ -2226,6 +2563,20 @@
       "banglapedia_mir_qasim"
     ],
     "start_year": 1717
+  },
+  {
+    "id": "kingdom_sardinia_piedmont",
+    "name": "Kingdom of Sardinia (Piedmont)",
+    "kind": "kingdom",
+    "start_year": 1720,
+    "end_year": 1861,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_sardinia_identity_cambridge"
+    ]
   },
   {
     "id": "russian_empire",
@@ -2371,6 +2722,35 @@
     ]
   },
   {
+    "id": "bar_confederation_forces",
+    "name": "Bar Confederation Forces",
+    "kind": "confederate_forces",
+    "start_year": 1768,
+    "end_year": 1772,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_poland_bar_archive"
+    ]
+  },
+  {
+    "id": "american_revolutionary_forces_1775",
+    "name": "American Revolutionary Forces (1775-1776)",
+    "kind": "revolutionary_force",
+    "start_year": 1775,
+    "end_year": 1776,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign actor for colonial militia and the newly created Continental Army before and through the 1776 declaration; it is not an anachronistic United States state identity. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_loc_american_revolution",
+      "wave7_army_revolution_campaigns"
+    ]
+  },
+  {
     "id": "clio_q837_1775_2940506b",
     "name": "Nepal",
     "kind": "polity",
@@ -2428,6 +2808,20 @@
     ]
   },
   {
+    "id": "polish_lithuanian_commonwealth_army_1792",
+    "name": "Polish-Lithuanian Commonwealth Army (1792)",
+    "kind": "state_armed_forces",
+    "start_year": 1792,
+    "end_year": 1792,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_poland_1792_agad"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Ends with destruction of the 1793 field army at Savenay; later Vendéan guerrilla forces do not inherit its rating. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1793,
@@ -2441,6 +2835,20 @@
       "persee_vendee"
     ],
     "start_year": 1793
+  },
+  {
+    "id": "kosciuszko_uprising_forces",
+    "name": "Kosciuszko Uprising Forces",
+    "kind": "revolutionary_forces",
+    "start_year": 1794,
+    "end_year": 1794,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_poland_kosciuszko_museum"
+    ]
   },
   {
     "id": "qajar_iran",
@@ -2461,6 +2869,34 @@
       "britannica_qajar_dynasty",
       "project_continuity_policy"
     ]
+  },
+  {
+    "id": "batavian_republic_1795",
+    "name": "Batavian Republic",
+    "kind": "republic",
+    "start_year": 1795,
+    "end_year": 1806,
+    "region": "Western Europe and overseas possessions",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Batavian Republic before the Kingdom of Holland. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_royal_house_netherlands"
+    ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Battle-specific Mamluk Egyptian force in 1798, not the medieval Mamluk Sultanate or a generic Egypt identity. No rating is inherited from either namesake.",
+    "end_year": 1798,
+    "id": "mamluk_egyptian_forces_1798",
+    "kind": "campaign_force",
+    "name": "Mamluk Egyptian Forces (1798)",
+    "predecessors": [],
+    "region": "North Africa",
+    "source_ids": [
+      "met_battle_pyramids"
+    ],
+    "start_year": 1798
   },
   {
     "id": "sikh_empire",
@@ -2536,6 +2972,20 @@
     ]
   },
   {
+    "id": "serbian_revolutionary_forces_1804_1815",
+    "name": "Serbian Revolutionary Forces (1804-1815)",
+    "kind": "revolutionary_forces",
+    "start_year": 1804,
+    "end_year": 1815,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_uprisings_museum"
+    ]
+  },
+  {
     "id": "egypt_muhammad_ali",
     "name": "Egypt (Muhammad Ali dynasty)",
     "kind": "dynastic_state",
@@ -2572,6 +3022,20 @@
     ]
   },
   {
+    "id": "kingdom_bavaria_1806",
+    "name": "Kingdom of Bavaria",
+    "kind": "kingdom",
+    "start_year": 1806,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded from 1 January 1806 through 8 November 1918. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_hdbg_kingdom"
+    ]
+  },
+  {
     "id": "kingdom_saxony",
     "name": "Kingdom of Saxony",
     "kind": "kingdom",
@@ -2584,6 +3048,21 @@
     "source_ids": [
       "saxony_kobryn",
       "saxony_maubeuge"
+    ]
+  },
+  {
+    "id": "murat_kingdom_naples",
+    "name": "Kingdom of Naples under Joachim Murat",
+    "kind": "kingdom",
+    "start_year": 1808,
+    "end_year": 1815,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Murat's Napoleonic kingdom, ending with the 1815 Austrian campaign and Bourbon restoration. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_treccani_murat",
+      "wave7_italian_army_1815"
     ]
   },
   {
@@ -2601,6 +3080,21 @@
     "source_ids": [
       "cliopatria_v020"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Reviewed revolutionary-army label window from the May 1810 reorganization through the 1816 independence boundary. Later Argentine governments and civil-war factions receive no rating inheritance.",
+    "end_year": 1816,
+    "id": "rio_de_la_plata_patriot_army_1810",
+    "kind": "revolutionary_army",
+    "name": "Patriot Army of the Río de la Plata (1810–1816)",
+    "predecessors": [],
+    "region": "South America",
+    "source_ids": [
+      "argentina_army_1810",
+      "argentina_naval_independence"
+    ],
+    "start_year": 1810
   },
   {
     "id": "clio_nl_dutch_emp_2_1811_2e0bb80e",
@@ -2651,6 +3145,21 @@
     ]
   },
   {
+    "id": "red_stick_creek_forces",
+    "name": "Red Stick Creek Forces",
+    "kind": "indigenous_faction",
+    "start_year": 1813,
+    "end_year": 1814,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Militant Upper Creek faction in the Creek civil war and war with United States forces, not the Creek Nation as a timeless collective. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_army_creek_war",
+      "wave7_nps_creek_war"
+    ]
+  },
+  {
     "id": "clio_no_norway_k_modern_1814_c9f18673",
     "name": "Kingdom of Norway",
     "kind": "kingdom",
@@ -2678,6 +3187,35 @@
     "continuity_note": "The Second Bourbon Restoration is rated as a separate polity from 1815 through the 1830 regime change. It is available only to exact reviewed source contracts; bare France labels remain unresolved in this interval and no rating transfers from the First Empire or to the July Monarchy.",
     "source_ids": [
       "france_assembly_bourbon_restoration_1815_1830"
+    ]
+  },
+  {
+    "id": "kingdom_netherlands_1815",
+    "name": "Kingdom of the Netherlands",
+    "kind": "kingdom",
+    "start_year": 1815,
+    "end_year": null,
+    "region": "Western Europe and overseas possessions",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Generic WEST dispatch begins in 1815; no alias-based dispatch is enabled. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
+    "source_ids": [
+      "wave7_west_royal_house_netherlands",
+      "wave7_west_nl_constitution_1815"
+    ]
+  },
+  {
+    "id": "principality_serbia_1815",
+    "name": "Principality of Serbia",
+    "kind": "principality",
+    "start_year": 1815,
+    "end_year": 1882,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbia_modern_government"
     ]
   },
   {
@@ -2893,6 +3431,20 @@
     ]
   },
   {
+    "id": "november_uprising_polish_forces",
+    "name": "Polish Forces of the November Uprising",
+    "kind": "revolutionary_government_forces",
+    "start_year": 1830,
+    "end_year": 1831,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_poland_november_archive"
+    ]
+  },
+  {
     "id": "argentine_confederation",
     "name": "Argentine Confederation",
     "kind": "confederation",
@@ -3070,6 +3622,21 @@
     ]
   },
   {
+    "id": "hungarian_honved_army_1848",
+    "name": "Hungarian Honved Army (1848-1849)",
+    "kind": "revolutionary_state_force",
+    "start_year": 1848,
+    "end_year": 1849,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Army of the Hungarian Revolution and War of Independence, not a generic timeless rebel identity. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_hungary_military_museum",
+      "wave7_hungary_archives"
+    ]
+  },
+  {
     "id": "roman_republic_1849",
     "name": "Roman Republic of 1849",
     "kind": "republic",
@@ -3150,6 +3717,21 @@
     "source_ids": [
       "cliopatria_v020"
     ]
+  },
+  {
+    "aliases": [],
+    "continuity_note": "Independent republic recognized in 1854 through the 1902 peace settlement. Its rating is rebuilt only from explicitly migrated and newly reviewed events; no rating is imported from a namesake or raw candidate.",
+    "end_year": 1902,
+    "id": "orange_free_state_1854",
+    "kind": "republic",
+    "name": "Orange Free State",
+    "predecessors": [],
+    "region": "Southern Africa",
+    "source_ids": [
+      "saho_orange_free_state",
+      "uk_na_south_african_war"
+    ],
+    "start_year": 1854
   },
   {
     "id": "ethiopian_empire",
@@ -3437,6 +4019,20 @@
     ]
   },
   {
+    "id": "abushiri_revolt_forces",
+    "name": "Abushiri Revolt Forces",
+    "kind": "rebel_forces",
+    "start_year": 1888,
+    "end_year": 1890,
+    "region": "East Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_abushiri_cambridge"
+    ]
+  },
+  {
     "id": "cuban_liberation_army_1895",
     "name": "Cuban Liberation Army (War of Independence)",
     "kind": "insurgent_army",
@@ -3620,6 +4216,21 @@
     ]
   },
   {
+    "id": "hashemite_arab_revolt_forces",
+    "name": "Hashemite Arab Revolt Forces",
+    "kind": "rebel_forces",
+    "start_year": 1916,
+    "end_year": 1919,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_p2_arab_revolt_nam",
+      "wave7_p2_arab_revolt_army"
+    ]
+  },
+  {
     "id": "clio_q399_1918_2f11ffcf",
     "name": "Armenia",
     "kind": "polity",
@@ -3794,6 +4405,20 @@
     ]
   },
   {
+    "aliases": [],
+    "continuity_note": "Reviewed generic-label window for the independent Kingdom of Egypt through the 1952 revolution boundary. No rating crosses into the 1953 republic or adjacent regimes.",
+    "end_year": 1952,
+    "id": "kingdom_egypt_1922",
+    "kind": "kingdom",
+    "name": "Kingdom of Egypt",
+    "predecessors": [],
+    "region": "North Africa",
+    "source_ids": [
+      "egypt_sis_modern_era"
+    ],
+    "start_year": 1922
+  },
+  {
     "id": "soviet_union",
     "name": "Soviet Union",
     "kind": "union_state",
@@ -3814,6 +4439,20 @@
     ]
   },
   {
+    "id": "arab_legion_transjordan",
+    "name": "Arab Legion of Transjordan",
+    "kind": "state_force",
+    "start_year": 1923,
+    "end_year": 1956,
+    "region": "Middle East",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Transjordan's Arab Legion, used only in an exact 1941 coalition contract. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_nam_syria"
+    ]
+  },
+  {
     "id": "clio_tr_turkey_rep_1924_934e0bcd",
     "name": "Republic of Turkey",
     "kind": "republic",
@@ -3827,6 +4466,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "imperial_state_iran_pahlavi",
+    "name": "Imperial State of Iran under the Pahlavi Dynasty",
+    "kind": "monarchy",
+    "start_year": 1925,
+    "end_year": 1979,
+    "region": "West Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_iran_pahlavi_loc"
     ]
   },
   {
@@ -3960,6 +4613,20 @@
     ]
   },
   {
+    "id": "kingdom_greece_restored",
+    "name": "Restored Kingdom of Greece",
+    "kind": "kingdom",
+    "start_year": 1935,
+    "end_year": 1967,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_greece_restored_presidency"
+    ]
+  },
+  {
     "id": "spanish_nationalist_faction",
     "name": "Spanish Nationalist Faction (1936-1939)",
     "kind": "civil_war_faction",
@@ -3972,6 +4639,36 @@
     "source_ids": [
       "britannica_spanish_civil_war",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "free_french_forces",
+    "name": "Free French Forces",
+    "kind": "government_in_exile_force",
+    "start_year": 1940,
+    "end_year": 1944,
+    "region": "Europe and French colonial territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Free French wartime actor before the provisional government transition. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_iwm_dakar",
+      "wave7_nam_syria"
+    ]
+  },
+  {
+    "id": "vichy_french_forces",
+    "name": "Vichy French Forces",
+    "kind": "state_force",
+    "start_year": 1940,
+    "end_year": 1944,
+    "region": "Europe and French colonial territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Forces owing allegiance to the Vichy government; kept distinct from Free French and Third Republic ratings. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_navy_torch",
+      "wave7_army_torch"
     ]
   },
   {
@@ -4004,6 +4701,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "warsaw_uprising_polish_forces_1944",
+    "name": "Polish Warsaw Uprising Forces",
+    "kind": "resistance_forces",
+    "start_year": 1944,
+    "end_year": 1944,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_poland_warsaw_ushmm"
     ]
   },
   {
@@ -4443,6 +5154,36 @@
     ]
   },
   {
+    "id": "nigerian_federal_military_forces",
+    "name": "Nigerian Federal Military Government Forces",
+    "kind": "state_force",
+    "start_year": 1966,
+    "end_year": 1979,
+    "region": "West Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Federal military actor for the Nigerian Civil War, distinct from later civilian republic administrations. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_state_biafra",
+      "wave7_nigeria_civil_war_history"
+    ]
+  },
+  {
+    "id": "republic_biafra",
+    "name": "Republic of Biafra",
+    "kind": "secessionist_state",
+    "start_year": 1967,
+    "end_year": 1970,
+    "region": "West Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Secessionist republic from the May 1967 declaration through the January 1970 surrender. No rating is inherited by a predecessor or successor.",
+    "source_ids": [
+      "wave7_un_biafra_identity",
+      "wave7_state_biafra"
+    ]
+  },
+  {
     "id": "clio_eg_egypt_modern_2_1973_e01853c2",
     "name": "Arab Republic of Egypt",
     "kind": "republic",
@@ -4598,6 +5339,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "republic_serbian_krajina_forces",
+    "name": "Republic of Serbian Krajina Forces",
+    "kind": "de_facto_state_forces",
+    "start_year": 1991,
+    "end_year": 1995,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
+    "source_ids": [
+      "wave7_serbian_krajina_irmct"
     ]
   },
   {

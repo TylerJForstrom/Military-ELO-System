@@ -63,16 +63,28 @@ roles are never unioned into an event that already has an explicit mapping.
 Titles, URLs, publishers, source counts, and family labels are never used to
 infer an outcome role.
 
-Only four registered sources have the direct outcome role:
+Fourteen registered sources have the direct outcome role. They span 12
+dependency families because the three Historic England records share one
+family:
 
 | Source ID | Outcome family | Rated events mapped |
 |---|---|---:|
-| `hced_dataset` | `hced` | 4,343 |
+| `hced_dataset` | `hced` | 4,523 |
 | `iwd_dataset` | `iwd` | 64 |
 | `iwbd_dataset` | `iwbd` | 151 |
 | `ucdp_termination_conflict` | `ucdp_conflict_termination` | 7 |
+| `wave7_nps_revolution_timeline` | `national_park_service_revolution` | 1 |
+| `wave7_nigeria_civil_war_history` | `nigeria_national_library_civil_war` | 1 |
+| `wave7_nps_creek_war` | `national_park_service_creek_war` | 1 |
+| `wave7_founders_emuckfaw` | `founders_online_jefferson_papers` | 2 |
+| `wave7_hungary_military_museum` | `hungarian_military_history_institute` | 2 |
+| `wave7_west_rcahmw_twt` | `rcahmw_coflein` | 1 |
+| `wave7_west_he_bamburgh` | `historic_england` | 1 |
+| `wave7_west_he_caister` | `historic_england` | 1 |
+| `wave7_west_ehr_lincolnshire_1470` | `english_historical_review` | 1 |
+| `wave7_west_he_bosworth` | `historic_england` | 1 |
 
-This maps 4,565 of 4,605 rated events, and every mapped event has exactly one
+This maps 4,757 of 4,797 rated events, and every mapped event has exactly one
 direct outcome family. Multiple-independent-family coverage is therefore zero.
 The 40 curated seed events remain explicitly unmapped: their generic reference
 URLs do not contain the claim-level outcome locator, edition/checksum context,
@@ -128,17 +140,16 @@ normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
-For the 4,343 already-rated HCED events, the release-to-candidate join is an
+For the 4,535 rated HCED events, the release-to-candidate join is an
 exact bijection: 1,884 crosswalk-resolved events, 2,383 label-resolved events,
-and 76 candidate-keyed early-modern events, with no missing, ambiguous, or
-colliding bindings. This metadata-only
-tranche adds no event and changes no outcome, participant, entity, or Elo.
+and 268 candidate-keyed reviewed events (76 from Wave 6 and 192 from Wave 7),
+with no missing, ambiguous, or colliding bindings.
 Candidate-ID-only policy manifests withhold 37 Point fields and 79
 country/jurisdiction fields, with 33 overlapping and 83 unique
 quarantine-manifest events. One additional rated candidate has a source-blank
-country. After fail-closed quarantine, 4,306 events carry an exact
-source-transcribed Point, 4,263 carry the source's modern
-country/geographic-jurisdiction string, and 4,310 carry at least one location
+country. After fail-closed quarantine, 4,498 events carry an exact
+source-transcribed Point, 4,455 carry the source's modern
+country/geographic-jurisdiction string, and 4,502 carry at least one location
 field plus closed provenance. Of 49 separately reviewed disputed or
 non-sovereign jurisdiction rows, 46 are deliberately retained verbatim and 3
 are already withheld under independent quarantine criteria. They are source
@@ -710,19 +721,22 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The current release publishes distinct coverage units separately:
 
-- 1,648 time-bounded polity identities in the rated-and-unrated registry;
-- 289 release entity records, of which 288 distinct IDs actually participate
+- 1,702 time-bounded polity identities in the rated-and-unrated registry;
+- 342 release entity records, of which 340 distinct IDs actually participate
   in rated events;
-- 205 registered provenance sources across 115 source families; and
-- 4,605 rating events: 40 manually curated events, 1,884 crosswalk-resolved,
-  2,383 label-resolved, and 76 candidate-keyed HCED tactical encounters,
+- 284 registered provenance sources across 176 source families; and
+- 4,797 rating events: 40 manually curated events, 1,884 crosswalk-resolved,
+  2,383 label-resolved, and 268 candidate-keyed HCED tactical encounters,
   64 coalition-aggregated IWD strategic parent wars, 151 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
 
-The one-record entity/evidence difference is intentional. The United Kingdom
+The two-record entity/evidence difference is intentional. The United Kingdom
 of Portugal, Brazil and the Algarves is present as a curated boundary identity,
-but no event currently promotes into its 1815-1821 policy window. It therefore
-has no rating and is not counted among the 288 participant IDs.
+but no event currently promotes into its 1815-1821 policy window. The
+superseded `Free Orange State` source envelope is retained for the five-event
+identity-migration audit, while those events use the reviewed Orange Free State
+identity. Neither record therefore has a rating or counts among the 340
+participant IDs.
 
 Relative to the Wave 4 artifact, Wave 5 adds 161 events and removes none of the
 previously published event IDs: 133 HCED encounters, 8 IWD parents, and 20 IWBD
@@ -742,6 +756,14 @@ candidate-keyed reviewed contracts raise the current Portugal-linked total to
 superseded rows, rather than disappearing when stronger curated identities
 replace them.
 
+Relative to Wave 6, Wave 7 adds 192 fingerprinted HCED encounters through five
+audited promotion lanes. It also atomically migrates five already-rated Orange
+Free State battles from a superseded source envelope to the reviewed identity;
+those migrations do not add events. Forty-two reviewed proposals remain on
+explicit holds. Seven root-lane outcomes and five western-lane source claims
+replace HCED as the direct outcome source for 12 exact candidates without
+creating a second rating event.
+
 The earlier curated state and non-state actor identity tranches raised the totals
 from the previous build (177 rated entities across 2,620 events): the new
 seed identities and their code/label policy windows resolve rows that were
@@ -751,21 +773,23 @@ records (1,582 to 1,590 net). Wave 4 then added three narrow identities while
 absorbing two exact-name Cliopatria envelopes, producing the Wave 4 total of
 1,591. Wave 5 produced a 1,598-row registry after consolidating the
 Tsardom of Russia onto its pre-existing canonical Cliopatria ID rather than
-creating a second Tsardom record. Wave 6 produces the measured 1,648-row
-registry and requires every release identity to have an exact registry row.
+creating a second Tsardom record. Wave 6 produced a 1,648-row registry. Wave 7
+adds reviewed identities and explicit supersession records to produce the
+measured 1,702-row registry, and every release identity still has an exact
+registry row.
 
 The review queues contain 27,014 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
 holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 18,789 remain outside the rating ledger because their layer,
+candidates, 18,597 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
 
 Outcome-family coverage uses a different denominator from corpus coverage.
-Exactly 4,565 rated events have an explicit direct-outcome mapping through the
-four dataset sources above; the remaining 40 are the curated seed events and
-stay unknown pending claim-level locator review. All 4,565 mapped events have
+Exactly 4,757 rated events have an explicit direct-outcome mapping through the
+14 sources above; the remaining 40 are the curated seed events and stay unknown
+pending claim-level locator review. All 4,757 mapped events have
 one family and none has multiple independently established outcome families.

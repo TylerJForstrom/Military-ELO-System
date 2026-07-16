@@ -374,10 +374,10 @@ and the Turkish National Movement; the Republic of China on Taiwan,
 French Third Republic, Spain, Poland, Greece, and the other opposing identities
 reuse their established canonical records.
 
-After canonical consolidation, the measured registry contains 1,648 identities.
-The release entity file contains 289 records, while 288 distinct IDs actually
-participate in rated events; the unrated Portuguese union identity explains the
-one-record difference.
+After canonical consolidation and the reviewed Wave 7 identity splits, the measured registry contains 1,702 identities.
+The release entity file contains 342 records, while 340 distinct IDs actually
+participate in rated events. The unrated Portuguese union identity and the
+superseded Free Orange State source envelope explain the two-record difference.
 
 ### Wave 6 identity-bound contracts and holds
 

@@ -43,7 +43,10 @@ class DashboardMapContractTests(unittest.TestCase):
             self.assertIn(f'id="{element_id}"', index)
         self.assertIn("mapContract.createBattleMap", app)
         self.assertIn("state.battleMap.update", app)
-        self.assertIn("horizonContract.eventAvailabilityYear(selectedEvent) === state.selectedYear", app)
+        self.assertIn(
+            "horizonContract.eventAvailabilityYear(selectedEvent) === state.selectedYear",
+            app,
+        )
         self.assertIn("Past 25 years", index)
         self.assertIn("All through selected year", index)
         self.assertNotIn("Selected year &plusmn;", index)
@@ -203,7 +206,7 @@ const fs = require('node:fs');
 const map = require('./web/map.js');
 const results = JSON.parse(fs.readFileSync('./web/data/results.json', 'utf8'));
 const index = map.createMapIndex(results.events);
-assert.equal(index.length, 4306);
+assert.equal(index.length, results.registry.coverage.hced_location_assertions.geojson_points);
 assert.equal(index.every((event) => event.geometry && event.location_provenance), true);
 assert.equal(index.every((event) => event.location_status === 'unreviewed_source_assertion'), true);
 assert.equal(index.every((event) => event.layer === 'tactical'), true);

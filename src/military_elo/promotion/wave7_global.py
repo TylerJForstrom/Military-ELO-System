@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Fail-closed Global/South HCED promotions and identity migrations for Wave 7."""
+
+from __future__ import annotations
 
 import copy
 import hashlib
@@ -108,10 +108,7 @@ def canonical_hced_row_sha256(row: Mapping[str, Any]) -> str:
 
 def canonical_cliopatria_supersession_sha256(row: Mapping[str, Any]) -> str:
     return canonical_object_sha256(
-        {
-            field: row.get(field)
-            for field in CLIOPATRIA_SUPERSESSION_FINGERPRINT_FIELDS
-        }
+        {field: row.get(field) for field in CLIOPATRIA_SUPERSESSION_FINGERPRINT_FIELDS}
     )
 
 
@@ -169,9 +166,7 @@ def _audit_signature() -> str:
             f"migrate|{migration['candidate_id']}|{migration['raw_row_sha256']}|"
             f"{event_id}|{migration['source_event_sha256']}"
         )
-    return hashlib.sha256(
-        ("\n".join(sorted(lines)) + "\n").encode("utf-8")
-    ).hexdigest()
+    return hashlib.sha256(("\n".join(sorted(lines)) + "\n").encode("utf-8")).hexdigest()
 
 
 def _validate_fixture_inventory() -> None:
@@ -232,6 +227,11 @@ def _validate_fixture_inventory() -> None:
             raise ValueError("Wave 7 Global Orange source identity drift")
         if migration["to_entity_id"] != _ORANGE_NEW_ENTITY_ID:
             raise ValueError("Wave 7 Global Orange target identity drift")
+        if (
+            len(str(migration["migrated_event_sha256"])) != 64
+            or migration["migrated_event_sha256"] == migration["source_event_sha256"]
+        ):
+            raise ValueError("Wave 7 Global Orange migrated-event hash drift")
         migration_candidate_ids.append(str(migration["candidate_id"]))
     if len(migration_candidate_ids) != len(set(migration_candidate_ids)):
         raise ValueError("Wave 7 Global Orange candidate IDs must be unique")
@@ -246,7 +246,9 @@ def _validate_fixture_inventory() -> None:
                 f"Wave 7 Global entity {entity['id']} must state its rating reset"
             )
         if not set(map(str, entity["source_ids"])) <= source_ids:
-            raise ValueError(f"Wave 7 Global entity {entity['id']} names an unknown source")
+            raise ValueError(
+                f"Wave 7 Global entity {entity['id']} names an unknown source"
+            )
 
     egypt_entities = {
         str(entity["id"]): entity
@@ -403,7 +405,9 @@ def promote_wave7_global_hced_contracts(
     for candidate_id, contract in ordered_contracts:
         candidate = rows_by_id[candidate_id][0]
         if hced_candidate_id(candidate) != candidate_id:
-            raise ValueError(f"Wave 7 Global HCED candidate ID changed for {candidate_id}")
+            raise ValueError(
+                f"Wave 7 Global HCED candidate ID changed for {candidate_id}"
+            )
         canonical = contract["canonical_event"]
         low_year = int(canonical["year_low"])
         high_year = int(canonical["year_high"])
@@ -443,9 +447,13 @@ def promote_wave7_global_hced_contracts(
         event_key = _event_key(event_name, low_year)
         raw_event_key = _event_key(str(candidate["name"]), low_year)
         if event_key in existing_keys or raw_event_key in existing_keys:
-            raise ValueError(f"Wave 7 Global source-family duplicate for {candidate_id}")
+            raise ValueError(
+                f"Wave 7 Global source-family duplicate for {candidate_id}"
+            )
         if event_key in accepted_keys:
-            raise ValueError(f"Wave 7 Global duplicate canonical key for {candidate_id}")
+            raise ValueError(
+                f"Wave 7 Global duplicate canonical key for {candidate_id}"
+            )
         accepted_keys.add(event_key)
 
         scale, scale_level = _scale(candidate)
@@ -542,6 +550,7 @@ def migrate_wave7_global_orange_events(
             by_event_id.setdefault(event_id, []).append(event)
 
     validated: dict[str, Mapping[str, Any]] = {}
+    states: set[str] = set()
     for event_id, spec in WAVE7_GLOBAL_ORANGE_MIGRATIONS.items():
         matches = by_event_id.get(event_id, [])
         if len(matches) != 1:
@@ -555,28 +564,44 @@ def migrate_wave7_global_orange_events(
                 f"Wave 7 Global Orange migration candidate drift for {event_id}"
             )
         actual_hash = canonical_event_sha256(event)
-        expected_hash = str(spec["source_event_sha256"])
-        if actual_hash != expected_hash:
+        source_hash = str(spec["source_event_sha256"])
+        migrated_hash = str(spec["migrated_event_sha256"])
+        if actual_hash == source_hash:
+            state = "source"
+            expected_entity_id = _ORANGE_OLD_ENTITY_ID
+        elif actual_hash == migrated_hash:
+            state = "migrated"
+            expected_entity_id = _ORANGE_NEW_ENTITY_ID
+        else:
             raise ValueError(
                 f"Wave 7 Global Orange migration event fingerprint changed for "
-                f"{event_id} ({actual_hash} != {expected_hash})"
+                f"{event_id} ({actual_hash} matches neither {source_hash} nor "
+                f"{migrated_hash})"
             )
         participants = event.get("participants")
-        old_count = (
+        expected_count = (
             sum(
-                participant.get("entity_id") == _ORANGE_OLD_ENTITY_ID
+                participant.get("entity_id") == expected_entity_id
                 for participant in participants
                 if isinstance(participant, Mapping)
             )
             if isinstance(participants, list)
             else 0
         )
-        if old_count != 1:
+        if expected_count != 1:
             raise ValueError(
                 f"Wave 7 Global Orange migration {event_id} expected exactly one "
-                "old-identity participant"
+                f"{state}-identity participant"
             )
+        states.add(state)
         validated[event_id] = event
+
+    if len(states) != 1:
+        raise ValueError(
+            "Wave 7 Global Orange migration cannot mix source and migrated events"
+        )
+    if states == {"migrated"}:
+        return [copy.deepcopy(dict(event)) for event in original]
 
     replacements: dict[str, dict[str, Any]] = {}
     for event_id, event in validated.items():
@@ -614,6 +639,10 @@ def migrate_wave7_global_orange_events(
             "to_entity_id": _ORANGE_NEW_ENTITY_ID,
             "wave": "wave7_global",
         }
+        if canonical_event_sha256(replacement) != spec["migrated_event_sha256"]:
+            raise ValueError(
+                f"Wave 7 Global Orange migrated event drift for {event_id}"
+            )
         replacements[event_id] = replacement
 
     return [

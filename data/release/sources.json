@@ -40,6 +40,32 @@
     ]
   },
   {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "argentina_army_1810",
+    "license": "Citation and link only",
+    "publisher": "Government of Argentina",
+    "source_family_id": "argentina_gob_ar",
+    "source_type": "official_or_academic_reference",
+    "title": "215th anniversary of the Argentine Army",
+    "url": "https://www.argentina.gob.ar/noticias/215deg-aniversario-del-ejercito-argentino"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "argentina_naval_independence",
+    "license": "Citation and link only",
+    "publisher": "Argentine Navy, Government of Argentina",
+    "source_family_id": "argentina_gob_ar",
+    "source_type": "official_or_academic_reference",
+    "title": "The War of Independence, 1810–1824",
+    "url": "https://www.argentina.gob.ar/armada/nueva-historia-naval/independencia-1810"
+  },
+  {
     "id": "army_chosin",
     "title": "The Chinese Intervention: Korea, 1950",
     "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/K%20Pdf/CMH_Pub_19-8.pdf",
@@ -1063,6 +1089,19 @@
     "url": "https://the-deccan.in/wp-content/uploads/2019/10/cambridge_history_eaton_deccan_social_history.pdf"
   },
   {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "egypt_sis_modern_era",
+    "license": "Citation and link only",
+    "publisher": "Egypt State Information Service",
+    "source_family_id": "egypt_state_information_service",
+    "source_type": "official_or_academic_reference",
+    "title": "Modern Era",
+    "url": "https://sis.gov.eg/en/egypt/history/egypts-history/modern-era/"
+  },
+  {
     "id": "estonia_government_independence_1918",
     "title": "Speech on the 99th anniversary of the Estonian Republic",
     "url": "https://valitsus.ee/en/news/speech-prime-minister-juri-ratas-vanemuine-concert-hall-tartu-celebration-99th-anniversary",
@@ -1401,6 +1440,19 @@
     "url": "https://academic.oup.com/book/1842"
   },
   {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "loc_ethiopia_country_study",
+    "license": "Citation and link only",
+    "publisher": "Library of Congress",
+    "source_family_id": "library_of_congress_country_studies",
+    "source_type": "official_or_academic_reference",
+    "title": "Ethiopia: A Country Study",
+    "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/et/ethiopiacountrys00ofca_0/ethiopiacountrys00ofca_0.pdf"
+  },
+  {
     "id": "mahdist_bm",
     "title": "Mahdiya identity context",
     "url": "https://www.britishmuseum.org/collection/term/x105338",
@@ -1440,6 +1492,97 @@
     "source_type": "official_or_academic_reference",
     "title": "Maratha–Nizam relations",
     "url": "https://vishwakosh.marathi.gov.in/28442/"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_ayyubid_period",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "The Art of the Ayyubid Period (ca. 1171–1260)",
+    "url": "https://www.metmuseum.org/essays/the-art-of-the-ayyubid-period-ca-1171-1260"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_battle_pyramids",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_collection",
+    "source_type": "official_or_academic_reference",
+    "title": "Battle of the Pyramids, July 21, 1798",
+    "url": "https://www.metmuseum.org/art/collection/search/339816"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_ethiopian_christianity",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "African Christianity in Ethiopia",
+    "url": "https://www.metmuseum.org/essays/african-christianity-in-ethiopia"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_fatimid_period",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "The Art of the Fatimid Period (909–1171)",
+    "url": "https://www.metmuseum.org/essays/the-art-of-the-fatimid-period-909-1171"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_mamluk_period",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "The Art of the Mamluk Period (1250–1517)",
+    "url": "https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_ptolemaic_egypt",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "Egypt in the Ptolemaic Period",
+    "url": "https://www.metmuseum.org/essays/egypt-in-the-ptolemaic-period"
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "met_saite_egypt",
+    "license": "Citation and link only",
+    "publisher": "The Metropolitan Museum of Art",
+    "source_family_id": "met_heilbrunn_timeline",
+    "source_type": "official_or_academic_reference",
+    "title": "Egypt in the Late Period (ca. 664–332 B.C.)",
+    "url": "https://www.metmuseum.org/essays/egypt-in-the-late-period-ca-712-332-b-c"
   },
   {
     "id": "mexico_constitutionalists",
@@ -1897,6 +2040,19 @@
     ]
   },
   {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "saho_orange_free_state",
+    "license": "Citation and link only",
+    "publisher": "South African History Online",
+    "source_family_id": "south_african_history_online",
+    "source_type": "official_or_academic_reference",
+    "title": "Adoption of the Orange Free State constitution",
+    "url": "https://sahistory.org.za/dated-event/adoption-orange-free-state-constitution"
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2185,6 +2341,19 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
+  },
+  {
+    "accessed": "2026-07-16",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ],
+    "id": "uk_na_south_african_war",
+    "license": "Citation and link only",
+    "publisher": "The National Archives (United Kingdom)",
+    "source_family_id": "uk_national_archives",
+    "source_type": "official_or_academic_reference",
+    "title": "The South African War, 1899–1902",
+    "url": "https://www.nationalarchives.gov.uk/education/resources/the-south-african-war-how-did-the-british-conduct-war-in-1899-1902/"
   },
   {
     "id": "ushmm_wwii_europe",
@@ -2643,6 +2812,894 @@
     "source_family_id": "watts_wars_roses",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_army_creek_war",
+    "title": "The Creek War, 1813-1814",
+    "url": "https://history.army.mil/portals/143/Images/Publications/catalog/74-4.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_creek_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_army_revolution_campaigns",
+    "title": "Revolutionary War Campaigns",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Revolutionary-War-Campaigns/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_revolutionary_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_army_torch",
+    "title": "Algeria-French Morocco",
+    "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/C%20Img/campaigns-wwii/pdf/2.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_algeria_french_morocco",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_artemisium_perseus",
+    "title": "Greek allied fleet and doubtful result at Artemisium",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0126%3Abook%3D8",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_artemisium_perseus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_canada_longueuil",
+    "title": "Fort Longueuil Memorial Plaque",
+    "url": "https://www.veterans.gc.ca/en/remembrance/memorials/national-inventory-canadian-memorials/details/9457",
+    "publisher": "Veterans Affairs Canada",
+    "license": "Citation and link only",
+    "source_type": "official_commemorative_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "veterans_affairs_canada_longueuil",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_founders_emuckfaw",
+    "title": "William Cocke to Thomas Jefferson, 28 January 1814",
+    "url": "https://founders.archives.gov/documents/Jefferson/03-07-02-0094",
+    "publisher": "National Archives / Founders Online",
+    "license": "Citation and link only",
+    "source_type": "primary_source_critical_edition",
+    "accessed": "2026-07-16",
+    "source_family_id": "founders_online_jefferson_papers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_greece_restored_presidency",
+    "title": "Restored Greek monarchy from 1935 through 1967",
+    "url": "https://www.presidency.gr/en/mansion/history/",
+    "publisher": "Presidency of the Hellenic Republic",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_greece_restored_presidency",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_greek_revolution_parliament",
+    "title": "Revolutionary governments and military organization from 1821",
+    "url": "https://www.hellenicparliament.gr/en/Vouli-ton-Ellinon/To-Politevma/Syntagmatiki-Istoria/",
+    "publisher": "Hellenic Parliament",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_greek_revolution_parliament",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_hungary_archives",
+    "title": "Operational records of the 1848-49 War of Independence",
+    "url": "https://adatbazisokonline.mnl.gov.hu/adatbazis/az-1848-49-evi-szabadsagharc-hadmuveleti-iratai/informacio",
+    "publisher": "National Archives of Hungary",
+    "license": "Citation and link only",
+    "source_type": "official_archival_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "hungarian_national_archives_1848",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_hungary_military_museum",
+    "title": "Our Catchwords Were Patriotism and Progress",
+    "url": "https://m.militaria.hu/en/exhibitions/permanent-exhibitions/our-catchwords-were-patriotism-and-progress",
+    "publisher": "Hungarian Ministry of Defence Military History Institute and Museum",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hungarian_military_history_institute",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_iran_pahlavi_loc",
+    "title": "Pahlavi dynasty boundary, 1925-1979",
+    "url": "https://www.loc.gov/aba/publications/Archived-LCC2017/DS-DX-text.pdf",
+    "publisher": "Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_iran_pahlavi_loc",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_italian_army_1815",
+    "title": "Rassegna dell'Esercito: Murat and the 1815 settlement",
+    "url": "https://www.esercito.difesa.it/comunicazione/editoria/Rassegna-Esercito/Tutti-i-numeri/2015/Documents/rassei-1-15.pdf",
+    "publisher": "Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_rassegna",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_iwm_dakar",
+    "title": "Vichy France's Radio Propaganda on Collaboration",
+    "url": "https://www.iwm.org.uk/sites/default/files/files/2018-11/Vichy%20France%E2%80%99s%20Radio%20Propaganda%20on%20Collaboration%20-%20Karine%20Varley.pdf",
+    "publisher": "Imperial War Museums",
+    "license": "Citation and link only",
+    "source_type": "museum_research_paper",
+    "accessed": "2026-07-16",
+    "source_family_id": "imperial_war_museums_vichy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_loc_american_revolution",
+    "title": "The American Revolution, 1763-1783",
+    "url": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/american-revolution-1763-1783/overview/",
+    "publisher": "Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "library_of_congress_american_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_nam_syria",
+    "title": "Paddy Mayne and combat against Vichy forces in Syria",
+    "url": "https://www.nam.ac.uk/explore/paddy-mayne",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum_syria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_navy_torch",
+    "title": "Operation Torch: Invasion of North Africa",
+    "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1942/operation-torch.html",
+    "publisher": "U.S. Naval History and Heritage Command",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_navy_operation_torch",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_nigeria_civil_war_history",
+    "title": "A Journey in Service: Nigerian Civil War operational chronology",
+    "url": "https://nigeriareposit.nln.gov.ng/server/api/core/bitstreams/ff513b9c-508b-44e8-9e08-96d4a3c8828b/content",
+    "publisher": "National Library of Nigeria Repository",
+    "license": "Citation and link only",
+    "source_type": "national_repository_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "nigeria_national_library_civil_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_nps_creek_war",
+    "title": "The Creek Indian War of 1813-1814",
+    "url": "https://www.nps.gov/ocmu/learn/historyculture/upload/Accessible-Creek-Indian-War-of-1813-1814-2.pdf",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_park_service_creek_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_nps_revolution_timeline",
+    "title": "Revolutionary War Timeline",
+    "url": "https://www.nps.gov/cowp/learn/historyculture/revolutionary-war-timeline.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_park_service_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_p2_abushiri_cambridge",
+    "title": "Abushiri revolt in German East Africa, 1888-1890",
+    "url": "https://www.cambridge.org/core/journals/british-journal-of-political-science/article/territorial-expansion-of-the-colonial-state-evidence-from-german-east-africa-18901909/709EEF58BC4BD8A27B5856B663EB7F59",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_abushiri_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_arab_revolt_army",
+    "title": "Evolution of a Revolt: Arab forces and the Medina campaign",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/evolution-of-a-revolt.pdf",
+    "publisher": "US Army University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_arab_revolt_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_arab_revolt_nam",
+    "title": "Hashemite Arab forces, Aqaba, and Tafileh in the Arab Revolt",
+    "url": "https://www.nam.ac.uk/explore/lawrence-arabia-man-behind-robes",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_arab_revolt_nam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_castelfidardo_army",
+    "title": "Castelfidardo and Ancona campaign history",
+    "url": "https://www.esercito.difesa.it/comunicazione/editoria/Rivista-Militare/archivio/Documents/2007/Rivista%20Militare%202007%20-%20Numero%203.pdf",
+    "publisher": "Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_castelfidardo_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_caudine_cambridge",
+    "title": "The Samnite victory and Roman surrender at the Caudine Forks",
+    "url": "https://www.cambridge.org/core/journals/journal-of-roman-studies/article/abs/pax-caudina/88BA1B5572D3B4D67C4256F2A3A2CCA4",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_caudine_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_gaeta_cambridge",
+    "title": "The siege of Gaeta, November 1860-February 1861",
+    "url": "https://www.cambridge.org/core/books/civil-war-and-agrarian-unrest/introduction/3B039798686E1BE66EFAA93FDA643BFE",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_gaeta_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_lautulae_diodorus",
+    "title": "Ancient traditions disagreeing over the result at Lautulae",
+    "url": "https://penelope.uchicago.edu/thayer/e/roman/texts/diodorus_siculus/19d%2A.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_lautulae_diodorus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_lezhe_albania_mod",
+    "title": "League of Lezhe and Skanderbeg battle chronology",
+    "url": "https://www.mod.gov.al/images/gazetaushtria/pdf/2023/mars/ushtria_3_3_2023.pdf",
+    "publisher": "Ministry of Defence of Albania",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_lezhe_albania_mod",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_samnite_chronology_attalus",
+    "title": "Ancient-source chronology for Samnium and Rome",
+    "url": "https://www.attalus.org/names/s/samnium.html",
+    "publisher": "Attalus historical source index",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_samnite_chronology_attalus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_samnium_cambridge",
+    "title": "Samnium as a confederacy of independent tribes",
+    "url": "https://www.cambridge.org/core/books/history-of-rome/first-samnite-war/3B2CCFF5B504A9FC34B12E254ACC9561",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_samnium_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_sardinia_campaigns_army",
+    "title": "Kingdom of Sardinia campaign and battle history, 1848-1859",
+    "url": "https://www.esercito.difesa.it/en/organization/the-chief-of-general-staff-of-the-army/comfoter/northern-operational-forces-command/pozzuolo%20del%20friuli-cavalry-brigade/history/123602.html",
+    "publisher": "Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_sardinia_campaigns_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_sardinia_identity_cambridge",
+    "title": "Piedmont and the Kingdom of Sardinia before Italian unification",
+    "url": "https://www.cambridge.org/core/books/paying-for-the-liberal-state/always-on-the-brink-piedmont-and-italy/876F1CA4FD215A387C8474C7661CBDFF",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_sardinia_identity_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_savra_elsie",
+    "title": "Balsha II and the Battle of Savra in 1385",
+    "url": "https://www.albanianhistory.net/1956_Vlora/index.html",
+    "publisher": "Robert Elsie Albanian History Archive",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_savra_elsie",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_sentinum_cambridge",
+    "title": "Coalition belligerents before Sentinum",
+    "url": "https://assets.cambridge.org/97805215/16945/excerpt/9780521516945_excerpt.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_sentinum_cambridge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_sentinum_livy",
+    "title": "Livy on the Samnite and Gallic coalition at Sentinum",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0026%3Abook%3D10%3Achapter%3D27",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_sentinum_livy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_p2_social_war_appian",
+    "title": "Appian on the distinct Samnite and Marsic actors in the Social War",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1%2A.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_pass2_wave7_p2_social_war_appian",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_poland_1792_agad",
+    "title": "Commonwealth army and Russian war of 1792",
+    "url": "https://agad.gov.pl/230K3M/WAR_gb.html",
+    "publisher": "Central Archives of Historical Records in Warsaw",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_poland_1792_agad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_poland_bar_archive",
+    "title": "Bar Confederation forces and 1768-1772 chronology",
+    "url": "https://ank.gov.pl/konfederacja/index.html",
+    "publisher": "National Archives in Krakow",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_poland_bar_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_poland_kosciuszko_museum",
+    "title": "Kosciuszko Uprising forces in 1794",
+    "url": "https://muzeumwp.pl/en/2024/05/08/photo-report-from-the-historical-picnic-on-the-occasion-of-the-104th-anniversary-of-the-polish-army-museum-and-the-230th-anniversary-of-the-kosciuszko-uprising/",
+    "publisher": "Polish Army Museum in Warsaw",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_poland_kosciuszko_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_poland_november_archive",
+    "title": "November Uprising chronology, 1830-1831",
+    "url": "https://lublin.ap.gov.pl/popularyzacja/galerie-online/powstanie-listopadowe-1830-1831/",
+    "publisher": "State Archives in Lublin",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_poland_november_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_poland_warsaw_ushmm",
+    "title": "Polish Home Army and Warsaw Uprising result in 1944",
+    "url": "https://encyclopedia.ushmm.org/content/en/article/the-warsaw-polish-uprising",
+    "publisher": "United States Holocaust Memorial Museum",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_poland_warsaw_ushmm",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_serbia_medieval_museum",
+    "title": "Nemanjić state, kingdom, and imperial identity context",
+    "url": "https://imus.org.rs/en/exhibitions/kings-and-saints-of-serbia/",
+    "publisher": "Historical Museum of Serbia",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_serbia_medieval_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_serbia_modern_government",
+    "title": "Modern Serbia, principality, and 1882 kingdom transition",
+    "url": "https://www.arhiva.serbia.gov.rs/enc/history/modern.html",
+    "publisher": "Government of Serbia",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_serbia_modern_government",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_serbia_uprisings_museum",
+    "title": "First and Second Serbian Uprisings and restoration of statehood",
+    "url": "https://imus.org.rs/en/about-us/",
+    "publisher": "Historical Museum of Serbia",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_serbia_uprisings_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_serbian_krajina_irmct",
+    "title": "Operation Storm, Knin, and the Krajina Serb belligerent",
+    "url": "https://www.irmct.org/en/mip/features/storm",
+    "publisher": "International Residual Mechanism for Criminal Tribunals",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "wave7_central_wave7_serbian_krajina_irmct",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_state_biafra",
+    "title": "Background Paper on Nigeria/Biafra",
+    "url": "https://history.state.gov/historicaldocuments/frus1969-76ve05p1/d35",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "official_diplomatic_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_nigeria_biafra",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_treccani_murat",
+    "title": "Gioacchino Napoleone Murat, re di Napoli",
+    "url": "https://www.treccani.it/enciclopedia/gioacchino-napoleone-murat-re-di-napoli_%28Dizionario-Biografico%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_treccani_tolentino",
+    "title": "Tolentino and the decisive combat of 1815",
+    "url": "https://www.treccani.it/enciclopedia/tolentino_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_uk_madagascar",
+    "title": "Maritime manoeuvre: the Battle of Madagascar, 1942",
+    "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/649524/doctrine_uk_maritime_power_jdp_0_10.pdf",
+    "publisher": "United Kingdom Ministry of Defence",
+    "license": "Citation and link only",
+    "source_type": "official_doctrine_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_mod_maritime_power",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_un_biafra_identity",
+    "title": "Nigeria national history and the 1967 Biafran secession",
+    "url": "https://documents.un.org/doc/undoc/gen/n96/291/59/pdf/n9629159.pdf",
+    "publisher": "United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "united_nations_nigeria_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave7_west_ehr_lincolnshire_1470",
+    "title": "The Lincolnshire Rebellion of 1470 Revisited",
+    "publisher": "Oxford University Press",
+    "url": "https://doi.org/10.1093/ehr/ceab030",
+    "accessed": "2026-07-16",
+    "source_type": "academic_reference",
+    "source_family_id": "english_historical_review",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_west_elysee_1870",
+    "title": "150 ans en Republique",
+    "publisher": "Presidence de la Republique francaise",
+    "url": "https://www.elysee.fr/emmanuel-macron/2020/09/04/150-ans-en-republique",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "elysee",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_hdbg_duchy",
+    "title": "The Duchy of Bavaria",
+    "publisher": "Haus der Bayerischen Geschichte",
+    "url": "https://archiv.hdbg.de/geschichte-bayerns/en-02-die-geschichte-02.php",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "haus_der_bayerischen_geschichte",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_hdbg_electorate",
+    "title": "The Electorate of Bavaria (1623-1806)",
+    "publisher": "Haus der Bayerischen Geschichte",
+    "url": "https://archiv.hdbg.de/geschichte-bayerns/en-02-die-geschichte-04.php",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "haus_der_bayerischen_geschichte",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_hdbg_kingdom",
+    "title": "The Kingdom of Bavaria (1806-1918)",
+    "publisher": "Haus der Bayerischen Geschichte",
+    "url": "https://archiv.hdbg.de/geschichte-bayerns/en-02-die-geschichte-05.php",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "haus_der_bayerischen_geschichte",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_hdbg_schellenberg",
+    "title": "Die Schlacht auf dem Schellenberg am 2. Juli 1704",
+    "publisher": "Haus der Bayerischen Geschichte",
+    "url": "https://hdbg.eu/karten/karten/detail/id/83",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "haus_der_bayerischen_geschichte",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_he_bamburgh",
+    "title": "Bamburgh Castle, Bamburgh, Northumberland",
+    "publisher": "Historic England",
+    "url": "https://historicengland.org.uk/education/schools-resources/educational-images/bamburgh-castle-bamburgh-northumberland-ioe01-15211-01",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "historic_england",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_west_he_bosworth",
+    "title": "English Heritage Battlefield Report: Bosworth 1485",
+    "publisher": "Historic England",
+    "url": "https://historicengland.org.uk/content/docs/listing/battlefields/bosworth/",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "historic_england",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_west_he_caister",
+    "title": "Caister Castle, West Caister",
+    "publisher": "Historic England",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1287573",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "historic_england",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_west_he_stoke",
+    "title": "English Heritage Battlefield Report: Stoke Field 1487",
+    "publisher": "Historic England",
+    "url": "https://historicengland.org.uk/content/docs/listing/battlefields/stoke-field/",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "historic_england",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_he_towton",
+    "title": "Battle of Towton, 1461",
+    "publisher": "Historic England",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1000040",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "historic_england",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_nl_constitution_1815",
+    "title": "Grondwetsherziening 1815",
+    "publisher": "De Nederlandse Grondwet",
+    "url": "https://www.denederlandsegrondwet.nl/grondwetsherziening-1815",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "de_nederlandse_grondwet",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_rcahmw_twt",
+    "title": "Battle of Twthill (Battlefields Inventory)",
+    "publisher": "Royal Commission on the Ancient and Historical Monuments of Wales",
+    "url": "https://coflein.gov.uk/en/sites/403421",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "rcahmw_coflein",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave7_west_richard_iii_st_albans",
+    "title": "The Second Battle of St Albans",
+    "publisher": "Richard III Society",
+    "url": "https://richardiii.net/richard-iii-his-world/the-war-of-the-roses/the-battles/the-second-battle-of-st-albans/",
+    "accessed": "2026-07-16",
+    "source_type": "specialist_historical_reference",
+    "source_family_id": "richard_iii_society",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_royal_house_netherlands",
+    "title": "History of the Kingdom of the Netherlands",
+    "publisher": "Royal House of the Netherlands",
+    "url": "https://www.royal-house.nl/topics/history/history-of-the-kingdom-of-the-netherlands",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "royal_house_netherlands",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_saho_blaauwberg",
+    "title": "The Battle of Blaauwberg takes place",
+    "publisher": "South African History Online",
+    "url": "https://sahistory.org.za/dated-event/battle-blaauwberg-takes-place",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "south_african_history_online",
+    "license": "Citation and link only",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave7_west_ukna_palatinate",
+    "title": "1621-1622 grant for the defence of the Palatinate",
+    "publisher": "The National Archives (United Kingdom)",
+    "url": "https://www.nationalarchives.gov.uk/e179/notes.asp?action=3&slctgrantid=381",
+    "accessed": "2026-07-16",
+    "source_type": "official_or_academic_reference",
+    "source_family_id": "uk_national_archives",
+    "license": "Citation and link only",
+    "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
   },

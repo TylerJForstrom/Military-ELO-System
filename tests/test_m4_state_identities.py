@@ -44,11 +44,21 @@ def _empty_tier_context():
 class StateLabelWindowTests(unittest.TestCase):
     def test_france_resolves_era_correctly_with_deliberate_gaps(self) -> None:
         self.assertEqual(_label_policy_seed_id("france", 1700, 1700), "kingdom_france")
-        self.assertEqual(_label_policy_seed_id("france", 1795, 1795), "french_first_republic")
-        self.assertEqual(_label_policy_seed_id("france", 1808, 1812), "first_french_empire")
-        self.assertEqual(_label_policy_seed_id("france", 1859, 1859), "second_french_empire")
-        self.assertEqual(_label_policy_seed_id("france", 1914, 1918), "french_third_republic")
-        self.assertEqual(_label_policy_seed_id("france", 1991, 1991), "french_fifth_republic")
+        self.assertEqual(
+            _label_policy_seed_id("france", 1795, 1795), "french_first_republic"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1808, 1812), "first_french_empire"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1859, 1859), "second_french_empire"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1914, 1918), "french_third_republic"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1991, 1991), "french_fifth_republic"
+        )
         # Restoration/July Monarchy/Second Republic and Vichy/Fourth Republic gaps.
         self.assertIsNone(_label_policy_seed_id("france", 1830, 1830))
         self.assertIsNone(_label_policy_seed_id("france", 1950, 1950))
@@ -59,11 +69,19 @@ class StateLabelWindowTests(unittest.TestCase):
         for label in ("austria", "habsburg empire"):
             with self.subTest(label=label):
                 self.assertIsNone(_label_policy_seed_id(label, 1540, 1550))
-                self.assertEqual(_label_policy_seed_id(label, 1683, 1683), "habsburg_monarchy")
-                self.assertEqual(_label_policy_seed_id(label, 1809, 1809), "austrian_empire")
-                self.assertEqual(_label_policy_seed_id(label, 1914, 1918), "austria_hungary")
+                self.assertEqual(
+                    _label_policy_seed_id(label, 1683, 1683), "habsburg_monarchy"
+                )
+                self.assertEqual(
+                    _label_policy_seed_id(label, 1809, 1809), "austrian_empire"
+                )
+                self.assertEqual(
+                    _label_policy_seed_id(label, 1914, 1918), "austria_hungary"
+                )
                 self.assertIsNone(_label_policy_seed_id(label, 1920, 1920))
-        self.assertEqual(_label_policy_seed_id("austria hungary", 1859, 1859), "austrian_empire")
+        self.assertEqual(
+            _label_policy_seed_id("austria hungary", 1859, 1859), "austrian_empire"
+        )
 
     def test_exact_habsburg_boundaries(self) -> None:
         label_expected = {
@@ -80,21 +98,35 @@ class StateLabelWindowTests(unittest.TestCase):
         }
         for year, entity_id in label_expected.items():
             with self.subTest(year=year, path="label"):
-                self.assertEqual(_label_policy_seed_id("austria", year, year), entity_id)
+                self.assertEqual(
+                    _label_policy_seed_id("austria", year, year), entity_id
+                )
             with self.subTest(year=year, path="cow"):
-                self.assertEqual(_cow_policy_seed_id("300", year, year), cow_expected[year])
+                self.assertEqual(
+                    _cow_policy_seed_id("300", year, year), cow_expected[year]
+                )
 
     def test_england_interregnum_gap(self) -> None:
-        self.assertEqual(_label_policy_seed_id("england", 1066, 1066), "kingdom_england")
-        self.assertEqual(_label_policy_seed_id("england", 1700, 1700), "kingdom_england")
+        self.assertEqual(
+            _label_policy_seed_id("england", 1066, 1066), "kingdom_england"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("england", 1700, 1700), "kingdom_england"
+        )
         self.assertIsNone(_label_policy_seed_id("england", 1650, 1655))
         self.assertIsNone(_label_policy_seed_id("england", 1648, 1650))
         self.assertIsNone(_label_policy_seed_id("england", 1710, 1710))
-        self.assertEqual(_label_policy_seed_id("england", 1648, 1648), "kingdom_england")
-        self.assertEqual(_label_policy_seed_id("england", 1661, 1661), "kingdom_england")
+        self.assertEqual(
+            _label_policy_seed_id("england", 1648, 1648), "kingdom_england"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("england", 1661, 1661), "kingdom_england"
+        )
 
     def test_persia_five_window_chain(self) -> None:
-        self.assertEqual(_label_policy_seed_id("persia", -490, -480), "achaemenid_empire")
+        self.assertEqual(
+            _label_policy_seed_id("persia", -490, -480), "achaemenid_empire"
+        )
         self.assertEqual(_label_policy_seed_id("persia", 260, 260), "sasanian_empire")
         self.assertEqual(_label_policy_seed_id("persia", 1736, 1736), "safavid_empire")
         self.assertEqual(_label_policy_seed_id("persia", 1740, 1740), "afsharid_iran")
@@ -105,31 +137,58 @@ class StateLabelWindowTests(unittest.TestCase):
         self.assertIsNone(_label_policy_seed_id("persia", 1935, 1935))
 
     def test_remaining_state_windows(self) -> None:
-        self.assertEqual(_label_policy_seed_id("prussia", 1757, 1757), "kingdom_prussia")
-        self.assertEqual(_label_policy_seed_id("prussia", 1870, 1870), "kingdom_prussia")
+        self.assertEqual(
+            _label_policy_seed_id("prussia", 1757, 1757), "kingdom_prussia"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("prussia", 1870, 1870), "kingdom_prussia"
+        )
         self.assertEqual(_label_policy_seed_id("prussia", 1871, 1871), "german_empire")
         self.assertIsNone(_label_policy_seed_id("prussia", 1880, 1880))
-        self.assertEqual(_label_policy_seed_id("poland", 1683, 1683), "polish_lithuanian_commonwealth")
-        self.assertEqual(_label_policy_seed_id("poland", 1920, 1920), "second_polish_republic")
+        self.assertEqual(
+            _label_policy_seed_id("poland", 1683, 1683),
+            "polish_lithuanian_commonwealth",
+        )
+        self.assertEqual(
+            _label_policy_seed_id("poland", 1920, 1920), "second_polish_republic"
+        )
         self.assertIsNone(_label_policy_seed_id("poland", 1850, 1850))
         self.assertEqual(_label_policy_seed_id("sweden", 1709, 1709), "kingdom_sweden")
         self.assertIsNone(_label_policy_seed_id("sweden", 1400, 1400))
-        self.assertEqual(_label_policy_seed_id("denmark", 1864, 1864), "kingdom_denmark")
-        self.assertEqual(_label_policy_seed_id("scotland", 1314, 1314), "kingdom_scotland")
+        self.assertEqual(
+            _label_policy_seed_id("denmark", 1864, 1864), "kingdom_denmark"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("scotland", 1314, 1314), "kingdom_scotland"
+        )
         self.assertIsNone(_label_policy_seed_id("scotland", 1750, 1750))
         self.assertEqual(_label_policy_seed_id("venice", 1571, 1571), "republic_venice")
         self.assertEqual(_label_policy_seed_id("korea", 1592, 1598), "joseon")
         self.assertIsNone(_label_policy_seed_id("korea", 1904, 1905))
-        self.assertEqual(_label_policy_seed_id("afghanistan", 1761, 1761), "durrani_empire")
-        self.assertEqual(_label_policy_seed_id("afghanistan", 1880, 1880), "emirate_afghanistan")
+        self.assertEqual(
+            _label_policy_seed_id("afghanistan", 1761, 1761), "durrani_empire"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("afghanistan", 1880, 1880), "emirate_afghanistan"
+        )
         self.assertIsNone(_label_policy_seed_id("afghanistan", 1935, 1935))
-        self.assertEqual(_label_policy_seed_id("marathas", 1761, 1761), "maratha_confederacy")
-        self.assertEqual(_label_policy_seed_id("maratha empire", 1803, 1803), "maratha_confederacy")
+        self.assertEqual(
+            _label_policy_seed_id("marathas", 1761, 1761), "maratha_confederacy"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("maratha empire", 1803, 1803), "maratha_confederacy"
+        )
         self.assertEqual(_label_policy_seed_id("mysore", 1780, 1780), "kingdom_mysore")
         self.assertEqual(_label_policy_seed_id("punjab", 1846, 1846), "sikh_empire")
-        self.assertEqual(_label_policy_seed_id("transvaal", 1900, 1900), "south_african_republic")
-        self.assertEqual(_label_policy_seed_id("muslim caliphate", 636, 636), "rashidun_caliphate")
-        self.assertEqual(_label_policy_seed_id("muslim caliphate", 717, 718), "umayyad_caliphate")
+        self.assertEqual(
+            _label_policy_seed_id("transvaal", 1900, 1900), "south_african_republic"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("muslim caliphate", 636, 636), "rashidun_caliphate"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("muslim caliphate", 717, 718), "umayyad_caliphate"
+        )
 
     def test_wave4_exact_source_label_windows(self) -> None:
         cases = (
@@ -161,7 +220,9 @@ class StateCodePolicyTests(unittest.TestCase):
     def test_prussia_germany_boundary_agrees_across_pipelines(self) -> None:
         for year, entity_id in ((1870, "kingdom_prussia"), (1871, "german_empire")):
             with self.subTest(year=year):
-                self.assertEqual(_label_policy_seed_id("prussia", year, year), entity_id)
+                self.assertEqual(
+                    _label_policy_seed_id("prussia", year, year), entity_id
+                )
                 self.assertEqual(_cow_policy_seed_id("255", year, year), entity_id)
 
     def test_wave4_cow_identity_windows_are_exact(self) -> None:
@@ -182,21 +243,34 @@ class StateCodePolicyTests(unittest.TestCase):
         seed_root = PROJECT_ROOT / "data" / "seed"
         entities = {
             entity["id"]: entity
-            for entity in json.loads((seed_root / "entities.json").read_text(encoding="utf-8"))
+            for entity in json.loads(
+                (seed_root / "entities.json").read_text(encoding="utf-8")
+            )
         }
         source_ids = {
             source["id"]
-            for source in json.loads((seed_root / "sources.json").read_text(encoding="utf-8"))
+            for source in json.loads(
+                (seed_root / "sources.json").read_text(encoding="utf-8")
+            )
         }
         expected = {
             "united_states_colombia": (
-                "United States of Colombia", 1863, 1885, "colombia"
+                "United States of Colombia",
+                1863,
+                1885,
+                "colombia",
             ),
             "kingdom_saudi_arabia": (
-                "Kingdom of Saudi Arabia", 1932, None, "saudi arabia"
+                "Kingdom of Saudi Arabia",
+                1932,
+                None,
+                "saudi arabia",
             ),
             "mutawakkilite_kingdom_yemen": (
-                "Mutawakkilite Kingdom of Yemen", 1918, 1961, "yemen"
+                "Mutawakkilite Kingdom of Yemen",
+                1918,
+                1961,
+                "yemen",
             ),
         }
         for entity_id, (name, low, high, forbidden_alias) in expected.items():
@@ -214,11 +288,19 @@ class StateCodePolicyTests(unittest.TestCase):
                 self.assertLessEqual(set(entity["source_ids"]), source_ids)
 
     def test_extended_seed_code_windows(self) -> None:
-        self.assertEqual(_policy_seed_id("fr_bourbon_k_2", 1795, 1800), "french_first_republic")
-        self.assertEqual(_policy_seed_id("gb_british_emp_1", 1588, 1588), "kingdom_england")
+        self.assertEqual(
+            _policy_seed_id("fr_bourbon_k_2", 1795, 1800), "french_first_republic"
+        )
+        self.assertEqual(
+            _policy_seed_id("gb_british_emp_1", 1588, 1588), "kingdom_england"
+        )
         self.assertIsNone(_policy_seed_id("gb_british_emp_1", 1650, 1655))
-        self.assertEqual(_policy_seed_id("gb_british_emp_1", 1800, 1800), "united_kingdom")
-        self.assertEqual(_policy_seed_id("at_habsburg_1", 1683, 1683), "habsburg_monarchy")
+        self.assertEqual(
+            _policy_seed_id("gb_british_emp_1", 1800, 1800), "united_kingdom"
+        )
+        self.assertEqual(
+            _policy_seed_id("at_habsburg_1", 1683, 1683), "habsburg_monarchy"
+        )
         self.assertIsNone(_policy_seed_id("at_habsburg_1", 1540, 1550))
         self.assertEqual(_policy_seed_id("kr_joseon", 1592, 1598), "joseon")
         self.assertEqual(_policy_seed_id("rs_serbia_k", 1914, 1918), "kingdom_serbia")
@@ -243,7 +325,9 @@ class StateCodePolicyTests(unittest.TestCase):
         for table_name, table in tables.items():
             for policy_key, windows in table.items():
                 for _, _, entity_id in windows:
-                    with self.subTest(table=table_name, key=policy_key, entity=entity_id):
+                    with self.subTest(
+                        table=table_name, key=policy_key, entity=entity_id
+                    ):
                         self.assertIn(entity_id, seed_ids)
 
     def test_france_revolution_boundary_edges(self) -> None:
@@ -290,11 +374,9 @@ class StateCodePolicyTests(unittest.TestCase):
         _validate_seed_event_intervals(events, {e["id"]: e for e in entities})
 
         widened = [dict(event) for event in events]
-        next(
-            event
-            for event in widened
-            if event["id"] == "american_revolutionary_war"
-        )["year"] = 1774
+        next(event for event in widened if event["id"] == "american_revolutionary_war")[
+            "year"
+        ] = 1774
         with self.assertRaisesRegex(ValueError, "interval exemption expected"):
             _validate_seed_event_intervals(
                 widened,
@@ -438,8 +520,8 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 4_605)
-        label = [e for e in self.events if e.get("identity_resolution") == "label"]
+        self.assertEqual(len(self.events), 4_797)
+        label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
             for e in self.events
@@ -447,11 +529,17 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         ]
         self.assertEqual(len(label), 2_383)
         self.assertEqual(len(crosswalk), 1_824)
-        self.assertEqual(sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64)
-        self.assertEqual(sum(str(e["id"]).startswith("iwbd_") for e in self.events), 151)
-        self.assertEqual(sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7)
+        self.assertEqual(
+            sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64
+        )
+        self.assertEqual(
+            sum(str(e["id"]).startswith("iwbd_") for e in self.events), 151
+        )
+        self.assertEqual(
+            sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7
+        )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 288)
+        self.assertEqual(len(rated), 340)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -483,7 +571,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 1_648)
+        self.assertEqual(len(self.registry["entities"]), 1_702)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

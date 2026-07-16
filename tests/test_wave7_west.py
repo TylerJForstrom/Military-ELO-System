@@ -202,7 +202,11 @@ class Wave7WestInventoryTests(unittest.TestCase):
 class Wave7WestPromotionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.release_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.release_events = [
+            event
+            for event in _json(ROOT / "data" / "release" / "events.json")
+            if event.get("hced_candidate_id") not in WAVE7_WEST_HCED_CONTRACT_IDS
+        ]
         cls.entities = {
             entity["id"]: entity
             for entity in _json(ROOT / "data" / "release" / "entities.json")

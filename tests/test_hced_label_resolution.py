@@ -173,11 +173,21 @@ def _resolve_label_stub(label, low_year, high_year):
 class LabelPolicyTests(unittest.TestCase):
     def test_france_label_resolves_by_era_and_never_bridges_1793_or_1816(self) -> None:
         self.assertEqual(_label_policy_seed_id("france", 1650, 1650), "kingdom_france")
-        self.assertEqual(_label_policy_seed_id("france", 1795, 1795), "french_first_republic")
-        self.assertEqual(_label_policy_seed_id("france", 1809, 1809), "first_french_empire")
-        self.assertEqual(_label_policy_seed_id("france", 1860, 1860), "second_french_empire")
-        self.assertEqual(_label_policy_seed_id("france", 1915, 1915), "french_third_republic")
-        self.assertEqual(_label_policy_seed_id("france", 1960, 1960), "french_fifth_republic")
+        self.assertEqual(
+            _label_policy_seed_id("france", 1795, 1795), "french_first_republic"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1809, 1809), "first_french_empire"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1860, 1860), "second_french_empire"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1915, 1915), "french_third_republic"
+        )
+        self.assertEqual(
+            _label_policy_seed_id("france", 1960, 1960), "french_fifth_republic"
+        )
         # 1816-1851 (Restoration through Second Republic) and 1941-1957 are
         # deliberate gaps; 1870 sits inside BOTH the Second Empire and Third
         # Republic windows, so the boundary year is ambiguous and fails.
@@ -198,18 +208,24 @@ class LabelPolicyTests(unittest.TestCase):
         self.assertIsNone(_label_policy_seed_id("russia", 1917, 1922))
         self.assertIsNone(_label_policy_seed_id("russia", 1992, 1992))
 
-    def test_rome_and_byzantium_split_at_395_with_boundary_ambiguity_failing(self) -> None:
+    def test_rome_and_byzantium_split_at_395_with_boundary_ambiguity_failing(
+        self,
+    ) -> None:
         self.assertEqual(_label_policy_seed_id("rome", -100, -100), "roman_republic")
         self.assertEqual(_label_policy_seed_id("rome", 100, 100), "roman_empire")
         self.assertEqual(_label_policy_seed_id("romans", 100, 100), "roman_empire")
         # -27 sits inside both declared windows: ambiguity always fails.
         self.assertIsNone(_label_policy_seed_id("rome", -27, -27))
-        self.assertEqual(_label_policy_seed_id("byzantium", 600, 600), "byzantine_empire")
+        self.assertEqual(
+            _label_policy_seed_id("byzantium", 600, 600), "byzantine_empire"
+        )
         self.assertIsNone(_label_policy_seed_id("rome", 600, 600))
         self.assertIsNone(_label_policy_seed_id("byzantium", 300, 300))
 
     def test_persia_interregna_stay_staged(self) -> None:
-        self.assertEqual(_label_policy_seed_id("persia", -500, -500), "achaemenid_empire")
+        self.assertEqual(
+            _label_policy_seed_id("persia", -500, -500), "achaemenid_empire"
+        )
         self.assertEqual(_label_policy_seed_id("persia", 400, 400), "sasanian_empire")
         self.assertEqual(_label_policy_seed_id("persia", 1600, 1600), "safavid_empire")
         self.assertIsNone(_label_policy_seed_id("persia", 100, 100))
@@ -240,7 +256,9 @@ class LabelPolicyTests(unittest.TestCase):
 
 
 class FactionLabelTests(unittest.TestCase):
-    def test_faction_labels_never_resolve_even_with_a_colliding_polity_alias(self) -> None:
+    def test_faction_labels_never_resolve_even_with_a_colliding_polity_alias(
+        self,
+    ) -> None:
         context = _context(
             polities=[
                 _polity("Mujahideen", 1987, 2024, aliases=("Mujahideen",)),
@@ -299,9 +317,7 @@ class PendingSplitTests(unittest.TestCase):
         self,
     ) -> None:
         context = _context(
-            polities=[
-                _polity("Swiss Confederation", 1294, 2024, wikidata_ids=("Q39",))
-            ]
+            polities=[_polity("Swiss Confederation", 1294, 2024, wikidata_ids=("Q39",))]
         )
         entity_id, polity, reason, tier = resolve_hced_side_label(
             "Swiss Confederation", 1700, 1700, context
@@ -314,9 +330,7 @@ class PendingSplitTests(unittest.TestCase):
     def test_pending_split_is_checked_before_policy_and_alias_tiers(self) -> None:
         # No pending-split label may double as a policy label: the pending
         # gate is authoritative and runs first.
-        self.assertTrue(
-            HCED_PENDING_SPLIT_LABELS.isdisjoint(HCED_LABEL_POLICIES)
-        )
+        self.assertTrue(HCED_PENDING_SPLIT_LABELS.isdisjoint(HCED_LABEL_POLICIES))
         # Even a covering curated seed alias cannot outrank the pending gate.
         context = _context(
             seeds=[_seed("modern_switzerland", "Switzerland", 1523, None)],
@@ -335,7 +349,9 @@ class LabelResolutionTierTests(unittest.TestCase):
         wessex = _seed("wessex", "Kingdom of Wessex", 519, 927, aliases=("Wessex",))
         open_ended = _seed("modernland", "Modernland", 1948, None)
         context = _context(seeds=[wessex, open_ended])
-        entity_id, _, reason, tier = resolve_hced_side_label("Wessex", 800, 800, context)
+        entity_id, _, reason, tier = resolve_hced_side_label(
+            "Wessex", 800, 800, context
+        )
         self.assertEqual((entity_id, reason, tier), ("wessex", None, "seed_alias"))
         # Open-ended seeds cover any later interval.
         entity_id, _, reason, tier = resolve_hced_side_label(
@@ -393,7 +409,9 @@ class LabelResolutionTierTests(unittest.TestCase):
         self.assertIsNone(entity_id)
         self.assertEqual(reason, "no_unique_time_valid_label_match")
 
-    def test_incoherent_observation_falls_through_to_alias_tier_not_failure(self) -> None:
+    def test_incoherent_observation_falls_through_to_alias_tier_not_failure(
+        self,
+    ) -> None:
         mispaired = _polity("Barland Kingdom", 1400, 1600, aliases=("Barland",))
         aliased = _polity("Fooland Kingdom", 1400, 1600, aliases=("Fooland",))
         context = _context(
@@ -475,7 +493,11 @@ class LabelResolutionTierTests(unittest.TestCase):
         # but is seven centuries away from the seed Mongol Empire: it keeps its
         # own candidate identity instead of inheriting the seed rating line.
         seed = _seed(
-            "mongol_empire", "Mongol Empire", 1206, 1294, aliases=("Great Mongol State",)
+            "mongol_empire",
+            "Mongol Empire",
+            1206,
+            1294,
+            aliases=("Great Mongol State",),
         )
         modern = _polity("Great Mongol State", 1912, 1925, aliases=("Bogd Khanate",))
         context = _context(seeds=[seed], polities=[modern])
@@ -497,7 +519,9 @@ class TwoPassStructureTests(unittest.TestCase):
         curated = {_event_key("Battle of Curated", 1800)}
         promoted = {_event_key("Battle of Promoted", 1801)}
         curated_before, promoted_before = set(curated), set(promoted)
-        rows = [_row("hced-1", "Battle of New", 1802, "Aland", "Bland", "Aland", "Bland")]
+        rows = [
+            _row("hced-1", "Battle of New", 1802, "Aland", "Bland", "Aland", "Bland")
+        ]
         result = promote_hced_label_rows(
             rows, curated, promoted, _resolve_code_stub, _resolve_label_stub
         )
@@ -571,7 +595,11 @@ class TwoPassStructureTests(unittest.TestCase):
             event["side_identity_resolution"],
             {"side_a": "seshat_crosswalk", "side_b": "cliopatria_alias"},
         )
-        sides = {p["side"] for p in event["participants"] if p["entity_id"] == "seed_code_fr_1"}
+        sides = {
+            p["side"]
+            for p in event["participants"]
+            if p["entity_id"] == "seed_code_fr_1"
+        }
         self.assertEqual(sides, {"side_a"})
 
     def test_unknown_winner_is_not_a_draw(self) -> None:
@@ -639,8 +667,17 @@ class TwoPassStructureTests(unittest.TestCase):
     def test_confidence_penalty_per_label_resolved_side(self) -> None:
         rows = [
             # consulted, one coded + one label side, point year -> 0.70
-            _row("c-1", "Battle One", 1801, "A1", "B1", "A1", "B1",
-                 codes1=("x1",), consulted="src"),
+            _row(
+                "c-1",
+                "Battle One",
+                1801,
+                "A1",
+                "B1",
+                "A1",
+                "B1",
+                codes1=("x1",),
+                consulted="src",
+            ),
             # consulted, two label sides, point year -> 0.67
             _row("c-2", "Battle Two", 1802, "A2", "B2", "A2", "B2", consulted="src"),
             # unconsulted, one coded + one label side, point year -> 0.64
@@ -654,7 +691,9 @@ class TwoPassStructureTests(unittest.TestCase):
             rows, set(), set(), _resolve_code_stub, _resolve_label_stub
         )
         self.assertEqual(result["accepted"], 5)
-        confidences = {e["hced_candidate_id"]: e["confidence"] for e in result["events"]}
+        confidences = {
+            e["hced_candidate_id"]: e["confidence"] for e in result["events"]
+        }
         self.assertEqual(
             confidences,
             {"c-1": 0.70, "c-2": 0.67, "c-3": 0.64, "c-4": 0.61, "c-5": 0.58},
@@ -662,12 +701,21 @@ class TwoPassStructureTests(unittest.TestCase):
         self.assertEqual(set(confidences.values()), LABEL_CONFIDENCE_VALUES)
         for event in result["events"]:
             for participant in event["participants"]:
-                self.assertEqual(participant["evidence_confidence"], event["confidence"])
+                self.assertEqual(
+                    participant["evidence_confidence"], event["confidence"]
+                )
 
     def test_event_carries_identity_resolution_provenance(self) -> None:
         rows = [
-            _row("hced-777", "Battle of Marker", 1650, "Fooland", "Barland",
-                 "Fooland", "Barland")
+            _row(
+                "hced-777",
+                "Battle of Marker",
+                1650,
+                "Fooland",
+                "Barland",
+                "Fooland",
+                "Barland",
+            )
         ]
         result = promote_hced_label_rows(
             rows, set(), set(), _resolve_code_stub, _resolve_label_stub
@@ -676,9 +724,7 @@ class TwoPassStructureTests(unittest.TestCase):
         self.assertTrue(str(event["id"]).startswith("hced_label_"))
         self.assertEqual(event["identity_resolution"], "label")
         self.assertEqual(event["hced_candidate_id"], "hced-777")
-        self.assertEqual(
-            set(event["side_identity_resolution"]), {"side_a", "side_b"}
-        )
+        self.assertEqual(set(event["side_identity_resolution"]), {"side_a", "side_b"})
         for tier in event["side_identity_resolution"].values():
             self.assertIn(tier, LABEL_TIERS | {"seshat_crosswalk"})
         self.assertIn("time-bounded label policy", event["summary"])
@@ -725,7 +771,9 @@ class TwoPassStructureTests(unittest.TestCase):
 
         rows = [
             _row("s-1", "Battle of Seeds", 1500, "Aland", "Bland", "Aland", "Bland"),
-            _row("s-2", "Battle of Clio", 1501, "Clioland", "Bland", "Clioland", "Bland"),
+            _row(
+                "s-2", "Battle of Clio", 1501, "Clioland", "Bland", "Clioland", "Bland"
+            ),
         ]
         result = promote_hced_label_rows(
             rows, set(), set(), _resolve_code_stub, resolve_clio
@@ -843,9 +891,7 @@ class ReleaseArtifactTests(unittest.TestCase):
                 f"unexpected hced id in legacy block: {event['id']}",
             )
         # No label event leaked in front of the append point.
-        self.assertTrue(
-            all(not str(e["id"]).startswith("hced_label_") for e in legacy)
-        )
+        self.assertTrue(all(not str(e["id"]).startswith("hced_label_") for e in legacy))
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
@@ -866,9 +912,7 @@ class ReleaseArtifactTests(unittest.TestCase):
                 continue
             key = (_normalized_event_name(event["name"]), int(event["year"]))
             groups.setdefault(key, []).append(str(event["id"]))
-        collisions = {
-            tuple(sorted(ids)) for ids in groups.values() if len(ids) > 1
-        }
+        collisions = {tuple(sorted(ids)) for ids in groups.values() if len(ids) > 1}
         self.assertEqual(
             collisions,
             {
@@ -901,8 +945,21 @@ class ReleaseArtifactTests(unittest.TestCase):
             self.metadata["promotion"]["accepted_hced_label_events"],
         )
         self.assertTrue(self.label_events)
+        expected_migrations = {
+            row["event_id"]
+            for row in self.metadata["promotion"]["wave7_global_identity_migrations"]
+        }
+        observed_migrations = {
+            event["id"]
+            for event in self.label_events
+            if event.get("identity_resolution") == "wave7_candidate_keyed_migration"
+        }
+        self.assertEqual(observed_migrations, expected_migrations)
         for event in self.label_events:
-            self.assertEqual(event["identity_resolution"], "label")
+            self.assertIn(
+                event["identity_resolution"],
+                {"label", "wave7_candidate_keyed_migration"},
+            )
             self.assertLessEqual(event["confidence"], 0.70)
             self.assertIn(event["confidence"], LABEL_CONFIDENCE_VALUES)
             self.assertEqual(event["event_type"], "engagement")
@@ -912,13 +969,23 @@ class ReleaseArtifactTests(unittest.TestCase):
                 self.assertIn(
                     tier,
                     LABEL_TIERS
-                    | {"seshat_crosswalk", "wave6_pre1500_candidate_policy"},
+                    | {
+                        "seshat_crosswalk",
+                        "wave6_pre1500_candidate_policy",
+                        "wave7_candidate_keyed_exact",
+                    },
                 )
             # At least one side is label- or reviewed-candidate-resolved on
             # every event emitted through this pass.
             self.assertTrue(
                 set(tiers.values())
-                & (LABEL_TIERS | {"wave6_pre1500_candidate_policy"})
+                & (
+                    LABEL_TIERS
+                    | {
+                        "wave6_pre1500_candidate_policy",
+                        "wave7_candidate_keyed_exact",
+                    }
+                )
             )
 
     def test_no_faction_or_pending_split_label_entity_in_any_label_event(self) -> None:
@@ -1032,17 +1099,18 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
-        # Pinned measured funnel: 501 + 4,113 + 1,884 + 2,383 == 8,881.
+        # Pinned measured funnel after reserving the reviewed Wave 7 rows:
+        # 726 + 3,888 + 1,884 + 2,383 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (501, 4113, 1884, 2383, 8881),
+            (726, 3888, 1884, 2383, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_496)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_271)
         # All thirteen declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 13)
         self.assertEqual(
@@ -1051,7 +1119,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             promotion["hced_label_rejections"]["curated_row_exclusion"], 53
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 147)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 140)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -1065,7 +1133,9 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)
         )
-        self.assertEqual(len(self.events), self.metadata["record_counts_expected"]["events"])
+        self.assertEqual(
+            len(self.events), self.metadata["record_counts_expected"]["events"]
+        )
         self.assertEqual(coverage["rated_events"], len(self.events))
 
     def test_unresolved_event_candidates_subtract_label_events(self) -> None:
@@ -1077,11 +1147,16 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             - queue["cliopatria-entity-candidates.jsonl"]
             - queue["ucdp-actor-26.1-candidates.jsonl"]
         )
+        candidate_keyed_hced = sum(
+            value
+            for key, value in coverage.items()
+            if key.startswith("candidate_keyed_") and key.endswith("_hced_events")
+        )
         expected_unresolved = (
             event_like
             - coverage["provisional_hced_events"]
             - coverage["provisional_hced_label_events"]
-            - coverage["candidate_keyed_wave6_hced_events"]
+            - candidate_keyed_hced
             - coverage["iwd_components_aggregated"]
             - coverage["provisional_iwbd_battles"]
             - coverage["provisional_ucdp_events"]

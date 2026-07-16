@@ -27,9 +27,15 @@ from .wave7_central_pass2_data import (
 
 WAVE7_CENTRAL_PASS2_PROMOTION_IDS = frozenset(WAVE7_CENTRAL_PASS2_PROMOTION_CONTRACTS)
 WAVE7_CENTRAL_PASS2_HOLD_IDS = frozenset(WAVE7_CENTRAL_PASS2_HOLDS)
+WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS = frozenset(
+    candidate_id
+    for candidate_id, contract in WAVE7_CENTRAL_PASS2_HOLDS.items()
+    if contract["category"] == "published_duplicate"
+)
 WAVE7_CENTRAL_PASS2_RESERVED_IDS = (
     WAVE7_CENTRAL_PASS2_PROMOTION_IDS | WAVE7_CENTRAL_PASS2_HOLD_IDS
 )
+assert WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS == {"hced-Albania1939-1"}
 WAVE7_CENTRAL_PASS2_REUSED_ENTITY_IDS = frozenset(
     {
         "austrian_empire",

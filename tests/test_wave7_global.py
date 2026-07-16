@@ -27,7 +27,6 @@ from military_elo.promotion.wave7_global_data import (
     WAVE7_GLOBAL_HCED_CONTRACTS,
     WAVE7_GLOBAL_HCED_HOLDS,
     WAVE7_GLOBAL_ORANGE_MIGRATIONS,
-    WAVE7_GLOBAL_SOURCES,
     WAVE7_GLOBAL_SUPERSESSIONS,
 )
 
@@ -49,8 +48,7 @@ def _embedded_hced_rows():
 
 def _embedded_cliopatria_rows():
     return [
-        contract["raw_candidate"]
-        for contract in WAVE7_GLOBAL_SUPERSESSIONS.values()
+        contract["raw_candidate"] for contract in WAVE7_GLOBAL_SUPERSESSIONS.values()
     ]
 
 
@@ -77,8 +75,7 @@ class Wave7GlobalInventoryTests(unittest.TestCase):
         self.assertEqual(len(WAVE7_GLOBAL_RESERVED_IDS), 47)
         self.assertFalse(WAVE7_GLOBAL_HCED_CONTRACT_IDS & WAVE7_GLOBAL_HCED_HOLD_IDS)
         self.assertFalse(
-            WAVE7_GLOBAL_HCED_CONTRACT_IDS
-            & WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS
+            WAVE7_GLOBAL_HCED_CONTRACT_IDS & WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS
         )
         self.assertEqual(
             WAVE7_GLOBAL_FINAL_AUDIT_SIGNATURE,
@@ -135,27 +132,21 @@ class Wave7GlobalInventoryTests(unittest.TestCase):
         original = _embedded_hced_rows()
         changed = copy.deepcopy(original)
         target = next(
-            row
-            for row in changed
-            if row["candidate_id"] == "hced-Antukyah1531-1"
+            row for row in changed if row["candidate_id"] == "hced-Antukyah1531-1"
         )
         target["winner_raw"] = "Ethiopia"
         with self.assertRaisesRegex(ValueError, "raw-row fingerprint changed"):
             validate_wave7_global_queue_contracts(changed)
 
         missing = [
-            row
-            for row in original
-            if row["candidate_id"] != "hced-Biddulphsberg1900-1"
+            row for row in original if row["candidate_id"] != "hced-Biddulphsberg1900-1"
         ]
         with self.assertRaisesRegex(ValueError, "expected exactly one queue row"):
             validate_wave7_global_queue_contracts(missing)
 
         duplicate = [
             *original,
-            WAVE7_GLOBAL_HCED_CONTRACTS["hced-Biddulphsberg1900-1"][
-                "raw_row"
-            ],
+            WAVE7_GLOBAL_HCED_CONTRACTS["hced-Biddulphsberg1900-1"]["raw_row"],
         ]
         with self.assertRaisesRegex(ValueError, "expected exactly one queue row"):
             validate_wave7_global_queue_contracts(duplicate)
@@ -187,7 +178,10 @@ class Wave7GlobalInventoryTests(unittest.TestCase):
         )
         self.assertEqual(release_kadesh["name"], "Battle of Kadesh")
         self.assertEqual(
-            {participant["termination"] for participant in release_kadesh["participants"]},
+            {
+                participant["termination"]
+                for participant in release_kadesh["participants"]
+            },
             {"inconclusive"},
         )
 
@@ -230,15 +224,17 @@ class Wave7GlobalPromotionTests(unittest.TestCase):
             cls.release_entities["ethiopian_empire"]
         )
         install_wave7_global_entities(cls.release_entities)
-        cls.release_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.release_events = [
+            event
+            for event in _json(ROOT / "data" / "release" / "events.json")
+            if event.get("hced_candidate_id") not in WAVE7_GLOBAL_HCED_CONTRACT_IDS
+        ]
         cls.promoted = promote_wave7_global_hced_contracts(
             _embedded_hced_rows(),
             cls.release_entities,
             cls.release_events,
         )
-        cls.by_candidate = {
-            event["hced_candidate_id"]: event for event in cls.promoted
-        }
+        cls.by_candidate = {event["hced_candidate_id"]: event for event in cls.promoted}
 
     def test_exact_37_new_events_parse_and_retain_hced_as_outcome_source(self) -> None:
         self.assertEqual(len(self.promoted), 37)
@@ -249,9 +245,7 @@ class Wave7GlobalPromotionTests(unittest.TestCase):
             37,
         )
         self.assertFalse(WAVE7_GLOBAL_HCED_HOLD_IDS & set(self.by_candidate))
-        self.assertFalse(
-            WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS & set(self.by_candidate)
-        )
+        self.assertFalse(WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS & set(self.by_candidate))
         for event in self.promoted:
             Event.from_dict(event)
             self.assertEqual(event["outcome_source_ids"], ["hced_dataset"])
@@ -350,7 +344,9 @@ class Wave7GlobalPromotionTests(unittest.TestCase):
             if entity["region"] == "North Africa"
         ]
         self.assertTrue(egypt_entities)
-        self.assertTrue(all("Egypt" not in entity["aliases"] for entity in egypt_entities))
+        self.assertTrue(
+            all("Egypt" not in entity["aliases"] for entity in egypt_entities)
+        )
 
     def test_every_contract_is_covered_by_each_exact_entity_window(self) -> None:
         for candidate_id, contract in WAVE7_GLOBAL_HCED_CONTRACTS.items():
@@ -367,13 +363,13 @@ class Wave7GlobalPromotionTests(unittest.TestCase):
                         self.assertGreaterEqual(entity["end_year"], high)
 
         self.assertLess(
-            WAVE7_GLOBAL_HCED_HOLDS["hced-Boomplaats1848-1"]["raw_row"][
-                "year_low"
-            ],
+            WAVE7_GLOBAL_HCED_HOLDS["hced-Boomplaats1848-1"]["raw_row"]["year_low"],
             self.release_entities["orange_free_state_1854"]["start_year"],
         )
 
-    def test_sources_are_parseable_identity_references_not_outcome_evidence(self) -> None:
+    def test_sources_are_parseable_identity_references_not_outcome_evidence(
+        self,
+    ) -> None:
         source_map: dict[str, dict] = {}
         install_wave7_global_sources(source_map)
         self.assertEqual(len(source_map), 13)
@@ -416,7 +412,7 @@ class Wave7GlobalOrangeMigrationTests(unittest.TestCase):
         cls.release_events = _json(ROOT / "data" / "release" / "events.json")
         cls.migration_ids = set(WAVE7_GLOBAL_ORANGE_MIGRATIONS)
 
-    def test_migration_is_atomic_pure_and_changes_exactly_five_events(self) -> None:
+    def test_committed_migration_is_exact_pure_and_idempotent(self) -> None:
         original = copy.deepcopy(self.release_events)
         migrated = migrate_wave7_global_orange_events(
             _embedded_hced_rows(),
@@ -429,65 +425,40 @@ class Wave7GlobalOrangeMigrationTests(unittest.TestCase):
             [event["id"] for event in migrated],
             [event["id"] for event in original],
         )
-        changed_ids = {
-            before["id"]
-            for before, after in zip(original, migrated)
-            if before != after
-        }
-        self.assertEqual(changed_ids, self.migration_ids)
-
-        before_by_id = {event["id"]: event for event in original}
+        self.assertEqual(migrated, original)
         after_by_id = {event["id"]: event for event in migrated}
         for event_id in self.migration_ids:
-            before = before_by_id[event_id]
             after = after_by_id[event_id]
             Event.from_dict(after)
             self.assertEqual(
-                canonical_event_sha256(before),
-                WAVE7_GLOBAL_ORANGE_MIGRATIONS[event_id][
-                    "source_event_sha256"
-                ],
-            )
-            self.assertEqual(before["hced_candidate_id"], after["hced_candidate_id"])
-            self.assertEqual(before["outcome_source_ids"], after["outcome_source_ids"])
-            self.assertEqual(before["outcome_source_family_ids"], after["outcome_source_family_ids"])
-            self.assertEqual(before["confidence"], after["confidence"])
-            self.assertEqual(before["decisiveness"], after["decisiveness"])
-
-            old_participants = copy.deepcopy(before["participants"])
-            new_participants = copy.deepcopy(after["participants"])
-            self.assertEqual(
-                sum(
-                    participant["entity_id"] == "clio_q218023_1856_cfb4e08e"
-                    for participant in old_participants
-                ),
-                1,
+                canonical_event_sha256(after),
+                WAVE7_GLOBAL_ORANGE_MIGRATIONS[event_id]["migrated_event_sha256"],
             )
             self.assertEqual(
                 sum(
                     participant["entity_id"] == "orange_free_state_1854"
-                    for participant in new_participants
+                    for participant in after["participants"]
                 ),
                 1,
             )
-            for participant in old_participants:
-                if participant["entity_id"] == "clio_q218023_1856_cfb4e08e":
-                    participant["entity_id"] = "orange_free_state_1854"
-            self.assertEqual(old_participants, new_participants)
+            self.assertFalse(
+                any(
+                    participant["entity_id"] == "clio_q218023_1856_cfb4e08e"
+                    for participant in after["participants"]
+                )
+            )
             self.assertEqual(
                 after["identity_migration"]["source_event_sha256"],
-                WAVE7_GLOBAL_ORANGE_MIGRATIONS[event_id][
-                    "source_event_sha256"
-                ],
+                WAVE7_GLOBAL_ORANGE_MIGRATIONS[event_id]["source_event_sha256"],
             )
             self.assertIn("tactical outcome fields are unchanged", after["summary"])
 
-    def test_any_source_event_drift_or_missing_member_aborts_the_whole_migration(self) -> None:
+    def test_any_source_event_drift_or_missing_member_aborts_the_whole_migration(
+        self,
+    ) -> None:
         changed = copy.deepcopy(self.release_events)
         target = next(
-            event
-            for event in changed
-            if event["id"] == "hced_label_hced_graspan1899_1"
+            event for event in changed if event["id"] == "hced_label_hced_graspan1899_1"
         )
         target["confidence"] = 0.71
         snapshot = copy.deepcopy(changed)
@@ -506,9 +477,7 @@ class Wave7GlobalOrangeMigrationTests(unittest.TestCase):
     def test_candidate_drift_aborts_before_event_replacement(self) -> None:
         rows = copy.deepcopy(_embedded_hced_rows())
         target = next(
-            row
-            for row in rows
-            if row["candidate_id"] == "hced-Graspan1899-1"
+            row for row in rows if row["candidate_id"] == "hced-Graspan1899-1"
         )
         target["side_2_raw"] = "South African Republic"
         events = copy.deepcopy(self.release_events)
@@ -520,9 +489,7 @@ class Wave7GlobalOrangeMigrationTests(unittest.TestCase):
 class Wave7GlobalSupersessionTests(unittest.TestCase):
     def test_exact_raw_identity_supersessions_and_1855_reset(self) -> None:
         self.assertEqual(
-            validate_wave7_global_supersession_candidates(
-                _embedded_cliopatria_rows()
-            ),
+            validate_wave7_global_supersession_candidates(_embedded_cliopatria_rows()),
             {
                 "cliopatria-613": (
                     "solomonic_ethiopian_empire_pre1855",
@@ -532,15 +499,11 @@ class Wave7GlobalSupersessionTests(unittest.TestCase):
             },
         )
         self.assertEqual(
-            WAVE7_GLOBAL_SUPERSESSIONS["cliopatria-613"][
-                "raw_candidate_sha256"
-            ],
+            WAVE7_GLOBAL_SUPERSESSIONS["cliopatria-613"]["raw_candidate_sha256"],
             "42de39e1a7ba3a9252fcfd8cdd0af1f98ff59b5395dbf580122d506043e4c396",
         )
         self.assertEqual(
-            WAVE7_GLOBAL_SUPERSESSIONS["cliopatria-661"][
-                "raw_candidate_sha256"
-            ],
+            WAVE7_GLOBAL_SUPERSESSIONS["cliopatria-661"]["raw_candidate_sha256"],
             "ed680e4fd0a82628b5f6fd17df2b3325c4ebccbb5da1e44f9b12e038d8dc97b5",
         )
         self.assertIn(

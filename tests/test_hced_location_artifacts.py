@@ -35,7 +35,7 @@ RELEASE = ROOT / "data" / "release"
 REGISTRY = ROOT / "data" / "catalog" / "registry.json"
 RESULTS = ROOT / "web" / "data" / "results.json"
 HCED_LOCATION_PROJECTION_SHA256 = (
-    "a2888c23e71256152259bdd9c08f2fba7f694e193d865e2597871c8e6decd4e5"
+    "5490bb832cec645c71138a2721a6a98b29c025beda44157c5770ac17b7850f52"
 )
 
 
@@ -61,25 +61,21 @@ class HcedLocationArtifactTests(unittest.TestCase):
         cls.entities = json.loads(
             (RELEASE / "entities.json").read_text(encoding="utf-8")
         )
-        cls.sources = json.loads(
-            (RELEASE / "sources.json").read_text(encoding="utf-8")
-        )
+        cls.sources = json.loads((RELEASE / "sources.json").read_text(encoding="utf-8"))
         cls.metadata = json.loads(
             (RELEASE / "metadata.json").read_text(encoding="utf-8")
         )
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.results = json.loads(RESULTS.read_text(encoding="utf-8"))
         cls.hced_events = [
-            event
-            for event in cls.events
-            if event.get("outcome_source_family_ids") == ["hced"]
+            event for event in cls.events if "hced_candidate_id" in event
         ]
         cls.by_candidate = {
             event["hced_candidate_id"]: event for event in cls.hced_events
         }
 
     def test_exact_candidate_bijection_and_promotion_tranches(self) -> None:
-        self.assertEqual(len(self.events), 4_605)
+        self.assertEqual(len(self.events), 4_797)
         self.assertEqual(len(self.hced_events), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(len(self.by_candidate), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(
@@ -93,6 +89,10 @@ class HcedLocationArtifactTests(unittest.TestCase):
         self.assertEqual(
             sum(event["id"].startswith("hced_wave6_") for event in self.hced_events),
             76,
+        )
+        self.assertEqual(
+            sum(event["id"].startswith("hced_wave7_") for event in self.hced_events),
+            192,
         )
         for event in self.hced_events:
             with self.subTest(event_id=event["id"]):
@@ -251,7 +251,10 @@ class HcedLocationArtifactTests(unittest.TestCase):
             for year in (1778, 1780, 1794, 1796, 1803)
         ]
         self.assertEqual(
-            {json.dumps(event["geometry"], sort_keys=True) for event in duplicate_coordinate_controls},
+            {
+                json.dumps(event["geometry"], sort_keys=True)
+                for event in duplicate_coordinate_controls
+            },
             {
                 json.dumps(
                     {
@@ -263,7 +266,10 @@ class HcedLocationArtifactTests(unittest.TestCase):
             },
         )
         self.assertTrue(
-            all("modern_location_country" not in event for event in duplicate_coordinate_controls)
+            all(
+                "modern_location_country" not in event
+                for event in duplicate_coordinate_controls
+            )
         )
 
     def test_release_dashboard_location_and_global_warning_parity(self) -> None:
@@ -306,7 +312,9 @@ class HcedLocationArtifactTests(unittest.TestCase):
             self.assertEqual(audits[0], audits[1])
             self.assertEqual(json.loads(audits[0]), [])
 
-    def test_dashboard_build_rejects_release_registry_location_count_drift(self) -> None:
+    def test_dashboard_build_rejects_release_registry_location_count_drift(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             release = root / "release"
@@ -430,7 +438,9 @@ class HcedLocationArtifactTests(unittest.TestCase):
                     str(raised.exception),
                 )
 
-    def test_dashboard_build_rejects_missing_or_stale_coupling_declarations(self) -> None:
+    def test_dashboard_build_rejects_missing_or_stale_coupling_declarations(
+        self,
+    ) -> None:
         cases = (
             "missing_declaration",
             "stale_policy_count",
@@ -454,9 +464,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
                 ):
                     shutil.copy2(RELEASE / filename, release / filename)
                 registry_document = json.loads(REGISTRY.read_text(encoding="utf-8"))
-                declaration = registry_document["coverage"][
-                    "hced_location_assertions"
-                ]
+                declaration = registry_document["coverage"]["hced_location_assertions"]
                 if case == "missing_declaration":
                     registry_document["coverage"].pop("hced_location_assertions")
                 elif case == "stale_policy_count":
@@ -468,9 +476,9 @@ class HcedLocationArtifactTests(unittest.TestCase):
                         "unreviewed_source_assertion": 3_979,
                     }
                 elif case == "verified_claim":
-                    declaration["verified_location_assertions"][
-                        "availability"
-                    ] = "available"
+                    declaration["verified_location_assertions"]["availability"] = (
+                        "available"
+                    )
                 elif case == "verified_count":
                     declaration["verified_location_assertions"]["count"] = 999
                 elif case == "verified_blank_reason":
@@ -529,9 +537,9 @@ class HcedLocationArtifactTests(unittest.TestCase):
             HCED_EXPECTED_POINT_ASSERTIONS,
         )
         self.assertEqual(
-            locations[
-                "hced_unreviewed_geographic_jurisdiction_label_present"
-            ]["numerator"],
+            locations["hced_unreviewed_geographic_jurisdiction_label_present"][
+                "numerator"
+            ],
             HCED_EXPECTED_COUNTRY_ASSERTIONS,
         )
         self.assertEqual(
@@ -542,9 +550,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
             locations["verified_location_assertion_present"]["availability"],
             "not_available",
         )
-        self.assertIsNone(
-            locations["verified_location_assertion_present"]["numerator"]
-        )
+        self.assertIsNone(locations["verified_location_assertion_present"]["numerator"])
         expected_policy = {
             "point_fields_withheld_by_quarantine": 37,
             "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
@@ -592,9 +598,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         for case in cases:
             with self.subTest(case=case), tempfile.TemporaryDirectory() as temporary:
                 registry_document = json.loads(REGISTRY.read_text(encoding="utf-8"))
-                declaration = registry_document["coverage"][
-                    "hced_location_assertions"
-                ]
+                declaration = registry_document["coverage"]["hced_location_assertions"]
                 if case == "missing_declaration":
                     registry_document["coverage"].pop("hced_location_assertions")
                 elif case == "stale_policy_count":
@@ -639,9 +643,7 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         cls.entities = json.loads(
             (RELEASE / "entities.json").read_text(encoding="utf-8")
         )
-        cls.sources = json.loads(
-            (RELEASE / "sources.json").read_text(encoding="utf-8")
-        )
+        cls.sources = json.loads((RELEASE / "sources.json").read_text(encoding="utf-8"))
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.results = json.loads(RESULTS.read_text(encoding="utf-8"))
 
@@ -663,19 +665,19 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
             projected_events.append(projected)
         self.assertEqual(
             _canonical_hash(projected_events),
-            "a10cbdcd7ab26f00bedad72caeb0b4039c3e507071e4f68cf4a44583e1cc7756",
+            "61451595aef22c88fb39af602d76ad9f63efae0ee9c859dbe9c89d6b7ce297dd",
         )
         self.assertEqual(
             _canonical_hash(self.entities),
-            "3ecaa903de145a8393b4a7f810afcfbb3a57a0463541ab4d21b14de4cb70e496",
+            "fbdc28f89a3022d0e2dce4df942481b12e0d41899d3902bd591bfa7d2a6e2a84",
         )
         self.assertEqual(
             _canonical_hash(self.sources),
-            "27d77bb29efeb92e5674dfbd22c7bb4e7e2309309e5f127af28c5f647f8523a6",
+            "ccfcd4270f7cb73e4a72806268db2ef4c160ffaef017a71805b714dc0032cd3b",
         )
         self.assertEqual(
             _canonical_hash(self.registry["entities"]),
-            "2d7aa8da02c03fb9efc377ea219e6665509f493f8fa046addb9abd53888357ee",
+            "eab3976f4607f1d056bb15f3768270837581fcb0d4dbb2ed3c851a610adde65c",
         )
 
     def test_dashboard_projection_matches_the_coupled_wave5_build(self) -> None:
@@ -695,13 +697,13 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         ]
         self.assertEqual(
             _canonical_hash(projected_events),
-            "c02523f5b2cbddc50cbd7717d59e9f4c126331a3efbd5eb269c6ec90a07e71e9",
+            "775e0c12e1910aefad5d00d1ff9b8799d8d88f9f84490c98ccbaa9add64e583a",
         )
         expected_hashes = {
-            "entities": "e2652d18404beeff0346bdaf408ebc6ce0965201bfc6cdb205264eef59e5ebee",
-            "series": "0d11463cb747681f5fd2ddbb54d8127f1b4ad7124367303b7f7bd1992c32ebae",
-            "leaderboard": "626138ccfa87f8de8dd59a26da77a2a709bc25bfa9adf61c950074a1cb826fb3",
-            "sensitivity": "e1ffd71dc67c5525063fc3ee5ec5f0388f2d5f0ed74f7d1402c043338b4f9ec1",
+            "entities": "b0d4579d0b5ae8186812e58634b588a33e42f72a67f24240f5f70ecd11dc55e0",
+            "series": "d11a8e61e7cc5e460f1c3580c9edb676dd4b28cd6cd02a6c1f80e725a6709dbb",
+            "leaderboard": "3e45c498fdbdb6c088c8808386e97b297af1558640f09f1ad29ace06ab4f0ebb",
+            "sensitivity": "020581e78f743683aec150a560489bff0f1fa12c7c9d8ef858234c749f5a933d",
         }
         for field_name, expected_hash in expected_hashes.items():
             with self.subTest(field_name=field_name):

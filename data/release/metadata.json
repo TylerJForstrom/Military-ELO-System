@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 289,
-    "events": 4605,
-    "sources": 205,
-    "registry_polities": 1648
+    "entities": 342,
+    "events": 4797,
+    "sources": 284,
+    "registry_polities": 1702
   },
   "year_range": {
     "start": -1274,
@@ -72,10 +72,15 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
     "accepted_hced_events": 1884,
     "accepted_hced_label_events": 2383,
     "accepted_wave6_1500_1799_hced_events": 76,
+    "accepted_wave7_root_hced_events": 62,
+    "accepted_wave7_central_hced_events": 33,
+    "accepted_wave7_central_pass2_hced_events": 31,
+    "accepted_wave7_global_hced_events": 37,
+    "accepted_wave7_west_hced_events": 29,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
       "bengal_states": 8,
@@ -487,21 +492,727 @@
         "raw_row_sha256": "3f98b6dfd3ab14f0740daa0cf17cd1a2eebaf519998dc5686cc5cc105d462cc0"
       }
     ],
-    "hced_label_pass_input_rows": 6496,
+    "wave7_root_cohort_counts": {
+      "american_1775": 15,
+      "biafra": 8,
+      "hungarian_honved": 10,
+      "murat_naples": 12,
+      "red_sticks": 11,
+      "vichy": 6
+    },
+    "wave7_root_queue_validation": {
+      "reviewed": 66,
+      "promoted": 62,
+      "held": 4
+    },
+    "wave7_root_candidate_ids": [
+      "hced-Abagana1968-1",
+      "hced-Acs1849-1",
+      "hced-Algiers1942-1",
+      "hced-Ancona1815-1",
+      "hced-Autossee1813-1",
+      "hced-Benin1967-1",
+      "hced-Boston1775-1776-1",
+      "hced-Buda1849-1",
+      "hced-Bunker Hill1775-1",
+      "hced-Burnt Corn1813-1",
+      "hced-Calabar1967-1",
+      "hced-Capri, 1815-1",
+      "hced-Casablanca1942-1",
+      "hced-Casaglia1815-1",
+      "hced-Castel di Sangro1815-1",
+      "hced-Cesenatico1815-1",
+      "hced-Chambly1775-1",
+      "hced-Concord1775-1",
+      "hced-Crown Point (1st)1775-1",
+      "hced-Dakar1940-1",
+      "hced-Emuckfaw1814-1",
+      "hced-Enotachopco1814-1",
+      "hced-Enugu1967-1",
+      "hced-Fort Mims1813-1",
+      "hced-Fort Sinquefield1813-1",
+      "hced-Fort Ticonderoga1775-1",
+      "hced-Great Bridge1775-1",
+      "hced-Hampton1775-1",
+      "hced-Holy Ground1813-1",
+      "hced-Horseshoe Bend1814-1",
+      "hced-Isaszeg1849-1",
+      "hced-Kapolna1849-1",
+      "hced-Komarom1849-1",
+      "hced-Lexington, Massachusetts1775-1",
+      "hced-Littafatchee1813-1",
+      "hced-Longueuil1775-1",
+      "hced-Machias1775-1",
+      "hced-Madagascar1942-1",
+      "hced-Montreal1775-1",
+      "hced-Nagy Sallo1849-1",
+      "hced-Occhiobello, 1815-1",
+      "hced-Onitsha1967-1",
+      "hced-Oran1942-1",
+      "hced-Owerri1968-1",
+      "hced-Pakozd1848-1",
+      "hced-Palmyra1941-1",
+      "hced-Panaro1815-1",
+      "hced-Pered1849-1",
+      "hced-Pesaro1815-1",
+      "hced-Port Harcourt1968-1",
+      "hced-Quebec1775-1776-1",
+      "hced-Ronco1815-1",
+      "hced-San Germano1815-1",
+      "hced-Scapezzano1815-1",
+      "hced-St Johns (1st)1775-1",
+      "hced-St Johns (2nd)1775-1",
+      "hced-Talladega1813-1",
+      "hced-Tallaseehatchee1813-1",
+      "hced-Temesvar1849-1",
+      "hced-Tolentino1815-1",
+      "hced-Umuahia1969-1",
+      "hced-Waitzen1849-1"
+    ],
+    "wave7_root_holds": [
+      {
+        "candidate_id": "hced-Lebanon1941-1",
+        "reason": "broad Lebanon campaign record overlaps the Syria-Lebanon campaign and component actions",
+        "raw_row_sha256": "ebd28f3da3f5908753826930791689af6038f19cea79b217e8ea075c5fa4dc58"
+      },
+      {
+        "candidate_id": "hced-Syria1941-1",
+        "reason": "broad Syria campaign record overlaps the Syria-Lebanon campaign and component actions",
+        "raw_row_sha256": "29070ceaa199ea799e85966e54400476aea2c53ba347a9603cafa60ef3c06f76"
+      },
+      {
+        "candidate_id": "hced-Torch1942-1",
+        "reason": "Operation Torch umbrella overlaps the separately rated Algiers, Casablanca, and Oran actions",
+        "raw_row_sha256": "263ceb8cfde113ae145a51ae27b2f1efd161bde2620d235ecfd8eb56ffcb0e91"
+      },
+      {
+        "candidate_id": "hced-Vienna1848-1",
+        "reason": "mixed Viennese and Hungarian rebel coalition cannot be assigned wholly to the Honved identity",
+        "raw_row_sha256": "14dd3bb49eb649f0559e5a0dd5cfcce704f06a161cc07e3cc5e8a10f967de1c7"
+      }
+    ],
+    "wave7_root_outcome_correction_ids": [
+      "hced-Buda1849-1",
+      "hced-Burnt Corn1813-1",
+      "hced-Concord1775-1",
+      "hced-Emuckfaw1814-1",
+      "hced-Enotachopco1814-1",
+      "hced-Onitsha1967-1",
+      "hced-Pakozd1848-1"
+    ],
+    "wave7_root_entities_added": 9,
+    "wave7_root_sources_added": 20,
+    "wave7_central_cohort_counts": {
+      "greece_artemisium": 1,
+      "greece_restored_kingdom": 1,
+      "greece_revolutionary": 1,
+      "iran_pahlavi": 1,
+      "poland_bar_confederation": 3,
+      "poland_commonwealth_1792": 1,
+      "poland_kosciuszko_1794": 6,
+      "poland_november_uprising": 7,
+      "poland_warsaw_uprising": 1,
+      "serbia_despotate": 1,
+      "serbia_empire": 2,
+      "serbia_grand_principality": 1,
+      "serbia_medieval_kingdom": 1,
+      "serbia_principality": 3,
+      "serbia_revolutionary": 2,
+      "serbian_krajina_knin": 1
+    },
+    "wave7_central_queue_validation": {
+      "reviewed": 42,
+      "promoted": 33,
+      "held": 9
+    },
+    "wave7_central_candidate_ids": [
+      "hced-Adrianople1355-1",
+      "hced-Alexinatz1876-1",
+      "hced-Anatoliko1823-1",
+      "hced-Artemisium-480-1",
+      "hced-Belgrade1862-1",
+      "hced-Bydgoszcz1794-1",
+      "hced-Djunis1876-1",
+      "hced-Greece1940-1",
+      "hced-Grochow1831-1",
+      "hced-Iran1941-1",
+      "hced-Knin1995-1",
+      "hced-Lanskroun1771-1",
+      "hced-Maciejowice1794-1",
+      "hced-Maritza1371-1",
+      "hced-Misar1806-1",
+      "hced-Morava1190-1",
+      "hced-Orekhovo1769-1",
+      "hced-Ostrolenka1831-1",
+      "hced-Praga1831-1",
+      "hced-Raclawice1794-1",
+      "hced-Semendria1439-1",
+      "hced-Siedlce1831-1",
+      "hced-Stalowicz1771-1",
+      "hced-Stefaniana1344-1",
+      "hced-Stoczek1831-1",
+      "hced-Szczekociny1794-1",
+      "hced-Terespol1794-1",
+      "hced-Varvarin1810-1",
+      "hced-Warsaw (1st)1794-1",
+      "hced-Warsaw1831-1",
+      "hced-Warsaw1944-1",
+      "hced-Wawer1831-1",
+      "hced-Zielenice1792-1"
+    ],
+    "wave7_central_holds": [
+      {
+        "candidate_id": "hced-Florina1947-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "e167f31c76122b8c245f438b633df79a402c4f63a2235990f3ac9ccfc993ff1b"
+      },
+      {
+        "candidate_id": "hced-Florina1949-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "bca7bf6da666d2091d02d2ad66e2710012afa2b9774a0cb44a17814a0afd8d88"
+      },
+      {
+        "candidate_id": "hced-Karpenision1949-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "a925a98271af56442d9b4e58cf58fe2f516d2926f7ce54f46f2c187a872847be"
+      },
+      {
+        "candidate_id": "hced-Kastoria1948-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "523076f5e8e46f7c0dca35c2201063c883601676cd12a745a05de22cd6441860"
+      },
+      {
+        "candidate_id": "hced-Kossovo1999-1",
+        "cohort": "serbia_kosovo_1999",
+        "reason": "The row combines NATO and Kosovar Albanian rebels and mislabels the Federal Republic of Yugoslavia as Serbia; no safe two-side contract is inferred.",
+        "raw_row_sha256": "af89e026af4195fc02445447bfa8812963d85ada6a4509e646b4efc30b8de15c"
+      },
+      {
+        "candidate_id": "hced-Litokhoro1946-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "9c91da29fab49538c0cc2d853cb90b1e01461037a812a46a23a63f888a0f7002"
+      },
+      {
+        "candidate_id": "hced-Roumeli1948-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "9aa33f00dfb7a7a18e6c4b6c063265f5f34dbed78f8cfeff3058e9466b8a808e"
+      },
+      {
+        "candidate_id": "hced-Velbuzhde1330-1",
+        "cohort": "serbia_medieval_kingdom",
+        "reason": "The Serbian kingdom is resolved, but the Bulgaria opponent remains unresolved in this lane.",
+        "raw_row_sha256": "7912a811d524ad2929456f47bdf0010b557d2ace755519ff5f23b98cddcce662"
+      },
+      {
+        "candidate_id": "hced-Vitsi1949-1",
+        "cohort": "greece_civil_war",
+        "reason": "The restored kingdom is resolved, but the generic communist actor requires its own evidence-backed identity.",
+        "raw_row_sha256": "a76c5a483bf8565dfddb7b1ffdf7983f36c70652d468180c941d54a1b9d810f6"
+      }
+    ],
+    "wave7_central_entities_added": 15,
+    "wave7_central_sources_added": 13,
+    "wave7_central_pass2_cohort_counts": {
+      "abushiri_revolt": 1,
+      "albania_lezhe": 6,
+      "albania_savra": 1,
+      "hashemite_arab_revolt": 7,
+      "piedmont_sardinia": 10,
+      "samnite_social_war": 1,
+      "samnite_wars": 5
+    },
+    "wave7_central_pass2_hold_counts": {
+      "chronology_or_duplicate": 1,
+      "coalition_or_party_gap": 7,
+      "cross_year_chronology": 1,
+      "disputed_outcome": 1,
+      "published_duplicate": 1
+    },
+    "wave7_central_pass2_queue_validation": {
+      "reviewed": 42,
+      "promoted": 31,
+      "held": 11,
+      "latent_held": 10,
+      "duplicate_held": 1
+    },
+    "wave7_central_pass2_candidate_ids": [
+      "hced-Acerrae-90-1",
+      "hced-Albulen1457-1",
+      "hced-Ancona1860-1",
+      "hced-Aqaba1917-1",
+      "hced-Aquilonia-293-1",
+      "hced-Bovianum-305-1",
+      "hced-Castelfidardo1860-1",
+      "hced-Caudine Forks-321-1",
+      "hced-Custozza1848-1",
+      "hced-Dibra1448-1",
+      "hced-Domosdova1444-1",
+      "hced-Goito1848-1",
+      "hced-Hejaz1916-1",
+      "hced-Kruje, Albania1450-1",
+      "hced-Medina, Saudi Arabia1916-1919-1",
+      "hced-Mondovi1796-1",
+      "hced-Mortara1849-1",
+      "hced-Mount Gaurus-342-1",
+      "hced-Novara1849-1",
+      "hced-Oranik1456-1",
+      "hced-Palestro1859-1",
+      "hced-Pangani1889-1",
+      "hced-Pastrengo1848-1",
+      "hced-Santa Lucia1848-1",
+      "hced-Savra1385-1",
+      "hced-Svetigrad1448-1",
+      "hced-Tafileh1918-1",
+      "hced-Taif1916-1",
+      "hced-Tarracina-314-1",
+      "hced-Wejh1917-1",
+      "hced-Yanbu (1st)1916-1"
+    ],
+    "wave7_central_pass2_holds": [
+      {
+        "candidate_id": "hced-Albania1939-1",
+        "cohort": "albania_1939",
+        "category": "published_duplicate",
+        "reason": "The candidate is already represented by published release event hced_label_hced_albania1939_1 and must not be rated twice.",
+        "raw_row_sha256": "2c8783b8dc1c283e150a27890a16441256bf59f4ca2c457132c6c6bb45463fae"
+      },
+      {
+        "candidate_id": "hced-Asculum, Marche-89-1",
+        "cohort": "samnite_social_war",
+        "category": "coalition_or_party_gap",
+        "reason": "The losing Social War side combines explicitly distinct Samnite and Marsic insurgents.",
+        "raw_row_sha256": "a4108c0d0f249db01074d57e3cfeb09fe64451bc3615a9e8a21879fd5301c21c"
+      },
+      {
+        "candidate_id": "hced-Camerinum-295-1",
+        "cohort": "samnite_wars",
+        "category": "coalition_or_party_gap",
+        "reason": "The winning side combines Samnite and Gallic forces; both coalition members require explicit identities.",
+        "raw_row_sha256": "b9f0cffc91435389c267b6ad71eaa40d11d6de8b34b685cad3299bcaa17f59f3"
+      },
+      {
+        "candidate_id": "hced-Fucine Lake-89-1",
+        "cohort": "samnite_social_war",
+        "category": "coalition_or_party_gap",
+        "reason": "The winning Social War side combines Marsic and Samnite actors that must remain separate.",
+        "raw_row_sha256": "8337b1006997715afabf115ea980d2ca054bfdb987c9e90bea48eadcc8fbd219"
+      },
+      {
+        "candidate_id": "hced-Gaeta1860-1",
+        "cohort": "piedmont_sardinia",
+        "category": "cross_year_chronology",
+        "reason": "The siege began in November 1860 but its decisive surrender occurred in February 1861; the one-year row needs correction.",
+        "raw_row_sha256": "170376ef86d9149839c92d5c410e5d1ba8b978f46c2a31bce1b9ff013c027f6d"
+      },
+      {
+        "candidate_id": "hced-Kruje, Albania1448-1",
+        "cohort": "albania_lezhe",
+        "category": "chronology_or_duplicate",
+        "reason": "The official chronology places Svetigrad in 1448 and the first siege of Kruje in 1450; this row is likely misdated or duplicative.",
+        "raw_row_sha256": "5bebcd1c766b98ad3e5295dd17a0f6cfd50936b828fd07c1c2262165350a5791"
+      },
+      {
+        "candidate_id": "hced-Lake Vadimo-310-1",
+        "cohort": "samnite_wars",
+        "category": "coalition_or_party_gap",
+        "reason": "The losing side is a composite Samnite-Etruscan coalition and cannot inherit one confederation identity.",
+        "raw_row_sha256": "466e056970f9dd87de0501dbf8682782b984d781b430eee4106713d81dcc6e57"
+      },
+      {
+        "candidate_id": "hced-Lautulae-315-1",
+        "cohort": "samnite_wars",
+        "category": "disputed_outcome",
+        "reason": "Ancient traditions disagree between a drawn battle and a Roman defeat; the HCED Samnite-win result is not promoted without adjudication.",
+        "raw_row_sha256": "dd8c77b25fd4dc240fb5e2a1135db68ba31113198843e86c650dacae3454c870"
+      },
+      {
+        "candidate_id": "hced-Pompeii-89-1",
+        "cohort": "samnite_social_war",
+        "category": "coalition_or_party_gap",
+        "reason": "The losing Social War side combines Marsic and Samnite actors that must remain separate.",
+        "raw_row_sha256": "cab53e7e55fc77ae568e80fe29255e0e99bb561e72220bb8ef2337551a0edd16"
+      },
+      {
+        "candidate_id": "hced-Sentinum-295-1",
+        "cohort": "samnite_wars",
+        "category": "coalition_or_party_gap",
+        "reason": "The raw row omits the documented Gallic coalition partner and therefore does not represent the complete opposing side.",
+        "raw_row_sha256": "abcf4a717cc22434ececbae5a2552e43750cfbddb30398d5cdf294eab119affb"
+      },
+      {
+        "candidate_id": "hced-Teanum-90-1",
+        "cohort": "samnite_social_war",
+        "category": "coalition_or_party_gap",
+        "reason": "The winning Social War side combines Marsic and Samnite actors that must remain separate.",
+        "raw_row_sha256": "85ef6ccf7c63f7697b8c1b4e7fc49caf966aab53344ffb8d1834d741270b28d4"
+      }
+    ],
+    "wave7_central_pass2_entities_added": 7,
+    "wave7_central_pass2_sources_added": 16,
+    "wave7_global_cohort_counts": {
+      "egypt_ayyubid": 1,
+      "egypt_fatimid": 2,
+      "egypt_kingdom_1922": 3,
+      "egypt_mamluk_forces_1798": 1,
+      "egypt_mamluk_sultanate": 1,
+      "egypt_ptolemaic": 1,
+      "egypt_saite": 1,
+      "orange_free_state": 11,
+      "rio_de_la_plata_patriot_army": 15,
+      "solomonic_ethiopia_pre1855": 1
+    },
+    "wave7_global_queue_validation": {
+      "new_event_contracts": 37,
+      "holds": 5,
+      "identity_migrations": 5,
+      "reviewed_hced_rows": 47
+    },
+    "wave7_global_candidate_ids": [
+      "hced-Alexandria-48-1",
+      "hced-Alexandria1167-1",
+      "hced-Antukyah1531-1",
+      "hced-Ascalon1123-1",
+      "hced-Asluj1948-1",
+      "hced-Beersheba1948-1",
+      "hced-Biddulphsberg1900-1",
+      "hced-Bothaville1900-1",
+      "hced-Cerrito1812-1",
+      "hced-Damietta1218-1",
+      "hced-Driefontein1900-1",
+      "hced-Elands River Poort1901-1",
+      "hced-Faluja1948-1",
+      "hced-Fariskur1250-1",
+      "hced-Florida, Bolivia1814-1",
+      "hced-Karee Siding1900-1",
+      "hced-Las Piedras1811-1",
+      "hced-Lindley1900-1",
+      "hced-Martin Garcia1814-1",
+      "hced-Montevideo1814-1",
+      "hced-Pari1816-1",
+      "hced-Pelusium-525-1",
+      "hced-Puesto del Marquez1815-1",
+      "hced-Pyramids1798-1",
+      "hced-Reddersburg1900-1",
+      "hced-Rio Piedras1812-1",
+      "hced-Roodewal, Orange Free State1900-1",
+      "hced-Salta1813-1",
+      "hced-San Lorenzo, Argentina1813-1",
+      "hced-San Nicolas1811-1",
+      "hced-Suipacha1810-1",
+      "hced-Tucuman1812-1",
+      "hced-Tweefontein1901-1",
+      "hced-Venta1815-1",
+      "hced-Vilcapugio1813-1",
+      "hced-Wepener1900-1",
+      "hced-Zilikats Nek (1st)1900-1"
+    ],
+    "wave7_global_holds": [
+      {
+        "candidate_id": "hced-Barrancas1819-1",
+        "category": "civil_war_faction_identity_unresolved",
+        "reason": "The 1819 civil-war labels denote opposing Argentine factions, not the bounded 1810–1816 independence army.",
+        "raw_row_sha256": "ff449c3c826adc1e543cd86f5c367f7536142556e1b307892b0e6a8f089dddfc"
+      },
+      {
+        "candidate_id": "hced-Boomplaats1848-1",
+        "category": "pre_polity_identity_anachronism",
+        "reason": "The source label predates the independent Orange Free State established in 1854; it cannot be back-projected.",
+        "raw_row_sha256": "a5c727e7bb4def84331d8ad06a1120a08fe463f0ce69bfd4032feb8b1facedff"
+      },
+      {
+        "candidate_id": "hced-Kadesh-1275-1",
+        "category": "duplicate_and_outcome_conflict",
+        "reason": "This is the already-rated Battle of Kadesh dated one year differently; its HCED outright Egyptian victory conflicts with the existing reviewed inconclusive/positional coding.",
+        "raw_row_sha256": "f4beff55c2138b889db199a18d4926e8ad3754be7a817f1d970fccd69e961531"
+      },
+      {
+        "candidate_id": "hced-La Herradura1819-1",
+        "category": "civil_war_faction_identity_unresolved",
+        "reason": "The 1819 civil-war labels denote opposing Argentine factions, not the bounded 1810–1816 independence army.",
+        "raw_row_sha256": "b5f76dcfead94e195004508c783191b22a0c7f8e99e8cd62e6b64f2036e63e1e"
+      },
+      {
+        "candidate_id": "hced-San Ignacio1867-1",
+        "category": "civil_war_faction_identity_unresolved",
+        "reason": "The 1867 rebel force requires a distinct faction identity and cannot inherit the 1810–1816 patriot-army rating.",
+        "raw_row_sha256": "fff9d7e6c7f5b96d88d188ff7445c938e36cfae20656c534d95164e12f89ac5f"
+      }
+    ],
+    "wave7_global_identity_migrations": [
+      {
+        "event_id": "hced_label_hced_belmont_south_africa1899_1",
+        "candidate_id": "hced-Belmont, South Africa1899-1",
+        "from_entity_id": "clio_q218023_1856_cfb4e08e",
+        "to_entity_id": "orange_free_state_1854",
+        "source_event_sha256": "4033cf495a2ffe5f116a04be63fc17795728eb9b6607b67f88df41060766530a"
+      },
+      {
+        "event_id": "hced_label_hced_graspan1899_1",
+        "candidate_id": "hced-Graspan1899-1",
+        "from_entity_id": "clio_q218023_1856_cfb4e08e",
+        "to_entity_id": "orange_free_state_1854",
+        "source_event_sha256": "6ccc8a78288e4ecec420c5d3859002ea5ccc7832fbe057b5d0a8c7d2683e856c"
+      },
+      {
+        "event_id": "hced_label_hced_kimberely1899_1",
+        "candidate_id": "hced-Kimberely1899-1",
+        "from_entity_id": "clio_q218023_1856_cfb4e08e",
+        "to_entity_id": "orange_free_state_1854",
+        "source_event_sha256": "255dd3262963b2081d8cfd4d5a7611f766c39c24a62ab1e98e39908cdc70b6b8"
+      },
+      {
+        "event_id": "hced_label_hced_rietfontein1899_1",
+        "candidate_id": "hced-Rietfontein1899-1",
+        "from_entity_id": "clio_q218023_1856_cfb4e08e",
+        "to_entity_id": "orange_free_state_1854",
+        "source_event_sha256": "efb01bd5d185b93b527f4c7bef69a53028380c46faa7cf149ab33fc64aa954dd"
+      },
+      {
+        "event_id": "hced_label_hced_stormberg1899_1",
+        "candidate_id": "hced-Stormberg1899-1",
+        "from_entity_id": "clio_q218023_1856_cfb4e08e",
+        "to_entity_id": "orange_free_state_1854",
+        "source_event_sha256": "769e8d9054317a325c193c369c1d027cc4a0117f094627ea9785b0e7136e98d2"
+      }
+    ],
+    "wave7_global_registry_supersessions": {
+      "cliopatria-613": [
+        "solomonic_ethiopian_empire_pre1855",
+        "ethiopian_empire"
+      ],
+      "cliopatria-661": [
+        "orange_free_state_1854"
+      ]
+    },
+    "wave7_global_entities_added": 8,
+    "wave7_global_sources_added": 13,
+    "wave7_west_cohort_counts": {
+      "bavaria_sequence": 14,
+      "netherlands_sequence": 10,
+      "wars_of_the_roses": 5
+    },
+    "wave7_west_queue_validation": {
+      "reviewed": 57,
+      "net_new_promotions": 29,
+      "holds": 13,
+      "protected_existing": 15,
+      "roses_rated_total": 18,
+      "roses_net_new": 5,
+      "roses_preserved_holds": 2,
+      "bavaria_net_new": 14,
+      "netherlands_net_new": 10
+    },
+    "wave7_west_candidate_ids": [
+      "hced-Amberg1745-1",
+      "hced-Ambon1796-1",
+      "hced-Bamburgh1464-1",
+      "hced-Blueberg1806-1",
+      "hced-Bosworth Field1485-1",
+      "hced-Caister Castle1469-1",
+      "hced-Camperdown1797-1",
+      "hced-Colombo1796-1",
+      "hced-Donauworth1704-1",
+      "hced-Freiburg, Wurttemberg1644-1",
+      "hced-Gerchsheim1866-1",
+      "hced-Groote Keeten1799-1",
+      "hced-Hammelburg1866-1",
+      "hced-Hanau1813-1",
+      "hced-Heidelberg1622-1",
+      "hced-Helmstadt1866-1",
+      "hced-Kissingen1866-1",
+      "hced-Lombok Strait1942-1",
+      "hced-Lose-Coat Field1470-1",
+      "hced-Munderkingen1703-1",
+      "hced-Rattenberg1809-1",
+      "hced-Saldanha Bay1796-1",
+      "hced-Surinam1800-1",
+      "hced-Surinam1804-1",
+      "hced-Twt Hill1463-1",
+      "hced-Werbach1866-1",
+      "hced-West Irian1962-1",
+      "hced-Wiesenthal1866-1",
+      "hced-Zella1866-1"
+    ],
+    "wave7_west_holds": [
+      {
+        "candidate_id": "hced-Alnwick1462-1",
+        "category": "coalition_incomplete_mandatory",
+        "reason": "The composite France/Scotland/Lancastrian side needs candidate-level coalition adjudication before rating.",
+        "raw_row_sha256": "8bdb2048dd6c00a7d0302302512b84c798f59208e4b64b2ffaa614c5b5e6d905"
+      },
+      {
+        "candidate_id": "hced-Bazeilles1870-1",
+        "category": "year_only_france_transition",
+        "reason": "A year-only France label cannot choose a side of the 4 September 1870 Second Empire/Third Republic boundary.",
+        "raw_row_sha256": "4d2f914ebfb86dfd4845f7095e9ec5e69756ad2b3ab51c48c1a5b69b243780a0"
+      },
+      {
+        "candidate_id": "hced-Boroughbridge1322-1",
+        "category": "anachronistic_faction_label",
+        "reason": "The 1322 row predates the 1455-1471 Lancastrian faction identity.",
+        "raw_row_sha256": "ac5a64b879ae6b8c625f162334ef6a1a8a042beb4771464f89157b7442620045"
+      },
+      {
+        "candidate_id": "hced-Chatillon-sous-Bagneux1870-1",
+        "category": "year_only_france_transition",
+        "reason": "A year-only France label cannot choose a side of the 4 September 1870 Second Empire/Third Republic boundary.",
+        "raw_row_sha256": "01ac09e2eb0f99070ea9b913bc134ede3ea41671f03b0027991d3b7bb81f6de2"
+      },
+      {
+        "candidate_id": "hced-Coulmiers1870-1",
+        "category": "year_only_france_transition",
+        "reason": "A year-only France label cannot choose a side of the 4 September 1870 Second Empire/Third Republic boundary.",
+        "raw_row_sha256": "8ee7008eb7c8f407c9ad769d336004a97680c9bf48ee5198573cdabe09dcef73"
+      },
+      {
+        "candidate_id": "hced-Dunstable1461-1",
+        "category": "component_inflation_existing_wave6_hold",
+        "reason": "Preserved Wave 6 hold: this was a small Yorkist outpost in the immediate Second St Albans operation, not a separately adjudicated battle contract.",
+        "raw_row_sha256": "c1d2ec4f8e40251ddf41730a63c57e51b5acdc26c388a113894fed4873a43a14"
+      },
+      {
+        "candidate_id": "hced-Edgecote1469-1",
+        "category": "party_identity_ambiguous",
+        "reason": "The named Pembroke and Devon forces cannot be collapsed into a timeless Lancastrian label without candidate-level review.",
+        "raw_row_sha256": "1baf4e13e887e5d6fefde411b0a93c9d926a2d6a4b104b90032406f02e3ba7c0"
+      },
+      {
+        "candidate_id": "hced-Ferrybridge1461-1",
+        "category": "multi_phase_component_existing_wave6_hold",
+        "reason": "Preserved Wave 6 hold: the changing bridge and Dintingdale actions immediately precede Towton and remain unseparated for Elo.",
+        "raw_row_sha256": "744cad190548005a74134b4bf7cf4be188a3172b3f34e23b36ac129396893f17"
+      },
+      {
+        "candidate_id": "hced-Gammelsdorf1313-1",
+        "category": "divided_duchy_boundary",
+        "reason": "The battle predates the unified 1506 duchy and the raw Bavaria label does not identify the correct divided duchy.",
+        "raw_row_sha256": "95211e4a0261d7861adfe44e734de3dd4bfe3ff3d9f913172d7d1d9b872385c0"
+      },
+      {
+        "candidate_id": "hced-Jogjakarta1948-1",
+        "category": "counterparty_identity_unresolved",
+        "reason": "The Indonesian Rebels counterparty needs a candidate-specific identity.",
+        "raw_row_sha256": "089f9ba86cafed0d66ec90e468c12a13bc5da0cc49871d24c508ed17769ae4bc"
+      },
+      {
+        "candidate_id": "hced-Marga1946-1",
+        "category": "counterparty_identity_unresolved",
+        "reason": "The Indonesian Rebels counterparty needs a candidate-specific identity.",
+        "raw_row_sha256": "b08ffe77e98629821504e4dd9d9e929c8a026c05b5cf363418e7e4d6381fec5f"
+      },
+      {
+        "candidate_id": "hced-Muhldorf1322-1",
+        "category": "divided_duchy_boundary",
+        "reason": "The battle predates the unified 1506 duchy and the raw Bavaria label does not identify the correct divided duchy.",
+        "raw_row_sha256": "1e042b9e62c0c22ec63909a5de5e83b34451f9e1c82a29286ee0efec7a93703f"
+      },
+      {
+        "candidate_id": "hced-Villepion1870-1",
+        "category": "year_only_france_transition",
+        "reason": "A year-only France label cannot choose a side of the 4 September 1870 Second Empire/Third Republic boundary.",
+        "raw_row_sha256": "68bf82efb5f704837eae4a0906b5964a6030845e0ca85341cb5ec1e2dfb02db7"
+      }
+    ],
+    "wave7_west_protected_existing": [
+      {
+        "candidate_id": "hced-Batavia1811-1",
+        "expected_event_id": "hced_label_hced_batavia1811_1",
+        "raw_row_sha256": "2c1996931830ae8a0163ce413425647f9f9a482e176f97bfdc1845bb082efee9"
+      },
+      {
+        "candidate_id": "hced-Blore Heath1459-1",
+        "expected_event_id": "hced_label_hced_blore_heath1459_1",
+        "raw_row_sha256": "9975e3a7e8e49199a8765aaed9bd76fbdca73a6bef2d088686d18a500ed91804"
+      },
+      {
+        "candidate_id": "hced-Hedgeley Moor1464-1",
+        "expected_event_id": "hced_label_hced_hedgeley_moor1464_1",
+        "raw_row_sha256": "6bb82f720b0dda7e45711435c083703675571cae39b837c6bf968d7829ba4d26"
+      },
+      {
+        "candidate_id": "hced-Hexham1464-1",
+        "expected_event_id": "hced_label_hced_hexham1464_1",
+        "raw_row_sha256": "f2e7117d19e50733ae0124f95da3d847028e783f929f0a68b415cf95c8a4ec55"
+      },
+      {
+        "candidate_id": "hced-Java1811-1",
+        "expected_event_id": "hced_label_hced_java1811_1",
+        "raw_row_sha256": "181ccd6c3d7491cec1c5b0aa076aca7a0be856688f4a8882097f7abfdffed3c2"
+      },
+      {
+        "candidate_id": "hced-Ludford Bridge1459-1",
+        "expected_event_id": "hced_label_hced_ludford_bridge1459_1",
+        "raw_row_sha256": "a47bb3521281ef170acf7d262bf0b0dbb866b626bcc1d533a3b829f0c92a3f69"
+      },
+      {
+        "candidate_id": "hced-Mortimers Cross1461-1",
+        "expected_event_id": "hced_label_hced_mortimers_cross1461_1",
+        "raw_row_sha256": "d75566979863d158c59afd0d66e472cb1f28855759f8fdb3d03a38b15e2350a1"
+      },
+      {
+        "candidate_id": "hced-Northampton1460-1",
+        "expected_event_id": "hced_label_hced_northampton1460_1",
+        "raw_row_sha256": "8a6ab3de8bbf7705059bc7b7ab00a9ed6fbf4333e62543ec13bbf23296f1c205"
+      },
+      {
+        "candidate_id": "hced-Sandwich1460-1",
+        "expected_event_id": "hced_label_hced_sandwich1460_1",
+        "raw_row_sha256": "f971b93fe03fd549567b589b024abd75da8d2e4b6154b9f7897a0c62c77179ed"
+      },
+      {
+        "candidate_id": "hced-St Albans1455-1",
+        "expected_event_id": "hced_label_hced_st_albans1455_1",
+        "raw_row_sha256": "31d5b052f4ad8487944405d0689f5c1095709cb9d525277964e4ea565a3c7c82"
+      },
+      {
+        "candidate_id": "hced-St Albans1461-1",
+        "expected_event_id": "hced_label_hced_st_albans1461_1",
+        "raw_row_sha256": "c7b22538d2473c4404d1a5bc54a7054fcc30ae7e8dd8a2e4e8b66dfa2c615155"
+      },
+      {
+        "candidate_id": "hced-Stoke1487-1",
+        "expected_event_id": "hced_label_hced_stoke1487_1",
+        "raw_row_sha256": "8e2a5a0f63ccd1762f429a951285a146b5722fa6e326d445d0c82c0030331306"
+      },
+      {
+        "candidate_id": "hced-Tewkesbury1471-1",
+        "expected_event_id": "hced_label_hced_tewkesbury1471_1",
+        "raw_row_sha256": "c332866b6d068786d8d9697500d7a5aae6c612302213ee42fdd794258cffefa1"
+      },
+      {
+        "candidate_id": "hced-Towton1461-1",
+        "expected_event_id": "hced_label_hced_towton1461_1",
+        "raw_row_sha256": "cd22d7ffd3e3e7ae9bca43f8e0f76a557f18c2e926212ff06f7eba2348bdb74c"
+      },
+      {
+        "candidate_id": "hced-Wakefield1460-1",
+        "expected_event_id": "hced_label_hced_wakefield1460_1",
+        "raw_row_sha256": "fab27047c3bca9a35779bb3d9918a423ccebe7de4e22cba93b61e0d66d611832"
+      }
+    ],
+    "wave7_west_entities_added": 14,
+    "wave7_west_sources_added": 17,
+    "hced_label_pass_input_rows": 6271,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
     "iwd_components_attached_to_rated_parents": 100,
     "hced_rejections": {
-      "curated_exclusion": 147,
+      "curated_exclusion": 140,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 3,
       "no_unique_time_valid_polity": 162,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 33,
-      "reserved_candidate_contract": 119,
-      "same_or_empty_opposing_side": 18
+      "reserved_candidate_contract": 352,
+      "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
       "blank_side_label": 0,
@@ -512,11 +1223,11 @@
       "label_outcome_not_aligned": 85,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2971,
-      "no_unique_time_valid_polity": 178,
-      "outside_continuity_policy": 102,
+      "no_unique_time_valid_label_match": 2751,
+      "no_unique_time_valid_polity": 177,
+      "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 3,
-      "wave6_pre1500_candidate_not_in_manifest": 44
+      "wave6_pre1500_candidate_not_in_manifest": 42
     },
     "hced_label_policy_labels": [
       "afghanistan",
@@ -3048,11 +3759,11 @@
     "accepted_iwbd_battles": 151,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
-      "coalition_or_composite_side": 129,
+      "coalition_or_composite_side": 130,
       "contains_constituent_iwbd_rows": 322,
       "curated_exclusion": 212,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 876,
+      "duplicate_of_hced_battle": 875,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

@@ -290,7 +290,11 @@ class Wave7CentralQueueAndBuildTests(unittest.TestCase):
             for entity in _json(ROOT / "data" / "release" / "entities.json")
         }
         install_wave7_central_entities(cls.release_entities)
-        cls.existing_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.existing_events = [
+            event
+            for event in _json(ROOT / "data" / "release" / "events.json")
+            if event.get("hced_candidate_id") not in WAVE7_CENTRAL_PROMOTION_IDS
+        ]
 
     def test_all_reviewed_rows_match_complete_queue_fingerprints(self):
         self.assertEqual(

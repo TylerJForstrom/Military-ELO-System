@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Deterministic orchestration for the expanded provisional release."""
+
+from __future__ import annotations
 
 import hashlib
 import json
@@ -127,6 +127,88 @@ from .wave6_1800_2021_policy import (
 from .wave6_1800_2021_registry import (
     WAVE6_1800_2021_ENTITY_OVERRIDES,
     WAVE6_1800_2021_SOURCES,
+)
+from .wave7_central import (
+    WAVE7_CENTRAL_HOLD_IDS,
+    WAVE7_CENTRAL_PROMOTION_IDS,
+    WAVE7_CENTRAL_RESERVED_IDS,
+    install_wave7_central_entities,
+    install_wave7_central_sources,
+    promote_wave7_central_hced_contracts,
+    validate_wave7_central_queue_contracts,
+    wave7_central_cohort_counts,
+)
+from .wave7_central_data import (
+    WAVE7_CENTRAL_ENTITIES,
+    WAVE7_CENTRAL_HOLDS,
+    WAVE7_CENTRAL_SOURCES,
+)
+from .wave7_central_pass2 import (
+    WAVE7_CENTRAL_PASS2_HOLD_IDS,
+    WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS,
+    WAVE7_CENTRAL_PASS2_PROMOTION_IDS,
+    WAVE7_CENTRAL_PASS2_RESERVED_IDS,
+    install_wave7_central_pass2_entities,
+    install_wave7_central_pass2_sources,
+    promote_wave7_central_pass2_hced_contracts,
+    validate_wave7_central_pass2_queue_contracts,
+    wave7_central_pass2_cohort_counts,
+    wave7_central_pass2_hold_counts,
+)
+from .wave7_central_pass2_data import (
+    WAVE7_CENTRAL_PASS2_ENTITIES,
+    WAVE7_CENTRAL_PASS2_HOLDS,
+    WAVE7_CENTRAL_PASS2_SOURCES,
+)
+from .wave7_root import (
+    WAVE7_ROOT_CONTRACT_IDS,
+    WAVE7_ROOT_ENTITIES,
+    WAVE7_ROOT_HOLD_IDS,
+    WAVE7_ROOT_HOLDS,
+    WAVE7_ROOT_OUTCOME_CORRECTION_IDS,
+    WAVE7_ROOT_RESERVED_IDS,
+    WAVE7_ROOT_SOURCES,
+    install_wave7_root_entities,
+    install_wave7_root_sources,
+    promote_wave7_root_contracts,
+    validate_wave7_root_candidates,
+    wave7_root_cohort_counts,
+)
+from .wave7_global import (
+    WAVE7_GLOBAL_HCED_CONTRACT_IDS,
+    WAVE7_GLOBAL_HCED_HOLD_IDS,
+    WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS,
+    WAVE7_GLOBAL_RESERVED_IDS,
+    install_wave7_global_entities,
+    install_wave7_global_sources,
+    migrate_wave7_global_orange_events,
+    promote_wave7_global_hced_contracts,
+    validate_wave7_global_queue_contracts,
+    validate_wave7_global_supersession_candidates,
+    wave7_global_cohort_counts,
+)
+from .wave7_global_data import (
+    WAVE7_GLOBAL_ENTITIES,
+    WAVE7_GLOBAL_HCED_HOLDS,
+    WAVE7_GLOBAL_ORANGE_MIGRATIONS,
+    WAVE7_GLOBAL_SOURCES,
+    WAVE7_GLOBAL_SUPERSESSIONS,
+)
+from .wave7_west import (
+    WAVE7_WEST_HCED_CONTRACT_IDS,
+    WAVE7_WEST_HCED_RESERVED_IDS,
+    WAVE7_WEST_PROTECTED_RATED_IDS,
+    install_wave7_west_entities,
+    install_wave7_west_sources,
+    promote_wave7_west_hced_contracts,
+    validate_wave7_west_queue_contracts,
+    wave7_west_cohort_counts,
+)
+from .wave7_west_data import (
+    WAVE7_WEST_ENTITIES,
+    WAVE7_WEST_HCED_HOLDS,
+    WAVE7_WEST_PROTECTED_RATED,
+    WAVE7_WEST_SOURCES,
 )
 
 
@@ -322,7 +404,7 @@ def _validate_hced_location_release(
         candidate_ids.append(candidate_id)
         if candidate_id in reviewed_candidate_ids:
             reviewed_event_candidate_ids.add(candidate_id)
-            if not event_id.startswith("hced_wave6_"):
+            if not event_id.startswith(("hced_wave6_", "hced_wave7_")):
                 raise ValueError(
                     f"Reviewed HCED candidate {candidate_id} has a non-lane event ID"
                 )
@@ -416,7 +498,7 @@ def _validate_hced_location_release(
     modern_candidate_ids = frozenset(WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS)
     lane_candidate_sets = {
         "pre1500": pre1500_candidate_ids,
-        "early_modern": reviewed_candidate_ids,
+        "candidate_keyed": reviewed_candidate_ids,
         "modern": modern_candidate_ids,
     }
     duplicate_lane_ids = {
@@ -428,7 +510,7 @@ def _validate_hced_location_release(
     }
     if duplicate_lane_ids:
         raise ValueError(
-            "Wave 6 HCED lanes overlap by candidate ID: "
+            "Candidate-keyed HCED lanes overlap by candidate ID: "
             f"{sorted(duplicate_lane_ids)}"
         )
     additional_candidate_ids = (
@@ -475,12 +557,10 @@ def _validate_hced_location_release(
     for candidate_id in additional_candidate_ids:
         candidate = hced_candidates_by_id.get(candidate_id)
         if candidate is None:
-            raise ValueError(f"Wave 6 HCED candidate is missing: {candidate_id}")
+            raise ValueError(f"Reviewed HCED candidate is missing: {candidate_id}")
         has_point = (
             candidate_id not in HCED_POINT_QUARANTINE_IDS
-            and parse_hced_point(
-                candidate.get("latitude"), candidate.get("longitude")
-            )
+            and parse_hced_point(candidate.get("latitude"), candidate.get("longitude"))
             is not None
         )
         country = candidate.get("modern_location_country")
@@ -589,8 +669,7 @@ def build_expanded_release(
     entity_id_collisions = sorted(seed_entity_ids & wave6_entity_ids)
     if entity_id_collisions:
         raise ValueError(
-            "Wave 6 pre-1500 entity IDs collide with the seed: "
-            f"{entity_id_collisions}"
+            f"Wave 6 pre-1500 entity IDs collide with the seed: {entity_id_collisions}"
         )
     seed_entities.extend(dict(entity) for entity in WAVE6_PRE1500_ENTITIES)
 
@@ -613,8 +692,7 @@ def build_expanded_release(
     source_id_collisions = sorted(seed_source_ids & wave6_source_ids)
     if source_id_collisions:
         raise ValueError(
-            "Wave 6 source IDs collide with the seed: "
-            f"{source_id_collisions}"
+            f"Wave 6 source IDs collide with the seed: {source_id_collisions}"
         )
     sources.extend(dict(source) for source in wave6_sources)
 
@@ -631,6 +709,16 @@ def build_expanded_release(
     polities = [row for row in cliopatria if row.get("record_type") == "POLITY"]
     hced = read_jsonl(review / "hced-candidates.jsonl")
     validate_wave6_pre1500_candidates(hced)
+    wave7_root_queue_validation = validate_wave7_root_candidates(hced)
+    wave7_central_queue_validation = validate_wave7_central_queue_contracts(hced)
+    wave7_central_pass2_queue_validation = validate_wave7_central_pass2_queue_contracts(
+        hced
+    )
+    wave7_global_queue_validation = validate_wave7_global_queue_contracts(hced)
+    wave7_west_queue_validation = validate_wave7_west_queue_contracts(hced)
+    wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
+        cliopatria
+    )
     hced_candidates_by_id = _index_hced_candidates(hced)
     wikidata_path = review / "wikidata-candidates.jsonl"
     wikidata_candidates = read_jsonl(wikidata_path) if wikidata_path.exists() else []
@@ -744,7 +832,17 @@ def build_expanded_release(
         curated_exclusions=EFFECTIVE_HCED_CURATED_EXCLUSIONS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
-        reserved_candidate_ids=WAVE6_HCED_RESERVED_IDS,
+        reserved_candidate_ids=(
+            WAVE6_HCED_RESERVED_IDS
+            | WAVE7_ROOT_RESERVED_IDS
+            | WAVE7_CENTRAL_RESERVED_IDS
+            | (
+                WAVE7_CENTRAL_PASS2_RESERVED_IDS
+                - WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS
+            )
+            | (WAVE7_GLOBAL_RESERVED_IDS - WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS)
+            | (WAVE7_WEST_HCED_RESERVED_IDS - WAVE7_WEST_PROTECTED_RATED_IDS)
+        ),
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
     rejections: Counter[str] = hced_crosswalk_pass["rejections"]
@@ -887,16 +985,97 @@ def build_expanded_release(
         span[1] = min(span[1], low_year)
         span[2] = max(span[2], high_year)
 
-    # Install the lane identities only after the generic HCED label pass, so
-    # their names cannot become fallback mappings for unrelated rows. The
-    # exact events then join the one global HCED stream before IWBD dedup.
+    # Install candidate-keyed lane identities only after the generic HCED
+    # label pass, so their names cannot become fallback mappings for unrelated
+    # rows. Exact events then join one global HCED stream before IWBD dedup.
     install_wave6_entities(release_entities)
     wave6_events = promote_wave6_hced_contracts(
         hced,
         release_entities,
         [*seed_events, *source_events, *iwd_events, *label_events],
     )
-    for event in wave6_events:
+    install_wave7_root_entities(release_entities)
+    install_wave7_central_entities(release_entities)
+    install_wave7_central_pass2_entities(release_entities)
+    install_wave7_global_entities(release_entities)
+    install_wave7_west_entities(release_entities)
+    # Five already-rated Orange rows are rebuilt through the legacy label pass
+    # solely so this exact, complete-event fingerprint migration can replace
+    # their old source-candidate identity atomically. Any upstream drift aborts.
+    label_events = migrate_wave7_global_orange_events(hced, label_events)
+    wave7_root_events = promote_wave7_root_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+        ],
+    )
+    wave7_central_events = promote_wave7_central_hced_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+        ],
+    )
+    wave7_central_pass2_events = promote_wave7_central_pass2_hced_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+        ],
+    )
+    wave7_global_events = promote_wave7_global_hced_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+        ],
+    )
+    wave7_west_events = promote_wave7_west_hced_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+        ],
+    )
+    for event in (
+        *wave6_events,
+        *wave7_root_events,
+        *wave7_central_events,
+        *wave7_central_pass2_events,
+        *wave7_global_events,
+        *wave7_west_events,
+    ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
         if not war_names or event.get("cluster_id") is None:
@@ -925,6 +1104,11 @@ def build_expanded_release(
             *EFFECTIVE_HCED_CURATED_EXCLUSIONS,
             *HCED_LABEL_CURATED_EXCLUSIONS,
             *WAVE6_HCED_NONPROMOTED_IDS,
+            *WAVE7_ROOT_HOLD_IDS,
+            *WAVE7_CENTRAL_HOLD_IDS,
+            *WAVE7_CENTRAL_PASS2_HOLD_IDS,
+            *WAVE7_GLOBAL_HCED_HOLD_IDS,
+            *WAVE7_WEST_HCED_HOLDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -949,7 +1133,16 @@ def build_expanded_release(
     # sides and outcome orientation. Different suffix branches never share a
     # key. Only promoted HCED rows can supply that identity signature; exact
     # names above continue to block against staged rows.
-    for event in (*source_events, *label_events, *wave6_events):
+    for event in (
+        *source_events,
+        *label_events,
+        *wave6_events,
+        *wave7_root_events,
+        *wave7_central_events,
+        *wave7_central_pass2_events,
+        *wave7_global_events,
+        *wave7_west_events,
+    ):
         winners = frozenset(
             str(participant["entity_id"])
             for participant in event["participants"]
@@ -1120,6 +1313,11 @@ def build_expanded_release(
         sources_by_id[source["id"]] = source
 
     install_wave6_sources(sources_by_id)
+    install_wave7_root_sources(sources_by_id)
+    install_wave7_central_sources(sources_by_id)
+    install_wave7_central_pass2_sources(sources_by_id)
+    install_wave7_global_sources(sources_by_id)
+    install_wave7_west_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -1127,14 +1325,35 @@ def build_expanded_release(
         *iwd_events,
         *label_events,
         *wave6_events,
+        *wave7_root_events,
+        *wave7_central_events,
+        *wave7_central_pass2_events,
+        *wave7_global_events,
+        *wave7_west_events,
         *iwbd_events,
         *ucdp_events,
     ]
-    hced_events = [*source_events, *label_events, *wave6_events]
+    hced_events = [
+        *source_events,
+        *label_events,
+        *wave6_events,
+        *wave7_root_events,
+        *wave7_central_events,
+        *wave7_central_pass2_events,
+        *wave7_global_events,
+        *wave7_west_events,
+    ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
         hced_candidates_by_id,
-        reviewed_candidate_ids=WAVE6_HCED_CONTRACT_IDS,
+        reviewed_candidate_ids=(
+            WAVE6_HCED_CONTRACT_IDS
+            | WAVE7_ROOT_CONTRACT_IDS
+            | WAVE7_CENTRAL_PROMOTION_IDS
+            | WAVE7_CENTRAL_PASS2_PROMOTION_IDS
+            | WAVE7_GLOBAL_HCED_CONTRACT_IDS
+            | WAVE7_WEST_HCED_CONTRACT_IDS
+        ),
     )
     used_entity_ids = {
         str(participant["entity_id"])
@@ -1155,6 +1374,11 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), seed_entities),
         *map(lambda entity: str(entity["id"]), WAVE6_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE6_1800_2021_ENTITY_OVERRIDES),
+        *map(lambda entity: str(entity["id"]), WAVE7_ROOT_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE7_CENTRAL_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE7_CENTRAL_PASS2_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE7_GLOBAL_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE7_WEST_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -1166,9 +1390,7 @@ def build_expanded_release(
             "kind": str(entity.get("kind") or "polity"),
             "start_year": int(entity["start_year"]),
             "end_year": (
-                int(entity["end_year"])
-                if entity.get("end_year") is not None
-                else None
+                int(entity["end_year"]) if entity.get("end_year") is not None else None
             ),
             "status": (
                 "rated"
@@ -1185,6 +1407,64 @@ def build_expanded_release(
     }
     for candidate in polities:
         entity_id = _candidate_entity_id(candidate)
+        global_replacements = wave7_global_registry_supersessions.get(
+            str(candidate.get("candidate_id"))
+        )
+        if global_replacements:
+            contract = WAVE7_GLOBAL_SUPERSESSIONS[str(candidate["candidate_id"])]
+            if str(contract["source_entity_id"]) != entity_id:
+                raise ValueError(
+                    f"Wave 7 Global supersession source ID drift: {entity_id}"
+                )
+            if entity_id in used_entity_ids:
+                raise ValueError(
+                    f"Wave 7 Global superseded identity remains rated: {entity_id}"
+                )
+            replacement_rows = []
+            for replacement_id in global_replacements:
+                replacement = registry_entities.get(replacement_id)
+                if replacement is None:
+                    raise ValueError(
+                        "Wave 7 Global registry supersession target is missing: "
+                        f"{entity_id} -> {replacement_id}"
+                    )
+                replacement_rows.append(replacement)
+            candidate_low = int(candidate["start_year"])
+            candidate_high = int(candidate["end_year"])
+            if any(
+                not any(
+                    int(replacement["start_year"]) <= year
+                    and (
+                        replacement.get("end_year") is None
+                        or int(replacement["end_year"]) >= year
+                    )
+                    for replacement in replacement_rows
+                )
+                for year in range(candidate_low, candidate_high + 1)
+            ):
+                raise ValueError(
+                    f"Wave 7 Global supersession leaves a temporal gap for {entity_id}"
+                )
+            superseded_row = {
+                "id": entity_id,
+                "name": str(candidate["canonical_name_candidate"]),
+                "kind": _infer_kind(str(candidate["canonical_name_candidate"])),
+                "start_year": candidate_low,
+                "end_year": candidate_high,
+                "status": "unrated",
+                "identity_status": "superseded",
+                "superseded_by_ids": list(global_replacements),
+                "supersession_note": str(contract["boundary_note"]),
+                "coverage_discontinuous": len(
+                    candidate.get("temporal_coverage_groups", [])
+                )
+                > 1,
+                "region": "Unclassified",
+            }
+            if len(global_replacements) == 1:
+                superseded_row["superseded_by"] = global_replacements[0]
+            registry_entities[entity_id] = superseded_row
+            continue
         superseded_by = WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.get(entity_id)
         if superseded_by:
             replacement = registry_entities.get(superseded_by)
@@ -1193,11 +1473,11 @@ def build_expanded_release(
                     f"registry supersession target is missing: {entity_id} -> "
                     f"{superseded_by}"
                 )
-            if (
-                normalize_label(candidate.get("canonical_name_candidate"))
-                != normalize_label(replacement.get("name"))
-                or not _candidate_overlaps_entity(candidate, replacement)
-            ):
+            if normalize_label(
+                candidate.get("canonical_name_candidate")
+            ) != normalize_label(
+                replacement.get("name")
+            ) or not _candidate_overlaps_entity(candidate, replacement):
                 raise ValueError(
                     f"registry supersession identity drift: {entity_id} -> "
                     f"{superseded_by}"
@@ -1274,6 +1554,11 @@ def build_expanded_release(
         - len(source_events)
         - len(label_events)
         - len(wave6_events)
+        - len(wave7_root_events)
+        - len(wave7_central_events)
+        - len(wave7_central_pass2_events)
+        - len(wave7_global_events)
+        - len(wave7_west_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -1290,6 +1575,14 @@ def build_expanded_release(
         "provisional_hced_events": len(source_events),
         "provisional_hced_label_events": len(label_events),
         "candidate_keyed_wave6_hced_events": len(wave6_events),
+        "candidate_keyed_wave7_root_hced_events": len(wave7_root_events),
+        "candidate_keyed_wave7_central_hced_events": len(wave7_central_events),
+        "candidate_keyed_wave7_central_pass2_hced_events": len(
+            wave7_central_pass2_events
+        ),
+        "candidate_keyed_wave7_global_hced_events": len(wave7_global_events),
+        "candidate_keyed_wave7_west_hced_events": len(wave7_west_events),
+        "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
         "iwbd_battles_total": iwbd_promotion["battles_total"],
@@ -1374,6 +1667,17 @@ def build_expanded_release(
                 "HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and "
                 "fingerprinted; none creates a label fallback, and all generic Holy "
                 "Roman Empire rows remain staged. "
+                "Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, "
+                "plus five atomic identity migrations of already-rated Orange events. "
+                "Every admitted or held row is pinned by its complete queue-row hash, "
+                "uses an alias-free time-bounded actor identity or an already curated "
+                "identity, and bypasses generic label fallback. Eight HCED outcomes are "
+                "corrected only where a direct historical reference contradicts the source "
+                "assertion; each correction carries its own outcome provenance. The WEST "
+                "lane also corrects four bad date, actor, or coalition records. Forty-two "
+                "additional rows "
+                "remain explicit holds, including Kadesh as a duplicate with a conflicting "
+                "source outcome. "
                 "IWD component wars never enter individually: each parent conflict is rated at "
                 "most once, as a coalition event aggregated from its component dyads, and only "
                 "when the reconstructed sides are consistent, the component outcomes are "
@@ -1427,6 +1731,11 @@ def build_expanded_release(
             "accepted_hced_events": len(source_events),
             "accepted_hced_label_events": len(label_events),
             "accepted_wave6_1500_1799_hced_events": len(wave6_events),
+            "accepted_wave7_root_hced_events": len(wave7_root_events),
+            "accepted_wave7_central_hced_events": len(wave7_central_events),
+            "accepted_wave7_central_pass2_hced_events": len(wave7_central_pass2_events),
+            "accepted_wave7_global_hced_events": len(wave7_global_events),
+            "accepted_wave7_west_hced_events": len(wave7_west_events),
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
             "wave6_1500_1799_candidate_ids": sorted(WAVE6_HCED_CONTRACTS),
@@ -1455,10 +1764,110 @@ def build_expanded_release(
                     "reason": contract["reason"],
                     "raw_row_sha256": contract["raw_row_sha256"],
                 }
-                for candidate_id, contract in sorted(
-                    WAVE6_WIKIDATA_EXCLUSIONS.items()
-                )
+                for candidate_id, contract in sorted(WAVE6_WIKIDATA_EXCLUSIONS.items())
             ],
+            "wave7_root_cohort_counts": wave7_root_cohort_counts(),
+            "wave7_root_queue_validation": wave7_root_queue_validation,
+            "wave7_root_candidate_ids": sorted(WAVE7_ROOT_CONTRACT_IDS),
+            "wave7_root_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "reason": contract["reason"],
+                    "raw_row_sha256": contract["raw_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_ROOT_HOLDS.items())
+            ],
+            "wave7_root_outcome_correction_ids": sorted(
+                WAVE7_ROOT_OUTCOME_CORRECTION_IDS
+            ),
+            "wave7_root_entities_added": len(WAVE7_ROOT_ENTITIES),
+            "wave7_root_sources_added": len(WAVE7_ROOT_SOURCES),
+            "wave7_central_cohort_counts": wave7_central_cohort_counts(),
+            "wave7_central_queue_validation": wave7_central_queue_validation,
+            "wave7_central_candidate_ids": sorted(WAVE7_CENTRAL_PROMOTION_IDS),
+            "wave7_central_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "cohort": contract["cohort"],
+                    "reason": contract["reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_CENTRAL_HOLDS.items())
+            ],
+            "wave7_central_entities_added": len(WAVE7_CENTRAL_ENTITIES),
+            "wave7_central_sources_added": len(WAVE7_CENTRAL_SOURCES),
+            "wave7_central_pass2_cohort_counts": (wave7_central_pass2_cohort_counts()),
+            "wave7_central_pass2_hold_counts": wave7_central_pass2_hold_counts(),
+            "wave7_central_pass2_queue_validation": (
+                wave7_central_pass2_queue_validation
+            ),
+            "wave7_central_pass2_candidate_ids": sorted(
+                WAVE7_CENTRAL_PASS2_PROMOTION_IDS
+            ),
+            "wave7_central_pass2_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "cohort": contract["cohort"],
+                    "category": contract["category"],
+                    "reason": contract["reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_CENTRAL_PASS2_HOLDS.items())
+            ],
+            "wave7_central_pass2_entities_added": len(WAVE7_CENTRAL_PASS2_ENTITIES),
+            "wave7_central_pass2_sources_added": len(WAVE7_CENTRAL_PASS2_SOURCES),
+            "wave7_global_cohort_counts": wave7_global_cohort_counts(),
+            "wave7_global_queue_validation": wave7_global_queue_validation,
+            "wave7_global_candidate_ids": sorted(WAVE7_GLOBAL_HCED_CONTRACT_IDS),
+            "wave7_global_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_GLOBAL_HCED_HOLDS.items())
+            ],
+            "wave7_global_identity_migrations": [
+                {
+                    "event_id": event_id,
+                    "candidate_id": contract["candidate_id"],
+                    "from_entity_id": contract["from_entity_id"],
+                    "to_entity_id": contract["to_entity_id"],
+                    "source_event_sha256": contract["source_event_sha256"],
+                }
+                for event_id, contract in sorted(WAVE7_GLOBAL_ORANGE_MIGRATIONS.items())
+            ],
+            "wave7_global_registry_supersessions": {
+                candidate_id: list(replacements)
+                for candidate_id, replacements in sorted(
+                    wave7_global_registry_supersessions.items()
+                )
+            },
+            "wave7_global_entities_added": len(WAVE7_GLOBAL_ENTITIES),
+            "wave7_global_sources_added": len(WAVE7_GLOBAL_SOURCES),
+            "wave7_west_cohort_counts": wave7_west_cohort_counts(),
+            "wave7_west_queue_validation": wave7_west_queue_validation,
+            "wave7_west_candidate_ids": sorted(WAVE7_WEST_HCED_CONTRACT_IDS),
+            "wave7_west_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_WEST_HCED_HOLDS.items())
+            ],
+            "wave7_west_protected_existing": [
+                {
+                    "candidate_id": candidate_id,
+                    "expected_event_id": contract["expected_event_id"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE7_WEST_PROTECTED_RATED.items())
+            ],
+            "wave7_west_entities_added": len(WAVE7_WEST_ENTITIES),
+            "wave7_west_sources_added": len(WAVE7_WEST_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -1480,17 +1889,13 @@ def build_expanded_release(
                 {"candidate_id": key, "reason": reason}
                 for key, reason in sorted(EFFECTIVE_HCED_CURATED_EXCLUSIONS.items())
             ],
-            "wave6_pre1500_safe_candidate_ids": list(
-                WAVE6_PRE1500_SAFE_CANDIDATE_IDS
-            ),
+            "wave6_pre1500_safe_candidate_ids": list(WAVE6_PRE1500_SAFE_CANDIDATE_IDS),
             "wave6_pre1500_holds": [
                 {"candidate_id": key, "reason": reason}
                 for key, reason in sorted(WAVE6_PRE1500_HOLD_REASONS.items())
             ],
             "wave6_pre1500_target_entity_ids": sorted(WAVE6_PRE1500_ENTITY_IDS),
-            "wave6_pre1500_source_families": list(
-                WAVE6_PRE1500_SOURCE_FAMILY_METADATA
-            ),
+            "wave6_pre1500_source_families": list(WAVE6_PRE1500_SOURCE_FAMILY_METADATA),
             "hced_reviewed_crosswalk_identity_candidate_ids": sorted(
                 HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS
             ),
@@ -1606,6 +2011,14 @@ def build_expanded_release(
         "provisional_hced_events": len(source_events),
         "provisional_hced_label_events": len(label_events),
         "candidate_keyed_wave6_hced_events": len(wave6_events),
+        "candidate_keyed_wave7_root_hced_events": len(wave7_root_events),
+        "candidate_keyed_wave7_central_hced_events": len(wave7_central_events),
+        "candidate_keyed_wave7_central_pass2_hced_events": len(
+            wave7_central_pass2_events
+        ),
+        "candidate_keyed_wave7_global_hced_events": len(wave7_global_events),
+        "candidate_keyed_wave7_west_hced_events": len(wave7_west_events),
+        "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
         "provisional_ucdp_events": len(ucdp_events),

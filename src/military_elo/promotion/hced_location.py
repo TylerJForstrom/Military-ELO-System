@@ -1,11 +1,11 @@
-from __future__ import annotations
-
 """Fail-closed HCED location transcription helpers.
 
 The audit-owned quarantine manifests are supplied by stable candidate ID.  No
 event name, year, slug, coordinate cluster, or country spelling participates in
 the runtime quarantine decision.
 """
+
+from __future__ import annotations
 
 import math
 import re
@@ -33,19 +33,19 @@ HCED_POINT_QUARANTINE_EVENT_SHA256 = (
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
     "f87948f9740690c660907a6fbf37531f556e77aeba43815d0213d8f707dab251"
 )
-# Wave 5 is the immutable base to which the Wave 6 lane manifests are added
+# Wave 5 is the immutable base to which reviewed lane manifests are added
 # during release construction. The final pins below are independently measured
-# from the coupled Wave 6 release/registry build and consumed by dashboard and
+# from the coupled Wave 7 release/registry build and consumed by dashboard and
 # coverage validation.
 HCED_WAVE5_CANDIDATE_BINDINGS = 4_152
 HCED_WAVE5_POINT_ASSERTIONS = 4_115
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_072
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_119
-HCED_EXPECTED_CANDIDATE_BINDINGS = 4_343
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 76
-HCED_EXPECTED_POINT_ASSERTIONS = 4_306
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_263
-HCED_EXPECTED_PROVENANCE_OBJECTS = 4_310
+HCED_EXPECTED_CANDIDATE_BINDINGS = 4_535
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 268
+HCED_EXPECTED_POINT_ASSERTIONS = 4_498
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_455
+HCED_EXPECTED_PROVENANCE_OBJECTS = 4_502
 HCED_EXPECTED_QUARANTINE_UNION = 83
 HCED_EXPECTED_QUARANTINE_OVERLAP = 33
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})

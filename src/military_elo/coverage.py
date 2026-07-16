@@ -142,13 +142,19 @@ def _category(value: Any) -> str:
 
 
 def _counts(
-    counter: Counter[str], *, include_unknown: bool = True, include_unclassified: bool = False
+    counter: Counter[str],
+    *,
+    include_unknown: bool = True,
+    include_unclassified: bool = False,
 ) -> dict[str, int]:
     if include_unknown:
         counter.setdefault(UNKNOWN, 0)
     if include_unclassified:
         counter.setdefault(UNCLASSIFIED, 0)
-    return {key: int(counter[key]) for key in sorted(counter, key=lambda item: (item.casefold(), item))}
+    return {
+        key: int(counter[key])
+        for key in sorted(counter, key=lambda item: (item.casefold(), item))
+    }
 
 
 def _count_metric(
@@ -211,7 +217,9 @@ def _unavailable_ratio(*, unit: str, definition: str, reason: str) -> dict[str, 
 
 
 def _event_layer(event: Mapping[str, Any]) -> str:
-    return LAYER_BY_EVENT_TYPE.get(str(event.get("event_type", "")).strip().casefold(), UNKNOWN)
+    return LAYER_BY_EVENT_TYPE.get(
+        str(event.get("event_type", "")).strip().casefold(), UNKNOWN
+    )
 
 
 def _rated_events(events: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -265,7 +273,9 @@ def _has_outcome_role(source: Mapping[str, Any]) -> bool:
             values.extend(value)
         elif value is not None:
             values.append(value)
-    return any(str(value).strip().casefold() in {"outcome", "outcomes"} for value in values)
+    return any(
+        str(value).strip().casefold() in {"outcome", "outcomes"} for value in values
+    )
 
 
 def _family_values(value: Any) -> tuple[set[str], Counter[str]]:
@@ -375,7 +385,9 @@ def _outcome_source_family_report(
 
     for index, event in enumerate(events):
         event_id = str(event.get("id") or f"event_index_{index}")
-        families, unusable, explicit_contract = _explicit_outcome_families(event, sources)
+        families, unusable, explicit_contract = _explicit_outcome_families(
+            event, sources
+        )
         events_with_contract += int(explicit_contract)
         if unusable:
             events_with_unusable_mapping += 1
@@ -436,7 +448,9 @@ def _outcome_source_family_report(
             "unit": "rated events",
         }
 
-    availability = "available" if events_with_data == len(events) else "partially_available"
+    availability = (
+        "available" if events_with_data == len(events) else "partially_available"
+    )
     return {
         "absent_explicit_mapping_event_count": len(events) - events_with_contract,
         "availability": availability,
@@ -486,7 +500,9 @@ def _parse_reference_date(value: str | None, *, strict: bool) -> date | None:
         return date.fromisoformat(text if strict else text[:10])
     except (TypeError, ValueError) as exc:
         if strict:
-            raise CoverageInputError(f"Invalid --as-of date: {value!r}; expected YYYY-MM-DD") from exc
+            raise CoverageInputError(
+                f"Invalid --as-of date: {value!r}; expected YYYY-MM-DD"
+            ) from exc
         return None
 
 
@@ -507,8 +523,7 @@ def _is_unresolved_review_record(record: Mapping[str, Any]) -> bool:
         return True
     value = record.get("resolution_status")
     return (
-        isinstance(value, str)
-        and value.strip().casefold() in UNRESOLVED_STATUS_VALUES
+        isinstance(value, str) and value.strip().casefold() in UNRESOLVED_STATUS_VALUES
     )
 
 
@@ -526,7 +541,9 @@ def _age_bucket(days: int) -> str:
     return "366_days_or_more"
 
 
-def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[str, Any]:
+def _scan_review(
+    review_dir: Path | None, reference_date: date | None
+) -> dict[str, Any]:
     empty = {
         "directory_supplied": False,
         "files_present": False,
@@ -617,7 +634,11 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
                     continue
                 unresolved_count += 1
                 timestamp_field = next(
-                    (field for field in QUEUE_TIMESTAMP_FIELDS if _present(record.get(field))),
+                    (
+                        field
+                        for field in QUEUE_TIMESTAMP_FIELDS
+                        if _present(record.get(field))
+                    ),
                     None,
                 )
                 if timestamp_field is None:
@@ -633,7 +654,9 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
 
     record_count = sum(counts_by_file.values())
     event_like_count = sum(
-        count for filename, count in counts_by_file.items() if filename not in IDENTITY_QUEUE_FILES
+        count
+        for filename, count in counts_by_file.items()
+        if filename not in IDENTITY_QUEUE_FILES
     )
 
     aging_definition = (
@@ -680,9 +703,7 @@ def _scan_review(review_dir: Path | None, reference_date: date | None) -> dict[s
             "unit": "days",
         }
     elif explicit_timestamp_count == 0:
-        reason = (
-            "Unresolved review records have no explicit queue timestamp; aging is unavailable, not zero."
-        )
+        reason = "Unresolved review records have no explicit queue timestamp; aging is unavailable, not zero."
         aging = {
             "availability": "not_available",
             "age_buckets": {},
@@ -804,7 +825,9 @@ def _coverage_metadata(
         return dict(registry_coverage), None, None
     queue_counts: dict[str, int] = {}
     if not isinstance(queue_counts_raw, dict):
-        raise CoverageInputError(f"{queue_counts_source} must be an object of nonnegative integer counts")
+        raise CoverageInputError(
+            f"{queue_counts_source} must be an object of nonnegative integer counts"
+        )
     for key, value in queue_counts_raw.items():
         count = _as_nonnegative_int(value)
         if count is None:
@@ -971,14 +994,24 @@ def _stage_funnel(
 
     unresolved_count = _as_nonnegative_int(coverage.get("unresolved_event_candidates"))
     curated_seed_count = _as_nonnegative_int(coverage.get("curated_seed_events"))
+    candidate_keyed_keys = tuple(
+        sorted(
+            key
+            for key in coverage
+            if key.startswith("candidate_keyed_") and key.endswith("_events")
+        )
+    )
     provisional_keys = (
         "provisional_hced_events",
         "provisional_hced_label_events",
+        *candidate_keyed_keys,
         "provisional_iwd_wars",
         "provisional_iwbd_battles",
         "provisional_ucdp_events",
     )
-    provisional_values = [_as_nonnegative_int(coverage.get(key)) for key in provisional_keys]
+    provisional_values = [
+        _as_nonnegative_int(coverage.get(key)) for key in provisional_keys
+    ]
     provisional_count = (
         sum(value for value in provisional_values if value is not None)
         if all(value is not None for value in provisional_values)
@@ -1278,7 +1311,9 @@ def _event_counts(
             "counts": {},
             "definition": source_families.get("definition"),
             "reason": source_families.get("reason"),
-            "unmapped_event_count": source_families.get("unmapped_event_count", len(events)),
+            "unmapped_event_count": source_families.get(
+                "unmapped_event_count", len(events)
+            ),
             "unit": "event-family incidences",
         }
     else:
@@ -1364,10 +1399,7 @@ def _geojson_positions(geometry: Mapping[str, Any]) -> list[Any]:
     if geometry_type == "Polygon":
         return [position for ring in coordinates for position in ring]
     return [
-        position
-        for polygon in coordinates
-        for ring in polygon
-        for position in ring
+        position for polygon in coordinates for ring in polygon for position in ring
     ]
 
 
@@ -1430,9 +1462,9 @@ def _has_coordinates(event: Mapping[str, Any]) -> bool:
             coordinates[1], -90, 90
         )
     if isinstance(coordinates, dict):
-        return _valid_coordinate(coordinates.get("latitude"), -90, 90) and _valid_coordinate(
-            coordinates.get("longitude"), -180, 180
-        )
+        return _valid_coordinate(
+            coordinates.get("latitude"), -90, 90
+        ) and _valid_coordinate(coordinates.get("longitude"), -180, 180)
     location = event.get("location")
     if isinstance(location, dict):
         if _valid_coordinate(location.get("latitude"), -90, 90) and _valid_coordinate(
@@ -1471,8 +1503,7 @@ def _unreviewed_hced_location_flags(
         and isinstance(source_record_id, str)
         and bool(source_record_id.strip())
         and source_record_id == source_record_id.strip()
-        and provenance.get("assertion_status")
-        == "unreviewed_source_assertion"
+        and provenance.get("assertion_status") == "unreviewed_source_assertion"
         and provenance.get("coordinate_precision") == "unknown"
     )
     if not valid_binding:
@@ -1503,9 +1534,7 @@ def _parent_event_references(event: Mapping[str, Any]) -> set[str]:
     plural = event.get("parent_event_ids")
     if isinstance(plural, (list, tuple)):
         references.update(
-            value
-            for value in plural
-            if isinstance(value, str) and value.strip()
+            value for value in plural if isinstance(value, str) and value.strip()
         )
     return references
 
@@ -1559,9 +1588,7 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         has_location = _has_location(event)
         locations += int(has_location)
         coordinates += int(_has_coordinates(event))
-        has_location_provenance = isinstance(
-            event.get("location_provenance"), Mapping
-        )
+        has_location_provenance = isinstance(event.get("location_provenance"), Mapping)
         location_provenance_objects += int(has_location_provenance)
         (
             has_unreviewed_point,
@@ -1570,11 +1597,11 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         ) = _unreviewed_hced_location_flags(event)
         modern_location_countries += int(has_unreviewed_country)
         unreviewed_source_points += int(has_unreviewed_point)
-        valid_unreviewed_location_provenance += int(
-            has_unreviewed_location
-        )
+        valid_unreviewed_location_provenance += int(has_unreviewed_location)
         unreviewed_source_locations += int(has_unreviewed_location)
-        explicit_location_region += int(_category(event.get("region")) not in {UNKNOWN, UNCLASSIFIED})
+        explicit_location_region += int(
+            _category(event.get("region")) not in {UNKNOWN, UNCLASSIFIED}
+        )
 
         raw_participants = event.get("participants")
         participant_rows = (
@@ -1602,10 +1629,14 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         resolvable_parent_references += len(parent_references & event_ids)
 
     participant_count = len(participants)
-    participant_entity_ids = sum(_present(row.get("entity_id")) for row, _ in participants)
+    participant_entity_ids = sum(
+        _present(row.get("entity_id")) for row, _ in participants
+    )
     participant_sides = sum(_present(row.get("side")) for row, _ in participants)
     explicit_roles = sum(_present(row.get("role")) for row, _ in participants)
-    documented_objectives = sum(_has_objective_statement(row) for row, _ in participants)
+    documented_objectives = sum(
+        _has_objective_statement(row) for row, _ in participants
+    )
     objective_outcomes = 0
     objective_applicable = 0
     role_counts: Counter[str] = Counter()
@@ -1628,7 +1659,8 @@ def _field_completeness(events: list[dict[str, Any]]) -> dict[str, Any]:
         objective_dimension = OBJECTIVE_DIMENSION_BY_LAYER[layer]
         objective_applicable += 1
         objective_outcomes += int(
-            objective_dimension in outcome and outcome.get(objective_dimension) is not None
+            objective_dimension in outcome
+            and outcome.get(objective_dimension) is not None
         )
         complete = True
         for dimension in expected:
@@ -1972,7 +2004,9 @@ def _registry_coverage(
         }
 
     registry_rows = [row for row in registry["entities"] if isinstance(row, dict)]
-    registry_ids = {str(row.get("id")) for row in registry_rows if _present(row.get("id"))}
+    registry_ids = {
+        str(row.get("id")) for row in registry_rows if _present(row.get("id"))
+    }
     rated_ids = {
         str(participant.get("entity_id"))
         for event in rated_events
@@ -1982,7 +2016,9 @@ def _registry_coverage(
     covered_ids = rated_ids & registry_ids
     missing_ids = sorted(rated_ids - registry_ids)
     status_counts = Counter(_category(row.get("status")) for row in registry_rows)
-    identity_status_counts = Counter(_category(row.get("identity_status")) for row in registry_rows)
+    identity_status_counts = Counter(
+        _category(row.get("identity_status")) for row in registry_rows
+    )
 
     result_ids: set[str] = set()
     result_table_supplied = isinstance(results, dict) and isinstance(
@@ -2004,7 +2040,9 @@ def _registry_coverage(
                 unit="proportion_of_registry_identities",
                 definition="Registry identities appearing in the supplied rating-results entity table.",
             ),
-            "results_entity_ids_missing_from_registry": sorted(result_ids - registry_ids),
+            "results_entity_ids_missing_from_registry": sorted(
+                result_ids - registry_ids
+            ),
         }
         if result_table_supplied
         else {
@@ -2063,7 +2101,9 @@ def _network_report(results: Mapping[str, Any] | None) -> dict[str, Any]:
         component = row.get("network_component")
         item = {
             "entity_id": str(row.get("id") or f"result_entity_index_{index}"),
-            "name": str(row.get("name") or row.get("id") or f"result_entity_index_{index}"),
+            "name": str(
+                row.get("name") or row.get("id") or f"result_entity_index_{index}"
+            ),
         }
         if component is None or (isinstance(component, str) and not component.strip()):
             missing_component_rows.append(item)
@@ -2152,7 +2192,9 @@ def build_coverage_report(
     sources = {
         str(row.get("id")): row for row in source_rows if _present(row.get("id"))
     }
-    review_scan = _scan_review(Path(review_dir) if review_dir is not None else None, reference_date)
+    review_scan = _scan_review(
+        Path(review_dir) if review_dir is not None else None, reference_date
+    )
     (
         coverage_metadata,
         metadata_queue_counts,
@@ -2193,7 +2235,8 @@ def build_coverage_report(
                 "observed": int(actual.get(filename, 0)),
             }
             for filename in filenames
-            if int(metadata_queue_counts.get(filename, 0)) != int(actual.get(filename, 0))
+            if int(metadata_queue_counts.get(filename, 0))
+            != int(actual.get(filename, 0))
         }
         consistency_checks["review_queue_counts"] = {
             "availability": "available",
@@ -2230,7 +2273,9 @@ def build_coverage_report(
 
     return {
         "consistency_checks": consistency_checks,
-        "event_counts": _event_counts(rated_events, combined_entity_rows, source_family_report),
+        "event_counts": _event_counts(
+            rated_events, combined_entity_rows, source_family_report
+        ),
         "field_completeness": _field_completeness(rated_events),
         "historical_completeness": {
             **_unavailable_ratio(
@@ -2249,7 +2294,9 @@ def build_coverage_report(
             coverage_metadata,
             required=(
                 registry is not None
-                and any(_present(event.get("hced_candidate_id")) for event in rated_events)
+                and any(
+                    _present(event.get("hced_candidate_id")) for event in rated_events
+                )
             ),
         ),
         "network": _network_report(results),
@@ -2338,7 +2385,9 @@ def _append_ratio_group(lines: list[str], title: str, group: Mapping[str, Any]) 
         found = True
         numerator = metric.get("numerator")
         denominator = metric.get("denominator")
-        numerator_text = f"{numerator:,}" if isinstance(numerator, int) else "not available"
+        numerator_text = (
+            f"{numerator:,}" if isinstance(numerator, int) else "not available"
+        )
         denominator_text = (
             f"{denominator:,}" if isinstance(denominator, int) else "not available"
         )
@@ -2451,7 +2500,10 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         for key, title in (
             ("by_era", "Analysis era"),
             ("by_region", "Event location region"),
-            ("by_participant_entity_region", "Participant-entity region (non-exclusive)"),
+            (
+                "by_participant_entity_region",
+                "Participant-entity region (non-exclusive)",
+            ),
             ("by_layer", "Rating layer"),
             ("by_domain", "Domain"),
             ("by_war_type", "War type"),
@@ -2479,13 +2531,18 @@ def render_markdown(report: Mapping[str, Any]) -> str:
                 lines.extend(
                     [
                         "Mismatched event IDs: "
-                        + ", ".join(f"`{_markdown_cell(value)}`" for value in mismatch_ids),
+                        + ", ".join(
+                            f"`{_markdown_cell(value)}`" for value in mismatch_ids
+                        ),
                         "",
                     ]
                 )
         source_family_counts = event_counts.get("by_source_family", {})
         lines.extend(["### Outcome-source family", ""])
-        if isinstance(source_family_counts, dict) and source_family_counts.get("availability") != "not_available":
+        if (
+            isinstance(source_family_counts, dict)
+            and source_family_counts.get("availability") != "not_available"
+        ):
             counts = source_family_counts.get("counts", {})
             lines.extend(["| Family | Event incidences |", "|---|---:|"])
             for family in sorted(counts):
@@ -2526,14 +2583,13 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             _append_ratio_group(lines, "Outcome dimensions", outcome)
             by_dimension = outcome.get("by_dimension")
             if isinstance(by_dimension, dict):
-                _append_ratio_group(lines, "Outcome dimensions by layer and field", by_dimension)
+                _append_ratio_group(
+                    lines, "Outcome dimensions by layer and field", by_dimension
+                )
 
     hced_policy = report.get("hced_location_policy", {})
     lines.extend(["## Declared HCED location quarantine policy", ""])
-    if (
-        isinstance(hced_policy, dict)
-        and hced_policy.get("availability") == "available"
-    ):
+    if isinstance(hced_policy, dict) and hced_policy.get("availability") == "available":
         lines.extend(
             [
                 str(hced_policy.get("definition", "")),
@@ -2621,7 +2677,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             ]
         )
     else:
-        lines.extend([f"Not available: {_markdown_cell(registry.get('reason', ''))}", ""])
+        lines.extend(
+            [f"Not available: {_markdown_cell(registry.get('reason', ''))}", ""]
+        )
     if isinstance(registry, dict):
         _append_ratio_group(
             lines,
@@ -2661,7 +2719,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         if isolated:
             lines.extend(["Isolated entities:", ""])
             for row in isolated:
-                lines.append(f"- {_markdown_cell(row.get('name'))} (`{_markdown_cell(row.get('entity_id'))}`)")
+                lines.append(
+                    f"- {_markdown_cell(row.get('name'))} (`{_markdown_cell(row.get('entity_id'))}`)"
+                )
             lines.append("")
         _append_ratio_group(
             lines,
@@ -2672,7 +2732,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             },
         )
     else:
-        lines.extend([f"Not available: {_markdown_cell(network.get('reason', ''))}", ""])
+        lines.extend(
+            [f"Not available: {_markdown_cell(network.get('reason', ''))}", ""]
+        )
 
     rejections = report.get("rejections", {})
     lines.extend(["## Rejection reasons", ""])
@@ -2688,7 +2750,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
                 )
         lines.append("")
     else:
-        lines.extend([f"Not available: {_markdown_cell(rejections.get('reason', ''))}", ""])
+        lines.extend(
+            [f"Not available: {_markdown_cell(rejections.get('reason', ''))}", ""]
+        )
 
     aging = report.get("unresolved_queue_aging", {})
     lines.extend(["## Unresolved queue aging", ""])
@@ -2711,9 +2775,7 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             lines.append(f"| {_markdown_cell(bucket)} | {int(count):,} |")
         lines.append("")
     elif isinstance(aging, dict) and aging.get("availability") == "not_applicable":
-        lines.extend(
-            [f"Not applicable: {_markdown_cell(aging.get('reason', ''))}", ""]
-        )
+        lines.extend([f"Not applicable: {_markdown_cell(aging.get('reason', ''))}", ""])
     else:
         lines.extend([f"Not available: {_markdown_cell(aging.get('reason', ''))}", ""])
     if isinstance(aging, dict):
@@ -2744,7 +2806,10 @@ def write_coverage_report(
 ) -> tuple[Path, Path]:
     """Write deterministic JSON and Markdown files to an explicit directory."""
 
-    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", basename) or basename in {".", ".."}:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", basename) or basename in {
+        ".",
+        "..",
+    }:
         raise ValueError(
             "Coverage output basename must be one safe filename component using letters, digits, '.', '_', or '-'."
         )

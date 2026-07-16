@@ -4,7 +4,6 @@ from pathlib import Path
 
 from military_elo.release import (
     HCED_FACTION_LABELS,
-    HCED_LABEL_CURATED_EXCLUSIONS,
     HCED_LABEL_POLICIES,
     HCED_PENDING_SPLIT_LABELS,
     UCDP_ACTOR_PARTY_POLICIES,
@@ -111,17 +110,21 @@ class ActorLabelPolicyTests(unittest.TestCase):
 
     def test_cuban_risings_are_three_identities_with_no_namesake_bridge(self) -> None:
         self.assertEqual(
-            _label_policy_seed_id("cuban rebels", 1873, 1873), "cuban_insurgent_army_1868"
+            _label_policy_seed_id("cuban rebels", 1873, 1873),
+            "cuban_insurgent_army_1868",
         )
         self.assertEqual(
-            _label_policy_seed_id("cuban rebels", 1896, 1896), "cuban_liberation_army_1895"
+            _label_policy_seed_id("cuban rebels", 1896, 1896),
+            "cuban_liberation_army_1895",
         )
         self.assertEqual(
             _label_policy_seed_id("cuban rebels", 1957, 1958), "cuban_26_july_movement"
         )
         for gap_year in (1885, 1902, 1953):
             with self.subTest(year=gap_year):
-                self.assertIsNone(_label_policy_seed_id("cuban rebels", gap_year, gap_year))
+                self.assertIsNone(
+                    _label_policy_seed_id("cuban rebels", gap_year, gap_year)
+                )
 
     def test_blocklist_migration_kept_the_front_gate_complete(self) -> None:
         self.assertEqual(len(HCED_FACTION_LABELS), 80)
@@ -146,19 +149,27 @@ class ActorLabelPolicyTests(unittest.TestCase):
         entity_id, _, reason, tier = resolve_hced_side_label(
             "Vendeen Rebels", 1793, 1793, context
         )
-        self.assertEqual((entity_id, reason, tier), (None, "faction_label_not_a_polity", None))
+        self.assertEqual(
+            (entity_id, reason, tier), (None, "faction_label_not_a_polity", None)
+        )
         entity_id, _, reason, tier = resolve_hced_side_label(
             "Switzerland", 1815, 1815, context
         )
-        self.assertEqual((entity_id, reason, tier), (None, "label_pending_identity_split", None))
+        self.assertEqual(
+            (entity_id, reason, tier), (None, "label_pending_identity_split", None)
+        )
         entity_id, _, reason, tier = resolve_hced_side_label(
             "Royalists", 1645, 1645, context
         )
-        self.assertEqual((entity_id, reason, tier), ("english_royalists", None, "label_policy"))
+        self.assertEqual(
+            (entity_id, reason, tier), ("english_royalists", None, "label_policy")
+        )
         entity_id, _, reason, tier = resolve_hced_side_label(
             "Royalists", 1660, 1660, context
         )
-        self.assertEqual((entity_id, reason, tier), (None, "label_outside_policy_window", None))
+        self.assertEqual(
+            (entity_id, reason, tier), (None, "label_outside_policy_window", None)
+        )
 
     def test_label_curated_exclusions_are_counted_before_every_other_gate(self) -> None:
         rows = [{"candidate_id": "hced-Ia Drang1965-1"}]
@@ -167,7 +178,12 @@ class ActorLabelPolicyTests(unittest.TestCase):
             curated_seed_keys=set(),
             promoted_event_keys=set(),
             resolve_code=lambda *args: (None, None, "no_unique_time_valid_polity"),
-            resolve_side_label=lambda *args: (None, None, "no_unique_time_valid_label_match", None),
+            resolve_side_label=lambda *args: (
+                None,
+                None,
+                "no_unique_time_valid_label_match",
+                None,
+            ),
         )
         self.assertEqual(result["events"], [])
         self.assertEqual(result["rejections"]["curated_row_exclusion"], 1)
@@ -191,7 +207,9 @@ class UcdpActorPolicyTests(unittest.TestCase):
         }
         self.assertEqual(methods["chinese_communist_forces"], "actor_party_policy")
         by_entity = {p["entity_id"]: p for p in event["participants"]}
-        self.assertEqual(by_entity["chinese_communist_forces"]["termination"], "victory")
+        self.assertEqual(
+            by_entity["chinese_communist_forces"]["termination"], "victory"
+        )
         self.assertEqual(by_entity["gov_710"]["termination"], "defeat")
         self.assertEqual(event["war_type"], "civil_war")
 
@@ -213,7 +231,9 @@ class UcdpActorPolicyTests(unittest.TestCase):
         self.assertEqual(len(result["events"]), 1)
         event = result["events"][0]
         by_entity = {p["entity_id"]: p for p in event["participants"]}
-        self.assertEqual(by_entity["chinese_communist_forces"]["termination"], "victory")
+        self.assertEqual(
+            by_entity["chinese_communist_forces"]["termination"], "victory"
+        )
         self.assertEqual(by_entity["gov_710"]["termination"], "defeat")
 
     def test_mixed_government_and_actor_primary_side_is_rejected(self) -> None:
@@ -263,7 +283,11 @@ class UcdpActorPolicyTests(unittest.TestCase):
 
     def test_actor_policy_window_is_the_attested_existence_bound(self) -> None:
         result = promote_ucdp_termination_episodes(
-            [_ucdp_conflict_row(c_ep_startyear="1950", c_ep_endyear="1950", year="1950")],
+            [
+                _ucdp_conflict_row(
+                    c_ep_startyear="1950", c_ep_endyear="1950", year="1950"
+                )
+            ],
             [],
             [],
             _government_resolver,
@@ -298,6 +322,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         "cliopatria_alias_to_seed",
         "seshat_crosswalk",
         "wave6_pre1500_candidate_policy",
+        "wave7_candidate_keyed_exact",
     }
 
     @classmethod
@@ -306,9 +331,20 @@ class ActorReleaseArtifactTests(unittest.TestCase):
 
     def test_label_events_carry_an_auditable_resolution_tier(self) -> None:
         label_events = [
-            e for e in self.events if e.get("identity_resolution") == "label"
+            e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         self.assertEqual(len(label_events), 2_383)
+        self.assertEqual(
+            sum(e.get("identity_resolution") == "label" for e in label_events),
+            2_378,
+        )
+        self.assertEqual(
+            sum(
+                e.get("identity_resolution") == "wave7_candidate_keyed_migration"
+                for e in label_events
+            ),
+            5,
+        )
         for event in label_events:
             tiers = event.get("side_identity_resolution")
             self.assertIsInstance(tiers, dict, event["id"])
