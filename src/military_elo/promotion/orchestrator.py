@@ -563,6 +563,25 @@ from .wave8_manchus import (
     wave8_manchus_cohort_counts,
     wave8_manchus_counts,
 )
+from .wave8_peruvian_rebels import (
+    WAVE8_PERUVIAN_REBELS_CONTRACT_IDS,
+    WAVE8_PERUVIAN_REBELS_CROSS_LANE_DISPOSITIONS,
+    WAVE8_PERUVIAN_REBELS_ENTITIES,
+    WAVE8_PERUVIAN_REBELS_HOLD_IDS,
+    WAVE8_PERUVIAN_REBELS_HOLDS,
+    WAVE8_PERUVIAN_REBELS_INTEGRATION_DISPOSITIONS,
+    WAVE8_PERUVIAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_PERUVIAN_REBELS_OUTCOME_OVERRIDES,
+    WAVE8_PERUVIAN_REBELS_RESERVED_IDS,
+    WAVE8_PERUVIAN_REBELS_SOURCES,
+    install_wave8_peruvian_rebels_entities,
+    install_wave8_peruvian_rebels_sources,
+    promote_wave8_peruvian_rebels_contracts,
+    validate_wave8_peruvian_rebels_integration_dispositions,
+    validate_wave8_peruvian_rebels_queue_contracts,
+    wave8_peruvian_rebels_cohort_counts,
+    wave8_peruvian_rebels_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -613,6 +632,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_MUSLIM_FORCES_RESERVED_IDS
     | WAVE8_MOROS_RESERVED_IDS
     | WAVE8_MANCHUS_RESERVED_IDS
+    | WAVE8_PERUVIAN_REBELS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1011,7 +1031,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 79
+        len(HCED_POINT_QUARANTINE_IDS) != 84
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 86
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1191,6 +1211,9 @@ def build_expanded_release(
     )
     wave8_moros_queue_validation = validate_wave8_moros_queue_contracts(hced)
     wave8_manchus_queue_validation = validate_wave8_manchus_queue_contracts(hced)
+    wave8_peruvian_rebels_queue_validation = (
+        validate_wave8_peruvian_rebels_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1528,6 +1551,7 @@ def build_expanded_release(
     install_wave8_muslim_forces_entities(release_entities)
     install_wave8_moros_entities(release_entities)
     install_wave8_manchus_entities(release_entities)
+    install_wave8_peruvian_rebels_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -2305,6 +2329,47 @@ def build_expanded_release(
             *wave8_moros_events,
         ],
     )
+    wave8_peruvian_rebels_events = promote_wave8_peruvian_rebels_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+            *wave8_fast17_events,
+            *wave8_naples_events,
+            *wave8_somali_irish_sa_events,
+            *wave8_argentine_independence_events,
+            *wave8_ecuador_independence_events,
+            *wave8_comanche_events,
+            *wave8_garibaldi_events,
+            *wave8_algiers_cheyenne_events,
+            *wave8_dagestan_events,
+            *wave8_irish_history_events,
+            *wave8_muslim_forces_events,
+            *wave8_moros_events,
+            *wave8_manchus_events,
+        ],
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -2337,6 +2402,7 @@ def build_expanded_release(
         *wave8_muslim_forces_events,
         *wave8_moros_events,
         *wave8_manchus_events,
+        *wave8_peruvian_rebels_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -2397,6 +2463,7 @@ def build_expanded_release(
             *WAVE8_MUSLIM_FORCES_TERMINAL_EXCLUSION_IDS,
             *WAVE8_MOROS_HOLD_IDS,
             *WAVE8_MANCHUS_HOLD_IDS,
+            *WAVE8_PERUVIAN_REBELS_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -2455,6 +2522,7 @@ def build_expanded_release(
         *wave8_muslim_forces_events,
         *wave8_moros_events,
         *wave8_manchus_events,
+        *wave8_peruvian_rebels_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -2526,6 +2594,11 @@ def build_expanded_release(
     )
     wave8_manchus_integration_validation = (
         validate_wave8_manchus_integration_dispositions(hced, iwbd_candidates)
+    )
+    wave8_peruvian_rebels_integration_validation = (
+        validate_wave8_peruvian_rebels_integration_dispositions(
+            hced, iwbd_candidates
+        )
     )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
@@ -2704,6 +2777,7 @@ def build_expanded_release(
     install_wave8_muslim_forces_sources(sources_by_id)
     install_wave8_moros_sources(sources_by_id)
     install_wave8_manchus_sources(sources_by_id)
+    install_wave8_peruvian_rebels_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -2741,6 +2815,7 @@ def build_expanded_release(
         *wave8_muslim_forces_events,
         *wave8_moros_events,
         *wave8_manchus_events,
+        *wave8_peruvian_rebels_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -2778,6 +2853,7 @@ def build_expanded_release(
         *wave8_muslim_forces_events,
         *wave8_moros_events,
         *wave8_manchus_events,
+        *wave8_peruvian_rebels_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -2814,6 +2890,7 @@ def build_expanded_release(
             | WAVE8_MUSLIM_FORCES_CONTRACT_IDS
             | WAVE8_MOROS_CONTRACT_IDS
             | WAVE8_MANCHUS_CONTRACT_IDS
+            | WAVE8_PERUVIAN_REBELS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -2886,6 +2963,10 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_MUSLIM_FORCES_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_MOROS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_MANCHUS_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_PERUVIAN_REBELS_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -3091,6 +3172,7 @@ def build_expanded_release(
         - len(wave8_muslim_forces_events)
         - len(wave8_moros_events)
         - len(wave8_manchus_events)
+        - len(wave8_peruvian_rebels_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -3169,6 +3251,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_moros_hced_events": len(wave8_moros_events),
         "candidate_keyed_wave8_manchus_hced_events": len(wave8_manchus_events),
+        "candidate_keyed_wave8_peruvian_rebels_hced_events": len(
+            wave8_peruvian_rebels_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -3391,6 +3476,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_moros_hced_events": len(wave8_moros_events),
             "accepted_wave8_manchus_hced_events": len(wave8_manchus_events),
+            "accepted_wave8_peruvian_rebels_hced_events": len(
+                wave8_peruvian_rebels_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -4105,6 +4193,55 @@ def build_expanded_release(
             ],
             "wave8_manchus_entities_added": len(WAVE8_MANCHUS_ENTITIES),
             "wave8_manchus_sources_added": len(WAVE8_MANCHUS_SOURCES),
+            "wave8_peruvian_rebels_counts": wave8_peruvian_rebels_counts(),
+            "wave8_peruvian_rebels_cohort_counts": (
+                wave8_peruvian_rebels_cohort_counts()
+            ),
+            "wave8_peruvian_rebels_queue_validation": (
+                wave8_peruvian_rebels_queue_validation
+            ),
+            "wave8_peruvian_rebels_integration_validation": (
+                wave8_peruvian_rebels_integration_validation
+            ),
+            "wave8_peruvian_rebels_candidate_ids": sorted(
+                WAVE8_PERUVIAN_REBELS_CONTRACT_IDS
+            ),
+            "wave8_peruvian_rebels_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PERUVIAN_REBELS_HOLDS.items()
+                )
+            ],
+            "wave8_peruvian_rebels_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PERUVIAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_peruvian_rebels_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PERUVIAN_REBELS_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_peruvian_rebels_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PERUVIAN_REBELS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_peruvian_rebels_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PERUVIAN_REBELS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_peruvian_rebels_entities_added": len(
+                WAVE8_PERUVIAN_REBELS_ENTITIES
+            ),
+            "wave8_peruvian_rebels_sources_added": len(
+                WAVE8_PERUVIAN_REBELS_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -4310,6 +4447,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_moros_hced_events": len(wave8_moros_events),
         "candidate_keyed_wave8_manchus_hced_events": len(wave8_manchus_events),
+        "candidate_keyed_wave8_peruvian_rebels_hced_events": len(
+            wave8_peruvian_rebels_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

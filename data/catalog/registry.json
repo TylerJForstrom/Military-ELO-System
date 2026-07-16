@@ -6127,6 +6127,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "valdes_royalist_southern_division_torata_1823",
+      "name": "Geronimo Valdes's southern royalist division at Torata (1823)",
+      "kind": "event_bounded_royalist_division",
+      "start_year": 1823,
+      "end_year": 1823,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Peru"
+    },
+    {
       "id": "clio_q117_1958_cf518641",
       "name": "Ghana",
       "kind": "polity",
@@ -8201,6 +8211,16 @@
       "kind": "royalist_field_force",
       "start_year": 1810,
       "end_year": 1810,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
+    },
+    {
+      "id": "ramirez_royalist_division_chacaltaya_1814",
+      "name": "Juan Ramirez Orozco's royalist division at Chacaltaya (1814)",
+      "kind": "event_bounded_royalist_division",
+      "start_year": 1814,
+      "end_year": 1814,
       "status": "rated",
       "identity_status": "curated",
       "region": "Upper Peru"
@@ -13686,6 +13706,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "picoaga_moscoso_arequipa_royalist_force_apacheta_1814",
+      "name": "Picoaga and Moscoso's Arequipa royalist force at Apacheta (1814)",
+      "kind": "event_bounded_royalist_force",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Andes"
+    },
+    {
+      "id": "pinedo_munecas_cuzco_expedition_chacaltaya_1814",
+      "name": "Pinedo and Munecas's Cuzco expedition at Chacaltaya (1814)",
+      "kind": "event_bounded_revolutionary_expedition",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
+    },
+    {
       "id": "pisan_beirut_blockade_fleet_1110",
       "name": "Pisan fleet at Beirut in 1110",
       "kind": "event_bounded_naval_contingent",
@@ -14583,6 +14623,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Volga-Ural region"
+    },
+    {
+      "id": "pumacahua_angulo_cuzco_junta_army_apacheta_1814",
+      "name": "Pumacahua and Angulo's Cuzco Junta army at Apacheta (1814)",
+      "kind": "event_bounded_revolutionary_army",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Andes"
     },
     {
       "id": "clio_q1627675_84_879a710b",
@@ -16063,6 +16113,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "royal_army_peru_campaign_1824",
+      "name": "Royal Army of Peru (1824 campaign)",
+      "kind": "campaign_bounded_royalist_army",
+      "start_year": 1824,
+      "end_year": 1824,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central and Southern Peru"
+    },
+    {
       "id": "english_royalists",
       "name": "Royalist Forces (Wars of the Three Kingdoms)",
       "kind": "civil_war_faction",
@@ -16081,6 +16141,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "alvarado_liberating_army_south_torata_1823",
+      "name": "Rudecindo Alvarado's Liberating Army of the South at Torata (1823)",
+      "kind": "event_bounded_multinational_army",
+      "start_year": 1823,
+      "end_year": 1823,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Peru"
     },
     {
       "id": "clio_q872644_455_7bb6951b",
@@ -19262,6 +19332,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "united_liberating_army_peru_campaign_1824",
+      "name": "United Liberating Army of Peru (1824 campaign)",
+      "kind": "campaign_bounded_multinational_army",
+      "start_year": 1824,
+      "end_year": 1824,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central and Southern Peru"
+    },
+    {
       "id": "clio_q958291_1859_873bcece",
       "name": "United Principalities of Moldavia and Wallachia",
       "kind": "polity",
@@ -20444,11 +20524,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1907,
-    "rated_entities": 544,
-    "rated_events": 5055,
+    "registry_polities": 1915,
+    "rated_entities": 552,
+    "rated_events": 5060,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18339,
+    "unresolved_event_candidates": 18334,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20484,6 +20564,7 @@
     "candidate_keyed_wave8_muslim_forces_hced_events": 14,
     "candidate_keyed_wave8_moros_hced_events": 6,
     "candidate_keyed_wave8_manchus_hced_events": 5,
+    "candidate_keyed_wave8_peruvian_rebels_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20494,21 +20575,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4791,
-      "candidate_keyed_reviewed_contracts": 481,
+      "hced_candidate_bindings": 4796,
+      "candidate_keyed_reviewed_contracts": 486,
       "geojson_points": 4712,
-      "modern_location_country_assertions": 4704,
-      "location_provenance_objects": 4753,
-      "point_fields_withheld_by_quarantine": 79,
+      "modern_location_country_assertions": 4709,
+      "location_provenance_objects": 4758,
+      "point_fields_withheld_by_quarantine": 84,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 127,
-      "point_quarantine_candidate_manifest_sha256": "d1ebc442a2f1d2901c2d221d2fc982e7ad284d1719099babbabb37053e16f53c",
+      "unique_events_with_any_quarantined_field": 132,
+      "point_quarantine_candidate_manifest_sha256": "16f5dcd54bb3dd3e58e16dadd97f652a5fa03b790d641b934a69212a5488e3ba",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "6e90feedde1f2c72321a13381b139e14bd348379034a11022ea01473f0bd9f8b",
+      "quarantine_policy_sha256": "6cc38d85f4f6656212a5ae14a2afe86e16f9416bd5167c373327200ecf29ad4e",
       "assertion_status": {
-        "unreviewed_source_assertion": 4753
+        "unreviewed_source_assertion": 4758
       },
       "verified_location_assertions": {
         "availability": "not_available",

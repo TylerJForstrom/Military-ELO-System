@@ -4476,6 +4476,21 @@
     ]
   },
   {
+    "id": "ramirez_royalist_division_chacaltaya_1814",
+    "name": "Juan Ramirez Orozco's royalist division at Chacaltaya (1814)",
+    "kind": "event_bounded_royalist_division",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded royalist division sent from the Army of Upper Peru under Juan Ramirez Orozco. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_garcia_camba_memorias",
+      "wave8_peruvian_rebels_redalyc_puno_alto_peru"
+    ]
+  },
+  {
     "id": "clio_no_norway_k_modern_1814_c9f18673",
     "name": "Kingdom of Norway",
     "kind": "kingdom",
@@ -4489,6 +4504,53 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "picoaga_moscoso_arequipa_royalist_force_apacheta_1814",
+    "name": "Picoaga and Moscoso's Arequipa royalist force at Apacheta (1814)",
+    "kind": "event_bounded_royalist_force",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Southern Andes",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Arequipa defense organized by Francisco Picoaga and Jose Gabriel Moscoso. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_bicentenario_cuzco_1814_readings",
+      "wave8_peruvian_rebels_cehmp_apacheta"
+    ]
+  },
+  {
+    "id": "pinedo_munecas_cuzco_expedition_chacaltaya_1814",
+    "name": "Pinedo and Munecas's Cuzco expedition at Chacaltaya (1814)",
+    "kind": "event_bounded_revolutionary_expedition",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Cuzco Junta expedition led by Jose Manuel Pinedo and Ildefonso de las Munecas. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_garcia_camba_memorias",
+      "wave8_peruvian_rebels_pucp_cuzco_junta_1814",
+      "wave8_peruvian_rebels_redalyc_puno_alto_peru"
+    ]
+  },
+  {
+    "id": "pumacahua_angulo_cuzco_junta_army_apacheta_1814",
+    "name": "Pumacahua and Angulo's Cuzco Junta army at Apacheta (1814)",
+    "kind": "event_bounded_revolutionary_army",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Southern Andes",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded force led by Mateo Pumacahua and Vicente Angulo at Apacheta. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_bicentenario_cuzco_1814_readings",
+      "wave8_peruvian_rebels_cehmp_apacheta",
+      "wave8_peruvian_rebels_pucp_cuzco_junta_1814"
     ]
   },
   {
@@ -5011,6 +5073,36 @@
     ]
   },
   {
+    "id": "valdes_royalist_southern_division_torata_1823",
+    "name": "Geronimo Valdes's southern royalist division at Torata (1823)",
+    "kind": "event_bounded_royalist_division",
+    "start_year": 1823,
+    "end_year": 1823,
+    "region": "Southern Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded southern royalist formation commanded by Geronimo Valdes at Torata. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_bicentenario_torata",
+      "wave8_peruvian_rebels_municipality_torata_history"
+    ]
+  },
+  {
+    "id": "alvarado_liberating_army_south_torata_1823",
+    "name": "Rudecindo Alvarado's Liberating Army of the South at Torata (1823)",
+    "kind": "event_bounded_multinational_army",
+    "start_year": 1823,
+    "end_year": 1823,
+    "region": "Southern Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Peruvian, Rioplatense, and Chilean army under Rudecindo Alvarado. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_bicentenario_torata",
+      "wave8_peruvian_rebels_municipality_torata_history"
+    ]
+  },
+  {
     "id": "mexican_republic",
     "name": "Mexican Republic",
     "kind": "republic",
@@ -5027,6 +5119,41 @@
       "cliopatria_polities",
       "britannica_mexico_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "royal_army_peru_campaign_1824",
+    "name": "Royal Army of Peru (1824 campaign)",
+    "kind": "campaign_bounded_royalist_army",
+    "start_year": 1824,
+    "end_year": 1824,
+    "region": "Central and Southern Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded army under Canterac and La Serna in the final 1824 campaign. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_agn_ayacucho_article",
+      "wave8_peruvian_rebels_bicentenario_ayacucho",
+      "wave8_peruvian_rebels_bicentenario_ayacucho_primary",
+      "wave8_peruvian_rebels_bicentenario_junin_part"
+    ]
+  },
+  {
+    "id": "united_liberating_army_peru_campaign_1824",
+    "name": "United Liberating Army of Peru (1824 campaign)",
+    "kind": "campaign_bounded_multinational_army",
+    "start_year": 1824,
+    "end_year": 1824,
+    "region": "Central and Southern Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded combined liberating army employed at Junin and Ayacucho in 1824. No rating is inherited by modern Peru, modern Spain, a generic rebel or royalist label, any constituent nationality, or a later force.",
+    "source_ids": [
+      "wave8_peruvian_rebels_agn_ayacucho_article",
+      "wave8_peruvian_rebels_bicentenario_ayacucho",
+      "wave8_peruvian_rebels_bicentenario_ayacucho_primary",
+      "wave8_peruvian_rebels_bicentenario_junin_part",
+      "wave8_peruvian_rebels_peruvian_army_junin"
     ]
   },
   {

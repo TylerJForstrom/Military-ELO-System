@@ -8037,6 +8037,187 @@
     ]
   },
   {
+    "id": "wave8_peruvian_rebels_agn_ayacucho_article",
+    "title": "La batalla de Ayacucho (9 de diciembre de 1824)",
+    "url": "https://revista.agn.gob.pe/ojs/index.php/ragn/article/view/18",
+    "publisher": "Archivo General de la Nacion del Peru",
+    "license": "Citation and link only",
+    "source_type": "scholarly_archival_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_agn_ayacucho_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_bicentenario_ayacucho",
+    "title": "La batalla de Ayacucho y su capitulacion",
+    "url": "https://bicentenario.gob.pe/batalla-de-ayacucho-hito-en-la-consolidacion-de-la-independencia-americana/",
+    "publisher": "Proyecto Especial Bicentenario del Peru",
+    "license": "Citation and link only",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_bicentenario_ayacucho_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_bicentenario_ayacucho_primary",
+    "title": "Homenaje a la victoria de Ayacucho: battle report and capitulation",
+    "url": "https://repositorio.bicentenario.gob.pe/bitstream/handle/20.500.12934/90/Homenaje%20victoria%20Ayacucho.pdf?isAllowed=y&sequence=3",
+    "publisher": "Repositorio Bicentenario del Peru",
+    "license": "Citation and link only",
+    "source_type": "digitized_primary_document_compilation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ayacucho_primary_document_compilation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_bicentenario_cuzco_1814_readings",
+    "title": "Lecturas de la Independencia: la revolucion del Cuzco de 1814",
+    "url": "https://bicentenario.gob.pe/biblioteca/storage/app/uploads/public/66c/663/064/66c6630642ffa238415020.pdf",
+    "publisher": "Proyecto Especial Bicentenario del Peru",
+    "license": "Citation and link only",
+    "source_type": "government_scholarly_compilation",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_bicentenario_cuzco_1814_readings",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_bicentenario_junin_part",
+    "title": "Victoria por la independencia: parte de la batalla de Junin",
+    "url": "https://bicentenario.gob.pe/parte-batalla-junin-1824/",
+    "publisher": "Proyecto Especial Bicentenario del Peru",
+    "license": "Citation and link only",
+    "source_type": "government_transcription_of_primary_battle_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_bicentenario_junin_primary_part",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_bicentenario_torata",
+    "title": "Bicentenario de las batallas de Torata y Moquegua: valor y sacrificio del Peru",
+    "url": "https://bicentenario.gob.pe/batallas-torata-moquegua-sacrificio/",
+    "publisher": "Proyecto Especial Bicentenario del Peru",
+    "license": "Citation and link only",
+    "source_type": "government_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_bicentenario_torata_moquegua",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_cehmp_apacheta",
+    "title": "Efemeride del 9 de noviembre de 1814: Batalla de Apacheta",
+    "url": "https://cehmp.wordpress.com/2024/11/10/efemeride-del-9-de-noviembre-de-1814-batalla-de-apacheta/",
+    "publisher": "Centro de Estudios Historico Militares del Peru",
+    "license": "Citation and link only",
+    "source_type": "institutional_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_center_historical_military_apacheta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_culture_ministry_pasco_1820",
+    "title": "Proyecto Bicentenario conmemora los 200 anos de la Batalla de Pasco",
+    "url": "https://www.gob.pe/institucion/cultura/noticias/319423-proyecto-bicentenario-conmemora-los-200-anos-de-la-batalla-de-pasco-este-6-de-diciembre",
+    "publisher": "Ministerio de Cultura del Peru",
+    "license": "Citation and link only",
+    "source_type": "government_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "peru_ministry_culture_pasco_1820",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_garcia_camba_memorias",
+    "title": "Memorias para la historia de las armas espanolas en el Peru",
+    "url": "https://bvpb.mcu.es/es/consulta/registro.do?id=398125",
+    "publisher": "Biblioteca Virtual del Patrimonio Bibliografico, Ministry of Culture of Spain",
+    "license": "Citation and link only",
+    "source_type": "digitized_near_contemporary_military_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "garcia_camba_peru_military_memories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_municipality_torata_history",
+    "title": "Historia de Torata: batalla del 19 de enero de 1823",
+    "url": "https://anterior.munitorata.gob.pe/historia/",
+    "publisher": "Municipalidad Distrital de Torata",
+    "license": "Citation and link only",
+    "source_type": "municipal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "torata_municipal_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_peruvian_army_junin",
+    "title": "Homenaje a la gesta de Junin y Dia del Arma de Caballeria",
+    "url": "https://www.gob.pe/institucion/ejercito/noticias/813715-homenaje-a-la-gesta-de-junin-y-dia-del-arma-de-caballeria",
+    "publisher": "Ejercito del Peru",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "peruvian_army_junin_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_pucp_cuzco_junta_1814",
+    "title": "1814: La junta de gobierno del Cuzco y el sur andino",
+    "url": "https://repositorio.pucp.edu.pe/items/1bacb037-de6a-4437-999d-e00bfc69b430",
+    "publisher": "Pontificia Universidad Catolica del Peru; IFEA",
+    "license": "Citation and link only",
+    "source_type": "open_access_scholarly_volume",
+    "accessed": "2026-07-16",
+    "source_family_id": "pucp_ifea_cuzco_junta_1814",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_peruvian_rebels_redalyc_puno_alto_peru",
+    "title": "Acciones revolucionarias en America Latina: Puno y el Alto Peru durante el proceso de independencia",
+    "url": "https://www.redalyc.org/journal/5717/571768450005/",
+    "publisher": "Revista Revoluciones / Redalyc",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "puno_alto_peru_independence_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_polish_czech_statistics_domazlice",
     "title": "Domažlice and the Hussite victory of 1431",
     "url": "https://csu.gov.cz/produkty/13-3231-06-za_rok_2005-domazlice",
