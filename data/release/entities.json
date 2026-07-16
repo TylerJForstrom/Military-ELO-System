@@ -1619,6 +1619,36 @@
     "start_year": 1270
   },
   {
+    "id": "angevin_sicily_berat_army_1281",
+    "name": "Angevin Kingdom of Sicily Army at Berat (1281)",
+    "kind": "campaign_army",
+    "start_year": 1281,
+    "end_year": 1281,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Hugh of Sully's army serving Charles I's Angevin Kingdom of Sicily; the raw label 'Naples' is anachronistic for this event. No rating is inherited by a later Kingdom of Naples, a Sicilian regime, or another Angevin force.",
+    "source_ids": [
+      "wave8_naples_berat_balkans_journal",
+      "wave8_naples_berat_byzantina_symmeikta"
+    ]
+  },
+  {
+    "id": "byzantine_berat_relief_army_1281",
+    "name": "Byzantine Relief Army at Berat (1281)",
+    "kind": "campaign_army",
+    "start_year": 1281,
+    "end_year": 1281,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Battle-bounded Byzantine relief force that defeated Hugh of Sully's Angevin army. No rating is inherited from the Byzantine Empire, a predecessor, a successor, or another Byzantine field army.",
+    "source_ids": [
+      "wave8_naples_berat_balkans_journal",
+      "wave8_naples_berat_byzantina_symmeikta"
+    ]
+  },
+  {
     "id": "llywelyn_ap_gruffudd_final_war_forces_1282",
     "name": "Llywelyn ap Gruffudd's final-war forces (1282)",
     "kind": "regime_bounded_princely_force",
@@ -2197,6 +2227,20 @@
     ]
   },
   {
+    "id": "aragonese_neapolitan_taranto_garrison_1501_1502",
+    "name": "Aragonese Neapolitan Garrison of Taranto (1501-1502)",
+    "kind": "royal_garrison",
+    "start_year": 1501,
+    "end_year": 1502,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The dynastic Neapolitan holdout commanded by Ferdinand, duke of Calabria and prince of Taranto, after Federico's defeat. No rating is inherited by later Spanish, Bourbon, republican, or Napoleonic Naples.",
+    "source_ids": [
+      "wave8_naples_taranto_treccani_ferdinand"
+    ]
+  },
+  {
     "id": "safavid_empire",
     "name": "Safavid Iran",
     "kind": "empire",
@@ -2212,6 +2256,20 @@
       "cliopatria_polities",
       "iranica_chaldiran",
       "iranica_kandahar"
+    ]
+  },
+  {
+    "id": "spanish_taranto_besieging_force_1501_1502",
+    "name": "Spanish Besieging Force at Taranto (1501-1502)",
+    "kind": "campaign_army",
+    "start_year": 1501,
+    "end_year": 1502,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Gonzalo Fernández de Córdoba's Spanish force in the exact Taranto siege. No rating is inherited from a timeless Spain identity, the Spanish Empire, or another Italian Wars army.",
+    "source_ids": [
+      "wave8_naples_taranto_rah_gonzalo"
     ]
   },
   {
@@ -2539,6 +2597,21 @@
     ]
   },
   {
+    "id": "ostryanyn_hunia_rebel_force_1638",
+    "name": "Ostryanyn-Hunia rebel force at Zhovnyne",
+    "kind": "insurgent_army",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Kyiv Voivodeship",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded force led successively by Yakiv Ostryanyn and Dmytro Hunia in the 1638 uprising. No generic Cossack, Ukrainian, or later insurgent continuity is inferred.",
+    "source_ids": [
+      "wave8_encyclopedia_history_ukraine_zhovnyne",
+      "wave8_encyclopedia_ukraine_ostryanyn"
+    ]
+  },
+  {
     "id": "english_parliamentarians",
     "name": "Parliamentarian Forces (Wars of the Three Kingdoms)",
     "kind": "civil_war_faction",
@@ -2582,6 +2655,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "krychevsky_zaporozhian_army_loyew_1649",
+    "name": "Krychevsky's Zaporozhian army at Loyew",
+    "kind": "campaign_army",
+    "start_year": 1649,
+    "end_year": 1649,
+    "region": "Polish-Lithuanian Commonwealth",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force under Mykhailo Krychevsky in the 1649 Loyew campaign. No rating is inherited by the Zaporozhian Host generally, modern Ukraine, or unrelated Cossack rebellions.",
+    "source_ids": [
+      "wave8_nas_ukraine_loyew_1649"
     ]
   },
   {
@@ -2973,6 +3060,21 @@
     ]
   },
   {
+    "id": "pugachev_rebellion_forces_1773_1775",
+    "name": "Pugachev Rebellion forces",
+    "kind": "insurgent_coalition",
+    "start_year": 1773,
+    "end_year": 1775,
+    "region": "Volga-Ural region",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded umbrella for Pugachev's main rebel army and the named mobile formations operating under the uprising's command. It does not transfer a rating to Yaik Cossacks, Bashkirs, peasants, later Cossack hosts, or any ethnic population.",
+    "source_ids": [
+      "wave8_great_russian_encyclopedia_pugachev",
+      "wave8_harvard_imperiia_pugachev_bashkir"
+    ]
+  },
+  {
     "id": "american_revolutionary_forces_1775",
     "name": "American Revolutionary Forces (1775-1776)",
     "kind": "revolutionary_force",
@@ -3137,6 +3239,35 @@
     ]
   },
   {
+    "id": "bourbon_naples_field_army_1798",
+    "name": "Bourbon Kingdom of Naples Field Army (1798)",
+    "kind": "state_armed_forces",
+    "start_year": 1798,
+    "end_year": 1798,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Karl Mack's field army of Ferdinand IV's Bourbon Kingdom of Naples during the 1798 invasion of the Roman Republic. No rating is inherited by the 1799 Parthenopean Republic, a restored Bourbon force, Joseph Bonaparte's kingdom, Murat's kingdom, or the Two Sicilies.",
+    "source_ids": [
+      "wave8_naples_civita_castellana_army_journal",
+      "wave8_naples_regime_boundaries_treccani"
+    ]
+  },
+  {
+    "id": "macdonald_french_division_civita_castellana_1798",
+    "name": "Macdonald's French Division at Civita Castellana (1798)",
+    "kind": "campaign_army",
+    "start_year": 1798,
+    "end_year": 1798,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The French Republican field force under Jacques Macdonald in the 1798 Roman campaign. No rating is inherited from generic France, the First French Empire, or another French army.",
+    "source_ids": [
+      "wave8_naples_civita_castellana_army_journal"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Battle-specific Mamluk Egyptian force in 1798, not the medieval Mamluk Sultanate or a generic Egypt identity. No rating is inherited from either namesake.",
     "end_year": 1798,
@@ -3149,6 +3280,51 @@
       "met_battle_pyramids"
     ],
     "start_year": 1798
+  },
+  {
+    "id": "championnet_french_army_naples_1799",
+    "name": "Championnet's French Army at Naples (1799)",
+    "kind": "campaign_army",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Jean-Étienne Championnet's French Republican army in the January 1799 capture of Naples. No rating is inherited from generic France, Macdonald's 1798 division, or a Napoleonic imperial army.",
+    "source_ids": [
+      "wave8_naples_1799_cambridge",
+      "wave8_naples_1799_treccani_republic"
+    ]
+  },
+  {
+    "id": "neapolitan_royalist_lazzari_1799",
+    "name": "Neapolitan Royalist Lazzari Defenders (1799)",
+    "kind": "urban_militia",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed popular royalist defenders who resisted after the Bourbon court and royal command abandoned Naples. No rating is inherited from Mack's 1798 army, a Bourbon state, or any later Neapolitan army.",
+    "source_ids": [
+      "wave8_naples_1799_cambridge",
+      "wave8_naples_1799_treccani_republic"
+    ]
+  },
+  {
+    "id": "parthenopean_republican_forces_1799",
+    "name": "Parthenopean Republican Forces at Naples (1799)",
+    "kind": "revolutionary_forces",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Neapolitan patriots who held Castel Sant'Elmo and proclaimed the Parthenopean Republic during the French entry. No rating is inherited from Bourbon Naples, the restored Bourbon kingdom, either Napoleonic kingdom, or the Kingdom of the Two Sicilies.",
+    "source_ids": [
+      "wave8_naples_1799_cambridge",
+      "wave8_naples_1799_treccani_republic"
+    ]
   },
   {
     "id": "sikh_empire",
@@ -3303,6 +3479,37 @@
     ]
   },
   {
+    "id": "massena_french_gaeta_corps_1806",
+    "name": "Masséna's French Siege Corps at Gaeta (1806)",
+    "kind": "siege_force",
+    "start_year": 1806,
+    "end_year": 1806,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "André Masséna's French imperial besieging force at Gaeta. No rating is inherited from the First French Republic, Joseph Bonaparte's newly installed kingdom, Murat's later kingdom, or another French corps.",
+    "source_ids": [
+      "wave8_naples_gaeta_founders_online",
+      "wave8_naples_gaeta_treccani"
+    ]
+  },
+  {
+    "id": "restored_bourbon_gaeta_garrison_1806",
+    "name": "Restored Bourbon Neapolitan Garrison of Gaeta (1806)",
+    "kind": "royal_garrison",
+    "start_year": 1806,
+    "end_year": 1806,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Gaeta garrison loyal to the displaced restored-Bourbon court and commanded by the prince of Hesse-Philippsthal. It is not the army of Joseph Bonaparte's Napoleonic Kingdom of Naples. No rating is inherited from the 1798 army or by any later Bourbon or Murat force.",
+    "source_ids": [
+      "wave8_naples_gaeta_founders_online",
+      "wave8_naples_gaeta_treccani",
+      "wave8_naples_regime_boundaries_treccani"
+    ]
+  },
+  {
     "id": "murat_kingdom_naples",
     "name": "Kingdom of Naples under Joachim Murat",
     "kind": "kingdom",
@@ -3334,6 +3541,20 @@
     ]
   },
   {
+    "id": "cordoba_royalist_force_cotagaita_1810",
+    "name": "José de Córdoba's royalist force at Cotagaita (1810)",
+    "kind": "royalist_field_force",
+    "start_year": 1810,
+    "end_year": 1810,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist force under José de Córdoba y Rojas at the Cotagaita positions. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_cotagaita_suipacha"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Reviewed revolutionary-army label window from the May 1810 reorganization through the 1816 independence boundary. Later Argentine governments and civil-war factions receive no rating inheritance.",
     "end_year": 1816,
@@ -3349,6 +3570,21 @@
     "start_year": 1810
   },
   {
+    "id": "primera_junta_auxiliary_army_cotagaita_1810",
+    "name": "Primera Junta auxiliary army at Cotagaita (1810)",
+    "kind": "revolutionary_army",
+    "start_year": 1810,
+    "end_year": 1810,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded first auxiliary expedition organized by the Primera Junta and militarily commanded by Antonio González Balcarce. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_cotagaita_suipacha",
+      "wave8_argentine_independence_morea_auxiliary_army"
+    ]
+  },
+  {
     "id": "clio_nl_dutch_emp_2_1811_2e0bb80e",
     "name": "(Netherlands)",
     "kind": "polity",
@@ -3362,6 +3598,35 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "goyeneche_royalist_army_huaqui_1811",
+    "name": "José Manuel de Goyeneche's royalist army at Huaqui (1811)",
+    "kind": "royalist_army",
+    "start_year": 1811,
+    "end_year": 1811,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist army of the Viceroyalty of Peru under José Manuel de Goyeneche. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_polastrelli_huaqui"
+    ]
+  },
+  {
+    "id": "junta_grande_auxiliary_army_huaqui_1811",
+    "name": "Junta Grande auxiliary army at Huaqui (1811)",
+    "kind": "revolutionary_army",
+    "start_year": 1811,
+    "end_year": 1811,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Army Auxiliary of Peru sent by the Junta Grande, with Juan José Castelli holding political authority and Antonio González Balcarce the military command. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_morea_auxiliary_army",
+      "wave8_argentine_independence_polastrelli_huaqui"
     ]
   },
   {
@@ -3397,6 +3662,51 @@
     ]
   },
   {
+    "id": "united_provinces_zelaya_detachment_pequereque_1813",
+    "name": "Cornelio Zelaya's Army of the North detachment at Pequereque (1813)",
+    "kind": "revolutionary_cavalry_detachment",
+    "start_year": 1813,
+    "end_year": 1813,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded advance-guard cavalry detachment of the United Provinces' Army of the North under Cornelio Zelaya. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_anh_index",
+      "wave8_argentine_independence_unla_belgrano"
+    ]
+  },
+  {
+    "id": "pezuela_royalist_army_ayohuma_1813",
+    "name": "Joaquín de la Pezuela's royalist army at Ayohuma (1813)",
+    "kind": "royalist_army",
+    "start_year": 1813,
+    "end_year": 1813,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist Army of Upper Peru under Joaquín de la Pezuela. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_unc_belgrano",
+      "wave8_argentine_independence_unla_belgrano"
+    ]
+  },
+  {
+    "id": "olaneta_royalist_detachment_pequereque_1813",
+    "name": "Pedro Antonio de Olañeta's royalist detachment at Pequereque (1813)",
+    "kind": "royalist_detachment",
+    "start_year": 1813,
+    "end_year": 1813,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist detachment commanded by Pedro Antonio de Olañeta in the Second Upper Peru campaign. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_anh_index",
+      "wave8_argentine_independence_rah_olaneta"
+    ]
+  },
+  {
     "id": "red_stick_creek_forces",
     "name": "Red Stick Creek Forces",
     "kind": "indigenous_faction",
@@ -3409,6 +3719,21 @@
     "source_ids": [
       "wave7_army_creek_war",
       "wave7_nps_creek_war"
+    ]
+  },
+  {
+    "id": "united_provinces_army_north_ayohuma_1813",
+    "name": "United Provinces Army of the North at Ayohuma (1813)",
+    "kind": "revolutionary_army",
+    "start_year": 1813,
+    "end_year": 1813,
+    "region": "Upper Peru",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded United Provinces Army of the North under Manuel Belgrano at Ayohuma. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_unc_belgrano",
+      "wave8_argentine_independence_unla_belgrano"
     ]
   },
   {
@@ -3442,6 +3767,21 @@
     ]
   },
   {
+    "id": "romarate_montevideo_royalist_squadron_1814",
+    "name": "Jacinto de Romarate's Montevideo royalist squadron (1814)",
+    "kind": "royalist_naval_squadron",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Río de la Plata and Uruguay River",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist squadron from Montevideo under Jacinto de Romarate at Arroyo de la China. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_navy_brown",
+      "wave8_argentine_independence_navy_overview"
+    ]
+  },
+  {
     "id": "clio_no_norway_k_modern_1814_c9f18673",
     "name": "Kingdom of Norway",
     "kind": "kingdom",
@@ -3455,6 +3795,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "united_provinces_nother_naval_division_1814",
+    "name": "Tomás Nother's United Provinces naval division (1814)",
+    "kind": "revolutionary_naval_division",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Río de la Plata and Uruguay River",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded naval division of the United Provinces under Tomás Nother at Arroyo de la China. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_navy_overview",
+      "wave8_argentine_independence_navy_segui"
     ]
   },
   {
@@ -3485,6 +3840,20 @@
     "source_ids": [
       "london_gazette_almora_dispatch",
       "nepal_ifa_britain_relations"
+    ]
+  },
+  {
+    "id": "bianchi_austrian_army_naples_war_1815",
+    "name": "Bianchi's Austrian Army in the Neapolitan War (1815)",
+    "kind": "campaign_army",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Austrian campaign army opposed to Murat in 1815, retained only to fingerprint the terminal Ferrara conflation. No rating is inherited from the Austrian Empire or another Austrian force.",
+    "source_ids": [
+      "wave8_naples_1815_italian_army"
     ]
   },
   {
@@ -3529,6 +3898,21 @@
     "source_ids": [
       "wave7_west_royal_house_netherlands",
       "wave7_west_nl_constitution_1815"
+    ]
+  },
+  {
+    "id": "murat_neapolitan_army_1815",
+    "name": "Murat's Neapolitan Army (1815 campaign)",
+    "kind": "state_armed_forces",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The army of Joachim Murat's Napoleonic Kingdom of Naples in 1815, retained only to fingerprint the terminal Ferrara conflation. No rating is inherited from Bourbon Naples, Joseph Bonaparte's kingdom, a restored Bourbon army, or the Kingdom of the Two Sicilies.",
+    "source_ids": [
+      "wave8_naples_1815_italian_army",
+      "wave8_naples_murat_treccani"
     ]
   },
   {
@@ -3757,6 +4141,36 @@
     "source_ids": [
       "britannica_greek_independence",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "marquiegui_royalist_vanguard_leon_1821",
+    "name": "Guillermo Marquiegui's royalist vanguard at León (1821)",
+    "kind": "royalist_vanguard",
+    "start_year": 1821,
+    "end_year": 1821,
+    "region": "Jujuy jurisdiction, Salta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish royalist invasion vanguard under Guillermo Marquiegui, within Pedro Antonio de Olañeta's larger command. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_jujuy_government_leon",
+      "wave8_argentine_independence_unju_leon"
+    ]
+  },
+  {
+    "id": "gorriti_jujuy_militia_leon_1821",
+    "name": "José Ignacio Gorriti's Jujuy militia at León (1821)",
+    "kind": "local_revolutionary_militia",
+    "start_year": 1821,
+    "end_year": 1821,
+    "region": "Jujuy jurisdiction, Salta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded local Jujuy gaucho militia under José Ignacio Gorriti; it is not projected backward or forward as a national Argentine army. No rating is inherited by any predecessor, successor, umbrella polity, similarly named force, or other engagement.",
+    "source_ids": [
+      "wave8_argentine_independence_jujuy_government_leon",
+      "wave8_argentine_independence_unju_leon"
     ]
   },
   {
@@ -4208,6 +4622,20 @@
     ]
   },
   {
+    "id": "durando_vicenza_defense_force_1848",
+    "name": "Durando's Vicenza Defense Force (1848)",
+    "kind": "event_bounded_defense_coalition",
+    "start_year": 1848,
+    "end_year": 1848,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Papal-service militias and Venetian and Romagnol volunteers under General Giovanni Durando that defended Vicenza and capitulated on 10–11 June 1848. This identity is event-bounded; no rating is inherited by Sardinia, the Papal States, Venice, a generic Italian-volunteer identity, or any successor.",
+    "source_ids": [
+      "post_wave8_vicenza_museum_1848"
+    ]
+  },
+  {
     "id": "second_french_republic",
     "name": "French Second Republic",
     "kind": "republic",
@@ -4234,6 +4662,37 @@
     "source_ids": [
       "wave7_hungary_military_museum",
       "wave7_hungary_archives"
+    ]
+  },
+  {
+    "id": "sicilian_revolutionary_state_forces_1848_1849",
+    "name": "Sicilian Revolutionary State Forces (1848-1849)",
+    "kind": "revolutionary_forces",
+    "start_year": 1848,
+    "end_year": 1849,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Armed forces of the independent Sicilian revolutionary government in the 1848-49 revolution. No rating is inherited from a generic Sicilian rebel label, the 1799 republic, or Garibaldi's 1860 campaign army.",
+    "source_ids": [
+      "wave8_naples_catania_treccani",
+      "wave8_naples_sicilian_revolution_oxford"
+    ]
+  },
+  {
+    "id": "two_sicilies_royal_army_sicily_1848_1849",
+    "name": "Two Sicilies Royal Army in Sicily (1848-1849)",
+    "kind": "state_armed_forces",
+    "start_year": 1848,
+    "end_year": 1849,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Carlo Filangieri's royal army of the Kingdom of the Two Sicilies in the 1848-49 reconquest of Sicily. No rating is inherited from a Kingdom of Naples army, another Bourbon restoration force, or the distinct 1860 royal army.",
+    "source_ids": [
+      "wave8_naples_catania_treccani",
+      "wave8_naples_sicilian_revolution_oxford",
+      "wave8_naples_two_sicilies_treccani"
     ]
   },
   {
@@ -4467,6 +4926,43 @@
     "source_ids": [
       "britannica_reform_war",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "garibaldian_southern_army_1860",
+    "name": "Garibaldian Southern Army (1860 campaign)",
+    "kind": "revolutionary_campaign_army",
+    "start_year": 1860,
+    "end_year": 1860,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Garibaldi's continuously commanded campaign force: the Thousand, Sicilian picciotti, and later volunteers. It excludes the regular Piedmontese or Sardinian army. No rating is inherited from earlier Italian nationalists, Sicilian revolutionaries, or the Kingdom of Italy.",
+    "source_ids": [
+      "wave8_naples_calatafimi_treccani",
+      "wave8_naples_milazzo_treccani",
+      "wave8_naples_risorgimento_treccani",
+      "wave8_naples_volturno_italian_army",
+      "wave8_naples_volturno_vive_museum"
+    ]
+  },
+  {
+    "id": "two_sicilies_royal_army_1860",
+    "name": "Two Sicilies Royal Army (1860 campaign)",
+    "kind": "state_armed_forces",
+    "start_year": 1860,
+    "end_year": 1860,
+    "region": "Southern Europe and the central Mediterranean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Bourbon royal army of Francis II in the 1860 campaign against Garibaldi. No rating is inherited from earlier Kingdom of Naples forces, the 1848-49 Sicilian army, a later loyalist remnant, or the Kingdom of Italy.",
+    "source_ids": [
+      "wave8_naples_calatafimi_treccani",
+      "wave8_naples_milazzo_treccani",
+      "wave8_naples_risorgimento_treccani",
+      "wave8_naples_two_sicilies_treccani",
+      "wave8_naples_volturno_italian_army",
+      "wave8_naples_volturno_vive_museum"
     ]
   },
   {
@@ -5307,6 +5803,35 @@
     ]
   },
   {
+    "id": "somali_dervish_movement_1899_1920",
+    "name": "Somali Dervish movement (1899–1920)",
+    "kind": "anti_colonial_movement_force",
+    "start_year": 1899,
+    "end_year": 1920,
+    "region": "Horn of Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded movement and fighting force associated with Mohammed Abdullah Hassan. No rating is inherited by modern Somalia, Somaliland, Somali ethnicity, or any later Islamist movement.",
+    "source_ids": [
+      "uk_wo_somaliland_official_history_1907",
+      "jardine_mad_mullah_somaliland_1923"
+    ]
+  },
+  {
+    "id": "lotter_commando_1901",
+    "name": "Commandant Lotter's Commando (1901)",
+    "kind": "event_bounded_boer_commando",
+    "start_year": 1901,
+    "end_year": 1901,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The distinct commando under Commandant Lotter captured at Groenkloof/Bouwershoek on 5 September 1901. This identity is event-bounded; no rating is inherited by either Boer republic, a generic Boer or Cape-rebel identity, or any successor.",
+    "source_ids": [
+      "post_wave8_samhs_groenkloof_1901"
+    ]
+  },
+  {
     "id": "jakob_morenga_resistance_force_1903_1907",
     "name": "Jakob Morenga's resistance force (1903–1907)",
     "kind": "multi_community_resistance_force",
@@ -5525,6 +6050,64 @@
     ]
   },
   {
+    "id": "union_defence_force_gswa_1914_1915",
+    "name": "Union Defence Force in German South West Africa (1914–1915)",
+    "kind": "campaign_force",
+    "start_year": 1914,
+    "end_year": 1915,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded Union Defence Force formation. No rating is inherited by post-1932 South Africa, the later South African Defence Force, or a modern South African state identity.",
+    "source_ids": [
+      "nam_south_west_africa_campaign",
+      "samh_sandfontein_1914",
+      "samh_gibeon_1915"
+    ]
+  },
+  {
+    "id": "first_east_african_infantry_brigade_salaita_1916",
+    "name": "1st East African Infantry Brigade at Salaita",
+    "kind": "expeditionary_brigade",
+    "start_year": 1916,
+    "end_year": 1916,
+    "region": "East Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Salaita formation. No rating is inherited by a modern East African state or any successor military formation.",
+    "source_ids": [
+      "samh_salaita_1916"
+    ]
+  },
+  {
+    "id": "first_south_african_infantry_brigade_delville_1916",
+    "name": "1st South African Infantry Brigade at Delville Wood",
+    "kind": "expeditionary_brigade",
+    "start_year": 1916,
+    "end_year": 1916,
+    "region": "Western Front",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Delville Wood formation. No rating is inherited by post-1932 South Africa or any successor military formation.",
+    "source_ids": [
+      "nam_delville_wood_1916"
+    ]
+  },
+  {
+    "id": "second_south_african_infantry_brigade_salaita_1916",
+    "name": "2nd South African Infantry Brigade at Salaita",
+    "kind": "expeditionary_brigade",
+    "start_year": 1916,
+    "end_year": 1916,
+    "region": "East Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Salaita formation. No rating is inherited by post-1932 South Africa or any successor military formation.",
+    "source_ids": [
+      "samh_salaita_1916"
+    ]
+  },
+  {
     "id": "hashemite_arab_revolt_forces",
     "name": "Hashemite Arab Revolt Forces",
     "kind": "rebel_forces",
@@ -5711,6 +6294,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "anti_treaty_ira_1922_1923",
+    "name": "Anti-Treaty IRA (1922–1923)",
+    "kind": "insurgent_army",
+    "start_year": 1922,
+    "end_year": 1923,
+    "region": "Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Civil-War-bounded anti-Treaty fighting force. No rating is inherited by modern Ireland or by any earlier or later organization using an IRA name.",
+    "source_ids": [
+      "ie_bmh_clonmel_ws1763",
+      "ucc_atlas_civil_war_unit8"
+    ]
+  },
+  {
+    "id": "irish_national_army_1922_1923",
+    "name": "Irish National Army (1922–1923)",
+    "kind": "state_army",
+    "start_year": 1922,
+    "end_year": 1923,
+    "region": "Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The exact National Army formation spanning Provisional Government and Irish Free State Civil War service. No rating is inherited by the Irish Free State polity, later Defence Forces, or modern Ireland.",
+    "source_ids": [
+      "ie_military_archives_four_courts_1922",
+      "ucc_atlas_civil_war_unit8"
     ]
   },
   {

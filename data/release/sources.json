@@ -1593,6 +1593,20 @@
     "url": "https://heritageireland.ie/places-to-visit/battle-of-the-boyne-visitor-centre-oldbridge-estate/"
   },
   {
+    "id": "historia_gswa_airpower_2017",
+    "title": "Air power in the German South West Africa campaign",
+    "url": "https://scielo.org.za/scielo.php?pid=S0018-229X2017000200001&script=sci_arttext",
+    "publisher": "Historia, Stellenbosch University",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "historia_stellenbosch",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -1604,6 +1618,34 @@
     "source_type": "official_or_academic_reference",
     "title": "La Guerre de Vendée (teaching dossier)",
     "url": "https://edap.vendee.fr/fileadmin/user_upload/activites_EDAP/animations_pedagogiques/pdf_preparer_visite/8_03.pdf"
+  },
+  {
+    "id": "ie_bmh_clonmel_ws1763",
+    "title": "Bureau of Military History Witness Statement 1763",
+    "url": "https://bmh.militaryarchives.ie/reels/bmh/BMH.WS1763.pdf",
+    "publisher": "Military Archives of Ireland",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_testimony",
+    "accessed": "2026-07-16",
+    "source_family_id": "irish_military_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "ie_military_archives_four_courts_1922",
+    "title": "Attack on Four Courts",
+    "url": "https://www.militaryarchives.ie/en/online-collections/military-service-pensions-collection-1916-1923/brigade-activity-reports/operations/attack-on-four-courts",
+    "publisher": "Military Archives of Ireland",
+    "license": "linked_reference",
+    "source_type": "government_archive",
+    "accessed": "2026-07-16",
+    "source_family_id": "irish_military_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
   },
   {
     "accessed": "2026-07-15",
@@ -1944,6 +1986,20 @@
     ]
   },
   {
+    "id": "jardine_mad_mullah_somaliland_1923",
+    "title": "The Mad Mullah of Somaliland",
+    "url": "https://archive.org/details/TheMadMullahOfSomaliland",
+    "publisher": "Herbert Jenkins Ltd.",
+    "license": "linked_reference",
+    "source_type": "digitized_administration_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "somaliland_administration_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "justice_lcc_eastern_cape_history",
     "title": "Land Claims Court historical findings on the Eastern Cape frontier",
     "url": "https://justice.gov.za/lcc/jdgm/2014/lcc-217-2009.pdf",
@@ -1952,6 +2008,19 @@
     "source_type": "judicial_record",
     "accessed": "2026-07-16",
     "source_family_id": "south_african_justice",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "kenya_gazette_salaita_heritage_2015",
+    "title": "Gazette notice for Salaita Hill heritage site",
+    "url": "https://new.kenyalaw.org/akn/ke/officialGazette/2015-01-23/7/eng@2015-01-23/source",
+    "publisher": "The Kenya Gazette",
+    "license": "linked_reference",
+    "source_type": "government_heritage_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "kenya_gazette",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
@@ -2354,6 +2423,20 @@
     ]
   },
   {
+    "id": "nam_delville_wood_1916",
+    "title": "South African troops at Delville Wood, 1916",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1994-12-26-1",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "nam_gwanga_1846",
     "title": "Battle of Gwanga collection record",
     "url": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-191-1",
@@ -2419,6 +2502,20 @@
     "url": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-152-1"
   },
   {
+    "id": "nam_south_west_africa_campaign",
+    "title": "The South West Africa campaign",
+    "url": "https://www.nam.ac.uk/explore/south-west-african-campaign",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "namibia_ancestral_land_commission",
     "title": "Commission of Inquiry into Claims of Ancestral Land Rights and Restitution",
     "url": "https://mfpe.gov.na/documents/1150081/1187317/REPORT%2B%2BOF%2BTHE%2BCOMMISSION%2BOF%2BINQUIRY%2B%2BINTO%2BCLAIMS%2BOF%2BANCESTRAL%2BLAND%2B%2BRIGHTS%2BAND%2BRESTITUTION%2B.pdf/e2973e3a-3767-4cbf-59da-16eeeed2fe1b?download=true&t=1663750331384",
@@ -2427,6 +2524,19 @@
     "source_type": "government_report",
     "accessed": "2026-07-16",
     "source_family_id": "namibia_government_reports",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "namibia_meft_sandfontein_heritage_2024",
+    "title": "Heritage assessment covering the Sandfontein battlefield",
+    "url": "https://eia.meft.gov.na/screening/4874_241111_epl_9049_heritage.pdf",
+    "publisher": "Namibia Ministry of Environment, Forestry and Tourism",
+    "license": "linked_reference",
+    "source_type": "government_heritage_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "namibia_meft",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
@@ -3043,6 +3153,215 @@
     "url": "https://sahitya.marathi.gov.in/ebooks/Portuguese%20Mahratta%20Relations.pdf"
   },
   {
+    "id": "post_wave8_awm_nsw_mounted_rifles",
+    "title": "1st New South Wales Mounted Rifles",
+    "url": "https://www.awm.gov.au/collection/U52007",
+    "publisher": "Australian War Memorial",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "australian_war_memorial",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "post_wave8_belgrade_fortress_1807",
+    "title": "About the complex: Belgrade Fortress in the New Age",
+    "url": "https://www.beogradskatvrdjava.co.rs/o-kompleksu/?lang=en",
+    "publisher": "JP Beogradska tvrđava, City of Belgrade",
+    "license": "linked_reference",
+    "source_type": "municipal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "city_of_belgrade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_de_wet_three_years_war",
+    "title": "Three Years' War",
+    "url": "https://www.gutenberg.org/files/18794/18794-h/18794-h.htm",
+    "publisher": "Project Gutenberg — C. R. de Wet memoir",
+    "license": "linked_reference",
+    "source_type": "primary_memoir",
+    "accessed": "2026-07-16",
+    "source_family_id": "de_wet_memoir",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_italian_navy_la_maddalena_1793",
+    "title": "La difesa dell'isola di La Maddalena",
+    "url": "https://www.marina.difesa.it/cosa-facciamo/storia/la-nostra-storia/medaglie/Pagine/maddalena.aspx",
+    "publisher": "Marina Militare Italiana",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_navy_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_museo_alpini_part1",
+    "title": "La guerra sulle Alpi nel '700 — Prima Parte",
+    "url": "https://www.museonazionalealpini.it/la-guerra-sulle-alpini-nel-700/",
+    "publisher": "Museo Nazionale Storico degli Alpini",
+    "license": "linked_reference",
+    "source_type": "military_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "museo_nazionale_storico_alpini",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_museo_alpini_part2",
+    "title": "La guerra sulle Alpi nel '700 — Seconda Parte",
+    "url": "https://www.museonazionalealpini.it/la-guerra-sulle-alpi-nel-700-seconda-parte/",
+    "publisher": "Museo Nazionale Storico degli Alpini",
+    "license": "linked_reference",
+    "source_type": "military_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "museo_nazionale_storico_alpini",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_samhs_groenkloof_1901",
+    "title": "The Capture of Lotter's Commando",
+    "url": "https://samilitaryhistory.org/vol015hk.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_samhs_harrismith",
+    "title": "Harrismith",
+    "url": "https://samilitaryhistory.org/vol081sw.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_samhs_moedwil_1901",
+    "title": "The Imperial Yeomanry, Part Two: 1901",
+    "url": "https://www.samilitaryhistory.org/vol141sw.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_samhs_poplar_grove_1900",
+    "title": "French Military Attaché in South Africa, February–June 1900",
+    "url": "https://www.samilitaryhistory.org/vol091cj.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_samhs_vaalkrans_1900",
+    "title": "The Battle of Vaalkrans",
+    "url": "https://samilitaryhistory.org/vol072sw.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_serbia_mod_cegar_1809",
+    "title": "Obeležena godišnjica bitke na Čegru",
+    "url": "https://www.mod.gov.rs/lat/11077/obelezena-godisnjica-bitke-na-cegru-11077",
+    "publisher": "Ministry of Defence of the Republic of Serbia",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "serbian_ministry_of_defence",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_serbia_mod_deligrad_1806",
+    "title": "Obeležena 212. godišnjica boja na Deligradu",
+    "url": "https://www.mod.gov.rs/lat/12974/obelezena-212-godisnjica-boja-na-deligradu-12974",
+    "publisher": "Ministry of Defence of the Republic of Serbia",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "serbian_ministry_of_defence",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_serbia_mod_ivankovac_1805",
+    "title": "Boj na Ivankovcu — 18. avgust 1805. godine",
+    "url": "https://www.mod.gov.rs/lat/11331/boj-na-ivankovcu-18-avgust-1805-godine-11331",
+    "publisher": "Ministry of Defence of the Republic of Serbia",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "serbian_ministry_of_defence",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "post_wave8_vicenza_museum_1848",
+    "title": "Vicenza 1848 — Museo del Risorgimento e della Resistenza guide",
+    "url": "https://www.museicivicivicenza.it/file/doc1-10911.pdf",
+    "publisher": "Musei Civici di Vicenza",
+    "license": "linked_reference",
+    "source_type": "municipal_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "musei_civici_vicenza",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "project_continuity_policy",
     "title": "Byzantine Empire overview (used with the project's explicit 395 reset convention)",
     "url": "https://www.britannica.com/place/Byzantine-Empire",
@@ -3083,6 +3402,20 @@
     "url": "https://dzieje.pl/ksiazki/pultusk-1703-mazowsze-w-czasie-wojny-polnocnej-1702-1704"
   },
   {
+    "id": "raf_casps_somaliland_1920",
+    "title": "Air Power Review: the 1920 Somaliland campaign",
+    "url": "https://www.raf.mod.uk/what-we-do/centre-for-air-and-space-power-studies/aspr/apr-vol21-iss1-5-pdf/",
+    "publisher": "Royal Air Force Centre for Air and Space Power Studies",
+    "license": "linked_reference",
+    "source_type": "official_military_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "raf_casps",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "roman_republic_italian_army",
     "title": "Roman Republic, Palestrina, and Rome actors and results",
     "url": "https://www.esercito.difesa.it/storia/giuseppe-garibaldi/83206.html",
@@ -3108,6 +3441,62 @@
     "source_type": "official_or_academic_reference",
     "title": "Warfare in Pre-British India, 1500 BCE to 1740 CE",
     "url": "https://www.routledge.com/Warfare-in-Pre-British-India---1500BCE-to-1740CE/Roy/p/book/9780415529792"
+  },
+  {
+    "id": "rte_ucc_battle_dublin_1922",
+    "title": "The Battle of Dublin",
+    "url": "https://www.rte.ie/history/battle-of-dublin/",
+    "publisher": "RTÉ and University College Cork",
+    "license": "linked_reference",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "rte_ucc_clashmealcon_1923",
+    "title": "Cave men: cave hideouts in the Civil War",
+    "url": "https://www.rte.ie/history/2022/0830/1319586-cave-men-cave-hideouts-in-the-civil-war/",
+    "publisher": "RTÉ and University College Cork",
+    "license": "linked_reference",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "rte_ucc_cork_1922",
+    "title": "The Battle of Cork",
+    "url": "https://www.rte.ie/history/sea-landings/2022/0804/1313977-the-battle-of-cork/",
+    "publisher": "RTÉ and University College Cork",
+    "license": "linked_reference",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "rte_ucc_kilmallock_1922",
+    "title": "The Battle of Kilmallock",
+    "url": "https://www.rte.ie/history/conventional-phase/2022/0630/1307775-the-battle-of-kilmallock/",
+    "publisher": "RTÉ and University College Cork",
+    "license": "linked_reference",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
   },
   {
     "id": "russian_presidential_library_empire_1721",
@@ -3226,6 +3615,48 @@
     "source_family_id": "south_african_history_online",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samh_gibeon_1915",
+    "title": "The Battle of Gibeon, 1915",
+    "url": "https://www.samilitaryhistory.org/vol132hp.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "samh_salaita_1916",
+    "title": "The Battle of Salaita Hill, 12 February 1916",
+    "url": "https://www.samilitaryhistory.org/vol166as.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "samh_sandfontein_1914",
+    "title": "The Battle of Sandfontein, 26 September 1914",
+    "url": "https://samilitaryhistory.org/vol164ra.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {
@@ -3668,6 +4099,20 @@
     ]
   },
   {
+    "id": "ucc_atlas_civil_war_unit8",
+    "title": "Atlas of the Irish Revolution: The Civil War, Part 2",
+    "url": "https://www.ucc.ie/en/media/projectsandcentres/irishrevolution/documents/U8.TYPROJECTBOOK-THECIVILWAR%28P.2%29.pdf",
+    "publisher": "University College Cork",
+    "license": "linked_reference",
+    "source_type": "academic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "ucdp_termination_conflict",
     "title": "UCDP Conflict Termination Dataset v4-2024, conflict level",
     "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
@@ -3760,6 +4205,48 @@
     ]
   },
   {
+    "id": "uk_gazette_somaliland_1920",
+    "title": "Official despatch on operations in Somaliland, 1920",
+    "url": "https://www.thegazette.co.uk/London/issue/32107/supplement/10589/data.pdf",
+    "publisher": "The London Gazette",
+    "license": "linked_reference",
+    "source_type": "official_despatch",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_london_gazette",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "uk_hansard_gumburu_1903",
+    "title": "The Disaster in Somaliland",
+    "url": "https://api.parliament.uk/historic-hansard/commons/1903/apr/23/the-disaster-in-somaliland",
+    "publisher": "UK Parliament",
+    "license": "linked_reference",
+    "source_type": "parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_parliament_hansard",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "uk_hansard_illig_1904",
+    "title": "The Capture of Fort Illig",
+    "url": "https://api.parliament.uk/historic-hansard/commons/1904/apr/28/the-capture-of-fort-illig",
+    "publisher": "UK Parliament",
+    "license": "linked_reference",
+    "source_type": "parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_parliament_hansard",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "uk_hansard_xhosa_war_1851",
     "title": "The Kaffir War",
     "url": "https://api.parliament.uk/historic-hansard/commons/1851/apr/15/the-kaffir-war",
@@ -3784,6 +4271,20 @@
     "source_type": "official_or_academic_reference",
     "title": "The South African War, 1899–1902",
     "url": "https://www.nationalarchives.gov.uk/education/resources/the-south-african-war-how-did-the-british-conduct-war-in-1899-1902/"
+  },
+  {
+    "id": "uk_wo_somaliland_official_history_1907",
+    "title": "Official History of the Operations in Somaliland, 1901–04",
+    "url": "https://archive.org/details/officialhistory00stafgoog",
+    "publisher": "War Office",
+    "license": "linked_reference",
+    "source_type": "digitized_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_war_office",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
   },
   {
     "id": "up_gwanga_regimental_account",
@@ -5187,6 +5688,199 @@
     ]
   },
   {
+    "id": "wave8_argentine_independence_anh_index",
+    "title": "Historia de la Nación Argentina, volume XI: General index",
+    "url": "https://repositorio.anh.org.ar/jspui/bitstream/anh/57/1/BaANH44820_Historia_de_la_Nacion_Argentina_11_-_Academia_Nacional_de_la_Historia.pdf",
+    "publisher": "Academia Nacional de la Historia (Argentina)",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "academia_nacional_historia_argentina",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_chile_academy_cancha_rayada",
+    "title": "Combate o desastre de Cancha Rayada",
+    "url": "https://www.academiahistoriamilitar.cl/academia/combate-o-desastre-de-cancha-rayada/",
+    "publisher": "Academia de Historia Militar de Chile",
+    "license": "Citation and link only",
+    "source_type": "institutional_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "chile_military_history_academy_cancha_rayada",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_cotagaita_suipacha",
+    "title": "7 de noviembre: Batalla de Suipacha, la primera victoria Patria",
+    "url": "https://www.argentina.gob.ar/node/285004",
+    "publisher": "Government of Argentina",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "argentina_gob_ar_independence_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_jujuy_government_leon",
+    "title": "Sadir valoró el espíritu de lucha del pueblo jujeño durante la conmemoración del Día Grande de Jujuy",
+    "url": "https://prensa.jujuy.gob.ar/carlos-sadir/sadir-valoro-el-espiritu-lucha-del-pueblo-jujeno-la-conmemoracion-del-dia-grande-jujuy-n119251",
+    "publisher": "Government of Jujuy Province",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "jujuy_government_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_memoria_cancha_rayada",
+    "title": "Guerras de independencia",
+    "url": "https://www.memoriachilena.gob.cl/602/w3-article-97864.html",
+    "publisher": "Memoria Chilena, National Library of Chile",
+    "license": "Citation and link only",
+    "source_type": "official_library_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "memoria_chilena_independence_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_morea_auxiliary_army",
+    "title": "El proceso de profesionalización del Ejército Auxiliar del Perú durante las guerras de independencia",
+    "url": "https://cerac.unlpam.edu.ar/index.php/quintosol/article/view/131",
+    "publisher": "Quinto Sol, Universidad Nacional de La Pampa",
+    "license": "Citation and link only",
+    "source_type": "academic_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "quinto_sol_unlpam_auxiliary_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_navy_brown",
+    "title": "Almirante Guillermo Brown",
+    "url": "https://www.argentina.gob.ar/armada/historia-naval/heroes-navales/almirante-guillermo-brown",
+    "publisher": "Argentine Navy, Government of Argentina",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "argentine_navy_brown_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_navy_overview",
+    "title": "La Guerra de la Independencia (1810-1824)",
+    "url": "https://www.argentina.gob.ar/armada/nueva-historia-naval/independencia-1810",
+    "publisher": "Argentine Navy, Government of Argentina",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "argentine_navy_independence_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_navy_segui",
+    "title": "Vicealmirante Francisco José Seguí",
+    "url": "https://www.argentina.gob.ar/armada/historia-naval/heroes-navales/vicealmirante-francisco-jose-segui",
+    "publisher": "Argentine Navy, Government of Argentina",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "argentine_navy_segui_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_polastrelli_huaqui",
+    "title": "Derrotas militares, ¿acusaciones políticas? Los juicios contra los jefes de las campañas al Paraguay y al Alto Perú, 1811-1813",
+    "url": "https://cerac.unlpam.edu.ar/index.php/quintosol/article/view/2559",
+    "publisher": "Quinto Sol, Universidad Nacional de La Pampa",
+    "license": "Citation and link only",
+    "source_type": "academic_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "quinto_sol_unlpam_huaqui",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_rah_olaneta",
+    "title": "Pedro Antonio de Olañeta Marquiegui",
+    "url": "https://historia-hispanica.rah.es/biografias/34084-pedro-antonio-de-olaneta-marquiegui",
+    "publisher": "Real Academia de la Historia",
+    "license": "Citation and link only",
+    "source_type": "national_academy_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "real_academia_historia_olaneta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_unc_belgrano",
+    "title": "Biografía de Manuel Belgrano",
+    "url": "https://www.eco.unc.edu.ar/recursos-de-informacion/?catid=31&id=330%3Abiografia-de-manuel-belgrano&view=article",
+    "publisher": "Faculty of Economic Sciences, National University of Córdoba",
+    "license": "Citation and link only",
+    "source_type": "university_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "unc_belgrano_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_unju_leon",
+    "title": "Día Grande de Jujuy: Batalla de León",
+    "url": "https://unjudiario.unju.edu.ar/jujuy/dia-grande-de-jujuy-batalla-de-leon",
+    "publisher": "Universidad Nacional de Jujuy",
+    "license": "Citation and link only",
+    "source_type": "university_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_university_jujuy_leon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_argentine_independence_unla_belgrano",
+    "title": "El legado de Belgrano",
+    "url": "https://www.unla.edu.ar/documentos/centros/manuel_ugarte/El%20legado%20de%20Belgrano.pdf",
+    "publisher": "Universidad Nacional de Lanús",
+    "license": "Citation and link only",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "unla_manuel_ugarte_belgrano",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_canada_batoche_history",
     "title": "History of Batoche National Historic Site",
     "url": "https://parks.canada.ca/lhn-nhs/sk/batoche/culture/histoire-history",
@@ -5270,6 +5964,34 @@
     ]
   },
   {
+    "id": "wave8_encyclopedia_history_ukraine_zhovnyne",
+    "title": "Battle of Zhovnyne, 1638",
+    "url": "https://resource.history.org.ua/cgi-bin/eiu/history.exe?C21COM=S&I21DBN=DOP&P21DBN=EIU&S21CNR=20&S21COLORTERMS=0&S21FMT=eiu_all&S21P01=0&S21P02=0&S21P03=TRN%3D&S21REF=10&S21STN=1&S21STR=Zhovnynska_bytva_1638&Z21ID=",
+    "publisher": "Encyclopedia of the History of Ukraine, NAS of Ukraine",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopedia_history_ukraine",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_encyclopedia_ukraine_ostryanyn",
+    "title": "Ostrianyn, Yakiv",
+    "url": "https://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CO%5CS%5COstrianynYakiv.htm",
+    "publisher": "Internet Encyclopedia of Ukraine, Canadian Institute of Ukrainian Studies",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopedia_of_ukraine",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",
@@ -5305,6 +6027,34 @@
     "source_type": "official_history",
     "accessed": "2026-07-16",
     "source_family_id": "saudipedia_first_saudi_state",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_great_russian_encyclopedia_pugachev",
+    "title": "Pugachev Uprising, 1773-1775",
+    "url": "https://old.bigenc.ru/domestic_history/text/3172674",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_pugachev",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_harvard_imperiia_pugachev_bashkir",
+    "title": "Pugachev's Rebellion in the Bashkir Lands: 1773-1775",
+    "url": "https://scalar.fas.harvard.edu/imperiia/pugachevs-rebellion-in-the-bashkir-lands-1773-1775",
+    "publisher": "Imperiia Project, Harvard University",
+    "license": "Citation and link only",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "harvard_imperiia_pugachev",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -5373,6 +6123,310 @@
     "source_type": "academic_book",
     "accessed": "2026-07-16",
     "source_family_id": "routledge_pre_modern_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_1799_cambridge",
+    "title": "Enlightenment and Revolution: Naples 1799",
+    "url": "https://www.cambridge.org/core/journals/transactions-of-the-royal-historical-society/article/abs/enlightenment-and-revolution-naples-1799/ED746A78587428361E11ACF242BA4ABA",
+    "publisher": "Cambridge University Press / Royal Historical Society",
+    "license": "Citation and link only",
+    "source_type": "academic_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_naples_1799",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_1799_treccani_republic",
+    "title": "Repubblica napoletana",
+    "url": "https://www.treccani.it/enciclopedia/repubblica-napoletana_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_neapolitan_republic_1799",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_1815_italian_army",
+    "title": "La campagna austro-napoletana del 1815",
+    "url": "https://www.esercito.difesa.it/comunicazione/editoria/Rassegna-Esercito/Tutti-i-numeri/2015/Documents/rassei-1-15.pdf",
+    "publisher": "Italian Army Historical Office",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_naples_war_1815",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_naples_berat_balkans_journal",
+    "title": "The Battle of Berat (1281) and the Angevin-Byzantine conflict",
+    "url": "https://journals.uni-vt.bg/balkans/eng/vol2/iss1/art8",
+    "publisher": "The Balkans, St. Cyril and St. Methodius University of Veliko Tarnovo",
+    "license": "Citation and link only",
+    "source_type": "academic_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "balkans_journal_berat_1281",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_berat_byzantina_symmeikta",
+    "title": "The Byzantine-Angevin struggle and the siege of Berat",
+    "url": "https://ejournals.epublishing.ekt.gr/index.php/bz/article/viewFile/3928/3720.pdf",
+    "publisher": "Byzantina Symmeikta, National Hellenic Research Foundation",
+    "license": "Citation and link only",
+    "source_type": "academic_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "byzantina_symmeikta_berat",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_calatafimi_treccani",
+    "title": "Calatafimi",
+    "url": "https://www.treccani.it/enciclopedia/calatafimi_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_calatafimi_1860",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_catania_treccani",
+    "title": "Catania",
+    "url": "https://www.treccani.it/enciclopedia/catania_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_catania_1849",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_civita_castellana_army_journal",
+    "title": "Rivista Militare Italiana, 1909, volume III",
+    "url": "https://www.esercito.difesa.it/comunicazione/editoria/Rivista-Militare/archivio/Documents/1909/1909-tomo3-testo-low.pdf",
+    "publisher": "Italian Army Historical Office",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_civita_castellana",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_gaeta_founders_online",
+    "title": "William Pinkney to James Madison, 30 July 1806",
+    "url": "https://founders.archives.gov/documents/Madison/02-12-02-0267",
+    "publisher": "U.S. National Archives, Founders Online",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "founders_online_gaeta_1806",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_gaeta_treccani",
+    "title": "Gaeta",
+    "url": "https://www.treccani.it/enciclopedia/gaeta_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_gaeta_1806",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_harbottle_scan",
+    "title": "Dictionary of Battles from the Earliest Date to the Present Time",
+    "url": "https://archive.org/details/dictionaryofbatt00harb/page/n7/mode/2up",
+    "publisher": "Internet Archive scan of Thomas Benfield Harbottle",
+    "license": "Citation and link only",
+    "source_type": "digitized_reference_scan",
+    "accessed": "2026-07-16",
+    "source_family_id": "harbottle_dictionary_scan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_naples_milazzo_treccani",
+    "title": "Milazzo",
+    "url": "https://www.treccani.it/enciclopedia/milazzo_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_milazzo_1860",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_murat_treccani",
+    "title": "Murat, Gioacchino Napoleone, re di Napoli",
+    "url": "https://www.treccani.it/enciclopedia/gioacchino-napoleone-murat-re-di-napoli_%28Dizionario-Biografico%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_murat_naples_1815",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_naples_regime_boundaries_treccani",
+    "title": "Napoli",
+    "url": "https://www.treccani.it/enciclopedia/napoli/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_naples_regime_boundaries",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_naples_risorgimento_treccani",
+    "title": "Risorgimento",
+    "url": "https://www.treccani.it/enciclopedia/risorgimento_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_risorgimento_1860",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_sicilian_revolution_oxford",
+    "title": "Under the Volcano: The Sicilian Revolution of 1848-49",
+    "url": "https://academic.oup.com/book/33068/chapter-abstract/281727604",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_sicilian_revolution_1848_1849",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_naples_taranto_rah_gonzalo",
+    "title": "Gonzalo Fernández de Córdoba",
+    "url": "https://historia-hispanica.rah.es/biografias/15450-gonzalo-fernandez-de-cordoba",
+    "publisher": "Real Academia de la Historia",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "real_academia_historia_taranto",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_taranto_treccani_ferdinand",
+    "title": "Aragona, Ferdinando d', duca di Calabria, principe di Taranto",
+    "url": "https://www.treccani.it/enciclopedia/aragona-ferdinando-d-duca-di-calabria-principe-di-taranto/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_taranto_1501_1502",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_two_sicilies_treccani",
+    "title": "Due Sicilie, Regno delle",
+    "url": "https://www.treccani.it/enciclopedia/due-sicilie-regno-delle_%28Dizionario-di-Storia%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_two_sicilies",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_naples_volturno_italian_army",
+    "title": "La battaglia del Volturno",
+    "url": "https://www.esercito.difesa.it/en/history/historic-office-of-the-general-staff-of-the-army/military-publishing/catalogo/risorgimento-e-prima-guerra-mondiale/la-battaglia-del-volturno/76375.html",
+    "publisher": "Italian Army Historical Office",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_volturno_1860",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_naples_volturno_vive_museum",
+    "title": "Bourbon prisoners on the Volturno line",
+    "url": "https://vive.cultura.gov.it/en/central-museum-risorgimento/what-see/bourbon-prisoners-volturno-line-michele-tedesco",
+    "publisher": "VIVE - Central Museum of the Risorgimento",
+    "license": "Citation and link only",
+    "source_type": "official_museum_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "vive_museum_volturno_1860",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_nas_ukraine_loyew_1649",
+    "title": "Battle of Loyew in 1649",
+    "url": "https://nasplib.isofts.kiev.ua/items/710a7079-2da7-409a-a3ac-e9ab2d422ed4",
+    "publisher": "M. S. Hrushevsky Institute of Ukrainian Archaeography and Source Studies, National Academy of Sciences of Ukraine",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nas_ukraine_loyew_study",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -5468,6 +6522,20 @@
     "source_type": "official_or_academic_reference",
     "accessed": "2026-07-16",
     "source_family_id": "polish_zpe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_ssau_campaign_kazan_pugachev",
+    "title": "Campaign against Kazan: the fatal misadventure of Pugachev's Rebellion",
+    "url": "https://journals.ssau.ru/hpp/article/view/29591",
+    "publisher": "Vestnik of Samara University",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "samara_university_pugachev_kazan",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"

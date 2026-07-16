@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 431,
-    "events": 4938,
-    "sources": 431,
-    "registry_polities": 1787
+    "entities": 472,
+    "events": 4994,
+    "sources": 508,
+    "registry_polities": 1828
   },
   "year_range": {
     "start": -1274,
@@ -92,6 +92,11 @@
     "accepted_wave8_judean_revolts_hced_events": 2,
     "accepted_wave8_canadian_resistance_hced_events": 3,
     "accepted_wave8_wales_hced_events": 4,
+    "accepted_wave8_cossack_hced_events": 6,
+    "accepted_wave8_fast17_hced_events": 17,
+    "accepted_wave8_naples_hced_events": 10,
+    "accepted_wave8_somali_irish_sa_hced_events": 17,
+    "accepted_wave8_argentine_independence_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -1874,7 +1879,294 @@
     ],
     "wave8_wales_entities_added": 3,
     "wave8_wales_sources_added": 11,
-    "hced_label_pass_input_rows": 6095,
+    "wave8_cossack_counts": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6,
+      "entities": 3,
+      "sources": 6
+    },
+    "wave8_cossack_cohort_counts": {
+      "khmelnytsky_uprising": 1,
+      "ostryanyn_uprising": 1,
+      "pugachev_rebellion": 4
+    },
+    "wave8_cossack_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_cossack_candidate_ids": [
+      "hced-Kazan1774-1",
+      "hced-Loyew1649-1",
+      "hced-Orenburg1773-1774-1",
+      "hced-Tatishchevo1774-1",
+      "hced-Ufa1773-1774-1",
+      "hced-Zhovnyne1638-1"
+    ],
+    "wave8_cossack_holds": [],
+    "wave8_cossack_entities_added": 3,
+    "wave8_cossack_sources_added": 6,
+    "wave8_fast17_counts": {
+      "country_quarantine_additions": 1,
+      "holds": 0,
+      "iwbd_duplicate_holds": 1,
+      "new_entities": 2,
+      "new_sources": 15,
+      "newly_rated_events": 17,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 17,
+      "reviewed_hced_rows": 17
+    },
+    "wave8_fast17_cohort_counts": {
+      "first_italian_war_of_independence": 1,
+      "first_serbian_uprising": 4,
+      "french_revolutionary_wars": 1,
+      "second_anglo_boer_war": 8,
+      "war_of_austrian_succession": 3
+    },
+    "wave8_fast17_queue_validation": {
+      "promotion_contracts": 17,
+      "holds": 0,
+      "reviewed_hced_rows": 17
+    },
+    "wave8_fast17_candidate_ids": [
+      "hced-Assietta1747-1",
+      "hced-Belgrade1807-1",
+      "hced-Casteldelfino1744-1",
+      "hced-Deligrad1806-1",
+      "hced-Groenkloof1901-1",
+      "hced-Ivanovatz1805-1",
+      "hced-La Maddalena1793-1",
+      "hced-Ladysmith1899-1900-1",
+      "hced-Madonna del Olmo1744-1",
+      "hced-Moedwil1901-1",
+      "hced-Nish1809-1",
+      "hced-Poplar Grove1900-1",
+      "hced-Sannahs Post1916-1",
+      "hced-Tugela Heights1900-1",
+      "hced-Vaal Kranz1900-1",
+      "hced-Vicenza1848-1",
+      "hced-Wagon Hill1900-1"
+    ],
+    "wave8_fast17_holds": [],
+    "wave8_fast17_iwbd_duplicate_holds": [
+      {
+        "candidate_id": "iwbd-10-4-40",
+        "duplicate_of_hced_candidate_id": "hced-Vicenza1848-1",
+        "hold_category": "duplicate_of_exact_hced_event",
+        "hold_reason": "Same Battle of Vicenza on 11 June 1848; the IWBD defender label Sardinia is also contradicted by the reviewed municipal-museum source."
+      }
+    ],
+    "wave8_fast17_entities_added": 2,
+    "wave8_fast17_sources_added": 15,
+    "wave8_naples_counts": {
+      "holds": 3,
+      "newly_rated_events": 10,
+      "promotion_contracts": 10,
+      "reviewed_hced_rows": 13,
+      "terminal_exclusions": 3
+    },
+    "wave8_naples_cohort_counts": {
+      "angevin_byzantine_war": 1,
+      "bourbon_naples_french_invasion_1798_1799": 2,
+      "garibaldian_campaign_1860": 4,
+      "italian_war_naples_1501_1502": 1,
+      "restored_bourbon_naples_1806": 1,
+      "sicilian_revolution_1848_1849": 1
+    },
+    "wave8_naples_queue_validation": {
+      "promotion_contracts": 10,
+      "holds": 3,
+      "reviewed_hced_rows": 13
+    },
+    "wave8_naples_candidate_ids": [
+      "hced-Berat1281-1",
+      "hced-Calatafimi1860-1",
+      "hced-Catania1849-1",
+      "hced-Civita Castelana1798-1",
+      "hced-Gaeta1806-1",
+      "hced-Milazzo1860-1",
+      "hced-Naples1799-1",
+      "hced-Palermo1860-1",
+      "hced-Taranto1501-1502-1",
+      "hced-Volturno1860-1"
+    ],
+    "wave8_naples_holds": [
+      {
+        "candidate_id": "hced-Ferrara1815-1",
+        "category": "source_conflation_and_duplicate_campaign_actions",
+        "reason": "Harbottle's Ferrara entry says Murat attempted to force the Po and was repulsed by Bianchi, but its 12 April date and narrative conflate the already represented Occhiobello crossing attempt with Casaglia and the lifting of the siege of Ferrara. Emitting a third result would duplicate the same campaign actions.",
+        "raw_row_sha256": "1ed88f90c4500968d51f4f413c8cb0cd4f86b45ff1d6faba67932d8522045852"
+      },
+      {
+        "candidate_id": "hced-Messina1860-1",
+        "category": "noncompetitive_negotiated_occupation",
+        "reason": "Medici occupied the city under a pact that left roughly 4,000 Bourbon troops inactive in the forts. The reviewed source supports negotiated occupation and control, not an opposing-force tactical result suitable for Elo.",
+        "raw_row_sha256": "17b06507788b9f65f77b8ee4ad1bbdf781d6acea21b4bed76f5ced77685b53f2"
+      },
+      {
+        "candidate_id": "hced-Palermo1848-1",
+        "category": "irreconcilable_year_conflict_and_duplicate",
+        "reason": "The source-record identifier says 1848, the locked queue fields say 1849, and the cited Harbottle entry describes Garibaldi's Thousand, Sicilian picciotti, and Lanza on 26-27 May—Palermo 1860. The row cannot be repaired without inventing which event was intended and duplicates the exact promoted Palermo 1860 row.",
+        "raw_row_sha256": "87538c13a7a0af72601584f22fc6f7f24e23d942d4b99b502b40a0d5540fc0ae"
+      }
+    ],
+    "wave8_naples_entities_added": 17,
+    "wave8_naples_sources_added": 21,
+    "wave8_somali_irish_sa_counts": {
+      "holds": 1,
+      "iwbd_duplicate_dispositions": 5,
+      "new_entities": 7,
+      "new_sources": 21,
+      "newly_rated_events": 17,
+      "outcome_overrides": 1,
+      "promotion_contracts": 17,
+      "reviewed_hced_rows": 18
+    },
+    "wave8_somali_irish_sa_cohort_counts": {
+      "irish_civil_war": 6,
+      "somali_dervish_wars": 7,
+      "wwi_south_african_formations": 4
+    },
+    "wave8_somali_irish_sa_queue_validation": {
+      "promotion_contracts": 17,
+      "holds": 1,
+      "reviewed_hced_rows": 18
+    },
+    "wave8_somali_irish_sa_candidate_ids": [
+      "hced-Clashmealcon Caves1923-1",
+      "hced-Clonmel1922-1",
+      "hced-Cork1922-1",
+      "hced-Delville Wood1916-1",
+      "hced-Ferdiddin1901-1",
+      "hced-Four Courts1922-1",
+      "hced-Galiabur1920-1",
+      "hced-Gibeon1915-1",
+      "hced-Gumburu1903-1",
+      "hced-Illig1904-1",
+      "hced-Kilmallock1922-1",
+      "hced-O'Connell Street1922-1",
+      "hced-OK Pass1919-1",
+      "hced-Salaita1916-1",
+      "hced-Samala1901-1",
+      "hced-Sandfontein1914-1",
+      "hced-Taleh1920-1"
+    ],
+    "wave8_somali_irish_sa_holds": [
+      {
+        "candidate_id": "hced-Windhoek1915-1",
+        "category": "not_an_engagement_unopposed_occupation",
+        "reason": "Windhoek was occupied without combat on 12 May 1915. Territorial control is not converted into a tactical win.",
+        "raw_row_sha256": "009404963bebeeecdbcb9f656c6da10664214a90881dd898893eb399a774d923"
+      }
+    ],
+    "wave8_somali_irish_sa_iwbd_duplicate_dispositions": [
+      {
+        "candidate_id": "iwbd-106-38-480",
+        "hced_candidate_id": "hced-Sandfontein1914-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_matching_outcome",
+        "iwbd_date_start": "1914-09-26",
+        "iwbd_date_end": "1914-09-26",
+        "reason": "Exact Sandfontein twin with the same German tactical result; retain the source-reviewed HCED assertion and stage IWBD."
+      },
+      {
+        "candidate_id": "iwbd-106-38-533",
+        "hced_candidate_id": "hced-Gibeon1915-1",
+        "disposition": "hold_contradictory_duplicate",
+        "relationship": "probable_twin_conflicting_date_and_outcome",
+        "iwbd_date_start": "1915-04-25",
+        "iwbd_date_end": "1915-04-26",
+        "reason": "IWBD's inconclusive 25–26 April record conflicts with the directly sourced 27 April Union Defence Force victory; stage IWBD rather than emit twice."
+      },
+      {
+        "candidate_id": "iwbd-106-38-547",
+        "hced_candidate_id": "hced-Windhoek1915-1",
+        "disposition": "exclude_not_an_engagement",
+        "relationship": "same_unopposed_occupation",
+        "iwbd_date_start": "1915-05-12",
+        "iwbd_date_end": "1915-05-12",
+        "reason": "The occupation of Windhoek was unopposed and supplies no competitive tactical outcome in either source."
+      },
+      {
+        "candidate_id": "iwbd-106-38-602",
+        "hced_candidate_id": "hced-Salaita1916-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_matching_outcome",
+        "iwbd_date_start": "1916-02-12",
+        "iwbd_date_end": "1916-02-12",
+        "reason": "Exact Salaita Hill twin with the same German tactical result; retain the source-reviewed HCED assertion and stage IWBD."
+      },
+      {
+        "candidate_id": "iwbd-106-38-636",
+        "hced_candidate_id": "hced-Delville Wood1916-1",
+        "disposition": "hold_campaign_envelope_containment",
+        "relationship": "broader_campaign_envelope_contains_hced_engagement",
+        "iwbd_date_start": "1916-07-15",
+        "iwbd_date_end": "1916-09-03",
+        "reason": "IWBD spans a broad Delville Wood campaign envelope containing the 15–20 July HCED engagement; stage the envelope to prevent double rating."
+      }
+    ],
+    "wave8_somali_irish_sa_outcome_overrides": [
+      {
+        "candidate_id": "hced-Gibeon1915-1",
+        "raw_winner_label": "Germany",
+        "raw_loser_label": "South Africa",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "union_defence_force_gswa_1914_1915"
+        ],
+        "outcome_source_ids": [
+          "nam_south_west_africa_campaign",
+          "samh_gibeon_1915"
+        ],
+        "outcome_source_family_ids": [
+          "national_army_museum",
+          "south_african_military_history_society"
+        ],
+        "correction_note": "Direct campaign histories establish the Union Defence Force as the tactical victor at Gibeon on 27 April 1915."
+      }
+    ],
+    "wave8_somali_irish_sa_entities_added": 7,
+    "wave8_somali_irish_sa_sources_added": 21,
+    "wave8_argentine_independence_counts": {
+      "holds": 1,
+      "newly_rated_events": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1
+    },
+    "wave8_argentine_independence_cohort_counts": {
+      "first_upper_peru_campaign": 2,
+      "jujuy_defense_1821": 1,
+      "naval_campaign_1814": 1,
+      "second_upper_peru_campaign": 2
+    },
+    "wave8_argentine_independence_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 1,
+      "reviewed_hced_rows": 7
+    },
+    "wave8_argentine_independence_candidate_ids": [
+      "hced-Arroyo de la China1814-1",
+      "hced-Ayohuma1813-1",
+      "hced-Cotagaita1810-1",
+      "hced-Huaqui1811-1",
+      "hced-Jujuy1821-1",
+      "hced-Pequereque1813-1"
+    ],
+    "wave8_argentine_independence_holds": [
+      {
+        "candidate_id": "hced-Cancha Rayada1813-1",
+        "category": "misdated_reversed_chilean_event",
+        "reason": "The row is both one year early and outcome-reversed for the attested named combat. It also belongs to the Chilean, not Argentine, theatre, so repairing it inside this lane would create a different event.",
+        "raw_row_sha256": "22eaae0ed180f592b0303cdaf1c6c42b77b97b6ed4c370450b62be2a1528f16e"
+      }
+    ],
+    "wave8_argentine_independence_entities_added": 12,
+    "wave8_argentine_independence_sources_added": 14,
+    "hced_label_pass_input_rows": 6034,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -1887,7 +2179,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 509,
+      "reserved_candidate_contract": 570,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -1899,7 +2191,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2569,
+      "no_unique_time_valid_label_match": 2508,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,
@@ -3518,7 +3810,7 @@
       },
       {
         "candidate_id": "iwbd-10-4-40",
-        "reason": "Wave 6 evidence audit hold"
+        "reason": "Same Battle of Vicenza on 11 June 1848; the IWBD defender label Sardinia is also contradicted by the reviewed municipal-museum source."
       },
       {
         "candidate_id": "iwbd-10-4-41",
@@ -3615,6 +3907,26 @@
       {
         "candidate_id": "iwbd-103-37-439",
         "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-106-38-480",
+        "reason": "Exact Sandfontein twin with the same German tactical result; retain the source-reviewed HCED assertion and stage IWBD."
+      },
+      {
+        "candidate_id": "iwbd-106-38-533",
+        "reason": "IWBD's inconclusive 25–26 April record conflicts with the directly sourced 27 April Union Defence Force victory; stage IWBD rather than emit twice."
+      },
+      {
+        "candidate_id": "iwbd-106-38-547",
+        "reason": "The occupation of Windhoek was unopposed and supplies no competitive tactical outcome in either source."
+      },
+      {
+        "candidate_id": "iwbd-106-38-602",
+        "reason": "Exact Salaita Hill twin with the same German tactical result; retain the source-reviewed HCED assertion and stage IWBD."
+      },
+      {
+        "candidate_id": "iwbd-106-38-636",
+        "reason": "IWBD spans a broad Delville Wood campaign envelope containing the 15–20 July HCED engagement; stage the envelope to prevent double rating."
       },
       {
         "candidate_id": "iwbd-108-40-788",
@@ -4626,10 +4938,10 @@
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
       "coalition_or_composite_side": 139,
-      "contains_constituent_iwbd_rows": 321,
-      "curated_exclusion": 213,
+      "contains_constituent_iwbd_rows": 320,
+      "curated_exclusion": 218,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 864,
+      "duplicate_of_hced_battle": 860,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

@@ -342,6 +342,79 @@ from .wave8_wales import (
     wave8_wales_cohort_counts,
     wave8_wales_counts,
 )
+from .wave8_cossack_rebellions import (
+    WAVE8_COSSACK_CONTRACT_IDS,
+    WAVE8_COSSACK_HOLD_IDS,
+    WAVE8_COSSACK_REBELLIONS_ENTITIES,
+    WAVE8_COSSACK_REBELLIONS_HOLDS,
+    WAVE8_COSSACK_REBELLIONS_SOURCES,
+    WAVE8_COSSACK_RESERVED_IDS,
+    install_wave8_cossack_entities,
+    install_wave8_cossack_sources,
+    promote_wave8_cossack_events,
+    validate_wave8_cossack_inventory,
+    wave8_cossack_cohort_counts,
+    wave8_cossack_counts,
+)
+from .wave8_fast17 import (
+    WAVE8_FAST17_CONTRACT_IDS,
+    WAVE8_FAST17_ENTITIES,
+    WAVE8_FAST17_HOLD_IDS,
+    WAVE8_FAST17_HOLDS,
+    WAVE8_FAST17_IWBD_DUPLICATE_HOLDS,
+    WAVE8_FAST17_RESERVED_IDS,
+    WAVE8_FAST17_SOURCES,
+    install_wave8_fast17_entities,
+    install_wave8_fast17_sources,
+    promote_wave8_fast17_contracts,
+    validate_wave8_fast17_queue_contracts,
+    wave8_fast17_cohort_counts,
+    wave8_fast17_counts,
+)
+from .wave8_naples import (
+    WAVE8_NAPLES_CONTRACT_IDS,
+    WAVE8_NAPLES_ENTITIES,
+    WAVE8_NAPLES_HOLD_IDS,
+    WAVE8_NAPLES_HOLDS,
+    WAVE8_NAPLES_RESERVED_IDS,
+    WAVE8_NAPLES_SOURCES,
+    install_wave8_naples_entities,
+    install_wave8_naples_sources,
+    promote_wave8_naples_contracts,
+    validate_wave8_naples_queue_contracts,
+    wave8_naples_cohort_counts,
+    wave8_naples_counts,
+)
+from .wave8_somali_irish_sa import (
+    WAVE8_SOMALI_IRISH_SA_CONTRACT_IDS,
+    WAVE8_SOMALI_IRISH_SA_ENTITIES,
+    WAVE8_SOMALI_IRISH_SA_HOLD_IDS,
+    WAVE8_SOMALI_IRISH_SA_HOLDS,
+    WAVE8_SOMALI_IRISH_SA_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_SOMALI_IRISH_SA_OUTCOME_OVERRIDES,
+    WAVE8_SOMALI_IRISH_SA_RESERVED_IDS,
+    WAVE8_SOMALI_IRISH_SA_SOURCES,
+    install_wave8_somali_irish_sa_entities,
+    install_wave8_somali_irish_sa_sources,
+    promote_wave8_somali_irish_sa_contracts,
+    validate_wave8_somali_irish_sa_queue_contracts,
+    wave8_somali_irish_sa_cohort_counts,
+    wave8_somali_irish_sa_counts,
+)
+from .wave8_argentine_independence import (
+    WAVE8_ARGENTINE_INDEPENDENCE_CONTRACT_IDS,
+    WAVE8_ARGENTINE_INDEPENDENCE_ENTITIES,
+    WAVE8_ARGENTINE_INDEPENDENCE_HOLD_IDS,
+    WAVE8_ARGENTINE_INDEPENDENCE_HOLDS,
+    WAVE8_ARGENTINE_INDEPENDENCE_RESERVED_IDS,
+    WAVE8_ARGENTINE_INDEPENDENCE_SOURCES,
+    install_wave8_argentine_independence_entities,
+    install_wave8_argentine_independence_sources,
+    promote_wave8_argentine_independence_contracts,
+    validate_wave8_argentine_independence_queue_contracts,
+    wave8_argentine_independence_cohort_counts,
+    wave8_argentine_independence_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -378,6 +451,11 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_JUDEAN_REVOLTS_RESERVED_IDS
     | WAVE8_CANADIAN_RESISTANCE_RESERVED_IDS
     | WAVE8_WALES_RESERVED_IDS
+    | WAVE8_COSSACK_RESERVED_IDS
+    | WAVE8_FAST17_RESERVED_IDS
+    | WAVE8_NAPLES_RESERVED_IDS
+    | WAVE8_SOMALI_IRISH_SA_RESERVED_IDS
+    | WAVE8_ARGENTINE_INDEPENDENCE_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -395,6 +473,16 @@ EFFECTIVE_IWD_REVIEWED_PARENT_CONTRACTS = {
 }
 EFFECTIVE_IWBD_CURATED_EXCLUSIONS = {
     **WAVE6_IWBD_CURATED_EXCLUSIONS,
+    **{
+        candidate_id: str(contract["hold_reason"])
+        for candidate_id, contract in WAVE8_FAST17_IWBD_DUPLICATE_HOLDS.items()
+    },
+    **{
+        candidate_id: str(contract["reason"])
+        for candidate_id, contract in (
+            WAVE8_SOMALI_IRISH_SA_IWBD_DUPLICATE_DISPOSITIONS.items()
+        )
+    },
     # Preserve the older candidate-specific adjudication when a Wave 6 audit
     # fingerprints the same row under a broader hold inventory.
     **IWBD_CURATED_EXCLUSIONS,
@@ -760,8 +848,8 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 37
-        or len(HCED_COUNTRY_QUARANTINE_IDS) != 79
+        len(HCED_POINT_QUARANTINE_IDS) != 46
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 83
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
         != HCED_EXPECTED_QUARANTINE_OVERLAP
@@ -914,6 +1002,15 @@ def build_expanded_release(
         validate_wave8_canadian_resistance_queue_contracts(hced)
     )
     wave8_wales_queue_validation = validate_wave8_wales_queue_contracts(hced)
+    wave8_cossack_queue_validation = validate_wave8_cossack_inventory(hced)
+    wave8_fast17_queue_validation = validate_wave8_fast17_queue_contracts(hced)
+    wave8_naples_queue_validation = validate_wave8_naples_queue_contracts(hced)
+    wave8_somali_irish_sa_queue_validation = (
+        validate_wave8_somali_irish_sa_queue_contracts(hced)
+    )
+    wave8_argentine_independence_queue_validation = (
+        validate_wave8_argentine_independence_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1237,6 +1334,11 @@ def build_expanded_release(
     install_wave8_judean_revolts_entities(release_entities)
     install_wave8_canadian_resistance_entities(release_entities)
     install_wave8_wales_entities(release_entities)
+    install_wave8_cossack_entities(release_entities)
+    install_wave8_fast17_entities(release_entities)
+    install_wave8_naples_entities(release_entities)
+    install_wave8_somali_irish_sa_entities(release_entities)
+    install_wave8_argentine_independence_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -1543,6 +1645,153 @@ def build_expanded_release(
             *wave8_canadian_resistance_events,
         ],
     )
+    wave8_cossack_events = promote_wave8_cossack_events(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+        ],
+    )
+    wave8_fast17_events = promote_wave8_fast17_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+        ],
+    )
+    wave8_naples_events = promote_wave8_naples_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+            *wave8_fast17_events,
+        ],
+    )
+    wave8_somali_irish_sa_events = promote_wave8_somali_irish_sa_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+            *wave8_fast17_events,
+            *wave8_naples_events,
+        ],
+    )
+    wave8_argentine_independence_events = (
+        promote_wave8_argentine_independence_contracts(
+            hced,
+            release_entities,
+            [
+                *seed_events,
+                *source_events,
+                *iwd_events,
+                *label_events,
+                *wave6_events,
+                *wave7_root_events,
+                *wave7_central_events,
+                *wave7_central_pass2_events,
+                *wave7_global_events,
+                *wave7_west_events,
+                *wave8_african_states_events,
+                *wave8_new_zealand_events,
+                *wave8_north_america_events,
+                *wave8_xhosa_events,
+                *wave8_polish_audit_events,
+                *wave8_namibia_resistance_events,
+                *wave8_first_saudi_events,
+                *wave8_early_states_events,
+                *wave8_judean_revolts_events,
+                *wave8_canadian_resistance_events,
+                *wave8_wales_events,
+                *wave8_cossack_events,
+                *wave8_fast17_events,
+                *wave8_naples_events,
+                *wave8_somali_irish_sa_events,
+            ],
+        )
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -1561,6 +1810,11 @@ def build_expanded_release(
         *wave8_judean_revolts_events,
         *wave8_canadian_resistance_events,
         *wave8_wales_events,
+        *wave8_cossack_events,
+        *wave8_fast17_events,
+        *wave8_naples_events,
+        *wave8_somali_irish_sa_events,
+        *wave8_argentine_independence_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -1605,6 +1859,11 @@ def build_expanded_release(
             *WAVE8_JUDEAN_REVOLTS_HOLD_IDS,
             *WAVE8_CANADIAN_RESISTANCE_HOLD_IDS,
             *WAVE8_WALES_HOLD_IDS,
+            *WAVE8_COSSACK_HOLD_IDS,
+            *WAVE8_FAST17_HOLD_IDS,
+            *WAVE8_NAPLES_HOLD_IDS,
+            *WAVE8_SOMALI_IRISH_SA_HOLD_IDS,
+            *WAVE8_ARGENTINE_INDEPENDENCE_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -1649,6 +1908,11 @@ def build_expanded_release(
         *wave8_judean_revolts_events,
         *wave8_canadian_resistance_events,
         *wave8_wales_events,
+        *wave8_cossack_events,
+        *wave8_fast17_events,
+        *wave8_naples_events,
+        *wave8_somali_irish_sa_events,
+        *wave8_argentine_independence_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -1836,6 +2100,11 @@ def build_expanded_release(
     install_wave8_judean_revolts_sources(sources_by_id)
     install_wave8_canadian_resistance_sources(sources_by_id)
     install_wave8_wales_sources(sources_by_id)
+    install_wave8_cossack_sources(sources_by_id)
+    install_wave8_fast17_sources(sources_by_id)
+    install_wave8_naples_sources(sources_by_id)
+    install_wave8_somali_irish_sa_sources(sources_by_id)
+    install_wave8_argentine_independence_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -1859,6 +2128,11 @@ def build_expanded_release(
         *wave8_judean_revolts_events,
         *wave8_canadian_resistance_events,
         *wave8_wales_events,
+        *wave8_cossack_events,
+        *wave8_fast17_events,
+        *wave8_naples_events,
+        *wave8_somali_irish_sa_events,
+        *wave8_argentine_independence_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -1882,6 +2156,11 @@ def build_expanded_release(
         *wave8_judean_revolts_events,
         *wave8_canadian_resistance_events,
         *wave8_wales_events,
+        *wave8_cossack_events,
+        *wave8_fast17_events,
+        *wave8_naples_events,
+        *wave8_somali_irish_sa_events,
+        *wave8_argentine_independence_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -1904,6 +2183,11 @@ def build_expanded_release(
             | WAVE8_JUDEAN_REVOLTS_CONTRACT_IDS
             | WAVE8_CANADIAN_RESISTANCE_CONTRACT_IDS
             | WAVE8_WALES_CONTRACT_IDS
+            | WAVE8_COSSACK_CONTRACT_IDS
+            | WAVE8_FAST17_CONTRACT_IDS
+            | WAVE8_NAPLES_CONTRACT_IDS
+            | WAVE8_SOMALI_IRISH_SA_CONTRACT_IDS
+            | WAVE8_ARGENTINE_INDEPENDENCE_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -1947,6 +2231,20 @@ def build_expanded_release(
             WAVE8_CANADIAN_RESISTANCE_ENTITIES,
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_WALES_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_COSSACK_REBELLIONS_ENTITIES,
+        ),
+        *map(lambda entity: str(entity["id"]), WAVE8_FAST17_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_NAPLES_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_SOMALI_IRISH_SA_ENTITIES,
+        ),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_ARGENTINE_INDEPENDENCE_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -2138,6 +2436,11 @@ def build_expanded_release(
         - len(wave8_judean_revolts_events)
         - len(wave8_canadian_resistance_events)
         - len(wave8_wales_events)
+        - len(wave8_cossack_events)
+        - len(wave8_fast17_events)
+        - len(wave8_naples_events)
+        - len(wave8_somali_irish_sa_events)
+        - len(wave8_argentine_independence_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -2190,6 +2493,15 @@ def build_expanded_release(
             wave8_canadian_resistance_events
         ),
         "candidate_keyed_wave8_wales_hced_events": len(wave8_wales_events),
+        "candidate_keyed_wave8_cossack_hced_events": len(wave8_cossack_events),
+        "candidate_keyed_wave8_fast17_hced_events": len(wave8_fast17_events),
+        "candidate_keyed_wave8_naples_hced_events": len(wave8_naples_events),
+        "candidate_keyed_wave8_somali_irish_sa_hced_events": len(
+            wave8_somali_irish_sa_events
+        ),
+        "candidate_keyed_wave8_argentine_independence_hced_events": len(
+            wave8_argentine_independence_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -2386,6 +2698,15 @@ def build_expanded_release(
                 wave8_canadian_resistance_events
             ),
             "accepted_wave8_wales_hced_events": len(wave8_wales_events),
+            "accepted_wave8_cossack_hced_events": len(wave8_cossack_events),
+            "accepted_wave8_fast17_hced_events": len(wave8_fast17_events),
+            "accepted_wave8_naples_hced_events": len(wave8_naples_events),
+            "accepted_wave8_somali_irish_sa_hced_events": len(
+                wave8_somali_irish_sa_events
+            ),
+            "accepted_wave8_argentine_independence_hced_events": len(
+                wave8_argentine_independence_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -2730,6 +3051,129 @@ def build_expanded_release(
             ],
             "wave8_wales_entities_added": len(WAVE8_WALES_ENTITIES),
             "wave8_wales_sources_added": len(WAVE8_WALES_SOURCES),
+            "wave8_cossack_counts": wave8_cossack_counts(),
+            "wave8_cossack_cohort_counts": wave8_cossack_cohort_counts(),
+            "wave8_cossack_queue_validation": wave8_cossack_queue_validation,
+            "wave8_cossack_candidate_ids": sorted(WAVE8_COSSACK_CONTRACT_IDS),
+            "wave8_cossack_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_COSSACK_REBELLIONS_HOLDS.items()
+                )
+            ],
+            "wave8_cossack_entities_added": len(
+                WAVE8_COSSACK_REBELLIONS_ENTITIES
+            ),
+            "wave8_cossack_sources_added": len(WAVE8_COSSACK_REBELLIONS_SOURCES),
+            "wave8_fast17_counts": wave8_fast17_counts(),
+            "wave8_fast17_cohort_counts": wave8_fast17_cohort_counts(),
+            "wave8_fast17_queue_validation": wave8_fast17_queue_validation,
+            "wave8_fast17_candidate_ids": sorted(WAVE8_FAST17_CONTRACT_IDS),
+            "wave8_fast17_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_FAST17_HOLDS.items())
+            ],
+            "wave8_fast17_iwbd_duplicate_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_FAST17_IWBD_DUPLICATE_HOLDS.items()
+                )
+            ],
+            "wave8_fast17_entities_added": len(WAVE8_FAST17_ENTITIES),
+            "wave8_fast17_sources_added": len(WAVE8_FAST17_SOURCES),
+            "wave8_naples_counts": wave8_naples_counts(),
+            "wave8_naples_cohort_counts": wave8_naples_cohort_counts(),
+            "wave8_naples_queue_validation": wave8_naples_queue_validation,
+            "wave8_naples_candidate_ids": sorted(WAVE8_NAPLES_CONTRACT_IDS),
+            "wave8_naples_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_NAPLES_HOLDS.items())
+            ],
+            "wave8_naples_entities_added": len(WAVE8_NAPLES_ENTITIES),
+            "wave8_naples_sources_added": len(WAVE8_NAPLES_SOURCES),
+            "wave8_somali_irish_sa_counts": wave8_somali_irish_sa_counts(),
+            "wave8_somali_irish_sa_cohort_counts": (
+                wave8_somali_irish_sa_cohort_counts()
+            ),
+            "wave8_somali_irish_sa_queue_validation": (
+                wave8_somali_irish_sa_queue_validation
+            ),
+            "wave8_somali_irish_sa_candidate_ids": sorted(
+                WAVE8_SOMALI_IRISH_SA_CONTRACT_IDS
+            ),
+            "wave8_somali_irish_sa_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_SOMALI_IRISH_SA_HOLDS.items()
+                )
+            ],
+            "wave8_somali_irish_sa_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SOMALI_IRISH_SA_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_somali_irish_sa_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SOMALI_IRISH_SA_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_somali_irish_sa_entities_added": len(
+                WAVE8_SOMALI_IRISH_SA_ENTITIES
+            ),
+            "wave8_somali_irish_sa_sources_added": len(
+                WAVE8_SOMALI_IRISH_SA_SOURCES
+            ),
+            "wave8_argentine_independence_counts": (
+                wave8_argentine_independence_counts()
+            ),
+            "wave8_argentine_independence_cohort_counts": (
+                wave8_argentine_independence_cohort_counts()
+            ),
+            "wave8_argentine_independence_queue_validation": (
+                wave8_argentine_independence_queue_validation
+            ),
+            "wave8_argentine_independence_candidate_ids": sorted(
+                WAVE8_ARGENTINE_INDEPENDENCE_CONTRACT_IDS
+            ),
+            "wave8_argentine_independence_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_ARGENTINE_INDEPENDENCE_HOLDS.items()
+                )
+            ],
+            "wave8_argentine_independence_entities_added": len(
+                WAVE8_ARGENTINE_INDEPENDENCE_ENTITIES
+            ),
+            "wave8_argentine_independence_sources_added": len(
+                WAVE8_ARGENTINE_INDEPENDENCE_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -2909,6 +3353,15 @@ def build_expanded_release(
             wave8_canadian_resistance_events
         ),
         "candidate_keyed_wave8_wales_hced_events": len(wave8_wales_events),
+        "candidate_keyed_wave8_cossack_hced_events": len(wave8_cossack_events),
+        "candidate_keyed_wave8_fast17_hced_events": len(wave8_fast17_events),
+        "candidate_keyed_wave8_naples_hced_events": len(wave8_naples_events),
+        "candidate_keyed_wave8_somali_irish_sa_hced_events": len(
+            wave8_somali_irish_sa_events
+        ),
+        "candidate_keyed_wave8_argentine_independence_hced_events": len(
+            wave8_argentine_independence_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

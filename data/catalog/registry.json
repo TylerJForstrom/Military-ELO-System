@@ -352,6 +352,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "first_east_african_infantry_brigade_salaita_1916",
+      "name": "1st East African Infantry Brigade at Salaita",
+      "kind": "expeditionary_brigade",
+      "start_year": 1916,
+      "end_year": 1916,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Africa"
+    },
+    {
+      "id": "first_south_african_infantry_brigade_delville_1916",
+      "name": "1st South African Infantry Brigade at Delville Wood",
+      "kind": "expeditionary_brigade",
+      "start_year": 1916,
+      "end_year": 1916,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Front"
+    },
+    {
       "id": "cuban_26_july_movement",
       "name": "26th of July Movement",
       "kind": "revolutionary_movement",
@@ -360,6 +380,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Caribbean"
+    },
+    {
+      "id": "second_south_african_infantry_brigade_salaita_1916",
+      "name": "2nd South African Infantry Brigade at Salaita",
+      "kind": "expeditionary_brigade",
+      "start_year": 1916,
+      "end_year": 1916,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "East Africa"
     },
     {
       "id": "clio_iq_abbasid_cal_1_750_82ab6afc",
@@ -623,6 +653,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "angevin_sicily_berat_army_1281",
+      "name": "Angevin Kingdom of Sicily Army at Berat (1281)",
+      "kind": "campaign_army",
+      "start_year": 1281,
+      "end_year": 1281,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_fr_capetian_k_1_1126_26d63a14",
       "name": "Angevins",
       "kind": "polity",
@@ -676,6 +716,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "anti_treaty_ira_1922_1923",
+      "name": "Anti-Treaty IRA (1922–1923)",
+      "kind": "insurgent_army",
+      "start_year": 1922,
+      "end_year": 1923,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland"
     },
     {
       "id": "clio_gr_antigonid_emp_bce291_a2d0a05b",
@@ -784,6 +834,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "aragonese_neapolitan_taranto_garrison_1501_1502",
+      "name": "Aragonese Neapolitan Garrison of Taranto (1501-1502)",
+      "kind": "royal_garrison",
+      "start_year": 1501,
+      "end_year": 1502,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "argentine_confederation",
@@ -1461,6 +1521,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "bianchi_austrian_army_naples_war_1815",
+      "name": "Bianchi's Austrian Army in the Neapolitan War (1815)",
+      "kind": "campaign_army",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_q669317_1492_d0ad8ed9",
       "name": "Bidar Sultanate",
       "kind": "sultanate",
@@ -1545,6 +1615,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bourbon_naples_field_army_1798",
+      "name": "Bourbon Kingdom of Naples Field Army (1798)",
+      "kind": "state_armed_forces",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "bourbon_restoration_france",
@@ -1800,6 +1880,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Eastern Mediterranean"
+    },
+    {
+      "id": "byzantine_berat_relief_army_1281",
+      "name": "Byzantine Relief Army at Berat (1281)",
+      "kind": "campaign_army",
+      "start_year": 1281,
+      "end_year": 1281,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "byzantine_pelusium_garrison_640",
@@ -2090,6 +2180,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "championnet_french_army_naples_1799",
+      "name": "Championnet's French Army at Naples (1799)",
+      "kind": "campaign_army",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "clio_in_chandela_k_960_6be99ddb",
@@ -2404,6 +2504,16 @@
       "region": "North America"
     },
     {
+      "id": "lotter_commando_1901",
+      "name": "Commandant Lotter's Commando (1901)",
+      "kind": "event_bounded_boer_commando",
+      "start_year": 1901,
+      "end_year": 1901,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q408_1905_c58c97bb",
       "name": "Commonwealth of Australia",
       "kind": "polity",
@@ -2530,6 +2640,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "united_provinces_zelaya_detachment_pequereque_1813",
+      "name": "Cornelio Zelaya's Army of the North detachment at Pequereque (1813)",
+      "kind": "revolutionary_cavalry_detachment",
+      "start_year": 1813,
+      "end_year": 1813,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_gb_brythonic_k_710_8a147c4d",
@@ -3934,6 +4054,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "durando_vicenza_defense_force_1848",
+      "name": "Durando's Vicenza Defense Force (1848)",
+      "kind": "event_bounded_defense_coalition",
+      "start_year": 1848,
+      "end_year": 1848,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q5316729_1840_f0c79081",
@@ -5550,6 +5680,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "garibaldian_southern_army_1860",
+      "name": "Garibaldian Southern Army (1860 campaign)",
+      "kind": "revolutionary_campaign_army",
+      "start_year": 1860,
+      "end_year": 1860,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_in_gauda_k_602_db9e1fab",
       "name": "Gauda Kingdom",
       "kind": "kingdom",
@@ -6143,6 +6283,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "marquiegui_royalist_vanguard_leon_1821",
+      "name": "Guillermo Marquiegui's royalist vanguard at León (1821)",
+      "kind": "royalist_vanguard",
+      "start_year": 1821,
+      "end_year": 1821,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Jujuy jurisdiction, Salta"
     },
     {
       "id": "clio_q983_1960_9e203922",
@@ -7092,6 +7242,16 @@
       "region": "Western Europe"
     },
     {
+      "id": "irish_national_army_1922_1923",
+      "name": "Irish National Army (1922–1923)",
+      "kind": "state_army",
+      "start_year": 1922,
+      "end_year": 1923,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland"
+    },
+    {
       "id": "islamic_republic_afghanistan",
       "name": "Islamic Republic of Afghanistan",
       "kind": "state",
@@ -7186,6 +7346,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "romarate_montevideo_royalist_squadron_1814",
+      "name": "Jacinto de Romarate's Montevideo royalist squadron (1814)",
+      "kind": "royalist_naval_squadron",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Río de la Plata and Uruguay River"
     },
     {
       "id": "jacobite_army_1715",
@@ -7546,6 +7716,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "pezuela_royalist_army_ayohuma_1813",
+      "name": "Joaquín de la Pezuela's royalist army at Ayohuma (1813)",
+      "kind": "royalist_army",
+      "start_year": 1813,
+      "end_year": 1813,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
+    },
+    {
       "id": "joseon",
       "name": "Joseon",
       "kind": "kingdom",
@@ -7554,6 +7734,36 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "East Asia"
+    },
+    {
+      "id": "gorriti_jujuy_militia_leon_1821",
+      "name": "José Ignacio Gorriti's Jujuy militia at León (1821)",
+      "kind": "local_revolutionary_militia",
+      "start_year": 1821,
+      "end_year": 1821,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Jujuy jurisdiction, Salta"
+    },
+    {
+      "id": "goyeneche_royalist_army_huaqui_1811",
+      "name": "José Manuel de Goyeneche's royalist army at Huaqui (1811)",
+      "kind": "royalist_army",
+      "start_year": 1811,
+      "end_year": 1811,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
+    },
+    {
+      "id": "cordoba_royalist_force_cotagaita_1810",
+      "name": "José de Córdoba's royalist force at Cotagaita (1810)",
+      "kind": "royalist_field_force",
+      "start_year": 1810,
+      "end_year": 1810,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_il_judea_bce144_794f2fad",
@@ -7585,6 +7795,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Judea"
+    },
+    {
+      "id": "junta_grande_auxiliary_army_huaqui_1811",
+      "name": "Junta Grande auxiliary army at Huaqui (1811)",
+      "kind": "revolutionary_army",
+      "start_year": 1811,
+      "end_year": 1811,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_in_kadamba_emp_353_9b0f1a8f",
@@ -9849,6 +10069,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "krychevsky_zaporozhian_army_loyew_1649",
+      "name": "Krychevsky's Zaporozhian army at Loyew",
+      "kind": "campaign_army",
+      "start_year": 1649,
+      "end_year": 1649,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Polish-Lithuanian Commonwealth"
+    },
+    {
       "id": "clio_cn_chinese_rep_1917_6e351d9e",
       "name": "Kuomintang",
       "kind": "polity",
@@ -10457,6 +10687,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "macdonald_french_division_civita_castellana_1798",
+      "name": "Macdonald's French Division at Civita Castellana (1798)",
+      "kind": "campaign_army",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_gr_macedonian_emp_bce675_db9f1c1c",
       "name": "Macedonian Empire",
       "kind": "empire",
@@ -10842,6 +11082,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "massena_french_gaeta_corps_1806",
+      "name": "Masséna's French Siege Corps at Gaeta (1806)",
+      "kind": "siege_force",
+      "start_year": 1806,
+      "end_year": 1806,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "clio_id_medang_k_741_458347cd",
@@ -11396,6 +11646,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "murat_neapolitan_army_1815",
+      "name": "Murat's Neapolitan Army (1815 campaign)",
+      "kind": "state_armed_forces",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "mutawakkilite_kingdom_yemen",
       "name": "Mutawakkilite Kingdom of Yemen",
       "kind": "kingdom",
@@ -11684,6 +11944,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Africa"
+    },
+    {
+      "id": "neapolitan_royalist_lazzari_1799",
+      "name": "Neapolitan Royalist Lazzari Defenders (1799)",
+      "kind": "urban_militia",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "clio_q213893_1775_4cd6c067",
@@ -12365,6 +12635,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ostryanyn_hunia_rebel_force_1638",
+      "name": "Ostryanyn-Hunia rebel force at Zhovnyne",
+      "kind": "insurgent_army",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kyiv Voivodeship"
+    },
+    {
       "id": "ottoman_empire",
       "name": "Ottoman Empire",
       "kind": "empire",
@@ -12600,6 +12880,16 @@
       "region": "Western Europe"
     },
     {
+      "id": "parthenopean_republican_forces_1799",
+      "name": "Parthenopean Republican Forces at Naples (1799)",
+      "kind": "revolutionary_forces",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_iq_parthian_emp_2_bce239_14e14c59",
       "name": "Parthian Empire",
       "kind": "empire",
@@ -12661,6 +12951,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "South America"
+    },
+    {
+      "id": "olaneta_royalist_detachment_pequereque_1813",
+      "name": "Pedro Antonio de Olañeta's royalist detachment at Pequereque (1813)",
+      "kind": "royalist_detachment",
+      "start_year": 1813,
+      "end_year": 1813,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_q208742_bce550_fcd70391",
@@ -13014,6 +13314,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "primera_junta_auxiliary_army_cotagaita_1810",
+      "name": "Primera Junta auxiliary army at Cotagaita (1810)",
+      "kind": "revolutionary_army",
+      "start_year": 1810,
+      "end_year": 1810,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_q1760473_1468_a64cbc81",
@@ -13723,6 +14033,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "pugachev_rebellion_forces_1773_1775",
+      "name": "Pugachev Rebellion forces",
+      "kind": "insurgent_coalition",
+      "start_year": 1773,
+      "end_year": 1775,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Volga-Ural region"
     },
     {
       "id": "clio_q1627675_84_879a710b",
@@ -14964,6 +15284,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "restored_bourbon_gaeta_garrison_1806",
+      "name": "Restored Bourbon Neapolitan Garrison of Gaeta (1806)",
+      "kind": "royal_garrison",
+      "start_year": 1806,
+      "end_year": 1806,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "kingdom_greece_restored",
       "name": "Restored Kingdom of Greece",
       "kind": "kingdom",
@@ -15979,6 +16309,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sicilian_revolutionary_state_forces_1848_1849",
+      "name": "Sicilian Revolutionary State Forces (1848-1849)",
+      "kind": "revolutionary_forces",
+      "start_year": 1848,
+      "end_year": 1849,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_q1044_1961_b5afd46f",
       "name": "Sierra Leone",
       "kind": "polity",
@@ -16203,6 +16543,16 @@
       "region": "Northeast Africa"
     },
     {
+      "id": "somali_dervish_movement_1899_1920",
+      "name": "Somali Dervish movement (1899–1920)",
+      "kind": "anti_colonial_movement_force",
+      "start_year": 1899,
+      "end_year": 1920,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Horn of Africa"
+    },
+    {
       "id": "clio_q7462_bce750_7c1bc513",
       "name": "Song",
       "kind": "polity",
@@ -16406,6 +16756,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Eastern Europe and Northern Asia"
+    },
+    {
+      "id": "spanish_taranto_besieging_force_1501_1502",
+      "name": "Spanish Besieging Force at Taranto (1501-1502)",
+      "kind": "campaign_army",
+      "start_year": 1501,
+      "end_year": 1502,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
     },
     {
       "id": "spanish_empire",
@@ -17726,6 +18086,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "united_provinces_nother_naval_division_1814",
+      "name": "Tomás Nother's United Provinces naval division (1814)",
+      "kind": "revolutionary_naval_division",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Río de la Plata and Uruguay River"
+    },
+    {
       "id": "clio_q1642472_1375_303aabcd",
       "name": "Tondo",
       "kind": "polity",
@@ -17911,6 +18281,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "two_sicilies_royal_army_1860",
+      "name": "Two Sicilies Royal Army (1860 campaign)",
+      "kind": "state_armed_forces",
+      "start_year": 1860,
+      "end_year": 1860,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
+      "id": "two_sicilies_royal_army_sicily_1848_1849",
+      "name": "Two Sicilies Royal Army in Sicily (1848-1849)",
+      "kind": "state_armed_forces",
+      "start_year": 1848,
+      "end_year": 1849,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe and the central Mediterranean"
+    },
+    {
       "id": "clio_q1034173_1775_f7ed642b",
       "name": "Tây Sơn dynasty",
       "kind": "dynastic_state",
@@ -18017,6 +18407,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "union_defence_force_gswa_1914_1915",
+      "name": "Union Defence Force in German South West Africa (1914–1915)",
+      "kind": "campaign_force",
+      "start_year": 1914,
+      "end_year": 1915,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q836_1990_6c7ea79f",
       "name": "Union of Myanmar",
       "kind": "polity",
@@ -18111,6 +18511,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "united_provinces_army_north_ayohuma_1813",
+      "name": "United Provinces Army of the North at Ayohuma (1813)",
+      "kind": "revolutionary_army",
+      "start_year": 1813,
+      "end_year": 1813,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Peru"
     },
     {
       "id": "clio_q190025_1824_be65b051",
@@ -19244,11 +19654,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1787,
-    "rated_entities": 428,
-    "rated_events": 4938,
+    "registry_polities": 1828,
+    "rated_entities": 467,
+    "rated_events": 4994,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18456,
+    "unresolved_event_candidates": 18400,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19270,6 +19680,11 @@
     "candidate_keyed_wave8_judean_revolts_hced_events": 2,
     "candidate_keyed_wave8_canadian_resistance_hced_events": 3,
     "candidate_keyed_wave8_wales_hced_events": 4,
+    "candidate_keyed_wave8_cossack_hced_events": 6,
+    "candidate_keyed_wave8_fast17_hced_events": 17,
+    "candidate_keyed_wave8_naples_hced_events": 10,
+    "candidate_keyed_wave8_somali_irish_sa_hced_events": 17,
+    "candidate_keyed_wave8_argentine_independence_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19280,21 +19695,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4674,
-      "candidate_keyed_reviewed_contracts": 364,
-      "geojson_points": 4637,
-      "modern_location_country_assertions": 4594,
-      "location_provenance_objects": 4641,
-      "point_fields_withheld_by_quarantine": 37,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
+      "hced_candidate_bindings": 4730,
+      "candidate_keyed_reviewed_contracts": 420,
+      "geojson_points": 4684,
+      "modern_location_country_assertions": 4646,
+      "location_provenance_objects": 4695,
+      "point_fields_withheld_by_quarantine": 46,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 33,
-      "unique_events_with_any_quarantined_field": 83,
-      "point_quarantine_candidate_manifest_sha256": "a24351d3a330f97007f55825ef251b76046b884ca12c9580bc6e08c24e3e17cf",
-      "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
-      "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
+      "point_country_quarantine_overlap": 35,
+      "unique_events_with_any_quarantined_field": 94,
+      "point_quarantine_candidate_manifest_sha256": "c0a477542ce2e5cfedc4017df74514dd7118c126e75854e54c77f70373b24c76",
+      "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
+      "quarantine_policy_sha256": "cca2a1495e0fb5733e8ea877035363e3e82e611e48c37bf05b9250824f0a204c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4641
+        "unreviewed_source_assertion": 4695
       },
       "verified_location_assertions": {
         "availability": "not_available",
