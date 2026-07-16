@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 519,
-    "events": 5030,
-    "sources": 582,
-    "registry_polities": 1875
+    "entities": 543,
+    "events": 5044,
+    "sources": 607,
+    "registry_polities": 1899
   },
   "year_range": {
     "start": -1274,
@@ -103,6 +103,7 @@
     "accepted_wave8_algiers_cheyenne_hced_events": 8,
     "accepted_wave8_dagestan_hced_events": 6,
     "accepted_wave8_irish_history_hced_events": 8,
+    "accepted_wave8_muslim_forces_hced_events": 14,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2724,7 +2725,729 @@
     ],
     "wave8_irish_history_entities_added": 17,
     "wave8_irish_history_sources_added": 16,
-    "hced_label_pass_input_rows": 5987,
+    "wave8_muslim_forces_counts": {
+      "duplicate_dispositions": 4,
+      "greedy_eligible_rows": 18,
+      "greedy_marginal_rows": 13,
+      "holds": 4,
+      "integration_dispositions": 23,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 24,
+      "new_sources": 25,
+      "newly_rated_events": 14,
+      "outcome_overrides": 0,
+      "promotion_contracts": 14,
+      "reviewed_hced_rows": 23,
+      "terminal_exclusions": 5,
+      "touched_rows": 23
+    },
+    "wave8_muslim_forces_cohort_counts": {
+      "byzantine_arab_wars": 3,
+      "ceuta": 1,
+      "crusades": 2,
+      "early_caliphal_armies": 3,
+      "iberia": 2,
+      "mongol_era_actors": 1,
+      "sicily": 2
+    },
+    "wave8_muslim_forces_queue_validation": {
+      "promotion_contracts": 14,
+      "holds": 4,
+      "reviewed_hced_rows": 23,
+      "terminal_exclusions": 5
+    },
+    "wave8_muslim_forces_candidate_ids": [
+      "hced-Aleppo1260-1",
+      "hced-Aleppo962-1",
+      "hced-Amida973-1",
+      "hced-Antioch, Syria969-1",
+      "hced-Beirut1110-1",
+      "hced-Bosra634-1",
+      "hced-Bridge634-1",
+      "hced-Buzakha632-1",
+      "hced-Castrogiovanni859-1",
+      "hced-Cerami1063-1",
+      "hced-Ceuta1415-1",
+      "hced-Ecija711-1",
+      "hced-Guadalete711-1",
+      "hced-Harenc1098-1"
+    ],
+    "wave8_muslim_forces_holds": [
+      {
+        "candidate_id": "hced-Aleppo639-1",
+        "raw_row_sha256": "7dd4c3588cf1b3c40752ba02d55cf82caf62f23dc351ce15c7959a06ea12f39c",
+        "canonical_event": {
+          "canonical_key": "reported_submission_of_aleppo:639:639",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Reported submission of Aleppo",
+          "year_low": 639,
+          "year_high": 639
+        },
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "chronology_and_event_sequence_unresolved",
+        "hold_reason": "The early conquest traditions disagree on the command, sequence, and date of Aleppo's submission; the reviewed evidence cannot bind the locked 639 row to one tactical engagement without invention.",
+        "evidence_refs": [
+          "wave8_muslim_forces_donner_early_conquests"
+        ],
+        "reviewed_actor_description": [
+          "Rashidun conquest forces",
+          "Byzantine or local Aleppo defenders"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Early Rashidun acquisition of Aleppo",
+          "reviewed_date": "chronology disputed; not securely 639",
+          "reviewed_outcome": "Regional submission is attested, but an exact 639 engagement result is not"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Amorium669-1",
+        "raw_row_sha256": "f4dcf265ba30377dfa3ec489bf16d6e2ed4eebb56a41c6da26f28aaef083de66",
+        "canonical_event": {
+          "canonical_key": "reported_byzantine_recovery_of_amorium:669:669",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Reported Byzantine recovery of Amorium",
+          "year_low": 669,
+          "year_high": 669
+        },
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "recovery_date_unresolved",
+        "hold_reason": "The evidence supports Arab occupation of Amorium in 669 and a later Byzantine recovery, but does not securely date a Byzantine victory to 669. Unknown timing is not converted into a win or draw.",
+        "evidence_refs": [
+          "wave8_muslim_forces_birmingham_amorium",
+          "wave8_muslim_forces_konstanz_amorium"
+        ],
+        "reviewed_actor_description": [
+          "Umayyad campaign force",
+          "Byzantine defenders or recovery force"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Occupation and later recovery of Amorium",
+          "reviewed_date": "Arab occupation in 669; Byzantine recovery date unresolved",
+          "reviewed_outcome": "Later Byzantine recovery is known, but the locked row's exact outcome/date pairing is not"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Babylon, Iraq634-1",
+        "raw_row_sha256": "6bb0e1c392cab6d2fb277b7c68c7f435e744222e11a4471005b12fd45e6b7f8b",
+        "canonical_event": {
+          "canonical_key": "reported_battle_at_babylon_in_iraq:634:634",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Reported battle at Babylon in Iraq",
+          "year_low": 634,
+          "year_high": 634
+        },
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "single_tradition_event_binding",
+        "hold_reason": "Only one conquest tradition places al-Muthanna's victory at Babil, and the early chronology may duplicate or displace another Iraq action. The exact row is held rather than manufacturing certainty.",
+        "evidence_refs": [
+          "wave8_muslim_forces_donner_early_conquests",
+          "wave8_muslim_forces_iranica_arab_conquest"
+        ],
+        "reviewed_actor_description": [
+          "Rashidun force under al-Muthanna",
+          "Sasanian force reported at Babil"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Reported action at Babil in Iraq",
+          "reviewed_date": "reported in the 634 campaign chronology",
+          "reviewed_outcome": "A Rashidun victory is reported in one tradition but is not independently secured"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Buwayb635-1",
+        "raw_row_sha256": "84a93ed5fc9ed8cc27bc65c713e280572d6ae28b5f7f946a6ab343bf1d54ba29",
+        "canonical_event": {
+          "canonical_key": "reported_battle_of_buwayb:635:635",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Reported battle of Buwayb",
+          "year_low": 635,
+          "year_high": 635
+        },
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "historicity_and_granularity_disputed",
+        "hold_reason": "Iranica repeats the conventional Muslim victory, while Donner concludes that the grand battle account may synthesize smaller actions and may not describe one battle at all. The conflict is retained as an audited hold.",
+        "evidence_refs": [
+          "wave8_muslim_forces_donner_early_conquests",
+          "wave8_muslim_forces_iranica_arab_conquest"
+        ],
+        "reviewed_actor_description": [
+          "Rashidun forces in lower Iraq",
+          "Sasanian forces associated with Mihran"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Traditions grouped as the Battle of Buwayb",
+          "reviewed_date": "conventionally 635; exact constituent actions unresolved",
+          "reviewed_outcome": "Conventional Rashidun victory account is not secure at exact-event granularity"
+        },
+        "full_row_audited": true
+      }
+    ],
+    "wave8_muslim_forces_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Aleppo969-1",
+        "raw_row_sha256": "6e97db73161cce95561bacac32e9e5db122cd7b2e9ca788a8f7b3f3ba31276f9",
+        "canonical_event": {
+          "canonical_key": "aleppo_protectorate_transition:969:969",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Aleppo protectorate transition",
+          "year_low": 969,
+          "year_high": 969
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "negotiated_transition_not_binary_engagement",
+        "hold_reason": "Aleppo's 969–970 transition involved an internal Hamdanid struggle, a request for Byzantine intervention, and a negotiated protectorate. The locked binary Byzantine-versus-Muslims win is not one ratable engagement.",
+        "evidence_refs": [
+          "wave8_muslim_forces_cnrs_aleppo",
+          "wave8_muslim_forces_sorbonne_antioch"
+        ],
+        "reviewed_actor_description": [
+          "Qarghuya and Bakjur in Aleppo",
+          "Sa'd al-Dawla's rival force",
+          "Byzantine authorities"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Aleppo's negotiated Byzantine protectorate transition",
+          "reviewed_date": "December 969–January 970",
+          "reviewed_outcome": "Negotiated settlement following intra-Hamdanid conflict, not a binary Byzantine battlefield victory"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Alexandria641-642-1",
+        "raw_row_sha256": "5bfb1a1c4a4216b3eccdb3baf0d48dffd1f97db685f3c6b899e35d881d332150",
+        "canonical_event": {
+          "canonical_key": "first_siege_and_treaty_of_alexandria:641:641",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "First siege and treaty of Alexandria",
+          "year_low": 641,
+          "year_high": 641
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "locked_interval_truncates_treaty_execution",
+        "hold_reason": "The locked queue interval is 641–641 although the source record and reviewed event run through the Byzantine evacuation in 642. Exact promotion would silently truncate the event boundary.",
+        "evidence_refs": [
+          "wave8_muslim_forces_cambridge_byzantine_egypt",
+          "wave8_muslim_forces_cambridge_egypt_641_868"
+        ],
+        "reviewed_actor_description": [
+          "Rashidun army under Amr ibn al-As",
+          "Byzantine authorities and garrison at Alexandria"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "First siege, treaty, and evacuation of Alexandria",
+          "reviewed_date": "treaty in November 641; evacuation completed in September 642",
+          "reviewed_outcome": "Negotiated evacuation and Rashidun occupation after the locked interval"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Alexandria645-1",
+        "raw_row_sha256": "fb7abbf7ecb8e9688d233735ab32247f2a693c0300e338ee4005b3c733ddfc98",
+        "canonical_event": {
+          "canonical_key": "alexandria_reconquest_assertion:645:645",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Alexandria reconquest assertion",
+          "year_low": 645,
+          "year_high": 645
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "winner_and_conquest_phase_mismatch",
+        "hold_reason": "A Byzantine expedition under Manuel retook Alexandria in 645; the final Rashidun recovery belongs to 646. Reversing the winner or shifting the date would create a different event.",
+        "evidence_refs": [
+          "wave8_muslim_forces_cambridge_byzantine_egypt",
+          "wave8_muslim_forces_cambridge_egypt_641_868"
+        ],
+        "reviewed_actor_description": [
+          "Byzantine expedition under Manuel",
+          "Rashidun garrison or recovery force"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Byzantine recapture and later Rashidun recovery of Alexandria",
+          "reviewed_date": "Byzantine recapture in 645; Rashidun recovery in 646",
+          "reviewed_outcome": "The locked 645 Rashidun win is the wrong phase and orientation"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Arqa1098-1",
+        "raw_row_sha256": "1c8f22de80a9be75edbe00915a654f5b9e67184ebd7e5f573d7592ee8102fee7",
+        "canonical_event": {
+          "canonical_key": "siege_of_arqa_assertion:1098:1098",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Siege of Arqa assertion",
+          "year_low": 1098,
+          "year_high": 1098
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "event_year_mismatch",
+        "hold_reason": "The First Crusade siege of Arqa occurred in 1099 and ended without a crusader capture. The locked 1098 Muslim win cannot be repaired without changing the event and year.",
+        "evidence_refs": [
+          "wave8_muslim_forces_cambridge_arqa"
+        ],
+        "reviewed_actor_description": [
+          "Raymond of Saint-Gilles's crusader siege force",
+          "Defenders of Arqa"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Unsuccessful First Crusade siege of Arqa",
+          "reviewed_date": "14 February–13 May 1099",
+          "reviewed_outcome": "The crusaders abandoned the siege; no 1098 engagement matching the row was established"
+        },
+        "full_row_audited": true
+      },
+      {
+        "candidate_id": "hced-Babylon, Egypt640-1",
+        "raw_row_sha256": "b256680a4b6890528f3fcb412f27a075f1bb6f4f6a1a2b22fc6294a71a5a6677",
+        "canonical_event": {
+          "canonical_key": "siege_of_babylon_fortress_assertion:640:640",
+          "date_precision": "year",
+          "granularity": "engagement",
+          "name": "Siege of Babylon fortress assertion",
+          "year_low": 640,
+          "year_high": 640
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "locked_interval_truncates_siege",
+        "hold_reason": "The siege of Babylon fortress began in 640 but its surrender belongs to 641. A one-year 640 Rashidun win would attach the outcome before it occurred and violate exact event granularity.",
+        "evidence_refs": [
+          "wave8_muslim_forces_cambridge_byzantine_egypt",
+          "wave8_muslim_forces_cambridge_egypt_641_868"
+        ],
+        "reviewed_actor_description": [
+          "Rashidun army under Amr ibn al-As",
+          "Byzantine Babylon fortress garrison"
+        ],
+        "reviewed_granularity": "exact_row_assertion",
+        "historical_event": {
+          "name": "Siege and surrender of Babylon fortress in Egypt",
+          "reviewed_date": "siege in 640–641; surrender at Easter 641",
+          "reviewed_outcome": "Rashidun acquisition followed a 641 surrender outside the locked interval"
+        },
+        "full_row_audited": true
+      }
+    ],
+    "wave8_muslim_forces_duplicate_dispositions": [
+      {
+        "disposition_id": "aleppo_antioch_969",
+        "candidate_ids": [
+          "hced-Aleppo969-1",
+          "hced-Antioch, Syria969-1"
+        ],
+        "disposition": "distinct_events",
+        "reason": "Aleppo's negotiated protectorate transition and Antioch's armed capture are separate 969 events in different cities."
+      },
+      {
+        "disposition_id": "alexandria_phases_641_645",
+        "candidate_ids": [
+          "hced-Alexandria641-642-1",
+          "hced-Alexandria645-1"
+        ],
+        "disposition": "distinct_conquest_phases",
+        "reason": "The first treaty/evacuation and the later Byzantine recapture belong to separate phases and neither is emitted from its malformed locked row."
+      },
+      {
+        "disposition_id": "guadalete_ecija_711",
+        "candidate_ids": [
+          "hced-Guadalete711-1",
+          "hced-Ecija711-1"
+        ],
+        "disposition": "distinct_engagements_same_campaign",
+        "reason": "The Écija action followed the battle traditionally called Guadalete and is not a duplicate rating of Roderic's defeat."
+      },
+      {
+        "disposition_id": "harenc_orontes_1098",
+        "candidate_ids": [
+          "hced-Harenc1098-1",
+          "hced-Orontes1098-1"
+        ],
+        "disposition": "distinct_engagements_same_campaign",
+        "reason": "Harenc is the 9 February action against Ridwan; Orontes represents the later 28 June action against Kerbogha."
+      }
+    ],
+    "wave8_muslim_forces_integration_dispositions": [
+      {
+        "candidate_id": "hced-Aleppo1260-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Aleppo639-1",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Aleppo962-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Aleppo969-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [
+          "aleppo_antioch_969"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Alexandria641-642-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [
+          "alexandria_phases_641_645"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Alexandria645-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [
+          "alexandria_phases_641_645"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Amida973-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Amorium669-1",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Antioch, Syria969-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "aleppo_antioch_969"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Arqa1098-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Babylon, Egypt640-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Babylon, Iraq634-1",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Beirut1110-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "kingdom of jerusalem crusaders",
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Bosra634-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Bridge634-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims",
+          "sassanians"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Buwayb635-1",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims",
+          "sassanids"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Buzakha632-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "beni asad tribe",
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Castrogiovanni859-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Cerami1063-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Ceuta1415-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "muslims",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Ecija711-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims",
+          "visigothic spain"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "guadalete_ecija_711"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Guadalete711-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "guadalete_ecija_711"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Harenc1098-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "muslims"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "harenc_orontes_1098"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      }
+    ],
+    "wave8_muslim_forces_entities_added": 24,
+    "wave8_muslim_forces_sources_added": 25,
+    "hced_label_pass_input_rows": 5964,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2737,7 +3460,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 617,
+      "reserved_candidate_contract": 640,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2745,11 +3468,11 @@
       "curated_row_exclusion": 71,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 464,
+      "faction_label_not_a_polity": 461,
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2462,
+      "no_unique_time_valid_label_match": 2442,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

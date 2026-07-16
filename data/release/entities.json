@@ -842,6 +842,21 @@
     ]
   },
   {
+    "id": "tulayha_asad_ghatafan_force_buzakha_632",
+    "name": "Tulayha's Asad–Ghatafan force at Buzakha in 632",
+    "kind": "event_bounded_tribal_coalition",
+    "start_year": 632,
+    "end_year": 632,
+    "region": "Central Arabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is the source-attested force under Tulayha at Buzakha, not either tribe in other contexts. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_buzakha",
+      "wave8_muslim_forces_tabari_volume_10"
+    ]
+  },
+  {
     "id": "ullais_sasanian_christian_arab_coalition_633",
     "name": "Sasanian–Christian Arab coalition at Ullais",
     "kind": "field_coalition",
@@ -956,6 +971,50 @@
     ]
   },
   {
+    "id": "roderic_visigothic_royal_army_711",
+    "name": "Roderic's Visigothic royal army in 711",
+    "kind": "event_bounded_royal_army",
+    "start_year": 711,
+    "end_year": 711,
+    "region": "Southern Iberia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with Roderic's defeat in the summer 711 battle traditionally called Guadalete. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_barcelona_iberia_711",
+      "wave8_muslim_forces_cambridge_visigothic_conquest"
+    ]
+  },
+  {
+    "id": "tariq_ibn_ziyad_invasion_army_711",
+    "name": "Tariq ibn Ziyad's invasion army in Iberia in 711",
+    "kind": "campaign_bounded_invasion_army",
+    "start_year": 711,
+    "end_year": 711,
+    "region": "Southern Iberia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to Tariq's 711 invasion campaign and does not absorb later Andalusi dynasties. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_barcelona_iberia_711",
+      "wave8_muslim_forces_cambridge_visigothic_conquest"
+    ]
+  },
+  {
+    "id": "ecija_visigothic_defenders_711",
+    "name": "Écija defenders and Visigothic survivors in 711",
+    "kind": "event_bounded_city_field_force",
+    "start_year": 711,
+    "end_year": 711,
+    "region": "Southern Iberia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the local defenders and survivors who fought Tariq near Écija after Guadalete. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_barcelona_iberia_711"
+    ]
+  },
+  {
     "id": "clio_iq_abbasid_cal_1_750_82ab6afc",
     "name": "Abbasid Caliphate",
     "kind": "caliphate",
@@ -1067,6 +1126,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "al_abbas_aghlabid_enna_force_859",
+    "name": "Al-Abbas ibn al-Fadl's Aghlabid Sicilian force at Enna in 859",
+    "kind": "event_bounded_field_force",
+    "start_year": 859,
+    "end_year": 859,
+    "region": "Sicily",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the January 859 capture of Enna and does not merge other Aghlabid campaigns. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_metcalfe_sicily",
+      "wave8_muslim_forces_unesco_enna"
     ]
   },
   {
@@ -1209,6 +1283,49 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "sayf_al_dawla_aleppo_force_962",
+    "name": "Sayf al-Dawla's Aleppo force in 962",
+    "kind": "event_bounded_emirate_force",
+    "start_year": 962,
+    "end_year": 962,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with Nikephoros Phokas's December 962 capture and sack of Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cnrs_aleppo",
+      "wave8_muslim_forces_garrood_aleppo"
+    ]
+  },
+  {
+    "id": "az_zughayli_antioch_garrison_969",
+    "name": "Az-Zughayli's Antioch garrison in 969",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 969,
+    "end_year": 969,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the Byzantine capture of Antioch on 28 October 969. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_sorbonne_antioch"
+    ]
+  },
+  {
+    "id": "hamdanid_mosul_amida_relief_force_973",
+    "name": "Hamdanid Mosul relief force at Amida in 973",
+    "kind": "event_bounded_relief_army",
+    "start_year": 973,
+    "end_year": 973,
+    "region": "Upper Mesopotamia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers Hibatallah's relief force at Amida on 3 July 973 and not a timeless Hamdanid actor. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_bbaw_amida"
     ]
   },
   {
@@ -1373,6 +1490,50 @@
     ]
   },
   {
+    "id": "african_reinforcement_contingent_cerami_1063",
+    "name": "African reinforcement contingent at Cerami in 1063",
+    "kind": "event_bounded_allied_contingent",
+    "start_year": 1063,
+    "end_year": 1063,
+    "region": "Sicily",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity preserves Malaterra's separately attested African contingent at Cerami. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_malaterra_cerami"
+    ]
+  },
+  {
+    "id": "roger_i_norman_force_cerami_1063",
+    "name": "Roger I's Norman force at Cerami in 1063",
+    "kind": "event_bounded_field_force",
+    "start_year": 1063,
+    "end_year": 1063,
+    "region": "Sicily",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is Roger's force at Cerami and not a timeless Norman polity. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_malaterra_cerami",
+      "wave8_muslim_forces_metcalfe_sicily"
+    ]
+  },
+  {
+    "id": "sicilian_defending_force_cerami_1063",
+    "name": "Sicilian defending force at Cerami in 1063",
+    "kind": "event_bounded_field_force",
+    "start_year": 1063,
+    "end_year": 1063,
+    "region": "Sicily",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity preserves the Sicilian force at Cerami without extending it to another emirate or campaign. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_malaterra_cerami",
+      "wave8_muslim_forces_metcalfe_sicily"
+    ]
+  },
+  {
     "id": "kingdom_castile_1065",
     "name": "Kingdom of Castile",
     "kind": "kingdom",
@@ -1404,6 +1565,34 @@
     ]
   },
   {
+    "id": "bohemond_lake_antioch_cavalry_1098",
+    "name": "Bohemond's crusader cavalry at the Lake of Antioch in 1098",
+    "kind": "event_bounded_field_force",
+    "start_year": 1098,
+    "end_year": 1098,
+    "region": "Northern Syria and Antioch",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the 9 February 1098 sortie against Ridwan's relief army. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_gesta_harenc"
+    ]
+  },
+  {
+    "id": "ridwan_aleppo_relief_army_1098",
+    "name": "Ridwan of Aleppo's relief army at Antioch in 1098",
+    "kind": "event_bounded_relief_army",
+    "start_year": 1098,
+    "end_year": 1098,
+    "region": "Northern Syria and Antioch",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the defeat of Ridwan's relief army on 9 February 1098. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_gesta_harenc"
+    ]
+  },
+  {
     "id": "clio_il_jerusalem_k_1_1099_306afd1d",
     "name": "Kingdom of Jerusalem",
     "kind": "kingdom",
@@ -1431,6 +1620,94 @@
     "continuity_note": "Republic identity only; separately administered Bank of Saint George colonies do not automatically inherit it.",
     "source_ids": [
       "wave6_treccani_genoa"
+    ]
+  },
+  {
+    "id": "baldwin_i_beirut_siege_force_1110",
+    "name": "Baldwin I's Jerusalem force at Beirut in 1110",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers Baldwin I's force in the February–May 1110 siege of Beirut only. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics",
+      "wave8_muslim_forces_routledge_baldwin"
+    ]
+  },
+  {
+    "id": "bertrand_tripoli_beirut_force_1110",
+    "name": "Bertrand of Tripoli's force at Beirut in 1110",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers Bertrand's attested force in the Beirut siege only. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics",
+      "wave8_muslim_forces_routledge_baldwin"
+    ]
+  },
+  {
+    "id": "fatimid_beirut_garrison_1110",
+    "name": "Fatimid Beirut garrison in 1110",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the capture of Beirut on 13 May 1110. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics",
+      "wave8_muslim_forces_routledge_baldwin"
+    ]
+  },
+  {
+    "id": "fatimid_coastal_relief_fleet_beirut_1110",
+    "name": "Fatimid coastal relief fleet at Beirut in 1110",
+    "kind": "event_bounded_naval_force",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the Fatimid ships from Tyre and Sidon that attempted to break the Beirut blockade. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics"
+    ]
+  },
+  {
+    "id": "genoese_beirut_blockade_fleet_1110",
+    "name": "Genoese fleet at Beirut in 1110",
+    "kind": "event_bounded_naval_contingent",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the Genoese blockade contingent at Beirut only. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics",
+      "wave8_muslim_forces_routledge_baldwin"
+    ]
+  },
+  {
+    "id": "pisan_beirut_blockade_fleet_1110",
+    "name": "Pisan fleet at Beirut in 1110",
+    "kind": "event_bounded_naval_contingent",
+    "start_year": 1110,
+    "end_year": 1110,
+    "region": "Levantine coast",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the Pisan blockade contingent at Beirut only. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_siege_tactics"
     ]
   },
   {
@@ -1693,6 +1970,62 @@
     "source_ids": [
       "cliopatria_polities",
       "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "ayyubid_aleppo_city_garrison_1260",
+    "name": "Ayyubid Aleppo city garrison in January 1260",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 1260,
+    "end_year": 1260,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers Turanshah's defenders of Aleppo city, not the later citadel capitulation or another Ayyubid line. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_mongols_aleppo"
+    ]
+  },
+  {
+    "id": "cilician_armenian_aleppo_contingent_1260",
+    "name": "Cilician Armenian contingent at Aleppo in 1260",
+    "kind": "event_bounded_allied_contingent",
+    "start_year": 1260,
+    "end_year": 1260,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Cilician Armenian contingent accompanying Hülegü at Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_mongols_aleppo"
+    ]
+  },
+  {
+    "id": "georgian_aleppo_contingent_1260",
+    "name": "Georgian contingent at Aleppo in 1260",
+    "kind": "event_bounded_allied_contingent",
+    "start_year": 1260,
+    "end_year": 1260,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Georgian contingent accompanying Hülegü at Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_mongols_aleppo"
+    ]
+  },
+  {
+    "id": "rum_seljuq_aleppo_contingent_1260",
+    "name": "Rūm Seljuq contingent at Aleppo in 1260",
+    "kind": "event_bounded_allied_contingent",
+    "start_year": 1260,
+    "end_year": 1260,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Rūm Seljuq contingent accompanying Hülegü at Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_mongols_aleppo"
     ]
   },
   {
@@ -2028,6 +2361,21 @@
       "ucl_champaner"
     ],
     "start_year": 1407
+  },
+  {
+    "id": "salah_ben_salah_ceuta_defenders_1415",
+    "name": "Salah ben Salah's Ceuta defenders in 1415",
+    "kind": "event_bounded_city_defence",
+    "start_year": 1415,
+    "end_year": 1415,
+    "region": "Strait of Gibraltar",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the urban garrison and locally summoned defenders of Ceuta during the Portuguese assault. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
+    "source_ids": [
+      "wave8_muslim_forces_cambridge_ceuta",
+      "wave8_muslim_forces_cham_ceuta_sources"
+    ]
   },
   {
     "id": "clio_mx_aztec_emp_1429_ad90ec62",

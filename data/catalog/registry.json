@@ -485,6 +485,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "african_reinforcement_contingent_cerami_1063",
+      "name": "African reinforcement contingent at Cerami in 1063",
+      "kind": "event_bounded_allied_contingent",
+      "start_year": 1063,
+      "end_year": 1063,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sicily"
+    },
+    {
       "id": "afsharid_iran",
       "name": "Afsharid Iran",
       "kind": "empire",
@@ -556,6 +566,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "al_abbas_aghlabid_enna_force_859",
+      "name": "Al-Abbas ibn al-Fadl's Aghlabid Sicilian force at Enna in 859",
+      "kind": "event_bounded_field_force",
+      "start_year": 859,
+      "end_year": 859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sicily"
     },
     {
       "id": "clio_q178054_414_498ecc98",
@@ -1108,6 +1128,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ayyubid_aleppo_city_garrison_1260",
+      "name": "Ayyubid Aleppo city garrison in January 1260",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 1260,
+      "end_year": 1260,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
+    },
+    {
       "id": "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
       "name": "Ayyubid Sultanate",
       "kind": "sultanate",
@@ -1116,6 +1146,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "az_zughayli_antioch_garrison_969",
+      "name": "Az-Zughayli's Antioch garrison in 969",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 969,
+      "end_year": 969,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
     },
     {
       "id": "clio_q227_1918_3c8832e0",
@@ -1245,6 +1285,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Doon Valley"
+    },
+    {
+      "id": "baldwin_i_beirut_siege_force_1110",
+      "name": "Baldwin I's Jerusalem force at Beirut in 1110",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
     },
     {
       "id": "clio_kr_balhae_k_705_40a38d8a",
@@ -1417,6 +1467,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bertrand_tripoli_beirut_force_1110",
+      "name": "Bertrand of Tripoli's force at Beirut in 1110",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
     },
     {
       "id": "clio_q174994_1812_bac75705",
@@ -1602,6 +1662,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bohemond_lake_antioch_cavalry_1098",
+      "name": "Bohemond's crusader cavalry at the Lake of Antioch in 1098",
+      "kind": "event_bounded_field_force",
+      "start_year": 1098,
+      "end_year": 1098,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria and Antioch"
     },
     {
       "id": "clio_bo_bolivia_modern_1825_016dfcaa",
@@ -2487,6 +2557,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "cilician_armenian_aleppo_contingent_1260",
+      "name": "Cilician Armenian contingent at Aleppo in 1260",
+      "kind": "event_bounded_allied_contingent",
+      "start_year": 1260,
+      "end_year": 1260,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
     },
     {
       "id": "clio_q321371_bce404_6c9ad1b4",
@@ -4995,6 +5075,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "fatimid_beirut_garrison_1110",
+      "name": "Fatimid Beirut garrison in 1110",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
+    },
+    {
       "id": "clio_tn_fatimid_cal_911_d329b0b3",
       "name": "Fatimid Caliphate",
       "kind": "caliphate",
@@ -5003,6 +5093,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "fatimid_coastal_relief_fleet_beirut_1110",
+      "name": "Fatimid coastal relief fleet at Beirut in 1110",
+      "kind": "event_bounded_naval_force",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
     },
     {
       "id": "clio_q2625228_1814_6fff5b44",
@@ -5922,6 +6022,16 @@
       "region": "Southern Africa"
     },
     {
+      "id": "genoese_beirut_blockade_fleet_1110",
+      "name": "Genoese fleet at Beirut in 1110",
+      "kind": "event_bounded_naval_contingent",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
+    },
+    {
       "id": "clio_q4962_567_91943f5d",
       "name": "Georgia",
       "kind": "polity",
@@ -5931,6 +6041,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "georgian_aleppo_contingent_1260",
+      "name": "Georgian contingent at Aleppo in 1260",
+      "kind": "event_bounded_allied_contingent",
+      "start_year": 1260,
+      "end_year": 1260,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
     },
     {
       "id": "clio_q5551337_1871_af3f2b84",
@@ -6632,6 +6752,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "hamdanid_mosul_amida_relief_force_973",
+      "name": "Hamdanid Mosul relief force at Amida in 973",
+      "kind": "event_bounded_relief_army",
+      "start_year": 973,
+      "end_year": 973,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Mesopotamia"
     },
     {
       "id": "clio_q588672_1018_4c7aa9cb",
@@ -13506,6 +13636,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "pisan_beirut_blockade_fleet_1110",
+      "name": "Pisan fleet at Beirut in 1110",
+      "kind": "event_bounded_naval_contingent",
+      "start_year": 1110,
+      "end_year": 1110,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levantine coast"
+    },
+    {
       "id": "clio_q1026_1830_a227c64f",
       "name": "Poles",
       "kind": "polity",
@@ -15748,6 +15888,16 @@
       "region": "Ireland and the Irish Sea"
     },
     {
+      "id": "ridwan_aleppo_relief_army_1098",
+      "name": "Ridwan of Aleppo's relief army at Antioch in 1098",
+      "kind": "event_bounded_relief_army",
+      "start_year": 1098,
+      "end_year": 1098,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria and Antioch"
+    },
+    {
       "id": "clio_q162192_1836_494dcd9f",
       "name": "Riograndense Republic",
       "kind": "republic",
@@ -15768,6 +15918,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "roderic_visigothic_royal_army_711",
+      "name": "Roderic's Visigothic royal army in 711",
+      "kind": "event_bounded_royal_army",
+      "start_year": 711,
+      "end_year": 711,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Iberia"
+    },
+    {
+      "id": "roger_i_norman_force_cerami_1063",
+      "name": "Roger I's Norman force at Cerami in 1063",
+      "kind": "event_bounded_field_force",
+      "start_year": 1063,
+      "end_year": 1063,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sicily"
     },
     {
       "id": "guzow_rokosz_forces_1607",
@@ -15982,6 +16152,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "rum_seljuq_aleppo_contingent_1260",
+      "name": "Rūm Seljuq contingent at Aleppo in 1260",
+      "kind": "event_bounded_allied_contingent",
+      "start_year": 1260,
+      "end_year": 1260,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
+    },
+    {
       "id": "clio_ma_saadi_sultanate_1556_f35fe6b9",
       "name": "Saadi Sultanate",
       "kind": "sultanate",
@@ -16131,6 +16311,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "salah_ben_salah_ceuta_defenders_1415",
+      "name": "Salah ben Salah's Ceuta defenders in 1415",
+      "kind": "event_bounded_city_defence",
+      "start_year": 1415,
+      "end_year": 1415,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Strait of Gibraltar"
     },
     {
       "id": "clio_fr_merovingian_emp_1_358_4f946264",
@@ -16322,6 +16512,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "sayf_al_dawla_aleppo_force_962",
+      "name": "Sayf al-Dawla's Aleppo force in 962",
+      "kind": "event_bounded_emirate_force",
+      "start_year": 962,
+      "end_year": 962,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
     },
     {
       "id": "clio_in_delhi_sultanate_1415_b24f3887",
@@ -16717,6 +16917,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and the central Mediterranean"
+    },
+    {
+      "id": "sicilian_defending_force_cerami_1063",
+      "name": "Sicilian defending force at Cerami in 1063",
+      "kind": "event_bounded_field_force",
+      "start_year": 1063,
+      "end_year": 1063,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sicily"
     },
     {
       "id": "clio_q1044_1961_b5afd46f",
@@ -18216,6 +18426,16 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "tariq_ibn_ziyad_invasion_army_711",
+      "name": "Tariq ibn Ziyad's invasion army in Iberia in 711",
+      "kind": "campaign_bounded_invasion_army",
+      "start_year": 711,
+      "end_year": 711,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Iberia"
+    },
+    {
       "id": "clio_q2247225_367_5ab941a5",
       "name": "Tarumanagara",
       "kind": "polity",
@@ -18589,6 +18809,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "tulayha_asad_ghatafan_force_buzakha_632",
+      "name": "Tulayha's Asad–Ghatafan force at Buzakha in 632",
+      "kind": "event_bounded_tribal_coalition",
+      "start_year": 632,
+      "end_year": 632,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Arabia"
     },
     {
       "id": "clio_eg_thulunid_ikhshidid_875_75b0b972",
@@ -20101,6 +20331,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ecija_visigothic_defenders_711",
+      "name": "Écija defenders and Visigothic survivors in 711",
+      "kind": "event_bounded_city_field_force",
+      "start_year": 711,
+      "end_year": 711,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Iberia"
+    },
+    {
       "id": "clio_q5306909_1938_1a11a719",
       "name": "Éire",
       "kind": "polity",
@@ -20124,11 +20364,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1875,
-    "rated_entities": 512,
-    "rated_events": 5030,
+    "registry_polities": 1899,
+    "rated_entities": 536,
+    "rated_events": 5044,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18364,
+    "unresolved_event_candidates": 18350,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20161,6 +20401,7 @@
     "candidate_keyed_wave8_algiers_cheyenne_hced_events": 8,
     "candidate_keyed_wave8_dagestan_hced_events": 6,
     "candidate_keyed_wave8_irish_history_hced_events": 8,
+    "candidate_keyed_wave8_muslim_forces_hced_events": 14,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20171,21 +20412,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4766,
-      "candidate_keyed_reviewed_contracts": 456,
-      "geojson_points": 4699,
-      "modern_location_country_assertions": 4680,
-      "location_provenance_objects": 4729,
-      "point_fields_withheld_by_quarantine": 67,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 85,
+      "hced_candidate_bindings": 4780,
+      "candidate_keyed_reviewed_contracts": 470,
+      "geojson_points": 4710,
+      "modern_location_country_assertions": 4693,
+      "location_provenance_objects": 4742,
+      "point_fields_withheld_by_quarantine": 70,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 37,
-      "unique_events_with_any_quarantined_field": 115,
-      "point_quarantine_candidate_manifest_sha256": "de4f4c7c8b2e54db0d241ea9b4a8493e9c45ebc965f7042eeb02bfc93e115b2e",
-      "country_quarantine_candidate_manifest_sha256": "6783605f9063b67956fd416a954aa9f84124388c843a0cbad16b24abcd90d75e",
-      "quarantine_policy_sha256": "72c9686c4a749b6e5eda2de3ec100f5d0742e1aa1f20fe4c6aeaf14f7aa13e74",
+      "point_country_quarantine_overlap": 38,
+      "unique_events_with_any_quarantined_field": 118,
+      "point_quarantine_candidate_manifest_sha256": "c4251fd04892818ebc440d700b2dedc6a5dac3ee3a072f43165db73ed5abbd26",
+      "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
+      "quarantine_policy_sha256": "7cf517f6d8bb2367199e02457ffd6066eb79735e3182aaac2995387021f2addf",
       "assertion_status": {
-        "unreviewed_source_assertion": 4729
+        "unreviewed_source_assertion": 4742
       },
       "verified_location_assertions": {
         "availability": "not_available",

@@ -6979,6 +6979,354 @@
     ]
   },
   {
+    "id": "wave8_muslim_forces_barcelona_iberia_711",
+    "title": "La conquista islámica de la península ibérica y la tergiversación del pasado",
+    "url": "https://diposit.ub.edu/dspace/bitstream/2445/116723/1/JSA_TESIS.pdf",
+    "publisher": "University of Barcelona Digital Repository",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_barcelona_repository",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_bbaw_amida",
+    "title": "Prosopography of the Middle Byzantine Period: Melias entry",
+    "url": "https://telota.bbaw.de/pmbz/scripts/browse.xql?target=PMBZ24742",
+    "publisher": "Berlin-Brandenburg Academy of Sciences and Humanities",
+    "license": "linked_reference",
+    "source_type": "institutional_prosopography",
+    "accessed": "2026-07-16",
+    "source_family_id": "bbaw_pmbz",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_birmingham_amorium",
+    "title": "The first Arab siege of Constantinople: the campaign of Yazid b. Mu'awiya",
+    "url": "https://research.birmingham.ac.uk/en/publications/the-first-arab-siege-of-constantinople-the-campaign-of-yazid-b-mu/",
+    "publisher": "University of Birmingham Research Portal",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_birmingham_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_arqa",
+    "title": "The First Crusade and the conquest of Jerusalem",
+    "url": "https://www.cambridge.org/core/books/encountering-islam-on-the-first-crusade/first-crusade-and-the-conquest-of-jerusalem/F0BCDCA3818B44A9ABB1DEAA2C615A48",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_encountering_islam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_buzakha",
+    "title": "The evolution of a Companion report",
+    "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/937D3E1F8957DE0D8AB1BC151F14DD91/S0041977X25100621a.pdf/he_was_penetrated_like_a_woman_the_evolution_of_a_companion_report.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "bulletin_school_oriental_african_studies",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_byzantine_egypt",
+    "title": "Byzantine Egypt: Economy, Society and Culture (excerpt)",
+    "url": "https://assets.cambridge.org/97805211/45879/excerpt/9780521145879_excerpt.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_byzantine_egypt",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_ceuta",
+    "title": "North Africa",
+    "url": "https://www.cambridge.org/core/books/abs/history-of-portugal-and-the-portuguese-empire/north-africa/EA59E9E8A1D96483B9650A5D0B251E3F",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_portugal",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_egypt_641_868",
+    "title": "Egypt as a province in the Islamic caliphate, 641–868",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/FF5C416D97BB2C72F30F2E435B6AD7F4/9781139053372c3_p62-85_CBO.pdf/egypt_as_a_province_in_the_islamic_caliphate_641868.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_of_egypt",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_egypt_syria",
+    "title": "Egypt and Syria under the Mongols and Mamluks",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/2800F3B21E1FEA0881D0E757534113DC/9781139055024c6_p175-230_CBO.pdf/egypt_and_syria.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_mongol_empire",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_mongols_aleppo",
+    "title": "The Battle of 'Ayn Jalut and the Mongol conquest of Syria",
+    "url": "https://www.cambridge.org/core/books/abs/mongols-and-mamluks/battle-of-ayn-jalut/28AF2C512086301FC77D6DC25EAAF02D",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_mongols_and_mamluks",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_siege_tactics",
+    "title": "Frankish siege tactics",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/ADB87140C73EA51F6CDA0E9A19B1C6A1/9780511497247c13_p203-216_CBO.pdf/frankish_siege_tactics.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_crusader_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cambridge_visigothic_conquest",
+    "title": "Coinage in Spain in the aftermath of the Islamic conquest",
+    "url": "https://www.cambridge.org/core/books/abs/minting-state-and-economy-in-the-visigothic-kingdom/coinage-in-spain-in-the-aftermath-of-the-islamic-conquest/5B18B6610F8A2E235F5312CA8464A575",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_visigothic_kingdom",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cham_ceuta_sources",
+    "title": "Sources for the history of Portuguese expansion in Morocco, Volume I",
+    "url": "https://cham.fcsh.unl.pt/portugalemarrocos/files/sources_portugal_tomo_I.pdf",
+    "publisher": "CHAM, NOVA University Lisbon",
+    "license": "linked_reference",
+    "source_type": "institutional_primary_source_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "cham_nova_portuguese_expansion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_cnrs_aleppo",
+    "title": "Alep, de la conquête arabe à la conquête ottomane",
+    "url": "https://books.openedition.org/editionscnrs/88878",
+    "publisher": "CNRS Éditions / OpenEdition",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cnrs_editions_aleppo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_donner_early_conquests",
+    "title": "The Early Islamic Conquests",
+    "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/lamine1.pdf",
+    "publisher": "University of Chicago Oriental Institute",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_chicago_oriental_institute",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_garrood_aleppo",
+    "title": "The Byzantine conquest of Cilicia and the Hamdanids of Aleppo, 959–965",
+    "url": "https://www.cambridge.org/core/journals/anatolian-studies/article/abs/byzantine-conquest-of-cilicia-and-the-hamdanids-of-aleppo-959965/5C9F862B3ADFB1C123A58AB76F6BD157",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "anatolian_studies",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_gesta_harenc",
+    "title": "Gesta Francorum 6.17: Ridwan's relief army defeated near Antioch",
+    "url": "https://dcc.dickinson.edu/gesta-francorum/6-17-5%E2%80%936",
+    "publisher": "Dickinson College Commentaries",
+    "license": "linked_reference",
+    "source_type": "critical_edition_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "dickinson_college_commentaries",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_iranica_arab_conquest",
+    "title": "Arab conquest of Iran",
+    "url": "https://www.iranicaonline.org/articles/arab-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_konstanz_amorium",
+    "title": "The Arab occupation of Amorion in 669 and its later recovery",
+    "url": "https://wiki.uni-konstanz.de/transmed-de/index.php/785-791%3A_Papst_Hadrian_I._kritisiert_einen_Verfall_christlicher_Lehre_und_Praxis_auf_der_Iberischen_Halbinsel",
+    "publisher": "University of Konstanz Transmediterranean History",
+    "license": "linked_reference",
+    "source_type": "academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_konstanz_transmed",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_malaterra_cerami",
+    "title": "Geoffrey Malaterra, The Deeds of Count Roger, Book II",
+    "url": "https://eprints.whiterose.ac.uk/id/eprint/213518/1/Deeds%20of%20Count%20Roger%20part%20two.pdf",
+    "publisher": "White Rose Research Online, University of Leeds",
+    "license": "linked_reference",
+    "source_type": "critical_translation_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "white_rose_research_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_metcalfe_sicily",
+    "title": "The Muslims of Medieval Italy",
+    "url": "https://edinburghuniversitypress.com/book-the-muslims-of-medieval-italy.html",
+    "publisher": "Edinburgh University Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "edinburgh_university_press",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_routledge_baldwin",
+    "title": "Baldwin I of Jerusalem, 1100–1118",
+    "url": "https://www.routledge.com/Baldwin-I-of-Jerusalem-1100-1118/Edgington/p/book/9780367662370",
+    "publisher": "Routledge",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "routledge_crusader_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_sorbonne_antioch",
+    "title": "Antioche au Xe siècle",
+    "url": "https://books.openedition.org/psorbonne/1932?lang=en",
+    "publisher": "Éditions de la Sorbonne / OpenEdition",
+    "license": "linked_reference",
+    "source_type": "academic_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "sorbonne_byzantine_syria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_tabari_volume_10",
+    "title": "The History of al-Tabari, Volume 10: The Conquest of Arabia",
+    "url": "https://sunypress.edu/Books/T/The-History-of-al-abari-Vol.-102",
+    "publisher": "State University of New York Press",
+    "license": "linked_reference",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "suny_press_tabari",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_muslim_forces_unesco_enna",
+    "title": "Arab-Norman Palermo and the Cathedral Churches: nomination dossier",
+    "url": "https://whc.unesco.org/uploads/nominations/1487.pdf",
+    "publisher": "UNESCO World Heritage Centre",
+    "license": "linked_reference",
+    "source_type": "institutional_historical_dossier",
+    "accessed": "2026-07-16",
+    "source_family_id": "unesco_world_heritage_centre",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_naples_1799_cambridge",
     "title": "Enlightenment and Revolution: Naples 1799",
     "url": "https://www.cambridge.org/core/journals/transactions-of-the-royal-historical-society/article/abs/enlightenment-and-revolution-naples-1799/ED746A78587428361E11ACF242BA4ABA",
