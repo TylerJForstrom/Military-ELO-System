@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 549,
-    "events": 5050,
-    "sources": 617,
-    "registry_polities": 1905
+    "entities": 551,
+    "events": 5055,
+    "sources": 628,
+    "registry_polities": 1907
   },
   "year_range": {
     "start": -1274,
@@ -105,6 +105,7 @@
     "accepted_wave8_irish_history_hced_events": 8,
     "accepted_wave8_muslim_forces_hced_events": 14,
     "accepted_wave8_moros_hced_events": 6,
+    "accepted_wave8_manchus_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -3497,7 +3498,71 @@
     ],
     "wave8_moros_entities_added": 6,
     "wave8_moros_sources_added": 10,
-    "hced_label_pass_input_rows": 5958,
+    "wave8_manchus_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 2,
+      "new_sources": 11,
+      "newly_rated_events": 5,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_manchus_cohort_counts": {
+      "jin_ming_joseon_saerhu_campaign_1619": 1,
+      "jin_ming_liaodong_war_1621_1631": 3,
+      "qing_southern_ming_jiangnan_campaign_1645": 1
+    },
+    "wave8_manchus_queue_validation": {
+      "promotion_contracts": 5,
+      "holds": 1,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_manchus_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_manchus_candidate_ids": [
+      "hced-Ningyuan1626-1",
+      "hced-Niumaozhai1619-1",
+      "hced-Shenyang1621-1",
+      "hced-Xiaoling1631-1",
+      "hced-Yangzhou1645-1"
+    ],
+    "wave8_manchus_holds": [
+      {
+        "candidate_id": "hced-Pyongyang1627-1",
+        "raw_row_sha256": "5ced47d9c4208fa36db6496c57533c0384b56b7aa1326c4a8a2bf708e360af87",
+        "canonical_event": {
+          "canonical_key": "occupation_of_pyongyang:1627:1627",
+          "date_precision": "year",
+          "date_text": "early 1627 (occupied without a fight)",
+          "granularity": "noncompetitive_occupation",
+          "name": "Occupation of Pyongyang",
+          "year_low": 1627,
+          "year_high": 1627
+        },
+        "hold_category": "noncompetitive_occupation_without_battle",
+        "hold_reason": "Swope reports that Jin forces took Pyongyang without a fight during the 1627 invasion. A noncompetitive occupation cannot produce an Elo result, and HCED's raw Joseon loser is not converted into a battlefield opponent. No winner or loser is emitted; unknown is never made a draw.",
+        "evidence_refs": [
+          "wave8_manchus_kci_first_invasion_1627",
+          "wave8_manchus_swope_military_collapse"
+        ]
+      }
+    ],
+    "wave8_manchus_iwbd_duplicate_dispositions": [],
+    "wave8_manchus_cross_lane_dispositions": [],
+    "wave8_manchus_integration_dispositions": [],
+    "wave8_manchus_outcome_overrides": [],
+    "wave8_manchus_entities_added": 2,
+    "wave8_manchus_sources_added": 11,
+    "hced_label_pass_input_rows": 5952,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -3510,7 +3575,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 646,
+      "reserved_candidate_contract": 652,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -3522,7 +3587,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2436,
+      "no_unique_time_valid_label_match": 2430,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

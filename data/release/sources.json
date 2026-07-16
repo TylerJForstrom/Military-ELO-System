@@ -6979,6 +6979,165 @@
     ]
   },
   {
+    "id": "wave8_manchus_cambridge_qing_inner_asia",
+    "title": "The Qing and Inner Asia: 1636-1800",
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-inner-asia/qing-and-inner-asia-16361800/F843687E97193ED212B2CF1BDEBA3357",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_di_cosmo_qing_inner_asia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_manchus_cambridge_southern_ming",
+    "title": "The Southern Ming, 1644-1662",
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-china/southern-ming-16441662/97FA570559404A627906FBF78D0C3A09",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_struve_southern_ming",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_huang_liaotung_1619",
+    "title": "The Liao-tung Campaign of 1619",
+    "url": "https://d-nb.info/1142298841/34",
+    "publisher": "Oriens Extremus 28.1; German National Library digital copy",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "huang_liaotung_campaign_1619",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_ihp_saerhu_artillery",
+    "title": "The Defeat in the Battle of Saerhu (1619) and the Introduction of European-style Muzzle Loading Artillery into Late-Ming China",
+    "url": "https://www1.ihp.sinica.edu.tw/en/Publications/Bulletin/62/Article/217",
+    "publisher": "Institute of History and Philology, Academia Sinica",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "ihp_huang_saerhu_artillery_2008",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_kci_first_invasion_1627",
+    "title": "Analysis on Combat and Negotiation Phases during the First Manchu Invasion of Choson in 1627",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002839932",
+    "publisher": "Korea Citation Index; Institute of Korean Local History",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "jang_first_manchu_invasion_1627",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_manchus_lu_huang_preqing_title",
+    "title": "A New Study of the Title of the Reigning Dynasty during the Pre-Qing Period",
+    "url": "https://doi.org/10.1163/23521341-12340146",
+    "publisher": "Brill, Journal of Chinese Humanities",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_open_access_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "lu_huang_preqing_dynastic_title",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_manchus_ming_history_yuan_chonghuan",
+    "title": "History of Ming: Biography of Yuan Chonghuan",
+    "url": "https://ctext.org/wiki.pl?chapter=88096&if=en",
+    "publisher": "Chinese Text Project digitization of the Ming Shi",
+    "license": "Citation and link only",
+    "source_type": "digitized_dynastic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ming_shi_yuan_chonghuan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_ncu_dalinghe",
+    "title": "Reexamining the Battle of Dalinghe: A Military Perspective",
+    "url": "https://etd.lib.ncu.edu.tw/thesis/detail/90aaf0ec2c0519a411ca2f7492d37c4b/",
+    "publisher": "National Central University",
+    "license": "Citation and link only",
+    "source_type": "institutional_scholarly_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "tang_dalinghe_military_thesis_2016",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_swope_military_collapse",
+    "title": "The Military Collapse of China's Ming Dynasty, 1618-44",
+    "url": "https://www.routledge.com/The-Military-Collapse-of-Chinas-Ming-Dynasty-1618-44-1st-Edition/Swope/p/book/9780203795439",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "swope_military_collapse_ming",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_taiwan_waiji_yangzhou",
+    "title": "Taiwan Waiji, Volume 4 (Yangzhou and the Hongguang court)",
+    "url": "https://ctext.org/wiki.pl?chapter=907884&if=en",
+    "publisher": "Chinese Text Project digitization",
+    "license": "Citation and link only",
+    "source_type": "digitized_near_contemporary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "taiwan_waiji_volume_4",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_manchus_wakeman_great_enterprise",
+    "title": "The Great Enterprise, Volume 1",
+    "url": "https://www.ucpress.edu/books/the-great-enterprise-volume-1/hardcover",
+    "publisher": "University of California Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "wakeman_great_enterprise_volume_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_moros_22d_infantry_datu_ali_archive",
     "title": "The Datu Ali Expedition",
     "url": "https://www.1-22infantry.org/history3/ali.htm",

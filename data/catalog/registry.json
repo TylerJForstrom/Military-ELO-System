@@ -8113,6 +8113,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "nurhaci_hong_taiji_jin_state_1616_1636",
+      "name": "Jin state of Nurhaci and Hong Taiji (1616-1636)",
+      "kind": "dynastic_state",
+      "start_year": 1616,
+      "end_year": 1636,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Manchuria and the Liaodong frontier"
+    },
+    {
       "id": "clio_cn_five_dyn_926_0366700e",
       "name": "Jingnan",
       "kind": "polity",
@@ -17321,6 +17331,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "southern_ming_hongguang_regime_1644_1645",
+      "name": "Southern Ming Hongguang regime (1644-1645)",
+      "kind": "rump_dynastic_regime",
+      "start_year": 1644,
+      "end_year": 1645,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Yangzi and southern China"
+    },
+    {
       "id": "clio_cn_southern_qi_dyn_480_efd17137",
       "name": "Southern Qi",
       "kind": "polity",
@@ -20424,11 +20444,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1905,
-    "rated_entities": 542,
-    "rated_events": 5050,
+    "registry_polities": 1907,
+    "rated_entities": 544,
+    "rated_events": 5055,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18344,
+    "unresolved_event_candidates": 18339,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20463,6 +20483,7 @@
     "candidate_keyed_wave8_irish_history_hced_events": 8,
     "candidate_keyed_wave8_muslim_forces_hced_events": 14,
     "candidate_keyed_wave8_moros_hced_events": 6,
+    "candidate_keyed_wave8_manchus_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20473,21 +20494,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4786,
-      "candidate_keyed_reviewed_contracts": 476,
-      "geojson_points": 4710,
-      "modern_location_country_assertions": 4699,
-      "location_provenance_objects": 4748,
-      "point_fields_withheld_by_quarantine": 76,
+      "hced_candidate_bindings": 4791,
+      "candidate_keyed_reviewed_contracts": 481,
+      "geojson_points": 4712,
+      "modern_location_country_assertions": 4704,
+      "location_provenance_objects": 4753,
+      "point_fields_withheld_by_quarantine": 79,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 124,
-      "point_quarantine_candidate_manifest_sha256": "a680d82c6e320c2480ea778c620d2d5946df26a63392938d73b262b88333bd5c",
+      "unique_events_with_any_quarantined_field": 127,
+      "point_quarantine_candidate_manifest_sha256": "d1ebc442a2f1d2901c2d221d2fc982e7ad284d1719099babbabb37053e16f53c",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "8643935690af9753690bb337c40eaf6300210a99426cf670caadff142594ec1d",
+      "quarantine_policy_sha256": "6e90feedde1f2c72321a13381b139e14bd348379034a11022ea01473f0bd9f8b",
       "assertion_status": {
-        "unreviewed_source_assertion": 4748
+        "unreviewed_source_assertion": 4753
       },
       "verified_location_assertions": {
         "availability": "not_available",

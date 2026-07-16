@@ -3114,6 +3114,21 @@
     ]
   },
   {
+    "id": "nurhaci_hong_taiji_jin_state_1616_1636",
+    "name": "Jin state of Nurhaci and Hong Taiji (1616-1636)",
+    "kind": "dynastic_state",
+    "start_year": 1616,
+    "end_year": 1636,
+    "region": "Manchuria and the Liaodong frontier",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "State bounded from Nurhaci's 1616 proclamation through Hong Taiji's 1636 proclamation of Great Qing. Later Jin is a historiographical convention; the reviewed official usage calls the state Jin. No rating is inherited by Jurchen or Manchu peoples, the Eight Banners, the Qing state, any earlier Jin dynasty, a field force, or a modern state.",
+    "source_ids": [
+      "wave8_manchus_cambridge_qing_inner_asia",
+      "wave8_manchus_lu_huang_preqing_title"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Composite Hohenzollern state through 1700; the Kingdom of Prussia begins in 1701, and neither identity inherits the other's rating across that reset. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1700,
@@ -3215,6 +3230,21 @@
     "source_ids": [
       "britannica_english_civil_wars",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "southern_ming_hongguang_regime_1644_1645",
+    "name": "Southern Ming Hongguang regime (1644-1645)",
+    "kind": "rump_dynastic_regime",
+    "start_year": 1644,
+    "end_year": 1645,
+    "region": "Lower Yangzi and southern China",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The first Southern Ming court, established at Nanjing in 1644 and collapsed in 1645. No rating is inherited by the pre-1644 Ming state, later Southern Ming courts, loyalist field armies, the Qing state, or a modern state.",
+    "source_ids": [
+      "wave8_manchus_cambridge_southern_ming",
+      "wave8_manchus_wakeman_great_enterprise"
     ]
   },
   {
