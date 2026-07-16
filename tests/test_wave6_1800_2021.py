@@ -65,11 +65,11 @@ class Wave6InventoryTests(unittest.TestCase):
     def test_exact_frozen_inventory(self):
         self.assertEqual(
             WAVE6_EXPECTED_IMPLEMENTED_COUNTS,
-            {"hced": 60, "iwd": 0, "iwbd": 8, "total": 68},
+            {"hced": 60, "iwd": 0, "iwbd": 9, "total": 69},
         )
         self.assertEqual(len(WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS), 60)
         self.assertEqual(WAVE6_IWD_REVIEWED_PARENT_CONTRACTS, {})
-        self.assertEqual(len(WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS), 8)
+        self.assertEqual(len(WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS), 9)
         self.assertEqual(
             {
                 candidate_id
@@ -81,16 +81,16 @@ class Wave6InventoryTests(unittest.TestCase):
 
     def test_exact_frozen_holds_and_cross_lane_omissions(self):
         self.assertEqual(
-            WAVE6_EXPECTED_HELD_COUNTS, {"hced": 42, "iwd": 15, "iwbd": 226}
+            WAVE6_EXPECTED_HELD_COUNTS, {"hced": 42, "iwd": 15, "iwbd": 225}
         )
         self.assertEqual(len(WAVE6_HCED_AUDITED_HOLD_IDS), 42)
         self.assertEqual(len(WAVE6_HCED_COMPANION_EXCLUSION_IDS), 15)
         self.assertEqual(len(WAVE6_IWD_CURATED_PARENT_EXCLUSIONS), 15)
-        self.assertEqual(len(WAVE6_IWBD_HELD_SOURCE_CONTRACTS), 226)
-        self.assertEqual(len(WAVE6_IWBD_CURATED_EXCLUSIONS), 204)
+        self.assertEqual(len(WAVE6_IWBD_HELD_SOURCE_CONTRACTS), 225)
+        self.assertEqual(len(WAVE6_IWBD_CURATED_EXCLUSIONS), 203)
         self.assertEqual(len(WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS), 14)
         self.assertEqual(len(WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS), 1)
-        self.assertEqual(len(WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS), 7)
+        self.assertEqual(len(WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS), 6)
         self.assertEqual(len(WAVE6_IWBD_BASELINE_PUBLISHED_HOLD_IDS), 22)
         self.assertEqual(
             set(WAVE6_IWBD_BASELINE_PRESERVATION_REASONS),

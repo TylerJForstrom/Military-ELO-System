@@ -4,14 +4,17 @@ import unittest
 from pathlib import Path
 
 from military_elo.release import (
+    HCED_CURATED_EXCLUSIONS,
     HCED_FACTION_LABELS,
     HCED_LABEL_POLICIES,
     HCED_PENDING_SPLIT_LABELS,
+    _canonicalize_superseded_identity,
     _candidate_entity_id,
     _event_key,
     _label_policy_seed_id,
     _normalized_event_name,
     _resolve_label_tiers,
+    _split_composite_label,
     normalize_label,
     promote_hced_label_rows,
     resolve_hced_side_label,
@@ -23,6 +26,10 @@ RELEASE_EVENTS = PROJECT_ROOT / "data" / "release" / "events.json"
 RELEASE_ENTITIES = PROJECT_ROOT / "data" / "release" / "entities.json"
 RELEASE_METADATA = PROJECT_ROOT / "data" / "release" / "metadata.json"
 REGISTRY = PROJECT_ROOT / "data" / "catalog" / "registry.json"
+SEED_ENTITIES = PROJECT_ROOT / "data" / "seed" / "entities.json"
+CLIOPATRIA_CANDIDATES = (
+    PROJECT_ROOT / "data" / "review" / "cliopatria-entity-candidates.jsonl"
+)
 WAVE4_PRE_LABEL_EVENT_IDS = (
     PROJECT_ROOT / "tests" / "fixtures" / "wave4_pre_label_event_ids.txt"
 )
@@ -33,6 +40,7 @@ LABEL_TIERS = {
     "crosswalk_observation",
     "cliopatria_alias",
     "cliopatria_alias_to_seed",
+    "label_composite",
 }
 LABEL_CONFIDENCE_VALUES = {0.70, 0.67, 0.64, 0.61, 0.58}
 
@@ -168,6 +176,394 @@ def _resolve_label_stub(label, low_year, high_year):
     if not normalized:
         return None, None, "blank_side_label", None
     return f"entity_{normalized.replace(' ', '_')}", None, None, "cliopatria_alias"
+
+
+def _mapping_label_resolver(mapping):
+    def resolve(label, low_year, high_year):
+        del low_year, high_year
+        entity_id = mapping.get(normalize_label(label))
+        if entity_id is None:
+            return None, None, "no_unique_time_valid_label_match", None
+        return entity_id, None, None, "cliopatria_alias"
+
+    return resolve
+
+
+class CompositeLabelSplitterTests(unittest.TestCase):
+    def test_explicit_delimiters_and_oxford_comma_split(self) -> None:
+        self.assertEqual(_split_composite_label("Aland, Bland"), ["Aland", "Bland"])
+        self.assertEqual(_split_composite_label("Aland; Bland"), ["Aland", "Bland"])
+        self.assertEqual(_split_composite_label("Aland & Bland"), ["Aland", "Bland"])
+        self.assertEqual(
+            _split_composite_label("Aland, Bland, and Cland"),
+            ["Aland", "Bland", "Cland"],
+        )
+
+    def test_single_names_and_internal_and_are_never_split(self) -> None:
+        for label in (
+            "Aland",
+            "Bosnia and Herzegovina",
+            "Trinidad and Tobago",
+            "",
+            None,
+        ):
+            with self.subTest(label=label):
+                self.assertEqual(_split_composite_label(label), [])
+
+
+class SupersededIdentityCanonicalizationTests(unittest.TestCase):
+    def test_unmapped_identity_is_an_exact_noop(self) -> None:
+        polity = {"canonical_name_candidate": "Aland"}
+        self.assertEqual(
+            _canonicalize_superseded_identity("raw_aland", polity, 1900, 1900, {}, {}),
+            ("raw_aland", polity),
+        )
+
+    def test_singleton_remap_selects_target_and_drops_raw_polity(self) -> None:
+        target = {"id": "canonical", "start_year": 1854, "end_year": 1902}
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw",
+                {"canonical_name_candidate": "Raw"},
+                1899,
+                1899,
+                {"raw": ("canonical",)},
+                {"canonical": target},
+            ),
+            ("canonical", None),
+        )
+
+    def test_split_supersession_selects_exactly_one_full_interval_target(self) -> None:
+        targets = {
+            "pre": {"id": "pre", "start_year": 1270, "end_year": 1854},
+            "post": {"id": "post", "start_year": 1855, "end_year": 1936},
+        }
+        supersessions = {"raw": ("pre", "post")}
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw", None, 1854, 1854, supersessions, targets
+            ),
+            ("pre", None),
+        )
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw", None, 1855, 1855, supersessions, targets
+            ),
+            ("post", None),
+        )
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw", None, 1854, 1855, supersessions, targets
+            ),
+            (None, None),
+        )
+
+    def test_missing_or_ambiguous_target_fails_closed(self) -> None:
+        overlapping = {
+            "first": {"id": "first", "start_year": 1800, "end_year": 1900},
+            "second": {"id": "second", "start_year": 1850, "end_year": 1950},
+        }
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw", None, 1870, 1870, {"raw": ("missing",)}, overlapping
+            ),
+            (None, None),
+        )
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw",
+                None,
+                1870,
+                1870,
+                {"raw": ("first", "second")},
+                overlapping,
+            ),
+            (None, None),
+        )
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw", None, 1870, 1870, {"raw": ()}, overlapping
+            ),
+            (None, None),
+        )
+        self.assertEqual(
+            _canonicalize_superseded_identity(
+                "raw",
+                None,
+                1870,
+                1870,
+                {"raw": ("intermediate",), "intermediate": ("first",)},
+                {
+                    **overlapping,
+                    "intermediate": {
+                        "id": "intermediate",
+                        "start_year": 1800,
+                        "end_year": 1900,
+                    },
+                },
+            ),
+            (None, None),
+        )
+
+
+class CompositeLabelPromotionTests(unittest.TestCase):
+    def test_fully_resolved_post1500_composite_promotes_one_coalition(self) -> None:
+        resolver = _mapping_label_resolver(
+            {"aland": "a", "bland": "b", "cland": "c", "dland": "d"}
+        )
+        raw_coalition = "Aland, Bland & Cland"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-composite",
+                    "Battle of Coalition",
+                    1900,
+                    raw_coalition,
+                    "Dland",
+                    raw_coalition,
+                    "Dland",
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            resolver,
+        )
+        self.assertEqual(result["accepted"], 1)
+        event = result["events"][0]
+        self.assertEqual(
+            event["side_identity_resolution"],
+            {"side_a": "label_composite", "side_b": "cliopatria_alias"},
+        )
+        side_a = [
+            participant
+            for participant in event["participants"]
+            if participant["side"] == "side_a"
+        ]
+        self.assertEqual(
+            {participant["entity_id"] for participant in side_a}, {"a", "b", "c"}
+        )
+        self.assertTrue(
+            all(
+                participant["role"] == "major_ally"
+                and participant["contribution"] == 0.3333
+                for participant in side_a
+            )
+        )
+
+    def test_one_unresolved_member_keeps_the_row_staged(self) -> None:
+        resolver = _mapping_label_resolver({"aland": "a", "dland": "d"})
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-partial-composite",
+                    "Battle of Partial Coalition",
+                    1900,
+                    "Aland, Bland",
+                    "Dland",
+                    "Aland, Bland",
+                    "Dland",
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            resolver,
+        )
+        self.assertEqual(result["accepted"], 0)
+        self.assertEqual(result["rejections"]["no_unique_time_valid_label_match"], 1)
+
+    def test_pre1500_and_cross_boundary_composites_never_resolve_members(self) -> None:
+        for low_year, high_year in ((1499, 1499), (1499, 1500)):
+            seen: list[str] = []
+
+            def resolver(label, member_low, member_high):
+                del member_low, member_high
+                seen.append(str(label))
+                return _mapping_label_resolver(
+                    {"aland": "a", "bland": "b", "dland": "d"}
+                )(label, low_year, high_year)
+
+            raw_coalition = "Aland, Bland"
+            result = promote_hced_label_rows(
+                [
+                    _row(
+                        f"hced-frozen-{low_year}-{high_year}",
+                        "Battle of Frozen Coalition",
+                        low_year,
+                        raw_coalition,
+                        "Dland",
+                        raw_coalition,
+                        "Dland",
+                        year_high=high_year,
+                    )
+                ],
+                set(),
+                set(),
+                _resolve_code_stub,
+                resolver,
+            )
+            with self.subTest(low_year=low_year, high_year=high_year):
+                self.assertEqual(result["accepted"], 0)
+                self.assertEqual(seen, [raw_coalition])
+
+    def test_1500_boundary_is_included(self) -> None:
+        raw_coalition = "Aland, Bland"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-boundary-composite",
+                    "Battle of Boundary Coalition",
+                    1500,
+                    raw_coalition,
+                    "Dland",
+                    raw_coalition,
+                    "Dland",
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            _mapping_label_resolver({"aland": "a", "bland": "b", "dland": "d"}),
+        )
+        self.assertEqual(result["accepted"], 1)
+
+    def test_members_never_use_candidate_keyed_resolver(self) -> None:
+        generic = _mapping_label_resolver({"aland": "a"})
+        candidate_calls: list[str] = []
+
+        def candidate_resolver(candidate, label, low_year, high_year):
+            del candidate
+            candidate_calls.append(str(label))
+            if normalize_label(label) == "forbidden":
+                return "candidate_only", None, None, "candidate_policy"
+            return generic(label, low_year, high_year)
+
+        raw_coalition = "Aland, Forbidden"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-candidate-guard",
+                    "Battle of Candidate Guard",
+                    1900,
+                    raw_coalition,
+                    "Dland",
+                    raw_coalition,
+                    "Dland",
+                    codes2=("d",),
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            generic,
+            resolve_candidate_side_label=candidate_resolver,
+        )
+        self.assertEqual(result["accepted"], 0)
+        self.assertEqual(candidate_calls, [raw_coalition])
+
+    def test_composite_member_supersession_uses_canonical_participant(self) -> None:
+        old_orange = "clio_q218023_1856_cfb4e08e"
+        raw_orange = {"canonical_name_candidate": "Free Orange State"}
+
+        def resolver(label, low_year, high_year):
+            del low_year, high_year
+            matches = {
+                "transvaal": ("transvaal", None),
+                "orange free state": (old_orange, raw_orange),
+                "united kingdom": ("united_kingdom", None),
+            }
+            match = matches.get(normalize_label(label))
+            if match is None:
+                return None, None, "no_unique_time_valid_label_match", None
+            return match[0], match[1], None, "cliopatria_alias"
+
+        supersessions = {old_orange: ("orange_free_state_1854",)}
+        target_entities = {
+            "orange_free_state_1854": {
+                "id": "orange_free_state_1854",
+                "start_year": 1854,
+                "end_year": 1902,
+            }
+        }
+
+        def canonicalize(entity_id, polity, low_year, high_year):
+            return _canonicalize_superseded_identity(
+                entity_id,
+                polity,
+                low_year,
+                high_year,
+                supersessions,
+                target_entities,
+            )
+
+        raw_coalition = "Transvaal, Orange Free State"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-boer-composite",
+                    "Battle of Boer Coalition",
+                    1899,
+                    raw_coalition,
+                    "United Kingdom",
+                    raw_coalition,
+                    "United Kingdom",
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            resolver,
+            canonicalize_composite_identity=canonicalize,
+        )
+        self.assertEqual(result["accepted"], 1)
+        participant_ids = {
+            participant["entity_id"]
+            for participant in result["events"][0]["participants"]
+        }
+        self.assertIn("orange_free_state_1854", participant_ids)
+        self.assertNotIn(old_orange, participant_ids)
+        self.assertNotIn(old_orange, result["resolved_polities"])
+
+    def test_distinct_raw_members_that_canonicalize_together_are_rejected(self) -> None:
+        resolver = _mapping_label_resolver(
+            {"aland": "raw_a", "bland": "raw_b", "dland": "d"}
+        )
+        target_entities = {
+            "canonical": {"id": "canonical", "start_year": 1800, "end_year": 2000}
+        }
+
+        def canonicalize(entity_id, polity, low_year, high_year):
+            return _canonicalize_superseded_identity(
+                entity_id,
+                polity,
+                low_year,
+                high_year,
+                {"raw_a": ("canonical",), "raw_b": ("canonical",)},
+                target_entities,
+            )
+
+        raw_coalition = "Aland, Bland"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-canonical-duplicate",
+                    "Battle of Canonical Duplicate",
+                    1900,
+                    raw_coalition,
+                    "Dland",
+                    raw_coalition,
+                    "Dland",
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            resolver,
+            canonicalize_composite_identity=canonicalize,
+        )
+        self.assertEqual(result["accepted"], 0)
+        self.assertEqual(result["rejections"]["no_unique_time_valid_label_match"], 1)
 
 
 class LabelPolicyTests(unittest.TestCase):
@@ -345,6 +741,39 @@ class PendingSplitTests(unittest.TestCase):
 
 
 class LabelResolutionTierTests(unittest.TestCase):
+    def test_bare_mexico_uses_real_seed_and_cliopatria_boundaries(self) -> None:
+        seeds = json.loads(SEED_ENTITIES.read_text(encoding="utf-8"))
+        polities = []
+        for line in CLIOPATRIA_CANDIDATES.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if row.get("record_type") == "POLITY":
+                polities.append(row)
+        context = _context(seeds=seeds, polities=polities)
+        expected = {
+            1863: ("mexican_republic", None, "seed_alias"),
+            1864: (None, "no_unique_time_valid_label_match", None),
+            1867: (None, "no_unique_time_valid_label_match", None),
+            1868: (
+                "clio_mx_mexico_1_1868_ffbcfbae",
+                None,
+                "cliopatria_alias",
+            ),
+            2024: (
+                "clio_mx_mexico_1_1868_ffbcfbae",
+                None,
+                "cliopatria_alias",
+            ),
+            2025: (None, "no_unique_time_valid_label_match", None),
+        }
+        for year, resolution in expected.items():
+            with self.subTest(year=year):
+                entity_id, _polity, reason, tier = resolve_hced_side_label(
+                    "Mexico", year, year, context
+                )
+                self.assertEqual((entity_id, reason, tier), resolution)
+
     def test_seed_alias_requires_uniqueness_and_full_interval_coverage(self) -> None:
         wessex = _seed("wessex", "Kingdom of Wessex", 519, 927, aliases=("Wessex",))
         open_ended = _seed("modernland", "Modernland", 1948, None)
@@ -836,7 +1265,9 @@ class ReleaseArtifactTests(unittest.TestCase):
             e for e in cls.events if str(e["id"]).startswith("hced_label_")
         ]
 
-    def test_existing_crosswalk_event_payload_is_unchanged(self) -> None:
+    def test_existing_crosswalk_payload_is_unchanged_except_audited_correction(
+        self,
+    ) -> None:
         # Pin Wave 4's reviewed pre-label-pass events by stable ID, not by their
         # positions in the rebuilt ledger. Later promotion waves may insert new
         # crosswalk or strategic rows ahead of the label pass without changing
@@ -848,8 +1279,18 @@ class ReleaseArtifactTests(unittest.TestCase):
         self.assertEqual(len(baseline_ids), len(set(baseline_ids)))
         events_by_id = {str(event["id"]): event for event in self.events}
         missing_ids = set(baseline_ids) - set(events_by_id)
-        self.assertEqual(missing_ids, set(), "Wave 4 baseline event IDs disappeared")
-        legacy = [events_by_id[event_id] for event_id in baseline_ids]
+        audited_removals = {"hced_hced_aros1886_1"}
+        self.assertEqual(
+            missing_ids,
+            audited_removals,
+            "an unenumerated Wave 4 baseline event disappeared",
+        )
+        self.assertIn("hced-Aros1886-1", HCED_CURATED_EXCLUSIONS)
+        legacy = [
+            events_by_id[event_id]
+            for event_id in baseline_ids
+            if event_id not in audited_removals
+        ]
         legacy_payload = []
         for event in legacy:
             additive_fields = {
@@ -877,14 +1318,14 @@ class ReleaseArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             digest,
-            "c45990dc61157f50ae1713b1ae6b3dbbbdbfc2f66282c5d314cc28675c4f3be7",
+            "f17605859c6a71fadf8361fef500e826a284b072162880191ce370a471e54d93",
             "pre-label-pass event block changed content",
         )
         self.assertGreater(len(self.events), len(legacy))
         for event in legacy:
             self.assertNotIn("identity_resolution", event)
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
-        self.assertEqual(len(hced_legacy), 1769)
+        self.assertEqual(len(hced_legacy), 1768)
         for event in hced_legacy:
             self.assertTrue(
                 str(event["id"]).startswith("hced_hced_"),
@@ -1100,26 +1541,26 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 7 rows:
-        # 726 + 3,888 + 1,884 + 2,383 == 8,881.
+        # 743 + 3,828 + 1,887 + 2,423 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (726, 3888, 1884, 2383, 8881),
+            (743, 3828, 1887, 2423, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_271)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_251)
         # All thirteen declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 13)
         self.assertEqual(
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 53
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 71
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 140)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 164)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 
@@ -1128,7 +1569,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_383)
+        self.assertEqual(len(label_events), 2_423)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

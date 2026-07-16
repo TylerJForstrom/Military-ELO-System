@@ -10,6 +10,7 @@ from typing import Any
 
 from ..canonical import hced_point_geometry_validation_error
 from .common import (
+    _canonicalize_superseded_identity,
     _candidate_entity_id,
     _candidate_labels,
     _candidate_overlaps_entity,
@@ -542,8 +543,8 @@ def _validate_hced_location_release(
     if len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
-        1_824 + len(modern_candidate_ids),
-        2_328 + len(pre1500_candidate_ids),
+        1_827 + len(modern_candidate_ids),
+        2_368 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -892,6 +893,44 @@ def build_expanded_release(
         "polity_alias_index": polity_alias_index,
     }
 
+    # Composite members enter through the ordinary label resolver, but any
+    # raw identity it returns must be canonicalized before coalition assembly.
+    # Keep this inventory data-driven and wave-neutral: the pre-1500 and
+    # fingerprint-validated Wave 7 supersessions are normalized to generated
+    # source entity IDs, while eventual curated targets are made available for
+    # interval checks without adding their aliases to the generic label index.
+    composite_identity_supersessions: dict[str, tuple[str, ...]] = {
+        str(source_id): (str(target_id),)
+        for source_id, target_id in WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.items()
+    }
+    for candidate_id, replacement_ids in wave7_global_registry_supersessions.items():
+        contract = WAVE7_GLOBAL_SUPERSESSIONS[candidate_id]
+        composite_identity_supersessions[str(contract["source_entity_id"])] = tuple(
+            map(str, replacement_ids)
+        )
+    composite_supersession_targets = {
+        **release_entities,
+        **{
+            str(entity["id"]): entity
+            for entity in WAVE7_GLOBAL_ENTITIES
+        },
+    }
+
+    def canonicalize_composite_identity(
+        entity_id: str,
+        polity: dict[str, Any] | None,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, dict[str, Any] | None]:
+        return _canonicalize_superseded_identity(
+            entity_id,
+            polity,
+            low_year,
+            high_year,
+            composite_identity_supersessions,
+            composite_supersession_targets,
+        )
+
     def resolve_iwd_label(
         label: str,
         low_year: int,
@@ -972,6 +1011,7 @@ def build_expanded_release(
                 ),
             )
         ),
+        canonicalize_composite_identity=canonicalize_composite_identity,
     )
     label_events: list[dict[str, Any]] = hced_label_pass["events"]
     annotate_and_validate_wave6_pre1500_events(source_events, label_events)
@@ -1655,8 +1695,13 @@ def build_expanded_release(
                 "uniqueness, full event-interval validity, and name-coherence for "
                 "observation-derived pairings; faction and collective-peoples labels never "
                 "resolve; polity labels pending identity splits never resolve; ambiguity "
-                "always stays staged. Label-resolved events carry reduced identity confidence "
-                "and an identity_resolution provenance marker. One independently dated "
+                "always stays staged. For post-1500 rows only, an otherwise unresolved side "
+                "may split on commas, semicolons, or ampersands as a coalition only when "
+                "every member independently resolves through those ordinary label rules to "
+                "a distinct identity valid for the full event interval. The shared canonical "
+                "supersession remap runs before coalition assembly; this path is unavailable "
+                "to the frozen pre-1500 cohort. Label-resolved events carry reduced identity "
+                "confidence and an identity_resolution provenance marker. One independently dated "
                 "HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint "
                 "and exact-ID binding to cross an otherwise fail-closed within-year Portugal "
                 "boundary; it does not populate a generic label observation. "

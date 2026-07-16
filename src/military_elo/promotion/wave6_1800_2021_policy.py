@@ -3,11 +3,11 @@ from __future__ import annotations
 """Exact, lane-local policy contracts for the Wave 6 modern-history audit.
 
 The Phase 1 package proposed 105 rows. Source/coalition, cross-lane, and
-identity-boundary rechecks hold 37 rather than rewriting their reviewed
-meaning. The implemented inventory is therefore 68 exact contracts
-(60 HCED and eight IWBD battles). Egypt, Syria, and transitional Spanish
-governments remain held until an atomic, time-bounded identity migration is
-reviewed; their events must not be attached to a wider existing Elo series.
+identity-boundary rechecks hold 36 rather than rewriting their reviewed
+meaning. The implemented inventory is therefore 69 exact contracts
+(60 HCED and nine IWBD battles). Egypt and transitional Spanish governments
+remain held until an atomic, time-bounded identity migration is reviewed;
+Syria's 1967 contract targets the reviewed post-UAR series.
 """
 
 from typing import Any
@@ -862,10 +862,6 @@ WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS = {
             "iwbd-169-64-1531",
         )
     },
-    "iwbd-169-64-1532": (
-        "identity_boundary: 1967 Syria requires a post-UAR identity; do not widen "
-        "the existing 1973-open series backward across the 1958-1961 UAR"
-    ),
 }
 WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
     candidate_id: WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS.pop(candidate_id)
@@ -891,5 +887,5 @@ WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS["iwbd-100-36-422"]["attacker"] = (
     ("kingdom_serbia", "kingdom_serbia"),
 )
 
-WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 60, "iwd": 0, "iwbd": 8, "total": 68}
-WAVE6_EXPECTED_HELD_COUNTS = {"hced": 42, "iwd": 15, "iwbd": 226}
+WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 60, "iwd": 0, "iwbd": 9, "total": 69}
+WAVE6_EXPECTED_HELD_COUNTS = {"hced": 42, "iwd": 15, "iwbd": 225}

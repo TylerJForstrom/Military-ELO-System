@@ -8,7 +8,7 @@ import re
 import unicodedata
 from collections import Counter
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Mapping
 
 from .policy import (
     IDENTITY_DENY_WINDOWS,
@@ -317,6 +317,25 @@ def _domain(value: Any) -> str:
     return next(iter(domains)) if len(domains) == 1 else "mixed"
 
 
+def _split_composite_label(raw: Any) -> list[str]:
+    """Split one explicitly delimited coalition label into its members.
+
+    ``and`` is deliberately not a delimiter because it occurs inside polity
+    names such as Bosnia and Herzegovina.  The leading ``and`` in an Oxford
+    comma member is stripped only after a comma, semicolon, or ampersand has
+    already established that the raw value is composite.
+    """
+
+    members: list[str] = []
+    for part in re.split(r"[;,&]", str(raw or "")):
+        cleaned = part.strip()
+        if cleaned.lower().startswith("and "):
+            cleaned = cleaned[4:].strip()
+        if cleaned:
+            members.append(cleaned)
+    return members if len(members) >= 2 else []
+
+
 def _participants(
     side_a: list[str],
     side_b: list[str],
@@ -501,6 +520,43 @@ def _entity_covers(entity: dict[str, Any], low_year: int, high_year: int) -> boo
     return int(entity["start_year"]) <= low_year and (
         end_year is None or int(end_year) >= high_year
     )
+
+
+def _canonicalize_superseded_identity(
+    entity_id: str,
+    polity: dict[str, Any] | None,
+    low_year: int,
+    high_year: int,
+    supersessions: Mapping[str, tuple[str, ...]],
+    target_entities: Mapping[str, dict[str, Any]],
+) -> tuple[str | None, dict[str, Any] | None]:
+    """Resolve one superseded ID to a unique time-valid canonical target.
+
+    The helper is wave-neutral: callers supply the complete, already-audited
+    supersession inventory and a non-label-indexed target catalog.  A mapped
+    identity fails closed when no target, or more than one target, covers the
+    full event interval.  Returning no source-candidate payload after a remap
+    prevents the superseded Cliopatria proposal from being materialized as the
+    canonical target.
+    """
+
+    source_id = str(entity_id)
+    if source_id not in supersessions:
+        return entity_id, polity
+    replacement_ids = tuple(dict.fromkeys(map(str, supersessions[source_id])))
+    if not replacement_ids:
+        return None, None
+    time_valid_targets = [
+        replacement_id
+        for replacement_id in replacement_ids
+        if replacement_id != source_id
+        and replacement_id not in supersessions
+        and replacement_id in target_entities
+        and _entity_covers(target_entities[replacement_id], low_year, high_year)
+    ]
+    if len(time_valid_targets) != 1:
+        return None, None
+    return time_valid_targets[0], None
 
 
 def _validate_seed_event_intervals(

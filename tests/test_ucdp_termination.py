@@ -306,7 +306,15 @@ class GwCodePolicyTests(unittest.TestCase):
     def test_policy_codes_never_fall_through_to_labels(self) -> None:
         # A policy code outside its windows must stay unresolved without ever
         # consulting the label path, even when a label match would exist.
-        gap_years = {"365": (1918, 1921), "816": (1978, 1981), "817": (1980, 1980), "700": (1979, 1979)}
+        gap_years = {
+            "365": (1918, 1921),
+            "816": (1978, 1981),
+            "817": (1980, 1980),
+            "700": (1979, 1979),
+            "160": (1930, 1930),
+            "355": (1908, 1908),
+            "652": (1958, 1961),
+        }
         self.assertEqual(set(gap_years), set(UCDP_GW_CODE_POLICIES))
         for code, (low, high) in gap_years.items():
             with self.subTest(code=code):

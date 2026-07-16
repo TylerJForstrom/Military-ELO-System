@@ -790,10 +790,20 @@
       "name": "Argentine Republic",
       "kind": "republic",
       "start_year": 1930,
-      "end_year": 2024,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "region": "Unclassified"
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
+    },
+    {
+      "id": "argentine_republic_1861",
+      "name": "Argentine Republic (post-Pavon)",
+      "kind": "federal_republic",
+      "start_year": 1861,
+      "end_year": 1930,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
     },
     {
       "id": "clio_q399_1918_2f11ffcf",
@@ -8029,7 +8039,7 @@
       "end_year": 1946,
       "status": "rated",
       "identity_status": "curated",
-      "region": "Southeast Europe"
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q147909_1947_57704f67",
@@ -10179,24 +10189,13 @@
     },
     {
       "id": "mahdist_ansar_forces",
-      "name": "Mahdist Ansar Forces",
-      "kind": "state_force",
+      "name": "Mahdist State",
+      "kind": "theocratic_state",
       "start_year": 1881,
       "end_year": 1899,
       "status": "rated",
       "identity_status": "curated",
       "region": "Northeast Africa"
-    },
-    {
-      "id": "clio_q3125368_1890_81adb534",
-      "name": "Mahdist State",
-      "kind": "polity",
-      "start_year": 1890,
-      "end_year": 1899,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
     },
     {
       "id": "clio_in_maitraka_dyn_476_70c95d99",
@@ -10620,13 +10619,13 @@
     },
     {
       "id": "clio_mx_mexico_1_1868_ffbcfbae",
-      "name": "Mexico",
-      "kind": "polity",
+      "name": "Mexico (restored republic)",
+      "kind": "federal_republic",
       "start_year": 1868,
       "end_year": 2024,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q79861_1305_c015221f",
@@ -12449,18 +12448,7 @@
       "end_year": 1908,
       "status": "rated",
       "identity_status": "curated",
-      "region": "Southeast Europe"
-    },
-    {
-      "id": "clio_q815731_1880_d3ab7be2",
-      "name": "Principality of Bulgaria",
-      "kind": "polity",
-      "start_year": 1880,
-      "end_year": 1944,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "region": "Southeastern Europe"
     },
     {
       "id": "clio_q1280122_840_4acee921",
@@ -14117,11 +14105,10 @@
       "name": "Republic of Texas",
       "kind": "republic",
       "start_year": 1836,
-      "end_year": 1845,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q1005_1967_d5c215ca",
@@ -15051,10 +15038,9 @@
       "kind": "republic",
       "start_year": 1946,
       "end_year": 1957,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
     },
     {
       "id": "clio_ir_seleucid_emp_bce318_21d0ee32",
@@ -16309,13 +16295,13 @@
     },
     {
       "id": "clio_q41137_1973_b05dea50",
-      "name": "Syria",
-      "kind": "polity",
-      "start_year": 1973,
-      "end_year": 2024,
-      "status": "provisional",
-      "identity_status": "source_candidate",
-      "region": "Unclassified"
+      "name": "Syrian Arab Republic",
+      "kind": "republic",
+      "start_year": 1962,
+      "end_year": null,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
     },
     {
       "id": "clio_q1039_1976_22bcdb9a",
@@ -18398,15 +18384,15 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1702,
-    "rated_entities": 340,
-    "rated_events": 4797,
+    "registry_polities": 1701,
+    "rated_entities": 343,
+    "rated_events": 4842,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18597,
+    "unresolved_event_candidates": 18552,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
-    "provisional_hced_events": 1884,
-    "provisional_hced_label_events": 2383,
+    "provisional_hced_events": 1887,
+    "provisional_hced_label_events": 2423,
     "candidate_keyed_wave6_hced_events": 76,
     "candidate_keyed_wave7_root_hced_events": 62,
     "candidate_keyed_wave7_central_hced_events": 33,
@@ -18415,7 +18401,7 @@
     "candidate_keyed_wave7_west_hced_events": 29,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
-    "provisional_iwbd_battles": 151,
+    "provisional_iwbd_battles": 153,
     "iwbd_battles_total": 1708,
     "provisional_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
@@ -18423,11 +18409,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4535,
+      "hced_candidate_bindings": 4578,
       "candidate_keyed_reviewed_contracts": 268,
-      "geojson_points": 4498,
-      "modern_location_country_assertions": 4455,
-      "location_provenance_objects": 4502,
+      "geojson_points": 4541,
+      "modern_location_country_assertions": 4498,
+      "location_provenance_objects": 4545,
       "point_fields_withheld_by_quarantine": 37,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
@@ -18437,7 +18423,7 @@
       "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
       "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 4502
+        "unreviewed_source_assertion": 4545
       },
       "verified_location_assertions": {
         "availability": "not_available",

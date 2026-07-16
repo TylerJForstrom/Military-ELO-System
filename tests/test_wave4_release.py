@@ -49,20 +49,20 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 4_797)
-        self.assertEqual(len(self.entities), 342)
-        self.assertEqual(len(self.registry_by_id), 1_702)
+        self.assertEqual(len(self.events), 4_842)
+        self.assertEqual(len(self.entities), 345)
+        self.assertEqual(len(self.registry_by_id), 1_701)
         self.assertEqual(
             families,
             {
                 (): 40,
                 ("english_historical_review",): 1,
                 ("founders_online_jefferson_papers",): 2,
-                ("hced",): 4_523,
+                ("hced",): 4_566,
                 ("historic_england",): 3,
                 ("hungarian_military_history_institute",): 2,
                 ("iwd",): 64,
-                ("iwbd",): 151,
+                ("iwbd",): 153,
                 ("national_park_service_creek_war",): 1,
                 ("national_park_service_revolution",): 1,
                 ("nigeria_national_library_civil_war",): 1,
@@ -94,7 +94,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             100,
         )
-        self.assertEqual(len(self.results["events"]), 4_797)
+        self.assertEqual(len(self.results["events"]), 4_842)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -173,7 +173,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 284)
+        self.assertEqual(len(self.sources), 289)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
             176,

@@ -3544,6 +3544,22 @@
     ]
   },
   {
+    "id": "clio_q170588_1836_8e422d86",
+    "name": "Republic of Texas",
+    "kind": "republic",
+    "start_year": 1836,
+    "end_year": 1846,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent republic from the 1836 declaration through the 1845-1846 annexation transfer. The existing Cliopatria ID is promoted rather than duplicated; generic policy covers only the complete 1836-1845 years, leaving pre-independence rebels and the 1846 transfer year staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_texas_revolution",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q774_1840_14933123",
     "name": "Guatemala",
     "kind": "polity",
@@ -3799,6 +3815,23 @@
     ]
   },
   {
+    "id": "argentine_republic_1861",
+    "name": "Argentine Republic (post-Pavon)",
+    "kind": "federal_republic",
+    "start_year": 1861,
+    "end_year": 1930,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [
+      "argentine_confederation"
+    ],
+    "continuity_note": "Unified republic from the 1861 Battle of Pavon to the 1930 military coup. Bare-label policy overlaps both transition years with the adjacent identities, leaving 1861 and 1930 unresolved at year precision; no rating crosses either boundary.",
+    "source_ids": [
+      "britannica_argentina_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q81931_1861_f3bc20bd",
     "name": "Confederate States of America",
     "kind": "confederation",
@@ -3886,18 +3919,20 @@
   },
   {
     "id": "clio_mx_mexico_1_1868_ffbcfbae",
-    "name": "Mexico",
-    "kind": "polity",
+    "name": "Mexico (restored republic)",
+    "kind": "federal_republic",
     "start_year": 1868,
     "end_year": 2024,
-    "region": "Unclassified",
-    "aliases": [
-      "Mexico"
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [
+      "mexican_republic"
     ],
-    "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Existing rated Cliopatria identity retained on its exact 1868-2024 source interval, beginning with the first complete post-Empire year. Generic and Seshat policy remain fail-closed in 1864-1867, when the Juarez government and Second Mexican Empire were concurrent; no Elo crosses that gap.",
     "source_ids": [
-      "cliopatria_v020"
+      "cliopatria_polities",
+      "britannica_mexico_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -3958,12 +3993,13 @@
     "kind": "principality",
     "start_year": 1878,
     "end_year": 1908,
-    "region": "Southeast Europe",
+    "region": "Southeastern Europe",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "continuity_note": "Autonomous principality created by the 1878 Treaty of Berlin through the 1908 declaration of independence. The formal 1908 kingdom transition is a rating boundary: year-only 1908 records stay staged and no Elo transfers to the kingdom.",
     "source_ids": [
-      "bulgaria_usni"
+      "britannica_bulgaria_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -3987,17 +4023,18 @@
   },
   {
     "id": "mahdist_ansar_forces",
-    "name": "Mahdist Ansar Forces",
-    "kind": "state_force",
+    "name": "Mahdist State",
+    "kind": "theocratic_state",
     "start_year": 1881,
     "end_year": 1899,
     "region": "Northeast Africa",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "continuity_note": "State and unified Ansar command from Muhammad Ahmad's 1881 proclamation through the defeat of the successor regime in 1899. The already-rated Wave 6 ID is retained so generic Mahdist labels join the reviewed battle series instead of forking a parallel Elo identity; no rating transfers to later Sudanese governments.",
     "source_ids": [
-      "mahdist_nam",
-      "mahdist_bm"
+      "britannica_al_mahdi",
+      "britannica_mahdist_sudan",
+      "project_continuity_policy"
     ]
   },
   {
@@ -4130,13 +4167,15 @@
     "kind": "kingdom",
     "start_year": 1908,
     "end_year": 1946,
-    "region": "Southeast Europe",
+    "region": "Southeastern Europe",
     "aliases": [],
-    "predecessors": [],
-    "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
+    "predecessors": [
+      "principality_bulgaria"
+    ],
+    "continuity_note": "Independent kingdom proclaimed in 1908 through abolition of the monarchy in 1946. The already-rated Wave 6 ID is retained; the transition year overlaps the principality and kingdom windows deliberately, so a year-only 1908 label cannot choose either identity.",
     "source_ids": [
-      "bulgaria_usni",
-      "bulgaria_iwm"
+      "britannica_bulgaria_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -4502,15 +4541,17 @@
     "name": "Argentine Republic",
     "kind": "republic",
     "start_year": 1930,
-    "end_year": 2024,
-    "region": "Unclassified",
-    "aliases": [
-      "Argentina"
+    "end_year": null,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [
+      "argentine_republic_1861"
     ],
-    "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
+    "continuity_note": "Existing Cliopatria modern interval promoted as the post-1930 policy target so extending the older republic does not swallow or strand the established modern rating series. The 1930 coup year remains ambiguous and no Elo transfers from the post-Pavon republic.",
     "source_ids": [
-      "cliopatria_v020"
+      "cliopatria_polities",
+      "britannica_argentina_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -4765,6 +4806,22 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "clio_sy_syria_modern_1946_86597c89",
+    "name": "Second Syrian Republic",
+    "kind": "republic",
+    "start_year": 1946,
+    "end_year": 1957,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent Syrian republic from the 1946 French withdrawal through the last complete pre-union year. The existing Cliopatria interval is promoted directly; the 1958-1961 United Arab Republic is a deliberate identity and label-policy gap.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_syria_history",
+      "project_continuity_policy"
     ]
   },
   {
@@ -5106,6 +5163,24 @@
     ]
   },
   {
+    "id": "clio_q41137_1973_b05dea50",
+    "name": "Syrian Arab Republic",
+    "kind": "republic",
+    "start_year": 1962,
+    "end_year": null,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [
+      "clio_sy_syria_modern_1946_86597c89"
+    ],
+    "continuity_note": "Post-UAR Syrian republic from the first complete year after Syria left the union. The already-rated 1973-open Cliopatria ID is retained and its reviewed boundary is extended to 1962, avoiding a parallel Elo line while keeping 1958-1961 fail-closed and resetting the rating across the union.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_syria_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_q833_1963_69748196",
     "name": "Malaysia",
     "kind": "polity",
@@ -5240,22 +5315,6 @@
     "region": "Unclassified",
     "aliases": [
       "Qatar"
-    ],
-    "predecessors": [],
-    "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
-    "source_ids": [
-      "cliopatria_v020"
-    ]
-  },
-  {
-    "id": "clio_q41137_1973_b05dea50",
-    "name": "Syria",
-    "kind": "polity",
-    "start_year": 1973,
-    "end_year": 2024,
-    "region": "Unclassified",
-    "aliases": [
-      "Syria"
     ],
     "predecessors": [],
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",

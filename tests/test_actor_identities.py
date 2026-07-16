@@ -320,6 +320,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         "crosswalk_observation",
         "cliopatria_alias",
         "cliopatria_alias_to_seed",
+        "label_composite",
         "seshat_crosswalk",
         "wave6_pre1500_candidate_policy",
         "wave7_candidate_keyed_exact",
@@ -333,10 +334,10 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
-        self.assertEqual(len(label_events), 2_383)
+        self.assertEqual(len(label_events), 2_423)
         self.assertEqual(
             sum(e.get("identity_resolution") == "label" for e in label_events),
-            2_378,
+            2_418,
         )
         self.assertEqual(
             sum(

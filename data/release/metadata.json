@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 342,
-    "events": 4797,
-    "sources": 284,
-    "registry_polities": 1702
+    "entities": 345,
+    "events": 4842,
+    "sources": 289,
+    "registry_polities": 1701
   },
   "year_range": {
     "start": -1274,
@@ -72,9 +72,9 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
-    "accepted_hced_events": 1884,
-    "accepted_hced_label_events": 2383,
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules to a distinct identity valid for the full event interval. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "accepted_hced_events": 1887,
+    "accepted_hced_label_events": 2423,
     "accepted_wave6_1500_1799_hced_events": 76,
     "accepted_wave7_root_hced_events": 62,
     "accepted_wave7_central_hced_events": 33,
@@ -1198,41 +1198,43 @@
     ],
     "wave7_west_entities_added": 14,
     "wave7_west_sources_added": 17,
-    "hced_label_pass_input_rows": 6271,
+    "hced_label_pass_input_rows": 6251,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
     "iwd_components_attached_to_rated_parents": 100,
     "hced_rejections": {
-      "curated_exclusion": 140,
+      "curated_exclusion": 164,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 3,
-      "no_unique_time_valid_polity": 162,
+      "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
-      "outside_continuity_policy": 33,
+      "outside_continuity_policy": 41,
       "reserved_candidate_contract": 352,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
       "blank_side_label": 0,
-      "curated_row_exclusion": 53,
+      "curated_row_exclusion": 71,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 461,
+      "faction_label_not_a_polity": 464,
       "label_outcome_not_aligned": 85,
-      "label_outside_policy_window": 180,
+      "label_outside_policy_window": 182,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2751,
-      "no_unique_time_valid_polity": 177,
-      "outside_continuity_policy": 100,
-      "same_or_empty_opposing_side": 3,
+      "no_unique_time_valid_label_match": 2716,
+      "no_unique_time_valid_polity": 90,
+      "outside_continuity_policy": 103,
+      "same_or_empty_opposing_side": 39,
       "wave6_pre1500_candidate_not_in_manifest": 42
     },
     "hced_label_policy_labels": [
       "afghanistan",
+      "argentina",
       "austria",
       "austria hungary",
+      "bulgaria",
       "byzantines",
       "byzantium",
       "carlists",
@@ -1246,6 +1248,8 @@
       "habsburg empire",
       "korea",
       "macedonia",
+      "mahdists",
+      "mahdiyya",
       "mamluks",
       "maratha empire",
       "marathas",
@@ -1268,8 +1272,14 @@
       "spain",
       "spanish nationalists",
       "spanish republicans",
+      "sudanese islamists",
+      "sudanese mahdists",
       "sweden",
+      "syria",
       "taiping",
+      "texan rebels",
+      "texas",
+      "the mahdiyya",
       "transvaal",
       "ummayyad caliphate",
       "untied kingdom",
@@ -1415,6 +1425,14 @@
         "reason": "wrong belligerent: Andalsnes was a British-Norwegian operation, not French"
       },
       {
+        "candidate_id": "hced-Aros1886-1",
+        "reason": "disputed friendly-fire outcome: Mexican and US accounts of the Crawford affair conflict, so an unqualified Mexican tactical victory is unsupported"
+      },
+      {
+        "candidate_id": "hced-Atlixco1847-1",
+        "reason": "inverted outcome and swapped identity coding: United States forces won at Atlixco"
+      },
+      {
         "candidate_id": "hced-Azov1695-1696-1",
         "reason": "conflates opposite-result campaigns: the source dates the event only to 1695, when the Russian siege failed, while the 1696 campaign won"
       },
@@ -1441,6 +1459,10 @@
       {
         "candidate_id": "hced-Bir Gafgafa1967-1",
         "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Boqueron, Nhembucu1866-1",
+        "reason": "incomplete coalition: Brazil is omitted from the coded side"
       },
       {
         "candidate_id": "hced-Bosworth Field1485-1",
@@ -1495,6 +1517,18 @@
         "reason": "source outcome is reversed: the Portuguese fortress withstood the Spanish siege of 1735-1737"
       },
       {
+        "candidate_id": "hced-Corrientes (2nd)1865-1",
+        "reason": "incomplete coalition: Brazil is omitted from the coded side"
+      },
+      {
+        "candidate_id": "hced-Curupaity1866-1",
+        "reason": "incomplete coalition: Brazil and Uruguay are omitted from the coded side"
+      },
+      {
+        "candidate_id": "hced-Curuzu1866-1",
+        "reason": "wrong belligerent: Curuzu was a Brazilian land-and-naval operation, while the source-side coding adds Argentina"
+      },
+      {
         "candidate_id": "hced-Danang1858-1",
         "reason": "Wave 6 evidence audit hold"
       },
@@ -1527,6 +1561,10 @@
         "reason": "misnamed El Bodon action with a reversed outcome: French forces won and the Anglo-Portuguese force withdrew"
       },
       {
+        "candidate_id": "hced-Estero Bellaco1866-1",
+        "reason": "incomplete belligerents: the reconstruction omits Uruguay from the Allied force"
+      },
+      {
         "candidate_id": "hced-Fada1987-1",
         "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
       },
@@ -1541,6 +1579,10 @@
       {
         "candidate_id": "hced-Firket1896-1",
         "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Fluvial1866-1",
+        "reason": "incomplete coalition: Brazil is omitted from the coded side"
       },
       {
         "candidate_id": "hced-France1940-1",
@@ -1615,8 +1657,16 @@
         "reason": "Wave 6 evidence audit hold"
       },
       {
+        "candidate_id": "hced-India Muerta1845-1",
+        "reason": "wrong identity flattening: the Blanco-Argentine force against Rivera's Colorados is not a simple Argentina-versus-Uruguay state battle"
+      },
+      {
         "candidate_id": "hced-Isola del Giglio1646-1",
         "reason": "Habsburg branch confusion: the defending fleet belonged to Habsburg Spain"
+      },
+      {
+        "candidate_id": "hced-Ita Ybate1868-1",
+        "reason": "incomplete coalition: Uruguay is omitted from the coded side"
       },
       {
         "candidate_id": "hced-Jebel Libni1967-1",
@@ -1645,6 +1695,10 @@
       {
         "candidate_id": "hced-Kresna1913-1",
         "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-Laredo1842-1",
+        "reason": "unsupported opposing force: the Somervell expedition captured and sacked Laredo without an identified Mexican field force"
       },
       {
         "candidate_id": "hced-Lepanto1571-1",
@@ -1699,8 +1753,16 @@
         "reason": "Francesco Sforza versus the Golden Ambrosian Republic, not Visconti Milan"
       },
       {
+        "candidate_id": "hced-Mill Creek1839-1",
+        "reason": "wrong opponent identity: Cordova's Mexican and Indigenous insurgent band was not the Mexican Republic; a bounded actor identity is still pending"
+      },
+      {
         "candidate_id": "hced-Mitla Pass1967-1",
         "reason": "cross_source_duplicate: reviewed IWBD tactical row retained"
+      },
+      {
+        "candidate_id": "hced-Molino del Rey1847-1",
+        "reason": "inverted outcome: United States forces captured the Molino del Rey position"
       },
       {
         "candidate_id": "hced-Monastir1916-1",
@@ -1815,6 +1877,10 @@
         "reason": "inverted siege assertion: Edward III abandoned the siege without taking Rheims"
       },
       {
+        "candidate_id": "hced-Riachuelo1865-1",
+        "reason": "wrong belligerent: Riachuelo was fought by the Brazilian and Paraguayan fleets"
+      },
+      {
         "candidate_id": "hced-Riga1701-1",
         "reason": "incomplete principal side at the Crossing of the Duna: the principal opponent was Saxony, but the crosswalk retains Russian auxiliaries alone"
       },
@@ -1843,12 +1909,24 @@
         "reason": "cross-boundary campaign envelope: the Salvador campaign began before Brazilian independence on 7 September 1822 and continued to July 1823, so one year-level Portuguese identity cannot represent it"
       },
       {
+        "candidate_id": "hced-San Antonio, Texas (2nd)1842-1",
+        "reason": "wrong outcome: Mexican forces occupied San Antonio after the defenders surrendered; the later Texan resistance is represented separately"
+      },
+      {
+        "candidate_id": "hced-San Carlos, Falklands1982-1",
+        "reason": "duplicate of the day-precision IWBD San Carlos record iwbd-202-78-1636"
+      },
+      {
         "candidate_id": "hced-San Isidro1896-1",
         "reason": "Wave 6 evidence audit hold"
       },
       {
         "candidate_id": "hced-San Mateo, Philippines1899-1",
         "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "hced-SanAntonio, Texas1842-1",
+        "reason": "unsupported engagement: the first 1842 seizure was an unopposed occupation after the Texan evacuation, not a bilateral draw"
       },
       {
         "candidate_id": "hced-Scutari1912-1913-1",
@@ -1895,6 +1973,10 @@
         "reason": "duplicate of the Battle of Guise/Saint-Quentin 1914"
       },
       {
+        "candidate_id": "hced-Stanley1982-1",
+        "reason": "overlapping operation envelope: the Battle for Stanley aggregates high-ground engagements already rated separately, including Longdon and Tumbledown"
+      },
+      {
         "candidate_id": "hced-Sucat1899-1",
         "reason": "Wave 6 evidence audit hold"
       },
@@ -1915,8 +1997,16 @@
         "reason": "chronology unresolved: reputable accounts differ between 86 and 85 BCE, and the reviewed primary texts do not pin the selected year"
       },
       {
+        "candidate_id": "hced-Thorntons Ambush1846-1",
+        "reason": "duplicate of the day-precision IWBD Thornton's Ambush record iwbd-7-3-10"
+      },
+      {
         "candidate_id": "hced-Tokar1891-1",
         "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Toluca1860-1",
+        "reason": "wrong actor identity: the opposing force was the Mexican Conservative faction, not a generic Mexican Republic state side"
       },
       {
         "candidate_id": "hced-Toski1889-1",
@@ -1935,12 +2025,20 @@
         "reason": "duplicate of Trouillas 1793 under a variant spelling"
       },
       {
+        "candidate_id": "hced-Tuyuti1866-1",
+        "reason": "incomplete coalition: Uruguay is omitted from the coded side"
+      },
+      {
         "candidate_id": "hced-Twt Hill1463-1",
         "reason": "date error: the action occurred on 16 October 1461"
       },
       {
         "candidate_id": "hced-Um Diwaykarat1899-1",
         "reason": "identity_boundary: post-1882 Egyptian events require sequential, time-bounded identities; do not widen the 1805-1882 Muhammad Ali series"
+      },
+      {
+        "candidate_id": "hced-Uruguayana1865-1",
+        "reason": "incomplete coalition: Uruguay is omitted from the coded side"
       },
       {
         "candidate_id": "hced-Vardar1915-1",
@@ -1961,6 +2059,14 @@
       {
         "candidate_id": "hced-Wofla1542-1",
         "reason": "incomplete principal side: the Adal Sultanate fielded the army at Wofla, but the crosswalk retains Ottoman support alone"
+      },
+      {
+        "candidate_id": "hced-Yatay1865-1",
+        "reason": "incomplete coalition: Brazilian and Uruguayan belligerents are omitted"
+      },
+      {
+        "candidate_id": "hced-Ytororo1868-1",
+        "reason": "wrong and incomplete belligerents: Ytororo was principally Brazil versus Paraguay"
       },
       {
         "candidate_id": "hced-Zapote Bridge1896-1",
@@ -2461,6 +2567,10 @@
         "reason": "inverted outcome: Napoleon withdrew before Schwarzenberg's Allied army"
       },
       {
+        "candidate_id": "hced-Atbara1898-1",
+        "reason": "incomplete coalition: Kitchener's Anglo-Egyptian army included British, Egyptian, and Sudanese formations, while the source-side resolution rates only Britain"
+      },
+      {
         "candidate_id": "hced-Barcelona, Spain1705-1706-1",
         "reason": "incompatible envelope: combines the distinct 1705 capture and 1706 defense while the 1705 siege is already rated separately"
       },
@@ -2493,6 +2603,10 @@
         "reason": "wrong Habsburg branch: Maximilian's Imperial-Tyrolean army is coded as Spain"
       },
       {
+        "candidate_id": "hced-Chalchuapa1885-1",
+        "reason": "wrong belligerent: the battle was fought by El Salvador against the Guatemalan invasion; Honduras did not fight at Chalchuapa"
+      },
+      {
         "candidate_id": "hced-Coatit1895-1",
         "reason": "inverted outcome: Baratieri's Italian force defeated Ras Mengesha"
       },
@@ -2503,6 +2617,10 @@
       {
         "candidate_id": "hced-Con Thien (2nd)1967-1",
         "reason": "side-misattributed: PAVN engagement coded as 'Viet Cong'"
+      },
+      {
+        "candidate_id": "hced-Dakhila1898-1",
+        "reason": "incomplete coalition: the raw winner is United Kingdom and Sudan, but the British crosswalk short-circuits the composite and drops the Sudanese force"
       },
       {
         "candidate_id": "hced-Dardanelles1654-1",
@@ -2519,6 +2637,22 @@
       {
         "candidate_id": "hced-Dragasani1821-1",
         "reason": "duplicate source row with the same inverted Dragasani outcome"
+      },
+      {
+        "candidate_id": "hced-El Obeid1883-1",
+        "reason": "duplicate of the Kashgal/Kashgil-Sheikan engagement and wrong resolved loser: Hicks commanded an Egyptian-Khedival army, not a Britain-only force"
+      },
+      {
+        "candidate_id": "hced-Fuengirola1810-1",
+        "reason": "incomplete coalition: the source loser label is British and Spanish, but the Spanish crosswalk short-circuits that composite and omits Britain"
+      },
+      {
+        "candidate_id": "hced-Gedaref1898-1",
+        "reason": "wrong resolved belligerent: the field force was Egyptian-Sudanese under British officers, while the release would rate Britain alone"
+      },
+      {
+        "candidate_id": "hced-Handoub1888-1",
+        "reason": "incomplete coalition: the raw winner includes Sudanese forces, but the British crosswalk short-circuits the composite and drops them"
       },
       {
         "candidate_id": "hced-Huaihai1948-1",
@@ -2541,12 +2675,24 @@
         "reason": "wrong actor: the defender was the independent Khanate of Kalat, not the Kabul emirate"
       },
       {
+        "candidate_id": "hced-Kashgal1883-1",
+        "reason": "duplicate of the El Obeid/Kashgil-Sheikan engagement and wrong resolved loser: Hicks commanded an Egyptian-Khedival army, not a Britain-only force"
+      },
+      {
         "candidate_id": "hced-Kehl1797-1",
         "reason": "inverted outcome: the French garrison capitulated to Austria"
       },
       {
+        "candidate_id": "hced-Khania1692-1",
+        "reason": "incomplete coalition: the Christian expedition also included Maltese and Florentine forces omitted by the source-side reconstruction"
+      },
+      {
         "candidate_id": "hced-Khe Sanh1967-1",
         "reason": "duplicate of iwbd_iwbd_163_62_1489 (Khe Sanh 1, 1967)"
+      },
+      {
+        "candidate_id": "hced-Koge Bay1677-1",
+        "reason": "wrong belligerent: the supporting Dutch fleet never reached the battle, which was fought by the Danish-Norwegian and Swedish fleets"
       },
       {
         "candidate_id": "hced-Kolberg1760-1",
@@ -2577,6 +2723,10 @@
         "reason": "inverted outcome: Sobieski defeated the Ottoman-Crimean force"
       },
       {
+        "candidate_id": "hced-Malaga1704-1",
+        "reason": "incomplete coalition: the source omits Spain from the Franco-Spanish fleet"
+      },
+      {
         "candidate_id": "hced-Marstrand-1",
         "reason": "inverted outcome: Danish-Norwegian forces captured Marstrand and Carlsten"
       },
@@ -2589,12 +2739,20 @@
         "reason": "inverted outcome: the Battle of Gniew/Mewe was a Swedish victory"
       },
       {
+        "candidate_id": "hced-Mirandola1511-1",
+        "reason": "incomplete coalition reconstruction: the siege involved additional Urbino, Spanish, Mirandolan, and Ferrarese belligerents"
+      },
+      {
         "candidate_id": "hced-Mockern (1st)1813-1",
         "reason": "wrong belligerent: Austria was neutral during the April action"
       },
       {
         "candidate_id": "hced-Mojkovac1916-1",
         "reason": "inverted outcome: Montenegro won the defensive action at Mojkovac"
+      },
+      {
+        "candidate_id": "hced-Monastir1912-1",
+        "reason": "wrong belligerent: Serbian forces fought the Ottoman army at Monastir; Bulgaria did not participate in the battle"
       },
       {
         "candidate_id": "hced-Mons1572-1",
@@ -2609,12 +2767,32 @@
         "reason": "mis-crosswalked participant: 'Australia' coded ko_korean_rep (no ROK forces at Nam Dong)"
       },
       {
+        "candidate_id": "hced-Nieuport1600-1",
+        "reason": "inverted outcome: Maurice's Dutch-led army defeated the Spanish field army"
+      },
+      {
+        "candidate_id": "hced-Omdurman1898-1",
+        "reason": "incomplete coalition: the Anglo-Egyptian army included British, Egyptian, and Sudanese formations, while the release would rate only Britain"
+      },
+      {
+        "candidate_id": "hced-Paniani1782-1",
+        "reason": "wrong belligerent: the opposing field force was Mysorean, including Lally's corps; the Maratha Confederacy did not fight at Paniani"
+      },
+      {
         "candidate_id": "hced-Parwan Durrah1840-1",
         "reason": "inverted outcome: Dost Mohammad's Afghan force won the action"
       },
       {
+        "candidate_id": "hced-Piave1809-1",
+        "reason": "wrong belligerent identity: the Italian force at Piave belonged to the Napoleonic Kingdom of Italy (1805-1814), while the ordinary Italy alias resolves to an over-wide Cliopatria Italian Republic envelope"
+      },
+      {
         "candidate_id": "hced-Poland1939-1",
         "reason": "campaign envelope duplicates separately rated invasion-of-Poland components"
+      },
+      {
+        "candidate_id": "hced-Raszyn1809-1",
+        "reason": "wrong belligerent: the defending coalition was Polish-Saxon, not French; the source also omits Saxony"
       },
       {
         "candidate_id": "hced-Rippach1813-1",
@@ -3055,10 +3233,6 @@
         "reason": "identity_boundary: 1967 Egypt requires a post-UAR, time-bounded identity; do not widen the 1805-1882 Muhammad Ali series"
       },
       {
-        "candidate_id": "iwbd-169-64-1532",
-        "reason": "identity_boundary: 1967 Syria requires a post-UAR identity; do not widen the existing 1973-open series backward across the 1958-1961 UAR"
-      },
-      {
         "candidate_id": "iwbd-170-65-1533",
         "reason": "Wave 6 evidence audit hold"
       },
@@ -3125,6 +3299,14 @@
       {
         "candidate_id": "iwbd-186-72-1586",
         "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-187-73-1600",
+        "reason": "duplicate of HCED Jijiga 1978; retain the HCED record because its coalition reconstruction includes Cuba"
+      },
+      {
+        "candidate_id": "iwbd-202-78-1640",
+        "reason": "overlapping operation envelope: Stanley aggregates the final high-ground engagements already rated separately, including Longdon and Tumbledown"
       },
       {
         "candidate_id": "iwbd-207-80-1650",
@@ -3509,6 +3691,10 @@
         "reason": "actor_transition: Garibaldi's volunteer army and later Sardinian regular forces cannot be one Italy identity"
       },
       {
+        "parent_war_id": "17",
+        "reason": "War of the Triple Alliance aggregation is incomplete: the available IWD component dyads omit Uruguay from the Argentina-Brazil-Uruguay coalition"
+      },
+      {
         "parent_war_id": "19",
         "reason": "coalition incomplete (independent German belligerents omitted)"
       },
@@ -3623,6 +3809,7 @@
       "iwbd-16-6-55",
       "iwbd-16-6-56",
       "iwbd-16-6-57",
+      "iwbd-169-64-1532",
       "iwbd-207-80-1652",
       "iwbd-207-80-1653",
       "iwbd-207-80-1655",
@@ -3660,6 +3847,9 @@
         "iwbd-16-6-55",
         "iwbd-16-6-56",
         "iwbd-16-6-57"
+      ],
+      "six_day_fronts": [
+        "iwbd-169-64-1532"
       ],
       "turkish_national_movement_franco_turkish": [
         "iwbd-116-44-820",
@@ -3750,20 +3940,20 @@
       "4": "insurgency_intervention"
     },
     "iwd_rejections": {
-      "curated_exclusion": 18,
+      "curated_exclusion": 19,
       "inconsistent_coalition_sides": 1,
       "mixed_component_outcomes": 2,
       "overlaps_curated_strategic_event": 6,
-      "unresolved_time_bounded_party": 2
+      "unresolved_time_bounded_party": 1
     },
-    "accepted_iwbd_battles": 151,
+    "accepted_iwbd_battles": 153,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
-      "coalition_or_composite_side": 130,
-      "contains_constituent_iwbd_rows": 322,
-      "curated_exclusion": 212,
+      "coalition_or_composite_side": 139,
+      "contains_constituent_iwbd_rows": 321,
+      "curated_exclusion": 213,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 875,
+      "duplicate_of_hced_battle": 864,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,
@@ -3776,7 +3966,7 @@
     "accepted_ucdp_events": 7,
     "ucdp_termination_rows_total": 2752,
     "ucdp_rejections": {
-      "contradictory_linked_episode_outcomes": 1,
+      "contradictory_linked_episode_outcomes": 2,
       "documented_side_attribution_dispute": 1,
       "duplicate_of_promoted_strategic_event": 9,
       "dyad_conflict_outcome_contradiction": 0,
@@ -3791,7 +3981,7 @@
       "outcome_peace_agreement": 60,
       "same_or_empty_opposing_side": 0,
       "unmapped_type_of_conflict": 0,
-      "unresolved_time_bounded_party": 6
+      "unresolved_time_bounded_party": 5
     },
     "ucdp_curated_exclusions": [
       {

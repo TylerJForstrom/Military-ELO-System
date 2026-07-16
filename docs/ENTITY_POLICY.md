@@ -60,6 +60,11 @@ time-bounded policies, never through loose name similarity:
 - **COW code 678 ("Yemen Arab Republic"):** resolves to the Mutawakkilite
   Kingdom of Yemen for 1918-1961 only. The policy stops before the 1962 coup
   and does not bridge into the republican regime.
+- **Seshat code `mx_mexico_1` and the bare label `mexico`:** resolve to the
+  Mexican Republic for 1824-1863 and to the reviewed modern Mexican series
+  from 1868. The years 1864-1867 are a global deny window shared by every
+  label pipeline, preventing the French Intervention and Second Mexican Empire
+  from being flattened into either republic.
 - **The label "France":** resolves through six approved windows — the Kingdom
   of France (987-1792), the French First Republic (1793-1803), the First
   French Empire (1804-1815), the Second French Empire (1852-1870), the French
@@ -81,6 +86,14 @@ exactly one window or it fails, with no fallback to alias matching. Assigning a
 bare label to these windows is an entity-boundary decision under the review
 workflow's high-impact rule: every entry below requires a second reviewer, and
 the release stays labelled provisional pending that sign-off.
+
+An explicit post-1500 comma, semicolon, or ampersand may describe a coalition
+rather than one label. Such a side resolves only when every member independently
+passes this same ordinary label resolver for the full interval and produces a
+distinct identity; plain `and` is never a delimiter. Resolved members are then
+canonicalized through the shared audited supersession inventory, so a source
+envelope cannot re-enter the ledger through a composite spelling. The rule has
+no pre-1500 path and therefore cannot modify the frozen ancient cohort.
 
 State polity labels:
 
@@ -108,6 +121,11 @@ State polity labels:
 | `mysore` | 1572-1799 Kingdom of Mysore | post-1799 | The Hyder Ali/Tipu Sultan takeover is a dynastic change within one polity; the post-1799 princely state stays staged. |
 | `punjab` | 1799-1849 Sikh Empire | outside | The pre-1799 misl confederacy stays staged. |
 | `transvaal` | 1852-1902 South African Republic | outside | The 1877-1881 British annexation is treated as an interruption of the same polity, not a reset. |
+| `mahdists`, `mahdiyya`, `the mahdiyya`, `sudanese mahdists`, `sudanese islamists` | 1881-1899 Mahdist State | outside | Muhammad Ahmad's proclamation through the successor regime's defeat; the existing rated Mahdist identity is retained rather than forking its Elo history. |
+| `argentina` | 1831-1861 Argentine Confederation; 1861-1930 post-Pavon Argentine Republic; 1930-present modern Argentine Republic | outside; bare 1861 and 1930 | The adjacent windows overlap deliberately at Pavon and the coup, so year-only transition records resolve to neither identity. |
+| `bulgaria` | 1878-1908 Principality of Bulgaria; 1908-1946 Kingdom of Bulgaria | outside; bare 1908 | The declaration-of-independence year is shared by both windows and therefore fails the unique-window rule at year precision. |
+| `texas`, `texan rebels` | 1836-1845 Republic of Texas | outside | The entity extends through 1846, but the generic policy stops after the last complete pre-transfer year; pre-independence rebels and the annexation-transfer year stay staged. |
+| `syria` | 1946-1957 Second Syrian Republic; 1962-present Syrian Arab Republic | 1958-1961 United Arab Republic | The union with Egypt is a distinct command identity and a deliberate gap; the post-UAR series restarts from the normal prior. |
 | `muslim caliphate` | 632-660 Rashidun Caliphate; 661-750 Umayyad Caliphate | after 750 | Era-correct split at the Umayyad accession; the Abbasid era resolves through its own Cliopatria identity. |
 | `macedonia` | 336-323 BCE Macedonian Empire | outside | Exact source-label policy for Alexander's reign; it does not turn the generic label into a resolver alias. |
 | `ummayyad caliphate` | 661-750 Umayyad Caliphate | outside | Exact upstream misspelling, constrained to the same historical interval as the canonical identity. |
@@ -135,7 +153,8 @@ Non-state actor labels (see the non-state actor policy below):
 Labels deliberately **not** given policy entries — for example `netherlands`
 (resolves through the curated Dutch Republic's alias for 1568-1795 only),
 `turkey` (deny-windowed 1919-1923 and otherwise resolved by era-valid alias
-matching), pre-1948 `israel`, and pre-1949 `china` — stay staged mechanically
+matching), `mexico` (deny-windowed 1864-1867 and otherwise resolved by the
+time-valid code/alias policy), pre-1948 `israel`, and pre-1949 `china` — stay staged mechanically
 until curated identities exist.
 
 ### Faction and collective-peoples labels never resolve
@@ -374,20 +393,49 @@ and the Turkish National Movement; the Republic of China on Taiwan,
 French Third Republic, Spain, Poland, Greece, and the other opposing identities
 reuse their established canonical records.
 
-After canonical consolidation and the reviewed Wave 7 identity splits, the measured registry contains 1,702 identities.
-The release entity file contains 342 records, while 340 distinct IDs actually
-participate in rated events. The unrated Portuguese union identity and the
-superseded Free Orange State source envelope explain the two-record difference.
+After canonical consolidation, the reviewed Wave 7 identity splits, and the
+current crisp-boundary tranche, the measured registry contains 1,701
+identities. The release entity file contains 345 records, while 343 distinct
+IDs actually participate in rated events. The unrated Portuguese union and
+the superseded Free Orange State source envelope explain the two-record
+difference; the Republic of Texas now participates through the reviewed Mexico
+code-continuity path.
+
+### Crisp state-identity tranche
+
+The current tranche reuses established IDs wherever a polity already has rated
+evidence, rather than opening parallel Elo series. Its exact identity and
+generic-policy boundaries are:
+
+| Identity | Entity interval | Generic label/code behavior |
+|---|---|---|
+| Mahdist State | 1881-1899 | Mahdist labels resolve throughout 1881-1899. |
+| Argentine Republic (post-Pavon) | 1861-1930 | `argentina` and COW/GW code 160 overlap the Confederation in 1861 and the modern republic in 1930, so both boundary years fail closed. |
+| Principality / Kingdom of Bulgaria | 1878-1908 / 1908-1946 | `bulgaria` and COW/GW code 355 overlap at 1908, so a year-only 1908 record is ambiguous. |
+| Republic of Texas | 1836-1846 | `texas` and `texan rebels` resolve only in complete years 1836-1845; 1846 stays staged. |
+| Syrian republics | 1946-1957 / 1962-present | `syria`, Seshat's modern-Syria code, and COW/GW code 652 all preserve the 1958-1961 UAR gap; no rating crosses it. |
+
+All five decisions use Britannica boundary references, start at the normal
+prior, and transfer no rating across a predecessor, coup, monarchy, union, or
+annexation boundary.
+
+The Argentine windows do not authorize every newly resolvable row. Exact HCED
+records remain excluded when they flatten Blanco/Colorado or Mexican faction
+forces into a state, omit Brazil or Uruguay from the Triple Alliance, invert a
+result, or duplicate a stronger event record. IWD parent 17 is also withheld:
+its component dyads omit Uruguay, so they cannot support the complete
+Argentina-Brazil-Uruguay coalition required by the parent-war rule.
 
 ### Wave 6 identity-bound contracts and holds
 
-Wave 6 adds 199 events through three candidate-keyed chronological lanes while
+Wave 6 originally added 199 events through three candidate-keyed chronological lanes while
 preserving every Wave 5 event payload. The modern lane initially proposed 90
 events, but an independent boundary audit moved 22 exact contracts to
-fingerprinted holds: 14 HCED rows involving post-1882 Egypt or transitional
-Spanish governments, the 1948 IWD parent, and seven 1967 IWBD rows involving
-Egypt or Syria. The build must not widen `egypt_muhammad_ali` beyond 1882 or
-the existing Syria identity backward before 1973. The First Balkan War row
+fingerprinted holds. The post-UAR Syrian identity now releases one exact 1967
+IWBD contract, leaving 21 holds: 14 HCED rows involving post-1882 Egypt or
+transitional Spanish governments, the 1948 IWD parent (still blocked by other
+coalition identities), and six Egypt-linked 1967 IWBD rows. The build must not
+widen `egypt_muhammad_ali` beyond 1882 or bridge Syria's 1958-1961 UAR gap. The First Balkan War row
 reuses the already-rated, time-valid Montenegro identity instead of opening a
 parallel series.
 

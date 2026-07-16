@@ -56,11 +56,11 @@ class Wave6RegistryConsistencyTests(unittest.TestCase):
         self.assertIn("cliopatria_v020", seljuk["source_ids"])
         self.assertIn("Seljuk Empire", seljuk["aliases"])
 
-    def test_modern_boundaries_were_not_widened(self) -> None:
+    def test_reviewed_modern_boundaries_are_explicit(self) -> None:
         egypt = self.entities["egypt_muhammad_ali"]
         syria = self.entities["clio_q41137_1973_b05dea50"]
         self.assertEqual((egypt["start_year"], egypt["end_year"]), (1805, 1882))
-        self.assertEqual((syria["start_year"], syria["end_year"]), (1973, 2024))
+        self.assertEqual((syria["start_year"], syria["end_year"]), (1962, None))
 
 
 if __name__ == "__main__":

@@ -194,6 +194,19 @@
     ]
   },
   {
+    "id": "britannica_al_mahdi",
+    "title": "Al-Mahdi: Sudanese religious leader",
+    "url": "https://www.britannica.com/biography/al-Mahdi-Sudanese-religious-leader",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "britannica_american_revolution",
     "title": "American Revolution",
     "url": "https://www.britannica.com/event/American-Revolution",
@@ -256,6 +269,19 @@
     "source_family_id": "britannica_editorial_corpus",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "britannica_bulgaria_history",
+    "title": "Bulgaria: History",
+    "url": "https://www.britannica.com/place/Bulgaria/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -516,6 +542,19 @@
     "license": "proprietary-reference",
     "source_type": "general_reference",
     "accessed": "2026-07-13",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "britannica_mahdist_sudan",
+    "title": "Sudan: The Mahdiyah (1885-98)",
+    "url": "https://www.britannica.com/place/Sudan/The-Mahdiyah-1885-98",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-16",
     "source_family_id": "britannica_editorial_corpus",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -804,6 +843,19 @@
     ]
   },
   {
+    "id": "britannica_syria_history",
+    "title": "Syria: History",
+    "url": "https://www.britannica.com/place/Syria/History",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "britannica_taiping_rebellion",
     "title": "Taiping Rebellion",
     "url": "https://www.britannica.com/event/Taiping-Rebellion",
@@ -833,6 +885,19 @@
     "url": "https://www.britannica.com/event/Ten-Years-War",
     "publisher": "Encyclopaedia Britannica",
     "source_type": "secondary",
+    "source_family_id": "britannica_editorial_corpus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "britannica_texas_revolution",
+    "title": "Texas Revolution",
+    "url": "https://www.britannica.com/topic/Texas-Revolution",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "proprietary-reference",
+    "source_type": "general_reference",
+    "accessed": "2026-07-16",
     "source_family_id": "britannica_editorial_corpus",
     "evidence_roles": [
       "identity_boundary_or_context_reference"

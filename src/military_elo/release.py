@@ -44,6 +44,7 @@ from .promotion.policy import (
 from .promotion.common import (
     normalize_label,
     read_jsonl,
+    _canonicalize_superseded_identity,
     _candidate_entity_id,
     _candidate_labels,
     _candidate_overlaps_entity,
@@ -65,6 +66,7 @@ from .promotion.common import (
     _scale,
     _seed_entity_labels,
     _slug,
+    _split_composite_label,
     _strategic_participants,
     _validate_seed_event_intervals,
     _WAR_NUMERAL_TOKENS,

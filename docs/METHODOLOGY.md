@@ -15,12 +15,12 @@ Each layer starts at 1500 with high uncertainty. A successor or newly recognized
 
 ## Coverage and evidence tiers
 
-The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,702 time-bounded polity identities. Its entity file contains 342 release records, while 340 distinct entity IDs actually participate in accepted rating evidence. Its 4,797 events consist of 40 manually curated events, 1,884 crosswalk-resolved, 2,383 label-resolved, and 268 candidate-keyed HCED tactical encounters, 64 coalition-aggregated IWD strategic parent wars, 151 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The review queues hold 27,014 staged source records, of which 23,390 are event-like candidates; 18,597 of those remain outside the rating ledger. An unrated registry entry or release entity record has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
+The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 1,701 time-bounded polity identities. Its entity file contains 345 release records, while 343 distinct entity IDs actually participate in accepted rating evidence. Its 4,842 events consist of 40 manually curated events, 1,887 crosswalk-resolved, 2,423 label-resolved, and 268 candidate-keyed HCED tactical encounters, 64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The review queues hold 27,014 staged source records, of which 23,390 are event-like candidates; 18,552 of those remain outside the rating ledger. An unrated registry entry or release entity record has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
 
 Location coverage is status-aware. Every rated HCED event is bound to exactly
 one stable source candidate ID, but a location field is published only when it
-survives the frozen candidate-ID quarantine. The release contains 4,498 strict
-GeoJSON Points, 4,455 exact `modern_location_country` transcriptions, and 4,502
+survives the frozen candidate-ID quarantine. The release contains 4,541 strict
+GeoJSON Points, 4,498 exact `modern_location_country` transcriptions, and 4,545
 provenance-bound events with at least one of those fields. Each provenance
 object is closed to `source_id: hced_dataset`, the exact source record ID,
 `assertion_status: unreviewed_source_assertion`, and
@@ -48,6 +48,29 @@ resolver. Same-name same-year label rows use their preserved source-record ID
 as a disambiguator, so distinct engagements such as both Breslau actions of
 1757 do not depend on source order. Label-resolved events retain their lower
 identity confidence and per-side resolution provenance.
+
+For post-1500 HCED rows only, an otherwise unresolved side can be interpreted
+as a coalition when the source label contains an explicit comma, semicolon, or
+ampersand. Plain `and` is never split because it occurs inside polity names.
+Every delimited member must independently pass the ordinary label resolver for
+the full event interval, every resulting identity must be distinct, and the
+normal guard still rejects an identity appearing on both sides. Before the
+coalition is built, the same shared pre-1500 and Wave 7 supersession inventory
+used by the release post-pass remaps obsolete source identities to their one
+time-valid canonical target. This admits 21 current events from 1658–1983,
+including four Boer-War composites canonicalized to
+`orange_free_state_1854`, while admitting no pre-1500 event and leaving the
+frozen ancient cohort unchanged.
+
+The Mexican Seshat-code policy is likewise interval-specific: it resolves to
+the Mexican Republic for 1824–1863 and to the reviewed modern series from 1868,
+while a shared `mexico` deny window forces every label pipeline to fail closed
+for 1864–1867. Resolution is only an identity gate, not automatic acceptance.
+Newly resolvable Argentine and Triple Alliance rows remain exact curated
+exclusions when the source omits a principal coalition member, assigns the
+wrong state actor, inverts the result, or duplicates a stronger event record;
+the IWD Triple Alliance parent is withheld because its component graph omits
+Uruguay.
 
 IWD and IWBD deliberately call the lower alias tiers directly. They enforce
 deny windows but bypass the HCED-only label policies, faction blocklist,
@@ -84,7 +107,7 @@ identities, and `Turkey` rows intersecting 1919-1923 stay staged. The
 war-level victor is ignored, day precision is preserved, and tactical severity
 is capped at limited.
 
-UCDP conflict-termination records are promoted only at the conflict-episode level; the dyad-level file is a consistency cross-check, never a promotion unit, because dyad rows are the component layer of one conflict episode and promoting them would enter one episode several times. Only terminal episodes with victory outcome codes 3 or 4 produce events: peace agreements, ceasefires, low-activity endings, and actor cessation all stay staged under named counters, because peace is not a loss, low activity is not an outcome, and actor cessation is ambiguous. Every primary party on both sides must resolve to a unique time-bounded identity for the full episode span: state parties through explicit Gleditsch–Ward code policies — authoritative tables with deliberately absent windows, exactly like the COW-code policies, so for example "Government of Afghanistan" resolves to nothing in 1979 rather than bridging four regimes — or exact time-valid alias matching, and non-state primaries only through conflict-scoped curated actor policies whose windows are the actor's attested existence bounds and whose keys bind to one conflict ID, so a homonymous actor label in a different conflict never resolves; the government side must independently resolve. The event's war type follows the source's `type_of_conflict` under an exhaustive declared mapping, and unmapped types are rejected rather than coerced. An otherwise-promotable episode is still rejected when it duplicates an already-promoted strategic event by shared entities and overlapping years; when a terminal dyad row of the same conflict contradicts it, either through an opposite-orientation victory or a same-pair negotiated termination (mixed evidence is quarantined, never forced into one binary umbrella outcome); when a victory assertion elsewhere in the file with the same episode end date orients a shared entity oppositely — this linked-episode rule quarantines the Israel–Jordan front of the 1967 Six-Day complex, whose fronts are mutually contradictory in the source, while the Syria and Egypt fronts of the same complex already stay staged one gate earlier as unresolved time-bounded parties; or when it carries a documented side-attribution dispute recorded as a curated exclusion. An accepted episode whose sibling episode deduplicated against a ledger war event inherits that event's cluster identifier, so episodes of one conflict share one diminishing evidence-weight schedule even across sources. Severity is capped at limited, existential or regime-ending consequences are never inferred from termination codes, and secondary supporters are recorded as provenance only — attaching a win/loss vector to a supporter whose individual result the source does not assert would invent an outcome.
+UCDP conflict-termination records are promoted only at the conflict-episode level; the dyad-level file is a consistency cross-check, never a promotion unit, because dyad rows are the component layer of one conflict episode and promoting them would enter one episode several times. Only terminal episodes with victory outcome codes 3 or 4 produce events: peace agreements, ceasefires, low-activity endings, and actor cessation all stay staged under named counters, because peace is not a loss, low activity is not an outcome, and actor cessation is ambiguous. Every primary party on both sides must resolve to a unique time-bounded identity for the full episode span: state parties through explicit Gleditsch–Ward code policies — authoritative tables with deliberately absent windows, exactly like the COW-code policies, so for example "Government of Afghanistan" resolves to nothing in 1979 rather than bridging four regimes — or exact time-valid alias matching, and non-state primaries only through conflict-scoped curated actor policies whose windows are the actor's attested existence bounds and whose keys bind to one conflict ID, so a homonymous actor label in a different conflict never resolves; the government side must independently resolve. The event's war type follows the source's `type_of_conflict` under an exhaustive declared mapping, and unmapped types are rejected rather than coerced. An otherwise-promotable episode is still rejected when it duplicates an already-promoted strategic event by shared entities and overlapping years; when a terminal dyad row of the same conflict contradicts it, either through an opposite-orientation victory or a same-pair negotiated termination (mixed evidence is quarantined, never forced into one binary umbrella outcome); when a victory assertion elsewhere in the file with the same episode end date orients a shared entity oppositely — this linked-episode rule quarantines the Israel–Jordan front of the 1967 Six-Day complex, whose fronts are mutually contradictory in the source and whose other fronts must independently pass the identity and linked-evidence gates; or when it carries a documented side-attribution dispute recorded as a curated exclusion. An accepted episode whose sibling episode deduplicated against a ledger war event inherits that event's cluster identifier, so episodes of one conflict share one diminishing evidence-weight schedule even across sources. Severity is capped at limited, existential or regime-ending consequences are never inferred from termination codes, and secondary supporters are recorded as provenance only — attaching a win/loss vector to a supporter whose individual result the source does not assert would invent an outcome.
 
 These filters make the build reproducible; they do not substitute for claim-level human adjudication or make the release comprehensive.
 

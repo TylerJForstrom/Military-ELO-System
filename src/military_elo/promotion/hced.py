@@ -13,6 +13,7 @@ from .common import (
     _resolve_code,
     _resolve_label_tiers,
     _scale,
+    _split_composite_label,
     _slug,
     _war_tokens,
     normalize_label,
@@ -32,6 +33,11 @@ from .policy import (
     HCED_PENDING_SPLIT_LABELS,
     _label_policy_seed_id,
 )
+
+
+# Composite splitting applies only to the un-frozen post-1500 reservoir; the
+# pre-1500 wave is an exact-manifest, exhaustively cited cohort.
+_COMPOSITE_SPLIT_MIN_YEAR = 1500
 
 
 def _hced_label_row_key(
@@ -458,6 +464,7 @@ def promote_hced_label_rows(
     resolve_side_label: Any,
     curated_exclusions: dict[str, str] | None = None,
     resolve_candidate_side_label: Any | None = None,
+    canonicalize_composite_identity: Any | None = None,
 ) -> dict[str, Any]:
     """Second HCED promotion pass for rows lacking Seshat coding on a side.
 
@@ -540,10 +547,7 @@ def promote_hced_label_rows(
                     entity_id, polity, reason, tier = resolve_candidate_side_label(
                         candidate, label, low_year, high_year
                     )
-                if not entity_id:
-                    rejections[reason or "no_unique_time_valid_label_match"] += 1
-                    resolution_failed = True
-                else:
+                if entity_id:
                     if polity:
                         pending_polities[entity_id] = polity
                     resolved.append(entity_id)
@@ -551,6 +555,39 @@ def promote_hced_label_rows(
                     label_side_count += 1
                     if tier == "crosswalk_observation":
                         observation_hits.append((normalize_label(label), entity_id))
+                elif low_year < _COMPOSITE_SPLIT_MIN_YEAR:
+                    rejections[reason or "no_unique_time_valid_label_match"] += 1
+                    resolution_failed = True
+                else:
+                    members = _split_composite_label(label)
+                    member_ids: list[str] = []
+                    member_polities: dict[str, dict[str, Any]] = {}
+                    composite_ok = len(members) >= 2
+                    for member in members:
+                        member_id, member_polity, _member_reason, _member_tier = (
+                            resolve_side_label(member, low_year, high_year)
+                        )
+                        if member_id and canonicalize_composite_identity is not None:
+                            member_id, member_polity = canonicalize_composite_identity(
+                                member_id,
+                                member_polity,
+                                low_year,
+                                high_year,
+                            )
+                        if not member_id:
+                            composite_ok = False
+                            break
+                        member_ids.append(member_id)
+                        if member_polity:
+                            member_polities[member_id] = member_polity
+                    if composite_ok and len(set(member_ids)) == len(member_ids):
+                        pending_polities.update(member_polities)
+                        resolved.extend(member_ids)
+                        side_tiers.append("label_composite")
+                        label_side_count += 1
+                    else:
+                        rejections[reason or "no_unique_time_valid_label_match"] += 1
+                        resolution_failed = True
             if resolution_failed:
                 break
             resolved_sides.append(_deduplicate(resolved))

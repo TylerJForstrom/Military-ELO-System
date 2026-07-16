@@ -382,7 +382,8 @@ class DedupTests(unittest.TestCase):
         )
 
     def test_curated_iwbd_exclusion_is_counted_before_other_gates(self) -> None:
-        candidate_id = next(iter(IWBD_CURATED_EXCLUSIONS))
+        candidate_id = "iwbd-187-73-1600"
+        self.assertIn(candidate_id, IWBD_CURATED_EXCLUSIONS)
         result = _promote(
             [
                 _battle(
@@ -1754,6 +1755,23 @@ class ReleaseArtifactTests(unittest.TestCase):
                 ),
                 event["id"],
             )
+
+    def test_named_variant_duplicates_prefer_day_precision_iwbd(self) -> None:
+        event_ids = {str(event["id"]) for event in self.events}
+        self.assertLessEqual(
+            {
+                "iwbd_iwbd_7_3_10_thornton_s_ambush",
+                "iwbd_iwbd_202_78_1636_san_carlos",
+            },
+            event_ids,
+        )
+        self.assertTrue(
+            {
+                "hced_hced_thorntons_ambush1846_1",
+                "hced_label_hced_san_carlos_falklands1982_1",
+                "iwbd_iwbd_202_78_1640_stanley",
+            }.isdisjoint(event_ids)
+        )
 
     def test_badme_2a_survives_cross_year_fuzzy_match(self) -> None:
         promoted = {

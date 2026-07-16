@@ -105,6 +105,13 @@ SEED_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     # Empire and the Third Republic at year precision and stays staged.
     "af_afghanistan_emirate": ((1823, 1926, "emirate_afghanistan"),),
     "af_durrani_emp": ((1747, 1822, "durrani_empire"),),
+    # The Seshat code spans the Confederation, post-Pavon republic, and modern
+    # series.  Overlapping transition years deliberately fail closed.
+    "ar_argentina_rep_1": (
+        (1831, 1861, "argentine_confederation"),
+        (1861, 1930, "argentine_republic_1861"),
+        (1930, 2026, "clio_q414_1930_5e281b3e"),
+    ),
     "at_habsburg_1": _HABSBURG_WINDOWS,
     "at_habsburg_2": _HABSBURG_WINDOWS,
     "au_austro_hungarian_emp": ((1867, 1918, "austria_hungary"),),
@@ -130,10 +137,23 @@ SEED_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "it_venetian_rep_3": ((697, 1797, "republic_venice"),),
     "it_venetian_rep_4": ((697, 1797, "republic_venice"),),
     "kr_joseon": ((1392, 1897, "joseon"),),
+    # HCED's Texas-revolution rows code the opposing republic with this
+    # Seshat identifier.  Bind only the already-curated Mexican Republic
+    # interval; the First and Second Empires remain outside the window.
+    "mx_mexico_1": (
+        (1824, 1863, "mexican_republic"),
+        (1868, 2024, "clio_mx_mexico_1_1868_ffbcfbae"),
+    ),
     "pl_poland_lithuania_commonwealth": ((1569, 1795, "polish_lithuanian_commonwealth"),),
     "pl_poland_lithuania_k": ((1569, 1795, "polish_lithuanian_commonwealth"),),
     "pl_polish_rep_1": ((1918, 1939, "second_polish_republic"),),
     "rs_serbia_k": ((1882, 1918, "kingdom_serbia"),),
+    # Syria's union with Egypt is a distinct command identity. The two
+    # republic series therefore remain separate and 1958-1961 is absent.
+    "sy_syria_modern": (
+        (1946, 1957, "clio_sy_syria_modern_1946_86597c89"),
+        (1962, 2026, "clio_q41137_1973_b05dea50"),
+    ),
     "sv_sweden_k_modern": ((1523, 2026, "kingdom_sweden"),),
     "sv_swedish_k": ((1523, 2026, "kingdom_sweden"),),
     "sv_swedish_k_1": ((1523, 2026, "kingdom_sweden"),),
@@ -166,6 +186,21 @@ IWD_COW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "100": ((1863, 1885, "united_states_colombia"),),
     "670": ((1932, 2026, "kingdom_saudi_arabia"),),
     "678": ((1918, 1961, "mutawakkilite_kingdom_yemen"),),
+    # Crisp-state tranche. Transition years intentionally overlap adjacent
+    # identities and therefore resolve to no unique target.
+    "160": (
+        (1831, 1861, "argentine_confederation"),
+        (1861, 1930, "argentine_republic_1861"),
+        (1930, 2026, "clio_q414_1930_5e281b3e"),
+    ),
+    "355": (
+        (1878, 1908, "principality_bulgaria"),
+        (1908, 1946, "kingdom_bulgaria"),
+    ),
+    "652": (
+        (1946, 1957, "clio_sy_syria_modern_1946_86597c89"),
+        (1962, 2026, "clio_q41137_1973_b05dea50"),
+    ),
 }
 
 
@@ -429,6 +464,29 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "sweden": ((1523, 2026, "kingdom_sweden"),),
     "transvaal": ((1852, 1902, "south_african_republic"),),
     "venice": ((697, 1797, "republic_venice"),),
+    # ---- Post-M4 crisp state-identity tranche ----
+    # The Argentina and Bulgaria transition years intentionally overlap two
+    # policy windows, preserving the pause-at-year-precision rule.
+    "argentina": (
+        (1831, 1861, "argentine_confederation"),
+        (1861, 1930, "argentine_republic_1861"),
+        (1930, 2026, "clio_q414_1930_5e281b3e"),
+    ),
+    "bulgaria": (
+        (1878, 1908, "principality_bulgaria"),
+        (1908, 1946, "kingdom_bulgaria"),
+    ),
+    "mahdists": ((1881, 1899, "mahdist_ansar_forces"),),
+    "mahdiyya": ((1881, 1899, "mahdist_ansar_forces"),),
+    "the mahdiyya": ((1881, 1899, "mahdist_ansar_forces"),),
+    "sudanese mahdists": ((1881, 1899, "mahdist_ansar_forces"),),
+    "sudanese islamists": ((1881, 1899, "mahdist_ansar_forces"),),
+    "texas": ((1836, 1845, "clio_q170588_1836_8e422d86"),),
+    "texan rebels": ((1836, 1845, "clio_q170588_1836_8e422d86"),),
+    "syria": (
+        (1946, 1957, "clio_sy_syria_modern_1946_86597c89"),
+        (1962, 2026, "clio_q41137_1973_b05dea50"),
+    ),
     # ---- M5 curated non-state actors (second reviewer pending) ----
     "royalists": ((1642, 1651, "english_royalists"),),
     "parliamentarians": ((1642, 1651, "english_parliamentarians"),),
@@ -783,6 +841,11 @@ IDENTITY_DENY_WINDOWS: dict[str, tuple[tuple[int, int], ...]] = {
     # occupation, and restored republic. Until those identities are split,
     # generic Latvia labels before the 1991 restoration stay fail-closed.
     "latvia": ((1918, 1991),),
+    # Generic "Mexico" is ambiguous during the French intervention between
+    # Juarez's republican government and the Second Mexican Empire.  Until
+    # those concurrent actors have reviewed identities, every label pipeline
+    # must fail closed instead of accepting a broad Cliopatria alias.
+    "mexico": ((1864, 1867),),
     "turkey": ((1919, 1923),),
 }
 
@@ -916,6 +979,10 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Andalsnes1940-1": (
         "wrong belligerent: Andalsnes was a British-Norwegian operation, not French"
     ),
+    "hced-Aros1886-1": (
+        "disputed friendly-fire outcome: Mexican and US accounts of the Crawford "
+        "affair conflict, so an unqualified Mexican tactical victory is unsupported"
+    ),
     "hced-Brusilov Offensive1916-1": (
         "inverted outcome: the Brusilov Offensive was a Russian victory over the Central Powers"
     ),
@@ -948,6 +1015,10 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
         "inverted outcome: the French garrison capitulated to the Allied besiegers"
     ),
     "hced-Kemmel1918-1": "inverted outcome: German forces captured Mont Kemmel",
+    "hced-Laredo1842-1": (
+        "unsupported opposing force: the Somervell expedition captured and sacked "
+        "Laredo without an identified Mexican field force"
+    ),
     "hced-Lepanto1571-1": (
         "wrong belligerent: the Danubian Habsburg monarchy did not fight at Lepanto"
     ),
@@ -955,6 +1026,10 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
         "wrong principal belligerent: the Dutch States Army, not England and France, took Maastricht"
     ),
     "hced-Martinesti1789-1": "duplicate of Rimnik/Rymnik 1789 under the battlefield place name",
+    "hced-Mill Creek1839-1": (
+        "wrong opponent identity: Cordova's Mexican and Indigenous insurgent band "
+        "was not the Mexican Republic; a bounded actor identity is still pending"
+    ),
     "hced-Messina1718-1": (
         "wrong opposing sides: Spain captured Messina while France and Austria were allies"
     ),
@@ -977,6 +1052,14 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Rosas1645-1": (
         "Habsburg branch confusion: the defense belonged to Habsburg Spain"
     ),
+    "hced-San Antonio, Texas (2nd)1842-1": (
+        "wrong outcome: Mexican forces occupied San Antonio after the defenders "
+        "surrendered; the later Texan resistance is represented separately"
+    ),
+    "hced-SanAntonio, Texas1842-1": (
+        "unsupported engagement: the first 1842 seizure was an unopposed occupation "
+        "after the Texan evacuation, not a bilateral draw"
+    ),
     "hced-Sevastopol1854-1855-1": (
         "campaign envelope duplicates separately rated Crimean War siege components"
     ),
@@ -992,6 +1075,62 @@ HCED_CURATED_EXCLUSIONS: dict[str, str] = {
     ),
     "hced-Vittorio Veneto1918-1": (
         "wrong principal belligerent: Italy is omitted from the Vittorio Veneto victory"
+    ),
+    # Identity-tranche source-side audit: these rows become technically
+    # resolvable once the Argentina/Mexico code windows exist, but their raw
+    # belligerent reconstruction is incomplete, wrong, or duplicated.
+    "hced-Boqueron, Nhembucu1866-1": (
+        "incomplete coalition: Brazil is omitted from the coded side"
+    ),
+    "hced-Corrientes (2nd)1865-1": (
+        "incomplete coalition: Brazil is omitted from the coded side"
+    ),
+    "hced-Curupaity1866-1": (
+        "incomplete coalition: Brazil and Uruguay are omitted from the coded side"
+    ),
+    "hced-Curuzu1866-1": (
+        "wrong belligerent: Curuzu was a Brazilian land-and-naval operation, "
+        "while the source-side coding adds Argentina"
+    ),
+    "hced-Estero Bellaco1866-1": (
+        "incomplete belligerents: the reconstruction omits Uruguay from the Allied force"
+    ),
+    "hced-Fluvial1866-1": "incomplete coalition: Brazil is omitted from the coded side",
+    "hced-India Muerta1845-1": (
+        "wrong identity flattening: the Blanco-Argentine force against Rivera's "
+        "Colorados is not a simple Argentina-versus-Uruguay state battle"
+    ),
+    "hced-Ita Ybate1868-1": "incomplete coalition: Uruguay is omitted from the coded side",
+    "hced-Riachuelo1865-1": (
+        "wrong belligerent: Riachuelo was fought by the Brazilian and Paraguayan fleets"
+    ),
+    "hced-Tuyuti1866-1": "incomplete coalition: Uruguay is omitted from the coded side",
+    "hced-Uruguayana1865-1": "incomplete coalition: Uruguay is omitted from the coded side",
+    "hced-Yatay1865-1": (
+        "incomplete coalition: Brazilian and Uruguayan belligerents are omitted"
+    ),
+    "hced-Ytororo1868-1": (
+        "wrong and incomplete belligerents: Ytororo was principally Brazil versus Paraguay"
+    ),
+    "hced-Atlixco1847-1": (
+        "inverted outcome and swapped identity coding: United States forces won at Atlixco"
+    ),
+    "hced-Molino del Rey1847-1": (
+        "inverted outcome: United States forces captured the Molino del Rey position"
+    ),
+    "hced-Toluca1860-1": (
+        "wrong actor identity: the opposing force was the Mexican Conservative faction, "
+        "not a generic Mexican Republic state side"
+    ),
+    "hced-San Carlos, Falklands1982-1": (
+        "duplicate of the day-precision IWBD San Carlos record iwbd-202-78-1636"
+    ),
+    "hced-Stanley1982-1": (
+        "overlapping operation envelope: the Battle for Stanley aggregates high-ground "
+        "engagements already rated separately, including Longdon and Tumbledown"
+    ),
+    "hced-Thorntons Ambush1846-1": (
+        "duplicate of the day-precision IWBD Thornton's Ambush record iwbd-7-3-10"
     ),
 }
 
@@ -1022,6 +1161,14 @@ IWBD_CURATED_EXCLUSIONS: dict[str, str] = {
     ),
     "iwbd-127-49-877": "duplicate of HCED Tembien (1st) 1936 (IWBD 'Tembien 1')",
     "iwbd-127-49-879": "duplicate of HCED Tembien (2nd) 1936 (IWBD 'Tembien 2')",
+    "iwbd-187-73-1600": (
+        "duplicate of HCED Jijiga 1978; retain the HCED record because its "
+        "coalition reconstruction includes Cuba"
+    ),
+    "iwbd-202-78-1640": (
+        "overlapping operation envelope: Stanley aggregates the final high-ground "
+        "engagements already rated separately, including Longdon and Tumbledown"
+    ),
 }
 
 
@@ -1037,6 +1184,10 @@ IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
     "42": (
         "Hungarian-Allies 1919: fought principally by the Hungarian Soviet Republic; "
         "the [1919,1943] Hungary interval bridges the 1919 regime resets (identity pending)"
+    ),
+    "17": (
+        "War of the Triple Alliance aggregation is incomplete: the available IWD "
+        "component dyads omit Uruguay from the Argentina-Brazil-Uruguay coalition"
     ),
 }
 
@@ -1086,6 +1237,10 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Arcis-sur-Aube1814-1": (
         "inverted outcome: Napoleon withdrew before Schwarzenberg's Allied army"
     ),
+    "hced-Atbara1898-1": (
+        "incomplete coalition: Kitchener's Anglo-Egyptian army included British, "
+        "Egyptian, and Sudanese formations, while the source-side resolution rates only Britain"
+    ),
     "hced-Barcelona, Spain1936-1": (
         "inverted outcome: Republican and anarchist forces defeated the July uprising"
     ),
@@ -1106,8 +1261,16 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Cadore1508-1": (
         "wrong Habsburg branch: Maximilian's Imperial-Tyrolean army is coded as Spain"
     ),
+    "hced-Chalchuapa1885-1": (
+        "wrong belligerent: the battle was fought by El Salvador against the "
+        "Guatemalan invasion; Honduras did not fight at Chalchuapa"
+    ),
     "hced-Coatit1895-1": "inverted outcome: Baratieri's Italian force defeated Ras Mengesha",
     "hced-Dardanelles1654-1": "inverted outcome: the first 1654 Dardanelles battle was Ottoman",
+    "hced-Dakhila1898-1": (
+        "incomplete coalition: the raw winner is United Kingdom and Sudan, but "
+        "the British crosswalk short-circuits the composite and drops the Sudanese force"
+    ),
     "hced-Dembeguina1935-1": (
         "inverted outcome: Ethiopian forces won the Dembeguina Pass action"
     ),
@@ -1117,13 +1280,41 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Dragasani1821-1": (
         "duplicate source row with the same inverted Dragasani outcome"
     ),
+    "hced-El Obeid1883-1": (
+        "duplicate of the Kashgal/Kashgil-Sheikan engagement and wrong resolved "
+        "loser: Hicks commanded an Egyptian-Khedival army, not a Britain-only force"
+    ),
+    "hced-Fuengirola1810-1": (
+        "incomplete coalition: the source loser label is British and Spanish, but "
+        "the Spanish crosswalk short-circuits that composite and omits Britain"
+    ),
+    "hced-Gedaref1898-1": (
+        "wrong resolved belligerent: the field force was Egyptian-Sudanese under "
+        "British officers, while the release would rate Britain alone"
+    ),
+    "hced-Handoub1888-1": (
+        "incomplete coalition: the raw winner includes Sudanese forces, but the "
+        "British crosswalk short-circuits the composite and drops them"
+    ),
     "hced-Huaihai1948-1": (
         "campaign envelope duplicates separately rated Huaihai component battles"
     ),
     "hced-Kalat1839-1": (
         "wrong actor: the defender was the independent Khanate of Kalat, not the Kabul emirate"
     ),
+    "hced-Kashgal1883-1": (
+        "duplicate of the El Obeid/Kashgil-Sheikan engagement and wrong resolved "
+        "loser: Hicks commanded an Egyptian-Khedival army, not a Britain-only force"
+    ),
+    "hced-Khania1692-1": (
+        "incomplete coalition: the Christian expedition also included Maltese and "
+        "Florentine forces omitted by the source-side reconstruction"
+    ),
     "hced-Kehl1797-1": "inverted outcome: the French garrison capitulated to Austria",
+    "hced-Koge Bay1677-1": (
+        "wrong belligerent: the supporting Dutch fleet never reached the battle, "
+        "which was fought by the Danish-Norwegian and Swedish fleets"
+    ),
     "hced-Kolin1756-1": "date error: Kolin was fought in 1757",
     "hced-Kolberg1760-1": "inverted outcome: the Russian siege of Kolberg failed in 1760",
     "hced-Kolberg1774-1": (
@@ -1134,6 +1325,9 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     ),
     "hced-Longwy1792-1": "wrong belligerent: the siege was conducted by Prussian forces",
     "hced-Lvov1675-1": "inverted outcome: Sobieski defeated the Ottoman-Crimean force",
+    "hced-Malaga1704-1": (
+        "incomplete coalition: the source omits Spain from the Franco-Spanish fleet"
+    ),
     "hced-Marstrand-1": (
         "inverted outcome: Danish-Norwegian forces captured Marstrand and Carlsten"
     ),
@@ -1141,13 +1335,41 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Mockern (1st)1813-1": (
         "wrong belligerent: Austria was neutral during the April action"
     ),
+    "hced-Mirandola1511-1": (
+        "incomplete coalition reconstruction: the siege involved additional Urbino, "
+        "Spanish, Mirandolan, and Ferrarese belligerents"
+    ),
     "hced-Mojkovac1916-1": "inverted outcome: Montenegro won the defensive action at Mojkovac",
+    "hced-Monastir1912-1": (
+        "wrong belligerent: Serbian forces fought the Ottoman army at Monastir; "
+        "Bulgaria did not participate in the battle"
+    ),
     "hced-Montmirail1814-1": (
         "wrong belligerent: Russian and Prussian corps, not Austria, fought at Montmirail"
     ),
+    "hced-Nieuport1600-1": (
+        "inverted outcome: Maurice's Dutch-led army defeated the Spanish field army"
+    ),
+    "hced-Omdurman1898-1": (
+        "incomplete coalition: the Anglo-Egyptian army included British, Egyptian, "
+        "and Sudanese formations, while the release would rate only Britain"
+    ),
+    "hced-Paniani1782-1": (
+        "wrong belligerent: the opposing field force was Mysorean, including "
+        "Lally's corps; the Maratha Confederacy did not fight at Paniani"
+    ),
     "hced-Parwan Durrah1840-1": "inverted outcome: Dost Mohammad's Afghan force won the action",
+    "hced-Piave1809-1": (
+        "wrong belligerent identity: the Italian force at Piave belonged to the "
+        "Napoleonic Kingdom of Italy (1805-1814), while the ordinary Italy alias "
+        "resolves to an over-wide Cliopatria Italian Republic envelope"
+    ),
     "hced-Poland1939-1": (
         "campaign envelope duplicates separately rated invasion-of-Poland components"
+    ),
+    "hced-Raszyn1809-1": (
+        "wrong belligerent: the defending coalition was Polish-Saxon, not French; "
+        "the source also omits Saxony"
     ),
     "hced-Rippach1813-1": "wrong belligerent: Austria was neutral during the May action",
     "hced-Tournai1794-1": "duplicate of Pont-a-Chin 1794, the same 22 May engagement",
@@ -1292,6 +1514,19 @@ UCDP_GW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "700": (
         (1996, 2001, "taliban"),
         (2004, 2021, "islamic_republic_afghanistan"),
+    ),
+    "160": (
+        (1831, 1861, "argentine_confederation"),
+        (1861, 1930, "argentine_republic_1861"),
+        (1930, 2026, "clio_q414_1930_5e281b3e"),
+    ),
+    "355": (
+        (1878, 1908, "principality_bulgaria"),
+        (1908, 1946, "kingdom_bulgaria"),
+    ),
+    "652": (
+        (1946, 1957, "clio_sy_syria_modern_1946_86597c89"),
+        (1962, 2026, "clio_q41137_1973_b05dea50"),
     ),
 }
 

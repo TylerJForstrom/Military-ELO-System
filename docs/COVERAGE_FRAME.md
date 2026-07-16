@@ -103,9 +103,9 @@ Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
 
-The current status-aware HCED numerators are 4,498 unreviewed source Points,
-4,455 source-transcribed geographic-jurisdiction labels, and 4,502 events with
-at least one provenance-bound HCED location, all over 4,797 rated events.
+The current status-aware HCED numerators are 4,541 unreviewed source Points,
+4,498 source-transcribed geographic-jurisdiction labels, and 4,545 events with
+at least one provenance-bound HCED location, all over 4,842 rated events.
 Verified-location coverage is `not_available`. The report separately publishes
 the frozen policy counts rather than inferring policy from absence: 37 Point
 fields withheld by quarantine, 79 country/jurisdiction fields withheld, 33
@@ -163,11 +163,11 @@ matching stable `outcome_source_family_ids` array. Generic source-role fallback
 is considered only when neither event-level field is present and is never
 unioned into an explicit mapping. Fourteen sources advertise the direct
 `outcome` capability across 12 families: the four core datasets plus ten
-reviewed historical references used by Wave 7 corrections. They map 4,757 of
-4,797 rated events. The mapped population contains 4,535 HCED-derived events,
-64 IWD, 151 IWBD, and 7 UCDP; 12 of the HCED-derived events use a reviewed
+reviewed historical references used by Wave 7 corrections. They map 4,802 of
+4,842 rated events. The mapped population contains 4,578 HCED-derived events,
+64 IWD, 153 IWBD, and 7 UCDP; 12 of the HCED-derived events use a reviewed
 historical-reference family instead of the HCED family. Every mapped event has
-exactly one family, so multiple-independent-family coverage is 0 of 4,757
+exactly one family, so multiple-independent-family coverage is 0 of 4,802
 mapped events.
 
 The other 40 rated events are the curated seed. They remain explicitly

@@ -69,9 +69,9 @@ family:
 
 | Source ID | Outcome family | Rated events mapped |
 |---|---|---:|
-| `hced_dataset` | `hced` | 4,523 |
+| `hced_dataset` | `hced` | 4,566 |
 | `iwd_dataset` | `iwd` | 64 |
-| `iwbd_dataset` | `iwbd` | 151 |
+| `iwbd_dataset` | `iwbd` | 153 |
 | `ucdp_termination_conflict` | `ucdp_conflict_termination` | 7 |
 | `wave7_nps_revolution_timeline` | `national_park_service_revolution` | 1 |
 | `wave7_nigeria_civil_war_history` | `nigeria_national_library_civil_war` | 1 |
@@ -84,7 +84,7 @@ family:
 | `wave7_west_ehr_lincolnshire_1470` | `english_historical_review` | 1 |
 | `wave7_west_he_bosworth` | `historic_england` | 1 |
 
-This maps 4,757 of 4,797 rated events, and every mapped event has exactly one
+This maps 4,802 of 4,842 rated events, and every mapped event has exactly one
 direct outcome family. Multiple-independent-family coverage is therefore zero.
 The 40 curated seed events remain explicitly unmapped: their generic reference
 URLs do not contain the claim-level outcome locator, edition/checksum context,
@@ -140,16 +140,16 @@ normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
-For the 4,535 rated HCED events, the release-to-candidate join is an
-exact bijection: 1,884 crosswalk-resolved events, 2,383 label-resolved events,
+For the 4,578 rated HCED events, the release-to-candidate join is an
+exact bijection: 1,887 crosswalk-resolved events, 2,423 label-resolved events,
 and 268 candidate-keyed reviewed events (76 from Wave 6 and 192 from Wave 7),
 with no missing, ambiguous, or colliding bindings.
 Candidate-ID-only policy manifests withhold 37 Point fields and 79
 country/jurisdiction fields, with 33 overlapping and 83 unique
 quarantine-manifest events. One additional rated candidate has a source-blank
-country. After fail-closed quarantine, 4,498 events carry an exact
-source-transcribed Point, 4,455 carry the source's modern
-country/geographic-jurisdiction string, and 4,502 carry at least one location
+country. After fail-closed quarantine, 4,541 events carry an exact
+source-transcribed Point, 4,498 carry the source's modern
+country/geographic-jurisdiction string, and 4,545 carry at least one location
 field plus closed provenance. Of 49 separately reviewed disputed or
 non-sovereign jurisdiction rows, 46 are deliberately retained verbatim and 3
 are already withheld under independent quarantine criteria. They are source
@@ -160,6 +160,25 @@ withheld rather than corrected, swapped, normalized, inferred,
 reverse-geocoded, or exposed through release provenance.
 The frozen 49-row jurisdiction review contract has SHA-256
 `b209a0cc8d308d56d74012b53ea72bd29df34c4ac8a773b3602b38558c085b5e`.
+
+The HCED label pass also recognizes an explicitly delimited coalition on
+post-1500 rows. It splits only commas, semicolons, and ampersands—never plain
+`and`—and accepts the side only when every member independently resolves to a
+distinct identity valid for the whole interval. The shared canonical
+supersession remap runs before coalition assembly. The current release contains
+21 such events dated 1658–1983, including four Boer-War composites whose
+Orange Free State member is canonicalized to `orange_free_state_1854`; zero
+pre-1500 rows enter through this path. The current exact HCED label-exclusion
+inventory contains 71 candidate IDs; failed spot-checks stay staged rather
+than being repaired implicitly by coalition splitting.
+
+HCED's `mx_mexico_1` code resolves to `mexican_republic` for 1824-1863 and to
+the reviewed modern Mexican series for 1868-2024 in the current Cliopatria
+snapshot. A shared `mexico` deny window
+covers 1864-1867, so coded, bare-label, and composite-member paths cannot use a
+broad alias to bridge the Reform/Second Empire boundary. This continuity rule
+does not override event review: the current global curated-exclusion inventory
+contains 164 exact candidates and the label-pass inventory contains 71.
 
 #### Verified live HCED profile
 
@@ -265,7 +284,7 @@ and the war-level victor code is ignored entirely. Coalition or composite side
 labels stay staged (146 rows), and both sides must resolve to unique
 time-bounded identities outside declared deny windows (12 side-resolution
 failures, including the declared "Turkey" 1919-1923 deny window). In the
-current build 151 of 1,708 battles pass; every other row stays staged under a
+current build 153 of 1,708 battles pass; every other row stays staged under a
 named rejection counter.
 
 Twenty of those accepted battles use Wave 5 candidate-keyed identity
@@ -277,10 +296,10 @@ widen a label resolver. In particular, the 12 exact Turkish National Movement
 bindings are the only contracted path through the deny interval; every other
 bare `Turkey` row intersecting 1919-1923 remains staged.
 
-Wave 6 adds eight more independently fingerprinted IWBD contracts while
-holding seven initially proposed Six-Day War rows at unresolved Egyptian and
-Syrian identity boundaries. Those holds cannot fall through to a generic
-resolver.
+Wave 6 now contains nine independently fingerprinted IWBD contracts. The
+reviewed post-UAR Syrian identity releases one exact 1967 row; six proposed
+Six-Day War rows remain held at the unresolved Egyptian identity boundary and
+cannot fall through to a generic resolver.
 
 IWBD's `iwdNum` field is the IWD parent-war identifier (IWD's `largerwarid`
 numbering), not an IWD component (`initwarid`) identifier. Promoted IWBD
@@ -339,17 +358,24 @@ and Austria-Hungary from 1867, code 345 to the Kingdom of Serbia (1882-1918,
 the interval COW labels "Yugoslavia"), code 100 to the United States of
 Colombia for 1863-1885, code 670 to the Kingdom of Saudi Arabia from 1932
 through the current snapshot, and code 678 to the Mutawakkilite Kingdom of
-Yemen for 1918-1961. Wave 5 adds complete parent-keyed contracts for eight
+Yemen for 1918-1961. The crisp-boundary policies additionally split code 160
+across the Argentine Confederation, post-Pavon republic, and modern republic;
+code 355 across the Bulgarian principality and kingdom; and code 652 around
+Syria's deliberate 1958-1961 UAR gap. Overlapping transition years remain
+ambiguous and fail closed. Wave 5 adds complete parent-keyed contracts for eight
 reviewed wars: Franco-Spanish 1823; the Estonian War; Poland-USSR;
 Greco-Turkish and France-Turkey; and the three China-Taiwan parents of 1950,
 1954-55, and 1958. Each contract pins the full component inventory, source
 semantics, party codes, and exact target entity IDs. It is not a generic COW
 fallback, and a missing component or changed fingerprint fails the build.
-Three parent wars remain on the curated exclusion list: Germany-Denmark 1848
+Four parent wars remain on the curated exclusion list: Germany-Denmark 1848
 because the source asserts a Prussian victory although Denmark won the First
 Schleswig War; Italian Unification 1859 because it was fought by the Kingdom
 of Sardinia; and Hungarian-Allies 1919 because it was fought by the Hungarian
-Soviet Republic.
+Soviet Republic. The War of the Triple Alliance also stays staged: its IWD
+component dyads omit Uruguay from the Argentina-Brazil-Uruguay coalition, so
+the parent cannot be promoted as a complete coalition merely because the new
+Argentine identity now resolves.
 Event confidence is reduced when some component rows could not contribute, and
 all component rows are attached to the emitted event as provenance. In the
 current build, 64 of 93 parent wars pass (100 of 265 component records); the
@@ -450,8 +476,8 @@ when a terminal dyad row of the same conflict contradicts it (an
 opposite-orientation victory or a same-pair negotiated termination), when a
 victory assertion elsewhere in the file with the same episode end date orients
 a shared entity oppositely (this quarantines the Israel-Jordan front of the
-mutually contradictory 1967 Six-Day complex; its Syria and Egypt fronts
-already fail identity resolution and stay staged as unresolved parties), or
+mutually contradictory 1967 Six-Day complex; every other front must still
+independently pass the identity and linked-evidence gates), or
 when it carries a documented side-attribution dispute
 recorded as a curated exclusion (the 1974 Paracel episode). Severity is capped
 at limited, and secondary supporters are recorded as provenance without
@@ -721,21 +747,27 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The current release publishes distinct coverage units separately:
 
-- 1,702 time-bounded polity identities in the rated-and-unrated registry;
-- 342 release entity records, of which 340 distinct IDs actually participate
+- 1,701 time-bounded polity identities in the rated-and-unrated registry;
+- 345 release entity records, of which 343 distinct IDs actually participate
   in rated events;
-- 284 registered provenance sources across 176 source families; and
-- 4,797 rating events: 40 manually curated events, 1,884 crosswalk-resolved,
-  2,383 label-resolved, and 268 candidate-keyed HCED tactical encounters,
-  64 coalition-aggregated IWD strategic parent wars, 151 IWBD tactical
+- 289 registered provenance sources across 176 source families; and
+- 4,842 rating events: 40 manually curated events, 1,887 crosswalk-resolved,
+  2,423 label-resolved, and 268 candidate-keyed HCED tactical encounters,
+  64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
+
+The committed dashboard is the matching 1,000-simulation build and its audit
+error array is empty. The current deterministic HCED planning funnel reports
+3,210 touched deferred rows, 2,439 unresolved normalized labels, and 1,807
+sole-blocker rows; the current top-ten greedy batch reaches 144 cumulative
+events. Those are prioritization units, not extra rating events.
 
 The two-record entity/evidence difference is intentional. The United Kingdom
 of Portugal, Brazil and the Algarves is present as a curated boundary identity,
 but no event currently promotes into its 1815-1821 policy window. The
 superseded `Free Orange State` source envelope is retained for the five-event
 identity-migration audit, while those events use the reviewed Orange Free State
-identity. Neither record therefore has a rating or counts among the 340
+identity. Neither record therefore has a rating or counts among the 343
 participant IDs.
 
 Relative to the Wave 4 artifact, Wave 5 adds 161 events and removes none of the
@@ -764,6 +796,20 @@ explicit holds. Seven root-lane outcomes and five western-lane source claims
 replace HCED as the direct outcome source for 12 exact candidates without
 creating a second rating event.
 
+Relative to Wave 7, the final composite-and-identities rebuild adds 48 event
+IDs and removes three after the deeper source-side audit, for 45 net events.
+The ledger gains 40 label-resolved and four crosswalk-resolved HCED encounters
+while the disputed Aros assertion leaves; four IWBD rows enter while the
+Puebla and Jijiga duplicates leave, for two net IWBD events. The IWD total is
+unchanged because the newly resolvable Triple Alliance parent remains excluded
+as an incomplete coalition. Of the label additions, 21 use the new post-1500
+delimiter-only composite path. The tranche curates the
+Mahdist State, post-Pavon Argentine Republic, Bulgarian principality/kingdom,
+Republic of Texas, and pre-/post-UAR Syrian republic windows. Argentina's
+1861 and 1930 boundaries and Bulgaria's 1908 boundary fail closed at year
+precision, Texas's generic label window ends in 1845, and Syria deliberately
+has no generic or code resolution in 1958-1961.
+
 The earlier curated state and non-state actor identity tranches raised the totals
 from the previous build (177 rated entities across 2,620 events): the new
 seed identities and their code/label policy windows resolve rows that were
@@ -774,22 +820,23 @@ absorbing two exact-name Cliopatria envelopes, producing the Wave 4 total of
 1,591. Wave 5 produced a 1,598-row registry after consolidating the
 Tsardom of Russia onto its pre-existing canonical Cliopatria ID rather than
 creating a second Tsardom record. Wave 6 produced a 1,648-row registry. Wave 7
-adds reviewed identities and explicit supersession records to produce the
-measured 1,702-row registry, and every release identity still has an exact
-registry row.
+added reviewed identities and explicit supersession records to produce 1,702
+registry rows. The current tranche consolidates reused source identities and
+produces the measured 1,701-row registry; every release identity still has an
+exact registry row.
 
 The review queues contain 27,014 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
 holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 18,597 remain outside the rating ledger because their layer,
+candidates, 18,552 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
 
 Outcome-family coverage uses a different denominator from corpus coverage.
-Exactly 4,757 rated events have an explicit direct-outcome mapping through the
+Exactly 4,802 rated events have an explicit direct-outcome mapping through the
 14 sources above; the remaining 40 are the curated seed events and stay unknown
-pending claim-level locator review. All 4,757 mapped events have
+pending claim-level locator review. All 4,802 mapped events have
 one family and none has multiple independently established outcome families.

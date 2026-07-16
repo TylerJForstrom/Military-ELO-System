@@ -1240,6 +1240,24 @@
     ]
   },
   {
+    "id": "clio_mx_mexico_1_1868_ffbcfbae",
+    "name": "Mexico (restored republic)",
+    "kind": "federal_republic",
+    "start_year": 1868,
+    "end_year": 2024,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [
+      "mexican_republic"
+    ],
+    "continuity_note": "Existing rated Cliopatria identity retained on its exact 1868-2024 source interval, beginning with the first complete post-Empire year. Generic and Seshat policy remain fail-closed in 1864-1867, when the Juarez government and Second Mexican Empire were concurrent; no Elo crosses that gap.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_mexico_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "argentine_confederation",
     "name": "Argentine Confederation",
     "kind": "confederation",
@@ -1670,6 +1688,139 @@
     "source_ids": [
       "estonia_government_independence_1918",
       "estonia_government_occupation_1940"
+    ]
+  },
+  {
+    "id": "mahdist_ansar_forces",
+    "name": "Mahdist State",
+    "kind": "theocratic_state",
+    "start_year": 1881,
+    "end_year": 1899,
+    "region": "Northeast Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "State and unified Ansar command from Muhammad Ahmad's 1881 proclamation through the defeat of the successor regime in 1899. The already-rated Wave 6 ID is retained so generic Mahdist labels join the reviewed battle series instead of forking a parallel Elo identity; no rating transfers to later Sudanese governments.",
+    "source_ids": [
+      "britannica_al_mahdi",
+      "britannica_mahdist_sudan",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "principality_bulgaria",
+    "name": "Principality of Bulgaria",
+    "kind": "principality",
+    "start_year": 1878,
+    "end_year": 1908,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Autonomous principality created by the 1878 Treaty of Berlin through the 1908 declaration of independence. The formal 1908 kingdom transition is a rating boundary: year-only 1908 records stay staged and no Elo transfers to the kingdom.",
+    "source_ids": [
+      "britannica_bulgaria_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_bulgaria",
+    "name": "Kingdom of Bulgaria",
+    "kind": "kingdom",
+    "start_year": 1908,
+    "end_year": 1946,
+    "region": "Southeastern Europe",
+    "aliases": [],
+    "predecessors": [
+      "principality_bulgaria"
+    ],
+    "continuity_note": "Independent kingdom proclaimed in 1908 through abolition of the monarchy in 1946. The already-rated Wave 6 ID is retained; the transition year overlaps the principality and kingdom windows deliberately, so a year-only 1908 label cannot choose either identity.",
+    "source_ids": [
+      "britannica_bulgaria_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "argentine_republic_1861",
+    "name": "Argentine Republic (post-Pavon)",
+    "kind": "federal_republic",
+    "start_year": 1861,
+    "end_year": 1930,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [
+      "argentine_confederation"
+    ],
+    "continuity_note": "Unified republic from the 1861 Battle of Pavon to the 1930 military coup. Bare-label policy overlaps both transition years with the adjacent identities, leaving 1861 and 1930 unresolved at year precision; no rating crosses either boundary.",
+    "source_ids": [
+      "britannica_argentina_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "clio_q414_1930_5e281b3e",
+    "name": "Argentine Republic",
+    "kind": "republic",
+    "start_year": 1930,
+    "end_year": null,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [
+      "argentine_republic_1861"
+    ],
+    "continuity_note": "Existing Cliopatria modern interval promoted as the post-1930 policy target so extending the older republic does not swallow or strand the established modern rating series. The 1930 coup year remains ambiguous and no Elo transfers from the post-Pavon republic.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_argentina_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "clio_q170588_1836_8e422d86",
+    "name": "Republic of Texas",
+    "kind": "republic",
+    "start_year": 1836,
+    "end_year": 1846,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent republic from the 1836 declaration through the 1845-1846 annexation transfer. The existing Cliopatria ID is promoted rather than duplicated; generic policy covers only the complete 1836-1845 years, leaving pre-independence rebels and the 1846 transfer year staged.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_texas_revolution",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "clio_sy_syria_modern_1946_86597c89",
+    "name": "Second Syrian Republic",
+    "kind": "republic",
+    "start_year": 1946,
+    "end_year": 1957,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent Syrian republic from the 1946 French withdrawal through the last complete pre-union year. The existing Cliopatria interval is promoted directly; the 1958-1961 United Arab Republic is a deliberate identity and label-policy gap.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_syria_history",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "clio_q41137_1973_b05dea50",
+    "name": "Syrian Arab Republic",
+    "kind": "republic",
+    "start_year": 1962,
+    "end_year": null,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [
+      "clio_sy_syria_modern_1946_86597c89"
+    ],
+    "continuity_note": "Post-UAR Syrian republic from the first complete year after Syria left the union. The already-rated 1973-open Cliopatria ID is retained and its reviewed boundary is extended to 1962, avoiding a parallel Elo line while keeping 1958-1961 fail-closed and resetting the rating across the union.",
+    "source_ids": [
+      "cliopatria_polities",
+      "britannica_syria_history",
+      "project_continuity_policy"
     ]
   },
   {
