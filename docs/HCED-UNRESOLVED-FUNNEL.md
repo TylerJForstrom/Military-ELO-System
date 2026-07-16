@@ -2,9 +2,10 @@
 
 The funnel is a release-neutral planning report for the HCED label pass. It
 uses the same seed identities, Cliopatria candidates, crosswalk observations,
-deny windows, Wave 6 contracts, reservations, and curated exclusions as the
-release builder. It does not edit identities and does not write the release,
-registry, or dashboard.
+deny windows, Wave 6-8 contracts, reservations, and curated exclusions as the
+release builder. Candidate IDs already present in the rated ledger are also
+removed before ranking. It does not edit identities and does not write the
+release, registry, or dashboard.
 
 Run it after the machine-local review queues have been restored:
 

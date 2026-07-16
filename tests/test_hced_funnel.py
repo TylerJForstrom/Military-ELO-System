@@ -237,11 +237,24 @@ class CurrentCorpusFunnelTests(unittest.TestCase):
 
     def test_current_locked_corpus_invariants(self) -> None:
         summary = self.report["summary"]
-        self.assertEqual(summary["events_touched"], 3210)
-        self.assertEqual(summary["unresolved_labels"], 2439)
-        self.assertEqual(summary["sole_blocker_events"], 1807)
+        self.assertEqual(summary["deferred_label_rows"], 3766)
+        self.assertEqual(summary["published_hced_candidate_rows_excluded"], 2423)
+        self.assertEqual(summary["events_touched"], 2908)
+        self.assertEqual(summary["unresolved_labels"], 2394)
+        self.assertEqual(summary["sole_blocker_events"], 1530)
         first = self.report["greedy_batch"]["ranking"][0]
-        self.assertEqual((first["label"], first["marginal_events"]), ("polish rebels", 18))
+        self.assertEqual((first["label"], first["marginal_events"]), ("muslims", 13))
+        published = {
+            str(event["hced_candidate_id"])
+            for event in json.loads(
+                (PROJECT_ROOT / "data" / "release" / "events.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            if event.get("hced_candidate_id") is not None
+        }
+        reported = {row["candidate_id"] for row in self.report["row_label_data"]}
+        self.assertFalse(published & reported)
 
     def test_csa_is_already_resolved_not_an_unresolved_headline(self) -> None:
         exact_labels = {row["label"] for row in self.report["labels"]}

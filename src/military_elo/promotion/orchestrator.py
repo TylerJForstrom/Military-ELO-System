@@ -250,6 +250,20 @@ from .wave8_north_america import (
 )
 
 
+EFFECTIVE_HCED_RESERVED_IDS = (
+    WAVE6_HCED_RESERVED_IDS
+    | WAVE7_ROOT_RESERVED_IDS
+    | WAVE7_CENTRAL_RESERVED_IDS
+    | (
+        WAVE7_CENTRAL_PASS2_RESERVED_IDS
+        - WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS
+    )
+    | (WAVE7_GLOBAL_RESERVED_IDS - WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS)
+    | (WAVE7_WEST_HCED_RESERVED_IDS - WAVE7_WEST_PROTECTED_RATED_IDS)
+    | WAVE8_AFRICAN_STATES_RESERVED_IDS
+    | WAVE8_NEW_ZEALAND_RESERVED_IDS
+    | WAVE8_NORTH_AMERICA_RESERVED_IDS
+)
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
     **WAVE6_PRE1500_CURATED_EXCLUSIONS,
@@ -881,20 +895,7 @@ def build_expanded_release(
         curated_exclusions=EFFECTIVE_HCED_CURATED_EXCLUSIONS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
-        reserved_candidate_ids=(
-            WAVE6_HCED_RESERVED_IDS
-            | WAVE7_ROOT_RESERVED_IDS
-            | WAVE7_CENTRAL_RESERVED_IDS
-            | (
-                WAVE7_CENTRAL_PASS2_RESERVED_IDS
-                - WAVE7_CENTRAL_PASS2_PUBLISHED_DUPLICATE_IDS
-            )
-            | (WAVE7_GLOBAL_RESERVED_IDS - WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS)
-            | (WAVE7_WEST_HCED_RESERVED_IDS - WAVE7_WEST_PROTECTED_RATED_IDS)
-            | WAVE8_AFRICAN_STATES_RESERVED_IDS
-            | WAVE8_NEW_ZEALAND_RESERVED_IDS
-            | WAVE8_NORTH_AMERICA_RESERVED_IDS
-        ),
+        reserved_candidate_ids=EFFECTIVE_HCED_RESERVED_IDS,
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
     rejections: Counter[str] = hced_crosswalk_pass["rejections"]

@@ -36,6 +36,7 @@ from .hced import (
 from .hced_location import hced_candidate_id
 from .orchestrator import (
     EFFECTIVE_HCED_CURATED_EXCLUSIONS,
+    EFFECTIVE_HCED_RESERVED_IDS,
     WAVE6_HCED_VALIDATED_SOURCE_CONTRACTS,
 )
 from .policy import (
@@ -43,7 +44,6 @@ from .policy import (
     HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
     IDENTITY_DENY_WINDOWS,
 )
-from .wave6_1500_1799 import WAVE6_HCED_RESERVED_IDS
 from .wave6_1800_2021_policy import WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS
 from .wave6_1800_2021_registry import WAVE6_1800_2021_ENTITY_OVERRIDES
 from .wave6_pre1500 import (
@@ -922,7 +922,7 @@ def build_hced_unresolved_funnel(
         curated_exclusions=EFFECTIVE_HCED_CURATED_EXCLUSIONS,
         resolve_reviewed_id=resolve_reviewed_identity,
         require_complete_reviewed_identity_bindings=True,
-        reserved_candidate_ids=WAVE6_HCED_RESERVED_IDS,
+        reserved_candidate_ids=EFFECTIVE_HCED_RESERVED_IDS,
     )
 
     seed_label_index: dict[str, set[str]] = {}
@@ -966,8 +966,19 @@ def build_hced_unresolved_funnel(
             ),
         )
 
+    published_hced_candidate_ids = {
+        str(event["hced_candidate_id"])
+        for event in ledger_events
+        if event.get("hced_candidate_id") is not None
+    }
+    deferred_label_rows = crosswalk["deferred_label_rows"]
+    unresolved_deferred_rows = [
+        candidate
+        for candidate in deferred_label_rows
+        if hced_candidate_id(candidate) not in published_hced_candidate_ids
+    ]
     report = analyze_hced_unresolved_labels(
-        crosswalk["deferred_label_rows"],
+        unresolved_deferred_rows,
         resolve_code=lambda code, low_year, high_year: _resolve_code(
             code, low_year, high_year, owners
         ),
@@ -979,6 +990,10 @@ def build_hced_unresolved_funnel(
         curated_seed_keys=curated_seed_keys,
         promoted_event_keys=crosswalk["promoted_event_keys"],
         batch_size=batch_size,
+    )
+    report["summary"]["deferred_label_rows"] = len(unresolved_deferred_rows)
+    report["summary"]["published_hced_candidate_rows_excluded"] = (
+        len(deferred_label_rows) - len(unresolved_deferred_rows)
     )
     report["inputs"] = {
         "seed_entities_sha256": _file_sha256(seed_entities_path),

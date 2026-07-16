@@ -777,10 +777,10 @@ The current release publishes distinct coverage units separately:
   battles, and 7 UCDP conflict-termination strategic episodes.
 
 The committed dashboard is the matching 1,000-simulation build and its audit
-error array is empty. The checked-in pre-promotion Wave 8 HCED planning funnel
-reports
-3,210 touched deferred rows, 2,439 unresolved normalized labels, and 1,807
-sole-blocker rows; the current top-ten greedy batch reaches 144 cumulative
+error array is empty. The current post-Wave-8 HCED planning funnel removes all
+candidate IDs already published in the ledger before ranking and reports 2,908
+touched deferred rows, 2,394 unresolved normalized labels, and 1,530
+sole-blocker rows; the current top-ten greedy batch reaches 84 cumulative
 events. Those are prioritization units, not extra rating events.
 
 The two-record entity/evidence difference is intentional. The United Kingdom
