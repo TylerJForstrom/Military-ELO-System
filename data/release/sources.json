@@ -8354,6 +8354,252 @@
     ]
   },
   {
+    "id": "wave8_seljuks_alexiad_primary",
+    "title": "Anna Komnene, The Alexiad, Book X",
+    "url": "https://sourcebooks.web.fordham.edu/source/comnena-cde.asp",
+    "publisher": "Fordham University Internet Medieval Sourcebook",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "anna_komnene_alexiad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_beihammer_anatolia",
+    "title": "Byzantium and the Emergence of Muslim-Turkish Anatolia, ca. 1040-1130",
+    "url": "https://kutuphane.ttk.gov.tr/details?id=588359&materialType=KT&query=Beihammer%2C+Alexander+Daniel.",
+    "publisher": "Routledge; Turkish Historical Society Library catalogue",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "beihammer_muslim_turkish_anatolia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_cambridge_baghdad",
+    "title": "Controlling and Developing Baghdad: Caliphs, Sultans and the Balance of Power",
+    "url": "https://www.cambridge.org/core/books/abs/seljuqs/controlling-and-developing-baghdad-caliphs-sultans-and-the-balance-of-power-in-the-abbasid-capital-mid5th11th-to-late-6th12th-centuries/F605C6E1758E5682CA57958C39E62A7B",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_seljuqs_baghdad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_cambridge_edessa_1144",
+    "title": "St Bernard of Clairvaux, the Low Countries and the Lisbon Letter",
+    "url": "https://www.cambridge.org/core/journals/journal-of-ecclesiastical-history/article/abs/st-bernard-of-clairvaux-the-low-countries-and-the-lisbon-letter-of-the-second-crusade/9E2707A74AE3CD481810EBDDB11B61A8",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_phillips_lisbon_letter",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_cambridge_edessa_1146",
+    "title": "The Afterlife of Edessa: Remembering Frankish Rule, 1144 and After",
+    "url": "https://www.cambridge.org/core/books/syria-in-crusader-times/afterlife-of-edessa-remembering-frankish-rule-1144-and-after/F4AC432D4716A20DF947A37F44EA09FA",
+    "publisher": "Cambridge University Press / Edinburgh University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "mac_evitt_afterlife_edessa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_cambridge_egypt_1167",
+    "title": "The New Cambridge Medieval History, Volume IV: Egypt and Syria",
+    "url": "https://assets.cambridge.org/97805214/14104/excerpt/9780521414104_excerpt.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_reference_work",
+    "accessed": "2026-07-16",
+    "source_family_id": "new_cambridge_medieval_history_iv",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_cambridge_formation_islam",
+    "title": "A Sunni Revival?",
+    "url": "https://www.cambridge.org/highereducation/books/the-formation-of-islam/0C58C7DC69FC4FFE20933C00B54D839F/a-sunni-revival/1F645AE9E9E7FB3B067C16DB7E16D767",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_formation_islam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_civetot_article",
+    "title": "The First Turkish Leader against the Crusaders: Sultan Kilij Arslan I",
+    "url": "https://dergipark.org.tr/en/pub/iusarkiyat/article/438164",
+    "publisher": "Istanbul University, Sarkiyat Mecmuasi",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "istanbul_university_kilij_arslan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_fordham_william_tyres_egypt",
+    "title": "William of Tyre: The Fiasco at Damascus and Revolution in Egypt",
+    "url": "https://sourcebooks.web.fordham.edu/source/tyre-cde.asp",
+    "publisher": "Fordham University Internet Medieval Sourcebook",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "william_of_tyre_egypt_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_ibn_al_jawzi_translation",
+    "title": "Information on the Seljuks in Ibn al-Jawzi's al-Muntazam, 430-485 AH",
+    "url": "https://belgeler.gov.tr/eng/full-text/32/tur",
+    "publisher": "Turkish Historical Society, Belgeler",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_primary_source_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ibn_al_jawzi_muntazam_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_iranica_bayju",
+    "title": "Bayju",
+    "url": "https://www.iranicaonline.org/articles/bayju-baiju-or-baicu-mongol-general-and-military-governor-in-northwestern-iran-fl/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica_bayju",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_iranica_rum",
+    "title": "Saljuqs III: Saljuqs of Rum",
+    "url": "https://www.iranicaonline.org/articles/saljuqs-iii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica_saljuqs_rum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_kapetron_sources",
+    "title": "The Battle of Kaputru in the Light of Historical Sources",
+    "url": "https://dergipark.org.tr/tr/pub/ataunitaed/article/39809",
+    "publisher": "Ataturk University Journal of Turkic Research Institute",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "ataturk_university_kapetron",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_oup_edessa_1144",
+    "title": "The Second Crusade, 1145-9",
+    "url": "https://academic.oup.com/book/25780/chapter-abstract/193358062",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_phillips_second_crusade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_penn_edessa_1146",
+    "title": "Images of Authority in Edessa, 1100-1150",
+    "url": "https://www.thetbs.org/study-materials/wp-content/uploads/2023/03/The_Crusades_and_the_Christian_World_of_the_East_Rough_Tolerance.pdf",
+    "publisher": "University of Pennsylvania Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "mac_evitt_rough_tolerance",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_tdv_besasiri",
+    "title": "Besasiri",
+    "url": "https://islamansiklopedisi.org.tr/besasiri",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_islam_encyclopedia_besasiri",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_seljuks_tdv_mesud",
+    "title": "Mesud I",
+    "url": "https://islamansiklopedisi.org.tr/mesud-i",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_islam_encyclopedia_mesud",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_ssau_campaign_kazan_pugachev",
     "title": "Campaign against Kazan: the fatal misadventure of Pugachev's Rebellion",
     "url": "https://journals.ssau.ru/hpp/article/view/29591",

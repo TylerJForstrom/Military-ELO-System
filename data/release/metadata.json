@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 559,
-    "events": 5060,
-    "sources": 641,
-    "registry_polities": 1915
+    "entities": 568,
+    "events": 5066,
+    "sources": 658,
+    "registry_polities": 1924
   },
   "year_range": {
     "start": -1274,
@@ -107,6 +107,7 @@
     "accepted_wave8_moros_hced_events": 6,
     "accepted_wave8_manchus_hced_events": 5,
     "accepted_wave8_peruvian_rebels_hced_events": 5,
+    "accepted_wave8_seljuks_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -3632,7 +3633,136 @@
     "wave8_peruvian_rebels_outcome_overrides": [],
     "wave8_peruvian_rebels_entities_added": 8,
     "wave8_peruvian_rebels_sources_added": 13,
-    "hced_label_pass_input_rows": 5946,
+    "wave8_seljuks_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "holds": 3,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 9,
+      "new_sources": 17,
+      "newly_rated_events": 6,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 9,
+      "terminal_exclusions": 1
+    },
+    "wave8_seljuks_cohort_counts": {
+      "bayju_rum_campaign_1243": 1,
+      "kilij_arslan_peoples_crusade_1096": 1,
+      "mesud_second_crusade_1147": 1,
+      "nur_al_din_edessa_1146": 1,
+      "tughril_basasiri_iraq_1060": 1,
+      "zengid_edessa_1144": 1
+    },
+    "wave8_seljuks_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 3,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_seljuks_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_seljuks_candidate_ids": [
+      "hced-Civetot1096-1",
+      "hced-Dorylaeum1147-1",
+      "hced-Edessa1144-1",
+      "hced-Edessa1146-1",
+      "hced-Kose Dagh1243-1",
+      "hced-Kufah1060-1"
+    ],
+    "wave8_seljuks_holds": [
+      {
+        "candidate_id": "hced-Baghdad1055-1",
+        "raw_row_sha256": "926a9a79d275b3ff54c17d6708c902a03e6012195404468386f8357ae824ac21",
+        "canonical_event": {
+          "canonical_key": "tughril_beg_s_entry_into_baghdad:1055:1055",
+          "date_precision": "month",
+          "date_text": "December 1055",
+          "granularity": "noncompetitive_political_transition",
+          "name": "Tughril Beg's entry into Baghdad",
+          "year_low": 1055,
+          "year_high": 1055
+        },
+        "hold_category": "terminal_exclusion_noncompetitive_transition_wrong_opponent",
+        "terminal_exclusion": true,
+        "hold_reason": "Tughril entered Baghdad and displaced Buyid power; the Abbasid caliph was not a defeated battlefield opponent. No result against the Abbasid Caliphate is invented from a political transfer.",
+        "evidence_refs": [
+          "wave8_seljuks_cambridge_baghdad",
+          "wave8_seljuks_cambridge_formation_islam"
+        ]
+      },
+      {
+        "candidate_id": "hced-Elasa1167-1",
+        "raw_row_sha256": "5dcf271f7e7f6424815c6820d8e0b4699013ec768819cb936ab2f9016d46ad03",
+        "canonical_event": {
+          "canonical_key": "battle_of_al_babein:1167:1167",
+          "date_precision": "day",
+          "date_text": "18 March 1167",
+          "granularity": "engagement",
+          "name": "Battle of al-Babein",
+          "year_low": 1167,
+          "year_high": 1167
+        },
+        "hold_category": "contradictory_or_inconclusive_tactical_outcome",
+        "terminal_exclusion": false,
+        "hold_reason": "The row corresponds to Shirkuh's Zengid expedition against the Jerusalem-Fatimid coalition, not a Seljuk polity. Scholarly and primary-source traditions differ between a Syrian success and an inconclusive tactical action; unknown is not converted into a draw.",
+        "evidence_refs": [
+          "wave8_seljuks_cambridge_egypt_1167",
+          "wave8_seljuks_fordham_william_tyres_egypt"
+        ]
+      },
+      {
+        "candidate_id": "hced-Hasankale1048-1",
+        "raw_row_sha256": "fc88d6a2a76268eadaaa2e22855700237e5cd5c3691b94ddc505c196f3f0987c",
+        "canonical_event": {
+          "canonical_key": "battle_of_kapetron:1048:1048",
+          "date_precision": "day_range",
+          "date_text": "17-18 September 1048",
+          "granularity": "engagement",
+          "name": "Battle of Kapetron",
+          "year_low": 1048,
+          "year_high": 1048
+        },
+        "hold_category": "contradictory_tactical_outcome_across_source_traditions",
+        "terminal_exclusion": false,
+        "hold_reason": "The Byzantine flanks prevailed while Ibrahim Inal captured Liparit and withdrew with captives and booty. Source traditions classify the mixed action differently, so HCED's Seljuk win is not promoted and the uncertainty is not converted into a draw.",
+        "evidence_refs": [
+          "wave8_seljuks_beihammer_anatolia",
+          "wave8_seljuks_kapetron_sources"
+        ]
+      }
+    ],
+    "wave8_seljuks_iwbd_duplicate_dispositions": [],
+    "wave8_seljuks_cross_lane_dispositions": [],
+    "wave8_seljuks_integration_dispositions": [],
+    "wave8_seljuks_outcome_overrides": [
+      {
+        "candidate_id": "hced-Kufah1060-1",
+        "raw_winner_label": "Arslan al-Basasiri",
+        "raw_loser_label": "Seljuks",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "clio_ir_seljuk_sultanate_1040_577da931"
+        ],
+        "outcome_source_ids": [
+          "wave8_seljuks_ibn_al_jawzi_translation",
+          "wave8_seljuks_tdv_besasiri"
+        ],
+        "outcome_source_family_ids": [
+          "ibn_al_jawzi_muntazam_translation",
+          "tdv_islam_encyclopedia_besasiri"
+        ],
+        "correction_note": "The translated chronicle and TDV biography agree that Seljuk cavalry defeated al-Basasiri near Kufa and that he was killed."
+      }
+    ],
+    "wave8_seljuks_entities_added": 9,
+    "wave8_seljuks_sources_added": 17,
+    "hced_label_pass_input_rows": 5937,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -3645,7 +3775,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 658,
+      "reserved_candidate_contract": 667,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -3657,7 +3787,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2424,
+      "no_unique_time_valid_label_match": 2415,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

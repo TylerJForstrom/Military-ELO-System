@@ -578,6 +578,16 @@
       "region": "Sicily"
     },
     {
+      "id": "al_basasiri_fatimid_aligned_field_force_1060",
+      "name": "Al-Basasiri's Fatimid-aligned field force near Kufa",
+      "kind": "campaign_force",
+      "start_year": 1060,
+      "end_year": 1060,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Iraq"
+    },
+    {
       "id": "clio_q178054_414_498ecc98",
       "name": "Alans",
       "kind": "polity",
@@ -2822,6 +2832,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "conrad_iii_german_crusader_army_1147",
+      "name": "Conrad III's German crusader army",
+      "kind": "campaign_force",
+      "start_year": 1147,
+      "end_year": 1147,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anatolia"
+    },
+    {
       "id": "constitutionalist_army_mexico",
       "name": "Constitutionalist Army of Mexico",
       "kind": "revolutionary_force",
@@ -3036,6 +3056,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "county_edessa_joscelin_ii_1131_1150",
+      "name": "County of Edessa under Joscelin II",
+      "kind": "crusader_county_regime",
+      "start_year": 1131,
+      "end_year": 1150,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Mesopotamia"
     },
     {
       "id": "clio_fr_capetian_k_1_990_39dc2541",
@@ -13514,6 +13544,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "peoples_crusade_asia_minor_force_1096",
+      "name": "People's Crusade field force in Asia Minor",
+      "kind": "campaign_force",
+      "start_year": 1096,
+      "end_year": 1096,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northwestern Anatolia"
+    },
+    {
       "id": "clio_q262_1963_de9ecdb4",
       "name": "People's Democratic Republic of Algeria",
       "kind": "republic",
@@ -18000,6 +18040,36 @@
       "region": "Unclassified"
     },
     {
+      "id": "rum_sultanate_kaykhusraw_ii_1237_1246",
+      "name": "Sultanate of Rum under Kaykhusraw II",
+      "kind": "sultanate_regime",
+      "start_year": 1237,
+      "end_year": 1246,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anatolia"
+    },
+    {
+      "id": "rum_sultanate_kilij_arslan_i_1092_1107",
+      "name": "Sultanate of Rum under Kilij Arslan I",
+      "kind": "sultanate_regime",
+      "start_year": 1092,
+      "end_year": 1107,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anatolia"
+    },
+    {
+      "id": "rum_sultanate_mesud_i_1116_1156",
+      "name": "Sultanate of Rum under Mesud I",
+      "kind": "sultanate_regime",
+      "start_year": 1116,
+      "end_year": 1156,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anatolia"
+    },
+    {
       "id": "clio_q19727688_1830_564cbebc",
       "name": "Sultanate of Sambaliung",
       "kind": "sultanate",
@@ -20328,6 +20398,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "zengid_aleppo_nur_al_din_1146_1154",
+      "name": "Zengid Aleppo under Nur al-Din",
+      "kind": "atabegate_regime",
+      "start_year": 1146,
+      "end_year": 1154,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Syria"
+    },
+    {
+      "id": "zengid_mosul_aleppo_imad_al_din_1127_1146",
+      "name": "Zengid Atabegate of Mosul and Aleppo under Imad al-Din Zengi",
+      "kind": "atabegate_regime",
+      "start_year": 1127,
+      "end_year": 1146,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Mesopotamia and Syria"
+    },
+    {
       "id": "clio_q189545_1139_e4a22b30",
       "name": "Zengid dynasty",
       "kind": "dynastic_state",
@@ -20524,11 +20614,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1915,
-    "rated_entities": 552,
-    "rated_events": 5060,
+    "registry_polities": 1924,
+    "rated_entities": 561,
+    "rated_events": 5066,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18334,
+    "unresolved_event_candidates": 18328,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20565,6 +20655,7 @@
     "candidate_keyed_wave8_moros_hced_events": 6,
     "candidate_keyed_wave8_manchus_hced_events": 5,
     "candidate_keyed_wave8_peruvian_rebels_hced_events": 5,
+    "candidate_keyed_wave8_seljuks_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20575,21 +20666,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4796,
-      "candidate_keyed_reviewed_contracts": 486,
-      "geojson_points": 4712,
-      "modern_location_country_assertions": 4709,
-      "location_provenance_objects": 4758,
-      "point_fields_withheld_by_quarantine": 84,
+      "hced_candidate_bindings": 4802,
+      "candidate_keyed_reviewed_contracts": 492,
+      "geojson_points": 4716,
+      "modern_location_country_assertions": 4715,
+      "location_provenance_objects": 4764,
+      "point_fields_withheld_by_quarantine": 86,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 132,
-      "point_quarantine_candidate_manifest_sha256": "16f5dcd54bb3dd3e58e16dadd97f652a5fa03b790d641b934a69212a5488e3ba",
+      "unique_events_with_any_quarantined_field": 134,
+      "point_quarantine_candidate_manifest_sha256": "3a606fb5d0ef73b62c34353344b27467ed5402a58f85a1652ffaf2c981ecf8a9",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "6cc38d85f4f6656212a5ae14a2afe86e16f9416bd5167c373327200ecf29ad4e",
+      "quarantine_policy_sha256": "93a280d9f179c98c0b58b0f337ad5345d333ca6594b19ef551bc84285217a37e",
       "assertion_status": {
-        "unreviewed_source_assertion": 4758
+        "unreviewed_source_assertion": 4764
       },
       "verified_location_assertions": {
         "availability": "not_available",

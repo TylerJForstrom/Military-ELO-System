@@ -1490,6 +1490,21 @@
     ]
   },
   {
+    "id": "al_basasiri_fatimid_aligned_field_force_1060",
+    "name": "Al-Basasiri's Fatimid-aligned field force near Kufa",
+    "kind": "campaign_force",
+    "start_year": 1060,
+    "end_year": 1060,
+    "region": "Iraq",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded force overtaken near Kufa in January 1060; it is not equated with the Fatimid state or an ethnic community. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_ibn_al_jawzi_translation",
+      "wave8_seljuks_tdv_besasiri"
+    ]
+  },
+  {
     "id": "african_reinforcement_contingent_cerami_1063",
     "name": "African reinforcement contingent at Cerami in 1063",
     "kind": "event_bounded_allied_contingent",
@@ -1549,6 +1564,21 @@
     ]
   },
   {
+    "id": "rum_sultanate_kilij_arslan_i_1092_1107",
+    "name": "Sultanate of Rum under Kilij Arslan I",
+    "kind": "sultanate_regime",
+    "start_year": 1092,
+    "end_year": 1107,
+    "region": "Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Reign-bounded Rum identity used only for the 1096 Civetot force. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_civetot_article",
+      "wave8_seljuks_iranica_rum"
+    ]
+  },
+  {
     "id": "clio_tr_rum_sultanate_1094_835c76cf",
     "name": "Sultanate of Rum",
     "kind": "sultanate",
@@ -1562,6 +1592,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "peoples_crusade_asia_minor_force_1096",
+    "name": "People's Crusade field force in Asia Minor",
+    "kind": "campaign_force",
+    "start_year": 1096,
+    "end_year": 1096,
+    "region": "Northwestern Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded force destroyed near Civetot in October 1096. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_alexiad_primary",
+      "wave8_seljuks_civetot_article"
     ]
   },
   {
@@ -1711,6 +1756,50 @@
     ]
   },
   {
+    "id": "rum_sultanate_mesud_i_1116_1156",
+    "name": "Sultanate of Rum under Mesud I",
+    "kind": "sultanate_regime",
+    "start_year": 1116,
+    "end_year": 1156,
+    "region": "Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Reign-bounded Rum identity used for Mesud's Second Crusade campaign. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_iranica_rum",
+      "wave8_seljuks_tdv_mesud"
+    ]
+  },
+  {
+    "id": "zengid_mosul_aleppo_imad_al_din_1127_1146",
+    "name": "Zengid Atabegate of Mosul and Aleppo under Imad al-Din Zengi",
+    "kind": "atabegate_regime",
+    "start_year": 1127,
+    "end_year": 1146,
+    "region": "Northern Mesopotamia and Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Regime-bounded Zengid polity ending with Imad al-Din's death in 1146. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_oup_edessa_1144"
+    ]
+  },
+  {
+    "id": "county_edessa_joscelin_ii_1131_1150",
+    "name": "County of Edessa under Joscelin II",
+    "kind": "crusader_county_regime",
+    "start_year": 1131,
+    "end_year": 1150,
+    "region": "Upper Mesopotamia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Ruler-bounded county; after 1144 it denotes Joscelin's surviving western domains and restoration force, not uninterrupted possession of Edessa city. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_cambridge_edessa_1146",
+      "wave8_seljuks_oup_edessa_1144"
+    ]
+  },
+  {
     "id": "clio_ma_almohad_emp_1139_2bb98e8d",
     "name": "Almohad Caliphate",
     "kind": "caliphate",
@@ -1771,6 +1860,35 @@
     "source_ids": [
       "portugal_mne_foundation_1143",
       "brazil_chamber_united_kingdom_1815"
+    ]
+  },
+  {
+    "id": "zengid_aleppo_nur_al_din_1146_1154",
+    "name": "Zengid Aleppo under Nur al-Din",
+    "kind": "atabegate_regime",
+    "start_year": 1146,
+    "end_year": 1154,
+    "region": "Northern Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Aleppo-centered regime from Zengi's succession split through Nur al-Din's acquisition of Damascus in 1154. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_cambridge_edessa_1146",
+      "wave8_seljuks_penn_edessa_1146"
+    ]
+  },
+  {
+    "id": "conrad_iii_german_crusader_army_1147",
+    "name": "Conrad III's German crusader army",
+    "kind": "campaign_force",
+    "start_year": 1147,
+    "end_year": 1147,
+    "region": "Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded German royal army in the Anatolian phase of the Second Crusade. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_tdv_mesud"
     ]
   },
   {
@@ -1953,6 +2071,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "rum_sultanate_kaykhusraw_ii_1237_1246",
+    "name": "Sultanate of Rum under Kaykhusraw II",
+    "kind": "sultanate_regime",
+    "start_year": 1237,
+    "end_year": 1246,
+    "region": "Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Reign-bounded Rum identity spanning the Mongol defeat at Kose Dag. No rating is inherited by a generic Seljuk, Turk, Muslim, crusader, German, Syrian, or modern-state label.",
+    "source_ids": [
+      "wave8_seljuks_iranica_bayju",
+      "wave8_seljuks_iranica_rum"
     ]
   },
   {
