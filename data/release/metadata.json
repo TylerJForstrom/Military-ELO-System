@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 371,
-    "events": 4888,
-    "sources": 318,
-    "registry_polities": 1727
+    "entities": 431,
+    "events": 4938,
+    "sources": 431,
+    "registry_polities": 1787
   },
   "year_range": {
     "start": -1274,
@@ -84,6 +84,15 @@
     "accepted_wave8_african_states_hced_events": 9,
     "accepted_wave8_new_zealand_hced_events": 15,
     "accepted_wave8_north_america_hced_events": 22,
+    "accepted_wave8_xhosa_hced_events": 10,
+    "accepted_wave8_polish_audit_hced_events": 1,
+    "accepted_wave8_namibia_resistance_hced_events": 8,
+    "accepted_wave8_first_saudi_hced_events": 1,
+    "accepted_wave8_early_states_hced_events": 21,
+    "accepted_wave8_judean_revolts_hced_events": 2,
+    "accepted_wave8_canadian_resistance_hced_events": 3,
+    "accepted_wave8_wales_hced_events": 4,
+    "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
       "bengal_states": 8,
@@ -1398,7 +1407,474 @@
     ],
     "wave8_north_america_entities_added": 11,
     "wave8_north_america_sources_added": 15,
-    "hced_label_pass_input_rows": 6189,
+    "wave8_xhosa_cohort_counts": {
+      "eighth_frontier_war": 2,
+      "fifth_frontier_war": 1,
+      "ninth_frontier_war": 3,
+      "seventh_frontier_war": 3,
+      "xhosa_civil_war": 1
+    },
+    "wave8_xhosa_queue_validation": {
+      "promotion_contracts": 10,
+      "holds": 9,
+      "reviewed_hced_rows": 19
+    },
+    "wave8_xhosa_candidate_ids": [
+      "hced-Amalinda1818-1",
+      "hced-Boomah Pass1850-1",
+      "hced-Burnshill1846-1",
+      "hced-Fish River1851-1",
+      "hced-Fort Peddie1846-1",
+      "hced-Grahamstown1819-1",
+      "hced-Gwanga1846-1",
+      "hced-Ibeka1877-1",
+      "hced-Kentani1878-1",
+      "hced-NAxama1878-1"
+    ],
+    "wave8_xhosa_holds": [
+      {
+        "candidate_id": "hced-Ciskei1834-1835-1",
+        "category": "campaign_aggregate",
+        "reason": "The row is a region-wide Sixth Frontier War interval with changing Ngqika, Ndlambe, and other forces, not one bounded engagement.",
+        "raw_row_sha256": "e5bab5fad7899a4ea10b1b12b127c47a2ee80d49180ada4da8879f9daa4972a2"
+      },
+      {
+        "candidate_id": "hced-Fish River1781-1",
+        "category": "campaign_without_discrete_event",
+        "reason": "The evidence supports a First Frontier War campaign around the Fish River but not a unique battle or exact commando and Gqunukhwebe sides.",
+        "raw_row_sha256": "b8ed106374c1b416738d82c071c22a56264beae5bab786a5baeef76b828c73cd"
+      },
+      {
+        "candidate_id": "hced-Fish River1819-1",
+        "category": "possible_campaign_duplicate",
+        "reason": "No authoritative discrete Fish River battle matches the row; it likely aggregates or duplicates retaliation after Grahamstown.",
+        "raw_row_sha256": "8af823110805daa4de0f991c405b7406c2652b52b45a07c20dfcef171f76b805"
+      },
+      {
+        "candidate_id": "hced-Fort White1850-1",
+        "category": "date_and_actor_conflict",
+        "reason": "The archival attack is dated 3 January 1851 while HCED says 1850, and the attacker is not branch-resolved; no year or actor is invented.",
+        "raw_row_sha256": "3514eaf10f57b9e3107bca18a7960d94d71c380a69d3693e418a090f1e7edf79"
+      },
+      {
+        "candidate_id": "hced-Iron Mountain, South Africa1852-1",
+        "category": "ambiguous_event_boundary",
+        "reason": "Contemporary accounts describe multiple 1852 Iron Mountain actions, so this row cannot be assigned without inventing an event boundary or victory.",
+        "raw_row_sha256": "ccd1d5510ad728ebdfbf9241dca8d568edd97909c240a03b2f62126ad7592da1"
+      },
+      {
+        "candidate_id": "hced-Roodewal, Cape Province1802-1",
+        "category": "unverified_event_and_sides",
+        "reason": "No authoritative discrete engagement or result matching Roodewal was found, and period evidence indicates a broader Khoi–Xhosa coalition.",
+        "raw_row_sha256": "640c62d73916b46f27d86b40d11815fdcf5651346ef364537f9cd1bb06ada62f"
+      },
+      {
+        "candidate_id": "hced-Sundays1802-1",
+        "category": "unverified_event_and_sides",
+        "reason": "No authoritative discrete engagement or result matching Sundays was found, and the two-party Boer/Xhosa formulation omits the period coalition.",
+        "raw_row_sha256": "9ede089ee3d52ea9300adb9afe433909061b9385c4d44f5ffd7b7a9d0ea972e7"
+      },
+      {
+        "candidate_id": "hced-Trompettersdrift1793-1",
+        "category": "unknown_outcome_not_draw",
+        "reason": "The loser is blank, so the nominal draw is structurally incomplete and remains unknown; the chronology also does not establish a unique engagement.",
+        "raw_row_sha256": "82b4ab9cb4f88fcf8758fdf071c0ecea934dfc4befce2d56fb1070009b2edf76"
+      },
+      {
+        "candidate_id": "hced-Waterkloof1851-1",
+        "category": "campaign_aggregate",
+        "reason": "Waterkloof denotes a month-long campaign with changing forces and no single set-piece battle or defensible overall tactical winner.",
+        "raw_row_sha256": "07a6b588687f8f1cd93d9b72971e72a4f7b2c166f4516a4c30550acf5f2b8652"
+      }
+    ],
+    "wave8_xhosa_entities_added": 22,
+    "wave8_xhosa_sources_added": 32,
+    "wave8_polish_audit_counts": {
+      "correction_targets": 4,
+      "holds": 4,
+      "newly_rated_events": 1,
+      "promotion_contracts": 1,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_polish_audit_queue_validation": {
+      "promotion_contracts": 1,
+      "holds": 4,
+      "reviewed_hced_rows": 5
+    },
+    "wave8_polish_audit_candidate_ids": [
+      "hced-Guzow1607-1"
+    ],
+    "wave8_polish_audit_holds": [
+      {
+        "candidate_id": "hced-Brest-Litovsk1794-1",
+        "category": "duplicate_of_reviewed_event",
+        "reason": "The official battle chronology identifies Terespol on 19 September 1794 as the Battle of Brest-Litovsk; rating this row would duplicate the published Terespol candidate.",
+        "raw_row_sha256": "5b512c935ddff849afdbc7cb4435973bca827c0d68779d585e4105611f3ffae6"
+      },
+      {
+        "candidate_id": "hced-Domazlice1431-1",
+        "category": "exact_belligerent_identities_unresolved",
+        "reason": "The Czech source supports a Hussite victory, but the raw labels 'Polish Hussites' and 'German Crusaders' do not identify the exact Bohemian field army and Fifth Crusade coalition.",
+        "raw_row_sha256": "70acb3918c284be0183bbd6739806ad8c7778cb73276c540fc4dae4f666006a9"
+      },
+      {
+        "candidate_id": "hced-Grotniki1439-1",
+        "category": "exact_belligerent_identities_unresolved",
+        "reason": "The academic evidence identifies Spytko of Melsztyn's confederation and rejects a generic Polish-Hussite identity, while the exact royal or regency opponent also remains uncurated.",
+        "raw_row_sha256": "95201255e4fe69a0f4398b063214af455e54136b4cebb831e843a4e295fbf56c"
+      },
+      {
+        "candidate_id": "hced-Janowiec1606-1",
+        "category": "agreement_not_battle",
+        "reason": "The reviewed official chronology describes an agreement at Janowiec, not a competitive military result. No victory is manufactured from the HCED row.",
+        "raw_row_sha256": "31c228e2adf6babc7d7707b104cd33697d84dbd523f2f1117ab8b2a91f855b86"
+      }
+    ],
+    "wave8_polish_audit_entities_added": 1,
+    "wave8_polish_audit_sources_added": 7,
+    "wave8_namibia_resistance_cohort_counts": {
+      "morenga_resistance": 3,
+      "ovaherero_resistance_1904": 2,
+      "witbooi_resistance_1893_1894": 1,
+      "witbooi_resistance_1904_1905": 2
+    },
+    "wave8_namibia_resistance_queue_validation": {
+      "promotion_contracts": 8,
+      "holds": 4,
+      "reviewed_hced_rows": 12
+    },
+    "wave8_namibia_resistance_candidate_ids": [
+      "hced-Freyers Farm1904-1",
+      "hced-Hartebeestmund1905-1",
+      "hced-Naris1904-1",
+      "hced-Naukluf1894-1",
+      "hced-Onganjira1904-1",
+      "hced-Vaalgras1905-1",
+      "hced-Van Rooisvlei1928-1",
+      "hced-Waterberg1904-1"
+    ],
+    "wave8_namibia_resistance_holds": [
+      {
+        "candidate_id": "hced-Hornkranz1893-1",
+        "category": "massacre_without_rateable_outcome",
+        "reason": "The surprise assault killed women and children while Witbooi and most fighters escaped. HCED's Nama win is rejected, but the massacre is never flipped into a German win or coerced into a draw.",
+        "raw_row_sha256": "5cb0b021e32c46c18dbcf808f8ab76c68a030c5f93f00e4a3dd516030419936d",
+        "full_row_sha256": "0fb8ef648a3a2e3d628a11fed09782f42ade688cb25f29deb9846210b89132b8"
+      },
+      {
+        "candidate_id": "hced-Okaharui1904-1",
+        "category": "contradictory_outcome_evidence",
+        "reason": "Authoritative accounts conflict on the result and even the exact date. The HCED German win is rejected; no winner or draw is inferred.",
+        "raw_row_sha256": "354321367133215c5fe16ee1c6cdc93443d5b03fd13b7cf4bc55ec9eb12423eb",
+        "full_row_sha256": "de886027df1999da4e795155c2ea5084008471a947095655a402bf9fd5364688"
+      },
+      {
+        "candidate_id": "hced-Oviumbo1904-1",
+        "category": "outcome_unknown",
+        "reason": "Sources characterize Oviumbo as a stand-off, tactical failure, nominal success, or strategic success. HCED's Ovaherero win is rejected and no draw is invented.",
+        "raw_row_sha256": "86c3d3f9c52408d25d4ca2c81823ae45ef5a3f37f3244ad125b6fceec261bd6b",
+        "full_row_sha256": "789a8446764a8177602be4624fbad2112a96a17c3c35221237139ddb1266a9d1"
+      },
+      {
+        "candidate_id": "hced-Owikokorero1904-1",
+        "category": "outcome_unknown",
+        "reason": "Owikokorero is normalized to Ovikokorero. Heavy German losses do not establish a winner, while a government ethnology calls it indecisive; no result is inferred.",
+        "raw_row_sha256": "5b6c24c21c14d4b14e0b7e2d9148bb4bb6337a8bbcd46f7b9f02fc3c1d1fafde",
+        "full_row_sha256": "eb4f6a4e21843b511cf27e3b0db86403b9fb071447df16e6cd697ed089741e75"
+      }
+    ],
+    "wave8_namibia_resistance_entities_added": 6,
+    "wave8_namibia_resistance_sources_added": 22,
+    "wave8_first_saudi_counts": {
+      "holds": 5,
+      "newly_rated_events": 1,
+      "promotion_contracts": 1,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_first_saudi_queue_validation": {
+      "promotion_contracts": 1,
+      "holds": 5,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_first_saudi_candidate_ids": [
+      "hced-Diriyah1818-1"
+    ],
+    "wave8_first_saudi_holds": [
+      {
+        "candidate_id": "hced-Al Safra1812-1",
+        "category": "source_date_conflict",
+        "reason": "The encounter is attested, but reviewed chronologies disagree between late 1811 and 1812. A year-precision Elo event is not emitted until that conflict is adjudicated.",
+        "raw_row_sha256": "a4698bdced9406da8357df88932e06ccb14a58cb21f264d8ba7daab26c47030c"
+      },
+      {
+        "candidate_id": "hced-Jeddah1813-1",
+        "category": "noncompetitive_occupation",
+        "reason": "The reviewed chronology describes control through negotiated or secret arrangements rather than a defensible competitive battle.",
+        "raw_row_sha256": "11d8ccc469f3e54e4215ff6a4c3977a04b5fb8310762c31ed71152e91c2cc47b"
+      },
+      {
+        "candidate_id": "hced-Mecca1813-1",
+        "category": "noncompetitive_occupation",
+        "reason": "The reviewed chronology supports entry and control, but not a competitive engagement with a defensible tactical outcome.",
+        "raw_row_sha256": "5b04706bec80c45c3c6dd6ff538454f32560af89cbae1faddd91e0ffc9089735"
+      },
+      {
+        "candidate_id": "hced-Medina1812-1",
+        "category": "outcome_mechanism_disputed",
+        "reason": "Official reviewed accounts differ over siege pressure, surrender, and secret agreements. Control of Medina is not converted into an invented tactical victory.",
+        "raw_row_sha256": "caa220a4b64e4f4599a8d179d2dbb2b742205c711da55edadb552cafd6ae5e9f"
+      },
+      {
+        "candidate_id": "hced-Nejd1817-1",
+        "category": "missing_event_date",
+        "reason": "The staged row has no year_low, year_high, or year_best. No date is invented from the source-record identifier.",
+        "raw_row_sha256": "35d1c5e5001cf9cacb4de6cd5dd552d92de184a0fda04e54a369e73384f137d2"
+      }
+    ],
+    "wave8_first_saudi_entities_added": 1,
+    "wave8_first_saudi_sources_added": 3,
+    "wave8_early_states_cohort_counts": {
+      "gurkha_audit": 5,
+      "muslim_ummah_audit": 9,
+      "parthia_audit": 7
+    },
+    "wave8_early_states_queue_validation": {
+      "promotion_contracts": 21,
+      "holds": 10,
+      "reviewed_hced_rows": 31
+    },
+    "wave8_early_states_candidate_ids": [
+      "hced-Ajnadin634-1",
+      "hced-Almorah1815-1",
+      "hced-Arsanias62-1",
+      "hced-Atra199-1",
+      "hced-Carrhae-53-1",
+      "hced-Ctesiphon198-1",
+      "hced-Gindarus-38-1",
+      "hced-Hormizdagan224-1",
+      "hced-Hunain630-1",
+      "hced-Jitgargh1815-1",
+      "hced-Kalanga1814-1",
+      "hced-Khaybar628-1",
+      "hced-Madain637-1",
+      "hced-Malaon1815-1",
+      "hced-Ohud625-1",
+      "hced-Parsa1815-1",
+      "hced-Pelusium640-1",
+      "hced-Ullais633-1",
+      "hced-Walaja633-1",
+      "hced-Yarmuk636-1",
+      "hced-Zab-130-1"
+    ],
+    "wave8_early_states_holds": [
+      {
+        "candidate_id": "hced-Ain Tamar634-1",
+        "category": "date_conflict",
+        "reason": "Authoritative chronology dates Ayn al-Tamr to 633, while the pinned row says 634; no corrected year is silently invented.",
+        "raw_row_sha256": "6343455f1080d5d35250c232d6348fcd22e6f4c15145a367b80863ddc4a45ce0"
+      },
+      {
+        "candidate_id": "hced-Ecbatana-129-1",
+        "category": "event_location_binding_disputed",
+        "reason": "The Parthian victory over Antiochus VII is defensible, but Ecbatana is not securely established as the battle site for this candidate.",
+        "raw_row_sha256": "558ea9617ac252d1f489fc44f9b6a7329eca4991c0d86bd9dadaa738f0953737"
+      },
+      {
+        "candidate_id": "hced-Jaitak1814-1815-1",
+        "category": "campaign_interval_mixed_outcomes",
+        "reason": "The interval combines repulsed Company assaults with the later evacuation after Malaun; no single tactical result covers the row.",
+        "raw_row_sha256": "1425921ad3e3be2c8c3f0d67a70efc4ce2805b373744f38e9f7fae11a8f13cf3"
+      },
+      {
+        "candidate_id": "hced-Katalgarh1815-1",
+        "category": "event_binding_unproven",
+        "reason": "Sources separate a failed Katalgarh siege from the later defeat of Hearsey's column elsewhere, so this row is not uniquely bound.",
+        "raw_row_sha256": "f9b0ac0d13685eadddd7444ac73becf13dc852fd1864ea061e6cf8c72efd98af"
+      },
+      {
+        "candidate_id": "hced-Mecca630-1",
+        "category": "exclude_not_discrete_engagement",
+        "reason": "The conquest was a capitulation and occupation rather than a clean competitive engagement, so no tactical win is rated.",
+        "raw_row_sha256": "c1d047beaf9ef321301f14fd8e2a8de11063f97b2142afbc1c2077ecf882f860"
+      },
+      {
+        "candidate_id": "hced-Medina, Saudi Arabia627-1",
+        "category": "composite_events_and_actors",
+        "reason": "The row conflates the Quraysh-led Trench siege with the subsequent Banu Qurayza action and cannot support one outcome or opposing side.",
+        "raw_row_sha256": "258a46d4a212bf80bf392ea80420d265889dadb8aed57a46c6119de561698f18"
+      },
+      {
+        "candidate_id": "hced-Memphis638-1",
+        "category": "date_conflict",
+        "reason": "The Egyptian conquest chronology begins in 639/640, making the pinned 638 date untenable; no corrected date is invented.",
+        "raw_row_sha256": "0065c0b95be4fab47ec4a212dad4ec34084baa01769e2c7b89a2cfa115357c16"
+      },
+      {
+        "candidate_id": "hced-Muta629-1",
+        "category": "outcome_and_actor_disputed",
+        "reason": "The extent of Byzantine participation and the tactical result remain disputed, so neither side nor outcome is asserted.",
+        "raw_row_sha256": "aef72fd0ce4a36784f5d503ae42a3040e2857d9bbf731ae443b6b51d7558dfa2"
+      },
+      {
+        "candidate_id": "hced-Wadi al-Arabah634-1",
+        "category": "event_binding_unproven",
+        "reason": "The evidence distinguishes a Dathin action from a later encampment at Ghamr al-Arabat and does not bind this row to one engagement.",
+        "raw_row_sha256": "fc1449255eab901f43c48f008057aab65d7f1a4ae1a7b89184f9f37ca127c613"
+      },
+      {
+        "candidate_id": "hced-Yarmuk634-1",
+        "category": "exclude_duplicate_of_reviewed_candidate",
+        "reason": "This wrong-year row duplicates the reviewed 636 Battle of Yarmuk candidate and must never be rated separately.",
+        "raw_row_sha256": "e3274c504961f556163e1736fc7493923f74c474dd76dada92cfbb4d9502994b"
+      }
+    ],
+    "wave8_early_states_entities_added": 19,
+    "wave8_early_states_sources_added": 27,
+    "wave8_judean_revolts_counts": {
+      "holds": 5,
+      "newly_rated_events": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 7
+    },
+    "wave8_judean_revolts_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 5,
+      "reviewed_hced_rows": 7
+    },
+    "wave8_judean_revolts_candidate_ids": [
+      "hced-Beth Horon66-1",
+      "hced-Emmaus-166-1"
+    ],
+    "wave8_judean_revolts_holds": [
+      {
+        "candidate_id": "hced-Aelia133-135-1",
+        "category": "campaign_or_massacre_not_distinct_engagement",
+        "reason": "The source supports Roman suppression of the 132–135 revolt, but the row collapses Aelia, a massacre assertion, and the wider campaign into one year. No distinct tactical outcome is manufactured.",
+        "raw_row_sha256": "aa41015a701b3f070aed3c920ffdb3fa8948fc6982e3e479d12b9daec36d817a"
+      },
+      {
+        "candidate_id": "hced-Beth Zachariah-164-1",
+        "category": "source_date_conflict",
+        "reason": "The HCED year conflicts with the reviewed academic chronology, which places Lysias's second expedition and Beth Zachariah later.",
+        "raw_row_sha256": "9a535ff8eb9776ccf80f8aa6c965978df3fcc623cdaa9849661a6501d8d92f55"
+      },
+      {
+        "candidate_id": "hced-Beth Zur-166-1",
+        "category": "source_date_conflict",
+        "reason": "Reviewed chronologies place the engagement in 165/164 BCE rather than the row's exact 166 BCE year.",
+        "raw_row_sha256": "2d8c4d98265bfe0e6a2f1281aeeb098d38043cbdad52d592e14b520fb5ecb347"
+      },
+      {
+        "candidate_id": "hced-Elasa-161-1",
+        "category": "source_date_conflict",
+        "reason": "The death of Judas is variously assigned to 161 or 160 BCE; the year-precision row remains staged pending one explicit chronology.",
+        "raw_row_sha256": "1c6fd84e264ff160ef954b922689ff826da0eeafbc852cd02cb854558ee70467"
+      },
+      {
+        "candidate_id": "hced-Gophna-166-1",
+        "category": "distinct_engagement_unverified",
+        "reason": "The reviewed sources do not establish a separate competitive battle at Gophna matching this row, so no result is inferred from the wider Maccabean campaign.",
+        "raw_row_sha256": "0d4fdbc1d5778b9c22a1a4f8044930211ef7ce4ad7477e0d39dccb07dfb2adf1"
+      }
+    ],
+    "wave8_judean_revolts_entities_added": 2,
+    "wave8_judean_revolts_sources_added": 5,
+    "wave8_canadian_resistance_counts": {
+      "holds": 3,
+      "newly_rated_events": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_canadian_resistance_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 3,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_canadian_resistance_candidate_ids": [
+      "hced-Batoche1885-1",
+      "hced-Duck Lake1885-1",
+      "hced-Toronto1837-1"
+    ],
+    "wave8_canadian_resistance_holds": [
+      {
+        "candidate_id": "hced-Battleford1885-1",
+        "category": "distinct_competitive_engagement_unverified",
+        "reason": "The official site history describes gathering, negotiation attempts, movement, and later surrenders, not a distinct Canadian victory at Battleford matching this row.",
+        "raw_row_sha256": "c06df56c06b71a52a32a5d115536a85988c4b544f0260ad494f9f9c0e9d93669"
+      },
+      {
+        "candidate_id": "hced-Fish Creek1885-1",
+        "category": "contradictory_outcome_evidence",
+        "reason": "Parks Canada pages describe the result both as an indecisive stand-off and as a short-lived Métis triumph; neither supports HCED's Canadian victory strongly enough for an Elo result.",
+        "raw_row_sha256": "5229a305cfef274d60cebcc04f28c98687ff54aa888c0d886d56f52f18672c29"
+      },
+      {
+        "candidate_id": "hced-Frenchmans Butte1885-1",
+        "category": "outcome_not_supported_as_victory",
+        "reason": "Parks Canada classifies Frenchman's Butte as a stand-off, so HCED's generic rebel victory is not promoted as either a win or an invented draw.",
+        "raw_row_sha256": "82ad2e75a0b831294583bfe8a564864fe360fcb3ed7b1a8d2fbf3150b6f71dd2"
+      }
+    ],
+    "wave8_canadian_resistance_entities_added": 6,
+    "wave8_canadian_resistance_sources_added": 6,
+    "wave8_wales_counts": {
+      "holds": 5,
+      "newly_rated_events": 4,
+      "outcome_overrides": 1,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_wales_cohort_counts": {
+      "glyndwr_revolt_1402": 1,
+      "llywelyn_final_war_1282": 2,
+      "owain_gwynedd_1157": 1
+    },
+    "wave8_wales_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 5,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_wales_candidate_ids": [
+      "hced-Aber Edw1282-1",
+      "hced-Bangor1282-1",
+      "hced-Coleshill1157-1",
+      "hced-Pilleth1402-1"
+    ],
+    "wave8_wales_holds": [
+      {
+        "candidate_id": "hced-Aberdare, Wales1093-1",
+        "category": "claimed_event_not_historically_supported",
+        "reason": "Modern scholarship places Rhys ap Tewdwr's Easter 1093 death near Brecon against Bernard de Neufmarché's Norman settlers, while the Fitzhamon-Iestyn battle at Aberdare/Hirwaun is a rejected late legend.",
+        "raw_row_sha256": "0f6373655de9c46d5fe2e2447a02649be011666fe834a014fc2929ff0f31ab32"
+      },
+      {
+        "candidate_id": "hced-Beandun614-1",
+        "category": "exact_brittonic_belligerent_unresolved",
+        "reason": "The Anglo-Saxon Chronicle supports a victory by Cynegils and Cwichelm over Britons, but scholarship still disputes Beandun's location and does not securely identify the defeated Brittonic polity.",
+        "raw_row_sha256": "d2600f40646b4b011c8bf18828d87d978f75072b951c123a8f52d9b064493b3f"
+      },
+      {
+        "candidate_id": "hced-Conwy1295-1",
+        "category": "event_conflation_and_location_unresolved",
+        "reason": "The commissioned battlefield study distinguishes Edward I's winter blockade and eventual recovery at Conwy from Warwick's 5 March victory at Maes Moydog, and identifies the older placement of that battle near Conwy as erroneous. HCED's row cannot be bound safely to one event.",
+        "raw_row_sha256": "131269b6a288ef243e8031ccce79eee11b3083a4eacc8266c80b26680c579233"
+      },
+      {
+        "candidate_id": "hced-Penselwood658-1",
+        "category": "exact_brittonic_belligerent_unresolved",
+        "reason": "The Chronicle supports Cenwalh's victory over Britons and pursuit to the Parrett, but academic place-name analysis treats identification of Peonnum with Penselwood as traditional and qualified; the source does not name the defeated polity.",
+        "raw_row_sha256": "ea1bd8ad44cc8ca2061dfc8868dc974a54cd10eb8a18f611614862f21b2dc8ef"
+      },
+      {
+        "candidate_id": "hced-Ystradowen1032-1",
+        "category": "spurious_claimed_event",
+        "reason": "The archaeological desk assessment finds no evidence for the battle, traces it only to Samuel Lewis's unspecified annals, and reports that the notice likely derives from a document forged by Iolo Morganwg.",
+        "raw_row_sha256": "e0b05bd28c68bde1e62c3b0ba2f385ae8a0ace584a91a6ac113992512d601217"
+      }
+    ],
+    "wave8_wales_entities_added": 3,
+    "wave8_wales_sources_added": 11,
+    "hced_label_pass_input_rows": 6095,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -1407,11 +1883,11 @@
       "curated_exclusion": 164,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
-      "missing_or_invalid_year": 3,
+      "missing_or_invalid_year": 2,
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 414,
+      "reserved_candidate_contract": 509,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -1421,10 +1897,10 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 464,
       "label_outcome_not_aligned": 81,
-      "label_outside_policy_window": 182,
+      "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2660,
-      "no_unique_time_valid_polity": 90,
+      "no_unique_time_valid_label_match": 2569,
+      "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 42

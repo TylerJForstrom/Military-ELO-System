@@ -421,6 +421,21 @@
     ]
   },
   {
+    "id": "arsacid_empire",
+    "name": "Arsacid Empire",
+    "kind": "empire",
+    "start_year": -247,
+    "end_year": 224,
+    "region": "Iran, Mesopotamia, and adjacent regions",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Arsacid state; candidate keys bind reviewed Parthian rows without opening a generic label resolver. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "met_parthian_empire",
+      "iranica_arsacids_ii"
+    ]
+  },
+  {
     "id": "clio_dz_numidia_bce197_0f528fc7",
     "name": "Kingdom of Numidia",
     "kind": "kingdom",
@@ -434,6 +449,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "maccabean_revolt_judean_forces_167_160_bce",
+    "name": "Judean forces of the Maccabean Revolt (167–160 BCE)",
+    "kind": "rebel_polity",
+    "start_year": -167,
+    "end_year": -160,
+    "region": "Judea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded forces led by Mattathias and Judas Maccabaeus. No rating is inherited by the later Hasmonean state, other Judean revolts, modern Jewish polities, or a generic Jewish-rebels label.",
+    "source_ids": [
+      "wave8_judean_roy_pre_modern_warfare",
+      "wave8_judean_cambridge_judas_maccabaeus"
     ]
   },
   {
@@ -468,6 +498,36 @@
     "source_ids": [
       "cliopatria_polities",
       "iranica_shapur"
+    ]
+  },
+  {
+    "id": "great_jewish_revolt_judean_forces_66_73",
+    "name": "Judean forces of the Great Jewish Revolt (66–73)",
+    "kind": "rebel_polity",
+    "start_year": 66,
+    "end_year": 73,
+    "region": "Roman Judea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Judean revolt forces beginning in 66 CE. No rating is inherited by the Bar Kokhba revolt, ancient predecessor states, modern Jewish polities, or a generic Jewish-rebels label.",
+    "source_ids": [
+      "wave8_judean_met_world_between_empires",
+      "wave8_judean_josephus_jewish_war"
+    ]
+  },
+  {
+    "id": "hatra_kingdom_defenders_199",
+    "name": "Kingdom of Hatra defenders in the second siege",
+    "kind": "city_kingdom_garrison",
+    "start_year": 199,
+    "end_year": 199,
+    "region": "Upper Mesopotamia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Hatra defenders; HCED's broad Parthia label is an identity error for this siege. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "iranica_hatra",
+      "iranica_balas_v"
     ]
   },
   {
@@ -704,6 +764,66 @@
     ]
   },
   {
+    "id": "medinan_muslim_polity_622_632",
+    "name": "Medinan polity under Muhammad (622–632)",
+    "kind": "city_state_religious_polity",
+    "start_year": 622,
+    "end_year": 632,
+    "region": "Western Arabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Time-bounded Medina-centered polity used only for candidate-keyed engagements before the Rashidun succession. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "sunypress_tabari_volume_8",
+      "ucpress_quran_and_conquest_chapter_1"
+    ]
+  },
+  {
+    "id": "quraysh_meccan_field_force_uhud_625",
+    "name": "Quraysh Meccan field force at Uhud",
+    "kind": "tribal_field_force",
+    "start_year": 625,
+    "end_year": 625,
+    "region": "Western Arabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Quraysh-led force that defeated the Medinan force at Uhud. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "sunypress_tabari_volume_8",
+      "ucpress_quran_and_conquest_chapter_1"
+    ]
+  },
+  {
+    "id": "khaybar_oasis_defenders_628",
+    "name": "Khaybar oasis defenders",
+    "kind": "oasis_defense_coalition",
+    "start_year": 628,
+    "end_year": 628,
+    "region": "Western Arabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded defenders of the Khaybar oasis settlements. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "sunypress_tabari_volume_8",
+      "ucpress_quran_and_conquest_chapter_1"
+    ]
+  },
+  {
+    "id": "hawazin_thaqif_coalition_hunayn_630",
+    "name": "Hawazin–Thaqif coalition at Hunayn",
+    "kind": "tribal_coalition",
+    "start_year": 630,
+    "end_year": 630,
+    "region": "Western Arabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded coalition opposing the Medinan force at Hunayn. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "sunypress_tabari_volume_8",
+      "ucpress_quran_and_conquest_chapter_1"
+    ]
+  },
+  {
     "id": "rashidun_caliphate",
     "name": "Rashidun Caliphate",
     "kind": "caliphate",
@@ -719,6 +839,51 @@
       "cliopatria_polities",
       "iranica_arab_conquest",
       "britannica_yarmouk"
+    ]
+  },
+  {
+    "id": "ullais_sasanian_christian_arab_coalition_633",
+    "name": "Sasanian–Christian Arab coalition at Ullais",
+    "kind": "field_coalition",
+    "start_year": 633,
+    "end_year": 633,
+    "region": "Lower Mesopotamia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Sasanian-aligned and Christian Arab force at Ullais. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "iranica_arab_conquest_iran",
+      "uchicago_early_muslim_conquests"
+    ]
+  },
+  {
+    "id": "walaja_sasanian_christian_arab_coalition_633",
+    "name": "Sasanian–Christian Arab coalition at Walaja",
+    "kind": "field_coalition",
+    "start_year": 633,
+    "end_year": 633,
+    "region": "Lower Mesopotamia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Sasanian-aligned and Christian Arab force at Walaja. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "iranica_arab_conquest_iran",
+      "uchicago_early_muslim_conquests"
+    ]
+  },
+  {
+    "id": "byzantine_pelusium_garrison_640",
+    "name": "Byzantine garrison of Pelusium",
+    "kind": "imperial_garrison",
+    "start_year": 640,
+    "end_year": 640,
+    "region": "Nile Delta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Byzantine defense at Pelusium; it is not a generic Egypt identity. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "cambridge_egypt_caliphate_641_868",
+      "uchicago_early_muslim_conquests"
     ]
   },
   {
@@ -1272,6 +1437,20 @@
     ]
   },
   {
+    "id": "dafydd_cynan_gwynedd_ambush_force_1157",
+    "name": "Dafydd and Cynan's Gwynedd ambush force at Coleshill (1157)",
+    "kind": "event_bounded_princely_force",
+    "start_year": 1157,
+    "end_year": 1157,
+    "region": "Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The event-bounded force of Owain Gwynedd's sons Dafydd and Cynan in the wooded-pass engagement against Henry II. No rating is inherited by a generic Wales identity, another Welsh dynasty or regime, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_wales_coflein_coleshill_1157"
+    ]
+  },
+  {
     "id": "crown_aragon_1164",
     "name": "Crown of Aragon",
     "kind": "composite_monarchy",
@@ -1438,6 +1617,21 @@
       "met_ethiopian_christianity"
     ],
     "start_year": 1270
+  },
+  {
+    "id": "llywelyn_ap_gruffudd_final_war_forces_1282",
+    "name": "Llywelyn ap Gruffudd's final-war forces (1282)",
+    "kind": "regime_bounded_princely_force",
+    "start_year": 1282,
+    "end_year": 1282,
+    "region": "Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict- and regime-bounded forces resisting Edward I in the final 1282 war under Llywelyn ap Gruffudd. No rating is inherited by a generic Wales identity, another Welsh dynasty or regime, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_wales_coflein_bridge_of_boats_1282",
+      "wave8_wales_coflein_irfon_bridge_1282"
+    ]
   },
   {
     "id": "clio_ru_golden_horde_1294_e1cd03b8",
@@ -1640,6 +1834,20 @@
     "source_ids": [
       "wave6_black_milan",
       "wave6_treccani_ambrosian"
+    ]
+  },
+  {
+    "id": "owain_glyndwr_bryn_glas_force_1402",
+    "name": "Owain Glyndŵr's force at Bryn Glas (1402)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1402,
+    "end_year": 1402,
+    "region": "Wales",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The event-bounded Glyndŵr force that fought Edmund Mortimer's army at Bryn Glas on 22 June 1402. No rating is inherited by a generic Wales identity, another Welsh dynasty or regime, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_wales_coflein_bryn_glas_1402"
     ]
   },
   {
@@ -2241,6 +2449,21 @@
     "start_year": 1590
   },
   {
+    "id": "guzow_rokosz_forces_1607",
+    "name": "Rokosz forces at Guzów (1607)",
+    "kind": "confederate_forces",
+    "start_year": 1607,
+    "end_year": 1607,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded forces of the noble rokosz defeated at Guzów in 1607. The identity opens no generic Polish-rebel label and no rating is inherited by earlier or later confederations, rebels, or state armies.",
+    "source_ids": [
+      "wave8_polish_zpe_rokosz_1606_1607",
+      "wave8_polish_ujk_rokosz_review"
+    ]
+  },
+  {
     "id": "clio_mn_zungharian_emp_1609_f84aab9a",
     "name": "Dzungar Khanate",
     "kind": "khanate",
@@ -2611,6 +2834,20 @@
     "start_year": 1724
   },
   {
+    "id": "first_saudi_state",
+    "name": "First Saudi State",
+    "kind": "emirate",
+    "start_year": 1727,
+    "end_year": 1818,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The polity founded at Diriyah in 1727 and extinguished after the 1818 siege. No rating is inherited by the Second Saudi State, the Emirate of Nejd and Hasa, or the modern Kingdom of Saudi Arabia; no generic House of Saud alias is opened.",
+    "source_ids": [
+      "wave8_first_saudi_state_history"
+    ]
+  },
+  {
     "id": "afsharid_iran",
     "name": "Afsharid Iran",
     "kind": "empire",
@@ -2784,6 +3021,21 @@
       "britannica_american_revolution",
       "state_vietnam",
       "sigar_afghanistan"
+    ]
+  },
+  {
+    "id": "upper_canada_colonial_government_1791_1841",
+    "name": "Colonial Government of Upper Canada (1791–1841)",
+    "kind": "colony",
+    "start_year": 1791,
+    "end_year": 1841,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Upper Canada colonial government and loyal militia. No rating is inherited by Britain, the Province of Canada, or the later Dominion.",
+    "source_ids": [
+      "wave8_canada_upper_canada_rebellion",
+      "wave8_canada_montgomery_tavern"
     ]
   },
   {
@@ -3160,6 +3412,36 @@
     ]
   },
   {
+    "id": "balbhadra_kunwar_nalapani_garrison_1814",
+    "name": "Balbhadra Kunwar's Nalapani garrison",
+    "kind": "state_garrison",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Doon Valley",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Nepalese garrison defending Nalapani/Kalanga. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "london_gazette_kalanga_dispatch",
+      "national_army_museum_gurkhas"
+    ]
+  },
+  {
+    "id": "gillespie_mawby_eic_doon_force_1814",
+    "name": "Gillespie–Mawby East India Company Doon force",
+    "kind": "company_field_force",
+    "start_year": 1814,
+    "end_year": 1814,
+    "region": "Doon Valley",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded East India Company force in the Nalapani/Kalanga siege. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "london_gazette_kalanga_dispatch",
+      "national_army_museum_gurkhas"
+    ]
+  },
+  {
     "id": "clio_no_norway_k_modern_1814_c9f18673",
     "name": "Kingdom of Norway",
     "kind": "kingdom",
@@ -3176,6 +3458,36 @@
     ]
   },
   {
+    "id": "amar_singh_thapa_malaun_force_1815",
+    "name": "Amar Singh Thapa's Malaun force",
+    "kind": "state_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Western Himalaya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Nepalese force under Amar Singh Thapa at Malaun. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "british_army_gurkha_history",
+      "coleman_special_corps_gurkhas"
+    ]
+  },
+  {
+    "id": "bam_shah_nepalese_kumaon_force_1815",
+    "name": "Bam Shah's Nepalese Kumaon force",
+    "kind": "state_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Kumaon Himalaya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Nepalese force defending Almora under Bam Shah. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "london_gazette_almora_dispatch",
+      "nepal_ifa_britain_relations"
+    ]
+  },
+  {
     "id": "bourbon_restoration_france",
     "name": "Bourbon Restoration France",
     "kind": "constitutional_monarchy",
@@ -3187,6 +3499,21 @@
     "continuity_note": "The Second Bourbon Restoration is rated as a separate polity from 1815 through the 1830 regime change. It is available only to exact reviewed source contracts; bare France labels remain unresolved in this interval and no rating transfers from the First Empire or to the July Monarchy.",
     "source_ids": [
       "france_assembly_bourbon_restoration_1815_1830"
+    ]
+  },
+  {
+    "id": "eic_parsa_outpost_1815",
+    "name": "East India Company Parsa outpost",
+    "kind": "company_garrison",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Parsa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded East India Company outpost defense at Parsa. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "nepal_archaeology_anglo_nepal_war",
+      "nepal_ifa_britain_relations"
     ]
   },
   {
@@ -3205,6 +3532,51 @@
     ]
   },
   {
+    "id": "nepalese_parsa_attack_force_1815",
+    "name": "Nepalese attack force at Parsa",
+    "kind": "state_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Parsa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Nepalese force attacking the Parsa outpost. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "nepal_archaeology_anglo_nepal_war",
+      "nepal_ifa_britain_relations"
+    ]
+  },
+  {
+    "id": "nicolls_eic_kumaon_field_force_1815",
+    "name": "Nicolls's East India Company Kumaon field force",
+    "kind": "company_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Kumaon Himalaya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded East India Company command in the Almora operation. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "london_gazette_almora_dispatch",
+      "nepal_ifa_britain_relations"
+    ]
+  },
+  {
+    "id": "ochterlony_eic_malaun_force_1815",
+    "name": "Ochterlony's East India Company Malaun force",
+    "kind": "company_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Western Himalaya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded East India Company command in the Malaun/Deothal operation. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "british_army_gurkha_history",
+      "coleman_special_corps_gurkhas"
+    ]
+  },
+  {
     "id": "principality_serbia_1815",
     "name": "Principality of Serbia",
     "kind": "principality",
@@ -3216,6 +3588,21 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_modern_government"
+    ]
+  },
+  {
+    "id": "ujir_singh_thapa_jitgadhi_force_1815",
+    "name": "Ujir Singh Thapa's Jitgadhi force",
+    "kind": "state_garrison",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Butwal",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Nepalese defense commanded by Ujir Singh Thapa at Jitgadhi. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "nepal_president_jitgadhi",
+      "nepal_archaeology_anglo_nepal_war"
     ]
   },
   {
@@ -3233,6 +3620,21 @@
     "source_ids": [
       "brazil_chamber_united_kingdom_1815",
       "brazil_government_independence_timeline"
+    ]
+  },
+  {
+    "id": "wood_eic_butwal_column_1815",
+    "name": "Wood's East India Company Butwal column",
+    "kind": "company_field_force",
+    "start_year": 1815,
+    "end_year": 1815,
+    "region": "Butwal",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded East India Company column commanded by John Sullivan Wood. No rating is inherited by a broader religious, ethnic, regional, imperial, predecessor, or successor label.",
+    "source_ids": [
+      "nepal_president_jitgadhi",
+      "nepal_archaeology_anglo_nepal_war"
     ]
   },
   {
@@ -3261,6 +3663,69 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "zulu_nam"
+    ]
+  },
+  {
+    "id": "maqoma_ngqika_rharhabe_force_1818",
+    "name": "Maqoma's Ngqika-Rharhabe force at Amalinde",
+    "kind": "indigenous_war_party",
+    "start_year": 1818,
+    "end_year": 1818,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Ngqika-Rharhabe force associated with Maqoma at Amalinde. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_amalinde_1818",
+      "saho_ngqika_ndlambe",
+      "statssa_amalinde"
+    ]
+  },
+  {
+    "id": "mdushane_ndlambe_hintsa_gcaleka_coalition_1818",
+    "name": "Mdushane–Ndlambe–Hintsa Gcaleka coalition at Amalinde",
+    "kind": "indigenous_coalition",
+    "start_year": 1818,
+    "end_year": 1818,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Mdushane's Ndlambe army and Hintsa's allied Gcaleka force at Amalinde. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_amalinde_1818",
+      "saho_ngqika_ndlambe",
+      "statssa_amalinde"
+    ]
+  },
+  {
+    "id": "jan_boesak_khoi_hunters_1819",
+    "name": "Jan Boesak's Khoi hunters at Grahamstown",
+    "kind": "indigenous_allied_force",
+    "start_year": 1819,
+    "end_year": 1819,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Khoi hunters under Jan Boesak who materially aided Grahamstown's defenders. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "makana_history_culture",
+      "makana_grahamstown_1819"
+    ]
+  },
+  {
+    "id": "makana_amandlambe_led_coalition_1819",
+    "name": "Makana's amaNdlambe-led coalition at Grahamstown",
+    "kind": "indigenous_coalition",
+    "start_year": 1819,
+    "end_year": 1819,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The attacking coalition led by Makana for Ndlambe at Grahamstown. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "makana_history_culture",
+      "makana_grahamstown_1819",
+      "govza_makana_1819"
     ]
   },
   {
@@ -3560,6 +4025,21 @@
     ]
   },
   {
+    "id": "mackenzie_upper_canada_rebel_force_1837",
+    "name": "Mackenzie's Upper Canada rebel force (1837)",
+    "kind": "rebel_force",
+    "start_year": 1837,
+    "end_year": 1837,
+    "region": "Upper Canada",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force rallied by William Lyon Mackenzie near Toronto. No rating is inherited by later Patriot raiders, Canadian reformers, or a generic Canadian-rebels identity.",
+    "source_ids": [
+      "wave8_canada_upper_canada_rebellion",
+      "wave8_canada_montgomery_tavern"
+    ]
+  },
+  {
     "id": "clio_q774_1840_14933123",
     "name": "Guatemala",
     "kind": "polity",
@@ -3638,6 +4118,82 @@
     ]
   },
   {
+    "id": "fort_peddie_mfengu_contingent_1846",
+    "name": "Mfengu contingent defending Fort Peddie",
+    "kind": "indigenous_allied_force",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu defenders who fought with the Fort Peddie garrison. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "ward_fort_peddie_1846",
+      "saho_peddie"
+    ]
+  },
+  {
+    "id": "mfengu_levies_gwanga_1846",
+    "name": "Mfengu levies at Gwanga",
+    "kind": "indigenous_allied_force",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu component of the defending force at Gwanga. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "nam_gwanga_1846",
+      "up_gwanga_regimental_account"
+    ]
+  },
+  {
+    "id": "mhala_siyolo_force_gwanga_1846",
+    "name": "Mhala–Siyolo force at Gwanga",
+    "kind": "indigenous_coalition",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The combined force associated with Mhala and Siyolo at Gwanga. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "nam_gwanga_1846",
+      "up_gwanga_regimental_account"
+    ]
+  },
+  {
+    "id": "pato_islambie_congo_ngqika_coalition_1846",
+    "name": "Pato–I'Slambie–Congo–Ngqika coalition at Fort Peddie",
+    "kind": "indigenous_coalition",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The branch-specific coalition identified in the attack on Fort Peddie. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "ward_fort_peddie_1846",
+      "saho_peddie"
+    ]
+  },
+  {
+    "id": "sandile_ngqika_force_burnshill_1846",
+    "name": "Sandile's Ngqika force at Burnshill",
+    "kind": "indigenous_war_party",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Ngqika attacking force associated with Sandile at the Burnshill ambush. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_burnshill_1846",
+      "amathole_xhosa_leadership",
+      "narsa_burnshill_journals"
+    ]
+  },
+  {
     "id": "te_mamaku_ngati_haua_force_1846",
     "name": "Te Mamaku's Ngāti Hāua-te-rangi force",
     "kind": "war_party",
@@ -3692,6 +4248,63 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "roman_republic_italian_army"
+    ]
+  },
+  {
+    "id": "ngqika_force_boma_pass_1850",
+    "name": "Ngqika force at Boma Pass",
+    "kind": "indigenous_war_party",
+    "start_year": 1850,
+    "end_year": 1850,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Ngqika force that ambushed Colonel Mackinnon's column at Boma Pass. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_boma_pass_1850",
+      "uk_hansard_xhosa_war_1851"
+    ]
+  },
+  {
+    "id": "fish_river_khoi_rebel_contingent_1851",
+    "name": "Khoi rebel contingent at Fish River Bush",
+    "kind": "rebel_force",
+    "start_year": 1851,
+    "end_year": 1851,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Khoi rebel contingent fighting with Siyolo at Fish River Bush. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_fish_river_bush_1851"
+    ]
+  },
+  {
+    "id": "mfengu_irregulars_fish_river_1851",
+    "name": "Mfengu irregulars at Fish River Bush",
+    "kind": "indigenous_allied_force",
+    "start_year": 1851,
+    "end_year": 1851,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu irregular component of Mackinnon's Fish River Bush column. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_fish_river_bush_1851"
+    ]
+  },
+  {
+    "id": "siyolo_amandlambe_force_1851",
+    "name": "Siyolo's amaNdlambe force at Fish River Bush",
+    "kind": "indigenous_war_party",
+    "start_year": 1851,
+    "end_year": 1851,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Siyolo's amaNdlambe defenders in the Fish River Bush action. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_fish_river_bush_1851"
     ]
   },
   {
@@ -4043,6 +4656,20 @@
     ]
   },
   {
+    "id": "dominion_canada_1867_1931",
+    "name": "Dominion of Canada (1867–1931)",
+    "kind": "dominion",
+    "start_year": 1867,
+    "end_year": 1931,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The confederated Dominion from 1867 through the 1931 Statute of Westminster boundary. No rating is inherited by the pre-Confederation colonies or the project's post-1931 Canada identity.",
+    "source_ids": [
+      "wave8_canada_dominion_boundary"
+    ]
+  },
+  {
     "id": "new_zealand_colonial_forces_1867",
     "name": "New Zealand colonial forces (1867–1872)",
     "kind": "colonial_state_force",
@@ -4277,6 +4904,111 @@
     ]
   },
   {
+    "id": "frontier_armed_mounted_police_ibeka_1877",
+    "name": "Frontier Armed and Mounted Police at Ibeka",
+    "kind": "colonial_police_force",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Cape colonial police and artillery formation defending at Ibeka. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "up_ninth_frontier_war_memoir"
+    ]
+  },
+  {
+    "id": "sigcawu_sarhili_gcaleka_force_ibeka_1877",
+    "name": "Sigcawu–Sarhili Gcaleka force at Ibeka",
+    "kind": "indigenous_war_party",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Gcaleka attacking force associated with Sigcawu and Sarhili at Ibeka. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "up_ninth_frontier_war_memoir"
+    ]
+  },
+  {
+    "id": "veldman_bikitsha_mfengu_levies_ibeka_1877",
+    "name": "Veldman Bikitsha's Mfengu levies at Ibeka",
+    "kind": "indigenous_allied_force",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu contingent associated with Veldman Bikitsha at Ibeka. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "up_ninth_frontier_war_memoir"
+    ]
+  },
+  {
+    "id": "cape_colonial_forces_centane_1878",
+    "name": "Cape colonial forces at Centane",
+    "kind": "colonial_state_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Cape colonial units documented in the defensive coalition at Centane. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "london_gazette_centane_1878",
+      "mnquma_centane_memorial"
+    ]
+  },
+  {
+    "id": "frontier_armed_mounted_police_nyumaga_1878",
+    "name": "Frontier Armed and Mounted Police at Nyumaga",
+    "kind": "colonial_police_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Cape colonial police component of Glyn's right column at Nyumaga. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "scientia_ninth_frontier_war"
+    ]
+  },
+  {
+    "id": "gcaleka_ngqika_force_nyumaga_1878",
+    "name": "Gcaleka–Ngqika force at Nyumaga",
+    "kind": "indigenous_coalition",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The combined Gcaleka–Ngqika opposing force at Nyumaga. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "scientia_ninth_frontier_war"
+    ]
+  },
+  {
+    "id": "khiva_sigcawu_gcaleka_ngqika_force_centane_1878",
+    "name": "Khiva–Sigcawu Gcaleka–Ngqika force at Centane",
+    "kind": "indigenous_coalition",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The branch-specific attacking force associated with Khiva and Sigcawu at Centane. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "london_gazette_centane_1878",
+      "mnquma_centane_memorial"
+    ]
+  },
+  {
     "id": "principality_bulgaria",
     "name": "Principality of Bulgaria",
     "kind": "principality",
@@ -4289,6 +5021,36 @@
     "source_ids": [
       "britannica_bulgaria_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "veldman_bikitsha_mfengu_levies_nyumaga_1878",
+    "name": "Veldman Bikitsha's Mfengu levies at Nyumaga",
+    "kind": "indigenous_allied_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu levies credited under Veldman Bikitsha at Nyumaga. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "samhs_ibeka_nyumaga_1877_1878",
+      "scientia_ninth_frontier_war"
+    ]
+  },
+  {
+    "id": "veldman_poswa_mfengu_levies_centane_1878",
+    "name": "Veldman Poswa's Mfengu levies at Centane",
+    "kind": "indigenous_allied_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Mfengu levies associated with Veldman Poswa at Centane. This identity is event-bounded; no rating is inherited by a generic Xhosa, Mfengu, Khoi, Cape, colonial, clan, or successor identity.",
+    "source_ids": [
+      "london_gazette_centane_1878",
+      "mnquma_centane_memorial"
     ]
   },
   {
@@ -4401,6 +5163,48 @@
     ]
   },
   {
+    "id": "batoche_first_nations_allied_defenders_1885",
+    "name": "First Nations allied defenders at Batoche (1885)",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1885,
+    "end_year": 1885,
+    "region": "North-West Territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded First Nations defenders attested at Batoche alongside the Métis force. No rating is inherited by any nation, band, or later coalition.",
+    "source_ids": [
+      "wave8_canada_batoche_history"
+    ]
+  },
+  {
+    "id": "duck_lake_first_nations_allied_force_1885",
+    "name": "First Nations allied force at Duck Lake (1885)",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1885,
+    "end_year": 1885,
+    "region": "North-West Territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Indigenous participants attested with the Métis at Duck Lake. No rating is inherited by any nation, band, later engagement, or umbrella Indigenous identity.",
+    "source_ids": [
+      "wave8_canada_battleford_history"
+    ]
+  },
+  {
+    "id": "metis_provisional_government_saskatchewan_1885",
+    "name": "Métis Provisional Government of Saskatchewan (1885)",
+    "kind": "provisional_government",
+    "start_year": 1885,
+    "end_year": 1885,
+    "region": "North-West Territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded provisional government at Batoche. No rating is inherited by Métis communities, the 1869–1870 Red River government, First Nations allies, or any generic Canadian-rebels label.",
+    "source_ids": [
+      "wave8_canada_batoche_history"
+    ]
+  },
+  {
     "id": "abushiri_revolt_forces",
     "name": "Abushiri Revolt Forces",
     "kind": "rebel_forces",
@@ -4441,6 +5245,21 @@
     "source_ids": [
       "nam_bsac_matabeleland_1893",
       "zimluanda_colonialism_1893"
+    ]
+  },
+  {
+    "id": "hendrik_witbooi_khowesin_resistance_1893_1894",
+    "name": "Hendrik Witbooi's ǀKhowesin resistance (1893–1894)",
+    "kind": "indigenous_resistance_force",
+    "start_year": 1893,
+    "end_year": 1894,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The separately rated ǀKhowesin force in the 1893–1894 conflict phase. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "cambridge_witbooi_imperial_project",
+      "namibia_ancestral_land_commission"
     ]
   },
   {
@@ -4488,6 +5307,68 @@
     ]
   },
   {
+    "id": "jakob_morenga_resistance_force_1903_1907",
+    "name": "Jakob Morenga's resistance force (1903–1907)",
+    "kind": "multi_community_resistance_force",
+    "start_year": 1903,
+    "end_year": 1907,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Morenga's multi-community force, including Nama, Oorlam, Ovaherero, Baster, Damara, and other participants. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "cambridge_hidden_histories_morenga",
+      "brill_morenga_resistance_chapter"
+    ]
+  },
+  {
+    "id": "hendrik_witbooi_khowesin_resistance_1904_1905",
+    "name": "Hendrik Witbooi's ǀKhowesin resistance (1904–1905)",
+    "kind": "indigenous_resistance_force",
+    "start_year": 1904,
+    "end_year": 1905,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The distinct 1904–1905 resistance phase under Hendrik Witbooi. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "dhm_nama_resistance",
+      "scientia_witbooi_fahlgras",
+      "dbnl_witbooi_papers"
+    ]
+  },
+  {
+    "id": "kandji_tjetjo_eastern_ovaherero_force_1904",
+    "name": "Kandji Tjetjo's eastern Ovaherero force (1904)",
+    "kind": "indigenous_resistance_force",
+    "start_year": 1904,
+    "end_year": 1904,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The eastern force and community associated with Kandji Tjetjo during the 1904 campaign. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "namibia_nhc_heritage_places",
+      "urjc_german_southwest_campaign_analysis"
+    ]
+  },
+  {
+    "id": "samuel_maharero_main_ovaherero_force_1904",
+    "name": "Samuel Maharero's main Ovaherero field force (1904)",
+    "kind": "indigenous_resistance_force",
+    "start_year": 1904,
+    "end_year": 1904,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Samuel Maharero's main field force during the 1904 campaign. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "suub_onganjira_oviumbo_page",
+      "dhm_waterberg_exhibit",
+      "bundesarchiv_war_against_herero_1904"
+    ]
+  },
+  {
     "id": "clio_q408_1905_c58c97bb",
     "name": "Commonwealth of Australia",
     "kind": "polity",
@@ -4501,6 +5382,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "morenga_johannes_christian_hartebeestmund_coalition_1905",
+    "name": "Morenga–Johannes Christian coalition at Hartebeestmund",
+    "kind": "event_bounded_resistance_coalition",
+    "start_year": 1905,
+    "end_year": 1905,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The event-bounded Morenga–Johannes Christian coalition at Hartebeestmund. This identity is conflict- or event-bounded; no rating is inherited by a generic Nama, Ovaherero, Herero, Damara, ethnic, colonial, or successor identity.",
+    "source_ids": [
+      "suub_gswa_campaign_history",
+      "brill_morenga_resistance_chapter"
     ]
   },
   {

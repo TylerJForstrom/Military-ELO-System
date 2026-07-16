@@ -581,6 +581,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "amar_singh_thapa_malaun_force_1815",
+      "name": "Amar Singh Thapa's Malaun force",
+      "kind": "state_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Himalaya"
+    },
+    {
       "id": "clio_de_empire_3_1450_0c352612",
       "name": "Ambrosian Republic",
       "kind": "republic",
@@ -825,6 +835,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "arsacid_empire",
+      "name": "Arsacid Empire",
+      "kind": "empire",
+      "start_year": -247,
+      "end_year": 224,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Iran, Mesopotamia, and adjacent regions"
     },
     {
       "id": "hyderabad_asaf_jahi_state_1724",
@@ -1127,6 +1147,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "balbhadra_kunwar_nalapani_garrison_1814",
+      "name": "Balbhadra Kunwar's Nalapani garrison",
+      "kind": "state_garrison",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Doon Valley"
+    },
+    {
       "id": "clio_kr_balhae_k_705_40a38d8a",
       "name": "Balhae",
       "kind": "polity",
@@ -1158,6 +1188,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bam_shah_nepalese_kumaon_force_1815",
+      "name": "Bam Shah's Nepalese Kumaon force",
+      "kind": "state_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kumaon Himalaya"
     },
     {
       "id": "clio_ml_bamana_k_1713_b1b15974",
@@ -1762,6 +1802,16 @@
       "region": "Eastern Mediterranean"
     },
     {
+      "id": "byzantine_pelusium_garrison_640",
+      "name": "Byzantine garrison of Pelusium",
+      "kind": "imperial_garrison",
+      "start_year": 640,
+      "end_year": 640,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nile Delta"
+    },
+    {
       "id": "clio_q1025803_bce750_e449faae",
       "name": "Cai",
       "kind": "polity",
@@ -1846,6 +1896,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "cape_colonial_forces_centane_1878",
+      "name": "Cape colonial forces at Centane",
+      "kind": "colonial_state_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_fr_capetian_k_2_1250_c8b61787",
@@ -2332,6 +2392,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "upper_canada_colonial_government_1791_1841",
+      "name": "Colonial Government of Upper Canada (1791–1841)",
+      "kind": "colony",
+      "start_year": 1791,
+      "end_year": 1841,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q408_1905_c58c97bb",
@@ -3083,6 +3153,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "dafydd_cynan_gwynedd_ambush_force_1157",
+      "name": "Dafydd and Cynan's Gwynedd ambush force at Coleshill (1157)",
+      "kind": "event_bounded_princely_force",
+      "start_year": 1157,
+      "end_year": 1157,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wales"
+    },
+    {
       "id": "clio_q5349053_bce208_9c485fc7",
       "name": "Dai",
       "kind": "polity",
@@ -3275,6 +3355,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "dominion_canada_1867_1931",
+      "name": "Dominion of Canada (1867–1931)",
+      "kind": "dominion",
+      "start_year": 1867,
+      "end_year": 1931,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q1057292_1552_62ba3c65",
@@ -4029,6 +4119,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "eic_parsa_outpost_1815",
+      "name": "East India Company Parsa outpost",
+      "kind": "company_garrison",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Parsa"
+    },
+    {
       "id": "clio_q574_2006_47f96c4f",
       "name": "East Timor",
       "kind": "polity",
@@ -4767,6 +4867,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "batoche_first_nations_allied_defenders_1885",
+      "name": "First Nations allied defenders at Batoche (1885)",
+      "kind": "event_bounded_allied_force",
+      "start_year": 1885,
+      "end_year": 1885,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North-West Territories"
+    },
+    {
+      "id": "duck_lake_first_nations_allied_force_1885",
+      "name": "First Nations allied force at Duck Lake (1885)",
+      "kind": "event_bounded_allied_force",
+      "start_year": 1885,
+      "end_year": 1885,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North-West Territories"
+    },
+    {
       "id": "first_philippine_republic",
       "name": "First Philippine Republic",
       "kind": "republic",
@@ -4795,6 +4915,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Northern Europe"
+    },
+    {
+      "id": "first_saudi_state",
+      "name": "First Saudi State",
+      "kind": "emirate",
+      "start_year": 1727,
+      "end_year": 1818,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_q7440601_bce1700_152e94d5",
@@ -5290,6 +5420,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "frontier_armed_mounted_police_ibeka_1877",
+      "name": "Frontier Armed and Mounted Police at Ibeka",
+      "kind": "colonial_police_force",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "frontier_armed_mounted_police_nyumaga_1878",
+      "name": "Frontier Armed and Mounted Police at Nyumaga",
+      "kind": "colonial_police_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_kh_funan_1_51_ab8034fb",
       "name": "Funan",
       "kind": "polity",
@@ -5422,6 +5572,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "gcaleka_ngqika_force_nyumaga_1878",
+      "name": "Gcaleka–Ngqika force at Nyumaga",
+      "kind": "indigenous_coalition",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q4962_567_91943f5d",
       "name": "Georgia",
       "kind": "polity",
@@ -5539,6 +5699,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "gillespie_mawby_eic_doon_force_1814",
+      "name": "Gillespie–Mawby East India Company Doon force",
+      "kind": "company_field_force",
+      "start_year": 1814,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Doon Valley"
     },
     {
       "id": "clio_q1241847_866_b61293a2",
@@ -6211,6 +6381,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "hawazin_thaqif_coalition_hunayn_630",
+      "name": "Hawazin–Thaqif coalition at Hunayn",
+      "kind": "tribal_coalition",
+      "start_year": 630,
+      "end_year": 630,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Arabia"
+    },
+    {
       "id": "clio_jp_heian_793_be59785f",
       "name": "Heian Japan",
       "kind": "polity",
@@ -6262,6 +6442,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hendrik_witbooi_khowesin_resistance_1893_1894",
+      "name": "Hendrik Witbooi's ǀKhowesin resistance (1893–1894)",
+      "kind": "indigenous_resistance_force",
+      "start_year": 1893,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "hendrik_witbooi_khowesin_resistance_1904_1905",
+      "name": "Hendrik Witbooi's ǀKhowesin resistance (1904–1905)",
+      "kind": "indigenous_resistance_force",
+      "start_year": 1904,
+      "end_year": 1905,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "tudor_lancastrian_army_1485",
@@ -7030,6 +7230,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "jakob_morenga_resistance_force_1903_1907",
+      "name": "Jakob Morenga's resistance force (1903–1907)",
+      "kind": "multi_community_resistance_force",
+      "start_year": 1903,
+      "end_year": 1907,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_ir_jayarid_khanate_1344_47a848f9",
       "name": "Jalayirid Sultanate",
       "kind": "sultanate",
@@ -7050,6 +7260,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "jan_boesak_khoi_hunters_1819",
+      "name": "Jan Boesak's Khoi hunters at Grahamstown",
+      "kind": "indigenous_allied_force",
+      "start_year": 1819,
+      "end_year": 1819,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_in_mahajanapada_bce600_0ea449e3",
@@ -7347,6 +7567,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "great_jewish_revolt_judean_forces_66_73",
+      "name": "Judean forces of the Great Jewish Revolt (66–73)",
+      "kind": "rebel_polity",
+      "start_year": 66,
+      "end_year": 73,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Roman Judea"
+    },
+    {
+      "id": "maccabean_revolt_judean_forces_167_160_bce",
+      "name": "Judean forces of the Maccabean Revolt (167–160 BCE)",
+      "kind": "rebel_polity",
+      "start_year": -167,
+      "end_year": -160,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Judea"
+    },
+    {
       "id": "clio_in_kadamba_emp_353_9b0f1a8f",
       "name": "Kadamba Empire",
       "kind": "empire",
@@ -7466,6 +7706,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kandji_tjetjo_eastern_ovaherero_force_1904",
+      "name": "Kandji Tjetjo's eastern Ovaherero force (1904)",
+      "kind": "indigenous_resistance_force",
+      "start_year": 1904,
+      "end_year": 1904,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_in_kannauj_varman_dyn_732_3e0629f4",
@@ -7776,6 +8026,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "khaybar_oasis_defenders_628",
+      "name": "Khaybar oasis defenders",
+      "kind": "oasis_defense_coalition",
+      "start_year": 628,
+      "end_year": 628,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Arabia"
+    },
+    {
       "id": "clio_ru_khazar_emp_630_b6fb9d71",
       "name": "Khazaria",
       "kind": "polity",
@@ -7785,6 +8045,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "khiva_sigcawu_gcaleka_ngqika_force_centane_1878",
+      "name": "Khiva–Sigcawu Gcaleka–Ngqika force at Centane",
+      "kind": "indigenous_coalition",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_kh_angkor_1_800_f9315c72",
@@ -7807,6 +8077,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "fish_river_khoi_rebel_contingent_1851",
+      "name": "Khoi rebel contingent at Fish River Bush",
+      "kind": "rebel_force",
+      "start_year": 1851,
+      "end_year": 1851,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_q10921634_1582_3826ffbe",
@@ -8498,6 +8778,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "hatra_kingdom_defenders_199",
+      "name": "Kingdom of Hatra defenders in the second siege",
+      "kind": "city_kingdom_garrison",
+      "start_year": 199,
+      "end_year": 199,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Mesopotamia"
     },
     {
       "id": "clio_us_hawaii_k_1791_290e1296",
@@ -10047,6 +10337,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "llywelyn_ap_gruffudd_final_war_forces_1282",
+      "name": "Llywelyn ap Gruffudd's final-war forces (1282)",
+      "kind": "regime_bounded_princely_force",
+      "start_year": 1282,
+      "end_year": 1282,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wales"
+    },
+    {
       "id": "clio_in_delhi_sultanate_1453_e7181f5f",
       "name": "Lodi Dynasty",
       "kind": "dynastic_state",
@@ -10176,6 +10476,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and West Asia"
+    },
+    {
+      "id": "mackenzie_upper_canada_rebel_force_1837",
+      "name": "Mackenzie's Upper Canada rebel force (1837)",
+      "kind": "rebel_force",
+      "start_year": 1837,
+      "end_year": 1837,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Canada"
     },
     {
       "id": "clio_q1019_1960_4e595f87",
@@ -10331,6 +10641,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "makana_amandlambe_led_coalition_1819",
+      "name": "Makana's amaNdlambe-led coalition at Grahamstown",
+      "kind": "indigenous_coalition",
+      "start_year": 1819,
+      "end_year": 1819,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_sd_makuria_k_1_347_688fc0fc",
       "name": "Makuria",
       "kind": "polity",
@@ -10458,6 +10778,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Egypt and the Levant"
+    },
+    {
+      "id": "maqoma_ngqika_rharhabe_force_1818",
+      "name": "Maqoma's Ngqika-Rharhabe force at Amalinde",
+      "kind": "indigenous_war_party",
+      "start_year": 1818,
+      "end_year": 1818,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "maratha_confederacy",
@@ -10623,6 +10953,16 @@
       "region": "North America"
     },
     {
+      "id": "mdushane_ndlambe_hintsa_gcaleka_coalition_1818",
+      "name": "Mdushane–Ndlambe–Hintsa Gcaleka coalition at Amalinde",
+      "kind": "indigenous_coalition",
+      "start_year": 1818,
+      "end_year": 1818,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_ir_median_emp_bce615_f93730ff",
       "name": "Median Kingdom",
       "kind": "kingdom",
@@ -10642,6 +10982,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southeastern Europe"
+    },
+    {
+      "id": "medinan_muslim_polity_622_632",
+      "name": "Medinan polity under Muhammad (622–632)",
+      "kind": "city_state_religious_polity",
+      "start_year": 622,
+      "end_year": 632,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Arabia"
     },
     {
       "id": "clio_q1071439_1792_b788c6eb",
@@ -10736,6 +11086,46 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "fort_peddie_mfengu_contingent_1846",
+      "name": "Mfengu contingent defending Fort Peddie",
+      "kind": "indigenous_allied_force",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "mfengu_irregulars_fish_river_1851",
+      "name": "Mfengu irregulars at Fish River Bush",
+      "kind": "indigenous_allied_force",
+      "start_year": 1851,
+      "end_year": 1851,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "mfengu_levies_gwanga_1846",
+      "name": "Mfengu levies at Gwanga",
+      "kind": "indigenous_allied_force",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "mhala_siyolo_force_gwanga_1846",
+      "name": "Mhala–Siyolo force at Gwanga",
+      "kind": "indigenous_coalition",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_q79861_1305_c015221f",
@@ -10932,6 +11322,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "morenga_johannes_christian_hartebeestmund_coalition_1905",
+      "name": "Morenga–Johannes Christian coalition at Hartebeestmund",
+      "kind": "event_bounded_resistance_coalition",
+      "start_year": 1905,
+      "end_year": 1905,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q1028_1670_ae522447",
       "name": "Morocco",
       "kind": "polity",
@@ -11037,6 +11437,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "metis_provisional_government_saskatchewan_1885",
+      "name": "Métis Provisional Government of Saskatchewan (1885)",
+      "kind": "provisional_government",
+      "start_year": 1885,
+      "end_year": 1885,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North-West Territories"
     },
     {
       "id": "clio_jo_nabataean_k_bce164_b7840299",
@@ -11341,6 +11751,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "nepalese_parsa_attack_force_1815",
+      "name": "Nepalese attack force at Parsa",
+      "kind": "state_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Parsa"
+    },
+    {
       "id": "clio_nl_dutch_emp_2_1815_f8556861",
       "name": "Netherlands",
       "kind": "polity",
@@ -11460,6 +11880,16 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "ngqika_force_boma_pass_1850",
+      "name": "Ngqika force at Boma Pass",
+      "kind": "indigenous_war_party",
+      "start_year": 1850,
+      "end_year": 1850,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "nguyen_dai_nam",
       "name": "Nguyen Dai Nam",
       "kind": "dynastic_state",
@@ -11522,6 +11952,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "nicolls_eic_kumaon_field_force_1815",
+      "name": "Nicolls's East India Company Kumaon field force",
+      "kind": "company_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kumaon Himalaya"
     },
     {
       "id": "clio_q552157_1885_9a40985a",
@@ -11786,6 +12226,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ochterlony_eic_malaun_force_1815",
+      "name": "Ochterlony's East India Company Malaun force",
+      "kind": "company_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Himalaya"
+    },
+    {
       "id": "clio_q870517_bce450_46c0fb51",
       "name": "Odrysian Kingdom",
       "kind": "kingdom",
@@ -11934,6 +12384,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "owain_glyndwr_bryn_glas_force_1402",
+      "name": "Owain Glyndŵr's force at Bryn Glas (1402)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1402,
+      "end_year": 1402,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wales"
     },
     {
       "id": "clio_ni_oyo_emp_2_1609_87bfd857",
@@ -12170,6 +12630,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "pato_islambie_congo_ngqika_coalition_1846",
+      "name": "Pato–I'Slambie–Congo–Ngqika coalition at Fort Peddie",
+      "kind": "indigenous_coalition",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_de_empire_3_1260_17d1adc9",
@@ -13448,6 +13918,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "quraysh_meccan_field_force_uhud_625",
+      "name": "Quraysh Meccan field force at Uhud",
+      "kind": "tribal_field_force",
+      "start_year": 625,
+      "end_year": 625,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Arabia"
+    },
+    {
       "id": "clio_q4401071_1497_8af5707f",
       "name": "Rajahnate of Cebu",
       "kind": "polity",
@@ -14570,6 +15050,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "guzow_rokosz_forces_1607",
+      "name": "Rokosz forces at Guzów (1607)",
+      "kind": "confederate_forces",
+      "start_year": 1607,
+      "end_year": 1607,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Europe"
+    },
+    {
       "id": "roman_empire",
       "name": "Roman Empire",
       "kind": "empire",
@@ -14988,6 +15478,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "samuel_maharero_main_ovaherero_force_1904",
+      "name": "Samuel Maharero's main Ovaherero field force (1904)",
+      "kind": "indigenous_resistance_force",
+      "start_year": 1904,
+      "end_year": 1904,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "sandile_ngqika_force_burnshill_1846",
+      "name": "Sandile's Ngqika force at Burnshill",
+      "kind": "indigenous_war_party",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q1931074_1344_8fcf051e",
       "name": "Sarbadars",
       "kind": "polity",
@@ -15007,6 +15517,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "West and Central Asia"
+    },
+    {
+      "id": "ullais_sasanian_christian_arab_coalition_633",
+      "name": "Sasanian–Christian Arab coalition at Ullais",
+      "kind": "field_coalition",
+      "start_year": 633,
+      "end_year": 633,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Mesopotamia"
+    },
+    {
+      "id": "walaja_sasanian_christian_arab_coalition_633",
+      "name": "Sasanian–Christian Arab coalition at Walaja",
+      "kind": "field_coalition",
+      "start_year": 633,
+      "end_year": 633,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Mesopotamia"
     },
     {
       "id": "clio_in_satavahana_emp_bce225_8060a7b3",
@@ -15460,6 +15990,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sigcawu_sarhili_gcaleka_force_ibeka_1877",
+      "name": "Sigcawu–Sarhili Gcaleka force at Ibeka",
+      "kind": "indigenous_war_party",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
       "id": "clio_q2578028_1762_28db00fc",
       "name": "Sikh Confederacy",
       "kind": "confederation",
@@ -15555,6 +16095,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "siyolo_amandlambe_force_1851",
+      "name": "Siyolo's amaNdlambe force at Fish River Bush",
+      "kind": "indigenous_war_party",
+      "start_year": 1851,
+      "end_year": 1851,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_q598570_1670_2a7c3f33",
@@ -17404,6 +17954,16 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "ujir_singh_thapa_jitgadhi_force_1815",
+      "name": "Ujir Singh Thapa's Jitgadhi force",
+      "kind": "state_garrison",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Butwal"
+    },
+    {
       "id": "clio_q598570_1992_4ea5154c",
       "name": "Ukraine",
       "kind": "polity",
@@ -17691,6 +18251,36 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "veldman_bikitsha_mfengu_levies_ibeka_1877",
+      "name": "Veldman Bikitsha's Mfengu levies at Ibeka",
+      "kind": "indigenous_allied_force",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "veldman_bikitsha_mfengu_levies_nyumaga_1878",
+      "name": "Veldman Bikitsha's Mfengu levies at Nyumaga",
+      "kind": "indigenous_allied_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "veldman_poswa_mfengu_levies_centane_1878",
+      "name": "Veldman Poswa's Mfengu levies at Centane",
+      "kind": "indigenous_allied_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_ve_venezuela_rep_1_1834_44eb6dd2",
@@ -18119,6 +18709,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Western Europe"
+    },
+    {
+      "id": "wood_eic_butwal_column_1815",
+      "name": "Wood's East India Company Butwal column",
+      "kind": "company_field_force",
+      "start_year": 1815,
+      "end_year": 1815,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Butwal"
     },
     {
       "id": "clio_cn_wu_confederacy_bce750_fa365e52",
@@ -18644,11 +19244,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1727,
-    "rated_entities": 369,
-    "rated_events": 4888,
+    "registry_polities": 1787,
+    "rated_entities": 428,
+    "rated_events": 4938,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18506,
+    "unresolved_event_candidates": 18456,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -18662,6 +19262,14 @@
     "candidate_keyed_wave8_african_states_hced_events": 9,
     "candidate_keyed_wave8_new_zealand_hced_events": 15,
     "candidate_keyed_wave8_north_america_hced_events": 22,
+    "candidate_keyed_wave8_xhosa_hced_events": 10,
+    "candidate_keyed_wave8_polish_audit_hced_events": 1,
+    "candidate_keyed_wave8_namibia_resistance_hced_events": 8,
+    "candidate_keyed_wave8_first_saudi_hced_events": 1,
+    "candidate_keyed_wave8_early_states_hced_events": 21,
+    "candidate_keyed_wave8_judean_revolts_hced_events": 2,
+    "candidate_keyed_wave8_canadian_resistance_hced_events": 3,
+    "candidate_keyed_wave8_wales_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -18672,11 +19280,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4624,
-      "candidate_keyed_reviewed_contracts": 314,
-      "geojson_points": 4587,
-      "modern_location_country_assertions": 4544,
-      "location_provenance_objects": 4591,
+      "hced_candidate_bindings": 4674,
+      "candidate_keyed_reviewed_contracts": 364,
+      "geojson_points": 4637,
+      "modern_location_country_assertions": 4594,
+      "location_provenance_objects": 4641,
       "point_fields_withheld_by_quarantine": 37,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
@@ -18686,7 +19294,7 @@
       "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
       "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 4591
+        "unreviewed_source_assertion": 4641
       },
       "verified_location_assertions": {
         "availability": "not_available",

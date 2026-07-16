@@ -222,6 +222,45 @@ from .wave8_african_states import (
     validate_wave8_african_states_queue_contracts,
     wave8_african_states_cohort_counts,
 )
+from .wave8_early_states import (
+    WAVE8_EARLY_STATES_CONTRACT_IDS,
+    WAVE8_EARLY_STATES_ENTITIES,
+    WAVE8_EARLY_STATES_HOLD_IDS,
+    WAVE8_EARLY_STATES_HOLDS,
+    WAVE8_EARLY_STATES_RESERVED_IDS,
+    WAVE8_EARLY_STATES_SOURCES,
+    install_wave8_early_states_entities,
+    install_wave8_early_states_sources,
+    promote_wave8_early_states_contracts,
+    validate_wave8_early_states_queue_contracts,
+    wave8_early_states_cohort_counts,
+)
+from .wave8_canadian_resistance import (
+    WAVE8_CANADIAN_RESISTANCE_CONTRACT_IDS,
+    WAVE8_CANADIAN_RESISTANCE_ENTITIES,
+    WAVE8_CANADIAN_RESISTANCE_HOLD_IDS,
+    WAVE8_CANADIAN_RESISTANCE_HOLDS,
+    WAVE8_CANADIAN_RESISTANCE_RESERVED_IDS,
+    WAVE8_CANADIAN_RESISTANCE_SOURCES,
+    install_wave8_canadian_resistance_entities,
+    install_wave8_canadian_resistance_sources,
+    promote_wave8_canadian_resistance_contracts,
+    validate_wave8_canadian_resistance_queue_contracts,
+    wave8_canadian_resistance_counts,
+)
+from .wave8_judean_revolts import (
+    WAVE8_JUDEAN_REVOLTS_CONTRACT_IDS,
+    WAVE8_JUDEAN_REVOLTS_ENTITIES,
+    WAVE8_JUDEAN_REVOLTS_HOLD_IDS,
+    WAVE8_JUDEAN_REVOLTS_HOLDS,
+    WAVE8_JUDEAN_REVOLTS_RESERVED_IDS,
+    WAVE8_JUDEAN_REVOLTS_SOURCES,
+    install_wave8_judean_revolts_entities,
+    install_wave8_judean_revolts_sources,
+    promote_wave8_judean_revolts_contracts,
+    validate_wave8_judean_revolts_queue_contracts,
+    wave8_judean_revolts_counts,
+)
 from .wave8_new_zealand import (
     WAVE8_NEW_ZEALAND_CONTRACT_IDS,
     WAVE8_NEW_ZEALAND_ENTITIES,
@@ -235,6 +274,19 @@ from .wave8_new_zealand import (
     validate_wave8_new_zealand_queue_contracts,
     wave8_new_zealand_cohort_counts,
 )
+from .wave8_namibia_resistance import (
+    WAVE8_NAMIBIA_RESISTANCE_CONTRACT_IDS,
+    WAVE8_NAMIBIA_RESISTANCE_ENTITIES,
+    WAVE8_NAMIBIA_RESISTANCE_HOLD_IDS,
+    WAVE8_NAMIBIA_RESISTANCE_HOLDS,
+    WAVE8_NAMIBIA_RESISTANCE_RESERVED_IDS,
+    WAVE8_NAMIBIA_RESISTANCE_SOURCES,
+    install_wave8_namibia_resistance_entities,
+    install_wave8_namibia_resistance_sources,
+    promote_wave8_namibia_resistance_contracts,
+    validate_wave8_namibia_resistance_queue_contracts,
+    wave8_namibia_resistance_cohort_counts,
+)
 from .wave8_north_america import (
     WAVE8_NORTH_AMERICA_CONTRACT_IDS,
     WAVE8_NORTH_AMERICA_ENTITIES,
@@ -247,6 +299,61 @@ from .wave8_north_america import (
     promote_wave8_north_america_contracts,
     validate_wave8_north_america_queue_contracts,
     wave8_north_america_cohort_counts,
+)
+from .wave8_polish_audit import (
+    WAVE8_POLISH_AUDIT_CONTRACT_IDS,
+    WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
+    WAVE8_POLISH_AUDIT_ENTITIES,
+    WAVE8_POLISH_AUDIT_HOLD_IDS,
+    WAVE8_POLISH_AUDIT_HOLDS,
+    WAVE8_POLISH_AUDIT_RESERVED_IDS,
+    WAVE8_POLISH_AUDIT_SOURCES,
+    apply_wave8_polish_audit_corrections,
+    install_wave8_polish_audit_entities,
+    install_wave8_polish_audit_sources,
+    promote_wave8_polish_audit_contracts,
+    validate_wave8_polish_audit_queue_contracts,
+    wave8_polish_audit_counts,
+)
+from .wave8_xhosa import (
+    WAVE8_XHOSA_CONTRACT_IDS,
+    WAVE8_XHOSA_ENTITIES,
+    WAVE8_XHOSA_HOLD_IDS,
+    WAVE8_XHOSA_HOLDS,
+    WAVE8_XHOSA_RESERVED_IDS,
+    WAVE8_XHOSA_SOURCES,
+    install_wave8_xhosa_entities,
+    install_wave8_xhosa_sources,
+    promote_wave8_xhosa_contracts,
+    validate_wave8_xhosa_queue_contracts,
+    wave8_xhosa_cohort_counts,
+)
+from .wave8_wales import (
+    WAVE8_WALES_CONTRACT_IDS,
+    WAVE8_WALES_ENTITIES,
+    WAVE8_WALES_HOLD_IDS,
+    WAVE8_WALES_HOLDS,
+    WAVE8_WALES_RESERVED_IDS,
+    WAVE8_WALES_SOURCES,
+    install_wave8_wales_entities,
+    install_wave8_wales_sources,
+    promote_wave8_wales_contracts,
+    validate_wave8_wales_queue_contracts,
+    wave8_wales_cohort_counts,
+    wave8_wales_counts,
+)
+from .wave8_first_saudi import (
+    WAVE8_FIRST_SAUDI_CONTRACT_IDS,
+    WAVE8_FIRST_SAUDI_ENTITIES,
+    WAVE8_FIRST_SAUDI_HOLD_IDS,
+    WAVE8_FIRST_SAUDI_HOLDS,
+    WAVE8_FIRST_SAUDI_RESERVED_IDS,
+    WAVE8_FIRST_SAUDI_SOURCES,
+    install_wave8_first_saudi_entities,
+    install_wave8_first_saudi_sources,
+    promote_wave8_first_saudi_contracts,
+    validate_wave8_first_saudi_queue_contracts,
+    wave8_first_saudi_counts,
 )
 
 
@@ -263,6 +370,14 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_AFRICAN_STATES_RESERVED_IDS
     | WAVE8_NEW_ZEALAND_RESERVED_IDS
     | WAVE8_NORTH_AMERICA_RESERVED_IDS
+    | WAVE8_POLISH_AUDIT_RESERVED_IDS
+    | WAVE8_XHOSA_RESERVED_IDS
+    | WAVE8_NAMIBIA_RESISTANCE_RESERVED_IDS
+    | WAVE8_FIRST_SAUDI_RESERVED_IDS
+    | WAVE8_EARLY_STATES_RESERVED_IDS
+    | WAVE8_JUDEAN_REVOLTS_RESERVED_IDS
+    | WAVE8_CANADIAN_RESISTANCE_RESERVED_IDS
+    | WAVE8_WALES_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -779,6 +894,26 @@ def build_expanded_release(
     wave8_north_america_queue_validation = (
         validate_wave8_north_america_queue_contracts(hced)
     )
+    wave8_polish_audit_queue_validation = (
+        validate_wave8_polish_audit_queue_contracts(hced)
+    )
+    wave8_xhosa_queue_validation = validate_wave8_xhosa_queue_contracts(hced)
+    wave8_namibia_resistance_queue_validation = (
+        validate_wave8_namibia_resistance_queue_contracts(hced)
+    )
+    wave8_first_saudi_queue_validation = validate_wave8_first_saudi_queue_contracts(
+        hced
+    )
+    wave8_early_states_queue_validation = validate_wave8_early_states_queue_contracts(
+        hced
+    )
+    wave8_judean_revolts_queue_validation = (
+        validate_wave8_judean_revolts_queue_contracts(hced)
+    )
+    wave8_canadian_resistance_queue_validation = (
+        validate_wave8_canadian_resistance_queue_contracts(hced)
+    )
+    wave8_wales_queue_validation = validate_wave8_wales_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1094,6 +1229,14 @@ def build_expanded_release(
     install_wave8_african_states_entities(release_entities)
     install_wave8_new_zealand_entities(release_entities)
     install_wave8_north_america_entities(release_entities)
+    install_wave8_polish_audit_entities(release_entities)
+    install_wave8_xhosa_entities(release_entities)
+    install_wave8_namibia_resistance_entities(release_entities)
+    install_wave8_first_saudi_entities(release_entities)
+    install_wave8_early_states_entities(release_entities)
+    install_wave8_judean_revolts_entities(release_entities)
+    install_wave8_canadian_resistance_entities(release_entities)
+    install_wave8_wales_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -1121,6 +1264,12 @@ def build_expanded_release(
             *wave7_root_events,
         ],
     )
+    polish_correction_partition_size = len(source_events)
+    polish_corrected_events = apply_wave8_polish_audit_corrections(
+        [*source_events, *wave7_central_events]
+    )
+    source_events = polish_corrected_events[:polish_correction_partition_size]
+    wave7_central_events = polish_corrected_events[polish_correction_partition_size:]
     wave7_central_pass2_events = promote_wave7_central_pass2_hced_contracts(
         hced,
         release_entities,
@@ -1214,6 +1363,186 @@ def build_expanded_release(
             *wave8_new_zealand_events,
         ],
     )
+    wave8_xhosa_events = promote_wave8_xhosa_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+        ],
+    )
+    wave8_polish_audit_events = promote_wave8_polish_audit_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+        ],
+    )
+    wave8_namibia_resistance_events = promote_wave8_namibia_resistance_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+        ],
+    )
+    wave8_first_saudi_events = promote_wave8_first_saudi_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+        ],
+    )
+    wave8_early_states_events = promote_wave8_early_states_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+        ],
+    )
+    wave8_judean_revolts_events = promote_wave8_judean_revolts_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+        ],
+    )
+    wave8_canadian_resistance_events = promote_wave8_canadian_resistance_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+        ],
+    )
+    wave8_wales_events = promote_wave8_wales_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+        ],
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -1224,6 +1553,14 @@ def build_expanded_release(
         *wave8_african_states_events,
         *wave8_new_zealand_events,
         *wave8_north_america_events,
+        *wave8_xhosa_events,
+        *wave8_polish_audit_events,
+        *wave8_namibia_resistance_events,
+        *wave8_first_saudi_events,
+        *wave8_early_states_events,
+        *wave8_judean_revolts_events,
+        *wave8_canadian_resistance_events,
+        *wave8_wales_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -1260,6 +1597,14 @@ def build_expanded_release(
             *WAVE7_WEST_HCED_HOLDS,
             *WAVE8_NEW_ZEALAND_HOLD_IDS,
             *WAVE8_NORTH_AMERICA_HOLD_IDS,
+            *WAVE8_POLISH_AUDIT_HOLD_IDS,
+            *WAVE8_XHOSA_HOLD_IDS,
+            *WAVE8_NAMIBIA_RESISTANCE_HOLD_IDS,
+            *WAVE8_FIRST_SAUDI_HOLD_IDS,
+            *WAVE8_EARLY_STATES_HOLD_IDS,
+            *WAVE8_JUDEAN_REVOLTS_HOLD_IDS,
+            *WAVE8_CANADIAN_RESISTANCE_HOLD_IDS,
+            *WAVE8_WALES_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -1296,6 +1641,14 @@ def build_expanded_release(
         *wave8_african_states_events,
         *wave8_new_zealand_events,
         *wave8_north_america_events,
+        *wave8_xhosa_events,
+        *wave8_polish_audit_events,
+        *wave8_namibia_resistance_events,
+        *wave8_first_saudi_events,
+        *wave8_early_states_events,
+        *wave8_judean_revolts_events,
+        *wave8_canadian_resistance_events,
+        *wave8_wales_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -1475,6 +1828,14 @@ def build_expanded_release(
     install_wave8_african_states_sources(sources_by_id)
     install_wave8_new_zealand_sources(sources_by_id)
     install_wave8_north_america_sources(sources_by_id)
+    install_wave8_polish_audit_sources(sources_by_id)
+    install_wave8_xhosa_sources(sources_by_id)
+    install_wave8_namibia_resistance_sources(sources_by_id)
+    install_wave8_first_saudi_sources(sources_by_id)
+    install_wave8_early_states_sources(sources_by_id)
+    install_wave8_judean_revolts_sources(sources_by_id)
+    install_wave8_canadian_resistance_sources(sources_by_id)
+    install_wave8_wales_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -1490,6 +1851,14 @@ def build_expanded_release(
         *wave8_african_states_events,
         *wave8_new_zealand_events,
         *wave8_north_america_events,
+        *wave8_xhosa_events,
+        *wave8_polish_audit_events,
+        *wave8_namibia_resistance_events,
+        *wave8_first_saudi_events,
+        *wave8_early_states_events,
+        *wave8_judean_revolts_events,
+        *wave8_canadian_resistance_events,
+        *wave8_wales_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -1505,6 +1874,14 @@ def build_expanded_release(
         *wave8_african_states_events,
         *wave8_new_zealand_events,
         *wave8_north_america_events,
+        *wave8_xhosa_events,
+        *wave8_polish_audit_events,
+        *wave8_namibia_resistance_events,
+        *wave8_first_saudi_events,
+        *wave8_early_states_events,
+        *wave8_judean_revolts_events,
+        *wave8_canadian_resistance_events,
+        *wave8_wales_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -1519,6 +1896,14 @@ def build_expanded_release(
             | WAVE8_AFRICAN_STATES_CONTRACT_IDS
             | WAVE8_NEW_ZEALAND_CONTRACT_IDS
             | WAVE8_NORTH_AMERICA_CONTRACT_IDS
+            | WAVE8_POLISH_AUDIT_CONTRACT_IDS
+            | WAVE8_XHOSA_CONTRACT_IDS
+            | WAVE8_NAMIBIA_RESISTANCE_CONTRACT_IDS
+            | WAVE8_FIRST_SAUDI_CONTRACT_IDS
+            | WAVE8_EARLY_STATES_CONTRACT_IDS
+            | WAVE8_JUDEAN_REVOLTS_CONTRACT_IDS
+            | WAVE8_CANADIAN_RESISTANCE_CONTRACT_IDS
+            | WAVE8_WALES_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -1548,6 +1933,20 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_AFRICAN_STATES_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_NEW_ZEALAND_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_NORTH_AMERICA_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_POLISH_AUDIT_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_XHOSA_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_NAMIBIA_RESISTANCE_ENTITIES,
+        ),
+        *map(lambda entity: str(entity["id"]), WAVE8_FIRST_SAUDI_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_EARLY_STATES_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_JUDEAN_REVOLTS_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_CANADIAN_RESISTANCE_ENTITIES,
+        ),
+        *map(lambda entity: str(entity["id"]), WAVE8_WALES_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -1731,6 +2130,14 @@ def build_expanded_release(
         - len(wave8_african_states_events)
         - len(wave8_new_zealand_events)
         - len(wave8_north_america_events)
+        - len(wave8_xhosa_events)
+        - len(wave8_polish_audit_events)
+        - len(wave8_namibia_resistance_events)
+        - len(wave8_first_saudi_events)
+        - len(wave8_early_states_events)
+        - len(wave8_judean_revolts_events)
+        - len(wave8_canadian_resistance_events)
+        - len(wave8_wales_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -1763,6 +2170,26 @@ def build_expanded_release(
         "candidate_keyed_wave8_north_america_hced_events": len(
             wave8_north_america_events
         ),
+        "candidate_keyed_wave8_xhosa_hced_events": len(wave8_xhosa_events),
+        "candidate_keyed_wave8_polish_audit_hced_events": len(
+            wave8_polish_audit_events
+        ),
+        "candidate_keyed_wave8_namibia_resistance_hced_events": len(
+            wave8_namibia_resistance_events
+        ),
+        "candidate_keyed_wave8_first_saudi_hced_events": len(
+            wave8_first_saudi_events
+        ),
+        "candidate_keyed_wave8_early_states_hced_events": len(
+            wave8_early_states_events
+        ),
+        "candidate_keyed_wave8_judean_revolts_hced_events": len(
+            wave8_judean_revolts_events
+        ),
+        "candidate_keyed_wave8_canadian_resistance_hced_events": len(
+            wave8_canadian_resistance_events
+        ),
+        "candidate_keyed_wave8_wales_hced_events": len(wave8_wales_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -1939,6 +2366,27 @@ def build_expanded_release(
             "accepted_wave8_north_america_hced_events": len(
                 wave8_north_america_events
             ),
+            "accepted_wave8_xhosa_hced_events": len(wave8_xhosa_events),
+            "accepted_wave8_polish_audit_hced_events": len(
+                wave8_polish_audit_events
+            ),
+            "accepted_wave8_namibia_resistance_hced_events": len(
+                wave8_namibia_resistance_events
+            ),
+            "accepted_wave8_first_saudi_hced_events": len(
+                wave8_first_saudi_events
+            ),
+            "accepted_wave8_early_states_hced_events": len(
+                wave8_early_states_events
+            ),
+            "accepted_wave8_judean_revolts_hced_events": len(
+                wave8_judean_revolts_events
+            ),
+            "accepted_wave8_canadian_resistance_hced_events": len(
+                wave8_canadian_resistance_events
+            ),
+            "accepted_wave8_wales_hced_events": len(wave8_wales_events),
+            "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
             "wave6_1500_1799_candidate_ids": sorted(WAVE6_HCED_CONTRACTS),
@@ -2124,6 +2572,164 @@ def build_expanded_release(
             ],
             "wave8_north_america_entities_added": len(WAVE8_NORTH_AMERICA_ENTITIES),
             "wave8_north_america_sources_added": len(WAVE8_NORTH_AMERICA_SOURCES),
+            "wave8_xhosa_cohort_counts": wave8_xhosa_cohort_counts(),
+            "wave8_xhosa_queue_validation": wave8_xhosa_queue_validation,
+            "wave8_xhosa_candidate_ids": sorted(WAVE8_XHOSA_CONTRACT_IDS),
+            "wave8_xhosa_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_XHOSA_HOLDS.items())
+            ],
+            "wave8_xhosa_entities_added": len(WAVE8_XHOSA_ENTITIES),
+            "wave8_xhosa_sources_added": len(WAVE8_XHOSA_SOURCES),
+            "wave8_polish_audit_counts": wave8_polish_audit_counts(),
+            "wave8_polish_audit_queue_validation": (
+                wave8_polish_audit_queue_validation
+            ),
+            "wave8_polish_audit_candidate_ids": sorted(
+                WAVE8_POLISH_AUDIT_CONTRACT_IDS
+            ),
+            "wave8_polish_audit_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_POLISH_AUDIT_HOLDS.items()
+                )
+            ],
+            "wave8_polish_audit_entities_added": len(
+                WAVE8_POLISH_AUDIT_ENTITIES
+            ),
+            "wave8_polish_audit_sources_added": len(WAVE8_POLISH_AUDIT_SOURCES),
+            "wave8_namibia_resistance_cohort_counts": (
+                wave8_namibia_resistance_cohort_counts()
+            ),
+            "wave8_namibia_resistance_queue_validation": (
+                wave8_namibia_resistance_queue_validation
+            ),
+            "wave8_namibia_resistance_candidate_ids": sorted(
+                WAVE8_NAMIBIA_RESISTANCE_CONTRACT_IDS
+            ),
+            "wave8_namibia_resistance_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                    "full_row_sha256": contract["full_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_NAMIBIA_RESISTANCE_HOLDS.items()
+                )
+            ],
+            "wave8_namibia_resistance_entities_added": len(
+                WAVE8_NAMIBIA_RESISTANCE_ENTITIES
+            ),
+            "wave8_namibia_resistance_sources_added": len(
+                WAVE8_NAMIBIA_RESISTANCE_SOURCES
+            ),
+            "wave8_first_saudi_counts": wave8_first_saudi_counts(),
+            "wave8_first_saudi_queue_validation": (
+                wave8_first_saudi_queue_validation
+            ),
+            "wave8_first_saudi_candidate_ids": sorted(
+                WAVE8_FIRST_SAUDI_CONTRACT_IDS
+            ),
+            "wave8_first_saudi_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_FIRST_SAUDI_HOLDS.items())
+            ],
+            "wave8_first_saudi_entities_added": len(WAVE8_FIRST_SAUDI_ENTITIES),
+            "wave8_first_saudi_sources_added": len(WAVE8_FIRST_SAUDI_SOURCES),
+            "wave8_early_states_cohort_counts": wave8_early_states_cohort_counts(),
+            "wave8_early_states_queue_validation": wave8_early_states_queue_validation,
+            "wave8_early_states_candidate_ids": sorted(
+                WAVE8_EARLY_STATES_CONTRACT_IDS
+            ),
+            "wave8_early_states_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_EARLY_STATES_HOLDS.items())
+            ],
+            "wave8_early_states_entities_added": len(WAVE8_EARLY_STATES_ENTITIES),
+            "wave8_early_states_sources_added": len(WAVE8_EARLY_STATES_SOURCES),
+            "wave8_judean_revolts_counts": wave8_judean_revolts_counts(),
+            "wave8_judean_revolts_queue_validation": (
+                wave8_judean_revolts_queue_validation
+            ),
+            "wave8_judean_revolts_candidate_ids": sorted(
+                WAVE8_JUDEAN_REVOLTS_CONTRACT_IDS
+            ),
+            "wave8_judean_revolts_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_JUDEAN_REVOLTS_HOLDS.items()
+                )
+            ],
+            "wave8_judean_revolts_entities_added": len(
+                WAVE8_JUDEAN_REVOLTS_ENTITIES
+            ),
+            "wave8_judean_revolts_sources_added": len(WAVE8_JUDEAN_REVOLTS_SOURCES),
+            "wave8_canadian_resistance_counts": wave8_canadian_resistance_counts(),
+            "wave8_canadian_resistance_queue_validation": (
+                wave8_canadian_resistance_queue_validation
+            ),
+            "wave8_canadian_resistance_candidate_ids": sorted(
+                WAVE8_CANADIAN_RESISTANCE_CONTRACT_IDS
+            ),
+            "wave8_canadian_resistance_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_CANADIAN_RESISTANCE_HOLDS.items()
+                )
+            ],
+            "wave8_canadian_resistance_entities_added": len(
+                WAVE8_CANADIAN_RESISTANCE_ENTITIES
+            ),
+            "wave8_canadian_resistance_sources_added": len(
+                WAVE8_CANADIAN_RESISTANCE_SOURCES
+            ),
+            "wave8_wales_counts": wave8_wales_counts(),
+            "wave8_wales_cohort_counts": wave8_wales_cohort_counts(),
+            "wave8_wales_queue_validation": wave8_wales_queue_validation,
+            "wave8_wales_candidate_ids": sorted(WAVE8_WALES_CONTRACT_IDS),
+            "wave8_wales_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_WALES_HOLDS.items())
+            ],
+            "wave8_wales_entities_added": len(WAVE8_WALES_ENTITIES),
+            "wave8_wales_sources_added": len(WAVE8_WALES_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -2283,6 +2889,26 @@ def build_expanded_release(
         "candidate_keyed_wave8_north_america_hced_events": len(
             wave8_north_america_events
         ),
+        "candidate_keyed_wave8_xhosa_hced_events": len(wave8_xhosa_events),
+        "candidate_keyed_wave8_polish_audit_hced_events": len(
+            wave8_polish_audit_events
+        ),
+        "candidate_keyed_wave8_namibia_resistance_hced_events": len(
+            wave8_namibia_resistance_events
+        ),
+        "candidate_keyed_wave8_first_saudi_hced_events": len(
+            wave8_first_saudi_events
+        ),
+        "candidate_keyed_wave8_early_states_hced_events": len(
+            wave8_early_states_events
+        ),
+        "candidate_keyed_wave8_judean_revolts_hced_events": len(
+            wave8_judean_revolts_events
+        ),
+        "candidate_keyed_wave8_canadian_resistance_hced_events": len(
+            wave8_canadian_resistance_events
+        ),
+        "candidate_keyed_wave8_wales_hced_events": len(wave8_wales_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

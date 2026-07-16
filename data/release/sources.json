@@ -1,5 +1,18 @@
 [
   {
+    "id": "abertay_first_islamic_conquest_aelia",
+    "title": "The first Islamic conquest of Aelia",
+    "url": "https://rke.abertay.ac.uk/files/15112996/Al_Tel_2002_The_first_islamic_conquest_of_Aelia_PhD.pdf",
+    "publisher": "Abertay University",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "abertay_research_repository",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -24,6 +37,19 @@
     "source_type": "official_or_academic_reference",
     "title": "Chand Bibi's Defence of Ahmadnagar and later Nizam Shahi wars",
     "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Ahmednagar%20District/histroy_early.html"
+  },
+  {
+    "id": "amathole_xhosa_leadership",
+    "title": "Xhosa Gallery",
+    "url": "https://museum.za.net/xhosa-gallery/",
+    "publisher": "Amathole Museum",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "amathole_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "arab_israeli_1948_state",
@@ -208,6 +234,20 @@
     "source_family_id": "brazil_federal_government",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "brill_morenga_resistance_chapter",
+    "title": "Jakob Morenga and resistance in southern Namibia",
+    "url": "https://brill.com/display/book/9789004712454/BP000015.pdf",
+    "publisher": "Brill",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "brill_namibia_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {
@@ -1047,6 +1087,19 @@
     ]
   },
   {
+    "id": "british_army_gurkha_history",
+    "title": "Gurkha history",
+    "url": "https://www.army.mod.uk/learn-and-explore/about-the-army/corps-regiments-and-units/brigade-of-gurkhas/gurkha-history/",
+    "publisher": "British Army",
+    "license": "linked_reference",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "british_army_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "bulgaria_iwm",
     "title": "Salonika campaign parties and outcomes",
     "url": "https://www.iwm.org.uk/history/a-short-history-of-the-salonika-campaign",
@@ -1072,6 +1125,74 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "bundesarchiv_war_against_herero_1904",
+    "title": "The war against the Herero in 1904",
+    "url": "https://www.bundesarchiv.de/themen-entdecken/online-entdecken/geschichtsgalerien/der-krieg-gegen-die-herero-1904/",
+    "publisher": "German Federal Archives",
+    "license": "linked_reference",
+    "source_type": "national_archive_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "german_federal_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "cambridge_egypt_caliphate_641_868",
+    "title": "Egypt as a province in the Islamic caliphate, 641–868",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/FF5C416D97BB2C72F30F2E435B6AD7F4/9781139053372c3_p62-85_CBO.pdf/egypt_as_a_province_in_the_islamic_caliphate_641868.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_of_egypt",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "cambridge_hidden_histories_morenga",
+    "title": "The Marengo rebellion and Riemvasmaak, 1903–1907",
+    "url": "https://www.cambridge.org/core/books/abs/hidden-histories-of-gordonia/marengo-rebellion-and-riemvasmaak-19031907/162DA49365B4942E564B3444FE4AC0EB",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_hidden_histories_gordonia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "cambridge_history_islam_warfare",
+    "title": "Warfare",
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-islam/warfare/4DDA9E79093E4F5D50262AA3EAD71F5A",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_of_islam",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "cambridge_witbooi_imperial_project",
+    "title": "Hendrik Witbooi and the evolution of Germany's imperial project",
+    "url": "https://www.cambridge.org/core/journals/central-european-history/article/from-boondoggle-to-settlement-colony-hendrik-witbooi-and-the-evolution-of-germanys-imperial-project-in-southwest-africa-18841894/FCFB2D98384A5380494F38821AF76DB8",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_central_european_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {
@@ -1156,6 +1277,19 @@
     "url": "https://search.worldcat.org/title/warfare-and-armed-conflicts-a-statistical-encyclopedia-of-casualty-and-other-figures-1492-2015/oclc/965194724"
   },
   {
+    "id": "coleman_special_corps_gurkhas",
+    "title": "A Special Corps: The Beginnings of Gorkha Service with the British",
+    "url": "https://www.philharding.net/harding/A-Special-Corps-by-A-P-Coleman-1999.pdf",
+    "publisher": "A. P. Coleman",
+    "license": "linked_reference",
+    "source_type": "historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "special_corps_gurkha_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "colombia_constitution_1863",
     "title": "Constitucion politica de los Estados Unidos de Colombia, 1863",
     "url": "https://www.archivogeneral.gov.co/sites/default/files/exposiciones_patrimonio/ConstitucionesColombia/1863/Texto1863.pdf",
@@ -1182,6 +1316,20 @@
     ]
   },
   {
+    "id": "dbnl_witbooi_papers",
+    "title": "The papers of Hendrik Witbooi",
+    "url": "https://www.dbnl.org/tekst/witb002dagb01_01/witb002dagb01_01_0002.php",
+    "publisher": "Digitale Bibliotheek voor de Nederlandse Letteren",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "dbnl",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -1193,6 +1341,47 @@
     "source_type": "official_or_academic_reference",
     "title": "Rathenow and Fehrbellin collection record",
     "url": "https://www.deutsche-digitale-bibliothek.de/item/YMATAKBNXAHV44NYNFXEZD4ZZKRA7P7U"
+  },
+  {
+    "id": "ddb_onganjira_provenance",
+    "title": "Onganjira collection provenance record",
+    "url": "https://ccc.deutsche-digitale-bibliothek.de/en/item/WNO5YFTFZWWL65AJCT673QNO5ISLVVZI",
+    "publisher": "Deutsche Digitale Bibliothek",
+    "license": "linked_reference",
+    "source_type": "museum_provenance_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsche_digitale_bibliothek",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "dhm_nama_resistance",
+    "title": "Resistance of the Nama",
+    "url": "https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/widerstand-der-nama",
+    "publisher": "Deutsches Historisches Museum",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsches_historisches_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "dhm_waterberg_exhibit",
+    "title": "The Battle of Waterberg and its aftermath",
+    "url": "https://www.dhm.de/archiv/ausstellungen/namibia/rooms/02.htm",
+    "publisher": "Deutsches Historisches Museum",
+    "license": "linked_reference",
+    "source_type": "museum_exhibit",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsches_historisches_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
   },
   {
     "accessed": "2026-07-15",
@@ -1268,6 +1457,85 @@
     "source_type": "official_parliamentary_history",
     "accessed": "2026-07-15",
     "source_family_id": "france_national_assembly",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "frankfurt_ovikokorero_record",
+    "title": "Ovikokorero colonial image-archive record",
+    "url": "https://sammlungen.ub.uni-frankfurt.de/kolonialesbildarchiv/content/titleinfo/11403260",
+    "publisher": "Goethe University Frankfurt Library",
+    "license": "linked_reference",
+    "source_type": "archive_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frankfurt_colonial_image_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "ghi_hull_oviumbo",
+    "title": "Military culture and the war in German South West Africa",
+    "url": "https://www.ghi-dc.org/fileadmin/publications/Bulletin/bu37.pdf",
+    "publisher": "German Historical Institute Washington",
+    "license": "linked_reference",
+    "source_type": "academic_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "german_historical_institute_washington",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "govza_indigenous_systems_appendix",
+    "title": "Appendix: indigenous systems and resistance history",
+    "url": "https://www.gov.za/about-government/appendix-indigenous-systems-awards",
+    "publisher": "Government of South Africa",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_government",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "govza_makana_1819",
+    "title": "Address bestowing freedom of the City of Makana Municipality",
+    "url": "https://www.gov.za/news/speeches/address-president-jacob-zuma-occasion-bestowing-freedom-city-makana-municipality",
+    "publisher": "Government of South Africa",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_government",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "gutenberg_60th_rifles_1852",
+    "title": "The History of the 60th Rifles",
+    "url": "https://www.gutenberg.org/cache/epub/57761/pg57761-images.html",
+    "publisher": "Project Gutenberg",
+    "license": "linked_reference",
+    "source_type": "digitized_regimental_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "project_gutenberg",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "gutenberg_king_campaign_1852",
+    "title": "Campaigning in Kaffirland, or Scenes and Adventures in the Kaffir War of 1851–2",
+    "url": "https://www.gutenberg.org/cache/epub/48550/pg48550-images.html",
+    "publisher": "Project Gutenberg",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "project_gutenberg",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
@@ -1403,6 +1671,19 @@
     ]
   },
   {
+    "id": "iranica_antioch_gindarus",
+    "title": "Antioch in northern Syria",
+    "url": "https://www.iranicaonline.org/articles/antioch-1-northern-syria/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "iranica_arab_conquest",
     "title": "Arab conquest of Iran",
     "url": "https://www.iranicaonline.org/articles/arab-ii/",
@@ -1416,6 +1697,58 @@
     ]
   },
   {
+    "id": "iranica_arab_conquest_iran",
+    "title": "Arab conquest of Iran",
+    "url": "https://www.iranicaonline.org/articles/arab-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_armenia_ii",
+    "title": "Armenia and Iran II: The pre-Islamic period",
+    "url": "https://www.iranicaonline.org/articles/armenia-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_arsacids_ii",
+    "title": "Arsacids II: The Arsacid dynasty",
+    "url": "https://www.iranicaonline.org/articles/arsacids-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_balas_v",
+    "title": "Balash VI",
+    "url": "https://www.iranicaonline.org/articles/balas/vi-balas-v/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "iranica_chaldiran",
     "title": "Chaldiran, Battle of",
     "url": "https://www.iranicaonline.org/articles/calderan-battle/",
@@ -1426,6 +1759,45 @@
     "source_family_id": "encyclopaedia_iranica_editorial_corpus",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "iranica_ctesiphon_early_states",
+    "title": "Ctesiphon",
+    "url": "https://www.iranicaonline.org/articles/ctesiphon/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_ctesiphon_parthian",
+    "title": "Ctesiphon",
+    "url": "https://www.iranicaonline.org/articles/ctesiphon/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_ecbatana",
+    "title": "Ecbatana",
+    "url": "https://www.iranicaonline.org/articles/ecbatana/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1452,6 +1824,32 @@
     "source_family_id": "encyclopaedia_iranica_editorial_corpus",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "iranica_hatra",
+    "title": "Hatra",
+    "url": "https://www.iranicaonline.org/articles/hatra/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "iranica_hormozdgan",
+    "title": "Hormozdgan",
+    "url": "https://www.iranicaonline.org/articles/hormozdgan/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "linked_reference",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_iranica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1546,6 +1944,19 @@
     ]
   },
   {
+    "id": "justice_lcc_eastern_cape_history",
+    "title": "Land Claims Court historical findings on the Eastern Cape frontier",
+    "url": "https://justice.gov.za/lcc/jdgm/2014/lcc-217-2009.pdf",
+    "publisher": "Department of Justice and Constitutional Development",
+    "license": "linked_reference",
+    "source_type": "judicial_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_justice",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -1585,6 +1996,45 @@
     "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/et/ethiopiacountrys00ofca_0/ethiopiacountrys00ofca_0.pdf"
   },
   {
+    "id": "london_gazette_almora_dispatch",
+    "title": "Official dispatch on the capture of Almora",
+    "url": "https://www.thegazette.co.uk/London/issue/17080/page/2293/data.pdf",
+    "publisher": "The London Gazette",
+    "license": "linked_reference",
+    "source_type": "official_dispatch",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_london_gazette",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "london_gazette_centane_1878",
+    "title": "Official despatch on the Battle of Centane",
+    "url": "https://www.thegazette.co.uk/London/issue/24566/page/2187/data.pdf",
+    "publisher": "The London Gazette",
+    "license": "linked_reference",
+    "source_type": "official_despatch",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_london_gazette",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "london_gazette_kalanga_dispatch",
+    "title": "Official dispatch on the operations at Kalanga",
+    "url": "https://www.thegazette.co.uk/London/issue/17052/page/1685/data.pdf",
+    "publisher": "The London Gazette",
+    "license": "linked_reference",
+    "source_type": "official_dispatch",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_london_gazette",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "mahdist_bm",
     "title": "Mahdiya identity context",
     "url": "https://www.britishmuseum.org/collection/term/x105338",
@@ -1610,6 +2060,45 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "makana_frontier_wars_chronology",
+    "title": "Historical information: Cape Frontier Wars chronology",
+    "url": "https://www.makana.gov.za/history-culture/historical-information/",
+    "publisher": "Makana Local Municipality",
+    "license": "linked_reference",
+    "source_type": "local_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "makana_municipality_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "makana_grahamstown_1819",
+    "title": "Grahamstown and the 1819 attack",
+    "url": "https://www.makana.gov.za/grahamstown/",
+    "publisher": "Makana Local Municipality",
+    "license": "linked_reference",
+    "source_type": "local_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "makana_municipality_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "makana_history_culture",
+    "title": "History and culture of Makana",
+    "url": "https://www.makana.gov.za/history-culture/",
+    "publisher": "Makana Local Municipality",
+    "license": "linked_reference",
+    "source_type": "local_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "makana_municipality_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1689,6 +2178,19 @@
     "source_type": "official_or_academic_reference",
     "title": "The Art of the Mamluk Period (1250–1517)",
     "url": "https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517"
+  },
+  {
+    "id": "met_parthian_empire",
+    "title": "The Parthian Empire (247 B.C.–224 A.D.)",
+    "url": "https://www.metmuseum.org/pt/essays/the-parthian-empire-247-b-c-224-a-d",
+    "publisher": "The Metropolitan Museum of Art",
+    "license": "linked_reference",
+    "source_type": "museum_scholarly_essay",
+    "accessed": "2026-07-16",
+    "source_family_id": "metropolitan_museum_heilbrunn_timeline",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "accessed": "2026-07-16",
@@ -1800,6 +2302,19 @@
     ]
   },
   {
+    "id": "mnquma_centane_memorial",
+    "title": "Battle of Centane Heroes Monument",
+    "url": "https://www.mnquma.gov.za/battle-of-centane-heroes-monument/",
+    "publisher": "Mnquma Local Municipality",
+    "license": "linked_reference",
+    "source_type": "local_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "mnquma_municipality",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -1836,6 +2351,19 @@
     "source_family_id": "national_army_museum_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "nam_gwanga_1846",
+    "title": "Battle of Gwanga collection record",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-191-1",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1891,6 +2419,85 @@
     "url": "https://collection.nam.ac.uk/detail.php?acc=1971-02-33-152-1"
   },
   {
+    "id": "namibia_ancestral_land_commission",
+    "title": "Commission of Inquiry into Claims of Ancestral Land Rights and Restitution",
+    "url": "https://mfpe.gov.na/documents/1150081/1187317/REPORT%2B%2BOF%2BTHE%2BCOMMISSION%2BOF%2BINQUIRY%2B%2BINTO%2BCLAIMS%2BOF%2BANCESTRAL%2BLAND%2B%2BRIGHTS%2BAND%2BRESTITUTION%2B.pdf/e2973e3a-3767-4cbf-59da-16eeeed2fe1b?download=true&t=1663750331384",
+    "publisher": "Government of Namibia",
+    "license": "linked_reference",
+    "source_type": "government_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "namibia_government_reports",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "namibia_meft_waterberg",
+    "title": "Waterberg Plateau Park",
+    "url": "https://www.meft.gov.na/national-parks/waterberg-plateau-park/231/",
+    "publisher": "Namibia Ministry of Environment, Forestry and Tourism",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "namibia_meft",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "namibia_nhc_heritage_places",
+    "title": "National heritage places of Namibia",
+    "url": "https://nhc-nam.org/heritage-places/",
+    "publisher": "National Heritage Council of Namibia",
+    "license": "linked_reference",
+    "source_type": "government_heritage_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "namibia_national_heritage_council",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "narsa_burnshill_journals",
+    "title": "Burnshill journals archival catalogue record",
+    "url": "https://www.nationalarchives.gov.za/node/1402607",
+    "publisher": "National Archives and Records Service of South Africa",
+    "license": "linked_reference",
+    "source_type": "archival_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_archives_south_africa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "narsa_third_frontier_war_archive",
+    "title": "Archival material on the Third Cape Frontier War",
+    "url": "https://www.nationalarchives.gov.za/sites/default/files/ITEM_NEG-0070-0011-_-108.pdf",
+    "publisher": "National Archives and Records Service of South Africa",
+    "license": "linked_reference",
+    "source_type": "archival_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_archives_south_africa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "national_army_museum_gurkhas",
+    "title": "The Gurkhas",
+    "url": "https://www.nam.ac.uk/explore/gurkhas",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "national_wwii_pacific",
     "title": "The Pacific Strategy, 1941-1944",
     "url": "https://www.nationalww2museum.org/war/articles/pacific-strategy-1941-1944",
@@ -1901,6 +2508,71 @@
     "source_family_id": "national_wwii_museum_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "nepal_archaeology_anglo_nepal_war",
+    "title": "Ancient Nepal 30–39",
+    "url": "https://giwmscdnone.gov.np/media/pdf_upload/ancient_nepal_30-39_full_1497252914_1581410181.pdf",
+    "publisher": "Department of Archaeology, Government of Nepal",
+    "license": "linked_reference",
+    "source_type": "government_history_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "nepal_department_archaeology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nepal_ifa_britain_relations",
+    "title": "200 Years of Nepal-Britain Relations: A Way Forward",
+    "url": "https://ifa.gov.np/media/publications/documents/200_Years_of_Nepal-Britain_Relations_A_Way_Forward.pdf",
+    "publisher": "Institute of Foreign Affairs, Nepal",
+    "license": "linked_reference",
+    "source_type": "government_research_publication",
+    "accessed": "2026-07-16",
+    "source_family_id": "nepal_institute_foreign_affairs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nepal_president_jitgadhi",
+    "title": "Address at Jitgadhi victory celebrations",
+    "url": "https://president.gov.np/%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%A8%E0%A5%80%E0%A4%AF-%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A4%AA%E0%A4%A4%E0%A4%BF-%E0%A4%B0%E0%A4%BE-4/",
+    "publisher": "Office of the President of Nepal",
+    "license": "linked_reference",
+    "source_type": "government_commemoration",
+    "accessed": "2026-07-16",
+    "source_family_id": "nepal_presidency",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nga_hartebeestmund_gazetteer",
+    "title": "Hartebeestmund geographic-name record",
+    "url": "https://geographic.org/geographic_names/namibia/h/ha.html",
+    "publisher": "Geographic.org (NGA-derived gazetteer)",
+    "license": "linked_reference",
+    "source_type": "gazetteer",
+    "accessed": "2026-07-16",
+    "source_family_id": "nga_geographic_names",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nga_kleinvaalgras_gazetteer",
+    "title": "Kleinvaalgras geographic-name record",
+    "url": "https://geographic.org/geographic_names/name.php?c=namibia&fid=6697&uni=-3554806",
+    "publisher": "Geographic.org (NGA-derived gazetteer)",
+    "license": "linked_reference",
+    "source_type": "gazetteer",
+    "accessed": "2026-07-16",
+    "source_family_id": "nga_geographic_names",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -2384,6 +3056,20 @@
     ]
   },
   {
+    "id": "proveana_hornkranz",
+    "title": "Assault on Hornkranz, 12 April 1893",
+    "url": "https://www.proveana.de/de/ereignis/ueberfall-auf-hornkranz-vom-12-april-1893",
+    "publisher": "German Lost Art Foundation",
+    "license": "linked_reference",
+    "source_type": "provenance_event_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "proveana",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2463,6 +3149,47 @@
     ]
   },
   {
+    "id": "saho_eastern_cape_wars_overview",
+    "title": "Eastern Cape wars of dispossession, 1779–1878",
+    "url": "https://sahistory.org.za/article/eastern-cape-wars-dispossession-1779-1878",
+    "publisher": "South African History Online",
+    "license": "linked_reference",
+    "source_type": "historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_history_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "saho_ngqika_ndlambe",
+    "title": "The contentious relationship between Ngqika and Ndlambe",
+    "url": "https://sahistory.org.za/article/contentious-relationship-between-ngqika-and-ndlambe",
+    "publisher": "South African History Online",
+    "license": "linked_reference",
+    "source_type": "historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_history_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "saho_okaharui_1904",
+    "title": "Herero people defeat German forces",
+    "url": "https://sahistory.org.za/dated-event/herero-people-defeat-german-forces",
+    "publisher": "South African History Online",
+    "license": "linked_reference",
+    "source_type": "historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_history_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "accessed": "2026-07-16",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2474,6 +3201,125 @@
     "source_type": "official_or_academic_reference",
     "title": "Adoption of the Orange Free State constitution",
     "url": "https://sahistory.org.za/dated-event/adoption-orange-free-state-constitution"
+  },
+  {
+    "id": "saho_peddie",
+    "title": "Peddie",
+    "url": "https://sahistory.org.za/place/peddie",
+    "publisher": "South African History Online",
+    "license": "linked_reference",
+    "source_type": "historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_history_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "saho_third_frontier_war_study",
+    "title": "Archival period study of the Third Cape Frontier War",
+    "url": "https://sahistory.org.za/sites/default/files/archive-files/LiAug56.1729.455X.000.020.Aug1956.6.pdf",
+    "publisher": "South African History Online",
+    "license": "linked_reference",
+    "source_type": "archival_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_history_online",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samhs_amalinde_1818",
+    "title": "The Battle of Amalinde and the Ngqika–Ndlambe conflict",
+    "url": "https://samilitaryhistory.org/vol135hk.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "samhs_boma_pass_1850",
+    "title": "The Eighth Frontier War: the opening at Boma Pass",
+    "url": "https://samilitaryhistory.org/vol153dw.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samhs_burnshill_1846",
+    "title": "The War of the Axe and the Burnshill ambush",
+    "url": "https://samilitaryhistory.org/vol156ja.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samhs_fifth_frontier_war_campaign",
+    "title": "Campaign study of the Fifth Cape Frontier War",
+    "url": "https://samilitaryhistory.org/jnl2/vol183pi.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samhs_fish_river_bush_1851",
+    "title": "The Battle of the Fish River Bush, 9 September 1851",
+    "url": "https://samilitaryhistory.org/vol094ds.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "samhs_ibeka_nyumaga_1877_1878",
+    "title": "The Ninth Frontier War: Ibeka and Nyumaga",
+    "url": "https://samilitaryhistory.org/vol056pg.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "samhs_waterkloof_campaign_1851",
+    "title": "The Waterkloof campaign of 1851–1852",
+    "url": "https://samilitaryhistory.org/vol134ds.html",
+    "publisher": "South African Military History Society",
+    "license": "linked_reference",
+    "source_type": "military_history_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "south_african_military_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "accessed": "2026-07-15",
@@ -2556,6 +3402,33 @@
     "url": "https://www.geschichte.sachsen.de/kurfuerstentum-und-fruehbarock-6798.html"
   },
   {
+    "id": "scientia_ninth_frontier_war",
+    "title": "Study of the Ninth Cape Frontier War",
+    "url": "https://scientiamilitaria.journals.ac.za/pub/article/download/152/198/",
+    "publisher": "Scientia Militaria",
+    "license": "linked_reference",
+    "source_type": "academic_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "scientia_militaria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "scientia_witbooi_fahlgras",
+    "title": "Hendrik Witbooi and the action at Fahlgras",
+    "url": "https://scientiamilitaria.journals.ac.za/pub/article/download/1249/1336",
+    "publisher": "Scientia Militaria",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "scientia_militaria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2596,6 +3469,19 @@
     ]
   },
   {
+    "id": "smithsonian_yarmuk_636",
+    "title": "Yarmuk AD 636: The Muslim Conquest of Syria",
+    "url": "https://www.si.edu/object/yarmuk-ad-636-muslim-conquest-syria-david-nicolle%3Asiris_sil_1146367",
+    "publisher": "Smithsonian Institution Libraries",
+    "license": "linked_reference",
+    "source_type": "library_catalogue_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "smithsonian_libraries",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2632,6 +3518,61 @@
     "source_family_id": "us_state_office_historian_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "statssa_amalinde",
+    "title": "Amalinde historical place record",
+    "url": "https://www.statssa.gov.za/?id=2269&page_id=4286",
+    "publisher": "Statistics South Africa",
+    "license": "linked_reference",
+    "source_type": "government_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "statistics_south_africa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "sunypress_tabari_volume_8",
+    "title": "The History of al-Tabari, Volume 8",
+    "url": "https://sunypress.edu/Books/T/The-History-of-al-abari-Vol.-82",
+    "publisher": "State University of New York Press",
+    "license": "linked_reference",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "suny_press_tabari",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "suub_gswa_campaign_history",
+    "title": "Official campaign history of German South West Africa",
+    "url": "https://brema.suub.uni-bremen.de/dsdk/content/structure/1843541",
+    "publisher": "Staats- und Universitätsbibliothek Bremen",
+    "license": "linked_reference",
+    "source_type": "digitized_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "suub_bremen_german_colonial_collection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "suub_onganjira_oviumbo_page",
+    "title": "Official campaign account: Onganjira and Oviumbo",
+    "url": "https://brema.suub.uni-bremen.de/dsdk/content/pagetext/1828982",
+    "publisher": "Staats- und Universitätsbibliothek Bremen",
+    "license": "linked_reference",
+    "source_type": "digitized_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "suub_bremen_german_colonial_collection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {
@@ -2753,6 +3694,32 @@
     ]
   },
   {
+    "id": "uchicago_early_muslim_conquests",
+    "title": "The Early Islamic Conquests",
+    "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/lamine1.pdf",
+    "publisher": "University of Chicago Oriental Institute",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_chicago_oriental_institute",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "uchicago_political_history_parthia",
+    "title": "A Political History of Parthia",
+    "url": "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/political_history_parthia.pdf",
+    "publisher": "University of Chicago Institute for the Study of Ancient Cultures",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_chicago_isac",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -2766,6 +3733,20 @@
     "url": "https://www.ucl.ac.uk/southasianarchaeology/Pre-Mughal.pdf"
   },
   {
+    "id": "ucpress_quran_and_conquest_chapter_1",
+    "title": "The Qur'an and Conquest, chapter 1",
+    "url": "https://content.ucpress.edu/chapters/10213001.ch01.pdf",
+    "publisher": "University of California Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_california_press",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "uk_archives_yemen_1918",
     "title": "The Arabian Peninsula",
     "url": "https://www.nationalarchives.gov.uk/the-middle-east/arabian-peninsula/",
@@ -2774,6 +3755,19 @@
     "source_type": "official_history",
     "accessed": "2026-07-15",
     "source_family_id": "uk_national_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "uk_hansard_xhosa_war_1851",
+    "title": "The Kaffir War",
+    "url": "https://api.parliament.uk/historic-hansard/commons/1851/apr/15/the-kaffir-war",
+    "publisher": "UK Parliament",
+    "license": "linked_reference",
+    "source_type": "parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_parliament_hansard",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
     ]
@@ -2792,6 +3786,46 @@
     "url": "https://www.nationalarchives.gov.uk/education/resources/the-south-african-war-how-did-the-british-conduct-war-in-1899-1902/"
   },
   {
+    "id": "up_gwanga_regimental_account",
+    "title": "Digitized regimental account of the Battle of Gwanga",
+    "url": "https://repository.up.ac.za/server/api/core/bitstreams/edbf29e3-a2a6-4ada-9d24-9853e811cb16/content",
+    "publisher": "University of Pretoria",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_pretoria_repository",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "up_ninth_frontier_war_memoir",
+    "title": "Digitized contemporary memoir of the Ninth Frontier War",
+    "url": "https://repository.up.ac.za/bitstreams/e9bb0e9c-a5bc-418f-b295-eee9b5bbf896/download",
+    "publisher": "University of Pretoria",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_pretoria_repository",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "urjc_german_southwest_campaign_analysis",
+    "title": "Campaign analysis of the 1904 war in German South West Africa",
+    "url": "https://guerracolonial.oa.urjc.es/index.php/gc/article/view/52/65",
+    "publisher": "Universidad Rey Juan Carlos",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "guerra_colonial_journal",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "ushmm_wwii_europe",
     "title": "World War II in Europe",
     "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-in-europe",
@@ -2802,6 +3836,19 @@
     "source_family_id": "ushmm_holocaust_encyclopedia",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "ward_fort_peddie_1846",
+    "title": "Five Years in Kaffirland: Attack on Fort Peddie",
+    "url": "https://readingroo.ms/3/5/3/0/35308/35308-h/35308-h.htm",
+    "publisher": "Project Gutenberg",
+    "license": "linked_reference",
+    "source_type": "digitized_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "project_gutenberg",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -4140,6 +5187,440 @@
     ]
   },
   {
+    "id": "wave8_canada_batoche_history",
+    "title": "History of Batoche National Historic Site",
+    "url": "https://parks.canada.ca/lhn-nhs/sk/batoche/culture/histoire-history",
+    "publisher": "Parks Canada",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "parks_canada_northwest_resistance",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_canada_battleford_history",
+    "title": "History of Fort Battleford National Historic Site",
+    "url": "https://parks.canada.ca/lhn-nhs/sk/battleford/culture/histoire-history",
+    "publisher": "Parks Canada",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "parks_canada_northwest_resistance",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_canada_dominion_boundary",
+    "title": "The Statute of Westminster and the Dominion of Canada",
+    "url": "https://www.canada.ca/en/intergovernmental-affairs/services/federation/statute-westminster.html",
+    "publisher": "Government of Canada",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "canada_intergovernmental_affairs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_canada_fish_creek_history",
+    "title": "Battle of Tourond's Coulee / Fish Creek National Historic Site",
+    "url": "https://parks.canada.ca/lhn-nhs/sk/tourond/culture",
+    "publisher": "Parks Canada",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "parks_canada_northwest_resistance",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_canada_montgomery_tavern",
+    "title": "History of the 7th Toronto Regiment, Royal Canadian Artillery",
+    "url": "https://www.canada.ca/en/army/corporate/4-canadian-division/7-toronto-regiment.html",
+    "publisher": "Canadian Army",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "canadian_army_unit_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_canada_upper_canada_rebellion",
+    "title": "Transforming Relationships, 1815–1902: the Rebellions",
+    "url": "https://www.canada.ca/en/department-national-defence/services/military-history/history-heritage/popular-books/aboriginal-people-canadian-military/transforming-relationships-1815-1902.html",
+    "publisher": "Department of National Defence, Canada",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "canadian_military_history_directorate",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_first_saudi_abdullah_diriyah",
+    "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
+    "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",
+    "publisher": "Saudipedia, Ministry of Media (Saudi Arabia)",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "saudipedia_first_saudi_state",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_first_saudi_rcrc_heart_of_call",
+    "title": "Heart of the Call: Al-Bujairi and At-Turaif",
+    "url": "https://www.rcrc.gov.sa/res/ada/ar/Publications/Al-Bujairi_Eng/files/assets/common/downloads/publication.pdf",
+    "publisher": "Royal Commission for Riyadh City",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "royal_commission_riyadh_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_first_saudi_state_history",
+    "title": "First Saudi State",
+    "url": "https://saudipedia.com/en/first-saudi-state",
+    "publisher": "Saudipedia, Ministry of Media (Saudi Arabia)",
+    "license": "Citation and link only",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "saudipedia_first_saudi_state",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_judean_1_maccabees_4",
+    "title": "The Book of Maccabees I, chapter 4",
+    "url": "https://www.sefaria.org/The_Book_of_Maccabees_I.4.1-35",
+    "publisher": "Sefaria Library",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "first_maccabees_primary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_judean_cambridge_judas_maccabaeus",
+    "title": "Judas Maccabaeus: The Jewish Struggle against the Seleucids",
+    "url": "https://www.cambridge.org/core/books/judas-maccabaeus/lysias-second-expedition-and-the-battle-at-beth-zacharia/0194BB737CA64265961A7B023D97E3CF",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_book",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_judas_maccabaeus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_judean_josephus_jewish_war",
+    "title": "The Jewish War",
+    "url": "https://classics.mit.edu/Josephus/j.bj.html",
+    "publisher": "MIT Internet Classics Archive / Perseus Project",
+    "license": "Citation and link only",
+    "source_type": "primary_source_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "josephus_jewish_war_primary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_judean_met_world_between_empires",
+    "title": "The World between Empires: Art and Identity in the Ancient Middle East",
+    "url": "https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf",
+    "publisher": "Metropolitan Museum of Art",
+    "license": "Citation and link only",
+    "source_type": "museum_scholarly_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "metropolitan_museum_ancient_middle_east",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_judean_roy_pre_modern_warfare",
+    "title": "A Global History of Pre-Modern Warfare",
+    "url": "https://www.routledge.com/A-Global-History-of-Pre-Modern-Warfare-Before-the-Rise-of-the-West-10000-BCE-1500-CE/Roy/p/book/9780367247171",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "academic_book",
+    "accessed": "2026-07-16",
+    "source_family_id": "routledge_pre_modern_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polish_czech_statistics_domazlice",
+    "title": "Domažlice and the Hussite victory of 1431",
+    "url": "https://csu.gov.cz/produkty/13-3231-06-za_rok_2005-domazlice",
+    "publisher": "Czech Statistical Office",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "czech_statistical_office",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_polish_krakow_archive_wawel_1772",
+    "title": "The Bar Confederation and the capitulation at Wawel",
+    "url": "https://ank.gov.pl/konfederacja/index.html",
+    "publisher": "National Archives in Kraków",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_archives_krakow",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polish_ujk_rokosz_review",
+    "title": "The Zebrzydowski rebellion and its leadership",
+    "url": "https://almanachhistoryczny.ujk.edu.pl/almanach/download/Almanach%20historyczny_tom_24_Szpaczy%C5%84ski.pdf?tennumer=24",
+    "publisher": "Jan Kochanowski University in Kielce",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "jan_kochanowski_university_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_polish_usilesia_grotniki",
+    "title": "Spytko of Melsztyn's confederation and the Battle of Grotniki",
+    "url": "https://journals.us.edu.pl/index.php/SPP/article/view/21114",
+    "publisher": "University of Silesia in Katowice",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_silesia_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_polish_zpe_kosciuszko_battles",
+    "title": "Battles of the Kościuszko Uprising",
+    "url": "https://zpe.gov.pl/a/bitwy-powstania-kosciuszkowskiego/D2QqJC2NL",
+    "publisher": "Polish Integrated Educational Platform",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "polish_zpe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polish_zpe_november_uprising_chronology",
+    "title": "The November Uprising: chronology and the Battle of Grochów",
+    "url": "https://zpe.gov.pl/a/odmowa-powstanie-listopadowe/DElrLAbcZ",
+    "publisher": "Polish Integrated Educational Platform",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "polish_zpe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polish_zpe_rokosz_1606_1607",
+    "title": "The Zebrzydowski rebellion and the Battle of Guzów",
+    "url": "https://zpe.gov.pl/a/przeczytaj/DYmT3989m",
+    "publisher": "Polish Integrated Educational Platform",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "polish_zpe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wales_antiquaries_lulworth_beandun",
+    "title": "An Early Iron Age 'beach-head' at Lulworth, Dorset",
+    "url": "https://www.cambridge.org/core/journals/antiquaries-journal/article/an-early-iron-age-beachhead-at-lulworth-dorset/5C9BC3CE22AC55020C27738FD12A8730",
+    "publisher": "The Antiquaries Journal, Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "antiquaries_journal",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_battlefields_maes_moydog_1295",
+    "title": "Maes Moydog (5 March 1295): historical and documentary research",
+    "url": "https://www.walesher1974.org/her/app/php/herumd.php?docid=301448840&group=CPAT&level=3",
+    "publisher": "Welsh Battlefields Project / Clwyd-Powys Archaeological Trust",
+    "license": "linked_reference",
+    "source_type": "commissioned_battlefield_research",
+    "accessed": "2026-07-16",
+    "source_family_id": "welsh_battlefields_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_coflein_bridge_of_boats_1282",
+    "title": "Moel-y-Don: possible site of the Bridge of Boats battle",
+    "url": "https://coflein.gov.uk/en/sites/404319",
+    "publisher": "Royal Commission on the Ancient and Historical Monuments of Wales (Coflein)",
+    "license": "linked_reference",
+    "source_type": "official_battlefield_inventory",
+    "accessed": "2026-07-16",
+    "source_family_id": "rcahmw_coflein_battlefields",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wales_coflein_bryn_glas_1402",
+    "title": "Bryn Glas battlefield, Pilleth",
+    "url": "https://coflein.gov.uk/en/sites/306352",
+    "publisher": "Royal Commission on the Ancient and Historical Monuments of Wales (Coflein)",
+    "license": "linked_reference",
+    "source_type": "official_battlefield_inventory",
+    "accessed": "2026-07-16",
+    "source_family_id": "rcahmw_coflein_battlefields",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wales_coflein_coleshill_1157",
+    "title": "Coleshill; Cwnsyllt, supposed site of battle in 1157, near Flint",
+    "url": "https://coflein.gov.uk/en/sites/402325",
+    "publisher": "Royal Commission on the Ancient and Historical Monuments of Wales (Coflein)",
+    "license": "linked_reference",
+    "source_type": "official_battlefield_inventory",
+    "accessed": "2026-07-16",
+    "source_family_id": "rcahmw_coflein_battlefields",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wales_coflein_irfon_bridge_1282",
+    "title": "Irfon Bridge; Pont Irfon; Battle of Orewin Bridge, Builth Wells",
+    "url": "https://coflein.gov.uk/en/sites/403411",
+    "publisher": "Royal Commission on the Ancient and Historical Monuments of Wales (Coflein)",
+    "license": "linked_reference",
+    "source_type": "official_battlefield_inventory",
+    "accessed": "2026-07-16",
+    "source_family_id": "rcahmw_coflein_battlefields",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_wales_cvhs_aberdare_legend",
+    "title": "Cynon Valley historical timeline: the Norman conquest tradition",
+    "url": "https://www.cvhs.org.uk/timeline/chron.html",
+    "publisher": "Cynon Valley History Society",
+    "license": "linked_reference",
+    "source_type": "local_historical_research",
+    "accessed": "2026-07-16",
+    "source_family_id": "cynon_valley_history_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_dwb_rhys_ap_tewdwr_1093",
+    "title": "Rhys ap Tewdwr (died 1093), king of Deheubarth (1078-1093)",
+    "url": "https://biography.wales/article/s11-RHYS-APT-1093.html",
+    "publisher": "Dictionary of Welsh Biography, National Library of Wales and University of Wales Centre for Advanced Welsh and Celtic Studies",
+    "license": "linked_reference",
+    "source_type": "academic_national_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "dictionary_of_welsh_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_epns_peonnum_658",
+    "title": "Canon and King's Pyon and Pyon Wood, Herefordshire",
+    "url": "https://www.nottingham.ac.uk/research/groups/epns/documents/journal/53-2021/jepns-53-2021-freeman.pdf",
+    "publisher": "Journal of the English Place-Name Society",
+    "license": "linked_reference",
+    "source_type": "academic_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "english_place_name_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_oen_beandun_614",
+    "title": "The Year's Work in Old English Studies: review of 'The Anglo-Saxon Chronicle for 614 and Brean Down, Somerset'",
+    "url": "https://www.oenewsletter.org/OEN/archive/OEN39_2.pdf",
+    "publisher": "Old English Newsletter",
+    "license": "linked_reference",
+    "source_type": "academic_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "old_english_newsletter",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_wales_ystradowen_archaeology_2012",
+    "title": "Land at Ystradowen, Vale of Glamorgan, Wales: Heritage Desk-Based Assessment",
+    "url": "https://www.walesher1974.org/her/groups/GGAT/media/ReportPDF/3344_LandatYstradowenDBA.pdf",
+    "publisher": "Cotswold Archaeology / Glamorgan-Gwent Archaeological Trust",
+    "license": "linked_reference",
+    "source_type": "archaeological_assessment",
+    "accessed": "2026-07-16",
+    "source_family_id": "cotswold_archaeology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -4163,6 +5644,33 @@
     "source_family_id": "world_history_encyclopedia_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "wits_kohler_ovaherero_history",
+    "title": "A history of the Ovaherero of South West Africa",
+    "url": "https://researcharchives.wits.ac.za/downloads/govt0001.pdf",
+    "publisher": "University of the Witwatersrand Historical Papers",
+    "license": "linked_reference",
+    "source_type": "digitized_government_ethnology",
+    "accessed": "2026-07-16",
+    "source_family_id": "wits_historical_papers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "yale_fort_white_archive",
+    "title": "Fort White attack archival finding aid",
+    "url": "https://ead-pdfs.library.yale.edu/4.pdf",
+    "publisher": "Yale University Library",
+    "license": "linked_reference",
+    "source_type": "archival_finding_aid",
+    "accessed": "2026-07-16",
+    "source_family_id": "yale_library",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
