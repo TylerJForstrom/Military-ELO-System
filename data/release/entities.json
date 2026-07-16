@@ -6877,6 +6877,37 @@
     ]
   },
   {
+    "id": "datu_ali_buayan_resistance_1902_1905",
+    "name": "Datu Ali's Buayan resistance (1902-1905)",
+    "kind": "regime_bounded_buayan_force",
+    "start_year": 1902,
+    "end_year": 1905,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The force owing operational allegiance to Datu Ali during his bounded Buayan resistance, used here only for Kudarangan in 1904 and Malala in 1905. No rating is inherited by all Maguindanao people, the historical Maguindanao sultanate envelope, a generic religious population, the modern Bangsamoro polity, or any predecessor or successor regime.",
+    "source_ids": [
+      "wave8_moros_22d_infantry_datu_ali_archive",
+      "wave8_moros_anu_muslim_mindanao",
+      "wave8_moros_war_department_1904"
+    ]
+  },
+  {
+    "id": "bayang_pandapatan_defenders_1902",
+    "name": "Sultan of Bayang's Fort Pandapatan defenders (1902)",
+    "kind": "engagement_bounded_maranao_sultanate_force",
+    "start_year": 1902,
+    "end_year": 1902,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Sultan of Bayang and followers defending Fort Pandapatan on 2 May 1902. No rating is inherited by other Maranao communities, a generic religious population, the modern Bangsamoro polity, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_moros_barmm_lanao_sites",
+      "wave8_moros_us_army_campaign_summary"
+    ]
+  },
+  {
     "id": "jakob_morenga_resistance_force_1903_1907",
     "name": "Jakob Morenga's resistance force (1903–1907)",
     "kind": "multi_community_resistance_force",
@@ -6889,6 +6920,37 @@
     "source_ids": [
       "cambridge_hidden_histories_morenga",
       "brill_morenga_resistance_chapter"
+    ]
+  },
+  {
+    "id": "panglima_hassan_luuk_force_1903",
+    "name": "Panglima Hassan's Luuk resistance force (1903)",
+    "kind": "campaign_bounded_tausug_chiefdom_force",
+    "start_year": 1903,
+    "end_year": 1903,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Panglima Hassan's Luuk followers in the November 1903 Lake Siit operation. No rating is inherited by all Tausug people, the Sultanate of Sulu, a generic religious population, the modern Bangsamoro polity, or Hassan's later or earlier forces without a separate contract.",
+    "source_ids": [
+      "wave8_moros_orosa_sulu_1931",
+      "wave8_moros_war_department_1904"
+    ]
+  },
+  {
+    "id": "bacolod_grande_defenders_1903",
+    "name": "Sultan of Bacolod Grande's kota defenders (1903)",
+    "kind": "engagement_bounded_maranao_sultanate_force",
+    "start_year": 1903,
+    "end_year": 1903,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Sultan of Bacolod Grande and the force defending his Lake Lanao kota during 6-8 April 1903. No rating is inherited by Bacolod City, other Maranao communities, a generic religious population, the modern Bangsamoro polity, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_moros_army_counterinsurgency_history",
+      "wave8_moros_barmm_lanao_sites",
+      "wave8_moros_war_department_1904"
     ]
   },
   {
@@ -7081,6 +7143,22 @@
     ]
   },
   {
+    "id": "datu_amil_lati_bud_bagsak_defenders_1913",
+    "name": "Datu Amil's Lati Ward defenders at Bud Bagsak (1913)",
+    "kind": "engagement_bounded_tausug_resistance_force",
+    "start_year": 1913,
+    "end_year": 1913,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed Lati Ward resistance led by Datu Amil and associated datus at Bud Bagsak, not the noncombatant population on the mountain. No rating is inherited by all Tausug people, the Sultanate of Sulu, a generic religious population, the modern Bangsamoro polity, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_moros_anu_muslim_mindanao",
+      "wave8_moros_field_artillery_bud_bagsak",
+      "wave8_moros_ncca_bud_bagsak"
+    ]
+  },
+  {
     "id": "huerta_federal_army",
     "name": "Mexican Federal Army under Huerta",
     "kind": "state_force",
@@ -7092,6 +7170,21 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "mexico_constitutionalists"
+    ]
+  },
+  {
+    "id": "philippine_scouts_bud_bagsak_column_1913",
+    "name": "Philippine Scouts in the Bud Bagsak column (1913)",
+    "kind": "engagement_bounded_colonial_military_formation",
+    "start_year": 1913,
+    "end_year": 1913,
+    "region": "Maritime Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Philippine Scout companies documented in the Bud Bagsak assault, kept distinct from the United States state participant. No rating is inherited by the modern Philippines, all Filipinos, other Scout units, or any predecessor or successor formation.",
+    "source_ids": [
+      "wave8_moros_army_turning_victory",
+      "wave8_moros_field_artillery_bud_bagsak"
     ]
   },
   {

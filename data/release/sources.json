@@ -6979,6 +6979,156 @@
     ]
   },
   {
+    "id": "wave8_moros_22d_infantry_datu_ali_archive",
+    "title": "The Datu Ali Expedition",
+    "url": "https://www.1-22infantry.org/history3/ali.htm",
+    "publisher": "1st Battalion, 22d Infantry historical archive",
+    "license": "Citation and link only",
+    "source_type": "unit_history_with_transcribed_primary_records",
+    "accessed": "2026-07-16",
+    "source_family_id": "first_battalion_22d_infantry_datu_ali",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_anu_muslim_mindanao",
+    "title": "Muslim Mindanao under American rule: resistance and administration",
+    "url": "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/9e6e7637-7d7e-411e-b1c0-b762a546ff88/content",
+    "publisher": "Australian National University Open Research Repository",
+    "license": "Citation and link only",
+    "source_type": "scholarly_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "anu_muslim_mindanao_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_army_counterinsurgency_history",
+    "title": "U.S. Army Counterinsurgency and Contingency Operations Doctrine, 1860-1941",
+    "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D114-PURL-gpo54108/pdf/GOVPUB-D114-PURL-gpo54108.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "U.S. Government work",
+    "source_type": "official_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_counterinsurgency_doctrine_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_army_turning_victory",
+    "title": "Turning Victory Into Success: Military Operations After the Campaign",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/TurningVictoryIntoSuccess.pdf",
+    "publisher": "U.S. Army Combat Studies Institute / Army University Press",
+    "license": "U.S. Government work",
+    "source_type": "official_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_csi_turning_victory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_barmm_lanao_sites",
+    "title": "Site identification and validation in Lanao del Sur",
+    "url": "https://bcpch.bangsamoro.gov.ph/bcpch-conducts-site-identification-and-validation-process-in-the-province-of-lanao-del-sur/",
+    "publisher": "Bangsamoro Commission for the Preservation of Cultural Heritage",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "barmm_bcpch_lanao_validation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_field_artillery_bud_bagsak",
+    "title": "The Battle of Bud Bagsak",
+    "url": "https://tradocfcoeccafcoepfwprod.blob.core.usgovcloudapi.net/fires-bulletin-archive/1925/NOV_DEC_1925/NOV_DEC_1925_FULL_EDITION.pdf",
+    "publisher": "The Field Artillery Journal, November-December 1925",
+    "license": "U.S. Government work",
+    "source_type": "official_military_professional_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "field_artillery_journal_bud_bagsak_1925",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_ncca_bud_bagsak",
+    "title": "Bud Bagsak",
+    "url": "https://philippineculturaleducation.com.ph/bud-bagsak/",
+    "publisher": "National Commission for Culture and the Arts, Sagisag Kultura",
+    "license": "Citation and link only",
+    "source_type": "official_philippine_cultural_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "ncca_sagisag_kultura_bud_bagsak",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_orosa_sulu_1931",
+    "title": "Sulu Archipelago and Its People: The American Administration",
+    "url": "https://suluarchipelagoanditspeople.wordpress.com/chapter-3-the-american-administration/",
+    "publisher": "Sixto Y. Orosa; digitized 1931 historical monograph",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "orosa_sulu_archipelago_1931",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_us_army_campaign_summary",
+    "title": "Philippine Insurrection: Army Campaigns brief summary",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Philippine-Insurrection/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "U.S. Government work",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_campaign_summaries_philippines",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_moros_war_department_1904",
+    "title": "Annual Reports of the Secretary of War, 1904 Philippine volume",
+    "url": "https://books.google.com/books?id=1AsSAAAAYAAJ",
+    "publisher": "U.S. War Department, Government Printing Office",
+    "license": "U.S. Government work",
+    "source_type": "digitized_official_primary_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_war_department_1904_philippines",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_muslim_forces_barcelona_iberia_711",
     "title": "La conquista islámica de la península ibérica y la tergiversación del pasado",
     "url": "https://diposit.ub.edu/dspace/bitstream/2445/116723/1/JSA_TESIS.pdf",

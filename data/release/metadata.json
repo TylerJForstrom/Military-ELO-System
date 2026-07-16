@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 543,
-    "events": 5044,
-    "sources": 607,
-    "registry_polities": 1899
+    "entities": 549,
+    "events": 5050,
+    "sources": 617,
+    "registry_polities": 1905
   },
   "year_range": {
     "start": -1274,
@@ -104,6 +104,7 @@
     "accepted_wave8_dagestan_hced_events": 6,
     "accepted_wave8_irish_history_hced_events": 8,
     "accepted_wave8_muslim_forces_hced_events": 14,
+    "accepted_wave8_moros_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -3447,7 +3448,56 @@
     ],
     "wave8_muslim_forces_entities_added": 24,
     "wave8_muslim_forces_sources_added": 25,
-    "hced_label_pass_input_rows": 5964,
+    "wave8_moros_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 6,
+      "new_sources": 10,
+      "newly_rated_events": 6,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_moros_cohort_counts": {
+      "bud_bagsak_disarmament_resistance_1913": 1,
+      "datu_ali_buayan_resistance_1904_1905": 2,
+      "hassan_uprising_1903": 1,
+      "lanao_resistance_1902_1903": 2
+    },
+    "wave8_moros_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_moros_candidate_ids": [
+      "hced-Bacolod1903-1",
+      "hced-Bayan1902-1",
+      "hced-Bud Bagsak1913-1",
+      "hced-Kudarangan1904-1",
+      "hced-Lake Seit1903-1",
+      "hced-Malala1905-1"
+    ],
+    "wave8_moros_holds": [],
+    "wave8_moros_integration_dispositions": [],
+    "wave8_moros_outcome_overrides": [
+      {
+        "candidate_id": "hced-Kudarangan1904-1",
+        "raw_outcome": "Draw",
+        "reviewed_outcome": "united_states_victory",
+        "reason": "The staged row is explicitly incomplete, while the official report records bombardment, capture, captured ordnance, and destruction of Datu Ali's fort on 10-11 March 1904.",
+        "evidence_refs": [
+          "wave8_moros_anu_muslim_mindanao",
+          "wave8_moros_war_department_1904"
+        ]
+      }
+    ],
+    "wave8_moros_entities_added": 6,
+    "wave8_moros_sources_added": 10,
+    "hced_label_pass_input_rows": 5958,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -3460,7 +3510,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 640,
+      "reserved_candidate_contract": 646,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -3472,7 +3522,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2442,
+      "no_unique_time_valid_label_match": 2436,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

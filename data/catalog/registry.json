@@ -3567,6 +3567,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "datu_ali_buayan_resistance_1902_1905",
+      "name": "Datu Ali's Buayan resistance (1902-1905)",
+      "kind": "regime_bounded_buayan_force",
+      "start_year": 1902,
+      "end_year": 1905,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
+    },
+    {
+      "id": "datu_amil_lati_bud_bagsak_defenders_1913",
+      "name": "Datu Amil's Lati Ward defenders at Bud Bagsak (1913)",
+      "kind": "engagement_bounded_tausug_resistance_force",
+      "start_year": 1913,
+      "end_year": 1913,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
+    },
+    {
       "id": "clio_fr_capetian_k_2_1260_6a805479",
       "name": "Dauphiné",
       "kind": "polity",
@@ -13286,6 +13306,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "panglima_hassan_luuk_force_1903",
+      "name": "Panglima Hassan's Luuk resistance force (1903)",
+      "kind": "campaign_bounded_tausug_chiefdom_force",
+      "start_year": 1903,
+      "end_year": 1903,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
+    },
+    {
       "id": "clio_q1230569_1856_761c355d",
       "name": "Panthay Rebellion",
       "kind": "polity",
@@ -13590,6 +13620,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southeast Asia"
+    },
+    {
+      "id": "philippine_scouts_bud_bagsak_column_1913",
+      "name": "Philippine Scouts in the Bud Bagsak column (1913)",
+      "kind": "engagement_bounded_colonial_military_formation",
+      "start_year": 1913,
+      "end_year": 1913,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
     },
     {
       "id": "clio_q7185566_bce1150_a2bcfea9",
@@ -17577,6 +17617,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "bacolod_grande_defenders_1903",
+      "name": "Sultan of Bacolod Grande's kota defenders (1903)",
+      "kind": "engagement_bounded_maranao_sultanate_force",
+      "start_year": 1903,
+      "end_year": 1903,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
+    },
+    {
+      "id": "bayang_pandapatan_defenders_1902",
+      "name": "Sultan of Bayang's Fort Pandapatan defenders (1902)",
+      "kind": "engagement_bounded_maranao_sultanate_force",
+      "start_year": 1902,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Maritime Southeast Asia"
+    },
+    {
       "id": "clio_q1050326_1744_c2425b02",
       "name": "Sultan of Yogyakarta",
       "kind": "polity",
@@ -20364,11 +20424,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1899,
-    "rated_entities": 536,
-    "rated_events": 5044,
+    "registry_polities": 1905,
+    "rated_entities": 542,
+    "rated_events": 5050,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18350,
+    "unresolved_event_candidates": 18344,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20402,6 +20462,7 @@
     "candidate_keyed_wave8_dagestan_hced_events": 6,
     "candidate_keyed_wave8_irish_history_hced_events": 8,
     "candidate_keyed_wave8_muslim_forces_hced_events": 14,
+    "candidate_keyed_wave8_moros_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20412,21 +20473,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4780,
-      "candidate_keyed_reviewed_contracts": 470,
+      "hced_candidate_bindings": 4786,
+      "candidate_keyed_reviewed_contracts": 476,
       "geojson_points": 4710,
-      "modern_location_country_assertions": 4693,
-      "location_provenance_objects": 4742,
-      "point_fields_withheld_by_quarantine": 70,
+      "modern_location_country_assertions": 4699,
+      "location_provenance_objects": 4748,
+      "point_fields_withheld_by_quarantine": 76,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 118,
-      "point_quarantine_candidate_manifest_sha256": "c4251fd04892818ebc440d700b2dedc6a5dac3ee3a072f43165db73ed5abbd26",
+      "unique_events_with_any_quarantined_field": 124,
+      "point_quarantine_candidate_manifest_sha256": "a680d82c6e320c2480ea778c620d2d5946df26a63392938d73b262b88333bd5c",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "7cf517f6d8bb2367199e02457ffd6066eb79735e3182aaac2995387021f2addf",
+      "quarantine_policy_sha256": "8643935690af9753690bb337c40eaf6300210a99426cf670caadff142594ec1d",
       "assertion_status": {
-        "unreviewed_source_assertion": 4742
+        "unreviewed_source_assertion": 4748
       },
       "verified_location_assertions": {
         "availability": "not_available",
