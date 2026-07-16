@@ -79,6 +79,46 @@
     ]
   },
   {
+    "id": "army_cmh_victorio_campaign_1880",
+    "title": "The Victorio Campaign",
+    "url": "https://history.army.mil/portals/143/Images/Publications/catalog/70-111-1.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "US government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_center_military_history",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "army_history_cieneguilla_1854",
+    "title": "Army History 77: Cieneguilla battlefield review",
+    "url": "https://history.army.mil/Portals/143/Images/Publications/ArmyHistoryMag/pdf/20102019/AH77%28W%29.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "US government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_center_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "army_indian_wars_summary",
+    "title": "Army Campaigns: Indian Wars",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Indian-Wars/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "US government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_center_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "army_tet",
     "title": "Turning Point, 1967-1968",
     "url": "https://history.army.mil/Publications/Publications-Catalog/Turning-Point/",
@@ -89,6 +129,20 @@
     "source_family_id": "us_army_cmh_official_history_corpus",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "army_upress_big_dry_wash_1882",
+    "title": "The Battle of Big Dry Wash: Arizona's Last Great Apache Fight",
+    "url": "https://www.armyupress.army.mil/Portals/7/educational-services/staff-rides/3_Battle_of_Big_Dry_Washpdf.pdf",
+    "publisher": "U.S. Army University Press",
+    "license": "linked scholarly reference",
+    "source_type": "official_military_education",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_university_press",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -1193,6 +1247,19 @@
     ]
   },
   {
+    "id": "fr_shd_dahomey_1890_1894",
+    "title": "The conquest of Dahomey (1890–1894)",
+    "url": "https://www.servicehistorique.sga.defense.gouv.fr/en/thematic-topics/conquest-dahomey-1890-1894",
+    "publisher": "Service historique de la Défense",
+    "license": "linked_reference",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_defence_historical_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "france_assembly_bourbon_restoration_1815_1830",
     "title": "1814-1848: de la Restauration a la monarchie de Juillet - les faits",
     "url": "https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/juniors/histoire/1814-1848-de-la-restauration-a-la-monarchie-de-juillet/les-faits",
@@ -1706,6 +1773,33 @@
     ]
   },
   {
+    "id": "mnhs_birch_coulee_1862",
+    "title": "Mni Sota Wakpa: Birch Coulee",
+    "url": "https://www.mnhs.org/usdakotawar/river-stories",
+    "publisher": "Minnesota Historical Society",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "minnesota_historical_society",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "mnhs_us_dakota_war_1862",
+    "title": "During the War: The U.S.–Dakota War of 1862",
+    "url": "https://www3.mnhs.org/history/war/during-war",
+    "publisher": "Minnesota Historical Society",
+    "license": "linked_reference",
+    "source_type": "museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "minnesota_historical_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
@@ -1717,6 +1811,19 @@
     "source_type": "official_or_academic_reference",
     "title": "Medieval India",
     "url": "https://old.mu.ac.in/wp-content/uploads/2021/04/TYBA-Medieval-India.pdf"
+  },
+  {
+    "id": "nam_bsac_matabeleland_1893",
+    "title": "British South Africa Company's Medal 1890–97, Matabeleland 1893",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1958-11-97-9",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "id": "nam_crimean",
@@ -1743,6 +1850,19 @@
     "source_type": "official_or_academic_reference",
     "title": "The Jacobites",
     "url": "https://www.nam.ac.uk/explore/jacobites"
+  },
+  {
+    "id": "nam_lobengula_ndebele",
+    "title": "Lobengula's daughter, 1890 (c)",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=2016-10-4--4",
+    "publisher": "National Army Museum",
+    "license": "linked_reference",
+    "source_type": "museum_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
   },
   {
     "accessed": "2026-07-15",
@@ -1822,6 +1942,244 @@
     "source_family_id": "nhhc_official_history",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "nps_apache_pass_1862",
+    "title": "Battle of Apache Pass",
+    "url": "https://www.nps.gov/fobo/learn/historyculture/the-battle-of-apache-pass.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_apache_wars_cochise",
+    "title": "The Apache Wars Part I: Cochise",
+    "url": "https://www.nps.gov/chir/learn/historyculture/apache-wars-cochise.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_fort_bowie_handbook",
+    "title": "Fort Bowie National Historic Site historical handbook",
+    "url": "https://www.nps.gov/parkhistory/online_books/fobo/utley.pdf",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_grattan_1854",
+    "title": "War on the Oregon & California Trails",
+    "url": "https://www.nps.gov/articles/000/war-on-the-oregon-california-trails.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_great_sioux_war",
+    "title": "Fighting for the Black Hills: Indigenous Perspectives on the Great Sioux War",
+    "url": "https://home.nps.gov/articles/000/fighting-for-the-black-hills-understanding-indigenous-perspectives-on-the-great-sioux-war-of-1876-1877.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_inkpaduta",
+    "title": "Inkpaduta",
+    "url": "https://www.nps.gov/people/inkpaduta.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_red_cloud_war",
+    "title": "Settlement of the Upper Missouri",
+    "url": "https://www.nps.gov/jeff/planyourvisit/settlement-of-the-upper-missouri.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_tonto_apache_war",
+    "title": "Tonto Apache War",
+    "url": "https://www.nps.gov/tont/learn/historyculture/tonto-apache-war.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nps_whitestone_hill",
+    "title": "Whitestone Hill battle detail",
+    "url": "https://www.nps.gov/civilwar/search-battles-detail.htm?battleCode=nd004",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_boulcott_1846",
+    "title": "Eight killed in attack on Boulcott Farm",
+    "url": "https://nzhistory.govt.nz/page/eight-killed-attack-boulcott-farm",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_kororareka_1845",
+    "title": "The fall of Kororāreka",
+    "url": "https://nzhistory.govt.nz/the-flagstaff-is-cut-down-for-the-fourth-and-last-time-and-kororareka-is-invaded",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "outcome",
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_moutoa_1864",
+    "title": "Moutoa Gardens NZ Wars memorial",
+    "url": "https://nzhistory.govt.nz/memorial/moutoa-gardens-nz-wars-memorial",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_taranaki_second_war",
+    "title": "The second Taranaki war",
+    "url": "https://nzhistory.govt.nz/war/taranaki-wars/second-taranaki-war",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_te_kooti_war",
+    "title": "Te Kooti's war",
+    "url": "https://nzhistory.govt.nz/war/te-kootis-war",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_te_porere_1869",
+    "title": "Te Pōrere and retreat",
+    "url": "https://nzhistory.govt.nz/war/te-kootis-war/te-porere-and-retreat",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_titokowaru_1868",
+    "title": "Tītokowaru's war: Turuturumōkai to Moturoa",
+    "url": "https://nzhistory.govt.nz/page/turuturumokai-moturoa",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzhistory_waikato_opening_1863",
+    "title": "War in Waikato: the opening phase",
+    "url": "https://nzhistory.govt.nz/war/war-in-waikato/opening-phase",
+    "publisher": "Manatū Taonga — Ministry for Culture and Heritage",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nzhistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "nzpolice_te_kooti_campaign",
+    "title": "New Zealand Police history: 1860s",
+    "url": "https://www.police.govt.nz/about-us/history-museum/museum/exhibitions/he-matapihi-o-nehe-ra/1860s",
+    "publisher": "New Zealand Police",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "new_zealand_police_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -2274,6 +2632,19 @@
     "source_family_id": "us_state_office_historian_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "teara_te_arawa_wars",
+    "title": "Te Arawa: wars and resistance",
+    "url": "https://teara.govt.nz/en/te-arawa/print",
+    "publisher": "Te Ara — The Encyclopedia of New Zealand",
+    "license": "linked_reference",
+    "source_type": "national_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "te_ara",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {
@@ -3792,6 +4163,19 @@
     "source_family_id": "world_history_encyclopedia_editorial_reference",
     "evidence_roles": [
       "curated_reference_pending_claim_level_outcome_locator"
+    ]
+  },
+  {
+    "id": "zimluanda_colonialism_1893",
+    "title": "Colonialism: the 1893 Anglo-Ndebele War",
+    "url": "https://www.zimluanda.gov.zw/?page_id=23091",
+    "publisher": "City of Luanda, Zimbabwe",
+    "license": "linked_reference",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "zimbabwe_local_government_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {

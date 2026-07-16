@@ -1103,7 +1103,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             for event in self.events
             if str(event.get("status", "complete")).casefold() == "complete"
         ]
-        self.assertEqual(len(rated_events), 4_842)
+        self.assertEqual(len(rated_events), 4_888)
         self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
         self.assertEqual(
             sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
@@ -1116,7 +1116,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         families = self.report["outcome_source_families"]
         self.assertEqual(families["availability"], "partially_available")
-        self.assertEqual(families["events_with_explicit_family_data"], 4_802)
+        self.assertEqual(families["events_with_explicit_family_data"], 4_848)
         self.assertEqual(families["events_without_explicit_family_data"], 40)
         self.assertEqual(families["unmapped_event_count"], 40)
         self.assertEqual(
@@ -1124,23 +1124,26 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             {
                 "english_historical_review": 1,
                 "founders_online_jefferson_papers": 2,
-                "hced": 4_566,
+                "hced": 4_608,
                 "historic_england": 3,
                 "hungarian_military_history_institute": 2,
                 "iwbd": 153,
                 "iwd": 64,
+                "minnesota_historical_society": 1,
                 "national_park_service_creek_war": 1,
                 "national_park_service_revolution": 1,
                 "nigeria_national_library_civil_war": 1,
+                "nzhistory": 2,
                 "rcahmw_coflein": 1,
                 "ucdp_conflict_termination": 7,
+                "us_army_center_military_history": 1,
             },
         )
-        self.assertEqual(families["family_count_distribution"], {"1": 4_802})
-        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_802)
-        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_842)
+        self.assertEqual(families["family_count_distribution"], {"1": 4_848})
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_848)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_888)
         self.assertEqual(families["multiple_family_coverage"]["numerator"], 0)
-        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_802)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_848)
         self.assertEqual(set(families["per_event_counts"].values()), {1})
 
         mapped_ids = set(families["per_event_counts"])
@@ -1163,7 +1166,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
     def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(
         self,
     ) -> None:
-        self.assertEqual(len(self.sources), 289)
+        self.assertEqual(len(self.sources), 318)
         manifest_contract = sorted(
             (
                 source["id"],
@@ -1181,7 +1184,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             manifest_digest,
-            "254f2bbdf2eb0a052c365107308947e652732e2ef54b1cc6d625ca04d1bd0aa4",
+            "f3ac44ebcad5677285ca4fcfaeca9697b212a760abda6506fe23433048461f28",
         )
         self.assertTrue(
             all(
@@ -1196,15 +1199,15 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             {
                 "curated_reference_pending_claim_level_outcome_locator": 70,
                 "derived_project_continuity_convention": 1,
-                "identity_boundary_or_context_reference": 228,
+                "identity_boundary_or_context_reference": 257,
                 "identity_crosswalk": 1,
                 "identity_registry": 2,
-                "outcome": 14,
+                "outcome": 21,
                 "outcome_consistency_crosscheck": 47,
             },
         )
         self.assertEqual(
-            len({source["source_family_id"] for source in self.sources}), 176
+            len({source["source_family_id"] for source in self.sources}), 186
         )
         outcome_source_ids = {
             source["id"]
@@ -1214,9 +1217,16 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         self.assertEqual(
             outcome_source_ids,
             {
+                "army_cmh_victorio_campaign_1880",
+                "army_upress_big_dry_wash_1882",
                 "hced_dataset",
                 "iwd_dataset",
                 "iwbd_dataset",
+                "mnhs_birch_coulee_1862",
+                "nps_apache_pass_1862",
+                "nps_fort_bowie_handbook",
+                "nzhistory_boulcott_1846",
+                "nzhistory_kororareka_1845",
                 "ucdp_termination_conflict",
                 "wave7_founders_emuckfaw",
                 "wave7_hungary_military_museum",
@@ -1237,9 +1247,16 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 if source["id"] in outcome_source_ids
             },
             {
+                "army_cmh_victorio_campaign_1880": "us_army_center_military_history",
+                "army_upress_big_dry_wash_1882": "us_army_university_press",
                 "hced_dataset": "hced",
                 "iwd_dataset": "iwd",
                 "iwbd_dataset": "iwbd",
+                "mnhs_birch_coulee_1862": "minnesota_historical_society",
+                "nps_apache_pass_1862": "us_national_park_service",
+                "nps_fort_bowie_handbook": "us_national_park_service",
+                "nzhistory_boulcott_1846": "nzhistory",
+                "nzhistory_kororareka_1845": "nzhistory",
                 "ucdp_termination_conflict": "ucdp_conflict_termination",
                 "wave7_founders_emuckfaw": "founders_online_jefferson_papers",
                 "wave7_hungary_military_museum": "hungarian_military_history_institute",
@@ -1288,8 +1305,8 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         dashboard_events = self.results["events"]
         dashboard_by_id = {event["id"]: event for event in dashboard_events}
 
-        self.assertEqual(len(release_by_id), 4_842)
-        self.assertEqual(len(dashboard_by_id), 4_842)
+        self.assertEqual(len(release_by_id), 4_888)
+        self.assertEqual(len(dashboard_by_id), 4_888)
         self.assertEqual(set(dashboard_by_id), set(release_by_id))
 
         mapped = 0
@@ -1324,7 +1341,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 self.assertEqual(dashboard_event["sources"], expected_sources)
                 mapped += "outcome_source_ids" in dashboard_event
 
-        self.assertEqual(mapped, 4_802)
+        self.assertEqual(mapped, 4_848)
         self.assertEqual(len(dashboard_events) - mapped, 40)
 
     def test_registry_coverage_is_an_observed_ratio_only(self) -> None:

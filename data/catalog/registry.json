@@ -1656,6 +1656,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "british_south_africa_company_forces_1893",
+      "name": "British South Africa Company forces (1893 Matabele campaign)",
+      "kind": "chartered_company_force",
+      "start_year": 1893,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
+    },
+    {
+      "id": "brule_lakota_grattan_camp_1854",
+      "name": "Brulé Lakota camp in the Grattan fight",
+      "kind": "indigenous_camp_force",
+      "start_year": 1854,
+      "end_year": 1854,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_gb_brythonic_k_439_68aa530b",
       "name": "Brythons",
       "kind": "polity",
@@ -2229,6 +2249,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "cibecue_apache_resistance_1881",
+      "name": "Cibecue Apache resistance force (1881)",
+      "kind": "indigenous_coalition",
+      "start_year": 1881,
+      "end_year": 1881,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q321371_bce404_6c9ad1b4",
       "name": "Cimmerian Bosporus",
       "kind": "polity",
@@ -2271,6 +2301,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "cochise_chiricahua_force_1869",
+      "name": "Cochise's Chiricahua force (1869)",
+      "kind": "indigenous_war_band",
+      "start_year": 1869,
+      "end_year": 1869,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "cochise_mangas_chiricahua_coalition_1862",
+      "name": "Cochise–Mangas Chiricahua coalition at Apache Pass",
+      "kind": "indigenous_coalition",
+      "start_year": 1862,
+      "end_year": 1862,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q183150_bce301_1105387e",
@@ -3042,6 +3092,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "dakota_lakota_resistance_1863",
+      "name": "Dakota–Lakota resistance forces (1863–1864)",
+      "kind": "indigenous_coalition",
+      "start_year": 1863,
+      "end_year": 1864,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_gb_anglo_saxon_2_878_2c940fa9",
@@ -6162,6 +6222,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "heke_kawiti_ngapuhi_coalition_1845",
+      "name": "Heke–Kawiti Ngāpuhi coalition",
+      "kind": "indigenous_coalition",
+      "start_year": 1845,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "hellenic_coalition_artemisium_480_bce",
       "name": "Hellenic Coalition Fleet at Artemisium",
       "kind": "military_coalition",
@@ -8151,6 +8221,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "dahomey_kingdom_behanzin",
+      "name": "Kingdom of Dahomey under Béhanzin",
+      "kind": "kingdom",
+      "start_year": 1889,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Africa"
+    },
+    {
       "id": "clio_cn_dali_k_947_b52cae1f",
       "name": "Kingdom of Dali",
       "kind": "kingdom",
@@ -9533,6 +9613,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingitanga_waikato_forces_1863",
+      "name": "Kīngitanga forces in the Waikato War",
+      "kind": "indigenous_coalition",
+      "start_year": 1863,
+      "end_year": 1864,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "clio_iq_lakhmid_k_270_23e63deb",
       "name": "Lakhmid Kingdom",
       "kind": "kingdom",
@@ -9542,6 +9632,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "lakota_northern_cheyenne_coalition_1876",
+      "name": "Lakota–Northern Cheyenne coalition (1876–1877)",
+      "kind": "indigenous_coalition",
+      "start_year": 1876,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q1059707_1600_6529c573",
@@ -10513,6 +10613,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "mdewakanton_wahpekute_resistance_1862",
+      "name": "Mdewakanton–Wahpekute resistance forces (1862)",
+      "kind": "indigenous_coalition",
+      "start_year": 1862,
+      "end_year": 1862,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_ir_median_emp_bce615_f93730ff",
       "name": "Median Kingdom",
       "kind": "kingdom",
@@ -11082,6 +11192,16 @@
       "region": "Southeast Asia"
     },
     {
+      "id": "natiotish_apache_band_1882",
+      "name": "Natiotish's Apache band (1882)",
+      "kind": "indigenous_war_band",
+      "start_year": 1882,
+      "end_year": 1882,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q2614237_1727_d8d537c1",
       "name": "Nawab of Awadh",
       "kind": "polity",
@@ -11144,6 +11264,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central Europe"
+    },
+    {
+      "id": "ndebele_kingdom_lobengula",
+      "name": "Ndebele Kingdom under Lobengula",
+      "kind": "kingdom",
+      "start_year": 1870,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Africa"
     },
     {
       "id": "clio_q213893_1775_4cd6c067",
@@ -11320,6 +11450,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "new_zealand_colonial_forces_1867",
+      "name": "New Zealand colonial forces (1867–1872)",
+      "kind": "colonial_state_force",
+      "start_year": 1867,
+      "end_year": 1872,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "nguyen_dai_nam",
       "name": "Nguyen Dai Nam",
       "kind": "dynastic_state",
@@ -11361,6 +11501,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ngati_porou_government_contingent_1868",
+      "name": "Ngāti Porou government contingent (1868)",
+      "kind": "indigenous_allied_force",
+      "start_year": 1868,
+      "end_year": 1869,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
     },
     {
       "id": "clio_q181254_1206_5dc859d8",
@@ -11828,6 +11978,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "pai_marire_forces_1864",
+      "name": "Pai Mārire forces (1864–1865)",
+      "kind": "religious_movement_force",
+      "start_year": 1864,
+      "end_year": 1865,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
     },
     {
       "id": "clio_in_pala_emp_750_cb8e98cb",
@@ -13106,6 +13266,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "putiki_kupapa_1864",
+      "name": "Pūtiki kūpapa at Moutoa",
+      "kind": "indigenous_allied_force",
+      "start_year": 1864,
+      "end_year": 1864,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "qajar_iran",
       "name": "Qajar Iran",
       "kind": "dynastic_state",
@@ -13341,6 +13511,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "red_cloud_plains_coalition_1866",
+      "name": "Red Cloud's Lakota–Cheyenne–Arapaho coalition",
+      "kind": "indigenous_coalition",
+      "start_year": 1866,
+      "end_year": 1868,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "red_stick_creek_forces",
@@ -16696,6 +16876,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "taranaki_resistance_forces_1863",
+      "name": "Taranaki resistance forces (1863–1864)",
+      "kind": "indigenous_coalition",
+      "start_year": 1863,
+      "end_year": 1864,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "clio_q2247225_367_5ab941a5",
       "name": "Tarumanagara",
       "kind": "polity",
@@ -16705,6 +16895,36 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "te_arawa_flying_column_1870",
+      "name": "Te Arawa Flying Column",
+      "kind": "indigenous_allied_force",
+      "start_year": 1870,
+      "end_year": 1872,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
+      "id": "te_kooti_whakarau_1868",
+      "name": "Te Kooti's whakarau",
+      "kind": "guerrilla_force",
+      "start_year": 1868,
+      "end_year": 1872,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
+      "id": "te_mamaku_ngati_haua_force_1846",
+      "name": "Te Mamaku's Ngāti Hāua-te-rangi force",
+      "kind": "war_party",
+      "start_year": 1846,
+      "end_year": 1846,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
     },
     {
       "id": "clio_q1356151_bce750_e4918023",
@@ -16738,6 +16958,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "terrazas_tarahumara_auxiliaries_1880",
+      "name": "Terrazas's Tarahumara auxiliaries at Tres Castillos",
+      "kind": "indigenous_auxiliary_force",
+      "start_year": 1880,
+      "end_year": 1880,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_de_empire_2_1236_22361181",
@@ -17164,6 +17394,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "titokowaru_ngati_ruanui_forces_1868",
+      "name": "Tītokowaru's Ngāti Ruanui-led forces",
+      "kind": "indigenous_resistance_force",
+      "start_year": 1868,
+      "end_year": 1869,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
+    },
+    {
       "id": "clio_q598570_1992_4ea5154c",
       "name": "Ukraine",
       "kind": "polity",
@@ -17495,6 +17735,16 @@
       "region": "Europe and French colonial territories"
     },
     {
+      "id": "victorio_mimbres_apache_band_1879",
+      "name": "Victorio's Mimbres Apache band (1879–1880)",
+      "kind": "indigenous_war_band",
+      "start_year": 1879,
+      "end_year": 1880,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q9326_1709_6fad0a09",
       "name": "Vientiane",
       "kind": "polity",
@@ -17816,6 +18066,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "whanganui_kupapa_1869",
+      "name": "Whanganui kūpapa under Te Keepa",
+      "kind": "indigenous_allied_force",
+      "start_year": 1869,
+      "end_year": 1870,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aotearoa New Zealand"
     },
     {
       "id": "clio_q2553863_1363_974b2d4a",
@@ -18384,11 +18644,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1701,
-    "rated_entities": 343,
-    "rated_events": 4842,
+    "registry_polities": 1727,
+    "rated_entities": 369,
+    "rated_events": 4888,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18552,
+    "unresolved_event_candidates": 18506,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -18399,6 +18659,9 @@
     "candidate_keyed_wave7_central_pass2_hced_events": 31,
     "candidate_keyed_wave7_global_hced_events": 37,
     "candidate_keyed_wave7_west_hced_events": 29,
+    "candidate_keyed_wave8_african_states_hced_events": 9,
+    "candidate_keyed_wave8_new_zealand_hced_events": 15,
+    "candidate_keyed_wave8_north_america_hced_events": 22,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -18409,11 +18672,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4578,
-      "candidate_keyed_reviewed_contracts": 268,
-      "geojson_points": 4541,
-      "modern_location_country_assertions": 4498,
-      "location_provenance_objects": 4545,
+      "hced_candidate_bindings": 4624,
+      "candidate_keyed_reviewed_contracts": 314,
+      "geojson_points": 4587,
+      "modern_location_country_assertions": 4544,
+      "location_provenance_objects": 4591,
       "point_fields_withheld_by_quarantine": 37,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 79,
       "source_blank_country_fields": 1,
@@ -18423,7 +18686,7 @@
       "country_quarantine_candidate_manifest_sha256": "688a909a42b1f408d3f9185cec30266f4a13ec89d8d5e655b0e507cc9bbb3bf4",
       "quarantine_policy_sha256": "c03b4cb6f5381bf9ac8c9295cd65536539068fe28e6cd29b896bc120a5cb4367",
       "assertion_status": {
-        "unreviewed_source_assertion": 4545
+        "unreviewed_source_assertion": 4591
       },
       "verified_location_assertions": {
         "availability": "not_available",

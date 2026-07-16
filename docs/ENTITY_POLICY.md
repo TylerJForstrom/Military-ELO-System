@@ -394,16 +394,17 @@ French Third Republic, Spain, Poland, Greece, and the other opposing identities
 reuse their established canonical records.
 
 After canonical consolidation, the reviewed Wave 7 identity splits, and the
-current crisp-boundary tranche, the measured registry contains 1,701
-identities. The release entity file contains 345 records, while 343 distinct
-IDs actually participate in rated events. The unrated Portuguese union and
+crisp-boundary tranche, the pre-Wave 8 registry contained 1,701 identities.
+Wave 8 adds 26 alias-free identity records, producing the current 1,727-row
+registry. The release entity file contains 371 records, while 369 distinct IDs
+actually participate in rated events. The unrated Portuguese union and
 the superseded Free Orange State source envelope explain the two-record
 difference; the Republic of Texas now participates through the reviewed Mexico
 code-continuity path.
 
 ### Crisp state-identity tranche
 
-The current tranche reuses established IDs wherever a polity already has rated
+The post-Wave 7 tranche reuses established IDs wherever a polity already has rated
 evidence, rather than opening parallel Elo series. Its exact identity and
 generic-policy boundaries are:
 
@@ -444,6 +445,10 @@ Second Bulgarian Empire remain published with `identity_status: superseded`
 and an exact `superseded_by` target. The two reused Bulgarian/Seljuk release
 identities preserve their Cliopatria provenance and aliases. Supersession is
 therefore explicit and reversible; no registry ID silently disappears.
+
+### Wave 8 candidate-keyed identities and holds
+
+Wave 8 admits 46 HCED rows through exact candidate contracts: 9 in the African-states lane, 15 in New Zealand, and 22 in North America. Each contract pins the complete queue row, event, time-bounded participants, and evidence set; the 26 added identities are alias-free, and no umbrella ethnonym passes identity or rating to a particular band, coalition, or successor. Four exact events use documented outcome overrides with their direct sources named. Sixteen massacre/noncompetitive or still-unresolved actor, coalition, and outcome records remain explicit fingerprinted holds rather than becoming inferred wins, losses, or draws.
 
 ## Non-state autonomous military actors (second reviewer pending)
 
@@ -501,25 +506,29 @@ counted under a curated-exclusion rejection counter in the owning pipeline,
 and never merged, rewritten, or fuzzy-matched. The immutable source assertions
 remain in `data/raw`; every exact ID and reason is emitted in release metadata.
 
-- **HCED coded pass (62):** the 39 Wave 4 exclusions plus 23 Wave 5
-  candidate-ID exclusions found during row-level review of the Portugal,
-  Tsardom, and boundary cohorts. These cover wrong or omitted principal actors,
-  reversed outcomes, duplicates, malformed campaign envelopes, and one
-  campaign crossing the September 1822 Portuguese identity reset.
-- **HCED label pass (53):** the original eight PAVN/IWBD/crosswalk
-  adjudications, 38 historical-review exclusions, and seven Wave 4 candidates
-  retained in staging after focused review.
-- **IWBD (10):** the wrong-outcome Duppel/Dybbol 1849 fallback plus five
-  cross-source spelling-twin duplicates of HCED battles (Tembien 1 and 2 1936,
-  Liebenau 1866, Dijon 3 1871, Velestino 1 1897), and four Wave 5 rows: Riga 2
-  assigns the Bermondtian action to the Russian SFSR; Akbas names Greece instead
-  of the French guards; Summer Offensive is a campaign umbrella; and Gediz has
-  the wrong result.
-- **IWD parents (3):** Germany-Denmark 1848 (the source asserts a Prussian win,
-  but Denmark won the First Schleswig War), Italian Unification 1859 (fought by
-  the Kingdom of Sardinia), and Hungarian-Allies 1919 (fought principally by
-  the Hungarian Soviet Republic). Parent 1 now promotes only through its exact
-  reviewed Bourbon-Restoration contract.
+- **HCED coded pass (172 policy entries; 164 current rejections):** exact
+  candidate-ID exclusions cover wrong or omitted principal actors, reversed
+  outcomes, duplicates, malformed campaign envelopes, unsafe umbrella
+  identities, and records crossing declared identity resets. The foundational
+  62 comprise 39 Wave 4 exclusions plus 23 Wave 5 Portugal, Tsardom, and
+  boundary-cohort findings; later reviewed inventories extend that set. All 172
+  entries are published in metadata, while 164 reach this rejection counter
+  under the current mutually exclusive gate order.
+- **HCED label pass (71):** exact candidate-ID exclusions cover the original
+  PAVN/IWBD/crosswalk adjudications, historical-review exclusions, and later
+  candidate-keyed review findings. The original 53 comprised eight early
+  adjudications, 38 historical-review exclusions, and seven retained Wave 4
+  candidates. All 71 reach the current label-pass counter.
+- **IWBD (213):** exact exclusions include wrong outcomes, cross-source
+  spelling-twin duplicates, campaign umbrellas, unresolved identity-boundary
+  proposals, and rows reserved by later reviewed inventories. The foundational
+  ten include Duppel/Dybbol 1849, five HCED spelling-twin duplicates, and the
+  four Wave 5 Riga 2, Akbas, Summer Offensive, and Gediz findings.
+- **IWD parents (19):** exact parent exclusions include wrong state actors,
+  indefensible source outcomes, incomplete coalitions, and unresolved reviewed
+  identity boundaries. The foundational three were Germany-Denmark 1848,
+  Italian Unification 1859, and Hungarian-Allies 1919; parent 1 now promotes
+  only through its exact reviewed Bourbon-Restoration contract.
 - **UCDP (1):** the 1974 Paracel Islands episode, documented above.
 
 Historical-review dispositions are explicit:

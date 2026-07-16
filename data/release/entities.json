@@ -3624,6 +3624,34 @@
     ]
   },
   {
+    "id": "heke_kawiti_ngapuhi_coalition_1845",
+    "name": "Heke–Kawiti Ngāpuhi coalition",
+    "kind": "indigenous_coalition",
+    "start_year": 1845,
+    "end_year": 1846,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Northern War coalition under Hōne Heke and Te Ruki Kawiti. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_kororareka_1845"
+    ]
+  },
+  {
+    "id": "te_mamaku_ngati_haua_force_1846",
+    "name": "Te Mamaku's Ngāti Hāua-te-rangi force",
+    "kind": "war_party",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Boulcott's Farm attacking force led by Te Mamaku. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_boulcott_1846"
+    ]
+  },
+  {
     "id": "second_french_republic",
     "name": "French Second Republic",
     "kind": "republic",
@@ -3732,6 +3760,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "brule_lakota_grattan_camp_1854",
+    "name": "Brulé Lakota camp in the Grattan fight",
+    "kind": "indigenous_camp_force",
+    "start_year": 1854,
+    "end_year": 1854,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact Brulé Lakota camp attacked by Lieutenant Grattan's detachment. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_grattan_1854"
     ]
   },
   {
@@ -3848,6 +3890,79 @@
     ]
   },
   {
+    "id": "cochise_mangas_chiricahua_coalition_1862",
+    "name": "Cochise–Mangas Chiricahua coalition at Apache Pass",
+    "kind": "indigenous_coalition",
+    "start_year": 1862,
+    "end_year": 1862,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Chokonen, Chihenne, and Bedonkohe force led by Cochise and Mangas Coloradas at Apache Pass. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_apache_pass_1862",
+      "nps_apache_wars_cochise"
+    ]
+  },
+  {
+    "id": "mdewakanton_wahpekute_resistance_1862",
+    "name": "Mdewakanton–Wahpekute resistance forces (1862)",
+    "kind": "indigenous_coalition",
+    "start_year": 1862,
+    "end_year": 1862,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Dakota forces, primarily Mdewakanton and Wahpekute, in the U.S.–Dakota War. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "mnhs_us_dakota_war_1862",
+      "mnhs_birch_coulee_1862"
+    ]
+  },
+  {
+    "id": "dakota_lakota_resistance_1863",
+    "name": "Dakota–Lakota resistance forces (1863–1864)",
+    "kind": "indigenous_coalition",
+    "start_year": 1863,
+    "end_year": 1864,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded forces encountered by the Sibley and Sully expeditions; this does not imply one permanent nation or command. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_inkpaduta",
+      "nps_whitestone_hill"
+    ]
+  },
+  {
+    "id": "kingitanga_waikato_forces_1863",
+    "name": "Kīngitanga forces in the Waikato War",
+    "kind": "indigenous_coalition",
+    "start_year": 1863,
+    "end_year": 1864,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Māori King movement forces resisting the Waikato invasion. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_waikato_opening_1863"
+    ]
+  },
+  {
+    "id": "taranaki_resistance_forces_1863",
+    "name": "Taranaki resistance forces (1863–1864)",
+    "kind": "indigenous_coalition",
+    "start_year": 1863,
+    "end_year": 1864,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Te Ātiawa, Taranaki, Ngāti Ruanui, Ngāti Rauru, and Whanganui resistance. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_taranaki_second_war"
+    ]
+  },
+  {
     "id": "united_states_colombia",
     "name": "United States of Colombia",
     "kind": "federal_republic",
@@ -3860,6 +3975,49 @@
     "source_ids": [
       "colombia_constitution_1863",
       "state_department_colombia_history"
+    ]
+  },
+  {
+    "id": "pai_marire_forces_1864",
+    "name": "Pai Mārire forces (1864–1865)",
+    "kind": "religious_movement_force",
+    "start_year": 1864,
+    "end_year": 1865,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Pai Mārire combatants; later Tītokowaru and Te Kooti forces remain separate. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_taranaki_second_war",
+      "nzhistory_moutoa_1864"
+    ]
+  },
+  {
+    "id": "putiki_kupapa_1864",
+    "name": "Pūtiki kūpapa at Moutoa",
+    "kind": "indigenous_allied_force",
+    "start_year": 1864,
+    "end_year": 1864,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact lower-Whanganui government-aligned force at Moutoa. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_moutoa_1864"
+    ]
+  },
+  {
+    "id": "red_cloud_plains_coalition_1866",
+    "name": "Red Cloud's Lakota–Cheyenne–Arapaho coalition",
+    "kind": "indigenous_coalition",
+    "start_year": 1866,
+    "end_year": 1868,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded coalition opposing the Bozeman Trail forts during Red Cloud's War. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_red_cloud_war"
     ]
   },
   {
@@ -3882,6 +4040,22 @@
       "cliopatria_polities",
       "britannica_austria_hungary",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "new_zealand_colonial_forces_1867",
+    "name": "New Zealand colonial forces (1867–1872)",
+    "kind": "colonial_state_force",
+    "start_year": 1867,
+    "end_year": 1872,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Armed Constabulary and colonial formations after imperial troop withdrawal. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_titokowaru_1868",
+      "nzhistory_te_kooti_war",
+      "nzpolice_te_kooti_campaign"
     ]
   },
   {
@@ -3936,6 +4110,77 @@
     ]
   },
   {
+    "id": "ngati_porou_government_contingent_1868",
+    "name": "Ngāti Porou government contingent (1868)",
+    "kind": "indigenous_allied_force",
+    "start_year": 1868,
+    "end_year": 1869,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Ngāti Porou force operating against Te Kooti. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_te_kooti_war",
+      "nzpolice_te_kooti_campaign"
+    ]
+  },
+  {
+    "id": "te_kooti_whakarau_1868",
+    "name": "Te Kooti's whakarau",
+    "kind": "guerrilla_force",
+    "start_year": 1868,
+    "end_year": 1872,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded followers and allied fighting force commanded by Te Kooti. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_te_kooti_war"
+    ]
+  },
+  {
+    "id": "titokowaru_ngati_ruanui_forces_1868",
+    "name": "Tītokowaru's Ngāti Ruanui-led forces",
+    "kind": "indigenous_resistance_force",
+    "start_year": 1868,
+    "end_year": 1869,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded South Taranaki command under Riwha Tītokowaru. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_titokowaru_1868"
+    ]
+  },
+  {
+    "id": "cochise_chiricahua_force_1869",
+    "name": "Cochise's Chiricahua force (1869)",
+    "kind": "indigenous_war_band",
+    "start_year": 1869,
+    "end_year": 1869,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-year identity for Cochise's Chiricahua resistance during the 1861–1872 war; it is not a generic Apache polity. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_apache_wars_cochise"
+    ]
+  },
+  {
+    "id": "whanganui_kupapa_1869",
+    "name": "Whanganui kūpapa under Te Keepa",
+    "kind": "indigenous_allied_force",
+    "start_year": 1869,
+    "end_year": 1870,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Whanganui contingent serving under Te Keepa Te Rangihiwinui. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "nzhistory_te_porere_1869"
+    ]
+  },
+  {
     "id": "french_third_republic",
     "name": "French Third Republic",
     "kind": "republic",
@@ -3953,6 +4198,35 @@
       "cliopatria_polities",
       "britannica_third_republic",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "ndebele_kingdom_lobengula",
+    "name": "Ndebele Kingdom under Lobengula",
+    "kind": "kingdom",
+    "start_year": 1870,
+    "end_year": 1894,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Ndebele kingdom under its second and last king, Lobengula, through the 1893–1894 conquest. No rating is inherited by later Ndebele resistance movements or modern namesakes.",
+    "source_ids": [
+      "nam_lobengula_ndebele",
+      "zimluanda_colonialism_1893"
+    ]
+  },
+  {
+    "id": "te_arawa_flying_column_1870",
+    "name": "Te Arawa Flying Column",
+    "kind": "indigenous_allied_force",
+    "start_year": 1870,
+    "end_year": 1872,
+    "region": "Aotearoa New Zealand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded Te Arawa force pursuing Te Kooti. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "source_ids": [
+      "teara_te_arawa_wars"
     ]
   },
   {
@@ -3988,6 +4262,21 @@
     ]
   },
   {
+    "id": "lakota_northern_cheyenne_coalition_1876",
+    "name": "Lakota–Northern Cheyenne coalition (1876–1877)",
+    "kind": "indigenous_coalition",
+    "start_year": 1876,
+    "end_year": 1877,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded non-reservation coalition in the Great Sioux War. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "army_indian_wars_summary",
+      "nps_great_sioux_war"
+    ]
+  },
+  {
     "id": "principality_bulgaria",
     "name": "Principality of Bulgaria",
     "kind": "principality",
@@ -4000,6 +4289,48 @@
     "source_ids": [
       "britannica_bulgaria_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "victorio_mimbres_apache_band_1879",
+    "name": "Victorio's Mimbres Apache band (1879–1880)",
+    "kind": "indigenous_war_band",
+    "start_year": 1879,
+    "end_year": 1880,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded Mimbres/Chihenne force led by Victorio; it does not inherit ratings from other Chiricahua or Apache groups. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "army_cmh_victorio_campaign_1880"
+    ]
+  },
+  {
+    "id": "terrazas_tarahumara_auxiliaries_1880",
+    "name": "Terrazas's Tarahumara auxiliaries at Tres Castillos",
+    "kind": "indigenous_auxiliary_force",
+    "start_year": 1880,
+    "end_year": 1880,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded Tarahumara component of Colonel Joaquin Terrazas's Mexican column at Tres Castillos. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "army_cmh_victorio_campaign_1880"
+    ]
+  },
+  {
+    "id": "cibecue_apache_resistance_1881",
+    "name": "Cibecue Apache resistance force (1881)",
+    "kind": "indigenous_coalition",
+    "start_year": 1881,
+    "end_year": 1881,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded warriors and mutinous Apache scouts who fought Carr's command at Cibecue Creek. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "nps_fort_bowie_handbook"
     ]
   },
   {
@@ -4056,6 +4387,20 @@
     ]
   },
   {
+    "id": "natiotish_apache_band_1882",
+    "name": "Natiotish's Apache band (1882)",
+    "kind": "indigenous_war_band",
+    "start_year": 1882,
+    "end_year": 1882,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Exact band led by Natiotish at Big Dry Wash; the source records uncertainty between White Mountain and Tonto affiliation, so neither broader identity is asserted. No rating is inherited by an umbrella ethnonym or a later tribal identity.",
+    "source_ids": [
+      "army_upress_big_dry_wash_1882"
+    ]
+  },
+  {
     "id": "abushiri_revolt_forces",
     "name": "Abushiri Revolt Forces",
     "kind": "rebel_forces",
@@ -4067,6 +4412,35 @@
     "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_p2_abushiri_cambridge"
+    ]
+  },
+  {
+    "id": "dahomey_kingdom_behanzin",
+    "name": "Kingdom of Dahomey under Béhanzin",
+    "kind": "kingdom",
+    "start_year": 1889,
+    "end_year": 1894,
+    "region": "West Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Béhanzin's independent reign and armed resistance to French conquest, bounded 1889–1894. No rating is inherited from earlier Dahomean reigns or the later French-controlled kingdom and colony.",
+    "source_ids": [
+      "fr_shd_dahomey_1890_1894"
+    ]
+  },
+  {
+    "id": "british_south_africa_company_forces_1893",
+    "name": "British South Africa Company forces (1893 Matabele campaign)",
+    "kind": "chartered_company_force",
+    "start_year": 1893,
+    "end_year": 1894,
+    "region": "Southern Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Candidate-keyed identity for the company police and settler columns in the First Matabele War. The HCED label 'United Kingdom' is not treated as proof that the British state army was the tactical belligerent. No rating is inherited by Britain, Rhodesia, or later company forces.",
+    "source_ids": [
+      "nam_bsac_matabeleland_1893",
+      "zimluanda_colonialism_1893"
     ]
   },
   {

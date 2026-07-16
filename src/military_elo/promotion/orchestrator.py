@@ -211,6 +211,43 @@ from .wave7_west_data import (
     WAVE7_WEST_PROTECTED_RATED,
     WAVE7_WEST_SOURCES,
 )
+from .wave8_african_states import (
+    WAVE8_AFRICAN_STATES_CONTRACT_IDS,
+    WAVE8_AFRICAN_STATES_ENTITIES,
+    WAVE8_AFRICAN_STATES_RESERVED_IDS,
+    WAVE8_AFRICAN_STATES_SOURCES,
+    install_wave8_african_states_entities,
+    install_wave8_african_states_sources,
+    promote_wave8_african_states_contracts,
+    validate_wave8_african_states_queue_contracts,
+    wave8_african_states_cohort_counts,
+)
+from .wave8_new_zealand import (
+    WAVE8_NEW_ZEALAND_CONTRACT_IDS,
+    WAVE8_NEW_ZEALAND_ENTITIES,
+    WAVE8_NEW_ZEALAND_HOLD_IDS,
+    WAVE8_NEW_ZEALAND_HOLDS,
+    WAVE8_NEW_ZEALAND_RESERVED_IDS,
+    WAVE8_NEW_ZEALAND_SOURCES,
+    install_wave8_new_zealand_entities,
+    install_wave8_new_zealand_sources,
+    promote_wave8_new_zealand_contracts,
+    validate_wave8_new_zealand_queue_contracts,
+    wave8_new_zealand_cohort_counts,
+)
+from .wave8_north_america import (
+    WAVE8_NORTH_AMERICA_CONTRACT_IDS,
+    WAVE8_NORTH_AMERICA_ENTITIES,
+    WAVE8_NORTH_AMERICA_HOLD_IDS,
+    WAVE8_NORTH_AMERICA_HOLDS,
+    WAVE8_NORTH_AMERICA_RESERVED_IDS,
+    WAVE8_NORTH_AMERICA_SOURCES,
+    install_wave8_north_america_entities,
+    install_wave8_north_america_sources,
+    promote_wave8_north_america_contracts,
+    validate_wave8_north_america_queue_contracts,
+    wave8_north_america_cohort_counts,
+)
 
 
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
@@ -405,7 +442,9 @@ def _validate_hced_location_release(
         candidate_ids.append(candidate_id)
         if candidate_id in reviewed_candidate_ids:
             reviewed_event_candidate_ids.add(candidate_id)
-            if not event_id.startswith(("hced_wave6_", "hced_wave7_")):
+            if not event_id.startswith(
+                ("hced_wave6_", "hced_wave7_", "hced_wave8_")
+            ):
                 raise ValueError(
                     f"Reviewed HCED candidate {candidate_id} has a non-lane event ID"
                 )
@@ -717,6 +756,15 @@ def build_expanded_release(
     )
     wave7_global_queue_validation = validate_wave7_global_queue_contracts(hced)
     wave7_west_queue_validation = validate_wave7_west_queue_contracts(hced)
+    wave8_african_states_queue_validation = (
+        validate_wave8_african_states_queue_contracts(hced)
+    )
+    wave8_new_zealand_queue_validation = validate_wave8_new_zealand_queue_contracts(
+        hced
+    )
+    wave8_north_america_queue_validation = (
+        validate_wave8_north_america_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -843,6 +891,9 @@ def build_expanded_release(
             )
             | (WAVE7_GLOBAL_RESERVED_IDS - WAVE7_GLOBAL_MIGRATION_CANDIDATE_IDS)
             | (WAVE7_WEST_HCED_RESERVED_IDS - WAVE7_WEST_PROTECTED_RATED_IDS)
+            | WAVE8_AFRICAN_STATES_RESERVED_IDS
+            | WAVE8_NEW_ZEALAND_RESERVED_IDS
+            | WAVE8_NORTH_AMERICA_RESERVED_IDS
         ),
     )
     source_events: list[dict[str, Any]] = hced_crosswalk_pass["events"]
@@ -1039,6 +1090,9 @@ def build_expanded_release(
     install_wave7_central_pass2_entities(release_entities)
     install_wave7_global_entities(release_entities)
     install_wave7_west_entities(release_entities)
+    install_wave8_african_states_entities(release_entities)
+    install_wave8_new_zealand_entities(release_entities)
+    install_wave8_north_america_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -1108,6 +1162,57 @@ def build_expanded_release(
             *wave7_global_events,
         ],
     )
+    wave8_african_states_events = promote_wave8_african_states_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+        ],
+    )
+    wave8_new_zealand_events = promote_wave8_new_zealand_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+        ],
+    )
+    wave8_north_america_events = promote_wave8_north_america_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+        ],
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -1115,6 +1220,9 @@ def build_expanded_release(
         *wave7_central_pass2_events,
         *wave7_global_events,
         *wave7_west_events,
+        *wave8_african_states_events,
+        *wave8_new_zealand_events,
+        *wave8_north_america_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -1149,6 +1257,8 @@ def build_expanded_release(
             *WAVE7_CENTRAL_PASS2_HOLD_IDS,
             *WAVE7_GLOBAL_HCED_HOLD_IDS,
             *WAVE7_WEST_HCED_HOLDS,
+            *WAVE8_NEW_ZEALAND_HOLD_IDS,
+            *WAVE8_NORTH_AMERICA_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -1182,6 +1292,9 @@ def build_expanded_release(
         *wave7_central_pass2_events,
         *wave7_global_events,
         *wave7_west_events,
+        *wave8_african_states_events,
+        *wave8_new_zealand_events,
+        *wave8_north_america_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -1358,6 +1471,9 @@ def build_expanded_release(
     install_wave7_central_pass2_sources(sources_by_id)
     install_wave7_global_sources(sources_by_id)
     install_wave7_west_sources(sources_by_id)
+    install_wave8_african_states_sources(sources_by_id)
+    install_wave8_new_zealand_sources(sources_by_id)
+    install_wave8_north_america_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -1370,6 +1486,9 @@ def build_expanded_release(
         *wave7_central_pass2_events,
         *wave7_global_events,
         *wave7_west_events,
+        *wave8_african_states_events,
+        *wave8_new_zealand_events,
+        *wave8_north_america_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -1382,6 +1501,9 @@ def build_expanded_release(
         *wave7_central_pass2_events,
         *wave7_global_events,
         *wave7_west_events,
+        *wave8_african_states_events,
+        *wave8_new_zealand_events,
+        *wave8_north_america_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -1393,6 +1515,9 @@ def build_expanded_release(
             | WAVE7_CENTRAL_PASS2_PROMOTION_IDS
             | WAVE7_GLOBAL_HCED_CONTRACT_IDS
             | WAVE7_WEST_HCED_CONTRACT_IDS
+            | WAVE8_AFRICAN_STATES_CONTRACT_IDS
+            | WAVE8_NEW_ZEALAND_CONTRACT_IDS
+            | WAVE8_NORTH_AMERICA_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -1419,6 +1544,9 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE7_CENTRAL_PASS2_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE7_GLOBAL_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE7_WEST_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_AFRICAN_STATES_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_NEW_ZEALAND_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_NORTH_AMERICA_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -1599,6 +1727,9 @@ def build_expanded_release(
         - len(wave7_central_pass2_events)
         - len(wave7_global_events)
         - len(wave7_west_events)
+        - len(wave8_african_states_events)
+        - len(wave8_new_zealand_events)
+        - len(wave8_north_america_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -1622,6 +1753,15 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave7_global_hced_events": len(wave7_global_events),
         "candidate_keyed_wave7_west_hced_events": len(wave7_west_events),
+        "candidate_keyed_wave8_african_states_hced_events": len(
+            wave8_african_states_events
+        ),
+        "candidate_keyed_wave8_new_zealand_hced_events": len(
+            wave8_new_zealand_events
+        ),
+        "candidate_keyed_wave8_north_america_hced_events": len(
+            wave8_north_america_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -1723,6 +1863,14 @@ def build_expanded_release(
                 "additional rows "
                 "remain explicit holds, including Kadesh as a duplicate with a conflicting "
                 "source outcome. "
+                "Wave 8 reviews 62 additional candidate-keyed HCED rows across African "
+                "state, New Zealand, and North American conflict lanes: 46 exact tactical "
+                "engagements enter and 16 massacre, civilian-camp, umbrella-identity, or "
+                "outcome-dispute rows remain explicit holds. Every new actor is "
+                "conflict- or engagement-bounded and alias-free; no rating is inherited "
+                "by a generic ethnic label. Four source outcomes are corrected only from "
+                "direct official-history or museum evidence, with that source family "
+                "recorded as outcome provenance. "
                 "IWD component wars never enter individually: each parent conflict is rated at "
                 "most once, as a coalition event aggregated from its component dyads, and only "
                 "when the reconstructed sides are consistent, the component outcomes are "
@@ -1781,6 +1929,15 @@ def build_expanded_release(
             "accepted_wave7_central_pass2_hced_events": len(wave7_central_pass2_events),
             "accepted_wave7_global_hced_events": len(wave7_global_events),
             "accepted_wave7_west_hced_events": len(wave7_west_events),
+            "accepted_wave8_african_states_hced_events": len(
+                wave8_african_states_events
+            ),
+            "accepted_wave8_new_zealand_hced_events": len(
+                wave8_new_zealand_events
+            ),
+            "accepted_wave8_north_america_hced_events": len(
+                wave8_north_america_events
+            ),
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
             "wave6_1500_1799_candidate_ids": sorted(WAVE6_HCED_CONTRACTS),
@@ -1913,6 +2070,59 @@ def build_expanded_release(
             ],
             "wave7_west_entities_added": len(WAVE7_WEST_ENTITIES),
             "wave7_west_sources_added": len(WAVE7_WEST_SOURCES),
+            "wave8_african_states_cohort_counts": (
+                wave8_african_states_cohort_counts()
+            ),
+            "wave8_african_states_queue_validation": (
+                wave8_african_states_queue_validation
+            ),
+            "wave8_african_states_candidate_ids": sorted(
+                WAVE8_AFRICAN_STATES_CONTRACT_IDS
+            ),
+            "wave8_african_states_entities_added": len(
+                WAVE8_AFRICAN_STATES_ENTITIES
+            ),
+            "wave8_african_states_sources_added": len(WAVE8_AFRICAN_STATES_SOURCES),
+            "wave8_new_zealand_cohort_counts": wave8_new_zealand_cohort_counts(),
+            "wave8_new_zealand_queue_validation": (
+                wave8_new_zealand_queue_validation
+            ),
+            "wave8_new_zealand_candidate_ids": sorted(
+                WAVE8_NEW_ZEALAND_CONTRACT_IDS
+            ),
+            "wave8_new_zealand_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_NEW_ZEALAND_HOLDS.items())
+            ],
+            "wave8_new_zealand_entities_added": len(WAVE8_NEW_ZEALAND_ENTITIES),
+            "wave8_new_zealand_sources_added": len(WAVE8_NEW_ZEALAND_SOURCES),
+            "wave8_north_america_cohort_counts": (
+                wave8_north_america_cohort_counts()
+            ),
+            "wave8_north_america_queue_validation": (
+                wave8_north_america_queue_validation
+            ),
+            "wave8_north_america_candidate_ids": sorted(
+                WAVE8_NORTH_AMERICA_CONTRACT_IDS
+            ),
+            "wave8_north_america_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(
+                    WAVE8_NORTH_AMERICA_HOLDS.items()
+                )
+            ],
+            "wave8_north_america_entities_added": len(WAVE8_NORTH_AMERICA_ENTITIES),
+            "wave8_north_america_sources_added": len(WAVE8_NORTH_AMERICA_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -2063,6 +2273,15 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave7_global_hced_events": len(wave7_global_events),
         "candidate_keyed_wave7_west_hced_events": len(wave7_west_events),
+        "candidate_keyed_wave8_african_states_hced_events": len(
+            wave8_african_states_events
+        ),
+        "candidate_keyed_wave8_new_zealand_hced_events": len(
+            wave8_new_zealand_events
+        ),
+        "candidate_keyed_wave8_north_america_hced_events": len(
+            wave8_north_america_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 345,
-    "events": 4842,
-    "sources": 289,
-    "registry_polities": 1701
+    "entities": 371,
+    "events": 4888,
+    "sources": 318,
+    "registry_polities": 1727
   },
   "year_range": {
     "start": -1274,
@@ -72,7 +72,7 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules to a distinct identity valid for the full event interval. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules to a distinct identity valid for the full event interval. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. Wave 8 reviews 62 additional candidate-keyed HCED rows across African state, New Zealand, and North American conflict lanes: 46 exact tactical engagements enter and 16 massacre, civilian-camp, umbrella-identity, or outcome-dispute rows remain explicit holds. Every new actor is conflict- or engagement-bounded and alias-free; no rating is inherited by a generic ethnic label. Four source outcomes are corrected only from direct official-history or museum evidence, with that source family recorded as outcome provenance. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
     "accepted_hced_events": 1887,
     "accepted_hced_label_events": 2423,
     "accepted_wave6_1500_1799_hced_events": 76,
@@ -81,6 +81,9 @@
     "accepted_wave7_central_pass2_hced_events": 31,
     "accepted_wave7_global_hced_events": 37,
     "accepted_wave7_west_hced_events": 29,
+    "accepted_wave8_african_states_hced_events": 9,
+    "accepted_wave8_new_zealand_hced_events": 15,
+    "accepted_wave8_north_america_hced_events": 22,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
       "bengal_states": 8,
@@ -1198,7 +1201,204 @@
     ],
     "wave7_west_entities_added": 14,
     "wave7_west_sources_added": 17,
-    "hced_label_pass_input_rows": 6251,
+    "wave8_african_states_cohort_counts": {
+      "dahomey_behanzin": 5,
+      "ndebele_lobengula": 4
+    },
+    "wave8_african_states_queue_validation": {
+      "promotion_contracts": 9,
+      "reviewed_hced_rows": 9
+    },
+    "wave8_african_states_candidate_ids": [
+      "hced-Abomey1892-1",
+      "hced-Acheribe1893-1",
+      "hced-Atchoupa1890-1",
+      "hced-Bembesi1893-1",
+      "hced-Cotonou1890-1",
+      "hced-Dogba1892-1",
+      "hced-Empadine1893-1",
+      "hced-Shangani Incident1893-1",
+      "hced-Shangani1893-1"
+    ],
+    "wave8_african_states_entities_added": 3,
+    "wave8_african_states_sources_added": 4,
+    "wave8_new_zealand_cohort_counts": {
+      "kingitanga_waikato": 3,
+      "northern_war": 1,
+      "pai_marire": 3,
+      "taranaki_resistance": 2,
+      "te_kooti": 3,
+      "titokowaru": 2,
+      "wellington_war": 1
+    },
+    "wave8_new_zealand_queue_validation": {
+      "promotion_contracts": 15,
+      "holds": 1,
+      "reviewed_hced_rows": 16
+    },
+    "wave8_new_zealand_candidate_ids": [
+      "hced-Boulcotts Farm1846-1",
+      "hced-Kaitake1864-1",
+      "hced-Koheroa1863-1",
+      "hced-Kororareka1845-1",
+      "hced-Makaretu1868-1",
+      "hced-Mangapiko1864-1",
+      "hced-Mauku1863-1",
+      "hced-Moturoa1868-1",
+      "hced-Moutoa1864-1",
+      "hced-Nukumaru1865-1",
+      "hced-Poutoko1863-1",
+      "hced-Te Ahuahu, Taranaki1864-1",
+      "hced-Te Ngutu-o-te-manu1868-1",
+      "hced-Te Porere1869-1",
+      "hced-Waikorowhiti1870-1"
+    ],
+    "wave8_new_zealand_holds": [
+      {
+        "candidate_id": "hced-Matawhero1868-1",
+        "category": "massacre_without_competitive_outcome",
+        "reason": "The row records targeted killings and supplies no competitive battlefield outcome; it must never be converted into a win or draw.",
+        "raw_row_sha256": "3310a36427abd5f550383fffd6881367556d99348afd927ee711280b294d5b3b"
+      }
+    ],
+    "wave8_new_zealand_entities_added": 12,
+    "wave8_new_zealand_sources_added": 10,
+    "wave8_north_america_cohort_counts": {
+      "apache_pass_1862": 1,
+      "big_dry_wash_1882": 1,
+      "cibecue_1881": 1,
+      "cochise_war_1869": 1,
+      "dakota_1862": 3,
+      "dakota_lakota_1863_1864": 4,
+      "grattan_1854": 1,
+      "great_sioux_war": 5,
+      "red_cloud_war": 2,
+      "victorio_campaign_1880": 3
+    },
+    "wave8_north_america_queue_validation": {
+      "promotion_contracts": 22,
+      "holds": 15,
+      "reviewed_hced_rows": 37
+    },
+    "wave8_north_america_candidate_ids": [
+      "hced-Apache Pass1862-1",
+      "hced-Big Dry Wash1882-1",
+      "hced-Big Mound1863-1",
+      "hced-Birch Coulee1862-1",
+      "hced-Chiricahua Pass1869-1",
+      "hced-Cibecue Creek1881-1",
+      "hced-Dead Buffalo Lake1863-1",
+      "hced-Fetterman Massacre1866-1",
+      "hced-Fort Laramie1854-1",
+      "hced-Fort Phil Kearney1866-1867-1",
+      "hced-Fort Ridgely1862-1",
+      "hced-Killdeer Mountain1864-1",
+      "hced-Little Big Horn1876-1",
+      "hced-Muddy Creek1877-1",
+      "hced-New Ulm1862-1",
+      "hced-Rattlesnake Springs1880-1",
+      "hced-Rosebud1876-1",
+      "hced-Slim Buttes1876-1",
+      "hced-Stony Lake1863-1",
+      "hced-Tinaja las Palmas1880-1",
+      "hced-Tres Castillos1880-1",
+      "hced-Wolf Mountain1877-1"
+    ],
+    "wave8_north_america_holds": [
+      {
+        "candidate_id": "hced-Arizpe1852-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The row supplies only an Apache umbrella label; no exact band or coalition has been established for this engagement.",
+        "raw_row_sha256": "6b35583b7d1c88cfb65bcaa40c7c5ebb47f2f1b36ffe2ca650f761be9bd0c5f8"
+      },
+      {
+        "candidate_id": "hced-Bloody Tanks1864-1",
+        "category": "coalition_and_identity_unresolved",
+        "reason": "The winning U.S.–Pima–Maricopa coalition and exact opposing Apache group require engagement-specific corroboration before rating.",
+        "raw_row_sha256": "e725138660de795359c9f4a8b2a101b1e4c43c88c5a81ab70ed205a621dea42c"
+      },
+      {
+        "candidate_id": "hced-Canon de Ugalde1790-1",
+        "category": "colonial_actor_and_identity_unresolved",
+        "reason": "The row's 1790 label Mexico is anachronistic for New Spain and the exact Apache force is unresolved.",
+        "raw_row_sha256": "eb898e6e9ae3c11830d6245a85534c038b950ef46aa9f10c475cbe9ced553f6e"
+      },
+      {
+        "candidate_id": "hced-Canyon of the Dead Sheep1857-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Apache local group or war band is not identified by the reviewed official sources.",
+        "raw_row_sha256": "2ba22fa3346750475b3963239dd16a4560a865765c89bab17e5ec5d1f4d8b551"
+      },
+      {
+        "candidate_id": "hced-Cieneguilla1854-1",
+        "category": "outcome_and_coalition_require_adjudication",
+        "reason": "The row's Apache-win label and the reviewed Army summary disagree, while accounts vary on Jicarilla and Ute participation; no result is invented.",
+        "raw_row_sha256": "6277589d940190b3e8f6e1d5c13e49b75c5a22f8d999860b6e8b6fb97e5daac3"
+      },
+      {
+        "candidate_id": "hced-Diablo Mountains1854-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Apache local group or war band is not identified by the reviewed official sources.",
+        "raw_row_sha256": "c1cb61056a6fb14446803c7860fb3db620d882bcfab5111afe1fd20c43fe65a3"
+      },
+      {
+        "candidate_id": "hced-Gila River1857-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Apache local group or war band is not identified by the reviewed official sources.",
+        "raw_row_sha256": "37f2dfdf448046fb12ef4a9735d4a751df7534c7743c55e4824759d811253d64"
+      },
+      {
+        "candidate_id": "hced-Janos Massacre1851-1",
+        "category": "massacre_without_competitive_outcome",
+        "reason": "HCED supplies a massacre marker rather than a winner and loser; unknown is never converted to a draw or victory.",
+        "raw_row_sha256": "c4aede561f559406f3120a3552c7de9ddd1b14831998bd72fbc22f8b5b62c194"
+      },
+      {
+        "candidate_id": "hced-Pinos Altos1861-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Apache force opposed by Confederate Arizona troops is not established by the reviewed official sources.",
+        "raw_row_sha256": "02be400b62127e119504d33f6dfd139599308e0e1edef8db61f8fba64e751ed4"
+      },
+      {
+        "candidate_id": "hced-Rio Caliente1854-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Apache local group or war band is not identified by the reviewed official sources.",
+        "raw_row_sha256": "43a727006a92ef8994c92913341d199041de92a9569c069ea97c61ce992d977f"
+      },
+      {
+        "candidate_id": "hced-Skeleton Cave1872-1",
+        "category": "massacre_and_identity_contested",
+        "reason": "The NPS records women, children, and elders among those killed and notes conflicting Tonto Apache and Yavapai identifications; it is not rated as a competitive battle.",
+        "raw_row_sha256": "d98f32995dcaeb3fab8c3df7579bafd6ec917425a000fefaf7ae489a1ca0fb30"
+      },
+      {
+        "candidate_id": "hced-Spirit Lake1857-1",
+        "category": "massacre_without_competitive_outcome",
+        "reason": "The Inkpaduta raid killed settlers and took captives; it is not converted into a battlefield victory.",
+        "raw_row_sha256": "7a517d87374d71f03e6efed924682950c4e4ae9fea010610c1da747852ccfeb7"
+      },
+      {
+        "candidate_id": "hced-Turret Butte1873-1",
+        "category": "umbrella_identity_unresolved",
+        "reason": "The exact Tonto Apache or Yavapai force is not established for this row; the broader campaign identity cannot substitute for it.",
+        "raw_row_sha256": "b0d164f347dacb959778eeeb06343c0707742c476f3fd3b6dc90d3e42c7dae76"
+      },
+      {
+        "candidate_id": "hced-Whitestone Hill1863-1",
+        "category": "civilian_camp_and_belligerency_ambiguous",
+        "reason": "The attack struck a large camp containing families and people not shown to be 1862 belligerents; one generic opponent identity would invent participation.",
+        "raw_row_sha256": "6b63276eb9c57f95e1ed21c6de62d1ab960aa2121a41003c3631c6032333f60d"
+      },
+      {
+        "candidate_id": "hced-Wounded Knee Creek1890-1",
+        "category": "massacre_without_competitive_outcome",
+        "reason": "HCED itself supplies only a Massacre marker and no competitive result; unknown is never a draw or victory.",
+        "raw_row_sha256": "a03c5b14d0dbfb16d1eed61e1017377a38aeab0e17b7279a675e305bc9d33d17"
+      }
+    ],
+    "wave8_north_america_entities_added": 11,
+    "wave8_north_america_sources_added": 15,
+    "hced_label_pass_input_rows": 6189,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -1211,7 +1411,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 352,
+      "reserved_candidate_contract": 414,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -1220,13 +1420,13 @@
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 464,
-      "label_outcome_not_aligned": 85,
+      "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 182,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2716,
+      "no_unique_time_valid_label_match": 2660,
       "no_unique_time_valid_polity": 90,
-      "outside_continuity_policy": 103,
-      "same_or_empty_opposing_side": 39,
+      "outside_continuity_policy": 102,
+      "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 42
     },
     "hced_label_policy_labels": [

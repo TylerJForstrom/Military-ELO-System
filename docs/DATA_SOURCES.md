@@ -63,13 +63,15 @@ roles are never unioned into an event that already has an explicit mapping.
 Titles, URLs, publishers, source counts, and family labels are never used to
 infer an outcome role.
 
-Fourteen registered sources have the direct outcome role. They span 12
-dependency families because the three Historic England records share one
-family:
+The 318-source registry contains 21 sources carrying the direct outcome role
+across 17 dependency families. Current event-level contracts select 18 of
+those sources across 15 families; the other three remain registered
+outcome-capable references but are not the selected direct source for a rated
+event. The current mappings are:
 
 | Source ID | Outcome family | Rated events mapped |
 |---|---|---:|
-| `hced_dataset` | `hced` | 4,566 |
+| `hced_dataset` | `hced` | 4,608 |
 | `iwd_dataset` | `iwd` | 64 |
 | `iwbd_dataset` | `iwbd` | 153 |
 | `ucdp_termination_conflict` | `ucdp_conflict_termination` | 7 |
@@ -83,8 +85,12 @@ family:
 | `wave7_west_he_caister` | `historic_england` | 1 |
 | `wave7_west_ehr_lincolnshire_1470` | `english_historical_review` | 1 |
 | `wave7_west_he_bosworth` | `historic_england` | 1 |
+| `nzhistory_kororareka_1845` | `nzhistory` | 1 |
+| `nzhistory_boulcott_1846` | `nzhistory` | 1 |
+| `mnhs_birch_coulee_1862` | `minnesota_historical_society` | 1 |
+| `army_cmh_victorio_campaign_1880` | `us_army_center_military_history` | 1 |
 
-This maps 4,802 of 4,842 rated events, and every mapped event has exactly one
+This maps 4,848 of 4,888 rated events, and every mapped event has exactly one
 direct outcome family. Multiple-independent-family coverage is therefore zero.
 The 40 curated seed events remain explicitly unmapped: their generic reference
 URLs do not contain the claim-level outcome locator, edition/checksum context,
@@ -140,16 +146,18 @@ normalized sovereign-country truth. HCED has no consistently usable
 participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
-For the 4,578 rated HCED events, the release-to-candidate join is an
+For the 4,624 rated HCED events, the release-to-candidate join is an
 exact bijection: 1,887 crosswalk-resolved events, 2,423 label-resolved events,
-and 268 candidate-keyed reviewed events (76 from Wave 6 and 192 from Wave 7),
-with no missing, ambiguous, or colliding bindings.
+and 314 candidate-keyed reviewed events: 76 from Wave 6, 192 from Wave 7, and
+46 from Wave 8 (9 in the African-states lane, 15 in New Zealand, and 22 in
+North America), with
+no missing, ambiguous, or colliding bindings.
 Candidate-ID-only policy manifests withhold 37 Point fields and 79
 country/jurisdiction fields, with 33 overlapping and 83 unique
 quarantine-manifest events. One additional rated candidate has a source-blank
-country. After fail-closed quarantine, 4,541 events carry an exact
-source-transcribed Point, 4,498 carry the source's modern
-country/geographic-jurisdiction string, and 4,545 carry at least one location
+country. After fail-closed quarantine, 4,587 events carry an exact
+source-transcribed Point, 4,544 carry the source's modern
+country/geographic-jurisdiction string, and 4,591 carry at least one location
 field plus closed provenance. Of 49 separately reviewed disputed or
 non-sovereign jurisdiction rows, 46 are deliberately retained verbatim and 3
 are already withheld under independent quarantine criteria. They are source
@@ -172,13 +180,23 @@ pre-1500 rows enter through this path. The current exact HCED label-exclusion
 inventory contains 71 candidate IDs; failed spot-checks stay staged rather
 than being repaired implicitly by coalition splitting.
 
+Wave 8 uses only candidate-keyed exact contracts: every queue-row hash, event,
+date, side, time-bounded entity ID, and evidence set is pinned. The contracts
+create no broad aliases and never let an umbrella ethnonym confer identity or
+rating on a particular group. Four exact events use documented outcome
+overrides with their direct sources named; massacre/noncompetitive assertions
+and rows with unresolved exact actors, coalitions, or outcomes remain explicit
+fingerprinted holds rather than inferred competitive results.
+
 HCED's `mx_mexico_1` code resolves to `mexican_republic` for 1824-1863 and to
 the reviewed modern Mexican series for 1868-2024 in the current Cliopatria
 snapshot. A shared `mexico` deny window
 covers 1864-1867, so coded, bare-label, and composite-member paths cannot use a
 broad alias to bridge the Reform/Second Empire boundary. This continuity rule
-does not override event review: the current global curated-exclusion inventory
-contains 164 exact candidates and the label-pass inventory contains 71.
+does not override event review: the current global coded-pass policy inventory
+contains 172 exact candidates, of which 164 reach the `curated_exclusion`
+counter under current gate ordering; the label-pass inventory and counter both
+contain 71.
 
 #### Verified live HCED profile
 
@@ -263,7 +281,7 @@ In this system IWBD battles enter the provisional ledger only through a
 declared promotion rule, as tactical engagements. Exact normalized battle
 names use a ±1-year window against curated seed events, non-curated-excluded
 HCED candidates (promoted or staged), and earlier accepted IWBD rows. In the
-current release, 1,010 IWBD records are excluded as presumptive HCED
+current release, 864 IWBD records are excluded as presumptive HCED
 duplicates. Exact canonical name/year matches remain exclusions rather than
 corroboration and do not require side agreement; no HCED record is modified.
 Cross-source matching canonicalizes numeric, suffixed, and word ordinals. A
@@ -275,13 +293,13 @@ adjacent-year battles, and arbitrary terminal numbers are not collapsed merely
 because they share a possible base.
 Within-IWBD matching always retains the exact canonical ordinal. A row
 whose date span strictly contains a differently-named battle of the same war
-is staged as a presumptive campaign umbrella (381 rows), so only battle-level
+is staged as a presumptive campaign umbrella (321 rows), so only battle-level
 granularity enters; the rule deliberately over-includes some genuinely
 distinct long engagements. The coded battle-level victor must match a named
 side with an agreeing attacker/defender role — the coded `inconclusive` value
 maps to a tactical stalemate, while a blank or mismatched victor is rejected —
 and the war-level victor code is ignored entirely. Coalition or composite side
-labels stay staged (146 rows), and both sides must resolve to unique
+labels stay staged (139 rows), and both sides must resolve to unique
 time-bounded identities outside declared deny windows (12 side-resolution
 failures, including the declared "Turkey" 1919-1923 deny window). In the
 current build 153 of 1,708 battles pass; every other row stays staged under a
@@ -747,17 +765,20 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The current release publishes distinct coverage units separately:
 
-- 1,701 time-bounded polity identities in the rated-and-unrated registry;
-- 345 release entity records, of which 343 distinct IDs actually participate
+- 1,727 time-bounded polity identities in the rated-and-unrated registry;
+- 371 release entity records, of which 369 distinct IDs actually participate
   in rated events;
-- 289 registered provenance sources across 176 source families; and
-- 4,842 rating events: 40 manually curated events, 1,887 crosswalk-resolved,
-  2,423 label-resolved, and 268 candidate-keyed HCED tactical encounters,
+- 318 registered provenance sources across 186 source families; and
+- 4,888 rating events: 40 manually curated events, 1,887 crosswalk-resolved,
+  2,423 label-resolved, and 314 candidate-keyed HCED tactical encounters
+  (76 Wave 6 + 192 Wave 7 + 46 Wave 8; Wave 8 splits 9/15/22 across African
+  states, New Zealand, and North America),
   64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
 
 The committed dashboard is the matching 1,000-simulation build and its audit
-error array is empty. The current deterministic HCED planning funnel reports
+error array is empty. The checked-in pre-promotion Wave 8 HCED planning funnel
+reports
 3,210 touched deferred rows, 2,439 unresolved normalized labels, and 1,807
 sole-blocker rows; the current top-ten greedy batch reaches 144 cumulative
 events. Those are prioritization units, not extra rating events.
@@ -767,7 +788,7 @@ of Portugal, Brazil and the Algarves is present as a curated boundary identity,
 but no event currently promotes into its 1815-1821 policy window. The
 superseded `Free Orange State` source envelope is retained for the five-event
 identity-migration audit, while those events use the reviewed Orange Free State
-identity. Neither record therefore has a rating or counts among the 343
+identity. Neither record therefore has a rating or counts among the 369
 participant IDs.
 
 Relative to the Wave 4 artifact, Wave 5 adds 161 events and removes none of the
@@ -810,6 +831,12 @@ Republic of Texas, and pre-/post-UAR Syrian republic windows. Argentina's
 precision, Texas's generic label window ends in 1845, and Syria deliberately
 has no generic or code resolution in 1958-1961.
 
+Relative to that post-Wave 7 artifact, Wave 8 adds 46 candidate-keyed HCED
+events and removes none: 9 in the African-states lane, 15 in New Zealand, and
+22 in North America. It adds 26 alias-free release/registry identities and 29
+sources. Four promoted rows carry documented outcome overrides, while 16
+massacre/noncompetitive or unresolved reviewed rows remain exact holds.
+
 The earlier curated state and non-state actor identity tranches raised the totals
 from the previous build (177 rated entities across 2,620 events): the new
 seed identities and their code/label policy windows resolve rows that were
@@ -821,22 +848,23 @@ absorbing two exact-name Cliopatria envelopes, producing the Wave 4 total of
 Tsardom of Russia onto its pre-existing canonical Cliopatria ID rather than
 creating a second Tsardom record. Wave 6 produced a 1,648-row registry. Wave 7
 added reviewed identities and explicit supersession records to produce 1,702
-registry rows. The current tranche consolidates reused source identities and
-produces the measured 1,701-row registry; every release identity still has an
-exact registry row.
+registry rows. The post-Wave 7 composite tranche consolidated reused source
+identities and produced 1,701 rows. Wave 8 adds 26 exact, alias-free identity
+records, producing the current measured 1,727-row registry; every release
+identity still has an exact registry row.
 
 The review queues contain 27,014 staged source records across Cliopatria, HCED,
 IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
 holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 18,552 remain outside the rating ledger because their layer,
+candidates, 18,506 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
 
 Outcome-family coverage uses a different denominator from corpus coverage.
-Exactly 4,802 rated events have an explicit direct-outcome mapping through the
-14 sources above; the remaining 40 are the curated seed events and stay unknown
-pending claim-level locator review. All 4,802 mapped events have
+Exactly 4,848 rated events have an explicit direct-outcome mapping through the
+18 selected sources above; the remaining 40 are the curated seed events and stay
+unknown pending claim-level locator review. All 4,848 mapped events have
 one family and none has multiple independently established outcome families.

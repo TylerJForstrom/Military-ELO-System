@@ -17,6 +17,7 @@ from military_elo.promotion.hced_location import (
     HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256,
     HCED_COUNTRY_QUARANTINE_IDS,
     HCED_EXPECTED_CANDIDATE_BINDINGS,
+    HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS,
     HCED_EXPECTED_COUNTRY_ASSERTIONS,
     HCED_EXPECTED_POINT_ASSERTIONS,
     HCED_EXPECTED_PROVENANCE_OBJECTS,
@@ -35,7 +36,7 @@ RELEASE = ROOT / "data" / "release"
 REGISTRY = ROOT / "data" / "catalog" / "registry.json"
 RESULTS = ROOT / "web" / "data" / "results.json"
 HCED_LOCATION_PROJECTION_SHA256 = (
-    "7c2644ab4f58649463592601c58989f1e21ec50853bc8b28bbe13f15b80c7fbf"
+    "af1a7e7aa27b2a2a4c03cfa026ee3ca855b27dd3e67492d40ed687cb26ed2197"
 )
 
 
@@ -75,7 +76,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         }
 
     def test_exact_candidate_bijection_and_promotion_tranches(self) -> None:
-        self.assertEqual(len(self.events), 4_842)
+        self.assertEqual(len(self.events), 4_888)
         self.assertEqual(len(self.hced_events), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(len(self.by_candidate), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(
@@ -93,6 +94,34 @@ class HcedLocationArtifactTests(unittest.TestCase):
         self.assertEqual(
             sum(event["id"].startswith("hced_wave7_") for event in self.hced_events),
             192,
+        )
+        self.assertEqual(
+            sum(
+                event["id"].startswith("hced_wave8_african_states_")
+                for event in self.hced_events
+            ),
+            9,
+        )
+        self.assertEqual(
+            sum(
+                event["id"].startswith("hced_wave8_new_zealand_")
+                for event in self.hced_events
+            ),
+            15,
+        )
+        self.assertEqual(
+            sum(
+                event["id"].startswith("hced_wave8_north_america_")
+                for event in self.hced_events
+            ),
+            22,
+        )
+        self.assertEqual(
+            sum(
+                event.get("identity_resolution") == "candidate_keyed_exact"
+                for event in self.hced_events
+            ),
+            HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS,
         )
         for event in self.hced_events:
             with self.subTest(event_id=event["id"]):
@@ -665,19 +694,19 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
             projected_events.append(projected)
         self.assertEqual(
             _canonical_hash(projected_events),
-            "1bb2ceed7aa827ab21c510978cdc3e367fc2222f7424862522a58b38272cfa91",
+            "8eb4c99fad4cb3869b9395544065bc5b7d434696b8703554a42173f6cdbad5ed",
         )
         self.assertEqual(
             _canonical_hash(self.entities),
-            "69109d9b9d3b20d52e5150f0c6d9998c8ff10b745bcc329e2a6696d26b8b2563",
+            "5452ed2317e09615a01d6e21f16443cdab21e9fe9e3a4dd49bdd85f91e9b0ef4",
         )
         self.assertEqual(
             _canonical_hash(self.sources),
-            "f6def9e2b06c94d45d082eb8174232ce10cf9fdc16bdea3a4b3bda01c9d342d1",
+            "0e8608359ffc3e6f782e6c01ea7640d47cb953a96877dea818d07067f873671d",
         )
         self.assertEqual(
             _canonical_hash(self.registry["entities"]),
-            "f93b229f455eb8ae55a952e178f2f279af8837eeeec244dd1a8c56a6099e8449",
+            "d893c6e46049af3589908c3ebe03ac43043dc7eb4efb505648373ce85f36aa7a",
         )
 
     def test_dashboard_projection_matches_the_coupled_wave5_build(self) -> None:
@@ -697,13 +726,13 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         ]
         self.assertEqual(
             _canonical_hash(projected_events),
-            "3e78480829f7d4230f43518bd0bceb68ef85c24e3fdf61bf9071b222b9f51fdd",
+            "88600ca64940af63340c6f0aac8fe5b9aae6e260bb291d94cf656e8e06116ee2",
         )
         expected_hashes = {
-            "entities": "b347006551933650e08cac8a8e41e616027dc1cffdcf07b49c044da3114a2bbd",
-            "series": "c9d8cbbac456115322020415a45f322b8518d0334f47ac96be1b19a2c6be0239",
-            "leaderboard": "2ec44e667aef7fb60b359835b7ef6d202ae0dde21ae7e3ff45afb6a857a8e230",
-            "sensitivity": "7c65fd243f3d3c274616c9b086b8ac9b204d6b491c4341f57a290336abf020c5",
+            "entities": "3a72cd2a16b4069d8686a499a5641398e27001e6ab73ddb27dfc7f2b4b6c9e7d",
+            "series": "552d2ebf748d74ce469281e2f51b1c04bac8e26333514177f08391b5a3c8d537",
+            "leaderboard": "4673b745ed624de3c42cca0597c971fd5cf241bf6b1925232cef265820dbac1d",
+            "sensitivity": "c12efe342d1d7383d59a7847a88e65ed48c09fc2e32be9aab0df253df4e36848",
         }
         for field_name, expected_hash in expected_hashes.items():
             with self.subTest(field_name=field_name):
