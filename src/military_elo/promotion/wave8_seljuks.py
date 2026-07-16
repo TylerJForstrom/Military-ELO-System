@@ -15,6 +15,7 @@ from collections import Counter
 from typing import Any, Iterable, Mapping
 
 from .common import _slug, normalize_label
+from .wave7_global import canonical_hced_row_sha256
 from .wave8_exact import (
     install_exact_entities,
     install_exact_sources,
@@ -30,6 +31,7 @@ __all__ = (
     "WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS",
     "WAVE8_SELJUKS_ENTITIES",
     "WAVE8_SELJUKS_EXPECTED_CANDIDATE_IDS",
+    "WAVE8_SELJUKS_EXTERNAL_OWNER_IDS",
     "WAVE8_SELJUKS_FINAL_AUDIT_SIGNATURE",
     "WAVE8_SELJUKS_HOLD_IDS",
     "WAVE8_SELJUKS_HOLDS",
@@ -61,8 +63,6 @@ _MONGOL_EMPIRE_ID = "mongol_empire"
 
 _RUM_KILIJ_ID = "rum_sultanate_kilij_arslan_i_1092_1107"
 _PEOPLES_CRUSADE_ID = "peoples_crusade_asia_minor_force_1096"
-_RUM_MESUD_ID = "rum_sultanate_mesud_i_1116_1156"
-_GERMAN_CRUSADE_ID = "conrad_iii_german_crusader_army_1147"
 _ZENGI_ID = "zengid_mosul_aleppo_imad_al_din_1127_1146"
 _EDESSA_ID = "county_edessa_joscelin_ii_1131_1150"
 _NUR_AL_DIN_ID = "zengid_aleppo_nur_al_din_1146_1154"
@@ -134,16 +134,6 @@ WAVE8_SELJUKS_SOURCES: tuple[dict[str, Any], ...] = (
         "translated_primary_chronicle",
         "anna_komnene_alexiad",
         outcome=True,
-    ),
-    _source(
-        "wave8_seljuks_tdv_mesud",
-        "Mesud I",
-        "https://islamansiklopedisi.org.tr/mesud-i",
-        "TDV Encyclopedia of Islam",
-        "scholarly_encyclopedia",
-        "tdv_islam_encyclopedia_mesud",
-        outcome=True,
-        crosscheck=True,
     ),
     _source(
         "wave8_seljuks_iranica_rum",
@@ -314,26 +304,6 @@ WAVE8_SELJUKS_ENTITIES: tuple[dict[str, Any], ...] = (
         "Campaign-bounded force destroyed near Civetot in October 1096.",
     ),
     _entity(
-        _RUM_MESUD_ID,
-        "Sultanate of Rum under Mesud I",
-        "sultanate_regime",
-        1116,
-        1156,
-        "Anatolia",
-        ["wave8_seljuks_iranica_rum", "wave8_seljuks_tdv_mesud"],
-        "Reign-bounded Rum identity used for Mesud's Second Crusade campaign.",
-    ),
-    _entity(
-        _GERMAN_CRUSADE_ID,
-        "Conrad III's German crusader army",
-        "campaign_force",
-        1147,
-        1147,
-        "Anatolia",
-        ["wave8_seljuks_tdv_mesud"],
-        "Campaign-bounded German royal army in the Anatolian phase of the Second Crusade.",
-    ),
-    _entity(
         _ZENGI_ID,
         "Zengid Atabegate of Mosul and Aleppo under Imad al-Din Zengi",
         "atabegate_regime",
@@ -472,17 +442,6 @@ WAVE8_SELJUKS_CONTRACTS: dict[str, dict[str, Any]] = {
         ["wave8_seljuks_alexiad_primary", "wave8_seljuks_civetot_article"],
         "Kilij Arslan I's Rum army destroyed the People's Crusade field force. The generic Seljuks label is not carried into another dynasty or reign.",
         confidence=0.94,
-    ),
-    "hced-Dorylaeum1147-1": _contract(
-        "hced-Dorylaeum1147-1",
-        _canonical("Second Battle of Dorylaeum", 1147, "26 October 1147"),
-        "mesud_second_crusade_1147",
-        [_RUM_MESUD_ID],
-        [_GERMAN_CRUSADE_ID],
-        1,
-        ["wave8_seljuks_iranica_rum", "wave8_seljuks_tdv_mesud"],
-        "Mesud I's Rum force inflicted a crushing defeat on Conrad III's German crusader army. No medieval Germany polity is invented.",
-        confidence=0.95,
     ),
     "hced-Edessa1144-1": _contract(
         "hced-Edessa1144-1",
@@ -658,8 +617,30 @@ WAVE8_SELJUKS_IWBD_ZERO_OVERLAP_AUDIT: dict[str, tuple[str, ...]] = {
     "1243": ("battle of kose dag", "kose dag", "kose dagh"),
 }
 WAVE8_SELJUKS_IWBD_DUPLICATE_DISPOSITIONS: dict[str, dict[str, Any]] = {}
-WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS: dict[str, dict[str, Any]] = {}
-WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS: dict[str, dict[str, Any]] = {}
+WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS: dict[str, dict[str, Any]] = {
+    "hced-Dorylaeum1147-1": {
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": _ROW_HASHES["hced-Dorylaeum1147-1"],
+        "canonical_event_name": "Battle of Dorylaeum (1147)",
+        "year": 1147,
+        "reason": (
+            "The Germany audit owns the exact candidate, direct Oxford and "
+            "St Andrews evidence, the 25 October date, and Conrad III's bounded "
+            "host. Emitting it here would double-rate one battle."
+        ),
+    }
+}
+WAVE8_SELJUKS_EXTERNAL_OWNER_IDS = frozenset(
+    candidate_id
+    for candidate_id, disposition in WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS.items()
+    if disposition["disposition"] == "external_lane_owner"
+)
+WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS: dict[str, dict[str, Any]] = {
+    **WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS,
+    **WAVE8_SELJUKS_IWBD_DUPLICATE_DISPOSITIONS,
+}
 
 
 def _canonical_json(value: Any) -> str:
@@ -690,7 +671,7 @@ def wave8_seljuks_audit_signature() -> str:
 
 
 WAVE8_SELJUKS_FINAL_AUDIT_SIGNATURE = (
-    "5900c4545be1caed2d5bc9accfdc2021ce4ab8528c1d55d0a86eae20fb47dcc1"
+    "a3b78b93a5cd8e2185b179e06d65f7009abfb7558d469f66d6f70741ab710eac"
 )
 
 
@@ -702,7 +683,6 @@ def _is_sorted_unique(values: Iterable[str]) -> bool:
 def _validate_static() -> None:
     expected_contracts = {
         "hced-Civetot1096-1",
-        "hced-Dorylaeum1147-1",
         "hced-Edessa1144-1",
         "hced-Edessa1146-1",
         "hced-Kose Dagh1243-1",
@@ -717,7 +697,10 @@ def _validate_static() -> None:
         raise ValueError(f"{_LANE_NAME} promotion inventory changed")
     if set(WAVE8_SELJUKS_HOLDS) != expected_holds:
         raise ValueError(f"{_LANE_NAME} hold inventory changed")
-    if WAVE8_SELJUKS_RESERVED_IDS != WAVE8_SELJUKS_EXPECTED_CANDIDATE_IDS:
+    if (
+        WAVE8_SELJUKS_RESERVED_IDS | WAVE8_SELJUKS_EXTERNAL_OWNER_IDS
+        != WAVE8_SELJUKS_EXPECTED_CANDIDATE_IDS
+    ):
         raise ValueError(f"{_LANE_NAME} reservation inventory is incomplete")
     if WAVE8_SELJUKS_CONTRACT_IDS & WAVE8_SELJUKS_HOLD_IDS:
         raise ValueError(f"{_LANE_NAME} promotions and holds overlap")
@@ -728,7 +711,7 @@ def _validate_static() -> None:
 
     source_by_id = {str(source["id"]): source for source in WAVE8_SELJUKS_SOURCES}
     entity_by_id = {str(entity["id"]): entity for entity in WAVE8_SELJUKS_ENTITIES}
-    if len(source_by_id) != 17 or len(entity_by_id) != 9:
+    if len(source_by_id) != 16 or len(entity_by_id) != 7:
         raise ValueError(f"{_LANE_NAME} source/entity inventory changed")
     if len(source_by_id) != len(WAVE8_SELJUKS_SOURCES):
         raise ValueError(f"{_LANE_NAME} source IDs are not unique")
@@ -843,24 +826,59 @@ def _validate_static() -> None:
         raise ValueError(f"{_LANE_NAME} point quarantine inventory changed")
     if WAVE8_SELJUKS_COUNTRY_QUARANTINE_ADDITIONS:
         raise ValueError(f"{_LANE_NAME} invented a country quarantine")
-    if (
-        WAVE8_SELJUKS_IWBD_DUPLICATE_DISPOSITIONS
-        or WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS
-        or WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS
-    ):
+    if WAVE8_SELJUKS_IWBD_DUPLICATE_DISPOSITIONS:
         raise ValueError(f"{_LANE_NAME} duplicate disposition audit changed")
+    if WAVE8_SELJUKS_EXTERNAL_OWNER_IDS != {"hced-Dorylaeum1147-1"}:
+        raise ValueError(f"{_LANE_NAME} external ownership changed")
+    dorylaeum = WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS[
+        "hced-Dorylaeum1147-1"
+    ]
+    if (
+        dorylaeum["owner_module"] != "military_elo.promotion.wave8_germany"
+        or dorylaeum["raw_row_sha256"]
+        != _ROW_HASHES["hced-Dorylaeum1147-1"]
+        or WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS
+        != WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS
+    ):
+        raise ValueError(f"{_LANE_NAME} Dorylaeum ownership contract changed")
 
 
 def validate_wave8_seljuks_queue_contracts(
     hced_rows: list[dict[str, Any]],
 ) -> dict[str, int]:
     _validate_static()
-    return validate_exact_hced_inventory(
+    result = validate_exact_hced_inventory(
         hced_rows,
         WAVE8_SELJUKS_CONTRACTS,
         WAVE8_SELJUKS_HOLDS,
         lane_name=_LANE_NAME,
     )
+    indexed: dict[str, list[dict[str, Any]]] = {}
+    for row in hced_rows:
+        indexed.setdefault(str(row.get("candidate_id") or ""), []).append(row)
+    for candidate_id in WAVE8_SELJUKS_EXTERNAL_OWNER_IDS:
+        rows = indexed.get(candidate_id, [])
+        if len(rows) != 1:
+            raise ValueError(
+                f"{_LANE_NAME} external owner {candidate_id} expected exactly one "
+                f"queue row, found {len(rows)}"
+            )
+        expected = WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS[candidate_id][
+            "raw_row_sha256"
+        ]
+        if canonical_hced_row_sha256(rows[0]) != expected:
+            raise ValueError(
+                f"{_LANE_NAME} external owner {candidate_id} raw-row fingerprint "
+                "changed"
+            )
+    return {
+        "external_owner_contracts": len(WAVE8_SELJUKS_EXTERNAL_OWNER_IDS),
+        "holds": result["holds"],
+        "promotion_contracts": result["promotion_contracts"],
+        "reviewed_hced_rows": (
+            result["reviewed_hced_rows"] + len(WAVE8_SELJUKS_EXTERNAL_OWNER_IDS)
+        ),
+    }
 
 
 def _iwbd_year(row: Mapping[str, Any]) -> int | None:
@@ -877,8 +895,24 @@ def _iwbd_year(row: Mapping[str, Any]) -> int | None:
 def validate_wave8_seljuks_integration_dispositions(
     hced_rows: list[dict[str, Any]],
     iwbd_rows: list[dict[str, Any]],
+    existing_events: Iterable[Mapping[str, Any]] = (),
 ) -> dict[str, int]:
     validate_wave8_seljuks_queue_contracts(hced_rows)
+    external_release = [
+        event
+        for event in existing_events
+        if event.get("hced_candidate_id") in WAVE8_SELJUKS_EXTERNAL_OWNER_IDS
+    ]
+    external_counts = Counter(
+        str(event["hced_candidate_id"]) for event in external_release
+    )
+    if set(external_counts) != WAVE8_SELJUKS_EXTERNAL_OWNER_IDS or any(
+        count != 1 for count in external_counts.values()
+    ) or any(
+        not str(event.get("id") or "").startswith("hced_wave8_germany_")
+        for event in external_release
+    ):
+        raise ValueError(f"{_LANE_NAME} external owner release contract changed")
     audited = {
         (int(year), normalize_label(name))
         for year, names in WAVE8_SELJUKS_IWBD_ZERO_OVERLAP_AUDIT.items()
@@ -894,8 +928,9 @@ def validate_wave8_seljuks_integration_dispositions(
             f"{_LANE_NAME} unreviewed probable IWBD duplicate(s): {sorted(collisions)}"
         )
     return {
-        "cross_lane_hced_dispositions": 0,
-        "integration_dispositions": 0,
+        "cross_lane_hced_dispositions": 1,
+        "external_owner_hced_dispositions": 1,
+        "integration_dispositions": 1,
         "iwbd_duplicate_dispositions": 0,
         "iwbd_probable_twins": 0,
     }
@@ -971,6 +1006,7 @@ def wave8_seljuks_counts() -> dict[str, int]:
             WAVE8_SELJUKS_COUNTRY_QUARANTINE_ADDITIONS
         ),
         "cross_lane_hced_dispositions": len(WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS),
+        "external_owner_hced_dispositions": len(WAVE8_SELJUKS_EXTERNAL_OWNER_IDS),
         "holds": len(WAVE8_SELJUKS_HOLDS),
         "integration_dispositions": len(WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS),
         "iwbd_duplicate_dispositions": len(
@@ -984,7 +1020,9 @@ def wave8_seljuks_counts() -> dict[str, int]:
             WAVE8_SELJUKS_POINT_QUARANTINE_ADDITIONS
         ),
         "promotion_contracts": len(WAVE8_SELJUKS_CONTRACTS),
-        "reviewed_hced_rows": len(WAVE8_SELJUKS_RESERVED_IDS),
+        "reviewed_hced_rows": (
+            len(WAVE8_SELJUKS_RESERVED_IDS) + len(WAVE8_SELJUKS_EXTERNAL_OWNER_IDS)
+        ),
         "terminal_exclusions": len(WAVE8_SELJUKS_TERMINAL_EXCLUSION_IDS),
     }
 

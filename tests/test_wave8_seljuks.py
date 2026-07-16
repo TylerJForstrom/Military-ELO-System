@@ -18,6 +18,7 @@ from military_elo.promotion.wave8_seljuks import (
     WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS,
     WAVE8_SELJUKS_ENTITIES,
     WAVE8_SELJUKS_EXPECTED_CANDIDATE_IDS,
+    WAVE8_SELJUKS_EXTERNAL_OWNER_IDS,
     WAVE8_SELJUKS_FINAL_AUDIT_SIGNATURE,
     WAVE8_SELJUKS_HOLD_IDS,
     WAVE8_SELJUKS_HOLDS,
@@ -48,8 +49,6 @@ GREAT_SELJUK_ID = "clio_ir_seljuk_sultanate_1040_577da931"
 MONGOL_EMPIRE_ID = "mongol_empire"
 RUM_KILIJ_ID = "rum_sultanate_kilij_arslan_i_1092_1107"
 PEOPLES_CRUSADE_ID = "peoples_crusade_asia_minor_force_1096"
-RUM_MESUD_ID = "rum_sultanate_mesud_i_1116_1156"
-GERMAN_CRUSADE_ID = "conrad_iii_german_crusader_army_1147"
 ZENGI_ID = "zengid_mosul_aleppo_imad_al_din_1127_1146"
 EDESSA_ID = "county_edessa_joscelin_ii_1131_1150"
 NUR_AL_DIN_ID = "zengid_aleppo_nur_al_din_1146_1154"
@@ -90,7 +89,6 @@ EXPECTED_RAW_LABELS = {
 
 EXPECTED_WINNERS_AND_LOSERS = {
     "hced-Civetot1096-1": ({RUM_KILIJ_ID}, {PEOPLES_CRUSADE_ID}),
-    "hced-Dorylaeum1147-1": ({RUM_MESUD_ID}, {GERMAN_CRUSADE_ID}),
     "hced-Edessa1144-1": ({ZENGI_ID}, {EDESSA_ID}),
     "hced-Edessa1146-1": ({NUR_AL_DIN_ID}, {EDESSA_ID}),
     "hced-Kose Dagh1243-1": ({MONGOL_EMPIRE_ID}, {RUM_KAYKHUSRAW_ID}),
@@ -100,7 +98,6 @@ EXPECTED_WINNERS_AND_LOSERS = {
 
 EXPECTED_DATES = {
     "hced-Civetot1096-1": ("day", "21 October 1096"),
-    "hced-Dorylaeum1147-1": ("day", "26 October 1147"),
     "hced-Edessa1144-1": ("day_range", "28 November-24 December 1144"),
     "hced-Edessa1146-1": ("day_range", "27 October-3 November 1146"),
     "hced-Kose Dagh1243-1": ("day", "26 June 1243"),
@@ -111,8 +108,6 @@ EXPECTED_DATES = {
 EXPECTED_WINDOWS = {
     RUM_KILIJ_ID: (1092, 1107),
     PEOPLES_CRUSADE_ID: (1096, 1096),
-    RUM_MESUD_ID: (1116, 1156),
-    GERMAN_CRUSADE_ID: (1147, 1147),
     ZENGI_ID: (1127, 1146),
     EDESSA_ID: (1131, 1150),
     NUR_AL_DIN_ID: (1146, 1154),
@@ -188,23 +183,31 @@ class Wave8SeljuksTests(unittest.TestCase):
         self.assertEqual(independent, WAVE8_SELJUKS_FINAL_AUDIT_SIGNATURE)
         self.assertEqual(wave8_seljuks_audit_signature(), independent)
         self.assertEqual(WAVE8_SELJUKS_CONTRACT_IDS, set(EXPECTED_WINNERS_AND_LOSERS))
-        self.assertEqual(WAVE8_SELJUKS_HOLD_IDS, set(EXPECTED_RAW_LABELS) - set(EXPECTED_WINNERS_AND_LOSERS))
-        self.assertEqual(WAVE8_SELJUKS_RESERVED_IDS, set(EXPECTED_RAW_LABELS))
+        self.assertEqual(
+            WAVE8_SELJUKS_HOLD_IDS,
+            {"hced-Baghdad1055-1", "hced-Elasa1167-1", "hced-Hasankale1048-1"},
+        )
+        self.assertEqual(WAVE8_SELJUKS_EXTERNAL_OWNER_IDS, {"hced-Dorylaeum1147-1"})
+        self.assertEqual(
+            WAVE8_SELJUKS_RESERVED_IDS | WAVE8_SELJUKS_EXTERNAL_OWNER_IDS,
+            set(EXPECTED_RAW_LABELS),
+        )
         self.assertEqual(WAVE8_SELJUKS_TERMINAL_EXCLUSION_IDS, {"hced-Baghdad1055-1"})
         self.assertEqual(
             wave8_seljuks_counts(),
             {
                 "country_quarantine_additions": 0,
-                "cross_lane_hced_dispositions": 0,
+                "cross_lane_hced_dispositions": 1,
+                "external_owner_hced_dispositions": 1,
                 "holds": 3,
-                "integration_dispositions": 0,
+                "integration_dispositions": 1,
                 "iwbd_duplicate_dispositions": 0,
-                "new_entities": 9,
-                "new_sources": 17,
-                "newly_rated_events": 6,
+                "new_entities": 7,
+                "new_sources": 16,
+                "newly_rated_events": 5,
                 "outcome_overrides": 1,
                 "point_quarantine_additions": 2,
-                "promotion_contracts": 6,
+                "promotion_contracts": 5,
                 "reviewed_hced_rows": 9,
                 "terminal_exclusions": 1,
             },
@@ -214,7 +217,6 @@ class Wave8SeljuksTests(unittest.TestCase):
             {
                 "bayju_rum_campaign_1243": 1,
                 "kilij_arslan_peoples_crusade_1096": 1,
-                "mesud_second_crusade_1147": 1,
                 "nur_al_din_edessa_1146": 1,
                 "tughril_basasiri_iraq_1060": 1,
                 "zengid_edessa_1144": 1,
@@ -237,7 +239,8 @@ class Wave8SeljuksTests(unittest.TestCase):
             )
             disposition = (
                 WAVE8_SELJUKS_CONTRACTS.get(candidate_id)
-                or WAVE8_SELJUKS_HOLDS[candidate_id]
+                or WAVE8_SELJUKS_HOLDS.get(candidate_id)
+                or WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS[candidate_id]
             )
             self.assertEqual(
                 canonical_hced_row_sha256(row),
@@ -245,7 +248,12 @@ class Wave8SeljuksTests(unittest.TestCase):
             )
         self.assertEqual(
             validate_wave8_seljuks_queue_contracts(self.hced_rows),
-            {"promotion_contracts": 6, "holds": 3, "reviewed_hced_rows": 9},
+            {
+                "external_owner_contracts": 1,
+                "promotion_contracts": 5,
+                "holds": 3,
+                "reviewed_hced_rows": 9,
+            },
         )
 
     def test_queue_inventory_fails_closed_on_mutation_or_absence(self) -> None:
@@ -289,8 +297,8 @@ class Wave8SeljuksTests(unittest.TestCase):
             },
             EXPECTED_WINDOWS,
         )
-        rum_ids = {RUM_KILIJ_ID, RUM_MESUD_ID, RUM_KAYKHUSRAW_ID}
-        self.assertEqual(len(rum_ids), 3)
+        rum_ids = {RUM_KILIJ_ID, RUM_KAYKHUSRAW_ID}
+        self.assertEqual(len(rum_ids), 2)
         self.assertTrue(rum_ids <= set(entity_by_id))
         self.assertNotEqual(ZENGI_ID, NUR_AL_DIN_ID)
         for entity in WAVE8_SELJUKS_ENTITIES:
@@ -308,7 +316,7 @@ class Wave8SeljuksTests(unittest.TestCase):
 
     def test_sources_roles_families_and_installation_are_exact(self) -> None:
         source_by_id = {str(source["id"]): source for source in WAVE8_SELJUKS_SOURCES}
-        self.assertEqual(len(source_by_id), 17)
+        self.assertEqual(len(source_by_id), 16)
         allowed_domains = {
             "academic.oup.com",
             "assets.cambridge.org",
@@ -359,7 +367,7 @@ class Wave8SeljuksTests(unittest.TestCase):
 
     def test_emitted_events_parse_with_exact_actors_and_no_draws(self) -> None:
         _, _, events = self._emit()
-        self.assertEqual(len(events), 6)
+        self.assertEqual(len(events), 5)
         by_candidate = {str(event["hced_candidate_id"]): event for event in events}
         self.assertEqual(set(by_candidate), set(EXPECTED_WINNERS_AND_LOSERS))
         for candidate_id, (expected_winners, expected_losers) in EXPECTED_WINNERS_AND_LOSERS.items():
@@ -427,20 +435,38 @@ class Wave8SeljuksTests(unittest.TestCase):
 
     def test_iwbd_zero_overlap_audit_fails_closed_on_future_twin(self) -> None:
         self.assertEqual(WAVE8_SELJUKS_IWBD_DUPLICATE_DISPOSITIONS, {})
-        self.assertEqual(WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS, {})
-        self.assertEqual(WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS, {})
+        self.assertEqual(
+            set(WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS),
+            {"hced-Dorylaeum1147-1"},
+        )
+        self.assertEqual(
+            WAVE8_SELJUKS_INTEGRATION_DISPOSITIONS,
+            WAVE8_SELJUKS_CROSS_LANE_DISPOSITIONS,
+        )
+        germany_owner = {
+            "id": "hced_wave8_germany_battle-of-dorylaeum-1147_1147_1147",
+            "hced_candidate_id": "hced-Dorylaeum1147-1",
+        }
         self.assertEqual(
             validate_wave8_seljuks_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
+                [germany_owner],
             ),
             {
-                "cross_lane_hced_dispositions": 0,
-                "integration_dispositions": 0,
+                "cross_lane_hced_dispositions": 1,
+                "external_owner_hced_dispositions": 1,
+                "integration_dispositions": 1,
                 "iwbd_duplicate_dispositions": 0,
                 "iwbd_probable_twins": 0,
             },
         )
+        with self.assertRaisesRegex(ValueError, "external owner release contract changed"):
+            validate_wave8_seljuks_integration_dispositions(
+                self.hced_rows,
+                self.iwbd_rows,
+                [],
+            )
         future = copy.deepcopy(self.iwbd_rows)
         future.append(
             {
@@ -451,7 +477,11 @@ class Wave8SeljuksTests(unittest.TestCase):
             }
         )
         with self.assertRaisesRegex(ValueError, "unreviewed probable IWBD duplicate"):
-            validate_wave8_seljuks_integration_dispositions(self.hced_rows, future)
+            validate_wave8_seljuks_integration_dispositions(
+                self.hced_rows,
+                future,
+                [germany_owner],
+            )
 
 
 if __name__ == "__main__":
