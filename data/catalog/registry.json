@@ -1912,6 +1912,16 @@
       "region": "Nile Delta"
     },
     {
+      "id": "sardinian_cacciatori_delle_alpi_1859",
+      "name": "Cacciatori delle Alpi (1859 Sardinian campaign)",
+      "kind": "campaign_bounded_state_volunteer_corps",
+      "start_year": 1859,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q1025803_bce750_e449faae",
       "name": "Cai",
       "kind": "polity",
@@ -2710,6 +2720,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "italian_volunteer_corps_1866",
+      "name": "Corpo Volontari Italiani (1866 campaign)",
+      "kind": "campaign_bounded_state_volunteer_corps",
+      "start_year": 1866,
+      "end_year": 1866,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_q71234_1757_02633c47",
@@ -4773,6 +4793,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "cairoli_villa_glori_band_1867",
+      "name": "Enrico Cairoli's Villa Glori volunteer band (1867)",
+      "kind": "formation_bounded_insurgent_band",
+      "start_year": 1867,
+      "end_year": 1867,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "clio_q983_1969_309cd47b",
       "name": "Equatorial Guinea",
       "kind": "polity",
@@ -5740,6 +5770,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "garibaldi_lombard_volunteer_column_1848",
+      "name": "Garibaldi's Lombard volunteer column (1848 campaign)",
+      "kind": "campaign_bounded_volunteer_column",
+      "start_year": 1848,
+      "end_year": 1848,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
+    },
+    {
       "id": "garibaldian_southern_army_1860",
       "name": "Garibaldian Southern Army (1860 campaign)",
       "kind": "revolutionary_campaign_army",
@@ -5748,6 +5788,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and the central Mediterranean"
+    },
+    {
+      "id": "garibaldian_agro_romano_volunteers_1867",
+      "name": "Garibaldian volunteers of the Agro Romano campaign (1867)",
+      "kind": "campaign_bounded_volunteer_army",
+      "start_year": 1867,
+      "end_year": 1867,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Europe"
     },
     {
       "id": "clio_in_gauda_k_602_db9e1fab",
@@ -19784,11 +19834,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1841,
-    "rated_entities": 480,
-    "rated_events": 5004,
+    "registry_polities": 1846,
+    "rated_entities": 484,
+    "rated_events": 5008,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18390,
+    "unresolved_event_candidates": 18386,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19817,6 +19867,7 @@
     "candidate_keyed_wave8_argentine_independence_hced_events": 6,
     "candidate_keyed_wave8_ecuador_independence_hced_events": 6,
     "candidate_keyed_wave8_comanche_hced_events": 4,
+    "candidate_keyed_wave8_garibaldi_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19827,21 +19878,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4740,
-      "candidate_keyed_reviewed_contracts": 430,
-      "geojson_points": 4690,
-      "modern_location_country_assertions": 4656,
-      "location_provenance_objects": 4705,
-      "point_fields_withheld_by_quarantine": 50,
+      "hced_candidate_bindings": 4744,
+      "candidate_keyed_reviewed_contracts": 434,
+      "geojson_points": 4692,
+      "modern_location_country_assertions": 4660,
+      "location_provenance_objects": 4709,
+      "point_fields_withheld_by_quarantine": 53,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 35,
-      "unique_events_with_any_quarantined_field": 98,
-      "point_quarantine_candidate_manifest_sha256": "57da5e4487d1eb6e930da1d960e32c8cc1d71e6be338dd0288df40a641ba2b0c",
+      "unique_events_with_any_quarantined_field": 101,
+      "point_quarantine_candidate_manifest_sha256": "5f0803d3e5c935514787a80e5896976c75700a741ba042aa6dffb8e9d8d9b5ef",
       "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
-      "quarantine_policy_sha256": "d9206493be71a5dd5af9eb2fd60ca1c62e4751a0eaed0dd202f4a52a2af10a4a",
+      "quarantine_policy_sha256": "73a4075894dd5fd1f021c8cca8fe188b79df73f4353eb5b13a3174e211f7d6fd",
       "assertion_status": {
-        "unreviewed_source_assertion": 4705
+        "unreviewed_source_assertion": 4709
       },
       "verified_location_assertions": {
         "availability": "not_available",

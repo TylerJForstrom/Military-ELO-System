@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 485,
-    "events": 5004,
-    "sources": 524,
-    "registry_polities": 1841
+    "entities": 490,
+    "events": 5008,
+    "sources": 533,
+    "registry_polities": 1846
   },
   "year_range": {
     "start": -1274,
@@ -99,6 +99,7 @@
     "accepted_wave8_argentine_independence_hced_events": 6,
     "accepted_wave8_ecuador_independence_hced_events": 6,
     "accepted_wave8_comanche_hced_events": 4,
+    "accepted_wave8_garibaldi_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2239,7 +2240,149 @@
     ],
     "wave8_comanche_entities_added": 9,
     "wave8_comanche_sources_added": 10,
-    "hced_label_pass_input_rows": 6022,
+    "wave8_garibaldi_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "holds": 2,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 3,
+      "new_entities": 5,
+      "new_sources": 9,
+      "newly_rated_events": 4,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_garibaldi_cohort_counts": {
+      "garibaldian_agro_romano_campaign_1867": 2,
+      "second_italian_war_of_independence_1859": 1,
+      "third_italian_war_of_independence_1866": 1
+    },
+    "wave8_garibaldi_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 2,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_garibaldi_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 3
+    },
+    "wave8_garibaldi_candidate_ids": [
+      "hced-Monte Suella1866-1",
+      "hced-Monterotondo1867-1",
+      "hced-Varese1859-1",
+      "hced-Villa Glori1867-1"
+    ],
+    "wave8_garibaldi_holds": [
+      {
+        "candidate_id": "hced-Morazzone1848-1",
+        "category": "irreconcilable_tactical_outcome",
+        "reason": "The sources establish the sides, date, Garibaldi's breakout, and the subsequent dissolution and flight to Switzerland, but not one stable tactical victor. Treccani describes the Austrian attack as repelled; Guerzoni calls the Austrian result only a half victory.",
+        "raw_row_sha256": "c3795422fc67d4708b92a4b3e87d0503c18a792cc104f9ff3961c5469fbb9ba3"
+      },
+      {
+        "candidate_id": "hced-Tre Ponti1859-1",
+        "category": "irreconcilable_tactical_outcome",
+        "reason": "The detailed account records an initial Garibaldian retreat in disorder, a rally, Austrian withdrawal, and the Cacciatori holding their morning ground; it explicitly declines to classify the final result as victory, defeat, check, or reverse.",
+        "raw_row_sha256": "685678851b4e50cdb6d9ff1214b0a29ed77e01ffc11e2e2285ffb8339b66814b"
+      }
+    ],
+    "wave8_garibaldi_integration_dispositions": [
+      {
+        "candidate_id": "hced-Palermo1860-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_naples",
+        "raw_row_sha256": "3de60e22c4a892ffb0b2896a68d8ec02fb71b1f850f366ecf52925d5e9a08eb4",
+        "reason": "The row's raw opponent is Naples and the concurrent Wave 8 Naples lane owns its exact 1860 Southern Army contract."
+      },
+      {
+        "candidate_id": "iwbd-10-4-43",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Morazzone1848-1",
+        "disposition": "hold_duplicate_with_unresolved_outcome",
+        "relationship": "same_engagement_same_date_same_queued_winner",
+        "fingerprint": {
+          "source_row": "43",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Morazzone",
+          "war_name": "Austro-Sardinian",
+          "start_date": "1848-08-26",
+          "end_date": "1848-08-26",
+          "duration_days": "1",
+          "attacker_raw": "Austria",
+          "defender_raw": "Sardinia",
+          "winner_raw": "Austria",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "Exact Morazzone twin. Its overbroad Sardinia defender and repeated Austrian assertion do not resolve the direct-source outcome conflict."
+      },
+      {
+        "candidate_id": "iwbd-28-10-104",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Tre Ponti1859-1",
+        "disposition": "hold_duplicate_with_unresolved_outcome",
+        "relationship": "same_engagement_same_date_same_queued_winner",
+        "fingerprint": {
+          "source_row": "104",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Tre Ponti",
+          "war_name": "Italian Unification",
+          "start_date": "1859-06-15",
+          "end_date": "1859-06-15",
+          "duration_days": "1",
+          "attacker_raw": "France/Sardinia/Piedmont",
+          "defender_raw": "Austria",
+          "winner_raw": "Austria",
+          "battle_level_victor_role": "Defender"
+        },
+        "reason": "Exact Tre Ponti twin. Its Austrian label cannot overcome the direct account's explicit refusal to assign a final tactical classification."
+      },
+      {
+        "candidate_id": "iwbd-28-10-98",
+        "source_dataset": "iwbd",
+        "hced_candidate_id": "hced-Varese1859-1",
+        "disposition": "deduplicate_to_hced",
+        "relationship": "same_engagement_same_date_matching_outcome",
+        "fingerprint": {
+          "source_row": "98",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Varese",
+          "war_name": "Italian Unification",
+          "start_date": "1859-05-26",
+          "end_date": "1859-05-26",
+          "duration_days": "1",
+          "attacker_raw": "France/Sardinia/Piedmont",
+          "defender_raw": "Austria",
+          "winner_raw": "France/Sardinia/Piedmont",
+          "battle_level_victor_role": "Attacker"
+        },
+        "reason": "Exact Varese twin with the same anti-Austrian result. Retain the source-reviewed HCED event with the Cacciatori delle Alpi identity."
+      }
+    ],
+    "wave8_garibaldi_outcome_overrides": [
+      {
+        "candidate_id": "hced-Monte Suella1866-1",
+        "raw_winner_label": "Habsburg Empire",
+        "raw_loser_label": "Garibaldi's Redshirts",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "italian_volunteer_corps_1866"
+        ],
+        "outcome_source_ids": [
+          "wave8_garibaldi_italian_army_rivista_2007"
+        ],
+        "outcome_source_family_ids": [
+          "italian_army_rivista_militare_2007_3"
+        ],
+        "correction_note": "The official Italian Army history directly identifies Garibaldi's victory over the Austrians at Monte Suello."
+      }
+    ],
+    "wave8_garibaldi_entities_added": 5,
+    "wave8_garibaldi_sources_added": 9,
+    "hced_label_pass_input_rows": 6016,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2252,7 +2395,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 582,
+      "reserved_candidate_contract": 588,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2264,7 +2407,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2496,
+      "no_unique_time_valid_label_match": 2490,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,
@@ -3895,7 +4038,7 @@
       },
       {
         "candidate_id": "iwbd-10-4-43",
-        "reason": "Wave 6 evidence audit hold"
+        "reason": "Exact Morazzone twin. Its overbroad Sardinia defender and repeated Austrian assertion do not resolve the direct-source outcome conflict."
       },
       {
         "candidate_id": "iwbd-10-4-44",
@@ -4384,6 +4527,14 @@
       {
         "candidate_id": "iwbd-221-85-1696",
         "reason": "Wave 6 evidence audit hold"
+      },
+      {
+        "candidate_id": "iwbd-28-10-104",
+        "reason": "Exact Tre Ponti twin. Its Austrian label cannot overcome the direct account's explicit refusal to assign a final tactical classification."
+      },
+      {
+        "candidate_id": "iwbd-28-10-98",
+        "reason": "Exact Varese twin with the same anti-Austrian result. Retain the source-reviewed HCED event with the Cacciatori delle Alpi identity."
       },
       {
         "candidate_id": "iwbd-37-13-111",
@@ -5012,9 +5163,9 @@
     "iwbd_rejections": {
       "coalition_or_composite_side": 139,
       "contains_constituent_iwbd_rows": 320,
-      "curated_exclusion": 218,
+      "curated_exclusion": 220,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 860,
+      "duplicate_of_hced_battle": 858,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

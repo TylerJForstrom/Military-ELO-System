@@ -4779,6 +4779,21 @@
     ]
   },
   {
+    "id": "garibaldi_lombard_volunteer_column_1848",
+    "name": "Garibaldi's Lombard volunteer column (1848 campaign)",
+    "kind": "campaign_bounded_volunteer_column",
+    "start_year": 1848,
+    "end_year": 1848,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The mixed volunteers entrusted to Garibaldi by the Provisional Government of Lombardy and retained through the Luino-Morazzone operations of August 1848. No rating is inherited by the later Italian Legion, Cacciatori delle Alpi, a generic Redshirts force, Sardinia, Italy, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_garibaldi_guerzoni_1889",
+      "wave8_garibaldi_treccani_garibaldi"
+    ]
+  },
+  {
     "id": "hungarian_honved_army_1848",
     "name": "Hungarian Honved Army (1848-1849)",
     "kind": "revolutionary_state_force",
@@ -5101,6 +5116,22 @@
     ]
   },
   {
+    "id": "sardinian_cacciatori_delle_alpi_1859",
+    "name": "Cacciatori delle Alpi (1859 Sardinian campaign)",
+    "kind": "campaign_bounded_state_volunteer_corps",
+    "start_year": 1859,
+    "end_year": 1859,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Garibaldi's Cacciatori delle Alpi while constituted as a distinct Sardinian formation for the 1859 campaign, including Varese and Tre Ponti. No rating is inherited by Sardinia, the 1848 volunteers, the 1860 Southern Army, the 1866 corps, generic Redshirts, or successors.",
+    "source_ids": [
+      "wave8_garibaldi_guerzoni_1889",
+      "wave8_garibaldi_italian_army_1859_inventory",
+      "wave8_garibaldi_italian_army_biography"
+    ]
+  },
+  {
     "id": "crooked_creek_comanche_fighting_force_1859",
     "name": "Comanche fighting force at Crooked Creek (1859)",
     "kind": "event_bounded_force",
@@ -5303,6 +5334,21 @@
     ]
   },
   {
+    "id": "italian_volunteer_corps_1866",
+    "name": "Corpo Volontari Italiani (1866 campaign)",
+    "kind": "campaign_bounded_state_volunteer_corps",
+    "start_year": 1866,
+    "end_year": 1866,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Kingdom of Italy's volunteer corps commanded by Garibaldi in the 1866 campaign. It was institutionally and temporally distinct from the 1859 Cacciatori and later formations. No rating is inherited by Italy, generic Redshirts, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_garibaldi_italian_army_biography",
+      "wave8_garibaldi_italian_army_rivista_2007"
+    ]
+  },
+  {
     "id": "red_cloud_plains_coalition_1866",
     "name": "Red Cloud's Lakota–Cheyenne–Arapaho coalition",
     "kind": "indigenous_coalition",
@@ -5350,6 +5396,36 @@
     "continuity_note": "The confederated Dominion from 1867 through the 1931 Statute of Westminster boundary. No rating is inherited by the pre-Confederation colonies or the project's post-1931 Canada identity.",
     "source_ids": [
       "wave8_canada_dominion_boundary"
+    ]
+  },
+  {
+    "id": "cairoli_villa_glori_band_1867",
+    "name": "Enrico Cairoli's Villa Glori volunteer band (1867)",
+    "kind": "formation_bounded_insurgent_band",
+    "start_year": 1867,
+    "end_year": 1867,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The roughly seventy volunteers separately led by Enrico Cairoli from Terni to Villa Glori to support a planned Roman uprising. No rating is inherited by Garibaldi's main 1867 campaign army, Italy, generic Redshirts, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_garibaldi_roma_villa_glori",
+      "wave8_garibaldi_treccani_villa_glori"
+    ]
+  },
+  {
+    "id": "garibaldian_agro_romano_volunteers_1867",
+    "name": "Garibaldian volunteers of the Agro Romano campaign (1867)",
+    "kind": "campaign_bounded_volunteer_army",
+    "start_year": 1867,
+    "end_year": 1867,
+    "region": "Southern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The volunteer force Garibaldi commanded in the October-November 1867 Agro Romano expedition, used here only at Monterotondo. No rating is inherited by the Cairoli band, Italy, the 1866 corps, generic Redshirts, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_garibaldi_italian_army_biography",
+      "wave8_garibaldi_treccani_mentana"
     ]
   },
   {

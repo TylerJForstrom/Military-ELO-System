@@ -6256,6 +6256,132 @@
     ]
   },
   {
+    "id": "wave8_garibaldi_guerzoni_1889",
+    "title": "Garibaldi, volume I (1807-1859)",
+    "url": "https://www.gutenberg.org/files/75122/75122-h/75122-h.htm",
+    "publisher": "Project Gutenberg transcription of Giuseppe Guerzoni's 1889 third edition",
+    "license": "Citation and link only",
+    "source_type": "digitized_near_contemporary_history_with_documents",
+    "accessed": "2026-07-16",
+    "source_family_id": "guerzoni_garibaldi_volume_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_italian_army_1859_inventory",
+    "title": "Inventario della Miscellanea G-17: Campagna 1859",
+    "url": "https://www.esercito.difesa.it/storia/Ufficio-Storico-SME/Documents/150312/G-17%20Inventario%20della%20Miscellanea%20G17%20Campagna%201859.pdf",
+    "publisher": "Italian Army Historical Office",
+    "license": "Citation and link only",
+    "source_type": "official_military_archival_finding_aid",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_historical_office_1859",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_italian_army_biography",
+    "title": "Giuseppe Garibaldi",
+    "url": "https://www.esercito.difesa.it/storia/giuseppe-garibaldi/83206.html",
+    "publisher": "Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_garibaldi_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_italian_army_rivista_2007",
+    "title": "L'opinione pubblica e l'Esercito dall'Unità d'Italia ai giorni nostri",
+    "url": "https://www.esercito.difesa.it/comunicazione/editoria/Rivista-Militare/archivio/Documents/2007/Rivista%20Militare%202007%20-%20Numero%203.pdf",
+    "publisher": "Rivista Militare, Italian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "italian_army_rivista_militare_2007_3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_lombardia_monte_suello",
+    "title": "Anfo, Monte Suello - Sacrario militare ai caduti",
+    "url": "https://www.lombardiabeniculturali.it/fotografie/schede/IMM-S0110-0000143/",
+    "publisher": "Lombardia Beni Culturali (SIRBeC)",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "lombardia_beni_culturali_monte_suello",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_roma_villa_glori",
+    "title": "Villa Glori",
+    "url": "https://www.turismoroma.it/en/node/1913",
+    "publisher": "Roma Capitale",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history_and_location",
+    "accessed": "2026-07-16",
+    "source_family_id": "roma_capitale_villa_glori",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_treccani_garibaldi",
+    "title": "Garibaldi, Giuseppe",
+    "url": "https://www.treccani.it/enciclopedia/giuseppe-garibaldi_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_garibaldi_enciclopedia_italiana",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_treccani_mentana",
+    "title": "Mentana",
+    "url": "https://www.treccani.it/enciclopedia/mentana_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_mentana_1867",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_garibaldi_treccani_villa_glori",
+    "title": "Villa Glori",
+    "url": "https://www.treccani.it/enciclopedia/villa-glori_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana (Treccani)",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_villa_glori_1867",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_great_russian_encyclopedia_pugachev",
     "title": "Pugachev Uprising, 1773-1775",
     "url": "https://old.bigenc.ru/domestic_history/text/3172674",
