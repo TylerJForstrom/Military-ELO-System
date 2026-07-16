@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 472,
-    "events": 4994,
-    "sources": 508,
-    "registry_polities": 1828
+    "entities": 476,
+    "events": 5000,
+    "sources": 514,
+    "registry_polities": 1832
   },
   "year_range": {
     "start": -1274,
@@ -97,6 +97,7 @@
     "accepted_wave8_naples_hced_events": 10,
     "accepted_wave8_somali_irish_sa_hced_events": 17,
     "accepted_wave8_argentine_independence_hced_events": 6,
+    "accepted_wave8_ecuador_independence_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2166,7 +2167,35 @@
     ],
     "wave8_argentine_independence_entities_added": 12,
     "wave8_argentine_independence_sources_added": 14,
-    "hced_label_pass_input_rows": 6034,
+    "wave8_ecuador_independence_counts": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6,
+      "new_entities": 4,
+      "new_sources": 6
+    },
+    "wave8_ecuador_independence_cohort_counts": {
+      "guayaquil_independence_campaign": 2,
+      "pasto_royalist_rebellion": 1,
+      "sucre_quito_campaign": 3
+    },
+    "wave8_ecuador_independence_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_ecuador_independence_candidate_ids": [
+      "hced-Huachi1820-1",
+      "hced-Huachi1821-1",
+      "hced-Ibarra1823-1",
+      "hced-Pichincha1822-1",
+      "hced-Tanizahua1821-1",
+      "hced-Yaguachi1821-1"
+    ],
+    "wave8_ecuador_independence_holds": [],
+    "wave8_ecuador_independence_entities_added": 4,
+    "wave8_ecuador_independence_sources_added": 6,
+    "hced_label_pass_input_rows": 6028,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2179,7 +2208,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 570,
+      "reserved_candidate_contract": 576,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2191,7 +2220,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2508,
+      "no_unique_time_valid_label_match": 2502,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,

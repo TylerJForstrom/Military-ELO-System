@@ -505,6 +505,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "agualongo_pasto_royalist_force_ibarra_1823",
+      "name": "Agualongo's Pasto royalist force at Ibarra",
+      "kind": "royalist_insurgent_force",
+      "start_year": 1823,
+      "end_year": 1823,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Andes"
+    },
+    {
       "id": "clio_q400290_1305_842d4d6a",
       "name": "Ahi Republic",
       "kind": "republic",
@@ -5332,6 +5342,16 @@
       "coverage_discontinuous": false,
       "region": "Unclassified",
       "superseded_by": "orange_free_state_1854"
+    },
+    {
+      "id": "free_province_guayaquil_1820_1822",
+      "name": "Free Province of Guayaquil",
+      "kind": "independent_province",
+      "start_year": 1820,
+      "end_year": 1822,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pacific South America"
     },
     {
       "id": "clio_gb_british_emp_1_1788_e4a0a7a5",
@@ -14580,6 +14600,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "gran_colombia_1819_1831",
+      "name": "Republic of Colombia (Gran Colombia)",
+      "kind": "republic",
+      "start_year": 1819,
+      "end_year": 1831,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern South America"
+    },
+    {
       "id": "clio_cr_costa_rica_rep_1840_6a6d91c1",
       "name": "Republic of Costa Rica",
       "kind": "republic",
@@ -16913,6 +16943,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "sucre_quito_liberating_army_1821_1822",
+      "name": "Sucre's multinational Quito liberating army",
+      "kind": "campaign_coalition_army",
+      "start_year": 1821,
+      "end_year": 1822,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pacific South America"
     },
     {
       "id": "clio_cn_sui_dyn_587_af2a9518",
@@ -19654,11 +19694,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1828,
-    "rated_entities": 467,
-    "rated_events": 4994,
+    "registry_polities": 1832,
+    "rated_entities": 471,
+    "rated_events": 5000,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18400,
+    "unresolved_event_candidates": 18394,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19685,6 +19725,7 @@
     "candidate_keyed_wave8_naples_hced_events": 10,
     "candidate_keyed_wave8_somali_irish_sa_hced_events": 17,
     "candidate_keyed_wave8_argentine_independence_hced_events": 6,
+    "candidate_keyed_wave8_ecuador_independence_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19695,11 +19736,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4730,
-      "candidate_keyed_reviewed_contracts": 420,
-      "geojson_points": 4684,
-      "modern_location_country_assertions": 4646,
-      "location_provenance_objects": 4695,
+      "hced_candidate_bindings": 4736,
+      "candidate_keyed_reviewed_contracts": 426,
+      "geojson_points": 4690,
+      "modern_location_country_assertions": 4652,
+      "location_provenance_objects": 4701,
       "point_fields_withheld_by_quarantine": 46,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
       "source_blank_country_fields": 1,
@@ -19709,7 +19750,7 @@
       "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
       "quarantine_policy_sha256": "cca2a1495e0fb5733e8ea877035363e3e82e611e48c37bf05b9250824f0a204c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4695
+        "unreviewed_source_assertion": 4701
       },
       "verified_location_assertions": {
         "availability": "not_available",

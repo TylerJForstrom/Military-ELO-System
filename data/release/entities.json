@@ -4113,6 +4113,20 @@
     ]
   },
   {
+    "id": "gran_colombia_1819_1831",
+    "name": "Republic of Colombia (Gran Colombia)",
+    "kind": "republic",
+    "start_year": 1819,
+    "end_year": 1831,
+    "region": "Northern South America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Republic of Colombia conventionally called Gran Colombia. Its rating is not inherited by modern Colombia, Ecuador, Panama, or Venezuela, and the generic label Colombia is not opened.",
+    "source_ids": [
+      "wave8_ecuador_anh_ibarra_1823"
+    ]
+  },
+  {
     "id": "clio_q836_1820_f17c2530",
     "name": "Burma",
     "kind": "polity",
@@ -4126,6 +4140,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "free_province_guayaquil_1820_1822",
+    "name": "Free Province of Guayaquil",
+    "kind": "independent_province",
+    "start_year": 1820,
+    "end_year": 1822,
+    "region": "Pacific South America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent Guayaquil polity and its Division Protectora de Quito, bounded from the October 1820 revolution to incorporation into Gran Colombia in 1822. No rating is inherited by modern Ecuador, Guayaquil city, or Gran Colombia.",
+    "source_ids": [
+      "wave8_ecuador_anh_guayaquil_flags",
+      "wave8_ecuador_cuenca_independence_history"
     ]
   },
   {
@@ -4171,6 +4200,21 @@
     "source_ids": [
       "wave8_argentine_independence_jujuy_government_leon",
       "wave8_argentine_independence_unju_leon"
+    ]
+  },
+  {
+    "id": "sucre_quito_liberating_army_1821_1822",
+    "name": "Sucre's multinational Quito liberating army",
+    "kind": "campaign_coalition_army",
+    "start_year": 1821,
+    "end_year": 1822,
+    "region": "Pacific South America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded army combining Gran Colombian, Guayaquilean, Peruvian, Rioplatense, British-volunteer, and other formations under Antonio Jose de Sucre. Components do not receive separate inferred outcomes and no modern state inherits this rating.",
+    "source_ids": [
+      "wave8_ecuador_anh_independence_campaign",
+      "wave8_ecuador_army_pichincha_composition"
     ]
   },
   {
@@ -4238,6 +4282,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "agualongo_pasto_royalist_force_ibarra_1823",
+    "name": "Agualongo's Pasto royalist force at Ibarra",
+    "kind": "royalist_insurgent_force",
+    "start_year": 1823,
+    "end_year": 1823,
+    "region": "Northern Andes",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Pasto royalist force led by Agustin Agualongo in the 1823 Ibarra campaign. No rating is inherited by Spain, Pasto, an ethnic population, or later royalist movements.",
+    "source_ids": [
+      "wave8_ecuador_anh_ibarra_1823"
     ]
   },
   {

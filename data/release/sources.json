@@ -5964,6 +5964,89 @@
     ]
   },
   {
+    "id": "wave8_ecuador_anh_guayaquil_flags",
+    "title": "The flags of Guayaquil in the independence process, 1820-1822",
+    "url": "https://www.academiahistoria.org.ec/index.php/boletinesANHE/article/download/313/598",
+    "publisher": "Academia Nacional de Historia del Ecuador",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecuador_academia_nacional_historia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ecuador_anh_ibarra_1823",
+    "title": "Bolivar, Agualongo, and the Battle of Ibarra",
+    "url": "https://academiahistoria.org.ec/index.php/boletinesANHE/article/download/293/560",
+    "publisher": "Academia Nacional de Historia del Ecuador",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecuador_academia_nacional_historia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_ecuador_anh_independence_campaign",
+    "title": "The Quito independence campaign and the Battle of Pichincha",
+    "url": "https://academiahistoria.org.ec/index.php/boletinesANHE/article/download/293/560/1087",
+    "publisher": "Academia Nacional de Historia del Ecuador",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecuador_academia_nacional_historia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_ecuador_army_independence_arms_history",
+    "title": "Ecuadorian Army arms history: independence campaigns",
+    "url": "https://mail.ejercitoecuatoriano.mil.ec/contact-us/categoria/139-sistema-de-armas/images/IMAGENES/RENDICION_2025/13BI/procesos_de_contratacin_2024.pdf",
+    "publisher": "Ecuadorian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecuadorian_army_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_ecuador_army_pichincha_composition",
+    "title": "Infantry history and the Battle of Pichincha",
+    "url": "https://ejercitoecuatoriano.mil.ec/index.php/pages/ejercito/ccasefe/infanteria",
+    "publisher": "Ecuadorian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecuadorian_army_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_ecuador_cuenca_independence_history",
+    "title": "La Campana Libertadora de 1820-1822",
+    "url": "https://biblioteca.ucuenca.edu.ec/digital/files/original/b4faeac57c685ebe3f10ab61ac65cdcee34b5dc0.pdf",
+    "publisher": "University of Cuenca Digital Library",
+    "license": "Citation and link only",
+    "source_type": "academic_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_cuenca_independence_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_encyclopedia_history_ukraine_zhovnyne",
     "title": "Battle of Zhovnyne, 1638",
     "url": "https://resource.history.org.ua/cgi-bin/eiu/history.exe?C21COM=S&I21DBN=DOP&P21DBN=EIU&S21CNR=20&S21COLORTERMS=0&S21FMT=eiu_all&S21P01=0&S21P02=0&S21P03=TRN%3D&S21REF=10&S21STN=1&S21STR=Zhovnynska_bytva_1638&Z21ID=",
