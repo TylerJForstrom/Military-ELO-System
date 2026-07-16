@@ -2514,6 +2514,46 @@
       "region": "North America"
     },
     {
+      "id": "crooked_creek_comanche_fighting_force_1859",
+      "name": "Comanche fighting force at Crooked Creek (1859)",
+      "kind": "event_bounded_force",
+      "start_year": 1859,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kansas Territory"
+    },
+    {
+      "id": "wichita_village_comanche_fighting_force_1858",
+      "name": "Comanche fighting force at the Wichita Village (1858)",
+      "kind": "event_bounded_force",
+      "start_year": 1858,
+      "end_year": 1858,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Indian Territory"
+    },
+    {
+      "id": "plum_creek_comanche_kiowa_war_party_1840",
+      "name": "Comanche–Kiowa Great Raid war party at Plum Creek (1840)",
+      "kind": "event_bounded_coalition",
+      "start_year": 1840,
+      "end_year": 1840,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Republic of Texas"
+    },
+    {
+      "id": "walkers_creek_comanche_waco_mexican_raiding_party_1844",
+      "name": "Comanche–Waco–Mexican raiding party at Walker's Creek (1844)",
+      "kind": "event_bounded_coalition",
+      "start_year": 1844,
+      "end_year": 1844,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Republic of Texas"
+    },
+    {
       "id": "lotter_commando_1901",
       "name": "Commandant Lotter's Commando (1901)",
       "kind": "event_bounded_boer_commando",
@@ -6561,6 +6601,16 @@
       "region": "Western Arabia"
     },
     {
+      "id": "walkers_creek_hays_ranger_detachment_1844",
+      "name": "Hays's Texas Ranger detachment at Walker's Creek (1844)",
+      "kind": "event_bounded_force",
+      "start_year": 1844,
+      "end_year": 1844,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Republic of Texas"
+    },
+    {
       "id": "clio_jp_heian_793_be59785f",
       "name": "Heian Japan",
       "kind": "polity",
@@ -7152,6 +7202,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "wichita_expedition_indigenous_auxiliaries_1858_1859",
+      "name": "Indigenous auxiliaries in the Wichita Expedition (1858–1859)",
+      "kind": "campaign_bounded_allied_force",
+      "start_year": 1858,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Plains"
     },
     {
       "id": "clio_pk_indo_greek_k_bce126_5b9fcfa7",
@@ -15121,6 +15181,16 @@
       "region": "North America"
     },
     {
+      "id": "plum_creek_texian_force_1840",
+      "name": "Republic of Texas force at Plum Creek (1840)",
+      "kind": "event_bounded_force",
+      "start_year": 1840,
+      "end_year": 1840,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Republic of Texas"
+    },
+    {
       "id": "clio_q1005_1967_d5c215ca",
       "name": "Republic of The Gambia",
       "kind": "republic",
@@ -18147,6 +18217,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "plum_creek_tonkawa_allies_1840",
+      "name": "Tonkawa allies at Plum Creek (1840)",
+      "kind": "event_bounded_allied_force",
+      "start_year": 1840,
+      "end_year": 1840,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Republic of Texas"
+    },
+    {
       "id": "clio_gb_british_emp_1_1820_c50025b6",
       "name": "Trucial States",
       "kind": "polity",
@@ -18669,6 +18749,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "wichita_expedition_us_army_force_1858_1859",
+      "name": "Van Dorn's U.S. Army force in the Wichita Expedition (1858–1859)",
+      "kind": "campaign_force",
+      "start_year": 1858,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Plains"
     },
     {
       "id": "clio_dz_vandal_k_439_3e96602a",
@@ -19694,11 +19784,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1832,
-    "rated_entities": 471,
-    "rated_events": 5000,
+    "registry_polities": 1841,
+    "rated_entities": 480,
+    "rated_events": 5004,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18394,
+    "unresolved_event_candidates": 18390,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -19726,6 +19816,7 @@
     "candidate_keyed_wave8_somali_irish_sa_hced_events": 17,
     "candidate_keyed_wave8_argentine_independence_hced_events": 6,
     "candidate_keyed_wave8_ecuador_independence_hced_events": 6,
+    "candidate_keyed_wave8_comanche_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -19736,21 +19827,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4736,
-      "candidate_keyed_reviewed_contracts": 426,
+      "hced_candidate_bindings": 4740,
+      "candidate_keyed_reviewed_contracts": 430,
       "geojson_points": 4690,
-      "modern_location_country_assertions": 4652,
-      "location_provenance_objects": 4701,
-      "point_fields_withheld_by_quarantine": 46,
+      "modern_location_country_assertions": 4656,
+      "location_provenance_objects": 4705,
+      "point_fields_withheld_by_quarantine": 50,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 83,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 35,
-      "unique_events_with_any_quarantined_field": 94,
-      "point_quarantine_candidate_manifest_sha256": "c0a477542ce2e5cfedc4017df74514dd7118c126e75854e54c77f70373b24c76",
+      "unique_events_with_any_quarantined_field": 98,
+      "point_quarantine_candidate_manifest_sha256": "57da5e4487d1eb6e930da1d960e32c8cc1d71e6be338dd0288df40a641ba2b0c",
       "country_quarantine_candidate_manifest_sha256": "eb491b73550a92645b5521ed7bb35f46fc1e4e00f5b448d0fe5197b2e2f900da",
-      "quarantine_policy_sha256": "cca2a1495e0fb5733e8ea877035363e3e82e611e48c37bf05b9250824f0a204c",
+      "quarantine_policy_sha256": "d9206493be71a5dd5af9eb2fd60ca1c62e4751a0eaed0dd202f4a52a2af10a4a",
       "assertion_status": {
-        "unreviewed_source_assertion": 4701
+        "unreviewed_source_assertion": 4705
       },
       "verified_location_assertions": {
         "availability": "not_available",

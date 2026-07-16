@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 476,
-    "events": 5000,
-    "sources": 514,
-    "registry_polities": 1832
+    "entities": 485,
+    "events": 5004,
+    "sources": 524,
+    "registry_polities": 1841
   },
   "year_range": {
     "start": -1274,
@@ -98,6 +98,7 @@
     "accepted_wave8_somali_irish_sa_hced_events": 17,
     "accepted_wave8_argentine_independence_hced_events": 6,
     "accepted_wave8_ecuador_independence_hced_events": 6,
+    "accepted_wave8_comanche_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -2195,7 +2196,50 @@
     "wave8_ecuador_independence_holds": [],
     "wave8_ecuador_independence_entities_added": 4,
     "wave8_ecuador_independence_sources_added": 6,
-    "hced_label_pass_input_rows": 6028,
+    "wave8_comanche_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 2,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 9,
+      "new_sources": 10,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_comanche_cohort_counts": {
+      "texas_comanche_conflict_1840_1844": 2,
+      "wichita_expedition_1858_1859": 2
+    },
+    "wave8_comanche_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 2,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_comanche_candidate_ids": [
+      "hced-Crooked Creek1859-1",
+      "hced-Plum Creek, Texas1840-1",
+      "hced-Rush Springs1858-1",
+      "hced-Walkers Creek1844-1"
+    ],
+    "wave8_comanche_holds": [
+      {
+        "candidate_id": "hced-Adobe Walls1864-1",
+        "category": "contradictory_outcome_evidence",
+        "reason": "The coalition cannot be reduced to HCED's United States–Comanche pair: Carson's New Mexico Volunteers fought with Ute and Jicarilla Apache scouts against Kiowa, Comanche, and Kiowa-Apache participants. More importantly, the TSHA account credits Carson with a decisive victory while two NPS histories describe a failed expedition/retreat and the Kiowa–Comanche force driving it from the field. The row is neither kept as a U.S. win nor reversed or converted into a draw.",
+        "raw_row_sha256": "957ce353c339375d96c44d93768d5d52f58efd863c9a2163cd230a894faf548d"
+      },
+      {
+        "candidate_id": "hced-Colorado1840-1",
+        "category": "ambiguous_event_identity_and_noncompetitive_massacre",
+        "reason": "The bare name Colorado and mixed participant tokens do not safely distinguish the separately documented 12 August Battle of Plum Creek from Moore's 24 October destruction of a Comanche village on the upper Colorado. HCED also marks the row as a battle followed by massacre, and the government marker records one-sided killing and capture at the village. No canonical engagement or second Elo result is invented.",
+        "raw_row_sha256": "7cee0a370329e6e3fa452e9ca9aff24b6ea31301a2b211af6b84334a58f4954e"
+      }
+    ],
+    "wave8_comanche_entities_added": 9,
+    "wave8_comanche_sources_added": 10,
+    "hced_label_pass_input_rows": 6022,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -2208,7 +2252,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 576,
+      "reserved_candidate_contract": 582,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -2220,7 +2264,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2502,
+      "no_unique_time_valid_label_match": 2496,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 102,
       "same_or_empty_opposing_side": 38,

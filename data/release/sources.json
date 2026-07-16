@@ -5964,6 +5964,146 @@
     ]
   },
   {
+    "id": "wave8_comanche_army_mcoe_raids",
+    "title": "Learning the Long-Distance Raid: Comanche, Rangers and 2nd U.S. Cavalry on the Texas Frontier",
+    "url": "https://www.benning.army.mil/armor/eARMOR/content/issues/2014/JUL_SEP/Jennings.html",
+    "publisher": "U.S. Army Maneuver Center of Excellence",
+    "license": "US government work",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_armor_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_nps_indian_scouts",
+    "title": "Indian Scouts — Fort Union National Monument",
+    "url": "https://www.nps.gov/foun/learn/historyculture/indian-scouts.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_nps_santa_fe_trail_four_tribes",
+    "title": "The Santa Fe Trail's Impact on Four Indian Nations",
+    "url": "https://www.nps.gov/safe/learn/historyculture/upload/Santa-Fe-Trail-Impact-on-Four-Tribes-508.pdf",
+    "publisher": "U.S. National Park Service",
+    "license": "US government work",
+    "source_type": "government_ethnohistory",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_national_park_service",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_ohs_wichita_village",
+    "title": "Wichita Village, Battle of the",
+    "url": "https://www.okhistory.org/publications/enc/entry?entry=WI004",
+    "publisher": "Oklahoma Historical Society",
+    "license": "linked_reference",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "oklahoma_historical_society",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_thc_centennial_monuments",
+    "title": "Monuments Erected by the State of Texas to Commemorate the Centenary of Texas Independence",
+    "url": "https://www.thc.texas.gov/public/upload/preserve/TexasCentennial1938.pdf",
+    "publisher": "Texas Historical Commission",
+    "license": "linked_reference",
+    "source_type": "government_historical_marker_compendium",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_historical_commission",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_thc_plum_creek",
+    "title": "Battle of Plum Creek historical marker — Atlas Number 5055009783",
+    "url": "https://atlas.thc.texas.gov/Details/5055009783",
+    "publisher": "Texas Historical Commission",
+    "license": "linked_reference",
+    "source_type": "government_historical_marker",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_historical_commission",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_tsha_first_adobe_walls",
+    "title": "Adobe Walls, First Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/adobe-walls-first-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "linked_reference",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_state_historical_association",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_tsha_plum_creek",
+    "title": "Plum Creek, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/plum-creek-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "linked_reference",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_state_historical_association",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_tsha_walkers_creek",
+    "title": "Walker's Creek, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/walkers-creek-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "linked_reference",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_state_historical_association",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_comanche_uok_without_quarter",
+    "title": "Without Quarter: The Wichita Expedition and the Fight on Crooked Creek",
+    "url": "https://www.oupress.com/9780806123677/without-quarter/",
+    "publisher": "University of Oklahoma Press",
+    "license": "linked_reference",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_of_oklahoma_press",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_ecuador_anh_guayaquil_flags",
     "title": "The flags of Guayaquil in the independence process, 1820-1822",
     "url": "https://www.academiahistoria.org.ec/index.php/boletinesANHE/article/download/313/598",

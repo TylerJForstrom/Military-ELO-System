@@ -4512,6 +4512,20 @@
     ]
   },
   {
+    "id": "plum_creek_comanche_kiowa_war_party_1840",
+    "name": "Comanche–Kiowa Great Raid war party at Plum Creek (1840)",
+    "kind": "event_bounded_coalition",
+    "start_year": 1840,
+    "end_year": 1840,
+    "region": "Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Comanche and Kiowa war party returning from the Great Raid; neither nation receives a separate timeless identity. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_thc_plum_creek"
+    ]
+  },
+  {
     "id": "clio_q774_1840_14933123",
     "name": "Guatemala",
     "kind": "polity",
@@ -4573,6 +4587,63 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "plum_creek_texian_force_1840",
+    "name": "Republic of Texas force at Plum Creek (1840)",
+    "kind": "event_bounded_force",
+    "start_year": 1840,
+    "end_year": 1840,
+    "region": "Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded volunteer, militia, and ranger force assembled at Plum Creek under Felix Huston and subordinate commanders. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_thc_plum_creek",
+      "wave8_comanche_tsha_plum_creek"
+    ]
+  },
+  {
+    "id": "plum_creek_tonkawa_allies_1840",
+    "name": "Tonkawa allies at Plum Creek (1840)",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1840,
+    "end_year": 1840,
+    "region": "Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The thirteen Tonkawa participants directly identified with Edward Burleson's volunteers at Plum Creek. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_thc_plum_creek"
+    ]
+  },
+  {
+    "id": "walkers_creek_comanche_waco_mexican_raiding_party_1844",
+    "name": "Comanche–Waco–Mexican raiding party at Walker's Creek (1844)",
+    "kind": "event_bounded_coalition",
+    "start_year": 1844,
+    "end_year": 1844,
+    "region": "Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded raiding party whose Comanche, Waco, and Mexican composition is reported by the Republic's acting war secretary. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_tsha_walkers_creek"
+    ]
+  },
+  {
+    "id": "walkers_creek_hays_ranger_detachment_1844",
+    "name": "Hays's Texas Ranger detachment at Walker's Creek (1844)",
+    "kind": "event_bounded_force",
+    "start_year": 1844,
+    "end_year": 1844,
+    "region": "Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The fifteen-man ranger detachment commanded by John Coffee Hays in the 8 June Walker's Creek action. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_tsha_walkers_creek"
     ]
   },
   {
@@ -4984,6 +5055,64 @@
     "source_ids": [
       "britannica_reform_war",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "wichita_village_comanche_fighting_force_1858",
+    "name": "Comanche fighting force at the Wichita Village (1858)",
+    "kind": "event_bounded_force",
+    "start_year": 1858,
+    "end_year": 1858,
+    "region": "Indian Territory",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded warriors who fought Van Dorn's column on 1 October; the identity does not absorb noncombatants in the attacked camp. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_army_mcoe_raids",
+      "wave8_comanche_ohs_wichita_village"
+    ]
+  },
+  {
+    "id": "wichita_expedition_indigenous_auxiliaries_1858_1859",
+    "name": "Indigenous auxiliaries in the Wichita Expedition (1858–1859)",
+    "kind": "campaign_bounded_allied_force",
+    "start_year": 1858,
+    "end_year": 1859,
+    "region": "Southern Plains",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded Native scouts and auxiliaries directly attested with Van Dorn's column; uncertain constituent labels are not expanded. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_army_mcoe_raids"
+    ]
+  },
+  {
+    "id": "wichita_expedition_us_army_force_1858_1859",
+    "name": "Van Dorn's U.S. Army force in the Wichita Expedition (1858–1859)",
+    "kind": "campaign_force",
+    "start_year": 1858,
+    "end_year": 1859,
+    "region": "Southern Plains",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded Second U.S. Cavalry and attached mounted-infantry force serving under Earl Van Dorn. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_army_mcoe_raids"
+    ]
+  },
+  {
+    "id": "crooked_creek_comanche_fighting_force_1859",
+    "name": "Comanche fighting force at Crooked Creek (1859)",
+    "kind": "event_bounded_force",
+    "start_year": 1859,
+    "end_year": 1859,
+    "region": "Kansas Territory",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded warriors who resisted the Wichita Expedition at Crooked Creek; no unattested Comanche band is supplied. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_comanche_army_mcoe_raids",
+      "wave8_comanche_uok_without_quarter"
     ]
   },
   {

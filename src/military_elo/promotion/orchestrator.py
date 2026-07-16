@@ -878,7 +878,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 46
+        len(HCED_POINT_QUARANTINE_IDS) != 50
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 83
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1860,6 +1860,39 @@ def build_expanded_release(
             *wave8_argentine_independence_events,
         ],
     )
+    wave8_comanche_events = promote_wave8_comanche_contracts(
+        hced,
+        release_entities,
+        [
+            *seed_events,
+            *source_events,
+            *iwd_events,
+            *label_events,
+            *wave6_events,
+            *wave7_root_events,
+            *wave7_central_events,
+            *wave7_central_pass2_events,
+            *wave7_global_events,
+            *wave7_west_events,
+            *wave8_african_states_events,
+            *wave8_new_zealand_events,
+            *wave8_north_america_events,
+            *wave8_xhosa_events,
+            *wave8_polish_audit_events,
+            *wave8_namibia_resistance_events,
+            *wave8_first_saudi_events,
+            *wave8_early_states_events,
+            *wave8_judean_revolts_events,
+            *wave8_canadian_resistance_events,
+            *wave8_wales_events,
+            *wave8_cossack_events,
+            *wave8_fast17_events,
+            *wave8_naples_events,
+            *wave8_somali_irish_sa_events,
+            *wave8_argentine_independence_events,
+            *wave8_ecuador_independence_events,
+        ],
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -1884,6 +1917,7 @@ def build_expanded_release(
         *wave8_somali_irish_sa_events,
         *wave8_argentine_independence_events,
         *wave8_ecuador_independence_events,
+        *wave8_comanche_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -1934,6 +1968,7 @@ def build_expanded_release(
             *WAVE8_SOMALI_IRISH_SA_HOLD_IDS,
             *WAVE8_ARGENTINE_INDEPENDENCE_HOLD_IDS,
             *WAVE8_ECUADOR_INDEPENDENCE_HOLD_IDS,
+            *WAVE8_COMANCHE_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -1984,6 +2019,7 @@ def build_expanded_release(
         *wave8_somali_irish_sa_events,
         *wave8_argentine_independence_events,
         *wave8_ecuador_independence_events,
+        *wave8_comanche_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -2177,6 +2213,7 @@ def build_expanded_release(
     install_wave8_somali_irish_sa_sources(sources_by_id)
     install_wave8_argentine_independence_sources(sources_by_id)
     install_wave8_ecuador_independence_sources(sources_by_id)
+    install_wave8_comanche_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -2206,6 +2243,7 @@ def build_expanded_release(
         *wave8_somali_irish_sa_events,
         *wave8_argentine_independence_events,
         *wave8_ecuador_independence_events,
+        *wave8_comanche_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -2235,6 +2273,7 @@ def build_expanded_release(
         *wave8_somali_irish_sa_events,
         *wave8_argentine_independence_events,
         *wave8_ecuador_independence_events,
+        *wave8_comanche_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -2263,6 +2302,7 @@ def build_expanded_release(
             | WAVE8_SOMALI_IRISH_SA_CONTRACT_IDS
             | WAVE8_ARGENTINE_INDEPENDENCE_CONTRACT_IDS
             | WAVE8_ECUADOR_INDEPENDENCE_CONTRACT_IDS
+            | WAVE8_COMANCHE_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -2324,6 +2364,7 @@ def build_expanded_release(
             lambda entity: str(entity["id"]),
             WAVE8_ECUADOR_INDEPENDENCE_ENTITIES,
         ),
+        *map(lambda entity: str(entity["id"]), WAVE8_COMANCHE_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -2521,6 +2562,7 @@ def build_expanded_release(
         - len(wave8_somali_irish_sa_events)
         - len(wave8_argentine_independence_events)
         - len(wave8_ecuador_independence_events)
+        - len(wave8_comanche_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -2585,6 +2627,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_ecuador_independence_hced_events": len(
             wave8_ecuador_independence_events
         ),
+        "candidate_keyed_wave8_comanche_hced_events": len(wave8_comanche_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -2793,6 +2836,7 @@ def build_expanded_release(
             "accepted_wave8_ecuador_independence_hced_events": len(
                 wave8_ecuador_independence_events
             ),
+            "accepted_wave8_comanche_hced_events": len(wave8_comanche_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -3289,6 +3333,21 @@ def build_expanded_release(
             "wave8_ecuador_independence_sources_added": len(
                 WAVE8_ECUADOR_INDEPENDENCE_SOURCES
             ),
+            "wave8_comanche_counts": wave8_comanche_counts(),
+            "wave8_comanche_cohort_counts": wave8_comanche_cohort_counts(),
+            "wave8_comanche_queue_validation": wave8_comanche_queue_validation,
+            "wave8_comanche_candidate_ids": sorted(WAVE8_COMANCHE_CONTRACT_IDS),
+            "wave8_comanche_holds": [
+                {
+                    "candidate_id": candidate_id,
+                    "category": contract["hold_category"],
+                    "reason": contract["hold_reason"],
+                    "raw_row_sha256": contract["raw_row_sha256"],
+                }
+                for candidate_id, contract in sorted(WAVE8_COMANCHE_HOLDS.items())
+            ],
+            "wave8_comanche_entities_added": len(WAVE8_COMANCHE_ENTITIES),
+            "wave8_comanche_sources_added": len(WAVE8_COMANCHE_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -3480,6 +3539,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_ecuador_independence_hced_events": len(
             wave8_ecuador_independence_events
         ),
+        "candidate_keyed_wave8_comanche_hced_events": len(wave8_comanche_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
