@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 843,
-    "events": 5246,
-    "sources": 1189,
-    "registry_polities": 2199
+    "entities": 861,
+    "events": 5250,
+    "sources": 1206,
+    "registry_polities": 2217
   },
   "year_range": {
     "start": -1274,
@@ -148,6 +148,7 @@
     "accepted_wave8_sauk_hced_events": 3,
     "accepted_wave8_ute_hced_events": 2,
     "accepted_wave8_yakima_hced_events": 2,
+    "accepted_wave8_taliban_al_qaeda_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -12790,7 +12791,550 @@
     "wave8_yakima_outcome_overrides": [],
     "wave8_yakima_entities_added": 4,
     "wave8_yakima_sources_added": 16,
-    "hced_label_pass_input_rows": 5701,
+    "wave8_taliban_al_qaeda_counts": {
+      "adjacent_hced_dispositions": 5,
+      "country_quarantine_additions": 0,
+      "existing_release_boundaries": 4,
+      "holds": 0,
+      "integration_dispositions": 17,
+      "iwbd_duplicate_dispositions": 4,
+      "new_entities": 18,
+      "new_sources": 17,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 0,
+      "ucdp_overlap_dispositions": 8
+    },
+    "wave8_taliban_al_qaeda_cohort_counts": {
+      "afghanistan_2001_tactical": 4
+    },
+    "wave8_taliban_al_qaeda_metadata": {
+      "audit": "candidate_keyed_exact_compound_actor_with_tactical_scope",
+      "counts": {
+        "adjacent_hced_dispositions": 5,
+        "country_quarantine_additions": 0,
+        "existing_release_boundaries": 4,
+        "holds": 0,
+        "integration_dispositions": 17,
+        "iwbd_duplicate_dispositions": 4,
+        "new_entities": 18,
+        "new_sources": 17,
+        "newly_rated_events": 4,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 4,
+        "promotion_contracts": 4,
+        "reviewed_hced_rows": 4,
+        "sole_blocker_rows": 4,
+        "terminal_exclusions": 0,
+        "ucdp_overlap_dispositions": 8
+      },
+      "cohorts": {
+        "afghanistan_2001_tactical": 4
+      },
+      "final_audit_signature": "e9f9b8a73d528d0055e68d67f1138e1d73211f7bef3d1efb5543772a2cc60937",
+      "funnel_audit": {
+        "label": "taliban al qaeda",
+        "event_candidate_id_sha256": "d645a53ebb045ff8525088633cb44e88561e27deea3092c6ed4fcd283bdabb09",
+        "events_touched": 4,
+        "unresolved_side_attempts": 4,
+        "sole_blocker_events": 4,
+        "candidate_ids": [],
+        "time_valid_candidate_ids": [],
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 4
+        },
+        "centuries": {
+          "CE_21": 4
+        },
+        "components_touched": 1,
+        "components_bridged": 0,
+        "rated_counterpart_entities": 1
+      },
+      "module_owner": "military_elo.promotion.wave8_taliban_al_qaeda",
+      "queue_sha256": {
+        "hced": "7466f5c9db3cde0d74ee39a4e0c209d9a397457435986a1ace156f9d6aa2aabf",
+        "iwbd": "2ae0b16256c472c62a78f451b0532ff1676e37db35a8a8c6cd2519abe38e5fc7",
+        "ucdp": {
+          "ucdp-conflict-26.1-candidates.jsonl": "cbc28e8d06b5fdd83b688ca0be45695e2d2d3bcc59b486d8f92522593ba619ee",
+          "ucdp-dyadic-26.1-candidates.jsonl": "c6e6f7deda305d38e78c987713817410ba3c4045904e22e86e12389fb4a622e4",
+          "ucdp-termination-conflict-candidates.jsonl": "4ce351ab0b0654b341ca8aba42ba82bd5a1955e7c6900351d0f179aae02a3219",
+          "ucdp-termination-dyad-candidates.jsonl": "49c8bead50aa966ee0c70ac023eca9dd81060668db180c1dcfd116c0e827218d"
+        }
+      }
+    },
+    "wave8_taliban_al_qaeda_queue_validation": {
+      "adjacent_hced_dispositions": 5,
+      "holds": 0,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_taliban_al_qaeda_integration_validation": {
+      "adjacent_hced_dispositions": 5,
+      "existing_release_boundaries": 4,
+      "integration_dispositions": 17,
+      "iwbd_duplicate_dispositions": 4,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0,
+      "ucdp_overlap_dispositions": 8
+    },
+    "wave8_taliban_al_qaeda_candidate_ids": [
+      "hced-Kunduz2001-1",
+      "hced-Mazar-i-Sharif2001-1",
+      "hced-Qala-i-Jangi2001-1",
+      "hced-Tora Bora2001-1"
+    ],
+    "wave8_taliban_al_qaeda_holds": [],
+    "wave8_taliban_al_qaeda_terminal_exclusions": [],
+    "wave8_taliban_al_qaeda_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Kabul1996-1",
+        "raw_row_sha256": "1b4e5f7d13f1dbad2bfed1ed96f96d78098ed15fe07b45ff614b8ab5e120f224",
+        "normalized_label": "taliban",
+        "disposition": "distinct_single_taliban_label_future_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A separate 1996 Afghan civil-war row against Massoud and Hekmatyar; it is neither an al-Qaeda compound row nor one of the 2001 battles."
+      },
+      {
+        "candidate_id": "hced-Kabul2001-1",
+        "raw_row_sha256": "71db0d14c3a117ac25349bad9173f51eee4ea9578472f2cbda82d13cc9c83233",
+        "normalized_label": "taliban",
+        "disposition": "distinct_existing_release_owner",
+        "owner_event_id": "hced_label_hced_kabul2001_1",
+        "boundary_note": "The capture of Kabul is separately released and does not duplicate Mazar, Kunduz, Qala-i-Jangi, or Tora Bora."
+      },
+      {
+        "candidate_id": "hced-Kandahar2001-1",
+        "raw_row_sha256": "bd54205d98c29e082856703a277c0063e1600143e89edf53e61f31dda0e57e26",
+        "normalized_label": "taliban",
+        "disposition": "distinct_existing_release_owner",
+        "owner_event_id": "hced_label_hced_kandahar2001_1",
+        "boundary_note": "The surrender of Kandahar is separately released and does not duplicate any northern or Tora Bora tactical contract."
+      },
+      {
+        "candidate_id": "hced-Operation Anaconda2002-1",
+        "raw_row_sha256": "1ea7a5ce4a1046bff20415235654d91dec102b2c6e6743bcee03852531a58981",
+        "normalized_label": "al qaeda taliban",
+        "disposition": "separate_reversed_compound_label_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "The reversed al-Qaeda/Taliban spelling belongs to a distinct funnel lane. Its candidate ID says 2002 while the locked year fields say 2001, a drift that this lane does not repair or silently absorb."
+      },
+      {
+        "candidate_id": "hced-Operation Mongoose2003-1",
+        "raw_row_sha256": "005bfbacf0527db7d168b6dcd891aa8c227005b6d3338e2580dc92926da7c39f",
+        "normalized_label": "al qaeda taliban",
+        "disposition": "separate_reversed_compound_label_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A distinct 2003 operation under the reversed compound spelling; its actor and event boundaries require their own audit."
+      }
+    ],
+    "wave8_taliban_al_qaeda_cross_lane_dispositions": [
+      {
+        "disposition_id": "exact_taliban_lane",
+        "candidate_ids": [
+          "hced-Kabul1996-1",
+          "hced-Kabul2001-1",
+          "hced-Kandahar2001-1"
+        ],
+        "disposition": "single_label_owned_outside_compound_lane"
+      },
+      {
+        "disposition_id": "reversed_al_qaeda_taliban_lane",
+        "candidate_ids": [
+          "hced-Operation Anaconda2002-1",
+          "hced-Operation Mongoose2003-1"
+        ],
+        "disposition": "reversed_compound_owned_outside_exact_lane"
+      }
+    ],
+    "wave8_taliban_al_qaeda_existing_release_boundaries": [
+      {
+        "event_id": "afghanistan_war_2001_2021",
+        "expected_name": "War in Afghanistan",
+        "expected_year": 2001,
+        "expected_end_year": 2021,
+        "expected_entity_ids": [
+          "islamic_republic_afghanistan",
+          "taliban",
+          "united_states"
+        ],
+        "disposition": "distinct_strategic_war_owner",
+        "boundary_note": "A twenty-year strategic seed event; no tactical result is deduced from or merged into it."
+      },
+      {
+        "event_id": "hced_label_hced_kabul2001_1",
+        "expected_name": "Kabul",
+        "expected_year": 2001,
+        "expected_end_year": 2001,
+        "expected_hced_candidate_id": "hced-Kabul2001-1",
+        "expected_entity_ids": [
+          "taliban",
+          "united_states"
+        ],
+        "disposition": "distinct_existing_hced_owner",
+        "boundary_note": "Different city capture and exact single-actor label."
+      },
+      {
+        "event_id": "hced_label_hced_kandahar2001_1",
+        "expected_name": "Kandahar",
+        "expected_year": 2001,
+        "expected_end_year": 2001,
+        "expected_hced_candidate_id": "hced-Kandahar2001-1",
+        "expected_entity_ids": [
+          "taliban",
+          "united_states"
+        ],
+        "disposition": "distinct_existing_hced_owner",
+        "boundary_note": "Different city surrender and exact single-actor label."
+      },
+      {
+        "event_id": "taliban_offensive_2021",
+        "expected_name": "Taliban Offensive of 2021",
+        "expected_year": 2021,
+        "expected_end_year": 2021,
+        "expected_entity_ids": [
+          "islamic_republic_afghanistan",
+          "taliban",
+          "united_states"
+        ],
+        "disposition": "distinct_later_campaign_owner",
+        "boundary_note": "Twenty years later with different regimes and formations."
+      }
+    ],
+    "wave8_taliban_al_qaeda_hced_duplicate_dispositions": [],
+    "wave8_taliban_al_qaeda_iwbd_duplicate_dispositions": [
+      {
+        "candidate_id": "iwbd-225-87-1698",
+        "raw_row_sha256": "6ea7d620b53b198a0c6884b3e4387ed2ae74d54a069f108e7d347e2abb3d7b2c",
+        "owner_hced_candidate_id": "hced-Mazar-i-Sharif2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_mazar_i_sharif2001_1",
+        "expected_name": "Mazar-i-Sharif",
+        "expected_start_date": "2001-11-09",
+        "expected_end_date": "2001-11-10",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-225-87-1700",
+        "raw_row_sha256": "1b5423dd77f2941791954d22ae82c0bf093478c4eb9e99da6151e9174b74d16b",
+        "owner_hced_candidate_id": "hced-Kunduz2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_kunduz2001_1",
+        "expected_name": "Kunduz",
+        "expected_start_date": "2001-11-14",
+        "expected_end_date": "2001-11-26",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-225-87-1701",
+        "raw_row_sha256": "30d81e05299d516ca86a57cb4b0f0649c72d4ab57bfb8e35e4904c09c1376b50",
+        "owner_hced_candidate_id": "hced-Qala-i-Jangi2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_qala_i_jangi2001_1",
+        "expected_name": "Qala-i-Jangi",
+        "expected_start_date": "2001-11-24",
+        "expected_end_date": "2001-11-27",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner",
+        "date_boundary_note": "IWBD's 24-27 range is retained as source metadata; independent review dates the uprising and final surrender 25-29 November."
+      },
+      {
+        "candidate_id": "iwbd-225-87-1703",
+        "raw_row_sha256": "c056c6407ca0f1a14fd91bcd167fe1dce31813dcfccbabad19c66c97c5298485",
+        "owner_hced_candidate_id": "hced-Tora Bora2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_tora_bora2001_1",
+        "expected_name": "Tora Bora",
+        "expected_start_date": "2001-12-06",
+        "expected_end_date": "2001-12-17",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner",
+        "scope_boundary_note": "The HCED owner uses audited eastern Afghan actors and extends to the official history's 19 December end of organized resistance."
+      }
+    ],
+    "wave8_taliban_al_qaeda_existing_release_duplicate_dispositions": [],
+    "wave8_taliban_al_qaeda_ucdp_overlap_dispositions": [
+      {
+        "candidate_id": "ucdp-conflict-26.1-333-2001-1715",
+        "raw_row_sha256": "7ca7b4ec1017476e3c048cd059524052edc19f640bb16eea0e54f4a68811deaa",
+        "conflict_id": "333",
+        "scope": "annual_conflict_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "Government/UIFSA annual conflict intensity is not a named tactical battle."
+      },
+      {
+        "candidate_id": "ucdp-conflict-26.1-418-2001-2388",
+        "raw_row_sha256": "76ba1738bcfb205d951294abe791a8c5bf2038a9913e6a5c5f70eab31a658c58",
+        "conflict_id": "418",
+        "scope": "annual_conflict_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The U.S.-al-Qaida annual conflict is global and location-coded to the USA."
+      },
+      {
+        "candidate_id": "ucdp-dyadic-26.1-736-2001-2113",
+        "raw_row_sha256": "81476d93b029414b7b06fea8278bfe125c52922fe7bd93b760f1facc1c893583",
+        "conflict_id": "333",
+        "scope": "annual_dyad_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The Taliban-government/UIFSA dyad aggregates a year of conflict."
+      },
+      {
+        "candidate_id": "ucdp-dyadic-26.1-878-2001-2754",
+        "raw_row_sha256": "4270f6a9e0011326dbff943f5eb9d06c9dcd07316bf65b0b2c7cab20b52ced28",
+        "conflict_id": "418",
+        "scope": "annual_dyad_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The U.S.-al-Qaida dyad does not identify any of the four battle outcomes."
+      },
+      {
+        "candidate_id": "ucdp-termination-conflict-333-1691",
+        "raw_row_sha256": "226a79a6015c95241e337cda420b3766e5938c46579520b96616150a3209cc2a",
+        "conflict_id": "333",
+        "scope": "strategic_conflict_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "No conflict-level termination is coded in this 2001 row."
+      },
+      {
+        "candidate_id": "ucdp-termination-conflict-418-2358",
+        "raw_row_sha256": "ca6276768e464a4d9e622ea835857e2dd8d6f255d631431482ad9756d41a65e5",
+        "conflict_id": "418",
+        "scope": "strategic_conflict_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The open strategic episode has no 2001 termination or tactical name."
+      },
+      {
+        "candidate_id": "ucdp-termination-dyad-333-2102",
+        "raw_row_sha256": "6a5975df7513155c5f0c6b987f3f2a31383fc55dab666f19773ffe3a430f69b4",
+        "conflict_id": "333",
+        "scope": "strategic_dyad_termination",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The 1996-2001 dyad termination is broader than all four engagements."
+      },
+      {
+        "candidate_id": "ucdp-termination-dyad-418-2734",
+        "raw_row_sha256": "a91f1a9e89ccac9d242d252f7ccc33d0d09ea202902227b1775121c8612d2653",
+        "conflict_id": "418",
+        "scope": "strategic_dyad_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The open dyad episode is not a tactical result and remains separately staged."
+      }
+    ],
+    "wave8_taliban_al_qaeda_integration_dispositions": [
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-225-87-1698",
+        "raw_row_sha256": "6ea7d620b53b198a0c6884b3e4387ed2ae74d54a069f108e7d347e2abb3d7b2c",
+        "owner_hced_candidate_id": "hced-Mazar-i-Sharif2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_mazar_i_sharif2001_1",
+        "expected_name": "Mazar-i-Sharif",
+        "expected_start_date": "2001-11-09",
+        "expected_end_date": "2001-11-10",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner"
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-225-87-1700",
+        "raw_row_sha256": "1b5423dd77f2941791954d22ae82c0bf093478c4eb9e99da6151e9174b74d16b",
+        "owner_hced_candidate_id": "hced-Kunduz2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_kunduz2001_1",
+        "expected_name": "Kunduz",
+        "expected_start_date": "2001-11-14",
+        "expected_end_date": "2001-11-26",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner"
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-225-87-1701",
+        "raw_row_sha256": "30d81e05299d516ca86a57cb4b0f0649c72d4ab57bfb8e35e4904c09c1376b50",
+        "owner_hced_candidate_id": "hced-Qala-i-Jangi2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_qala_i_jangi2001_1",
+        "expected_name": "Qala-i-Jangi",
+        "expected_start_date": "2001-11-24",
+        "expected_end_date": "2001-11-27",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner",
+        "date_boundary_note": "IWBD's 24-27 range is retained as source metadata; independent review dates the uprising and final surrender 25-29 November."
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-225-87-1703",
+        "raw_row_sha256": "c056c6407ca0f1a14fd91bcd167fe1dce31813dcfccbabad19c66c97c5298485",
+        "owner_hced_candidate_id": "hced-Tora Bora2001-1",
+        "owner_event_id": "hced_wave8_taliban_al_qaeda_hced_tora_bora2001_1",
+        "expected_name": "Tora Bora",
+        "expected_start_date": "2001-12-06",
+        "expected_end_date": "2001-12-17",
+        "expected_winner_raw": "Allies/Northern Alliance",
+        "disposition": "duplicate_of_canonical_hced_owner",
+        "scope_boundary_note": "The HCED owner uses audited eastern Afghan actors and extends to the official history's 19 December end of organized resistance."
+      },
+      {
+        "disposition_id": "related_hced:hced-Kabul1996-1",
+        "raw_row_sha256": "1b4e5f7d13f1dbad2bfed1ed96f96d78098ed15fe07b45ff614b8ab5e120f224",
+        "normalized_label": "taliban",
+        "disposition": "distinct_single_taliban_label_future_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A separate 1996 Afghan civil-war row against Massoud and Hekmatyar; it is neither an al-Qaeda compound row nor one of the 2001 battles."
+      },
+      {
+        "disposition_id": "related_hced:hced-Kabul2001-1",
+        "raw_row_sha256": "71db0d14c3a117ac25349bad9173f51eee4ea9578472f2cbda82d13cc9c83233",
+        "normalized_label": "taliban",
+        "disposition": "distinct_existing_release_owner",
+        "owner_event_id": "hced_label_hced_kabul2001_1",
+        "boundary_note": "The capture of Kabul is separately released and does not duplicate Mazar, Kunduz, Qala-i-Jangi, or Tora Bora."
+      },
+      {
+        "disposition_id": "related_hced:hced-Kandahar2001-1",
+        "raw_row_sha256": "bd54205d98c29e082856703a277c0063e1600143e89edf53e61f31dda0e57e26",
+        "normalized_label": "taliban",
+        "disposition": "distinct_existing_release_owner",
+        "owner_event_id": "hced_label_hced_kandahar2001_1",
+        "boundary_note": "The surrender of Kandahar is separately released and does not duplicate any northern or Tora Bora tactical contract."
+      },
+      {
+        "disposition_id": "related_hced:hced-Operation Anaconda2002-1",
+        "raw_row_sha256": "1ea7a5ce4a1046bff20415235654d91dec102b2c6e6743bcee03852531a58981",
+        "normalized_label": "al qaeda taliban",
+        "disposition": "separate_reversed_compound_label_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "The reversed al-Qaeda/Taliban spelling belongs to a distinct funnel lane. Its candidate ID says 2002 while the locked year fields say 2001, a drift that this lane does not repair or silently absorb."
+      },
+      {
+        "disposition_id": "related_hced:hced-Operation Mongoose2003-1",
+        "raw_row_sha256": "005bfbacf0527db7d168b6dcd891aa8c227005b6d3338e2580dc92926da7c39f",
+        "normalized_label": "al qaeda taliban",
+        "disposition": "separate_reversed_compound_label_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A distinct 2003 operation under the reversed compound spelling; its actor and event boundaries require their own audit."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-conflict-26.1-333-2001-1715",
+        "raw_row_sha256": "7ca7b4ec1017476e3c048cd059524052edc19f640bb16eea0e54f4a68811deaa",
+        "conflict_id": "333",
+        "scope": "annual_conflict_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "Government/UIFSA annual conflict intensity is not a named tactical battle."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-conflict-26.1-418-2001-2388",
+        "raw_row_sha256": "76ba1738bcfb205d951294abe791a8c5bf2038a9913e6a5c5f70eab31a658c58",
+        "conflict_id": "418",
+        "scope": "annual_conflict_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The U.S.-al-Qaida annual conflict is global and location-coded to the USA."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-dyadic-26.1-736-2001-2113",
+        "raw_row_sha256": "81476d93b029414b7b06fea8278bfe125c52922fe7bd93b760f1facc1c893583",
+        "conflict_id": "333",
+        "scope": "annual_dyad_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The Taliban-government/UIFSA dyad aggregates a year of conflict."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-dyadic-26.1-878-2001-2754",
+        "raw_row_sha256": "4270f6a9e0011326dbff943f5eb9d06c9dcd07316bf65b0b2c7cab20b52ced28",
+        "conflict_id": "418",
+        "scope": "annual_dyad_record",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The U.S.-al-Qaida dyad does not identify any of the four battle outcomes."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-termination-conflict-333-1691",
+        "raw_row_sha256": "226a79a6015c95241e337cda420b3766e5938c46579520b96616150a3209cc2a",
+        "conflict_id": "333",
+        "scope": "strategic_conflict_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "No conflict-level termination is coded in this 2001 row."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-termination-conflict-418-2358",
+        "raw_row_sha256": "ca6276768e464a4d9e622ea835857e2dd8d6f255d631431482ad9756d41a65e5",
+        "conflict_id": "418",
+        "scope": "strategic_conflict_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The open strategic episode has no 2001 termination or tactical name."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-termination-dyad-333-2102",
+        "raw_row_sha256": "6a5975df7513155c5f0c6b987f3f2a31383fc55dab666f19773ffe3a430f69b4",
+        "conflict_id": "333",
+        "scope": "strategic_dyad_termination",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The 1996-2001 dyad termination is broader than all four engagements."
+      },
+      {
+        "disposition_id": "ucdp_boundary:ucdp-termination-dyad-418-2734",
+        "raw_row_sha256": "a91f1a9e89ccac9d242d252f7ccc33d0d09ea202902227b1775121c8612d2653",
+        "conflict_id": "418",
+        "scope": "strategic_dyad_episode",
+        "disposition": "related_strategic_record_not_tactical_duplicate",
+        "evidence_refs": [
+          "wave8_taliban_al_qaeda_ucdp_v26_1"
+        ],
+        "boundary_note": "The open dyad episode is not a tactical result and remains separately staged."
+      }
+    ],
+    "wave8_taliban_al_qaeda_outcome_overrides": [],
+    "wave8_taliban_al_qaeda_entities_added": 18,
+    "wave8_taliban_al_qaeda_sources_added": 17,
+    "hced_label_pass_input_rows": 5697,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -12803,7 +13347,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 903,
+      "reserved_candidate_contract": 907,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -12815,7 +13359,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2190,
+      "no_unique_time_valid_label_match": 2186,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
@@ -14945,6 +15489,22 @@
         "reason": "Wave 6 evidence audit hold"
       },
       {
+        "candidate_id": "iwbd-225-87-1698",
+        "reason": "duplicate of canonical HCED owner hced-Mazar-i-Sharif2001-1"
+      },
+      {
+        "candidate_id": "iwbd-225-87-1700",
+        "reason": "duplicate of canonical HCED owner hced-Kunduz2001-1"
+      },
+      {
+        "candidate_id": "iwbd-225-87-1701",
+        "reason": "duplicate of canonical HCED owner hced-Qala-i-Jangi2001-1"
+      },
+      {
+        "candidate_id": "iwbd-225-87-1703",
+        "reason": "duplicate of canonical HCED owner hced-Tora Bora2001-1"
+      },
+      {
         "candidate_id": "iwbd-28-10-104",
         "reason": "Exact Tre Ponti twin. Its Austrian label cannot overcome the direct account's explicit refusal to assign a final tactical classification."
       },
@@ -15579,9 +16139,9 @@
     "iwbd_rejections": {
       "coalition_or_composite_side": 139,
       "contains_constituent_iwbd_rows": 320,
-      "curated_exclusion": 222,
+      "curated_exclusion": 226,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 856,
+      "duplicate_of_hced_battle": 852,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

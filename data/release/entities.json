@@ -13157,6 +13157,294 @@
     ]
   },
   {
+    "id": "al_qaeda_tora_bora_defenders_2001",
+    "name": "Al-Qaeda defenders of the Tora Bora complex (2001)",
+    "kind": "event_bounded_nonstate_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Tora Bora, Nangarhar, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to al-Qaeda forces defending the cave complex through the end of organized resistance in December. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_911_commission",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_senate_tora_bora"
+    ]
+  },
+  {
+    "id": "al_qaeda_foreign_fighters_mazar_2001",
+    "name": "Al-Qaeda-linked foreign fighters at Mazar-e Sharif (2001)",
+    "kind": "event_bounded_nonstate_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Mazar-e Sharif and southern Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Arab and other al-Qaeda-linked foreign formations reinforcing the Mazar front. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_cia_swords_review",
+      "wave8_taliban_al_qaeda_commons_2001"
+    ]
+  },
+  {
+    "id": "al_qaeda_foreign_fighters_kunduz_2001",
+    "name": "Al-Qaeda-linked foreign fighters in the Kunduz pocket (2001)",
+    "kind": "event_bounded_nonstate_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Kunduz, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the separately attested Arab and other al-Qaeda-linked foreign fighters in the Kunduz pocket. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_commons_2001",
+      "wave8_taliban_al_qaeda_doj_lindh",
+      "wave8_taliban_al_qaeda_hrw_kunduz"
+    ]
+  },
+  {
+    "id": "al_qaeda_prisoner_uprising_qala_jangi_2001",
+    "name": "Al-Qaeda-trained foreign prisoners in the Qala-i-Jangi uprising (2001)",
+    "kind": "event_bounded_captive_combatant_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Qala-i-Jangi fortress, Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the separately attested al-Qaeda-trained and affiliated foreign captives who joined the uprising. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_mitchell_dsc",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_doj_lindh"
+    ]
+  },
+  {
+    "id": "ali_zaman_eastern_afghan_tora_bora_force_2001",
+    "name": "Ali-Zaman eastern Afghan assault force at Tora Bora (2001)",
+    "kind": "event_bounded_afghan_coalition",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Tora Bora, Nangarhar, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the rival Hazrat Ali and Haji Zaman militias used for the Tora Bora ground assault; it is not silently relabeled as the Northern Alliance. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_australian_army_tora",
+      "wave8_taliban_al_qaeda_senate_tora_bora"
+    ]
+  },
+  {
+    "id": "uk_tora_bora_special_forces_2001",
+    "name": "British special-forces contingent at Tora Bora (2001)",
+    "kind": "event_bounded_foreign_assault_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Tora Bora, Nangarhar, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to British special-forces personnel directly attested in Task Force 11 and the December assault. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001",
+      "wave8_taliban_al_qaeda_senate_tora_bora"
+    ]
+  },
+  {
+    "id": "uk_qala_jangi_special_forces_2001",
+    "name": "British special-forces response at Qala-i-Jangi (2001)",
+    "kind": "event_bounded_foreign_support_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Qala-i-Jangi fortress, Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the British special-forces personnel directly attested in the fortress response. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_amnesty_qala",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_hansard_qala"
+    ]
+  },
+  {
+    "id": "united_front_kunduz_siege_force_2001",
+    "name": "Daoud-Bariullah United Front siege coalition at Kunduz (2001)",
+    "kind": "event_bounded_afghan_coalition",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Kunduz and its approaches, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to United Front formations that encircled Kunduz and accepted its November surrender. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001",
+      "wave8_taliban_al_qaeda_hrw_kunduz"
+    ]
+  },
+  {
+    "id": "united_front_mazar_assault_force_2001",
+    "name": "Dostum-Atta-Mohaqiq United Front assault coalition at Mazar-e Sharif (2001)",
+    "kind": "event_bounded_afghan_coalition",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Mazar-e Sharif approaches and city, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the United Front formations that captured Mazar on 9-10 November. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_cia_swords_review",
+      "wave8_taliban_al_qaeda_un_human_rights_2002"
+    ]
+  },
+  {
+    "id": "taliban_kunduz_garrison_2001",
+    "name": "Taliban Kunduz garrison (2001)",
+    "kind": "event_bounded_nonstate_garrison",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Kunduz, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Taliban defenders encircled in Kunduz through their November surrender. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_hrw_kunduz",
+      "wave8_taliban_al_qaeda_un_kunduz_2003"
+    ]
+  },
+  {
+    "id": "taliban_mazar_garrison_2001",
+    "name": "Taliban Mazar-e Sharif garrison (2001)",
+    "kind": "event_bounded_nonstate_garrison",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Mazar-e Sharif, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Taliban garrison and field defenders displaced from Mazar on 9-10 November. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001",
+      "wave8_taliban_al_qaeda_un_human_rights_2002"
+    ]
+  },
+  {
+    "id": "taliban_prisoner_uprising_qala_jangi_2001",
+    "name": "Taliban prisoners in the Qala-i-Jangi uprising (2001)",
+    "kind": "event_bounded_captive_combatant_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Qala-i-Jangi fortress, Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Taliban captives who resumed organized resistance inside the fortress. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_doj_lindh",
+      "wave8_taliban_al_qaeda_hansard_qala"
+    ]
+  },
+  {
+    "id": "taliban_tora_bora_supporting_fighters_2001",
+    "name": "Taliban supporting fighters at Tora Bora (2001)",
+    "kind": "event_bounded_nonstate_formation",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Tora Bora, Nangarhar, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Taliban commanders and fighters separately attested at the Tora Bora positions and surrender talks. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001",
+      "wave8_taliban_al_qaeda_commons_2005"
+    ]
+  },
+  {
+    "id": "us_qala_jangi_response_force_2001",
+    "name": "U.S. rescue, special-operations, and air-support force at Qala-i-Jangi (2001)",
+    "kind": "event_bounded_foreign_support_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Qala-i-Jangi fortress, Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the CIA, U.S. special-operations, quick-reaction, and air elements in the fortress battle. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_mitchell_dsc",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_doj_lindh"
+    ]
+  },
+  {
+    "id": "us_tora_bora_special_operations_airpower_2001",
+    "name": "U.S. special-operations and air force at Tora Bora (2001)",
+    "kind": "event_bounded_foreign_assault_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Tora Bora, Nangarhar, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to U.S. CIA, special-operations, and air elements used in the December cave-complex battle. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_911_commission",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_senate_tora_bora"
+    ]
+  },
+  {
+    "id": "us_special_operations_airpower_kunduz_2001",
+    "name": "U.S. special-operations and air-support force at Kunduz (2001)",
+    "kind": "event_bounded_foreign_support_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Kunduz Province, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to U.S. teams and airpower supporting the Kunduz encirclement and surrender. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_army_modern_war",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001"
+    ]
+  },
+  {
+    "id": "us_special_operations_airpower_mazar_2001",
+    "name": "U.S. special-operations and air-support force at Mazar-e Sharif (2001)",
+    "kind": "event_bounded_foreign_support_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Mazar-e Sharif approaches, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to U.S. special operations, CIA liaison, targeting, and air support in the Mazar capture. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_air_force_oef",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_cia_swords_review"
+    ]
+  },
+  {
+    "id": "united_front_qala_jangi_recapture_force_2001",
+    "name": "United Front guard and recapture force at Qala-i-Jangi (2001)",
+    "kind": "event_bounded_afghan_force",
+    "start_year": 2001,
+    "end_year": 2001,
+    "region": "Qala-i-Jangi fortress, Balkh, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Dostum, Atta, and Mohaqiq-aligned forces defending and retaking the fortress. No rating is inherited from or passed to the generic Taliban, al-Qaeda, Afghanistan, United States, United Kingdom, Northern Alliance, another Afghan faction, a later insurgency, or the strategic outcome of the 2001-2021 war.",
+    "source_ids": [
+      "wave8_taliban_al_qaeda_amnesty_qala",
+      "wave8_taliban_al_qaeda_army_oef",
+      "wave8_taliban_al_qaeda_commons_2001"
+    ]
+  },
+  {
     "id": "islamic_republic_afghanistan",
     "name": "Islamic Republic of Afghanistan",
     "kind": "state",

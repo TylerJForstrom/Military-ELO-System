@@ -628,6 +628,46 @@
       "region": "Iraq"
     },
     {
+      "id": "al_qaeda_tora_bora_defenders_2001",
+      "name": "Al-Qaeda defenders of the Tora Bora complex (2001)",
+      "kind": "event_bounded_nonstate_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tora Bora, Nangarhar, Afghanistan"
+    },
+    {
+      "id": "al_qaeda_foreign_fighters_mazar_2001",
+      "name": "Al-Qaeda-linked foreign fighters at Mazar-e Sharif (2001)",
+      "kind": "event_bounded_nonstate_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mazar-e Sharif and southern Balkh, Afghanistan"
+    },
+    {
+      "id": "al_qaeda_foreign_fighters_kunduz_2001",
+      "name": "Al-Qaeda-linked foreign fighters in the Kunduz pocket (2001)",
+      "kind": "event_bounded_nonstate_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kunduz, Afghanistan"
+    },
+    {
+      "id": "al_qaeda_prisoner_uprising_qala_jangi_2001",
+      "name": "Al-Qaeda-trained foreign prisoners in the Qala-i-Jangi uprising (2001)",
+      "kind": "event_bounded_captive_combatant_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
+    },
+    {
       "id": "alamannic_besieging_host_sens_356",
       "name": "Alamannic besieging host at Sens (356)",
       "kind": "event_bounded_besieging_force",
@@ -738,6 +778,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Mediterranean"
+    },
+    {
+      "id": "ali_zaman_eastern_afghan_tora_bora_force_2001",
+      "name": "Ali-Zaman eastern Afghan assault force at Tora Bora (2001)",
+      "kind": "event_bounded_afghan_coalition",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tora Bora, Nangarhar, Afghanistan"
     },
     {
       "id": "clio_ma_almohad_emp_1139_2bb98e8d",
@@ -2244,6 +2294,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Africa"
+    },
+    {
+      "id": "uk_tora_bora_special_forces_2001",
+      "name": "British special-forces contingent at Tora Bora (2001)",
+      "kind": "event_bounded_foreign_assault_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tora Bora, Nangarhar, Afghanistan"
+    },
+    {
+      "id": "uk_qala_jangi_special_forces_2001",
+      "name": "British special-forces response at Qala-i-Jangi (2001)",
+      "kind": "event_bounded_foreign_support_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
     },
     {
       "id": "brule_lakota_grattan_camp_1854",
@@ -4097,6 +4167,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "united_front_kunduz_siege_force_2001",
+      "name": "Daoud-Bariullah United Front siege coalition at Kunduz (2001)",
+      "kind": "event_bounded_afghan_coalition",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kunduz and its approaches, Afghanistan"
+    },
+    {
       "id": "datu_ali_buayan_resistance_1902_1905",
       "name": "Datu Ali's Buayan resistance (1902-1905)",
       "kind": "regime_bounded_buayan_force",
@@ -4348,6 +4428,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "united_front_mazar_assault_force_2001",
+      "name": "Dostum-Atta-Mohaqiq United Front assault coalition at Mazar-e Sharif (2001)",
+      "kind": "event_bounded_afghan_coalition",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mazar-e Sharif approaches and city, Afghanistan"
     },
     {
       "id": "dove_creek_confederate_texas_militia_assault_force_1865",
@@ -20872,6 +20962,46 @@
       "region": "South and Central Asia"
     },
     {
+      "id": "taliban_kunduz_garrison_2001",
+      "name": "Taliban Kunduz garrison (2001)",
+      "kind": "event_bounded_nonstate_garrison",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kunduz, Afghanistan"
+    },
+    {
+      "id": "taliban_mazar_garrison_2001",
+      "name": "Taliban Mazar-e Sharif garrison (2001)",
+      "kind": "event_bounded_nonstate_garrison",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mazar-e Sharif, Afghanistan"
+    },
+    {
+      "id": "taliban_prisoner_uprising_qala_jangi_2001",
+      "name": "Taliban prisoners in the Qala-i-Jangi uprising (2001)",
+      "kind": "event_bounded_captive_combatant_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
+    },
+    {
+      "id": "taliban_tora_bora_supporting_fighters_2001",
+      "name": "Taliban supporting fighters at Tora Bora (2001)",
+      "kind": "event_bounded_nonstate_formation",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tora Bora, Nangarhar, Afghanistan"
+    },
+    {
       "id": "clio_q19569014_1820_645a3991",
       "name": "Talpur Dynasty",
       "kind": "dynastic_state",
@@ -21704,6 +21834,46 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "us_qala_jangi_response_force_2001",
+      "name": "U.S. rescue, special-operations, and air-support force at Qala-i-Jangi (2001)",
+      "kind": "event_bounded_foreign_support_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
+    },
+    {
+      "id": "us_tora_bora_special_operations_airpower_2001",
+      "name": "U.S. special-operations and air force at Tora Bora (2001)",
+      "kind": "event_bounded_foreign_assault_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tora Bora, Nangarhar, Afghanistan"
+    },
+    {
+      "id": "us_special_operations_airpower_kunduz_2001",
+      "name": "U.S. special-operations and air-support force at Kunduz (2001)",
+      "kind": "event_bounded_foreign_support_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kunduz Province, Afghanistan"
+    },
+    {
+      "id": "us_special_operations_airpower_mazar_2001",
+      "name": "U.S. special-operations and air-support force at Mazar-e Sharif (2001)",
+      "kind": "event_bounded_foreign_support_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mazar-e Sharif approaches, Afghanistan"
+    },
+    {
       "id": "ubaydallah_shaybanid_jam_army_1528",
       "name": "Ubaydallah Khan's Shaybanid army at Jam (1528)",
       "kind": "event_bounded_field_army",
@@ -21839,6 +22009,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "united_front_qala_jangi_recapture_force_2001",
+      "name": "United Front guard and recapture force at Qala-i-Jangi (2001)",
+      "kind": "event_bounded_afghan_force",
+      "start_year": 2001,
+      "end_year": 2001,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
     },
     {
       "id": "united_kingdom",
@@ -23364,11 +23544,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2199,
-    "rated_entities": 836,
-    "rated_events": 5246,
+    "registry_polities": 2217,
+    "rated_entities": 854,
+    "rated_events": 5250,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18148,
+    "unresolved_event_candidates": 18144,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23446,6 +23626,7 @@
     "candidate_keyed_wave8_sauk_hced_events": 3,
     "candidate_keyed_wave8_ute_hced_events": 2,
     "candidate_keyed_wave8_yakima_hced_events": 2,
+    "candidate_keyed_wave8_taliban_al_qaeda_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23456,21 +23637,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4982,
-      "candidate_keyed_reviewed_contracts": 672,
+      "hced_candidate_bindings": 4986,
+      "candidate_keyed_reviewed_contracts": 676,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4889,
-      "location_provenance_objects": 4938,
-      "point_fields_withheld_by_quarantine": 248,
+      "modern_location_country_assertions": 4893,
+      "location_provenance_objects": 4942,
+      "point_fields_withheld_by_quarantine": 252,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 296,
-      "point_quarantine_candidate_manifest_sha256": "09987cfb176bf46cd410174886055682b977a7c9040ac28e8af12838f9c633dc",
+      "unique_events_with_any_quarantined_field": 300,
+      "point_quarantine_candidate_manifest_sha256": "7168ac73c9c8d8a17a1f03a521691523c182473adc5c006758d34de83f23ca50",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "ed1ca980ea9bd081b86bddc6c8490a550c71954d8d195ec6455e0f2fe6c8210c",
+      "quarantine_policy_sha256": "6c607f234943ecd4828fda7df7c8c0c31d66f3fb11eeac492b739cb64f4c658d",
       "assertion_status": {
-        "unreviewed_source_assertion": 4938
+        "unreviewed_source_assertion": 4942
       },
       "verified_location_assertions": {
         "availability": "not_available",

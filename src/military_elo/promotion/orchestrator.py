@@ -1525,6 +1525,33 @@ from .wave8_yakima import (
     wave8_yakima_cohort_counts,
     wave8_yakima_counts,
 )
+from .wave8_taliban_al_qaeda import (
+    WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS,
+    WAVE8_TALIBAN_AL_QAEDA_CROSS_LANE_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_ENTITIES,
+    WAVE8_TALIBAN_AL_QAEDA_EXISTING_RELEASE_BOUNDARIES,
+    WAVE8_TALIBAN_AL_QAEDA_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_HCED_DUPLICATE_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_HOLD_IDS,
+    WAVE8_TALIBAN_AL_QAEDA_HOLDS,
+    WAVE8_TALIBAN_AL_QAEDA_INTEGRATION_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_OUTCOME_OVERRIDES,
+    WAVE8_TALIBAN_AL_QAEDA_RELATED_HCED_DISPOSITIONS,
+    WAVE8_TALIBAN_AL_QAEDA_RESERVED_IDS,
+    WAVE8_TALIBAN_AL_QAEDA_SOURCES,
+    WAVE8_TALIBAN_AL_QAEDA_TERMINAL_EXCLUSION_IDS,
+    WAVE8_TALIBAN_AL_QAEDA_TERMINAL_EXCLUSIONS,
+    WAVE8_TALIBAN_AL_QAEDA_UCDP_OVERLAP_DISPOSITIONS,
+    install_wave8_taliban_al_qaeda_entities,
+    install_wave8_taliban_al_qaeda_sources,
+    promote_wave8_taliban_al_qaeda_contracts,
+    validate_wave8_taliban_al_qaeda_integration_dispositions,
+    validate_wave8_taliban_al_qaeda_queue_contracts,
+    wave8_taliban_al_qaeda_cohort_counts,
+    wave8_taliban_al_qaeda_counts,
+    wave8_taliban_al_qaeda_metadata,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1617,6 +1644,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_SAUK_RESERVED_IDS
     | WAVE8_UTE_RESERVED_IDS
     | WAVE8_YAKIMA_RESERVED_IDS
+    | WAVE8_TALIBAN_AL_QAEDA_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1654,6 +1682,15 @@ EFFECTIVE_IWBD_CURATED_EXCLUSIONS = {
         candidate_id: str(contract["reason"])
         for candidate_id, contract in (
             WAVE8_GERMANY_IWBD_DUPLICATE_DISPOSITIONS.items()
+        )
+    },
+    **{
+        candidate_id: (
+            "duplicate of canonical HCED owner "
+            f"{contract['owner_hced_candidate_id']}"
+        )
+        for candidate_id, contract in (
+            WAVE8_TALIBAN_AL_QAEDA_IWBD_DUPLICATE_DISPOSITIONS.items()
         )
     },
     # Preserve the older candidate-specific adjudication when a Wave 6 audit
@@ -2021,7 +2058,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 248
+        len(HCED_POINT_QUARANTINE_IDS) != 252
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2281,6 +2318,9 @@ def build_expanded_release(
     wave8_sauk_queue_validation = validate_wave8_sauk_queue_contracts(hced)
     wave8_ute_queue_validation = validate_wave8_ute_queue_contracts(hced)
     wave8_yakima_queue_validation = validate_wave8_yakima_queue_contracts(hced)
+    wave8_taliban_al_qaeda_queue_validation = (
+        validate_wave8_taliban_al_qaeda_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2660,6 +2700,7 @@ def build_expanded_release(
     install_wave8_sauk_entities(release_entities)
     install_wave8_ute_entities(release_entities)
     install_wave8_yakima_entities(release_entities)
+    install_wave8_taliban_al_qaeda_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4023,6 +4064,15 @@ def build_expanded_release(
         release_entities,
         wave8_yakima_existing_events,
     )
+    wave8_taliban_al_qaeda_existing_events = [
+        *wave8_yakima_existing_events,
+        *wave8_yakima_events,
+    ]
+    wave8_taliban_al_qaeda_events = promote_wave8_taliban_al_qaeda_contracts(
+        hced,
+        release_entities,
+        wave8_taliban_al_qaeda_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4097,6 +4147,7 @@ def build_expanded_release(
         *wave8_sauk_events,
         *wave8_ute_events,
         *wave8_yakima_events,
+        *wave8_taliban_al_qaeda_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4236,6 +4287,8 @@ def build_expanded_release(
             *WAVE8_UTE_TERMINAL_EXCLUSION_IDS,
             *WAVE8_YAKIMA_HOLD_IDS,
             *WAVE8_YAKIMA_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_TALIBAN_AL_QAEDA_HOLD_IDS,
+            *WAVE8_TALIBAN_AL_QAEDA_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -4336,6 +4389,7 @@ def build_expanded_release(
         *wave8_sauk_events,
         *wave8_ute_events,
         *wave8_yakima_events,
+        *wave8_taliban_al_qaeda_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4725,6 +4779,24 @@ def build_expanded_release(
             wave8_yakima_existing_events,
         )
     )
+    wave8_taliban_al_qaeda_ucdp_rows = [
+        row
+        for filename in (
+            "ucdp-conflict-26.1-candidates.jsonl",
+            "ucdp-dyadic-26.1-candidates.jsonl",
+            "ucdp-termination-conflict-candidates.jsonl",
+            "ucdp-termination-dyad-candidates.jsonl",
+        )
+        for row in read_jsonl(review / filename)
+    ]
+    wave8_taliban_al_qaeda_integration_validation = (
+        validate_wave8_taliban_al_qaeda_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_taliban_al_qaeda_existing_events,
+            wave8_taliban_al_qaeda_ucdp_rows,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4944,6 +5016,7 @@ def build_expanded_release(
     install_wave8_sauk_sources(sources_by_id)
     install_wave8_ute_sources(sources_by_id)
     install_wave8_yakima_sources(sources_by_id)
+    install_wave8_taliban_al_qaeda_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5023,6 +5096,7 @@ def build_expanded_release(
         *wave8_sauk_events,
         *wave8_ute_events,
         *wave8_yakima_events,
+        *wave8_taliban_al_qaeda_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5102,6 +5176,7 @@ def build_expanded_release(
         *wave8_sauk_events,
         *wave8_ute_events,
         *wave8_yakima_events,
+        *wave8_taliban_al_qaeda_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5180,6 +5255,7 @@ def build_expanded_release(
             | WAVE8_SAUK_CONTRACT_IDS
             | WAVE8_UTE_CONTRACT_IDS
             | WAVE8_YAKIMA_CONTRACT_IDS
+            | WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5300,6 +5376,10 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_SAUK_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_UTE_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_YAKIMA_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_TALIBAN_AL_QAEDA_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5547,6 +5627,7 @@ def build_expanded_release(
         - len(wave8_sauk_events)
         - len(wave8_ute_events)
         - len(wave8_yakima_events)
+        - len(wave8_taliban_al_qaeda_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5707,6 +5788,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_sauk_hced_events": len(wave8_sauk_events),
         "candidate_keyed_wave8_ute_hced_events": len(wave8_ute_events),
         "candidate_keyed_wave8_yakima_hced_events": len(wave8_yakima_events),
+        "candidate_keyed_wave8_taliban_al_qaeda_hced_events": len(
+            wave8_taliban_al_qaeda_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -6009,6 +6093,9 @@ def build_expanded_release(
             "accepted_wave8_sauk_hced_events": len(wave8_sauk_events),
             "accepted_wave8_ute_hced_events": len(wave8_ute_events),
             "accepted_wave8_yakima_hced_events": len(wave8_yakima_events),
+            "accepted_wave8_taliban_al_qaeda_hced_events": len(
+                wave8_taliban_al_qaeda_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -9163,6 +9250,94 @@ def build_expanded_release(
             ],
             "wave8_yakima_entities_added": len(WAVE8_YAKIMA_ENTITIES),
             "wave8_yakima_sources_added": len(WAVE8_YAKIMA_SOURCES),
+            "wave8_taliban_al_qaeda_counts": wave8_taliban_al_qaeda_counts(),
+            "wave8_taliban_al_qaeda_cohort_counts": (
+                wave8_taliban_al_qaeda_cohort_counts()
+            ),
+            "wave8_taliban_al_qaeda_metadata": (
+                wave8_taliban_al_qaeda_metadata()
+            ),
+            "wave8_taliban_al_qaeda_queue_validation": (
+                wave8_taliban_al_qaeda_queue_validation
+            ),
+            "wave8_taliban_al_qaeda_integration_validation": (
+                wave8_taliban_al_qaeda_integration_validation
+            ),
+            "wave8_taliban_al_qaeda_candidate_ids": sorted(
+                WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS
+            ),
+            "wave8_taliban_al_qaeda_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_HOLDS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_existing_release_boundaries": [
+                {"event_id": event_id, **contract}
+                for event_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_EXISTING_RELEASE_BOUNDARIES.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_hced_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_HCED_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_ucdp_overlap_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_UCDP_OVERLAP_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_TALIBAN_AL_QAEDA_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_taliban_al_qaeda_entities_added": len(
+                WAVE8_TALIBAN_AL_QAEDA_ENTITIES
+            ),
+            "wave8_taliban_al_qaeda_sources_added": len(
+                WAVE8_TALIBAN_AL_QAEDA_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -9450,6 +9625,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_sauk_hced_events": len(wave8_sauk_events),
         "candidate_keyed_wave8_ute_hced_events": len(wave8_ute_events),
         "candidate_keyed_wave8_yakima_hced_events": len(wave8_yakima_events),
+        "candidate_keyed_wave8_taliban_al_qaeda_hced_events": len(
+            wave8_taliban_al_qaeda_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

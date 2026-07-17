@@ -15205,6 +15205,259 @@
     ]
   },
   {
+    "id": "wave8_taliban_al_qaeda_911_commission",
+    "title": "The 9/11 Commission Report, chapter 10",
+    "url": "https://911commission.gov/report/911Report_Ch10.htm",
+    "publisher": "National Commission on Terrorist Attacks Upon the United States",
+    "license": "Citation and link only",
+    "source_type": "official_independent_commission_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "nine_eleven_commission_chapter10",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_air_force_oef",
+    "title": "2001 - Operation Enduring Freedom",
+    "url": "https://www.afhistory.af.mil/FAQs/Fact-Sheets/Article/458975/2001-operation-enduring-freedom/",
+    "publisher": "U.S. Air Force Historical Support Division",
+    "license": "Citation and link only",
+    "source_type": "official_air_force_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "usaf_oef_2001_fact_sheet",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_amnesty_qala",
+    "title": "Afghanistan: urgent inquiry needed into violence in Qala-i-Jhangi",
+    "url": "https://www.amnesty.org/en/wp-content/uploads/2021/06/asa110362001en.pdf",
+    "publisher": "Amnesty International",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_human_rights_statement",
+    "accessed": "2026-07-16",
+    "source_family_id": "amnesty_qala_i_jhangi_2001",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_army_mitchell_dsc",
+    "title": "Afghanistan SF leader gets first DSC since Vietnam",
+    "url": "https://www.army.mil/article-amp/1666/afghanistan_sf_leader_gets_first_dsc_since_vietnam",
+    "publisher": "U.S. Army",
+    "license": "Citation and link only",
+    "source_type": "official_award_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_mitchell_dsc_qala_2007",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_army_modern_war",
+    "title": "Modern War in an Ancient Land: The U.S. Army in Afghanistan, 2001-2014, Volume I",
+    "url": "https://history.army.mil/portals/143/Images/Publications/catalog/59-1-p1.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_operational_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "degen_reardon_modern_war_volume1_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_army_oef",
+    "title": "Operation Enduring Freedom, September 2001-March 2002",
+    "url": "https://history.army.mil/Portals/143/Images/Publications/Publication%20By%20Title%20Images/P%20Pdf/cmhPub_70-83-1v2.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "folse_army_cmh_oef_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_australian_army_tora",
+    "title": "Operational Analysis of the Battle of Tora Bora, Afghanistan, 2001",
+    "url": "https://cove.army.gov.au/article/operational-analysis-battle-tora-bora-afghanistan-2001",
+    "publisher": "Australian Army",
+    "license": "Citation and link only",
+    "source_type": "official_professional_military_analysis",
+    "accessed": "2026-07-16",
+    "source_family_id": "australian_army_cove_tora_bora_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_cia_swords_review",
+    "title": "Review: Afghan Napoleon and Swords of Lightning",
+    "url": "https://www.cia.gov/resources/csi/static/Review4-Afghan-Napoleon-and-Swords-of-Lightning-Sep2022.pdf",
+    "publisher": "Central Intelligence Agency, Center for the Study of Intelligence",
+    "license": "Citation and link only",
+    "source_type": "official_intelligence_history_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "cia_studies_intelligence_swords_review_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_commons_2001",
+    "title": "The Campaign against International Terrorism: prospects after the fall of the Taliban",
+    "url": "https://researchbriefings.files.parliament.uk/documents/RP01-112/RP01-112.pdf",
+    "publisher": "House of Commons Library",
+    "license": "Citation and link only",
+    "source_type": "parliamentary_research_paper",
+    "accessed": "2026-07-16",
+    "source_family_id": "commons_library_rp01_112",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_commons_2005",
+    "title": "Afghanistan: the culmination of the Bonn process",
+    "url": "https://researchbriefings.files.parliament.uk/documents/RP05-72/RP05-72.pdf",
+    "publisher": "House of Commons Library",
+    "license": "Citation and link only",
+    "source_type": "parliamentary_research_paper",
+    "accessed": "2026-07-16",
+    "source_family_id": "commons_library_rp05_72",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_doj_lindh",
+    "title": "Affidavit in Support of a Criminal Complaint and an Arrest Warrant",
+    "url": "https://www.justice.gov/archives/ag/affidavit-support-criminal-complaint-and-arrest-warrant",
+    "publisher": "U.S. Department of Justice",
+    "license": "Citation and link only",
+    "source_type": "official_sworn_legal_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "doj_lindh_affidavit_2002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_hansard_qala",
+    "title": "Afghanistan: Qala-i-Jhangi written answers, 13 December 2001",
+    "url": "https://hansard.parliament.uk/commons/2001-12-13/debates/0910a83d-6d25-4cb1-b6db-ad2b77d5a281/Afghanistan",
+    "publisher": "UK Parliament",
+    "license": "Citation and link only",
+    "source_type": "official_parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "uk_hansard_qala_i_jhangi_2001",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_hrw_kunduz",
+    "title": "Afghanistan: Northern Alliance Must Accept Surrender Offer",
+    "url": "https://www.hrw.org/news/2001/11/20/afghanistan-northern-alliance-must-accept-surrender-offer",
+    "publisher": "Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_human_rights_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_kunduz_surrender_2001",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_senate_tora_bora",
+    "title": "Tora Bora Revisited: How We Failed to Get Bin Laden and Why It Matters Today",
+    "url": "https://www.govinfo.gov/content/pkg/CPRT-111SPRT53709/pdf/CPRT-111SPRT53709.pdf",
+    "publisher": "U.S. Senate Committee on Foreign Relations",
+    "license": "Citation and link only",
+    "source_type": "congressional_committee_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "senate_foreign_relations_tora_bora_2009",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_ucdp_v26_1",
+    "title": "UCDP Conflict, Dyadic, and Conflict Termination datasets, version 26.1/4.2024.002",
+    "url": "https://ucdp.uu.se/downloads/",
+    "publisher": "Uppsala Conflict Data Program",
+    "license": "Citation and link only",
+    "source_type": "research_dataset_documentation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucdp_release_26_1_and_termination_4_2024_002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_un_human_rights_2002",
+    "title": "Report on the situation of human rights in Afghanistan, E/CN.4/2002/43",
+    "url": "https://digitallibrary.un.org/record/459912/files/E_CN.4_2002_43-EN.pdf",
+    "publisher": "United Nations Commission on Human Rights",
+    "license": "Citation and link only",
+    "source_type": "un_special_rapporteur_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_hossain_afghanistan_2002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_taliban_al_qaeda_un_kunduz_2003",
+    "title": "Mission to Afghanistan, E/CN.4/2003/3/Add.4",
+    "url": "https://digitallibrary.un.org/record/487505/files/E_CN.4_2003_3_Add.4-EN.pdf",
+    "publisher": "United Nations Commission on Human Rights",
+    "license": "Citation and link only",
+    "source_type": "un_special_rapporteur_mission_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_afghanistan_mission_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_thebes_bosworth_alexander",
     "title": "Alexander III, 'the Great', of Macedon, 356-323 BCE",
     "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548059801",
