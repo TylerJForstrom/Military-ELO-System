@@ -8995,6 +8995,239 @@
     ]
   },
   {
+    "id": "wave8_savoy_bnf_cassano",
+    "title": "La Victoire remportee par l'armee du Roy sur l'armee Imperialle pres de Cassano, 16 aout 1705",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb415058702",
+    "publisher": "Bibliotheque nationale de France",
+    "license": "Citation and link only",
+    "source_type": "national_library_contemporary_print_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "bnf_cassano_victory_print",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_borgomanero_municipality",
+    "title": "La Battaglia di Borgomanero: 22 aprile 1449",
+    "url": "https://www.comune.borgomanero.no.it/Borgomanero/pdf/Battaglia_di_Borgomanero.pdf",
+    "publisher": "Citta di Borgomanero",
+    "license": "Citation and link only",
+    "source_type": "municipal_commissioned_battle_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "borgomanero_municipal_battle_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_cambridge_dynasty_diplomacy",
+    "title": "Dynasty and Diplomacy in the Court of Savoy",
+    "url": "https://assets.cambridge.org/052165/2685/sample/0521652685ws.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_sample",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_osborne_dynasty_diplomacy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_savoy_cambridge_ottoman_europe",
+    "title": "The Ottoman Empire and Early Modern Europe",
+    "url": "https://assets.cambridge.org/97805214/52809/frontmatter/9780521452809_frontmatter.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_goffman_ottoman_europe",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_cambridge_rise_1690_1720",
+    "title": "War, Diplomacy and the Rise of Savoy, 1690-1720: Introduction",
+    "url": "https://www.cambridge.org/core/books/war-diplomacy-and-the-rise-of-savoy-16901720/introduction/1BEFEC9929F1231657C9B285E752887D",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_storrs_rise_of_savoy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_savoy_cox_green_count",
+    "title": "The Green Count of Savoy: Amadeus VI and Transalpine Savoy",
+    "url": "https://doi.org/10.1515/9781400874996",
+    "publisher": "Princeton University Press; De Gruyter Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "cox_green_count_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_geneva_archives_escalade",
+    "title": "L'Escalade: premier recit du 12 decembre 1602",
+    "url": "https://archives-etat-ge.ch/page_de_base/premier-recit-de-lescalade/",
+    "publisher": "Archives d'Etat de Geneve",
+    "license": "Citation and link only",
+    "source_type": "state_archive_historical_exhibit",
+    "accessed": "2026-07-16",
+    "source_family_id": "geneva_state_archives_escalade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_hls_geneva_republic",
+    "title": "Geneve (canton): La Republique (1536-1798)",
+    "url": "https://hls-dhs-dss.ch/fr/articles/007398/",
+    "publisher": "Dictionnaire historique de la Suisse",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "hls_geneva_republic",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_savoy_polito_staffarda",
+    "title": "La difesa dello stato: il progetto delle piazzeforti milanesi di Joseph Chafrion alla fine del XVII secolo",
+    "url": "https://doi.org/10.17401/studiericerche.7.2020-pozzati",
+    "publisher": "Politecnico di Torino; Studi e Ricerche di Storia dell'Architettura",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "polito_pozzati_staffarda",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_pup_provence_nice",
+    "title": "La Provence des rois de France: De Charles VIII a Henri II",
+    "url": "https://books.openedition.org/pup/13488?lang=en",
+    "publisher": "Presses universitaires de Provence",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "pup_provence_renaissance_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_pur_vendome_cassano",
+    "title": "Le duc de Vendome en Italie (1702-1706)",
+    "url": "https://books.openedition.org/pur/155462?lang=fr",
+    "publisher": "Presses universitaires de Rennes",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "pur_vendome_italy_cassano",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_rennes_amadeus_vi",
+    "title": "Les entreprises d'Amedee VI, entre aventures etrangeres et guerres intestines (1355-1383)",
+    "url": "https://books.openedition.org/pur/194446?lang=fr",
+    "publisher": "Presses universitaires de Rennes",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "rennes_amadeus_vi_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_swiss_museum_escalade",
+    "title": "Swiss History: The Geneva Escalade",
+    "url": "https://blog.nationalmuseum.ch/en/2020/12/geneva-escalade/",
+    "publisher": "Swiss National Museum",
+    "license": "Citation and link only",
+    "source_type": "national_museum_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "swiss_national_museum_escalade",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_treccani_fogliano",
+    "title": "Fogliano, Corrado da",
+    "url": "https://www.treccani.it/enciclopedia/corrado-da-fogliano_%28Dizionario-Biografico%29/",
+    "publisher": "Dizionario Biografico degli Italiani, Treccani",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_fogliano_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_treccani_mantua_monferrato",
+    "title": "Mantova e Monferrato, Guerra di successione di",
+    "url": "https://www.treccani.it/enciclopedia/mantova-e-monferrato-guerra-di-successione-di_%28Enciclopedia-Italiana%29/",
+    "publisher": "Enciclopedia Italiana, Treccani",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_mantua_monferrato_succession",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_savoy_treccani_staffarda",
+    "title": "Staffarda: La battaglia di Staffarda",
+    "url": "https://www.treccani.it/enciclopedia/staffarda_%28Enciclopedia-Italiana%29/",
+    "publisher": "Enciclopedia Italiana, Treccani",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_staffarda",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_seljuks_alexiad_primary",
     "title": "Anna Komnene, The Alexiad, Book X",
     "url": "https://sourcebooks.web.fordham.edu/source/comnena-cde.asp",

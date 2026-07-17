@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 599,
-    "events": 5088,
-    "sources": 702,
-    "registry_polities": 1955
+    "entities": 603,
+    "events": 5093,
+    "sources": 718,
+    "registry_polities": 1959
   },
   "year_range": {
     "start": -1274,
@@ -111,6 +111,7 @@
     "accepted_wave8_seljuks_hced_events": 5,
     "accepted_wave8_danish_vikings_hced_events": 4,
     "accepted_wave8_epirus_hced_events": 6,
+    "accepted_wave8_savoy_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4341,7 +4342,133 @@
     "wave8_epirus_outcome_overrides": [],
     "wave8_epirus_entities_added": 6,
     "wave8_epirus_sources_added": 10,
-    "hced_label_pass_input_rows": 5909,
+    "wave8_savoy_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "exclusions": 1,
+      "holds": 1,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "location_reviews": 5,
+      "new_entities": 4,
+      "new_sources": 16,
+      "newly_rated_events": 5,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 0,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1
+    },
+    "wave8_savoy_cohort_counts": {
+      "geneva_escalade_1602": 1,
+      "italian_war_nice_1543": 1,
+      "milanese_succession_borgomanero_1449": 1,
+      "nine_years_war_staffarda_1690": 1,
+      "savoyard_crusade_gallipoli_1366": 1
+    },
+    "wave8_savoy_queue_validation": {
+      "promotion_contracts": 5,
+      "holds": 1,
+      "exclusions": 1,
+      "reviewed_hced_rows": 7
+    },
+    "wave8_savoy_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_savoy_candidate_ids": [
+      "hced-Borgomanero1449-1",
+      "hced-Gallipoli1366-1",
+      "hced-Geneva1602-1",
+      "hced-Nice1543-1",
+      "hced-Staffarda1690-1"
+    ],
+    "wave8_savoy_holds": [
+      {
+        "candidate_id": "hced-Cassano1705-1",
+        "raw_row_sha256": "a4cf2aef945218d3d30687d5006e1bcab0fea7fbd32d5dc740ecfd36c07b0d3f",
+        "canonical_event": {
+          "canonical_key": "battle_of_cassano:1705:1705",
+          "date_precision": "day",
+          "date_text": "16 August 1705",
+          "granularity": "engagement",
+          "name": "Battle of Cassano",
+          "year_low": 1705,
+          "year_high": 1705
+        },
+        "cohort": "war_of_spanish_succession_cassano_1705",
+        "disposition": "research_hold",
+        "hold_category": "conflicting_tactical_outcome_and_false_savoy_actor",
+        "reviewed_outcome": "unresolved_conflict",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_savoy_bnf_cassano",
+          "wave8_savoy_pur_vendome_cassano"
+        ],
+        "hold_reason": "Savoy in this row is Prince Eugene's surname: he commanded an Imperial army, not the Savoyard polity. The contemporary French victory print and modern scholarly account (which calls the combat indecisive) do not support one uncontested tactical result. The row remains unrated; uncertainty is not encoded as a draw."
+      }
+    ],
+    "wave8_savoy_exclusions": [
+      {
+        "candidate_id": "hced-Casale1628-1",
+        "raw_row_sha256": "fe4a1f4a2b090cf61bf28108039f44b7559fab3bcf28f62ee151a0802662b03d",
+        "canonical_event": {
+          "canonical_key": "conflated_casale_siege_assertion:1628:1628",
+          "date_precision": "year",
+          "date_text": "1628",
+          "granularity": "source_conflation",
+          "name": "Conflated Casale siege assertion",
+          "year_low": 1628,
+          "year_high": 1628
+        },
+        "cohort": "mantuan_succession_source_conflation",
+        "disposition": "terminal_exclusion",
+        "hold_category": "source_conflates_siege_location_and_belligerents",
+        "reviewed_outcome": "not_a_valid_event_assertion",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_savoy_cambridge_dynasty_diplomacy",
+          "wave8_savoy_treccani_mantua_monferrato"
+        ],
+        "hold_reason": "In 1628 Savoyard troops attacked Trino, Alba, and Moncalvo while Spanish troops besieged Casale; France was still committed at La Rochelle and did not defeat Savoy at Casale. A French-associated relief force was instead defeated by Savoy at Sampeyre. The row cannot be repaired without replacing its location, sides, and event, so it is terminally excluded and never converted to a draw."
+      }
+    ],
+    "wave8_savoy_iwbd_duplicate_dispositions": [],
+    "wave8_savoy_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Casale1629-1",
+        "source_dataset": "hced",
+        "hced_candidate_id": "hced-Casale1628-1",
+        "disposition": "related_later_siege_phase_already_separately_keyed",
+        "relationship": "same_campaign_not_a_repair_target",
+        "raw_row_sha256": "75418ba7be825e6ad1b4e151879d9379fe18d5facc24276713ac843443f7578e",
+        "evidence_refs": [
+          "wave8_savoy_treccani_mantua_monferrato"
+        ],
+        "reason": "The 1629 row represents the later French relief phase against the Spanish siege. It does not validate HCED's separate 1628 France-versus-Savoy assertion and must not be merged into or duplicated by this lane."
+      }
+    ],
+    "wave8_savoy_integration_dispositions": [
+      {
+        "disposition_id": "hced-Casale1629-1",
+        "source_dataset": "hced",
+        "hced_candidate_id": "hced-Casale1628-1",
+        "disposition": "related_later_siege_phase_already_separately_keyed",
+        "relationship": "same_campaign_not_a_repair_target",
+        "raw_row_sha256": "75418ba7be825e6ad1b4e151879d9379fe18d5facc24276713ac843443f7578e",
+        "evidence_refs": [
+          "wave8_savoy_treccani_mantua_monferrato"
+        ],
+        "reason": "The 1629 row represents the later French relief phase against the Spanish siege. It does not validate HCED's separate 1628 France-versus-Savoy assertion and must not be merged into or duplicated by this lane."
+      }
+    ],
+    "wave8_savoy_outcome_overrides": [],
+    "wave8_savoy_entities_added": 4,
+    "wave8_savoy_sources_added": 16,
+    "hced_label_pass_input_rows": 5902,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4354,7 +4481,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 695,
+      "reserved_candidate_contract": 702,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4366,11 +4493,11 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2391,
+      "no_unique_time_valid_label_match": 2385,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,
-      "wave6_pre1500_candidate_not_in_manifest": 42
+      "wave6_pre1500_candidate_not_in_manifest": 41
     },
     "hced_label_policy_labels": [
       "afghanistan",

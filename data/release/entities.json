@@ -2795,6 +2795,21 @@
     ]
   },
   {
+    "id": "amadeus_vi_savoyard_crusade_1366_1367",
+    "name": "Amadeus VI's Savoyard Crusading Expedition (1366-1367)",
+    "kind": "campaign_bounded_crusading_coalition",
+    "start_year": 1366,
+    "end_year": 1367,
+    "region": "Dardanelles, Black Sea, and Balkans",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded expedition led and financed by Amadeus VI, Count of Savoy, including joined Gattilusio and Byzantine elements at Gallipoli. No rating is inherited by the County or Duchy of Savoy, a generic crusader identity, Byzantium, Lesbos, a dynasty, or any predecessor, successor, ethnic group, or modern state.",
+    "source_ids": [
+      "wave8_savoy_cox_green_count",
+      "wave8_savoy_rennes_amadeus_vi"
+    ]
+  },
+  {
     "id": "clio_cn_ming_dyn_1375_80721637",
     "name": "Ming Dynasty",
     "kind": "dynastic_state",
@@ -2948,6 +2963,21 @@
     ]
   },
   {
+    "id": "savoyard_state_ducal_1416_1713",
+    "name": "Savoyard State under the Dukes (1416-1713)",
+    "kind": "composite_ducal_state",
+    "start_year": 1416,
+    "end_year": 1713,
+    "region": "Savoy, Piedmont, Aosta, and Nice",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Composite Savoyard state from the elevation of Amadeus VIII to duke in 1416 through Victor Amadeus II's internationally recognized royal crown of Sicily in 1713. No rating is inherited by the earlier County of Savoy, the House of Savoy, Prince Eugene's Imperial service, the 1713-1720 Sicilian monarchy, Sardinia-Piedmont, Italy, or a modern state.",
+    "source_ids": [
+      "wave8_savoy_cambridge_dynasty_diplomacy",
+      "wave8_savoy_cambridge_rise_1690_1720"
+    ]
+  },
+  {
     "id": "clio_mx_aztec_emp_1429_ad90ec62",
     "name": "Aztec Triple Alliance",
     "kind": "polity",
@@ -2991,6 +3021,21 @@
     "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_p2_lezhe_albania_mod"
+    ]
+  },
+  {
+    "id": "sforza_venetian_borgomanero_coalition_1449",
+    "name": "Sforza-Venetian Coalition at Borgomanero (1449)",
+    "kind": "engagement_bounded_claimant_coalition",
+    "start_year": 1449,
+    "end_year": 1449,
+    "region": "Novarese, northern Italy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The exact Sforza formations and Venetian-service troops under Bartolomeo Colleoni that fought at Borgomanero. No rating is inherited by Milan, the Ambrosian Republic, the later Sforza duchy, Venice as a whole, another claimant army, or any successor.",
+    "source_ids": [
+      "wave8_savoy_borgomanero_municipality",
+      "wave8_savoy_treccani_fogliano"
     ]
   },
   {
@@ -3426,6 +3471,22 @@
       "met_ethiopian_christianity"
     ],
     "start_year": 1531
+  },
+  {
+    "id": "republic_geneva_1536_1798",
+    "name": "Republic of Geneva (1536-1798)",
+    "kind": "sovereign_city_republic",
+    "start_year": 1536,
+    "end_year": 1798,
+    "region": "Geneva and its subject territories",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent sovereign Reformed republic from the 1536 political emancipation through French annexation in 1798. No rating is inherited by the earlier episcopal principality, Bernese forces, the French department of Leman, the post-1815 canton, Switzerland, or a modern state.",
+    "source_ids": [
+      "wave8_savoy_geneva_archives_escalade",
+      "wave8_savoy_hls_geneva_republic",
+      "wave8_savoy_swiss_museum_escalade"
+    ]
   },
   {
     "aliases": [],

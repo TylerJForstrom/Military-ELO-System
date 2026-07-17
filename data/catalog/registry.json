@@ -671,6 +671,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "amadeus_vi_savoyard_crusade_1366_1367",
+      "name": "Amadeus VI's Savoyard Crusading Expedition (1366-1367)",
+      "kind": "campaign_bounded_crusading_coalition",
+      "start_year": 1366,
+      "end_year": 1367,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Dardanelles, Black Sea, and Balkans"
+    },
+    {
       "id": "amar_singh_thapa_malaun_force_1815",
       "name": "Amar Singh Thapa's Malaun force",
       "kind": "state_field_force",
@@ -15626,6 +15636,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "republic_geneva_1536_1798",
+      "name": "Republic of Geneva (1536-1798)",
+      "kind": "sovereign_city_republic",
+      "start_year": 1536,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Geneva and its subject territories"
+    },
+    {
       "id": "clio_it_genoa_rep_1_1010_1f45e325",
       "name": "Republic of Genoa",
       "kind": "republic",
@@ -16890,6 +16910,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "savoyard_state_ducal_1416_1713",
+      "name": "Savoyard State under the Dukes (1416-1713)",
+      "kind": "composite_ducal_state",
+      "start_year": 1416,
+      "end_year": 1713,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Savoy, Piedmont, Aosta, and Nice"
+    },
+    {
       "id": "clio_q158151_1806_8c3f0e60",
       "name": "Saxe-Altenburg",
       "kind": "polity",
@@ -17260,6 +17290,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "sforza_venetian_borgomanero_coalition_1449",
+      "name": "Sforza-Venetian Coalition at Borgomanero (1449)",
+      "kind": "engagement_bounded_claimant_coalition",
+      "start_year": 1449,
+      "end_year": 1449,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Novarese, northern Italy"
     },
     {
       "id": "clio_q4765854_1294_63151ed8",
@@ -20924,11 +20964,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1955,
-    "rated_entities": 592,
-    "rated_events": 5088,
+    "registry_polities": 1959,
+    "rated_entities": 596,
+    "rated_events": 5093,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18306,
+    "unresolved_event_candidates": 18301,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20969,6 +21009,7 @@
     "candidate_keyed_wave8_seljuks_hced_events": 5,
     "candidate_keyed_wave8_danish_vikings_hced_events": 4,
     "candidate_keyed_wave8_epirus_hced_events": 6,
+    "candidate_keyed_wave8_savoy_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20979,11 +21020,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4824,
-      "candidate_keyed_reviewed_contracts": 514,
-      "geojson_points": 4725,
-      "modern_location_country_assertions": 4736,
-      "location_provenance_objects": 4785,
+      "hced_candidate_bindings": 4829,
+      "candidate_keyed_reviewed_contracts": 519,
+      "geojson_points": 4730,
+      "modern_location_country_assertions": 4741,
+      "location_provenance_objects": 4790,
       "point_fields_withheld_by_quarantine": 99,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
       "source_blank_country_fields": 1,
@@ -20993,7 +21034,7 @@
       "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
       "quarantine_policy_sha256": "e9ede18567dfc578454fbe59f933969d24fecee3000b521d7554b0bd89fdc42c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4785
+        "unreviewed_source_assertion": 4790
       },
       "verified_location_assertions": {
         "availability": "not_available",
