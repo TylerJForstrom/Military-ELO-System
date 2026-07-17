@@ -7980,6 +7980,225 @@
     ]
   },
   {
+    "id": "wave8_flanders_burgers_melis_stoke",
+    "title": "De loopbaan van de klerk Melis Stoke",
+    "url": "https://www.dbnl.org/tekst/_bij005199301_01/_bij005199301_01_0004.php",
+    "publisher": "BMGN / Digitale Bibliotheek voor de Nederlandse Letteren",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_source_criticism",
+    "accessed": "2026-07-16",
+    "source_family_id": "burgers_melis_stoke_1993",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_flanders_cambridge_dampierres",
+    "title": "The Dampierres, the comital family of Flanders",
+    "url": "https://www.cambridge.org/core/books/abs/french-in-the-kingdom-of-sicily-12661305/dampierres-the-comital-family-of-flanders/51CEDF951380ECD92691D5D63DF0EC81",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "dunbabin_dampierres_2011",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_flanders_cambridge_low_countries",
+    "title": "Counts, cities and commerce: institutional foundations of trade in late medieval Flanders, Holland and Zeeland",
+    "url": "https://www.cambridge.org/core/product/37D28A756288A8CCEC41456609F0739C/core-reader",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_open_access_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "zuijderduijn_et_al_low_countries_2025",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_flanders_devries_infantry",
+    "title": "Infantry Warfare in the Early Fourteenth Century",
+    "url": "https://boydellandbrewer.com/book/infantry-warfare-in-the-early-fourteenth-century/",
+    "publisher": "Boydell & Brewer",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "devries_infantry_warfare_1996",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_france_culture_cassel",
+    "title": "Bataille de Cassel, 23 août 1328",
+    "url": "https://pop.culture.gouv.fr/notice/joconde/000PE005885",
+    "publisher": "Ministère de la Culture, France",
+    "license": "Citation and link only",
+    "source_type": "official_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "france_culture_cassel_1328",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_lambert_memory",
+    "title": "De Guldensporenslag van fait-divers tot ankerpunt van de Vlaamse identiteit (1302-1838)",
+    "url": "https://doi.org/10.18352/bmgn-lchr.5285",
+    "publisher": "BMGN - Low Countries Historical Review",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "lambert_guldensporenslag_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_larousse_philip_iv",
+    "title": "Philippe IV le Bel",
+    "url": "https://www.larousse.fr/encyclopedie/personnage/Philippe_IV_le_Bel/137969",
+    "publisher": "Encyclopédie Larousse",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "larousse_philip_iv",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_larousse_philip_vi",
+    "title": "Philippe VI de Valois",
+    "url": "https://www.larousse.fr/encyclopedie/personnage/wd/137971",
+    "publisher": "Encyclopédie Larousse",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "larousse_philip_vi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_melis_stoke",
+    "title": "Rijmkroniek van Holland",
+    "url": "https://www.dbnl.org/titels/titel.php?id=stok001rijm01",
+    "publisher": "Digitale Bibliotheek voor de Nederlandse Letteren",
+    "license": "Citation and link only",
+    "source_type": "digitized_contemporary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "melis_stoke_rijmkroniek",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_pirenne_cassel",
+    "title": "Les conséquences de la bataille de Cassel pour la ville de Bruges",
+    "url": "https://www.persee.fr/doc/bcrh_0770-6707_1899_num_68_9_2291",
+    "publisher": "Commission royale d'Histoire / Persée",
+    "license": "Citation and link only",
+    "source_type": "scholarly_document_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "pirenne_cassel_consequences_1899",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_sayers_zierikzee",
+    "title": "Naval Tactics at the Battle of Zierikzee (1304) in the Light of Mediterranean Praxis",
+    "url": "https://www.cambridge.org/core/books/journal-of-medieval-military-history/naval-tactics-at-the-battle-of-zierikzee-1304-in-the-light-of-mediterranean-praxis/20F05855CF85624D9284CCDA8D8FAAC0",
+    "publisher": "Cambridge University Press / Boydell & Brewer",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "sayers_zierikzee_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_somme_devries_review",
+    "title": "Kelly De Vries, Infantry Warfare in the Early Fourteenth Century",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1999_num_91_331_2943_t1_0636_0000_2",
+    "publisher": "Revue du Nord / Persée",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "somme_devries_review_1999",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_tebrake_insurrection",
+    "title": "A Plague of Insurrection: Popular Politics and Peasant Revolt in Flanders",
+    "url": "https://www.pennpress.org/9780812215267/a-plague-of-insurrection/",
+    "publisher": "University of Pennsylvania Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "tebrake_plague_insurrection_1993",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_verbruggen_golden_spurs",
+    "title": "The Battle of the Golden Spurs (Courtrai, 11 July 1302)",
+    "url": "https://www.jstor.org/stable/10.7722/j.ctt81svs",
+    "publisher": "Boydell Press / JSTOR",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "verbruggen_golden_spurs_2002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_flanders_zierikzee_heritage",
+    "title": "Reizende Tentoonstelling 1304",
+    "url": "https://www.vriendenerfgoedzierikzee.nl/reizende-tentoonstelling-1304/",
+    "publisher": "Stichting Vrienden Erfgoed Zierikzee",
+    "license": "Citation and link only",
+    "source_type": "institutional_local_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "zierikzee_heritage_1304",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_garibaldi_guerzoni_1889",
     "title": "Garibaldi, volume I (1807-1859)",
     "url": "https://www.gutenberg.org/files/75122/75122-h/75122-h.htm",

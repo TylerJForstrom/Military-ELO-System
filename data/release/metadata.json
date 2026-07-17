@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 776,
-    "events": 5204,
-    "sources": 1025,
-    "registry_polities": 2132
+    "entities": 785,
+    "events": 5208,
+    "sources": 1040,
+    "registry_polities": 2141
   },
   "year_range": {
     "start": -1274,
@@ -135,6 +135,7 @@
     "accepted_wave8_comanches_hced_events": 2,
     "accepted_wave8_sikh_punjab_hced_events": 4,
     "accepted_wave8_eritrea_hced_events": 4,
+    "accepted_wave8_flanders_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -8528,7 +8529,295 @@
     "wave8_eritrea_outcome_overrides": [],
     "wave8_eritrea_entities_added": 4,
     "wave8_eritrea_sources_added": 16,
-    "hced_label_pass_input_rows": 5757,
+    "wave8_flanders_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 4,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 9,
+      "new_sources": 15,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_flanders_cohort_counts": {
+      "flemish_coast_revolt_1323_1328": 1,
+      "franco_flemish_war_1297_1305": 3
+    },
+    "wave8_flanders_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_flanders_integration_validation": {
+      "cross_lane_hced_dispositions": 4,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "related_hced_dispositions": 2
+    },
+    "wave8_flanders_candidate_ids": [
+      "hced-Cassel1328-1",
+      "hced-Courtrai1302-1",
+      "hced-Mons-en-Pevele1304-1",
+      "hced-Zieriksee1304-1"
+    ],
+    "wave8_flanders_holds": [],
+    "wave8_flanders_terminal_exclusions": [],
+    "wave8_flanders_cross_lane_dispositions": [
+      {
+        "disposition_id": "burgundy",
+        "disposition": "outside_identity_window",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "burgundian_flanders_start_year": 1384,
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_cambridge_low_countries"
+        ],
+        "note": "All four events predate the 1384 Burgundian succession; no Burgundian actor or inherited rating is admitted."
+      },
+      {
+        "disposition_id": "dutch",
+        "disposition": "medieval_holland_zeeland_not_dutch_republic",
+        "candidate_ids": [
+          "hced-Zieriksee1304-1"
+        ],
+        "evidence_refs": [
+          "wave8_flanders_cambridge_low_countries",
+          "wave8_flanders_sayers_zierikzee"
+        ],
+        "note": "The 1304 Holland-Zeeland force is event bounded and receives no continuity to the much later Dutch Republic or Netherlands."
+      },
+      {
+        "disposition_id": "france",
+        "disposition": "shared_raw_counterpart_but_event_bounded_identities",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "kingdom_france"
+        ],
+        "evidence_refs": [
+          "wave8_flanders_devries_infantry",
+          "wave8_flanders_larousse_philip_iv",
+          "wave8_flanders_larousse_philip_vi"
+        ],
+        "note": "Philip IV's Capetian forces and Philip VI's Valois intervention are separate bounded formations; no generic France rating is reused."
+      },
+      {
+        "disposition_id": "medieval_county_of_flanders",
+        "disposition": "related_identity_not_a_candidate_owner",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "existing_entity_id": "clio_fr_capetian_k_1_990_39dc2541",
+        "related_existing_event_id": "hced_label_hced_furnes1297_1",
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_cambridge_low_countries"
+        ],
+        "note": "The generic County of Flanders interval is not substituted for communal rebels, a comital fleet, or the 1328 rebels."
+      }
+    ],
+    "wave8_flanders_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Bruges1302-1",
+        "disposition": "related_distinct_hced_event",
+        "raw_row_sha256": "de7ab6229982ceb2334b030782ec31f3bab70e16ef15556ec90c6389372d3f0c",
+        "relation": "Bruges Matins is a distinct uprising episode and remains owned by the exact Flemish Rebels label lane, not this battle inventory.",
+        "evidence_refs": [
+          "wave8_flanders_lambert_memory",
+          "wave8_flanders_verbruggen_golden_spurs"
+        ]
+      },
+      {
+        "candidate_id": "hced-Furnes1297-1",
+        "disposition": "related_distinct_existing_release_event",
+        "raw_row_sha256": "a723935dcde264ef3474442b8a47faca832ee55c6eeeb2e08fec12798dec0c4a",
+        "owner_event_id": "hced_label_hced_furnes1297_1",
+        "owner_entity_id": "clio_fr_capetian_k_1_990_39dc2541",
+        "relation": "Furnes 1297 is a separate earlier engagement already released by the medieval label resolver and is not a duplicate of these four rows.",
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_devries_infantry"
+        ]
+      }
+    ],
+    "wave8_flanders_iwbd_duplicate_dispositions": [],
+    "wave8_flanders_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Cassel1328-1",
+        "aliases": [
+          "battle of cassel",
+          "battle of cassel 1328",
+          "battle of kassel",
+          "cassel",
+          "cassel 1328",
+          "kassel"
+        ],
+        "years": [
+          1328,
+          1328
+        ]
+      },
+      {
+        "audit_id": "hced-Courtrai1302-1",
+        "aliases": [
+          "battle of courtrai",
+          "battle of kortrijk",
+          "battle of the golden spurs",
+          "courtrai",
+          "golden spurs",
+          "kortrijk"
+        ],
+        "years": [
+          1302,
+          1302
+        ]
+      },
+      {
+        "audit_id": "hced-Mons-en-Pevele1304-1",
+        "aliases": [
+          "battle of mons en pevele",
+          "battle of pevelenberg",
+          "mons en pevele",
+          "pevelenberg"
+        ],
+        "years": [
+          1304,
+          1304
+        ]
+      },
+      {
+        "audit_id": "hced-Zieriksee1304-1",
+        "aliases": [
+          "battle of zieriksee",
+          "battle of zierikzee",
+          "naval battle of zierikzee",
+          "slag op de gouwe",
+          "zieriksee",
+          "zierikzee"
+        ],
+        "years": [
+          1304,
+          1304
+        ]
+      }
+    ],
+    "wave8_flanders_existing_release_duplicate_dispositions": [],
+    "wave8_flanders_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:burgundy",
+        "disposition": "outside_identity_window",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "burgundian_flanders_start_year": 1384,
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_cambridge_low_countries"
+        ],
+        "note": "All four events predate the 1384 Burgundian succession; no Burgundian actor or inherited rating is admitted."
+      },
+      {
+        "disposition_id": "cross_lane:dutch",
+        "disposition": "medieval_holland_zeeland_not_dutch_republic",
+        "candidate_ids": [
+          "hced-Zieriksee1304-1"
+        ],
+        "evidence_refs": [
+          "wave8_flanders_cambridge_low_countries",
+          "wave8_flanders_sayers_zierikzee"
+        ],
+        "note": "The 1304 Holland-Zeeland force is event bounded and receives no continuity to the much later Dutch Republic or Netherlands."
+      },
+      {
+        "disposition_id": "cross_lane:france",
+        "disposition": "shared_raw_counterpart_but_event_bounded_identities",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "kingdom_france"
+        ],
+        "evidence_refs": [
+          "wave8_flanders_devries_infantry",
+          "wave8_flanders_larousse_philip_iv",
+          "wave8_flanders_larousse_philip_vi"
+        ],
+        "note": "Philip IV's Capetian forces and Philip VI's Valois intervention are separate bounded formations; no generic France rating is reused."
+      },
+      {
+        "disposition_id": "cross_lane:medieval_county_of_flanders",
+        "disposition": "related_identity_not_a_candidate_owner",
+        "candidate_ids": [
+          "hced-Cassel1328-1",
+          "hced-Courtrai1302-1",
+          "hced-Mons-en-Pevele1304-1",
+          "hced-Zieriksee1304-1"
+        ],
+        "existing_entity_id": "clio_fr_capetian_k_1_990_39dc2541",
+        "related_existing_event_id": "hced_label_hced_furnes1297_1",
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_cambridge_low_countries"
+        ],
+        "note": "The generic County of Flanders interval is not substituted for communal rebels, a comital fleet, or the 1328 rebels."
+      },
+      {
+        "disposition_id": "related_hced:hced-Bruges1302-1",
+        "disposition": "related_distinct_hced_event",
+        "raw_row_sha256": "de7ab6229982ceb2334b030782ec31f3bab70e16ef15556ec90c6389372d3f0c",
+        "relation": "Bruges Matins is a distinct uprising episode and remains owned by the exact Flemish Rebels label lane, not this battle inventory.",
+        "evidence_refs": [
+          "wave8_flanders_lambert_memory",
+          "wave8_flanders_verbruggen_golden_spurs"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Furnes1297-1",
+        "disposition": "related_distinct_existing_release_event",
+        "raw_row_sha256": "a723935dcde264ef3474442b8a47faca832ee55c6eeeb2e08fec12798dec0c4a",
+        "owner_event_id": "hced_label_hced_furnes1297_1",
+        "owner_entity_id": "clio_fr_capetian_k_1_990_39dc2541",
+        "relation": "Furnes 1297 is a separate earlier engagement already released by the medieval label resolver and is not a duplicate of these four rows.",
+        "evidence_refs": [
+          "wave8_flanders_cambridge_dampierres",
+          "wave8_flanders_devries_infantry"
+        ]
+      }
+    ],
+    "wave8_flanders_outcome_overrides": [],
+    "wave8_flanders_entities_added": 9,
+    "wave8_flanders_sources_added": 15,
+    "hced_label_pass_input_rows": 5753,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -8541,7 +8830,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 847,
+      "reserved_candidate_contract": 851,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -8553,7 +8842,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2246,
+      "no_unique_time_valid_label_match": 2242,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

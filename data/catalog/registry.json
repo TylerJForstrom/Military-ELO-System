@@ -5990,6 +5990,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "flemish_communal_army_courtrai_1302",
+      "name": "Flemish communal resistance army at Courtrai (1302)",
+      "kind": "event_bounded_rebel_field_army",
+      "start_year": 1302,
+      "end_year": 1302,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Courtrai and the Groeninge field"
+    },
+    {
+      "id": "flemish_resistance_army_mons_en_pevele_1304",
+      "name": "Flemish resistance army at Mons-en-Pévèle (1304)",
+      "kind": "event_bounded_rebel_field_army",
+      "start_year": 1304,
+      "end_year": 1304,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mons-en-Pévèle"
+    },
+    {
       "id": "balsa_ii_forces_savra_1385",
       "name": "Forces of Balsha II at Savra",
       "kind": "dynastic_forces",
@@ -7387,6 +7407,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "guy_namur_flemish_fleet_zierikzee_1304",
+      "name": "Guy of Namur's Flemish fleet at Zierikzee (1304)",
+      "kind": "event_bounded_comital_fleet",
+      "start_year": 1304,
+      "end_year": 1304,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gouwe channel off Zierikzee"
     },
     {
       "id": "clio_q734_1967_cb0e91de",
@@ -14034,6 +14064,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "zannekin_flemish_coast_rebel_army_cassel_1328",
+      "name": "Nicolaas Zannekin's Flemish coastal rebel army at Cassel (1328)",
+      "kind": "event_bounded_rebel_field_army",
+      "start_year": 1328,
+      "end_year": 1328,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cassel and maritime Flanders"
+    },
+    {
       "id": "nicolls_eic_kumaon_field_force_1815",
       "name": "Nicolls's East India Company Kumaon field force",
       "kind": "company_field_force",
@@ -15050,6 +15090,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "philip_iv_french_royal_army_mons_en_pevele_1304",
+      "name": "Philip IV's French royal army at Mons-en-Pévèle (1304)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1304,
+      "end_year": 1304,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mons-en-Pévèle"
+    },
+    {
+      "id": "philip_vi_french_royal_army_cassel_1328",
+      "name": "Philip VI's French royal army at Cassel (1328)",
+      "kind": "event_bounded_royal_intervention_army",
+      "start_year": 1328,
+      "end_year": 1328,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cassel and the Peene valley"
     },
     {
       "id": "philippine_revolutionary_forces",
@@ -16298,6 +16358,16 @@
       "region": "Western Arabia"
     },
     {
+      "id": "rainier_grimaldi_french_genoese_fleet_zierikzee_1304",
+      "name": "Rainier Grimaldi's French-paid Genoese fleet at Zierikzee (1304)",
+      "kind": "event_bounded_allied_fleet",
+      "start_year": 1304,
+      "end_year": 1304,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gouwe channel off Zierikzee"
+    },
+    {
       "id": "clio_q4401071_1497_8af5707f",
       "name": "Rajahnate of Cebu",
       "kind": "polity",
@@ -17538,6 +17608,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Sutherland, Scotland"
+    },
+    {
+      "id": "robert_artois_french_royal_army_courtrai_1302",
+      "name": "Robert of Artois's French royal army at Courtrai (1302)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1302,
+      "end_year": 1302,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Courtrai and the Groeninge field"
     },
     {
       "id": "roderic_visigothic_royal_army_711",
@@ -21991,6 +22071,16 @@
       "region": "Bedford Castle, Bedfordshire"
     },
     {
+      "id": "william_avesnes_holland_zeeland_force_zierikzee_1304",
+      "name": "William of Avesnes's Holland-Zeeland force at Zierikzee (1304)",
+      "kind": "event_bounded_comital_relief_force",
+      "start_year": 1304,
+      "end_year": 1304,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Zierikzee and the Gouwe channel"
+    },
+    {
       "id": "irish_williamite_army_1689",
       "name": "Williamite Army in Ireland",
       "kind": "claimant_army",
@@ -22694,11 +22784,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2132,
-    "rated_entities": 769,
-    "rated_events": 5204,
+    "registry_polities": 2141,
+    "rated_entities": 778,
+    "rated_events": 5208,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18190,
+    "unresolved_event_candidates": 18186,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22763,6 +22853,7 @@
     "candidate_keyed_wave8_comanches_hced_events": 2,
     "candidate_keyed_wave8_sikh_punjab_hced_events": 4,
     "candidate_keyed_wave8_eritrea_hced_events": 4,
+    "candidate_keyed_wave8_flanders_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22773,21 +22864,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4940,
-      "candidate_keyed_reviewed_contracts": 630,
+      "hced_candidate_bindings": 4944,
+      "candidate_keyed_reviewed_contracts": 634,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4847,
-      "location_provenance_objects": 4896,
-      "point_fields_withheld_by_quarantine": 206,
+      "modern_location_country_assertions": 4851,
+      "location_provenance_objects": 4900,
+      "point_fields_withheld_by_quarantine": 210,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 254,
-      "point_quarantine_candidate_manifest_sha256": "96b0b5ae006a2b1655a5701a75be565047850471365fce35cbf62d4000eafb9a",
+      "unique_events_with_any_quarantined_field": 258,
+      "point_quarantine_candidate_manifest_sha256": "1794c7b9720ffaf9a085393a8cd1d8e82f0894db8d1c8f93b4fdcf190bd38c21",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "15a588ad3dd1fc6bbb4d6f3436b7773e20ffa2e8564a9ae209cb3d53ba6ee3db",
+      "quarantine_policy_sha256": "ac072cc35cecf126ab7aa34ec9ee62dd18adabea3c7d6dbc8c506f3ab0afd112",
       "assertion_status": {
-        "unreviewed_source_assertion": 4896
+        "unreviewed_source_assertion": 4900
       },
       "verified_location_assertions": {
         "availability": "not_available",

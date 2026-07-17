@@ -3618,6 +3618,119 @@
     ]
   },
   {
+    "id": "flemish_communal_army_courtrai_1302",
+    "name": "Flemish communal resistance army at Courtrai (1302)",
+    "kind": "event_bounded_rebel_field_army",
+    "start_year": 1302,
+    "end_year": 1302,
+    "region": "Courtrai and the Groeninge field",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Bruges, Ypres, Courtrai, Franc of Bruges, and allied contingents assembled under William of Jülich, Guy of Namur, and their commanders for the 11 July engagement. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_devries_infantry",
+      "wave8_flanders_lambert_memory",
+      "wave8_flanders_verbruggen_golden_spurs"
+    ]
+  },
+  {
+    "id": "robert_artois_french_royal_army_courtrai_1302",
+    "name": "Robert of Artois's French royal army at Courtrai (1302)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1302,
+    "end_year": 1302,
+    "region": "Courtrai and the Groeninge field",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Robert II of Artois's royal cavalry, infantry, and allied contingents committed against the Flemish position on 11 July. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_devries_infantry",
+      "wave8_flanders_lambert_memory",
+      "wave8_flanders_verbruggen_golden_spurs"
+    ]
+  },
+  {
+    "id": "flemish_resistance_army_mons_en_pevele_1304",
+    "name": "Flemish resistance army at Mons-en-Pévèle (1304)",
+    "kind": "event_bounded_rebel_field_army",
+    "start_year": 1304,
+    "end_year": 1304,
+    "region": "Mons-en-Pévèle",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Flemish communal and comital resistance force led by William of Jülich, Philip of Chieti, and John of Namur in the 18 August engagement. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_devries_infantry",
+      "wave8_flanders_larousse_philip_iv",
+      "wave8_flanders_somme_devries_review"
+    ]
+  },
+  {
+    "id": "guy_namur_flemish_fleet_zierikzee_1304",
+    "name": "Guy of Namur's Flemish fleet at Zierikzee (1304)",
+    "kind": "event_bounded_comital_fleet",
+    "start_year": 1304,
+    "end_year": 1304,
+    "region": "Gouwe channel off Zierikzee",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Guy of Namur's fleet and siege-supporting force defeated and captured in the 10-11 August naval engagement. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_melis_stoke",
+      "wave8_flanders_sayers_zierikzee",
+      "wave8_flanders_zierikzee_heritage"
+    ]
+  },
+  {
+    "id": "philip_iv_french_royal_army_mons_en_pevele_1304",
+    "name": "Philip IV's French royal army at Mons-en-Pévèle (1304)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1304,
+    "end_year": 1304,
+    "region": "Mons-en-Pévèle",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Philip IV's personally commanded royal army in the 18 August battle and the recovery of the field after the final attack. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_devries_infantry",
+      "wave8_flanders_larousse_philip_iv",
+      "wave8_flanders_somme_devries_review"
+    ]
+  },
+  {
+    "id": "rainier_grimaldi_french_genoese_fleet_zierikzee_1304",
+    "name": "Rainier Grimaldi's French-paid Genoese fleet at Zierikzee (1304)",
+    "kind": "event_bounded_allied_fleet",
+    "start_year": 1304,
+    "end_year": 1304,
+    "region": "Gouwe channel off Zierikzee",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Rainier Grimaldi's French-financed Genoese-led naval contingent in the 10-11 August relief battle. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_melis_stoke",
+      "wave8_flanders_sayers_zierikzee",
+      "wave8_flanders_zierikzee_heritage"
+    ]
+  },
+  {
+    "id": "william_avesnes_holland_zeeland_force_zierikzee_1304",
+    "name": "William of Avesnes's Holland-Zeeland force at Zierikzee (1304)",
+    "kind": "event_bounded_comital_relief_force",
+    "start_year": 1304,
+    "end_year": 1304,
+    "region": "Zierikzee and the Gouwe channel",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Holland and Zeeland ships, troops, and Zierikzee defenders cooperating with Grimaldi's fleet; it predates the Dutch Republic by centuries. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_burgers_melis_stoke",
+      "wave8_flanders_cambridge_low_countries",
+      "wave8_flanders_melis_stoke",
+      "wave8_flanders_sayers_zierikzee"
+    ]
+  },
+  {
     "id": "clio_ro_wallachia_principality_1_1314_b44d81d9",
     "name": "Principality of Wallachia",
     "kind": "polity",
@@ -3659,6 +3772,40 @@
     "continuity_note": "The identity is limited to Richard de Clare’s divided field army at Dysert O’Dea. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
     "source_ids": [
       "wave8_irish_simms_dysert_odea"
+    ]
+  },
+  {
+    "id": "zannekin_flemish_coast_rebel_army_cassel_1328",
+    "name": "Nicolaas Zannekin's Flemish coastal rebel army at Cassel (1328)",
+    "kind": "event_bounded_rebel_field_army",
+    "start_year": 1328,
+    "end_year": 1328,
+    "region": "Cassel and maritime Flanders",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Zannekin's insurgent rural and urban militias from maritime Flanders in their final attack on the French camp. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_pirenne_cassel",
+      "wave8_flanders_somme_devries_review",
+      "wave8_flanders_tebrake_insurrection"
+    ]
+  },
+  {
+    "id": "philip_vi_french_royal_army_cassel_1328",
+    "name": "Philip VI's French royal army at Cassel (1328)",
+    "kind": "event_bounded_royal_intervention_army",
+    "start_year": 1328,
+    "end_year": 1328,
+    "region": "Cassel and the Peene valley",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Philip VI's royal host intervening for Louis of Nevers and fighting the rebel assault on 23 August. No rating is inherited from or passed to generic France, the County of Flanders, a Burgundian polity, the Dutch Republic, or any modern Belgian, French, or Dutch state identity.",
+    "source_ids": [
+      "wave8_flanders_devries_infantry",
+      "wave8_flanders_france_culture_cassel",
+      "wave8_flanders_larousse_philip_vi",
+      "wave8_flanders_somme_devries_review",
+      "wave8_flanders_tebrake_insurrection"
     ]
   },
   {
