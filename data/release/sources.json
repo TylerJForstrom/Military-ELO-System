@@ -11946,6 +11946,75 @@
     ]
   },
   {
+    "id": "wave8_irish_cw_decies_waterford_1922",
+    "title": "The Battle of Waterford, 1922",
+    "url": "https://archive.waterfordcouncil.ie/Historical%20Newspapers%2C%20Books%20and%20Journals/Decies/Decies%20XXVI%20-%201984.pdf",
+    "publisher": "Waterford Archaeological and Historical Society / Decies",
+    "license": "Citation and link only",
+    "source_type": "local_history_journal_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "waterford_decies_journal",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_cw_limerick_inevitable_conflict",
+    "title": "The Inevitable Conflict: Essays on the Civil War in County Limerick",
+    "url": "https://www.limerick.ie/sites/default/files/media/documents/2022-08/The-Inevitable-Conflict.pdf",
+    "publisher": "Limerick City and County Council",
+    "license": "Citation and link only",
+    "source_type": "official_local_history_collection",
+    "accessed": "2026-07-17",
+    "source_family_id": "limerick_council_civil_war_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_cw_rte_ucc_limerick_1922",
+    "title": "Urban warfare: the Battle for Limerick",
+    "url": "https://www.rte.ie/history/conventional-phase/2022/0713/1309991-the-battle-for-limerick/",
+    "publisher": "RTÉ and University College Cork",
+    "license": "Citation and link only",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_irish_cw_ucc_1922_overview",
+    "title": "The Irish Revolution: 1922 Battle for Munster overview",
+    "url": "https://www.ucc.ie/en/theirishrevolution/",
+    "publisher": "University College Cork",
+    "license": "Citation and link only",
+    "source_type": "academic_public_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "ucc_atlas_irish_revolution",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_irish_cw_ucc_cork_fatalities",
+    "title": "Cork Fatality Register: Research Findings",
+    "url": "https://www.ucc.ie/en/theirishrevolution/collections/cork-fatality-register/register-research-findings/",
+    "publisher": "University College Cork",
+    "license": "Citation and link only",
+    "source_type": "academic_research_register",
+    "accessed": "2026-07-17",
+    "source_family_id": "ucc_irish_civil_war_fatalities",
+    "evidence_roles": [
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_irish_dublin_city_walls",
     "title": "Dublin City Walls and Defences",
     "url": "https://www.dublincity.ie/sites/default/files/media/file-uploads/2018-06/City_Walls_booklet_17_6_10.pdf",

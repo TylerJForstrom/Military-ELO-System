@@ -1932,6 +1932,25 @@ from .wave8_oman import (
     wave8_oman_cohort_counts,
     wave8_oman_counts,
 )
+from .wave8_irish_civil_war import (
+    WAVE8_IRISH_CIVIL_WAR_CONTRACT_IDS,
+    WAVE8_IRISH_CIVIL_WAR_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_IRISH_CIVIL_WAR_ENTITIES,
+    WAVE8_IRISH_CIVIL_WAR_FINAL_AUDIT_SIGNATURE,
+    WAVE8_IRISH_CIVIL_WAR_FUNNEL_AUDIT,
+    WAVE8_IRISH_CIVIL_WAR_HOLDS,
+    WAVE8_IRISH_CIVIL_WAR_LOCATION_QUARANTINE_REASONS,
+    WAVE8_IRISH_CIVIL_WAR_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_IRISH_CIVIL_WAR_RESERVED_IDS,
+    WAVE8_IRISH_CIVIL_WAR_SOURCES,
+    install_wave8_irish_civil_war_sources,
+    promote_wave8_irish_civil_war_contracts,
+    validate_wave8_irish_civil_war_integration_dispositions,
+    validate_wave8_irish_civil_war_queue_contracts,
+    wave8_irish_civil_war_audit_signature,
+    wave8_irish_civil_war_cohort_counts,
+    wave8_irish_civil_war_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -2042,6 +2061,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_FLN_RESERVED_IDS
     | WAVE8_SINDH_RESERVED_IDS
     | WAVE8_OMAN_RESERVED_IDS
+    | WAVE8_IRISH_CIVIL_WAR_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2463,7 +2483,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 336
+        len(HCED_POINT_QUARANTINE_IDS) != 338
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2761,6 +2781,9 @@ def build_expanded_release(
     wave8_fln_queue_validation = validate_wave8_fln_queue_contracts(hced)
     wave8_sindh_queue_validation = validate_wave8_sindh_queue_contracts(hced)
     wave8_oman_queue_validation = validate_wave8_oman_queue_contracts(hced)
+    wave8_irish_civil_war_queue_validation = (
+        validate_wave8_irish_civil_war_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -4693,6 +4716,15 @@ def build_expanded_release(
         release_entities,
         wave8_oman_existing_events,
     )
+    wave8_irish_civil_war_existing_events = [
+        *wave8_oman_existing_events,
+        *wave8_oman_events,
+    ]
+    wave8_irish_civil_war_events = promote_wave8_irish_civil_war_contracts(
+        hced,
+        release_entities,
+        wave8_irish_civil_war_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4785,6 +4817,7 @@ def build_expanded_release(
         *wave8_fln_events,
         *wave8_sindh_events,
         *wave8_oman_events,
+        *wave8_irish_civil_war_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -5054,6 +5087,7 @@ def build_expanded_release(
         *wave8_fln_events,
         *wave8_sindh_events,
         *wave8_oman_events,
+        *wave8_irish_civil_war_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -5587,6 +5621,16 @@ def build_expanded_release(
             [*wave8_oman_existing_events, *wave8_oman_events],
         )
     )
+    wave8_irish_civil_war_integration_validation = (
+        validate_wave8_irish_civil_war_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_irish_civil_war_existing_events,
+                *wave8_irish_civil_war_events,
+            ],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5836,6 +5880,7 @@ def build_expanded_release(
     install_wave8_fln_sources(sources_by_id)
     install_wave8_sindh_sources(sources_by_id)
     install_wave8_oman_sources(sources_by_id)
+    install_wave8_irish_civil_war_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5933,6 +5978,7 @@ def build_expanded_release(
         *wave8_fln_events,
         *wave8_sindh_events,
         *wave8_oman_events,
+        *wave8_irish_civil_war_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -6030,6 +6076,7 @@ def build_expanded_release(
         *wave8_fln_events,
         *wave8_sindh_events,
         *wave8_oman_events,
+        *wave8_irish_civil_war_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -6126,6 +6173,7 @@ def build_expanded_release(
             | WAVE8_FLN_CONTRACT_IDS
             | WAVE8_SINDH_CONTRACT_IDS
             | WAVE8_OMAN_CONTRACT_IDS
+            | WAVE8_IRISH_CIVIL_WAR_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -6275,6 +6323,10 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_FLN_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_SINDH_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_OMAN_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_IRISH_CIVIL_WAR_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -6540,6 +6592,7 @@ def build_expanded_release(
         - len(wave8_fln_events)
         - len(wave8_sindh_events)
         - len(wave8_oman_events)
+        - len(wave8_irish_civil_war_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -6742,6 +6795,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_fln_hced_events": len(wave8_fln_events),
         "candidate_keyed_wave8_sindh_hced_events": len(wave8_sindh_events),
         "candidate_keyed_wave8_oman_hced_events": len(wave8_oman_events),
+        "candidate_keyed_wave8_irish_civil_war_hced_events": len(
+            wave8_irish_civil_war_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -7086,6 +7142,9 @@ def build_expanded_release(
             "accepted_wave8_fln_hced_events": len(wave8_fln_events),
             "accepted_wave8_sindh_hced_events": len(wave8_sindh_events),
             "accepted_wave8_oman_hced_events": len(wave8_oman_events),
+            "accepted_wave8_irish_civil_war_hced_events": len(
+                wave8_irish_civil_war_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -11172,6 +11231,52 @@ def build_expanded_release(
             ),
             "wave8_oman_entities_added": len(WAVE8_OMAN_ENTITIES),
             "wave8_oman_sources_added": len(WAVE8_OMAN_SOURCES),
+            "wave8_irish_civil_war_counts": wave8_irish_civil_war_counts(),
+            "wave8_irish_civil_war_cohort_counts": (
+                wave8_irish_civil_war_cohort_counts()
+            ),
+            "wave8_irish_civil_war_audit_signature": (
+                wave8_irish_civil_war_audit_signature()
+            ),
+            "wave8_irish_civil_war_final_audit_signature": (
+                WAVE8_IRISH_CIVIL_WAR_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_irish_civil_war_queue_validation": (
+                wave8_irish_civil_war_queue_validation
+            ),
+            "wave8_irish_civil_war_integration_validation": (
+                wave8_irish_civil_war_integration_validation
+            ),
+            "wave8_irish_civil_war_candidate_ids": sorted(
+                WAVE8_IRISH_CIVIL_WAR_CONTRACT_IDS
+            ),
+            "wave8_irish_civil_war_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_IRISH_CIVIL_WAR_HOLDS.items()
+                )
+            ],
+            "wave8_irish_civil_war_exact_label_funnel_audit": (
+                WAVE8_IRISH_CIVIL_WAR_FUNNEL_AUDIT
+            ),
+            "wave8_irish_civil_war_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_IRISH_CIVIL_WAR_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_irish_civil_war_point_quarantine_additions": sorted(
+                WAVE8_IRISH_CIVIL_WAR_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_irish_civil_war_country_quarantine_additions": sorted(
+                WAVE8_IRISH_CIVIL_WAR_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_irish_civil_war_entities_added": len(
+                WAVE8_IRISH_CIVIL_WAR_ENTITIES
+            ),
+            "wave8_irish_civil_war_sources_added": len(
+                WAVE8_IRISH_CIVIL_WAR_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
