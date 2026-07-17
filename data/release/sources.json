@@ -8973,6 +8973,118 @@
     ]
   },
   {
+    "id": "wave8_mamluk_egypt_alexandria_portal",
+    "title": "Alexandria in the Ottoman Era",
+    "url": "https://www.alexandria.gov.eg/alex/english/Ottoman%20Era.html",
+    "publisher": "Alexandria Governorate official portal",
+    "license": "Citation and link only",
+    "source_type": "official_local_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "alexandria_governorate_ottoman_era",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_berthier_campaign",
+    "title": "Mémoires du maréchal Berthier: Campagne d'Égypte, première partie",
+    "url": "https://www.gutenberg.org/cache/epub/38737/pg38737-images.html",
+    "publisher": "Project Gutenberg transcription of the BnF/Gallica edition",
+    "license": "Citation and link only",
+    "source_type": "participant_primary_campaign_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "berthier_egypt_campaign_primary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_fondation_campaign",
+    "title": "La campagne d'Égypte",
+    "url": "https://www.napoleon.org/histoire-des-2-empires/articles/la-campagne-degypte/",
+    "publisher": "Fondation Napoléon; Revue du Souvenir Napoléonien 383",
+    "license": "Citation and link only",
+    "source_type": "institutional_campaign_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "fondation_napoleon_egypt_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_fondation_correspondence",
+    "title": "Chronologie de la Correspondance générale de Napoléon Bonaparte, tome 2",
+    "url": "https://www.napoleon.org/histoire-des-2-empires/chronologies/chronologie-de-la-correspondance-generale-de-napoleon-bonaparte-tome-2-la-campagne-degypte-et-lavenement-1798-1799/",
+    "publisher": "Fondation Napoléon",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_correspondence_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "napoleon_general_correspondence_chronology_2",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_fondation_rapp",
+    "title": "Rapp, Jean",
+    "url": "https://www.napoleon.org/en/history-of-the-two-empires/biographies/rapp-jean/",
+    "publisher": "Fondation Napoléon",
+    "license": "Citation and link only",
+    "source_type": "institutional_participant_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "fondation_napoleon_jean_rapp",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_karahan_1786",
+    "title": "The Expedition of Grand Admiral Djezairli Ghazi Hasan Pasha to Egypt",
+    "url": "https://doi.org/10.16985/MTAD.2017130406",
+    "publisher": "Marmara Türkiyat Araştırmaları Dergisi",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archival_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "karahan_hasan_pasha_egypt_1786",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_tdv_ibrahim_bey",
+    "title": "İbrâhim Bey",
+    "url": "https://islamansiklopedisi.org.tr/ibrahim-bey",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_islam_encyclopedia_ibrahim_bey",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_mamluk_egypt_thibaudeau_volume_2",
+    "title": "Histoire générale de Napoléon: Guerre d'Égypte, tome second",
+    "url": "https://www.mediterranee-antique.fr/Fichiers_PdF/TUV/Thibaudeau/Guerre_Egypte_2.pdf",
+    "publisher": "Méditerranée antique; public-domain 1828 edition",
+    "license": "Citation and link only",
+    "source_type": "near_contemporary_campaign_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "thibaudeau_egypt_campaign_volume_2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_manchus_cambridge_qing_inner_asia",
     "title": "The Qing and Inner Asia: 1636-1800",
     "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-inner-asia/qing-and-inner-asia-16361800/F843687E97193ED212B2CF1BDEBA3357",

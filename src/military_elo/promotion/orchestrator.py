@@ -942,6 +942,27 @@ from .wave8_rajputs import (
     wave8_rajputs_cohort_counts,
     wave8_rajputs_counts,
 )
+from .wave8_mamluk_egypt import (
+    WAVE8_MAMLUK_EGYPT_CONTRACT_IDS,
+    WAVE8_MAMLUK_EGYPT_CROSS_LANE_DISPOSITIONS,
+    WAVE8_MAMLUK_EGYPT_ENTITIES,
+    WAVE8_MAMLUK_EGYPT_EXISTING_RELEASE_DISPOSITIONS,
+    WAVE8_MAMLUK_EGYPT_HOLD_IDS,
+    WAVE8_MAMLUK_EGYPT_HOLDS,
+    WAVE8_MAMLUK_EGYPT_INTEGRATION_DISPOSITIONS,
+    WAVE8_MAMLUK_EGYPT_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_MAMLUK_EGYPT_OUTCOME_OVERRIDES,
+    WAVE8_MAMLUK_EGYPT_RESERVED_IDS,
+    WAVE8_MAMLUK_EGYPT_SOURCES,
+    WAVE8_MAMLUK_EGYPT_TERMINAL_EXCLUSION_IDS,
+    install_wave8_mamluk_egypt_entities,
+    install_wave8_mamluk_egypt_sources,
+    promote_wave8_mamluk_egypt_contracts,
+    validate_wave8_mamluk_egypt_integration_dispositions,
+    validate_wave8_mamluk_egypt_queue_contracts,
+    wave8_mamluk_egypt_cohort_counts,
+    wave8_mamluk_egypt_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1010,6 +1031,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_LIVONIAN_ORDER_RESERVED_IDS
     | WAVE8_SATSUMA_RESERVED_IDS
     | WAVE8_RAJPUTS_RESERVED_IDS
+    | WAVE8_MAMLUK_EGYPT_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1414,7 +1436,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 157
+        len(HCED_POINT_QUARANTINE_IDS) != 161
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 90
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1626,6 +1648,9 @@ def build_expanded_release(
     )
     wave8_satsuma_queue_validation = validate_wave8_satsuma_queue_contracts(hced)
     wave8_rajputs_queue_validation = validate_wave8_rajputs_queue_contracts(hced)
+    wave8_mamluk_egypt_queue_validation = (
+        validate_wave8_mamluk_egypt_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1981,6 +2006,7 @@ def build_expanded_release(
     install_wave8_livonian_order_entities(release_entities)
     install_wave8_satsuma_entities(release_entities)
     install_wave8_rajputs_entities(release_entities)
+    install_wave8_mamluk_egypt_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3128,6 +3154,15 @@ def build_expanded_release(
         release_entities,
         wave8_rajputs_existing_events,
     )
+    wave8_mamluk_egypt_existing_events = [
+        *wave8_rajputs_existing_events,
+        *wave8_rajputs_events,
+    ]
+    wave8_mamluk_egypt_events = promote_wave8_mamluk_egypt_contracts(
+        hced,
+        release_entities,
+        wave8_mamluk_egypt_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3178,6 +3213,7 @@ def build_expanded_release(
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
         *wave8_rajputs_events,
+        *wave8_mamluk_egypt_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3269,6 +3305,8 @@ def build_expanded_release(
             *WAVE8_SATSUMA_TERMINAL_EXCLUSION_IDS,
             *WAVE8_RAJPUTS_HOLD_IDS,
             *WAVE8_RAJPUTS_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_MAMLUK_EGYPT_HOLD_IDS,
+            *WAVE8_MAMLUK_EGYPT_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3345,6 +3383,7 @@ def build_expanded_release(
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
         *wave8_rajputs_events,
+        *wave8_mamluk_egypt_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3568,6 +3607,13 @@ def build_expanded_release(
             wave8_rajputs_existing_events,
         )
     )
+    wave8_mamluk_egypt_integration_validation = (
+        validate_wave8_mamluk_egypt_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_mamluk_egypt_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -3763,6 +3809,7 @@ def build_expanded_release(
     install_wave8_livonian_order_sources(sources_by_id)
     install_wave8_satsuma_sources(sources_by_id)
     install_wave8_rajputs_sources(sources_by_id)
+    install_wave8_mamluk_egypt_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3818,6 +3865,7 @@ def build_expanded_release(
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
         *wave8_rajputs_events,
+        *wave8_mamluk_egypt_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3873,6 +3921,7 @@ def build_expanded_release(
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
         *wave8_rajputs_events,
+        *wave8_mamluk_egypt_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3927,6 +3976,7 @@ def build_expanded_release(
             | WAVE8_LIVONIAN_ORDER_CONTRACT_IDS
             | WAVE8_SATSUMA_CONTRACT_IDS
             | WAVE8_RAJPUTS_CONTRACT_IDS
+            | WAVE8_MAMLUK_EGYPT_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4023,6 +4073,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_LIVONIAN_ORDER_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_SATSUMA_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_RAJPUTS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_MAMLUK_EGYPT_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4246,6 +4297,7 @@ def build_expanded_release(
         - len(wave8_livonian_order_events)
         - len(wave8_satsuma_events)
         - len(wave8_rajputs_events)
+        - len(wave8_mamluk_egypt_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4358,6 +4410,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_satsuma_hced_events": len(wave8_satsuma_events),
         "candidate_keyed_wave8_rajputs_hced_events": len(wave8_rajputs_events),
+        "candidate_keyed_wave8_mamluk_egypt_hced_events": len(
+            wave8_mamluk_egypt_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4612,6 +4667,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_satsuma_hced_events": len(wave8_satsuma_events),
             "accepted_wave8_rajputs_hced_events": len(wave8_rajputs_events),
+            "accepted_wave8_mamluk_egypt_hced_events": len(
+                wave8_mamluk_egypt_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -6202,6 +6260,61 @@ def build_expanded_release(
             ],
             "wave8_rajputs_entities_added": len(WAVE8_RAJPUTS_ENTITIES),
             "wave8_rajputs_sources_added": len(WAVE8_RAJPUTS_SOURCES),
+            "wave8_mamluk_egypt_counts": wave8_mamluk_egypt_counts(),
+            "wave8_mamluk_egypt_cohort_counts": (
+                wave8_mamluk_egypt_cohort_counts()
+            ),
+            "wave8_mamluk_egypt_queue_validation": (
+                wave8_mamluk_egypt_queue_validation
+            ),
+            "wave8_mamluk_egypt_integration_validation": (
+                wave8_mamluk_egypt_integration_validation
+            ),
+            "wave8_mamluk_egypt_candidate_ids": sorted(
+                WAVE8_MAMLUK_EGYPT_CONTRACT_IDS
+            ),
+            "wave8_mamluk_egypt_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_HOLDS.items()
+                )
+            ],
+            "wave8_mamluk_egypt_existing_release_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_EXISTING_RELEASE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_mamluk_egypt_cross_lane_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_mamluk_egypt_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_mamluk_egypt_integration_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_mamluk_egypt_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MAMLUK_EGYPT_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_mamluk_egypt_entities_added": len(
+                WAVE8_MAMLUK_EGYPT_ENTITIES
+            ),
+            "wave8_mamluk_egypt_sources_added": len(
+                WAVE8_MAMLUK_EGYPT_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -6441,6 +6554,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_satsuma_hced_events": len(wave8_satsuma_events),
         "candidate_keyed_wave8_rajputs_hced_events": len(wave8_rajputs_events),
+        "candidate_keyed_wave8_mamluk_egypt_hced_events": len(
+            wave8_mamluk_egypt_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

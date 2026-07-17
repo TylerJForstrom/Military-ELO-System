@@ -5496,6 +5496,21 @@
     ]
   },
   {
+    "id": "murad_bey_rahmaniyya_force_1786",
+    "name": "Murad Bey's Rahmaniyya Field Force (1786)",
+    "kind": "household_field_force",
+    "start_year": 1786,
+    "end_year": 1786,
+    "region": "Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded force commanded by Murad Bey after his forces joined the detachments of Laçin and Mustafa Bey near Rahmaniyya. Ibrahim Bey was Murad's political partner but is not asserted as the field commander here. No rating is inherited by the Mamluk Sultanate, Ottoman Egypt, either household in another year, or generic Egypt.",
+    "source_ids": [
+      "wave8_mamluk_egypt_karahan_1786",
+      "wave8_mamluk_egypt_tdv_ibrahim_bey"
+    ]
+  },
+  {
     "id": "quang_trung_tay_son_thang_long_force_1789",
     "name": "Quang Trung's Tây Sơn Thăng Long offensive force (1789)",
     "kind": "event_bounded_offensive_force",
@@ -5747,6 +5762,22 @@
     "start_year": 1798
   },
   {
+    "id": "murad_bey_egypt_campaign_force_1798",
+    "name": "Murad Bey's Egyptian Campaign Force (1798)",
+    "kind": "campaign_force",
+    "start_year": 1798,
+    "end_year": 1798,
+    "region": "Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Year-bounded field command of Murad Bey at Shubra Khit and Sediman, including his Mamluk cavalry and the attached infantry, river, and tribal components attested for those actions. It does not widen or reuse the committed Pyramids-only identity. No rating is inherited by the Mamluk Sultanate, Ottoman Egypt, a later Murad Bey coalition, or generic Egypt.",
+    "source_ids": [
+      "wave8_mamluk_egypt_berthier_campaign",
+      "wave8_mamluk_egypt_fondation_campaign",
+      "wave8_mamluk_egypt_thibaudeau_volume_2"
+    ]
+  },
+  {
     "id": "championnet_french_army_naples_1799",
     "name": "Championnet's French Army at Naples (1799)",
     "kind": "campaign_army",
@@ -5759,6 +5790,22 @@
     "source_ids": [
       "wave8_naples_1799_cambridge",
       "wave8_naples_1799_treccani_republic"
+    ]
+  },
+  {
+    "id": "murad_bey_samhud_coalition_1799",
+    "name": "Murad Bey's Samhud Coalition (1799)",
+    "kind": "engagement_coalition",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded coalition at Samhud: Murad Bey's Mamluks, Hassan Bey's contingent, infantry from Yanbu/Mecca, and allied Arab forces. The coalition is not reduced to a generic Mamluk or Egyptian polity. No rating is inherited from the 1798 campaign force, by Ottoman Egypt, by the Mamluk Sultanate, or by generic Egypt.",
+    "source_ids": [
+      "wave8_mamluk_egypt_fondation_campaign",
+      "wave8_mamluk_egypt_fondation_correspondence",
+      "wave8_mamluk_egypt_thibaudeau_volume_2"
     ]
   },
   {

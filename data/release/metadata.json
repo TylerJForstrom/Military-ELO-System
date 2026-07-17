@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 698,
-    "events": 5155,
-    "sources": 884,
-    "registry_polities": 2054
+    "entities": 701,
+    "events": 5159,
+    "sources": 892,
+    "registry_polities": 2057
   },
   "year_range": {
     "start": -1274,
@@ -124,6 +124,7 @@
     "accepted_wave8_livonian_order_hced_events": 4,
     "accepted_wave8_satsuma_hced_events": 6,
     "accepted_wave8_rajputs_hced_events": 6,
+    "accepted_wave8_mamluk_egypt_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6550,7 +6551,148 @@
     ],
     "wave8_rajputs_entities_added": 9,
     "wave8_rajputs_sources_added": 15,
-    "hced_label_pass_input_rows": 5818,
+    "wave8_mamluk_egypt_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "exact_label_rows": 8,
+      "existing_release_dispositions": 2,
+      "holds": 2,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 3,
+      "new_sources": 8,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 9,
+      "terminal_exclusions": 2,
+      "unresolved_exact_label_rows": 6
+    },
+    "wave8_mamluk_egypt_cohort_counts": {
+      "murad_bey_campaign_1798": 2,
+      "murad_bey_samhud_coalition_1799": 1,
+      "ottoman_rahmaniyya_1786": 1
+    },
+    "wave8_mamluk_egypt_queue_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_dispositions": 2,
+      "holds": 2,
+      "promotion_contracts": 4,
+      "reviewed_exact_label_rows": 8,
+      "reviewed_hced_rows": 9,
+      "unresolved_exact_label_rows": 6
+    },
+    "wave8_mamluk_egypt_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_dispositions": 2,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_mamluk_egypt_candidate_ids": [
+      "hced-Rahmaniyya1786-1",
+      "hced-Samhud1799-1",
+      "hced-Sediman1798-1",
+      "hced-Shubra Khit1798-1"
+    ],
+    "wave8_mamluk_egypt_holds": [
+      {
+        "candidate_id": "hced-Alexandria1798-1",
+        "raw_row_sha256": "9e6416b28654cf8894fd1af4fdbfe597eca128709375e06b6d6d50df33f66386",
+        "canonical_event": {
+          "canonical_key": "capture_of_alexandria:1798:1798",
+          "date_precision": "day",
+          "date_text": "2 July 1798",
+          "granularity": "engagement",
+          "name": "Capture of Alexandria",
+          "year_low": 1798,
+          "year_high": 1798
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "terminal_exclusion_wrong_actor",
+        "hold_reason": "The French captured Alexandria, but the defenders were the local Ottoman-era garrison and inhabitants led by governor Muhammad Karim, not Murad Bey's Mamluk field force. This terminally excludes the HCED Mamluk-Egypt assertion; it does not deny that a separately curated Alexandria-defenders event could be reviewed later.",
+        "evidence_refs": [
+          "wave8_mamluk_egypt_alexandria_portal"
+        ]
+      },
+      {
+        "candidate_id": "hced-Er Ridisiya1799-1",
+        "raw_row_sha256": "f685fa5a0156beeadb7a5012ca429bdb3ad89b5afd93dfe732dbc9c7035d4363",
+        "canonical_event": {
+          "canonical_key": "belliard_s_pursuit_toward_redesieh:1799:1799",
+          "date_precision": "year",
+          "date_text": "1799 (no separately attested competitive engagement)",
+          "granularity": "engagement",
+          "name": "Belliard's pursuit toward Redesieh",
+          "year_low": 1799,
+          "year_high": 1799
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "terminal_exclusion_noncompetitive_pursuit_attrition",
+        "hold_reason": "Thibaudeau states that Belliard did not catch the Mamluks; losses on the desert route were horses, camels, servants, and women. A French tactical victory is therefore not rated, and the unknown competitive outcome is not converted into a draw.",
+        "evidence_refs": [
+          "wave8_mamluk_egypt_thibaudeau_volume_2"
+        ]
+      }
+    ],
+    "wave8_mamluk_egypt_existing_release_dispositions": [
+      {
+        "candidate_id": "hced-Marj Dabik1516-1",
+        "raw_row_sha256": "0eb60113f47e6f8f89cf6f4d7c016e1fc6c35cbe80efc459d9a871d31cfb2fc6",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_marj_dabik1516_1",
+        "expected_entity_ids": [
+          "mamluk_sultanate",
+          "ottoman_empire"
+        ],
+        "note": "Already rated as the Ottoman conquest battle against the still-extant, time-bounded Mamluk Sultanate."
+      },
+      {
+        "candidate_id": "hced-Ridanieh1517-1",
+        "raw_row_sha256": "260940e4918a9eb6c58cf7167e21ab665751a0668678db421abba26ef30072f7",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_ridanieh1517_1",
+        "expected_entity_ids": [
+          "mamluk_sultanate",
+          "ottoman_empire"
+        ],
+        "note": "Already rated as the Ottoman conquest battle against the still-extant, time-bounded Mamluk Sultanate."
+      }
+    ],
+    "wave8_mamluk_egypt_cross_lane_dispositions": [
+      {
+        "candidate_id": "hced-Mount Tabor1799-1",
+        "raw_row_sha256": "3a01784e5f849b2e5bc53f3943f6150f59f8f9d572415c1d370bbb7de102fa2a",
+        "disposition": "cross_lane_existing_release",
+        "owner_event_id": "hced_label_hced_mount_tabor1799_1",
+        "expected_entity_ids": [
+          "french_first_republic",
+          "ottoman_empire"
+        ],
+        "note": "The composite raw label 'Turkey, Mamluk Egypt' is already resolved to the Ottoman campaign force. No additional Mamluk participant is invented and the event is not emitted again."
+      }
+    ],
+    "wave8_mamluk_egypt_iwbd_duplicate_dispositions": [],
+    "wave8_mamluk_egypt_integration_dispositions": [
+      {
+        "candidate_id": "hced-Mount Tabor1799-1",
+        "raw_row_sha256": "3a01784e5f849b2e5bc53f3943f6150f59f8f9d572415c1d370bbb7de102fa2a",
+        "disposition": "cross_lane_existing_release",
+        "owner_event_id": "hced_label_hced_mount_tabor1799_1",
+        "expected_entity_ids": [
+          "french_first_republic",
+          "ottoman_empire"
+        ],
+        "note": "The composite raw label 'Turkey, Mamluk Egypt' is already resolved to the Ottoman campaign force. No additional Mamluk participant is invented and the event is not emitted again."
+      }
+    ],
+    "wave8_mamluk_egypt_outcome_overrides": [],
+    "wave8_mamluk_egypt_entities_added": 3,
+    "wave8_mamluk_egypt_sources_added": 8,
+    "hced_label_pass_input_rows": 5812,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6563,7 +6705,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 786,
+      "reserved_candidate_contract": 792,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6575,7 +6717,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 175,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2304,
+      "no_unique_time_valid_label_match": 2298,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

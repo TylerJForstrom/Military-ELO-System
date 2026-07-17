@@ -12826,6 +12826,36 @@
       "region": "Unclassified"
     },
     {
+      "id": "murad_bey_egypt_campaign_force_1798",
+      "name": "Murad Bey's Egyptian Campaign Force (1798)",
+      "kind": "campaign_force",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Egypt"
+    },
+    {
+      "id": "murad_bey_rahmaniyya_force_1786",
+      "name": "Murad Bey's Rahmaniyya Field Force (1786)",
+      "kind": "household_field_force",
+      "start_year": 1786,
+      "end_year": 1786,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Egypt"
+    },
+    {
+      "id": "murad_bey_samhud_coalition_1799",
+      "name": "Murad Bey's Samhud Coalition (1799)",
+      "kind": "engagement_coalition",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Egypt"
+    },
+    {
       "id": "murat_neapolitan_army_1815",
       "name": "Murat's Neapolitan Army (1815 campaign)",
       "kind": "state_armed_forces",
@@ -21914,11 +21944,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2054,
-    "rated_entities": 691,
-    "rated_events": 5155,
+    "registry_polities": 2057,
+    "rated_entities": 694,
+    "rated_events": 5159,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18239,
+    "unresolved_event_candidates": 18235,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21972,6 +22002,7 @@
     "candidate_keyed_wave8_livonian_order_hced_events": 4,
     "candidate_keyed_wave8_satsuma_hced_events": 6,
     "candidate_keyed_wave8_rajputs_hced_events": 6,
+    "candidate_keyed_wave8_mamluk_egypt_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21982,21 +22013,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4891,
-      "candidate_keyed_reviewed_contracts": 581,
+      "hced_candidate_bindings": 4895,
+      "candidate_keyed_reviewed_contracts": 585,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4800,
-      "location_provenance_objects": 4849,
-      "point_fields_withheld_by_quarantine": 157,
+      "modern_location_country_assertions": 4804,
+      "location_provenance_objects": 4853,
+      "point_fields_withheld_by_quarantine": 161,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 205,
-      "point_quarantine_candidate_manifest_sha256": "e6c1e73f81a7969b168372470c07f06f00b55416ad00244edbb007f7ac607f1e",
+      "unique_events_with_any_quarantined_field": 209,
+      "point_quarantine_candidate_manifest_sha256": "0f3803b68cdb587f61055992130a028b1e12e81389c1e8ed356df10b7f8ff04c",
       "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "e389f664e9fc7909853ffa8934233f1cb1d47cf6bf3d55e0ef3eb4fecf57eec3",
+      "quarantine_policy_sha256": "ededa116c6c8666d91252309227583bde3896a87922c46750271f39dab355447",
       "assertion_status": {
-        "unreviewed_source_assertion": 4849
+        "unreviewed_source_assertion": 4853
       },
       "verified_location_assertions": {
         "availability": "not_available",
