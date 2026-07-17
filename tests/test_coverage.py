@@ -1103,7 +1103,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             for event in self.events
             if str(event.get("status", "complete")).casefold() == "complete"
         ]
-        self.assertEqual(len(rated_events), 4_888)
+        self.assertEqual(len(rated_events), 5_338)
         self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
         self.assertEqual(
             sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
@@ -1116,35 +1116,27 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         families = self.report["outcome_source_families"]
         self.assertEqual(families["availability"], "partially_available")
-        self.assertEqual(families["events_with_explicit_family_data"], 4_848)
+        self.assertEqual(families["events_with_explicit_family_data"], 5_298)
         self.assertEqual(families["events_without_explicit_family_data"], 40)
         self.assertEqual(families["unmapped_event_count"], 40)
+        expected_events_by_family = Counter(
+            family_id
+            for event in rated_events
+            for family_id in set(event.get("outcome_source_family_ids", []))
+        )
         self.assertEqual(
             families["events_by_family"],
-            {
-                "english_historical_review": 1,
-                "founders_online_jefferson_papers": 2,
-                "hced": 4_608,
-                "historic_england": 3,
-                "hungarian_military_history_institute": 2,
-                "iwbd": 153,
-                "iwd": 64,
-                "minnesota_historical_society": 1,
-                "national_park_service_creek_war": 1,
-                "national_park_service_revolution": 1,
-                "nigeria_national_library_civil_war": 1,
-                "nzhistory": 2,
-                "rcahmw_coflein": 1,
-                "ucdp_conflict_termination": 7,
-                "us_army_center_military_history": 1,
-            },
+            dict(sorted(expected_events_by_family.items())),
         )
-        self.assertEqual(families["family_count_distribution"], {"1": 4_848})
-        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 4_848)
-        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 4_888)
-        self.assertEqual(families["multiple_family_coverage"]["numerator"], 0)
-        self.assertEqual(families["multiple_family_coverage"]["denominator"], 4_848)
-        self.assertEqual(set(families["per_event_counts"].values()), {1})
+        self.assertEqual(
+            families["family_count_distribution"],
+            {"1": 4_959, "2": 214, "3": 94, "4": 26, "5": 4, "6": 1},
+        )
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 5_298)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 5_338)
+        self.assertEqual(families["multiple_family_coverage"]["numerator"], 339)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 5_298)
+        self.assertEqual(set(families["per_event_counts"].values()), {1, 2, 3, 4, 5, 6})
 
         mapped_ids = set(families["per_event_counts"])
         unmapped_ids = {event["id"] for event in rated_events} - mapped_ids
@@ -1157,16 +1149,26 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                     self.assertNotIn("outcome_source_ids", event)
                     self.assertNotIn("outcome_source_family_ids", event)
                 else:
-                    self.assertEqual(len(event["outcome_source_ids"]), 1)
-                    self.assertEqual(len(event["outcome_source_family_ids"]), 1)
+                    outcome_source_ids = event["outcome_source_ids"]
+                    outcome_family_ids = event["outcome_source_family_ids"]
+                    self.assertGreaterEqual(len(outcome_source_ids), 1)
+                    self.assertEqual(len(outcome_source_ids), len(set(outcome_source_ids)))
+                    self.assertEqual(len(outcome_family_ids), len(set(outcome_family_ids)))
                     self.assertTrue(
-                        set(event["outcome_source_ids"]).issubset(event["source_ids"])
+                        set(outcome_source_ids).issubset(event["source_ids"])
+                    )
+                    self.assertEqual(
+                        set(outcome_family_ids),
+                        {
+                            self.sources_by_id[source_id]["source_family_id"]
+                            for source_id in outcome_source_ids
+                        },
                     )
 
     def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(
         self,
     ) -> None:
-        self.assertEqual(len(self.sources), 318)
+        self.assertEqual(len(self.sources), 1_413)
         manifest_contract = sorted(
             (
                 source["id"],
@@ -1184,7 +1186,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             manifest_digest,
-            "f3ac44ebcad5677285ca4fcfaeca9697b212a760abda6506fe23433048461f28",
+            "04bdb529db33493612be6c88ba93f965335d658f9402d7f9c5a68a74c34a4580",
         )
         self.assertTrue(
             all(
@@ -1197,79 +1199,54 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 role for source in self.sources for role in source["evidence_roles"]
             ),
             {
-                "curated_reference_pending_claim_level_outcome_locator": 70,
+                "curated_reference_pending_claim_level_outcome_locator": 93,
                 "derived_project_continuity_convention": 1,
-                "identity_boundary_or_context_reference": 257,
+                "identity_boundary_or_context_reference": 1_338,
                 "identity_crosswalk": 1,
                 "identity_registry": 2,
-                "outcome": 21,
-                "outcome_consistency_crosscheck": 47,
+                "outcome": 831,
+                "outcome_consistency_crosscheck": 615,
             },
         )
         self.assertEqual(
-            len({source["source_family_id"] for source in self.sources}), 186
+            len({source["source_family_id"] for source in self.sources}), 1_158
         )
         outcome_source_ids = {
             source["id"]
             for source in self.sources
             if "outcome" in source["evidence_roles"]
         }
+        self.assertEqual(len(outcome_source_ids), 831)
         self.assertEqual(
-            outcome_source_ids,
-            {
-                "army_cmh_victorio_campaign_1880",
-                "army_upress_big_dry_wash_1882",
-                "hced_dataset",
-                "iwd_dataset",
-                "iwbd_dataset",
-                "mnhs_birch_coulee_1862",
-                "nps_apache_pass_1862",
-                "nps_fort_bowie_handbook",
-                "nzhistory_boulcott_1846",
-                "nzhistory_kororareka_1845",
-                "ucdp_termination_conflict",
-                "wave7_founders_emuckfaw",
-                "wave7_hungary_military_museum",
-                "wave7_nigeria_civil_war_history",
-                "wave7_nps_creek_war",
-                "wave7_nps_revolution_timeline",
-                "wave7_west_ehr_lincolnshire_1470",
-                "wave7_west_he_bamburgh",
-                "wave7_west_he_bosworth",
-                "wave7_west_he_caister",
-                "wave7_west_rcahmw_twt",
-            },
+            len(
+                {
+                    source["source_family_id"]
+                    for source in self.sources
+                    if source["id"] in outcome_source_ids
+                }
+            ),
+            761,
         )
-        self.assertEqual(
-            {
-                source["id"]: source["source_family_id"]
-                for source in self.sources
-                if source["id"] in outcome_source_ids
-            },
-            {
-                "army_cmh_victorio_campaign_1880": "us_army_center_military_history",
-                "army_upress_big_dry_wash_1882": "us_army_university_press",
-                "hced_dataset": "hced",
-                "iwd_dataset": "iwd",
-                "iwbd_dataset": "iwbd",
-                "mnhs_birch_coulee_1862": "minnesota_historical_society",
-                "nps_apache_pass_1862": "us_national_park_service",
-                "nps_fort_bowie_handbook": "us_national_park_service",
-                "nzhistory_boulcott_1846": "nzhistory",
-                "nzhistory_kororareka_1845": "nzhistory",
-                "ucdp_termination_conflict": "ucdp_conflict_termination",
-                "wave7_founders_emuckfaw": "founders_online_jefferson_papers",
-                "wave7_hungary_military_museum": "hungarian_military_history_institute",
-                "wave7_nigeria_civil_war_history": "nigeria_national_library_civil_war",
-                "wave7_nps_creek_war": "national_park_service_creek_war",
-                "wave7_nps_revolution_timeline": "national_park_service_revolution",
-                "wave7_west_ehr_lincolnshire_1470": "english_historical_review",
-                "wave7_west_he_bamburgh": "historic_england",
-                "wave7_west_he_bosworth": "historic_england",
-                "wave7_west_he_caister": "historic_england",
-                "wave7_west_rcahmw_twt": "rcahmw_coflein",
-            },
-        )
+        selected_outcome_source_ids = {
+            source_id
+            for event in self.events
+            for source_id in event.get("outcome_source_ids", [])
+        }
+        self.assertEqual(len(selected_outcome_source_ids), 721)
+        self.assertLessEqual(selected_outcome_source_ids, outcome_source_ids)
+        for source_id in selected_outcome_source_ids:
+            self.assertIn("outcome", self.sources_by_id[source_id]["evidence_roles"])
+
+        expected_core_outcome_families = {
+            "hced_dataset": "hced",
+            "iwd_dataset": "iwd",
+            "iwbd_dataset": "iwbd",
+            "ucdp_termination_conflict": "ucdp_conflict_termination",
+        }
+        for source_id, family_id in expected_core_outcome_families.items():
+            source = self.sources_by_id[source_id]
+            self.assertEqual(source["source_family_id"], family_id)
+            self.assertIn("outcome", source["evidence_roles"])
         expected_negative_controls = {
             "hced_seshat_crosswalk": (
                 "hced_seshat_crosswalk_file_11018172",
@@ -1305,8 +1282,8 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         dashboard_events = self.results["events"]
         dashboard_by_id = {event["id"]: event for event in dashboard_events}
 
-        self.assertEqual(len(release_by_id), 4_888)
-        self.assertEqual(len(dashboard_by_id), 4_888)
+        self.assertEqual(len(release_by_id), 5_338)
+        self.assertEqual(len(dashboard_by_id), 5_338)
         self.assertEqual(set(dashboard_by_id), set(release_by_id))
 
         mapped = 0
@@ -1341,7 +1318,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 self.assertEqual(dashboard_event["sources"], expected_sources)
                 mapped += "outcome_source_ids" in dashboard_event
 
-        self.assertEqual(mapped, 4_848)
+        self.assertEqual(mapped, 5_298)
         self.assertEqual(len(dashboard_events) - mapped, 40)
 
     def test_registry_coverage_is_an_observed_ratio_only(self) -> None:
