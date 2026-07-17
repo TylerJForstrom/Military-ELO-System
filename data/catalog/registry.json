@@ -700,6 +700,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "alexander_macdonald_lordship_regime_1423_1449",
+      "name": "Alexander MacDonald's lordship military regime (1423-1449)",
+      "kind": "era_bounded_lordship_military_regime",
+      "start_year": 1423,
+      "end_year": 1449,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Highlands and Isles of Scotland"
+    },
+    {
       "id": "alexander_macedonian_greek_assault_force_thebes_335_bce",
       "name": "Alexander's Macedonian and allied Greek assault force at Thebes (335 BCE)",
       "kind": "siege_and_assault_force",
@@ -4146,6 +4156,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "donald_balloch_alasdair_carrach_inverlochy_coalition_1431",
+      "name": "Donald Balloch and Alasdair Carrach's island coalition at Inverlochy (1431)",
+      "kind": "event_bounded_island_and_highland_coalition",
+      "start_year": 1431,
+      "end_year": 1431,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lochaber, Scotland"
     },
     {
       "id": "clio_q713393_bce36_dd55949f",
@@ -8552,6 +8572,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "james_i_lochaber_royal_coalition_1429",
+      "name": "James I's royal coalition in the Lochaber campaign (1429)",
+      "kind": "event_bounded_royal_and_clan_coalition",
+      "start_year": 1429,
+      "end_year": 1429,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lochaber, Scotland"
+    },
+    {
       "id": "jan_boesak_khoi_hunters_1819",
       "name": "Jan Boesak's Khoi hunters at Grahamstown",
       "kind": "indigenous_allied_force",
@@ -8854,6 +8884,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Upper Peru"
+    },
+    {
+      "id": "john_macdonald_strathfleet_raid_detachment_1453",
+      "name": "John MacDonald's island and Ross raid detachment at Strathfleet (1453)",
+      "kind": "event_bounded_lordship_raid_detachment",
+      "start_year": 1453,
+      "end_year": 1453,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sutherland, Scotland"
     },
     {
       "id": "non_treaty_nimiipuu_allied_campaign_force_1877",
@@ -12448,6 +12488,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Africa"
+    },
+    {
+      "id": "mar_caithness_inverlochy_royal_coalition_1431",
+      "name": "Mar and Caithness royal coalition at Inverlochy (1431)",
+      "kind": "event_bounded_royal_and_clan_coalition",
+      "start_year": 1431,
+      "end_year": 1431,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lochaber, Scotland"
     },
     {
       "id": "maratha_confederacy",
@@ -17288,6 +17338,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "robert_sutherland_strathfleet_defence_1453",
+      "name": "Robert Sutherland's defence on the sands of Strathfleet (1453)",
+      "kind": "event_bounded_earldom_defence",
+      "start_year": 1453,
+      "end_year": 1453,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sutherland, Scotland"
     },
     {
       "id": "roderic_visigothic_royal_army_711",
@@ -22404,11 +22464,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2103,
-    "rated_entities": 740,
-    "rated_events": 5188,
+    "registry_polities": 2109,
+    "rated_entities": 746,
+    "rated_events": 5191,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18206,
+    "unresolved_event_candidates": 18203,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22468,6 +22528,7 @@
     "candidate_keyed_wave8_alemanni_hced_events": 8,
     "candidate_keyed_wave8_madagascar_hced_events": 5,
     "candidate_keyed_wave8_kickapoo_hced_events": 4,
+    "candidate_keyed_wave8_lordship_isles_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22478,21 +22539,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4924,
-      "candidate_keyed_reviewed_contracts": 614,
+      "hced_candidate_bindings": 4927,
+      "candidate_keyed_reviewed_contracts": 617,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4832,
-      "location_provenance_objects": 4881,
-      "point_fields_withheld_by_quarantine": 190,
+      "modern_location_country_assertions": 4835,
+      "location_provenance_objects": 4884,
+      "point_fields_withheld_by_quarantine": 193,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 91,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 43,
-      "unique_events_with_any_quarantined_field": 238,
-      "point_quarantine_candidate_manifest_sha256": "5a82ed56cf9d336c580dffb4612e1734a5781693ddb4474985cd30fe81c93e6b",
+      "unique_events_with_any_quarantined_field": 241,
+      "point_quarantine_candidate_manifest_sha256": "ad04d868b6a17d1b14274cf6d27503f536c0f2a0e3fbac1cca68b1649624c4b0",
       "country_quarantine_candidate_manifest_sha256": "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd",
-      "quarantine_policy_sha256": "3385d66ad1418e6f5bdd8a9116191ac86cd662c44cfea227a7dc5ed7de328d80",
+      "quarantine_policy_sha256": "bd91a4e92217471e9b0c88ea9c485dafc954fbba45447064adb6e078dc3afbc5",
       "assertion_status": {
-        "unreviewed_source_assertion": 4881
+        "unreviewed_source_assertion": 4884
       },
       "verified_location_assertions": {
         "availability": "not_available",

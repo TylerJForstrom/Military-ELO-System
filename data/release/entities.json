@@ -4047,6 +4047,22 @@
     ]
   },
   {
+    "id": "alexander_macdonald_lordship_regime_1423_1449",
+    "name": "Alexander MacDonald's lordship military regime (1423-1449)",
+    "kind": "era_bounded_lordship_military_regime",
+    "start_year": 1423,
+    "end_year": 1449,
+    "region": "Western Highlands and Isles of Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Alexander MacDonald's tenure and used here only for his 1429 field force after the Lochaber rising; it does not identify Donald's Harlaw host or Donald Balloch's later coalition. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_egan_early_stewarts",
+      "wave8_lordship_isles_munro_acts",
+      "wave8_lordship_isles_scots_peerage"
+    ]
+  },
+  {
     "id": "cenek_vartenberk_lords_union_force_horice_1423",
     "name": "Cenek of Vartenberk's Lords' Union force at Horice (1423)",
     "kind": "event_bounded_field_coalition",
@@ -4217,6 +4233,53 @@
     ]
   },
   {
+    "id": "james_i_lochaber_royal_coalition_1429",
+    "name": "James I's royal coalition in the Lochaber campaign (1429)",
+    "kind": "event_bounded_royal_and_clan_coalition",
+    "start_year": 1429,
+    "end_year": 1429,
+    "region": "Lochaber, Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal host and the Cameron and Mackintosh elements that abandoned Alexander's standard during this campaign. Those contingents are coalition members, not aliases for Scotland. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_egan_early_stewarts",
+      "wave8_lordship_isles_scots_peerage"
+    ]
+  },
+  {
+    "id": "donald_balloch_alasdair_carrach_inverlochy_coalition_1431",
+    "name": "Donald Balloch and Alasdair Carrach's island coalition at Inverlochy (1431)",
+    "kind": "event_bounded_island_and_highland_coalition",
+    "start_year": 1431,
+    "end_year": 1431,
+    "region": "Lochaber, Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Donald Balloch, Ranald Bane, the MacIain and Moidart contingents, their island clansmen, and Alasdair Carrach's force at Inverlochy. It is not Alexander's whole lordship regime. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_egan_early_stewarts",
+      "wave8_lordship_isles_hes_inverlochy",
+      "wave8_lordship_isles_scots_peerage"
+    ]
+  },
+  {
+    "id": "mar_caithness_inverlochy_royal_coalition_1431",
+    "name": "Mar and Caithness royal coalition at Inverlochy (1431)",
+    "kind": "event_bounded_royal_and_clan_coalition",
+    "start_year": 1431,
+    "end_year": 1431,
+    "region": "Lochaber, Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal army led by the earls of Mar and Caithness, including its Cameron component, in September 1431. It is not a timeless Scottish Crown or Cameron-clan identity. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_egan_early_stewarts",
+      "wave8_lordship_isles_hes_inverlochy",
+      "wave8_lordship_isles_scots_peerage"
+    ]
+  },
+  {
     "id": "clio_pe_inca_emp_1440_816cd40c",
     "name": "Inca Empire",
     "kind": "empire",
@@ -4291,6 +4354,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "john_macdonald_strathfleet_raid_detachment_1453",
+    "name": "John MacDonald's island and Ross raid detachment at Strathfleet (1453)",
+    "kind": "event_bounded_lordship_raid_detachment",
+    "start_year": 1453,
+    "end_year": 1453,
+    "region": "Sutherland, Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the island and Ross detachment that continued through Sutherland and was intercepted at Strathfleet. It is not John MacDonald's whole regime or a generic MacDonald army. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_dnb_john_macdonald",
+      "wave8_lordship_isles_nls_feuds"
+    ]
+  },
+  {
+    "id": "robert_sutherland_strathfleet_defence_1453",
+    "name": "Robert Sutherland's defence on the sands of Strathfleet (1453)",
+    "kind": "event_bounded_earldom_defence",
+    "start_year": 1453,
+    "end_year": 1453,
+    "region": "Sutherland, Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Sutherland force assembled under Robert Sutherland for this interception. It does not open an Earldom of Sutherland rating or absorb every Sutherland clan force. No rating is inherited from or transferred to a generic Lordship of the Isles, the MacDonald dynasty, Clan Donald or any other clan, the Scottish Crown, an omitted coalition partner, or a force in another campaign.",
+    "source_ids": [
+      "wave8_lordship_isles_dnb_john_macdonald",
+      "wave8_lordship_isles_nls_feuds"
     ]
   },
   {

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 747,
-    "events": 5188,
-    "sources": 960,
-    "registry_polities": 2103
+    "entities": 753,
+    "events": 5191,
+    "sources": 971,
+    "registry_polities": 2109
   },
   "year_range": {
     "start": -1274,
@@ -130,6 +130,7 @@
     "accepted_wave8_alemanni_hced_events": 8,
     "accepted_wave8_madagascar_hced_events": 5,
     "accepted_wave8_kickapoo_hced_events": 4,
+    "accepted_wave8_lordship_isles_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -7302,7 +7303,185 @@
     "wave8_kickapoo_outcome_overrides": [],
     "wave8_kickapoo_entities_added": 8,
     "wave8_kickapoo_sources_added": 17,
-    "hced_label_pass_input_rows": 5779,
+    "wave8_lordship_isles_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 5,
+      "new_entities": 6,
+      "new_sources": 11,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "related_hced_dispositions": 1,
+      "reviewed_hced_rows": 5,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_lordship_isles_cohort_counts": {
+      "james_i_lordship_campaign_1429_1431": 2,
+      "lordship_internal_conflict_early_1480s": 1,
+      "ross_succession_conflict_1411": 1,
+      "sutherland_lordship_raid_1453": 1
+    },
+    "wave8_lordship_isles_row_dispositions": {
+      "hced-Bloody Bay1480-1": "terminal_exclusion",
+      "hced-Harlaw1411-1": "hold",
+      "hced-Inverlochy1431-1": "promote",
+      "hced-Lochaber1429-1": "promote",
+      "hced-Strathfleet1453-1": "promote"
+    },
+    "wave8_lordship_isles_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 1
+    },
+    "wave8_lordship_isles_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "related_hced_dispositions": 1
+    },
+    "wave8_lordship_isles_candidate_ids": [
+      "hced-Inverlochy1431-1",
+      "hced-Lochaber1429-1",
+      "hced-Strathfleet1453-1"
+    ],
+    "wave8_lordship_isles_holds": [
+      {
+        "candidate_id": "hced-Harlaw1411-1",
+        "raw_row_sha256": "fdf84b5432f9d91a4795444a6ba15af000055a005740882695b9c3cc912384b2",
+        "canonical_event": {
+          "canonical_key": "battle_of_harlaw:1411:1411",
+          "date_precision": "day",
+          "date_text": "24 July 1411",
+          "granularity": "engagement",
+          "name": "Battle of Harlaw",
+          "year_low": 1411,
+          "year_high": 1411
+        },
+        "cohort": "ross_succession_conflict_1411",
+        "disposition": "hold",
+        "hold_category": "official_record_militarily_inconclusive",
+        "reviewed_outcome": "tactical_winner_not_source_attested",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Donald of Harlaw's Isles and Ross-claimant coalition",
+          "Alexander Stewart, Earl of Mar's northeastern royal-aligned host"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "Historic Environment Scotland describes the military outcome as inconclusive and notes that both sides claimed victory. The battle's strategic check on Donald does not attest HCED's tactical Scotland win. The row is not promoted; its rating result remains unknown and is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_lordship_isles_cochran_yu_ross",
+          "wave8_lordship_isles_hes_harlaw",
+          "wave8_lordship_isles_scots_peerage"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_lordship_isles",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_lordship_isles_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Bloody Bay1480-1",
+        "raw_row_sha256": "89db06da57b614ddbf91e8c75d1583eef673dc0d9b8c7e86f1e3b98bb1b4020c",
+        "canonical_event": {
+          "canonical_key": "battle_of_bloody_bay:1481:1481",
+          "date_precision": "circa_year",
+          "date_text": "c. 1481 (early 1480s)",
+          "granularity": "engagement",
+          "name": "Battle of Bloody Bay",
+          "year_low": 1481,
+          "year_high": 1481
+        },
+        "cohort": "lordship_internal_conflict_early_1480s",
+        "disposition": "terminal_exclusion",
+        "hold_category": "wrong_belligerents_and_unpreserved_chronology",
+        "reviewed_outcome": "angus_og_rebel_coalition_victory_attested",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "John II MacDonald's loyalist lordship coalition, including MacLean support",
+          "Angus Og MacDonald's rebel lordship coalition"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The scholarly studies place Bloody Bay around 1481 or in the early 1480s and identify an internal lordship conflict in which Angus Og's coalition defeated his father John's loyalists. The Scottish Crown was not HCED's proposed winning belligerent, and a unitary Lordship cannot stand on only one side. Repair would replace both actor semantics and the locked 1480 chronology, so this exact row is terminally excluded rather than promoted or drawn.",
+        "evidence_refs": [
+          "wave8_lordship_isles_caldwell_finlaggan",
+          "wave8_lordship_isles_cochran_yu_ross",
+          "wave8_lordship_isles_crawford_warfare"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_lordship_isles",
+          "status": "terminal_hced_exclusion"
+        }
+      }
+    ],
+    "wave8_lordship_isles_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Dee1308-1",
+        "raw_row_sha256": "b9aeeb6aaac6609c2da3d862df389905ba6946da89766fee46855cc678151c37",
+        "related_candidate_ids": [],
+        "disposition": "not_owned_non_exact_composite_and_anachronistic_title",
+        "owner_module": null,
+        "unknown_is_never_draw": true,
+        "reason": "Its exact side is 'Galloway, Lordship of the Isles', not this lane's label. The scholarly act calendar starts the Lords' surviving acts in 1336, while Taggart finds the 1308 Dee/Cree narrative internally inconsistent about Donald of the Isles and weakly supported. This lane neither splits the composite nor creates a backward dynastic or clan bridge; the row remains unowned and unknown, never a draw.",
+        "evidence_refs": [
+          "wave8_lordship_isles_munro_acts",
+          "wave8_lordship_isles_taggart_historicity"
+        ]
+      }
+    ],
+    "wave8_lordship_isles_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Strathfleet1453-1",
+        "source_dataset": "hced",
+        "raw_row_sha256": "8e13882492bb41d110c00e6baf91ea89aa0510fa160fa49edd45d1675e971829",
+        "other_exact_label": "earldom of sutherland",
+        "disposition": "canonical_owner_here_for_shared_exact_row",
+        "owner_module": "wave8_lordship_isles",
+        "reason": "The same row is blocked by Earldom of Sutherland. This module owns the one candidate and both event-bounded sides; a future Sutherland lane must record external ownership and must not emit a second event."
+      }
+    ],
+    "wave8_lordship_isles_iwbd_duplicate_dispositions": [],
+    "wave8_lordship_isles_existing_release_duplicate_dispositions": [],
+    "wave8_lordship_isles_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:hced-Strathfleet1453-1",
+        "source_dataset": "hced",
+        "raw_row_sha256": "8e13882492bb41d110c00e6baf91ea89aa0510fa160fa49edd45d1675e971829",
+        "other_exact_label": "earldom of sutherland",
+        "disposition": "canonical_owner_here_for_shared_exact_row",
+        "owner_module": "wave8_lordship_isles",
+        "reason": "The same row is blocked by Earldom of Sutherland. This module owns the one candidate and both event-bounded sides; a future Sutherland lane must record external ownership and must not emit a second event."
+      },
+      {
+        "disposition_id": "related_hced:hced-Dee1308-1",
+        "raw_row_sha256": "b9aeeb6aaac6609c2da3d862df389905ba6946da89766fee46855cc678151c37",
+        "related_candidate_ids": [],
+        "disposition": "not_owned_non_exact_composite_and_anachronistic_title",
+        "owner_module": null,
+        "unknown_is_never_draw": true,
+        "reason": "Its exact side is 'Galloway, Lordship of the Isles', not this lane's label. The scholarly act calendar starts the Lords' surviving acts in 1336, while Taggart finds the 1308 Dee/Cree narrative internally inconsistent about Donald of the Isles and weakly supported. This lane neither splits the composite nor creates a backward dynastic or clan bridge; the row remains unowned and unknown, never a draw.",
+        "evidence_refs": [
+          "wave8_lordship_isles_munro_acts",
+          "wave8_lordship_isles_taggart_historicity"
+        ]
+      }
+    ],
+    "wave8_lordship_isles_outcome_overrides": [],
+    "wave8_lordship_isles_entities_added": 6,
+    "wave8_lordship_isles_sources_added": 11,
+    "hced_label_pass_input_rows": 5774,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -7315,7 +7494,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 825,
+      "reserved_candidate_contract": 830,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -7327,7 +7506,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2268,
+      "no_unique_time_valid_label_match": 2263,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

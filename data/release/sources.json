@@ -9393,6 +9393,166 @@
     ]
   },
   {
+    "id": "wave8_lordship_isles_caldwell_finlaggan",
+    "title": "The Archaeology of Finlaggan, Islay",
+    "url": "https://books.socantscot.org/digital-books/catalog/download/23/21/1230?inline=1",
+    "publisher": "Society of Antiquaries of Scotland",
+    "license": "Citation and link only",
+    "source_type": "scholarly_archaeological_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "caldwell_finlaggan_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_cochran_yu_ross",
+    "title": "A Keystone of Contention: The Earldom of Ross, 1215-1517",
+    "url": "https://theses.gla.ac.uk/7242/",
+    "publisher": "University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "cochran_yu_earldom_ross_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_crawford_warfare",
+    "title": "Warfare in the West Highlands and Isles of Scotland in the Late Middle Ages",
+    "url": "https://theses.gla.ac.uk/7310/",
+    "publisher": "University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "crawford_west_highland_warfare_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_dnb_john_macdonald",
+    "title": "Macdonald, John (d. 1498?)",
+    "url": "https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Macdonald,_John_(d.1498%3F)",
+    "publisher": "Dictionary of National Biography; Wikisource transcription",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "dnb_john_macdonald_1885",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_egan_early_stewarts",
+    "title": "The Early Stewart Kings, the Lordship of the Isles, and Ireland, c.1371-c.1433",
+    "url": "https://eprints.gla.ac.uk/180073/",
+    "publisher": "Northern Studies; University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "egan_early_stewart_lordship_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_hes_harlaw",
+    "title": "Battle of Harlaw (BTL11)",
+    "url": "https://portal.historicenvironment.scot/apex/f?p=1505:300:::::VIEWTYPE,VIEWREF:designation,BTL11",
+    "publisher": "Historic Environment Scotland",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_designation",
+    "accessed": "2026-07-16",
+    "source_family_id": "hes_harlaw_btl11",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_hes_inverlochy",
+    "title": "Battle of Inverlochy I (BTL34)",
+    "url": "https://portal.historicenvironment.scot/apex/f?p=1505:300:::::VIEWTYPE,VIEWREF:designation,BTL34",
+    "publisher": "Historic Environment Scotland",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_designation",
+    "accessed": "2026-07-16",
+    "source_family_id": "hes_inverlochy_btl34",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_munro_acts",
+    "title": "Acts of the Lords of the Isles, 1336-1493",
+    "url": "https://deriv.nls.uk/dcn23/1266/1366/126613661.23.pdf",
+    "publisher": "Scottish History Society; National Library of Scotland",
+    "license": "Citation and link only",
+    "source_type": "scholarly_calendar_of_primary_acts",
+    "accessed": "2026-07-16",
+    "source_family_id": "munro_acts_lords_isles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_nls_feuds",
+    "title": "The History of the Feuds and Conflicts among the Clans",
+    "url": "https://deriv.nls.uk/dcn23/7964/79641905.23.pdf",
+    "publisher": "National Library of Scotland digitization",
+    "license": "Citation and link only",
+    "source_type": "digitized_early_modern_primary_narrative",
+    "accessed": "2026-07-16",
+    "source_family_id": "nls_feuds_conflicts_clans",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_scots_peerage",
+    "title": "The Scots Peerage, Volume V: Macdonald, Lord of the Isles",
+    "url": "https://electricscotland.com/books/pdf/ScotsPeerageVol5.pdf",
+    "publisher": "David Douglas; digitized by Electric Scotland",
+    "license": "Citation and link only",
+    "source_type": "scholarly_peerage_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "scots_peerage_volume_five_macdonald",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lordship_isles_taggart_historicity",
+    "title": "The Historicity of Barbour's Bruce",
+    "url": "https://theses.gla.ac.uk/1423/",
+    "publisher": "University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "taggart_historicity_barbour_bruce_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_louvre_algiers_1688",
     "title": "Le bombardement d'Alger par le maréchal d'Estrées, 1er juillet 1688",
     "url": "https://arts-graphiques.louvre.fr/detail/oeuvres/0/536169-Le-bombardement-dAlger-par-le-marechal-dEstrees-le-1er-juillet-1688",

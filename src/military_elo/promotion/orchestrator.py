@@ -1078,6 +1078,30 @@ from .wave8_kickapoo import (
     wave8_kickapoo_cohort_counts,
     wave8_kickapoo_counts,
 )
+from .wave8_lordship_isles import (
+    WAVE8_LORDSHIP_ISLES_CONTRACT_IDS,
+    WAVE8_LORDSHIP_ISLES_CROSS_LANE_DISPOSITIONS,
+    WAVE8_LORDSHIP_ISLES_ENTITIES,
+    WAVE8_LORDSHIP_ISLES_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_LORDSHIP_ISLES_HOLD_IDS,
+    WAVE8_LORDSHIP_ISLES_HOLDS,
+    WAVE8_LORDSHIP_ISLES_INTEGRATION_DISPOSITIONS,
+    WAVE8_LORDSHIP_ISLES_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_LORDSHIP_ISLES_OUTCOME_OVERRIDES,
+    WAVE8_LORDSHIP_ISLES_RELATED_HCED_DISPOSITIONS,
+    WAVE8_LORDSHIP_ISLES_RESERVED_IDS,
+    WAVE8_LORDSHIP_ISLES_SOURCES,
+    WAVE8_LORDSHIP_ISLES_TERMINAL_EXCLUSION_IDS,
+    WAVE8_LORDSHIP_ISLES_TERMINAL_EXCLUSIONS,
+    install_wave8_lordship_isles_entities,
+    install_wave8_lordship_isles_sources,
+    promote_wave8_lordship_isles_contracts,
+    validate_wave8_lordship_isles_integration_dispositions,
+    validate_wave8_lordship_isles_queue_contracts,
+    wave8_lordship_isles_cohort_counts,
+    wave8_lordship_isles_counts,
+    wave8_lordship_isles_row_dispositions,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1152,6 +1176,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ALEMANNI_RESERVED_IDS
     | WAVE8_MADAGASCAR_RESERVED_IDS
     | WAVE8_KICKAPOO_RESERVED_IDS
+    | WAVE8_LORDSHIP_ISLES_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1556,7 +1581,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 190
+        len(HCED_POINT_QUARANTINE_IDS) != 193
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 91
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1780,6 +1805,9 @@ def build_expanded_release(
         validate_wave8_madagascar_queue_contracts(hced)
     )
     wave8_kickapoo_queue_validation = validate_wave8_kickapoo_queue_contracts(hced)
+    wave8_lordship_isles_queue_validation = (
+        validate_wave8_lordship_isles_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2141,6 +2169,7 @@ def build_expanded_release(
     install_wave8_alemanni_entities(release_entities)
     install_wave8_madagascar_entities(release_entities)
     install_wave8_kickapoo_entities(release_entities)
+    install_wave8_lordship_isles_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3342,6 +3371,15 @@ def build_expanded_release(
         release_entities,
         wave8_kickapoo_existing_events,
     )
+    wave8_lordship_isles_existing_events = [
+        *wave8_kickapoo_existing_events,
+        *wave8_kickapoo_events,
+    ]
+    wave8_lordship_isles_events = promote_wave8_lordship_isles_contracts(
+        hced,
+        release_entities,
+        wave8_lordship_isles_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3398,6 +3436,7 @@ def build_expanded_release(
         *wave8_alemanni_events,
         *wave8_madagascar_events,
         *wave8_kickapoo_events,
+        *wave8_lordship_isles_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3501,6 +3540,8 @@ def build_expanded_release(
             *WAVE8_MADAGASCAR_TERMINAL_EXCLUSION_IDS,
             *WAVE8_KICKAPOO_HOLD_IDS,
             *WAVE8_KICKAPOO_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_LORDSHIP_ISLES_HOLD_IDS,
+            *WAVE8_LORDSHIP_ISLES_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3583,6 +3624,7 @@ def build_expanded_release(
         *wave8_alemanni_events,
         *wave8_madagascar_events,
         *wave8_kickapoo_events,
+        *wave8_lordship_isles_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3848,6 +3890,13 @@ def build_expanded_release(
             wave8_kickapoo_existing_events,
         )
     )
+    wave8_lordship_isles_integration_validation = (
+        validate_wave8_lordship_isles_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_lordship_isles_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4049,6 +4098,7 @@ def build_expanded_release(
     install_wave8_alemanni_sources(sources_by_id)
     install_wave8_madagascar_sources(sources_by_id)
     install_wave8_kickapoo_sources(sources_by_id)
+    install_wave8_lordship_isles_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4110,6 +4160,7 @@ def build_expanded_release(
         *wave8_alemanni_events,
         *wave8_madagascar_events,
         *wave8_kickapoo_events,
+        *wave8_lordship_isles_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -4171,6 +4222,7 @@ def build_expanded_release(
         *wave8_alemanni_events,
         *wave8_madagascar_events,
         *wave8_kickapoo_events,
+        *wave8_lordship_isles_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4231,6 +4283,7 @@ def build_expanded_release(
             | WAVE8_ALEMANNI_CONTRACT_IDS
             | WAVE8_MADAGASCAR_CONTRACT_IDS
             | WAVE8_KICKAPOO_CONTRACT_IDS
+            | WAVE8_LORDSHIP_ISLES_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4333,6 +4386,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_ALEMANNI_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_MADAGASCAR_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KICKAPOO_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_LORDSHIP_ISLES_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4562,6 +4616,7 @@ def build_expanded_release(
         - len(wave8_alemanni_events)
         - len(wave8_madagascar_events)
         - len(wave8_kickapoo_events)
+        - len(wave8_lordship_isles_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4686,6 +4741,9 @@ def build_expanded_release(
             wave8_madagascar_events
         ),
         "candidate_keyed_wave8_kickapoo_hced_events": len(wave8_kickapoo_events),
+        "candidate_keyed_wave8_lordship_isles_hced_events": len(
+            wave8_lordship_isles_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4952,6 +5010,9 @@ def build_expanded_release(
                 wave8_madagascar_events
             ),
             "accepted_wave8_kickapoo_hced_events": len(wave8_kickapoo_events),
+            "accepted_wave8_lordship_isles_hced_events": len(
+                wave8_lordship_isles_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -6885,6 +6946,76 @@ def build_expanded_release(
             ],
             "wave8_kickapoo_entities_added": len(WAVE8_KICKAPOO_ENTITIES),
             "wave8_kickapoo_sources_added": len(WAVE8_KICKAPOO_SOURCES),
+            "wave8_lordship_isles_counts": wave8_lordship_isles_counts(),
+            "wave8_lordship_isles_cohort_counts": (
+                wave8_lordship_isles_cohort_counts()
+            ),
+            "wave8_lordship_isles_row_dispositions": (
+                wave8_lordship_isles_row_dispositions()
+            ),
+            "wave8_lordship_isles_queue_validation": (
+                wave8_lordship_isles_queue_validation
+            ),
+            "wave8_lordship_isles_integration_validation": (
+                wave8_lordship_isles_integration_validation
+            ),
+            "wave8_lordship_isles_candidate_ids": sorted(
+                WAVE8_LORDSHIP_ISLES_CONTRACT_IDS
+            ),
+            "wave8_lordship_isles_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_HOLDS.items()
+                )
+            ],
+            "wave8_lordship_isles_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_lordship_isles_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LORDSHIP_ISLES_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_lordship_isles_entities_added": len(
+                WAVE8_LORDSHIP_ISLES_ENTITIES
+            ),
+            "wave8_lordship_isles_sources_added": len(
+                WAVE8_LORDSHIP_ISLES_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -7136,6 +7267,9 @@ def build_expanded_release(
             wave8_madagascar_events
         ),
         "candidate_keyed_wave8_kickapoo_hced_events": len(wave8_kickapoo_events),
+        "candidate_keyed_wave8_lordship_isles_hced_events": len(
+            wave8_lordship_isles_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
