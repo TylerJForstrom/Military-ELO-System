@@ -10515,6 +10515,226 @@
     ]
   },
   {
+    "id": "wave8_uzbekistan_baburnama_beveridge",
+    "title": "The Bābur-nāma in English (Annette Beveridge translation)",
+    "url": "https://uzbekliterature.uz/sites/default/files/baburnama_2.pdf",
+    "publisher": "Uzbek Literature digital library; public-domain translation",
+    "license": "Citation and link only",
+    "source_type": "digitized_translated_primary_narrative",
+    "accessed": "2026-07-16",
+    "source_family_id": "baburnama_beveridge_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_cambridge_babur",
+    "title": "Mulkgirliq: The Act of Kingdom-Seizing",
+    "url": "https://www.cambridge.org/core/books/abs/babur/mulkgirliq-the-act-of-kingdomseizing/4C018974330644B7B2FFB92C722ECBAC",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "dale_babur_2018_chapter_3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_cambridge_shaybanids",
+    "title": "The Shaybanids",
+    "url": "https://www.cambridge.org/core/books/abs/history-of-inner-asia/shaybanids/681328EFAC754EF2B9D3E7CF4BFE8CB7",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "sinor_history_inner_asia_shaybanids",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_abbas",
+    "title": "ʿAbbās I",
+    "url": "https://www.iranicaonline.org/articles/abbas-i/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_abbas_i",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_allahverdi",
+    "title": "Allāhverdī Khan (1)",
+    "url": "https://www.iranicaonline.org/articles/allahverdi-khan-d-1/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_allahverdi_khan_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_central_asia_vii",
+    "title": "Central Asia vii. In the 18th-19th Centuries",
+    "url": "https://www.iranicaonline.org/articles/central-asia-vii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_central_asia_vii",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_chronology",
+    "title": "Chronology of Iranian History, Part 1",
+    "url": "https://www.iranicaonline.org/articles/chronology-of-iranian-history-part-1/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_iranian_history_chronology_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_damghan",
+    "title": "Dāmḡān",
+    "url": "https://www.iranicaonline.org/articles/damgan-persian-town/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_damgan_town",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_herat",
+    "title": "Herat iii. History, Medieval Period",
+    "url": "https://www.iranicaonline.org/articles/herat-iii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_herat_medieval_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_ilbars",
+    "title": "Ilbārs Khan",
+    "url": "https://www.iranicaonline.org/articles/ilbars-khan/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_ilbars_khan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_kandahar",
+    "title": "Kandahar iv. From the Mongol Invasion Through the Safavid Era",
+    "url": "https://www.iranicaonline.org/articles/kandahar-from-the-mongol-invasion-through-the-safavid-era/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_kandahar_mongol_safavid",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_khiva",
+    "title": "Khiva",
+    "url": "https://www.iranicaonline.org/articles/khiva/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_khiva",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_khorasan_safavid",
+    "title": "Khorasan x. History in the Safavid and Afsharid Periods",
+    "url": "https://www.iranicaonline.org/articles/khorasan-x-history-in-the-safavid-and-afsharid-periods/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_khorasan_safavid_afsharid",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_iranica_tahmasp",
+    "title": "Ṭahmāsp I",
+    "url": "https://www.iranicaonline.org/articles/tahmasp-i/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_tahmasp_i",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbekistan_turk_dunyasi_babur",
+    "title": "Bâbür",
+    "url": "https://turkdunyasiansiklopedisi.gov.tr/detay/9662/B%C3%A2b%C3%BCr",
+    "publisher": "Atatürk Culture, Language and History High Institution",
+    "license": "Citation and link only",
+    "source_type": "government_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "turk_dunyasi_ansiklopedisi_babur",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_wales_antiquaries_lulworth_beandun",
     "title": "An Early Iron Age 'beach-head' at Lulworth, Dorset",
     "url": "https://www.cambridge.org/core/journals/antiquaries-journal/article/an-early-iron-age-beachhead-at-lulworth-dorset/5C9BC3CE22AC55020C27738FD12A8730",

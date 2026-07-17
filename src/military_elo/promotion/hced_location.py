@@ -19,19 +19,19 @@ HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
 HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
-    "ba73a9705d56aaac274ccb2c11b56faf518330cc43f022c3963bb4db4ccfb12f"
+    "416cd428df33665c53c73fc0947b01d9f5bcfe3a6de0def5d33bbf0134f52547"
 )
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "26ab54d1a3146ec1fd686f1bd3379d6cfebeb219603fd4bbc7bafea9510ca5cf"
+    "81f9ef3209c5713de02e80460055aecb0c62d4df9ec6d66c0f0d23632ac57a97"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
-    "a6393fab3d4e9f22ae3c70b982df1f315725a098086de8b054675673d2fb1336"
+    "3e0052ad68f2d2b611155c021cac3fe13b834cb500194ab1a67ba5b93f28ca7f"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "bd849a5cef3ccdcebe095f2a439b2c1bdbab0f0ba13f3d5cffdfe6f1841ed159"
+    "f0c6d4c5b903ee1608c8f58e86aa5af7ecf4a614ddbef6d99a7061d61936e5a6"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
-    "5bd24c12f33c302fa0b2837ffd0fc05ef11a45038175ae42bda65869680b902d"
+    "014db1a1992a7694a49f5dda1337243d501cdc0df12ed07e38b7667c8fc9cc4d"
 )
 # Wave 5 is the immutable base to which reviewed lane manifests are added
 # during release construction. The final pins below are independently measured
@@ -41,13 +41,13 @@ HCED_WAVE5_CANDIDATE_BINDINGS = 4_195
 HCED_WAVE5_POINT_ASSERTIONS = 4_158
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_115
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_162
-HCED_EXPECTED_CANDIDATE_BINDINGS = 4_852
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 542
+HCED_EXPECTED_CANDIDATE_BINDINGS = 4_856
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 546
 HCED_EXPECTED_POINT_ASSERTIONS = 4_732
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_763
-HCED_EXPECTED_PROVENANCE_OBJECTS = 4_812
-HCED_EXPECTED_QUARANTINE_UNION = 168
-HCED_EXPECTED_QUARANTINE_OVERLAP = 40
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_766
+HCED_EXPECTED_PROVENANCE_OBJECTS = 4_815
+HCED_EXPECTED_QUARANTINE_UNION = 172
+HCED_EXPECTED_QUARANTINE_OVERLAP = 41
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
     "HCED location fields are unreviewed source assertions. Quarantined values "
@@ -95,6 +95,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Crazy Woman Creek1876-1",
     "hced-Crooked Creek1859-1",
     "hced-Damascus1925-1",
+    "hced-Damghan1528-1",
     "hced-Dublin (2nd)1171-1",
     "hced-Dyle891-1",
     "hced-Dysert ODea1318-1",
@@ -120,6 +121,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Junin1824-1",
     "hced-Kafr1925-1",
     "hced-Kagul Lagoon1574-1",
+    "hced-Khiva1740-1",
     "hced-Komandorski Islands1943-1",
     "hced-Kota Bharu1941-1",
     "hced-Kudarangan1904-1",
@@ -149,6 +151,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Plum Creek, Texas1840-1",
     "hced-Porto Praya1781-1",
     "hced-Raab1044-1",
+    "hced-Rabat-i-Pariyan1598-1",
     "hced-Rashaya1925-1",
     "hced-Rennell Island1943-1",
     "hced-Riade933-1",
@@ -169,6 +172,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Telamon-225-1",
     "hced-Thessalonica1224-1",
     "hced-Torata1823-1",
+    "hced-Torbat-i-Jam1528-1",
     "hced-Tristan de Cunha1815-1",
     "hced-Vaal Kranz1900-1",
     "hced-Villa Glori1867-1",
@@ -246,6 +250,7 @@ HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS = (
     "hced-Pork Chop Hill1953-1",
     "hced-Porto Praya1781-1",
     "hced-Pruth1770-1",
+    "hced-Rabat-i-Pariyan1598-1",
     "hced-Rennell Island1943-1",
     "hced-Reunion1810-1",
     "hced-Riviera1944-1",

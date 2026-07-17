@@ -3875,6 +3875,16 @@
       "region": "North Africa"
     },
     {
+      "id": "din_muhammad_shaybanid_rebat_parian_army_1598",
+      "name": "Din Muhammad Khan's Uzbek army at Rebāt-e Pariān (1598)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Herat region, Afghanistan"
+    },
+    {
       "id": "buffalo_wallow_dispatch_detail_1874",
       "name": "Dixon-Chapman Sixth Cavalry dispatch detail at Buffalo Wallow (1874)",
       "kind": "event_bounded_dispatch_detail",
@@ -7807,6 +7817,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ilbars_khivan_petnak_field_army_1740",
+      "name": "Ilbars Khan's Khivan army near Petnak (1740)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1740,
+      "end_year": 1740,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khwarazm, Uzbekistan"
     },
     {
       "id": "clio_ir_il_khanate_1294_68c670c3",
@@ -12761,6 +12781,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "nader_afsharid_petnak_campaign_army_1740",
+      "name": "Nader Shah's Afsharid army near Petnak (1740)",
+      "kind": "event_bounded_campaign_army",
+      "start_year": 1740,
+      "end_year": 1740,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khwarazm, Uzbekistan"
+    },
+    {
       "id": "clio_q1411866_1066_1ecf062c",
       "name": "Najahid Dynasty",
       "kind": "dynastic_state",
@@ -17592,6 +17622,36 @@
       "region": "Novarese, northern Italy"
     },
     {
+      "id": "abbas_safavid_rebat_parian_army_1598",
+      "name": "Shah Abbas's Safavid army at Rebāt-e Pariān (1598)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Herat region, Afghanistan"
+    },
+    {
+      "id": "tahmasp_safavid_damghan_recapture_force_1528",
+      "name": "Shah Tahmasp's Safavid force retaking Damghan (1528)",
+      "kind": "event_bounded_recapture_force",
+      "start_year": 1528,
+      "end_year": 1528,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Damghan, Iran"
+    },
+    {
+      "id": "tahmasp_safavid_jam_relief_army_1528",
+      "name": "Shah Tahmasp's Safavid relief army at Jam (1528)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1528,
+      "end_year": 1528,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khorasan, Iran"
+    },
+    {
       "id": "clio_q4765854_1294_63151ed8",
       "name": "Shan States",
       "kind": "polity",
@@ -19874,6 +19934,16 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "ubaydallah_shaybanid_jam_army_1528",
+      "name": "Ubaydallah Khan's Shaybanid army at Jam (1528)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1528,
+      "end_year": 1528,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khorasan, Iran"
+    },
+    {
       "id": "ujir_singh_thapa_jitgadhi_force_1815",
       "name": "Ujir Singh Thapa's Jitgadhi force",
       "kind": "state_garrison",
@@ -20158,6 +20228,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "uzbek_damghan_occupation_force_1528",
+      "name": "Uzbek occupation force at Damghan (1528)",
+      "kind": "event_bounded_occupation_force",
+      "start_year": 1528,
+      "end_year": 1528,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Damghan, Iran"
     },
     {
       "id": "clio_in_vakataka_k_260_091eca76",
@@ -21294,11 +21374,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1992,
-    "rated_entities": 629,
-    "rated_events": 5116,
+    "registry_polities": 2000,
+    "rated_entities": 637,
+    "rated_events": 5120,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18278,
+    "unresolved_event_candidates": 18274,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21346,6 +21426,7 @@
     "candidate_keyed_wave8_druze_rebels_hced_events": 4,
     "candidate_keyed_wave8_insubrian_gauls_hced_events": 4,
     "candidate_keyed_wave8_kiowa_hced_events": 4,
+    "candidate_keyed_wave8_uzbekistan_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21356,21 +21437,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4852,
-      "candidate_keyed_reviewed_contracts": 542,
+      "hced_candidate_bindings": 4856,
+      "candidate_keyed_reviewed_contracts": 546,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4763,
-      "location_provenance_objects": 4812,
-      "point_fields_withheld_by_quarantine": 120,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 88,
+      "modern_location_country_assertions": 4766,
+      "location_provenance_objects": 4815,
+      "point_fields_withheld_by_quarantine": 124,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 89,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 40,
-      "unique_events_with_any_quarantined_field": 168,
-      "point_quarantine_candidate_manifest_sha256": "26ab54d1a3146ec1fd686f1bd3379d6cfebeb219603fd4bbc7bafea9510ca5cf",
-      "country_quarantine_candidate_manifest_sha256": "a6393fab3d4e9f22ae3c70b982df1f315725a098086de8b054675673d2fb1336",
-      "quarantine_policy_sha256": "ba73a9705d56aaac274ccb2c11b56faf518330cc43f022c3963bb4db4ccfb12f",
+      "point_country_quarantine_overlap": 41,
+      "unique_events_with_any_quarantined_field": 172,
+      "point_quarantine_candidate_manifest_sha256": "81f9ef3209c5713de02e80460055aecb0c62d4df9ec6d66c0f0d23632ac57a97",
+      "country_quarantine_candidate_manifest_sha256": "3e0052ad68f2d2b611155c021cac3fe13b834cb500194ab1a67ba5b93f28ca7f",
+      "quarantine_policy_sha256": "416cd428df33665c53c73fc0947b01d9f5bcfe3a6de0def5d33bbf0134f52547",
       "assertion_status": {
-        "unreviewed_source_assertion": 4812
+        "unreviewed_source_assertion": 4815
       },
       "verified_location_assertions": {
         "availability": "not_available",

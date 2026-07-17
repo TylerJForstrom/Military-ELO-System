@@ -3602,6 +3602,69 @@
     ]
   },
   {
+    "id": "tahmasp_safavid_damghan_recapture_force_1528",
+    "name": "Shah Tahmasp's Safavid force retaking Damghan (1528)",
+    "kind": "event_bounded_recapture_force",
+    "start_year": 1528,
+    "end_year": 1528,
+    "region": "Damghan, Iran",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the force involved in the documented 1528 recovery of Damghan; it does not stand for every Safavid formation in the wider Khorasan campaign. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_damghan",
+      "wave8_uzbekistan_iranica_khorasan_safavid",
+      "wave8_uzbekistan_iranica_tahmasp"
+    ]
+  },
+  {
+    "id": "tahmasp_safavid_jam_relief_army_1528",
+    "name": "Shah Tahmasp's Safavid relief army at Jam (1528)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1528,
+    "end_year": 1528,
+    "region": "Khorasan, Iran",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Tahmasp's relief army in the Battle of Jam/Sāruqameš after the siege of Herat was lifted. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_chronology",
+      "wave8_uzbekistan_iranica_khorasan_safavid",
+      "wave8_uzbekistan_iranica_tahmasp"
+    ]
+  },
+  {
+    "id": "ubaydallah_shaybanid_jam_army_1528",
+    "name": "Ubaydallah Khan's Shaybanid army at Jam (1528)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1528,
+    "end_year": 1528,
+    "region": "Khorasan, Iran",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Ubaydallah Khan's opposing army at Jam/Sāruqameš; it does not merge other Shaybanid commands or the Uzbek population. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_chronology",
+      "wave8_uzbekistan_iranica_khorasan_safavid",
+      "wave8_uzbekistan_iranica_tahmasp"
+    ]
+  },
+  {
+    "id": "uzbek_damghan_occupation_force_1528",
+    "name": "Uzbek occupation force at Damghan (1528)",
+    "kind": "event_bounded_occupation_force",
+    "start_year": 1528,
+    "end_year": 1528,
+    "region": "Damghan, Iran",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Uzbek force holding Damghan before its documented Safavid recovery, not to Uzbeks generally or a generic khanate. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_damghan",
+      "wave8_uzbekistan_iranica_khorasan_safavid"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Campaign-bounded Adal forces for the 1531–1543 invasion period identified by the reviewed source. No rating is inherited from a broader or namesake Adal polity.",
     "end_year": 1543,
@@ -3811,6 +3874,22 @@
     ]
   },
   {
+    "id": "din_muhammad_shaybanid_rebat_parian_army_1598",
+    "name": "Din Muhammad Khan's Uzbek army at Rebāt-e Pariān (1598)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "Herat region, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Din Muhammad Khan's defeated army at Rebāt-e Pariān, not to every Shaybanid formation or the inhabitants of Transoxiana. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_abbas",
+      "wave8_uzbekistan_iranica_allahverdi",
+      "wave8_uzbekistan_iranica_khorasan_safavid"
+    ]
+  },
+  {
     "id": "bagenal_blackwater_relief_army_1598",
     "name": "Henry Bagenal’s Blackwater Relief Army (1598)",
     "kind": "relief_army",
@@ -3840,6 +3919,22 @@
       "wave8_irish_ucc_beatha_aodha_ruaidh",
       "wave8_irish_ucc_four_masters_1594_1598",
       "wave8_irish_ucc_hanmer_yellow_ford"
+    ]
+  },
+  {
+    "id": "abbas_safavid_rebat_parian_army_1598",
+    "name": "Shah Abbas's Safavid army at Rebāt-e Pariān (1598)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "Herat region, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Shah Abbas's army in the August 1598 battle that opened the recovery of Herat. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_abbas",
+      "wave8_uzbekistan_iranica_allahverdi",
+      "wave8_uzbekistan_iranica_khorasan_safavid"
     ]
   },
   {
@@ -4390,6 +4485,38 @@
       "cliopatria_polities",
       "britannica_nader_shah",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "ilbars_khivan_petnak_field_army_1740",
+    "name": "Ilbars Khan's Khivan army near Petnak (1740)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1740,
+    "end_year": 1740,
+    "region": "Khwarazm, Uzbekistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Ilbars Khan's routed field army near Petnak; the later Khanqah siege, Khiva population, and other Khivan forces are outside the identity. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_central_asia_vii",
+      "wave8_uzbekistan_iranica_ilbars",
+      "wave8_uzbekistan_iranica_khiva"
+    ]
+  },
+  {
+    "id": "nader_afsharid_petnak_campaign_army_1740",
+    "name": "Nader Shah's Afsharid army near Petnak (1740)",
+    "kind": "event_bounded_campaign_army",
+    "start_year": 1740,
+    "end_year": 1740,
+    "region": "Khwarazm, Uzbekistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Nader Shah's Khwarazm campaign army in the documented battle near Petnak, before the Khanqah siege and Khiva surrender. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_central_asia_vii",
+      "wave8_uzbekistan_iranica_ilbars",
+      "wave8_uzbekistan_iranica_khiva"
     ]
   },
   {

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 636,
-    "events": 5116,
-    "sources": 787,
-    "registry_polities": 1992
+    "entities": 644,
+    "events": 5120,
+    "sources": 802,
+    "registry_polities": 2000
   },
   "year_range": {
     "start": -1274,
@@ -118,6 +118,7 @@
     "accepted_wave8_druze_rebels_hced_events": 4,
     "accepted_wave8_insubrian_gauls_hced_events": 4,
     "accepted_wave8_kiowa_hced_events": 4,
+    "accepted_wave8_uzbekistan_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -5156,7 +5157,363 @@
     "wave8_kiowa_outcome_overrides": [],
     "wave8_kiowa_entities_added": 7,
     "wave8_kiowa_sources_added": 15,
-    "hced_label_pass_input_rows": 5872,
+    "wave8_uzbekistan_counts": {
+      "country_quarantine_additions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 6,
+      "integration_dispositions": 4,
+      "internal_relationship_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 10,
+      "new_entities": 8,
+      "new_sources": 15,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 3,
+      "reviewed_hced_rows": 10,
+      "sole_blocker_rows": 4
+    },
+    "wave8_uzbekistan_cohort_counts": {
+      "afsharid_khwarazm_campaign_1740": 1,
+      "safavid_reconquest_khorasan_1598": 1,
+      "safavid_uzbek_khorasan_1528": 2
+    },
+    "wave8_uzbekistan_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 6,
+      "reviewed_hced_rows": 10
+    },
+    "wave8_uzbekistan_integration_validation": {
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 4,
+      "internal_relationship_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 10,
+      "related_hced_dispositions": 3
+    },
+    "wave8_uzbekistan_candidate_ids": [
+      "hced-Damghan1528-1",
+      "hced-Khiva1740-1",
+      "hced-Rabat-i-Pariyan1598-1",
+      "hced-Torbat-i-Jam1528-1"
+    ],
+    "wave8_uzbekistan_holds": [
+      {
+        "candidate_id": "hced-Ghujduwan1512-1",
+        "raw_row_sha256": "3f3c4155aa3f8599b9dac243798812260fceb3b225024bd38cf386748a8c894c",
+        "canonical_event": {
+          "canonical_key": "battle_of_ghujduwan:1512:1512",
+          "date_precision": "year",
+          "date_text": "1512",
+          "granularity": "engagement",
+          "name": "Battle of Ghujduwan",
+          "year_low": 1512,
+          "year_high": 1512
+        },
+        "disposition": "hold",
+        "hold_category": "composite_opponent_and_pre_mughal_identity_blocker",
+        "reviewed_outcome": "attested_uzbek_victory_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Ubaydallah Khan's bounded Shaybanid force",
+          "Najm-e Sani's Safavid force with Babur's pre-Mughal Timurid contingent"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The broad Uzbek victory is attested, but HCED's composite 'Persia, Mughal Empire' opponent crosses two formations and calls Babur's 1512 force Mughal fourteen years before the empire's 1526 start. The row remains an explicit other-identity hold; it is not promoted and the unrated result is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_cambridge_babur",
+          "wave8_uzbekistan_iranica_chronology",
+          "wave8_uzbekistan_turk_dunyasi_babur"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Kandahar1508-1",
+        "raw_row_sha256": "2a5105c6c0e051d1f1267bebf3060a6fe8c43752628e1cb0b0486206684b9883",
+        "canonical_event": {
+          "canonical_key": "hced_kandahar_claim:1508:1508",
+          "date_precision": "year",
+          "date_text": "1508 in HCED; the matched academic sequence is in 1507",
+          "granularity": "unresolved_event_claim",
+          "name": "HCED Kandahar claim",
+          "year_low": 1508,
+          "year_high": 1508
+        },
+        "disposition": "hold",
+        "hold_category": "date_actor_and_outcome_conflict",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Shaybani Khan's 1507 besieging force",
+          "Nasir Mirza's Timurid Kandahar garrison",
+          "the Arghun force that subsequently recovered Kandahar"
+        ],
+        "reviewed_granularity": "unresolved_event_claim",
+        "hold_reason": "The academic Kandahar chronology places Shaybani's encroachment in 1507 and says Nasir Mirza defended the city before the Arghuns, not Shaybani, recovered it. It does not establish HCED's 1508 Uzbek win over 'Babur of Kabul.' The candidate stays unknown and is not promoted; unknown is never a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_babur",
+          "wave8_uzbekistan_iranica_kandahar"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Kul-i-Malik1512-1",
+        "raw_row_sha256": "b33bd75c639f58ba5a24652c1f167166d36ab1be17a3d2b024521d9b17946b5f",
+        "canonical_event": {
+          "canonical_key": "battle_of_kul_i_malik:1512:1512",
+          "date_precision": "year",
+          "date_text": "1512",
+          "granularity": "engagement",
+          "name": "Battle of Kul-i Malik",
+          "year_low": 1512,
+          "year_high": 1512
+        },
+        "disposition": "hold",
+        "hold_category": "pre_mughal_babur_identity_blocker",
+        "reviewed_outcome": "attested_shaybanid_victory_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Ubaydallah Khan's bounded Shaybanid force",
+          "Babur's 1512 Timurid-Safavid client force"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The battle and Babur's defeat are attested, but the raw opponent is the Mughal Empire before its 1526 foundation. A separate candidate-keyed Babur formation is required. This row is held, not promoted or treated as a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_babur",
+          "wave8_uzbekistan_turk_dunyasi_babur"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Maruchak1507-1",
+        "raw_row_sha256": "dabaf0de5cadeb1edb7c8699cf13e1c7f70ed2cf134ecdb50292d715ec5c209b",
+        "canonical_event": {
+          "canonical_key": "hced_maruchak_claim:1507:1507",
+          "date_precision": "year",
+          "date_text": "1507",
+          "granularity": "unresolved_event_claim",
+          "name": "HCED Maruchak claim",
+          "year_low": 1507,
+          "year_high": 1507
+        },
+        "disposition": "hold",
+        "hold_category": "unbounded_event_and_possible_campaign_overlap",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Muhammad Shaybani's 1507 Khorasan campaign force",
+          "unresolved Timurid or Arghun opponent rather than a Mughal Empire"
+        ],
+        "reviewed_granularity": "unresolved_event_claim",
+        "hold_reason": "The academic and primary narratives establish Shaybani's 1507 Khorasan campaign and Herat takeover but do not supply a sufficiently bounded Maruchak engagement matching HCED's Mughal opponent and outcome. A related Herat row is separately pinned as a possible campaign overlap. This claim remains unknown, is not promoted, and is never a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_shaybanids",
+          "wave8_uzbekistan_iranica_herat"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Pul-i-Sanghin1511-1",
+        "raw_row_sha256": "a89ae290d9371f71141e9dc4d1c40194a84e9f6c8b74103c3549564ac556faa2",
+        "canonical_event": {
+          "canonical_key": "battle_of_pul_i_sanghin:1511:1511",
+          "date_precision": "year",
+          "date_text": "1511",
+          "granularity": "engagement",
+          "name": "Battle of Pul-i Sanghin",
+          "year_low": 1511,
+          "year_high": 1511
+        },
+        "disposition": "hold",
+        "hold_category": "pre_mughal_babur_identity_blocker",
+        "reviewed_outcome": "attested_babur_victory_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Babur's bounded 1511 Timurid force with Safavid support",
+          "the opposing bounded Shaybanid force"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "Babur's victory over the Uzbek force belongs to his pre-1526 Timurid restoration campaign, not to the Mughal Empire identity in HCED. It requires a paired Babur audit, is not promoted here, and is not converted to a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_babur"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Sar-i-Pul1501-1",
+        "raw_row_sha256": "2c71302cbd529bbd5807195f3ad86c5654e6328942107bb2e295d0a35966e81e",
+        "canonical_event": {
+          "canonical_key": "battle_of_sar_i_pul:1501:1501",
+          "date_precision": "year",
+          "date_text": "1501",
+          "granularity": "engagement",
+          "name": "Battle of Sar-i Pul",
+          "year_low": 1501,
+          "year_high": 1501
+        },
+        "disposition": "hold",
+        "hold_category": "pre_mughal_babur_identity_blocker",
+        "reviewed_outcome": "attested_shaybanid_victory_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Muhammad Shaybani's bounded 1501 force",
+          "Babur's bounded Timurid force contesting Samarkand"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The Shaybanid victory is attested, but Babur's 1501 force cannot be rated as the Mughal Empire founded in 1526. The row remains a paired-identity hold, is not promoted, and is not encoded as a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_shaybanids"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_uzbekistan",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_uzbekistan_iwbd_duplicate_dispositions": [],
+    "wave8_uzbekistan_existing_release_duplicate_dispositions": [],
+    "wave8_uzbekistan_internal_relationship_dispositions": [
+      {
+        "disposition_id": "damghan_and_jam_1528",
+        "candidate_ids": [
+          "hced-Damghan1528-1",
+          "hced-Torbat-i-Jam1528-1"
+        ],
+        "raw_row_sha256s": [
+          "140c5601cae5c0036cc8f6c0c178f851ecdec5d49fdf844e05eae4103a33b010",
+          "b36a6201b5395f2b0a7810db4c9a23150dcc40f201d15d0657debd4d8b38d89d"
+        ],
+        "disposition": "distinct_actions_in_one_khorasan_campaign",
+        "reason": "Damghan's recovery and the later Jam/Sāruqameš field battle occurred at different places and retain separate bounded forces and keys.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_damghan",
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbekistan_iranica_tahmasp"
+        ]
+      }
+    ],
+    "wave8_uzbekistan_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Charjui1740-1",
+        "raw_row_sha256": "eb7e4da86b51dd510a5a0e55317ded9dae974edc468bfa9795e74339118fa9f5",
+        "related_candidate_id": "hced-Khiva1740-1",
+        "disposition": "distinct_preceding_bukhara_campaign_action",
+        "owner_module": null,
+        "reason": "Charjui precedes Nader's receipt of Bukhara's submission; the Khiva row is narrowed to the later Petnak battle in Khwarazm.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_central_asia_vii"
+        ]
+      },
+      {
+        "candidate_id": "hced-Herat1507-1",
+        "raw_row_sha256": "53460fb224c6bbaac3f54e5c5d85b4a4f8829ab09a3cf4a0105b80fcf988c9cb",
+        "related_candidate_id": "hced-Maruchak1507-1",
+        "disposition": "possible_campaign_overlap_keeps_maruchak_on_hold",
+        "owner_module": null,
+        "reason": "The sourced 1507 endpoint is Shaybani's Herat takeover; a separate bounded Maruchak engagement has not been established.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_herat"
+        ]
+      },
+      {
+        "candidate_id": "hced-Herat1528-1",
+        "raw_row_sha256": "d9f4a2ab2537692214c3ac693774b3a26ee1541eb077ca154567835039186e2a",
+        "related_candidate_id": "hced-Torbat-i-Jam1528-1",
+        "disposition": "distinct_siege_relief_and_field_battle_claims",
+        "owner_module": null,
+        "reason": "The Herat siege/lifting and the later field battle at Sāruqameš are related campaign actions, not interchangeable event keys.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbekistan_iranica_tahmasp"
+        ]
+      }
+    ],
+    "wave8_uzbekistan_integration_dispositions": [
+      {
+        "disposition_id": "internal:damghan_and_jam_1528",
+        "candidate_ids": [
+          "hced-Damghan1528-1",
+          "hced-Torbat-i-Jam1528-1"
+        ],
+        "raw_row_sha256s": [
+          "140c5601cae5c0036cc8f6c0c178f851ecdec5d49fdf844e05eae4103a33b010",
+          "b36a6201b5395f2b0a7810db4c9a23150dcc40f201d15d0657debd4d8b38d89d"
+        ],
+        "disposition": "distinct_actions_in_one_khorasan_campaign",
+        "reason": "Damghan's recovery and the later Jam/Sāruqameš field battle occurred at different places and retain separate bounded forces and keys.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_damghan",
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbekistan_iranica_tahmasp"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Charjui1740-1",
+        "raw_row_sha256": "eb7e4da86b51dd510a5a0e55317ded9dae974edc468bfa9795e74339118fa9f5",
+        "related_candidate_id": "hced-Khiva1740-1",
+        "disposition": "distinct_preceding_bukhara_campaign_action",
+        "owner_module": null,
+        "reason": "Charjui precedes Nader's receipt of Bukhara's submission; the Khiva row is narrowed to the later Petnak battle in Khwarazm.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_central_asia_vii"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Herat1507-1",
+        "raw_row_sha256": "53460fb224c6bbaac3f54e5c5d85b4a4f8829ab09a3cf4a0105b80fcf988c9cb",
+        "related_candidate_id": "hced-Maruchak1507-1",
+        "disposition": "possible_campaign_overlap_keeps_maruchak_on_hold",
+        "owner_module": null,
+        "reason": "The sourced 1507 endpoint is Shaybani's Herat takeover; a separate bounded Maruchak engagement has not been established.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_herat"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Herat1528-1",
+        "raw_row_sha256": "d9f4a2ab2537692214c3ac693774b3a26ee1541eb077ca154567835039186e2a",
+        "related_candidate_id": "hced-Torbat-i-Jam1528-1",
+        "disposition": "distinct_siege_relief_and_field_battle_claims",
+        "owner_module": null,
+        "reason": "The Herat siege/lifting and the later field battle at Sāruqameš are related campaign actions, not interchangeable event keys.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbekistan_iranica_tahmasp"
+        ]
+      }
+    ],
+    "wave8_uzbekistan_outcome_overrides": [],
+    "wave8_uzbekistan_entities_added": 8,
+    "wave8_uzbekistan_sources_added": 15,
+    "hced_label_pass_input_rows": 5862,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -5169,7 +5526,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 732,
+      "reserved_candidate_contract": 742,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -5181,9 +5538,9 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2355,
+      "no_unique_time_valid_label_match": 2346,
       "no_unique_time_valid_polity": 89,
-      "outside_continuity_policy": 101,
+      "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 41
     },

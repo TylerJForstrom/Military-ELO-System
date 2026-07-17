@@ -809,6 +809,27 @@ from .wave8_kiowa import (
     wave8_kiowa_cohort_counts,
     wave8_kiowa_counts,
 )
+from .wave8_uzbekistan import (
+    WAVE8_UZBEKISTAN_CONTRACT_IDS,
+    WAVE8_UZBEKISTAN_ENTITIES,
+    WAVE8_UZBEKISTAN_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_UZBEKISTAN_HOLD_IDS,
+    WAVE8_UZBEKISTAN_HOLDS,
+    WAVE8_UZBEKISTAN_INTEGRATION_DISPOSITIONS,
+    WAVE8_UZBEKISTAN_INTERNAL_RELATIONSHIP_DISPOSITIONS,
+    WAVE8_UZBEKISTAN_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_UZBEKISTAN_OUTCOME_OVERRIDES,
+    WAVE8_UZBEKISTAN_RELATED_HCED_DISPOSITIONS,
+    WAVE8_UZBEKISTAN_RESERVED_IDS,
+    WAVE8_UZBEKISTAN_SOURCES,
+    install_wave8_uzbekistan_entities,
+    install_wave8_uzbekistan_sources,
+    promote_wave8_uzbekistan_contracts,
+    validate_wave8_uzbekistan_integration_dispositions,
+    validate_wave8_uzbekistan_queue_contracts,
+    wave8_uzbekistan_cohort_counts,
+    wave8_uzbekistan_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -871,6 +892,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_DRUZE_REBELS_RESERVED_IDS
     | WAVE8_INSUBRIAN_GAULS_RESERVED_IDS
     | WAVE8_KIOWA_RESERVED_IDS
+    | WAVE8_UZBEKISTAN_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1275,8 +1297,8 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 120
-        or len(HCED_COUNTRY_QUARANTINE_IDS) != 88
+        len(HCED_POINT_QUARANTINE_IDS) != 124
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 89
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
         != HCED_EXPECTED_QUARANTINE_OVERLAP
@@ -1477,6 +1499,9 @@ def build_expanded_release(
         validate_wave8_insubrian_gauls_queue_contracts(hced)
     )
     wave8_kiowa_queue_validation = validate_wave8_kiowa_queue_contracts(hced)
+    wave8_uzbekistan_queue_validation = validate_wave8_uzbekistan_queue_contracts(
+        hced
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1826,6 +1851,7 @@ def build_expanded_release(
     install_wave8_druze_rebels_entities(release_entities)
     install_wave8_insubrian_gauls_entities(release_entities)
     install_wave8_kiowa_entities(release_entities)
+    install_wave8_uzbekistan_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -2919,6 +2945,15 @@ def build_expanded_release(
         release_entities,
         wave8_kiowa_existing_events,
     )
+    wave8_uzbekistan_existing_events = [
+        *wave8_kiowa_existing_events,
+        *wave8_kiowa_events,
+    ]
+    wave8_uzbekistan_events = promote_wave8_uzbekistan_contracts(
+        hced,
+        release_entities,
+        wave8_uzbekistan_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -2963,6 +2998,7 @@ def build_expanded_release(
         *wave8_druze_rebels_events,
         *wave8_insubrian_gauls_events,
         *wave8_kiowa_events,
+        *wave8_uzbekistan_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3043,6 +3079,7 @@ def build_expanded_release(
             *WAVE8_INSUBRIAN_GAULS_HOLD_IDS,
             *WAVE8_INSUBRIAN_GAULS_TERMINAL_EXCLUSION_IDS,
             *WAVE8_KIOWA_HOLD_IDS,
+            *WAVE8_UZBEKISTAN_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3113,6 +3150,7 @@ def build_expanded_release(
         *wave8_druze_rebels_events,
         *wave8_insubrian_gauls_events,
         *wave8_kiowa_events,
+        *wave8_uzbekistan_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3293,6 +3331,13 @@ def build_expanded_release(
     )
     wave8_kiowa_integration_validation = (
         validate_wave8_kiowa_integration_dispositions(hced, iwbd_candidates)
+    )
+    wave8_uzbekistan_integration_validation = (
+        validate_wave8_uzbekistan_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_uzbekistan_existing_events,
+        )
     )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
@@ -3483,6 +3528,7 @@ def build_expanded_release(
     install_wave8_druze_rebels_sources(sources_by_id)
     install_wave8_insubrian_gauls_sources(sources_by_id)
     install_wave8_kiowa_sources(sources_by_id)
+    install_wave8_uzbekistan_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3532,6 +3578,7 @@ def build_expanded_release(
         *wave8_druze_rebels_events,
         *wave8_insubrian_gauls_events,
         *wave8_kiowa_events,
+        *wave8_uzbekistan_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3581,6 +3628,7 @@ def build_expanded_release(
         *wave8_druze_rebels_events,
         *wave8_insubrian_gauls_events,
         *wave8_kiowa_events,
+        *wave8_uzbekistan_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3629,6 +3677,7 @@ def build_expanded_release(
             | WAVE8_DRUZE_REBELS_CONTRACT_IDS
             | WAVE8_INSUBRIAN_GAULS_CONTRACT_IDS
             | WAVE8_KIOWA_CONTRACT_IDS
+            | WAVE8_UZBEKISTAN_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -3719,6 +3768,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_DRUZE_REBELS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_INSUBRIAN_GAULS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIOWA_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_UZBEKISTAN_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -3936,6 +3986,7 @@ def build_expanded_release(
         - len(wave8_druze_rebels_events)
         - len(wave8_insubrian_gauls_events)
         - len(wave8_kiowa_events)
+        - len(wave8_uzbekistan_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4038,6 +4089,9 @@ def build_expanded_release(
             wave8_insubrian_gauls_events
         ),
         "candidate_keyed_wave8_kiowa_hced_events": len(wave8_kiowa_events),
+        "candidate_keyed_wave8_uzbekistan_hced_events": len(
+            wave8_uzbekistan_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4282,6 +4336,9 @@ def build_expanded_release(
                 wave8_insubrian_gauls_events
             ),
             "accepted_wave8_kiowa_hced_events": len(wave8_kiowa_events),
+            "accepted_wave8_uzbekistan_hced_events": len(
+                wave8_uzbekistan_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -5548,6 +5605,61 @@ def build_expanded_release(
             ],
             "wave8_kiowa_entities_added": len(WAVE8_KIOWA_ENTITIES),
             "wave8_kiowa_sources_added": len(WAVE8_KIOWA_SOURCES),
+            "wave8_uzbekistan_counts": wave8_uzbekistan_counts(),
+            "wave8_uzbekistan_cohort_counts": wave8_uzbekistan_cohort_counts(),
+            "wave8_uzbekistan_queue_validation": (
+                wave8_uzbekistan_queue_validation
+            ),
+            "wave8_uzbekistan_integration_validation": (
+                wave8_uzbekistan_integration_validation
+            ),
+            "wave8_uzbekistan_candidate_ids": sorted(
+                WAVE8_UZBEKISTAN_CONTRACT_IDS
+            ),
+            "wave8_uzbekistan_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_HOLDS.items()
+                )
+            ],
+            "wave8_uzbekistan_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_uzbekistan_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_uzbekistan_internal_relationship_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_INTERNAL_RELATIONSHIP_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_uzbekistan_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_uzbekistan_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_uzbekistan_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_UZBEKISTAN_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_uzbekistan_entities_added": len(WAVE8_UZBEKISTAN_ENTITIES),
+            "wave8_uzbekistan_sources_added": len(WAVE8_UZBEKISTAN_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -5777,6 +5889,9 @@ def build_expanded_release(
             wave8_insubrian_gauls_events
         ),
         "candidate_keyed_wave8_kiowa_hced_events": len(wave8_kiowa_events),
+        "candidate_keyed_wave8_uzbekistan_hced_events": len(
+            wave8_uzbekistan_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
