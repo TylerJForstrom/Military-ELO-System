@@ -1537,6 +1537,20 @@ input[type="range"] {
   overflow-x: auto;
 }
 
+/* The registry catalog holds thousands of rows; cap the panel height and
+   scroll inside it instead of growing the page. */
+.registry-section .table-wrap {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.registry-section .registry-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

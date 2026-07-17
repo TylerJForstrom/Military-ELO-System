@@ -4,7 +4,7 @@
   const DATA_URL = "./data/results.json";
   const SVG_NS = "http://www.w3.org/2000/svg";
   const MAX_PINNED = 10;
-  const REGISTRY_PAGE_SIZE = 40;
+  const REGISTRY_PAGE_SIZE = 200;
   const REGISTRY_STATUSES = new Set(["rated", "unrated", "provisional"]);
   const locationContract = window.MilitaryEloLocation;
   const mapContract = window.MilitaryEloMap;
