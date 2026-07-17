@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 644,
-    "events": 5120,
-    "sources": 802,
-    "registry_polities": 2000
+    "entities": 656,
+    "events": 5127,
+    "sources": 823,
+    "registry_polities": 2012
   },
   "year_range": {
     "start": -1274,
@@ -119,6 +119,7 @@
     "accepted_wave8_insubrian_gauls_hced_events": 4,
     "accepted_wave8_kiowa_hced_events": 4,
     "accepted_wave8_uzbekistan_hced_events": 4,
+    "accepted_wave8_vietnam_hced_events": 7,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -5513,7 +5514,283 @@
     "wave8_uzbekistan_outcome_overrides": [],
     "wave8_uzbekistan_entities_added": 8,
     "wave8_uzbekistan_sources_added": 15,
-    "hced_label_pass_input_rows": 5862,
+    "wave8_vietnam_counts": {
+      "country_quarantine_additions": 0,
+      "greedy_eligible_rows": 6,
+      "hced_duplicate_dispositions": 1,
+      "holds": 1,
+      "integration_dispositions": 9,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 12,
+      "new_sources": 21,
+      "newly_rated_events": 7,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 7,
+      "promotion_contracts": 7,
+      "reviewed_hced_rows": 9,
+      "sole_blocker_promotions": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_vietnam_cohort_counts": {
+      "dai_viet_champa_war": 1,
+      "lam_son_uprising": 3,
+      "tay_son_qing_war": 1,
+      "tran_mongol_wars": 2
+    },
+    "wave8_vietnam_queue_validation": {
+      "promotion_contracts": 7,
+      "holds": 1,
+      "reviewed_hced_rows": 9,
+      "terminal_exclusions": 1
+    },
+    "wave8_vietnam_integration_validation": {
+      "hced_duplicate_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 9,
+      "existing_release_duplicate_dispositions": 0
+    },
+    "wave8_vietnam_candidate_ids": [
+      "hced-Bach Dang1288-1",
+      "hced-Chi Lang Pass1427-1",
+      "hced-Dong-do1426-1427-1",
+      "hced-Thang Long1258-1",
+      "hced-Thang Long1789-1",
+      "hced-Tot-dong1426-1",
+      "hced-Vijaya1471-1"
+    ],
+    "wave8_vietnam_holds": [
+      {
+        "candidate_id": "hced-Siming1285-1",
+        "raw_row_sha256": "20e71617da98641add162d86c10632d98c52c907bc32c4af55694e8c0b146a8d",
+        "canonical_event": {
+          "canonical_key": "reported_siming_frontier_action:1285:1285",
+          "date_precision": "year",
+          "date_text": "1285",
+          "granularity": "engagement",
+          "name": "Reported Siming frontier action",
+          "year_low": 1285,
+          "year_high": 1285
+        },
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "actor_and_terminal_tactical_outcome_unresolved",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Toghon's retreating Yuan forces near Siming",
+          "Huang-lineage frontier forces loyal to the Trần court"
+        ],
+        "reviewed_granularity": "frontier_retreat_episode",
+        "hold_reason": "Academic evidence places Toghon's retreat at Siming and describes an attack by local Huang descendants aligned with the Trần court, but it does not establish a unique terminal tactical winner matching HCED's binary Vietnam-Mongols assertion. The participant string also conflates Champa, Yunnan, Siming, and generic labels. The row is not promoted, reversed, or converted to a draw: unknown remains unknown.",
+        "evidence_refs": [
+          "wave8_vietnam_anderson_siming_frontier",
+          "wave8_vietnam_iseas_mongol_navy"
+        ],
+        "full_row_audited": true,
+        "duplicate_ownership": {
+          "owner_module": "wave8_vietnam",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_vietnam_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Hanoi1789-1",
+        "raw_row_sha256": "3034572de41f712b94ba30a4d8fe4f230f5f90a46452b1ae06ab3bb6dc5c7064",
+        "canonical_event": {
+          "canonical_key": "ngoc_hoi_ong_a_offensive_at_thang_long:1789:1789",
+          "date_precision": "day",
+          "date_text": "30 January 1789",
+          "granularity": "engagement",
+          "name": "Ngọc Hồi-Đống Đa offensive at Thăng Long",
+          "year_low": 1789,
+          "year_high": 1789
+        },
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "same_event_duplicate_and_anachronistic_toponym",
+        "reviewed_outcome": "The same Tây Sơn victory over Sun Shiyi's Qing invasion force already owned by hced-Thang Long1789-1",
+        "reviewed_actor_description": [
+          "Quang Trung's bounded Tây Sơn offensive force",
+          "Sun Shiyi's bounded Qing invasion force"
+        ],
+        "reviewed_granularity": "duplicate_exact_event_assertion",
+        "hold_reason": "HCED's Hanoi and Thang Long 1789 rows describe the same Ngọc Hồi-Đống Đa/Qing-defeat episode. Thăng Long is the period-appropriate city name; Hanoi was introduced in 1831. Emitting both would double-rate one result, so this row is terminally excluded in favor of hced-Thang Long1789-1.",
+        "evidence_refs": [
+          "wave8_vietnam_vass_ngoc_hoi_dong_da",
+          "wave8_vietnam_vass_thang_long_hanoi_names"
+        ],
+        "full_row_audited": true,
+        "duplicate_of_hced_candidate_id": "hced-Thang Long1789-1",
+        "duplicate_ownership": {
+          "owner_module": "wave8_vietnam",
+          "status": "terminal_duplicate_exclusion"
+        }
+      }
+    ],
+    "wave8_vietnam_hced_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Hanoi1789-1",
+        "raw_row_sha256": "3034572de41f712b94ba30a4d8fe4f230f5f90a46452b1ae06ab3bb6dc5c7064",
+        "related_hced_candidate_id": "hced-Thang Long1789-1",
+        "related_raw_row_sha256": "b79ddc32e1c4a289d36de2a873a294b3a2f6e2d71a8af580a318945389fa656c",
+        "disposition": "terminal_duplicate_exclusion",
+        "relationship": "same_ngoc_hoi_dong_da_qing_defeat_episode",
+        "canonical_owner": "hced-Thang Long1789-1",
+        "reason": "The rows share year, sides, result, theater, and episode. Thăng Long is the historically bounded 1789 toponym; Hanoi dates from 1831.",
+        "evidence_refs": [
+          "wave8_vietnam_vass_ngoc_hoi_dong_da",
+          "wave8_vietnam_vass_thang_long_hanoi_names"
+        ]
+      }
+    ],
+    "wave8_vietnam_iwbd_duplicate_dispositions": [],
+    "wave8_vietnam_existing_release_duplicate_dispositions": [],
+    "wave8_vietnam_integration_dispositions": [
+      {
+        "candidate_id": "hced-Bach Dang1288-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:no_unique_time_valid_polity"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Chi Lang Pass1427-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "vietnam",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Dong-do1426-1427-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "vietnam",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Hanoi1789-1",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "qing",
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "hanoi_thang_long_1789"
+        ],
+        "release_duplicate_scan": "duplicate_of_reserved_hced_candidate"
+      },
+      {
+        "candidate_id": "hced-Siming1285-1",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:faction_label_not_a_polity"
+        ],
+        "all_opposing_actors_resolved": false,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Thang Long1258-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "mongols china",
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Thang Long1789-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "vietnam",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [
+          "hanoi_thang_long_1789"
+        ],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Tot-dong1426-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "vietnam",
+        "other_blockers": [],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      },
+      {
+        "candidate_id": "hced-Vijaya1471-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "vietnam"
+        ],
+        "greedy_eligible": false,
+        "sole_blocker_label": null,
+        "other_blockers": [
+          "other_identity_blocker:label_pending_identity_split"
+        ],
+        "all_opposing_actors_resolved": true,
+        "duplicate_review_ids": [],
+        "release_duplicate_scan": "no_existing_release_event_twin_found"
+      }
+    ],
+    "wave8_vietnam_outcome_overrides": [],
+    "wave8_vietnam_entities_added": 12,
+    "wave8_vietnam_sources_added": 21,
+    "hced_label_pass_input_rows": 5853,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -5526,7 +5803,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 742,
+      "reserved_candidate_contract": 751,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -5538,7 +5815,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2346,
+      "no_unique_time_valid_label_match": 2337,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

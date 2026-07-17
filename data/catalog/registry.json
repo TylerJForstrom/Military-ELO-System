@@ -11034,6 +11034,16 @@
       "region": "North America"
     },
     {
+      "id": "lam_son_northern_campaign_forces_1426_1427",
+      "name": "Lam Sơn northern campaign forces (1426-1427)",
+      "kind": "campaign_bounded_insurgent_field_forces",
+      "start_year": 1426,
+      "end_year": 1427,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Red River delta and northern Đại Việt"
+    },
+    {
       "id": "clio_q1059707_1600_6529c573",
       "name": "Lan Na",
       "kind": "polity",
@@ -11424,6 +11434,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "liu_sheng_ming_relief_column_chi_lang_1427",
+      "name": "Liu Sheng's Ming relief column at Chi Lăng (1427)",
+      "kind": "event_bounded_relief_column",
+      "start_year": 1427,
+      "end_year": 1427,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Chi Lăng pass"
+    },
+    {
       "id": "clio_q49697_426_dc5b1891",
       "name": "Liu Song Dynasty",
       "kind": "dynastic_state",
@@ -11605,6 +11625,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "le_thanh_tong_dai_viet_vijaya_force_1471",
+      "name": "Lê Thánh Tông's Đại Việt Vijaya expedition (1471)",
+      "kind": "event_bounded_royal_expedition",
+      "start_year": 1471,
+      "end_year": 1471,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vijaya (Trà Bàn), Champa"
     },
     {
       "id": "macdonald_french_division_civita_castellana_1798",
@@ -13693,6 +13723,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "omar_yuan_bach_dang_fleet_1288",
+      "name": "Omar's Yuan withdrawal fleet at Bạch Đằng (1288)",
+      "kind": "event_bounded_withdrawal_fleet",
+      "start_year": 1288,
+      "end_year": 1288,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bạch Đằng river system"
+    },
+    {
       "id": "orange_free_state_1854",
       "name": "Orange Free State",
       "kind": "republic",
@@ -15446,6 +15486,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "quang_trung_tay_son_thang_long_force_1789",
+      "name": "Quang Trung's Tây Sơn Thăng Long offensive force (1789)",
+      "kind": "event_bounded_offensive_force",
+      "start_year": 1789,
+      "end_year": 1789,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ngọc Hồi, Đống Đa, and Thăng Long"
     },
     {
       "id": "quraysh_meccan_field_force_uhud_625",
@@ -18828,6 +18878,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sun_shiyi_qing_thang_long_invasion_force_1789",
+      "name": "Sun Shiyi's Qing invasion force at Thăng Long (1789)",
+      "kind": "event_bounded_invasion_force",
+      "start_year": 1789,
+      "end_year": 1789,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ngọc Hồi, Đống Đa, and Thăng Long"
+    },
+    {
       "id": "clio_q1469742_674_1519949b",
       "name": "Sunda Kingdom",
       "kind": "kingdom",
@@ -19678,6 +19738,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "tra_toan_vijaya_champa_defenders_1471",
+      "name": "Trà Toàn's Vijaya defenders (1471)",
+      "kind": "event_bounded_capital_defenders",
+      "start_year": 1471,
+      "end_year": 1471,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vijaya (Trà Bàn), Champa"
+    },
+    {
       "id": "clio_q1207428_43_72198b2f",
       "name": "Trưng sisters",
       "kind": "polity",
@@ -19687,6 +19757,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "tran_dai_viet_bach_dang_force_1288",
+      "name": "Trần Đại Việt Bạch Đằng force under Trần Hưng Đạo (1288)",
+      "kind": "event_bounded_combined_force",
+      "start_year": 1288,
+      "end_year": 1288,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bạch Đằng river system"
+    },
+    {
+      "id": "tran_dai_viet_dong_bo_dau_force_1258",
+      "name": "Trần Đại Việt counterattack force at Đông Bộ Đầu (1258)",
+      "kind": "event_bounded_dynastic_field_force",
+      "start_year": 1258,
+      "end_year": 1258,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Đông Bộ Đầu landing, Thăng Long"
     },
     {
       "id": "clio_q2267508_1572_69673f96",
@@ -20197,6 +20287,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "uriyangkhadai_mongol_invasion_column_1258",
+      "name": "Uriyangkhadai's Mongol invasion column at Đông Bộ Đầu (1258)",
+      "kind": "event_bounded_invasion_column",
+      "start_year": 1258,
+      "end_year": 1258,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Thăng Long and the Red River corridor"
+    },
+    {
       "id": "clio_in_utpala_dyn_960_a9f0f5f8",
       "name": "Utpala Dynasty",
       "kind": "dynastic_state",
@@ -20460,6 +20560,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "wang_tong_ming_tot_dong_force_1426",
+      "name": "Wang Tong's Ming field force at Tốt Động-Chúc Động (1426)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1426,
+      "end_year": 1426,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tốt Động and Chúc Động"
+    },
+    {
+      "id": "wang_tong_ming_dong_quan_garrison_1426_1427",
+      "name": "Wang Tong's Ming Đông Quan garrison (1426-1427)",
+      "kind": "siege_bounded_garrison",
+      "start_year": 1426,
+      "end_year": 1427,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Đông Quan citadel"
     },
     {
       "id": "clio_jp_azuchi_momoyama_1468_686ae822",
@@ -21374,11 +21494,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2000,
-    "rated_entities": 637,
-    "rated_events": 5120,
+    "registry_polities": 2012,
+    "rated_entities": 649,
+    "rated_events": 5127,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18274,
+    "unresolved_event_candidates": 18267,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21427,6 +21547,7 @@
     "candidate_keyed_wave8_insubrian_gauls_hced_events": 4,
     "candidate_keyed_wave8_kiowa_hced_events": 4,
     "candidate_keyed_wave8_uzbekistan_hced_events": 4,
+    "candidate_keyed_wave8_vietnam_hced_events": 7,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21437,21 +21558,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4856,
-      "candidate_keyed_reviewed_contracts": 546,
+      "hced_candidate_bindings": 4863,
+      "candidate_keyed_reviewed_contracts": 553,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4766,
-      "location_provenance_objects": 4815,
-      "point_fields_withheld_by_quarantine": 124,
+      "modern_location_country_assertions": 4773,
+      "location_provenance_objects": 4822,
+      "point_fields_withheld_by_quarantine": 131,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 89,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 41,
-      "unique_events_with_any_quarantined_field": 172,
-      "point_quarantine_candidate_manifest_sha256": "81f9ef3209c5713de02e80460055aecb0c62d4df9ec6d66c0f0d23632ac57a97",
+      "unique_events_with_any_quarantined_field": 179,
+      "point_quarantine_candidate_manifest_sha256": "63d4713ecfcbf200eece65ea5f1a23e2fb4da17c5a7bfab57a7db4ff09295811",
       "country_quarantine_candidate_manifest_sha256": "3e0052ad68f2d2b611155c021cac3fe13b834cb500194ab1a67ba5b93f28ca7f",
-      "quarantine_policy_sha256": "416cd428df33665c53c73fc0947b01d9f5bcfe3a6de0def5d33bbf0134f52547",
+      "quarantine_policy_sha256": "cbced00bdf0c61fd04a65122d53633db4fb9e66003efdbe68450f07392b98371",
       "assertion_status": {
-        "unreviewed_source_assertion": 4815
+        "unreviewed_source_assertion": 4822
       },
       "verified_location_assertions": {
         "availability": "not_available",
