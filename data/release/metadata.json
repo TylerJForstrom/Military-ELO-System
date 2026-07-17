@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 713,
-    "events": 5165,
-    "sources": 903,
-    "registry_polities": 2069
+    "entities": 725,
+    "events": 5171,
+    "sources": 918,
+    "registry_polities": 2081
   },
   "year_range": {
     "start": -1274,
@@ -126,6 +126,7 @@
     "accepted_wave8_rajputs_hced_events": 6,
     "accepted_wave8_mamluk_egypt_hced_events": 4,
     "accepted_wave8_rebel_barons_hced_events": 6,
+    "accepted_wave8_thebes_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6751,7 +6752,90 @@
     "wave8_rebel_barons_outcome_overrides": [],
     "wave8_rebel_barons_entities_added": 12,
     "wave8_rebel_barons_sources_added": 11,
-    "hced_label_pass_input_rows": 5806,
+    "wave8_thebes_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 6,
+      "new_entities": 12,
+      "new_sources": 15,
+      "newly_rated_events": 6,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 6,
+      "terminal_exclusions": 0
+    },
+    "wave8_thebes_cohort_counts": {
+      "boeotian_spartan_war_375_371_bce": 2,
+      "first_peloponnesian_war_boeotia_447_bce": 1,
+      "peloponnesian_war_boeotian_campaign_424_bce": 1,
+      "theban_hegemony_mantinea_362_bce": 1,
+      "theban_revolt_against_alexander_335_bce": 1
+    },
+    "wave8_thebes_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 6,
+      "terminal_exclusions": 0
+    },
+    "wave8_thebes_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 6
+    },
+    "wave8_thebes_candidate_ids": [
+      "hced-Coronea-447-1",
+      "hced-Delium-424-1",
+      "hced-Leuctra-371-1",
+      "hced-Mantinea-362-1",
+      "hced-Tegyra-375-1",
+      "hced-Thebes-335-1"
+    ],
+    "wave8_thebes_holds": [],
+    "wave8_thebes_terminal_exclusions": [],
+    "wave8_thebes_cross_lane_dispositions": [],
+    "wave8_thebes_iwbd_duplicate_dispositions": [],
+    "wave8_thebes_existing_release_duplicate_dispositions": [],
+    "wave8_thebes_integration_dispositions": [],
+    "wave8_thebes_outcome_overrides": [
+      {
+        "candidate_id": "hced-Mantinea-362-1",
+        "raw_winner_raw": "Draw",
+        "raw_loser_raw": null,
+        "raw_winner_loser_complete": false,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 1,
+        "corrected_winner_entity_ids": [
+          "epaminondas_theban_allied_army_mantinea_362_bce"
+        ],
+        "corrected_loser_entity_ids": [
+          "spartan_athenian_mantinean_allied_army_362_bce"
+        ],
+        "override_kind": "raw_draw_placeholder_to_sourced_theban_led_tactical_victory",
+        "outcome_reversal": false,
+        "strategic_disposition": "no_decisive_strategic_payoff_after_epaminondas_death_not_a_tactical_draw",
+        "outcome_source_ids": [
+          "wave8_thebes_lucas_boeotian_army",
+          "wave8_thebes_shipley_mantinea",
+          "wave8_thebes_xenophon_mantinea"
+        ],
+        "outcome_source_family_ids": [
+          "lucas_boeotian_military_organization_2023",
+          "shipley_early_hellenistic_peloponnese_2018",
+          "xenophon_hellenica_brownson"
+        ]
+      }
+    ],
+    "wave8_thebes_entities_added": 12,
+    "wave8_thebes_sources_added": 15,
+    "hced_label_pass_input_rows": 5800,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6764,7 +6848,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 798,
+      "reserved_candidate_contract": 804,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6776,7 +6860,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 175,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2292,
+      "no_unique_time_valid_label_match": 2286,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

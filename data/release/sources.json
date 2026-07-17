@@ -11673,6 +11673,229 @@
     ]
   },
   {
+    "id": "wave8_thebes_bosworth_alexander",
+    "title": "Alexander III, 'the Great', of Macedon, 356-323 BCE",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548059801",
+    "publisher": "Oxford Classical Dictionary / Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "bosworth_oxford_alexander_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_buckler_beck_leuctra",
+    "title": "Plutarch on Leuctra",
+    "url": "https://www.cambridge.org/core/books/central-greece-and-the-politics-of-power-in-the-fourth-century-bc/plutarch-on-leuctra/62A8242B61E5E075DF9DB04E0092BAB8",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "buckler_beck_central_greece_2008",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_buckler_beck_tegyra",
+    "title": "The battle of Tegyra, 375 BC",
+    "url": "https://www.cambridge.org/core/books/central-greece-and-the-politics-of-power-in-the-fourth-century-bc/battle-of-tegyra-375-bc/707C6396118CC26949753D47C7FF2A51",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "buckler_beck_central_greece_2008",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_diodorus_book17",
+    "title": "Diodorus Siculus, Library of History 17.8-14: Thebes",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0084%3Abook%3D17",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "diodorus_library_oldfather",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_dull_coronea",
+    "title": "Thucydides 1.113 and the Leadership of Orchomenus",
+    "url": "https://www.jstor.org/stable/267879",
+    "publisher": "Classical Philology / University of Chicago Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "dull_coronea_orchomenus_1977",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_flower_panhellenism",
+    "title": "Alexander the Great and Panhellenism",
+    "url": "https://academic.oup.com/book/9564/chapter-abstract/156576753",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "flower_alexander_panhellenism_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_hammond_boeotia",
+    "title": "Political Developments in Boeotia",
+    "url": "https://www.cambridge.org/core/journals/classical-quarterly/article/political-developments-in-boeotia/AC1562330D7EDE3100E3AB70C37AE757",
+    "publisher": "The Classical Quarterly / Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "hammond_political_developments_boeotia_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_thebes_lucas_boeotian_army",
+    "title": "L'organisation militaire de la confédération béotienne (447-171 av. J.-C.)",
+    "url": "https://books.openedition.org/efa/15868",
+    "publisher": "École française d'Athènes",
+    "license": "Citation and link only",
+    "source_type": "open_access_scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "lucas_boeotian_military_organization_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_plutarch_pelopidas",
+    "title": "Plutarch, Life of Pelopidas 16-23: Tegyra and Leuctra",
+    "url": "https://penelope.uchicago.edu/Thayer/e/roman/texts/plutarch/lives/pelopidas%2A.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "plutarch_pelopidas_perrin",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_shipley_mantinea",
+    "title": "Warfare and Control",
+    "url": "https://www.cambridge.org/core/books/early-hellenistic-peloponnese/warfare-and-control/7C1B225BBF6AD84FADF4320C3A38BE03",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "shipley_early_hellenistic_peloponnese_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_thucydides_coronea",
+    "title": "Thucydides, History of the Peloponnesian War 1.113: Coronea",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0200%3Abook%3D1%3Achapter%3D113",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "thucydides_peloponnesian_war_crawley",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_thucydides_delium",
+    "title": "Thucydides, History of the Peloponnesian War 4.89-101: Delium",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0200%3Abook%3D4",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "thucydides_peloponnesian_war_crawley",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_van_wijk_athens_boiotia",
+    "title": "The Attic Neighbour? A Short Chronological Overview of Atheno-Boiotian Relations",
+    "url": "https://www.cambridge.org/core/books/athens-and-boiotia/attic-neighbour/76EF4754B60E745DFA2DDD62C1FB7F19",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "open_access_scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "van_wijk_athens_and_boiotia_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_xenophon_leuctra",
+    "title": "Xenophon, Hellenica 6.4: Leuctra",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0206%3Abook%3D6%3Achapter%3D4",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "xenophon_hellenica_brownson",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_thebes_xenophon_mantinea",
+    "title": "Xenophon, Hellenica 7.5.18-27: Mantinea",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Xen.+Hell.+7.5&lang=original",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "xenophon_hellenica_brownson",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_treccani_acton_algiers_1775",
     "title": "John Francis Edward Acton",
     "url": "https://www.treccani.it/enciclopedia/john-francis-edward-acton_%28Dizionario-Biografico%29/",

@@ -264,6 +264,69 @@
     ]
   },
   {
+    "id": "orchomenian_boeotian_exiles_locrian_euboean_exiles_coronea_447_bce",
+    "name": "Orchomenian Boeotian exiles, Locrians, and Euboean exiles at Coronea (447 BCE)",
+    "kind": "field_coalition",
+    "start_year": -447,
+    "end_year": -447,
+    "region": "Coronea and north-western Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Orchomenian-led Boeotian exiles, Locrian allies, Euboean exiles, and others of the same party who attacked Tolmides; it is not Thebes. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_dull_coronea",
+      "wave8_thebes_thucydides_coronea",
+      "wave8_thebes_van_wijk_athens_boiotia"
+    ]
+  },
+  {
+    "id": "tolmides_athenian_allied_force_coronea_447_bce",
+    "name": "Tolmides's Athenian and allied expedition at Coronea (447 BCE)",
+    "kind": "field_force",
+    "start_year": -447,
+    "end_year": -447,
+    "region": "Chaeronea-Coronea, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the one-thousand-hoplite Athenian core, allied contingents, and Tolmides's return march from Chaeronea. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_dull_coronea",
+      "wave8_thebes_thucydides_coronea",
+      "wave8_thebes_van_wijk_athens_boiotia"
+    ]
+  },
+  {
+    "id": "hippocrates_athenian_field_army_delium_424_bce",
+    "name": "Athenian field army under Hippocrates at Delium (424 BCE)",
+    "kind": "field_army",
+    "start_year": -424,
+    "end_year": -424,
+    "region": "Delium and Oropia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Hippocrates's withdrawing Athenian expedition and its field battle, not the city of Athens across other campaigns. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_thucydides_delium"
+    ]
+  },
+  {
+    "id": "boeotian_federal_field_army_delium_424_bce",
+    "name": "Boeotian federal field army under Pagondas at Delium (424 BCE)",
+    "kind": "federal_field_army",
+    "start_year": -424,
+    "end_year": -424,
+    "region": "Delium and the Attic-Boeotian frontier",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the assembled Boeotian army: its Theban right wing and the Haliartian, Coronean, Copaean, Thespian, Tanagraean, Orchomenian, cavalry, and light-armed contingents. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_hammond_boeotia",
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_thucydides_delium"
+    ]
+  },
+  {
     "id": "clio_cn_wei_dyn_warring_states_bce404_8cec0006",
     "name": "Wei",
     "kind": "polity",
@@ -294,6 +357,106 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "pelopidas_sacred_band_cavalry_tegyra_375_bce",
+    "name": "Pelopidas's Sacred Band and cavalry at Tegyra (375 BCE)",
+    "kind": "field_force",
+    "start_year": -375,
+    "end_year": -375,
+    "region": "Tegyra and Orchomenus, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Pelopidas's three hundred Theban infantry and small cavalry force returning from the attempted move on Orchomenus. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_buckler_beck_tegyra",
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_plutarch_pelopidas"
+    ]
+  },
+  {
+    "id": "spartan_orchomenus_garrison_force_tegyra_375_bce",
+    "name": "Spartan Orchomenus garrison detachments at Tegyra (375 BCE)",
+    "kind": "garrison_field_force",
+    "start_year": -375,
+    "end_year": -375,
+    "region": "Tegyra and Orchomenus, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the two Lacedaemonian garrison divisions encountered while returning from Locris, not the Spartan polity generally. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_buckler_beck_tegyra",
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_plutarch_pelopidas"
+    ]
+  },
+  {
+    "id": "epaminondas_boeotian_field_army_leuctra_371_bce",
+    "name": "Boeotian field army under Epaminondas at Leuctra (371 BCE)",
+    "kind": "federal_field_army",
+    "start_year": -371,
+    "end_year": -371,
+    "region": "Leuctra, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Boeotian mobilization and its Theban-led assault formation at Leuctra, including but not flattened to the Sacred Band. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_buckler_beck_leuctra",
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_plutarch_pelopidas",
+      "wave8_thebes_xenophon_leuctra"
+    ]
+  },
+  {
+    "id": "cleombrotus_lacedaemonian_allied_army_leuctra_371_bce",
+    "name": "Cleombrotus's Lacedaemonian and allied army at Leuctra (371 BCE)",
+    "kind": "field_army",
+    "start_year": -371,
+    "end_year": -371,
+    "region": "Leuctra, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to King Cleombrotus's Lacedaemonian core and Peloponnesian allied contingents at Leuctra, not Sparta across other wars. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_buckler_beck_leuctra",
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_plutarch_pelopidas",
+      "wave8_thebes_xenophon_leuctra"
+    ]
+  },
+  {
+    "id": "epaminondas_theban_allied_army_mantinea_362_bce",
+    "name": "Epaminondas's Theban-led allied army at Mantinea (362 BCE)",
+    "kind": "field_coalition",
+    "start_year": -362,
+    "end_year": -362,
+    "region": "Mantinea and Tegea, Arcadia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Boeotian, Euboean, Thessalian, Argive, Messenian, Sicyonian, Tegean, Megalopolitan, and aligned Arcadian coalition. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_shipley_mantinea",
+      "wave8_thebes_van_wijk_athens_boiotia",
+      "wave8_thebes_xenophon_mantinea"
+    ]
+  },
+  {
+    "id": "spartan_athenian_mantinean_allied_army_362_bce",
+    "name": "Spartan-Athenian-Mantinean allied army at Mantinea (362 BCE)",
+    "kind": "field_coalition",
+    "start_year": -362,
+    "end_year": -362,
+    "region": "Mantinea, Arcadia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Lacedaemonian, Athenian, Mantinean, Elean, Achaean, and anti-Theban Arcadian coalition in this battle. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_lucas_boeotian_army",
+      "wave8_thebes_shipley_mantinea",
+      "wave8_thebes_van_wijk_athens_boiotia",
+      "wave8_thebes_xenophon_mantinea"
     ]
   },
   {
@@ -341,6 +504,38 @@
       "cliopatria_polities",
       "iranica_alexander",
       "iranica_gaugamela"
+    ]
+  },
+  {
+    "id": "alexander_macedonian_greek_assault_force_thebes_335_bce",
+    "name": "Alexander's Macedonian and allied Greek assault force at Thebes (335 BCE)",
+    "kind": "siege_and_assault_force",
+    "start_year": -335,
+    "end_year": -335,
+    "region": "Thebes, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Alexander's battle-seasoned Macedonian army and the allied Greek contingents used against the Theban revolt. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_bosworth_alexander",
+      "wave8_thebes_diodorus_book17",
+      "wave8_thebes_flower_panhellenism"
+    ]
+  },
+  {
+    "id": "theban_rebel_civic_defenders_335_bce",
+    "name": "Theban rebel civic defenders at Thebes (335 BCE)",
+    "kind": "civic_defense_force",
+    "start_year": -335,
+    "end_year": -335,
+    "region": "Thebes, Boeotia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the citizens and other defenders who resolved to fight Alexander during the 335 BCE revolt and city assault. No rating is inherited from or passed to an earlier or later Theban, Boeotian, Athenian, Spartan, or Macedonian regime, any same-name Thebes elsewhere, or any modern state.",
+    "source_ids": [
+      "wave8_thebes_bosworth_alexander",
+      "wave8_thebes_diodorus_book17",
+      "wave8_thebes_flower_panhellenism"
     ]
   },
   {

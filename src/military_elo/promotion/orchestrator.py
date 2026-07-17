@@ -986,6 +986,28 @@ from .wave8_rebel_barons import (
     wave8_rebel_barons_cohort_counts,
     wave8_rebel_barons_counts,
 )
+from .wave8_thebes import (
+    WAVE8_THEBES_CONTRACT_IDS,
+    WAVE8_THEBES_CROSS_LANE_DISPOSITIONS,
+    WAVE8_THEBES_ENTITIES,
+    WAVE8_THEBES_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_THEBES_HOLD_IDS,
+    WAVE8_THEBES_HOLDS,
+    WAVE8_THEBES_INTEGRATION_DISPOSITIONS,
+    WAVE8_THEBES_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_THEBES_OUTCOME_OVERRIDES,
+    WAVE8_THEBES_RESERVED_IDS,
+    WAVE8_THEBES_SOURCES,
+    WAVE8_THEBES_TERMINAL_EXCLUSION_IDS,
+    WAVE8_THEBES_TERMINAL_EXCLUSIONS,
+    install_wave8_thebes_entities,
+    install_wave8_thebes_sources,
+    promote_wave8_thebes_contracts,
+    validate_wave8_thebes_integration_dispositions,
+    validate_wave8_thebes_queue_contracts,
+    wave8_thebes_cohort_counts,
+    wave8_thebes_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1056,6 +1078,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_RAJPUTS_RESERVED_IDS
     | WAVE8_MAMLUK_EGYPT_RESERVED_IDS
     | WAVE8_REBEL_BARONS_RESERVED_IDS
+    | WAVE8_THEBES_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1460,7 +1483,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 167
+        len(HCED_POINT_QUARANTINE_IDS) != 173
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 90
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1678,6 +1701,7 @@ def build_expanded_release(
     wave8_rebel_barons_queue_validation = (
         validate_wave8_rebel_barons_queue_contracts(hced)
     )
+    wave8_thebes_queue_validation = validate_wave8_thebes_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2035,6 +2059,7 @@ def build_expanded_release(
     install_wave8_rajputs_entities(release_entities)
     install_wave8_mamluk_egypt_entities(release_entities)
     install_wave8_rebel_barons_entities(release_entities)
+    install_wave8_thebes_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3200,6 +3225,15 @@ def build_expanded_release(
         release_entities,
         wave8_rebel_barons_existing_events,
     )
+    wave8_thebes_existing_events = [
+        *wave8_rebel_barons_existing_events,
+        *wave8_rebel_barons_events,
+    ]
+    wave8_thebes_events = promote_wave8_thebes_contracts(
+        hced,
+        release_entities,
+        wave8_thebes_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3252,6 +3286,7 @@ def build_expanded_release(
         *wave8_rajputs_events,
         *wave8_mamluk_egypt_events,
         *wave8_rebel_barons_events,
+        *wave8_thebes_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3347,6 +3382,8 @@ def build_expanded_release(
             *WAVE8_MAMLUK_EGYPT_TERMINAL_EXCLUSION_IDS,
             *WAVE8_REBEL_BARONS_HOLD_IDS,
             *WAVE8_REBEL_BARONS_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_THEBES_HOLD_IDS,
+            *WAVE8_THEBES_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3425,6 +3462,7 @@ def build_expanded_release(
         *wave8_rajputs_events,
         *wave8_mamluk_egypt_events,
         *wave8_rebel_barons_events,
+        *wave8_thebes_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3662,6 +3700,13 @@ def build_expanded_release(
             wave8_rebel_barons_existing_events,
         )
     )
+    wave8_thebes_integration_validation = (
+        validate_wave8_thebes_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_thebes_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -3859,6 +3904,7 @@ def build_expanded_release(
     install_wave8_rajputs_sources(sources_by_id)
     install_wave8_mamluk_egypt_sources(sources_by_id)
     install_wave8_rebel_barons_sources(sources_by_id)
+    install_wave8_thebes_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3916,6 +3962,7 @@ def build_expanded_release(
         *wave8_rajputs_events,
         *wave8_mamluk_egypt_events,
         *wave8_rebel_barons_events,
+        *wave8_thebes_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3973,6 +4020,7 @@ def build_expanded_release(
         *wave8_rajputs_events,
         *wave8_mamluk_egypt_events,
         *wave8_rebel_barons_events,
+        *wave8_thebes_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4029,6 +4077,7 @@ def build_expanded_release(
             | WAVE8_RAJPUTS_CONTRACT_IDS
             | WAVE8_MAMLUK_EGYPT_CONTRACT_IDS
             | WAVE8_REBEL_BARONS_CONTRACT_IDS
+            | WAVE8_THEBES_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4127,6 +4176,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_RAJPUTS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_MAMLUK_EGYPT_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_REBEL_BARONS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_THEBES_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4352,6 +4402,7 @@ def build_expanded_release(
         - len(wave8_rajputs_events)
         - len(wave8_mamluk_egypt_events)
         - len(wave8_rebel_barons_events)
+        - len(wave8_thebes_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4470,6 +4521,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_rebel_barons_hced_events": len(
             wave8_rebel_barons_events
         ),
+        "candidate_keyed_wave8_thebes_hced_events": len(wave8_thebes_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4730,6 +4782,7 @@ def build_expanded_release(
             "accepted_wave8_rebel_barons_hced_events": len(
                 wave8_rebel_barons_events
             ),
+            "accepted_wave8_thebes_hced_events": len(wave8_thebes_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -6442,6 +6495,55 @@ def build_expanded_release(
             "wave8_rebel_barons_sources_added": len(
                 WAVE8_REBEL_BARONS_SOURCES
             ),
+            "wave8_thebes_counts": wave8_thebes_counts(),
+            "wave8_thebes_cohort_counts": wave8_thebes_cohort_counts(),
+            "wave8_thebes_queue_validation": wave8_thebes_queue_validation,
+            "wave8_thebes_integration_validation": (
+                wave8_thebes_integration_validation
+            ),
+            "wave8_thebes_candidate_ids": sorted(WAVE8_THEBES_CONTRACT_IDS),
+            "wave8_thebes_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_THEBES_HOLDS.items())
+            ],
+            "wave8_thebes_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_THEBES_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_thebes_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_THEBES_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_thebes_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_THEBES_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_thebes_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_THEBES_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_thebes_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_THEBES_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_thebes_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_THEBES_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_thebes_entities_added": len(WAVE8_THEBES_ENTITIES),
+            "wave8_thebes_sources_added": len(WAVE8_THEBES_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -6687,6 +6789,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_rebel_barons_hced_events": len(
             wave8_rebel_barons_events
         ),
+        "candidate_keyed_wave8_thebes_hced_events": len(wave8_thebes_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
