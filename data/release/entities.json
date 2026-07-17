@@ -8148,6 +8148,21 @@
     ]
   },
   {
+    "id": "first_empire_haiti_1804_1806",
+    "name": "First Empire of Haiti (1804-1806)",
+    "kind": "empire",
+    "start_year": 1804,
+    "end_year": 1806,
+    "region": "Haiti",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the independent state proclaimed in 1804 under Jacques I and ended by Dessalines's death and the 1806 political split. No generic Haiti, Dominican Republic, France, or campaign label resolves to this record. Predecessor links are lineage metadata and transfer no Elo.",
+    "source_ids": [
+      "wave8_haiti_clio_dessalines_2022",
+      "wave8_haiti_embassy_monarchs"
+    ]
+  },
+  {
     "id": "first_french_empire",
     "name": "First French Empire",
     "kind": "empire",
@@ -8198,6 +8213,21 @@
       "cliopatria_polities",
       "britannica_muhammad_ali_egypt",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "ferrand_santo_domingo_defense_1805",
+    "name": "Ferrand's Santo Domingo defensive force (March 1805)",
+    "kind": "event_bounded_colonial_defense",
+    "start_year": 1805,
+    "end_year": 1805,
+    "region": "Walled city of Santo Domingo",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to General Jean-Louis Ferrand's French-commanded garrison and local defenders during the March 1805 siege; it does not stand for France or Santo Domingo in another action. No generic Haiti, Dominican Republic, France, or campaign label resolves to this record. Predecessor links are lineage metadata and transfer no Elo.",
+    "source_ids": [
+      "wave8_haiti_clio_dessalines_2022",
+      "wave8_haiti_loc_santo_domingo_map"
     ]
   },
   {
@@ -9017,6 +9047,22 @@
     ]
   },
   {
+    "id": "republic_haiti_reunified_1820_1849",
+    "name": "Reunified Republic of Haiti (1820-26 August 1849)",
+    "kind": "republic",
+    "start_year": 1820,
+    "end_year": 1849,
+    "region": "Haiti and, until 1844, all Hispaniola",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded from reunification after the northern kingdom's collapse in 1820 through Soulouque's imperial proclamation on 26 August 1849. Its 1849 year overlap with the Second Empire is mechanical only; the 17 April El Numero contract is selected by exact event date. No generic Haiti, Dominican Republic, France, or campaign label resolves to this record. Predecessor links are lineage metadata and transfer no Elo.",
+    "source_ids": [
+      "wave8_haiti_embassy_faustin",
+      "wave8_haiti_larousse_soulouque",
+      "wave8_haiti_openedition_state_genesis"
+    ]
+  },
+  {
     "id": "greek_revolutionaries_1821",
     "name": "Greek Revolutionary Forces (War of Independence)",
     "kind": "revolutionary_government",
@@ -9829,6 +9875,21 @@
     ]
   },
   {
+    "id": "first_dominican_republic_1844_1861",
+    "name": "First Dominican Republic (1844-1861)",
+    "kind": "republic",
+    "start_year": 1844,
+    "end_year": 1861,
+    "region": "Eastern Hispaniola",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded from the 27 February 1844 independence proclamation through the 18 March 1861 annexation to Spain. It is distinct from the 1865 restored republic and from the modern continuous-country envelope. No generic Haiti, Dominican Republic, France, or campaign label resolves to this record. Predecessor links are lineage metadata and transfer no Elo.",
+    "source_ids": [
+      "wave8_haiti_dominican_judiciary_first_republic",
+      "wave8_haiti_dominican_presidency_independence"
+    ]
+  },
+  {
     "id": "walkers_creek_hays_ranger_detachment_1844",
     "name": "Hays's Texas Ranger detachment at Walker's Creek (1844)",
     "kind": "event_bounded_force",
@@ -10081,6 +10142,24 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "roman_republic_italian_army"
+    ]
+  },
+  {
+    "id": "second_empire_haiti_1849_1859",
+    "name": "Second Empire of Haiti (26 August 1849-1859)",
+    "kind": "empire",
+    "start_year": 1849,
+    "end_year": 1859,
+    "region": "Haiti",
+    "aliases": [],
+    "predecessors": [
+      "republic_haiti_reunified_1820_1849"
+    ],
+    "continuity_note": "Bounded from Faustin I's proclamation on 26 August 1849 through the fall of the empire in 1859. Its 1849 year overlap with the preceding Republic is mechanical only; no generic year-only resolution is open. No generic Haiti, Dominican Republic, France, or campaign label resolves to this record. Predecessor links are lineage metadata and transfer no Elo.",
+    "source_ids": [
+      "wave8_haiti_clio_independence_2020",
+      "wave8_haiti_embassy_faustin",
+      "wave8_haiti_larousse_soulouque"
     ]
   },
   {

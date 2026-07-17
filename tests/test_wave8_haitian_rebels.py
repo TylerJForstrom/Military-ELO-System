@@ -17,7 +17,7 @@ from military_elo.promotion.wave7_global import canonical_hced_row_sha256
 ROOT = Path(__file__).resolve().parents[1]
 EVENT_ID_PREFIX = "hced_wave8_haitian_rebels_"
 FINAL_AUDIT_SIGNATURE = (
-    "3a9c3a7d8dd4c85de829abaff58bf11673346f7789a325357bff1b2596d5436b"
+    "49067b26bfdc0409bdf40472144e67df57031c2a7bc979ea4b37e84056bb392f"
 )
 FUNNEL_CANDIDATE_ID_SHA256 = (
     "f29f50e86e7f9a7bb36ee51b166d5efc4826578d50b546f92fb66182e700a078"
@@ -373,10 +373,18 @@ class Wave8HaitianRebelsTests(unittest.TestCase):
             ]
             self.assertEqual(canonical_hced_row_sha256(row), expected_hash)
             self.assertEqual(disposition["raw_row_sha256"], expected_hash)
-            self.assertIs(disposition["outcome_not_adjudicated"], True)
             self.assertNotIn(candidate_id, lane.WAVE8_HAITIAN_REBELS_RESERVED_IDS)
+            if candidate_id == "hced-Santo Domingo1802-1803-1":
+                self.assertIs(disposition["outcome_not_adjudicated"], True)
+                self.assertIsNone(disposition["owner_module"])
+            else:
+                self.assertIs(disposition["outcome_not_adjudicated"], False)
+                self.assertEqual(
+                    disposition["owner_module"],
+                    "military_elo.promotion.wave8_haiti_regimes",
+                )
         self.assertIn(
-            "post_independence_haitian_imperial_campaign",
+            "delegated_to_wave8_haiti_regimes",
             lane.WAVE8_HAITIAN_REBELS_RELATED_HCED_DISPOSITIONS[
                 "hced-Santo Domingo1805-1"
             ]["disposition"],

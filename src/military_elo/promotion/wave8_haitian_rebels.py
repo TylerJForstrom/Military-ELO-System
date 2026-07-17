@@ -688,37 +688,49 @@ WAVE8_HAITIAN_REBELS_RELATED_HCED_DISPOSITIONS: dict[
         "raw_row_sha256": (
             "2c59fbed65521ed79b5d5b6004c5275db64da25638db65d2f6d97fbae1b6c4cb"
         ),
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army.",
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": False,
+        "boundary_note": (
+            "Dominican independence battle now owned by the exact Haiti "
+            "constitutional-regime lane; not the 1803 Indigenous Army."
+        ),
     },
     "hced-Cabeza de las Marias and las Hicoteas1844-1": {
         "raw_row_sha256": (
             "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4"
         ),
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army.",
+        "disposition": "delegated_to_wave8_haiti_regimes_unknown_hold",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": False,
+        "boundary_note": (
+            "Composite Dominican independence row now owned as an explicit "
+            "unknown hold by the exact Haiti regime lane."
+        ),
     },
     "hced-El Numero1849-1": {
         "raw_row_sha256": (
             "fac408e00c7ebe0beae2880f30a8640bfa254fd48dbcb5be557256b9b92d27a2"
         ),
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army.",
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": False,
+        "boundary_note": (
+            "Soulouque's pre-imperial Republic is now resolved by exact date in "
+            "the Haiti regime lane; not the 1803 Indigenous Army."
+        ),
     },
     "hced-Sabana Larga1856-1": {
         "raw_row_sha256": (
             "b1e041908f7fcf8f14bb28f203671a43c9929f485b7b2a3e737c1d2757dfc3cf"
         ),
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army.",
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": False,
+        "boundary_note": (
+            "Faustin I's Second Empire is now resolved by the exact Haiti "
+            "regime lane; not the 1803 Indigenous Army."
+        ),
     },
     "hced-Santo Domingo1802-1803-1": {
         "raw_row_sha256": (
@@ -736,12 +748,13 @@ WAVE8_HAITIAN_REBELS_RELATED_HCED_DISPOSITIONS: dict[
         "raw_row_sha256": (
             "100b9326b4d08e44f7e10a2bc51ab70346637df2d57ffa692e551cf4033f36fe"
         ),
-        "disposition": "distinct_post_independence_haitian_imperial_campaign",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": False,
         "boundary_note": (
-            "Dessalines's independent 1805 empire and Napoleon's First Empire "
-            "are outside both 1802 and 1803 actor windows."
+            "Dessalines's independent 1805 empire and Ferrand's defense are now "
+            "owned by the exact Haiti regime lane; both remain outside the 1802 "
+            "and 1803 actor windows."
         ),
     },
 }
@@ -808,7 +821,7 @@ def wave8_haitian_rebels_audit_signature() -> str:
 
 
 WAVE8_HAITIAN_REBELS_FINAL_AUDIT_SIGNATURE = (
-    "3a9c3a7d8dd4c85de829abaff58bf11673346f7789a325357bff1b2596d5436b"
+    "49067b26bfdc0409bdf40472144e67df57031c2a7bc979ea4b37e84056bb392f"
 )
 
 

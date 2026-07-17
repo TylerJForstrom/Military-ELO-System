@@ -88,7 +88,9 @@ class Wave8HaitiRegimesTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
         cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
         cls.exact_rows = [
             row
             for row in cls.hced_rows
@@ -268,6 +270,72 @@ class Wave8HaitiRegimesTests(unittest.TestCase):
             self.assertNotIn("geometry", event)
             self.assertEqual(event["modern_location_country"], "Dominican Republic")
             self.assertIn("location_provenance", event)
+
+    def test_current_release_artifacts_include_the_lane_exactly_once(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_HAITI_REGIMES_CONTRACT_IDS
+        ]
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in events},
+            lane.WAVE8_HAITI_REGIMES_CONTRACT_IDS,
+        )
+        self.assertEqual(len(events), len(lane.WAVE8_HAITI_REGIMES_CONTRACT_IDS))
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in events)
+        )
+        self.assertFalse(
+            lane.WAVE8_HAITI_REGIMES_HOLD_IDS
+            & {str(event.get("hced_candidate_id")) for event in self.release_events}
+        )
+        for event in events:
+            self.assertNotIn("geometry", event)
+            self.assertEqual(event["modern_location_country"], "Dominican Republic")
+            Event.from_dict(event)
+
+        entity_ids = {str(item["id"]) for item in lane.WAVE8_HAITI_REGIMES_ENTITIES}
+        release_entities = {str(item["id"]): item for item in self.release_entities}
+        self.assertLessEqual(entity_ids, set(release_entities))
+        self.assertTrue(all(not release_entities[entity_id]["aliases"] for entity_id in entity_ids))
+
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertLessEqual(entity_ids, set(registry_entities))
+        self.assertTrue(
+            all(registry_entities[entity_id]["status"] == "rated" for entity_id in entity_ids)
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_haiti_regimes_hced_events"], 4)
+        self.assertEqual(
+            promotion["wave8_haiti_regimes_candidate_ids"],
+            sorted(lane.WAVE8_HAITI_REGIMES_CONTRACT_IDS),
+        )
+        self.assertEqual(
+            [item["candidate_id"] for item in promotion["wave8_haiti_regimes_holds"]],
+            sorted(lane.WAVE8_HAITI_REGIMES_HOLD_IDS),
+        )
+        self.assertEqual(
+            promotion["wave8_haiti_regimes_final_audit_signature"],
+            lane.WAVE8_HAITI_REGIMES_FINAL_AUDIT_SIGNATURE,
+        )
+
+        coverage = self.registry["coverage"]
+        self.assertEqual(coverage["candidate_keyed_wave8_haiti_regimes_hced_events"], 4)
+        self.assertEqual(coverage["rated_events"], len(self.release_events))
+        self.assertEqual(coverage["registry_polities"], len(self.registry["entities"]))
+        self.assertEqual(
+            coverage["rated_entities"],
+            len(
+                {
+                    participant["entity_id"]
+                    for event in self.release_events
+                    for participant in event["participants"]
+                }
+            ),
+        )
 
     def test_queue_tampering_and_duplicate_rows_fail_closed(self) -> None:
         tampered = copy.deepcopy(self.hced_rows)

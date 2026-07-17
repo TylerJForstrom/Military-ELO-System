@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 962,
-    "events": 5299,
-    "sources": 1304,
-    "registry_polities": 2318
+    "entities": 967,
+    "events": 5303,
+    "sources": 1316,
+    "registry_polities": 2323
   },
   "year_range": {
     "start": -1274,
@@ -154,6 +154,7 @@
     "accepted_wave8_saudi_rashidi_hced_events": 11,
     "accepted_wave8_yaqui_hced_events": 3,
     "accepted_wave8_egypt_forces_hced_events": 16,
+    "accepted_wave8_haiti_regimes_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -9890,34 +9891,34 @@
       {
         "candidate_id": "hced-Azua1844-1",
         "raw_row_sha256": "2c59fbed65521ed79b5d5b6004c5275db64da25638db65d2f6d97fbae1b6c4cb",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Dominican independence battle now owned by the exact Haiti constitutional-regime lane; not the 1803 Indigenous Army."
       },
       {
         "candidate_id": "hced-Cabeza de las Marias and las Hicoteas1844-1",
         "raw_row_sha256": "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes_unknown_hold",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Composite Dominican independence row now owned as an explicit unknown hold by the exact Haiti regime lane."
       },
       {
         "candidate_id": "hced-El Numero1849-1",
         "raw_row_sha256": "fac408e00c7ebe0beae2880f30a8640bfa254fd48dbcb5be557256b9b92d27a2",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Soulouque's pre-imperial Republic is now resolved by exact date in the Haiti regime lane; not the 1803 Indigenous Army."
       },
       {
         "candidate_id": "hced-Sabana Larga1856-1",
         "raw_row_sha256": "b1e041908f7fcf8f14bb28f203671a43c9929f485b7b2a3e737c1d2757dfc3cf",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Faustin I's Second Empire is now resolved by the exact Haiti regime lane; not the 1803 Indigenous Army."
       },
       {
         "candidate_id": "hced-Santo Domingo1802-1803-1",
@@ -9930,10 +9931,10 @@
       {
         "candidate_id": "hced-Santo Domingo1805-1",
         "raw_row_sha256": "100b9326b4d08e44f7e10a2bc51ab70346637df2d57ffa692e551cf4033f36fe",
-        "disposition": "distinct_post_independence_haitian_imperial_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dessalines's independent 1805 empire and Napoleon's First Empire are outside both 1802 and 1803 actor windows."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Dessalines's independent 1805 empire and Ferrand's defense are now owned by the exact Haiti regime lane; both remain outside the 1802 and 1803 actor windows."
       }
     ],
     "wave8_haitian_rebels_hced_duplicate_dispositions": [],
@@ -9994,34 +9995,34 @@
       {
         "disposition_id": "related_hced:hced-Azua1844-1",
         "raw_row_sha256": "2c59fbed65521ed79b5d5b6004c5275db64da25638db65d2f6d97fbae1b6c4cb",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Dominican independence battle now owned by the exact Haiti constitutional-regime lane; not the 1803 Indigenous Army."
       },
       {
         "disposition_id": "related_hced:hced-Cabeza de las Marias and las Hicoteas1844-1",
         "raw_row_sha256": "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes_unknown_hold",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Composite Dominican independence row now owned as an explicit unknown hold by the exact Haiti regime lane."
       },
       {
         "disposition_id": "related_hced:hced-El Numero1849-1",
         "raw_row_sha256": "fac408e00c7ebe0beae2880f30a8640bfa254fd48dbcb5be557256b9b92d27a2",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Soulouque's pre-imperial Republic is now resolved by exact date in the Haiti regime lane; not the 1803 Indigenous Army."
       },
       {
         "disposition_id": "related_hced:hced-Sabana Larga1856-1",
         "raw_row_sha256": "b1e041908f7fcf8f14bb28f203671a43c9929f485b7b2a3e737c1d2757dfc3cf",
-        "disposition": "distinct_post_independence_haitian_state_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Faustin I's Second Empire is now resolved by the exact Haiti regime lane; not the 1803 Indigenous Army."
       },
       {
         "disposition_id": "related_hced:hced-Santo Domingo1802-1803-1",
@@ -10034,10 +10035,10 @@
       {
         "disposition_id": "related_hced:hced-Santo Domingo1805-1",
         "raw_row_sha256": "100b9326b4d08e44f7e10a2bc51ab70346637df2d57ffa692e551cf4033f36fe",
-        "disposition": "distinct_post_independence_haitian_imperial_campaign",
-        "owner_module": null,
-        "outcome_not_adjudicated": true,
-        "boundary_note": "Dessalines's independent 1805 empire and Napoleon's First Empire are outside both 1802 and 1803 actor windows."
+        "disposition": "delegated_to_wave8_haiti_regimes",
+        "owner_module": "military_elo.promotion.wave8_haiti_regimes",
+        "outcome_not_adjudicated": false,
+        "boundary_note": "Dessalines's independent 1805 empire and Ferrand's defense are now owned by the exact Haiti regime lane; both remain outside the 1802 and 1803 actor windows."
       }
     ],
     "wave8_haitian_rebels_outcome_overrides": [],
@@ -18033,7 +18034,129 @@
     "wave8_egypt_forces_outcome_overrides": [],
     "wave8_egypt_forces_entities_added": 32,
     "wave8_egypt_forces_sources_added": 38,
-    "hced_label_pass_input_rows": 5627,
+    "wave8_haiti_regimes_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 1,
+      "new_entities": 5,
+      "new_sources": 12,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_haiti_regimes_cohort_counts": {
+      "first_empire_haiti": 1,
+      "republic_haiti_dominican_first_republic": 3,
+      "second_empire_haiti_dominican_first_republic": 1
+    },
+    "wave8_haiti_regimes_audit_signature": "cb078b4e46fd7bc655585248475d0867ddad24abc0e98a5b6f4c1a2cb28e6394",
+    "wave8_haiti_regimes_final_audit_signature": "cb078b4e46fd7bc655585248475d0867ddad24abc0e98a5b6f4c1a2cb28e6394",
+    "wave8_haiti_regimes_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 1,
+      "reviewed_hced_rows": 5,
+      "exact_label_rows": 5
+    },
+    "wave8_haiti_regimes_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_haiti_regimes_candidate_ids": [
+      "hced-Azua1844-1",
+      "hced-El Numero1849-1",
+      "hced-Sabana Larga1856-1",
+      "hced-Santo Domingo1805-1"
+    ],
+    "wave8_haiti_regimes_holds": [
+      {
+        "candidate_id": "hced-Cabeza de las Marias and las Hicoteas1844-1",
+        "raw_row_sha256": "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4",
+        "canonical_event": {
+          "canonical_key": "skirmishes_at_cabeza_de_las_marias_and_las_hicoteas:1844:1844",
+          "date_precision": "day_range",
+          "date_text": "13-18 March 1844",
+          "granularity": "multiple_skirmishes_compressed_into_one_row",
+          "name": "Skirmishes at Cabeza de Las Marias and Las Hicoteas",
+          "year_low": 1844,
+          "year_high": 1844
+        },
+        "cohort": "republic_haiti_dominican_first_republic",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_haiti_clio_azua_1962",
+          "wave8_haiti_clio_independence_2020"
+        ],
+        "hold_reason": "Not promoted: the source row joins Cabeza de Las Marias and Las Hicoteas across several days. Accounts distinguish a Dominican withdrawal at one position from delaying or repulsing actions at the other, while later summaries alternate between a Haitian tactical win and a Dominican strategic success. One aggregate winner would invent granularity and certainty; this unknown is not a draw."
+      }
+    ],
+    "wave8_haiti_regimes_exact_label_funnel_audit": {
+      "event_candidate_id_sha256": "d335346c74accdde228bcbb518484d8edb67019c67eb69a90c7f2720d1253baf",
+      "events_touched": 5,
+      "label": "haiti",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 5
+    },
+    "wave8_haiti_regimes_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Azua1844-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies a point but the reviewed sources establish the named engagement or siege, not the exact source coordinate; retain the modern-country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_haiti_clio_azua_1962",
+          "wave8_haiti_clio_independence_2020"
+        ]
+      },
+      {
+        "candidate_id": "hced-El Numero1849-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies a point but the reviewed sources establish the named engagement or siege, not the exact source coordinate; retain the modern-country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_haiti_clio_el_numero_1950",
+          "wave8_haiti_clio_independence_2020"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sabana Larga1856-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies a point but the reviewed sources establish the named engagement or siege, not the exact source coordinate; retain the modern-country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_haiti_clio_independence_2020",
+          "wave8_haiti_clio_sabana_1956"
+        ]
+      },
+      {
+        "candidate_id": "hced-Santo Domingo1805-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies a point but the reviewed sources establish the named engagement or siege, not the exact source coordinate; retain the modern-country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_haiti_clio_dessalines_2022",
+          "wave8_haiti_loc_santo_domingo_map"
+        ]
+      }
+    ],
+    "wave8_haiti_regimes_point_quarantine_additions": [
+      "hced-Azua1844-1",
+      "hced-El Numero1849-1",
+      "hced-Sabana Larga1856-1",
+      "hced-Santo Domingo1805-1"
+    ],
+    "wave8_haiti_regimes_country_quarantine_additions": [],
+    "wave8_haiti_regimes_entities_added": 5,
+    "wave8_haiti_regimes_sources_added": 12,
+    "hced_label_pass_input_rows": 5622,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18046,7 +18169,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 983,
+      "reserved_candidate_contract": 988,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18058,7 +18181,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2123,
+      "no_unique_time_valid_label_match": 2118,
       "no_unique_time_valid_polity": 84,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

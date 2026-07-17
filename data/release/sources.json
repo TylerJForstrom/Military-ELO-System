@@ -10146,6 +10146,180 @@
     ]
   },
   {
+    "id": "wave8_haiti_clio_azua_1962",
+    "title": "La primera batalla de marzo",
+    "url": "https://catalogo.academiadominicanahistoria.org.do/opac-tmpl/files/ppcodice/CLIO-1962-118-119-035-067.pdf",
+    "publisher": "Academia Dominicana de la Historia, Clio 118-119",
+    "license": "Citation and link only",
+    "source_type": "historical_article_with_dominican_french_and_haitian_accounts",
+    "accessed": "2026-07-16",
+    "source_family_id": "beras_clio_1962_azua",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_clio_dessalines_2022",
+    "title": "La expedicion haitiana de Dessalines a Santo Domingo en 1805",
+    "url": "https://catalogo.academiadominicanahistoria.org.do/opac-tmpl/files/clio/Clio-2022-91-203.pdf",
+    "publisher": "Academia Dominicana de la Historia, Clio 203",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_campaign_history_with_primary_accounts",
+    "accessed": "2026-07-16",
+    "source_family_id": "reyes_clio_2022_dessalines",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_clio_el_numero_1950",
+    "title": "Documentos para la historia: report of the action at El Numero",
+    "url": "https://catalogo.academiadominicanahistoria.org.do/opac-tmpl/files/ppcodice/Clio-1950-018-088-120-140.pdf",
+    "publisher": "Academia Dominicana de la Historia, Clio 88",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_military_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "clio_1950_el_numero_report",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_clio_independence_2020",
+    "title": "A machete o a tiro limpio? De armas blancas y de fuego en la guerra de Independencia",
+    "url": "https://catalogo.academiadominicanahistoria.org.do/opac-tmpl/files/ppcodice/Clio-2020-200-075-140.pdf",
+    "publisher": "Academia Dominicana de la Historia, Clio 200",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article_with_primary_reports",
+    "accessed": "2026-07-16",
+    "source_family_id": "espinal_clio_2020_independence",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_clio_sabana_1956",
+    "title": "Batalla de Sabana Larga",
+    "url": "https://catalogo.academiadominicanahistoria.org.do/opac-tmpl/files/ppcodice/Clio-1956-024-107-128-136.pdf",
+    "publisher": "Academia Dominicana de la Historia, Clio 107",
+    "license": "Citation and link only",
+    "source_type": "historical_battle_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "ricardo_clio_1956_sabana_larga",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_dominican_judiciary_first_republic",
+    "title": "The Judicial Branch in the First Republic (1844-1861)",
+    "url": "https://poderjudicial.gob.do/sobre-nosotros/historia/",
+    "publisher": "Judicial Branch of the Dominican Republic",
+    "license": "Citation and link only",
+    "source_type": "official_institutional_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "dominican_judiciary_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_dominican_presidency_independence",
+    "title": "National symbols: the first Dominican flag and independence",
+    "url": "https://www.presidencia.gob.do/acerca-de-rd/simbolos-patrios",
+    "publisher": "Presidency of the Dominican Republic",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "dominican_presidency_symbols",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_embassy_faustin",
+    "title": "Haitian monarchs: Faustin I",
+    "url": "https://embassyofhaiti.eu/haitian-monarchs/4/",
+    "publisher": "Embassy of the Republic of Haiti",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "embassy_haiti_monarchs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_embassy_monarchs",
+    "title": "Haitian monarchs: Jacques I",
+    "url": "https://embassyofhaiti.eu/haitian-monarchs/",
+    "publisher": "Embassy of the Republic of Haiti",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "embassy_haiti_monarchs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_larousse_soulouque",
+    "title": "Faustin Soulouque",
+    "url": "https://www.larousse.fr/encyclopedie/personnage/Faustin_Soulouque/144938",
+    "publisher": "Larousse",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "larousse_soulouque",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_loc_santo_domingo_map",
+    "title": "Plan du siege de Santo Domingo par Dessalines, forme et leve en 1805",
+    "url": "https://www.loc.gov/resource/g4954s.ct000102/",
+    "publisher": "Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "contemporary_campaign_map",
+    "accessed": "2026-07-16",
+    "source_family_id": "loc_santo_domingo_1805_map",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haiti_openedition_state_genesis",
+    "title": "Genese de l'Etat haitien (1804-1859): constitutions, continuities and ruptures",
+    "url": "https://books.openedition.org/editionsmsh/65486",
+    "publisher": "Editions de la Maison des sciences de l'homme / OpenEdition",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "hurbon_genese_etat_haitien",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_haitian_rebels_ardouin_tome5",
     "title": "Etudes sur l'histoire d'Haiti, Tome V, chapter 3",
     "url": "https://fr.wikisource.org/wiki/%C3%89tudes_sur_l%E2%80%99histoire_d%E2%80%99Ha%C3%AFti/Tome_5/5.3",

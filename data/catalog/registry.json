@@ -6422,6 +6422,16 @@
       "region": "Fellin (Viljandi), Livonia"
     },
     {
+      "id": "ferrand_santo_domingo_defense_1805",
+      "name": "Ferrand's Santo Domingo defensive force (March 1805)",
+      "kind": "event_bounded_colonial_defense",
+      "start_year": 1805,
+      "end_year": 1805,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Walled city of Santo Domingo"
+    },
+    {
       "id": "ferrers_de_eyville_disinherited_force_chesterfield_1266",
       "name": "Ferrers-de Eyville Disinherited force at Chesterfield (1266)",
       "kind": "event_bounded_rebel_force",
@@ -6472,6 +6482,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southeastern Europe"
+    },
+    {
+      "id": "first_dominican_republic_1844_1861",
+      "name": "First Dominican Republic (1844-1861)",
+      "kind": "republic",
+      "start_year": 1844,
+      "end_year": 1861,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eastern Hispaniola"
+    },
+    {
+      "id": "first_empire_haiti_1804_1806",
+      "name": "First Empire of Haiti (1804-1806)",
+      "kind": "empire",
+      "start_year": 1804,
+      "end_year": 1806,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Haiti"
     },
     {
       "id": "first_french_empire",
@@ -18934,6 +18964,16 @@
       "region": "Southern Europe"
     },
     {
+      "id": "republic_haiti_reunified_1820_1849",
+      "name": "Reunified Republic of Haiti (1820-26 August 1849)",
+      "kind": "republic",
+      "start_year": 1820,
+      "end_year": 1849,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Haiti and, until 1844, all Hispaniola"
+    },
+    {
       "id": "clio_q175881_1799_b720cd63",
       "name": "Revolutionary Roman Republic",
       "kind": "republic",
@@ -19879,6 +19919,16 @@
       "superseded_by": "second_bulgarian_empire",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "second_empire_haiti_1849_1859",
+      "name": "Second Empire of Haiti (26 August 1849-1859)",
+      "kind": "empire",
+      "start_year": 1849,
+      "end_year": 1859,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Haiti"
     },
     {
       "id": "second_french_empire",
@@ -24554,11 +24604,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2318,
-    "rated_entities": 955,
-    "rated_events": 5299,
+    "registry_polities": 2323,
+    "rated_entities": 960,
+    "rated_events": 5303,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18095,
+    "unresolved_event_candidates": 18091,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24642,6 +24692,7 @@
     "candidate_keyed_wave8_saudi_rashidi_hced_events": 11,
     "candidate_keyed_wave8_yaqui_hced_events": 3,
     "candidate_keyed_wave8_egypt_forces_hced_events": 16,
+    "candidate_keyed_wave8_haiti_regimes_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24652,21 +24703,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5035,
-      "candidate_keyed_reviewed_contracts": 725,
+      "hced_candidate_bindings": 5039,
+      "candidate_keyed_reviewed_contracts": 729,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4940,
-      "location_provenance_objects": 4989,
-      "point_fields_withheld_by_quarantine": 301,
+      "modern_location_country_assertions": 4944,
+      "location_provenance_objects": 4993,
+      "point_fields_withheld_by_quarantine": 305,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 349,
-      "point_quarantine_candidate_manifest_sha256": "b6b02dc651d33d23d766a002dc4a71a7cbdfc81b0bafe7d53d193c4173bce5fb",
+      "unique_events_with_any_quarantined_field": 353,
+      "point_quarantine_candidate_manifest_sha256": "374255350b5c548a40ff77d7d09ae03ef31c3a594e31cec2f64fda54bd46faa9",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "ba3d77024606d53ce0f2c9ce894823586faafaadcf6e98ed8dfde16a5ee02e5a",
+      "quarantine_policy_sha256": "30c2324105e3e511546b790931629d1ec0214d6db4f41eb2ed1b52343fc3de62",
       "assertion_status": {
-        "unreviewed_source_assertion": 4989
+        "unreviewed_source_assertion": 4993
       },
       "verified_location_assertions": {
         "availability": "not_available",
