@@ -4881,6 +4881,46 @@
       "region": "Unclassified"
     },
     {
+      "id": "eplf_afabet_field_force_1988",
+      "name": "EPLF Afabet Field Force (17-19 March 1988)",
+      "kind": "field_force",
+      "start_year": 1988,
+      "end_year": 1988,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
+      "id": "eplf_barentu_assault_force_1985",
+      "name": "EPLF Barentu Assault Force (July 1985)",
+      "kind": "assault_force",
+      "start_year": 1985,
+      "end_year": 1985,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
+      "id": "eplf_keren_defense_force_1977_1978",
+      "name": "EPLF Keren Defensive Force (1977-1978)",
+      "kind": "campaign_force",
+      "start_year": 1977,
+      "end_year": 1978,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
+      "id": "eplf_nakfa_front_1977_1988",
+      "name": "EPLF Nakfa Front (1977-1988)",
+      "kind": "defensive_front",
+      "start_year": 1977,
+      "end_year": 1988,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
       "id": "clio_gb_england_plantagenet_1333_6b661c95",
       "name": "Earldom of Desmond",
       "kind": "polity",
@@ -22654,11 +22694,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2128,
-    "rated_entities": 765,
-    "rated_events": 5200,
+    "registry_polities": 2132,
+    "rated_entities": 769,
+    "rated_events": 5204,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18194,
+    "unresolved_event_candidates": 18190,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22722,6 +22762,7 @@
     "candidate_keyed_wave8_armenia_hced_events": 3,
     "candidate_keyed_wave8_comanches_hced_events": 2,
     "candidate_keyed_wave8_sikh_punjab_hced_events": 4,
+    "candidate_keyed_wave8_eritrea_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22732,21 +22773,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4936,
-      "candidate_keyed_reviewed_contracts": 626,
+      "hced_candidate_bindings": 4940,
+      "candidate_keyed_reviewed_contracts": 630,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4843,
-      "location_provenance_objects": 4892,
-      "point_fields_withheld_by_quarantine": 202,
+      "modern_location_country_assertions": 4847,
+      "location_provenance_objects": 4896,
+      "point_fields_withheld_by_quarantine": 206,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 250,
-      "point_quarantine_candidate_manifest_sha256": "359143aaaf0feea8e09b383efb9d4d30a098f98738aa8ca61c3982a538607741",
+      "unique_events_with_any_quarantined_field": 254,
+      "point_quarantine_candidate_manifest_sha256": "96b0b5ae006a2b1655a5701a75be565047850471365fce35cbf62d4000eafb9a",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "98522a5ec0c714f98787e176c4b9c6d78efe720d9f2e1fb73e462d4927bebd47",
+      "quarantine_policy_sha256": "15a588ad3dd1fc6bbb4d6f3436b7773e20ffa2e8564a9ae209cb3d53ba6ee3db",
       "assertion_status": {
-        "unreviewed_source_assertion": 4892
+        "unreviewed_source_assertion": 4896
       },
       "verified_location_assertions": {
         "availability": "not_available",

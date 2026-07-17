@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 772,
-    "events": 5200,
-    "sources": 1009,
-    "registry_polities": 2128
+    "entities": 776,
+    "events": 5204,
+    "sources": 1025,
+    "registry_polities": 2132
   },
   "year_range": {
     "start": -1274,
@@ -134,6 +134,7 @@
     "accepted_wave8_armenia_hced_events": 3,
     "accepted_wave8_comanches_hced_events": 2,
     "accepted_wave8_sikh_punjab_hced_events": 4,
+    "accepted_wave8_eritrea_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -7874,7 +7875,660 @@
     "wave8_sikh_punjab_outcome_overrides": [],
     "wave8_sikh_punjab_entities_added": 8,
     "wave8_sikh_punjab_sources_added": 13,
-    "hced_label_pass_input_rows": 5761,
+    "wave8_eritrea_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 7,
+      "exact_label_rows": 8,
+      "existing_release_dispositions": 4,
+      "external_owner_contracts": 4,
+      "holds": 0,
+      "integration_dispositions": 16,
+      "iwbd_duplicate_dispositions": 4,
+      "iwbd_related_dispositions": 1,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 16,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 7,
+      "reviewed_hced_rows": 15,
+      "terminal_exclusions": 0,
+      "unresolved_exact_label_rows": 4
+    },
+    "wave8_eritrea_cohort_counts": {
+      "eplf_afabet_1988": 1,
+      "eplf_barentu_capture_1985": 1,
+      "eplf_nakfa_defensive_front_1977_1988": 1,
+      "ethiopian_keren_offensive_1977_1978": 1
+    },
+    "wave8_eritrea_queue_validation": {
+      "existing_release_dispositions": 4,
+      "holds": 0,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 7,
+      "reviewed_exact_label_rows": 8,
+      "reviewed_hced_rows": 15,
+      "terminal_exclusions": 0,
+      "unresolved_exact_label_rows": 4
+    },
+    "wave8_eritrea_integration_validation": {
+      "existing_release_dispositions": 4,
+      "integration_dispositions": 16,
+      "iwbd_duplicate_dispositions": 4,
+      "iwbd_probable_twins": 0,
+      "iwbd_related_dispositions": 1,
+      "iwbd_zero_overlap_candidates": 4,
+      "related_hced_dispositions": 7
+    },
+    "wave8_eritrea_candidate_ids": [
+      "hced-Afabet1988-1",
+      "hced-Barentu1985-1",
+      "hced-Keren1977-1978-1",
+      "hced-Nakfa1977-1988-1"
+    ],
+    "wave8_eritrea_holds": [],
+    "wave8_eritrea_terminal_exclusions": [],
+    "wave8_eritrea_existing_release_dispositions": [
+      {
+        "candidate_id": "hced-Badme1998-1",
+        "raw_row_sha256": "1f72e7cbafeb0e4f16dfb3c73b0c140a2d536b034ace9a696753fdc8e2ed61e4",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1998_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_horn_war",
+          "wave8_eritrea_un_badme_1998"
+        ],
+        "note": "The post-independence interstate actor is correctly the State of Eritrea. The existing HCED owner is retained and is not re-emitted."
+      },
+      {
+        "candidate_id": "hced-Badme1999-1",
+        "raw_row_sha256": "ee307cce2fc50dbed61db44d4fc6f19ce612665800f81a057809c5859fd98738",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Ethiopia's late-February recapture of Badme and remains the canonical HCED owner."
+      },
+      {
+        "candidate_id": "hced-Barentu2000-1",
+        "raw_row_sha256": "ce17ab82e77fb3e208717083e7892c49d15facd7a489ae5102981c1ec32358e9",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_barentu2000_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_un_report_2000"
+        ],
+        "note": "The existing event records Ethiopia's May 2000 capture of Barentu; the independent State of Eritrea is the correct opposing polity."
+      },
+      {
+        "candidate_id": "hced-Tsorona1999-1",
+        "raw_row_sha256": "654f0874b7cf05716c38c1ec35f068c909f7cc77d7f3198d1876d983aceefbc6",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_tsorona1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_central_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Eritrea's repulse of the March 1999 Ethiopian offensive on the Tsorona front."
+      }
+    ],
+    "wave8_eritrea_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Addis Ababa1991-1",
+        "raw_row_sha256": "c743004579d8037cec5b470037779bdebac698c21cfe11a3c44413f52fe36538",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Ethiopian Rebels"
+        ],
+        "actor_boundary": "The EPRDF/TPLF-led seizure of Addis Ababa is an Ethiopian rebel coalition event. EPLF cooperation does not make it an Eritrea exact-label row or transfer this lane's actors into that coalition.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "candidate_id": "hced-Asosa1990-1991-1",
+        "raw_row_sha256": "3fce1e2431ad7cc42e1122493e6b91c29f1a16d6a96e914c703e3316a45359f7",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Oromo Rebels, Eritrea"
+        ],
+        "actor_boundary": "The composite label requires an independently sourced Oromo/Eritrean coalition. It is neither the Afabet force nor the State of Eritrea.",
+        "evidence_refs": [
+          "wave8_eritrea_ucdp_actor_26_1",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Assab1991-1",
+        "raw_row_sha256": "eae47486367be08330cf39f1b9c5c25b97445da5689bd73ff9ccc9a520b1284a",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "The generic rebel label and 1991 transition require a separate Assab operation audit; no exact Eritrea contract absorbs it.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Dekemhare1990-1991-1",
+        "raw_row_sha256": "0e37854dff6227ee9a8f332bae75a58678331bd18a25df40e13609c7858ff562",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "The two-year generic rebel campaign needs its own bounded formation and outcome review; it is outside this literal-label inventory.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "candidate_id": "hced-Inda Silase1989-1",
+        "raw_row_sha256": "4a4ea3108666d6399002a7d7b37bdc834ce467fe0e3b46b8d76b960b4a2f42f0",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Tigrayan Rebels, Eritrea"
+        ],
+        "actor_boundary": "The composite TPLF/EPLF label is a separate coalition boundary. It cannot inherit an EPLF-only or State of Eritrea rating.",
+        "evidence_refs": [
+          "wave8_eritrea_tareke_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "candidate_id": "hced-Massawa1977-1",
+        "raw_row_sha256": "fc2d47d47d86252bbb428cad1899fc1e0985a43aae0c53b2fad6393e979b188c",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia, USSR"
+        ],
+        "actor_boundary": "Massawa combines Ethiopian/Soviet support and a generic rebel side; the responsible front composition must be audited independently.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_total_war",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Massawa1990-1",
+        "raw_row_sha256": "7fc9e9a0dc9accc6a1c85386f31a43538248d5f125b250230b127cfa80517199",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "Operation Fenkil is a distinct Massawa campaign with its own force and naval/ground boundaries; this lane does not absorb it.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      }
+    ],
+    "wave8_eritrea_iwbd_duplicate_dispositions": [
+      {
+        "candidate_id": "iwbd-219-84-1691",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Badme1998-1",
+        "owner_event_id": "hced_label_hced_badme1998_1",
+        "expected_name": "Badme 1",
+        "expected_start_date": "1998-05-06",
+        "expected_end_date": "1998-05-06",
+        "expected_winner_raw": "Eritrea",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_horn_war",
+          "wave8_eritrea_un_badme_1998"
+        ]
+      },
+      {
+        "candidate_id": "iwbd-219-84-1693",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Badme1999-1",
+        "owner_event_id": "hced_label_hced_badme1999_1",
+        "expected_name": "Badme 2 (b)",
+        "expected_start_date": "1999-02-25",
+        "expected_end_date": "1999-02-26",
+        "expected_winner_raw": "Ethiopia",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ]
+      },
+      {
+        "candidate_id": "iwbd-219-84-1694",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Tsorona1999-1",
+        "owner_event_id": "hced_label_hced_tsorona1999_1",
+        "expected_name": "Tsorona",
+        "expected_start_date": "1999-03-16",
+        "expected_end_date": "1999-03-18",
+        "expected_winner_raw": "Eritrea",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_central_front",
+          "wave8_eritrea_hrw_horn_war"
+        ]
+      },
+      {
+        "candidate_id": "iwbd-219-84-1695",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Barentu2000-1",
+        "owner_event_id": "hced_label_hced_barentu2000_1",
+        "expected_name": "Barentu",
+        "expected_start_date": "2000-05-17",
+        "expected_end_date": "2000-05-18",
+        "expected_winner_raw": "Ethiopia",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_un_report_2000"
+        ]
+      }
+    ],
+    "wave8_eritrea_related_iwbd_dispositions": [
+      {
+        "candidate_id": "iwbd-219-84-1692",
+        "disposition": "related_but_distinct_operation",
+        "expected_name": "Badme 2 (a)",
+        "expected_start_date": "1999-02-06",
+        "expected_end_date": "1999-02-10",
+        "expected_winner_raw": "Eritrea",
+        "not_owner_hced_candidate_id": "hced-Badme1999-1",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "This earlier February action has the opposite winner from HCED's Badme 1999 row and is not silently deduplicated into it."
+      }
+    ],
+    "wave8_eritrea_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Afabet1988-1",
+        "aliases": [
+          "afabet",
+          "battle of afabet"
+        ],
+        "years": [
+          1988
+        ]
+      },
+      {
+        "audit_id": "hced-Barentu1985-1",
+        "aliases": [
+          "barentu",
+          "eplf capture of barentu"
+        ],
+        "years": [
+          1985
+        ]
+      },
+      {
+        "audit_id": "hced-Keren1977-1978-1",
+        "aliases": [
+          "ethiopian campaign to recapture keren",
+          "keren"
+        ],
+        "years": [
+          1977,
+          1978
+        ]
+      },
+      {
+        "audit_id": "hced-Nakfa1977-1988-1",
+        "aliases": [
+          "defense of the nakfa front",
+          "nakfa",
+          "nacfa"
+        ],
+        "years": [
+          1977,
+          1978,
+          1979,
+          1980,
+          1981,
+          1982,
+          1983,
+          1984,
+          1985,
+          1986,
+          1987,
+          1988
+        ]
+      }
+    ],
+    "wave8_eritrea_existing_release_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Badme1998-1",
+        "raw_row_sha256": "1f72e7cbafeb0e4f16dfb3c73b0c140a2d536b034ace9a696753fdc8e2ed61e4",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1998_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_horn_war",
+          "wave8_eritrea_un_badme_1998"
+        ],
+        "note": "The post-independence interstate actor is correctly the State of Eritrea. The existing HCED owner is retained and is not re-emitted."
+      },
+      {
+        "candidate_id": "hced-Badme1999-1",
+        "raw_row_sha256": "ee307cce2fc50dbed61db44d4fc6f19ce612665800f81a057809c5859fd98738",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Ethiopia's late-February recapture of Badme and remains the canonical HCED owner."
+      },
+      {
+        "candidate_id": "hced-Barentu2000-1",
+        "raw_row_sha256": "ce17ab82e77fb3e208717083e7892c49d15facd7a489ae5102981c1ec32358e9",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_barentu2000_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_un_report_2000"
+        ],
+        "note": "The existing event records Ethiopia's May 2000 capture of Barentu; the independent State of Eritrea is the correct opposing polity."
+      },
+      {
+        "candidate_id": "hced-Tsorona1999-1",
+        "raw_row_sha256": "654f0874b7cf05716c38c1ec35f068c909f7cc77d7f3198d1876d983aceefbc6",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_tsorona1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_central_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Eritrea's repulse of the March 1999 Ethiopian offensive on the Tsorona front."
+      }
+    ],
+    "wave8_eritrea_integration_dispositions": [
+      {
+        "disposition_id": "existing_release:hced-Badme1998-1",
+        "raw_row_sha256": "1f72e7cbafeb0e4f16dfb3c73b0c140a2d536b034ace9a696753fdc8e2ed61e4",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1998_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_horn_war",
+          "wave8_eritrea_un_badme_1998"
+        ],
+        "note": "The post-independence interstate actor is correctly the State of Eritrea. The existing HCED owner is retained and is not re-emitted."
+      },
+      {
+        "disposition_id": "existing_release:hced-Badme1999-1",
+        "raw_row_sha256": "ee307cce2fc50dbed61db44d4fc6f19ce612665800f81a057809c5859fd98738",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_badme1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Ethiopia's late-February recapture of Badme and remains the canonical HCED owner."
+      },
+      {
+        "disposition_id": "existing_release:hced-Barentu2000-1",
+        "raw_row_sha256": "ce17ab82e77fb3e208717083e7892c49d15facd7a489ae5102981c1ec32358e9",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_barentu2000_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q115_1942_f6caec22",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_un_report_2000"
+        ],
+        "note": "The existing event records Ethiopia's May 2000 capture of Barentu; the independent State of Eritrea is the correct opposing polity."
+      },
+      {
+        "disposition_id": "existing_release:hced-Tsorona1999-1",
+        "raw_row_sha256": "654f0874b7cf05716c38c1ec35f068c909f7cc77d7f3198d1876d983aceefbc6",
+        "disposition": "existing_release",
+        "owner_event_id": "hced_label_hced_tsorona1999_1",
+        "expected_entity_ids": [
+          "clio_q115_1942_f6caec22",
+          "clio_q986_1992_ada8dae7"
+        ],
+        "reviewed_winner_id": "clio_q986_1992_ada8dae7",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_central_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "The existing state-versus-state event records Eritrea's repulse of the March 1999 Ethiopian offensive on the Tsorona front."
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-219-84-1691",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Badme1998-1",
+        "owner_event_id": "hced_label_hced_badme1998_1",
+        "expected_name": "Badme 1",
+        "expected_start_date": "1998-05-06",
+        "expected_end_date": "1998-05-06",
+        "expected_winner_raw": "Eritrea",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_horn_war",
+          "wave8_eritrea_un_badme_1998"
+        ]
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-219-84-1693",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Badme1999-1",
+        "owner_event_id": "hced_label_hced_badme1999_1",
+        "expected_name": "Badme 2 (b)",
+        "expected_start_date": "1999-02-25",
+        "expected_end_date": "1999-02-26",
+        "expected_winner_raw": "Ethiopia",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ]
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-219-84-1694",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Tsorona1999-1",
+        "owner_event_id": "hced_label_hced_tsorona1999_1",
+        "expected_name": "Tsorona",
+        "expected_start_date": "1999-03-16",
+        "expected_end_date": "1999-03-18",
+        "expected_winner_raw": "Eritrea",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_central_front",
+          "wave8_eritrea_hrw_horn_war"
+        ]
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-219-84-1695",
+        "disposition": "duplicate_of_existing_hced_owner",
+        "owner_hced_candidate_id": "hced-Barentu2000-1",
+        "owner_event_id": "hced_label_hced_barentu2000_1",
+        "expected_name": "Barentu",
+        "expected_start_date": "2000-05-17",
+        "expected_end_date": "2000-05-18",
+        "expected_winner_raw": "Ethiopia",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_un_report_2000"
+        ]
+      },
+      {
+        "disposition_id": "iwbd_related:iwbd-219-84-1692",
+        "disposition": "related_but_distinct_operation",
+        "expected_name": "Badme 2 (a)",
+        "expected_start_date": "1999-02-06",
+        "expected_end_date": "1999-02-10",
+        "expected_winner_raw": "Eritrea",
+        "not_owner_hced_candidate_id": "hced-Badme1999-1",
+        "evidence_refs": [
+          "wave8_eritrea_eecc_western_front",
+          "wave8_eritrea_hrw_horn_war"
+        ],
+        "note": "This earlier February action has the opposite winner from HCED's Badme 1999 row and is not silently deduplicated into it."
+      },
+      {
+        "disposition_id": "related_hced:hced-Addis Ababa1991-1",
+        "raw_row_sha256": "c743004579d8037cec5b470037779bdebac698c21cfe11a3c44413f52fe36538",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Ethiopian Rebels"
+        ],
+        "actor_boundary": "The EPRDF/TPLF-led seizure of Addis Ababa is an Ethiopian rebel coalition event. EPLF cooperation does not make it an Eritrea exact-label row or transfer this lane's actors into that coalition.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Asosa1990-1991-1",
+        "raw_row_sha256": "3fce1e2431ad7cc42e1122493e6b91c29f1a16d6a96e914c703e3316a45359f7",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Oromo Rebels, Eritrea"
+        ],
+        "actor_boundary": "The composite label requires an independently sourced Oromo/Eritrean coalition. It is neither the Afabet force nor the State of Eritrea.",
+        "evidence_refs": [
+          "wave8_eritrea_ucdp_actor_26_1",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Assab1991-1",
+        "raw_row_sha256": "eae47486367be08330cf39f1b9c5c25b97445da5689bd73ff9ccc9a520b1284a",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "The generic rebel label and 1991 transition require a separate Assab operation audit; no exact Eritrea contract absorbs it.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Dekemhare1990-1991-1",
+        "raw_row_sha256": "0e37854dff6227ee9a8f332bae75a58678331bd18a25df40e13609c7858ff562",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "The two-year generic rebel campaign needs its own bounded formation and outcome review; it is outside this literal-label inventory.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Inda Silase1989-1",
+        "raw_row_sha256": "4a4ea3108666d6399002a7d7b37bdc834ce467fe0e3b46b8d76b960b4a2f42f0",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Tigrayan Rebels, Eritrea"
+        ],
+        "actor_boundary": "The composite TPLF/EPLF label is a separate coalition boundary. It cannot inherit an EPLF-only or State of Eritrea rating.",
+        "evidence_refs": [
+          "wave8_eritrea_tareke_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Massawa1977-1",
+        "raw_row_sha256": "fc2d47d47d86252bbb428cad1899fc1e0985a43aae0c53b2fad6393e979b188c",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia, USSR"
+        ],
+        "actor_boundary": "Massawa combines Ethiopian/Soviet support and a generic rebel side; the responsible front composition must be audited independently.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_total_war",
+          "wave8_eritrea_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Massawa1990-1",
+        "raw_row_sha256": "7fc9e9a0dc9accc6a1c85386f31a43538248d5f125b250230b127cfa80517199",
+        "disposition": "outside_exact_eritrea_lane",
+        "raw_labels": [
+          "Eritrean Rebels",
+          "Ethiopia"
+        ],
+        "actor_boundary": "Operation Fenkil is a distinct Massawa campaign with its own force and naval/ground boundaries; this lane does not absorb it.",
+        "evidence_refs": [
+          "wave8_eritrea_hrw_afabet",
+          "wave8_eritrea_ucdp_actor_26_1"
+        ]
+      }
+    ],
+    "wave8_eritrea_outcome_overrides": [],
+    "wave8_eritrea_entities_added": 4,
+    "wave8_eritrea_sources_added": 16,
+    "hced_label_pass_input_rows": 5757,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -7887,7 +8541,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 843,
+      "reserved_candidate_contract": 847,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -7899,7 +8553,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2250,
+      "no_unique_time_valid_label_match": 2246,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

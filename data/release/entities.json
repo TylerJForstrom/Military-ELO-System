@@ -11876,6 +11876,41 @@
     ]
   },
   {
+    "id": "eplf_keren_defense_force_1977_1978",
+    "name": "EPLF Keren Defensive Force (1977-1978)",
+    "kind": "campaign_force",
+    "start_year": 1977,
+    "end_year": 1978,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded EPLF formation defending Keren through the November 1978 Ethiopian offensive and strategic withdrawal. It is not the separate ELF, Eritrean civilians, or an Eritrean state. No rating is inherited by the ELF, a generic Eritrean Rebels label, the 1991 Provisional Government, the PFDJ, the State of Eritrea, or any Ethiopian rebel coalition.",
+    "source_ids": [
+      "wave8_eritrea_hrw_total_war",
+      "wave8_eritrea_ucalgary_keren",
+      "wave8_eritrea_ucdp_actor_26_1",
+      "wave8_eritrea_un_coi_history"
+    ]
+  },
+  {
+    "id": "eplf_nakfa_front_1977_1988",
+    "name": "EPLF Nakfa Front (1977-1988)",
+    "kind": "defensive_front",
+    "start_year": 1977,
+    "end_year": 1988,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded EPLF defensive organization at Nakfa and its approaches. It represents the source row's sustained front, not every EPLF unit or the Eritrean population. No rating is inherited by the ELF, a generic Eritrean Rebels label, the 1991 Provisional Government, the PFDJ, the State of Eritrea, or any Ethiopian rebel coalition.",
+    "source_ids": [
+      "wave8_eritrea_hrw_total_war",
+      "wave8_eritrea_jude_nakfa",
+      "wave8_eritrea_tareke_nakfa",
+      "wave8_eritrea_ucdp_actor_26_1",
+      "wave8_eritrea_un_coi_history"
+    ]
+  },
+  {
     "id": "libyan_arab_jamahiriya",
     "name": "Libyan Arab Jamahiriya",
     "kind": "state",
@@ -11903,6 +11938,41 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "eplf_barentu_assault_force_1985",
+    "name": "EPLF Barentu Assault Force (July 1985)",
+    "kind": "assault_force",
+    "start_year": 1985,
+    "end_year": 1985,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded EPLF force that captured Barentu in July 1985. It excludes the later Ethiopian counteroffensive, other Eritrean fronts, civilians, and a continuous national army. No rating is inherited by the ELF, a generic Eritrean Rebels label, the 1991 Provisional Government, the PFDJ, the State of Eritrea, or any Ethiopian rebel coalition.",
+    "source_ids": [
+      "wave8_eritrea_dia_1985",
+      "wave8_eritrea_hrw_barentu",
+      "wave8_eritrea_ucdp_actor_26_1",
+      "wave8_eritrea_un_coi_history"
+    ]
+  },
+  {
+    "id": "eplf_afabet_field_force_1988",
+    "name": "EPLF Afabet Field Force (17-19 March 1988)",
+    "kind": "field_force",
+    "start_year": 1988,
+    "end_year": 1988,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded EPLF field force that defeated Ethiopia's Northern Command at Afabet. It is not a retrospective State of Eritrea army identity. No rating is inherited by the ELF, a generic Eritrean Rebels label, the 1991 Provisional Government, the PFDJ, the State of Eritrea, or any Ethiopian rebel coalition.",
+    "source_ids": [
+      "wave8_eritrea_hrw_afabet",
+      "wave8_eritrea_loc_afabet",
+      "wave8_eritrea_tareke_afabet",
+      "wave8_eritrea_ucdp_actor_26_1",
+      "wave8_eritrea_un_coi_history"
     ]
   },
   {

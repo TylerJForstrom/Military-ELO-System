@@ -7715,6 +7715,230 @@
     ]
   },
   {
+    "id": "wave8_eritrea_dia_1985",
+    "title": "Ethiopia: 1985 military operations in northern Ethiopia",
+    "url": "https://www.dia.mil/FOIA/FOIA-Electronic-Reading-Room/FileId/238426/",
+    "publisher": "U.S. Defense Intelligence Agency FOIA Electronic Reading Room",
+    "license": "Citation and link only",
+    "source_type": "declassified_contemporaneous_intelligence_assessment",
+    "accessed": "2026-07-16",
+    "source_family_id": "dia_ethiopia_1985_operations",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_eecc_central_front",
+    "title": "Eritrea-Ethiopia Claims Commission case documents: Central Front Partial Awards",
+    "url": "https://pca-cpa.org/en/cases/71/",
+    "publisher": "Permanent Court of Arbitration",
+    "license": "Citation and link only",
+    "source_type": "international_arbitral_case_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "eecc_central_front_awards",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_eecc_western_front",
+    "title": "Eritrea-Ethiopia Claims Commission: Western Front Partial Award",
+    "url": "https://legal.un.org/riaa/cases/vol_XXVI/291-349.pdf",
+    "publisher": "United Nations Reports of International Arbitral Awards",
+    "license": "Citation and link only",
+    "source_type": "international_arbitral_award",
+    "accessed": "2026-07-16",
+    "source_family_id": "eecc_western_front_award",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_hrw_afabet",
+    "title": "Evil Days — The Road to Asmara: Eritrea, 1988-91",
+    "url": "https://www.hrw.org/reports/pdfs/e/ethiopia/ethiopia.919/d4afabet.pdf",
+    "publisher": "Africa Watch / Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_evil_days_afabet",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_hrw_barentu",
+    "title": "Evil Days — War and the Use of Relief as a Weapon in Eritrea, 1984-88",
+    "url": "https://www.hrw.org/reports/pdfs/e/ethiopia/ethiopia.919/d0barent.pdf",
+    "publisher": "Africa Watch / Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_evil_days_barentu",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_hrw_horn_war",
+    "title": "The Horn of Africa War: Mass Expulsions and the Nationality Issue",
+    "url": "https://www.hrw.org/report/2003/01/29/horn-africa-war/mass-expulsions-and-nationality-issue",
+    "publisher": "Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_postwar_investigation",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_horn_of_africa_war_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_hrw_total_war",
+    "title": "Evil Days: 30 Years of War and Famine in Ethiopia — Total War in Eritrea, 1978-84",
+    "url": "https://www.hrw.org/reports/pdfs/e/ethiopia/ethiopia.919/c7redsta.pdf",
+    "publisher": "Africa Watch / Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_evil_days_total_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_jude_nakfa",
+    "title": "Making or un-making states: when does war have formative effects?",
+    "url": "https://doi.org/10.1177/13540661211053628",
+    "publisher": "SAGE, European Journal of International Relations",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_state_formation_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "jude_war_state_formation_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_loc_afabet",
+    "title": "Ethiopia: Government Defeats in Eritrea and Tigray",
+    "url": "https://countrystudies.us/ethiopia/36.htm",
+    "publisher": "U.S. Library of Congress, Federal Research Division",
+    "license": "Citation and link only",
+    "source_type": "federal_country_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "loc_ethiopia_country_study",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_tareke_afabet",
+    "title": "From Af Abet to Shire: the defeat and demise of Ethiopia's Red Army, 1988-89",
+    "url": "https://doi.org/10.1017/S0022278X04000114",
+    "publisher": "Cambridge University Press, Journal of Modern African Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "tareke_afabet_shire_2004",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_tareke_nakfa",
+    "title": "Nakfa: Even the Mountains Fought",
+    "url": "https://doi.org/10.12987/yale/9780300156157.003.0007",
+    "publisher": "Yale University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "tareke_ethiopian_revolution_nakfa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_ucalgary_keren",
+    "title": "Map of Ethiopia and Eritrea",
+    "url": "https://ucp.manifoldapp.org/read/secession-and-separatist-conflicts-in-postcolonial-africa/section/e9100900-9389-4ae9-a282-fdb792a55be1",
+    "publisher": "University of Calgary Press",
+    "license": "Citation and link only",
+    "source_type": "open_access_scholarly_book",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucalgary_secession_conflicts_eritrea",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_ucdp_actor_26_1",
+    "title": "UCDP Actor Dataset version 26.1",
+    "url": "https://ucdp.uu.se/downloads/",
+    "publisher": "Uppsala Conflict Data Program",
+    "license": "Citation and link only",
+    "source_type": "curated_conflict_actor_dataset",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucdp_actor_26_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_un_badme_1998",
+    "title": "Letter transmitting Eritrea's 20 May 1998 statement, S/1998/417",
+    "url": "https://digitallibrary.un.org/record/254443/files/S_1998_417-EN.pdf",
+    "publisher": "United Nations Security Council Digital Library",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_diplomatic_primary_document",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_security_council_badme_1998",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_un_coi_history",
+    "title": "Detailed findings of the Commission of Inquiry on Human Rights in Eritrea, chapter III",
+    "url": "https://www.ohchr.org/Documents/HRBodies/HRCouncil/CoIEritrea/A_HRC_29_CRP-1_Chapter_III.pdf",
+    "publisher": "United Nations Human Rights Council",
+    "license": "Citation and link only",
+    "source_type": "united_nations_commission_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_coi_eritrea_chapter_iii",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_eritrea_un_report_2000",
+    "title": "Report of the Secretary-General on Eritrea and Ethiopia, S/2000/530",
+    "url": "https://documents.un.org/doc/undoc/gen/n00/461/18/pdf/n0046118.pdf",
+    "publisher": "United Nations Security Council",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_un_secretary_general_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_sg_eritrea_ethiopia_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",
