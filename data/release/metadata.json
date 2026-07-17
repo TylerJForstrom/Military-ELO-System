@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 998,
-    "events": 5341,
-    "sources": 1421,
-    "registry_polities": 2348
+    "entities": 1001,
+    "events": 5345,
+    "sources": 1435,
+    "registry_polities": 2350
   },
   "year_range": {
     "start": -1274,
@@ -169,6 +169,7 @@
     "accepted_wave8_irish_civil_war_hced_events": 2,
     "accepted_wave8_bannock_sheepeater_hced_events": 2,
     "accepted_wave8_catholic_rebels_hced_events": 3,
+    "accepted_wave8_macedon_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19794,7 +19795,151 @@
     "wave8_catholic_rebels_country_quarantine_additions": [],
     "wave8_catholic_rebels_entities_added": 3,
     "wave8_catholic_rebels_sources_added": 8,
-    "hced_label_pass_input_rows": 5565,
+    "wave8_macedon_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 2,
+      "new_entities": 3,
+      "new_sources": 14,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 6,
+      "source_date_overrides": 2,
+      "terminal_exclusions": 0
+    },
+    "wave8_macedon_cohort_counts": {
+      "antigonid_macedonia_hellenistic_wars": 1,
+      "chremonidean_war_athens_siege": 1,
+      "cleomenean_war_sellasia": 1,
+      "third_macedonian_war_callinicus": 1
+    },
+    "wave8_macedon_audit_signature": "72f9e67abee0a05c258cc20ca868940f68c09117c66b121de51301e52e812498",
+    "wave8_macedon_final_audit_signature": "72f9e67abee0a05c258cc20ca868940f68c09117c66b121de51301e52e812498",
+    "wave8_macedon_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 2,
+      "reviewed_hced_rows": 6,
+      "exact_label_rows": 6
+    },
+    "wave8_macedon_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_macedon_candidate_ids": [
+      "hced-Andros-245-1",
+      "hced-Athens, Greece-264-1",
+      "hced-Callicinus-171-1",
+      "hced-Sellasia-222-1"
+    ],
+    "wave8_macedon_holds": [
+      {
+        "candidate_id": "hced-Chios-201-1",
+        "raw_row_sha256": "560f737d00941d4c5f9c64e8a22ea6f03c3f7a2947c5beae5ed995b93a2e4723",
+        "disposition": "hold",
+        "hold_category": "contradictory_outcome_sources",
+        "hold_reason": "HCED calls Chios a Macedonian victory, but Polybius says Philip was decidedly worsted and labels his victory claim imaginary. Panovski and Sarakinski reject a crushing defeat yet characterize the result as inconclusive or a draw by losses. These are materially different competitive labels, so unknown is not converted into either a win or a draw.",
+        "evidence_refs": [
+          "wave8_macedon_panovski_chios",
+          "wave8_macedon_polybius_chios"
+        ]
+      },
+      {
+        "candidate_id": "hced-Thessaly353-1",
+        "raw_row_sha256": "e24d9202e46b27111ef4d9e9e2db6df8b1ce744f00a8faff07b04bca05d1b1ba",
+        "disposition": "hold",
+        "hold_category": "date_and_engagement_ambiguity",
+        "hold_reason": "The positive 353 year conflicts with the BCE Third Sacred War. Diodorus and the Oxford Classical Dictionary report that Onomarchus defeated Philip twice in Thessaly, but the generic HCED name does not identify which engagement it means. Correcting the sign and choosing one of two battles would invent a unique event.",
+        "evidence_refs": [
+          "wave8_macedon_diodorus_thessaly",
+          "wave8_macedon_ocd_onomarchus"
+        ]
+      }
+    ],
+    "wave8_macedon_exact_label_funnel_audit": {
+      "macedon": {
+        "candidate_ids": [],
+        "centuries": {
+          "BCE_02": 1,
+          "BCE_03": 4,
+          "CE_04": 1
+        },
+        "components_bridged": 0,
+        "components_touched": 1,
+        "event_candidate_id_sha256": "c7c53c77e71580b3c9a5d18fcc690779e5f80c207e5d2e09c8b55b752d8fefeb",
+        "events_touched": 6,
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 6
+        },
+        "label": "macedon",
+        "rated_counterpart_entities": 3,
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 6
+      }
+    },
+    "wave8_macedon_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Andros-245-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern Greek jurisdiction, but do not bind HCED's exact coordinate to the closed release location-provenance contract. Retain the source-transcribed country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_macedon_coskun_andros",
+          "wave8_macedon_livius_andros"
+        ]
+      },
+      {
+        "candidate_id": "hced-Athens, Greece-264-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern Greek jurisdiction, but do not bind HCED's exact coordinate to the closed release location-provenance contract. Retain the source-transcribed country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_macedon_pausanias_athens",
+          "wave8_macedon_wallace_athens"
+        ]
+      },
+      {
+        "candidate_id": "hced-Callicinus-171-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern Greek jurisdiction, but do not bind HCED's exact coordinate to the closed release location-provenance contract. Retain the source-transcribed country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_macedon_appian_callinicus",
+          "wave8_macedon_livy_callinicus"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sellasia-222-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern Greek jurisdiction, but do not bind HCED's exact coordinate to the closed release location-provenance contract. Retain the source-transcribed country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_macedon_almagor_sellasia",
+          "wave8_macedon_polybius_sellasia",
+          "wave8_macedon_wiley_sellasia"
+        ]
+      }
+    ],
+    "wave8_macedon_point_quarantine_additions": [
+      "hced-Andros-245-1",
+      "hced-Athens, Greece-264-1",
+      "hced-Callicinus-171-1",
+      "hced-Sellasia-222-1"
+    ],
+    "wave8_macedon_country_quarantine_additions": [],
+    "wave8_macedon_entities_added": 3,
+    "wave8_macedon_sources_added": 14,
+    "hced_label_pass_input_rows": 5559,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19807,7 +19952,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1045,
+      "reserved_candidate_contract": 1051,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19819,7 +19964,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2065,
+      "no_unique_time_valid_label_match": 2059,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

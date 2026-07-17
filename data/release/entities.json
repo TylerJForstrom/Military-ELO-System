@@ -691,6 +691,21 @@
     ]
   },
   {
+    "id": "clio_gr_antigonid_emp_bce277_3bbcbfdf",
+    "name": "Antigonid Macedonia",
+    "kind": "hellenistic_kingdom",
+    "start_year": -277,
+    "end_year": -168,
+    "region": "Macedonia and the southern Balkans",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated Antigonid dynastic-state identity from Antigonus II Gonatas' accession through the Roman defeat and abolition of the monarchy in 168 BCE. It reuses the Cliopatria candidate ID but opens no generic Macedon or Macedonia alias and inherits no rating from Alexander's kingdom, successor coalitions, or Roman provincial Macedonia.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_macedon_met_antigonid"
+    ]
+  },
+  {
     "id": "argos_antigonid_spartan_defensive_coalition_272_bce",
     "name": "Argive-Antigonid-Spartan defensive coalition at Argos (272 BCE)",
     "kind": "event_bounded_coalition",
@@ -702,6 +717,21 @@
     "continuity_note": "Event-bounded defenders and relief forces opposing Pyrrhus inside Argos. No rating is inherited by Argos, Macedon, Sparta, Antigonus II, their later states, or a modern state outside this coalition event.",
     "source_ids": [
       "wave8_epirus_plutarch_pyrrhus"
+    ]
+  },
+  {
+    "id": "athenian_defenders_chremonidean_siege_264_262_bce",
+    "name": "Athenian defenders during Antigonus's siege (264-262 BCE)",
+    "kind": "siege_bounded_city_defender",
+    "start_year": -264,
+    "end_year": -262,
+    "region": "Athens and Attica",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Athenian civic defenders under Antigonus II's blockade and siege in the closing phase of the Chremonidean War. Sparta and Ptolemaic forces attempted separate relief operations but are not folded into this defender rating because Pausanias says the forces did not unite. This is not a generic Athens identity.",
+    "source_ids": [
+      "wave8_macedon_pausanias_athens",
+      "wave8_macedon_wallace_athens"
     ]
   },
   {
@@ -748,6 +778,22 @@
       "wave8_insubrian_polybius_book_2",
       "wave8_insubrian_rawlings_225_222",
       "wave8_insubrian_szubelak_telamon"
+    ]
+  },
+  {
+    "id": "antigonus_hellenic_alliance_sellasia_222_bce",
+    "name": "Antigonus's Hellenic alliance at Sellasia (222 BCE)",
+    "kind": "engagement_bounded_multistate_coalition",
+    "start_year": -222,
+    "end_year": -222,
+    "region": "Laconia and the Peloponnese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the coalition commanded by Antigonus III Doson at Sellasia: Macedonian, Achaean, Megalopolitan, Boeotian, Epirote, Acarnanian, Illyrian, mercenary, and other contingents. One coalition rating avoids inventing contribution shares and does not extend to Macedon, the Achaean League, or any later Hellenic alliance.",
+    "source_ids": [
+      "wave8_macedon_almagor_sellasia",
+      "wave8_macedon_polybius_sellasia",
+      "wave8_macedon_wiley_sellasia"
     ]
   },
   {

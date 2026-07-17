@@ -13580,6 +13580,201 @@
     ]
   },
   {
+    "id": "wave8_macedon_almagor_sellasia",
+    "title": "A Literary Passage: Polybius and Plutarch's Narrator",
+    "url": "https://histos.org/index.php/histos/article/download/122/116",
+    "publisher": "Eran Almagor / Histos Supplement",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "almagor_polybius_plutarch",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_macedon_appian_callinicus",
+    "title": "Appian, The Macedonian Wars 6",
+    "url": "https://www.livius.org/sources/content/appian/appian-the-macedonian-wars/appian-the-macedonian-wars-6/",
+    "publisher": "Appian / Livius.org",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "appian_macedonian_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_coskun_andros",
+    "title": "Ptolemaioi as Commanders in 3rd-Century Asia Minor and Some Glimpses on Ephesos and Mylasa during the Second and Third Syrian Wars",
+    "url": "https://dergipark.org.tr/tr/download/article-file/501353",
+    "publisher": "Altay Coşkun / Vir Doctus Anatolicus",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "coskun_ptolemaioi_commanders",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_diodorus_thessaly",
+    "title": "Diodorus Siculus, Library of History, Book 16.35",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/16B%2A.html",
+    "publisher": "Diodorus Siculus / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "diodorus_library_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_macedon_livius_andros",
+    "title": "Third Syrian War",
+    "url": "https://www.livius.org/articles/concept/syrian-war-3/",
+    "publisher": "Livius.org",
+    "license": "Citation and link only",
+    "source_type": "expert_historical_reference",
+    "accessed": "2026-07-17",
+    "source_family_id": "livius_third_syrian_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_livy_callinicus",
+    "title": "Livy, History of Rome, Book 42",
+    "url": "https://spiritualpilgrim.net/08_Classics-Library/hellenist-roman/livy/rome-6-42.htm",
+    "publisher": "Livy / Spiritual Pilgrim Classics Library",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "livy_ab_urbe_condita",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_met_antigonid",
+    "title": "Pergamon and the Hellenistic Kingdoms of the Ancient World",
+    "url": "https://resources.metmuseum.org/resources/metpublications/pdf/Pergamon_and_the_Hellenistic_Kingdoms_of_the_Ancient_World.pdf",
+    "publisher": "The Metropolitan Museum of Art",
+    "license": "Citation and link only",
+    "source_type": "museum_scholarly_catalogue",
+    "accessed": "2026-07-17",
+    "source_family_id": "met_pergamon_hellenistic_kingdoms",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_macedon_ocd_onomarchus",
+    "title": "Onomarchus",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/549696210",
+    "publisher": "Oxford Classical Dictionary",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia_entry",
+    "accessed": "2026-07-17",
+    "source_family_id": "oxford_classical_dictionary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_macedon_panovski_chios",
+    "title": "Comfortably Sunk: Philip, the Battle of Chios and the List of Losses in Polybius",
+    "url": "https://repository.ukim.mk/bitstream/20.500.12188/791/1/Comfortably_Sunk_Philip_the_Battle_of_Ch.pdf",
+    "publisher": "Stefan Panovski and Vojislav Sarakinski / Kratistos",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "panovski_sarakinski_chios",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_macedon_pausanias_athens",
+    "title": "Pausanias, Description of Greece 3.6.4-6",
+    "url": "https://www.theoi.com/Text/Pausanias3A.html",
+    "publisher": "Theoi Classical Texts Library",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "pausanias_description_greece",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_polybius_chios",
+    "title": "Polybius, Histories, Book 16: Battle of Chios",
+    "url": "https://penelope.uchicago.edu/Thayer/e/roman/texts/polybius/16%2A.html",
+    "publisher": "Polybius / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "polybius_histories",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_macedon_polybius_sellasia",
+    "title": "Polybius, Histories, Book 2: Battle of Sellasia",
+    "url": "https://penelope.uchicago.edu/thayer/e/roman/texts/polybius/2%2A.html",
+    "publisher": "Polybius / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "polybius_histories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_wallace_athens",
+    "title": "The Freedom of the Greeks in the Early Hellenistic Period (337-262 BC): A Study in Ruler-City Relations",
+    "url": "https://era.ed.ac.uk/server/api/core/bitstreams/7709d1d1-e06e-429b-b5be-2f5e35d92bbd/content",
+    "publisher": "Shane Wallace / University of Edinburgh",
+    "license": "Citation and link only",
+    "source_type": "doctoral_historical_thesis",
+    "accessed": "2026-07-17",
+    "source_family_id": "wallace_freedom_greeks_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_macedon_wiley_sellasia",
+    "title": "Sellasia, Battle of",
+    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781444338386.wbeah09220",
+    "publisher": "Ioanna Kralli / The Encyclopedia of Ancient History",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia_entry",
+    "accessed": "2026-07-17",
+    "source_family_id": "kralli_sellasia_encyclopedia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_madagascar_annales_tamatave_1845",
     "title": "Madagascar: Combat livre a Tamatave le 15 juin 1845",
     "url": "https://books.google.com/books?id=mesZAAAAYAAJ",

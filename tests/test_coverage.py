@@ -1103,7 +1103,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             for event in self.events
             if str(event.get("status", "complete")).casefold() == "complete"
         ]
-        self.assertEqual(len(rated_events), 5_341)
+        self.assertEqual(len(rated_events), 5_345)
         self.assertEqual(self.report["event_counts"]["total"], len(rated_events))
         self.assertEqual(
             sum(self.report["event_counts"]["by_layer"].values()), len(rated_events)
@@ -1116,7 +1116,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         families = self.report["outcome_source_families"]
         self.assertEqual(families["availability"], "partially_available")
-        self.assertEqual(families["events_with_explicit_family_data"], 5_301)
+        self.assertEqual(families["events_with_explicit_family_data"], 5_305)
         self.assertEqual(families["events_without_explicit_family_data"], 40)
         self.assertEqual(families["unmapped_event_count"], 40)
         expected_events_by_family = Counter(
@@ -1130,12 +1130,12 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         )
         self.assertEqual(
             families["family_count_distribution"],
-            {"1": 4_959, "2": 217, "3": 94, "4": 26, "5": 4, "6": 1},
+            {"1": 4_959, "2": 221, "3": 94, "4": 26, "5": 4, "6": 1},
         )
-        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 5_301)
-        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 5_341)
-        self.assertEqual(families["multiple_family_coverage"]["numerator"], 342)
-        self.assertEqual(families["multiple_family_coverage"]["denominator"], 5_301)
+        self.assertEqual(families["explicit_mapping_coverage"]["numerator"], 5_305)
+        self.assertEqual(families["explicit_mapping_coverage"]["denominator"], 5_345)
+        self.assertEqual(families["multiple_family_coverage"]["numerator"], 346)
+        self.assertEqual(families["multiple_family_coverage"]["denominator"], 5_305)
         self.assertEqual(set(families["per_event_counts"].values()), {1, 2, 3, 4, 5, 6})
 
         mapped_ids = set(families["per_event_counts"])
@@ -1168,7 +1168,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
     def test_source_manifest_roles_keep_non_outcome_provenance_out_of_coverage(
         self,
     ) -> None:
-        self.assertEqual(len(self.sources), 1_421)
+        self.assertEqual(len(self.sources), 1_435)
         manifest_contract = sorted(
             (
                 source["id"],
@@ -1186,7 +1186,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             manifest_digest,
-            "29cda7a41fc45df746a95b2dc6cd065b013f82a80d3012467fbd93e7e3bdf247",
+            "3a6adbe12854be16ee88039c2efe5c71d10a6e64e1c4fc24aca708008aca1d71",
         )
         self.assertTrue(
             all(
@@ -1201,22 +1201,22 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
             {
                 "curated_reference_pending_claim_level_outcome_locator": 93,
                 "derived_project_continuity_convention": 1,
-                "identity_boundary_or_context_reference": 1_346,
+                "identity_boundary_or_context_reference": 1_358,
                 "identity_crosswalk": 1,
                 "identity_registry": 2,
-                "outcome": 836,
-                "outcome_consistency_crosscheck": 617,
+                "outcome": 846,
+                "outcome_consistency_crosscheck": 622,
             },
         )
         self.assertEqual(
-            len({source["source_family_id"] for source in self.sources}), 1_165
+            len({source["source_family_id"] for source in self.sources}), 1_176
         )
         outcome_source_ids = {
             source["id"]
             for source in self.sources
             if "outcome" in source["evidence_roles"]
         }
-        self.assertEqual(len(outcome_source_ids), 836)
+        self.assertEqual(len(outcome_source_ids), 846)
         self.assertEqual(
             len(
                 {
@@ -1225,14 +1225,14 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                     if source["id"] in outcome_source_ids
                 }
             ),
-            765,
+            772,
         )
         selected_outcome_source_ids = {
             source_id
             for event in self.events
             for source_id in event.get("outcome_source_ids", [])
         }
-        self.assertEqual(len(selected_outcome_source_ids), 726)
+        self.assertEqual(len(selected_outcome_source_ids), 734)
         self.assertLessEqual(selected_outcome_source_ids, outcome_source_ids)
         for source_id in selected_outcome_source_ids:
             self.assertIn("outcome", self.sources_by_id[source_id]["evidence_roles"])
@@ -1282,8 +1282,8 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
         dashboard_events = self.results["events"]
         dashboard_by_id = {event["id"]: event for event in dashboard_events}
 
-        self.assertEqual(len(release_by_id), 5_341)
-        self.assertEqual(len(dashboard_by_id), 5_341)
+        self.assertEqual(len(release_by_id), 5_345)
+        self.assertEqual(len(dashboard_by_id), 5_345)
         self.assertEqual(set(dashboard_by_id), set(release_by_id))
 
         mapped = 0
@@ -1318,7 +1318,7 @@ class CommittedCoverageArtifactTests(unittest.TestCase):
                 self.assertEqual(dashboard_event["sources"], expected_sources)
                 mapped += "outcome_source_ids" in dashboard_event
 
-        self.assertEqual(mapped, 5_301)
+        self.assertEqual(mapped, 5_305)
         self.assertEqual(len(dashboard_events) - mapped, 40)
 
     def test_registry_coverage_is_an_observed_ratio_only(self) -> None:
