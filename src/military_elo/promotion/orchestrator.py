@@ -1605,6 +1605,33 @@ from .wave8_chadian_rebels import (
     wave8_chadian_rebels_counts,
     wave8_chadian_rebels_metadata,
 )
+from .wave8_saudi_rashidi_forces import (
+    WAVE8_SAUDI_RASHIDI_CONTRACT_IDS,
+    WAVE8_SAUDI_RASHIDI_CROSS_LABEL_BOUNDARIES,
+    WAVE8_SAUDI_RASHIDI_ENTITIES,
+    WAVE8_SAUDI_RASHIDI_FIRST_SAUDI_OWNERSHIP_AUDIT,
+    WAVE8_SAUDI_RASHIDI_HCED_TWIN_DISPOSITIONS,
+    WAVE8_SAUDI_RASHIDI_HOLD_IDS,
+    WAVE8_SAUDI_RASHIDI_HOLDS,
+    WAVE8_SAUDI_RASHIDI_INTEGRATION_DISPOSITIONS,
+    WAVE8_SAUDI_RASHIDI_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_SAUDI_RASHIDI_IWBD_OUTSIDE_LANE_AUDIT,
+    WAVE8_SAUDI_RASHIDI_IWBD_ZERO_OVERLAP_AUDIT,
+    WAVE8_SAUDI_RASHIDI_LABEL_OWNERSHIP_AUDIT,
+    WAVE8_SAUDI_RASHIDI_OUTCOME_OVERRIDES,
+    WAVE8_SAUDI_RASHIDI_RELEASE_OWNERSHIP_AUDIT,
+    WAVE8_SAUDI_RASHIDI_RESERVED_IDS,
+    WAVE8_SAUDI_RASHIDI_SOURCES,
+    WAVE8_SAUDI_RASHIDI_TERMINAL_EXCLUSION_IDS,
+    WAVE8_SAUDI_RASHIDI_TERMINAL_EXCLUSIONS,
+    install_wave8_saudi_rashidi_entities,
+    install_wave8_saudi_rashidi_sources,
+    promote_wave8_saudi_rashidi_contracts,
+    validate_wave8_saudi_rashidi_integration_dispositions,
+    validate_wave8_saudi_rashidi_queue_contracts,
+    wave8_saudi_rashidi_cohort_counts,
+    wave8_saudi_rashidi_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1700,6 +1727,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_TALIBAN_AL_QAEDA_RESERVED_IDS
     | WAVE8_FRENCH_RELIGIOUS_FORCES_RESERVED_IDS
     | WAVE8_CHADIAN_REBELS_RESERVED_IDS
+    | WAVE8_SAUDI_RASHIDI_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2121,7 +2149,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 271
+        len(HCED_POINT_QUARANTINE_IDS) != 282
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2389,6 +2417,9 @@ def build_expanded_release(
     )
     wave8_chadian_rebels_queue_validation = (
         validate_wave8_chadian_rebels_queue_contracts(hced)
+    )
+    wave8_saudi_rashidi_queue_validation = (
+        validate_wave8_saudi_rashidi_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -2772,6 +2803,7 @@ def build_expanded_release(
     install_wave8_taliban_al_qaeda_entities(release_entities)
     install_wave8_french_religious_forces_entities(release_entities)
     install_wave8_chadian_rebels_entities(release_entities)
+    install_wave8_saudi_rashidi_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4164,6 +4196,15 @@ def build_expanded_release(
         release_entities,
         wave8_chadian_rebels_existing_events,
     )
+    wave8_saudi_rashidi_existing_events = [
+        *wave8_chadian_rebels_existing_events,
+        *wave8_chadian_rebels_events,
+    ]
+    wave8_saudi_rashidi_events = promote_wave8_saudi_rashidi_contracts(
+        hced,
+        release_entities,
+        wave8_saudi_rashidi_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4241,6 +4282,7 @@ def build_expanded_release(
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
         *wave8_chadian_rebels_events,
+        *wave8_saudi_rashidi_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4386,6 +4428,8 @@ def build_expanded_release(
             *WAVE8_FRENCH_RELIGIOUS_FORCES_TERMINAL_EXCLUSION_IDS,
             *WAVE8_CHADIAN_REBELS_HOLD_IDS,
             *WAVE8_CHADIAN_REBELS_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_SAUDI_RASHIDI_HOLD_IDS,
+            *WAVE8_SAUDI_RASHIDI_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -4489,6 +4533,7 @@ def build_expanded_release(
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
         *wave8_chadian_rebels_events,
+        *wave8_saudi_rashidi_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4903,6 +4948,13 @@ def build_expanded_release(
             wave8_french_religious_forces_existing_events,
         )
     )
+    wave8_saudi_rashidi_integration_validation = (
+        validate_wave8_saudi_rashidi_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_saudi_rashidi_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5137,6 +5189,7 @@ def build_expanded_release(
     install_wave8_taliban_al_qaeda_sources(sources_by_id)
     install_wave8_french_religious_forces_sources(sources_by_id)
     install_wave8_chadian_rebels_sources(sources_by_id)
+    install_wave8_saudi_rashidi_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5219,6 +5272,7 @@ def build_expanded_release(
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
         *wave8_chadian_rebels_events,
+        *wave8_saudi_rashidi_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5301,6 +5355,7 @@ def build_expanded_release(
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
         *wave8_chadian_rebels_events,
+        *wave8_saudi_rashidi_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5382,6 +5437,7 @@ def build_expanded_release(
             | WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS
             | WAVE8_FRENCH_RELIGIOUS_FORCES_CONTRACT_IDS
             | WAVE8_CHADIAN_REBELS_CONTRACT_IDS
+            | WAVE8_SAUDI_RASHIDI_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5511,6 +5567,7 @@ def build_expanded_release(
             WAVE8_FRENCH_RELIGIOUS_FORCES_ENTITIES,
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_CHADIAN_REBELS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_SAUDI_RASHIDI_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5761,6 +5818,7 @@ def build_expanded_release(
         - len(wave8_taliban_al_qaeda_events)
         - len(wave8_french_religious_forces_events)
         - len(wave8_chadian_rebels_events)
+        - len(wave8_saudi_rashidi_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5929,6 +5987,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_chadian_rebels_hced_events": len(
             wave8_chadian_rebels_events
+        ),
+        "candidate_keyed_wave8_saudi_rashidi_hced_events": len(
+            wave8_saudi_rashidi_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -6240,6 +6301,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_chadian_rebels_hced_events": len(
                 wave8_chadian_rebels_events
+            ),
+            "accepted_wave8_saudi_rashidi_hced_events": len(
+                wave8_saudi_rashidi_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -9650,6 +9714,91 @@ def build_expanded_release(
             "wave8_chadian_rebels_sources_added": len(
                 WAVE8_CHADIAN_REBELS_SOURCES
             ),
+            "wave8_saudi_rashidi_counts": wave8_saudi_rashidi_counts(),
+            "wave8_saudi_rashidi_cohort_counts": (
+                wave8_saudi_rashidi_cohort_counts()
+            ),
+            "wave8_saudi_rashidi_queue_validation": (
+                wave8_saudi_rashidi_queue_validation
+            ),
+            "wave8_saudi_rashidi_integration_validation": (
+                wave8_saudi_rashidi_integration_validation
+            ),
+            "wave8_saudi_rashidi_candidate_ids": sorted(
+                WAVE8_SAUDI_RASHIDI_CONTRACT_IDS
+            ),
+            "wave8_saudi_rashidi_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_HOLDS.items()
+                )
+            ],
+            "wave8_saudi_rashidi_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_saudi_rashidi_label_ownership_audit": (
+                WAVE8_SAUDI_RASHIDI_LABEL_OWNERSHIP_AUDIT
+            ),
+            "wave8_saudi_rashidi_first_saudi_ownership_audit": (
+                WAVE8_SAUDI_RASHIDI_FIRST_SAUDI_OWNERSHIP_AUDIT
+            ),
+            "wave8_saudi_rashidi_release_ownership_audit": [
+                {"event_id": event_id, **contract}
+                for event_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_RELEASE_OWNERSHIP_AUDIT.items()
+                )
+            ],
+            "wave8_saudi_rashidi_cross_label_boundaries": [
+                {"boundary_id": boundary_id, **contract}
+                for boundary_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_CROSS_LABEL_BOUNDARIES.items()
+                )
+            ],
+            "wave8_saudi_rashidi_hced_twin_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_HCED_TWIN_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_saudi_rashidi_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_saudi_rashidi_iwbd_zero_overlap_audit": [
+                {"audit_id": audit_id, **contract}
+                for audit_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_IWBD_ZERO_OVERLAP_AUDIT.items()
+                )
+            ],
+            "wave8_saudi_rashidi_iwbd_outside_lane_audit": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_IWBD_OUTSIDE_LANE_AUDIT.items()
+                )
+            ],
+            "wave8_saudi_rashidi_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_saudi_rashidi_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SAUDI_RASHIDI_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_saudi_rashidi_entities_added": len(
+                WAVE8_SAUDI_RASHIDI_ENTITIES
+            ),
+            "wave8_saudi_rashidi_sources_added": len(
+                WAVE8_SAUDI_RASHIDI_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -9945,6 +10094,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_chadian_rebels_hced_events": len(
             wave8_chadian_rebels_events
+        ),
+        "candidate_keyed_wave8_saudi_rashidi_hced_events": len(
+            wave8_saudi_rashidi_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

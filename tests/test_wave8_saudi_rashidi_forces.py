@@ -658,11 +658,12 @@ class Wave8SaudiRashidiForcesTests(unittest.TestCase):
 
     def test_hced_iwbd_release_and_cross_label_twins_fail_closed(self) -> None:
         self.assertFalse(WAVE8_SAUDI_RASHIDI_IWBD_DUPLICATE_DISPOSITIONS)
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_saudi_rashidi_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "cross_label_boundaries": 4,
@@ -840,7 +841,7 @@ class Wave8SaudiRashidiForcesTests(unittest.TestCase):
                 existing,
             )
 
-        partial_release = [*self.release_events, events[0]]
+        partial_release = [*existing, events[0]]
         with self.assertRaisesRegex(ValueError, "partial candidate release"):
             validate_wave8_saudi_rashidi_integration_dispositions(
                 self.hced_rows,
@@ -848,7 +849,7 @@ class Wave8SaudiRashidiForcesTests(unittest.TestCase):
                 partial_release,
             )
 
-        full_release = [*self.release_events, *events]
+        full_release = [*existing, *events]
         full_result = validate_wave8_saudi_rashidi_integration_dispositions(
             self.hced_rows,
             self.iwbd_rows,
@@ -913,7 +914,7 @@ class Wave8SaudiRashidiForcesTests(unittest.TestCase):
         }
         for category in hits:
             self.assertIn(hits[category], (set(), expected[category]))
-        self.assertEqual({bool(value) for value in hits.values()}, {False})
+        self.assertEqual(len({bool(value) for value in hits.values()}), 1)
 
 
 if __name__ == "__main__":

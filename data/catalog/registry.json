@@ -413,6 +413,36 @@
       "region": "Unclassified"
     },
     {
+      "id": "abd_al_rahman_qassim_coalition_mulayda_1891",
+      "name": "Abdul Rahman Al Saud-Qassim coalition at al-Mulayda in 1891",
+      "kind": "event_bounded_coalition",
+      "start_year": 1891,
+      "end_year": 1891,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "abdulaziz_ibn_mutaib_rashidi_force_rawdat_muhanna_1906",
+      "name": "Abdulaziz ibn Mutaib's Rashidi force at Rawdat Muhanna in 1906",
+      "kind": "event_bounded_field_force",
+      "start_year": 1906,
+      "end_year": 1906,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "abdullah_hashemite_army_turabah_1919",
+      "name": "Abdullah's Hashemite army at Turabah in 1919",
+      "kind": "event_bounded_field_army",
+      "start_year": 1919,
+      "end_year": 1919,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "abushiri_revolt_forces",
       "name": "Abushiri Revolt Forces",
       "kind": "rebel_forces",
@@ -595,6 +625,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ajlan_rashidi_riyadh_garrison_1902",
+      "name": "Ajlan's Rashidi Riyadh garrison in January 1902",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 1902,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_iq_akkad_emp_bce2300_74c9fca7",
@@ -1436,6 +1476,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Northern Syria"
+    },
+    {
+      "id": "azaiyiz_mutair_ikhwan_force_umm_radhmah_1929",
+      "name": "Azaiyiz al-Dawish's Mutair Ikhwan force at Umm Radhmah in 1929",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1929,
+      "end_year": 1929,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_q227_1918_3c8832e0",
@@ -4435,6 +4485,16 @@
       "region": "North Africa"
     },
     {
+      "id": "dhaydan_ibn_hithlayn_ajman_force_kanzan_1915",
+      "name": "Dhaydan ibn Hithlayn's al-Ajman force at Kanzan in 1915",
+      "kind": "event_bounded_tribal_force",
+      "start_year": 1915,
+      "end_year": 1915,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "din_muhammad_shaybanid_rebat_parian_army_1598",
       "name": "Din Muhammad Khan's Uzbek army at Rebāt-e Pariān (1598)",
       "kind": "event_bounded_field_army",
@@ -6053,6 +6113,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central Africa"
+    },
+    {
+      "id": "faisal_sultan_rebel_ikhwan_sabilla_1929",
+      "name": "Faisal al-Dawish and Sultan ibn Bijad's rebel Ikhwan at Sabilla in 1929",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1929,
+      "end_year": 1929,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "fatimid_beirut_garrison_1110",
@@ -8141,6 +8211,16 @@
       "region": "Arabian Peninsula"
     },
     {
+      "id": "hashemite_medina_garrison_1925",
+      "name": "Hashemite Medina garrison in 1925",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "clio_us_haudenosaunee_1_1450_0f51fc43",
       "name": "Haudenosaunee",
       "kind": "polity",
@@ -8884,6 +8964,106 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ibn_musaid_loyal_shammar_force_umm_radhmah_1929",
+      "name": "Ibn Musa'id's loyal Shammar force at Umm Radhmah in 1929",
+      "kind": "event_bounded_loyal_tribal_force",
+      "start_year": 1929,
+      "end_year": 1929,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_rashid_dilam_force_1902",
+      "name": "Ibn Rashid's force at Dilam in 1902",
+      "kind": "event_bounded_field_force",
+      "start_year": 1902,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_hofuf_assault_force_1913",
+      "name": "Ibn Saud's Hofuf assault force in May 1913",
+      "kind": "event_bounded_assault_force",
+      "start_year": 1913,
+      "end_year": 1913,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_medina_siege_force_1925",
+      "name": "Ibn Saud's Medina siege force in 1925",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_riyadh_raiding_party_1902",
+      "name": "Ibn Saud's Riyadh raiding party in January 1902",
+      "kind": "event_bounded_raiding_party",
+      "start_year": 1902,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_unayzah_assault_force_1904",
+      "name": "Ibn Saud's Unayzah assault force in March 1904",
+      "kind": "event_bounded_assault_force",
+      "start_year": 1904,
+      "end_year": 1904,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_dilam_force_1902",
+      "name": "Ibn Saud's force at Dilam in 1902",
+      "kind": "event_bounded_field_force",
+      "start_year": 1902,
+      "end_year": 1902,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_kanzan_force_1915",
+      "name": "Ibn Saud's force at Kanzan in 1915",
+      "kind": "event_bounded_field_force",
+      "start_year": 1915,
+      "end_year": 1915,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_rawdat_muhanna_force_1906",
+      "name": "Ibn Saud's force at Rawdat Muhanna in 1906",
+      "kind": "event_bounded_field_force",
+      "start_year": 1906,
+      "end_year": 1906,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "ibn_saud_loyalist_army_sabilla_1929",
+      "name": "Ibn Saud's loyalist army at Sabilla in March 1929",
+      "kind": "event_bounded_combined_arms_force",
+      "start_year": 1929,
+      "end_year": 1929,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_is_icelandic_commonwealth_936_931a1f0d",
@@ -10196,6 +10376,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "khalid_sultan_ikhwan_force_turabah_1919",
+      "name": "Khalid ibn Luayy and Sultan ibn Bijad's Ikhwan force at Turabah in 1919",
+      "kind": "event_bounded_allied_force",
+      "start_year": 1919,
+      "end_year": 1919,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_in_delhi_sultanate_1294_6f6beeef",
@@ -13231,6 +13421,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "majid_ibn_hamoud_rashidi_unayzah_force_1904",
+      "name": "Majid ibn Hamoud's Rashidi force at Unayzah in March 1904",
+      "kind": "event_bounded_city_force",
+      "start_year": 1904,
+      "end_year": 1904,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "davie_british_ceylon_garrison_kandy_1803",
       "name": "Major Davie's British Ceylon garrison at Kandy (1803)",
       "kind": "event_bounded_colonial_garrison",
@@ -14223,6 +14423,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "muhammad_ibn_abdullah_rashidi_army_mulayda_1891",
+      "name": "Muhammad ibn Abdullah Al Rashid's army at al-Mulayda in 1891",
+      "kind": "event_bounded_field_army",
+      "start_year": 1891,
+      "end_year": 1891,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "muircheartach_obrien_thomond_dysert_coalition_1318",
@@ -15443,6 +15653,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southeastern Europe, West Asia, and North Africa"
+    },
+    {
+      "id": "ottoman_hofuf_garrison_1913",
+      "name": "Ottoman Hofuf garrison in May 1913",
+      "kind": "event_bounded_city_garrison",
+      "start_year": 1913,
+      "end_year": 1913,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_q1529261_1840_cdde4d69",
@@ -23954,11 +24174,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2258,
-    "rated_entities": 895,
-    "rated_events": 5269,
+    "registry_polities": 2280,
+    "rated_entities": 917,
+    "rated_events": 5280,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18125,
+    "unresolved_event_candidates": 18114,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24039,6 +24259,7 @@
     "candidate_keyed_wave8_taliban_al_qaeda_hced_events": 4,
     "candidate_keyed_wave8_french_religious_forces_hced_events": 16,
     "candidate_keyed_wave8_chadian_rebels_hced_events": 3,
+    "candidate_keyed_wave8_saudi_rashidi_hced_events": 11,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24049,21 +24270,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5005,
-      "candidate_keyed_reviewed_contracts": 695,
+      "hced_candidate_bindings": 5016,
+      "candidate_keyed_reviewed_contracts": 706,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4912,
-      "location_provenance_objects": 4961,
-      "point_fields_withheld_by_quarantine": 271,
+      "modern_location_country_assertions": 4923,
+      "location_provenance_objects": 4972,
+      "point_fields_withheld_by_quarantine": 282,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 319,
-      "point_quarantine_candidate_manifest_sha256": "67395dc142508fb601660e022d8c2a3564194547469d0532896c0042d6e66d8f",
+      "unique_events_with_any_quarantined_field": 330,
+      "point_quarantine_candidate_manifest_sha256": "c5a7085b375aebbe3ce4487dfe2e8ff7ba92e618db9d81cb9c4cef7411f41cb2",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "c8972690e443bed586291879ab1908c7d977c195f0fb5d37aa556d27a21d030c",
+      "quarantine_policy_sha256": "60fec31b56bcd8aa6d6d71df42fcd5a40e3a8f194ca7370aa17a4b6e460594f0",
       "assertion_status": {
-        "unreviewed_source_assertion": 4961
+        "unreviewed_source_assertion": 4972
       },
       "verified_location_assertions": {
         "availability": "not_available",

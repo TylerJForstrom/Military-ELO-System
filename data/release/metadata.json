@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 902,
-    "events": 5269,
-    "sources": 1243,
-    "registry_polities": 2258
+    "entities": 924,
+    "events": 5280,
+    "sources": 1257,
+    "registry_polities": 2280
   },
   "year_range": {
     "start": -1274,
@@ -151,6 +151,7 @@
     "accepted_wave8_taliban_al_qaeda_hced_events": 4,
     "accepted_wave8_french_religious_forces_hced_events": 16,
     "accepted_wave8_chadian_rebels_hced_events": 3,
+    "accepted_wave8_saudi_rashidi_hced_events": 11,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -15495,7 +15496,867 @@
     "wave8_chadian_rebels_outcome_overrides": [],
     "wave8_chadian_rebels_entities_added": 9,
     "wave8_chadian_rebels_sources_added": 16,
-    "hced_label_pass_input_rows": 5667,
+    "wave8_saudi_rashidi_counts": {
+      "country_quarantine_additions": 0,
+      "cross_label_boundaries": 4,
+      "exact_owned_labels": 3,
+      "first_saudi_candidate_overlap": 0,
+      "hced_twin_dispositions": 4,
+      "holds": 4,
+      "integration_dispositions": 16,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_outside_lane_rows": 1,
+      "new_entities": 22,
+      "new_sources": 14,
+      "newly_rated_events": 11,
+      "outcome_overrides": 2,
+      "point_quarantine_additions": 11,
+      "promotion_contracts": 11,
+      "release_ownership_rows": 4,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 1
+    },
+    "wave8_saudi_rashidi_cohort_counts": {
+      "hasa_and_wartime_consolidation_1913_1915": 2,
+      "hijaz_expansion_1919_1925": 2,
+      "ikhwan_rebellion_1929": 2,
+      "riyadh_qassim_reconquest_1902_1906": 4,
+      "second_saudi_rashidi_climax_1891": 1
+    },
+    "wave8_saudi_rashidi_queue_validation": {
+      "promotion_contracts": 11,
+      "holds": 4,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 1
+    },
+    "wave8_saudi_rashidi_integration_validation": {
+      "cross_label_boundaries": 4,
+      "first_saudi_candidate_overlap": 0,
+      "hced_twin_dispositions": 4,
+      "integration_dispositions": 16,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_outside_lane_rows": 1,
+      "iwbd_probable_twins": 0,
+      "release_ownership_rows": 4,
+      "release_probable_twins": 0,
+      "released_target_candidates": 0
+    },
+    "wave8_saudi_rashidi_candidate_ids": [
+      "hced-Dilam1902-1",
+      "hced-Hofuf1913-1",
+      "hced-Kinzan1915-1",
+      "hced-Medina, Saudi Arabia1925-1",
+      "hced-Mulaydah1891-1",
+      "hced-Rawdhat al Muhanna1906-1",
+      "hced-Riyadh1902-1",
+      "hced-Sabalah1929-1",
+      "hced-Turabah1919-1",
+      "hced-Umm Urdhumah1929-1",
+      "hced-Unayzah1904-1"
+    ],
+    "wave8_saudi_rashidi_holds": [
+      {
+        "candidate_id": "hced-Bukairiya1904-1",
+        "raw_row_sha256": "2e449823da05e2699a4a8f88d9d34a475e477f08414ee854926352f77b4238dc",
+        "canonical_event": {
+          "canonical_key": "bukayriyah_campaign_phases:1904:1904",
+          "date_precision": "year",
+          "date_text": "1904; initial and renewed phases unresolved",
+          "granularity": "multi_phase_campaign",
+          "name": "Bukayriyah campaign phases",
+          "year_low": 1904,
+          "year_high": 1904
+        },
+        "disposition": "hold",
+        "hold_category": "campaign_phase_and_outcome_conflict",
+        "hold_reason": "Sources distinguish an initial Saudi setback from renewed fighting and a later Saudi success, while some accounts attach victory differently across Bukayriyah and the following campaign phase. The locked row does not identify which phase it rates, so its exact outcome remains unknown and is never converted to a draw.",
+        "evidence_refs": [
+          "wave8_saudi_rashidi_abedin_kcl_2002",
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_gungordu_aybu_2015"
+        ],
+        "full_row_audited": true,
+        "terminal_exclusion": false,
+        "historical_event": {
+          "reviewed_actors": [
+            "Ibn Saud's Qassim campaign force",
+            "Rashidi and Ottoman forces in successive Bukayriyah phases"
+          ],
+          "reviewed_date": "1904; exact initial-versus-renewed phase binding unresolved",
+          "reviewed_event": "Successive actions around Bukayriyah in the 1904 Qassim campaign",
+          "reviewed_outcome": "Sources support different outcomes for successive phases; the row's phase is not fixed"
+        }
+      },
+      {
+        "candidate_id": "hced-Jirab1915-1",
+        "raw_row_sha256": "74bea832c007e7bd23f41918f99ec85c575478bb21dcc62894d980f45b9c537a",
+        "canonical_event": {
+          "canonical_key": "battle_of_jarrab:1915:1915",
+          "date_precision": "day",
+          "date_text": "24 January 1915",
+          "granularity": "engagement",
+          "name": "Battle of Jarrab",
+          "year_low": 1915,
+          "year_high": 1915
+        },
+        "disposition": "hold",
+        "hold_category": "direct_source_outcome_conflict",
+        "hold_reason": "The British Library eyewitness account describes Ibn Saud's complete rout and later official reporting calls the day disastrous, while the contemporary Britannica supplement calls the battle indecisive. This direct outcome conflict is held as unknown and is never converted to a draw.",
+        "evidence_refs": [
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_britannica_1926",
+          "wave8_saudi_rashidi_qdl_jarrab_1915"
+        ],
+        "full_row_audited": true,
+        "terminal_exclusion": false,
+        "historical_event": {
+          "reviewed_actors": [
+            "Ibn Rashid's Bani Shammar force at Jarrab",
+            "Ibn Saud's force at Jarrab"
+          ],
+          "reviewed_date": "24 January 1915",
+          "reviewed_event": "Battle of Jarrab and death of Captain William Shakespear",
+          "reviewed_outcome": "Rashidi rout in eyewitness and official accounts versus a contemporary indecisive characterization"
+        }
+      },
+      {
+        "candidate_id": "hced-Riyadh1887-1",
+        "raw_row_sha256": "916cf6857f46133066b8b48c1f1f0b317dcd6c36b31ce3a2a99e2e0c45980aa6",
+        "canonical_event": {
+          "canonical_key": "riyadh_transition_asserted_for_1887:1887:1887",
+          "date_precision": "year",
+          "date_text": "1887 assertion; exact engagement unlocated",
+          "granularity": "unresolved_transition",
+          "name": "Riyadh transition asserted for 1887",
+          "year_low": 1887,
+          "year_high": 1887
+        },
+        "disposition": "hold",
+        "hold_category": "discrete_engagement_not_independently_located",
+        "hold_reason": "Reviewed histories describe the broader late-1880s collapse of Saudi control but do not independently locate one binary Rashidi victory at Riyadh in 1887. The exact event and tactical outcome remain unknown; unknown is never converted to a draw.",
+        "evidence_refs": [
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_bunzel_princeton_2023",
+          "wave8_saudi_rashidi_cambridge_al_rasheed_2010"
+        ],
+        "full_row_audited": true,
+        "terminal_exclusion": false,
+        "historical_event": {
+          "reviewed_actors": [
+            "Rashidi expansion forces",
+            "late Second Saudi State forces associated with Riyadh"
+          ],
+          "reviewed_date": "broader transition in the late 1880s; no exact 1887 battle located",
+          "reviewed_event": "Late-1880s transfer of power around Riyadh",
+          "reviewed_outcome": "Rashidi ascendancy is known, but a single 1887 tactical result is not"
+        }
+      },
+      {
+        "candidate_id": "hced-Taif1924-1",
+        "raw_row_sha256": "9c4e3360661f7e35b520cf60fb61e746d5604b6dbc0e89370c3fb60b0ab387e3",
+        "canonical_event": {
+          "canonical_key": "taif_and_al_hawiyah_operations:1924:1924",
+          "date_precision": "month",
+          "date_text": "September 1924",
+          "granularity": "approach_battle_and_city_capture",
+          "name": "Taif and al-Hawiyah operations",
+          "year_low": 1924,
+          "year_high": 1924
+        },
+        "disposition": "hold",
+        "hold_category": "approach_battle_and_city_capture_boundary_conflict",
+        "hold_reason": "One reviewed account locates the Hashemite defeat at nearby al-Hawiyah before the force entered Taif, while the contemporary Britannica account says Taif itself was captured without opposition. The row does not fix approach battle versus city entry, so no tactical winner is emitted; unknown is never converted to a draw.",
+        "evidence_refs": [
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_britannica_1926",
+          "wave8_saudi_rashidi_loc_country_study_1992"
+        ],
+        "full_row_audited": true,
+        "terminal_exclusion": false,
+        "historical_event": {
+          "reviewed_actors": [
+            "Hashemite force at al-Hawiyah or Taif",
+            "Ikhwan advance force toward Taif"
+          ],
+          "reviewed_date": "September 1924",
+          "reviewed_event": "Defeat near al-Hawiyah followed by entry into Taif",
+          "reviewed_outcome": "A Hashemite defeat is reported outside the city, but no opposed capture at Taif is secure"
+        }
+      }
+    ],
+    "wave8_saudi_rashidi_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Hail1921-1",
+        "raw_row_sha256": "3eefee2789251ac32073ec2cf2180dc222207b8dd7c33b2393d3a53f843a5f42",
+        "canonical_event": {
+          "canonical_key": "surrender_of_hail:1921:1921",
+          "date_precision": "year",
+          "date_text": "1921 surrender after economic and military pressure",
+          "granularity": "noncombat_surrender_after_blockade",
+          "name": "Surrender of Hail",
+          "year_low": 1921,
+          "year_high": 1921
+        },
+        "disposition": "terminal_exclusion",
+        "hold_category": "surrender_without_fighting_after_blockade",
+        "hold_reason": "Independent accounts state that Hail surrendered without a fight and emphasize blockade or economic pressure rather than a competitive battle. That is affirmative proof of a non-ratable transfer, so this row is excluded rather than assigned an invented outcome.",
+        "evidence_refs": [
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_britannica_1926",
+          "wave8_saudi_rashidi_loc_country_study_1992"
+        ],
+        "full_row_audited": true,
+        "terminal_exclusion": true,
+        "historical_event": {
+          "reviewed_actors": [
+            "Hail authorities and remaining Rashidi defenders",
+            "Ibn Saud's encircling forces at Hail"
+          ],
+          "reviewed_date": "1921",
+          "reviewed_event": "Surrender and transfer of Hail after blockade pressure",
+          "reviewed_outcome": "Surrender without fighting; no competitive engagement outcome exists"
+        }
+      }
+    ],
+    "wave8_saudi_rashidi_label_ownership_audit": {
+      "rashidis": {
+        "candidate_ids": [
+          "hced-Dilam1902-1",
+          "hced-Hail1921-1",
+          "hced-Jirab1915-1",
+          "hced-Kinzan1915-1",
+          "hced-Mulaydah1891-1",
+          "hced-Rawdhat al Muhanna1906-1",
+          "hced-Riyadh1887-1",
+          "hced-Riyadh1902-1"
+        ],
+        "events_touched": 8,
+        "funnel_event_candidate_id_sha256": "02c7ad2ff436088c5d5c0ff4106af8f99fbcc4b7b91bd8f6f33886cdb16880a6",
+        "mechanically_necessary_variant": false,
+        "ownership_rule": "exact normalized side label only; no token or dynasty expansion",
+        "sole_blocker_events": 0
+      },
+      "saudis": {
+        "candidate_ids": [
+          "hced-Bukairiya1904-1",
+          "hced-Dilam1902-1",
+          "hced-Hail1921-1",
+          "hced-Hofuf1913-1",
+          "hced-Jirab1915-1",
+          "hced-Kinzan1915-1",
+          "hced-Medina, Saudi Arabia1925-1",
+          "hced-Rawdhat al Muhanna1906-1",
+          "hced-Riyadh1887-1",
+          "hced-Riyadh1902-1",
+          "hced-Sabalah1929-1",
+          "hced-Taif1924-1",
+          "hced-Turabah1919-1",
+          "hced-Umm Urdhumah1929-1",
+          "hced-Unayzah1904-1"
+        ],
+        "events_touched": 15,
+        "funnel_event_candidate_id_sha256": "eaa1ab3a42b774324714a4c7c1edfffd4b2374b3204c66bf25459b09b83f39f0",
+        "mechanically_necessary_variant": false,
+        "ownership_rule": "exact normalized side label only; no token or dynasty expansion",
+        "sole_blocker_events": 3
+      },
+      "saudis qasim": {
+        "candidate_ids": [
+          "hced-Mulaydah1891-1"
+        ],
+        "events_touched": 1,
+        "funnel_event_candidate_id_sha256": "858031ba91aaf34bef903c02ac4ae649d5a1e3b5a57d9411e4f3d09d077940e1",
+        "mechanically_necessary_variant": true,
+        "ownership_rule": "exact normalized side label only; no token or dynasty expansion",
+        "sole_blocker_events": 0
+      }
+    },
+    "wave8_saudi_rashidi_first_saudi_ownership_audit": {
+      "imported_lane": "wave8_first_saudi",
+      "imported_reserved_candidate_ids": [
+        "hced-Al Safra1812-1",
+        "hced-Diriyah1818-1",
+        "hced-Jeddah1813-1",
+        "hced-Mecca1813-1",
+        "hced-Medina1812-1",
+        "hced-Nejd1817-1"
+      ],
+      "target_overlap": [],
+      "disposition": "separate_exact_label_ownership",
+      "reason": "First Saudi owns six House of Saud rows ending in 1818; this lane owns only the 1887-1929 Saudis/Rashidis exact-label inventory."
+    },
+    "wave8_saudi_rashidi_release_ownership_audit": [
+      {
+        "event_id": "hced_wave8_first_saudi_hced_diriyah1818_1",
+        "candidate_id": "hced-Diriyah1818-1",
+        "name": "Siege of Diriyah",
+        "owner": "wave8_first_saudi",
+        "reviewed_target_entity_id": "first_saudi_state",
+        "year": 1818
+      },
+      {
+        "event_id": "iwd_war_48_saudi_arabia_yemen_1934",
+        "candidate_id": null,
+        "name": "Saudi Arabia-Yemen 1934",
+        "owner": "existing_iwd_parent_war",
+        "reviewed_target_entity_id": "kingdom_saudi_arabia",
+        "year": 1934
+      },
+      {
+        "event_id": "iwd_war_70_yom_kippur_1973",
+        "candidate_id": null,
+        "name": "Yom Kippur 1973",
+        "owner": "existing_iwd_parent_war",
+        "reviewed_target_entity_id": "kingdom_saudi_arabia",
+        "year": 1973
+      },
+      {
+        "event_id": "iwd_war_82_gulf_war_1991",
+        "candidate_id": null,
+        "name": "Gulf War 1991",
+        "owner": "existing_iwd_parent_war",
+        "reviewed_target_entity_id": "kingdom_saudi_arabia",
+        "year": 1991
+      }
+    ],
+    "wave8_saudi_rashidi_cross_label_boundaries": [
+      {
+        "boundary_id": "house of saud",
+        "candidate_ids": [
+          "hced-Al Safra1812-1",
+          "hced-Diriyah1818-1",
+          "hced-Jeddah1813-1",
+          "hced-Mecca1813-1",
+          "hced-Medina1812-1",
+          "hced-Nejd1817-1"
+        ],
+        "disposition": "owned_by_wave8_first_saudi",
+        "reason": "The six House of Saud rows concern the First Saudi State lane; this lane does not acquire that dynastic spelling."
+      },
+      {
+        "boundary_id": "ottoman empire rashidis",
+        "candidate_ids": [
+          "hced-Bukairiya1904-1"
+        ],
+        "disposition": "opposing_composite_resolved_inside_owned_row_only",
+        "reason": "The composite is not a lane alias; Bukayriyah is reserved through its exact Saudis side and the opposing actors are reviewed there."
+      },
+      {
+        "boundary_id": "saudi",
+        "candidate_ids": [],
+        "disposition": "not_owned_no_locked_exact_rows",
+        "reason": "A singular token is not inferred from the plural exact label."
+      },
+      {
+        "boundary_id": "saudi arabia",
+        "candidate_ids": [
+          "hced-Hamad1920-1",
+          "hced-Hudayda1934-1",
+          "hced-Jahrah1920-1"
+        ],
+        "disposition": "outside_exact_label_lane",
+        "reason": "These rows use the modern-state label and require a separate identity and duplicate review."
+      }
+    ],
+    "wave8_saudi_rashidi_hced_twin_dispositions": [
+      {
+        "candidate_id": "medina_1812_1925",
+        "candidate_ids": [
+          "hced-Medina1812-1",
+          "hced-Medina, Saudi Arabia1925-1"
+        ],
+        "disposition": "distinct_states_centuries_and_conflicts",
+        "reason": "The First Saudi 1812 row and the Hashemite siege ending in 1925 are not twins."
+      },
+      {
+        "candidate_id": "qassim_campaign_1904",
+        "candidate_ids": [
+          "hced-Bukairiya1904-1",
+          "hced-Unayzah1904-1"
+        ],
+        "disposition": "distinct_engagements_same_campaign",
+        "reason": "Unayzah's March capture is distinct from the unresolved multi-phase Bukayriyah fighting."
+      },
+      {
+        "candidate_id": "riyadh_1887_1902",
+        "candidate_ids": [
+          "hced-Riyadh1887-1",
+          "hced-Riyadh1902-1"
+        ],
+        "disposition": "same_place_distinct_events",
+        "reason": "The unresolved 1887 transition and the documented January 1902 assault are fifteen years apart."
+      },
+      {
+        "candidate_id": "taif_1916_1924",
+        "candidate_ids": [
+          "hced-Taif1916-1",
+          "hced-Taif1924-1"
+        ],
+        "disposition": "distinct_wars_and_forces",
+        "reason": "The 1916 Arab Revolt capture from the Ottomans is distinct from the 1924 Saudi-Hashemite operations."
+      }
+    ],
+    "wave8_saudi_rashidi_iwbd_duplicate_dispositions": [],
+    "wave8_saudi_rashidi_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Bukairiya1904-1",
+        "year": 1904,
+        "aliases": [
+          "al bukayriyah",
+          "battle of bukayriyah",
+          "bukairiya",
+          "bukayriyah"
+        ]
+      },
+      {
+        "audit_id": "hced-Dilam1902-1",
+        "year": 1902,
+        "aliases": [
+          "battle of dilam",
+          "dilam"
+        ]
+      },
+      {
+        "audit_id": "hced-Hail1921-1",
+        "year": 1921,
+        "aliases": [
+          "fall of hail",
+          "hail",
+          "siege of hail"
+        ]
+      },
+      {
+        "audit_id": "hced-Hofuf1913-1",
+        "year": 1913,
+        "aliases": [
+          "assault and capture of hofuf",
+          "capture of hofuf",
+          "hofuf"
+        ]
+      },
+      {
+        "audit_id": "hced-Jirab1915-1",
+        "year": 1915,
+        "aliases": [
+          "battle of jarrab",
+          "jarrab",
+          "jirab"
+        ]
+      },
+      {
+        "audit_id": "hced-Kinzan1915-1",
+        "year": 1915,
+        "aliases": [
+          "battle of kanzan",
+          "kanzan",
+          "kinzan"
+        ]
+      },
+      {
+        "audit_id": "hced-Medina, Saudi Arabia1925-1",
+        "year": 1925,
+        "aliases": [
+          "medina",
+          "medina saudi arabia",
+          "siege and surrender of medina",
+          "siege of medina"
+        ]
+      },
+      {
+        "audit_id": "hced-Mulaydah1891-1",
+        "year": 1891,
+        "aliases": [
+          "al mulayda",
+          "battle of al mulayda",
+          "mulayda",
+          "mulaydah"
+        ]
+      },
+      {
+        "audit_id": "hced-Rawdhat al Muhanna1906-1",
+        "year": 1906,
+        "aliases": [
+          "battle of rawdat muhanna",
+          "rawdat al muhanna",
+          "rawdat muhanna",
+          "rawdhat al muhanna"
+        ]
+      },
+      {
+        "audit_id": "hced-Riyadh1887-1",
+        "year": 1887,
+        "aliases": [
+          "riyadh",
+          "riyadh transition"
+        ]
+      },
+      {
+        "audit_id": "hced-Riyadh1902-1",
+        "year": 1902,
+        "aliases": [
+          "capture of riyadh",
+          "riyadh"
+        ]
+      },
+      {
+        "audit_id": "hced-Sabalah1929-1",
+        "year": 1929,
+        "aliases": [
+          "battle of sabilla",
+          "sabalah",
+          "sabilla",
+          "sablah"
+        ]
+      },
+      {
+        "audit_id": "hced-Taif1924-1",
+        "year": 1924,
+        "aliases": [
+          "battle of taif",
+          "capture of taif",
+          "taif",
+          "taif and al hawiyah operations"
+        ]
+      },
+      {
+        "audit_id": "hced-Turabah1919-1",
+        "year": 1919,
+        "aliases": [
+          "battle of turabah",
+          "battle of turubah",
+          "turabah",
+          "turubah"
+        ]
+      },
+      {
+        "audit_id": "hced-Umm Urdhumah1929-1",
+        "year": 1929,
+        "aliases": [
+          "battle of umm radhmah",
+          "battle of umm urdhumah",
+          "umm radhma",
+          "umm radhmah",
+          "umm radmah",
+          "umm urdhumah"
+        ]
+      },
+      {
+        "audit_id": "hced-Unayzah1904-1",
+        "year": 1904,
+        "aliases": [
+          "assault and capture of unayzah",
+          "unaizah",
+          "unayzah"
+        ]
+      }
+    ],
+    "wave8_saudi_rashidi_iwbd_outside_lane_audit": [
+      {
+        "candidate_id": "iwbd-125-48-872",
+        "raw_row_sha256": "a2a2c654330cadc5e469c31d2875487cef692b36a4220fcef6b94507465eb5e2",
+        "name": "Hudayda",
+        "year": 1934,
+        "attacker_raw": "Yemen",
+        "defender_raw": "Saudi Arabia",
+        "winner_raw": "Saudi Arabia",
+        "related_hced_candidate_id": "hced-Hudayda1934-1",
+        "disposition": "outside_exact_label_lane",
+        "reason": "The only Saudi-related IWBD row is a 1934 Saudi Arabia/Yemen row. It is a probable twin of an HCED Saudi Arabia row, not any exact Saudis/Rashidis event owned here."
+      }
+    ],
+    "wave8_saudi_rashidi_integration_dispositions": [
+      {
+        "disposition_id": "hced-Bukairiya1904-1",
+        "all_opposing_actors_resolved": false,
+        "blocker_labels": [
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": "saudis"
+      },
+      {
+        "disposition_id": "hced-Dilam1902-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Hail1921-1",
+        "all_opposing_actors_resolved": false,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "EXCLUDE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Hofuf1913-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": "saudis"
+      },
+      {
+        "disposition_id": "hced-Jirab1915-1",
+        "all_opposing_actors_resolved": false,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Kinzan1915-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Medina, Saudi Arabia1925-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "hashemites",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Mulaydah1891-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "rashidis",
+          "saudis qasim"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Rawdhat al Muhanna1906-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Riyadh1887-1",
+        "all_opposing_actors_resolved": false,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Riyadh1902-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "rashidis",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Sabalah1929-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "ikhwan brotherhood",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Taif1924-1",
+        "all_opposing_actors_resolved": false,
+        "blocker_labels": [
+          "hashemites",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "HOLD",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Turabah1919-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "hashemites",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Umm Urdhumah1929-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "ikhwan rebels",
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": null
+      },
+      {
+        "disposition_id": "hced-Unayzah1904-1",
+        "all_opposing_actors_resolved": true,
+        "blocker_labels": [
+          "saudis"
+        ],
+        "cross_label_duplicate_scan": "reviewed_no_rating_collision",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "greedy_eligible": true,
+        "iwbd_duplicate_scan": "reviewed_no_exact_or_probable_twin",
+        "other_blockers": [],
+        "release_duplicate_scan": "reviewed_no_existing_release_twin",
+        "sole_blocker_label": "saudis"
+      }
+    ],
+    "wave8_saudi_rashidi_outcome_overrides": [
+      {
+        "candidate_id": "hced-Kinzan1915-1",
+        "raw_side_1_label": "Rashidis",
+        "raw_winner_label": "Rashidis",
+        "reviewed_result": "side_1_win",
+        "reviewed_side_1_entity_ids": [
+          "dhaydan_ibn_hithlayn_ajman_force_kanzan_1915"
+        ],
+        "override_type": "winner_actor_correction",
+        "reason": "The winning orientation is retained, but the documented victor was al-Ajman, not a Rashidi formation.",
+        "source_ids": [
+          "wave8_saudi_rashidi_abedin_kcl_2002",
+          "wave8_saudi_rashidi_al_azma_durham_1999"
+        ]
+      },
+      {
+        "candidate_id": "hced-Unayzah1904-1",
+        "raw_loser_label": null,
+        "raw_winner_label": "Draw",
+        "reviewed_result": "side_1_win",
+        "reviewed_side_1_entity_ids": [
+          "ibn_saud_unayzah_assault_force_1904"
+        ],
+        "reviewed_side_2_entity_ids": [
+          "majid_ibn_hamoud_rashidi_unayzah_force_1904"
+        ],
+        "override_type": "draw_to_source_backed_win",
+        "reason": "The Rashidi commander was killed, the defending force surrendered or fled, and Ibn Saud's force entered Unayzah.",
+        "source_ids": [
+          "wave8_saudi_rashidi_almutairi_uea_2019",
+          "wave8_saudi_rashidi_alotaibi_bangor_2017"
+        ]
+      }
+    ],
+    "wave8_saudi_rashidi_entities_added": 22,
+    "wave8_saudi_rashidi_sources_added": 14,
+    "hced_label_pass_input_rows": 5651,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -15508,7 +16369,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 937,
+      "reserved_candidate_contract": 953,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -15520,7 +16381,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2157,
+      "no_unique_time_valid_label_match": 2141,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

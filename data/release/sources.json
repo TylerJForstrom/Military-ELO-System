@@ -14832,6 +14832,202 @@
     ]
   },
   {
+    "id": "wave8_saudi_rashidi_abedin_kcl_2002",
+    "title": "Abdul Aziz Al-Saud and the Great Game in Arabia, 1896-1946",
+    "url": "https://kclpure.kcl.ac.uk/portal/files/2925835/397151.pdf",
+    "publisher": "King's College London Research Portal",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "kings_college_london_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_al_azma_durham_1999",
+    "title": "The role of the Ikhwan under 'Abdul-'Aziz Al Sa'ud, 1916-1934",
+    "url": "https://etheses.dur.ac.uk/1472/1/1472.pdf",
+    "publisher": "Durham University E-Theses",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "durham_university_etheses",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_almutairi_uea_2019",
+    "title": "British-Saudi Relations 1902-1932",
+    "url": "https://ueaeprints.uea.ac.uk/id/eprint/94658/",
+    "publisher": "University of East Anglia Digital Repository",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_east_anglia_repository",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_alotaibi_bangor_2017",
+    "title": "Ibn Sa'ud and Britain: Early changing relationship and pre-state formation 1902-1914",
+    "url": "https://pure.bangor.ac.uk/ws/portalfiles/portal/20572121/file",
+    "publisher": "Bangor University Research Portal",
+    "license": "linked_reference",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "bangor_university_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_britannica_1926",
+    "title": "Arabia",
+    "url": "https://en.wikisource.org/wiki/Page:EB1926_-_Supplement_Volume_1.pdf/196",
+    "publisher": "Encyclopaedia Britannica, 13th edition supplement",
+    "license": "linked_reference",
+    "source_type": "contemporary_reference_work",
+    "accessed": "2026-07-16",
+    "source_family_id": "encyclopaedia_britannica_1926",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_bunzel_princeton_2023",
+    "title": "Wahhabism: The History of a Militant Islamic Movement",
+    "url": "https://www.jstor.org/stable/j.ctv321jd1x",
+    "publisher": "Princeton University Press / JSTOR",
+    "license": "linked_reference",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "princeton_university_press",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_cambridge_al_rasheed_2010",
+    "title": "The emerging state, 1902-1932",
+    "url": "https://www.cambridge.org/core/books/abs/history-of-saudi-arabia/emerging-state-19021932/89B3D34A6AC46FB63ACC9387D19C9B10",
+    "publisher": "Cambridge University Press",
+    "license": "linked_reference",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_saudi_arabia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_gungordu_aybu_2015",
+    "title": "Turkey-Saudi Arabia relations since the establishment of the Saudi Kingdom",
+    "url": "https://avesis.aybu.edu.tr/yonetilen-tez/03c04be1-496a-4110-bbd1-b86675463ef3/turkey-saudi-arabia-relations-since-the-establishment-of-the-saudi-kingdom",
+    "publisher": "Ankara Yildirim Beyazit University Research Portal",
+    "license": "linked_reference",
+    "source_type": "masters_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ankara_yildirim_beyazit_university",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_loc_country_profile_2006",
+    "title": "Saudi Arabia: Country Profile",
+    "url": "https://tile.loc.gov/storage-services/master/frd/copr/Saudi_Arabia.pdf",
+    "publisher": "Library of Congress Federal Research Division",
+    "license": "linked_reference",
+    "source_type": "institutional_country_profile",
+    "accessed": "2026-07-16",
+    "source_family_id": "library_of_congress_federal_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_loc_country_study_1992",
+    "title": "Saudi Arabia: A Country Study",
+    "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/sa/saudiarabiacount00metz_0/saudiarabiacount00metz_0.pdf",
+    "publisher": "Library of Congress Federal Research Division",
+    "license": "linked_reference",
+    "source_type": "institutional_country_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "library_of_congress_country_studies",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_qdl_jarrab_1915",
+    "title": "The Death of Captain Shakespear, 1915",
+    "url": "https://qdl.qa/en/death-captain-shakespear-1915",
+    "publisher": "Qatar Digital Library / British Library",
+    "license": "linked_reference",
+    "source_type": "curated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "british_library_india_office_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_rundell_bloomsbury_2020",
+    "title": "Vision or Mirage: Saudi Arabia at the Crossroads",
+    "url": "https://www.bloomsbury.com/us/vision-or-mirage-9781838605933/",
+    "publisher": "I.B. Tauris / Bloomsbury",
+    "license": "linked_reference",
+    "source_type": "academic_trade_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "bloomsbury_ib_tauris",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_saudipedia_dilam",
+    "title": "Ad-Dilam Wall",
+    "url": "https://saudipedia.com/en/ad-dilam-wall",
+    "publisher": "Saudipedia / Ministry of Media, Saudi Arabia",
+    "license": "linked_reference",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "saudipedia_heritage_commission",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_saudi_rashidi_saudipedia_rawdat",
+    "title": "Battle of Rawdat Muhanna",
+    "url": "https://saudipedia.com/%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D8%B1%D9%88%D8%B6%D8%A9-%D9%85%D9%87%D9%86%D8%A7",
+    "publisher": "Saudipedia / Ministry of Media, Saudi Arabia",
+    "license": "linked_reference",
+    "source_type": "official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "saudipedia_king_abdulaziz_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_sauk_army_indian_wars",
     "title": "Indian Wars: Black Hawk campaign, 26 April-30 September 1832",
     "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Indian-Wars/",

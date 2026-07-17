@@ -11611,6 +11611,37 @@
     ]
   },
   {
+    "id": "abd_al_rahman_qassim_coalition_mulayda_1891",
+    "name": "Abdul Rahman Al Saud-Qassim coalition at al-Mulayda in 1891",
+    "kind": "event_bounded_coalition",
+    "start_year": 1891,
+    "end_year": 1891,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity combines only the source-attested Saudi and Qassim forces opposed at al-Mulayda. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_bunzel_princeton_2023"
+    ]
+  },
+  {
+    "id": "muhammad_ibn_abdullah_rashidi_army_mulayda_1891",
+    "name": "Muhammad ibn Abdullah Al Rashid's army at al-Mulayda in 1891",
+    "kind": "event_bounded_field_army",
+    "start_year": 1891,
+    "end_year": 1891,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Rashidi army in the 1891 al-Mulayda engagement. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_bunzel_princeton_2023",
+      "wave8_saudi_rashidi_cambridge_al_rasheed_2010"
+    ]
+  },
+  {
     "id": "british_south_africa_company_forces_1893",
     "name": "British South Africa Company forces (1893 Matabele campaign)",
     "kind": "chartered_company_force",
@@ -11714,6 +11745,21 @@
     ]
   },
   {
+    "id": "ajlan_rashidi_riyadh_garrison_1902",
+    "name": "Ajlan's Rashidi Riyadh garrison in January 1902",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 1902,
+    "end_year": 1902,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the January 1902 capture of Ajlan's Riyadh position. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_loc_country_profile_2006"
+    ]
+  },
+  {
     "id": "datu_ali_buayan_resistance_1902_1905",
     "name": "Datu Ali's Buayan resistance (1902-1905)",
     "kind": "regime_bounded_buayan_force",
@@ -11727,6 +11773,51 @@
       "wave8_moros_22d_infantry_datu_ali_archive",
       "wave8_moros_anu_muslim_mindanao",
       "wave8_moros_war_department_1904"
+    ]
+  },
+  {
+    "id": "ibn_rashid_dilam_force_1902",
+    "name": "Ibn Rashid's force at Dilam in 1902",
+    "kind": "event_bounded_field_force",
+    "start_year": 1902,
+    "end_year": 1902,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Rashidi force that withdrew after the Dilam engagement. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_alotaibi_bangor_2017",
+      "wave8_saudi_rashidi_saudipedia_dilam"
+    ]
+  },
+  {
+    "id": "ibn_saud_riyadh_raiding_party_1902",
+    "name": "Ibn Saud's Riyadh raiding party in January 1902",
+    "kind": "event_bounded_raiding_party",
+    "start_year": 1902,
+    "end_year": 1902,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the small party that entered Riyadh and attacked Ajlan's position in January 1902. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_loc_country_profile_2006"
+    ]
+  },
+  {
+    "id": "ibn_saud_dilam_force_1902",
+    "name": "Ibn Saud's force at Dilam in 1902",
+    "kind": "event_bounded_field_force",
+    "start_year": 1902,
+    "end_year": 1902,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the force engaged at Dilam in 1902. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_alotaibi_bangor_2017",
+      "wave8_saudi_rashidi_saudipedia_dilam"
     ]
   },
   {
@@ -11807,6 +11898,21 @@
     ]
   },
   {
+    "id": "ibn_saud_unayzah_assault_force_1904",
+    "name": "Ibn Saud's Unayzah assault force in March 1904",
+    "kind": "event_bounded_assault_force",
+    "start_year": 1904,
+    "end_year": 1904,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the force that attacked the Rashidi position and entered Unayzah in March 1904. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_alotaibi_bangor_2017"
+    ]
+  },
+  {
     "id": "kandji_tjetjo_eastern_ovaherero_force_1904",
     "name": "Kandji Tjetjo's eastern Ovaherero force (1904)",
     "kind": "indigenous_resistance_force",
@@ -11819,6 +11925,21 @@
     "source_ids": [
       "namibia_nhc_heritage_places",
       "urjc_german_southwest_campaign_analysis"
+    ]
+  },
+  {
+    "id": "majid_ibn_hamoud_rashidi_unayzah_force_1904",
+    "name": "Majid ibn Hamoud's Rashidi force at Unayzah in March 1904",
+    "kind": "event_bounded_city_force",
+    "start_year": 1904,
+    "end_year": 1904,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the commander's death and the garrison's surrender or flight at Unayzah. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_alotaibi_bangor_2017"
     ]
   },
   {
@@ -11898,6 +12019,38 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "abdulaziz_ibn_mutaib_rashidi_force_rawdat_muhanna_1906",
+    "name": "Abdulaziz ibn Mutaib's Rashidi force at Rawdat Muhanna in 1906",
+    "kind": "event_bounded_field_force",
+    "start_year": 1906,
+    "end_year": 1906,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with Abdulaziz ibn Mutaib Al Rashid's death in the Rawdat Muhanna fighting. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_abedin_kcl_2002",
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_saudipedia_rawdat"
+    ]
+  },
+  {
+    "id": "ibn_saud_rawdat_muhanna_force_1906",
+    "name": "Ibn Saud's force at Rawdat Muhanna in 1906",
+    "kind": "event_bounded_field_force",
+    "start_year": 1906,
+    "end_year": 1906,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Saudi force in the 1906 Rawdat Muhanna engagement. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_abedin_kcl_2002",
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_saudipedia_rawdat"
     ]
   },
   {
@@ -11996,6 +12149,22 @@
     ]
   },
   {
+    "id": "ibn_saud_hofuf_assault_force_1913",
+    "name": "Ibn Saud's Hofuf assault force in May 1913",
+    "kind": "event_bounded_assault_force",
+    "start_year": 1913,
+    "end_year": 1913,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the wall-scaling assault and capture operation at Hofuf in May 1913. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926",
+      "wave8_saudi_rashidi_loc_country_study_1992"
+    ]
+  },
+  {
     "id": "huerta_federal_army",
     "name": "Mexican Federal Army under Huerta",
     "kind": "state_force",
@@ -12007,6 +12176,21 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "mexico_constitutionalists"
+    ]
+  },
+  {
+    "id": "ottoman_hofuf_garrison_1913",
+    "name": "Ottoman Hofuf garrison in May 1913",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 1913,
+    "end_year": 1913,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the Ottoman garrison's surrender and removal from Hofuf. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926"
     ]
   },
   {
@@ -12038,6 +12222,36 @@
       "nam_south_west_africa_campaign",
       "samh_sandfontein_1914",
       "samh_gibeon_1915"
+    ]
+  },
+  {
+    "id": "dhaydan_ibn_hithlayn_ajman_force_kanzan_1915",
+    "name": "Dhaydan ibn Hithlayn's al-Ajman force at Kanzan in 1915",
+    "kind": "event_bounded_tribal_force",
+    "start_year": 1915,
+    "end_year": 1915,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is the al-Ajman force in the Kanzan engagement, not HCED's erroneous Rashidi label. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_abedin_kcl_2002",
+      "wave8_saudi_rashidi_al_azma_durham_1999"
+    ]
+  },
+  {
+    "id": "ibn_saud_kanzan_force_1915",
+    "name": "Ibn Saud's force at Kanzan in 1915",
+    "kind": "event_bounded_field_force",
+    "start_year": 1915,
+    "end_year": 1915,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers Ibn Saud's force in the Kanzan attack and immediate defeat only. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_abedin_kcl_2002",
+      "wave8_saudi_rashidi_al_azma_durham_1999"
     ]
   },
   {
@@ -12210,6 +12424,22 @@
     ]
   },
   {
+    "id": "abdullah_hashemite_army_turabah_1919",
+    "name": "Abdullah's Hashemite army at Turabah in 1919",
+    "kind": "event_bounded_field_army",
+    "start_year": 1919,
+    "end_year": 1919,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to Abdullah's Hashemite army defeated at Turabah in May 1919. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926",
+      "wave8_saudi_rashidi_loc_country_study_1992"
+    ]
+  },
+  {
     "id": "landeswehr_iron_division_cesis_force_1919",
     "name": "Baltische Landeswehr and Iron Division at Cēsis (1919)",
     "kind": "event_bounded_baltic_german_formation",
@@ -12269,6 +12499,22 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "khalid_sultan_ikhwan_force_turabah_1919",
+    "name": "Khalid ibn Luayy and Sultan ibn Bijad's Ikhwan force at Turabah in 1919",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1919,
+    "end_year": 1919,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the source-attested Ikhwan-led force in the May 1919 Turabah attack. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926",
+      "wave8_saudi_rashidi_loc_country_study_1992"
     ]
   },
   {
@@ -12445,6 +12691,37 @@
     ]
   },
   {
+    "id": "hashemite_medina_garrison_1925",
+    "name": "Hashemite Medina garrison in 1925",
+    "kind": "event_bounded_city_garrison",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity ends with the Hashemite garrison's December 1925 surrender after the siege. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926"
+    ]
+  },
+  {
+    "id": "ibn_saud_medina_siege_force_1925",
+    "name": "Ibn Saud's Medina siege force in 1925",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the force maintaining the 1925 Medina siege through surrender. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_britannica_1926",
+      "wave8_saudi_rashidi_loc_country_study_1992"
+    ]
+  },
+  {
     "id": "imperial_state_iran_pahlavi",
     "name": "Imperial State of Iran under the Pahlavi Dynasty",
     "kind": "monarchy",
@@ -12538,6 +12815,68 @@
     "source_ids": [
       "britannica_chinese_civil_war",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "azaiyiz_mutair_ikhwan_force_umm_radhmah_1929",
+    "name": "Azaiyiz al-Dawish's Mutair Ikhwan force at Umm Radhmah in 1929",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1929,
+    "end_year": 1929,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the Mutair Ikhwan force defeated at the Umm Radhmah wells. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_al_azma_durham_1999",
+      "wave8_saudi_rashidi_rundell_bloomsbury_2020"
+    ]
+  },
+  {
+    "id": "faisal_sultan_rebel_ikhwan_sabilla_1929",
+    "name": "Faisal al-Dawish and Sultan ibn Bijad's rebel Ikhwan at Sabilla in 1929",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1929,
+    "end_year": 1929,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to the rebel Ikhwan formation defeated at Sabilla in March 1929. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_al_azma_durham_1999",
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_rundell_bloomsbury_2020"
+    ]
+  },
+  {
+    "id": "ibn_musaid_loyal_shammar_force_umm_radhmah_1929",
+    "name": "Ibn Musa'id's loyal Shammar force at Umm Radhmah in 1929",
+    "kind": "event_bounded_loyal_tribal_force",
+    "start_year": 1929,
+    "end_year": 1929,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity covers the loyal Shammar force that held the Umm Radhmah wells in September 1929. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_al_azma_durham_1999",
+      "wave8_saudi_rashidi_rundell_bloomsbury_2020"
+    ]
+  },
+  {
+    "id": "ibn_saud_loyalist_army_sabilla_1929",
+    "name": "Ibn Saud's loyalist army at Sabilla in March 1929",
+    "kind": "event_bounded_combined_arms_force",
+    "start_year": 1929,
+    "end_year": 1929,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity is limited to Ibn Saud's loyalist army and machine-gun element at Sabilla. No rating is inherited by a Saudi or Rashidi dynasty/state label, the modern Kingdom of Saudi Arabia, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_rashidi_al_azma_durham_1999",
+      "wave8_saudi_rashidi_almutairi_uea_2019",
+      "wave8_saudi_rashidi_rundell_bloomsbury_2020"
     ]
   },
   {
