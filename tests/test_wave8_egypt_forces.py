@@ -487,6 +487,15 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             )
 
     def test_iwbd_iwd_and_current_release_duplicate_audits_fail_closed(self):
+        current_overlap = {
+            str(event.get("hced_candidate_id"))
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_EGYPT_FORCES_CONTRACT_IDS
+        }
+        self.assertIn(
+            current_overlap,
+            (set(), set(lane.WAVE8_EGYPT_FORCES_CONTRACT_IDS)),
+        )
         self.assertEqual(
             lane.validate_wave8_egypt_forces_integration_dispositions(
                 self.hced_rows,
@@ -499,7 +508,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
                 "hced_same_event_twins": 0,
                 "iwbd_duplicate_dispositions": 20,
                 "iwd_related_rows": 1,
-                "release_lane_overlap": 0,
+                "release_lane_overlap": len(current_overlap),
             },
         )
         released_iwbd = {
@@ -539,7 +548,8 @@ class Wave8EgyptForcesTests(unittest.TestCase):
 
     def test_release_integration_is_all_or_none_and_preserves_single_owners(self):
         promoted = self._events()
-        full_release = [*copy.deepcopy(self.release_events), *copy.deepcopy(promoted)]
+        _, _, base_release = self._installed()
+        full_release = [*copy.deepcopy(base_release), *copy.deepcopy(promoted)]
         result = lane.validate_wave8_egypt_forces_integration_dispositions(
             self.hced_rows,
             self.iwbd_rows,
@@ -548,14 +558,14 @@ class Wave8EgyptForcesTests(unittest.TestCase):
         )
         self.assertEqual(result["release_lane_overlap"], 16)
 
-        partial = [*copy.deepcopy(self.release_events), copy.deepcopy(promoted[0])]
+        partial = [*copy.deepcopy(base_release), copy.deepcopy(promoted[0])]
         with self.assertRaisesRegex(ValueError, "partial release integration"):
             lane.validate_wave8_egypt_forces_integration_dispositions(
                 self.hced_rows, self.iwbd_rows, partial, self.iwd_rows
             )
 
         held = [
-            *copy.deepcopy(self.release_events),
+            *copy.deepcopy(full_release),
             {
                 "id": "bad_held_egypt_event",
                 "name": "Masindi",
@@ -570,7 +580,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             )
 
         twin = [
-            *copy.deepcopy(self.release_events),
+            *copy.deepcopy(full_release),
             {
                 "id": "bad_chinese_farm_twin",
                 "name": "Chinese Farm",

@@ -524,6 +524,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "afar_issa_awsa_defenders_1875",
+      "name": "Afar and Issa defenders at Awsa (1875)",
+      "kind": "event_bounded_formation",
+      "start_year": 1875,
+      "end_year": 1875,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Awsa, Ethiopia"
+    },
+    {
       "id": "afghan_bengal_river_defense_ghaghra_1529",
       "name": "Afghan-Bengal river defense at Ghaghra (1529)",
       "kind": "event_bounded_coalition",
@@ -1468,6 +1478,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ayyubid_damietta_garrison_1218_1219",
+      "name": "Ayyubid garrison of Damietta (1218-1219)",
+      "kind": "event_bounded_formation",
+      "start_year": 1218,
+      "end_year": 1219,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Damietta, Egypt"
+    },
+    {
       "id": "az_zughayli_antioch_garrison_969",
       "name": "Az-Zughayli's Antioch garrison in 969",
       "kind": "event_bounded_city_garrison",
@@ -1635,6 +1655,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Levantine coast"
+    },
+    {
+      "id": "baldwin_iv_montgisard_force_1177",
+      "name": "Baldwin IV's Jerusalem-Templar force at Montgisard (1177)",
+      "kind": "event_bounded_formation",
+      "start_year": 1177,
+      "end_year": 1177,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Montgisard"
     },
     {
       "id": "clio_kr_balhae_k_705_40a38d8a",
@@ -2540,6 +2570,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "caesarian_pergamene_nile_coalition_47_bce",
+      "name": "Caesarian-Pergamene coalition at the Nile (47 BCE)",
+      "kind": "event_bounded_formation",
+      "start_year": -47,
+      "end_year": -47,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nile Delta"
     },
     {
       "id": "clio_q1025803_bce750_e449faae",
@@ -5165,6 +5205,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "dufile_garrison_1888",
+      "name": "Dufile garrison (1888)",
+      "kind": "event_bounded_formation",
+      "start_year": 1888,
+      "end_year": 1888,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Dufile, Uganda"
+    },
+    {
       "id": "duke_norfolk_forces_1469",
       "name": "Duke of Norfolk's Forces at Caister",
       "kind": "campaign_force",
@@ -5658,6 +5708,86 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Egypt and the Levant"
+    },
+    {
+      "id": "egyptian_chinese_farm_defenders_1973",
+      "name": "Egyptian defenders at Chinese Farm (1973)",
+      "kind": "event_bounded_formation",
+      "start_year": 1973,
+      "end_year": 1973,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Chinese Farm, Sinai"
+    },
+    {
+      "id": "egyptian_abu_ageila_force_1967",
+      "name": "Egyptian force at Abu Ageila (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Abu Ageila, Sinai"
+    },
+    {
+      "id": "egyptian_bir_gafgafa_force_1967",
+      "name": "Egyptian force at Bir Gafgafa (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bir Gafgafa, Sinai"
+    },
+    {
+      "id": "egyptian_jebel_libni_force_1967",
+      "name": "Egyptian force at Jebel Libni (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Jebel Libni, Sinai"
+    },
+    {
+      "id": "egyptian_rafah_force_1967",
+      "name": "Egyptian force at Rafah (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rafah"
+    },
+    {
+      "id": "egyptian_gaza_force_1967",
+      "name": "Egyptian force in the defense of Gaza (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gaza"
+    },
+    {
+      "id": "sinkat_egyptian_garrison_1884",
+      "name": "Egyptian garrison of Sinkat (1884)",
+      "kind": "event_bounded_formation",
+      "start_year": 1884,
+      "end_year": 1884,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sinkat, Sudan"
+    },
+    {
+      "id": "egyptian_mitla_retreat_force_1967",
+      "name": "Egyptian retreat force at Mitla Pass (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mitla Pass, Sinai"
     },
     {
       "id": "clio_ir_elam_2_bce3200_3ae02065",
@@ -6313,6 +6443,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "fifth_crusade_damietta_siege_host_1218_1219",
+      "name": "Fifth Crusade siege host at Damietta (1218-1219)",
+      "kind": "event_bounded_formation",
+      "start_year": 1218,
+      "end_year": 1219,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Damietta, Egypt"
+    },
+    {
       "id": "clio_q5448100_750_a5b32cd8",
       "name": "Fihrids",
       "kind": "polity",
@@ -6618,6 +6758,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Western Europe"
+    },
+    {
+      "id": "frankish_ascalon_garrison_1247",
+      "name": "Frankish garrison of Ascalon (1247)",
+      "kind": "event_bounded_formation",
+      "start_year": 1247,
+      "end_year": 1247,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ascalon"
     },
     {
       "id": "frederick_i_imperial_field_army_legnano_1176",
@@ -9423,6 +9573,76 @@
       "region": "Unclassified"
     },
     {
+      "id": "israeli_abu_ageila_force_1967",
+      "name": "Israeli force at Abu Ageila (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Abu Ageila, Sinai"
+    },
+    {
+      "id": "israeli_bir_gafgafa_force_1967",
+      "name": "Israeli force at Bir Gafgafa (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bir Gafgafa, Sinai"
+    },
+    {
+      "id": "israeli_chinese_farm_force_1973",
+      "name": "Israeli force at Chinese Farm (1973)",
+      "kind": "event_bounded_formation",
+      "start_year": 1973,
+      "end_year": 1973,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Chinese Farm, Sinai"
+    },
+    {
+      "id": "israeli_jebel_libni_force_1967",
+      "name": "Israeli force at Jebel Libni (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Jebel Libni, Sinai"
+    },
+    {
+      "id": "israeli_rafah_force_1967",
+      "name": "Israeli force at Rafah (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rafah"
+    },
+    {
+      "id": "israeli_gaza_force_1967",
+      "name": "Israeli force in the capture of Gaza (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gaza"
+    },
+    {
+      "id": "israeli_mitla_interdiction_force_1967",
+      "name": "Israeli interdiction force at Mitla Pass (1967)",
+      "kind": "event_bounded_formation",
+      "start_year": 1967,
+      "end_year": 1967,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mitla Pass, Sinai"
+    },
+    {
       "id": "clio_q926295_1890_cc276195",
       "name": "Italian Africa",
       "kind": "polity",
@@ -9924,6 +10144,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "East Asia"
+    },
+    {
+      "id": "josiah_judah_force_609_bce",
+      "name": "Josiah's Judahite force at Megiddo (609 BCE)",
+      "kind": "event_bounded_formation",
+      "start_year": -609,
+      "end_year": -609,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Megiddo"
     },
     {
       "id": "gorriti_jujuy_militia_leon_1821",
@@ -13630,6 +13860,16 @@
       "region": "Egypt and the Levant"
     },
     {
+      "id": "mamluk_alexandria_defenders_1365",
+      "name": "Mamluk defenders of Alexandria (1365)",
+      "kind": "event_bounded_formation",
+      "start_year": 1365,
+      "end_year": 1365,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alexandria, Egypt"
+    },
+    {
       "id": "manco_inca_ollantaytambo_defenders_1537",
       "name": "Manco Inca's defenders at Ollantaytambo (1537)",
       "kind": "event_bounded_fortified_field_force",
@@ -14506,6 +14746,16 @@
       "region": "Amritsar, Punjab"
     },
     {
+      "id": "munzinger_awsa_expedition_1875",
+      "name": "Munzinger's Egyptian Awsa expedition (1875)",
+      "kind": "event_bounded_formation",
+      "start_year": 1875,
+      "end_year": 1875,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Awsa, Ethiopia"
+    },
+    {
       "id": "murad_bey_egypt_campaign_force_1798",
       "name": "Murad Bey's Egyptian Campaign Force (1798)",
       "kind": "campaign_force",
@@ -14894,6 +15144,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and the central Mediterranean"
+    },
+    {
+      "id": "necho_ii_megiddo_force_609_bce",
+      "name": "Necho II's force at Megiddo (609 BCE)",
+      "kind": "event_bounded_formation",
+      "start_year": -609,
+      "end_year": -609,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Megiddo"
     },
     {
       "id": "clio_q213893_1775_4cd6c067",
@@ -15624,6 +15884,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "osman_digna_sinkat_force_1884",
+      "name": "Osman Digna's force at Sinkat (1884)",
+      "kind": "event_bounded_formation",
+      "start_year": 1884,
+      "end_year": 1884,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sinkat, Sudan"
+    },
+    {
       "id": "clio_it_ostrogoth_k_500_92704df8",
       "name": "Ostrogothic Kingdom",
       "kind": "kingdom",
@@ -16199,6 +16469,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "peter_i_alexandria_crusade_force_1365",
+      "name": "Peter I's Alexandria crusade force (1365)",
+      "kind": "event_bounded_formation",
+      "start_year": 1365,
+      "end_year": 1365,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alexandria, Egypt"
     },
     {
       "id": "clio_q4202088_1294_3066b3e1",
@@ -17221,6 +17501,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North Africa"
+    },
+    {
+      "id": "ptolemy_xiii_nile_army_47_bce",
+      "name": "Ptolemy XIII's army at the Nile (47 BCE)",
+      "kind": "event_bounded_formation",
+      "start_year": -47,
+      "end_year": -47,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nile Delta"
     },
     {
       "id": "clio_us_aztec_puebloan_1152_4f2384fb",
@@ -19201,6 +19491,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "saladin_montgisard_campaign_force_1177",
+      "name": "Saladin's campaign force at Montgisard (1177)",
+      "kind": "event_bounded_formation",
+      "start_year": 1177,
+      "end_year": 1177,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Montgisard"
     },
     {
       "id": "salah_ben_salah_ceuta_defenders_1415",
@@ -22586,6 +22886,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "umar_salih_dufile_force_1888",
+      "name": "Umar Salih's Mahdist force at Dufile (1888)",
+      "kind": "event_bounded_formation",
+      "start_year": 1888,
+      "end_year": 1888,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Dufile, Uganda"
+    },
+    {
       "id": "umayyad_caliphate",
       "name": "Umayyad Caliphate",
       "kind": "caliphate",
@@ -24170,6 +24480,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "al_salih_ayyub_ascalon_siege_force_1247",
+      "name": "al-Salih Ayyub's Ascalon siege force (1247)",
+      "kind": "event_bounded_formation",
+      "start_year": 1247,
+      "end_year": 1247,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ascalon"
+    },
+    {
       "id": "clio_q867227_bce256_fb867f63",
       "name": "Âu Lạc",
       "kind": "polity",
@@ -24234,11 +24554,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2286,
-    "rated_entities": 923,
-    "rated_events": 5283,
+    "registry_polities": 2318,
+    "rated_entities": 955,
+    "rated_events": 5299,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18111,
+    "unresolved_event_candidates": 18095,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24321,6 +24641,7 @@
     "candidate_keyed_wave8_chadian_rebels_hced_events": 3,
     "candidate_keyed_wave8_saudi_rashidi_hced_events": 11,
     "candidate_keyed_wave8_yaqui_hced_events": 3,
+    "candidate_keyed_wave8_egypt_forces_hced_events": 16,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24331,21 +24652,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5019,
-      "candidate_keyed_reviewed_contracts": 709,
+      "hced_candidate_bindings": 5035,
+      "candidate_keyed_reviewed_contracts": 725,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4926,
-      "location_provenance_objects": 4975,
-      "point_fields_withheld_by_quarantine": 285,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
+      "modern_location_country_assertions": 4940,
+      "location_provenance_objects": 4989,
+      "point_fields_withheld_by_quarantine": 301,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 333,
-      "point_quarantine_candidate_manifest_sha256": "38aff2211cc2c0024ce1121fb54b16a058c4fb40cf9d08cf2487bda9accb54ee",
-      "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "8552a5dae72af1291aa0601a58b3175a00fb8e4a084de0aded4fda1bb4dc32e8",
+      "point_country_quarantine_overlap": 46,
+      "unique_events_with_any_quarantined_field": 349,
+      "point_quarantine_candidate_manifest_sha256": "b6b02dc651d33d23d766a002dc4a71a7cbdfc81b0bafe7d53d193c4173bce5fb",
+      "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
+      "quarantine_policy_sha256": "ba3d77024606d53ce0f2c9ce894823586faafaadcf6e98ed8dfde16a5ee02e5a",
       "assertion_status": {
-        "unreviewed_source_assertion": 4975
+        "unreviewed_source_assertion": 4989
       },
       "verified_location_assertions": {
         "availability": "not_available",

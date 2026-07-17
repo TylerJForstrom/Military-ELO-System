@@ -7773,6 +7773,536 @@
     ]
   },
   {
+    "id": "wave8_egypt_andrews_megiddo_609",
+    "title": "The Babylonian Chronicle and the Ancient Calendar of Judah",
+    "url": "https://www.andrews.edu/library/car/cardigital/Periodicals/AUSS/1967-1/1967-1-02.pdf",
+    "publisher": "Andrews University Seminary Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_chronology_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "thiele_megiddo_609_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_army_chinese_farm",
+    "title": "Sinai 1973: Israeli Maneuver Organization and the Battle of the Chinese Farm",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/AnArmyAtWar_ChangeInTheMidstOfConflict.pdf",
+    "publisher": "U.S. Army Combat Studies Institute",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "mcgrath_chinese_farm",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_army_key_sinai",
+    "title": "Key to the Sinai: The Battles for Abu Ageila in 1956 and 1967",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/key-to-the-sinai.pdf",
+    "publisher": "U.S. Army Combat Studies Institute",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "gawrych_key_to_sinai",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_army_scouts_out",
+    "title": "Scouts Out! The Development of Reconnaissance Units in Modern Armies",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/scouts_out.pdf",
+    "publisher": "U.S. Army Combat Studies Institute",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "army_scouts_out_rafah_case",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_army_yom_kippur",
+    "title": "The 1973 Arab-Israeli War: The Albatross of Decisive Victory",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/the-1973-arab-israeli-war.pdf",
+    "publisher": "U.S. Army Combat Studies Institute",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "gawrych_1973_arab_israeli_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_barilan_azotus",
+    "title": "Ashdod in the Assyrian Period",
+    "url": "https://lisa.biu.ac.il/sites/lisa/files/shared/Ashdod%20in%20the%20Assyrian%20Period%20Aster%20JNES%20Offprint.pdf",
+    "publisher": "Journal of Near Eastern Studies / Bar-Ilan University",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "aster_ashdod_assyrian_period",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_birmingham_alexandria_1365",
+    "title": "The Crusade of Peter I of Cyprus against Alexandria",
+    "url": "https://etheses.bham.ac.uk/id/eprint/6111/1/Ozkutlu15PhD.pdf",
+    "publisher": "University of Birmingham",
+    "license": "Citation and link only",
+    "source_type": "doctoral_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "ozkutlu_peter_i_alexandria_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_bmcr_cos",
+    "title": "Review: The Ptolemaic Navy and the Battle of Cos",
+    "url": "https://bmcr.brynmawr.edu/2001/2001.03.17/",
+    "publisher": "Bryn Mawr Classical Review",
+    "license": "Citation and link only",
+    "source_type": "scholarly_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "bmcr_ptolemaic_navy_cos",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_brill_alexandria_1365",
+    "title": "The Crusade of Peter I of Cyprus and the Sack of Alexandria",
+    "url": "https://brill.com/display/book/edcoll/9789047416241/front-7.pdf",
+    "publisher": "Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "brill_peter_i_alexandria_1365",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_bu_megiddo_609",
+    "title": "Chosen City: Jerusalem in the Persian and Hellenistic Periods",
+    "url": "https://www.bu.edu/mzank/Jerusalem/cp/ChosenCity.html",
+    "publisher": "Boston University",
+    "license": "Citation and link only",
+    "source_type": "university_history_resource",
+    "accessed": "2026-07-16",
+    "source_family_id": "bu_chosen_city_megiddo_609",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_cambridge_battle_nile",
+    "title": "The Date of Julius Caesar's Departure from Alexandria",
+    "url": "https://www.cambridge.org/core/journals/journal-of-roman-studies/article/abs/date-of-julius-caesars-departure-from-alexandria1/5DD2BE963C9905415C97879B091036B5",
+    "publisher": "Journal of Roman Studies / Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_chronology_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "jrs_caesar_alexandria_departure",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_cambridge_montgisard",
+    "title": "The Leper King and His Heirs: Epilogue",
+    "url": "https://www.cambridge.org/core/books/abs/leper-king-and-his-heirs/epilogue/A4BD507B706309EE9B2F1D6055764848",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hamilton_leper_king_montgisard",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_cambridge_panion",
+    "title": "The Battle of Panion, 200 BC",
+    "url": "https://www.cambridge.org/core/books/abs/seleucid-army/battle-of-panion-200-bc/CC125ED635D11BD09F305B9D1BDA3E0A",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "bar_kochva_panion_200",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_dickinson_battle_nile",
+    "title": "Eutropius 6.22: Caesar at Alexandria",
+    "url": "https://dcc.dickinson.edu/eutropius/6-22",
+    "publisher": "Dickinson College Commentaries",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "eutropius_dickinson_caesar_alexandria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_emory_napata",
+    "title": "Psamtik II and the Nubian Campaign",
+    "url": "https://etd.library.emory.edu/downloads/wd375x259?locale=en",
+    "publisher": "Emory University",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "emory_psamtik_nubian_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_fordham_ascalon_1247",
+    "title": "Frederick II: Letter on the Loss of Jerusalem and Ascalon",
+    "url": "https://sourcebooks.web.fordham.edu/source/1228frederick2.asp",
+    "publisher": "Fordham University Internet Medieval Sourcebook",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "frederick_ii_ascalon_sourcebook",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_hansard_sinkat",
+    "title": "Vote of Censure: Egypt and the Soudan",
+    "url": "https://api.parliament.uk/historic-hansard/lords/1884/feb/12/vote-of-censure",
+    "publisher": "UK Parliament Historic Hansard",
+    "license": "Citation and link only",
+    "source_type": "contemporary_parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "hansard_sinkat_1884",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_hansard_tokar",
+    "title": "Egypt and the Soudan: The Fall of Tokar",
+    "url": "https://hansard.parliament.uk/Commons/1884-02-25/debates/b072137c-ea9e-4cdd-858d-76a9f670b514/CommonsChamber",
+    "publisher": "UK Parliament Historic Hansard",
+    "license": "Citation and link only",
+    "source_type": "contemporary_parliamentary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "hansard_tokar_1884",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_ifpo_montgisard",
+    "title": "Saladin and the Battle of Montgisard",
+    "url": "https://books.openedition.org/ifpo/23621",
+    "publisher": "Presses de l'Ifpo / OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "ifpo_saladin_montgisard",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_jstor_munzinger_awsa",
+    "title": "The Egyptian Colonial Path to Harar",
+    "url": "https://www.jstor.org/stable/j.ctv14h511.8",
+    "publisher": "JSTOR / Red Sea Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "caulk_egyptian_path_harar",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_masindi_profile",
+    "title": "Masindi District Tourism Profile",
+    "url": "https://masindi.go.ug/sites/default/files/MASINDI%20DISTRICT%20TOURISM%20%20UPDATED%20PROFILE%20PDF%20final.pdf",
+    "publisher": "Masindi District Local Government",
+    "license": "Citation and link only",
+    "source_type": "official_local_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "masindi_district_kabalega_baker",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_michigan_napata",
+    "title": "Graffiti as Devotion along the Nile",
+    "url": "https://lsa.umich.edu/content/dam/kelsey-assets/kelsey-publications/pdfs/Graffiti-as-Devotion.pdf",
+    "publisher": "University of Michigan Kelsey Museum",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "kelsey_napata_psamtik_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_mprl_munzinger",
+    "title": "Werner Munzinger and Northeast African Exploration",
+    "url": "https://www.mprl-series.mpg.de/studies/14/6/index.html",
+    "publisher": "Max Planck Research Library",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "mprl_munzinger_northeast_africa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_osu_megiddo",
+    "title": "The Battle of Megiddo",
+    "url": "https://ehistory.osu.edu/battles/megiddo",
+    "publisher": "Ohio State University eHistory",
+    "license": "Citation and link only",
+    "source_type": "university_history_resource",
+    "accessed": "2026-07-16",
+    "source_family_id": "osu_megiddo_thutmose",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_oxford_fifth_crusade",
+    "title": "The Damietta Crusade, 1217-1221: A Military History",
+    "url": "https://academic.oup.com/book/57913",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "powell_fifth_crusade_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_oxford_gaza_history",
+    "title": "Gaza: A History",
+    "url": "https://pal.k0de.org/Filiu%2C%20Jean-Pierre%20-%20Gaza_%20A%20History%20-%20Oxford%20University%20Press%20%282014%29.pdf",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "filiu_gaza_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_pollack_six_day_war",
+    "title": "Air Power in the Six-Day War",
+    "url": "https://www.warfaresims.com/temp/AirOps_AirPowerInTheSixDayWar.pdf",
+    "publisher": "Journal of Strategic Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "pollack_air_power_six_day_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_sabanci_dufile",
+    "title": "The Late Ottoman Imperialist Endeavor in Central Africa: The Province of Equatoria (Hatt-I Istiva)",
+    "url": "https://research.sabanciuniv.edu/id/eprint/48734/1/10473116.pdf",
+    "publisher": "Sabanci University",
+    "license": "Citation and link only",
+    "source_type": "graduate_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "sabanci_emin_pasha_dufile",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_study_circle_sudan",
+    "title": "The Egyptian Campaigns in the Eastern Sudan, 1883-1885",
+    "url": "https://www.egyptstudycircle.org.uk/QCs/QC062.pdf",
+    "publisher": "Egypt Study Circle",
+    "license": "Citation and link only",
+    "source_type": "archival_campaign_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "egypt_study_circle_eastern_sudan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_tandf_damietta",
+    "title": "Oliver of Paderborn and the Frisians at the Siege of Damietta, 1218-1219",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/14765276.2023.2271408",
+    "publisher": "Taylor & Francis",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "tandf_fifth_crusade_damietta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_tdv_al_salih_ayyub",
+    "title": "el-Melikus-Salih Eyyub",
+    "url": "https://islamansiklopedisi.org.tr/el-melikus-salih-eyyub",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_al_salih_ayyub",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_egypt_treccani_azotus",
+    "title": "Ashdod",
+    "url": "https://www.treccani.it/enciclopedia/asdod_%28Enciclopedia-dell%27-Arte-Antica%29/",
+    "publisher": "Treccani Enciclopedia dell'Arte Antica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_ashdod",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_ucla_chronology",
+    "title": "Ancient Egyptian Chronology",
+    "url": "https://uee.ucla.edu/chronology",
+    "publisher": "UCLA Encyclopedia of Egyptology",
+    "license": "Citation and link only",
+    "source_type": "scholarly_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucla_egyptian_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_uganda_journal_masindi",
+    "title": "Sir Samuel Baker and Bunyoro",
+    "url": "https://ufdcimages.uflib.ufl.edu/UF/00/08/08/55/00044/UF00080855_00044.pdf",
+    "publisher": "The Uganda Journal / University of Florida Digital Collections",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "uganda_journal_baker_bunyoro",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_egypt_usmc_crossing_under_fire",
+    "title": "Crossing under Fire: The 1973 Suez Canal Crossing",
+    "url": "https://www.usmcu.edu/Outreach/Marine-Corps-University-Press/Expeditions-with-MCUP-digital-journal/Crossing-under-Fire/",
+    "publisher": "Marine Corps University Press",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "usmcu_crossing_under_fire",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_usni_six_day_war",
+    "title": "The Six-Day War, 1967",
+    "url": "https://www.usni.org/magazines/proceedings/1968/june/six-day-war-1967",
+    "publisher": "U.S. Naval Institute Proceedings",
+    "license": "Citation and link only",
+    "source_type": "professional_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "usni_six_day_war_1967",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_vandeleur_dufile",
+    "title": "Campaigning on the Upper Nile and Niger",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Campaigning_on_the_upper_Nile_and_Niger_%28IA_campaigningonupp00vand%29.pdf",
+    "publisher": "Methuen / Internet Archive scan",
+    "license": "Citation and link only",
+    "source_type": "participant_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "vandeleur_upper_nile_dufile",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_egypt_world_history_kadesh",
+    "title": "Battle of Kadesh",
+    "url": "https://www.worldhistory.org/Kadesh/",
+    "publisher": "World History Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "editorially_reviewed_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "whe_kadesh_review",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_encyclopedia_history_ukraine_zhovnyne",
     "title": "Battle of Zhovnyne, 1638",
     "url": "https://resource.history.org.ua/cgi-bin/eiu/history.exe?C21COM=S&I21DBN=DOP&P21DBN=EIU&S21CNR=20&S21COLORTERMS=0&S21FMT=eiu_all&S21P01=0&S21P02=0&S21P03=TRN%3D&S21REF=10&S21STN=1&S21STR=Zhovnynska_bytva_1638&Z21ID=",

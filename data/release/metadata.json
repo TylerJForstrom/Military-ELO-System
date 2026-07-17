@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 930,
-    "events": 5283,
-    "sources": 1266,
-    "registry_polities": 2286
+    "entities": 962,
+    "events": 5299,
+    "sources": 1304,
+    "registry_polities": 2318
   },
   "year_range": {
     "start": -1274,
@@ -153,6 +153,7 @@
     "accepted_wave8_chadian_rebels_hced_events": 3,
     "accepted_wave8_saudi_rashidi_hced_events": 11,
     "accepted_wave8_yaqui_hced_events": 3,
+    "accepted_wave8_egypt_forces_hced_events": 16,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -16766,20 +16767,1286 @@
     "wave8_yaqui_outcome_overrides": [],
     "wave8_yaqui_entities_added": 6,
     "wave8_yaqui_sources_added": 9,
-    "hced_label_pass_input_rows": 5647,
+    "wave8_egypt_forces_counts": {
+      "adjacent_hced_rows": 38,
+      "audited_current_release_events": 56,
+      "audited_existing_identities": 18,
+      "country_quarantine_additions": 2,
+      "exact_label_rows": 58,
+      "existing_release_dispositions": 31,
+      "hced_same_event_twins": 0,
+      "holds": 9,
+      "iwbd_duplicate_dispositions": 20,
+      "iwd_related_rows": 1,
+      "new_entities": 32,
+      "new_sources": 38,
+      "newly_rated_events": 16,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 16,
+      "promotion_contracts": 16,
+      "reviewed_hced_rows": 58,
+      "terminal_exclusions": 2
+    },
+    "wave8_egypt_forces_cohort_counts": {
+      "ancient_chronology": 3,
+      "ancient_duplicate_conflict": 1,
+      "ancient_egypt": 1,
+      "equatoria_expeditionary": 1,
+      "fifth_crusade": 1,
+      "hellenistic_chronology": 2,
+      "khedival_periphery": 2,
+      "mahdist_war": 2,
+      "medieval_egypt": 3,
+      "ptolemaic_civil_war": 1,
+      "six_day_war_sinai": 6,
+      "yom_kippur_war_sinai": 4
+    },
+    "wave8_egypt_forces_audit_signature": "bb523b35e94b15c8d88c5f06f4c62161be9c6d18a25e86a538a675223be6949a",
+    "wave8_egypt_forces_final_audit_signature": "bb523b35e94b15c8d88c5f06f4c62161be9c6d18a25e86a538a675223be6949a",
+    "wave8_egypt_forces_queue_validation": {
+      "adjacent_hced_rows": 38,
+      "exact_label_rows": 58,
+      "existing_release_dispositions": 31,
+      "holds": 9,
+      "promotion_contracts": 16,
+      "reviewed_hced_rows": 58,
+      "terminal_exclusions": 2
+    },
+    "wave8_egypt_forces_identity_validation": {
+      "audited_release_entities": 18,
+      "audited_release_events": 56,
+      "audited_seed_entities": 3,
+      "audited_seed_events": 2,
+      "existing_1967_identity_candidates": 0
+    },
+    "wave8_egypt_forces_integration_validation": {
+      "existing_release_dispositions": 31,
+      "hced_same_event_twins": 0,
+      "iwbd_duplicate_dispositions": 20,
+      "iwd_related_rows": 1,
+      "release_lane_overlap": 16
+    },
+    "wave8_egypt_forces_candidate_ids": [
+      "hced-Abu Ageila1967-1",
+      "hced-Alexandria1365-1",
+      "hced-Ascalon1247-1",
+      "hced-Aussa1875-1",
+      "hced-Bir Gafgafa1967-1",
+      "hced-Chinese Farm1973-1",
+      "hced-Dufile1888-1",
+      "hced-Gaza1967-1",
+      "hced-Jebel Libni1967-1",
+      "hced-Megiddo-609-1",
+      "hced-Mitla Pass1967-1",
+      "hced-Montgisard1177-1",
+      "hced-Nile-47-1",
+      "hced-Rafa1967-1",
+      "hced-Sinkat1884-1",
+      "hced-al, Damietta1218-1219-1"
+    ],
+    "wave8_egypt_forces_holds": [
+      {
+        "candidate_id": "hced-Azotus-659-1",
+        "raw_row_sha256": "5a6ef97fecc27bf7a5f37aede95b6da9f6412551b42e8d3b167618db14d0daf2",
+        "cohort": "ancient_chronology",
+        "disposition": "hold",
+        "hold_category": "pinned_year_unsupported",
+        "hold_reason": "The reviewed literature places Psammetichus I's Ashdod campaign around 636 BCE and preserves a prolonged-siege tradition; it does not support an Egyptian win at the locked 659 BCE date.",
+        "evidence_refs": [
+          "wave8_egypt_barilan_azotus",
+          "wave8_egypt_treccani_azotus"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Cos-254-1",
+        "raw_row_sha256": "0781dc4cf0ccf333ce99cc9b8c6bbfe4cbeddd42565d15d5999522208d5455c1",
+        "cohort": "hellenistic_chronology",
+        "disposition": "hold",
+        "hold_category": "chronology_and_outcome_disputed",
+        "hold_reason": "The Battle of Cos chronology, belligerent alignment, and relationship to the Chremonidean War remain disputed; the HCED -254 assertion is not safe to rate.",
+        "evidence_refs": [
+          "wave8_egypt_bmcr_cos"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Masindi1872-1",
+        "raw_row_sha256": "7189079104efb18a269ae3ee0f1193675e406b20eeada769cd3c4c64cb642726",
+        "cohort": "khedival_periphery",
+        "disposition": "hold",
+        "hold_category": "conflicting_tactical_traditions",
+        "hold_reason": "Accounts alternately describe Baker as locally victorious and as defeated by Kabalega before an insecure retreat. That conflict is unknown, not a draw.",
+        "evidence_refs": [
+          "wave8_egypt_masindi_profile",
+          "wave8_egypt_uganda_journal_masindi"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Megiddo-1468-1",
+        "raw_row_sha256": "c2986da33d2ede9d02806d69228e99e92790194b2fbf26da607cbe36334a5e43",
+        "cohort": "ancient_chronology",
+        "disposition": "hold",
+        "hold_category": "pinned_year_unsupported",
+        "hold_reason": "Current Egyptian chronologies place Thutmose III's accession in 1479 BCE and commonly date Megiddo to 1479 or 1457 BCE; the locked -1468 row cannot be reconciled without choosing a chronology by invention.",
+        "evidence_refs": [
+          "wave8_egypt_osu_megiddo",
+          "wave8_egypt_ucla_chronology"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Napata-593-1",
+        "raw_row_sha256": "1bd577688524c0cc872bb5d1f583b67ffeeaaeb7047b935fdb30d67af7b8cb26",
+        "cohort": "ancient_chronology",
+        "disposition": "hold",
+        "hold_category": "campaign_date_and_event_granularity_uncertain",
+        "hold_reason": "Scholarship dates Psamtik II's Nubian campaign to 592 or 590 BCE and does not establish the queued -593 Napata record as a discrete engagement.",
+        "evidence_refs": [
+          "wave8_egypt_emory_napata",
+          "wave8_egypt_michigan_napata"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Paneas-198-1",
+        "raw_row_sha256": "64d054e173e56c6ff2f64071850d3bb00d13f1ee72cb7ba339d1e0c92734a7eb",
+        "cohort": "hellenistic_chronology",
+        "disposition": "hold",
+        "hold_category": "battle_date_mismatch",
+        "hold_reason": "The battle normally identified as Panion is dated to 200 BCE. The 198 BCE date reflects territorial consequences and cannot be promoted as the same engagement.",
+        "evidence_refs": [
+          "wave8_egypt_cambridge_panion"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Suez Canal (1st)1973-1",
+        "raw_row_sha256": "de182498c56f50c3f33afbeaf9e5f371601e7235d9017f8e34063345ecb4e989",
+        "cohort": "yom_kippur_war_sinai",
+        "disposition": "hold",
+        "hold_category": "generic_phase_not_discrete_event",
+        "hold_reason": "The ordinal label cannot be mapped uniquely to a discrete canal operation in the reviewed campaign histories; its proposed Egyptian win is therefore held.",
+        "evidence_refs": [
+          "wave8_egypt_army_yom_kippur",
+          "wave8_egypt_usmc_crossing_under_fire"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Suez Canal (2nd)1973-1",
+        "raw_row_sha256": "ba1185cbd8a93139aaccdbd666cdac1635c462165c5addfe7d708223d5648d0b",
+        "cohort": "yom_kippur_war_sinai",
+        "disposition": "hold",
+        "hold_category": "generic_phase_not_discrete_event",
+        "hold_reason": "The ordinal label cannot be mapped uniquely to a discrete operation. HCED's Draw proposal is not converted into a rating; ambiguity remains a hold.",
+        "evidence_refs": [
+          "wave8_egypt_army_yom_kippur",
+          "wave8_egypt_usmc_crossing_under_fire"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Suez Canal (3rd)1973-1",
+        "raw_row_sha256": "59916bd6ac011998c281f6091229306f667c2644e5a0766f3d8345a01a44532a",
+        "cohort": "yom_kippur_war_sinai",
+        "disposition": "hold",
+        "hold_category": "generic_phase_not_discrete_event",
+        "hold_reason": "The ordinal label cannot be mapped uniquely to a discrete canal operation in the reviewed campaign histories; its proposed Israeli win is therefore held.",
+        "evidence_refs": [
+          "wave8_egypt_army_yom_kippur",
+          "wave8_egypt_usmc_crossing_under_fire"
+        ],
+        "terminal_exclusion": false,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "hold"
+        }
+      }
+    ],
+    "wave8_egypt_forces_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Kadesh-1275-1",
+        "raw_row_sha256": "f4beff55c2138b889db199a18d4926e8ad3754be7a817f1d970fccd69e961531",
+        "cohort": "ancient_duplicate_conflict",
+        "disposition": "terminal_exclusion",
+        "hold_category": "existing_inconclusive_event_and_false_outcome",
+        "hold_reason": "The current release already owns the same Kadesh tradition at 1274 BCE as inconclusive, with the Hittites retaining Kadesh. The HCED -1275 unqualified Egyptian win would duplicate and contradict that adjudication.",
+        "evidence_refs": [
+          "wave8_egypt_world_history_kadesh"
+        ],
+        "terminal_exclusion": true,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "terminal_exclusion",
+          "existing_owner_event_id": "battle_kadesh_1274_bce"
+        }
+      },
+      {
+        "candidate_id": "hced-Tokar1883-1",
+        "raw_row_sha256": "8c50131d3230eac5c0c0a1d2c411f052a09f213465aaccf7681bea192da690c0",
+        "cohort": "mahdist_war",
+        "disposition": "terminal_exclusion",
+        "hold_category": "proposed_outcome_disproved",
+        "hold_reason": "The Egyptian relief column sent toward Tokar on 6 November 1883 was annihilated; Tokar remained besieged and surrendered in February 1884. The queued Egyptian win is the opposite of the documented outcome.",
+        "evidence_refs": [
+          "wave8_egypt_hansard_tokar",
+          "wave8_egypt_study_circle_sudan"
+        ],
+        "terminal_exclusion": true,
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_egypt_forces",
+          "status": "terminal_exclusion"
+        }
+      }
+    ],
+    "wave8_egypt_forces_exact_label_funnel_audit": {
+      "normalized_label": "egypt",
+      "events_touched": 13,
+      "unresolved_side_attempts": 13,
+      "event_candidate_id_sha256": "693f2bd0faa9d2bc1b808980f598d62b7a54c91adc9e3c59b1df77d6e70c659d",
+      "exact_inventory_candidate_id_sha256": "8ec9305eb28bc56ff94e53d8495a0385148d27e4edb1a178b2a04332ed7bf363",
+      "exact_row_hash_mapping_sha256": "6ecf1744a5b71a88f449dade893007a6db6031524e28b94c0f7dd069b6cafb27",
+      "finding": "the_funnel_is_a_13_row_unresolved_projection_not_the_58_row_literal_inventory"
+    },
+    "wave8_egypt_forces_existing_release_dispositions": [
+      {
+        "candidate_id": "hced-Abu Ageila1956-1",
+        "raw_row_sha256": "b1749fe5be1900e99ec5386e634e70d297c544fc6acac9006f86008133029ddb",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_abu_ageila1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Acre1831-1",
+        "raw_row_sha256": "2203bb8e6a8405d48b3b4bbc57276c85bfe12dfb3fec5cc1dd0a7d501e320119",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_acre1831_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "ottoman_empire",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Acre1840-1",
+        "raw_row_sha256": "843c9cda832b0893ecd52aa99035adae36e1ff58c94872e3ef6be1e5e222c570",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_acre1840_1",
+        "participant_sides": [
+          [
+            "austrian_empire",
+            "side_a"
+          ],
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Alexandria-48-1",
+        "raw_row_sha256": "a6db82f40c262068522699bcc94fa3bd8d2e7e10b722a8eff668fbddd326ac5d",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_alexandria_48_1",
+        "participant_sides": [
+          [
+            "ptolemaic_egypt_305_bce",
+            "side_b"
+          ],
+          [
+            "roman_republic",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Alexandria1167-1",
+        "raw_row_sha256": "08efcecd6ddaf0441da0b41bc9c0b1d5447403480e23384f6dc1a25535266239",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_alexandria1167_1",
+        "participant_sides": [
+          [
+            "clio_il_jerusalem_k_1_1099_306afd1d",
+            "side_a"
+          ],
+          [
+            "clio_tn_fatimid_cal_911_d329b0b3",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Alexandria1882-1",
+        "raw_row_sha256": "5c064cdfb312fe7850ef25b4086e0aa36cc413ba289bc01f0a1cd98eaa0b0a32",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_alexandria1882_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Ascalon1123-1",
+        "raw_row_sha256": "a171defc571446fdab9ccadefe06ceeeeb3f32031581d325e0bcc08ea2cb2d51",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_ascalon1123_1",
+        "participant_sides": [
+          [
+            "clio_tn_fatimid_cal_911_d329b0b3",
+            "side_b"
+          ],
+          [
+            "republic_venice",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Asluj1948-1",
+        "raw_row_sha256": "5ddff8ea5ab61e32dce6817dd4890eb08630102c51a78cad59f108ee9e7ef457",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_asluj1948_1",
+        "participant_sides": [
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ],
+          [
+            "kingdom_egypt_1922",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Beersheba1948-1",
+        "raw_row_sha256": "f3dfb1ee75cbafb3d25e85aeac4603e5c92e2e992fc761ef2a66e0586b38a757",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_beersheba1948_1",
+        "participant_sides": [
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ],
+          [
+            "kingdom_egypt_1922",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Beirut1840-1",
+        "raw_row_sha256": "0aa4025160e8dcc1b833d662ea3ca2ffb195e624e36ad75d7024c9e7299cb44a",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_beirut1840_1",
+        "participant_sides": [
+          [
+            "austrian_empire",
+            "side_a"
+          ],
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Belen1832-1",
+        "raw_row_sha256": "485ab2c3d85191eef7b1098d76cd56969267a9f7be11d64e958a900d47e691a8",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_belen1832_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "ottoman_empire",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Damietta1218-1",
+        "raw_row_sha256": "bdf6d2f4ce6b08ea1fa519f3132b2bb35d740b6961a7462daa82fb0499d48458",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_damietta1218_1",
+        "participant_sides": [
+          [
+            "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
+            "side_a"
+          ],
+          [
+            "kingdom_france",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Faluja1948-1",
+        "raw_row_sha256": "b9cff0fb8da3cc4add122af5c09e47d6ddeaa8301e17acc91444020ffd9859e8",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_faluja1948_1",
+        "participant_sides": [
+          [
+            "clio_q801_1948_5abea45e",
+            "side_b"
+          ],
+          [
+            "kingdom_egypt_1922",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Fariskur1250-1",
+        "raw_row_sha256": "f99d6ce6ee08cfdedb881ccc60f781075aee290d370b739261653c7301f8764d",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_fariskur1250_1",
+        "participant_sides": [
+          [
+            "kingdom_france",
+            "side_b"
+          ],
+          [
+            "mamluk_sultanate",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Gaza1956-1",
+        "raw_row_sha256": "7402eefa8544094b576efb51676f791812d37358200522587c054d61ff228400",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_gaza1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Gundet1875-1",
+        "raw_row_sha256": "8f22fbf4cdf8ec20a30664e55356200e9ac7c1183509681b9d13927bd855c4b6",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_gundet1875_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "ethiopian_empire",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Gura1876-1",
+        "raw_row_sha256": "838ffe1fe23e7d6e0bd41c1cbf779a5f2150d6afc2e8cba858203f5898dfded9",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_gura1876_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "ethiopian_empire",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Homs1832-1",
+        "raw_row_sha256": "976363b14d328473d40c211f1f97acbd8f2b95bdbdef63e399415b86b10d4ad2",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_homs1832_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "ottoman_empire",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Kassassin1882-1",
+        "raw_row_sha256": "1ce9ae88ddf2032a146b07b51e4371598ef2306bd36e2177defc1b39c9164de7",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_kassassin1882_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Konya1832-1",
+        "raw_row_sha256": "11aa2f2bba76355c3ef7b0888be2575bf4419d5c03a4f2c8b98a5bd85ef7e21b",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_konya1832_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "ottoman_empire",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Mitla Pass1956-1",
+        "raw_row_sha256": "523c157b486b138268b5f6c3310058815967127beb3c29d1c535db94fe963ba5",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_mitla_pass1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Navarino1825-1",
+        "raw_row_sha256": "601fac2da0d8817aa6c660245eb7ef3fb2030a540561c0df09d9b3fe9b5b0baa",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_navarino1825_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "greek_revolutionaries_1821",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Nezib1839-1",
+        "raw_row_sha256": "71c1a4e481195d9a80d6e316a3ac6ca91f0e590e0732c53b55db6d4c9e2541ea",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_nezib1839_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_a"
+          ],
+          [
+            "ottoman_empire",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Pelusium-525-1",
+        "raw_row_sha256": "d83df32062ede6e630c095980ca8742f7ecba7b4aa9d3aa4820b3e73e3ddf64b",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_pelusium_525_1",
+        "participant_sides": [
+          [
+            "achaemenid_empire",
+            "side_a"
+          ],
+          [
+            "saite_egypt_664_bce",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Pelusium640-1",
+        "raw_row_sha256": "2056d0e32202789f3efce49db7e1380496768c006296b3603d393f4cc174a878",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave8_early_states_hced_pelusium640_1",
+        "participant_sides": [
+          [
+            "byzantine_pelusium_garrison_640",
+            "side_b"
+          ],
+          [
+            "rashidun_caliphate",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Port Said1956-1",
+        "raw_row_sha256": "2c5034f6dc6b6858e924432c4324737ea3872cca5baace77f42f48d1b4e700b2",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_port_said1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Pyramids1798-1",
+        "raw_row_sha256": "1009989a5cd59f69b286a66ade6959b727517638297d486f7e35ed0591d06789",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_wave7_global_hced_pyramids1798_1",
+        "participant_sides": [
+          [
+            "french_first_republic",
+            "side_a"
+          ],
+          [
+            "mamluk_egyptian_forces_1798",
+            "side_b"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Rafa1956-1",
+        "raw_row_sha256": "da81dc0ce98958b5d1ae72db66b7718540d660ba76d12cc7b815906690fabec5",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_rafa1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Straits of Tiran1956-1",
+        "raw_row_sha256": "6ae500acdc7f96d77a377dae293d4a7f6b5d7ea5eb3fddc5928d703454e5e31e",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_straits_of_tiran1956_1",
+        "participant_sides": [
+          [
+            "clio_eg_egypt_modern_2_1953_a888d535",
+            "side_b"
+          ],
+          [
+            "clio_q801_1948_5abea45e",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Tel-el-Kebir1882-1",
+        "raw_row_sha256": "1bf1cfdc6f9cd48f9d5c012fade8c67737e828deec777fe1a8f98a681f6522cb",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_tel_el_kebir1882_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      },
+      {
+        "candidate_id": "hced-Tel-el-Maskhuta1882-1",
+        "raw_row_sha256": "b73e0e4613a4f433c626fe9c26ba0bb5e85a53febb7f2fe000cbf8057fd41f5b",
+        "disposition": "existing_release_owner",
+        "owner_event_id": "hced_label_hced_tel_el_maskhuta1882_1",
+        "participant_sides": [
+          [
+            "egypt_muhammad_ali",
+            "side_b"
+          ],
+          [
+            "united_kingdom",
+            "side_a"
+          ]
+        ]
+      }
+    ],
+    "wave8_egypt_forces_identity_boundary_audit": {
+      "seed_entities": {
+        "egypt_new_kingdom": [
+          -1550,
+          -1069
+        ],
+        "egypt_muhammad_ali": [
+          1805,
+          1882
+        ],
+        "mamluk_sultanate": [
+          1250,
+          1517
+        ]
+      },
+      "release_entities": {
+        "egypt_new_kingdom": [
+          -1550,
+          -1069
+        ],
+        "saite_egypt_664_bce": [
+          -664,
+          -525
+        ],
+        "ptolemaic_egypt_305_bce": [
+          -305,
+          -30
+        ],
+        "byzantine_pelusium_garrison_640": [
+          640,
+          640
+        ],
+        "clio_tn_fatimid_cal_911_d329b0b3": [
+          911,
+          1176
+        ],
+        "clio_eg_ayyubid_sultanate_1177_95f5a3a5": [
+          1177,
+          1249
+        ],
+        "mamluk_sultanate": [
+          1250,
+          1517
+        ],
+        "ayyubid_aleppo_city_garrison_1260": [
+          1260,
+          1260
+        ],
+        "baybars_mamluk_siege_army_krak_1271": [
+          1271,
+          1271
+        ],
+        "qalawun_mamluk_siege_army_margat_1285": [
+          1285,
+          1285
+        ],
+        "murad_bey_rahmaniyya_force_1786": [
+          1786,
+          1786
+        ],
+        "mamluk_egyptian_forces_1798": [
+          1798,
+          1798
+        ],
+        "murad_bey_egypt_campaign_force_1798": [
+          1798,
+          1798
+        ],
+        "murad_bey_samhud_coalition_1799": [
+          1799,
+          1799
+        ],
+        "egypt_muhammad_ali": [
+          1805,
+          1882
+        ],
+        "kingdom_egypt_1922": [
+          1922,
+          1952
+        ],
+        "clio_eg_egypt_modern_2_1953_a888d535": [
+          1953,
+          1957
+        ],
+        "clio_eg_egypt_modern_2_1973_e01853c2": [
+          1973,
+          2024
+        ]
+      },
+      "seed_events": {
+        "battle_kadesh_1274_bce": {
+          "year": -1274,
+          "entity_ids": [
+            "egypt_new_kingdom",
+            "hittite_empire"
+          ],
+          "finding": "existing_inconclusive_owner_blocks_hced_1275_win"
+        },
+        "battle_ain_jalut_1260": {
+          "year": 1260,
+          "entity_ids": [
+            "mamluk_sultanate",
+            "mongol_empire"
+          ],
+          "finding": "mamluk_sultanate_rating_is_time_bounded_and_not_generic_egypt"
+        }
+      },
+      "findings": {
+        "1967": "no_audited_existing_egypt_identity_covers_1967",
+        "1973": "existing_republic_is_strategic_polity_only_chinese_farm_uses_event_formations",
+        "adjacent_namesakes": "ayyubid_and_mamluk_event_forces_outside_egypt_are_never_reused",
+        "generic_identity": "forbidden"
+      }
+    },
+    "wave8_egypt_forces_current_release_event_audit": {
+      "audited_entity_ids": [
+        "ayyubid_aleppo_city_garrison_1260",
+        "baybars_mamluk_siege_army_krak_1271",
+        "byzantine_pelusium_garrison_640",
+        "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
+        "clio_eg_egypt_modern_2_1953_a888d535",
+        "clio_eg_egypt_modern_2_1973_e01853c2",
+        "clio_tn_fatimid_cal_911_d329b0b3",
+        "egypt_muhammad_ali",
+        "egypt_new_kingdom",
+        "kingdom_egypt_1922",
+        "mamluk_egyptian_forces_1798",
+        "mamluk_sultanate",
+        "murad_bey_egypt_campaign_force_1798",
+        "murad_bey_rahmaniyya_force_1786",
+        "murad_bey_samhud_coalition_1799",
+        "ptolemaic_egypt_305_bce",
+        "qalawun_mamluk_siege_army_margat_1285",
+        "saite_egypt_664_bce"
+      ],
+      "audited_entity_id_sha256": "09b5ca9eeef1d2ce527057c0668a6101440179701824f2499d0a18aed61db25b",
+      "event_count": 56,
+      "event_id_sha256": "9b7c0228700c4985d2da755806a0320d5a7ba0b1c4e20b0cccc53fac96a9e29b",
+      "event_projection_sha256": "47a302cd21e5016f2ff7c935e0fe3c57736c4f787031de386485a1d52cdbafce",
+      "projection_fields": [
+        "end_year",
+        "entity_ids",
+        "hced_candidate_id",
+        "id",
+        "iwd_parent_war_id",
+        "year"
+      ]
+    },
+    "wave8_egypt_forces_hced_twin_dispositions": [],
+    "wave8_egypt_forces_iwbd_duplicate_dispositions": [
+      {
+        "candidate_id": "iwbd-148-55-1397",
+        "raw_row_sha256": "d74ed0a3470ab7645df35d2b9e5f61bb5e11e1f9d5aea92385b79accbb0cf741",
+        "hced_owner_candidate_id": "hced-Beersheba1948-1",
+        "owner_event_id": "hced_wave7_global_hced_beersheba1948_1",
+        "name": "Beersheba",
+        "year": 1948,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1399",
+        "raw_row_sha256": "0183fc84cc1c0c5277de7c10880e40d789fae2e51ad1664c07279529b425a24d",
+        "hced_owner_candidate_id": "hced-Faluja1948-1",
+        "owner_event_id": "hced_wave7_global_hced_faluja1948_1",
+        "name": "Faluja",
+        "year": 1948,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-148-55-1401",
+        "raw_row_sha256": "e18861a9590ae4450b0afba4772629f3f0a0bceaf1d9f33e9759b0541780cac9",
+        "hced_owner_candidate_id": "hced-Asluj1948-1",
+        "owner_event_id": "hced_wave7_global_hced_asluj1948_1",
+        "name": "Asluj",
+        "year": 1948,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1448",
+        "raw_row_sha256": "a2cc94737eb01ce14c4fbf96b2abaa3158889712d65299ecf75e1b98e9fc2910",
+        "hced_owner_candidate_id": "hced-Mitla Pass1956-1",
+        "owner_event_id": "hced_label_hced_mitla_pass1956_1",
+        "name": "Mitla Pass",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1449",
+        "raw_row_sha256": "64b354275e9965ceb49015ad839aff0e265df135910a714f0751eb5f6aed3a6d",
+        "hced_owner_candidate_id": "hced-Abu Ageila1956-1",
+        "owner_event_id": "hced_label_hced_abu_ageila1956_1",
+        "name": "Abu Ageila",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1450",
+        "raw_row_sha256": "44fad3910fc48e9973d08732b187369b551e767a3a8ba6a6c98d3a0ac095c924",
+        "hced_owner_candidate_id": "hced-Rafa1956-1",
+        "owner_event_id": "hced_label_hced_rafa1956_1",
+        "name": "Rafa",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1451",
+        "raw_row_sha256": "81bbe178fecc4b71c8a80cdf7556f611dd03b97234bede9789066414738b28a2",
+        "hced_owner_candidate_id": "hced-Straits of Tiran1956-1",
+        "owner_event_id": "hced_label_hced_straits_of_tiran1956_1",
+        "name": "Straits of Tiran",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1452",
+        "raw_row_sha256": "b77d03a06f7419fc5bf265a744dd244c417868d13fbdf8e0e57fcb7c67d6340b",
+        "hced_owner_candidate_id": "hced-Gaza1956-1",
+        "owner_event_id": "hced_label_hced_gaza1956_1",
+        "name": "Gaza",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-155-58-1453",
+        "raw_row_sha256": "1718495a32601d7b5c5c2b9652c7127b1124030c7b1f8d519b98d35dcd4eeb4d",
+        "hced_owner_candidate_id": "hced-Port Said1956-1",
+        "owner_event_id": "hced_label_hced_port_said1956_1",
+        "name": "Port Said",
+        "year": 1956,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1523",
+        "raw_row_sha256": "9440cf793688bf417973786696b1ac0da7e44b36b633c9e1225abf0e58aa0e18",
+        "hced_owner_candidate_id": "hced-Rafa1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_rafa1967_1",
+        "name": "Rafa",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1524",
+        "raw_row_sha256": "1560128ba3169c92ebc46d8c544bf8d85d12758ed6072c54af053fa7a00b8e00",
+        "hced_owner_candidate_id": "hced-Abu Ageila1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_abu_ageila1967_1",
+        "name": "Abu Ageila",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1527",
+        "raw_row_sha256": "9c5356e7334a99fa8d6770fb651d656950d72bf550ff2bcf0f5b09935a209920",
+        "hced_owner_candidate_id": "hced-Gaza1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_gaza1967_1",
+        "name": "Gaza",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1529",
+        "raw_row_sha256": "6f8f0d4fa751ed9d696c2fc87de544db759bae55ceac90b22a314e71b796df44",
+        "hced_owner_candidate_id": "hced-Jebel Libni1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_jebel_libni1967_1",
+        "name": "Jebel Libni",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1530",
+        "raw_row_sha256": "c9139030cae6c2de6b22b3eac831bec557a20b42a8f005a2b9dcbee1317353ac",
+        "hced_owner_candidate_id": "hced-Mitla Pass1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_mitla_pass1967_1",
+        "name": "Mitla Pass",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-169-64-1531",
+        "raw_row_sha256": "2173aef03686d77f287f1d9445d8aaf7b9f6f124211be87247eaf14e17a4509f",
+        "hced_owner_candidate_id": "hced-Bir Gafgafa1967-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_bir_gafgafa1967_1",
+        "name": "Bir Gafgafa",
+        "year": 1967,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-181-70-1570",
+        "raw_row_sha256": "65aae876817960d608e784ac4d0be0737f160388add1917c762584c9db2c46aa",
+        "hced_owner_candidate_id": "hced-Chinese Farm1973-1",
+        "owner_event_id": "hced_wave8_egypt_forces_hced_chinese_farm1973_1",
+        "name": "Chinese Farm",
+        "year": 1973,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-65-24-314",
+        "raw_row_sha256": "52ce1c002cddc465f0cd157280e8445ea7cea9bffda7ecc5e881650fa74060b8",
+        "hced_owner_candidate_id": "hced-Alexandria1882-1",
+        "owner_event_id": "hced_label_hced_alexandria1882_1",
+        "name": "Alexandria",
+        "year": 1882,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-65-24-315",
+        "raw_row_sha256": "b82ee5290b859de95f1004a433e6539faabb321b1ac18038f75c677686d9ccc3",
+        "hced_owner_candidate_id": "hced-Tel-el-Maskhuta1882-1",
+        "owner_event_id": "hced_label_hced_tel_el_maskhuta1882_1",
+        "name": "Tel-el-Maskhuta",
+        "year": 1882,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-65-24-316",
+        "raw_row_sha256": "93506e4784a6058ae5b7f65a675a3f1a8ed825165b77e56dfdf10bac695d6740",
+        "hced_owner_candidate_id": "hced-Kassassin1882-1",
+        "owner_event_id": "hced_label_hced_kassassin1882_1",
+        "name": "Kassassin",
+        "year": 1882,
+        "disposition": "source_duplicate_hced_owner"
+      },
+      {
+        "candidate_id": "iwbd-65-24-317",
+        "raw_row_sha256": "11e05ed7995a47deeb1dc27b15c55e72e9392789e5eb7292ab02452f3487d69a",
+        "hced_owner_candidate_id": "hced-Tel-el-Kebir1882-1",
+        "owner_event_id": "hced_label_hced_tel_el_kebir1882_1",
+        "name": "Tel-el-Kebir",
+        "year": 1882,
+        "disposition": "source_duplicate_hced_owner"
+      }
+    ],
+    "wave8_egypt_forces_iwd_audit": [
+      {
+        "candidate_id": "iwd-195",
+        "raw_row_sha256": "5372e7a72b547d359fafc9c4ad66746d08a2666b8431b08717fdbe1b0f89e59b",
+        "name": "SixDay_Isr_Egypt_1967",
+        "start_year": 1967,
+        "end_year": 1967,
+        "parent_war_id": "64",
+        "disposition": "strategic_component_held_outside_tactical_lane",
+        "release_parent_owner": null,
+        "reason": "The IWD component is a strategic war candidate and cannot own or duplicate six separately sourced HCED/IWBD tactical engagements."
+      }
+    ],
+    "wave8_egypt_forces_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Abu Ageila1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Alexandria1365-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Ascalon1247-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Aussa1875-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "reason": "HCED identifies Awsa as Djibouti although the action is in present-day Ethiopia; its point is not independently source-audited."
+      },
+      {
+        "candidate_id": "hced-Bir Gafgafa1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Chinese Farm1973-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Dufile1888-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "reason": "HCED identifies Dufile as Sudan although the fort is in present-day Uganda; its point is not independently source-audited."
+      },
+      {
+        "candidate_id": "hced-Gaza1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Jebel Libni1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Megiddo-609-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Mitla Pass1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Montgisard1177-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Nile-47-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Rafa1967-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-Sinkat1884-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      },
+      {
+        "candidate_id": "hced-al, Damietta1218-1219-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The HCED point is not independently verified at engagement precision and is withheld; the reviewed modern country remains."
+      }
+    ],
+    "wave8_egypt_forces_point_quarantine_additions": [
+      "hced-Abu Ageila1967-1",
+      "hced-Alexandria1365-1",
+      "hced-Ascalon1247-1",
+      "hced-Aussa1875-1",
+      "hced-Bir Gafgafa1967-1",
+      "hced-Chinese Farm1973-1",
+      "hced-Dufile1888-1",
+      "hced-Gaza1967-1",
+      "hced-Jebel Libni1967-1",
+      "hced-Megiddo-609-1",
+      "hced-Mitla Pass1967-1",
+      "hced-Montgisard1177-1",
+      "hced-Nile-47-1",
+      "hced-Rafa1967-1",
+      "hced-Sinkat1884-1",
+      "hced-al, Damietta1218-1219-1"
+    ],
+    "wave8_egypt_forces_country_quarantine_additions": [
+      "hced-Aussa1875-1",
+      "hced-Dufile1888-1"
+    ],
+    "wave8_egypt_forces_outcome_overrides": [],
+    "wave8_egypt_forces_entities_added": 32,
+    "wave8_egypt_forces_sources_added": 38,
+    "hced_label_pass_input_rows": 5627,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
     "iwd_components_attached_to_rated_parents": 100,
     "hced_rejections": {
-      "curated_exclusion": 164,
+      "curated_exclusion": 158,
       "duplicate_of_curated_seed": 5,
       "duplicate_source_id": 6,
       "missing_or_invalid_year": 2,
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 957,
+      "reserved_candidate_contract": 983,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -16789,10 +18056,10 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 459,
       "label_outcome_not_aligned": 79,
-      "label_outside_policy_window": 174,
+      "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2137,
-      "no_unique_time_valid_polity": 89,
+      "no_unique_time_valid_label_match": 2123,
+      "no_unique_time_valid_polity": 84,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 41
@@ -19569,11 +20836,11 @@
     "accepted_iwbd_battles": 153,
     "iwbd_battles_total": 1708,
     "iwbd_rejections": {
-      "coalition_or_composite_side": 139,
+      "coalition_or_composite_side": 140,
       "contains_constituent_iwbd_rows": 320,
       "curated_exclusion": 226,
       "duplicate_of_curated_seed": 3,
-      "duplicate_of_hced_battle": 852,
+      "duplicate_of_hced_battle": 851,
       "duplicate_within_iwbd": 0,
       "malformed_candidate_id": 0,
       "missing_battle_name": 0,

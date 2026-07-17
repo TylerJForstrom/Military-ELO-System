@@ -180,6 +180,36 @@
     ]
   },
   {
+    "id": "josiah_judah_force_609_bce",
+    "name": "Josiah's Judahite force at Megiddo (609 BCE)",
+    "kind": "event_bounded_formation",
+    "start_year": -609,
+    "end_year": -609,
+    "region": "Megiddo",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Josiah's Judahite force at Megiddo (609 BCE). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_andrews_megiddo_609",
+      "wave8_egypt_bu_megiddo_609"
+    ]
+  },
+  {
+    "id": "necho_ii_megiddo_force_609_bce",
+    "name": "Necho II's force at Megiddo (609 BCE)",
+    "kind": "event_bounded_formation",
+    "start_year": -609,
+    "end_year": -609,
+    "region": "Megiddo",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Necho II's force at Megiddo (609 BCE). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_andrews_megiddo_609",
+      "wave8_egypt_bu_megiddo_609"
+    ]
+  },
+  {
     "id": "achaemenid_empire",
     "name": "Achaemenid Empire",
     "kind": "empire",
@@ -890,6 +920,36 @@
       "wave8_armenia_demir_tigranocerta",
       "wave8_armenia_oxford_tigranocerta",
       "wave8_armenia_plutarch_lucullus"
+    ]
+  },
+  {
+    "id": "caesarian_pergamene_nile_coalition_47_bce",
+    "name": "Caesarian-Pergamene coalition at the Nile (47 BCE)",
+    "kind": "event_bounded_formation",
+    "start_year": -47,
+    "end_year": -47,
+    "region": "Nile Delta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Caesarian-Pergamene coalition at the Nile (47 BCE). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_cambridge_battle_nile",
+      "wave8_egypt_dickinson_battle_nile"
+    ]
+  },
+  {
+    "id": "ptolemy_xiii_nile_army_47_bce",
+    "name": "Ptolemy XIII's army at the Nile (47 BCE)",
+    "kind": "event_bounded_formation",
+    "start_year": -47,
+    "end_year": -47,
+    "region": "Nile Delta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Ptolemy XIII's army at the Nile (47 BCE). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_cambridge_battle_nile",
+      "wave8_egypt_dickinson_battle_nile"
     ]
   },
   {
@@ -3028,6 +3088,36 @@
     ]
   },
   {
+    "id": "baldwin_iv_montgisard_force_1177",
+    "name": "Baldwin IV's Jerusalem-Templar force at Montgisard (1177)",
+    "kind": "event_bounded_formation",
+    "start_year": 1177,
+    "end_year": 1177,
+    "region": "Montgisard",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Baldwin IV's Jerusalem-Templar force at Montgisard (1177). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_cambridge_montgisard",
+      "wave8_egypt_ifpo_montgisard"
+    ]
+  },
+  {
+    "id": "saladin_montgisard_campaign_force_1177",
+    "name": "Saladin's campaign force at Montgisard (1177)",
+    "kind": "event_bounded_formation",
+    "start_year": 1177,
+    "end_year": 1177,
+    "region": "Montgisard",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Saladin's campaign force at Montgisard (1177). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_cambridge_montgisard",
+      "wave8_egypt_ifpo_montgisard"
+    ]
+  },
+  {
     "id": "prithviraja_iii_chahamana_regime_and_army_1178_1192",
     "name": "Prithviraja III's Chahamana kingdom and field army (1178-1192)",
     "kind": "ruler_bounded_dynastic_regime",
@@ -3150,6 +3240,36 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
+    "id": "ayyubid_damietta_garrison_1218_1219",
+    "name": "Ayyubid garrison of Damietta (1218-1219)",
+    "kind": "event_bounded_formation",
+    "start_year": 1218,
+    "end_year": 1219,
+    "region": "Damietta, Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Ayyubid garrison of Damietta (1218-1219). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_oxford_fifth_crusade",
+      "wave8_egypt_tandf_damietta"
+    ]
+  },
+  {
+    "id": "fifth_crusade_damietta_siege_host_1218_1219",
+    "name": "Fifth Crusade siege host at Damietta (1218-1219)",
+    "kind": "event_bounded_formation",
+    "start_year": 1218,
+    "end_year": 1219,
+    "region": "Damietta, Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Fifth Crusade siege host at Damietta (1218-1219). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_oxford_fifth_crusade",
+      "wave8_egypt_tandf_damietta"
     ]
   },
   {
@@ -3292,6 +3412,36 @@
     "source_ids": [
       "wave8_seljuks_iranica_bayju",
       "wave8_seljuks_iranica_rum"
+    ]
+  },
+  {
+    "id": "frankish_ascalon_garrison_1247",
+    "name": "Frankish garrison of Ascalon (1247)",
+    "kind": "event_bounded_formation",
+    "start_year": 1247,
+    "end_year": 1247,
+    "region": "Ascalon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Frankish garrison of Ascalon (1247). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_fordham_ascalon_1247",
+      "wave8_egypt_tdv_al_salih_ayyub"
+    ]
+  },
+  {
+    "id": "al_salih_ayyub_ascalon_siege_force_1247",
+    "name": "al-Salih Ayyub's Ascalon siege force (1247)",
+    "kind": "event_bounded_formation",
+    "start_year": 1247,
+    "end_year": 1247,
+    "region": "Ascalon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in al-Salih Ayyub's Ascalon siege force (1247). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_fordham_ascalon_1247",
+      "wave8_egypt_tdv_al_salih_ayyub"
     ]
   },
   {
@@ -3954,6 +4104,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mamluk_alexandria_defenders_1365",
+    "name": "Mamluk defenders of Alexandria (1365)",
+    "kind": "event_bounded_formation",
+    "start_year": 1365,
+    "end_year": 1365,
+    "region": "Alexandria, Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Mamluk defenders of Alexandria (1365). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_birmingham_alexandria_1365",
+      "wave8_egypt_brill_alexandria_1365"
+    ]
+  },
+  {
+    "id": "peter_i_alexandria_crusade_force_1365",
+    "name": "Peter I's Alexandria crusade force (1365)",
+    "kind": "event_bounded_formation",
+    "start_year": 1365,
+    "end_year": 1365,
+    "region": "Alexandria, Egypt",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Peter I's Alexandria crusade force (1365). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_birmingham_alexandria_1365",
+      "wave8_egypt_brill_alexandria_1365"
     ]
   },
   {
@@ -11172,6 +11352,36 @@
     ]
   },
   {
+    "id": "afar_issa_awsa_defenders_1875",
+    "name": "Afar and Issa defenders at Awsa (1875)",
+    "kind": "event_bounded_formation",
+    "start_year": 1875,
+    "end_year": 1875,
+    "region": "Awsa, Ethiopia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Afar and Issa defenders at Awsa (1875). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_jstor_munzinger_awsa",
+      "wave8_egypt_mprl_munzinger"
+    ]
+  },
+  {
+    "id": "munzinger_awsa_expedition_1875",
+    "name": "Munzinger's Egyptian Awsa expedition (1875)",
+    "kind": "event_bounded_formation",
+    "start_year": 1875,
+    "end_year": 1875,
+    "region": "Awsa, Ethiopia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Munzinger's Egyptian Awsa expedition (1875). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_jstor_munzinger_awsa",
+      "wave8_egypt_mprl_munzinger"
+    ]
+  },
+  {
     "id": "lakota_northern_cheyenne_coalition_1876",
     "name": "Lakota–Northern Cheyenne coalition (1876–1877)",
     "kind": "indigenous_coalition",
@@ -11574,6 +11784,36 @@
     ]
   },
   {
+    "id": "sinkat_egyptian_garrison_1884",
+    "name": "Egyptian garrison of Sinkat (1884)",
+    "kind": "event_bounded_formation",
+    "start_year": 1884,
+    "end_year": 1884,
+    "region": "Sinkat, Sudan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian garrison of Sinkat (1884). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_hansard_sinkat",
+      "wave8_egypt_study_circle_sudan"
+    ]
+  },
+  {
+    "id": "osman_digna_sinkat_force_1884",
+    "name": "Osman Digna's force at Sinkat (1884)",
+    "kind": "event_bounded_formation",
+    "start_year": 1884,
+    "end_year": 1884,
+    "region": "Sinkat, Sudan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Osman Digna's force at Sinkat (1884). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_hansard_sinkat",
+      "wave8_egypt_study_circle_sudan"
+    ]
+  },
+  {
     "id": "batoche_first_nations_allied_defenders_1885",
     "name": "First Nations allied defenders at Batoche (1885)",
     "kind": "event_bounded_allied_force",
@@ -11692,6 +11932,36 @@
     "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_p2_abushiri_cambridge"
+    ]
+  },
+  {
+    "id": "dufile_garrison_1888",
+    "name": "Dufile garrison (1888)",
+    "kind": "event_bounded_formation",
+    "start_year": 1888,
+    "end_year": 1888,
+    "region": "Dufile, Uganda",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Dufile garrison (1888). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_sabanci_dufile",
+      "wave8_egypt_vandeleur_dufile"
+    ]
+  },
+  {
+    "id": "umar_salih_dufile_force_1888",
+    "name": "Umar Salih's Mahdist force at Dufile (1888)",
+    "kind": "event_bounded_formation",
+    "start_year": 1888,
+    "end_year": 1888,
+    "region": "Dufile, Uganda",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Umar Salih's Mahdist force at Dufile (1888). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_sabanci_dufile",
+      "wave8_egypt_vandeleur_dufile"
     ]
   },
   {
@@ -13685,6 +13955,186 @@
     ]
   },
   {
+    "id": "egyptian_abu_ageila_force_1967",
+    "name": "Egyptian force at Abu Ageila (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Abu Ageila, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian force at Abu Ageila (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "egyptian_bir_gafgafa_force_1967",
+    "name": "Egyptian force at Bir Gafgafa (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Bir Gafgafa, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian force at Bir Gafgafa (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "egyptian_jebel_libni_force_1967",
+    "name": "Egyptian force at Jebel Libni (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Jebel Libni, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian force at Jebel Libni (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "egyptian_rafah_force_1967",
+    "name": "Egyptian force at Rafah (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Rafah",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian force at Rafah (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_scouts_out",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "egyptian_gaza_force_1967",
+    "name": "Egyptian force in the defense of Gaza (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian force in the defense of Gaza (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_oxford_gaza_history",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "egyptian_mitla_retreat_force_1967",
+    "name": "Egyptian retreat force at Mitla Pass (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Mitla Pass, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian retreat force at Mitla Pass (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_pollack_six_day_war",
+      "wave8_egypt_usni_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_abu_ageila_force_1967",
+    "name": "Israeli force at Abu Ageila (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Abu Ageila, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force at Abu Ageila (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_bir_gafgafa_force_1967",
+    "name": "Israeli force at Bir Gafgafa (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Bir Gafgafa, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force at Bir Gafgafa (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_jebel_libni_force_1967",
+    "name": "Israeli force at Jebel Libni (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Jebel Libni, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force at Jebel Libni (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_key_sinai",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_rafah_force_1967",
+    "name": "Israeli force at Rafah (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Rafah",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force at Rafah (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_scouts_out",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_gaza_force_1967",
+    "name": "Israeli force in the capture of Gaza (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force in the capture of Gaza (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_oxford_gaza_history",
+      "wave8_egypt_pollack_six_day_war"
+    ]
+  },
+  {
+    "id": "israeli_mitla_interdiction_force_1967",
+    "name": "Israeli interdiction force at Mitla Pass (1967)",
+    "kind": "event_bounded_formation",
+    "start_year": 1967,
+    "end_year": 1967,
+    "region": "Mitla Pass, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli interdiction force at Mitla Pass (1967). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_pollack_six_day_war",
+      "wave8_egypt_usni_six_day_war"
+    ]
+  },
+  {
     "id": "republic_biafra",
     "name": "Republic of Biafra",
     "kind": "secessionist_state",
@@ -13713,6 +14163,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "egyptian_chinese_farm_defenders_1973",
+    "name": "Egyptian defenders at Chinese Farm (1973)",
+    "kind": "event_bounded_formation",
+    "start_year": 1973,
+    "end_year": 1973,
+    "region": "Chinese Farm, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Egyptian defenders at Chinese Farm (1973). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_chinese_farm",
+      "wave8_egypt_usmc_crossing_under_fire"
+    ]
+  },
+  {
+    "id": "israeli_chinese_farm_force_1973",
+    "name": "Israeli force at Chinese Farm (1973)",
+    "kind": "event_bounded_formation",
+    "start_year": 1973,
+    "end_year": 1973,
+    "region": "Chinese Farm, Sinai",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant in Israeli force at Chinese Farm (1973). It is not a generic polity or a timeless national force. No rating is inherited by a dynasty, predecessor, successor, namesake formation, modern state, or generic Egypt outside this event window.",
+    "source_ids": [
+      "wave8_egypt_army_chinese_farm",
+      "wave8_egypt_usmc_crossing_under_fire"
     ]
   },
   {
