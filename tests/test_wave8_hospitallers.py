@@ -592,6 +592,16 @@ class Wave8HospitallersTests(unittest.TestCase):
         self.assertTrue(all(normalize_label(row["winner_raw"]) != "draw" for row in exact_rows))
 
     def test_duplicate_audits_validate_current_snapshots_and_fail_on_future_twins(self):
+        current_overlap = {
+            str(event.get("hced_candidate_id"))
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            in lane.WAVE8_HOSPITALLERS_CONTRACT_IDS
+        }
+        self.assertIn(
+            len(current_overlap),
+            {0, len(lane.WAVE8_HOSPITALLERS_CONTRACT_IDS)},
+        )
         result = lane.validate_wave8_hospitallers_integration_dispositions(
             self.hced_rows,
             self.iwbd_rows,
@@ -606,7 +616,7 @@ class Wave8HospitallersTests(unittest.TestCase):
                 "integration_dispositions": 5,
                 "iwbd_duplicate_dispositions": 0,
                 "iwbd_probable_twins": 0,
-                "release_lane_overlap": 0,
+                "release_lane_overlap": len(current_overlap),
             },
         )
 
@@ -652,7 +662,13 @@ class Wave8HospitallersTests(unittest.TestCase):
 
     def test_release_overlap_must_be_all_or_none(self):
         events = self._events()
-        fully_integrated = [*self.release_events, *events]
+        release_without_lane = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            not in lane.WAVE8_HOSPITALLERS_CONTRACT_IDS
+        ]
+        fully_integrated = [*release_without_lane, *events]
         result = lane.validate_wave8_hospitallers_integration_dispositions(
             self.hced_rows,
             self.iwbd_rows,
@@ -660,7 +676,7 @@ class Wave8HospitallersTests(unittest.TestCase):
         )
         self.assertEqual(result["release_lane_overlap"], 8)
 
-        partial = [*self.release_events, events[0]]
+        partial = [*release_without_lane, events[0]]
         with self.assertRaisesRegex(ValueError, "partial release integration"):
             lane.validate_wave8_hospitallers_integration_dispositions(
                 self.hced_rows,

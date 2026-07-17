@@ -1676,6 +1676,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "baybars_mamluk_siege_army_krak_1271",
+      "name": "Baybars's Mamluk siege army at Krak des Chevaliers (1271)",
+      "kind": "event_bounded_mamluk_siege_army",
+      "start_year": 1271,
+      "end_year": 1271,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Krak des Chevaliers, Syria"
+    },
+    {
       "id": "clio_q213510_1890_5df80aef",
       "name": "Belgian Congo",
       "kind": "polity",
@@ -2320,6 +2330,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and the central Mediterranean"
+    },
+    {
+      "id": "byzantine_rhodes_defenders_1310",
+      "name": "Byzantine defenders of Rhodes in the final Hospitaller conquest phase (1310)",
+      "kind": "event_bounded_byzantine_island_defenders",
+      "start_year": 1310,
+      "end_year": 1310,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
     },
     {
       "id": "byzantine_pelusium_garrison_640",
@@ -6377,6 +6397,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "french_army_orient_malta_1798",
+      "name": "French Army of the Orient invasion force at Malta (1798)",
+      "kind": "event_bounded_french_revolutionary_invasion_force",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Malta"
+    },
+    {
       "id": "clio_fr_bourbon_k_2_1791_48f3b4d5",
       "name": "French Colony of Guiana",
       "kind": "polity",
@@ -7979,6 +8009,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "hompesch_hospitaller_malta_garrison_1798",
+      "name": "Hompesch's Hospitaller Malta garrison and order-state forces (1798)",
+      "kind": "event_bounded_hospitaller_island_garrison",
+      "start_year": 1798,
+      "end_year": 1798,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Malta"
+    },
+    {
       "id": "clio_q783_1840_cd44c8fd",
       "name": "Honduras",
       "kind": "polity",
@@ -7987,6 +8027,66 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "hospitaller_rhodes_defenders_1480",
+      "name": "Hospitaller defenders of Rhodes (1480)",
+      "kind": "event_bounded_hospitaller_island_defenders",
+      "start_year": 1480,
+      "end_year": 1480,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
+    },
+    {
+      "id": "hospitaller_rhodes_defenders_1522",
+      "name": "Hospitaller defenders of Rhodes (1522)",
+      "kind": "event_bounded_hospitaller_island_defenders",
+      "start_year": 1522,
+      "end_year": 1522,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
+    },
+    {
+      "id": "hospitaller_krak_garrison_1271",
+      "name": "Hospitaller garrison of Krak des Chevaliers (1271)",
+      "kind": "event_bounded_hospitaller_castle_garrison",
+      "start_year": 1271,
+      "end_year": 1271,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Krak des Chevaliers, Syria"
+    },
+    {
+      "id": "hospitaller_margat_garrison_1285",
+      "name": "Hospitaller garrison of Margat (1285)",
+      "kind": "event_bounded_hospitaller_castle_garrison",
+      "start_year": 1285,
+      "end_year": 1285,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Margat (Qal'at al-Marqab), Syria"
+    },
+    {
+      "id": "hospitaller_tripoli_garrison_1551",
+      "name": "Hospitaller garrison of Tripoli (1551)",
+      "kind": "event_bounded_hospitaller_outpost_garrison",
+      "start_year": 1551,
+      "end_year": 1551,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tripoli, Libya"
+    },
+    {
+      "id": "hospitaller_smyrna_garrison_1402",
+      "name": "Hospitaller garrison of the Smyrna sea-castle (1402)",
+      "kind": "event_bounded_hospitaller_outpost_garrison",
+      "start_year": 1402,
+      "end_year": 1402,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Smyrna, Anatolia"
     },
     {
       "id": "clio_q627449_1709_52d2293f",
@@ -14746,6 +14846,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ottoman_rhodes_expedition_1480",
+      "name": "Ottoman expedition against Rhodes (1480)",
+      "kind": "event_bounded_ottoman_siege_expedition",
+      "start_year": 1480,
+      "end_year": 1480,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
+    },
+    {
       "id": "fort_loudoun_overhill_cherokee_siege_force_1760",
       "name": "Overhill Cherokee siege force at Fort Loudoun (1760)",
       "kind": "event_bounded_indigenous_siege_force",
@@ -16314,6 +16424,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "West and Central Asia"
+    },
+    {
+      "id": "qalawun_mamluk_siege_army_margat_1285",
+      "name": "Qalawun's Mamluk siege army at Margat (1285)",
+      "kind": "event_bounded_mamluk_siege_army",
+      "start_year": 1285,
+      "end_year": 1285,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Margat (Qal'at al-Marqab), Syria"
     },
     {
       "id": "clio_tr_qara_qoyunlu_1375_f326d63b",
@@ -19033,6 +19153,16 @@
       "region": "England and Ireland"
     },
     {
+      "id": "sinan_pasha_ottoman_force_tripoli_1551",
+      "name": "Sinan Pasha's Ottoman force at Tripoli (1551)",
+      "kind": "event_bounded_ottoman_siege_force",
+      "start_year": 1551,
+      "end_year": 1551,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tripoli, Libya"
+    },
+    {
       "id": "clio_pk_sind_abbasid_fatimid_860_1184adb7",
       "name": "Sind-Habbari Dynasty",
       "kind": "dynastic_state",
@@ -19675,6 +19805,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "suleiman_ottoman_siege_army_rhodes_1522",
+      "name": "Suleiman I's Ottoman siege army at Rhodes (1522)",
+      "kind": "event_bounded_ottoman_siege_army",
+      "start_year": 1522,
+      "end_year": 1522,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
     },
     {
       "id": "sultan_al_atrash_jabal_hawran_field_force_1925",
@@ -20902,6 +21042,16 @@
       "region": "Tigranocerta and Arzanene"
     },
     {
+      "id": "timur_siege_army_smyrna_1402",
+      "name": "Timur's siege army at Smyrna (1402)",
+      "kind": "event_bounded_timurid_siege_army",
+      "start_year": 1402,
+      "end_year": 1402,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Smyrna, Anatolia"
+    },
+    {
       "id": "clio_uz_timurid_emp_1375_73c13c8e",
       "name": "Timurid Empire",
       "kind": "empire",
@@ -21130,6 +21280,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Vilcabamba road and Huayna Pucara"
+    },
+    {
+      "id": "turgut_reis_corsair_force_tripoli_1551",
+      "name": "Turgut Reis's corsair force at Tripoli (1551)",
+      "kind": "event_bounded_corsair_siege_force",
+      "start_year": 1551,
+      "end_year": 1551,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tripoli, Libya"
     },
     {
       "id": "clio_q654380_561_f7b201cd",
@@ -21856,6 +22016,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "villaret_hospitaller_rhodes_conquest_force_1310",
+      "name": "Villaret's Hospitaller conquest force on Rhodes (1310 completion)",
+      "kind": "event_bounded_hospitaller_conquest_force",
+      "start_year": 1310,
+      "end_year": 1310,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhodes, Dodecanese"
     },
     {
       "id": "clio_es_visigothic_k_426_df2f0710",
@@ -22954,11 +23124,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2158,
-    "rated_entities": 795,
-    "rated_events": 5222,
+    "registry_polities": 2175,
+    "rated_entities": 812,
+    "rated_events": 5230,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18172,
+    "unresolved_event_candidates": 18164,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23029,6 +23199,7 @@
     "candidate_keyed_wave8_inca_rebels_hced_events": 3,
     "candidate_keyed_wave8_haitian_rebels_hced_events": 2,
     "candidate_keyed_wave8_kingdom_kandy_hced_events": 2,
+    "candidate_keyed_wave8_hospitallers_hced_events": 8,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23039,21 +23210,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4958,
-      "candidate_keyed_reviewed_contracts": 648,
+      "hced_candidate_bindings": 4966,
+      "candidate_keyed_reviewed_contracts": 656,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4865,
-      "location_provenance_objects": 4914,
-      "point_fields_withheld_by_quarantine": 224,
+      "modern_location_country_assertions": 4873,
+      "location_provenance_objects": 4922,
+      "point_fields_withheld_by_quarantine": 232,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 272,
-      "point_quarantine_candidate_manifest_sha256": "672681b8f11ba5be23b148c892bdb6767d6f3ff45ed5939ffebcf68d59e7ed82",
+      "unique_events_with_any_quarantined_field": 280,
+      "point_quarantine_candidate_manifest_sha256": "1de289ef89a69911b6b473b18077c387a56b36c386917d0682eaad45306de093",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "fd9fe9e9e3092f994f0b801e0bb027bd4b93282d39dc218d7124e60986f9ebfa",
+      "quarantine_policy_sha256": "8df884c2ef4bee46ec6bd7aa273836e54336c1eec0a9c4a4d3110654f2bcc36d",
       "assertion_status": {
-        "unreviewed_source_assertion": 4914
+        "unreviewed_source_assertion": 4922
       },
       "verified_location_assertions": {
         "availability": "not_available",

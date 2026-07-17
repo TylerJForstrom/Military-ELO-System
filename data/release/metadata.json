@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 802,
-    "events": 5222,
-    "sources": 1099,
-    "registry_polities": 2158
+    "entities": 819,
+    "events": 5230,
+    "sources": 1117,
+    "registry_polities": 2175
   },
   "year_range": {
     "start": -1274,
@@ -141,6 +141,7 @@
     "accepted_wave8_inca_rebels_hced_events": 3,
     "accepted_wave8_haitian_rebels_hced_events": 2,
     "accepted_wave8_kingdom_kandy_hced_events": 2,
+    "accepted_wave8_hospitallers_hced_events": 8,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -10313,7 +10314,289 @@
     "wave8_kingdom_kandy_outcome_overrides": [],
     "wave8_kingdom_kandy_entities_added": 4,
     "wave8_kingdom_kandy_sources_added": 13,
-    "hced_label_pass_input_rows": 5733,
+    "wave8_hospitallers_counts": {
+      "adjacent_existing_release_owners": 2,
+      "adjacent_hced_rows": 5,
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 5,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 8,
+      "new_entities": 17,
+      "new_sources": 18,
+      "newly_rated_events": 8,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 8,
+      "promotion_contracts": 8,
+      "reviewed_hced_rows": 8,
+      "terminal_exclusions": 0
+    },
+    "wave8_hospitallers_cohort_counts": {
+      "final_levantine_hospitaller_castles": 2,
+      "french_invasion_of_hospitaller_malta": 1,
+      "hospitaller_acquisition_of_rhodes": 1,
+      "ottoman_hospitaller_rhodes_wars": 2,
+      "ottoman_hospitaller_tripoli_wars": 1,
+      "rhodian_hospitaller_outposts": 1
+    },
+    "wave8_hospitallers_queue_validation": {
+      "adjacent_hced_rows": 5,
+      "holds": 0,
+      "promotion_contracts": 8,
+      "reviewed_hced_rows": 8,
+      "terminal_exclusions": 0
+    },
+    "wave8_hospitallers_integration_validation": {
+      "adjacent_existing_release_owners": 2,
+      "cross_lane_hced_dispositions": 5,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0
+    },
+    "wave8_hospitallers_candidate_ids": [
+      "hced-Krak de Chevaliers1271-1",
+      "hced-Malta1798-1",
+      "hced-Marqab1285-1",
+      "hced-Rhodes1310-1",
+      "hced-Rhodes1480-1",
+      "hced-Rhodes1522-1",
+      "hced-Smyrna1402-1",
+      "hced-Tripoli, Libya1551-1"
+    ],
+    "wave8_hospitallers_holds": [],
+    "wave8_hospitallers_terminal_exclusions": [],
+    "wave8_hospitallers_cross_lane_dispositions": [
+      {
+        "candidate_id": "hced-Acre1291-1",
+        "raw_row_sha256": "6a2d152a9d39544a5b83f87eb64ed7929f65a1ba0e4c8a61e9e32980a2f8b989",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "contains_source_misspelling_inside_four_member_coalition",
+        "reason": "Acre combines Jerusalem, Hospitallers, Templars, and Teutonic Knights; this exact-label lane cannot silently collapse that coalition into one Hospitaller actor."
+      },
+      {
+        "candidate_id": "hced-Arsouf1191-1",
+        "raw_row_sha256": "6dac2eea873a203820c14f28ae4064550f67666316b8114a072c19fe25a3fc91",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_name_inside_england_coalition",
+        "owner_event_id": "hced_hced_arsouf1191_1",
+        "reason": "The coded pass already owns the row as England versus the Ayyubids; this lane does not re-rate or append a second Hospitaller outcome."
+      },
+      {
+        "candidate_id": "hced-Cresson1187-1",
+        "raw_row_sha256": "f153d030c9e77de82a92d5405b5ee71bcad21287dcf82265cd9c9fd417645e14",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "templar_hospitaller_joint_side",
+        "reason": "Cresson is a Templar-Hospitaller coalition and requires its own joint-force identity audit; neither order is substituted for the whole side here."
+      },
+      {
+        "candidate_id": "hced-Malta1565-1",
+        "raw_row_sha256": "364eef3dd82e293d73606dff98f3be322e2418b0da697129f326d80abaaa9afd",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_spain_coalition_variant",
+        "owner_event_id": "hced_hced_malta1565_1",
+        "reason": "The coded pass already owns the Great Siege row through Spain and the Ottoman Empire; the 1798 exact-label event is chronologically and operationally distinct."
+      },
+      {
+        "candidate_id": "hced-Smyrna1344-1",
+        "raw_row_sha256": "9ba48bc02ff693315bef98a48e662463774bdca1215f1de69a772631a2ef7fe0",
+        "disposition": "adjacent_four_power_coalition_outside_exact_lane",
+        "relationship": "venice_cyprus_papal_hospitaller_coalition",
+        "reason": "The 1344 capture belongs to a four-power league and cannot be assigned solely to the Order; it is also distinct from Timur's 1402 capture of the Hospitaller sea-castle."
+      }
+    ],
+    "wave8_hospitallers_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Acre1291-1",
+        "raw_row_sha256": "6a2d152a9d39544a5b83f87eb64ed7929f65a1ba0e4c8a61e9e32980a2f8b989",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "contains_source_misspelling_inside_four_member_coalition",
+        "reason": "Acre combines Jerusalem, Hospitallers, Templars, and Teutonic Knights; this exact-label lane cannot silently collapse that coalition into one Hospitaller actor."
+      },
+      {
+        "candidate_id": "hced-Arsouf1191-1",
+        "raw_row_sha256": "6dac2eea873a203820c14f28ae4064550f67666316b8114a072c19fe25a3fc91",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_name_inside_england_coalition",
+        "owner_event_id": "hced_hced_arsouf1191_1",
+        "reason": "The coded pass already owns the row as England versus the Ayyubids; this lane does not re-rate or append a second Hospitaller outcome."
+      },
+      {
+        "candidate_id": "hced-Cresson1187-1",
+        "raw_row_sha256": "f153d030c9e77de82a92d5405b5ee71bcad21287dcf82265cd9c9fd417645e14",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "templar_hospitaller_joint_side",
+        "reason": "Cresson is a Templar-Hospitaller coalition and requires its own joint-force identity audit; neither order is substituted for the whole side here."
+      },
+      {
+        "candidate_id": "hced-Malta1565-1",
+        "raw_row_sha256": "364eef3dd82e293d73606dff98f3be322e2418b0da697129f326d80abaaa9afd",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_spain_coalition_variant",
+        "owner_event_id": "hced_hced_malta1565_1",
+        "reason": "The coded pass already owns the Great Siege row through Spain and the Ottoman Empire; the 1798 exact-label event is chronologically and operationally distinct."
+      },
+      {
+        "candidate_id": "hced-Smyrna1344-1",
+        "raw_row_sha256": "9ba48bc02ff693315bef98a48e662463774bdca1215f1de69a772631a2ef7fe0",
+        "disposition": "adjacent_four_power_coalition_outside_exact_lane",
+        "relationship": "venice_cyprus_papal_hospitaller_coalition",
+        "reason": "The 1344 capture belongs to a four-power league and cannot be assigned solely to the Order; it is also distinct from Timur's 1402 capture of the Hospitaller sea-castle."
+      }
+    ],
+    "wave8_hospitallers_iwbd_duplicate_dispositions": [],
+    "wave8_hospitallers_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Krak de Chevaliers1271-1",
+        "aliases": [
+          "crac des chevaliers",
+          "krak de chevaliers",
+          "krak des chevaliers",
+          "siege of krak des chevaliers"
+        ],
+        "years": [
+          1271
+        ]
+      },
+      {
+        "audit_id": "hced-Malta1798-1",
+        "aliases": [
+          "french invasion of malta",
+          "invasion of malta",
+          "malta"
+        ],
+        "years": [
+          1798
+        ]
+      },
+      {
+        "audit_id": "hced-Marqab1285-1",
+        "aliases": [
+          "margat",
+          "marqab",
+          "siege of margat",
+          "siege of marqab"
+        ],
+        "years": [
+          1285
+        ]
+      },
+      {
+        "audit_id": "hced-Rhodes1310-1",
+        "aliases": [
+          "conquest of rhodes",
+          "hospitaller conquest of rhodes",
+          "rhodes"
+        ],
+        "years": [
+          1310
+        ]
+      },
+      {
+        "audit_id": "hced-Rhodes1480-1",
+        "aliases": [
+          "rhodes",
+          "siege of rhodes",
+          "siege of rhodes 1480"
+        ],
+        "years": [
+          1480
+        ]
+      },
+      {
+        "audit_id": "hced-Rhodes1522-1",
+        "aliases": [
+          "rhodes",
+          "siege of rhodes",
+          "siege of rhodes 1522"
+        ],
+        "years": [
+          1522
+        ]
+      },
+      {
+        "audit_id": "hced-Smyrna1402-1",
+        "aliases": [
+          "siege of smyrna",
+          "smyrna",
+          "smyrna sea castle"
+        ],
+        "years": [
+          1402
+        ]
+      },
+      {
+        "audit_id": "hced-Tripoli, Libya1551-1",
+        "aliases": [
+          "siege of tripoli",
+          "tripoli",
+          "tripoli libya"
+        ],
+        "years": [
+          1551
+        ]
+      }
+    ],
+    "wave8_hospitallers_existing_release_duplicate_dispositions": [],
+    "wave8_hospitallers_integration_dispositions": [
+      {
+        "disposition_id": "hced-Acre1291-1",
+        "raw_row_sha256": "6a2d152a9d39544a5b83f87eb64ed7929f65a1ba0e4c8a61e9e32980a2f8b989",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "contains_source_misspelling_inside_four_member_coalition",
+        "reason": "Acre combines Jerusalem, Hospitallers, Templars, and Teutonic Knights; this exact-label lane cannot silently collapse that coalition into one Hospitaller actor."
+      },
+      {
+        "disposition_id": "hced-Arsouf1191-1",
+        "raw_row_sha256": "6dac2eea873a203820c14f28ae4064550f67666316b8114a072c19fe25a3fc91",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_name_inside_england_coalition",
+        "owner_event_id": "hced_hced_arsouf1191_1",
+        "reason": "The coded pass already owns the row as England versus the Ayyubids; this lane does not re-rate or append a second Hospitaller outcome."
+      },
+      {
+        "disposition_id": "hced-Cresson1187-1",
+        "raw_row_sha256": "f153d030c9e77de82a92d5405b5ee71bcad21287dcf82265cd9c9fd417645e14",
+        "disposition": "adjacent_multi_order_coalition_outside_exact_lane",
+        "relationship": "templar_hospitaller_joint_side",
+        "reason": "Cresson is a Templar-Hospitaller coalition and requires its own joint-force identity audit; neither order is substituted for the whole side here."
+      },
+      {
+        "disposition_id": "hced-Malta1565-1",
+        "raw_row_sha256": "364eef3dd82e293d73606dff98f3be322e2418b0da697129f326d80abaaa9afd",
+        "disposition": "existing_coded_release_owner",
+        "relationship": "hospitaller_spain_coalition_variant",
+        "owner_event_id": "hced_hced_malta1565_1",
+        "reason": "The coded pass already owns the Great Siege row through Spain and the Ottoman Empire; the 1798 exact-label event is chronologically and operationally distinct."
+      },
+      {
+        "disposition_id": "hced-Smyrna1344-1",
+        "raw_row_sha256": "9ba48bc02ff693315bef98a48e662463774bdca1215f1de69a772631a2ef7fe0",
+        "disposition": "adjacent_four_power_coalition_outside_exact_lane",
+        "relationship": "venice_cyprus_papal_hospitaller_coalition",
+        "reason": "The 1344 capture belongs to a four-power league and cannot be assigned solely to the Order; it is also distinct from Timur's 1402 capture of the Hospitaller sea-castle."
+      }
+    ],
+    "wave8_hospitallers_cross_spelling_duplicate_audit": {
+      "exact_source_labels": [
+        "Knights Hospitallier",
+        "Knights of St John"
+      ],
+      "same_event_candidate_pairs": [],
+      "finding": "no_same_name_and_year_pair_across_exact_spellings",
+      "method": "candidate id, normalized place name, locked year, canonical event, and adjacent coalition inventory"
+    },
+    "wave8_hospitallers_opposite_result_audit": {
+      "same_event_opposite_result_pairs": [],
+      "finding": "no_opposite_result_twin_in_hced_iwbd_or_release_snapshot"
+    },
+    "wave8_hospitallers_outcome_overrides": [],
+    "wave8_hospitallers_entities_added": 17,
+    "wave8_hospitallers_sources_added": 18,
+    "hced_label_pass_input_rows": 5725,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -10326,7 +10609,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 871,
+      "reserved_candidate_contract": 879,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -10338,7 +10621,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2222,
+      "no_unique_time_valid_label_match": 2214,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

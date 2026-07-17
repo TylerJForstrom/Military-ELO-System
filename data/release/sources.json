@@ -9298,6 +9298,274 @@
     ]
   },
   {
+    "id": "wave8_hospitallers_cambridge_crusades_chronology",
+    "title": "The Cambridge Companion to the Literature of the Crusades: Chronology",
+    "url": "https://assets.cambridge.org/97811084/74511/frontmatter/9781108474511_frontmatter.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_companion_crusades_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_krak_1271",
+    "title": "The taking of Le Krak des Chevaliers in 1271",
+    "url": "https://doi.org/10.1017/S0003598X0002007X",
+    "publisher": "Antiquity / Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "cathcart_king_krak_1949",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_malta_1798",
+    "title": "Holy Wars, Empires, and the Portability of the Past",
+    "url": "https://doi.org/10.1017/S0010417506000120",
+    "publisher": "Comparative Studies in Society and History / Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "knobler_holy_wars_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_malta_regimes",
+    "title": "Malta's Archaeological Past",
+    "url": "https://doi.org/10.1017/CBO9781139030465.002",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "sagona_archaeology_malta_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_ottoman_expansion",
+    "title": "Ottoman expansion in the Mediterranean",
+    "url": "https://doi.org/10.1017/CHO9781139049047.009",
+    "publisher": "Cambridge University Press, The Cambridge History of Turkey",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_history_turkey_mediterranean_expansion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_rhodes_bastion",
+    "title": "Rhodes and the origin of the bastion",
+    "url": "https://www.cambridge.org/core/journals/antiquaries-journal/article/abs/rhodes-and-the-origin-of-the-bastion/0F2FF1F28B0352EBA7A1DBB39023DC74",
+    "publisher": "The Antiquaries Journal / Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_architectural_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oneil_rhodes_bastion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cambridge_tripoli_1551",
+    "title": "A Knight of Malta at the Court of Elizabeth I: Introduction",
+    "url": "https://assets.cambridge.org/97811070/92938/excerpt/9781107092938_excerpt.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edited_primary_correspondence",
+    "accessed": "2026-07-16",
+    "source_family_id": "potter_michel_de_seure_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_cnrs_rhodes_arrival",
+    "title": "Rhodes et l'ordre de Saint-Jean-de-Jerusalem: L'arrivee a Rhodes",
+    "url": "https://books.openedition.org/editionscnrs/2572",
+    "publisher": "CNRS Editions / OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "blondy_rhodes_arrival_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_edinburgh_margat",
+    "title": "Micromorphological and geochemical investigation of formation processes in the refectory at the Castle of Margat",
+    "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/16836436/Micromorphological_and_Geochemical_Investigation_of_Formation_Processes_in_the_Refectory_at_the_Castle_of_Margat.pdf",
+    "publisher": "University of Edinburgh / Journal of Archaeological Science",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "major_et_al_margat_archaeology_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_ehr_rhodes_town",
+    "title": "The Town of Rhodes, 1306-1356",
+    "url": "https://doi.org/10.1093/ehr/cel331",
+    "publisher": "The English Historical Review / Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_review",
+    "accessed": "2026-07-16",
+    "source_family_id": "edbury_luttrell_rhodes_review_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_fleet_smyrna",
+    "title": "European and Islamic Trade in the Early Ottoman State: Historical outline",
+    "url": "https://assets.cambridge.org/052164/2213/sample/0521642213wsc00.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "kate_fleet_early_ottoman_trade_1999",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_heritage_malta_invasion",
+    "title": "A pivotal moment in Malta's history features in a new Heritage Malta documentary",
+    "url": "https://heritagemalta.mt/news/a-pivotal-moment-in-maltas-history-features-in-a-new-heritage-malta-documentary/",
+    "publisher": "Heritage Malta",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "heritage_malta_napoleon_invasion_document",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_luttrell_smyrna",
+    "title": "The Hospitallers of Rhodes: Prospects, Problems, Possibilities",
+    "url": "https://journals.ub.uni-heidelberg.de/index.php/vuf/article/download/16541/10385",
+    "publisher": "University of Heidelberg Journals",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "luttrell_hospitallers_rhodes_prospects",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_michaudel_margat",
+    "title": "Fall and Rise of the Hospitaller and Templar Castles in Syria",
+    "url": "https://api.pageplace.de/preview/DT0400.9781317179863_A26662580/preview-9781317179863_A26662580.pdf",
+    "publisher": "Routledge, Archaeology and Architecture of the Military Orders",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "michaudel_fall_rise_castles_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_nhrf_smyrna",
+    "title": "The Hospitallers and the Turks",
+    "url": "https://helios-eie.ekt.gr/EIE/bitstream/10442/16515/2/%CE%9205.014.0.pdf",
+    "publisher": "National Hellenic Research Foundation",
+    "license": "Citation and link only",
+    "source_type": "scholarly_source_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "luttrell_zachariadou_hospitallers_turks",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_phillips_tripoli_1551",
+    "title": "Navies and the Mediterranean in the Early Modern Period",
+    "url": "https://api.pageplace.de/preview/DT0400.9781136713170_A24375320/preview-9781136713170_A24375320.pdf",
+    "publisher": "Frank Cass / Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edited_volume_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "phillips_navies_mediterranean_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_pur_rhodes_conquest",
+    "title": "Le siege de Rhodes par les Hospitaliers en 1306-1310",
+    "url": "https://books.openedition.org/pur/36638",
+    "publisher": "Presses universitaires de Rennes / OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "rhodes_medieval_sieges_pur",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hospitallers_unesco_krak",
+    "title": "Crac des Chevaliers and Qal'at Salah El-Din nomination dossier",
+    "url": "https://whc.unesco.org/document/168916",
+    "publisher": "UNESCO World Heritage Centre",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_nomination_dossier",
+    "accessed": "2026-07-16",
+    "source_family_id": "unesco_krak_nomination_dossier",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_hussites_archaeological_atlas_vladar",
     "title": "Zahorice: prehistoric hillfort Vladar",
     "url": "https://www.archeologickyatlas.cz/en/lokace/zahorice_kv_hradiste_vladar",

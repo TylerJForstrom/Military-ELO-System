@@ -3507,6 +3507,36 @@
     "start_year": 1270
   },
   {
+    "id": "baybars_mamluk_siege_army_krak_1271",
+    "name": "Baybars's Mamluk siege army at Krak des Chevaliers (1271)",
+    "kind": "event_bounded_mamluk_siege_army",
+    "start_year": 1271,
+    "end_year": 1271,
+    "region": "Krak des Chevaliers, Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Baybars's force in the March-April siege and capture. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_krak_1271",
+      "wave8_hospitallers_unesco_krak"
+    ]
+  },
+  {
+    "id": "hospitaller_krak_garrison_1271",
+    "name": "Hospitaller garrison of Krak des Chevaliers (1271)",
+    "kind": "event_bounded_hospitaller_castle_garrison",
+    "start_year": 1271,
+    "end_year": 1271,
+    "region": "Krak des Chevaliers, Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order's castle garrison that capitulated in April 1271. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_krak_1271",
+      "wave8_hospitallers_unesco_krak"
+    ]
+  },
+  {
     "id": "angevin_sicily_berat_army_1281",
     "name": "Angevin Kingdom of Sicily Army at Berat (1281)",
     "kind": "campaign_army",
@@ -3549,6 +3579,36 @@
     "source_ids": [
       "wave8_wales_coflein_bridge_of_boats_1282",
       "wave8_wales_coflein_irfon_bridge_1282"
+    ]
+  },
+  {
+    "id": "hospitaller_margat_garrison_1285",
+    "name": "Hospitaller garrison of Margat (1285)",
+    "kind": "event_bounded_hospitaller_castle_garrison",
+    "start_year": 1285,
+    "end_year": 1285,
+    "region": "Margat (Qal'at al-Marqab), Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Margat garrison that surrendered on 25 May 1285. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_edinburgh_margat",
+      "wave8_hospitallers_michaudel_margat"
+    ]
+  },
+  {
+    "id": "qalawun_mamluk_siege_army_margat_1285",
+    "name": "Qalawun's Mamluk siege army at Margat (1285)",
+    "kind": "event_bounded_mamluk_siege_army",
+    "start_year": 1285,
+    "end_year": 1285,
+    "region": "Margat (Qal'at al-Marqab), Syria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Qalawun's force in the April-May siege and capture. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_edinburgh_margat",
+      "wave8_hospitallers_michaudel_margat"
     ]
   },
   {
@@ -3728,6 +3788,36 @@
       "wave8_flanders_cambridge_low_countries",
       "wave8_flanders_melis_stoke",
       "wave8_flanders_sayers_zierikzee"
+    ]
+  },
+  {
+    "id": "byzantine_rhodes_defenders_1310",
+    "name": "Byzantine defenders of Rhodes in the final Hospitaller conquest phase (1310)",
+    "kind": "event_bounded_byzantine_island_defenders",
+    "start_year": 1310,
+    "end_year": 1310,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the remaining Byzantine-held Rhodian position in the conquest's final phase. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cnrs_rhodes_arrival",
+      "wave8_hospitallers_pur_rhodes_conquest"
+    ]
+  },
+  {
+    "id": "villaret_hospitaller_rhodes_conquest_force_1310",
+    "name": "Villaret's Hospitaller conquest force on Rhodes (1310 completion)",
+    "kind": "event_bounded_hospitaller_conquest_force",
+    "start_year": 1310,
+    "end_year": 1310,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the final phase of the 1306-1310 acquisition of Rhodes. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cnrs_rhodes_arrival",
+      "wave8_hospitallers_pur_rhodes_conquest"
     ]
   },
   {
@@ -3977,6 +4067,22 @@
     ]
   },
   {
+    "id": "hospitaller_smyrna_garrison_1402",
+    "name": "Hospitaller garrison of the Smyrna sea-castle (1402)",
+    "kind": "event_bounded_hospitaller_outpost_garrison",
+    "start_year": 1402,
+    "end_year": 1402,
+    "region": "Lower Smyrna, Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order-administered Latin garrison attacked in December 1402. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_fleet_smyrna",
+      "wave8_hospitallers_luttrell_smyrna",
+      "wave8_hospitallers_nhrf_smyrna"
+    ]
+  },
+  {
     "id": "owain_glyndwr_bryn_glas_force_1402",
     "name": "Owain Glyndŵr's force at Bryn Glas (1402)",
     "kind": "event_bounded_rebel_force",
@@ -4002,6 +4108,22 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
+    "id": "timur_siege_army_smyrna_1402",
+    "name": "Timur's siege army at Smyrna (1402)",
+    "kind": "event_bounded_timurid_siege_army",
+    "start_year": 1402,
+    "end_year": 1402,
+    "region": "Lower Smyrna, Anatolia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Timur's December assault on the Latin sea-castle. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_fleet_smyrna",
+      "wave8_hospitallers_luttrell_smyrna",
+      "wave8_hospitallers_nhrf_smyrna"
     ]
   },
   {
@@ -4811,6 +4933,36 @@
     ]
   },
   {
+    "id": "hospitaller_rhodes_defenders_1480",
+    "name": "Hospitaller defenders of Rhodes (1480)",
+    "kind": "event_bounded_hospitaller_island_defenders",
+    "start_year": 1480,
+    "end_year": 1480,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order and island defenders who repelled the 1480 expedition. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_ottoman_expansion",
+      "wave8_hospitallers_cambridge_rhodes_bastion"
+    ]
+  },
+  {
+    "id": "ottoman_rhodes_expedition_1480",
+    "name": "Ottoman expedition against Rhodes (1480)",
+    "kind": "event_bounded_ottoman_siege_expedition",
+    "start_year": 1480,
+    "end_year": 1480,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the unsuccessful 1480 Ottoman siege expedition. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_ottoman_expansion",
+      "wave8_hospitallers_cambridge_rhodes_bastion"
+    ]
+  },
+  {
     "id": "tudor_lancastrian_army_1485",
     "name": "Henry Tudor's Army at Bosworth",
     "kind": "campaign_army",
@@ -4987,6 +5139,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "hospitaller_rhodes_defenders_1522",
+    "name": "Hospitaller defenders of Rhodes (1522)",
+    "kind": "event_bounded_hospitaller_island_defenders",
+    "start_year": 1522,
+    "end_year": 1522,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order's final Rhodian defence and capitulation. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_crusades_chronology",
+      "wave8_hospitallers_cambridge_rhodes_bastion"
+    ]
+  },
+  {
+    "id": "suleiman_ottoman_siege_army_rhodes_1522",
+    "name": "Suleiman I's Ottoman siege army at Rhodes (1522)",
+    "kind": "event_bounded_ottoman_siege_army",
+    "start_year": 1522,
+    "end_year": 1522,
+    "region": "Rhodes, Dodecanese",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the 1522 Ottoman siege ending in the December capitulation. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_crusades_chronology",
+      "wave8_hospitallers_cambridge_rhodes_bastion"
     ]
   },
   {
@@ -5299,6 +5481,51 @@
       "thornton_atlantic_africa"
     ],
     "start_year": 1549
+  },
+  {
+    "id": "hospitaller_tripoli_garrison_1551",
+    "name": "Hospitaller garrison of Tripoli (1551)",
+    "kind": "event_bounded_hospitaller_outpost_garrison",
+    "start_year": 1551,
+    "end_year": 1551,
+    "region": "Tripoli, Libya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order's Tripoli garrison from Malta that surrendered in 1551. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_tripoli_1551",
+      "wave8_hospitallers_phillips_tripoli_1551"
+    ]
+  },
+  {
+    "id": "sinan_pasha_ottoman_force_tripoli_1551",
+    "name": "Sinan Pasha's Ottoman force at Tripoli (1551)",
+    "kind": "event_bounded_ottoman_siege_force",
+    "start_year": 1551,
+    "end_year": 1551,
+    "region": "Tripoli, Libya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Sinan Pasha's Ottoman component in the August siege. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_tripoli_1551",
+      "wave8_hospitallers_phillips_tripoli_1551"
+    ]
+  },
+  {
+    "id": "turgut_reis_corsair_force_tripoli_1551",
+    "name": "Turgut Reis's corsair force at Tripoli (1551)",
+    "kind": "event_bounded_corsair_siege_force",
+    "start_year": 1551,
+    "end_year": 1551,
+    "region": "Tripoli, Libya",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Dragut/Turgut Reis's separately attested corsair component. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_tripoli_1551",
+      "wave8_hospitallers_phillips_tripoli_1551"
+    ]
   },
   {
     "id": "narva_order_city_castle_defence_1558",
@@ -6834,6 +7061,37 @@
     "source_ids": [
       "wave8_naples_civita_castellana_army_journal",
       "wave8_naples_regime_boundaries_treccani"
+    ]
+  },
+  {
+    "id": "french_army_orient_malta_1798",
+    "name": "French Army of the Orient invasion force at Malta (1798)",
+    "kind": "event_bounded_french_revolutionary_invasion_force",
+    "start_year": 1798,
+    "end_year": 1798,
+    "region": "Malta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to Bonaparte's June landings and acquisition of the islands. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_malta_1798",
+      "wave8_hospitallers_heritage_malta_invasion"
+    ]
+  },
+  {
+    "id": "hompesch_hospitaller_malta_garrison_1798",
+    "name": "Hompesch's Hospitaller Malta garrison and order-state forces (1798)",
+    "kind": "event_bounded_hospitaller_island_garrison",
+    "start_year": 1798,
+    "end_year": 1798,
+    "region": "Malta",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded participant: Bounded to the Order-state force that capitulated to the French in June 1798. No rating is inherited by the Order of St John in another territorial era, a broad religious order, a namesake organization, an opponent's wider regime, or any modern state or population.",
+    "source_ids": [
+      "wave8_hospitallers_cambridge_malta_1798",
+      "wave8_hospitallers_cambridge_malta_regimes",
+      "wave8_hospitallers_heritage_malta_invasion"
     ]
   },
   {
