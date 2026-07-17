@@ -1811,6 +1811,23 @@ from .wave8_achea import (
     wave8_achea_cohort_counts,
     wave8_achea_counts,
 )
+from .wave8_oran import (
+    WAVE8_ORAN_CONTRACT_IDS,
+    WAVE8_ORAN_EXISTING_RELEASE_DISPOSITIONS,
+    WAVE8_ORAN_FINAL_AUDIT_SIGNATURE,
+    WAVE8_ORAN_FUNNEL_AUDIT,
+    WAVE8_ORAN_HOLDS,
+    WAVE8_ORAN_RESERVED_IDS,
+    WAVE8_ORAN_SOURCES,
+    install_wave8_oran_entities,
+    install_wave8_oran_sources,
+    promote_wave8_oran_contracts,
+    validate_wave8_oran_integration_dispositions,
+    validate_wave8_oran_queue_contracts,
+    wave8_oran_audit_signature,
+    wave8_oran_cohort_counts,
+    wave8_oran_counts,
+)
 from .wave8_kievan_rus import (
     WAVE8_KIEVAN_RUS_CONTRACT_IDS,
     WAVE8_KIEVAN_RUS_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2155,6 +2172,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_BOHEMIA_RESERVED_IDS
     | WAVE8_SPANISH_LIBERALS_RESERVED_IDS
     | WAVE8_ACHEA_RESERVED_IDS
+    | WAVE8_ORAN_RESERVED_IDS
     | WAVE8_KIEVAN_RUS_RESERVED_IDS
     | WAVE8_CARNATIC_RESERVED_IDS
     | WAVE8_GOGURYEO_RESERVED_IDS
@@ -2878,6 +2896,7 @@ def build_expanded_release(
         validate_wave8_spanish_liberals_queue_contracts(hced)
     )
     wave8_achea_queue_validation = validate_wave8_achea_queue_contracts(hced)
+    wave8_oran_queue_validation = validate_wave8_oran_queue_contracts(hced)
     wave8_kievan_rus_queue_validation = validate_wave8_kievan_rus_queue_contracts(
         hced
     )
@@ -3289,6 +3308,7 @@ def build_expanded_release(
     install_wave8_bohemia_entities(release_entities)
     install_wave8_spanish_liberals_entities(release_entities)
     install_wave8_achea_entities(release_entities)
+    install_wave8_oran_entities(release_entities)
     install_wave8_kievan_rus_entities(release_entities)
     install_wave8_carnatic_entities(release_entities)
     install_wave8_goguryeo_entities(release_entities)
@@ -4781,9 +4801,18 @@ def build_expanded_release(
         release_entities,
         wave8_achea_existing_events,
     )
-    wave8_kievan_rus_existing_events = [
+    wave8_oran_existing_events = [
         *wave8_achea_existing_events,
         *wave8_achea_events,
+    ]
+    wave8_oran_events = promote_wave8_oran_contracts(
+        hced,
+        release_entities,
+        wave8_oran_existing_events,
+    )
+    wave8_kievan_rus_existing_events = [
+        *wave8_oran_existing_events,
+        *wave8_oran_events,
     ]
     wave8_kievan_rus_events = promote_wave8_kievan_rus_contracts(
         hced,
@@ -4975,6 +5004,7 @@ def build_expanded_release(
         *wave8_bohemia_events,
         *wave8_spanish_liberals_events,
         *wave8_achea_events,
+        *wave8_oran_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -5250,6 +5280,7 @@ def build_expanded_release(
         *wave8_bohemia_events,
         *wave8_spanish_liberals_events,
         *wave8_achea_events,
+        *wave8_oran_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -5748,6 +5779,13 @@ def build_expanded_release(
             ],
         )
     )
+    wave8_oran_integration_validation = (
+        validate_wave8_oran_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [*wave8_oran_existing_events, *wave8_oran_events],
+        )
+    )
     wave8_achea_integration_validation = (
         validate_wave8_achea_integration_dispositions(
             hced,
@@ -6089,6 +6127,7 @@ def build_expanded_release(
     install_wave8_bohemia_sources(sources_by_id)
     install_wave8_spanish_liberals_sources(sources_by_id)
     install_wave8_achea_sources(sources_by_id)
+    install_wave8_oran_sources(sources_by_id)
     install_wave8_kievan_rus_sources(sources_by_id)
     install_wave8_carnatic_sources(sources_by_id)
     install_wave8_goguryeo_sources(sources_by_id)
@@ -6192,6 +6231,7 @@ def build_expanded_release(
         *wave8_bohemia_events,
         *wave8_spanish_liberals_events,
         *wave8_achea_events,
+        *wave8_oran_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -6295,6 +6335,7 @@ def build_expanded_release(
         *wave8_bohemia_events,
         *wave8_spanish_liberals_events,
         *wave8_achea_events,
+        *wave8_oran_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -6397,6 +6438,7 @@ def build_expanded_release(
             | WAVE8_BOHEMIA_CONTRACT_IDS
             | WAVE8_SPANISH_LIBERALS_CONTRACT_IDS
             | WAVE8_ACHEA_CONTRACT_IDS
+            | WAVE8_ORAN_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
             | WAVE8_CARNATIC_CONTRACT_IDS
             | WAVE8_GOGURYEO_CONTRACT_IDS
@@ -6832,6 +6874,7 @@ def build_expanded_release(
         - len(wave8_bohemia_events)
         - len(wave8_spanish_liberals_events)
         - len(wave8_achea_events)
+        - len(wave8_oran_events)
         - len(wave8_kievan_rus_events)
         - len(wave8_carnatic_events)
         - len(wave8_goguryeo_events)
@@ -7034,6 +7077,7 @@ def build_expanded_release(
             wave8_spanish_liberals_events
         ),
         "candidate_keyed_wave8_achea_hced_events": len(wave8_achea_events),
+        "candidate_keyed_wave8_oran_hced_events": len(wave8_oran_events),
         "candidate_keyed_wave8_kievan_rus_hced_events": len(
             wave8_kievan_rus_events
         ),
@@ -7390,6 +7434,7 @@ def build_expanded_release(
                 wave8_spanish_liberals_events
             ),
             "accepted_wave8_achea_hced_events": len(wave8_achea_events),
+            "accepted_wave8_oran_hced_events": len(wave8_oran_events),
             "accepted_wave8_kievan_rus_hced_events": len(
                 wave8_kievan_rus_events
             ),
@@ -11303,6 +11348,30 @@ def build_expanded_release(
             ),
             "wave8_achea_entities_added": len(WAVE8_ACHEA_ENTITIES),
             "wave8_achea_sources_added": len(WAVE8_ACHEA_SOURCES),
+            "wave8_oran_counts": wave8_oran_counts(),
+            "wave8_oran_cohort_counts": wave8_oran_cohort_counts(),
+            "wave8_oran_audit_signature": wave8_oran_audit_signature(),
+            "wave8_oran_final_audit_signature": (
+                WAVE8_ORAN_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_oran_queue_validation": wave8_oran_queue_validation,
+            "wave8_oran_integration_validation": (
+                wave8_oran_integration_validation
+            ),
+            "wave8_oran_candidate_ids": sorted(WAVE8_ORAN_CONTRACT_IDS),
+            "wave8_oran_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_ORAN_HOLDS.items())
+            ],
+            "wave8_oran_existing_release_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ORAN_EXISTING_RELEASE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_oran_exact_label_funnel_audit": WAVE8_ORAN_FUNNEL_AUDIT,
+            "wave8_oran_entities_added": 0,
+            "wave8_oran_sources_added": len(WAVE8_ORAN_SOURCES),
             "wave8_kievan_rus_counts": wave8_kievan_rus_counts(),
             "wave8_kievan_rus_cohort_counts": wave8_kievan_rus_cohort_counts(),
             "wave8_kievan_rus_audit_signature": (
@@ -12047,6 +12116,7 @@ def build_expanded_release(
             wave8_spanish_liberals_events
         ),
         "candidate_keyed_wave8_achea_hced_events": len(wave8_achea_events),
+        "candidate_keyed_wave8_oran_hced_events": len(wave8_oran_events),
         "candidate_keyed_wave8_kievan_rus_hced_events": len(
             wave8_kievan_rus_events
         ),
