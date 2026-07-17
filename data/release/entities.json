@@ -7377,6 +7377,36 @@
     ]
   },
   {
+    "id": "kicking_bird_kiowa_war_party_little_wichita_1870",
+    "name": "Kicking Bird's Kiowa war party at the Little Wichita River (1870)",
+    "kind": "event_bounded_war_party",
+    "start_year": 1870,
+    "end_year": 1870,
+    "region": "Little Wichita River, Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Kicking Bird's approximately one-hundred-person fighting party in the 12 July engagement; peaceful Kiowa factions and the whole Kiowa people are outside the identity. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_tribe_history",
+      "wave8_kiowa_tsha_little_wichita"
+    ]
+  },
+  {
+    "id": "mclellan_sixth_cavalry_detachment_1870",
+    "name": "McLellan's Sixth Cavalry detachment at the Little Wichita River (1870)",
+    "kind": "event_bounded_military_detachment",
+    "start_year": 1870,
+    "end_year": 1870,
+    "region": "Little Wichita River, Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Captain Curwen B. McLellan's pursued field detachment in the 12 July engagement, not the United States Army as a timeless actor. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_tbh_frontier_timeline",
+      "wave8_kiowa_tsha_little_wichita"
+    ]
+  },
+  {
     "id": "ndebele_kingdom_lobengula",
     "name": "Ndebele Kingdom under Lobengula",
     "kind": "kingdom",
@@ -7435,6 +7465,85 @@
     "continuity_note": "Exact Wave 6 reviewed-party boundary. It is used only by candidate-specific contracts and opens no label or code fallback. Predecessor and successor ratings are not inherited.",
     "source_ids": [
       "carlist_spanish_army"
+    ]
+  },
+  {
+    "id": "palo_duro_comanche_kiowa_cheyenne_war_parties_1874",
+    "name": "Comanche-Kiowa-Cheyenne defending war parties at Palo Duro (1874)",
+    "kind": "event_bounded_allied_war_parties",
+    "start_year": 1874,
+    "end_year": 1874,
+    "region": "Palo Duro Canyon, Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the armed war parties that resisted Mackenzie's 28 September attack. Families, villages, prisoners, and noncombatants in the canyon are expressly outside the rated formation. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_tpwd_palo_duro",
+      "wave8_kiowa_tribe_palo_duro_150",
+      "wave8_kiowa_tsha_palo_duro"
+    ]
+  },
+  {
+    "id": "buffalo_wallow_dispatch_detail_1874",
+    "name": "Dixon-Chapman Sixth Cavalry dispatch detail at Buffalo Wallow (1874)",
+    "kind": "event_bounded_dispatch_detail",
+    "start_year": 1874,
+    "end_year": 1874,
+    "region": "Gageby Creek-Washita divide, Texas Panhandle",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to civilian scouts Billy Dixon and Amos Chapman and the four Sixth Cavalry soldiers surrounded on 12 September. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_tbh_red_river_battles",
+      "wave8_kiowa_thc_red_river_guide"
+    ]
+  },
+  {
+    "id": "lyman_buffalo_wallow_kiowa_comanche_warriors_1874",
+    "name": "Kiowa-Comanche warriors linking Lyman's train and Buffalo Wallow (1874)",
+    "kind": "campaign_bounded_allied_war_party",
+    "start_year": 1874,
+    "end_year": 1874,
+    "region": "Upper Washita and Gageby Creek, Southern Plains",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Kiowa-Comanche force at Lyman's 9-12 September siege and the approximately 125 warriors directly reported leaving that siege before the separate Buffalo Wallow engagement. The continuity is attested only across these linked actions. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_nps_red_river_nrhp",
+      "wave8_kiowa_tbh_red_river_battles",
+      "wave8_kiowa_tsha_lone_wolf"
+    ]
+  },
+  {
+    "id": "mackenzie_fourth_cavalry_tonkawa_column_1874",
+    "name": "Mackenzie's Fourth Cavalry-Tonkawa column at Palo Duro (1874)",
+    "kind": "event_bounded_allied_column",
+    "start_year": 1874,
+    "end_year": 1874,
+    "region": "Palo Duro Canyon, Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Colonel Ranald Mackenzie's Fourth Cavalry field column and the directly attested Tonkawa scouts in the 28 September action. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_army_lawton",
+      "wave8_kiowa_tpwd_palo_duro",
+      "wave8_kiowa_tsha_palo_duro"
+    ]
+  },
+  {
+    "id": "lyman_supply_train_escort_1874",
+    "name": "Wyllys Lyman's supply-train escort (1874)",
+    "kind": "event_bounded_military_escort",
+    "start_year": 1874,
+    "end_year": 1874,
+    "region": "Upper Washita, Southern Plains",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Lyman's infantry, cavalry, armed teamsters, and defended wagon train during the 9-14 September siege. No rating is inherited by a constituent nation, ethnic label, reservation population, descendant community, later force, or modern state.",
+    "source_ids": [
+      "wave8_kiowa_nps_red_river_nrhp",
+      "wave8_kiowa_tbh_red_river_battles",
+      "wave8_kiowa_tsha_lyman"
     ]
   },
   {

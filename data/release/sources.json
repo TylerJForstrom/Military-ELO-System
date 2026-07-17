@@ -8254,6 +8254,226 @@
     ]
   },
   {
+    "id": "wave8_kiowa_army_lawton",
+    "title": "Two Decades on the Frontier: Henry W. Lawton",
+    "url": "https://history.army.mil/Portals/143/Images/Publications/ArmyHistoryMag/pdf/20002009/AH63%28W%29.pdf?ver=kRfbRJG0lJ6qYd8u3mb3aQ%3D%3D",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "army_history_lawton_frontier",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_nps_red_river_nrhp",
+    "title": "Battle Sites of the Red River War in the Texas Panhandle, 1874-1875",
+    "url": "https://npgallery.nps.gov/NRHP/GetAsset/NRHP/64500626_text",
+    "publisher": "U.S. National Park Service and Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "national_register_multiple_property_documentation",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_red_river_battle_sites_nrhp",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tbh_frontier_timeline",
+    "title": "Timeline of Texas and the Western Frontier, 1866-1875",
+    "url": "https://www.texasbeyondhistory.net/forts/66-75.html",
+    "publisher": "Texas Archeological Research Laboratory, University of Texas at Austin",
+    "license": "Citation and link only",
+    "source_type": "university_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_beyond_history_frontier_timeline",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tbh_red_river_battles",
+    "title": "Red River War: The Battles",
+    "url": "https://www.texasbeyondhistory.net/redriver/battles.html",
+    "publisher": "Texas Archeological Research Laboratory, University of Texas at Austin",
+    "license": "Citation and link only",
+    "source_type": "university_archaeology_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_beyond_history_red_river_battles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_texas_ranger_jones",
+    "title": "John B. Jones, Texas Ranger Hall of Fame",
+    "url": "https://www.texasranger.org/Hall-of-Fame/Jones-John",
+    "publisher": "Texas Ranger Hall of Fame and Museum",
+    "license": "Citation and link only",
+    "source_type": "institutional_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_ranger_museum_jones",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_thc_red_river_guide",
+    "title": "Red River War of 1874-1875: Clash of Cultures in the Texas Panhandle",
+    "url": "https://www.thc.texas.gov/public/upload/publications/red-river-war-2021.pdf",
+    "publisher": "Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "government_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_historical_commission_red_river_guide",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tpwd_palo_duro",
+    "title": "Palo Duro Canyon State Park History",
+    "url": "https://tpwd.texas.gov/state-parks/palo-duro-canyon/history",
+    "publisher": "Texas Parks and Wildlife Department",
+    "license": "Citation and link only",
+    "source_type": "government_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "tpwd_palo_duro_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tribe_history",
+    "title": "History of the Kiowa Tribe",
+    "url": "https://www.kiowatribe.org/about-us",
+    "publisher": "Kiowa Tribe",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kiowa_tribe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tribe_palo_duro_150",
+    "title": "Successful Commemoration of the Battle of Palo Duro Canyon",
+    "url": "https://www.kiowatribe.org/sites/default/files/inline-files/September%202024%20Newsletter.pdf",
+    "publisher": "Kiowa Tribe",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_commemoration",
+    "accessed": "2026-07-16",
+    "source_family_id": "kiowa_tribe_palo_duro_commemoration",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_little_wichita",
+    "title": "Little Wichita River, Battle of the",
+    "url": "https://www.tshaonline.org/handbook/entries/little-wichita-river-battle-of-the",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_little_wichita",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_lone_wolf",
+    "title": "Lone Wolf",
+    "url": "https://www.tshaonline.org/handbook/entries/lone-wolf",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_lone_wolf",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_lost_valley",
+    "title": "Lost Valley",
+    "url": "https://www.tshaonline.org/handbook/entries/lost-valley",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_lost_valley",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_lyman",
+    "title": "Lyman's Wagontrain",
+    "url": "https://www.tshaonline.org/handbook/entries/lymans-wagontrain",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_lymans_wagontrain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_palo_duro",
+    "title": "Palo Duro Canyon, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/palo-duro-canyon-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_palo_duro",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kiowa_tsha_red_river_war",
+    "title": "Red River War",
+    "url": "https://www.tshaonline.org/handbook/entries/red-river-war",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_red_river_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_kshs_solomons_fork_1857",
     "title": "The Kiowa and Comanche Campaign of 1860",
     "url": "https://www.kansashistory.gov/p/the-kiowa-and-comanche-campaign-of-1860/13142",

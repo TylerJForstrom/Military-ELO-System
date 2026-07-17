@@ -2784,6 +2784,16 @@
       "region": "Indian Territory"
     },
     {
+      "id": "palo_duro_comanche_kiowa_cheyenne_war_parties_1874",
+      "name": "Comanche-Kiowa-Cheyenne defending war parties at Palo Duro (1874)",
+      "kind": "event_bounded_allied_war_parties",
+      "start_year": 1874,
+      "end_year": 1874,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Palo Duro Canyon, Texas"
+    },
+    {
       "id": "plum_creek_comanche_kiowa_war_party_1840",
       "name": "Comanche–Kiowa Great Raid war party at Plum Creek (1840)",
       "kind": "event_bounded_coalition",
@@ -3863,6 +3873,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North Africa"
+    },
+    {
+      "id": "buffalo_wallow_dispatch_detail_1874",
+      "name": "Dixon-Chapman Sixth Cavalry dispatch detail at Buffalo Wallow (1874)",
+      "kind": "event_bounded_dispatch_detail",
+      "start_year": 1874,
+      "end_year": 1874,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gageby Creek-Washita divide, Texas Panhandle"
     },
     {
       "id": "clio_q43048_1206_80d83511",
@@ -9152,6 +9172,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kicking_bird_kiowa_war_party_little_wichita_1870",
+      "name": "Kicking Bird's Kiowa war party at the Little Wichita River (1870)",
+      "kind": "event_bounded_war_party",
+      "start_year": 1870,
+      "end_year": 1870,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Little Wichita River, Texas"
+    },
+    {
       "id": "clio_af_kidarite_k_358_0325349a",
       "name": "Kidarites",
       "kind": "polity",
@@ -10825,6 +10855,16 @@
       "region": "Southern Europe"
     },
     {
+      "id": "lyman_buffalo_wallow_kiowa_comanche_warriors_1874",
+      "name": "Kiowa-Comanche warriors linking Lyman's train and Buffalo Wallow (1874)",
+      "kind": "campaign_bounded_allied_war_party",
+      "start_year": 1874,
+      "end_year": 1874,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Washita and Gageby Creek, Southern Plains"
+    },
+    {
       "id": "clio_q1062422_1741_5f5cea8a",
       "name": "Konbaung Dynasty",
       "kind": "dynastic_state",
@@ -11578,6 +11618,16 @@
       "region": "Southern Europe and West Asia"
     },
     {
+      "id": "mackenzie_fourth_cavalry_tonkawa_column_1874",
+      "name": "Mackenzie's Fourth Cavalry-Tonkawa column at Palo Duro (1874)",
+      "kind": "event_bounded_allied_column",
+      "start_year": 1874,
+      "end_year": 1874,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Palo Duro Canyon, Texas"
+    },
+    {
       "id": "mackenzie_upper_canada_rebel_force_1837",
       "name": "Mackenzie's Upper Canada rebel force (1837)",
       "kind": "rebel_force",
@@ -12121,6 +12171,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "mclellan_sixth_cavalry_detachment_1870",
+      "name": "McLellan's Sixth Cavalry detachment at the Little Wichita River (1870)",
+      "kind": "event_bounded_military_detachment",
+      "start_year": 1870,
+      "end_year": 1870,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Little Wichita River, Texas"
     },
     {
       "id": "mdewakanton_wahpekute_resistance_1862",
@@ -20663,6 +20723,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "lyman_supply_train_escort_1874",
+      "name": "Wyllys Lyman's supply-train escort (1874)",
+      "kind": "event_bounded_military_escort",
+      "start_year": 1874,
+      "end_year": 1874,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Washita, Southern Plains"
+    },
+    {
       "id": "clio_q7427_410_b56d774b",
       "name": "Xia",
       "kind": "polity",
@@ -21224,11 +21294,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1985,
-    "rated_entities": 622,
-    "rated_events": 5112,
+    "registry_polities": 1992,
+    "rated_entities": 629,
+    "rated_events": 5116,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18282,
+    "unresolved_event_candidates": 18278,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21275,6 +21345,7 @@
     "candidate_keyed_wave8_cherokee_hced_events": 4,
     "candidate_keyed_wave8_druze_rebels_hced_events": 4,
     "candidate_keyed_wave8_insubrian_gauls_hced_events": 4,
+    "candidate_keyed_wave8_kiowa_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21285,21 +21356,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4848,
-      "candidate_keyed_reviewed_contracts": 538,
+      "hced_candidate_bindings": 4852,
+      "candidate_keyed_reviewed_contracts": 542,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4759,
-      "location_provenance_objects": 4808,
-      "point_fields_withheld_by_quarantine": 116,
+      "modern_location_country_assertions": 4763,
+      "location_provenance_objects": 4812,
+      "point_fields_withheld_by_quarantine": 120,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 88,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 40,
-      "unique_events_with_any_quarantined_field": 164,
-      "point_quarantine_candidate_manifest_sha256": "9a013634fffe7056bd148c3ec28d190a55b365c09e64d038298585433948b075",
+      "unique_events_with_any_quarantined_field": 168,
+      "point_quarantine_candidate_manifest_sha256": "26ab54d1a3146ec1fd686f1bd3379d6cfebeb219603fd4bbc7bafea9510ca5cf",
       "country_quarantine_candidate_manifest_sha256": "a6393fab3d4e9f22ae3c70b982df1f315725a098086de8b054675673d2fb1336",
-      "quarantine_policy_sha256": "37ed825dfd1eac6f487c866f91663ad5c4b36fe39289b839646108271d2cfafd",
+      "quarantine_policy_sha256": "ba73a9705d56aaac274ccb2c11b56faf518330cc43f022c3963bb4db4ccfb12f",
       "assertion_status": {
-        "unreviewed_source_assertion": 4808
+        "unreviewed_source_assertion": 4812
       },
       "verified_location_assertions": {
         "availability": "not_available",

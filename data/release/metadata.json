@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 629,
-    "events": 5112,
-    "sources": 772,
-    "registry_polities": 1985
+    "entities": 636,
+    "events": 5116,
+    "sources": 787,
+    "registry_polities": 1992
   },
   "year_range": {
     "start": -1274,
@@ -117,6 +117,7 @@
     "accepted_wave8_cherokee_hced_events": 4,
     "accepted_wave8_druze_rebels_hced_events": 4,
     "accepted_wave8_insubrian_gauls_hced_events": 4,
+    "accepted_wave8_kiowa_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4974,7 +4975,188 @@
     "wave8_insubrian_gauls_outcome_overrides": [],
     "wave8_insubrian_gauls_entities_added": 8,
     "wave8_insubrian_gauls_sources_added": 12,
-    "hced_label_pass_input_rows": 5877,
+    "wave8_kiowa_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 2,
+      "holds": 1,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 7,
+      "new_sources": 15,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 2,
+      "reviewed_hced_rows": 5
+    },
+    "wave8_kiowa_cohort_counts": {
+      "little_wichita_campaign_1870": 1,
+      "red_river_war_lyman_buffalo_actions_1874": 2,
+      "red_river_war_palo_duro_1874": 1
+    },
+    "wave8_kiowa_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 1,
+      "reviewed_hced_rows": 5
+    },
+    "wave8_kiowa_integration_validation": {
+      "cross_lane_hced_dispositions": 2,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 5,
+      "related_hced_dispositions": 2
+    },
+    "wave8_kiowa_candidate_ids": [
+      "hced-Buffalo Wallow1874-1",
+      "hced-Little Rock1870-1",
+      "hced-Lymans Wagon Train1874-1",
+      "hced-Palo Duro1874-1"
+    ],
+    "wave8_kiowa_holds": [
+      {
+        "candidate_id": "hced-Lost Valley, Texas1874-1",
+        "raw_row_sha256": "d53373b3c2cbd2954892793066130bd1c057362e297175c9811590d7e68dc13e",
+        "canonical_event": {
+          "canonical_key": "lost_valley_fight:1874:1874",
+          "date_precision": "day",
+          "date_text": "12 July 1874",
+          "granularity": "engagement",
+          "name": "Lost Valley Fight",
+          "year_low": 1874,
+          "year_high": 1874
+        },
+        "disposition": "hold",
+        "hold_category": "contradictory_tactical_outcome_evidence",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Lone Wolf's Kiowa-led war party, with composition reported differently",
+          "John B. Jones's Texas Frontier Battalion detachment",
+          "late Tenth Cavalry relief element in some accounts"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The sources agree on a fought 12 July engagement but not on a unique tactical victor or even the complete coalition. The Lone Wolf and Red River War accounts emphasize the Rangers' losses, horse losses, and need for rescue; the Lost Valley and Ranger institutional accounts describe the Rangers as holding out or dispersing the attackers. The HCED Kiowa win is therefore not promoted, reversed, or relabelled as a draw. Unknown remains unknown pending stronger adjudication.",
+        "evidence_refs": [
+          "wave8_kiowa_texas_ranger_jones",
+          "wave8_kiowa_tsha_lone_wolf",
+          "wave8_kiowa_tsha_lost_valley",
+          "wave8_kiowa_tsha_red_river_war"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_kiowa",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_kiowa_iwbd_duplicate_dispositions": [],
+    "wave8_kiowa_cross_lane_dispositions": [
+      {
+        "disposition_id": "wave8_algiers_cheyenne",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_algiers_cheyenne",
+        "owned_candidate_ids": [
+          "hced-Palo Duro1874-1"
+        ],
+        "shared_component": "Southern Cheyenne war parties at Palo Duro",
+        "reason": "The Cheyenne audit owns different HCED rows. Palo Duro's exact mixed formation is owned here and creates no generic Cheyenne identity."
+      },
+      {
+        "disposition_id": "wave8_comanche",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_comanche",
+        "owned_candidate_ids": [
+          "hced-Buffalo Wallow1874-1",
+          "hced-Lymans Wagon Train1874-1",
+          "hced-Palo Duro1874-1"
+        ],
+        "shared_component": "Comanche participants in exact mixed formations",
+        "reason": "The Comanche audit owns different HCED rows. These exact linked and event-bounded mixed formations remain Kiowa-lane candidate owners and create no generic Comanche identity."
+      }
+    ],
+    "wave8_kiowa_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Adobe Walls1874-1",
+        "raw_row_sha256": "39f7628115b70c14c5dfa50d5bc142b3e52c377352431a8faf561b105237daa5",
+        "disposition": "distinct_unowned_engagement",
+        "relationship": "same_campaign_distinct_earlier_engagement",
+        "owner_module": null,
+        "reason": "Second Adobe Walls occurred on 27 June, months before the Lyman, Buffalo Wallow, and Palo Duro actions. It is not a duplicate or a campaign umbrella and remains outside this exact-label lane because its full Comanche-Kiowa-Cheyenne-Arapaho coalition needs its own audit.",
+        "evidence_refs": [
+          "wave8_kiowa_thc_red_river_guide",
+          "wave8_kiowa_tsha_red_river_war"
+        ]
+      },
+      {
+        "candidate_id": "hced-Buffalo Wallow1874-1",
+        "raw_row_sha256": "494fd42f8f696f5126c97b3f030a8b24d9a386458c58d453d930fb1a2c16b284",
+        "related_hced_candidate_id": "hced-Lymans Wagon Train1874-1",
+        "related_raw_row_sha256": "3d6612a05634fb9b3604d489ec260fbaf12f828ec80e65c70a1ab5f493c1eea5",
+        "disposition": "distinct_linked_engagements",
+        "relationship": "shared_attested_warrior_group_separate_battlefields",
+        "owner_module": "wave8_kiowa",
+        "reason": "About 125 warriors left the Lyman siege and then encountered the six-person dispatch detail at Buffalo Wallow. Shared personnel justify one short campaign identity; different objectives, locations, and event boundaries require two Elo events.",
+        "evidence_refs": [
+          "wave8_kiowa_nps_red_river_nrhp",
+          "wave8_kiowa_tbh_red_river_battles"
+        ]
+      }
+    ],
+    "wave8_kiowa_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:wave8_algiers_cheyenne",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_algiers_cheyenne",
+        "owned_candidate_ids": [
+          "hced-Palo Duro1874-1"
+        ],
+        "shared_component": "Southern Cheyenne war parties at Palo Duro",
+        "reason": "The Cheyenne audit owns different HCED rows. Palo Duro's exact mixed formation is owned here and creates no generic Cheyenne identity."
+      },
+      {
+        "disposition_id": "cross_lane:wave8_comanche",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_comanche",
+        "owned_candidate_ids": [
+          "hced-Buffalo Wallow1874-1",
+          "hced-Lymans Wagon Train1874-1",
+          "hced-Palo Duro1874-1"
+        ],
+        "shared_component": "Comanche participants in exact mixed formations",
+        "reason": "The Comanche audit owns different HCED rows. These exact linked and event-bounded mixed formations remain Kiowa-lane candidate owners and create no generic Comanche identity."
+      },
+      {
+        "disposition_id": "related_hced:hced-Adobe Walls1874-1",
+        "raw_row_sha256": "39f7628115b70c14c5dfa50d5bc142b3e52c377352431a8faf561b105237daa5",
+        "disposition": "distinct_unowned_engagement",
+        "relationship": "same_campaign_distinct_earlier_engagement",
+        "owner_module": null,
+        "reason": "Second Adobe Walls occurred on 27 June, months before the Lyman, Buffalo Wallow, and Palo Duro actions. It is not a duplicate or a campaign umbrella and remains outside this exact-label lane because its full Comanche-Kiowa-Cheyenne-Arapaho coalition needs its own audit.",
+        "evidence_refs": [
+          "wave8_kiowa_thc_red_river_guide",
+          "wave8_kiowa_tsha_red_river_war"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Buffalo Wallow1874-1",
+        "raw_row_sha256": "494fd42f8f696f5126c97b3f030a8b24d9a386458c58d453d930fb1a2c16b284",
+        "related_hced_candidate_id": "hced-Lymans Wagon Train1874-1",
+        "related_raw_row_sha256": "3d6612a05634fb9b3604d489ec260fbaf12f828ec80e65c70a1ab5f493c1eea5",
+        "disposition": "distinct_linked_engagements",
+        "relationship": "shared_attested_warrior_group_separate_battlefields",
+        "owner_module": "wave8_kiowa",
+        "reason": "About 125 warriors left the Lyman siege and then encountered the six-person dispatch detail at Buffalo Wallow. Shared personnel justify one short campaign identity; different objectives, locations, and event boundaries require two Elo events.",
+        "evidence_refs": [
+          "wave8_kiowa_nps_red_river_nrhp",
+          "wave8_kiowa_tbh_red_river_battles"
+        ]
+      }
+    ],
+    "wave8_kiowa_outcome_overrides": [],
+    "wave8_kiowa_entities_added": 7,
+    "wave8_kiowa_sources_added": 15,
+    "hced_label_pass_input_rows": 5872,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4987,7 +5169,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 727,
+      "reserved_candidate_contract": 732,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4999,7 +5181,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2360,
+      "no_unique_time_valid_label_match": 2355,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,
