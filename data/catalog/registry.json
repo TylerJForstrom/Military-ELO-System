@@ -842,6 +842,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "appledore_raiding_detachment_farnham_893",
+      "name": "Appledore Army's Raiding Detachment at Farnham (893)",
+      "kind": "engagement_force",
+      "start_year": 893,
+      "end_year": 893,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kent, Hampshire, Berkshire, and Surrey"
+    },
+    {
       "id": "clio_ir_ak_koyunlu_1407_245420bc",
       "name": "Aq Qoyunlu",
       "kind": "polity",
@@ -4730,6 +4740,16 @@
       "region": "England"
     },
     {
+      "id": "edward_west_saxon_field_army_farnham_893",
+      "name": "Edward's West Saxon Field Army at Farnham (893)",
+      "kind": "engagement_force",
+      "start_year": 893,
+      "end_year": 893,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wessex and Surrey"
+    },
+    {
       "id": "egypt_muhammad_ali",
       "name": "Egypt (Muhammad Ali dynasty)",
       "kind": "dynastic_state",
@@ -6551,6 +6571,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "great_heathen_army_wessex_campaign_871",
+      "name": "Great Army in the Wessex Campaign (871)",
+      "kind": "campaign_army",
+      "start_year": 871,
+      "end_year": 871,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wessex"
     },
     {
       "id": "clio_cn_later_great_jin_1126_ffd82ca7",
@@ -18941,6 +18971,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "thames_viking_host_aclea_851",
+      "name": "Thames-Invasion Host at Aclea (851)",
+      "kind": "engagement_force",
+      "start_year": 851,
+      "end_year": 851,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Thames valley and Surrey"
+    },
+    {
       "id": "clio_in_thanjavur_maratha_k_1677_53cb427f",
       "name": "Thanjavur Maratha Kingdom",
       "kind": "kingdom",
@@ -20771,6 +20811,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "aethelred_alfred_wessex_campaign_army_871",
+      "name": "Æthelred and Alfred's West Saxon Campaign Army (871)",
+      "kind": "campaign_army",
+      "start_year": 871,
+      "end_year": 871,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wessex"
+    },
+    {
+      "id": "aethelwulf_aethelbald_aclea_army_851",
+      "name": "Æthelwulf and Æthelbald's West Saxon Army at Aclea (851)",
+      "kind": "engagement_force",
+      "start_year": 851,
+      "end_year": 851,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wessex and Surrey"
+    },
+    {
       "id": "ecija_visigothic_defenders_711",
       "name": "Écija defenders and Visigothic survivors in 711",
       "kind": "event_bounded_city_field_force",
@@ -20804,11 +20864,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1943,
-    "rated_entities": 580,
-    "rated_events": 5078,
+    "registry_polities": 1949,
+    "rated_entities": 586,
+    "rated_events": 5082,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18316,
+    "unresolved_event_candidates": 18312,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20847,6 +20907,7 @@
     "candidate_keyed_wave8_peruvian_rebels_hced_events": 5,
     "candidate_keyed_wave8_germany_hced_events": 13,
     "candidate_keyed_wave8_seljuks_hced_events": 5,
+    "candidate_keyed_wave8_danish_vikings_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20857,21 +20918,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4814,
-      "candidate_keyed_reviewed_contracts": 504,
+      "hced_candidate_bindings": 4818,
+      "candidate_keyed_reviewed_contracts": 508,
       "geojson_points": 4725,
-      "modern_location_country_assertions": 4727,
-      "location_provenance_objects": 4776,
-      "point_fields_withheld_by_quarantine": 89,
+      "modern_location_country_assertions": 4731,
+      "location_provenance_objects": 4780,
+      "point_fields_withheld_by_quarantine": 93,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 137,
-      "point_quarantine_candidate_manifest_sha256": "1ec44f2b18828e2ded546d5ce7789c86189800a19958c96fb63a9ca6bc03ca44",
+      "unique_events_with_any_quarantined_field": 141,
+      "point_quarantine_candidate_manifest_sha256": "59db4fa35875aa39599c42d37981780f49b55c1393b5c07561d244101ee5e47c",
       "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "d288bcf00bed5735b8d79f0719f8a1eca812ee0b2eec102fcbd949efe426e71b",
+      "quarantine_policy_sha256": "2215ce767048005707a2b94297d7f95de53b660c956fc6dc23891c853ba98992",
       "assertion_status": {
-        "unreviewed_source_assertion": 4776
+        "unreviewed_source_assertion": 4780
       },
       "verified_location_assertions": {
         "availability": "not_available",

@@ -6317,6 +6317,115 @@
     ]
   },
   {
+    "id": "wave8_danish_vikings_aethelweard_book_four",
+    "title": "The Fourth Book of the Chronicle of Æthelweard",
+    "url": "https://deremilitari.org/2013/09/the-fourth-book-of-the-chronicle-of-aethelweard/",
+    "publisher": "De Re Militari: The Society for Medieval Military History",
+    "license": "Citation and link only",
+    "source_type": "translated_near_contemporary_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "aethelweard_chronicle_book_four",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_cambridge_alfred",
+    "title": "Alfred, King of the Anglo-Saxons",
+    "url": "https://www.cambridge.org/core/books/abs/alfred-the-great/alfred-king-of-the-anglosaxons/1DD9F17FD759F2F9FABC44DE497C7A36",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "anlezark_alfred_the_great_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_he_aclea",
+    "title": "Historic England Research Record: Battle of Aclea",
+    "url": "https://www.heritagegateway.org.uk/Gateway/Results_Single.aspx?resourceID=19191&uid=397119",
+    "publisher": "Historic England via Heritage Gateway",
+    "license": "Citation and link only",
+    "source_type": "national_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "historic_england_research_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_he_ashdown",
+    "title": "West Berkshire HER: Ashdown, Battle of",
+    "url": "https://www.heritagegateway.org.uk/Gateway/Results_Single.aspx?resourceID=1030&uid=MWB4187",
+    "publisher": "West Berkshire Historic Environment Record via Heritage Gateway",
+    "license": "Citation and link only",
+    "source_type": "local_authority_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "historic_england_research_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_he_farnham",
+    "title": "Historic England Research Record: Battle of Farnham 893 AD",
+    "url": "https://www.heritagegateway.org.uk/Gateway/Results_Single.aspx?resourceID=19191&uid=1553910",
+    "publisher": "Historic England via Heritage Gateway",
+    "license": "Citation and link only",
+    "source_type": "national_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "historic_england_research_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_he_sandwich_851",
+    "title": "Historic England Research Record: Battle of Sandwich 851",
+    "url": "https://www.heritagegateway.org.uk/Gateway/Results_Single.aspx?resourceID=19191&uid=8755225b-5477-4896-ac2a-8ecf4e1a942b",
+    "publisher": "Historic England via Heritage Gateway",
+    "license": "Citation and link only",
+    "source_type": "national_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "historic_england_research_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_surrey_farnham",
+    "title": "The so-called Battle of Farnham in 893",
+    "url": "https://www.surreyarchaeology.org.uk/system/files/SAS%20SP%20497.pdf",
+    "publisher": "Surrey Archaeological Society, Surrey's Past 497",
+    "license": "Citation and link only",
+    "source_type": "scholarly_archaeological_society_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "surrey_archaeological_society_farnham_893",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_danish_vikings_yale_asc_ninth_century",
+    "title": "The Anglo-Saxon Chronicle: Ninth Century",
+    "url": "https://avalon.law.yale.edu/medieval/ang09.asp",
+    "publisher": "Lillian Goldman Law Library, Yale Law School",
+    "license": "Citation and link only",
+    "source_type": "institutional_translation_of_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "anglo_saxon_chronicle_ingram_yale",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_ecuador_anh_guayaquil_flags",
     "title": "The flags of Guayaquil in the independence process, 1820-1822",
     "url": "https://www.academiahistoria.org.ec/index.php/boletinesANHE/article/download/313/598",

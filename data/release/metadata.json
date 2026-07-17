@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 587,
-    "events": 5078,
-    "sources": 684,
-    "registry_polities": 1943
+    "entities": 593,
+    "events": 5082,
+    "sources": 692,
+    "registry_polities": 1949
   },
   "year_range": {
     "start": -1274,
@@ -109,6 +109,7 @@
     "accepted_wave8_peruvian_rebels_hced_events": 5,
     "accepted_wave8_germany_hced_events": 13,
     "accepted_wave8_seljuks_hced_events": 5,
+    "accepted_wave8_danish_vikings_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4054,7 +4055,166 @@
     ],
     "wave8_seljuks_entities_added": 7,
     "wave8_seljuks_sources_added": 16,
-    "hced_label_pass_input_rows": 5922,
+    "wave8_danish_vikings_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 3,
+      "external_owner_hced_dispositions": 2,
+      "holds": 1,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 6,
+      "new_sources": 8,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "locally_reserved_hced_rows": 5,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1,
+      "touched_hced_rows": 7
+    },
+    "wave8_danish_vikings_cohort_counts": {
+      "appledore_raiding_campaign_893": 1,
+      "great_army_wessex_campaign_871": 2,
+      "thames_invasion_851": 1
+    },
+    "wave8_danish_vikings_queue_validation": {
+      "external_owner_contracts": 2,
+      "holds": 1,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 7
+    },
+    "wave8_danish_vikings_integration_validation": {
+      "cross_lane_hced_dispositions": 3,
+      "external_owner_hced_dispositions": 2,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_danish_vikings_candidate_ids": [
+      "hced-Aclea851-1",
+      "hced-Ashdown871-1",
+      "hced-Farnham893-1",
+      "hced-Merton871-1"
+    ],
+    "wave8_danish_vikings_holds": [
+      {
+        "candidate_id": "hced-Thanet851-1",
+        "raw_row_sha256": "0d8a932fa39470ac9303c78faa6a3591071f38cc65021ecc16784d4084895f15",
+        "canonical_event": {
+          "canonical_key": "first_recorded_viking_overwintering_on_thanet:851:851",
+          "date_precision": "year",
+          "date_text": "851",
+          "granularity": "noncompetitive_overwintering_notice",
+          "name": "First recorded Viking overwintering on Thanet",
+          "year_low": 851,
+          "year_high": 851
+        },
+        "cohort": "thames_invasion_851",
+        "disposition": "terminal_exclusion",
+        "hold_category": "noncompetitive_overwintering_misattributed_as_battle",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_danish_vikings_he_sandwich_851",
+          "wave8_danish_vikings_yale_asc_ninth_century"
+        ],
+        "hold_reason": "The Chronicle says only that a force first overwintered on Thanet. It separately records the naval Battle of Sandwich, where Æthelstan and Ealhhere captured ships and drove the remaining force off, and the later Aclea battle. No competitive Thanet engagement or Danish victory can be recovered from the row; unknown is excluded, never drawn."
+      }
+    ],
+    "wave8_danish_vikings_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Thanet851-1",
+        "raw_row_sha256": "0d8a932fa39470ac9303c78faa6a3591071f38cc65021ecc16784d4084895f15",
+        "canonical_event": {
+          "canonical_key": "first_recorded_viking_overwintering_on_thanet:851:851",
+          "date_precision": "year",
+          "date_text": "851",
+          "granularity": "noncompetitive_overwintering_notice",
+          "name": "First recorded Viking overwintering on Thanet",
+          "year_low": 851,
+          "year_high": 851
+        },
+        "cohort": "thames_invasion_851",
+        "disposition": "terminal_exclusion",
+        "hold_category": "noncompetitive_overwintering_misattributed_as_battle",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_danish_vikings_he_sandwich_851",
+          "wave8_danish_vikings_yale_asc_ninth_century"
+        ],
+        "hold_reason": "The Chronicle says only that a force first overwintered on Thanet. It separately records the naval Battle of Sandwich, where Æthelstan and Ealhhere captured ships and drove the remaining force off, and the later Aclea battle. No competitive Thanet engagement or Danish victory can be recovered from the row; unknown is excluded, never drawn."
+      }
+    ],
+    "wave8_danish_vikings_iwbd_duplicate_dispositions": [],
+    "wave8_danish_vikings_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Dyle891-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "2f33f1a8acb214c89abc890958622091d462899165fa0ee07f76a4f49b9bfeef",
+        "canonical_event_name": "Battle of the Dyle (Leuven)",
+        "year": 891,
+        "reason": "The concurrent Germany lane owns the exact East Frankish-versus-Viking campaign contract, its bounded actors, and the required Dyle point quarantine. Emitting it here would double-rate one battle."
+      },
+      {
+        "disposition_id": "hced-Inverdovat877-1",
+        "source_dataset": "hced",
+        "disposition": "not_owned_composite_label",
+        "relationship": "distinct_composite_dublin_and_danish_force",
+        "raw_row_sha256": "af130b8630beadb653872552ffa2038821e3edd4aac9cb8e8f69560f642d1303",
+        "reason": "Its exact side string is 'Vikings of Dublin, Danish Vikings', not the Danish Vikings label. Neither this lane nor wave8_irish_history has evidence to collapse that composite into one of its bounded forces."
+      },
+      {
+        "disposition_id": "hced-La Gueule891-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "3e968135745eaf6e62b3c33b7854a1c85ce5fe5382c98e10e641321b9b9eaf3e",
+        "canonical_event_name": "Battle on the Geul",
+        "year": 891,
+        "reason": "The concurrent Germany lane owns the exact Geul contract and shares only its bounded 891 Viking campaign army with Dyle. Emitting the same candidate in this lane would invent a second Elo update."
+      }
+    ],
+    "wave8_danish_vikings_integration_dispositions": [
+      {
+        "disposition_id": "hced-Dyle891-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "2f33f1a8acb214c89abc890958622091d462899165fa0ee07f76a4f49b9bfeef",
+        "canonical_event_name": "Battle of the Dyle (Leuven)",
+        "year": 891,
+        "reason": "The concurrent Germany lane owns the exact East Frankish-versus-Viking campaign contract, its bounded actors, and the required Dyle point quarantine. Emitting it here would double-rate one battle."
+      },
+      {
+        "disposition_id": "hced-Inverdovat877-1",
+        "source_dataset": "hced",
+        "disposition": "not_owned_composite_label",
+        "relationship": "distinct_composite_dublin_and_danish_force",
+        "raw_row_sha256": "af130b8630beadb653872552ffa2038821e3edd4aac9cb8e8f69560f642d1303",
+        "reason": "Its exact side string is 'Vikings of Dublin, Danish Vikings', not the Danish Vikings label. Neither this lane nor wave8_irish_history has evidence to collapse that composite into one of its bounded forces."
+      },
+      {
+        "disposition_id": "hced-La Gueule891-1",
+        "source_dataset": "hced",
+        "disposition": "external_lane_owner",
+        "owner_module": "military_elo.promotion.wave8_germany",
+        "raw_row_sha256": "3e968135745eaf6e62b3c33b7854a1c85ce5fe5382c98e10e641321b9b9eaf3e",
+        "canonical_event_name": "Battle on the Geul",
+        "year": 891,
+        "reason": "The concurrent Germany lane owns the exact Geul contract and shares only its bounded 891 Viking campaign army with Dyle. Emitting the same candidate in this lane would invent a second Elo update."
+      }
+    ],
+    "wave8_danish_vikings_outcome_overrides": [],
+    "wave8_danish_vikings_entities_added": 6,
+    "wave8_danish_vikings_sources_added": 8,
+    "hced_label_pass_input_rows": 5917,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4067,7 +4227,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 682,
+      "reserved_candidate_contract": 687,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4079,7 +4239,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2403,
+      "no_unique_time_valid_label_match": 2398,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

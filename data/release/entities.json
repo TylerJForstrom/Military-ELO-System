@@ -1129,6 +1129,36 @@
     ]
   },
   {
+    "id": "thames_viking_host_aclea_851",
+    "name": "Thames-Invasion Host at Aclea (851)",
+    "kind": "engagement_force",
+    "start_year": 851,
+    "end_year": 851,
+    "region": "Thames valley and Surrey",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the host from the Chronicle's 350-ship Thames incursion that fought at Aclea. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_he_aclea",
+      "wave8_danish_vikings_yale_asc_ninth_century"
+    ]
+  },
+  {
+    "id": "aethelwulf_aethelbald_aclea_army_851",
+    "name": "Æthelwulf and Æthelbald's West Saxon Army at Aclea (851)",
+    "kind": "engagement_force",
+    "start_year": 851,
+    "end_year": 851,
+    "region": "Wessex and Surrey",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the West Saxon royal army in the Aclea engagement. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_he_aclea",
+      "wave8_danish_vikings_yale_asc_ninth_century"
+    ]
+  },
+  {
     "id": "al_abbas_aghlabid_enna_force_859",
     "name": "Al-Abbas ibn al-Fadl's Aghlabid Sicilian force at Enna in 859",
     "kind": "event_bounded_field_force",
@@ -1157,6 +1187,38 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "great_heathen_army_wessex_campaign_871",
+    "name": "Great Army in the Wessex Campaign (871)",
+    "kind": "campaign_army",
+    "start_year": 871,
+    "end_year": 871,
+    "region": "Wessex",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the continuing Great Army opposed by Æthelred and Alfred in 871; it is reused only at Ashdown and Meretun here. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_aethelweard_book_four",
+      "wave8_danish_vikings_cambridge_alfred",
+      "wave8_danish_vikings_yale_asc_ninth_century"
+    ]
+  },
+  {
+    "id": "aethelred_alfred_wessex_campaign_army_871",
+    "name": "Æthelred and Alfred's West Saxon Campaign Army (871)",
+    "kind": "campaign_army",
+    "start_year": 871,
+    "end_year": 871,
+    "region": "Wessex",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the royal West Saxon army in the 871 Reading-to-Meretun campaign; it is reused only at Ashdown and Meretun here. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_aethelweard_book_four",
+      "wave8_danish_vikings_cambridge_alfred",
+      "wave8_danish_vikings_yale_asc_ninth_century"
     ]
   },
   {
@@ -1217,6 +1279,40 @@
     "source_ids": [
       "wave8_germany_bern_geul_dyle",
       "wave8_germany_lvr_vikings_rhine"
+    ]
+  },
+  {
+    "id": "appledore_raiding_detachment_farnham_893",
+    "name": "Appledore Army's Raiding Detachment at Farnham (893)",
+    "kind": "engagement_force",
+    "start_year": 893,
+    "end_year": 893,
+    "region": "Kent, Hampshire, Berkshire, and Surrey",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the plunder-bearing detachment intercepted at Farnham after leaving the Appledore army's position. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_aethelweard_book_four",
+      "wave8_danish_vikings_he_farnham",
+      "wave8_danish_vikings_surrey_farnham",
+      "wave8_danish_vikings_yale_asc_ninth_century"
+    ]
+  },
+  {
+    "id": "edward_west_saxon_field_army_farnham_893",
+    "name": "Edward's West Saxon Field Army at Farnham (893)",
+    "kind": "engagement_force",
+    "start_year": 893,
+    "end_year": 893,
+    "region": "Wessex and Surrey",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Identity limited to the English intercepting force at Farnham. No rating is inherited by Denmark, a Danish dynasty, Wessex, East Francia, any generic Viking or Northman label, another expedition, or a successor formation.",
+    "source_ids": [
+      "wave8_danish_vikings_aethelweard_book_four",
+      "wave8_danish_vikings_he_farnham",
+      "wave8_danish_vikings_surrey_farnham",
+      "wave8_danish_vikings_yale_asc_ninth_century"
     ]
   },
   {
