@@ -1244,6 +1244,16 @@
       "region": "Southern Europe"
     },
     {
+      "id": "atkinson_combined_us_force_bad_axe_1832",
+      "name": "Atkinson's combined U.S. force at Bad Axe (1832)",
+      "kind": "event_bounded_combined_regular_militia_river_force",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_ir_atropatene_k_bce307_35d94b93",
       "name": "Atropatene",
       "kind": "polity",
@@ -1912,6 +1922,26 @@
       "region": "Franconia, Central Europe"
     },
     {
+      "id": "black_hawk_british_band_rearguard_wisconsin_heights_1832",
+      "name": "Black Hawk's British Band rearguard at Wisconsin Heights (1832)",
+      "kind": "event_bounded_multiethnic_rearguard",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "black_hawk_british_band_war_party_stillmans_run_1832",
+      "name": "Black Hawk's British Band war party at Stillman's Run (1832)",
+      "kind": "event_bounded_multiethnic_war_party",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q287996_1519_b8946855",
       "name": "Blambangan Kingdom",
       "kind": "kingdom",
@@ -2099,6 +2129,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "black_hawk_british_band_fighting_remnant_bad_axe_1832",
+      "name": "British Band fighting remnant at Bad Axe (1832)",
+      "kind": "event_bounded_multiethnic_fighting_remnant",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_gb_british_emp_1_1796_1f8c04f5",
@@ -7952,6 +7992,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Chesterfield, Derbyshire"
+    },
+    {
+      "id": "henry_dodge_combined_militia_wisconsin_heights_1832",
+      "name": "Henry-Dodge combined militia force at Wisconsin Heights (1832)",
+      "kind": "event_bounded_combined_militia_force",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "pizarro_spanish_allied_garrison_cuzco_1536_1537",
@@ -19814,6 +19864,16 @@
       "region": "Porici nad Sazavou, Bohemia"
     },
     {
+      "id": "stillman_bailey_illinois_militia_detachment_1832",
+      "name": "Stillman-Bailey Illinois militia detachment at Stillman's Run (1832)",
+      "kind": "event_bounded_militia_detachment",
+      "start_year": 1832,
+      "end_year": 1832,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_gb_brythonic_k_644_30092689",
       "name": "Strathclyde",
       "kind": "polity",
@@ -23224,11 +23284,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2185,
-    "rated_entities": 822,
-    "rated_events": 5239,
+    "registry_polities": 2191,
+    "rated_entities": 828,
+    "rated_events": 5242,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18155,
+    "unresolved_event_candidates": 18152,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23303,6 +23363,7 @@
     "candidate_keyed_wave8_murids_hced_events": 4,
     "candidate_keyed_wave8_punjabi_sikhs_hced_events": 2,
     "candidate_keyed_wave8_modoc_hced_events": 3,
+    "candidate_keyed_wave8_sauk_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23313,21 +23374,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4975,
-      "candidate_keyed_reviewed_contracts": 665,
+      "hced_candidate_bindings": 4978,
+      "candidate_keyed_reviewed_contracts": 668,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4882,
-      "location_provenance_objects": 4931,
-      "point_fields_withheld_by_quarantine": 241,
+      "modern_location_country_assertions": 4885,
+      "location_provenance_objects": 4934,
+      "point_fields_withheld_by_quarantine": 244,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 289,
-      "point_quarantine_candidate_manifest_sha256": "c6110d12aa260e1ec3edc660cbd11f82730cf7b4f24fae52a2cb4c28937bd1fd",
+      "unique_events_with_any_quarantined_field": 292,
+      "point_quarantine_candidate_manifest_sha256": "0b0675cc67c15fb352ba172ed68fba3b142167807c4e15b92824c2eaddb71aa0",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "5eb9628323e4d438a17d420f4d6009237b470dc766833982c6cf7eae4c47c629",
+      "quarantine_policy_sha256": "0b67247dbfb36b6b84e2ddd1b0f825e542b3a3aec55573f4da4180bfceacaa48",
       "assertion_status": {
-        "unreviewed_source_assertion": 4931
+        "unreviewed_source_assertion": 4934
       },
       "verified_location_assertions": {
         "availability": "not_available",

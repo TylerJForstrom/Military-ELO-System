@@ -8658,6 +8658,89 @@
     ]
   },
   {
+    "id": "atkinson_combined_us_force_bad_axe_1832",
+    "name": "Atkinson's combined U.S. force at Bad Axe (1832)",
+    "kind": "event_bounded_combined_regular_militia_river_force",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded U.S. regulars, Illinois and Michigan Territory volunteers, and the armed steamboat element engaged at Bad Axe. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_army_indian_wars",
+      "wave8_sauk_whs_atkinson_bad_axe",
+      "wave8_sauk_whs_bad_axe_marker"
+    ]
+  },
+  {
+    "id": "black_hawk_british_band_rearguard_wisconsin_heights_1832",
+    "name": "Black Hawk's British Band rearguard at Wisconsin Heights (1832)",
+    "kind": "event_bounded_multiethnic_rearguard",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded rearguard of roughly fifty warriors that covered the British Band families' Wisconsin River crossing. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_meskwaki_history",
+      "wave8_sauk_whs_black_hawk_route",
+      "wave8_sauk_whs_black_hawk_wisconsin_heights",
+      "wave8_sauk_whs_dodge_wisconsin_heights"
+    ]
+  },
+  {
+    "id": "black_hawk_british_band_war_party_stillmans_run_1832",
+    "name": "Black Hawk's British Band war party at Stillman's Run (1832)",
+    "kind": "event_bounded_multiethnic_war_party",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded warriors under Black Hawk; the British Band included Sauk, Meskwaki, and some Kickapoo members and is not a generic tribe. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_army_indian_wars",
+      "wave8_sauk_illinois_dnr_apple_river",
+      "wave8_sauk_oupress_jung",
+      "wave8_sauk_uiowa_black_hawk"
+    ]
+  },
+  {
+    "id": "black_hawk_british_band_fighting_remnant_bad_axe_1832",
+    "name": "British Band fighting remnant at Bad Axe (1832)",
+    "kind": "event_bounded_multiethnic_fighting_remnant",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded armed defenders at Bad Axe only. Women, children, elders, captives, swimmers, and every other noncombatant killed or displaced during the massacre are expressly outside this identity. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_meskwaki_history",
+      "wave8_sauk_sac_fox_bad_axe",
+      "wave8_sauk_whs_atkinson_bad_axe",
+      "wave8_sauk_whs_historic_indians"
+    ]
+  },
+  {
+    "id": "henry_dodge_combined_militia_wisconsin_heights_1832",
+    "name": "Henry-Dodge combined militia force at Wisconsin Heights (1832)",
+    "kind": "event_bounded_combined_militia_force",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Illinois volunteers under James D. Henry and Michigan Territory mounted volunteers under Henry Dodge. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_army_indian_wars",
+      "wave8_sauk_whs_dodge_wisconsin_heights",
+      "wave8_sauk_whs_wisconsin_heights_register"
+    ]
+  },
+  {
     "id": "kingdom_greece",
     "name": "Kingdom of Greece",
     "kind": "kingdom",
@@ -8673,6 +8756,22 @@
       "cliopatria_polities",
       "britannica_greece_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "stillman_bailey_illinois_militia_detachment_1832",
+    "name": "Stillman-Bailey Illinois militia detachment at Stillman's Run (1832)",
+    "kind": "event_bounded_militia_detachment",
+    "start_year": 1832,
+    "end_year": 1832,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Illinois volunteer detachment under Isaiah Stillman and David Bailey. This identity exists only for the named 1832 action. No rating is inherited by the Sauk or Meskwaki peoples, any Kickapoo participants, civilians, noncombatants, or accompanying families, a modern tribal government, the United States as a whole, the U.S. Army, a territorial or state militia, or any formation across time.",
+    "source_ids": [
+      "wave8_sauk_army_indian_wars",
+      "wave8_sauk_illinois_dnr_apple_river",
+      "wave8_sauk_illinois_stillman_register"
     ]
   },
   {

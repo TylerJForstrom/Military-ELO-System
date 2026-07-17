@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 829,
-    "events": 5239,
-    "sources": 1143,
-    "registry_polities": 2185
+    "entities": 835,
+    "events": 5242,
+    "sources": 1160,
+    "registry_polities": 2191
   },
   "year_range": {
     "start": -1274,
@@ -145,6 +145,7 @@
     "accepted_wave8_murids_hced_events": 4,
     "accepted_wave8_punjabi_sikhs_hced_events": 2,
     "accepted_wave8_modoc_hced_events": 3,
+    "accepted_wave8_sauk_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -11583,7 +11584,299 @@
     "wave8_modoc_outcome_overrides": [],
     "wave8_modoc_entities_added": 6,
     "wave8_modoc_sources_added": 10,
-    "hced_label_pass_input_rows": 5713,
+    "wave8_sauk_counts": {
+      "adjacent_hced_dispositions": 2,
+      "country_quarantine_additions": 0,
+      "cross_lane_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 6,
+      "new_sources": 17,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_sauk_cohort_counts": {
+      "black_hawk_war_1832": 4
+    },
+    "wave8_sauk_metadata": {
+      "counts": {
+        "adjacent_hced_dispositions": 2,
+        "country_quarantine_additions": 0,
+        "cross_lane_dispositions": 1,
+        "existing_release_duplicate_dispositions": 0,
+        "hced_duplicate_dispositions": 0,
+        "holds": 1,
+        "integration_dispositions": 3,
+        "iwbd_duplicate_dispositions": 0,
+        "iwbd_zero_overlap_candidates": 4,
+        "new_entities": 6,
+        "new_sources": 17,
+        "newly_rated_events": 3,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 3,
+        "promotion_contracts": 3,
+        "reviewed_hced_rows": 4,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "black_hawk_war_1832": 4
+      },
+      "final_audit_signature": "ec90a3cb838235b310db77628cea405066d7e46e0b306ecef369b0c4b8178b93",
+      "hold_ids": [
+        "hced-Kelloggs Grove1832-1"
+      ],
+      "promoted_candidate_ids": [
+        "hced-Bad Axe1832-1",
+        "hced-Rock River1832-1",
+        "hced-Wisconsin Heights1832-1"
+      ],
+      "adjacent_hced_candidate_ids": [
+        "hced-Pecatonica1832-1",
+        "hced-Rock Island Rapids1814-1"
+      ]
+    },
+    "wave8_sauk_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_sauk_integration_validation": {
+      "adjacent_hced_dispositions": 2,
+      "cross_lane_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4
+    },
+    "wave8_sauk_candidate_ids": [
+      "hced-Bad Axe1832-1",
+      "hced-Rock River1832-1",
+      "hced-Wisconsin Heights1832-1"
+    ],
+    "wave8_sauk_holds": [
+      {
+        "candidate_id": "hced-Kelloggs Grove1832-1",
+        "raw_row_sha256": "b0bb092a16351619c4c692cb803540cb81fffa40ac486d9e3b9b4d505fe3487c",
+        "canonical_event": {
+          "canonical_key": "kellogg_s_grove_engagements:1832:1832",
+          "date_precision": "multiple_days",
+          "date_text": "16 and 25 June 1832",
+          "granularity": "ambiguous_same_place_multi_engagement_record",
+          "name": "Kellogg's Grove engagements",
+          "year_low": 1832,
+          "year_high": 1832
+        },
+        "cohort": "black_hawk_war_1832",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_sauk_illinois_dnr_apple_river",
+          "wave8_sauk_lincoln_log_kellogg",
+          "wave8_sauk_nps_kelloggs_grove",
+          "wave8_sauk_oupress_jung",
+          "wave8_sauk_uillinois_black_hawk"
+        ],
+        "hold_reason": "Not promoted: Kellogg's Grove hosted separate actions on 16 and 25 June, while HCED supplies only place and year. The current Illinois site history describes U.S. pressure forcing Black Hawk north, but Black Hawk's account and modern scholarship treat the 25 June action as his last military success. These accounts conflict. Choosing an episode or tactical winner would invent certainty; the unresolved outcome is not a draw."
+      }
+    ],
+    "wave8_sauk_terminal_exclusions": [],
+    "wave8_sauk_adjacent_hced_dispositions": [
+      {
+        "candidate_id": "hced-Pecatonica1832-1",
+        "raw_row_sha256": "d721827b8f598cd586833273241de24a88e1c9dc6af3dfda65e22e4cf69936f6",
+        "literal_label": "sawk indians",
+        "disposition": "adjacent_misspelled_label_separate_exact_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A distinct Pecatonica engagement under HCED's literal 'Sawk Indians' label; this exact 'Sauk Indians' lane neither promotes nor excludes it.",
+        "evidence_refs": [
+          "wave8_sauk_oupress_jung",
+          "wave8_sauk_whs_historic_indians"
+        ]
+      },
+      {
+        "candidate_id": "hced-Rock Island Rapids1814-1",
+        "raw_row_sha256": "c7cb00b6e3a9c82f92320c8a8e187ca6713a55d71735da69198c191779b3f1d5",
+        "literal_label": "sauk indians fox indians kickapoo indians",
+        "disposition": "distinct_1814_multi_actor_coalition",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "War of 1812 coalition row, eighteen years before the Black Hawk War; it cannot inherit any 1832 British Band event identity.",
+        "evidence_refs": [
+          "wave8_sauk_meskwaki_history",
+          "wave8_sauk_uiowa_black_hawk"
+        ]
+      }
+    ],
+    "wave8_sauk_cross_lane_dispositions": [
+      {
+        "disposition_id": "wave8_kickapoo",
+        "disposition": "composite_1814_row_outside_both_exact_label_lanes",
+        "other_module": "military_elo.promotion.wave8_kickapoo",
+        "candidate_ids": [
+          "hced-Rock Island Rapids1814-1"
+        ],
+        "reason": "Kickapoo participation in the 1814 coalition does not make that row an exact Kickapoo or exact Sauk fixture. Neither lane claims it.",
+        "evidence_refs": [
+          "wave8_sauk_meskwaki_history",
+          "wave8_sauk_uiowa_black_hawk"
+        ]
+      }
+    ],
+    "wave8_sauk_hced_duplicate_dispositions": [],
+    "wave8_sauk_iwbd_duplicate_dispositions": [],
+    "wave8_sauk_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Bad Axe1832-1",
+        "aliases": [
+          "bad axe",
+          "bad axe massacre",
+          "battle and massacre at bad axe",
+          "battle of bad axe",
+          "massacre at bad axe"
+        ],
+        "years": [
+          1832,
+          1832
+        ]
+      },
+      {
+        "audit_id": "hced-Kelloggs Grove1832-1",
+        "aliases": [
+          "battle of kellogg s grove",
+          "battle of kelloggs grove",
+          "kellogg s grove",
+          "kelloggs grove",
+          "second battle of kellogg s grove"
+        ],
+        "years": [
+          1832,
+          1832
+        ]
+      },
+      {
+        "audit_id": "hced-Rock River1832-1",
+        "aliases": [
+          "battle of stillman s run",
+          "battle of stillmans run",
+          "old man s creek",
+          "rock river",
+          "stillman s run",
+          "stillmans run"
+        ],
+        "years": [
+          1832,
+          1832
+        ]
+      },
+      {
+        "audit_id": "hced-Wisconsin Heights1832-1",
+        "aliases": [
+          "battle of wisconsin heights",
+          "wisconsin heights"
+        ],
+        "years": [
+          1832,
+          1832
+        ]
+      }
+    ],
+    "wave8_sauk_existing_release_duplicate_dispositions": [],
+    "wave8_sauk_integration_dispositions": [
+      {
+        "disposition_id": "adjacent_hced:hced-Pecatonica1832-1",
+        "raw_row_sha256": "d721827b8f598cd586833273241de24a88e1c9dc6af3dfda65e22e4cf69936f6",
+        "literal_label": "sawk indians",
+        "disposition": "adjacent_misspelled_label_separate_exact_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "A distinct Pecatonica engagement under HCED's literal 'Sawk Indians' label; this exact 'Sauk Indians' lane neither promotes nor excludes it.",
+        "evidence_refs": [
+          "wave8_sauk_oupress_jung",
+          "wave8_sauk_whs_historic_indians"
+        ]
+      },
+      {
+        "disposition_id": "adjacent_hced:hced-Rock Island Rapids1814-1",
+        "raw_row_sha256": "c7cb00b6e3a9c82f92320c8a8e187ca6713a55d71735da69198c191779b3f1d5",
+        "literal_label": "sauk indians fox indians kickapoo indians",
+        "disposition": "distinct_1814_multi_actor_coalition",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "War of 1812 coalition row, eighteen years before the Black Hawk War; it cannot inherit any 1832 British Band event identity.",
+        "evidence_refs": [
+          "wave8_sauk_meskwaki_history",
+          "wave8_sauk_uiowa_black_hawk"
+        ]
+      },
+      {
+        "disposition_id": "cross_lane:wave8_kickapoo",
+        "disposition": "composite_1814_row_outside_both_exact_label_lanes",
+        "other_module": "military_elo.promotion.wave8_kickapoo",
+        "candidate_ids": [
+          "hced-Rock Island Rapids1814-1"
+        ],
+        "reason": "Kickapoo participation in the 1814 coalition does not make that row an exact Kickapoo or exact Sauk fixture. Neither lane claims it.",
+        "evidence_refs": [
+          "wave8_sauk_meskwaki_history",
+          "wave8_sauk_uiowa_black_hawk"
+        ]
+      }
+    ],
+    "wave8_sauk_scope_and_opposite_result_audit": {
+      "hced-Rock River1832-1": {
+        "canonical_action": "Stillman's Run, 14 May 1832",
+        "scope": "single engagement",
+        "reviewed_result": "British Band tactical victory",
+        "opposite_result_boundary": "Later U.S. victories at Wisconsin Heights and Bad Axe are distinct actions."
+      },
+      "hced-Kelloggs Grove1832-1": {
+        "canonical_action": "two Kellogg's Grove actions, 16 and 25 June 1832",
+        "scope": "ambiguous same-place multi-engagement row",
+        "reviewed_result": "unknown",
+        "opposite_result_boundary": "U.S.-victory and British-Band-success readings are both attested; no draw."
+      },
+      "hced-Wisconsin Heights1832-1": {
+        "canonical_action": "Wisconsin Heights, 21 July 1832",
+        "scope": "single rearguard engagement",
+        "reviewed_result": "U.S. battlefield victory",
+        "opposite_result_boundary": "Black Hawk's successful protective withdrawal is preserved in confidence and scope, not substituted for the contested-field result."
+      },
+      "hced-Bad Axe1832-1": {
+        "canonical_action": "Bad Axe, 1-2 August 1832",
+        "scope": "engagement followed by massacre",
+        "reviewed_result": "U.S. combat victory",
+        "opposite_result_boundary": "Civilians killed while fleeing are outside both rated formations."
+      },
+      "hced-Pecatonica1832-1": {
+        "canonical_action": "Pecatonica, 16 June 1832",
+        "scope": "adjacent misspelled-label engagement",
+        "reviewed_result": "not adjudicated in this lane",
+        "opposite_result_boundary": "Distinct row, place, formation, and literal label."
+      },
+      "hced-Rock Island Rapids1814-1": {
+        "canonical_action": "Rock Island Rapids, 1814",
+        "scope": "adjacent multi-actor War of 1812 coalition",
+        "reviewed_result": "not adjudicated in this lane",
+        "opposite_result_boundary": "Distinct war, year, coalition, and formation."
+      }
+    },
+    "wave8_sauk_outcome_overrides": [],
+    "wave8_sauk_entities_added": 6,
+    "wave8_sauk_sources_added": 17,
+    "hced_label_pass_input_rows": 5709,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -11596,7 +11889,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 891,
+      "reserved_candidate_contract": 895,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -11608,7 +11901,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2202,
+      "no_unique_time_valid_label_match": 2198,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

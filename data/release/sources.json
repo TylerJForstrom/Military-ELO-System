@@ -14297,6 +14297,247 @@
     ]
   },
   {
+    "id": "wave8_sauk_army_indian_wars",
+    "title": "Indian Wars: Black Hawk campaign, 26 April-30 September 1832",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Indian-Wars/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_cmh_black_hawk_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_illinois_dnr_apple_river",
+    "title": "Apple River Fort and the Black Hawk War",
+    "url": "https://dnrhistoric.illinois.gov/experience/sites/northwest/apple-river.html",
+    "publisher": "Illinois Department of Natural Resources, Historic Preservation",
+    "license": "Citation and link only",
+    "source_type": "official_state_historic_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "illinois_dnr_apple_river_black_hawk_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_illinois_stillman_register",
+    "title": "National Register of Historic Places in Illinois",
+    "url": "https://dnrhistoric.illinois.gov/content/dam/soi/en/web/dnrhistoric/preserve/siteassets/pages/places/national-register-listings-in-illinois-updated-june-2022.pdf",
+    "publisher": "Illinois Department of Natural Resources, Historic Preservation",
+    "license": "Citation and link only",
+    "source_type": "official_state_national_register_inventory",
+    "accessed": "2026-07-16",
+    "source_family_id": "illinois_national_register_stillmans_run",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_lincoln_log_kellogg",
+    "title": "The Lincoln Log: 25-26 June 1832 at Kellogg's Grove",
+    "url": "https://www.thelincolnlog.org/Results.aspx?month=6&type=CalendarMonth&year=1832",
+    "publisher": "Abraham Lincoln Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_documentary_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "lincoln_log_kelloggs_grove_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_meskwaki_history",
+    "title": "The Meskwaki Nation's History",
+    "url": "https://www.meskwaki.org/history/",
+    "publisher": "Sac & Fox Tribe of the Mississippi in Iowa",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "meskwaki_nation_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_nps_kelloggs_grove",
+    "title": "Kellogg's Grove, National Register Information System 78001191",
+    "url": "https://npgallery.nps.gov/AssetDetail/NRIS/78001191",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_national_register_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_kelloggs_grove_register_record",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_oupress_jung",
+    "title": "The Black Hawk War of 1832",
+    "url": "https://www.oupress.com/9780806139944/the-black-hawk-war-of-1832/",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "patrick_jung_black_hawk_war_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_sac_fox_bad_axe",
+    "title": "Nemishatenemo ehthakiwiyani: Black Hawk War and Bad Axe history",
+    "url": "https://www.sacandfoxnation-nsn.gov/wp-content/uploads/2021/01/August_2020.pdf",
+    "publisher": "Sac and Fox Nation",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_publication",
+    "accessed": "2026-07-16",
+    "source_family_id": "sac_and_fox_nation_bad_axe_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_uillinois_black_hawk",
+    "title": "Black Hawk: An Autobiography",
+    "url": "https://www.press.uillinois.edu/books/?id=p723254",
+    "publisher": "University of Illinois Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edited_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_illinois_black_hawk_autobiography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_uiowa_black_hawk",
+    "title": "Black Hawk",
+    "url": "https://uipress.lib.uiowa.edu/bdi/DetailsPage.aspx?id=31",
+    "publisher": "University of Iowa Libraries and University of Iowa Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "university_iowa_black_hawk_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_atkinson_bad_axe",
+    "title": "The Battle of Bad Axe: General Atkinson's account",
+    "url": "https://www.wisconsinhistory.org/pdfs/lessons/EDU-Account-BlackHawkWar1832-General-Atkinson.pdf",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "published_contemporary_command_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "henry_atkinson_bad_axe_primary_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_bad_axe_marker",
+    "title": "Bad Axe Battlefield Site Marker",
+    "url": "https://www.wisconsinhistory.org/Records/Image/IM37846",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "official_historical_collection_location_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "wisconsin_historical_society_bad_axe_marker",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_black_hawk_route",
+    "title": "Black Hawk's Route Through Wisconsin",
+    "url": "https://www.wisconsinhistory.org/record/map/W0135UO",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "official_historical_map_catalog_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "wisconsin_historical_society_black_hawk_route_map",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_black_hawk_wisconsin_heights",
+    "title": "The Battle of Wisconsin Heights: Black Hawk's account",
+    "url": "https://www.wisconsinhistory.org/pdfs/lessons/EDU-Account-BlackHawkWar1832-Black-Hawk.pdf",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "published_indigenous_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "black_hawk_wisconsin_heights_primary_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_dodge_wisconsin_heights",
+    "title": "The Battle of Wisconsin Heights: Henry Dodge's account",
+    "url": "https://www.wisconsinhistory.org/pdfs/lessons/EDU-Account-BlackHawkWar1832-Henry-Dodge.pdf",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "published_contemporary_command_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "henry_dodge_wisconsin_heights_primary_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_historic_indians",
+    "title": "Wisconsin's Indians Since 1634: Cultural Resource Management Plan",
+    "url": "https://wisconsinhistory.org/MediaFileLocation/xkzjatfm/wi-shpo-crmp-volume-1-historic-indians.pdf",
+    "publisher": "Wisconsin Historical Society, State Historic Preservation Office",
+    "license": "Citation and link only",
+    "source_type": "official_state_historic_context",
+    "accessed": "2026-07-16",
+    "source_family_id": "wisconsin_shpo_historic_indians_context",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sauk_whs_wisconsin_heights_register",
+    "title": "Wisconsin Heights Battlefield, National Register record",
+    "url": "https://www.wisconsinhistory.org/Records/NationalRegister/NR1815",
+    "publisher": "Wisconsin Historical Society",
+    "license": "Citation and link only",
+    "source_type": "official_state_and_national_register_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "wisconsin_heights_battlefield_register_record",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_savoy_bnf_cassano",
     "title": "La Victoire remportee par l'armee du Roy sur l'armee Imperialle pres de Cassano, 16 aout 1705",
     "url": "https://catalogue.bnf.fr/ark:/12148/cb415058702",
