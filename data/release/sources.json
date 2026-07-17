@@ -8682,6 +8682,249 @@
     ]
   },
   {
+    "id": "wave8_kickapoo_connole_tonkawa",
+    "title": "A Terrible Truth: The Tonkawa Massacre of 1862",
+    "url": "https://gateway.okhistory.org/ark:/67531/metadc2017477/",
+    "publisher": "Chronicles of Oklahoma; Oklahoma Historical Society",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "connole_tonkawa_massacre_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_gibson_monograph",
+    "title": "The Kickapoos: Lords of the Middle Border",
+    "url": "https://books.google.com/books?id=QDUiWKyyF4AC",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "gibson_kickapoo_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_govinfo_rusk_report",
+    "title": "Official account of the 16 October 1838 battle near Kickapoo village",
+    "url": "https://www.govinfo.gov/content/pkg/SERIALSET-00512_00_00-172-0171-0000/pdf/SERIALSET-00512_00_00-172-0171-0000.pdf",
+    "publisher": "U.S. Government Publishing Office, U.S. Congressional Serial Set",
+    "license": "Citation and link only",
+    "source_type": "digitized_government_primary_document",
+    "accessed": "2026-07-16",
+    "source_family_id": "republic_of_texas_official_rusk_battle_report",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_kshq_no_koaht",
+    "title": "No-ko-aht's Talk: A Kickapoo Chief's Account of the Kickapoo Indians",
+    "url": "https://www.kancoll.org/khq/1932/32_2_root.htm",
+    "publisher": "Kansas Historical Quarterly",
+    "license": "Citation and link only",
+    "source_type": "published_tribal_oral_history_primary_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "no_koaht_little_concho_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_kttt_official",
+    "title": "Kickapoo Traditional Tribe of Texas",
+    "url": "https://kickapootexas.org/",
+    "publisher": "Kickapoo Traditional Tribe of Texas",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_government_identity_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "kickapoo_traditional_tribe_of_texas",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_nps_newtonia_study",
+    "title": "Newtonia Battlefields Special Resource Study",
+    "url": "https://parkplanning.nps.gov/showFile.cfm?projectID=31498&sfid=148234",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_special_resource_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_newtonia_civil_war_indian_territory_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_ohs_tonkawa_massacre",
+    "title": "Tonkawa Massacre",
+    "url": "https://www.okhistory.org/publications/enc/entry?entry=TO005",
+    "publisher": "Oklahoma Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "ohs_tonkawa_massacre",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_or_dove_creek_inquiry",
+    "title": "Official inquiry into the Dove Creek expedition",
+    "url": "https://texashistory.unt.edu/ark:/67531/metapth139842/m1/42/",
+    "publisher": "U.S. War Department; University of North Texas Libraries",
+    "license": "Citation and link only",
+    "source_type": "digitized_federal_archival_primary_document",
+    "accessed": "2026-07-16",
+    "source_family_id": "official_records_dove_creek_inquiry",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_pool_dove_creek",
+    "title": "The Battle of Dove Creek",
+    "url": "https://texashistory.unt.edu/ark:/67531/metapth101126/m1/482/",
+    "publisher": "Southwestern Historical Quarterly; University of North Texas Libraries",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "pool_dove_creek_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_thc_battle_creek_marker",
+    "title": "Battle Creek Burial Ground historical marker",
+    "url": "https://atlas.thc.texas.gov/Details/5349008271",
+    "publisher": "Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "state_government_historical_marker",
+    "accessed": "2026-07-16",
+    "source_family_id": "thc_battle_creek_marker",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_thc_kickapoo_battlefield_marker",
+    "title": "Site of Kickapoo Battlefield historical marker",
+    "url": "https://atlas.thc.texas.gov/Details/5001008770/print",
+    "publisher": "Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "state_government_historical_marker",
+    "accessed": "2026-07-16",
+    "source_family_id": "thc_kickapoo_battlefield_marker",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_battle_creek",
+    "title": "Battle Creek Fight",
+    "url": "https://www.tshaonline.org/handbook/entries/battle-creek-fight",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_battle_creek_fight",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_cherokee_war",
+    "title": "Cherokee War",
+    "url": "https://www.tshaonline.org/handbook/entries/cherokee-war",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_cherokee_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_dove_creek",
+    "title": "Dove Creek, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/dove-creek-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_dove_creek_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_killough",
+    "title": "Killough Massacre",
+    "url": "https://www.tshaonline.org/handbook/entries/killough-massacre",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_killough_massacre",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_knickerbocker",
+    "title": "Knickerbocker, Texas",
+    "url": "https://www.tshaonline.org/handbook/entries/knickerbocker-tx",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_knickerbocker_location",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kickapoo_tsha_people",
+    "title": "Kickapoo Indians",
+    "url": "https://www.tshaonline.org/handbook/entries/kickapoo-indians",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_kickapoo_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_kiowa_army_lawton",
     "title": "Two Decades on the Frontier: Henry W. Lawton",
     "url": "https://history.army.mil/Portals/143/Images/Publications/ArmyHistoryMag/pdf/20002009/AH63%28W%29.pdf?ver=kRfbRJG0lJ6qYd8u3mb3aQ%3D%3D",

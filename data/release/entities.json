@@ -7814,6 +7814,71 @@
     ]
   },
   {
+    "id": "battle_creek_allied_indigenous_war_party_1838",
+    "name": "Battle Creek allied Kickapoo-Cherokee-Delaware war party (1838)",
+    "kind": "war_party",
+    "start_year": 1838,
+    "end_year": 1838,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded armed coalition attested at Battle Creek; it excludes every civilian or unverified member of the named peoples. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_kttt_official",
+      "wave8_kickapoo_thc_battle_creek_marker",
+      "wave8_kickapoo_tsha_battle_creek",
+      "wave8_kickapoo_tsha_people"
+    ]
+  },
+  {
+    "id": "battle_creek_armed_surveying_party_1838",
+    "name": "Battle Creek armed surveying party (1838)",
+    "kind": "armed_party",
+    "start_year": 1838,
+    "end_year": 1838,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The bounded party is the twenty-five armed surveyors in this fight. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_thc_battle_creek_marker",
+      "wave8_kickapoo_tsha_battle_creek"
+    ]
+  },
+  {
+    "id": "kickapoo_town_allied_indigenous_mexican_fighting_force_1838",
+    "name": "Kickapoo Town allied Indigenous-Mexican fighting force (1838)",
+    "kind": "allied_fighting_force",
+    "start_year": 1838,
+    "end_year": 1838,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defenders and allies encountered near Kickapoo Town; the fixture does not assert a stable intertribal coalition. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_govinfo_rusk_report",
+      "wave8_kickapoo_kttt_official",
+      "wave8_kickapoo_tsha_cherokee_war",
+      "wave8_kickapoo_tsha_people"
+    ]
+  },
+  {
+    "id": "rusk_texas_militia_column_kickapoo_town_1838",
+    "name": "Thomas J. Rusk's Texas militia column at Kickapoo Town (1838)",
+    "kind": "militia_column",
+    "start_year": 1838,
+    "end_year": 1838,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Republic of Texas militia column under Thomas J. Rusk. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_govinfo_rusk_report",
+      "wave8_kickapoo_thc_kickapoo_battlefield_marker",
+      "wave8_kickapoo_tsha_cherokee_war"
+    ]
+  },
+  {
     "id": "burleson_texas_lipan_tonkawa_force_san_saba_1839",
     "name": "Burleson's Republic of Texas-Lipan-Tonkawa force at San Saba (1839)",
     "kind": "event_bounded_allied_frontier_force",
@@ -8579,6 +8644,37 @@
     ]
   },
   {
+    "id": "confederate_cavalry_patrol_little_concho_1862",
+    "name": "Confederate cavalry patrol at Little Concho (1862)",
+    "kind": "cavalry_patrol",
+    "start_year": 1862,
+    "end_year": 1862,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded mounted patrol that attacked the camp near Knickerbocker. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_gibson_monograph",
+      "wave8_kickapoo_kshq_no_koaht"
+    ]
+  },
+  {
+    "id": "machemanet_kickapoo_camp_defenders_1862",
+    "name": "Machemanet's Kickapoo camp defense force at Little Concho (1862)",
+    "kind": "camp_defense_force",
+    "start_year": 1862,
+    "end_year": 1862,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded fighters defending Machemanet's camp; accompanying families are expressly outside the rated formation. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_gibson_monograph",
+      "wave8_kickapoo_kshq_no_koaht",
+      "wave8_kickapoo_kttt_official"
+    ]
+  },
+  {
     "id": "mdewakanton_wahpekute_resistance_1862",
     "name": "Mdewakanton–Wahpekute resistance forces (1862)",
     "kind": "indigenous_coalition",
@@ -8694,6 +8790,40 @@
     "continuity_note": "Exact lower-Whanganui government-aligned force at Moutoa. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
     "source_ids": [
       "nzhistory_moutoa_1864"
+    ]
+  },
+  {
+    "id": "dove_creek_confederate_texas_militia_assault_force_1865",
+    "name": "Dove Creek Confederate-Texas militia assault force (1865)",
+    "kind": "combined_assault_force",
+    "start_year": 1865,
+    "end_year": 1865,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded combined Confederate cavalry and Texas frontier militia force assembled for the Dove Creek attack. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_or_dove_creek_inquiry",
+      "wave8_kickapoo_pool_dove_creek",
+      "wave8_kickapoo_tsha_dove_creek"
+    ]
+  },
+  {
+    "id": "dove_creek_kickapoo_camp_defenders_1865",
+    "name": "Kickapoo camp defense force at Dove Creek (1865)",
+    "kind": "camp_defense_force",
+    "start_year": 1865,
+    "end_year": 1865,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded fighters who defended the migrating camps; women, children, elders, and every other noncombatant are excluded. This identity exists only for the named event and year. No rating is inherited by the Kickapoo people, any ethnic label, noncombatants or travelling families, a modern tribal government, Texas, the Confederacy, a military service, or any later formation.",
+    "source_ids": [
+      "wave8_kickapoo_gibson_monograph",
+      "wave8_kickapoo_kttt_official",
+      "wave8_kickapoo_pool_dove_creek",
+      "wave8_kickapoo_tsha_dove_creek",
+      "wave8_kickapoo_tsha_people"
     ]
   },
   {

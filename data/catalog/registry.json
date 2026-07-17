@@ -1605,6 +1605,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "battle_creek_allied_indigenous_war_party_1838",
+      "name": "Battle Creek allied Kickapoo-Cherokee-Delaware war party (1838)",
+      "kind": "war_party",
+      "start_year": 1838,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "battle_creek_armed_surveying_party_1838",
+      "name": "Battle Creek armed surveying party (1838)",
+      "kind": "armed_party",
+      "start_year": 1838,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q13048507_540_71f6c831",
       "name": "Bavarians",
       "kind": "polity",
@@ -3111,6 +3131,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "confederate_cavalry_patrol_little_concho_1862",
+      "name": "Confederate cavalry patrol at Little Concho (1862)",
+      "kind": "cavalry_patrol",
+      "start_year": 1862,
+      "end_year": 1862,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q154741_1809_fffde4ac",
       "name": "Confederation of the Rhine",
       "kind": "confederation",
@@ -4138,6 +4168,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "dove_creek_confederate_texas_militia_assault_force_1865",
+      "name": "Dove Creek Confederate-Texas militia assault force (1865)",
+      "kind": "combined_assault_force",
+      "start_year": 1865,
+      "end_year": 1865,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_pl_piast_dyn_2_1279_294e7ee3",
@@ -9482,6 +9522,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "kickapoo_town_allied_indigenous_mexican_fighting_force_1838",
+      "name": "Kickapoo Town allied Indigenous-Mexican fighting force (1838)",
+      "kind": "allied_fighting_force",
+      "start_year": 1838,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "dove_creek_kickapoo_camp_defenders_1865",
+      "name": "Kickapoo camp defense force at Dove Creek (1865)",
+      "kind": "camp_defense_force",
+      "start_year": 1865,
+      "end_year": 1865,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "kicking_bird_kiowa_war_party_little_wichita_1870",
       "name": "Kicking Bird's Kiowa war party at the Little Wichita River (1870)",
       "kind": "event_bounded_war_party",
@@ -12016,6 +12076,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe and West Asia"
+    },
+    {
+      "id": "machemanet_kickapoo_camp_defenders_1862",
+      "name": "Machemanet's Kickapoo camp defense force at Little Concho (1862)",
+      "kind": "camp_defense_force",
+      "start_year": 1862,
+      "end_year": 1862,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "mackenzie_fourth_cavalry_tonkawa_column_1874",
@@ -20246,6 +20316,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "rusk_texas_militia_column_kickapoo_town_1838",
+      "name": "Thomas J. Rusk's Texas militia column at Kickapoo Town (1838)",
+      "kind": "militia_column",
+      "start_year": 1838,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q1115291_1769_a42fc38c",
       "name": "Thonburi Kingdom",
       "kind": "kingdom",
@@ -22324,11 +22404,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2095,
-    "rated_entities": 732,
-    "rated_events": 5184,
+    "registry_polities": 2103,
+    "rated_entities": 740,
+    "rated_events": 5188,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18210,
+    "unresolved_event_candidates": 18206,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22387,6 +22467,7 @@
     "candidate_keyed_wave8_thebes_hced_events": 6,
     "candidate_keyed_wave8_alemanni_hced_events": 8,
     "candidate_keyed_wave8_madagascar_hced_events": 5,
+    "candidate_keyed_wave8_kickapoo_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22397,21 +22478,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4920,
-      "candidate_keyed_reviewed_contracts": 610,
+      "hced_candidate_bindings": 4924,
+      "candidate_keyed_reviewed_contracts": 614,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4828,
-      "location_provenance_objects": 4877,
-      "point_fields_withheld_by_quarantine": 186,
+      "modern_location_country_assertions": 4832,
+      "location_provenance_objects": 4881,
+      "point_fields_withheld_by_quarantine": 190,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 91,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 43,
-      "unique_events_with_any_quarantined_field": 234,
-      "point_quarantine_candidate_manifest_sha256": "b8f1421c94266627efb4f0fca13ca8e62c8b824e3ce57dcbcd81f56add9ee98b",
+      "unique_events_with_any_quarantined_field": 238,
+      "point_quarantine_candidate_manifest_sha256": "5a82ed56cf9d336c580dffb4612e1734a5781693ddb4474985cd30fe81c93e6b",
       "country_quarantine_candidate_manifest_sha256": "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd",
-      "quarantine_policy_sha256": "90e54391453d96830e12b771f1e77801576fd877d6636170722a7648f75bd743",
+      "quarantine_policy_sha256": "3385d66ad1418e6f5bdd8a9116191ac86cd662c44cfea227a7dc5ed7de328d80",
       "assertion_status": {
-        "unreviewed_source_assertion": 4877
+        "unreviewed_source_assertion": 4881
       },
       "verified_location_assertions": {
         "availability": "not_available",

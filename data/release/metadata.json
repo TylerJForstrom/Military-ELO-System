@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 739,
-    "events": 5184,
-    "sources": 943,
-    "registry_polities": 2095
+    "entities": 747,
+    "events": 5188,
+    "sources": 960,
+    "registry_polities": 2103
   },
   "year_range": {
     "start": -1274,
@@ -129,6 +129,7 @@
     "accepted_wave8_thebes_hced_events": 6,
     "accepted_wave8_alemanni_hced_events": 8,
     "accepted_wave8_madagascar_hced_events": 5,
+    "accepted_wave8_kickapoo_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -7032,7 +7033,276 @@
     "wave8_madagascar_outcome_overrides": [],
     "wave8_madagascar_entities_added": 2,
     "wave8_madagascar_sources_added": 13,
-    "hced_label_pass_input_rows": 5785,
+    "wave8_kickapoo_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 6,
+      "new_entities": 8,
+      "new_sources": 17,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 4,
+      "reviewed_hced_rows": 6,
+      "terminal_exclusions": 2
+    },
+    "wave8_kickapoo_cohort_counts": {
+      "kickapoo_migration_confederate_conflict_1862_1865": 2,
+      "republic_of_texas_frontier_conflict_1838": 3,
+      "wichita_agency_tonkawa_massacre_1862": 1
+    },
+    "wave8_kickapoo_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 0,
+      "reviewed_hced_rows": 6,
+      "terminal_exclusions": 2
+    },
+    "wave8_kickapoo_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 6,
+      "related_hced_dispositions": 4
+    },
+    "wave8_kickapoo_candidate_ids": [
+      "hced-Battle Creek, Texas1838-1",
+      "hced-Dove Creek1865-1",
+      "hced-Kickapoo Town1838-1",
+      "hced-Little Concho1862-1"
+    ],
+    "wave8_kickapoo_holds": [],
+    "wave8_kickapoo_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Killough Massacre1838-1",
+        "raw_row_sha256": "15459a01b094ac12bd1e2991c2b09bd2d265285dfa45f4815658abd05d47121f",
+        "canonical_event": {
+          "canonical_key": "killough_settlement_massacre:1838:1838",
+          "date_precision": "day",
+          "date_text": "5 October 1838",
+          "granularity": "civilian_massacre",
+          "name": "Killough settlement massacre",
+          "year_low": 1838,
+          "year_high": 1838
+        },
+        "cohort": "republic_of_texas_frontier_conflict_1838",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "civilian_massacre_with_unresolved_attacker_composition",
+        "hold_reason": "The event was an attack on a civilian settlement, not a competitive engagement. The detailed TSHA review says the exact attacking composition is unknown, while broader summaries associate subsequent violence with several peoples. HCED's United States side is also anachronistic for Republic of Texas territory. No exact Kickapoo fighting formation or Elo outcome can be recovered; unknown is never made a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "civilian_massacre",
+        "evidence_refs": [
+          "wave8_kickapoo_tsha_killough",
+          "wave8_kickapoo_tsha_people"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_kickapoo",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "attacked_group": "Killough settlement civilians",
+          "competitive_event": false,
+          "exact_attacker_composition": "unknown",
+          "raw_side_problem": "United States is anachronistic in October 1838"
+        }
+      },
+      {
+        "candidate_id": "hced-Wichita Agency1862-1",
+        "raw_row_sha256": "7aa936e568ce02973c088328b3f9f279112e39cb9512c9a410ecfa34ce3cc82b",
+        "canonical_event": {
+          "canonical_key": "sacking_of_the_wichita_agency_and_tonkawa_massacre:1862:1862",
+          "date_precision": "day_range",
+          "date_text": "23-24 October 1862",
+          "granularity": "composite_noncompetitive_massacre",
+          "name": "Sacking of the Wichita Agency and Tonkawa Massacre",
+          "year_low": 1862,
+          "year_high": 1862
+        },
+        "cohort": "wichita_agency_tonkawa_massacre_1862",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "composite_agency_attack_and_civilian_massacre",
+        "hold_reason": "The row fuses two sequential episodes: the 23 October attack on the Wichita Agency and the 24 October killing of Tonkawa people. The NPS study expressly treats this violence as outside its definition of a battle, and the Oklahoma scholarship documents a massacre rather than opposing competitive formations. A Kickapoo component is attested, but neither episode licenses a timeless actor or an Elo result; unknown is never made a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "composite_noncompetitive_massacre",
+        "evidence_refs": [
+          "wave8_kickapoo_connole_tonkawa",
+          "wave8_kickapoo_nps_newtonia_study",
+          "wave8_kickapoo_ohs_tonkawa_massacre"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_kickapoo",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "episode_1": "23 October attack on Wichita Agency personnel and property",
+          "episode_2": "24 October Tonkawa massacre",
+          "competitive_event": false,
+          "repair_risk": "would merge two episodes and rate civilian victims"
+        }
+      }
+    ],
+    "wave8_kickapoo_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Battle Creek, Texas1838-1",
+        "raw_row_sha256": "5833bba8079f29acc8ce74a0b08644753a1ba5931f2299edf900ccbe71c9cf7a",
+        "related_hced_candidate_id": "hced-Kickapoo Town1838-1",
+        "related_raw_row_sha256": "90c57dea7caa1ca95fa5957a82b335a58dff59b2b8c94fa2e7d2ade5005ee15a",
+        "disposition": "distinct_linked_engagements",
+        "relationship": "same_month_distinct_forces_sites_and_dates",
+        "owner_module": "wave8_kickapoo",
+        "reason": "Battle Creek occurred on 8 October and Kickapoo Town on 16 October, with different objectives, sites, and bounded formations.",
+        "evidence_refs": [
+          "wave8_kickapoo_govinfo_rusk_report",
+          "wave8_kickapoo_tsha_battle_creek"
+        ]
+      },
+      {
+        "candidate_id": "hced-Killough Massacre1838-1",
+        "raw_row_sha256": "15459a01b094ac12bd1e2991c2b09bd2d265285dfa45f4815658abd05d47121f",
+        "related_hced_candidate_id": "hced-Kickapoo Town1838-1",
+        "related_raw_row_sha256": "90c57dea7caa1ca95fa5957a82b335a58dff59b2b8c94fa2e7d2ade5005ee15a",
+        "disposition": "distinct_massacre_and_later_engagement",
+        "relationship": "linked_frontier_context_not_duplicate",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The 5 October civilian massacre and 16 October militia engagement have separate victims, forces, places, and event boundaries.",
+        "evidence_refs": [
+          "wave8_kickapoo_govinfo_rusk_report",
+          "wave8_kickapoo_tsha_killough"
+        ]
+      },
+      {
+        "candidate_id": "hced-Little Concho1862-1",
+        "raw_row_sha256": "731da8dc895eff1e3302e00c7e64efafff602c66805fb8c4907174e008ac4b46",
+        "related_hced_candidate_id": "hced-Dove Creek1865-1",
+        "related_raw_row_sha256": "2b3745128b539c57b34483dcd78912da81c9baf52e8ca59e1023085e0c2eda39",
+        "disposition": "distinct_migration_conflict_engagements",
+        "relationship": "different_year_force_location_and_attack",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The December 1862 Little Concho defense is not the January 1865 Dove Creek attack; the scholarly history treats them as separate actions.",
+        "evidence_refs": [
+          "wave8_kickapoo_gibson_monograph",
+          "wave8_kickapoo_kshq_no_koaht",
+          "wave8_kickapoo_tsha_dove_creek"
+        ]
+      },
+      {
+        "candidate_id": "hced-Wichita Agency1862-1",
+        "raw_row_sha256": "7aa936e568ce02973c088328b3f9f279112e39cb9512c9a410ecfa34ce3cc82b",
+        "related_hced_candidate_id": "hced-Little Concho1862-1",
+        "related_raw_row_sha256": "731da8dc895eff1e3302e00c7e64efafff602c66805fb8c4907174e008ac4b46",
+        "disposition": "distinct_same_year_episodes",
+        "relationship": "different_month_territory_actors_and_granularity",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The October agency attack and massacre in Indian Territory are not the December camp defense near Knickerbocker, Texas.",
+        "evidence_refs": [
+          "wave8_kickapoo_kshq_no_koaht",
+          "wave8_kickapoo_nps_newtonia_study"
+        ]
+      }
+    ],
+    "wave8_kickapoo_cross_lane_dispositions": [
+      {
+        "disposition_id": "wave8_cherokee",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_cherokee",
+        "owned_candidate_ids": [
+          "hced-Battle Creek, Texas1838-1"
+        ],
+        "shared_component": "Cherokee participants in the Battle Creek war party",
+        "reason": "The Cherokee lane owns no candidate in this inventory. This lane owns the exact Battle Creek row and rates only its mixed event formation.",
+        "evidence_refs": [
+          "wave8_kickapoo_tsha_battle_creek"
+        ]
+      }
+    ],
+    "wave8_kickapoo_iwbd_duplicate_dispositions": [],
+    "wave8_kickapoo_existing_release_duplicate_dispositions": [],
+    "wave8_kickapoo_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:wave8_cherokee",
+        "disposition": "shared_component_not_duplicate",
+        "other_module": "wave8_cherokee",
+        "owned_candidate_ids": [
+          "hced-Battle Creek, Texas1838-1"
+        ],
+        "shared_component": "Cherokee participants in the Battle Creek war party",
+        "reason": "The Cherokee lane owns no candidate in this inventory. This lane owns the exact Battle Creek row and rates only its mixed event formation.",
+        "evidence_refs": [
+          "wave8_kickapoo_tsha_battle_creek"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Battle Creek, Texas1838-1",
+        "raw_row_sha256": "5833bba8079f29acc8ce74a0b08644753a1ba5931f2299edf900ccbe71c9cf7a",
+        "related_hced_candidate_id": "hced-Kickapoo Town1838-1",
+        "related_raw_row_sha256": "90c57dea7caa1ca95fa5957a82b335a58dff59b2b8c94fa2e7d2ade5005ee15a",
+        "disposition": "distinct_linked_engagements",
+        "relationship": "same_month_distinct_forces_sites_and_dates",
+        "owner_module": "wave8_kickapoo",
+        "reason": "Battle Creek occurred on 8 October and Kickapoo Town on 16 October, with different objectives, sites, and bounded formations.",
+        "evidence_refs": [
+          "wave8_kickapoo_govinfo_rusk_report",
+          "wave8_kickapoo_tsha_battle_creek"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Killough Massacre1838-1",
+        "raw_row_sha256": "15459a01b094ac12bd1e2991c2b09bd2d265285dfa45f4815658abd05d47121f",
+        "related_hced_candidate_id": "hced-Kickapoo Town1838-1",
+        "related_raw_row_sha256": "90c57dea7caa1ca95fa5957a82b335a58dff59b2b8c94fa2e7d2ade5005ee15a",
+        "disposition": "distinct_massacre_and_later_engagement",
+        "relationship": "linked_frontier_context_not_duplicate",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The 5 October civilian massacre and 16 October militia engagement have separate victims, forces, places, and event boundaries.",
+        "evidence_refs": [
+          "wave8_kickapoo_govinfo_rusk_report",
+          "wave8_kickapoo_tsha_killough"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Little Concho1862-1",
+        "raw_row_sha256": "731da8dc895eff1e3302e00c7e64efafff602c66805fb8c4907174e008ac4b46",
+        "related_hced_candidate_id": "hced-Dove Creek1865-1",
+        "related_raw_row_sha256": "2b3745128b539c57b34483dcd78912da81c9baf52e8ca59e1023085e0c2eda39",
+        "disposition": "distinct_migration_conflict_engagements",
+        "relationship": "different_year_force_location_and_attack",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The December 1862 Little Concho defense is not the January 1865 Dove Creek attack; the scholarly history treats them as separate actions.",
+        "evidence_refs": [
+          "wave8_kickapoo_gibson_monograph",
+          "wave8_kickapoo_kshq_no_koaht",
+          "wave8_kickapoo_tsha_dove_creek"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Wichita Agency1862-1",
+        "raw_row_sha256": "7aa936e568ce02973c088328b3f9f279112e39cb9512c9a410ecfa34ce3cc82b",
+        "related_hced_candidate_id": "hced-Little Concho1862-1",
+        "related_raw_row_sha256": "731da8dc895eff1e3302e00c7e64efafff602c66805fb8c4907174e008ac4b46",
+        "disposition": "distinct_same_year_episodes",
+        "relationship": "different_month_territory_actors_and_granularity",
+        "owner_module": "wave8_kickapoo",
+        "reason": "The October agency attack and massacre in Indian Territory are not the December camp defense near Knickerbocker, Texas.",
+        "evidence_refs": [
+          "wave8_kickapoo_kshq_no_koaht",
+          "wave8_kickapoo_nps_newtonia_study"
+        ]
+      }
+    ],
+    "wave8_kickapoo_outcome_overrides": [],
+    "wave8_kickapoo_entities_added": 8,
+    "wave8_kickapoo_sources_added": 17,
+    "hced_label_pass_input_rows": 5779,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -7045,7 +7315,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 819,
+      "reserved_candidate_contract": 825,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -7054,10 +7324,10 @@
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 459,
-      "label_outcome_not_aligned": 81,
+      "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2273,
+      "no_unique_time_valid_label_match": 2268,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
