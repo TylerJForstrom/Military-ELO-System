@@ -185,7 +185,58 @@ class Wave8HaitianRebelsTests(unittest.TestCase):
 
     def test_funnel_pins_four_sole_blockers_without_generic_identity(self) -> None:
         self.assertEqual(
-            lane.validate_wave8_haitian_rebels_funnel(self.funnel),
+            lane.WAVE8_HAITIAN_REBELS_FUNNEL_AUDIT,
+            {
+                "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                "events_touched": 4,
+                "failure_case": "zero_time_valid_candidates",
+                "failure_case_count": 4,
+                "label": "haitian rebels",
+                "marginal_events": 4,
+                "newly_unblocked_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                "sole_blocker_events": 4,
+            },
+        )
+        historical_funnel = {
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "events_touched": 4,
+                        "label": "haitian rebels",
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": (
+                            FUNNEL_CANDIDATE_ID_SHA256
+                        ),
+                    }
+                ]
+            },
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "events_touched": 4,
+                    "failure_cases": {"zero_time_valid_candidates": 4},
+                    "label": "haitian rebels",
+                    "sole_blocker_events": 4,
+                    "time_valid_candidate_ids": [],
+                }
+            ],
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "haitian rebels",
+                        }
+                    ],
+                    "sole_blocker_label": "haitian rebels",
+                }
+                for candidate_id in sorted(EXPECTED_RAW_HASHES)
+            ],
+        }
+        self.assertEqual(
+            lane.validate_wave8_haitian_rebels_funnel(historical_funnel),
             {
                 "exact_label_rows": 4,
                 "shared_label_rows": 0,
@@ -193,7 +244,9 @@ class Wave8HaitianRebelsTests(unittest.TestCase):
             },
         )
         label = next(
-            row for row in self.funnel["labels"] if row["label"] == "haitian rebels"
+            row
+            for row in historical_funnel["labels"]
+            if row["label"] == "haitian rebels"
         )
         self.assertEqual(label["event_candidate_id_sha256"], FUNNEL_CANDIDATE_ID_SHA256)
         self.assertEqual(label["events_touched"], 4)
@@ -201,6 +254,21 @@ class Wave8HaitianRebelsTests(unittest.TestCase):
         self.assertEqual(label["candidate_ids"], [])
         self.assertEqual(label["time_valid_candidate_ids"], [])
         self.assertEqual(label["failure_cases"]["zero_time_valid_candidates"], 4)
+        self.assertFalse(
+            any(
+                row.get("label") == "haitian rebels"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Haitian Rebels lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id"))
+                in lane.WAVE8_HAITIAN_REBELS_CONTRACT_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Haitian Rebels candidates must not remain in the live funnel",
+        )
 
     def test_dispositions_are_two_promotions_and_two_unknown_holds(self) -> None:
         self.assertEqual(

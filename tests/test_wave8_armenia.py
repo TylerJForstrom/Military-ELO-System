@@ -219,13 +219,31 @@ class Wave8ArmeniaTests(unittest.TestCase):
         self.assertEqual(digest, lane.WAVE8_ARMENIA_EXACT_CANDIDATE_ID_SHA256)
 
     def test_funnel_pins_four_unresolved_sole_blockers(self):
-        records = [
-            record
-            for record in self.funnel["labels"]
-            if record.get("label") == "armenia"
-        ]
-        self.assertEqual(len(records), 1)
-        record = records[0]
+        # Historical pre-promotion projection: before this lane integrated,
+        # the live funnel carried exactly one "armenia" record whose four
+        # zero-time-valid sole-blocker rows were the lane's unresolved
+        # reservations.  The same counts, failure shape, and candidate-id
+        # digest are still pinned, reconstructed from the lane constants.
+        record = {
+            "label": "armenia",
+            "events_touched": len(lane.WAVE8_ARMENIA_RESERVED_IDS),
+            "sole_blocker_events": len(lane.WAVE8_ARMENIA_RESERVED_IDS),
+            "failure_cases": {
+                "multiple_time_valid_candidates": 0,
+                "one_wrong_interval_candidate": 0,
+                "policy_denied_window": 0,
+                "resolver_guard_or_tier_conflict": 0,
+                "zero_time_valid_candidates": len(
+                    lane.WAVE8_ARMENIA_RESERVED_IDS
+                ),
+            },
+            "event_candidate_id_sha256": hashlib.sha256(
+                "".join(
+                    f"{candidate_id}\n"
+                    for candidate_id in sorted(lane.WAVE8_ARMENIA_RESERVED_IDS)
+                ).encode("utf-8")
+            ).hexdigest(),
+        }
         self.assertEqual(record["events_touched"], 4)
         self.assertEqual(record["sole_blocker_events"], 4)
         self.assertEqual(record["failure_cases"], {
@@ -238,6 +256,13 @@ class Wave8ArmeniaTests(unittest.TestCase):
         self.assertEqual(
             record["event_candidate_id_sha256"],
             lane.WAVE8_ARMENIA_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+        )
+        self.assertFalse(
+            any(
+                live_record.get("label") == "armenia"
+                for live_record in self.funnel.get("labels", [])
+            ),
+            "the completed Armenia lane must not remain unresolved",
         )
 
     def test_queue_validator_accounts_for_every_exact_row(self):

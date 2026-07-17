@@ -264,9 +264,39 @@ class Wave8YakimaTests(unittest.TestCase):
         )
 
     def test_unresolved_funnel_entry_and_four_rows_are_pinned(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "centuries": {"CE_19": 4},
+                    "event_candidate_id_sha256": (
+                        "65081d0328a98785942285646c7fccc6738acd1239"
+                        "f6acaa759337dc143a7519"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "label": "yakima indians",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 4,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "sole_blocker_label": "yakima indians",
+                }
+                for candidate_id in sorted(EXPECTED_RAW_ROWS)
+            ],
+        }
         summaries = [
             item
-            for item in _dicts(self.funnel)
+            for item in _dicts(historical_funnel)
             if item.get("label") == "yakima indians"
             and "unresolved_side_attempts" in item
         ]
@@ -292,10 +322,30 @@ class Wave8YakimaTests(unittest.TestCase):
         )
         funnel_rows = {
             str(item["candidate_id"])
-            for item in _dicts(self.funnel)
+            for item in _dicts(historical_funnel)
             if item.get("sole_blocker_label") == "yakima indians"
         }
         self.assertEqual(funnel_rows, lane.WAVE8_YAKIMA_EXPECTED_CANDIDATE_IDS)
+        self.assertEqual(
+            _sorted_newline_sha256(funnel_rows),
+            lane.WAVE8_YAKIMA_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+        )
+        self.assertFalse(
+            any(
+                item.get("label") == "yakima indians"
+                for item in _dicts(self.funnel)
+            ),
+            "the completed Yakima Indians lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                item.get("sole_blocker_label") == "yakima indians"
+                or str(item.get("candidate_id"))
+                in lane.WAVE8_YAKIMA_RESERVED_IDS
+                for item in _dicts(self.funnel)
+            ),
+            "reviewed Yakima Indians rows must be absent from the live funnel",
+        )
 
     def test_complete_exact_label_inventory_is_four_rows(self) -> None:
         exact_ids = {

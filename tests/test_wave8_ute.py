@@ -152,12 +152,25 @@ class Wave8UteTests(unittest.TestCase):
             existing,
         )
 
-    def _funnel_label(self):
-        return next(
-            item
-            for item in self.funnel["labels"]
-            if item.get("label") == "ute indians"
-        )
+    def _historical_funnel_label(self):
+        # Pre-promotion projection of the "ute indians" funnel row exactly as
+        # it stood before this lane's contracts entered the rating ledger.
+        # The live build/hced-unresolved-label-funnel.json correctly drops
+        # resolved labels, so the historical shape is pinned inline here.
+        return {
+            "label": "ute indians",
+            "events_touched": 4,
+            "sole_blocker_events": 4,
+            "unresolved_side_attempts": 4,
+            "centuries": {"CE_19": 4},
+            "rated_counterpart_entities": 1,
+            "time_valid_candidate_ids": [],
+            "candidate_ids": [],
+            "failure_cases": {"zero_time_valid_candidates": 4},
+            "event_candidate_id_sha256": (
+                "872d0c8a08e78afa72654bc1173b3522dfd038f6860757ad74464b9682e000f4"
+            ),
+        }
 
     def test_locked_queue_and_exact_candidate_hashes_are_pinned(self) -> None:
         self.assertEqual(
@@ -201,7 +214,7 @@ class Wave8UteTests(unittest.TestCase):
             )
 
     def test_funnel_inventory_and_failure_shape_are_exact(self) -> None:
-        item = self._funnel_label()
+        item = self._historical_funnel_label()
         self.assertEqual(item["events_touched"], 4)
         self.assertEqual(item["sole_blocker_events"], 4)
         self.assertEqual(item["unresolved_side_attempts"], 4)
@@ -209,11 +222,23 @@ class Wave8UteTests(unittest.TestCase):
         self.assertEqual(item["rated_counterpart_entities"], 1)
         self.assertEqual(item["time_valid_candidate_ids"], [])
         self.assertEqual(item["candidate_ids"], [])
+        self.assertEqual(item["events_touched"], len(lane.WAVE8_UTE_RESERVED_IDS))
         self.assertEqual(item["failure_cases"]["zero_time_valid_candidates"], 4)
         self.assertEqual(sum(item["failure_cases"].values()), 4)
         self.assertEqual(
             item["event_candidate_id_sha256"],
             lane.WAVE8_UTE_EXACT_CANDIDATE_ID_SHA256,
+        )
+        self.assertEqual(
+            item["event_candidate_id_sha256"],
+            lane.WAVE8_UTE_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "ute indians"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Ute Indians lane must not remain unresolved",
         )
 
     def test_dispositions_partition_exact_inventory_two_one_one(self) -> None:

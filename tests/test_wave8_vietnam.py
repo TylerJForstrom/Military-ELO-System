@@ -198,8 +198,100 @@ class Wave8VietnamTests(unittest.TestCase):
         )
 
     def test_authoritative_funnel_is_the_exact_owned_cohort(self) -> None:
+        vietnam_failure = {
+            "candidate_ids": ["clio_vt_vietnam_socialist_rep_1976_7f7549c0"],
+            "failure_case": "one_wrong_interval_candidate",
+            "label": "vietnam",
+            "time_valid_candidate_ids": [],
+        }
+
+        def historical_row(
+            candidate_id, blocker_labels, greedy_eligible, sole, other
+        ):
+            return {
+                "candidate_id": candidate_id,
+                "blocker_labels": blocker_labels,
+                "greedy_eligible": greedy_eligible,
+                "sole_blocker_label": sole,
+                "other_blockers": other,
+                "label_failures": [copy.deepcopy(vietnam_failure)],
+            }
+
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [
+                        "clio_vt_vietnam_socialist_rep_1976_7f7549c0"
+                    ],
+                    "centuries": {"CE_13": 3, "CE_15": 4, "CE_18": 2},
+                    "components_bridged": 0,
+                    "components_touched": 1,
+                    "event_candidate_id_sha256": (
+                        "1a6431d8b16f1868a7b7b6a4cc8d779c87b37418151703f1f312d1e8babe26dc"
+                    ),
+                    "events_touched": 9,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 9,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 0,
+                    },
+                    "label": "vietnam",
+                    "rated_counterpart_entities": 2,
+                    "sole_blocker_events": 4,
+                    "time_valid_candidate_ids": [],
+                    "unresolved_side_attempts": 9,
+                }
+            ],
+            "row_label_data": [
+                historical_row(
+                    "hced-Thang Long1258-1",
+                    ["mongols china", "vietnam"],
+                    True,
+                    None,
+                    [],
+                ),
+                historical_row(
+                    "hced-Siming1285-1",
+                    ["vietnam"],
+                    False,
+                    None,
+                    ["other_identity_blocker:faction_label_not_a_polity"],
+                ),
+                historical_row(
+                    "hced-Bach Dang1288-1",
+                    ["vietnam"],
+                    False,
+                    None,
+                    ["other_identity_blocker:no_unique_time_valid_polity"],
+                ),
+                historical_row(
+                    "hced-Tot-dong1426-1", ["vietnam"], True, "vietnam", []
+                ),
+                historical_row(
+                    "hced-Dong-do1426-1427-1", ["vietnam"], True, "vietnam", []
+                ),
+                historical_row(
+                    "hced-Chi Lang Pass1427-1", ["vietnam"], True, "vietnam", []
+                ),
+                historical_row(
+                    "hced-Vijaya1471-1",
+                    ["vietnam"],
+                    False,
+                    None,
+                    ["other_identity_blocker:label_pending_identity_split"],
+                ),
+                historical_row(
+                    "hced-Thang Long1789-1", ["vietnam"], True, "vietnam", []
+                ),
+                historical_row(
+                    "hced-Hanoi1789-1", ["qing", "vietnam"], True, None, []
+                ),
+            ],
+        }
         self.assertEqual(
-            validate_wave8_vietnam_funnel(self.funnel),
+            validate_wave8_vietnam_funnel(historical_funnel),
             {
                 "events_touched": 9,
                 "greedy_eligible_rows": 6,
@@ -208,7 +300,7 @@ class Wave8VietnamTests(unittest.TestCase):
         )
         scoped = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "vietnam" in row.get("blocker_labels", [])
         }
         self.assertEqual(set(scoped), WAVE8_VIETNAM_RESERVED_IDS)
@@ -245,7 +337,28 @@ class Wave8VietnamTests(unittest.TestCase):
         self.assertEqual(exact_raw_ids & WAVE8_VIETNAM_RESERVED_IDS, set(scoped))
         self.assertTrue(exact_raw_ids - WAVE8_VIETNAM_RESERVED_IDS)
 
-        changed = copy.deepcopy(self.funnel)
+        self.assertFalse(
+            any(
+                row.get("label") == "vietnam"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Vietnam lane must not remain unresolved",
+        )
+        live_rows = self.funnel.get("row_label_data", [])
+        self.assertFalse(
+            any(
+                "vietnam" in row.get("blocker_labels", [])
+                for row in live_rows
+            ),
+            "the completed Vietnam lane must not remain unresolved",
+        )
+        self.assertFalse(
+            {str(row.get("candidate_id")) for row in live_rows}
+            & WAVE8_VIETNAM_RESERVED_IDS,
+            "resolved Vietnam candidates must not remain in the live funnel",
+        )
+
+        changed = copy.deepcopy(historical_funnel)
         changed["row_label_data"].append(
             {
                 "candidate_id": "hced-FutureVietnam1790-1",
@@ -255,7 +368,7 @@ class Wave8VietnamTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "exact funnel cohort changed"):
             validate_wave8_vietnam_funnel(changed)
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(item for item in changed["labels"] if item["label"] == "vietnam")[
             "events_touched"
         ] = 10

@@ -197,6 +197,98 @@ def _canonical_json(value) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
+def _historical_funnel_row(
+    candidate_id: str,
+    blocker_labels: list,
+    sole_blocker_label,
+    resolved_counterpart_entity_ids: list,
+) -> dict:
+    return {
+        "candidate_id": candidate_id,
+        "blocker_labels": blocker_labels,
+        "greedy_eligible": True,
+        "sole_blocker_label": sole_blocker_label,
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": resolved_counterpart_entity_ids,
+        "label_failures": [
+            {
+                "candidate_ids": [],
+                "failure_case": "zero_time_valid_candidates",
+                "label": "rajputs",
+                "time_valid_candidate_ids": [],
+            }
+        ],
+    }
+
+
+# Pre-promotion projection of the authoritative Rajputs funnel scope.  The lane
+# is integrated in the current release, so the live funnel correctly drops the
+# resolved label; these historical values mirror the lane's pinned funnel
+# summary, greedy audit, and integration dispositions (also recorded in
+# data/release/metadata.json under promotion.wave8_rajputs_*).
+HISTORICAL_FUNNEL = {
+    "labels": [
+        {
+            "candidate_ids": [],
+            "centuries": {"CE_12": 2, "CE_16": 2, "CE_18": 3},
+            "components_bridged": 0,
+            "components_touched": 1,
+            "event_candidate_id_sha256": (
+                "c39bff610c71388f144308649e960ed193ae0dfce339bdd678f8746be1e04264"
+            ),
+            "events_touched": 7,
+            "failure_cases": {
+                "multiple_time_valid_candidates": 0,
+                "one_wrong_interval_candidate": 0,
+                "policy_denied_window": 0,
+                "resolver_guard_or_tier_conflict": 0,
+                "zero_time_valid_candidates": 7,
+            },
+            "label": "rajputs",
+            "rated_counterpart_entities": 2,
+            "sole_blocker_events": 4,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 7,
+        }
+    ],
+    "greedy_batch": {
+        "ranking": [
+            {
+                "events_touched": 7,
+                "label": "rajputs",
+                "marginal_events": 4,
+                "newly_unblocked_candidate_id_sha256": (
+                    "0f9809cbae3d23bea7a0afd8aa0f8011d1cd2dc5efb058f0c675243413a35cae"
+                ),
+            }
+        ]
+    },
+    "row_label_data": [
+        _historical_funnel_row(
+            "hced-Chitor1567-1", ["rajputs"], "rajputs", ["mughal_empire"]
+        ),
+        _historical_funnel_row(
+            "hced-Fatehpur1799-1", ["hariana", "rajputs"], None, []
+        ),
+        _historical_funnel_row(
+            "hced-Gogra1529-1", ["rajputs"], "rajputs", ["mughal_empire"]
+        ),
+        _historical_funnel_row(
+            "hced-Merta1790-1", ["rajputs"], "rajputs", ["maratha_confederacy"]
+        ),
+        _historical_funnel_row(
+            "hced-Patan1790-1", ["rajputs"], "rajputs", ["maratha_confederacy"]
+        ),
+        _historical_funnel_row(
+            "hced-Taraori1191-1", ["ghor", "rajputs"], None, []
+        ),
+        _historical_funnel_row(
+            "hced-Taraori1192-1", ["ghor", "rajputs"], None, []
+        ),
+    ],
+}
+
+
 class Wave8RajputsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -204,6 +296,7 @@ class Wave8RajputsTests(unittest.TestCase):
         cls.iwbd_rows = _jsonl(ROOT / "data" / "review" / "iwbd-candidates.jsonl")
         cls.release_entities = _json(ROOT / "data" / "release" / "entities.json")
         cls.release_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.release_metadata = _json(ROOT / "data" / "release" / "metadata.json")
         cls.release_sources = _json(ROOT / "data" / "release" / "sources.json")
         cls.funnel = _json(ROOT / "build" / "wave8-funnel-current.json")
         cls.lane_rows = {
@@ -346,7 +439,7 @@ class Wave8RajputsTests(unittest.TestCase):
 
     def test_authoritative_funnel_pins_seven_rows_and_four_sole_blockers(self) -> None:
         self.assertEqual(
-            validate_wave8_rajputs_funnel(self.funnel),
+            validate_wave8_rajputs_funnel(HISTORICAL_FUNNEL),
             {
                 "events_touched": 7,
                 "greedy_eligible_rows": 7,
@@ -385,11 +478,27 @@ class Wave8RajputsTests(unittest.TestCase):
                 WAVE8_RAJPUTS_ROW_DISPOSITIONS[candidate_id],
             )
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(HISTORICAL_FUNNEL)
         label = next(item for item in changed["labels"] if item["label"] == "rajputs")
         label["sole_blocker_events"] = 5
         with self.assertRaisesRegex(ValueError, "funnel summary changed"):
             validate_wave8_rajputs_funnel(changed)
+
+        self.assertFalse(
+            any(
+                item.get("label") == "rajputs"
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed Rajputs lane must not remain in the live unresolved funnel",
+        )
+        live_row_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            live_row_ids & set(WAVE8_RAJPUTS_CONTRACT_IDS),
+            "promoted Rajputs candidates must not remain in live funnel row data",
+        )
 
     def test_complete_exact_queue_and_all_raw_hashes_fail_closed(self) -> None:
         exact_rows = {
@@ -745,11 +854,12 @@ class Wave8RajputsTests(unittest.TestCase):
             set(WAVE8_RAJPUTS_IWBD_ZERO_OVERLAP_AUDIT),
             WAVE8_RAJPUTS_RESERVED_IDS,
         )
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_rajputs_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "cross_lane_hced_dispositions": 0,
@@ -793,7 +903,7 @@ class Wave8RajputsTests(unittest.TestCase):
             )
 
         release_twin = [
-            *self.release_events,
+            *existing,
             {"id": "future-merta-twin", "name": "Battle of Merta", "year": 1790},
         ]
         with self.assertRaisesRegex(ValueError, "existing-release twin"):
@@ -802,6 +912,58 @@ class Wave8RajputsTests(unittest.TestCase):
                 self.iwbd_rows,
                 release_twin,
             )
+
+    def test_current_release_integrates_all_six_contracts_exactly_once(self) -> None:
+        lane_events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_RAJPUTS_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        self.assertEqual(len(lane_events), 6)
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in lane_events},
+            set(WAVE8_RAJPUTS_CONTRACT_IDS),
+        )
+        self.assertEqual(len({str(event["id"]) for event in lane_events}), 6)
+        self.assertTrue(
+            all(
+                str(event["id"]).startswith(EVENT_ID_PREFIX)
+                for event in lane_events
+            )
+        )
+        self.assertNotIn(
+            "hced-Chitor1567-1",
+            {event.get("hced_candidate_id") for event in self.release_events},
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_rajputs_hced_events"], 6)
+        self.assertEqual(
+            promotion["wave8_rajputs_candidate_ids"],
+            sorted(WAVE8_RAJPUTS_CONTRACT_IDS),
+        )
+        self.assertEqual(promotion["wave8_rajputs_holds"], [])
+        self.assertEqual(
+            promotion["wave8_rajputs_queue_validation"],
+            {
+                "holds": 0,
+                "promotion_contracts": 6,
+                "reviewed_hced_rows": 7,
+                "terminal_exclusions": 1,
+            },
+        )
+        self.assertEqual(
+            promotion["wave8_rajputs_integration_validation"],
+            {
+                "cross_lane_hced_dispositions": 0,
+                "existing_release_duplicate_dispositions": 0,
+                "hced_duplicate_dispositions": 0,
+                "integration_dispositions": 7,
+                "iwbd_duplicate_dispositions": 0,
+                "iwbd_zero_overlap_candidates": 7,
+            },
+        )
 
     def test_entity_window_event_duplicates_and_installer_collisions_fail_closed(self) -> None:
         entities, _, existing = self._installed()

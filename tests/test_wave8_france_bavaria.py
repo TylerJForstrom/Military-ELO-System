@@ -248,11 +248,66 @@ class Wave8FranceBavariaTests(unittest.TestCase):
             WAVE8_FRANCE_BAVARIA_ROW_DISPOSITIONS,
         )
 
+    def _historical_funnel(self):
+        cohort_sha256 = (
+            "52b980eb0e9eb8290c1c387871606948063624dbbf7d9d9c069a2eef6fff3b22"
+        )
+        counterpart_map = {
+            "hced-Gefrees1809-1": [AUSTRIA],
+            "hced-Neumarkt-St-Viet1809-1": [AUSTRIA],
+            "hced-Polotsk (1st)1812-1": [RUSSIA],
+            "hced-Polotsk (2nd)1812-1": [RUSSIA],
+        }
+        return {
+            "labels": [
+                {
+                    "label": EXACT_LABEL,
+                    "event_candidate_id_sha256": cohort_sha256,
+                    "events_touched": 4,
+                    "unresolved_side_attempts": 4,
+                    "sole_blocker_events": 4,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "centuries": {"CE_19": 4},
+                    "components_touched": 1,
+                    "components_bridged": 0,
+                    "rated_counterpart_entities": 2,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [{"label": EXACT_LABEL}],
+                    "sole_blocker_label": EXACT_LABEL,
+                    "blocker_labels": [EXACT_LABEL],
+                    "other_blockers": [],
+                    "resolved_counterpart_entity_ids": counterparts,
+                }
+                for candidate_id, counterparts in counterpart_map.items()
+            ],
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "label": EXACT_LABEL,
+                        "events_touched": 4,
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": cohort_sha256,
+                    }
+                ]
+            },
+        }
+
     def test_locked_funnel_is_four_sole_blockers_with_two_counterpart_regimes(
         self,
     ) -> None:
+        historical_funnel = self._historical_funnel()
         self.assertEqual(
-            validate_wave8_france_bavaria_funnel(self.funnel),
+            validate_wave8_france_bavaria_funnel(historical_funnel),
             {"events_touched": 4, "sole_blocker_events": 4},
         )
         expected = WAVE8_FRANCE_BAVARIA_FUNNEL_AUDIT
@@ -266,14 +321,14 @@ class Wave8FranceBavariaTests(unittest.TestCase):
             },
             {AUSTRIA, RUSSIA},
         )
-        tampered = copy.deepcopy(self.funnel)
+        tampered = copy.deepcopy(historical_funnel)
         next(
             item for item in tampered["labels"] if item.get("label") == EXACT_LABEL
         )["events_touched"] = 5
         with self.assertRaisesRegex(ValueError, "funnel events_touched"):
             validate_wave8_france_bavaria_funnel(tampered)
 
-        tampered = copy.deepcopy(self.funnel)
+        tampered = copy.deepcopy(historical_funnel)
         row = next(
             item
             for item in tampered["row_label_data"]
@@ -282,6 +337,26 @@ class Wave8FranceBavariaTests(unittest.TestCase):
         row["resolved_counterpart_entity_ids"] = [RUSSIA]
         with self.assertRaisesRegex(ValueError, "sole-blocker row"):
             validate_wave8_france_bavaria_funnel(tampered)
+
+        self.assertFalse(
+            any(
+                item.get("label") == EXACT_LABEL
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed France-Bavaria lane must not remain unresolved",
+        )
+        live_failure_ids = {
+            str(item.get("candidate_id"))
+            for item in self.funnel.get("row_label_data", [])
+            if any(
+                failure.get("label") == EXACT_LABEL
+                for failure in item.get("label_failures", [])
+            )
+        }
+        self.assertFalse(
+            live_failure_ids & WAVE8_FRANCE_BAVARIA_CONTRACT_IDS,
+            "promoted France-Bavaria candidates must not remain in the funnel rows",
+        )
 
     def test_exact_queue_inventory_hashes_and_label_order_are_pinned(self) -> None:
         self.assertEqual(

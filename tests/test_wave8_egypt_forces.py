@@ -123,7 +123,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
         independent = hashlib.sha256(_canonical_json(payload).encode()).hexdigest()
         self.assertEqual(
             independent,
-            "bb523b35e94b15c8d88c5f06f4c62161be9c6d18a25e86a538a675223be6949a",
+            "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b",
         )
         self.assertEqual(independent, lane.WAVE8_EGYPT_FORCES_FINAL_AUDIT_SIGNATURE)
         self.assertEqual(independent, lane.wave8_egypt_forces_audit_signature())
@@ -131,7 +131,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             lane.wave8_egypt_forces_counts(),
             {
                 "adjacent_hced_rows": 38,
-                "audited_current_release_events": 56,
+                "audited_current_release_events": 57,
                 "audited_existing_identities": 18,
                 "country_quarantine_additions": 2,
                 "exact_label_rows": 58,
@@ -209,14 +209,22 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             mapping_digest,
             lane.WAVE8_EGYPT_FORCES_EXACT_LABEL_FUNNEL_AUDIT["exact_row_hash_mapping_sha256"],
         )
-        funnel_record = next(
-            item for item in self.funnel["labels"] if item["label"] == "egypt"
-        )
-        self.assertEqual(funnel_record["events_touched"], 13)
-        self.assertEqual(funnel_record["unresolved_side_attempts"], 13)
+        # The historical 13-row unresolved projection is pinned in the lane's
+        # audit record; the completed cohort must no longer appear in the live
+        # funnel, which drops rows already published in the ledger.
+        audit = lane.WAVE8_EGYPT_FORCES_EXACT_LABEL_FUNNEL_AUDIT
+        self.assertEqual(audit["events_touched"], 13)
+        self.assertEqual(audit["unresolved_side_attempts"], 13)
         self.assertEqual(
-            funnel_record["event_candidate_id_sha256"],
-            lane.WAVE8_EGYPT_FORCES_EXACT_LABEL_FUNNEL_AUDIT["event_candidate_id_sha256"],
+            audit["event_candidate_id_sha256"],
+            "693f2bd0faa9d2bc1b808980f598d62b7a54c91adc9e3c59b1df77d6e70c659d",
+        )
+        self.assertFalse(
+            any(
+                item.get("label") == "egypt"
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed Egypt exact-label cohort must not remain unresolved",
         )
 
         tampered = copy.deepcopy(self.hced_rows)
@@ -438,7 +446,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             ),
             {
                 "audited_release_entities": 18,
-                "audited_release_events": 56,
+                "audited_release_events": 57,
                 "audited_seed_entities": 3,
                 "audited_seed_events": 2,
                 "existing_1967_identity_candidates": 0,

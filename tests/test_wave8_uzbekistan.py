@@ -89,6 +89,7 @@ class Wave8UzbekistanTests(unittest.TestCase):
         cls.iwbd_rows = _jsonl(ROOT / "data" / "review" / "iwbd-candidates.jsonl")
         cls.release_entities = _json(ROOT / "data" / "release" / "entities.json")
         cls.release_events = _json(ROOT / "data" / "release" / "events.json")
+        cls.release_metadata = _json(ROOT / "data" / "release" / "metadata.json")
         cls.release_sources = _json(ROOT / "data" / "release" / "sources.json")
         cls.funnel = _json(ROOT / "build" / "wave8-funnel-current.json")
         cls.lane_rows = [
@@ -208,8 +209,50 @@ class Wave8UzbekistanTests(unittest.TestCase):
         )
 
     def test_authoritative_funnel_pins_ten_rows_and_four_sole_blockers(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "46857510596b58250321ea401b73c39f1d4f643e7ac1635e6890e5dd5e7b40e4"
+                    ),
+                    "events_touched": 10,
+                    "failure_cases": {"one_wrong_interval_candidate": 10},
+                    "label": "uzbekistan",
+                    "sole_blocker_events": 4,
+                }
+            ],
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "events_touched": 10,
+                        "label": "uzbekistan",
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": (
+                            "e77d2e5ab725775c715de98155e8c5186c2c6fa2064df2f8db50174477f7ca5a"
+                        ),
+                    }
+                ]
+            },
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "one_wrong_interval_candidate",
+                            "label": "uzbekistan",
+                        }
+                    ],
+                    "sole_blocker_label": (
+                        "uzbekistan"
+                        if candidate_id in WAVE8_UZBEKISTAN_CONTRACT_IDS
+                        else None
+                    ),
+                }
+                for candidate_id in sorted(WAVE8_UZBEKISTAN_EXPECTED_CANDIDATE_IDS)
+            ],
+        }
         self.assertEqual(
-            validate_wave8_uzbekistan_funnel(self.funnel),
+            validate_wave8_uzbekistan_funnel(historical_funnel),
             {
                 "exact_label_rows": 10,
                 "held_other_identity_rows": 6,
@@ -229,11 +272,37 @@ class Wave8UzbekistanTests(unittest.TestCase):
             WAVE8_UZBEKISTAN_HOLD_IDS,
         )
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         label = next(item for item in changed["labels"] if item["label"] == "uzbekistan")
         label["sole_blocker_events"] = 5
         with self.assertRaisesRegex(ValueError, "sole_blocker_events changed"):
             validate_wave8_uzbekistan_funnel(changed)
+
+        self.assertFalse(
+            any(
+                item.get("label") == "uzbekistan"
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed Uzbekistan lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                item.get("label") == "uzbekistan"
+                for item in self.funnel.get("greedy_batch", {}).get("ranking", [])
+            ),
+            "the completed Uzbekistan lane must not remain in the greedy batch",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in WAVE8_UZBEKISTAN_CONTRACT_IDS
+                or any(
+                    failure.get("label") == "uzbekistan"
+                    for failure in row.get("label_failures") or []
+                )
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Uzbekistan rows must not remain in the live funnel row data",
+        )
 
     def test_complete_exact_queue_is_hash_pinned_and_drift_fails_closed(self) -> None:
         exact_rows = {
@@ -534,11 +603,12 @@ class Wave8UzbekistanTests(unittest.TestCase):
             set(WAVE8_UZBEKISTAN_RELATED_HCED_DISPOSITIONS),
             {"hced-Charjui1740-1", "hced-Herat1507-1", "hced-Herat1528-1"},
         )
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_uzbekistan_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "existing_release_duplicate_dispositions": 0,
@@ -563,7 +633,7 @@ class Wave8UzbekistanTests(unittest.TestCase):
             validate_wave8_uzbekistan_integration_dispositions(
                 self.hced_rows,
                 future_iwbd,
-                self.release_events,
+                existing,
             )
 
         changed_hced = copy.deepcopy(self.hced_rows)
@@ -576,11 +646,11 @@ class Wave8UzbekistanTests(unittest.TestCase):
             validate_wave8_uzbekistan_integration_dispositions(
                 changed_hced,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             )
 
         future_release = [
-            *self.release_events,
+            *existing,
             {
                 "id": "future_petnak_duplicate",
                 "name": "Battle near Petnak",
@@ -594,6 +664,37 @@ class Wave8UzbekistanTests(unittest.TestCase):
                 self.iwbd_rows,
                 future_release,
             )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_UZBEKISTAN_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        promotion = self.release_metadata.get("promotion", {})
+        if "accepted_wave8_uzbekistan_hced_events" not in promotion:
+            self.assertEqual(integrated, [])
+            return
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            WAVE8_UZBEKISTAN_CONTRACT_IDS,
+        )
+        self.assertEqual(len(integrated), len(WAVE8_UZBEKISTAN_CONTRACT_IDS))
+        self.assertEqual(
+            len({str(event["id"]) for event in integrated}),
+            len(WAVE8_UZBEKISTAN_CONTRACT_IDS),
+        )
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in integrated)
+        )
+        for event in integrated:
+            Event.from_dict(event)
+        self.assertEqual(promotion["accepted_wave8_uzbekistan_hced_events"], 4)
+        self.assertEqual(
+            promotion["wave8_uzbekistan_candidate_ids"],
+            sorted(WAVE8_UZBEKISTAN_CONTRACT_IDS),
+        )
 
     def test_internal_relationships_and_every_row_disposition_are_explicit(self) -> None:
         self.assertEqual(

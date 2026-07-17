@@ -84,14 +84,45 @@ class Wave8CarnaticTests(unittest.TestCase):
                 "reviewed_hced_rows": 9,
             },
         )
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": (
+                        "94bd58ae8bd79cc4c94249054916c3b0e6b29969334ccaeb08606353193614b5"
+                    ),
+                    "events_touched": 3,
+                    "failure_cases": {"zero_time_valid_candidates": 3},
+                    "label": "arcot",
+                    "sole_blocker_events": 3,
+                },
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": (
+                        "a6a1227a8dc7c570158391963de8ae723e15a25d960ad55d0b4f8ffe6839bcf5"
+                    ),
+                    "events_touched": 2,
+                    "failure_cases": {"zero_time_valid_candidates": 2},
+                    "label": "nawab of arcot",
+                    "sole_blocker_events": 2,
+                },
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_carnatic_funnel(self.funnel),
+            lane.validate_wave8_carnatic_funnel(historical_funnel),
             {
                 "events_touched": 5,
                 "labels": 2,
                 "sole_blocker_events": 5,
                 "zero_time_valid_candidates": 5,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") in {"arcot", "nawab of arcot"}
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Carnatic lane must not remain unresolved",
         )
 
     def test_existing_registry_candidate_is_curated_without_arcot_aliases(self) -> None:

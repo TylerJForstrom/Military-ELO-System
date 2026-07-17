@@ -43,6 +43,7 @@ from military_elo.promotion.wave8_germany import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
+EVENT_ID_PREFIX = "hced_wave8_germany_"
 
 
 def _json(path: Path):
@@ -113,6 +114,7 @@ class Wave8GermanyTests(unittest.TestCase):
             event
             for event in self.release_events
             if event.get("hced_candidate_id") not in WAVE8_GERMANY_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
         ]
 
     def _events(self) -> list[dict]:
@@ -123,9 +125,73 @@ class Wave8GermanyTests(unittest.TestCase):
         )
 
     def test_exact_sixteen_row_inventory_counts_and_signature(self) -> None:
+        # The lane is fully integrated, so the live funnel no longer carries
+        # its rows. The pre-promotion sixteen-row scope is validated against
+        # the historical audit-moment projection (regenerated from the tree
+        # before the Seljuks lane promoted Dorylaeum and this lane reserved
+        # its cohort), then the live funnel is required to have released it.
+        historical_blockers = {
+            "hced-Cassano1158-1": ["germany"],
+            "hced-Cedynia972-1": ["germany"],
+            "hced-Cesis1919-1": ["germany"],
+            "hced-Cotrone982-1": ["germany"],
+            "hced-Dorylaeum1147-1": ["germany", "seljuks"],
+            "hced-Dyle891-1": ["danish vikings", "germany"],
+            "hced-La Gueule891-1": ["danish vikings", "germany"],
+            "hced-Legnano1176-1": ["germany", "lombard league"],
+            "hced-Pressburg907-1": ["germany"],
+            "hced-Psie Pole1109-1": ["germany"],
+            "hced-Raab1044-1": ["germany"],
+            "hced-Riade933-1": ["germany"],
+            "hced-Riga1709-1710-1": ["germany"],
+            "hced-SantAngelo998-1": ["anti pope john crescentius", "germany"],
+            "hced-Sidon1196-1": ["germany"],
+            "hced-Warmstadt1113-1": [
+                "germany",
+                "palatinate lower saxony north mark groitch thuringia",
+            ],
+        }
+        historical_sole_blocker_ids = {
+            "hced-Cesis1919-1",
+            "hced-Cotrone982-1",
+            "hced-Riga1709-1710-1",
+            "hced-Sidon1196-1",
+        }
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "9d3b28f89eae15baed2eb001f6bb25f58ac9d34ac8356928a25236eabb333c4f"
+                    ),
+                    "events_touched": 16,
+                    "failure_cases": {"one_wrong_interval_candidate": 16},
+                    "label": "germany",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 16,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "blocker_labels": blockers,
+                    "sole_blocker_label": (
+                        "germany"
+                        if candidate_id in historical_sole_blocker_ids
+                        else None
+                    ),
+                    "label_failures": [
+                        {
+                            "label": "germany",
+                            "failure_case": "one_wrong_interval_candidate",
+                        }
+                    ],
+                }
+                for candidate_id, blockers in historical_blockers.items()
+            ],
+        }
         scoped_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "germany" in row.get("blocker_labels", [])
         }
         exact_unresolved_germany_ids = set(scoped_rows)
@@ -136,7 +202,9 @@ class Wave8GermanyTests(unittest.TestCase):
         self.assertEqual(len(exact_unresolved_germany_ids), 16)
 
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "germany"
+            row
+            for row in historical_funnel["labels"]
+            if row.get("label") == "germany"
         ]
         self.assertEqual(len(label_rows), 1)
         label_row = label_rows[0]
@@ -167,6 +235,24 @@ class Wave8GermanyTests(unittest.TestCase):
                     for failure in row.get("label_failures", [])
                 )
             )
+
+        live_rows = self.funnel.get("row_label_data", [])
+        self.assertFalse(
+            any(
+                row.get("label") == "germany"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Germany lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any("germany" in row.get("blocker_labels", []) for row in live_rows),
+            "the completed Germany lane must not remain unresolved",
+        )
+        self.assertFalse(
+            WAVE8_GERMANY_RESERVED_IDS
+            & {str(row.get("candidate_id")) for row in live_rows},
+            "reserved Germany candidates must be absent from the live funnel",
+        )
         self.assertEqual(
             (
                 len(WAVE8_GERMANY_CONTRACT_IDS),
@@ -479,6 +565,21 @@ class Wave8GermanyTests(unittest.TestCase):
             },
             {"clio_ru_moskva_rurik_dyn_1547_93deb0e2"},
         )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_GERMANY_RESERVED_IDS
+        ]
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in events},
+            WAVE8_GERMANY_CONTRACT_IDS,
+        )
+        self.assertEqual(len(events), 13)
+        self.assertEqual(len({event["id"] for event in events}), 13)
+        for event in events:
+            self.assertTrue(str(event["id"]).startswith(EVENT_ID_PREFIX))
 
     def test_location_contract_withholds_only_three_points(self) -> None:
         expected = {"hced-Dyle891-1", "hced-Raab1044-1", "hced-Riade933-1"}

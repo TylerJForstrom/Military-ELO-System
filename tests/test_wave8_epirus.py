@@ -83,11 +83,17 @@ class Wave8EpirusTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.hced_rows = _load_jsonl(ROOT / "data/review/hced-candidates.jsonl")
         cls.iwbd_rows = _load_jsonl(ROOT / "data/review/iwbd-candidates.jsonl")
+        cls.funnel = json.loads(
+            (ROOT / "build/hced-unresolved-label-funnel.json").read_text(encoding="utf-8")
+        )
         cls.release_entities = {
             str(entity["id"]): entity
             for entity in json.loads((ROOT / "data/release/entities.json").read_text(encoding="utf-8"))
         }
         cls.release_events = json.loads((ROOT / "data/release/events.json").read_text(encoding="utf-8"))
+        cls.release_metadata = json.loads(
+            (ROOT / "data/release/metadata.json").read_text(encoding="utf-8")
+        )
         cls.lane_rows = [
             row
             for row in cls.hced_rows
@@ -95,11 +101,28 @@ class Wave8EpirusTests(unittest.TestCase):
         ]
 
     def _installed(self) -> tuple[dict, dict, list]:
-        entities = copy.deepcopy(self.release_entities)
+        lane_entity_ids = {str(entity["id"]) for entity in WAVE8_EPIRUS_ENTITIES}
+        entities = {
+            entity_id: copy.deepcopy(entity)
+            for entity_id, entity in self.release_entities.items()
+            if entity_id not in lane_entity_ids
+        }
         sources: dict[str, dict] = {}
         install_wave8_epirus_entities(entities)
         install_wave8_epirus_sources(sources)
-        return entities, sources, copy.deepcopy(self.release_events)
+        existing = [
+            copy.deepcopy(event)
+            for event in self.release_events
+            if event.get("hced_candidate_id") not in WAVE8_EPIRUS_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        return entities, sources, existing
+
+    def _is_integrated(self) -> bool:
+        return (
+            "accepted_wave8_epirus_hced_events"
+            in self.release_metadata.get("promotion", {})
+        )
 
     def _emit(self) -> tuple[dict, dict, list]:
         entities, sources, existing = self._installed()
@@ -378,11 +401,12 @@ class Wave8EpirusTests(unittest.TestCase):
         self.assertEqual(WAVE8_EPIRUS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS, {})
         self.assertEqual(WAVE8_EPIRUS_INTEGRATION_DISPOSITIONS, {})
         self.assertEqual(len(WAVE8_EPIRUS_IWBD_ZERO_OVERLAP_AUDIT), 8)
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_epirus_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "cross_lane_hced_dispositions": 0,
@@ -414,7 +438,7 @@ class Wave8EpirusTests(unittest.TestCase):
             validate_wave8_epirus_integration_dispositions(self.hced_rows, iwbd_twin)
 
         release_twin = [
-            *self.release_events,
+            *existing,
             {"id": "future-thessalonica-twin", "name": "Thessalonica", "year": 1224},
         ]
         with self.assertRaisesRegex(ValueError, "existing-release twin"):
@@ -423,6 +447,52 @@ class Wave8EpirusTests(unittest.TestCase):
                 self.iwbd_rows,
                 release_twin,
             )
+
+    def test_completed_lane_is_resolved_out_of_the_live_funnel(self) -> None:
+        self.assertFalse(
+            any(
+                row.get("label") == "epirus"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Epirus lane must not remain unresolved",
+        )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_EPIRUS_EXPECTED_CANDIDATE_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        if not self._is_integrated():
+            self.assertFalse(integrated)
+            return
+
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            set(WAVE8_EPIRUS_CONTRACT_IDS),
+        )
+        self.assertEqual(len({event["id"] for event in integrated}), 6)
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in integrated)
+        )
+        release_candidate_ids = {
+            str(event.get("hced_candidate_id")) for event in self.release_events
+        }
+        self.assertFalse(
+            WAVE8_EPIRUS_HOLD_IDS & release_candidate_ids,
+            "terminal Epirus holds must never reach the release",
+        )
+        self.assertLessEqual(
+            {str(entity["id"]) for entity in WAVE8_EPIRUS_ENTITIES},
+            set(self.release_entities),
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_epirus_hced_events"], 6)
+        self.assertEqual(
+            promotion["wave8_epirus_candidate_ids"],
+            sorted(WAVE8_EPIRUS_CONTRACT_IDS),
+        )
 
     def test_raw_row_tamper_entity_window_and_duplicate_promotion_fail_closed(self) -> None:
         tampered = copy.deepcopy(self.hced_rows)

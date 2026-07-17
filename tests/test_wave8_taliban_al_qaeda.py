@@ -285,20 +285,55 @@ class Wave8TalibanAlQaedaTests(unittest.TestCase):
         self.assertEqual(WAVE8_TALIBAN_AL_QAEDA_OUTCOME_OVERRIDES, {})
 
     def test_funnel_record_and_validator_are_exact(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "label": "taliban al qaeda",
+                    "event_candidate_id_sha256": (
+                        "d645a53ebb045ff8525088633cb44e88561e27deea3092c6ed4fcd283bdabb09"
+                    ),
+                    "events_touched": 4,
+                    "unresolved_side_attempts": 4,
+                    "sole_blocker_events": 4,
+                    "candidate_ids": [],
+                    "time_valid_candidate_ids": [],
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "centuries": {"CE_21": 4},
+                    "components_touched": 1,
+                    "components_bridged": 0,
+                    "rated_counterpart_entities": 1,
+                }
+            ]
+        }
         self.assertEqual(
-            validate_wave8_taliban_al_qaeda_funnel(self.funnel),
+            validate_wave8_taliban_al_qaeda_funnel(historical_funnel),
             {"exact_label_rows": 4, "shared_label_rows": 0, "sole_blocker_rows": 4},
         )
         record = next(
-            item for item in self.funnel["labels"] if item.get("label") == "taliban al qaeda"
+            item
+            for item in historical_funnel["labels"]
+            if item.get("label") == "taliban al qaeda"
         )
         self.assertEqual(record, WAVE8_TALIBAN_AL_QAEDA_FUNNEL_AUDIT)
-        tampered = copy.deepcopy(self.funnel)
+        tampered = copy.deepcopy(historical_funnel)
         next(item for item in tampered["labels"] if item.get("label") == "taliban al qaeda")[
             "events_touched"
         ] = 5
         with self.assertRaisesRegex(ValueError, "funnel field"):
             validate_wave8_taliban_al_qaeda_funnel(tampered)
+        self.assertFalse(
+            any(
+                row.get("label") == "taliban al qaeda"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Taliban al Qaeda lane must not remain unresolved",
+        )
 
     def test_queue_validator_and_raw_drift_fail_closed(self) -> None:
         self.assertEqual(

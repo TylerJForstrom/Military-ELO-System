@@ -160,6 +160,7 @@ class Wave8MadagascarTests(unittest.TestCase):
             event
             for event in cls.release_events
             if event.get("hced_candidate_id") not in WAVE8_MADAGASCAR_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
         ]
         cls.hced_by_id = {
             str(row["candidate_id"]): row for row in cls.hced_rows
@@ -193,9 +194,65 @@ class Wave8MadagascarTests(unittest.TestCase):
         return entities, sources, events
 
     def test_funnel_and_queue_lock_complete_five_row_exact_cohort(self) -> None:
+        # Historical pre-promotion projection of the unresolved-label funnel.
+        # The five-row Madagascar cohort is fully promoted into the release
+        # ledger, so the live build/ funnel correctly no longer carries it; the
+        # locked pre-promotion accounting is preserved inline instead.
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "events_touched": 5,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 5,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 0,
+                    },
+                    "label": "madagascar",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 5,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["madagascar"],
+                    "candidate_id": "hced-Andriba1895-1",
+                    "other_blockers": [],
+                    "sole_blocker_label": "madagascar",
+                },
+                {
+                    "blocker_labels": ["madagascar"],
+                    "candidate_id": "hced-Tamatave1845-1",
+                    "other_blockers": [
+                        "other_identity_blocker:outside_continuity_policy"
+                    ],
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["madagascar"],
+                    "candidate_id": "hced-Tamatave1883-1",
+                    "other_blockers": [],
+                    "sole_blocker_label": "madagascar",
+                },
+                {
+                    "blocker_labels": ["madagascar"],
+                    "candidate_id": "hced-Tananarive1895-1",
+                    "other_blockers": [],
+                    "sole_blocker_label": "madagascar",
+                },
+                {
+                    "blocker_labels": ["madagascar"],
+                    "candidate_id": "hced-Tsarasoatra1895-1",
+                    "other_blockers": [],
+                    "sole_blocker_label": "madagascar",
+                },
+            ],
+        }
         scoped_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "madagascar" in row.get("blocker_labels", [])
         }
         exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
@@ -210,7 +267,9 @@ class Wave8MadagascarTests(unittest.TestCase):
             FUNNEL_CANDIDATE_ID_SHA256,
         )
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "madagascar"
+            row
+            for row in historical_funnel["labels"]
+            if row.get("label") == "madagascar"
         ]
         self.assertEqual(len(label_rows), 1)
         label_row = label_rows[0]
@@ -236,6 +295,21 @@ class Wave8MadagascarTests(unittest.TestCase):
         self.assertIn(
             "other_identity_blocker:outside_continuity_policy",
             scoped_rows["hced-Tamatave1845-1"]["other_blockers"],
+        )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "madagascar"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Madagascar lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in WAVE8_MADAGASCAR_EXPECTED_CANDIDATE_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Madagascar candidates must be absent from the live funnel",
         )
 
     def test_raw_hashes_contract_ids_and_signature_are_pinned(self) -> None:

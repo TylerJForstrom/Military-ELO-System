@@ -185,6 +185,38 @@ class Wave8ModocTests(unittest.TestCase):
             existing,
         )
 
+    def _historical_funnel(self):
+        # Pre-promotion projection of the retired live funnel record: the
+        # exact "modoc indians" label row as it stood before the lane's
+        # three contracts were integrated and the label was resolved.
+        return {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "centuries": {"CE_19": 4},
+                    "components_bridged": 0,
+                    "components_touched": 1,
+                    "event_candidate_id_sha256": (
+                        "c1c5d7e80c707e5d8964e5f77ad6073af5"
+                        "4215dddefda04e5ebd9bda5fce4309"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "label": "modoc indians",
+                    "rated_counterpart_entities": 1,
+                    "sole_blocker_events": 4,
+                    "time_valid_candidate_ids": [],
+                    "unresolved_side_attempts": 4,
+                }
+            ]
+        }
+
     def test_exact_inventory_raw_hashes_and_semantics_are_pinned(self):
         exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
         self.assertEqual(exact_ids, set(EXPECTED_RAW_ROWS))
@@ -220,7 +252,7 @@ class Wave8ModocTests(unittest.TestCase):
         digest = hashlib.sha256(payload.encode("utf-8")).hexdigest()
         self.assertEqual(digest, lane.WAVE8_MODOC_EXACT_CANDIDATE_ID_SHA256)
         self.assertEqual(
-            lane.validate_wave8_modoc_funnel(self.funnel),
+            lane.validate_wave8_modoc_funnel(self._historical_funnel()),
             {
                 "events_touched": 4,
                 "release_lane_overlap": 0,
@@ -236,6 +268,13 @@ class Wave8ModocTests(unittest.TestCase):
                 "resolver_guard_or_tier_conflict": 0,
                 "zero_time_valid_candidates": 4,
             },
+        )
+        self.assertFalse(
+            any(
+                normalize_label(row.get("label")) == "modoc indians"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Modoc lane must not remain unresolved",
         )
 
     def test_queue_validator_pins_complete_war_and_spelling_inventory(self):
@@ -565,7 +604,7 @@ class Wave8ModocTests(unittest.TestCase):
             (set(), set(lane.WAVE8_MODOC_CONTRACT_IDS)),
         )
         result = lane.validate_wave8_modoc_funnel(
-            self.funnel,
+            self._historical_funnel(),
             self.release_events,
         )
         self.assertEqual(result["release_lane_overlap"], len(actual_overlap))

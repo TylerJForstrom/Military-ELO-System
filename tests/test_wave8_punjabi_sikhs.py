@@ -166,9 +166,37 @@ class Wave8PunjabiSikhsTests(unittest.TestCase):
                 expected_hash,
             )
 
+        self.assertEqual(
+            lane.WAVE8_PUNJABI_SIKHS_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+            EXACT_CANDIDATE_ID_SHA256,
+        )
+        historical_funnel = {
+            "labels": [
+                {
+                    "centuries": {"CE_17": 1, "CE_18": 3},
+                    "event_candidate_id_sha256": (
+                        lane.WAVE8_PUNJABI_SIKHS_FUNNEL_EVENT_CANDIDATE_ID_SHA256
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {"zero_time_valid_candidates": 4},
+                    "label": "punjabi sikhs",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 4,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["punjabi sikhs"],
+                    "candidate_id": candidate_id,
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "punjabi sikhs",
+                }
+                for candidate_id in sorted(EXPECTED_RAW_HASHES)
+            ],
+        }
         labels = [
             item
-            for item in self.funnel["labels"]
+            for item in historical_funnel["labels"]
             if item.get("label") == "punjabi sikhs"
         ]
         self.assertEqual(len(labels), 1)
@@ -181,13 +209,36 @@ class Wave8PunjabiSikhsTests(unittest.TestCase):
         self.assertEqual(label["centuries"], {"CE_17": 1, "CE_18": 3})
         funnel_rows = {
             str(item["candidate_id"]): item
-            for item in self.funnel["row_label_data"]
+            for item in historical_funnel["row_label_data"]
             if "punjabi sikhs" in item.get("blocker_labels", [])
         }
         self.assertEqual(set(funnel_rows), set(EXPECTED_RAW_HASHES))
         for item in funnel_rows.values():
             self.assertEqual(item["sole_blocker_label"], "punjabi sikhs")
             self.assertTrue(item["greedy_eligible"])
+
+        self.assertFalse(
+            any(
+                item.get("label") == "punjabi sikhs"
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed Punjabi Sikhs lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                "punjabi sikhs" in item.get("blocker_labels", [])
+                for item in self.funnel.get("row_label_data", [])
+            ),
+            "no live funnel row may still cite the resolved 'punjabi sikhs' blocker",
+        )
+        live_row_candidate_ids = {
+            str(item.get("candidate_id"))
+            for item in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            set(lane.WAVE8_PUNJABI_SIKHS_CONTRACT_IDS) & live_row_candidate_ids,
+            "promoted Punjabi Sikhs candidates must be absent from the live funnel",
+        )
 
     def test_adjacent_label_and_company_era_boundaries_are_complete(self) -> None:
         for label, pin in lane.WAVE8_PUNJABI_SIKHS_ADJACENT_LABEL_INVENTORY_PINS.items():

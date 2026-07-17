@@ -124,6 +124,36 @@ EXPECTED_EVENTS = {
 }
 
 
+HISTORICAL_FUNNEL_RECORD = {
+    "candidate_ids": [],
+    "centuries": {"CE_18": 1, "CE_19": 3},
+    "components_bridged": 0,
+    "components_touched": 1,
+    "event_candidate_id_sha256": (
+        "cf1b11ff4f4dc2664e253719a5d5c2b5885b4148a1a1d79a340bddcc7c86d432"
+    ),
+    "events_touched": 4,
+    "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 4,
+    },
+    "label": "yaqui",
+    "rated_counterpart_entities": 2,
+    "sole_blocker_events": 4,
+    "time_valid_candidate_ids": [],
+    "unresolved_side_attempts": 4,
+}
+
+
+def _historical_funnel():
+    """Pre-promotion projection of the lane's since-resolved funnel record."""
+
+    return {"labels": [copy.deepcopy(HISTORICAL_FUNNEL_RECORD)]}
+
+
 def _json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -249,12 +279,23 @@ class Wave8YaquiTests(unittest.TestCase):
             lane.WAVE8_YAQUI_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
         )
         self.assertEqual(
-            lane.validate_wave8_yaqui_funnel(self.funnel),
+            digest,
+            HISTORICAL_FUNNEL_RECORD["event_candidate_id_sha256"],
+        )
+        self.assertEqual(
+            lane.validate_wave8_yaqui_funnel(_historical_funnel()),
             {
                 "events_touched": 4,
                 "release_lane_overlap": 0,
                 "sole_blocker_events": 4,
             },
+        )
+        self.assertFalse(
+            any(
+                record.get("label") == "yaqui"
+                for record in self.funnel.get("labels", [])
+            ),
+            "the completed Yaqui lane must not remain unresolved",
         )
         self.assertEqual(
             lane.validate_wave8_yaqui_queue_contracts(self.hced_rows),
@@ -567,7 +608,7 @@ class Wave8YaquiTests(unittest.TestCase):
         )
         self.assertEqual(
             lane.validate_wave8_yaqui_funnel(
-                self.funnel,
+                _historical_funnel(),
                 self.release_events,
             )["release_lane_overlap"],
             len(actual_overlap),

@@ -272,8 +272,28 @@ class Wave8HospitallersTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(combined, lane.WAVE8_HOSPITALLERS_EXACT_CANDIDATE_ID_SHA256)
 
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "22745e39bf11454907bd3597ad27614fb314feb919e26e24eb6b8f2f4898f348"
+                    ),
+                    "events_touched": 4,
+                    "label": "knights hospitallier",
+                    "sole_blocker_events": 4,
+                },
+                {
+                    "event_candidate_id_sha256": (
+                        "72e41e7b5b66a93b541564d21574c3b2eaea5e0405f3dbda5d429c1f1a32bb35"
+                    ),
+                    "events_touched": 4,
+                    "label": "knights of st john",
+                    "sole_blocker_events": 4,
+                },
+            ]
+        }
         funnel_by_label = {
-            str(record["label"]): record for record in self.funnel["labels"]
+            str(record["label"]): record for record in historical_funnel["labels"]
         }
         for raw_label, normalized in (
             ("Knights Hospitallier", "knights hospitallier"),
@@ -296,6 +316,24 @@ class Wave8HospitallersTests(unittest.TestCase):
                 digest,
                 lane.WAVE8_HOSPITALLERS_EXACT_LABEL_FUNNEL_DIGESTS[normalized],
             )
+
+        for normalized in ("knights hospitallier", "knights of st john"):
+            self.assertFalse(
+                any(
+                    row.get("label") == normalized
+                    for row in self.funnel.get("labels", [])
+                ),
+                "the completed Hospitallers lane must not remain unresolved",
+            )
+        live_candidate_ids = {
+            str(candidate_id)
+            for record in self.funnel.get("labels", [])
+            for candidate_id in record.get("candidate_ids", [])
+        }
+        self.assertFalse(
+            lane.WAVE8_HOSPITALLERS_RESERVED_IDS & live_candidate_ids,
+            "promoted Hospitaller candidate ids must be absent from the live funnel",
+        )
 
     def test_raw_rows_and_hashes_are_exact_and_fail_closed(self):
         rows = {

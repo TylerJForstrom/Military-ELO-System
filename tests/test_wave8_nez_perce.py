@@ -290,7 +290,19 @@ class Wave8NezPerceTests(unittest.TestCase):
         self.assertEqual(wave8_nez_perce_cohort_counts(), {"nez_perce_war_1877": 5})
 
     def test_funnel_and_queue_own_all_and_only_five_exact_rows(self) -> None:
-        funnel_rows = _sole_blocker_rows(self.funnel, "nez perce indians")
+        historical_funnel = {
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "greedy_eligible": True,
+                    "other_blockers": [],
+                    "resolved_counterpart_entity_ids": [UNITED_STATES_ID],
+                    "sole_blocker_label": "nez perce indians",
+                }
+                for candidate_id in sorted(EXPECTED_RAW_LABELS)
+            ]
+        }
+        funnel_rows = _sole_blocker_rows(historical_funnel, "nez perce indians")
         self.assertEqual(len(funnel_rows), 5)
         self.assertEqual(
             {str(row["candidate_id"]) for row in funnel_rows},
@@ -300,6 +312,18 @@ class Wave8NezPerceTests(unittest.TestCase):
         self.assertTrue(all(row["other_blockers"] == [] for row in funnel_rows))
         self.assertTrue(
             all(row["resolved_counterpart_entity_ids"] == [UNITED_STATES_ID] for row in funnel_rows)
+        )
+        self.assertFalse(
+            _sole_blocker_rows(self.funnel, "nez perce indians"),
+            "the completed Nez Perce lane must not remain unresolved",
+        )
+        live_row_candidate_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            live_row_candidate_ids & set(WAVE8_NEZ_PERCE_EXPECTED_CANDIDATE_IDS),
+            "promoted Nez Perce candidate ids must be absent from the live funnel",
         )
 
         exact_rows = {

@@ -680,7 +680,26 @@ class Wave8MuridsTests(unittest.TestCase):
             lane.install_wave8_murids_sources(colliding)
 
     def test_funnel_drift_fails_but_post_integration_absence_is_allowed(self) -> None:
-        changed = copy.deepcopy(self.funnel)
+        historical_funnel = {
+            "labels": [copy.deepcopy(lane.WAVE8_MURIDS_FUNNEL_AUDIT)],
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [{"label": "murids"}],
+                    "sole_blocker_label": "murids",
+                    "blocker_labels": ["murids"],
+                    "other_blockers": [],
+                    "resolved_counterpart_entity_ids": [RUSSIAN_EMPIRE],
+                }
+                for candidate_id in sorted(EXPECTED_RAW_ROWS)
+            ],
+        }
+        self.assertEqual(
+            lane.validate_wave8_murids_funnel(historical_funnel, []),
+            {"events_touched": 4, "sole_blocker_events": 4},
+        )
+
+        changed = copy.deepcopy(historical_funnel)
         record = next(
             item for item in changed["labels"] if item.get("label") == "murids"
         )
@@ -688,13 +707,28 @@ class Wave8MuridsTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "funnel field changed"):
             lane.validate_wave8_murids_funnel(changed, [])
 
-        integrated = copy.deepcopy(self.funnel)
+        integrated = copy.deepcopy(historical_funnel)
         integrated["labels"] = [
             item for item in integrated["labels"] if item.get("label") != "murids"
         ]
         self.assertEqual(
             lane.validate_wave8_murids_funnel(integrated, self._events()),
             {"events_touched": 4, "sole_blocker_events": 4},
+        )
+
+        self.assertFalse(
+            any(
+                item.get("label") == "murids"
+                for item in self.funnel.get("labels", [])
+            ),
+            "the completed Murids lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in lane.WAVE8_MURIDS_CONTRACT_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Murids candidate ids must be absent from the live funnel",
         )
 
     def test_promoter_requires_all_three_existing_identities(self) -> None:

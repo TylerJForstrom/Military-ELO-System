@@ -84,13 +84,34 @@ class Wave8KievanRusTests(unittest.TestCase):
                 "reviewed_hced_rows": 6,
             },
         )
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": (
+                        "9307ef14d4691d33ba87567bfb225b97de78ffc65481f3b93f19a096764fc72f"
+                    ),
+                    "events_touched": 6,
+                    "failure_cases": {"zero_time_valid_candidates": 6},
+                    "label": "kiev",
+                    "sole_blocker_events": 3,
+                }
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_kievan_rus_funnel(self.funnel),
+            lane.validate_wave8_kievan_rus_funnel(historical_funnel),
             {
                 "events_touched": 6,
                 "sole_blocker_events": 3,
                 "zero_time_valid_candidates": 6,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "kiev"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Kievan Rus lane must not remain unresolved",
         )
 
     def test_existing_registry_candidate_is_curated_without_kiev_alias(self) -> None:

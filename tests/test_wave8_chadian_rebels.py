@@ -336,17 +336,100 @@ class Wave8ChadianRebelsTests(unittest.TestCase):
             lane.validate_wave8_chadian_rebels_queue_contracts(adjacent)
 
     def test_funnel_audit_pins_all_three_labels(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "label": "chadian rebels",
+                    "event_candidate_id_sha256": (
+                        "862b50fc9666c7c233f39c0e4359b9944843656e711c3f361853794860fac209"
+                    ),
+                    "events_touched": 6,
+                    "unresolved_side_attempts": 6,
+                    "sole_blocker_events": 3,
+                    "candidate_ids": [],
+                    "time_valid_candidate_ids": [],
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 6,
+                    },
+                    "centuries": {"CE_20": 6},
+                    "components_touched": 0,
+                    "components_bridged": 0,
+                    "rated_counterpart_entities": 0,
+                },
+                {
+                    "label": "northern chadian rebels",
+                    "event_candidate_id_sha256": (
+                        "afdd073b02c0367b00beeb7a152a5cb4081dfd83c045b92276077c57862590c7"
+                    ),
+                    "events_touched": 1,
+                    "unresolved_side_attempts": 1,
+                    "sole_blocker_events": 0,
+                    "candidate_ids": [],
+                    "time_valid_candidate_ids": [],
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 1,
+                    },
+                    "centuries": {"CE_20": 1},
+                    "components_touched": 0,
+                    "components_bridged": 0,
+                    "rated_counterpart_entities": 0,
+                },
+                {
+                    "label": "libya north chadian rebels",
+                    "event_candidate_id_sha256": (
+                        "6f92b07c0583bd44423442117efc4d45c148c5e5d4ec05fe8a6d1ab80d0af1c5"
+                    ),
+                    "events_touched": 1,
+                    "unresolved_side_attempts": 1,
+                    "sole_blocker_events": 1,
+                    "candidate_ids": [],
+                    "time_valid_candidate_ids": [],
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 1,
+                    },
+                    "centuries": {"CE_20": 1},
+                    "components_touched": 0,
+                    "components_bridged": 0,
+                    "rated_counterpart_entities": 0,
+                },
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_chadian_rebels_funnel(self.funnel),
+            lane.validate_wave8_chadian_rebels_funnel(historical_funnel),
             {"funnel_labels": 3, "rows_touched": 8, "sole_blocker_rows": 4},
         )
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         record = next(
             item for item in changed["labels"] if item["label"] == "chadian rebels"
         )
         record["sole_blocker_events"] += 1
         with self.assertRaisesRegex(ValueError, "funnel field changed"):
             lane.validate_wave8_chadian_rebels_funnel(changed)
+        for label in (
+            "chadian rebels",
+            "northern chadian rebels",
+            "libya north chadian rebels",
+        ):
+            self.assertFalse(
+                any(
+                    row.get("label") == label
+                    for row in self.funnel.get("labels", [])
+                ),
+                f"the completed Chadian rebels lane label {label!r} "
+                "must not remain unresolved",
+            )
 
     def test_dispositions_are_complete_disjoint_and_conservative(self) -> None:
         self.assertEqual(set(lane.WAVE8_CHADIAN_REBELS_CONTRACTS), set(EXPECTED_PROMOTIONS))

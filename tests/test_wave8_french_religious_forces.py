@@ -390,6 +390,134 @@ EXPECTED_PROMOTIONS = {
 }
 
 
+# Historical pre-promotion funnel projection.  The live
+# build/hced-unresolved-label-funnel.json no longer carries the two exact
+# labels or the promoted candidate rows once the lane is published, so the
+# pre-promotion accounting is validated against this exact reconstruction.
+HISTORICAL_FUNNEL_LABEL_ROWS = {
+    "french catholics": (
+        "hced-Arnay-le-Duc1570-1",
+        "hced-Auneau1587-1",
+        "hced-Caudebec1592-1",
+        "hced-Coutras1587-1",
+        "hced-Dormans1575-1",
+        "hced-Dreux1562-1",
+        "hced-Jarnac1569-1",
+        "hced-La Roche-LAbeille1569-1",
+        "hced-La Rochelle1572-1",
+        "hced-Montauban1621-1",
+        "hced-Orleans1563-1",
+        "hced-Orthez1569-1",
+        "hced-Poitiers1569-1",
+        "hced-Rouen1562-1",
+        "hced-St Denis, France1567-1",
+        "hced-Vergt1562-1",
+    ),
+    "french protestants": (
+        "hced-Arnay-le-Duc1570-1",
+        "hced-Caudebec1592-1",
+        "hced-Coutras1587-1",
+        "hced-La Rochelle1572-1",
+        "hced-La Rochelle1625-1",
+        "hced-Moncontour1569-1",
+        "hced-Montauban1621-1",
+        "hced-Orleans1563-1",
+        "hced-Orthez1569-1",
+        "hced-Paris1590-1",
+        "hced-Poitiers1569-1",
+        "hced-Rouen1591-1",
+        "hced-St Denis, France1567-1",
+        "hced-St Jean dAngely1621-1",
+        "hced-Vergt1562-1",
+    ),
+}
+HISTORICAL_FUNNEL_SOLE_BLOCKERS = {
+    "hced-La Rochelle1625-1": "french protestants",
+    "hced-Moncontour1569-1": "french protestants",
+    "hced-Rouen1562-1": "french catholics",
+    "hced-St Jean dAngely1621-1": "french protestants",
+}
+HISTORICAL_FUNNEL_LABEL_RECORDS = [
+    {
+        "candidate_ids": [],
+        "centuries": {"CE_16": 15, "CE_17": 1},
+        "components_bridged": 0,
+        "components_touched": 1,
+        "event_candidate_id_sha256": (
+            "8a2ac2c2783e2e8c11c538a233853f6114fbd0f413cc0958220e91260620f0bd"
+        ),
+        "events_touched": 16,
+        "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 16,
+        },
+        "label": "french catholics",
+        "rated_counterpart_entities": 1,
+        "sole_blocker_events": 1,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 16,
+    },
+    {
+        "candidate_ids": [],
+        "centuries": {"CE_15": 1, "CE_16": 11, "CE_17": 3},
+        "components_bridged": 0,
+        "components_touched": 1,
+        "event_candidate_id_sha256": (
+            "04cbc352e3049810b7f5781f5871d91ceaf5b2178502b486691119e15b216608"
+        ),
+        "events_touched": 15,
+        "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 15,
+        },
+        "label": "french protestants",
+        "rated_counterpart_entities": 2,
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 15,
+    },
+]
+
+
+def _historical_funnel():
+    labels_by_candidate = {}
+    for label, candidate_ids in HISTORICAL_FUNNEL_LABEL_ROWS.items():
+        for candidate_id in candidate_ids:
+            labels_by_candidate.setdefault(candidate_id, []).append(label)
+    row_label_data = []
+    for candidate_id in sorted(labels_by_candidate):
+        row = {
+            "candidate_id": candidate_id,
+            "greedy_eligible": candidate_id != "hced-Paris1590-1",
+            "label_failures": [
+                {
+                    "candidate_ids": [],
+                    "failure_case": "zero_time_valid_candidates",
+                    "label": label,
+                    "time_valid_candidate_ids": [],
+                }
+                for label in labels_by_candidate[candidate_id]
+            ],
+        }
+        if candidate_id == "hced-Paris1590-1":
+            row["other_blockers"] = ["duplicate_of_existing_event"]
+        sole_label = HISTORICAL_FUNNEL_SOLE_BLOCKERS.get(candidate_id)
+        if sole_label is not None:
+            row["sole_blocker_label"] = sole_label
+        row_label_data.append(row)
+    return {
+        "greedy_batch": {"ranking": []},
+        "labels": copy.deepcopy(HISTORICAL_FUNNEL_LABEL_RECORDS),
+        "row_label_data": row_label_data,
+    }
+
+
 def _json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -569,8 +697,9 @@ class Wave8FrenchReligiousForcesTests(unittest.TestCase):
             self.assertEqual(review["owner_module"], lane.__name__)
 
     def test_funnel_pins_both_labels_shared_rows_and_sole_blockers(self):
+        historical_funnel = _historical_funnel()
         self.assertEqual(
-            lane.validate_wave8_french_religious_forces_funnel(self.funnel),
+            lane.validate_wave8_french_religious_forces_funnel(historical_funnel),
             {
                 "french_catholic_funnel_rows": 16,
                 "french_protestant_funnel_rows": 15,
@@ -592,11 +721,28 @@ class Wave8FrenchReligiousForcesTests(unittest.TestCase):
         )
         self.assertEqual(audit["non_greedy_candidate_ids"], ["hced-Paris1590-1"])
         self.assertNotIn("hced-Vassy1562-1", {
-            row["candidate_id"] for row in self.funnel["row_label_data"]
+            row["candidate_id"] for row in historical_funnel["row_label_data"]
         })
         for record in audit["labels"].values():
             self.assertEqual(record["candidate_ids"], [])
             self.assertEqual(record["time_valid_candidate_ids"], [])
+        self.assertFalse(
+            any(
+                normalize_label(record.get("label"))
+                in {"french catholics", "french protestants"}
+                for record in self.funnel.get("labels", [])
+            ),
+            "the completed French religious forces lane must not remain unresolved",
+        )
+        live_row_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            lane.WAVE8_FRENCH_RELIGIOUS_FORCES_CONTRACT_IDS & live_row_ids,
+            "promoted French religious forces candidates must be absent "
+            "from the live funnel",
+        )
 
     def test_five_holds_are_unknown_never_draw_and_vassy_is_not_rateable(self):
         expected_holds = {
@@ -847,7 +993,9 @@ class Wave8FrenchReligiousForcesTests(unittest.TestCase):
             16,
         )
         self.assertEqual(
-            lane.validate_wave8_french_religious_forces_funnel(self.funnel, full)["release_lane_overlap"],
+            lane.validate_wave8_french_religious_forces_funnel(
+                _historical_funnel(), full
+            )["release_lane_overlap"],
             16,
         )
         with self.assertRaisesRegex(ValueError, "release overlap is partial"):

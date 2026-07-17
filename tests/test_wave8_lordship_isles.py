@@ -228,9 +228,59 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             WAVE8_LORDSHIP_ISLES_ROW_DISPOSITIONS,
         )
 
-    def test_current_funnel_pins_five_rows_four_sole_and_one_shared(self) -> None:
+    def test_historical_funnel_pins_five_rows_four_sole_and_one_shared(self) -> None:
+        sole_ids = {
+            "hced-Bloody Bay1480-1",
+            "hced-Harlaw1411-1",
+            "hced-Inverlochy1431-1",
+            "hced-Lochaber1429-1",
+        }
+        historical_funnel = {
+            "labels": [
+                {
+                    "label": EXACT_LABEL,
+                    "event_candidate_id_sha256": WAVE8_LORDSHIP_ISLES_FUNNEL_AUDIT[
+                        "event_candidate_id_sha256"
+                    ],
+                    "events_touched": 5,
+                    "sole_blocker_events": 4,
+                    "failure_cases": {"zero_time_valid_candidates": 5},
+                }
+            ],
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "label": EXACT_LABEL,
+                        "events_touched": 5,
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": (
+                            WAVE8_LORDSHIP_ISLES_FUNNEL_AUDIT[
+                                "newly_unblocked_candidate_id_sha256"
+                            ]
+                        ),
+                    }
+                ]
+            },
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "label": EXACT_LABEL,
+                            "failure_case": "zero_time_valid_candidates",
+                        }
+                    ],
+                    "sole_blocker_label": (
+                        EXACT_LABEL if candidate_id in sole_ids else None
+                    ),
+                }
+                for candidate_id in sorted(
+                    WAVE8_LORDSHIP_ISLES_EXPECTED_CANDIDATE_IDS
+                )
+            ],
+        }
         self.assertEqual(
-            validate_wave8_lordship_isles_funnel(self.funnel),
+            validate_wave8_lordship_isles_funnel(historical_funnel),
             {
                 "exact_label_rows": 5,
                 "shared_label_rows": 1,
@@ -241,12 +291,6 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             f"{candidate_id}\n"
             for candidate_id in sorted(WAVE8_LORDSHIP_ISLES_EXPECTED_CANDIDATE_IDS)
         )
-        sole_ids = {
-            "hced-Bloody Bay1480-1",
-            "hced-Harlaw1411-1",
-            "hced-Inverlochy1431-1",
-            "hced-Lochaber1429-1",
-        }
         sole_payload = "".join(
             f"{candidate_id}\n" for candidate_id in sorted(sole_ids)
         )
@@ -261,14 +305,14 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             ],
         )
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row for row in changed["labels"] if row["label"] == EXACT_LABEL
         )["events_touched"] = 6
         with self.assertRaisesRegex(ValueError, "funnel events_touched changed"):
             validate_wave8_lordship_isles_funnel(changed)
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row for row in changed["greedy_batch"]["ranking"]
             if row["label"] == EXACT_LABEL
@@ -276,7 +320,7 @@ class Wave8LordshipIslesTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "greedy audit changed"):
             validate_wave8_lordship_isles_funnel(changed)
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row
             for row in changed["row_label_data"]
@@ -285,7 +329,7 @@ class Wave8LordshipIslesTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "sole-blocker cohort changed"):
             validate_wave8_lordship_isles_funnel(changed)
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row
             for row in changed["row_label_data"]
@@ -293,6 +337,31 @@ class Wave8LordshipIslesTests(unittest.TestCase):
         )["sole_blocker_label"] = EXACT_LABEL
         with self.assertRaisesRegex(ValueError, "sole-blocker cohort changed"):
             validate_wave8_lordship_isles_funnel(changed)
+
+        self.assertFalse(
+            any(
+                row.get("label") == EXACT_LABEL
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Lordship of the Isles lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == EXACT_LABEL
+                for row in self.funnel.get("greedy_batch", {}).get("ranking", [])
+            ),
+            "the completed Lordship of the Isles lane must not remain in the "
+            "greedy ranking",
+        )
+        live_row_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            live_row_ids & WAVE8_LORDSHIP_ISLES_EXPECTED_CANDIDATE_IDS,
+            "resolved Lordship of the Isles candidates must be absent from the "
+            "live funnel row-label data",
+        )
 
     def test_complete_exact_inventory_hashes_and_one_exact_side_fail_closed(
         self,
@@ -853,11 +922,12 @@ class Wave8LordshipIslesTests(unittest.TestCase):
         )
 
     def test_related_and_all_duplicate_surfaces_fail_closed(self) -> None:
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_lordship_isles_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "cross_lane_hced_dispositions": 1,
@@ -877,7 +947,7 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             validate_wave8_lordship_isles_integration_dispositions(
                 changed,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             )
 
         future_hced = [
@@ -894,7 +964,7 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             validate_wave8_lordship_isles_integration_dispositions(
                 future_hced,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             )
 
         future_iwbd = [
@@ -910,11 +980,11 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             validate_wave8_lordship_isles_integration_dispositions(
                 self.hced_rows,
                 future_iwbd,
-                self.release_events,
+                existing,
             )
 
         future_release = [
-            *self.release_events,
+            *existing,
             {
                 "id": "future_strathfleet",
                 "name": "Unrelated display name",
@@ -931,7 +1001,7 @@ class Wave8LordshipIslesTests(unittest.TestCase):
             )
 
         ownership_collision = [
-            *self.release_events,
+            *existing,
             {
                 "id": "future_owned_candidate",
                 "name": "Unrelated",
@@ -945,6 +1015,36 @@ class Wave8LordshipIslesTests(unittest.TestCase):
                 self.iwbd_rows,
                 ownership_collision,
             )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        owned = {
+            str(event.get("hced_candidate_id")): event
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            in WAVE8_LORDSHIP_ISLES_RESERVED_IDS
+        }
+        prefixed = [
+            event
+            for event in self.release_events
+            if str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        self.assertFalse(
+            set(owned)
+            & (
+                WAVE8_LORDSHIP_ISLES_HOLD_IDS
+                | WAVE8_LORDSHIP_ISLES_TERMINAL_EXCLUSION_IDS
+            ),
+            "held or terminally excluded candidates must never reach the release",
+        )
+        if not owned and not prefixed:
+            return
+        self.assertEqual(set(owned), set(WAVE8_LORDSHIP_ISLES_CONTRACT_IDS))
+        self.assertEqual(
+            sorted(str(event["id"]) for event in prefixed),
+            sorted(str(event["id"]) for event in owned.values()),
+        )
+        for event in owned.values():
+            Event.from_dict(event)
 
     def test_promotion_rejects_candidate_name_and_identity_collisions(self) -> None:
         events, entities, _, existing = self._emit()

@@ -1086,9 +1086,12 @@ WAVE8_EGYPT_FORCES_CURRENT_RELEASE_EVENT_AUDIT = {
         WAVE8_EGYPT_FORCES_IDENTITY_BOUNDARY_AUDIT["release_entities"]
     ),
     "audited_entity_id_sha256": "09b5ca9eeef1d2ce527057c0668a6101440179701824f2499d0a18aed61db25b",
-    "event_count": 56,
-    "event_id_sha256": "9b7c0228700c4985d2da755806a0320d5a7ba0b1c4e20b0cccc53fac96a9e29b",
-    "event_projection_sha256": "47a302cd21e5016f2ff7c935e0fe3c57736c4f787031de386485a1d52cdbafce",
+    # Refreshed to the current ledger after the Wave 8 Muslim forces lane
+    # promoted Aleppo 1260 with the audited Ayyubid garrison identity, adding
+    # a 57th Egypt-related release event to this audit's scope.
+    "event_count": 57,
+    "event_id_sha256": "dfe4bae0d3013ea5cbb85de41b8a1c080d6e53b1e0645f160e6bd1f91c4d03f1",
+    "event_projection_sha256": "a064ed3d44dbbe4faf14cad3684079a3af8547cc67336f77ec357d84b7668b79",
     "projection_fields": [
         "end_year",
         "entity_ids",
@@ -1209,7 +1212,7 @@ def wave8_egypt_forces_audit_signature() -> str:
 
 
 WAVE8_EGYPT_FORCES_FINAL_AUDIT_SIGNATURE = (
-    "bb523b35e94b15c8d88c5f06f4c62161be9c6d18a25e86a538a675223be6949a"
+    "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b"
 )
 
 

@@ -170,9 +170,54 @@ class Wave8SikhPunjabTests(unittest.TestCase):
         exact_by_id = {
             str(row["candidate_id"]): row for row in self.exact_rows
         }
+        historical_funnel = {
+            "labels": [
+                {
+                    "centuries": {"CE_17": 1, "CE_18": 3, "CE_19": 1},
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "events_touched": 5,
+                    "failure_cases": {"zero_time_valid_candidates": 5},
+                    "label": "sikh punjab",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 5,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["sikh punjab"],
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "sikh punjab",
+                        }
+                    ],
+                    "sole_blocker_label": "sikh punjab",
+                }
+                for candidate_id in sorted(
+                    set(EXPECTED_RAW_HASHES) - {"hced-Anandpur1701-1"}
+                )
+            ]
+            + [
+                {
+                    "blocker_labels": [
+                        "northern punjabi hill tribes gujar tribes",
+                        "sikh punjab",
+                    ],
+                    "candidate_id": "hced-Anandpur1701-1",
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "sikh punjab",
+                        }
+                    ],
+                    "sole_blocker_label": None,
+                }
+            ],
+        }
         funnel_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "sikh punjab" in row.get("blocker_labels", [])
         }
         self.assertEqual(set(exact_by_id), set(EXPECTED_RAW_HASHES))
@@ -191,7 +236,7 @@ class Wave8SikhPunjabTests(unittest.TestCase):
         )
         labels = [
             row
-            for row in self.funnel["labels"]
+            for row in historical_funnel["labels"]
             if row.get("label") == "sikh punjab"
         ]
         self.assertEqual(len(labels), 1)
@@ -221,6 +266,29 @@ class Wave8SikhPunjabTests(unittest.TestCase):
                     for failure in row.get("label_failures", [])
                 )
             )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "sikh punjab"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Sikh Punjab lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                "sikh punjab" in row.get("blocker_labels", [])
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "no live funnel row may still cite the resolved 'sikh punjab' blocker",
+        )
+        live_row_candidate_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            set(lane.WAVE8_SIKH_PUNJAB_CONTRACT_IDS) & live_row_candidate_ids,
+            "promoted Sikh Punjab candidates must be absent from the live funnel",
+        )
 
     def test_hashes_dispositions_counts_and_ownership_are_pinned(self) -> None:
         for candidate_id, expected_hash in EXPECTED_RAW_HASHES.items():

@@ -216,9 +216,29 @@ class Wave8IncaRebelsTests(unittest.TestCase):
         self.assertEqual(digest, lane.WAVE8_INCA_REBELS_EXACT_CANDIDATE_ID_SHA256)
 
     def test_funnel_pins_four_unresolved_sole_blockers(self):
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "306e8bd1195fc82273c8dcdad2b51509617a99f63227f68684f241ff5d03a3e9"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "label": "inca rebels",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 4,
+                }
+            ]
+        }
         records = [
             record
-            for record in self.funnel["labels"]
+            for record in historical_funnel["labels"]
             if record.get("label") == "inca rebels"
         ]
         self.assertEqual(len(records), 1)
@@ -239,6 +259,59 @@ class Wave8IncaRebelsTests(unittest.TestCase):
         self.assertEqual(
             record["event_candidate_id_sha256"],
             lane.WAVE8_INCA_REBELS_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+        )
+        funnel_digest = hashlib.sha256(
+            "".join(
+                f"{candidate_id}\n"
+                for candidate_id in sorted(
+                    lane.WAVE8_INCA_REBELS_EXPECTED_CANDIDATE_IDS
+                )
+            ).encode("utf-8")
+        ).hexdigest()
+        self.assertEqual(
+            funnel_digest,
+            lane.WAVE8_INCA_REBELS_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
+        )
+        self.assertFalse(
+            any(
+                record.get("label") == "inca rebels"
+                for record in self.funnel.get("labels", [])
+            ),
+            "the completed Inca Rebels lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id"))
+                in lane.WAVE8_INCA_REBELS_RESERVED_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "reviewed Inca Rebels candidate rows must not remain in the live funnel",
+        )
+
+    def test_current_release_integration_is_exactly_all_or_none(self):
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            in lane.WAVE8_INCA_REBELS_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        release_candidate_ids = {
+            str(event.get("hced_candidate_id")) for event in self.release_events
+        }
+        self.assertFalse(
+            lane.WAVE8_INCA_REBELS_TERMINAL_EXCLUSION_IDS & release_candidate_ids,
+            "the terminally excluded Cuzco 1535 row must never reach the release",
+        )
+        if not integrated:
+            return
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            set(lane.WAVE8_INCA_REBELS_CONTRACT_IDS),
+        )
+        self.assertEqual(len({str(event["id"]) for event in integrated}), 3)
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in integrated)
         )
 
     def test_queue_validator_accounts_for_every_exact_row(self):

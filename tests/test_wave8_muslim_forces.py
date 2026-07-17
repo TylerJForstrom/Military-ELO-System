@@ -158,13 +158,15 @@ class Wave8MuslimForcesTests(unittest.TestCase):
         )
 
     def test_funnel_scope_is_exact_and_every_row_was_audited(self) -> None:
-        funnel_path = ROOT / "build" / "hced-unresolved-label-funnel.json"
-        if not funnel_path.exists():
-            raise unittest.SkipTest("HCED unresolved-label funnel is unavailable")
-        funnel = _json(funnel_path)
+        # The lane is promoted, so the live funnel no longer carries its rows.
+        # The pre-promotion funnel scope is validated against the promotion
+        # audit recorded in the release metadata instead.
+        historical_rows = _json(ROOT / "data" / "release" / "metadata.json")[
+            "promotion"
+        ]["wave8_muslim_forces_integration_dispositions"]
         scoped = {
             row["candidate_id"]: row
-            for row in funnel["row_label_data"]
+            for row in historical_rows
             if "muslims" in row.get("blocker_labels", [])
         }
         self.assertEqual(set(scoped), WAVE8_MUSLIM_FORCES_RESERVED_IDS)
@@ -181,6 +183,19 @@ class Wave8MuslimForcesTests(unittest.TestCase):
             self.assertEqual(disposition["greedy_eligible"], row["greedy_eligible"])
             self.assertEqual(disposition["sole_blocker_label"], row["sole_blocker_label"])
             self.assertEqual(disposition["other_blockers"], row["other_blockers"])
+
+        funnel_path = ROOT / "build" / "hced-unresolved-label-funnel.json"
+        if funnel_path.exists():
+            live_rows = _json(funnel_path)["row_label_data"]
+            self.assertFalse(
+                any("muslims" in row.get("blocker_labels", []) for row in live_rows),
+                "the completed Muslim-forces lane must not remain unresolved",
+            )
+            self.assertFalse(
+                WAVE8_MUSLIM_FORCES_CONTRACT_IDS
+                & {row["candidate_id"] for row in live_rows},
+                "promoted Muslim-forces candidates must be absent from the live funnel",
+            )
 
     def test_raw_hashes_and_queue_validation_are_fail_closed(self) -> None:
         rows = _rows()

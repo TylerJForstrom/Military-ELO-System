@@ -90,7 +90,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
         cls.release_entities = _json(ROOT / "data" / "release" / "entities.json")
         cls.release_events = _json(ROOT / "data" / "release" / "events.json")
         cls.release_sources = _json(ROOT / "data" / "release" / "sources.json")
-        cls.funnel = _json(ROOT / "build" / "wave8-funnel-current.json")
+        cls.funnel = _json(ROOT / "build" / "hced-unresolved-label-funnel.json")
         cls.lane_rows = [
             row
             for row in cls.hced_rows
@@ -205,8 +205,52 @@ class Wave8LivonianOrderTests(unittest.TestCase):
         )
 
     def test_authoritative_funnel_pins_seven_rows_and_four_sole_blockers(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "57fce904f7f47658baca08f28413afa99111f7d465efe0a7520c061c68e57adf"
+                    ),
+                    "events_touched": 7,
+                    "failure_cases": {"zero_time_valid_candidates": 7},
+                    "label": "livonian order",
+                    "sole_blocker_events": 4,
+                }
+            ],
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "events_touched": 7,
+                        "label": "livonian order",
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": (
+                            "8d35ae2da31bf0da56b17ff6d5540d49513268b3142da604291f960c12a019a1"
+                        ),
+                    }
+                ]
+            },
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "livonian order",
+                        }
+                    ],
+                    "sole_blocker_label": (
+                        "livonian order"
+                        if candidate_id in WAVE8_LIVONIAN_ORDER_CONTRACT_IDS
+                        else None
+                    ),
+                }
+                for candidate_id in sorted(
+                    WAVE8_LIVONIAN_ORDER_EXPECTED_CANDIDATE_IDS
+                )
+            ],
+        }
         self.assertEqual(
-            validate_wave8_livonian_order_funnel(self.funnel),
+            validate_wave8_livonian_order_funnel(historical_funnel),
             {
                 "exact_label_rows": 7,
                 "held_other_identity_rows": 3,
@@ -231,7 +275,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
                 "newly_unblocked_candidate_id_sha256"
             ],
         )
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row
             for row in changed["labels"]
@@ -240,7 +284,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "funnel sole_blocker_events changed"):
             validate_wave8_livonian_order_funnel(changed)
 
-        changed = copy.deepcopy(self.funnel)
+        changed = copy.deepcopy(historical_funnel)
         next(
             row
             for row in changed["row_label_data"]
@@ -248,6 +292,22 @@ class Wave8LivonianOrderTests(unittest.TestCase):
         )["sole_blocker_label"] = None
         with self.assertRaisesRegex(ValueError, "funnel sole blockers changed"):
             validate_wave8_livonian_order_funnel(changed)
+
+        self.assertFalse(
+            any(
+                row.get("label") == "livonian order"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Livonian Order lane must not remain unresolved",
+        )
+        live_row_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            live_row_ids & WAVE8_LIVONIAN_ORDER_CONTRACT_IDS,
+            "promoted Livonian Order candidates must not remain in live funnel rows",
+        )
 
     def test_complete_exact_queue_inventory_and_raw_hashes_fail_closed(self) -> None:
         self.assertEqual(
@@ -624,11 +684,12 @@ class Wave8LivonianOrderTests(unittest.TestCase):
             self.assertIn("modern_location_country", by_candidate[candidate_id])
 
     def test_related_hced_and_all_duplicate_surfaces_fail_closed(self) -> None:
+        _, _, existing = self._installed()
         self.assertEqual(
             validate_wave8_livonian_order_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             ),
             {
                 "cross_lane_hced_dispositions": 1,
@@ -659,7 +720,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
             validate_wave8_livonian_order_integration_dispositions(
                 changed,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             )
 
         future_hced = [
@@ -676,7 +737,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
             validate_wave8_livonian_order_integration_dispositions(
                 future_hced,
                 self.iwbd_rows,
-                self.release_events,
+                existing,
             )
 
         future_iwbd = [
@@ -692,11 +753,11 @@ class Wave8LivonianOrderTests(unittest.TestCase):
             validate_wave8_livonian_order_integration_dispositions(
                 self.hced_rows,
                 future_iwbd,
-                self.release_events,
+                existing,
             )
 
         future_release = [
-            *self.release_events,
+            *existing,
             {
                 "id": "future_capture_narva",
                 "name": "Capture of Narva",
@@ -713,7 +774,7 @@ class Wave8LivonianOrderTests(unittest.TestCase):
             )
 
         ownership_collision = [
-            *self.release_events,
+            *existing,
             {
                 "id": "future_owned_candidate",
                 "name": "Unrelated",
@@ -727,6 +788,26 @@ class Wave8LivonianOrderTests(unittest.TestCase):
                 self.iwbd_rows,
                 ownership_collision,
             )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        owned = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_LIVONIAN_ORDER_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        owned_ids = {str(event.get("hced_candidate_id")) for event in owned}
+        if owned:
+            self.assertEqual(owned_ids, set(WAVE8_LIVONIAN_ORDER_CONTRACT_IDS))
+            self.assertEqual(len(owned), len(WAVE8_LIVONIAN_ORDER_CONTRACT_IDS))
+            self.assertEqual(len({str(event["id"]) for event in owned}), len(owned))
+            self.assertTrue(
+                all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in owned)
+            )
+        self.assertFalse(
+            WAVE8_LIVONIAN_ORDER_HOLD_IDS & owned_ids,
+            "held Livonian Order candidates must never be integrated",
+        )
 
     def test_promotion_rejects_existing_candidate_name_and_missing_entity(self) -> None:
         events, entities, _, existing = self._emit()

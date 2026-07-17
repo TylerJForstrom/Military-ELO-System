@@ -144,6 +144,9 @@ class Wave8SatsumaTests(unittest.TestCase):
             for entity in json.loads((ROOT / "data/release/entities.json").read_text(encoding="utf-8"))
         }
         cls.release_events = json.loads((ROOT / "data/release/events.json").read_text(encoding="utf-8"))
+        cls.release_metadata = json.loads(
+            (ROOT / "data/release/metadata.json").read_text(encoding="utf-8")
+        )
         cls.exact_rows = [
             row
             for row in cls.hced_rows
@@ -158,10 +161,18 @@ class Wave8SatsumaTests(unittest.TestCase):
         install_wave8_satsuma_sources(sources)
         return entities, sources
 
+    def _preintegration_events(self) -> list[dict]:
+        return [
+            copy.deepcopy(event)
+            for event in self.release_events
+            if event.get("hced_candidate_id") not in WAVE8_SATSUMA_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+
     def _emit(self, existing_events=None) -> tuple[dict, dict, list]:
         entities, sources = self._installed()
         existing = (
-            copy.deepcopy(self.release_events)
+            self._preintegration_events()
             if existing_events is None
             else copy.deepcopy(existing_events)
         )
@@ -173,9 +184,27 @@ class Wave8SatsumaTests(unittest.TestCase):
         return entities, sources, events
 
     def test_funnel_and_queue_lock_the_complete_seven_row_exact_cohort(self) -> None:
+        # Historical pre-promotion projection of the unresolved-label funnel;
+        # the live file correctly drops the cohort once the lane is integrated.
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "events_touched": 7,
+                    "failure_cases": {"zero_time_valid_candidates": 7},
+                    "label": "satsuma",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 7,
+                }
+            ],
+            "row_label_data": [
+                {"blocker_labels": ["satsuma"], "candidate_id": candidate_id}
+                for candidate_id in sorted(EXPECTED_RAW_HASHES)
+            ],
+        }
         scoped_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "satsuma" in row.get("blocker_labels", [])
         }
         exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
@@ -187,7 +216,7 @@ class Wave8SatsumaTests(unittest.TestCase):
         payload = "".join(f"{candidate_id}\n" for candidate_id in sorted(scoped_rows))
         self.assertEqual(hashlib.sha256(payload.encode()).hexdigest(), FUNNEL_CANDIDATE_ID_SHA256)
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "satsuma"
+            row for row in historical_funnel["labels"] if row.get("label") == "satsuma"
         ]
         self.assertEqual(len(label_rows), 1)
         label = label_rows[0]
@@ -196,6 +225,22 @@ class Wave8SatsumaTests(unittest.TestCase):
         self.assertEqual(label["unresolved_side_attempts"], 7)
         self.assertEqual(label["sole_blocker_events"], 4)
         self.assertEqual(label["failure_cases"]["zero_time_valid_candidates"], 7)
+
+        self.assertFalse(
+            any(
+                row.get("label") == "satsuma"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Satsuma lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in WAVE8_SATSUMA_EXPECTED_CANDIDATE_IDS
+                or "satsuma" in row.get("blocker_labels", [])
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "resolved Satsuma candidate ids must be absent from the live funnel",
+        )
 
     def test_exact_label_is_literal_and_each_locked_row_has_one_satsuma_side(self) -> None:
         for row in self.exact_rows:
@@ -471,6 +516,43 @@ class Wave8SatsumaTests(unittest.TestCase):
                 self.assertEqual(event["identity_resolution"], "candidate_keyed_exact")
                 self.assertEqual(event["status"], "complete")
                 self.assertTrue(set(event["outcome_source_ids"]) <= set(event["source_ids"]))
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_SATSUMA_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        if not integrated:
+            return
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            set(WAVE8_SATSUMA_CONTRACT_IDS),
+        )
+        self.assertEqual(
+            len({str(event["id"]) for event in integrated}),
+            len(WAVE8_SATSUMA_CONTRACT_IDS),
+        )
+        self.assertLessEqual(
+            {str(entity["id"]) for entity in WAVE8_SATSUMA_ENTITIES},
+            set(self.release_entities),
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_satsuma_hced_events"], 6)
+        self.assertEqual(
+            promotion["wave8_satsuma_candidate_ids"],
+            sorted(WAVE8_SATSUMA_CONTRACT_IDS),
+        )
+        self.assertEqual(
+            promotion["wave8_satsuma_queue_validation"],
+            {
+                "holds": 0,
+                "promotion_contracts": 6,
+                "reviewed_hced_rows": 7,
+                "terminal_exclusions": 1,
+            },
+        )
 
     def test_promoted_winners_losers_and_toshimitsu_coalition_are_mechanical(self) -> None:
         _, _, events = self._emit(existing_events=[])

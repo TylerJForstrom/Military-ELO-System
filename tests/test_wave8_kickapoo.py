@@ -266,8 +266,52 @@ class Wave8KickapooTests(unittest.TestCase):
         self.assertEqual(exact_ids, WAVE8_KICKAPOO_EXPECTED_CANDIDATE_IDS)
         self.assertEqual(len(exact_ids), 6)
 
-    def test_stale_funnel_has_four_sole_blockers_not_the_exact_inventory(self) -> None:
-        rows = _funnel_rows(self.funnel)
+    def test_historical_funnel_had_four_sole_blockers_not_the_exact_inventory(
+        self,
+    ) -> None:
+        historical_funnel = {
+            "row_label_data": [
+                {
+                    "candidate_id": "hced-Battle Creek, Texas1838-1",
+                    "blocker_labels": ["kickapoo indians"],
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "kickapoo indians",
+                },
+                {
+                    "candidate_id": "hced-Dove Creek1865-1",
+                    "blocker_labels": ["kickapoo indians"],
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "kickapoo indians",
+                },
+                {
+                    "candidate_id": "hced-Kickapoo Town1838-1",
+                    "blocker_labels": ["kickapoo indians"],
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "kickapoo indians",
+                },
+                {
+                    "candidate_id": "hced-Little Concho1862-1",
+                    "blocker_labels": ["kickapoo indians"],
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "kickapoo indians",
+                },
+                {
+                    "candidate_id": "hced-Wichita Agency1862-1",
+                    "blocker_labels": [
+                        "confederate states of america tonkawa indians",
+                        "kickapoo indians",
+                    ],
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+            ]
+        }
+        rows = _funnel_rows(historical_funnel)
+        self.assertEqual(
+            {str(row["candidate_id"]) for row in rows},
+            WAVE8_KICKAPOO_EXPECTED_CANDIDATE_IDS
+            - {"hced-Killough Massacre1838-1"},
+        )
         sole = {
             str(row["candidate_id"])
             for row in rows
@@ -285,6 +329,25 @@ class Wave8KickapooTests(unittest.TestCase):
         self.assertNotIn("hced-Killough Massacre1838-1", sole)
         self.assertNotIn("hced-Wichita Agency1862-1", sole)
         self.assertEqual(len(WAVE8_KICKAPOO_EXPECTED_CANDIDATE_IDS), 6)
+
+    def test_completed_lane_is_absent_from_live_funnel(self) -> None:
+        self.assertFalse(
+            any(
+                row.get("label") == "kickapoo indians"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Kickapoo lane label must not remain unresolved",
+        )
+        live_rows = _funnel_rows(self.funnel)
+        self.assertFalse(
+            any(
+                str(row["candidate_id"]) in WAVE8_KICKAPOO_RESERVED_IDS
+                or row.get("sole_blocker_label") == "kickapoo indians"
+                or "kickapoo indians" in row.get("blocker_labels", [])
+                for row in live_rows
+            ),
+            "the completed Kickapoo lane rows must not remain in the live funnel",
+        )
 
     def test_every_raw_row_field_and_fingerprint_is_pinned(self) -> None:
         self.assertEqual(set(self.lane_rows), set(EXPECTED_RAW_ROWS))

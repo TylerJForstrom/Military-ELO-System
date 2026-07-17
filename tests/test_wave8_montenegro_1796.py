@@ -137,13 +137,34 @@ class Wave8Montenegro1796Tests(unittest.TestCase):
                 "reviewed_hced_rows": 4,
             },
         )
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": ["clio_q236_1853_31d59baa"],
+                    "event_candidate_id_sha256": (
+                        "43d2d5fa715e71c6a7f6cfa5f676a09c029767633fd254b773a1215e826221a4"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {"one_wrong_interval_candidate": 4},
+                    "label": "montenegro",
+                    "sole_blocker_events": 3,
+                }
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_montenegro_1796_funnel(self.funnel),
+            lane.validate_wave8_montenegro_1796_funnel(historical_funnel),
             {
                 "events_touched": 4,
                 "one_wrong_interval_candidates": 4,
                 "sole_blocker_events": 3,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "montenegro"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Montenegro 1796 lane must not remain unresolved",
         )
 
     def test_dispositions_promote_only_the_two_uncontested_1796_battles(self) -> None:

@@ -270,8 +270,46 @@ class Wave8SaukTests(unittest.TestCase):
         )
 
     def test_funnel_pins_four_sole_blockers_without_generic_identity(self) -> None:
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": EXACT_CANDIDATE_ID_SHA256,
+                    "events_touched": 4,
+                    "failure_cases": {"zero_time_valid_candidates": 4},
+                    "label": "sauk indians",
+                    "sole_blocker_events": 4,
+                    "time_valid_candidate_ids": [],
+                }
+            ],
+            "greedy_batch": {
+                "ranking": [
+                    {
+                        "events_touched": 4,
+                        "label": "sauk indians",
+                        "marginal_events": 4,
+                        "newly_unblocked_candidate_id_sha256": (
+                            EXACT_CANDIDATE_ID_SHA256
+                        ),
+                    }
+                ]
+            },
+            "row_label_data": [
+                {
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "sauk indians",
+                        }
+                    ],
+                    "sole_blocker_label": "sauk indians",
+                }
+                for candidate_id in sorted(EXPECTED_RAW_ROWS)
+            ],
+        }
         self.assertEqual(
-            lane.validate_wave8_sauk_funnel(self.funnel),
+            lane.validate_wave8_sauk_funnel(historical_funnel),
             {
                 "exact_label_rows": 4,
                 "shared_label_rows": 0,
@@ -279,7 +317,9 @@ class Wave8SaukTests(unittest.TestCase):
             },
         )
         label = next(
-            row for row in self.funnel["labels"] if row["label"] == "sauk indians"
+            row
+            for row in historical_funnel["labels"]
+            if row["label"] == "sauk indians"
         )
         self.assertEqual(label["event_candidate_id_sha256"], EXACT_CANDIDATE_ID_SHA256)
         self.assertEqual(label["events_touched"], 4)
@@ -287,6 +327,27 @@ class Wave8SaukTests(unittest.TestCase):
         self.assertEqual(label["candidate_ids"], [])
         self.assertEqual(label["time_valid_candidate_ids"], [])
         self.assertEqual(label["failure_cases"]["zero_time_valid_candidates"], 4)
+        self.assertFalse(
+            any(
+                row.get("label") == "sauk indians"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Sauk Indians lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "sauk indians"
+                for row in self.funnel.get("greedy_batch", {}).get("ranking", [])
+            ),
+            "the completed Sauk Indians lane must not remain in the greedy batch",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in lane.WAVE8_SAUK_CONTRACT_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Sauk Indians candidate ids must not remain in the live funnel",
+        )
 
     def test_kelloggs_grove_remains_unknown_not_a_draw(self) -> None:
         hold = lane.WAVE8_SAUK_HOLDS["hced-Kelloggs Grove1832-1"]

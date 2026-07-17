@@ -86,13 +86,34 @@ class Wave8GoguryeoTests(unittest.TestCase):
                 "reviewed_hced_rows": 3,
             },
         )
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": (
+                        "599aacf1db824924ef6bda94c6e48d07223ddff99ecab36cbd66810f0834d9b8"
+                    ),
+                    "events_touched": 3,
+                    "failure_cases": {"zero_time_valid_candidates": 3},
+                    "label": "koguryo",
+                    "sole_blocker_events": 3,
+                }
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_goguryeo_funnel(self.funnel),
+            lane.validate_wave8_goguryeo_funnel(historical_funnel),
             {
                 "events_touched": 3,
                 "sole_blocker_events": 3,
                 "zero_time_valid_candidates": 3,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "koguryo"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Goguryeo lane must not remain unresolved",
         )
 
     def test_three_registry_candidates_are_curated_without_global_aliases(self) -> None:

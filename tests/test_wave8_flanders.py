@@ -214,9 +214,37 @@ class Wave8FlandersTests(unittest.TestCase):
             lane.WAVE8_FLANDERS_FUNNEL_EVENT_CANDIDATE_ID_SHA256,
         )
 
+        # Pre-promotion funnel projection: the exact record shape and counts
+        # the live funnel carried for this label before the lane was promoted
+        # into the current release and the label was resolved out.
+        historical_funnel = {
+            "labels": [
+                {
+                    "centuries": {"CE_14": 4},
+                    "event_candidate_id_sha256": (
+                        "c821571928ccf2f116c853868c1f7e36c4b150b8405a5fdb7478413c74f0a7bf"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {
+                        "multiple_time_valid_candidates": 0,
+                        "one_wrong_interval_candidate": 0,
+                        "policy_denied_window": 0,
+                        "resolver_guard_or_tier_conflict": 0,
+                        "zero_time_valid_candidates": 4,
+                    },
+                    "label": "flanders",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 4,
+                }
+            ],
+            "row_label_data": [
+                {"candidate_id": candidate_id, "blocker_labels": ["flanders"]}
+                for candidate_id in sorted(exact_ids)
+            ],
+        }
         records = [
             record
-            for record in self.funnel["labels"]
+            for record in historical_funnel["labels"]
             if record.get("label") == "flanders"
         ]
         self.assertEqual(len(records), 1)
@@ -238,10 +266,26 @@ class Wave8FlandersTests(unittest.TestCase):
         )
         funnel_ids = {
             str(row["candidate_id"])
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "flanders" in row.get("blocker_labels", [])
         }
         self.assertEqual(funnel_ids, exact_ids)
+
+        self.assertFalse(
+            any(
+                record.get("label") == "flanders"
+                for record in self.funnel.get("labels", [])
+            ),
+            "the completed Flanders lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in exact_ids
+                or "flanders" in row.get("blocker_labels", [])
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Flanders candidates must not remain in the live funnel",
+        )
 
     def test_raw_rows_and_outcomes_are_fully_pinned(self):
         by_id = {str(row["candidate_id"]): row for row in self.exact_rows}

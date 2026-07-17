@@ -315,32 +315,174 @@ class Wave8SaudiRashidiForcesTests(unittest.TestCase):
         }
         self.assertEqual(exact_ids, WAVE8_SAUDI_RASHIDI_RESERVED_IDS)
 
+        historical_funnel = {
+            "labels": [
+                {
+                    "event_candidate_id_sha256": (
+                        "02c7ad2ff436088c5d5c0ff4106af8f99fbcc4b7b91bd8f6f33886cdb16880a6"
+                    ),
+                    "events_touched": 8,
+                    "label": "rashidis",
+                    "sole_blocker_events": 0,
+                },
+                {
+                    "event_candidate_id_sha256": (
+                        "eaa1ab3a42b774324714a4c7c1edfffd4b2374b3204c66bf25459b09b83f39f0"
+                    ),
+                    "events_touched": 15,
+                    "label": "saudis",
+                    "sole_blocker_events": 3,
+                },
+                {
+                    "event_candidate_id_sha256": (
+                        "858031ba91aaf34bef903c02ac4ae649d5a1e3b5a57d9411e4f3d09d077940e1"
+                    ),
+                    "events_touched": 1,
+                    "label": "saudis qasim",
+                    "sole_blocker_events": 0,
+                },
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["saudis"],
+                    "candidate_id": "hced-Bukairiya1904-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "saudis",
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Dilam1902-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Hail1921-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["saudis"],
+                    "candidate_id": "hced-Hofuf1913-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "saudis",
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Jirab1915-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Kinzan1915-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["hashemites", "saudis"],
+                    "candidate_id": "hced-Medina, Saudi Arabia1925-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis qasim"],
+                    "candidate_id": "hced-Mulaydah1891-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Rawdhat al Muhanna1906-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Riyadh1887-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["rashidis", "saudis"],
+                    "candidate_id": "hced-Riyadh1902-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["ikhwan brotherhood", "saudis"],
+                    "candidate_id": "hced-Sabalah1929-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["hashemites", "saudis"],
+                    "candidate_id": "hced-Taif1924-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["hashemites", "saudis"],
+                    "candidate_id": "hced-Turabah1919-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["ikhwan rebels", "saudis"],
+                    "candidate_id": "hced-Umm Urdhumah1929-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["saudis"],
+                    "candidate_id": "hced-Unayzah1904-1",
+                    "greedy_eligible": True,
+                    "sole_blocker_label": "saudis",
+                },
+            ],
+        }
+        funnel_by_id = {
+            row["candidate_id"]: row
+            for row in historical_funnel["row_label_data"]
+        }
+        funnel_labels = {row["label"]: row for row in historical_funnel["labels"]}
+        for label, audit in WAVE8_SAUDI_RASHIDI_LABEL_OWNERSHIP_AUDIT.items():
+            label_row = funnel_labels[label]
+            self.assertEqual(
+                label_row["event_candidate_id_sha256"],
+                audit["funnel_event_candidate_id_sha256"],
+            )
+            self.assertEqual(label_row["events_touched"], audit["events_touched"])
+            self.assertEqual(
+                label_row["sole_blocker_events"],
+                audit["sole_blocker_events"],
+            )
+        for candidate_id, audit in WAVE8_SAUDI_RASHIDI_ROW_INVENTORY.items():
+            row = funnel_by_id[candidate_id]
+            self.assertEqual(row["blocker_labels"], audit["blocker_labels"])
+            self.assertEqual(row["greedy_eligible"], audit["greedy_eligible"])
+            self.assertEqual(
+                row["sole_blocker_label"],
+                audit["sole_blocker_label"],
+            )
+
         funnel_path = ROOT / "build/hced-unresolved-label-funnel.json"
         if funnel_path.exists():
-            funnel = _json(funnel_path)
-            funnel_by_id = {
-                row["candidate_id"]: row for row in funnel["row_label_data"]
-            }
-            funnel_labels = {row["label"]: row for row in funnel["labels"]}
-            for label, audit in WAVE8_SAUDI_RASHIDI_LABEL_OWNERSHIP_AUDIT.items():
-                label_row = funnel_labels[label]
-                self.assertEqual(
-                    label_row["event_candidate_id_sha256"],
-                    audit["funnel_event_candidate_id_sha256"],
-                )
-                self.assertEqual(label_row["events_touched"], audit["events_touched"])
-                self.assertEqual(
-                    label_row["sole_blocker_events"],
-                    audit["sole_blocker_events"],
-                )
-            for candidate_id, audit in WAVE8_SAUDI_RASHIDI_ROW_INVENTORY.items():
-                row = funnel_by_id[candidate_id]
-                self.assertEqual(row["blocker_labels"], audit["blocker_labels"])
-                self.assertEqual(row["greedy_eligible"], audit["greedy_eligible"])
-                self.assertEqual(
-                    row["sole_blocker_label"],
-                    audit["sole_blocker_label"],
-                )
+            live_funnel = _json(funnel_path)
+            self.assertFalse(
+                any(
+                    row.get("label") in OWNED_LABELS
+                    for row in live_funnel.get("labels", [])
+                ),
+                "the completed Saudi-Rashidi lane must not remain unresolved",
+            )
+            self.assertFalse(
+                any(
+                    row.get("candidate_id") in WAVE8_SAUDI_RASHIDI_CONTRACT_IDS
+                    for row in live_funnel.get("row_label_data", [])
+                ),
+                "promoted Saudi-Rashidi candidates must not remain in the live funnel",
+            )
 
     def test_raw_fingerprints_and_queue_validator_fail_closed(self) -> None:
         inventory = {

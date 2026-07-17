@@ -264,13 +264,7 @@ class Wave8ThebesTests(unittest.TestCase):
             str(row["candidate_id"]): row
             for row in self.exact_rows
         }
-        funnel_rows = {
-            str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
-            if "thebes" in row.get("blocker_labels", [])
-        }
         self.assertEqual(set(exact_by_id), set(EXPECTED_RAW_ROWS))
-        self.assertEqual(set(funnel_rows), set(EXPECTED_RAW_ROWS))
         self.assertEqual(
             lane.WAVE8_THEBES_EXPECTED_CANDIDATE_IDS,
             set(EXPECTED_RAW_ROWS),
@@ -284,8 +278,68 @@ class Wave8ThebesTests(unittest.TestCase):
             candidate_digest,
             lane.WAVE8_THEBES_EXACT_CANDIDATE_ID_SHA256,
         )
+
+        # Historical pre-promotion projection of the unresolved-label funnel.
+        # All six exact-label rows are promoted into the release ledger, so
+        # the live build/ funnel correctly no longer carries the cohort; the
+        # locked pre-promotion accounting is preserved inline instead.
+        historical_funnel = {
+            "labels": [
+                {
+                    "centuries": {"BCE_04": 4, "BCE_05": 2},
+                    "event_candidate_id_sha256": (
+                        "7ddb38c5103454765606d88a2b08d700cb22ca56d36d10d952701837e60af75b"
+                    ),
+                    "events_touched": 6,
+                    "failure_cases": {"zero_time_valid_candidates": 6},
+                    "label": "thebes",
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 6,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["athens boetia", "thebes"],
+                    "candidate_id": "hced-Coronea-447-1",
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["thebes"],
+                    "candidate_id": "hced-Delium-424-1",
+                    "sole_blocker_label": "thebes",
+                },
+                {
+                    "blocker_labels": ["thebes"],
+                    "candidate_id": "hced-Tegyra-375-1",
+                    "sole_blocker_label": "thebes",
+                },
+                {
+                    "blocker_labels": ["thebes"],
+                    "candidate_id": "hced-Leuctra-371-1",
+                    "sole_blocker_label": "thebes",
+                },
+                {
+                    "blocker_labels": ["athens sparta", "thebes"],
+                    "candidate_id": "hced-Mantinea-362-1",
+                    "sole_blocker_label": None,
+                },
+                {
+                    "blocker_labels": ["thebes"],
+                    "candidate_id": "hced-Thebes-335-1",
+                    "sole_blocker_label": "thebes",
+                },
+            ],
+        }
+        funnel_rows = {
+            str(row["candidate_id"]): row
+            for row in historical_funnel["row_label_data"]
+            if "thebes" in row.get("blocker_labels", [])
+        }
+        self.assertEqual(set(funnel_rows), set(EXPECTED_RAW_ROWS))
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "thebes"
+            row
+            for row in historical_funnel["labels"]
+            if row.get("label") == "thebes"
         ]
         self.assertEqual(len(label_rows), 1)
         label = label_rows[0]
@@ -308,6 +362,23 @@ class Wave8ThebesTests(unittest.TestCase):
                 "hced-Thebes-335-1",
             },
         )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "thebes"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Thebes lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id"))
+                in lane.WAVE8_THEBES_EXPECTED_CANDIDATE_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Thebes candidates must be absent from the live funnel",
+        )
+
         self.assertEqual(
             lane.validate_wave8_thebes_queue_contracts(self.hced_rows),
             {
@@ -317,6 +388,31 @@ class Wave8ThebesTests(unittest.TestCase):
                 "terminal_exclusions": 0,
             },
         )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_THEBES_RESERVED_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        self.assertIn(len(integrated), {0, 6})
+        if integrated:
+            self.assertEqual(
+                {str(event["hced_candidate_id"]) for event in integrated},
+                set(lane.WAVE8_THEBES_CONTRACT_IDS),
+            )
+            self.assertEqual(len({str(event["id"]) for event in integrated}), 6)
+            self.assertTrue(
+                all(
+                    str(event["id"]).startswith(EVENT_ID_PREFIX)
+                    for event in integrated
+                )
+            )
+            for event in integrated:
+                self.assertNotIn("geometry", event)
+                self.assertEqual(event["modern_location_country"], "Greece")
+                Event.from_dict(event)
 
     def test_raw_rows_and_exact_hashes_are_fully_pinned(self) -> None:
         by_id = {str(row["candidate_id"]): row for row in self.exact_rows}

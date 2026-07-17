@@ -145,9 +145,53 @@ VARIANT_LABEL_IDS = {
     "hced-Tynec1423-1",
 }
 
+HISTORICAL_SOLE_BLOCKER_IDS = frozenset(
+    {
+        "hced-Kutna Hora1421-1",
+        "hced-Nebovidy1422-1",
+        "hced-Nemecky Brod1422-1",
+        "hced-Vitkov Hill1420-1",
+    }
+)
+
 
 def _load_jsonl(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def _historical_funnel_projection() -> dict:
+    """Pre-promotion snapshot of the live unresolved-label planning artifact.
+
+    The funnel is a LIVE artifact: once the lane's twelve promotions and two
+    holds resolved the exact ``hussites`` label, current policy removed the
+    cohort from it.  This projection reconstructs exactly the rows and label
+    accounting the artifact carried before promotion, so the locked cohort's
+    counts, digest, and failure shapes stay pinned.
+    """
+
+    row_label_data = []
+    for candidate_id in sorted(EXPECTED_RAW_HASHES):
+        row = {
+            "blocker_labels": ["hussites"],
+            "candidate_id": candidate_id,
+            "label_failures": [{"label": "hussites"}],
+        }
+        if candidate_id in HISTORICAL_SOLE_BLOCKER_IDS:
+            row["sole_blocker_label"] = "hussites"
+        row_label_data.append(row)
+    return {
+        "labels": [
+            {
+                "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                "events_touched": 14,
+                "failure_cases": {"zero_time_valid_candidates": 14},
+                "label": "hussites",
+                "sole_blocker_events": 4,
+                "unresolved_side_attempts": 14,
+            }
+        ],
+        "row_label_data": row_label_data,
+    }
 
 
 class Wave8HussitesTests(unittest.TestCase):
@@ -163,6 +207,9 @@ class Wave8HussitesTests(unittest.TestCase):
             for entity in json.loads((ROOT / "data/release/entities.json").read_text(encoding="utf-8"))
         }
         cls.release_events = json.loads((ROOT / "data/release/events.json").read_text(encoding="utf-8"))
+        cls.release_metadata = json.loads(
+            (ROOT / "data/release/metadata.json").read_text(encoding="utf-8")
+        )
         cls.exact_rows = [
             row
             for row in cls.hced_rows
@@ -171,16 +218,29 @@ class Wave8HussitesTests(unittest.TestCase):
         ]
 
     def _installed(self) -> tuple[dict, dict]:
-        entities = copy.deepcopy(self.release_entities)
+        lane_entity_ids = {str(entity["id"]) for entity in WAVE8_HUSSITES_ENTITIES}
+        entities = {
+            entity_id: copy.deepcopy(entity)
+            for entity_id, entity in self.release_entities.items()
+            if entity_id not in lane_entity_ids
+        }
         sources: dict[str, dict] = {}
         install_wave8_hussites_entities(entities)
         install_wave8_hussites_sources(sources)
         return entities, sources
 
+    def _preintegration_events(self) -> list:
+        return [
+            copy.deepcopy(event)
+            for event in self.release_events
+            if event.get("hced_candidate_id") not in WAVE8_HUSSITES_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+
     def _emit(self, existing_events=None) -> tuple[dict, dict, list]:
         entities, sources = self._installed()
         existing = (
-            copy.deepcopy(self.release_events)
+            self._preintegration_events()
             if existing_events is None
             else copy.deepcopy(existing_events)
         )
@@ -192,9 +252,10 @@ class Wave8HussitesTests(unittest.TestCase):
         return entities, sources, events
 
     def test_funnel_and_queue_lock_the_complete_fourteen_row_exact_cohort(self) -> None:
+        historical = _historical_funnel_projection()
         scoped_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical["row_label_data"]
             if "hussites" in row.get("blocker_labels", [])
         }
         exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
@@ -206,7 +267,7 @@ class Wave8HussitesTests(unittest.TestCase):
         payload = "".join(f"{candidate_id}\n" for candidate_id in sorted(scoped_rows))
         self.assertEqual(hashlib.sha256(payload.encode()).hexdigest(), FUNNEL_CANDIDATE_ID_SHA256)
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "hussites"
+            row for row in historical["labels"] if row.get("label") == "hussites"
         ]
         self.assertEqual(len(label_rows), 1)
         label_row = label_rows[0]
@@ -236,6 +297,29 @@ class Wave8HussitesTests(unittest.TestCase):
                     for failure in row.get("label_failures", [])
                 )
             )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "hussites"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Hussites lane must not remain in the live unresolved funnel",
+        )
+        self.assertFalse(
+            any(
+                "hussites" in row.get("blocker_labels", [])
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "no live funnel row may still carry the resolved exact hussites blocker",
+        )
+        live_row_ids = {
+            str(row.get("candidate_id"))
+            for row in self.funnel.get("row_label_data", [])
+        }
+        self.assertFalse(
+            live_row_ids & set(WAVE8_HUSSITES_EXPECTED_CANDIDATE_IDS),
+            "adjudicated Hussites candidates must not remain in the live funnel row data",
+        )
 
     def test_hashes_dispositions_counts_and_ownership_are_pinned(self) -> None:
         by_id = {str(row["candidate_id"]): row for row in self.exact_rows}
@@ -332,7 +416,14 @@ class Wave8HussitesTests(unittest.TestCase):
             self.assertEqual(source["evidence_roles"], sorted(set(source["evidence_roles"])))
 
         entity_ids = {str(entity["id"]) for entity in WAVE8_HUSSITES_ENTITIES}
-        self.assertTrue(entity_ids.isdisjoint(self.release_entities))
+        self.assertLessEqual(entity_ids, set(self.release_entities))
+        for entity in WAVE8_HUSSITES_ENTITIES:
+            self.assertEqual(self.release_entities[str(entity["id"])], entity)
+        installed_entities, _ = self._installed()
+        self.assertEqual(
+            set(installed_entities) - (set(self.release_entities) - entity_ids),
+            entity_ids,
+        )
         used_ids = {
             str(entity_id)
             for contract in WAVE8_HUSSITES_CONTRACTS.values()
@@ -544,12 +635,12 @@ class Wave8HussitesTests(unittest.TestCase):
         events_1 = promote_wave8_hussites_contracts(
             self.hced_rows,
             entities,
-            copy.deepcopy(self.release_events),
+            self._preintegration_events(),
         )
         events_2 = promote_wave8_hussites_contracts(
             self.hced_rows,
             entities,
-            copy.deepcopy(self.release_events),
+            self._preintegration_events(),
         )
         self.assertEqual(events_1, events_2)
         self.assertEqual(len({event["id"] for event in events_1}), 12)
@@ -611,13 +702,14 @@ class Wave8HussitesTests(unittest.TestCase):
             validate_wave8_hussites_queue_contracts(expanded)
 
         entities, _ = self._installed()
+        existing = self._preintegration_events()
         missing_entity = copy.deepcopy(entities)
         missing_entity.pop(VITKOV_HUSSITE_ID)
         with self.assertRaisesRegex(ValueError, "entity-window violation"):
             promote_wave8_hussites_contracts(
                 self.hced_rows,
                 missing_entity,
-                self.release_events,
+                existing,
             )
         wrong_window = copy.deepcopy(entities)
         wrong_window[VITKOV_HUSSITE_ID]["start_year"] = 1421
@@ -625,11 +717,11 @@ class Wave8HussitesTests(unittest.TestCase):
             promote_wave8_hussites_contracts(
                 self.hced_rows,
                 wrong_window,
-                self.release_events,
+                existing,
             )
 
         candidate_collision = [
-            *copy.deepcopy(self.release_events),
+            *self._preintegration_events(),
             {
                 "id": "future_owner",
                 "name": "Unrelated",
@@ -644,7 +736,7 @@ class Wave8HussitesTests(unittest.TestCase):
                 candidate_collision,
             )
         name_collision = [
-            *copy.deepcopy(self.release_events),
+            *self._preintegration_events(),
             {"id": "future_twin", "name": "Battle of Vitkov Hill", "year": 1420},
         ]
         with self.assertRaisesRegex(ValueError, "duplicate event"):
@@ -739,6 +831,52 @@ class Wave8HussitesTests(unittest.TestCase):
                 self.iwbd_rows,
                 release_twin,
             )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        lane_events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_HUSSITES_RESERVED_IDS
+        ]
+        self.assertEqual(len(lane_events), 12)
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in lane_events},
+            set(WAVE8_HUSSITES_CONTRACT_IDS),
+        )
+        self.assertEqual(len({event["id"] for event in lane_events}), 12)
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in lane_events)
+        )
+        self.assertFalse(
+            WAVE8_HUSSITES_HOLD_IDS
+            & {str(event.get("hced_candidate_id")) for event in self.release_events},
+            "held Hussites rows must never reach the rating ledger",
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_hussites_hced_events"], 12)
+        self.assertEqual(
+            promotion["wave8_hussites_candidate_ids"],
+            sorted(WAVE8_HUSSITES_CONTRACT_IDS),
+        )
+        self.assertEqual(
+            [hold["candidate_id"] for hold in promotion["wave8_hussites_holds"]],
+            sorted(WAVE8_HUSSITES_HOLD_IDS),
+        )
+        self.assertEqual(promotion["wave8_hussites_entities_added"], 22)
+        self.assertEqual(promotion["wave8_hussites_sources_added"], 16)
+        self.assertEqual(
+            promotion["wave8_hussites_queue_validation"],
+            validate_wave8_hussites_queue_contracts(self.hced_rows),
+        )
+        self.assertEqual(
+            promotion["wave8_hussites_integration_validation"],
+            validate_wave8_hussites_integration_dispositions(
+                self.hced_rows,
+                self.iwbd_rows,
+                self.release_events,
+            ),
+        )
 
     def test_location_quarantines_are_promoted_only_and_do_not_mutate_globals(self) -> None:
         before_points_object = HCED_POINT_QUARANTINE_IDS

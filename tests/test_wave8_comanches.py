@@ -146,6 +146,7 @@ class Wave8ComanchesTests(unittest.TestCase):
         cls.iwbd_rows = _jsonl(ROOT / "data/review/iwbd-candidates.jsonl")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
         cls.release_sources = _json(ROOT / "data/release/sources.json")
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.hced_by_id = {
@@ -183,6 +184,7 @@ class Wave8ComanchesTests(unittest.TestCase):
                 for event in self.release_events
                 if event.get("hced_candidate_id")
                 not in WAVE8_COMANCHES_CONTRACT_IDS
+                and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
             ]
             if existing_events is None
             else copy.deepcopy(existing_events)
@@ -199,9 +201,26 @@ class Wave8ComanchesTests(unittest.TestCase):
         self.assertEqual(WAVE8_COMANCHES_EXPECTED_CANDIDATE_IDS, exact_ids)
         self.assertEqual(WAVE8_COMANCHES_RESERVED_IDS, exact_ids)
 
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "label": "comanches",
+                    "sole_blocker_events": 4,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["comanches"],
+                    "candidate_id": candidate_id,
+                }
+                for candidate_id in sorted(EXPECTED_RAW_HASHES)
+            ],
+        }
         funnel_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "comanches" in row.get("blocker_labels", [])
         }
         self.assertEqual(set(funnel_rows), exact_ids)
@@ -211,13 +230,31 @@ class Wave8ComanchesTests(unittest.TestCase):
             FUNNEL_CANDIDATE_ID_SHA256,
         )
         label_rows = [
-            row for row in self.funnel["labels"] if row.get("label") == "comanches"
+            row
+            for row in historical_funnel["labels"]
+            if row.get("label") == "comanches"
         ]
         self.assertEqual(len(label_rows), 1)
         self.assertEqual(label_rows[0]["sole_blocker_events"], 4)
         self.assertEqual(
             label_rows[0]["event_candidate_id_sha256"],
             FUNNEL_CANDIDATE_ID_SHA256,
+        )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "comanches"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Comanches lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                str(row.get("candidate_id")) in exact_ids
+                or "comanches" in row.get("blocker_labels", [])
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "adjudicated Comanches rows must not remain in the live funnel row data",
         )
 
     def test_row_hashes_and_all_four_dispositions_fail_closed(self) -> None:
@@ -607,6 +644,37 @@ class Wave8ComanchesTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValueError, "duplicate event"):
             self._events([duplicate_name])
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_COMANCHES_CONTRACT_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        promotion = self.release_metadata.get("promotion", {})
+        if "accepted_wave8_comanches_hced_events" not in promotion:
+            self.assertEqual(integrated, [])
+            return
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            WAVE8_COMANCHES_CONTRACT_IDS,
+        )
+        self.assertEqual(len(integrated), len(WAVE8_COMANCHES_CONTRACT_IDS))
+        self.assertEqual(
+            len({str(event["id"]) for event in integrated}),
+            len(WAVE8_COMANCHES_CONTRACT_IDS),
+        )
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in integrated)
+        )
+        for event in integrated:
+            Event.from_dict(event)
+        self.assertEqual(promotion["accepted_wave8_comanches_hced_events"], 2)
+        self.assertEqual(
+            promotion["wave8_comanches_candidate_ids"],
+            sorted(WAVE8_COMANCHES_CONTRACT_IDS),
+        )
 
 
 if __name__ == "__main__":

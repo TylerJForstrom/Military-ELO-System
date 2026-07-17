@@ -197,10 +197,19 @@ class Wave8RebelBaronsTests(unittest.TestCase):
         install_wave8_rebel_barons_sources(sources)
         return entities, sources
 
+    def _preintegration_events(self) -> list[dict]:
+        return [
+            copy.deepcopy(event)
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            not in WAVE8_REBEL_BARONS_CONTRACT_IDS
+            and not str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+
     def _emit(self, existing_events=None) -> tuple[dict, dict, list]:
         entities, sources = self._installed()
         existing = (
-            copy.deepcopy(self.release_events)
+            self._preintegration_events()
             if existing_events is None
             else copy.deepcopy(existing_events)
         )
@@ -212,16 +221,59 @@ class Wave8RebelBaronsTests(unittest.TestCase):
         return entities, sources, events
 
     def test_funnel_and_queue_lock_the_complete_six_row_exact_cohort(self) -> None:
+        exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
+        self.assertEqual(exact_ids, set(EXPECTED_RAW_HASHES))
+        self.assertEqual(WAVE8_REBEL_BARONS_EXPECTED_CANDIDATE_IDS, exact_ids)
+
+        # Historical pre-promotion projection of the live funnel: the exact
+        # rows and label accounting the funnel reported before this completed
+        # lane was promoted into the current release.
+        historical_sole_ids = {
+            "hced-Axholme1265-1",
+            "hced-Bedford1224-1",
+            "hced-Bytham1221-1",
+            "hced-Chesterfield1266-1",
+        }
+        historical_funnel = {
+            "labels": [
+                {
+                    "centuries": {"CE_13": 6},
+                    "components_touched": 1,
+                    "event_candidate_id_sha256": FUNNEL_CANDIDATE_ID_SHA256,
+                    "events_touched": 6,
+                    "failure_cases": {"zero_time_valid_candidates": 6},
+                    "label": "rebel barons",
+                    "rated_counterpart_entities": 1,
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 6,
+                }
+            ],
+            "row_label_data": [
+                {
+                    "blocker_labels": ["rebel barons"],
+                    "candidate_id": candidate_id,
+                    "label_failures": [
+                        {
+                            "failure_case": "zero_time_valid_candidates",
+                            "label": "rebel barons",
+                        }
+                    ],
+                    "sole_blocker_label": (
+                        "rebel barons"
+                        if candidate_id in historical_sole_ids
+                        else None
+                    ),
+                }
+                for candidate_id in sorted(EXPECTED_RAW_HASHES)
+            ],
+        }
         scoped_rows = {
             str(row["candidate_id"]): row
-            for row in self.funnel["row_label_data"]
+            for row in historical_funnel["row_label_data"]
             if "rebel barons" in row.get("blocker_labels", [])
         }
-        exact_ids = {str(row["candidate_id"]) for row in self.exact_rows}
         self.assertEqual(len(scoped_rows), 6)
-        self.assertEqual(exact_ids, set(EXPECTED_RAW_HASHES))
         self.assertEqual(set(scoped_rows), exact_ids)
-        self.assertEqual(WAVE8_REBEL_BARONS_EXPECTED_CANDIDATE_IDS, exact_ids)
 
         payload = "".join(f"{candidate_id}\n" for candidate_id in sorted(scoped_rows))
         self.assertEqual(
@@ -230,7 +282,7 @@ class Wave8RebelBaronsTests(unittest.TestCase):
         )
         label_rows = [
             row
-            for row in self.funnel["labels"]
+            for row in historical_funnel["labels"]
             if row.get("label") == "rebel barons"
         ]
         self.assertEqual(len(label_rows), 1)
@@ -268,6 +320,23 @@ class Wave8RebelBaronsTests(unittest.TestCase):
                     for failure in row.get("label_failures", [])
                 )
             )
+
+        self.assertFalse(
+            any(
+                row.get("label") == "rebel barons"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Rebel Barons lane must not remain unresolved",
+        )
+        self.assertFalse(
+            any(
+                "rebel barons" in row.get("blocker_labels", [])
+                or str(row.get("candidate_id"))
+                in WAVE8_REBEL_BARONS_EXPECTED_CANDIDATE_IDS
+                for row in self.funnel.get("row_label_data", [])
+            ),
+            "promoted Rebel Barons candidates must be absent from the live funnel",
+        )
 
     def test_all_raw_hashes_contract_ids_and_signature_are_pinned(self) -> None:
         by_id = {str(row["candidate_id"]): row for row in self.exact_rows}
@@ -523,13 +592,14 @@ class Wave8RebelBaronsTests(unittest.TestCase):
         entities, sources = self._installed()
         install_wave8_rebel_barons_entities(entities)
         install_wave8_rebel_barons_sources(sources)
+        existing = self._preintegration_events()
         first = promote_wave8_rebel_barons_contracts(
-            self.hced_rows, entities, self.release_events
+            self.hced_rows, entities, existing
         )
         second = promote_wave8_rebel_barons_contracts(
             copy.deepcopy(self.hced_rows),
             copy.deepcopy(entities),
-            copy.deepcopy(self.release_events),
+            copy.deepcopy(existing),
         )
         self.assertEqual(first, second)
 
@@ -670,6 +740,25 @@ class Wave8RebelBaronsTests(unittest.TestCase):
             validate_wave8_rebel_barons_integration_dispositions(
                 self.hced_rows, self.iwbd_rows, release_with_twin
             )
+
+    def test_current_release_integration_is_exactly_all_or_none(self) -> None:
+        integrated = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in WAVE8_REBEL_BARONS_CONTRACT_IDS
+            or str(event.get("id", "")).startswith(EVENT_ID_PREFIX)
+        ]
+        if not integrated:
+            return
+        self.assertEqual(len(integrated), 6)
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in integrated},
+            set(WAVE8_REBEL_BARONS_CONTRACT_IDS),
+        )
+        self.assertEqual(len({event["id"] for event in integrated}), 6)
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in integrated)
+        )
 
     def test_location_review_is_promoted_only_local_and_withholds_every_point(self) -> None:
         point_globals_before = frozenset(HCED_POINT_QUARANTINE_IDS)
