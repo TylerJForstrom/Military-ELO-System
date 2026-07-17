@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 785,
-    "events": 5208,
-    "sources": 1040,
-    "registry_polities": 2141
+    "entities": 786,
+    "events": 5211,
+    "sources": 1051,
+    "registry_polities": 2142
   },
   "year_range": {
     "start": -1274,
@@ -136,6 +136,7 @@
     "accepted_wave8_sikh_punjab_hced_events": 4,
     "accepted_wave8_eritrea_hced_events": 4,
     "accepted_wave8_flanders_hced_events": 4,
+    "accepted_wave8_france_bavaria_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -8817,7 +8818,257 @@
     "wave8_flanders_outcome_overrides": [],
     "wave8_flanders_entities_added": 9,
     "wave8_flanders_sources_added": 15,
-    "hced_label_pass_input_rows": 5753,
+    "wave8_france_bavaria_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_lane_overlap_audits": 4,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 1,
+      "new_sources": 11,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "related_hced_dispositions": 4,
+      "required_existing_entities": 4,
+      "reviewed_hced_rows": 4,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_france_bavaria_cohort_counts": {
+      "fifth_coalition_bavarian_campaign_1809": 1,
+      "fifth_coalition_northern_theatre_1809": 1,
+      "russian_campaign_polotsk_1812": 2
+    },
+    "wave8_france_bavaria_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_france_bavaria_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "related_hced_dispositions": 4
+    },
+    "wave8_france_bavaria_candidate_ids": [
+      "hced-Gefrees1809-1",
+      "hced-Neumarkt-St-Viet1809-1",
+      "hced-Polotsk (2nd)1812-1"
+    ],
+    "wave8_france_bavaria_holds": [
+      {
+        "candidate_id": "hced-Polotsk (1st)1812-1",
+        "raw_row_sha256": "c2cea72b37d778e14f56cf3eae8a8aff5110c61672bb1f83d4a01c7ea223923d",
+        "canonical_event": {
+          "canonical_key": "first_battle_of_polotsk:1812:1812",
+          "date_precision": "day_range",
+          "date_text": "17-18 August 1812",
+          "granularity": "multi_day_engagement",
+          "name": "First Battle of Polotsk",
+          "year_low": 1812,
+          "year_high": 1812
+        },
+        "cohort": "russian_campaign_polotsk_1812",
+        "disposition": "hold",
+        "hold_category": "historiographically_contested_outcome",
+        "reviewed_outcome": "tactical_result_not_uniquely_source_attested",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Oudinot's French II Corps and Saint-Cyr's Bavarian VI Corps",
+          "Wittgenstein's Russian I Corps"
+        ],
+        "reviewed_granularity": "multi_day_engagement",
+        "hold_reason": "Authoritative accounts conflict at the rating granularity: some describe a French tactical victory after Wittgenstein withdrew, while the Great Russian Encyclopedia describes failed French attacks and a failed operational plan. Strategic effect cannot substitute for a uniquely attested tactical result. This row is not promoted; its outcome remains unknown and is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_france_bavaria_fondation_napoleon_1812",
+          "wave8_france_bavaria_foord_1812",
+          "wave8_france_bavaria_napoleon_series_polotsk_first",
+          "wave8_france_bavaria_russian_encyclopedia_polotsk"
+        ],
+        "conflicting_outcome_positions": {
+          "french_tactical_victory": [
+            "wave8_france_bavaria_foord_1812",
+            "wave8_france_bavaria_fondation_napoleon_1812"
+          ],
+          "failed_french_attack_or_russian_success": [
+            "wave8_france_bavaria_russian_encyclopedia_polotsk"
+          ]
+        },
+        "duplicate_ownership": {
+          "owner_module": "wave8_france_bavaria",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_france_bavaria_terminal_exclusions": [],
+    "wave8_france_bavaria_existing_lane_overlap_audit": [
+      {
+        "audit_id": "austrian_empire",
+        "existing_owner": "curated_release_and_central_europe_lanes",
+        "candidate_id_overlap": [],
+        "identity_window": [
+          1804,
+          1867
+        ],
+        "disposition": "reuse_identity_without_reowning_existing_events"
+      },
+      {
+        "audit_id": "first_french_empire",
+        "existing_owner": "curated_release_and_france_lanes",
+        "candidate_id_overlap": [],
+        "identity_window": [
+          1804,
+          1815
+        ],
+        "disposition": "reuse_identity_without_reowning_existing_events"
+      },
+      {
+        "audit_id": "kingdom_bavaria_1806",
+        "existing_owner": "wave7_west_bavaria_sequence",
+        "candidate_id_overlap": [],
+        "identity_window": [
+          1806,
+          1918
+        ],
+        "disposition": "reuse_identity_without_reowning_existing_events"
+      },
+      {
+        "audit_id": "russian_empire",
+        "existing_owner": "curated_release_and_russia_lanes",
+        "candidate_id_overlap": [],
+        "identity_window": [
+          1721,
+          1917
+        ],
+        "disposition": "reuse_identity_without_reowning_existing_events"
+      }
+    ],
+    "wave8_france_bavaria_cross_lane_dispositions": [],
+    "wave8_france_bavaria_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Jacobovo1812-1",
+        "raw_row_sha256": "77ae8eaa411701af3a6d8faa0f83771f57bb6d5e359b8a8af2836e639a1515f1",
+        "disposition": "separate_klyastitsy_jakubowo_engagement",
+        "owner_module": "existing_release",
+        "reason": "Jacobovo/Jakubowo belongs to the late-July Klyastitsy fighting, not either August or October Battle of Polotsk. Its existing candidate ownership is untouched."
+      },
+      {
+        "candidate_id": "hced-Neumarkt1796-1",
+        "raw_row_sha256": "7ecbd24dbdf4cb4861d465dbc460d0380077e6747cded047028fed9043669cdb",
+        "disposition": "separate_1796_neumarkt_engagement",
+        "owner_module": "existing_release",
+        "reason": "The 1796 event is thirteen years earlier and is not Neumarkt-Sankt Veit."
+      },
+      {
+        "candidate_id": "hced-Polotsk1563-1",
+        "raw_row_sha256": "d95e376f8617a4176b97d021e3c8bcb965d38c2aaf1ae2fb175f44cdcac4f4b0",
+        "disposition": "separate_sixteenth_century_siege",
+        "owner_module": null,
+        "reason": "The 1563 siege is unrelated to the 1812 Russian campaign."
+      },
+      {
+        "candidate_id": "hced-Polotsk1579-1",
+        "raw_row_sha256": "fc738f56ff035563110c936701085b0562914061eef1ea1c286b38ed8a118582",
+        "disposition": "separate_sixteenth_century_siege",
+        "owner_module": "existing_release",
+        "reason": "The 1579 siege is unrelated to the 1812 Russian campaign."
+      }
+    ],
+    "wave8_france_bavaria_iwbd_duplicate_dispositions": [],
+    "wave8_france_bavaria_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Gefrees1809-1",
+        "aliases": [
+          "battle of gefrees",
+          "gefrees"
+        ],
+        "years": [
+          1809,
+          1809
+        ]
+      },
+      {
+        "audit_id": "hced-Neumarkt-St-Viet1809-1",
+        "aliases": [
+          "battle of neumarkt sankt veit",
+          "battle of neumarkt st veit",
+          "neumarkt sankt veit",
+          "neumarkt st viet"
+        ],
+        "years": [
+          1809,
+          1809
+        ]
+      },
+      {
+        "audit_id": "hced-Polotsk (1st)1812-1",
+        "aliases": [
+          "first battle of polotsk",
+          "polotsk 1st",
+          "polotsk first"
+        ],
+        "years": [
+          1812,
+          1812
+        ]
+      },
+      {
+        "audit_id": "hced-Polotsk (2nd)1812-1",
+        "aliases": [
+          "polotsk 2nd",
+          "polotsk second",
+          "second battle of polotsk"
+        ],
+        "years": [
+          1812,
+          1812
+        ]
+      }
+    ],
+    "wave8_france_bavaria_existing_release_duplicate_dispositions": [],
+    "wave8_france_bavaria_integration_dispositions": [
+      {
+        "disposition_id": "related_hced:hced-Jacobovo1812-1",
+        "raw_row_sha256": "77ae8eaa411701af3a6d8faa0f83771f57bb6d5e359b8a8af2836e639a1515f1",
+        "disposition": "separate_klyastitsy_jakubowo_engagement",
+        "owner_module": "existing_release",
+        "reason": "Jacobovo/Jakubowo belongs to the late-July Klyastitsy fighting, not either August or October Battle of Polotsk. Its existing candidate ownership is untouched."
+      },
+      {
+        "disposition_id": "related_hced:hced-Neumarkt1796-1",
+        "raw_row_sha256": "7ecbd24dbdf4cb4861d465dbc460d0380077e6747cded047028fed9043669cdb",
+        "disposition": "separate_1796_neumarkt_engagement",
+        "owner_module": "existing_release",
+        "reason": "The 1796 event is thirteen years earlier and is not Neumarkt-Sankt Veit."
+      },
+      {
+        "disposition_id": "related_hced:hced-Polotsk1563-1",
+        "raw_row_sha256": "d95e376f8617a4176b97d021e3c8bcb965d38c2aaf1ae2fb175f44cdcac4f4b0",
+        "disposition": "separate_sixteenth_century_siege",
+        "owner_module": null,
+        "reason": "The 1563 siege is unrelated to the 1812 Russian campaign."
+      },
+      {
+        "disposition_id": "related_hced:hced-Polotsk1579-1",
+        "raw_row_sha256": "fc738f56ff035563110c936701085b0562914061eef1ea1c286b38ed8a118582",
+        "disposition": "separate_sixteenth_century_siege",
+        "owner_module": "existing_release",
+        "reason": "The 1579 siege is unrelated to the 1812 Russian campaign."
+      }
+    ],
+    "wave8_france_bavaria_outcome_overrides": [],
+    "wave8_france_bavaria_entities_added": 1,
+    "wave8_france_bavaria_sources_added": 11,
+    "hced_label_pass_input_rows": 5749,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -8830,7 +9081,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 851,
+      "reserved_candidate_contract": 855,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -8842,7 +9093,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2242,
+      "no_unique_time_valid_label_match": 2238,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

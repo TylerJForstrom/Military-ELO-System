@@ -7070,6 +7070,21 @@
     ]
   },
   {
+    "id": "black_brunswick_hesse_kassel_free_corps_gefrees_1809",
+    "name": "Black Brunswick and Hesse-Kassel free corps at Gefrees (1809)",
+    "kind": "event_bounded_volunteer_free_corps_coalition",
+    "start_year": 1809,
+    "end_year": 1809,
+    "region": "Franconia, Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Black Brunswick and attached Hesse-Kassel free-corps contingents that fought with Kienmayer's Austrian force at Gefrees. No rating is inherited from or transferred to the Duchy of Brunswick, Hesse-Kassel, a dynasty, a later state, another coalition, or any formation in another campaign.",
+    "source_ids": [
+      "wave8_france_bavaria_bamberg_gefrees",
+      "wave8_france_bavaria_gill_with_eagles"
+    ]
+  },
+  {
     "id": "clio_q152115_1809_3106574e",
     "name": "Duchy of Warsaw",
     "kind": "polity",

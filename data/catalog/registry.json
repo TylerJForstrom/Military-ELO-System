@@ -1892,6 +1892,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "black_brunswick_hesse_kassel_free_corps_gefrees_1809",
+      "name": "Black Brunswick and Hesse-Kassel free corps at Gefrees (1809)",
+      "kind": "event_bounded_volunteer_free_corps_coalition",
+      "start_year": 1809,
+      "end_year": 1809,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Franconia, Central Europe"
+    },
+    {
       "id": "clio_q287996_1519_b8946855",
       "name": "Blambangan Kingdom",
       "kind": "kingdom",
@@ -22784,11 +22794,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2141,
-    "rated_entities": 778,
-    "rated_events": 5208,
+    "registry_polities": 2142,
+    "rated_entities": 779,
+    "rated_events": 5211,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18186,
+    "unresolved_event_candidates": 18183,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22854,6 +22864,7 @@
     "candidate_keyed_wave8_sikh_punjab_hced_events": 4,
     "candidate_keyed_wave8_eritrea_hced_events": 4,
     "candidate_keyed_wave8_flanders_hced_events": 4,
+    "candidate_keyed_wave8_france_bavaria_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22864,21 +22875,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4944,
-      "candidate_keyed_reviewed_contracts": 634,
+      "hced_candidate_bindings": 4947,
+      "candidate_keyed_reviewed_contracts": 637,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4851,
-      "location_provenance_objects": 4900,
-      "point_fields_withheld_by_quarantine": 210,
+      "modern_location_country_assertions": 4854,
+      "location_provenance_objects": 4903,
+      "point_fields_withheld_by_quarantine": 213,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 258,
-      "point_quarantine_candidate_manifest_sha256": "1794c7b9720ffaf9a085393a8cd1d8e82f0894db8d1c8f93b4fdcf190bd38c21",
+      "unique_events_with_any_quarantined_field": 261,
+      "point_quarantine_candidate_manifest_sha256": "cfccb507bd15b693a7036f6e3e07ab1dc6791006ac87b65d20af8afd0e984bf0",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "ac072cc35cecf126ab7aa34ec9ee62dd18adabea3c7d6dbc8c506f3ab0afd112",
+      "quarantine_policy_sha256": "ea63bab2bb1cdda089728fc65a092bd209a7e5a7acdf6856bf7e1004657fceab",
       "assertion_status": {
-        "unreviewed_source_assertion": 4900
+        "unreviewed_source_assertion": 4903
       },
       "verified_location_assertions": {
         "availability": "not_available",

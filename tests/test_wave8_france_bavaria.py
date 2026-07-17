@@ -478,8 +478,13 @@ class Wave8FranceBavariaTests(unittest.TestCase):
         release_candidate_ids = {
             event.get("hced_candidate_id") for event in self.release_events
         }
-        self.assertFalse(
+        release_overlap = (
             WAVE8_FRANCE_BAVARIA_RESERVED_IDS & release_candidate_ids
+        )
+        self.assertFalse(WAVE8_FRANCE_BAVARIA_HOLD_IDS & release_candidate_ids)
+        self.assertIn(
+            release_overlap,
+            (frozenset(), WAVE8_FRANCE_BAVARIA_CONTRACT_IDS),
         )
 
     def test_installers_are_idempotent_copy_fixtures_and_reject_collisions(

@@ -8199,6 +8199,171 @@
     ]
   },
   {
+    "id": "wave8_france_bavaria_bamberg_gefrees",
+    "title": "Noth, Thränen und Excesse aller Art: Der Krieg von 1806/07 in Franken",
+    "url": "https://fis.uni-bamberg.de/bitstreams/20ed743a-9bb6-49f6-887a-123f78db4827/download",
+    "publisher": "University of Bamberg",
+    "license": "Citation and link only",
+    "source_type": "academic_historical_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "bamberg_gefrees_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_bavarian_general_staff_1809",
+    "title": "Der Feldzug von 1809 in Süddeutschland",
+    "url": "https://www.digitale-sammlungen.de/de/view/bsb10347307",
+    "publisher": "Bavarian General Staff; Bavarian State Library digitization",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "bavarian_general_staff_campaign_1809",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_fondation_napoleon_1812",
+    "title": "Napoleon's Russian Campaign: From the Niemen to Moscow",
+    "url": "https://www.napoleon.org/en/history-of-the-two-empires/timelines/napoleons-russian-campaign-from-the-niemen-to-moscow/",
+    "publisher": "Fondation Napoléon",
+    "license": "Citation and link only",
+    "source_type": "institutional_curated_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "fondation_napoleon_russian_campaign_timeline",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_foord_1812",
+    "title": "Napoleon's Russian Campaign of 1812",
+    "url": "https://www.gutenberg.org/cache/epub/57185/pg57185-images.html",
+    "publisher": "Project Gutenberg digitization of Edward Foord",
+    "license": "Citation and link only",
+    "source_type": "digitized_scholarly_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "foord_russian_campaign_1812",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_gill_neumarkt",
+    "title": "1809: Thunder on the Danube, Volume II",
+    "url": "https://www.casematepublishers.com/9781848327580/1809-thunder-on-the-danube/",
+    "publisher": "Frontline Books; Casemate Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "gill_thunder_danube_volume_two",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_gill_with_eagles",
+    "title": "With Eagles to Glory: Napoleon and His German Allies in the 1809 Campaign",
+    "url": "https://www.casematepublishers.com/9781784383107/with-eagles-to-glory/",
+    "publisher": "Greenhill Books; Casemate Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "gill_with_eagles_to_glory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_mcgill_fifth_coalition",
+    "title": "The Fifth Coalition, 1809: Chronology",
+    "url": "https://digital.library.mcgill.ca/napoleon/english/timeline-5th.htm",
+    "publisher": "McGill University Napoleon Collection",
+    "license": "Citation and link only",
+    "source_type": "academic_library_curated_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "mcgill_napoleon_fifth_coalition_timeline",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_napoleon_series_polotsk_first",
+    "title": "The First Battle of Polotsk",
+    "url": "https://www.napoleon-series.org/military-info/battles/1812/Russia/Pultusk/PultuskChapter5.pdf",
+    "publisher": "The Napoleon Series",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "napoleon_series_polotsk_chapter_five",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_napoleon_series_polotsk_second",
+    "title": "The Second Battle of Polotsk",
+    "url": "https://www.napoleon-series.org/military-info/battles/1812/Russia/Pultusk/PultuskChapter6.pdf",
+    "publisher": "The Napoleon Series",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "napoleon_series_polotsk_chapter_six",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_russian_encyclopedia_polotsk",
+    "title": "Polotsk Battles of 1812",
+    "url": "https://old.bigenc.ru/military_science/text/3155926",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_polotsk",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_france_bavaria_thiers_neumarkt",
+    "title": "History of the Consulate and the Empire of France, Volume X",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/History_of_the_Consulate_and_the_Empire_of_France_Under_Napoleon%2C_20_Vols.%28Vol.X%29_%28IA_dli.granth.40667%29.pdf",
+    "publisher": "Internet Archive scan via Wikimedia Commons",
+    "license": "Citation and link only",
+    "source_type": "digitized_nineteenth_century_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "thiers_consulate_empire_volume_ten",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_garibaldi_guerzoni_1889",
     "title": "Garibaldi, volume I (1807-1859)",
     "url": "https://www.gutenberg.org/files/75122/75122-h/75122-h.htm",
