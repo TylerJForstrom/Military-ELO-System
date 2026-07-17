@@ -36,6 +36,9 @@ class Wave8KievanRusTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
+        cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         entities = {
@@ -196,6 +199,59 @@ class Wave8KievanRusTests(unittest.TestCase):
                 "hced_probable_twins": 0,
                 "iwbd_probable_twins": 0,
             },
+        )
+
+    def test_current_release_activates_one_curated_kievan_rus_identity(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            in lane.WAVE8_KIEVAN_RUS_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 2)
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in events},
+            lane.WAVE8_KIEVAN_RUS_CONTRACT_IDS,
+        )
+        self.assertFalse(
+            lane.WAVE8_KIEVAN_RUS_HOLD_IDS
+            & {
+                str(event.get("hced_candidate_id"))
+                for event in self.release_events
+            }
+        )
+
+        release_entities = {
+            str(item["id"]): item for item in self.release_entities
+        }
+        self.assertIn(KIEVAN_RUS, release_entities)
+        self.assertFalse(release_entities[KIEVAN_RUS]["aliases"])
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertEqual(registry_entities[KIEVAN_RUS]["status"], "rated")
+        self.assertEqual(
+            registry_entities[KIEVAN_RUS]["identity_status"],
+            "curated",
+        )
+
+        source_ids = {str(item["id"]) for item in self.release_sources}
+        self.assertLessEqual(
+            {str(item["id"]) for item in lane.WAVE8_KIEVAN_RUS_SOURCES},
+            source_ids,
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_kievan_rus_hced_events"], 2)
+        self.assertEqual(
+            promotion["wave8_kievan_rus_candidate_ids"],
+            sorted(lane.WAVE8_KIEVAN_RUS_CONTRACT_IDS),
+        )
+        self.assertEqual(len(promotion["wave8_kievan_rus_holds"]), 4)
+        self.assertEqual(
+            self.registry["coverage"][
+                "candidate_keyed_wave8_kievan_rus_hced_events"
+            ],
+            2,
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:

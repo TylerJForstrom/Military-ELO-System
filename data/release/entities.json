@@ -1947,6 +1947,22 @@
     ]
   },
   {
+    "id": "clio_ua_kievan_rus_882_b1e5ac40",
+    "name": "Kievan Rus'",
+    "kind": "polity",
+    "start_year": 882,
+    "end_year": 1240,
+    "region": "Eastern Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate. Only fingerprinted, candidate-keyed events with reviewed actors may use this identity: the source label 'Kiev' is not a global alias and is not allowed to bridge the later Rus' principalities or coalitions. Predecessors and successors inherit no Elo.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_kievan_rus_encyclopedia_martin",
+      "wave8_kievan_rus_hanak_sviatoslav"
+    ]
+  },
+  {
     "id": "arnulf_east_frankish_royal_army_dyle_891",
     "name": "Arnulf's East Frankish royal army at the Dyle (891)",
     "kind": "event_bounded_royal_field_army",

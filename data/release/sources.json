@@ -12141,6 +12141,47 @@
     ]
   },
   {
+    "id": "wave8_kievan_rus_encyclopedia_martin",
+    "title": "Janet Martin, Kievan Rus, Encyclopedia of Russian History",
+    "url": "https://www.encyclopedia.com/history/modern-europe/russian-soviet-and-cis-history/kievan-rus",
+    "publisher": "Encyclopedia of Russian History / Gale",
+    "license": "Citation and link only",
+    "source_type": "edited_reference_work",
+    "accessed": "2026-07-17",
+    "source_family_id": "martin_encyclopedia_russian_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kievan_rus_hanak_sviatoslav",
+    "title": "Walter K. Hanak, The Infamous Svjatoslav: Master of Duplicity in War and Peace?",
+    "url": "https://deremilitari.org/2014/05/the-infamous-svjatoslav-master-of-duplicity-in-war-and-peace/",
+    "publisher": "De Re Militari; originally Catholic University of America Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter_republication",
+    "accessed": "2026-07-17",
+    "source_family_id": "hanak_sviatoslav_1995",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_kievan_rus_leo_deacon",
+    "title": "Leo the Deacon, History, translated by Alice-Mary Talbot and Denis F. Sullivan",
+    "url": "https://terpconnect.umd.edu/~sullivan/LeoTheDeacon.pdf",
+    "publisher": "Dumbarton Oaks Research Library and Collection",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle_scholarly_edition",
+    "accessed": "2026-07-17",
+    "source_family_id": "leo_deacon_history_talbot_sullivan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_kingdom_kandy_codrington_short_history",
     "title": "A Short History of Ceylon",
     "url": "https://noolaham.net/project/46/4531/4531.html",
