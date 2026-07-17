@@ -3185,6 +3185,321 @@
     ]
   },
   {
+    "id": "meissen_austrian_crusader_assault_force_vitkov_1420",
+    "name": "Meissen-Austrian crusader assault force at Vitkov Hill (1420)",
+    "kind": "event_bounded_assault_force",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Vitkov Hill, Prague, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the mounted assault contingent, chiefly from Meissen and Austria, committed against the hill works. No rating is inherited by Hungary, the Empire, Germans, Austrians, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_vhu_vitkov"
+    ]
+  },
+  {
+    "id": "prague_orebite_tabor_field_coalition_vysehrad_1420",
+    "name": "Prague-Orebite-Tabor field coalition at Vysehrad (1420)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Pankrac plain and Vysehrad, Prague, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Prague-led coalition holding the siege lines on 1 November. No rating is inherited by Hussites generally, any member town or faction, the Czech people, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_prague2_vysehrad"
+    ]
+  },
+  {
+    "id": "rosenberg_svamberk_plauen_royalist_coalition_pansky_bor_1420",
+    "name": "Rosenberg-Svamberk-Plauen royalist coalition at Pansky Bor (1420)",
+    "kind": "event_bounded_coalition",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Pansky Bor (Maly Bor), Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the south- and west-Bohemian Catholic coalition assembled for this action. No rating is inherited by a Habsburg empire, the named lords separately, Germans, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_husitstvi_maly_bor"
+    ]
+  },
+  {
+    "id": "sigismund_crusader_relief_army_vysehrad_1420",
+    "name": "Sigismund's crusader relief army at Vysehrad (1420)",
+    "kind": "event_bounded_relief_army",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Pankrac plain and Vysehrad, Prague, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Sigismund's German, Hungarian, Silesian, Lusatian, Czech, and Moravian relief contingents in this battle. No rating is inherited by those polities or peoples, the Empire, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_prague2_vysehrad"
+    ]
+  },
+  {
+    "id": "sternberg_bohemian_royalist_interception_force_porici_1420",
+    "name": "Sternberg-led Bohemian royalist interception force at Porici (1420)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Porici nad Sazavou, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Catholic-royalist force that intercepted the Taborite march at Porici. No rating is inherited by Habsburgs, Bohemian nobles generally, a German identity, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_posazavi_porici"
+    ]
+  },
+  {
+    "id": "zizka_tabor_field_force_pansky_bor_1420",
+    "name": "Zizka's Taborite field force at Pansky Bor (1420)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Pansky Bor (Maly Bor), Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Zizka's force defending near Pansky Bor on 12 October. No rating is inherited by Hussites generally, another Taborite army, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_husitstvi_maly_bor"
+    ]
+  },
+  {
+    "id": "zizka_tabor_marching_force_porici_1420",
+    "name": "Zizka's Taborite marching force at Porici (1420)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Porici nad Sazavou, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Taborite column marching to Prague and fighting at Porici. No rating is inherited by Hussites generally, later Taborite armies, Bohemia, a religious population, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_posazavi_porici"
+    ]
+  },
+  {
+    "id": "zizka_prague_vitkov_defensive_force_1420",
+    "name": "Zizka-Prague defensive force at Vitkov Hill (1420)",
+    "kind": "event_bounded_defensive_force",
+    "start_year": 1420,
+    "end_year": 1420,
+    "region": "Vitkov Hill, Prague, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the small hill defenders and Prague reinforcement at Vitkov. No rating is inherited by Hussites, Prague, Taborites, the Czech people, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_vhu_vitkov"
+    ]
+  },
+  {
+    "id": "pilsen_landfrieden_pursuit_force_vladar_1421",
+    "name": "Pilsen Landfrieden pursuit force at Vladar Hill (1421)",
+    "kind": "event_bounded_pursuit_force",
+    "start_year": 1421,
+    "end_year": 1421,
+    "region": "Vladar Hill near Zlutice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Pilsen Landfrieden force surrounding Zizka at Vladar. No rating is inherited by Pilsen, Catholic Bohemian estates, Germans, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_archaeological_atlas_vladar",
+      "wave8_hussites_fudge_chronicle"
+    ]
+  },
+  {
+    "id": "western_second_crusade_besieging_army_zatec_1421",
+    "name": "Western Second Crusade besieging army at Zatec (1421)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1421,
+    "end_year": 1421,
+    "region": "Zatec, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the western imperial and princely contingents that besieged Zatec and disintegrated on 2 October. No rating is inherited by the Holy Roman Empire, its estates, Germans generally, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_hardy_zatec"
+    ]
+  },
+  {
+    "id": "zatec_hussite_garrison_and_civic_defenders_1421",
+    "name": "Zatec Hussite garrison and civic defenders (1421)",
+    "kind": "event_bounded_siege_defenders",
+    "start_year": 1421,
+    "end_year": 1421,
+    "region": "Zatec, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the armed garrison and civic defense of Zatec during the Second Crusade siege. No rating is inherited by Hussites, the city in other years, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_fudge_chronicle",
+      "wave8_hussites_hardy_zatec"
+    ]
+  },
+  {
+    "id": "zizka_hussite_retreating_force_vladar_1421",
+    "name": "Zizka's retreating Hussite force at Vladar Hill (1421)",
+    "kind": "event_bounded_defensive_force",
+    "start_year": 1421,
+    "end_year": 1421,
+    "region": "Vladar Hill near Zlutice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the force that defended its wagon position and broke away from Vladar. No rating is inherited by Hussites generally, Zizka's other armies, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_archaeological_atlas_vladar",
+      "wave8_hussites_fudge_chronicle"
+    ]
+  },
+  {
+    "id": "prague_tabor_hussite_counteroffensive_army_1422",
+    "name": "Prague-Tabor Hussite counteroffensive army (January 1422)",
+    "kind": "campaign_bounded_field_army",
+    "start_year": 1422,
+    "end_year": 1422,
+    "region": "Nebovidy-Habry-Nemecky Brod campaign, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the joined Prague and Tabor forces counterattacking from Kolin through Nemecky Brod in January 1422. No rating is inherited by Hussites generally, either faction in other campaigns, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_papajik_kutna",
+      "wave8_hussites_vhu_kutna_brod"
+    ]
+  },
+  {
+    "id": "sigismund_crusader_defenders_nemecky_brod_1422",
+    "name": "Sigismund's crusader defenders at Nemecky Brod (1422)",
+    "kind": "event_bounded_urban_defenders",
+    "start_year": 1422,
+    "end_year": 1422,
+    "region": "Nemecky Brod (Havlickuv Brod), Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the crusader elements that formed for defense in Nemecky Brod on 9-10 January. No rating is inherited by Hungary, the town, German crusaders generally, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_papajik_kutna",
+      "wave8_hussites_vhu_kutna_brod"
+    ]
+  },
+  {
+    "id": "sigismund_crusader_rear_guard_habry_1422",
+    "name": "Sigismund's crusader rear guard at Habry (1422)",
+    "kind": "event_bounded_rear_guard",
+    "start_year": 1422,
+    "end_year": 1422,
+    "region": "Habry, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the rear guard ordered to delay the Hussite pursuit at Habry. No rating is inherited by Hungary, German crusaders, Sigismund's whole army, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_papajik_kutna",
+      "wave8_hussites_vhu_kutna_brod"
+    ]
+  },
+  {
+    "id": "sigismund_crusader_resistance_force_nebovidy_1422",
+    "name": "Sigismund's crusader resistance force at Nebovidy (1422)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1422,
+    "end_year": 1422,
+    "region": "Nebovidy near Kutna Hora, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the dispersed royal-crusader troops attempting resistance before Nebovidy on 6 January. No rating is inherited by Hungary, Austria, the Empire, crusaders generally, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_papajik_kutna",
+      "wave8_hussites_vhu_kutna_brod"
+    ]
+  },
+  {
+    "id": "cenek_vartenberk_lords_union_force_horice_1423",
+    "name": "Cenek of Vartenberk's Lords' Union force at Horice (1423)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": 1423,
+    "end_year": 1423,
+    "region": "Gothard Hill at Horice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Bohemian lordly coalition led by Cenek of Vartenberk at Horice. No rating is inherited by a Habsburg empire, the Lords' Union in other actions, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_cornej_zizka",
+      "wave8_hussites_horice_history"
+    ]
+  },
+  {
+    "id": "zizka_orebite_field_army_horice_1423",
+    "name": "Zizka's Orebite field army at Horice (1423)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1423,
+    "end_year": 1423,
+    "region": "Gothard Hill at Horice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Zizka's field army at Horice in April 1423. No rating is inherited by Hussites, Orebites, Zizka's other armies, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_cornej_zizka",
+      "wave8_hussites_horice_history"
+    ]
+  },
+  {
+    "id": "eastern_bohemian_catholic_lords_force_skalice_1424",
+    "name": "Eastern Bohemian Catholic lords' force at Skalice (1424)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": 1424,
+    "end_year": 1424,
+    "region": "Ceska Skalice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the named eastern-Bohemian Catholic lords and their men at Skalice. No rating is inherited by royalist barons generally, their families, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_ceska_skalice_history",
+      "wave8_hussites_cornej_zizka"
+    ]
+  },
+  {
+    "id": "zizka_hradec_field_force_ceska_skalice_1424",
+    "name": "Zizka-Hradec field force at Ceska Skalice (1424)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1424,
+    "end_year": 1424,
+    "region": "Ceska Skalice, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Zizka and the Hradec contingent at Ceska Skalice on 6 January. No rating is inherited by Hussites, Hradec, Zizka's other forces, the Czech people, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_ceska_skalice_history",
+      "wave8_hussites_cornej_zizka"
+    ]
+  },
+  {
+    "id": "hussite_field_coalition_aussig_1426",
+    "name": "Combined Hussite field coalition at Aussig (1426)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": 1426,
+    "end_year": 1426,
+    "region": "Behani heights near Usti nad Labem, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Taborite, Orphan, Prague, and Lithuanian-linked forces assembled at Aussig on 16 June. No rating is inherited by Hussites generally, any member faction, Bohemia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_querengaesser_aussig",
+      "wave8_hussites_vhu_aussig"
+    ]
+  },
+  {
     "id": "lam_son_northern_campaign_forces_1426_1427",
     "name": "Lam Sơn northern campaign forces (1426-1427)",
     "kind": "campaign_bounded_insurgent_field_forces",
@@ -3199,6 +3514,21 @@
       "wave8_vietnam_museum_chi_lang",
       "wave8_vietnam_ndj_tot_dong",
       "wave8_vietnam_vass_lam_son"
+    ]
+  },
+  {
+    "id": "saxon_meissen_thuringian_lusatian_relief_army_aussig_1426",
+    "name": "Saxon-Meissen-Thuringian-Lusatian relief army at Aussig (1426)",
+    "kind": "event_bounded_relief_army",
+    "start_year": 1426,
+    "end_year": 1426,
+    "region": "Behani heights near Usti nad Labem, Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the regional relief contingents that assaulted the Hussite wagon fort at Aussig. No rating is inherited by Germans generally, Saxony, Meissen, Thuringia, Lusatia, or any modern state.",
+    "source_ids": [
+      "wave8_hussites_querengaesser_aussig",
+      "wave8_hussites_vhu_aussig"
     ]
   },
   {

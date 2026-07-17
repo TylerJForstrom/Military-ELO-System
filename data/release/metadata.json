@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 656,
-    "events": 5127,
-    "sources": 823,
-    "registry_polities": 2012
+    "entities": 678,
+    "events": 5139,
+    "sources": 839,
+    "registry_polities": 2034
   },
   "year_range": {
     "start": -1274,
@@ -120,6 +120,7 @@
     "accepted_wave8_kiowa_hced_events": 4,
     "accepted_wave8_uzbekistan_hced_events": 4,
     "accepted_wave8_vietnam_hced_events": 7,
+    "accepted_wave8_hussites_hced_events": 12,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -5790,7 +5791,139 @@
     "wave8_vietnam_outcome_overrides": [],
     "wave8_vietnam_entities_added": 12,
     "wave8_vietnam_sources_added": 21,
-    "hced_label_pass_input_rows": 5853,
+    "wave8_hussites_counts": {
+      "country_quarantine_additions": 1,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "holds": 2,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 14,
+      "new_entities": 22,
+      "new_sources": 16,
+      "newly_rated_events": 12,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 12,
+      "promotion_contracts": 12,
+      "reviewed_hced_rows": 14,
+      "terminal_exclusions": 0
+    },
+    "wave8_hussites_cohort_counts": {
+      "aussig_campaign_1426": 1,
+      "hussite_war_1420": 4,
+      "kutna_brod_counteroffensive_1422": 3,
+      "second_crusade_zatec_1421": 1,
+      "western_bohemian_campaign_1421": 1,
+      "zizka_internal_campaigns_1423_1424": 2
+    },
+    "wave8_hussites_queue_validation": {
+      "external_owner_contracts": 0,
+      "holds": 2,
+      "promotion_contracts": 12,
+      "reviewed_hced_rows": 14,
+      "terminal_exclusions": 0
+    },
+    "wave8_hussites_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 14
+    },
+    "wave8_hussites_candidate_ids": [
+      "hced-Aussig1426-1",
+      "hced-Bor Pansky1420-1",
+      "hced-Habry1422-1",
+      "hced-Horice1423-1",
+      "hced-Nebovidy1422-1",
+      "hced-Nemecky Brod1422-1",
+      "hced-Porici1420-1",
+      "hced-Skalice1424-1",
+      "hced-Vitkov Hill1420-1",
+      "hced-Vladar1421-1",
+      "hced-Vysehrad1420-1",
+      "hced-Zatec1421-1"
+    ],
+    "wave8_hussites_holds": [
+      {
+        "candidate_id": "hced-Kutna Hora1421-1",
+        "raw_row_sha256": "1dfaeed1298adef4f1f2884d2bf194138daa81060df1613740560ecc9e013069",
+        "canonical_event": {
+          "canonical_key": "kutna_hora_battle_occupation_and_breakout:1421:1421",
+          "date_precision": "day_range",
+          "date_text": "21-22 December 1421",
+          "granularity": "composite_battle_occupation_breakout",
+          "name": "Kutna Hora battle, occupation, and breakout",
+          "year_low": 1421,
+          "year_high": 1421
+        },
+        "disposition": "hold",
+        "hold_category": "row_conflates_distinct_actors_and_opposed_tactical_phases",
+        "hold_reason": "The reviewed sources distinguish Catholic infiltration and occupation of Kutna Hora, the killing of the small Hussite element left inside, and the field army's orderly breakout. The peer-reviewed study says the field army withdrew but was not defeated. HCED's single Hungary win cannot be attached to one event-bounded opponent without splitting the row; the result remains unknown and is never a draw.",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Sigismund's attacking army and Catholic Kutna Hora infiltrators",
+          "Hussite field army outside Kutna Hora",
+          "small Hussite defending element left inside Kutna Hora"
+        ],
+        "reviewed_granularity": "composite_battle_occupation_breakout",
+        "evidence_refs": [
+          "wave8_hussites_fudge_chronicle",
+          "wave8_hussites_papajik_kutna",
+          "wave8_hussites_vhu_kutna_brod"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_hussites",
+          "status": "held_hced_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Zwettl-1",
+        "raw_row_sha256": "ae3514bdfa173cb574a252cc1b4cac70398e97b10e1d1acfea006ec73324e3e5",
+        "canonical_event": {
+          "canonical_key": "battle_near_zwettl:1427:1427",
+          "date_precision": "day",
+          "date_text": "25 March 1427",
+          "granularity": "engagement",
+          "name": "Battle near Zwettl",
+          "year_low": 1427,
+          "year_high": 1427
+        },
+        "disposition": "hold",
+        "hold_category": "reciprocal_two_phase_tactical_outcome",
+        "hold_reason": "Zwettl's municipal archival history records an Austrian relief force routing the Hussites, then stopping to plunder the wagon fort, after which the regrouped Hussites counterattacked and drove the Austrians into the city. The Hussites withdrew three days later. The undivided row does not identify which phase its winner describes, so the overall tactical result remains unknown and is never a draw.",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Prokop Holy's Hussite field army near Zwettl",
+          "Austrian relief army assembled by Duke Albrecht V"
+        ],
+        "reviewed_granularity": "reciprocal_two_phase_engagement",
+        "evidence_refs": [
+          "wave8_hussites_theisen_austria",
+          "wave8_hussites_zwettl_history"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_hussites",
+          "status": "held_hced_owner"
+        }
+      }
+    ],
+    "wave8_hussites_terminal_exclusions": [],
+    "wave8_hussites_iwbd_duplicate_dispositions": [],
+    "wave8_hussites_cross_lane_dispositions": [],
+    "wave8_hussites_existing_release_duplicate_dispositions": [],
+    "wave8_hussites_integration_dispositions": [],
+    "wave8_hussites_outcome_overrides": [],
+    "wave8_hussites_entities_added": 22,
+    "wave8_hussites_sources_added": 16,
+    "hced_label_pass_input_rows": 5839,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -5803,7 +5936,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 751,
+      "reserved_candidate_contract": 765,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -5815,7 +5948,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2337,
+      "no_unique_time_valid_label_match": 2323,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

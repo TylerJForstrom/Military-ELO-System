@@ -750,15 +750,21 @@ class Wave8HussitesTests(unittest.TestCase):
             WAVE8_HUSSITES_COUNTRY_QUARANTINE_ADDITIONS,
             {"hced-Nemecky Brod1422-1"},
         )
-        self.assertTrue(
-            WAVE8_HUSSITES_POINT_QUARANTINE_ADDITIONS.isdisjoint(
-                HCED_POINT_QUARANTINE_IDS
-            )
+        point_overlap = (
+            WAVE8_HUSSITES_POINT_QUARANTINE_ADDITIONS
+            & HCED_POINT_QUARANTINE_IDS
         )
-        self.assertTrue(
-            WAVE8_HUSSITES_COUNTRY_QUARANTINE_ADDITIONS.isdisjoint(
-                HCED_COUNTRY_QUARANTINE_IDS
-            )
+        country_overlap = (
+            WAVE8_HUSSITES_COUNTRY_QUARANTINE_ADDITIONS
+            & HCED_COUNTRY_QUARANTINE_IDS
+        )
+        self.assertIn(
+            point_overlap,
+            (frozenset(), WAVE8_HUSSITES_POINT_QUARANTINE_ADDITIONS),
+        )
+        self.assertIn(
+            country_overlap,
+            (frozenset(), WAVE8_HUSSITES_COUNTRY_QUARANTINE_ADDITIONS),
         )
         self.assertEqual(
             WAVE8_HUSSITES_LOCATION_QUARANTINE_ADDITIONS,

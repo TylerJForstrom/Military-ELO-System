@@ -2367,6 +2367,16 @@
       "region": "Northeastern Caucasus"
     },
     {
+      "id": "cenek_vartenberk_lords_union_force_horice_1423",
+      "name": "Cenek of Vartenberk's Lords' Union force at Horice (1423)",
+      "kind": "event_bounded_field_coalition",
+      "start_year": 1423,
+      "end_year": 1423,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gothard Hill at Horice, Bohemia"
+    },
+    {
       "id": "clio_q929_1961_2742f300",
       "name": "Central African Republic",
       "kind": "republic",
@@ -2812,6 +2822,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Republic of Texas"
+    },
+    {
+      "id": "hussite_field_coalition_aussig_1426",
+      "name": "Combined Hussite field coalition at Aussig (1426)",
+      "kind": "event_bounded_field_coalition",
+      "start_year": 1426,
+      "end_year": 1426,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Behani heights near Usti nad Labem, Bohemia"
     },
     {
       "id": "lotter_commando_1901",
@@ -4730,6 +4750,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "eastern_bohemian_catholic_lords_force_skalice_1424",
+      "name": "Eastern Bohemian Catholic lords' force at Skalice (1424)",
+      "kind": "event_bounded_field_coalition",
+      "start_year": 1424,
+      "end_year": 1424,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ceska Skalice, Bohemia"
     },
     {
       "id": "clio_q1191125_1492_260f8530",
@@ -12284,6 +12314,16 @@
       "region": "Western Arabia"
     },
     {
+      "id": "meissen_austrian_crusader_assault_force_vitkov_1420",
+      "name": "Meissen-Austrian crusader assault force at Vitkov Hill (1420)",
+      "kind": "event_bounded_assault_force",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vitkov Hill, Prague, Bohemia"
+    },
+    {
       "id": "clio_q1071439_1792_b788c6eb",
       "name": "Merina Kingdom",
       "kind": "kingdom",
@@ -14376,6 +14416,16 @@
       "region": "Southern Andes"
     },
     {
+      "id": "pilsen_landfrieden_pursuit_force_vladar_1421",
+      "name": "Pilsen Landfrieden pursuit force at Vladar Hill (1421)",
+      "kind": "event_bounded_pursuit_force",
+      "start_year": 1421,
+      "end_year": 1421,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vladar Hill near Zlutice, Bohemia"
+    },
+    {
       "id": "pinedo_munecas_cuzco_expedition_chacaltaya_1814",
       "name": "Pinedo and Munecas's Cuzco expedition at Chacaltaya (1814)",
       "kind": "event_bounded_revolutionary_expedition",
@@ -14554,6 +14604,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "prague_orebite_tabor_field_coalition_vysehrad_1420",
+      "name": "Prague-Orebite-Tabor field coalition at Vysehrad (1420)",
+      "kind": "event_bounded_field_coalition",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pankrac plain and Vysehrad, Prague, Bohemia"
+    },
+    {
+      "id": "prague_tabor_hussite_counteroffensive_army_1422",
+      "name": "Prague-Tabor Hussite counteroffensive army (January 1422)",
+      "kind": "campaign_bounded_field_army",
+      "start_year": 1422,
+      "end_year": 1422,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nebovidy-Habry-Nemecky Brod campaign, Bohemia"
     },
     {
       "id": "primera_junta_auxiliary_army_cotagaita_1810",
@@ -16792,6 +16862,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "rosenberg_svamberk_plauen_royalist_coalition_pansky_bor_1420",
+      "name": "Rosenberg-Svamberk-Plauen royalist coalition at Pansky Bor (1420)",
+      "kind": "event_bounded_coalition",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pansky Bor (Maly Bor), Bohemia"
+    },
+    {
       "id": "clio_mn_rouran_khaganate_402_da4f7a8a",
       "name": "Rouran Khaganate",
       "kind": "polity",
@@ -17333,6 +17413,16 @@
       "region": "Central Europe"
     },
     {
+      "id": "saxon_meissen_thuringian_lusatian_relief_army_aussig_1426",
+      "name": "Saxon-Meissen-Thuringian-Lusatian relief army at Aussig (1426)",
+      "kind": "event_bounded_relief_army",
+      "start_year": 1426,
+      "end_year": 1426,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Behani heights near Usti nad Labem, Bohemia"
+    },
+    {
       "id": "clio_q101985_283_a7036aa8",
       "name": "Saxons",
       "kind": "polity",
@@ -17818,6 +17908,46 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Africa"
+    },
+    {
+      "id": "sigismund_crusader_defenders_nemecky_brod_1422",
+      "name": "Sigismund's crusader defenders at Nemecky Brod (1422)",
+      "kind": "event_bounded_urban_defenders",
+      "start_year": 1422,
+      "end_year": 1422,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nemecky Brod (Havlickuv Brod), Bohemia"
+    },
+    {
+      "id": "sigismund_crusader_rear_guard_habry_1422",
+      "name": "Sigismund's crusader rear guard at Habry (1422)",
+      "kind": "event_bounded_rear_guard",
+      "start_year": 1422,
+      "end_year": 1422,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Habry, Bohemia"
+    },
+    {
+      "id": "sigismund_crusader_relief_army_vysehrad_1420",
+      "name": "Sigismund's crusader relief army at Vysehrad (1420)",
+      "kind": "event_bounded_relief_army",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pankrac plain and Vysehrad, Prague, Bohemia"
+    },
+    {
+      "id": "sigismund_crusader_resistance_force_nebovidy_1422",
+      "name": "Sigismund's crusader resistance force at Nebovidy (1422)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1422,
+      "end_year": 1422,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Nebovidy near Kutna Hora, Bohemia"
     },
     {
       "id": "clio_q2578028_1762_28db00fc",
@@ -18402,6 +18532,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "sternberg_bohemian_royalist_interception_force_porici_1420",
+      "name": "Sternberg-led Bohemian royalist interception force at Porici (1420)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Porici nad Sazavou, Bohemia"
     },
     {
       "id": "clio_gb_brythonic_k_644_30092689",
@@ -20785,6 +20925,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "western_second_crusade_besieging_army_zatec_1421",
+      "name": "Western Second Crusade besieging army at Zatec (1421)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1421,
+      "end_year": 1421,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Zatec, Bohemia"
+    },
+    {
       "id": "clio_q1143164_534_d4b6ce69",
       "name": "Western Wei",
       "kind": "polity",
@@ -21226,6 +21376,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "zatec_hussite_garrison_and_civic_defenders_1421",
+      "name": "Zatec Hussite garrison and civic defenders (1421)",
+      "kind": "event_bounded_siege_defenders",
+      "start_year": 1421,
+      "end_year": 1421,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Zatec, Bohemia"
+    },
+    {
       "id": "zayd_al_atrash_rashaya_besiegers_1925",
       "name": "Zayd al-Atrash's Rashaya besieging force (1925)",
       "kind": "engagement_bounded_anti_colonial_siege_force",
@@ -21398,6 +21558,66 @@
       "region": "Unclassified"
     },
     {
+      "id": "zizka_orebite_field_army_horice_1423",
+      "name": "Zizka's Orebite field army at Horice (1423)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1423,
+      "end_year": 1423,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Gothard Hill at Horice, Bohemia"
+    },
+    {
+      "id": "zizka_tabor_field_force_pansky_bor_1420",
+      "name": "Zizka's Taborite field force at Pansky Bor (1420)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pansky Bor (Maly Bor), Bohemia"
+    },
+    {
+      "id": "zizka_tabor_marching_force_porici_1420",
+      "name": "Zizka's Taborite marching force at Porici (1420)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Porici nad Sazavou, Bohemia"
+    },
+    {
+      "id": "zizka_hussite_retreating_force_vladar_1421",
+      "name": "Zizka's retreating Hussite force at Vladar Hill (1421)",
+      "kind": "event_bounded_defensive_force",
+      "start_year": 1421,
+      "end_year": 1421,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vladar Hill near Zlutice, Bohemia"
+    },
+    {
+      "id": "zizka_hradec_field_force_ceska_skalice_1424",
+      "name": "Zizka-Hradec field force at Ceska Skalice (1424)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1424,
+      "end_year": 1424,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ceska Skalice, Bohemia"
+    },
+    {
+      "id": "zizka_prague_vitkov_defensive_force_1420",
+      "name": "Zizka-Prague defensive force at Vitkov Hill (1420)",
+      "kind": "event_bounded_defensive_force",
+      "start_year": 1420,
+      "end_year": 1420,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vitkov Hill, Prague, Bohemia"
+    },
+    {
       "id": "zulu_kingdom",
       "name": "Zulu Kingdom",
       "kind": "kingdom",
@@ -21494,11 +21714,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2012,
-    "rated_entities": 649,
-    "rated_events": 5127,
+    "registry_polities": 2034,
+    "rated_entities": 671,
+    "rated_events": 5139,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18267,
+    "unresolved_event_candidates": 18255,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21548,6 +21768,7 @@
     "candidate_keyed_wave8_kiowa_hced_events": 4,
     "candidate_keyed_wave8_uzbekistan_hced_events": 4,
     "candidate_keyed_wave8_vietnam_hced_events": 7,
+    "candidate_keyed_wave8_hussites_hced_events": 12,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21558,21 +21779,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4863,
-      "candidate_keyed_reviewed_contracts": 553,
+      "hced_candidate_bindings": 4875,
+      "candidate_keyed_reviewed_contracts": 565,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4773,
-      "location_provenance_objects": 4822,
-      "point_fields_withheld_by_quarantine": 131,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 89,
+      "modern_location_country_assertions": 4784,
+      "location_provenance_objects": 4833,
+      "point_fields_withheld_by_quarantine": 143,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 41,
-      "unique_events_with_any_quarantined_field": 179,
-      "point_quarantine_candidate_manifest_sha256": "63d4713ecfcbf200eece65ea5f1a23e2fb4da17c5a7bfab57a7db4ff09295811",
-      "country_quarantine_candidate_manifest_sha256": "3e0052ad68f2d2b611155c021cac3fe13b834cb500194ab1a67ba5b93f28ca7f",
-      "quarantine_policy_sha256": "cbced00bdf0c61fd04a65122d53633db4fb9e66003efdbe68450f07392b98371",
+      "point_country_quarantine_overlap": 42,
+      "unique_events_with_any_quarantined_field": 191,
+      "point_quarantine_candidate_manifest_sha256": "a795a467a9b319f37babe916126fb91e61e7646d888167710b88905d9d5c7010",
+      "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
+      "quarantine_policy_sha256": "bc22014dd0b969de706c10c063c6caa23a3b213ee0b62dab66d919e40af74a8e",
       "assertion_status": {
-        "unreviewed_source_assertion": 4822
+        "unreviewed_source_assertion": 4833
       },
       "verified_location_assertions": {
         "availability": "not_available",

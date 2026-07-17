@@ -7767,6 +7767,244 @@
     ]
   },
   {
+    "id": "wave8_hussites_archaeological_atlas_vladar",
+    "title": "Zahorice: prehistoric hillfort Vladar",
+    "url": "https://www.archeologickyatlas.cz/en/lokace/zahorice_kv_hradiste_vladar",
+    "publisher": "Archaeological Atlas of the Czech Republic",
+    "license": "Citation and link only",
+    "source_type": "czech_academy_institutional_site_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "archaeological_atlas_vladar",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_ceska_skalice_history",
+    "title": "Mala vzpominka na kulate husitske vyroci",
+    "url": "https://www.ceskaskalice.cz/prakticke-info/aktuality/mala-vzpominka-na-kulate-husitske-vyroci-2664cs.html",
+    "publisher": "City of Ceska Skalice and Bozena Nemcova Museum",
+    "license": "Citation and link only",
+    "source_type": "municipal_museum_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "ceska_skalice_museum_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_cornej_zizka",
+    "title": "Jan Zizka: zivot a doba husitskeho valecnika",
+    "url": "https://books.google.com/books/about/Jan_%C5%BDi%C5%BEka.html?id=Xq5HzQEACAAJ",
+    "publisher": "Paseka",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "cornej_jan_zizka_2019",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_fudge_chronicle",
+    "title": "Origins of the Hussite Uprising: The Chronicle of Laurence of Brezova (1414-1421)",
+    "url": "https://www.routledge.com/Origins-of-the-Hussite-Uprising-The-Chronicle-of-Laurence-of-Brezova/Fudge/p/book/9780367438111",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "academic_edition_of_translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "fudge_laurence_brezova_chronicle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_hardy_zatec",
+    "title": "An Alsatian Nobleman's Account of the Second Crusade against the Hussites in 1421: A New Edition, Translation, and Interpretation",
+    "url": "https://doi.org/10.1080/28327861.2016.12220069",
+    "publisher": "Crusades (Routledge)",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_primary_source_edition",
+    "accessed": "2026-07-16",
+    "source_family_id": "hardy_alsatian_zatec_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_horice_history",
+    "title": "History of Horice",
+    "url": "https://infocentrum.horice.org/the-town/history",
+    "publisher": "Municipal Information Centre Horice",
+    "license": "Citation and link only",
+    "source_type": "municipal_institutional_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "horice_municipal_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_husitstvi_maly_bor",
+    "title": "Bitva u Maleho Boru",
+    "url": "https://husitstvi.cz/vojenstvi/bitvy-a-tazeni/bitva-u-maleho-boru/",
+    "publisher": "Husitstvi.cz specialist history portal",
+    "license": "Citation and link only",
+    "source_type": "specialist_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "husitstvi_maly_bor",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_papajik_kutna",
+    "title": "Hasek z Valdstejna a Kutna Hora",
+    "url": "https://www.uhk.cz/file/edee/filozoficka-fakulta/veda-a-vyzkum/ha_51_2024.pdf",
+    "publisher": "Historia Aperta, University of Hradec Kralove",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "papajik_historia_aperta_51",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_posazavi_porici",
+    "title": "Zizka and the battle of Porici nad Sazavou (1420)",
+    "url": "https://tourist.posazavi.com/en/Memory/Memory.aspx?Id=7607",
+    "publisher": "Posazavi regional heritage portal",
+    "license": "Citation and link only",
+    "source_type": "regional_institutional_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "posazavi_porici_memorial",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_prague2_vysehrad",
+    "title": "Bitva u Vysehradu",
+    "url": "https://encyklopedie.praha2.cz/udalosti/795-bitva-u-vysehradu",
+    "publisher": "Encyclopedia of Prague 2",
+    "license": "Citation and link only",
+    "source_type": "municipal_institutional_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "prague2_vysehrad_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_querengaesser_aussig",
+    "title": "Friedrich der Streitbare und die Hussitenbewegung",
+    "url": "https://doi.org/10.52410/shb.Bd.64.2018.H.2.S.109-113",
+    "publisher": "Sachsische Heimatblatter",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "querengaesser_friedrich_hussites",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_theisen_austria",
+    "title": "Herzog Albrecht V. und die Auswirkungen der Hussitenkriege: Neue Aspekte",
+    "url": "https://doi.org/10.7767/9783205219583",
+    "publisher": "Bohlau",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_edited_scholarly_volume",
+    "accessed": "2026-07-16",
+    "source_family_id": "theisen_albrecht_v_hussite_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_hussites_vhu_aussig",
+    "title": "Po stopach husitstvi v Usteckem kraji",
+    "url": "https://vhu.cz/exhibit/luzek-borivoj-po-stopach-husitstvi-v-usteckem-kraji/",
+    "publisher": "Military History Institute Prague (VHU Praha)",
+    "license": "Citation and link only",
+    "source_type": "institutional_military_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "vhu_luzek_aussig",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_vhu_kutna_brod",
+    "title": "Zpravy pramenu o bojich u Hory a Brodu kol Vanoc 1421",
+    "url": "https://vhu.cz/exhibit/zpravy-pramenu-o-bojich-u-hory-a-brodu-kol-vanoc-1421/",
+    "publisher": "Military History Institute Prague (VHU Praha)",
+    "license": "Citation and link only",
+    "source_type": "institutional_primary_source_collection_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "vhu_pekar_kutna_brod_source_collection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_vhu_vitkov",
+    "title": "Zpravy pramenu o boji na hore Vitkove 14. cervence 1420",
+    "url": "https://www.vhu.cz/exhibit/jofef-pekar-zpravy-pramenu-o-boji-na-hore-vitkove-14-cervence-1420/",
+    "publisher": "Military History Institute Prague (VHU Praha)",
+    "license": "Citation and link only",
+    "source_type": "institutional_primary_source_collection_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "vhu_pekar_vitkov_source_collection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hussites_zwettl_history",
+    "title": "Hussiten belagern die Stadt Zwettl",
+    "url": "https://www.zwettl.gv.at/Hussiten_belagern_die_Stadt_Zwettl_2",
+    "publisher": "Stadtgemeinde Zwettl",
+    "license": "Citation and link only",
+    "source_type": "municipal_archival_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "zwettl_municipal_hussite_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_insubrian_cambridge_expansion_west",
     "title": "Roman expansion in the west",
     "url": "https://doi.org/10.1017/CHOL9780521234481.006",
