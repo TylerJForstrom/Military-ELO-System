@@ -26,11 +26,11 @@ EVENTS = ROOT / "data" / "release" / "events.json"
 
 
 def _queue_rows():
-    return [json.loads(line) for line in QUEUE.read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in QUEUE.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def _release_entities():
-    return {entity["id"]: entity for entity in json.loads(ENTITIES.read_text())}
+    return {entity["id"]: entity for entity in json.loads(ENTITIES.read_text(encoding="utf-8"))}
 
 
 class Wave8CossackRebellionsTests(unittest.TestCase):
@@ -41,7 +41,7 @@ class Wave8CossackRebellionsTests(unittest.TestCase):
         install_wave8_cossack_entities(cls.entities)
         existing = [
             event
-            for event in json.loads(EVENTS.read_text())
+            for event in json.loads(EVENTS.read_text(encoding="utf-8"))
             if event.get("hced_candidate_id") not in WAVE8_COSSACK_RESERVED_IDS
         ]
         cls.promoted = promote_wave8_cossack_events(

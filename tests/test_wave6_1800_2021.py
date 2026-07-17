@@ -138,6 +138,22 @@ class Wave6InventoryTests(unittest.TestCase):
             WAVE6_HCED_COMPANION_EXCLUSION_IDS <= set(WAVE6_HCED_CURATED_EXCLUSIONS)
         )
 
+    # Wave 6 exclusions are point-in-time adjudications, not permanent bans: a
+    # later candidate-keyed lane may supersede one with its own reviewed
+    # contract. Every such supersession must be pinned here explicitly, with
+    # the owning lane, so an accidental double promotion still fails.
+    WAVE6_HCED_EXCLUSIONS_SUPERSEDED_BY_LATER_CONTRACTS = {
+        # Wave 8 Egypt-forces lane resolved the 1967 Sinai fronts that Wave 6
+        # held for the then-unresolvable "Egypt" identity; each row is now a
+        # candidate-keyed exact contract owned by hced_wave8_egypt_forces_*.
+        "hced-Abu Ageila1967-1",
+        "hced-Bir Gafgafa1967-1",
+        "hced-Gaza1967-1",
+        "hced-Jebel Libni1967-1",
+        "hced-Mitla Pass1967-1",
+        "hced-Rafa1967-1",
+    }
+
     def test_wave6_exclusions_never_target_a_published_wave5_event(self):
         events = _json(ROOT / "data" / "release" / "events.json")
         published_hced = {
@@ -155,7 +171,21 @@ class Wave6InventoryTests(unittest.TestCase):
             for event in events
             if event.get("iwd_parent_war_id")
         }
-        self.assertTrue(published_hced.isdisjoint(WAVE6_HCED_CURATED_EXCLUSIONS))
+        superseded = self.WAVE6_HCED_EXCLUSIONS_SUPERSEDED_BY_LATER_CONTRACTS
+        self.assertEqual(
+            published_hced & set(WAVE6_HCED_CURATED_EXCLUSIONS), superseded
+        )
+        for candidate_id in sorted(superseded):
+            owners = {
+                str(event["id"])
+                for event in events
+                if str(event.get("hced_candidate_id")) == candidate_id
+            }
+            self.assertEqual(len(owners), 1, candidate_id)
+            self.assertTrue(
+                next(iter(owners)).startswith("hced_wave8_egypt_forces_"),
+                candidate_id,
+            )
         self.assertTrue(published_iwbd.isdisjoint(WAVE6_IWBD_CURATED_EXCLUSIONS))
         self.assertTrue(published_iwd.isdisjoint(WAVE6_IWD_CURATED_PARENT_EXCLUSIONS))
 

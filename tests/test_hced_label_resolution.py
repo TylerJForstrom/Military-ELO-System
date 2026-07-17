@@ -1318,12 +1318,22 @@ class ReleaseArtifactTests(unittest.TestCase):
         ).hexdigest()
         self.assertEqual(
             digest,
-            "f17605859c6a71fadf8361fef500e826a284b072162880191ce370a471e54d93",
+            "69d4d88ed0e715bc704a00ac453ee728fb656a6dc341758f9aeec2d985e1e5f8",
             "pre-label-pass event block changed content",
         )
         self.assertGreater(len(self.events), len(legacy))
-        for event in legacy:
-            self.assertNotIn("identity_resolution", event)
+        # Exactly one legacy crosswalk event carries a reviewed Wave 8
+        # correction annotation (Cracow 1772); every other legacy event stays
+        # unmarked, so a new marker appearing in the block still fails.
+        legacy_marked = {
+            str(event["id"]): str(event.get("identity_resolution"))
+            for event in legacy
+            if "identity_resolution" in event
+        }
+        self.assertEqual(
+            legacy_marked,
+            {"hced_hced_cracow1772_1": "candidate_keyed_exact_wave8_correction"},
+        )
         hced_legacy = [e for e in legacy if str(e["id"]).startswith("hced_")]
         self.assertEqual(len(hced_legacy), 1768)
         for event in hced_legacy:
@@ -1541,17 +1551,17 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 8 rows:
-        # 805 + 3,766 + 1,887 + 2,423 == 8,881.
+        # 1,445 + 3,126 + 1,887 + 2,423 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (805, 3766, 1887, 2423, 8881),
+            (1445, 3126, 1887, 2423, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 6_189)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 5_549)
         # All thirteen declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 13)
         self.assertEqual(
@@ -1560,7 +1570,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         self.assertEqual(
             promotion["hced_label_rejections"]["curated_row_exclusion"], 71
         )
-        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 164)
+        self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 158)
         # uncoded_side is gone from pass 1: replaced by the deferral.
         self.assertNotIn("uncoded_side", promotion["hced_rejections"])
 

@@ -37,7 +37,7 @@ def _rows():
     path = ROOT / "data" / "review" / "hced-candidates.jsonl"
     if not path.exists():
         raise unittest.SkipTest("locked HCED review queue is unavailable")
-    return [json.loads(line) for line in path.read_text().splitlines() if line]
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
 class Wave8WalesTests(unittest.TestCase):

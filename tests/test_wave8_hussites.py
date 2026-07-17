@@ -147,7 +147,7 @@ VARIANT_LABEL_IDS = {
 
 
 def _load_jsonl(path: Path) -> list[dict]:
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 class Wave8HussitesTests(unittest.TestCase):
@@ -156,13 +156,13 @@ class Wave8HussitesTests(unittest.TestCase):
         cls.hced_rows = _load_jsonl(ROOT / "data/review/hced-candidates.jsonl")
         cls.iwbd_rows = _load_jsonl(ROOT / "data/review/iwbd-candidates.jsonl")
         cls.funnel = json.loads(
-            (ROOT / "build/hced-unresolved-label-funnel.json").read_text()
+            (ROOT / "build/hced-unresolved-label-funnel.json").read_text(encoding="utf-8")
         )
         cls.release_entities = {
             str(entity["id"]): entity
-            for entity in json.loads((ROOT / "data/release/entities.json").read_text())
+            for entity in json.loads((ROOT / "data/release/entities.json").read_text(encoding="utf-8"))
         }
-        cls.release_events = json.loads((ROOT / "data/release/events.json").read_text())
+        cls.release_events = json.loads((ROOT / "data/release/events.json").read_text(encoding="utf-8"))
         cls.exact_rows = [
             row
             for row in cls.hced_rows

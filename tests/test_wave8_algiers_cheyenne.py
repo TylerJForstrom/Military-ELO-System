@@ -50,7 +50,7 @@ def _rows() -> list[dict]:
     path = ROOT / "data" / "review" / "hced-candidates.jsonl"
     if not path.exists():
         raise unittest.SkipTest("locked HCED review queue is unavailable")
-    return [json.loads(line) for line in path.read_text().splitlines() if line]
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
 def _independent_signature() -> str:
@@ -509,7 +509,7 @@ class Wave8AlgiersCheyenneTests(unittest.TestCase):
         }
         pre_1900_names = {
             str(row["name"]).casefold()
-            for row in map(json.loads, iwbd_path.read_text().splitlines())
+            for row in map(json.loads, iwbd_path.read_text(encoding="utf-8").splitlines())
             if int(str(row.get("start_date", "9999"))[:4]) < 1900
         }
         self.assertFalse(target_terms & pre_1900_names)

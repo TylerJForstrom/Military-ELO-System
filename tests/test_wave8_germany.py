@@ -52,7 +52,7 @@ def _json(path: Path):
 def _jsonl(path: Path) -> list[dict]:
     if not path.exists():
         raise unittest.SkipTest(f"locked review queue unavailable: {path}")
-    return [json.loads(line) for line in path.read_text().splitlines() if line]
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
 def _independent_signature() -> str:

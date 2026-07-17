@@ -361,7 +361,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
         # the three already-rated rows on the existing Cliopatria identity;
         # three source rows failed the historical accuracy audit.
         self.assertEqual(len(portugal), 79)
-        self.assertEqual(len(tsardom), 58)
+        self.assertEqual(len(tsardom), 62)
         self.assertEqual(
             Counter(
                 "label" if event["id"].startswith("hced_label_") else "crosswalk"
@@ -374,21 +374,32 @@ class Wave5BulkArtifactTests(unittest.TestCase):
                 "label" if event["id"].startswith("hced_label_") else "crosswalk"
                 for event in tsardom
             ),
-            {"crosswalk": 41, "label": 17},
+            {"crosswalk": 45, "label": 17},
         )
 
         combined = [*portugal, *tsardom]
         event_ids = [event["id"] for event in combined]
         candidate_ids = [event.get("hced_candidate_id") for event in combined]
-        self.assertEqual(len(combined), 137)
+        self.assertEqual(len(combined), 141)
         self.assertEqual(len(event_ids), len(set(event_ids)))
         self.assertNotIn(None, candidate_ids)
         self.assertEqual(len(candidate_ids), len(set(candidate_ids)))
-        self.assertTrue(
-            all(
-                tuple(event.get("outcome_source_family_ids", ())) == ("hced",)
-                for event in combined
-            )
+        # Wave 5 rows carry the bare hced family; the four Tsardom rows later
+        # re-promoted by exact Wave 8 lanes carry curated bibliographic
+        # families instead.
+        curated_family_rows = {
+            event["id"]
+            for event in combined
+            if tuple(event.get("outcome_source_family_ids", ())) != ("hced",)
+        }
+        self.assertEqual(
+            curated_family_rows,
+            {
+                "hced_wave8_germany_hced_riga1709_1710_1",
+                "hced_wave8_livonian_order_hced_narva1558_1",
+                "hced_wave8_livonian_order_hced_fellin1560_1",
+                "hced_wave8_livonian_order_hced_oomuli1560_1",
+            },
         )
 
     def test_tsardom_is_one_reused_identity_with_one_elo_history(self) -> None:
@@ -410,7 +421,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             for event in self.events
             if TSARDOM_ID in self._participants(event)
         ]
-        self.assertEqual(len(tsardom_events), 58)
+        self.assertEqual(len(tsardom_events), 62)
         self.assertFalse(
             any(
                 "tsardom_russia" in self._participants(event)
@@ -440,7 +451,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             for event in results["events"]
             if TSARDOM_ID in self._participants(event)
         ]
-        self.assertEqual(len(site_tsardom_events), 58)
+        self.assertEqual(len(site_tsardom_events), 62)
         self.assertFalse(
             any(
                 "tsardom_russia" in self._participants(event)

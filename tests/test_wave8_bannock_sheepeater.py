@@ -380,7 +380,7 @@ class Wave8BannockSheepeaterTests(unittest.TestCase):
         self.assertEqual(coverage["unresolved_event_candidates"], 18_040)
         location = coverage["hced_location_assertions"]
         self.assertEqual(location["hced_candidate_bindings"], 5_090)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 780)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 777)
         self.assertEqual(location["geojson_points"], 4_734)
         self.assertEqual(location["modern_location_country_assertions"], 4_995)
         self.assertEqual(location["location_provenance_objects"], 5_044)
