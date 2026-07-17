@@ -86,6 +86,10 @@
     chartEmpty: document.getElementById("chart-empty"),
     chartLegend: document.getElementById("chart-legend"),
     chartSummary: document.getElementById("chart-summary"),
+    chartFrameModern: document.getElementById("chart-frame-modern"),
+    chartModern: document.getElementById("timeline-chart-modern"),
+    chartEmptyModern: document.getElementById("chart-empty-modern"),
+    chartSummaryModern: document.getElementById("chart-summary-modern"),
     timelineRankingTitle: document.getElementById("timeline-ranking-title"),
     timelineRankingMetric: document.getElementById("timeline-ranking-metric"),
     timelineRankingList: document.getElementById("timeline-ranking-list"),
@@ -1239,10 +1243,14 @@
       yMin = 1300;
       yMax = 1700;
     }
-    if (yMax - yMin < 100) {
+    // Fit the axis to the visible data (uncertainty bands included above).
+    // Only a small floor is kept so near-flat series still get a readable
+    // scale; a one-point rating move then spans ~10% of the plot instead of
+    // disappearing into a fixed 100-point window.
+    if (yMax - yMin < 10) {
       const center = (yMax + yMin) / 2;
-      yMin = center - 50;
-      yMax = center + 50;
+      yMin = center - 5;
+      yMax = center + 5;
     }
     const yPadding = (yMax - yMin) * 0.08;
     yMin -= yPadding;
@@ -1422,6 +1430,217 @@
       elements.chartSummary.textContent = `${leader.series.entity.name} leads the visible lines at ${formatRating(leader.point[metric])}${uncertainty ? ` ${uncertainty}` : ""} in ${formatYear(state.selectedYear)}.`;
     } else {
       elements.chartSummary.textContent = `No visible line is active in ${formatYear(state.selectedYear)}.`;
+    }
+
+    renderModernChart(entityIds);
+  }
+
+  // A second, fixed-window view of the same authorized series covering the
+  // 250 years before the selected date, where most of the rated evidence
+  // lives. Shares the horizon contract and colors with the main chart; the
+  // hover tooltip stays on the main chart, click-to-jump works on both.
+  function renderModernChart(entityIds) {
+    const svg = elements.chartModern;
+    if (!svg || !state.data) return;
+
+    const width = Math.max(240, Math.round(elements.chartFrameModern.clientWidth || 900));
+    const height = width <= 640 ? 300 : 360;
+    const margins = {
+      top: 24,
+      right: width <= 520 ? 12 : 20,
+      bottom: 48,
+      left: width <= 520 ? 50 : 62,
+    };
+    const plotWidth = width - margins.left - margins.right;
+    const plotHeight = height - margins.top - margins.bottom;
+    const metric = state.metric;
+    const windowMaxYear = state.selectedYear;
+    const windowMinYear = windowMaxYear - 250;
+
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.replaceChildren();
+    svg.append(
+      svgElement("title", { id: "chart-title-modern" }, `${METRIC_LABELS[metric]} military Elo, ${formatYear(windowMinYear)} to ${formatYear(windowMaxYear)}`),
+      svgElement(
+        "desc",
+        { id: "chart-description-modern" },
+        `Step-line ratings over the 250 years through ${formatYear(windowMaxYear)}. No later outcomes are included.`,
+      ),
+    );
+
+    const chartSeries = entityIds
+      .map((id, index) => {
+        const authorized = horizonContract
+          .authorizedSeriesThrough(state.data.series[id] ?? [], state.eventById, id, windowMaxYear)
+          .filter((point) => point[metric] !== null);
+        const before = authorized.filter((point) => point.year <= windowMinYear);
+        const inside = authorized.filter((point) => point.year > windowMinYear);
+        const entry = before.length
+          ? [{ ...before[before.length - 1], year: windowMinYear, _synthetic: true }]
+          : [];
+        return {
+          id,
+          entity: state.entityById.get(id),
+          points: [...entry, ...inside],
+          color: SERIES_COLORS[index % SERIES_COLORS.length],
+        };
+      })
+      .filter((series) => state.ratedEntityIds.has(series.id) && series.entity && series.points.length);
+
+    elements.chartEmptyModern.hidden = chartSeries.length > 0;
+    if (!chartSeries.length) {
+      elements.chartSummaryModern.textContent = "No visible rating series in this window.";
+      return;
+    }
+
+    const domainValues = [];
+    for (const series of chartSeries) {
+      for (const point of series.points) {
+        const uncertainty = point.uncertainty ?? 0;
+        domainValues.push(point[metric] - uncertainty, point[metric] + uncertainty);
+      }
+    }
+    let yMin = Math.min(...domainValues);
+    let yMax = Math.max(...domainValues);
+    if (!Number.isFinite(yMin) || !Number.isFinite(yMax)) {
+      yMin = 1300;
+      yMax = 1700;
+    }
+    if (yMax - yMin < 10) {
+      const center = (yMax + yMin) / 2;
+      yMin = center - 5;
+      yMax = center + 5;
+    }
+    const yPadding = (yMax - yMin) * 0.08;
+    yMin -= yPadding;
+    yMax += yPadding;
+
+    const yScale = (value) => margins.top + ((yMax - value) / (yMax - yMin)) * plotHeight;
+    const xScale = (year) => margins.left + ((year - windowMinYear) / (windowMaxYear - windowMinYear)) * plotWidth;
+    const xInvert = (pixel) => windowMinYear + ((pixel - margins.left) / plotWidth) * (windowMaxYear - windowMinYear);
+
+    const gridGroup = svgElement("g", { "aria-hidden": "true" });
+    for (const tick of numericTicks(yMin, yMax, 6)) {
+      const y = yScale(tick);
+      gridGroup.append(
+        svgElement("line", { class: "grid-line", x1: margins.left, x2: width - margins.right, y1: y, y2: y }),
+        svgElement("text", { class: "tick-label", x: margins.left - 9, y: y + 4, "text-anchor": "end" }, formatRating(tick)),
+      );
+    }
+    for (const tick of yearTicks(windowMinYear, windowMaxYear, width < 360 ? 3 : width <= 520 ? 4 : 7)) {
+      const x = xScale(tick);
+      gridGroup.append(
+        svgElement("line", { class: "grid-line", x1: x, x2: x, y1: margins.top, y2: height - margins.bottom }),
+        svgElement("text", { class: "tick-label", x, y: height - margins.bottom + 23, "text-anchor": "middle" }, formatAxisYear(tick)),
+      );
+    }
+    gridGroup.append(
+      svgElement("line", {
+        class: "axis-line",
+        x1: margins.left,
+        x2: width - margins.right,
+        y1: height - margins.bottom,
+        y2: height - margins.bottom,
+      }),
+      svgElement(
+        "text",
+        {
+          class: "axis-label",
+          x: 13,
+          y: margins.top + plotHeight / 2,
+          transform: `rotate(-90 13 ${margins.top + plotHeight / 2})`,
+          "text-anchor": "middle",
+        },
+        `${METRIC_LABELS[metric]} Elo`,
+      ),
+    );
+    svg.append(gridGroup);
+
+    const rugGroup = svgElement("g", { "aria-hidden": "true" });
+    const windowEventYears = state.eventYears.filter((year) => year > windowMinYear && year <= windowMaxYear);
+    const rugYears = windowEventYears.length > 500 ? sampleEvenly(windowEventYears, 500) : windowEventYears;
+    for (const year of rugYears) {
+      const x = xScale(year);
+      rugGroup.append(
+        svgElement("line", { class: "event-rug", x1: x, x2: x, y1: height - margins.bottom + 1, y2: height - margins.bottom + 6 }),
+      );
+    }
+    svg.append(rugGroup);
+
+    const bands = svgElement("g", { "aria-hidden": "true" });
+    const lines = svgElement("g", { "aria-hidden": "true" });
+    chartSeries.forEach((series, index) => {
+      const extended = extendSeries(series.points, series.entity);
+      const uncertaintyPath = buildBandPath(extended, metric, xScale, yScale);
+      if (uncertaintyPath) {
+        bands.append(svgElement("path", { class: "uncertainty-band", d: uncertaintyPath, fill: series.color }));
+      }
+      const path = svgElement("path", {
+        class: `rating-line${state.pinned.has(series.id) ? " is-pinned" : ""}`,
+        d: buildStepPath(extended, (point) => point[metric], xScale, yScale),
+        stroke: series.color,
+      });
+      const dash = DASH_PATTERNS[Math.floor(index / SERIES_COLORS.length)] ?? "";
+      if (dash) path.setAttribute("stroke-dasharray", dash);
+      lines.append(path);
+    });
+    svg.append(bands, lines);
+
+    const selectionX = xScale(state.selectedYear);
+    const selection = svgElement("g", { "aria-hidden": "true" });
+    selection.append(
+      svgElement("line", {
+        class: "selection-rule",
+        x1: selectionX,
+        x2: selectionX,
+        y1: margins.top,
+        y2: height - margins.bottom,
+      }),
+    );
+    for (const series of chartSeries) {
+      if (!isEntityActive(series.entity, state.selectedYear)) continue;
+      const point = pointAt(series.id, state.selectedYear);
+      if (!point || point[metric] === null) continue;
+      selection.append(
+        svgElement("circle", {
+          class: "selection-dot",
+          cx: selectionX,
+          cy: yScale(point[metric]),
+          r: state.pinned.has(series.id) ? 4.5 : 3.5,
+          fill: series.color,
+        }),
+      );
+    }
+    svg.append(selection);
+
+    const interaction = svgElement("rect", {
+      class: "interaction-layer",
+      x: margins.left,
+      y: margins.top,
+      width: plotWidth,
+      height: plotHeight,
+      role: "presentation",
+    });
+    interaction.addEventListener("click", (event) => {
+      const bounds = svg.getBoundingClientRect();
+      const pixelX = clamp(event.clientX - bounds.left, margins.left, width - margins.right);
+      jumpToYear(Math.round(xInvert(pixelX)));
+    });
+    svg.append(interaction);
+
+    const activeRows = chartSeries
+      .map((series) => {
+        if (!isEntityActive(series.entity, state.selectedYear)) return null;
+        const point = pointAt(series.id, state.selectedYear);
+        return point ? { series, point } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.point[metric] - a.point[metric]);
+    if (activeRows.length) {
+      const leader = activeRows[0];
+      elements.chartSummaryModern.textContent = `${formatYear(windowMinYear)}–${formatYear(windowMaxYear)}: ${leader.series.entity.name} leads at ${formatRating(leader.point[metric])}.`;
+    } else {
+      elements.chartSummaryModern.textContent = `No visible line is active in ${formatYear(windowMaxYear)}.`;
     }
   }
 
