@@ -1,0 +1,3812 @@
+# Dataset gaps after the Wikidata + Brecke expansion
+
+**Priority comparison: MATERIAL DISAGREEMENT.** The revised discovery ranking is led by **Mediterranean Europe** (551 actionable unmatched pre-1500 candidates), while the current funnel ranks individual identity labels. The new corpus therefore changes where the next review wave should look first.
+
+**The scouting expectation is not supported by the strict actionable ranking.** West Asia/North Africa ranks 2, Japan 8, Indian subcontinent 9, and China 10; Mediterranean Europe is the measured leader. This is why the report re-ranks the next review wave.
+
+This report is staged discovery analysis only. It does not approve an outcome, create a draw from an unknown result, or add any event to the rating ledger.
+
+## Headline
+
+The expanded queue contains **18,954** candidates. The strict three-factor comparison finds **2,385** HCED matches and **16,569** unmatched rows. Before 1500, **4,326** are unmatched and **1,940** also carry at least two distinct P710 participants—the actionable headline expected by the contract.
+
+A crucial limitation: **7,900** unmatched rows lack usable coordinates. They fail the strict match contract but are not proof that HCED lacks the same historical event; they remain review candidates.
+
+## Deduplication rule
+
+A Wikidata row matches HCED only when all three conditions hold: normalized event name equality, Wikidata year inside the HCED interval plus or minus one year, and haversine distance strictly below 25 km. `hced_match_candidates` is written only to `build/dataset-gaps.json`; the content-locked queue is never rewritten.
+
+## Revised discovery priority
+
+Region memberships are non-exclusive and derive only from a conservative mapping of source-asserted P17 QIDs. They are analysis lanes, not battlefield geography.
+
+| Rank | Discovery lane | Actionable new pre-1500 | All new pre-1500 | All new |
+| --- | --- | --- | --- | --- |
+| 1 | Mediterranean Europe | 551 | 1,063 | 2,225 |
+| 2 | West Asia and North Africa | 506 | 770 | 1,911 |
+| 3 | No P17 jurisdiction claim | 411 | 1,026 | 4,226 |
+| 4 | Western and Northern Europe | 206 | 833 | 2,610 |
+| 5 | Eastern Europe | 101 | 286 | 1,718 |
+| 6 | Unmapped P17 jurisdiction | 75 | 117 | 564 |
+| 7 | Central Asia and Caucasus | 57 | 71 | 229 |
+| 8 | Japan | 54 | 103 | 465 |
+| 9 | Indian subcontinent | 12 | 40 | 290 |
+| 10 | China | 7 | 59 | 221 |
+| 11 | Korea and Mongolia | 4 | 14 | 135 |
+| 12 | Southeast Asia | 3 | 7 | 265 |
+| 13 | Americas | 3 | 6 | 1,540 |
+| 14 | Sub-Saharan Africa | 2 | 3 | 289 |
+| 15 | Oceania | 0 | 0 | 42 |
+
+### Current HCED resolver funnel
+
+| Rank | Unresolved label | Marginal events | Cumulative events |
+| --- | --- | --- | --- |
+| 1 | algeria | 3 | 3 |
+| 2 | cheyenne | 3 | 6 |
+| 3 | commanche | 3 | 9 |
+| 4 | germanic tribes | 3 | 12 |
+| 5 | huang chao | 3 | 15 |
+| 6 | libya | 3 | 18 |
+| 7 | sassanid empire | 3 | 21 |
+| 8 | sioux indians cheyenne indians | 3 | 24 |
+| 9 | tidikelt tribes | 3 | 27 |
+| 10 | tripoli | 3 | 30 |
+| 11 | wurtemburg | 3 | 33 |
+| 12 | zaia | 3 | 36 |
+| 13 | irish royalists | 2 | 38 |
+| 14 | burma | 2 | 40 |
+| 15 | siam | 7 | 47 |
+| 16 | cambodia | 3 | 50 |
+| 17 | mexican government | 2 | 52 |
+| 18 | pancho villa rebels | 2 | 54 |
+| 19 | holy roman empire | 2 | 56 |
+| 20 | swabian league | 2 | 58 |
+
+Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 58 events.
+
+## Genuinely-new candidates by century
+
+| Century | Strict-contract unmatched candidates |
+| --- | --- |
+| 33rd century BCE | 1 |
+| 30th century BCE | 2 |
+| 27th century BCE | 1 |
+| 25th century BCE | 1 |
+| 18th century BCE | 1 |
+| 16th century BCE | 1 |
+| 15th century BCE | 2 |
+| 14th century BCE | 3 |
+| 13th century BCE | 7 |
+| 12th century BCE | 4 |
+| 11th century BCE | 5 |
+| 10th century BCE | 2 |
+| 9th century BCE | 6 |
+| 8th century BCE | 14 |
+| 7th century BCE | 31 |
+| 6th century BCE | 32 |
+| 5th century BCE | 78 |
+| 4th century BCE | 120 |
+| 3rd century BCE | 165 |
+| 2nd century BCE | 85 |
+| 1st century BCE | 150 |
+| 1st century CE | 58 |
+| 2nd century CE | 36 |
+| 3rd century CE | 85 |
+| 4th century CE | 64 |
+| 5th century CE | 82 |
+| 6th century CE | 122 |
+| 7th century CE | 184 |
+| 8th century CE | 145 |
+| 9th century CE | 174 |
+| 10th century CE | 162 |
+| 11th century CE | 299 |
+| 12th century CE | 417 |
+| 13th century CE | 561 |
+| 14th century CE | 549 |
+| 15th century CE | 684 |
+| 16th century CE | 1,396 |
+| 17th century CE | 1,349 |
+| 18th century CE | 1,790 |
+| 19th century CE | 3,318 |
+| 20th century CE | 3,428 |
+| 21st century CE | 955 |
+
+## Brecke war-name coverage
+
+Of **3,708** Brecke war records, **78** have at least one exact-name, time-overlapping HCED battle and **3,630** have none. Brecke has no winner field and no reusable license grant; the sidecar is a war-name coverage registry only.
+
+| Brecke region | Wars with zero matching HCED battles |
+| --- | --- |
+| Brecke region 1 | 182 |
+| Brecke region 10 | 206 |
+| Brecke region 11 | 193 |
+| Brecke region 12 | 538 |
+| Brecke region 2 | 149 |
+| Brecke region 3 | 592 |
+| Brecke region 4 | 537 |
+| Brecke region 5 | 167 |
+| Brecke region 6 | 224 |
+| Brecke region 7 | 299 |
+| Brecke region 8 | 397 |
+| Brecke region 9 | 145 |
+| Unclassified | 1 |
+
+### Zero-match Brecke wars, enumerated by region
+
+#### Brecke region 1
+
+- `brecke-0214` — 1441–1441: Mexico (Maya)
+- `brecke-0510` — 1493–1493: Spain-Arawaks (Haiti)
+- `brecke-0522` — 1495–1495: Spain-Arawaks (Haiti)
+- `brecke-0567` — 1502–1502: Spain-Indians (Venezuela)
+- `brecke-0574` — 1503–1504: Spain-Arawaks (Hispaniola)
+- `brecke-0575` — 1503–1503: Spain-Indians (Panama)
+- `brecke-0579` — 1504–1504: Spain-Indians (Panama)
+- `brecke-0632` — 1511–1511: Spain-Caribs (Puerto Rico)
+- `brecke-0633` — 1511–1511: Spain-Ciboney (Cuba)
+- `brecke-0651` — 1513–1513: Spain-Cuarecuans (Panama)
+- `brecke-0672` — 1515–1519: Aztecs-Tlaxcala (Mexico)
+- `brecke-0665` — 1515–1515: Spain-Indians (Curacao, Bonaire)
+- `brecke-0664` — 1515–1515: Spain-Indians (Panama)
+- `brecke-0702` — 1519–1521: Spain-Aztecs (Mexico)
+- `brecke-0721` — 1522–1524: Spain-Guatamala
+- `brecke-0734` — 1524–1526: Spain-Honduras
+- `brecke-0758` — 1527–1528: Spain-Yucatan (Mexico)
+- `brecke-0776` — 1529–1529: Spanish Mexico (Tabasco)
+- `brecke-0786` — 1531–1535: Spain-Yucatan
+- `brecke-0833` — 1539–1539: Spain-Florida
+- `brecke-0831` — 1539–1539: Spain-Yucatan
+- `brecke-0839` — 1540–1542: Spain-Mexico (northern)
+- `brecke-0869` — 1546–1546: Spain-Mexico (Maya)
+- `brecke-0985` — 1565–1565: Spain-France (Florida)
+- `brecke-1001` — 1568–1568: England-Spain (Caribbean)
+- `brecke-1022` — 1570–1571: American Indians-Portugal
+- `brecke-1113` — 1585–1586: England-Spain (Caribbean)
+- `brecke-1180` — 1595–1595: Puerto Rico-British pirates
+- `brecke-1323` — 1622–1622: Powhatans-British settlers (Virginia)
+- `brecke-1344` — 1625–1625: United Provinces-Spain (Puerto Rico)
+- `brecke-1407` — 1635–1635: France-Martinique, Guadalupe
+- `brecke-1424` — 1637–1637: British settlers-Pequots (Massachusetts)
+- `brecke-1480` — 1646–1646: England-Bahamas
+- `brecke-1492` — 1648–1650: Iroquois-Huron (America)
+- `brecke-1529` — 1655–1657: England-Spain (West Indies)
+- `brecke-1566` — 1663–1665: England-United Provinces (North America)
+- `brecke-1614` — 1671–1671: England-Panama
+- `brecke-1636` — 1671–1676: USA (peasants-Indians, British)
+- `brecke-1623` — 1674–1674: United Provinces-France (Martinique)
+- `brecke-1629` — 1675–1676: England-American Indians
+- `brecke-1664` — 1683–1683: France-Iroquois Indians (America)
+- `brecke-1682` — 1687–1689: France-Iroquois Indians (America)
+- `brecke-1700` — 1689–1691: England (American colonies)
+- `brecke-1743` — 1702–1702: Britain-Spain (Puerto Rico)
+- `brecke-1750` — 1704–1704: France, Amer. Indians-Amer. settlers (Massachusetts)
+- `brecke-1774` — 1711–1711: American settlers-Indians (N. Carolina)
+- `brecke-1775` — 1711–1711: Britain-France (Canada)
+- `brecke-1791` — 1715–1715: American settlers-Indians (S. Carolina)
+- `brecke-1809` — 1720–1722: Spain-Texas
+- `brecke-1868` — 1739–1743: Britain-Spain
+- `brecke-1883` — 1744–1748: Britain-France (North America)
+- `brecke-1921` — 1754–1760: Britain-France (North America)
+- `brecke-1934` — 1758–1762: Britain-Cherokees (Virginia)
+- `brecke-1949` — 1762–1763: West Indies (slave revolt), 1762-63 ?
+- `brecke-1954` — 1763–1763: Britain-American Indians
+- `brecke-1976` — 1771–1771: England-American colonists (North Carolina)
+- `brecke-1982` — 1772–1777: West Indies (slave revolt), 1772-77 ?
+- `brecke-2025` — 1786–1787: United States (rebellion)
+- `brecke-2040` — 1790–1794: Maumee-USA
+- `brecke-2045` — 1791–1795: Haiti-France, Spain
+- `brecke-2052` — 1793–1801: France-England, Spain, Holland (colonies in America)
+- `brecke-2060` — 1795–1796: West Indies (slave revolt), 1795-96 ?
+- `brecke-2074` — 1798–1800: USA-France
+- `brecke-2079` — 1799–1801: Hispaniola
+- `brecke-2091` — 1802–1803: Haiti-France
+- `brecke-2117` — 1806–1820: Haiti
+- `brecke-2134` — 1808–1809: Santo Domingo-Haiti
+- `brecke-2143` — 1810–1814: Mexico-Spain
+- `brecke-2151` — 1811–1811: USA-Shawnee
+- `brecke-2166` — 1813–1814: United States-Creek Indians
+- `brecke-2191` — 1818–1818: USA-Seminoles
+- `brecke-2214` — 1821–1822: Mexico-Spain
+- `brecke-2229` — 1822–1822: Haiti-Santo Domingo
+- `brecke-2226` — 1822–1823: Nicaragua, El Salvador-Mexico
+- `brecke-2234` — 1823–1823: Central America
+- `brecke-2265` — 1827–1829: Central America
+- `brecke-2271` — 1829–1830: Central American Republic
+- `brecke-2274` — 1829–1829: Spain-Mexico
+- `brecke-2299` — 1831–1845: Costa Rica, Guatamala, Honduras, Nicaragua, El Salvador
+- `brecke-2298` — 1831–1831: USA (slaves)
+- `brecke-2306` — 1832–1834: Mexico
+- `brecke-2329` — 1835–1836: Texas-Mexico
+- `brecke-2341` — 1837–1837: Canada (Ontario)
+- `brecke-2342` — 1837–1837: Canada (Quebec)
+- `brecke-2350` — 1838–1839: France-Mexico
+- `brecke-2352` — 1839–1840: Central American Federation
+- `brecke-2362` — 1840–1843: Mexico (Yucatan)
+- `brecke-2379` — 1843–1843: Haiti
+- `brecke-2385` — 1844–1844: Santo Domingo-Haiti
+- `brecke-2384` — 1844–1844: Spain-Cuba
+- `brecke-2395` — 1845–1847: Mexico (Yaquis uprising)
+- `brecke-2406` — 1847–1858: Mexico (Mayans)
+- `brecke-2435` — 1849–1849: Canada
+- `brecke-2436` — 1849–1858: Central America
+- `brecke-2440` — 1850–1851: Cuba-Spain
+- `brecke-2449` — 1851–1851: Cuba-Spain
+- `brecke-2468` — 1853–1855: Mexico
+- `brecke-2484` — 1855–1856: Haiti-Santo Domingo
+- `brecke-2485` — 1855–1856: Nicaragua
+- `brecke-2483` — 1855–1860: United States (Kansas)
+- `brecke-2495` — 1856–1857: Costa Rica, Honduras, El Salvador-Nicaragua
+- `brecke-2513` — 1858–1858: Haiti
+- `brecke-2512` — 1858–1861: Mexico
+- `brecke-2546` — 1862–1867: France-Mexico (with British and Spanish involvement)
+- `brecke-2547` — 1862–1867: USA-American Indians (Sioux)
+- `brecke-2557` — 1863–1865: Dominican Republic-Spain
+- `brecke-2560` — 1863–1863: Guatamala, Nicaragua-Honduras, El Salvador
+- `brecke-2581` — 1865–1865: Britain-Jamaica
+- `brecke-2584` — 1865–1867: Guatemala, Nicaragua-El Salvador, Honduras
+- `brecke-2582` — 1865–1865: Panama
+- `brecke-2608` — 1867–1869: Haiti
+- `brecke-2611` — 1868–1878: Cubans-Spain
+- `brecke-2610` — 1868–1868: Puerto Rico-Spain
+- `brecke-2623` — 1869–1870: Canada (Manitoba)
+- `brecke-2635` — 1871–1871: Guatamala
+- `brecke-2647` — 1873–1873: Panama
+- `brecke-2659` — 1874–1875: USA-Plains Indians (Texas, Oklahoma, Kansas)
+- `brecke-2672` — 1876–1877: Sioux-USA
+- `brecke-2759` — 1885–1885: Canada (Saskatchewan)
+- `brecke-2760` — 1885–1885: Guatemala, Honduras-El Salvador, Costa Rica, Nicaragua
+- `brecke-2788` — 1889–1889: Guatemala, Honduras-El Salvador
+- `brecke-2791` — 1890–1891: USA-Sioux
+- `brecke-2840` — 1895–1898: Cubans (assisted by USA)-Spain
+- `brecke-2866` — 1897–1897: Nicaragua-Costa Rica
+- `brecke-2939` — 1904–1904: United States-Dominican Republic
+- `brecke-2961` — 1906–1906: Cuba-United States
+- `brecke-2962` — 1906–1906: Guatemala-Honduras, El Salvador
+- `brecke-2963` — 1907–1907: Nicaragua-Honduras, El Salvador
+- `brecke-2988` — 1909–1912: Honduras (with intervention by USA)
+- `brecke-2987` — 1909–1912: Nicaragua (with intervention by USA)
+- `brecke-2997` — 1910–1920: Mexico (with intervention by USA)
+- `brecke-3003` — 1911–1912: Nicaragua
+- `brecke-3009` — 1912–1912: Cuba (with intervention by USA)
+- `brecke-3024` — 1914–1914: US-Mexico (Veracruz)
+- `brecke-3041` — 1915–1916: Haiti (with US intervention)
+- `brecke-3052` — 1916–1916: Dominican Republic
+- `brecke-3064` — 1917–1917: Cuba
+- `brecke-3063` — 1917–1918: Dominican Republic-USA
+- `brecke-3078` — 1918–1919: Haitians-USA
+- `brecke-3095` — 1919–1919: US (race riots)
+- `brecke-3146` — 1924–1924: Honduras (with intervention by USA)
+- `brecke-3158` — 1926–1930: Mexico
+- `brecke-3162` — 1927–1927: Dominican Republic (with intervention by USA)
+- `brecke-3161` — 1927–1933: Nicaragua (with intervention by USA)
+- `brecke-3171` — 1929–1929: Haiti-USA
+- `brecke-3192` — 1931–1931: Cuba
+- `brecke-3191` — 1931–1932: El Salvador
+- `brecke-3206` — 1933–1934: Cuba
+- `brecke-3234` — 1937–1937: Dominican Republic-Haiti (massacre of Haitians in DR)
+- `brecke-3303` — 1948–1948: Costa Rica (Caldoron with Nicaraguan and Honduran support)
+- `brecke-3304` — 1948–1949: Costa Rica (Caldoronistas with Nicaraguan support)
+- `brecke-3344` — 1954–1954: Guatemala (with intervention from Honduras, Nicaragua and United States)
+- `brecke-3346` — 1955–1955: Costa Rica (with intervention from Nicaragua)
+- `brecke-3360` — 1956–1959: Cuba
+- `brecke-3363` — 1956–1957: Haiti
+- `brecke-3371` — 1957–1957: Nicaragua-Honduras
+- `brecke-3395` — 1959–1959: Cuba-Dominican Republic
+- `brecke-3396` — 1960–1979: Nicaragua
+- `brecke-3414` — 1961–1962: Dominican Republic (with intervention by USA)
+- `brecke-3420` — 1962–1962: Guatemala
+- `brecke-3433` — 1963–1971: United States (race conflict)
+- `brecke-3458` — 1964–1966: Guatemala
+- `brecke-3459` — 1964–1964: Panama (anti-US riots)
+- `brecke-3467` — 1965–1966: Dominican Republic (with intervention by USA)
+- `brecke-3479` — 1966–1972: Guatamala
+- `brecke-3480` — 1966–1984: Guatemala, 1966-84 G
+- `brecke-3495` — 1968–1968: Mexico (student revolt)
+- `brecke-3497` — 1969–1969: Anguila (with British intervention)
+- `brecke-3499` — 1969–1969: Curacao-Netherlands
+- `brecke-3500` — 1969–1969: El Salvador-Honduras
+- `brecke-3498` — 1969–1969: St. Maarten-Netherlands
+- `brecke-3511` — 1970–1971: Guatamala
+- `brecke-3545` — 1976–1995: Guatemala
+- `brecke-3561` — 1978–1979: Nicaragua
+- `brecke-3562` — 1979–1992: El Salvador
+- `brecke-3579` — 1981–1988: Nicaragua
+- `brecke-3590` — 1982–1989: Nicaragua (with intervention from Honduras)
+- `brecke-3593` — 1983–1983: USA-Grenada
+- `brecke-3622` — 1989–1989: Panama
+- `brecke-3623` — 1989–1989: Panama-United States
+- `brecke-3644` — 1991–1991: Haiti
+- `brecke-3673` — 1994–1994: Mexico
+
+#### Brecke region 10
+
+- `brecke-0014` — 1401–1406: Mujapahit (India, civil war)
+- `brecke-0055` — 1406–1406: Bahmanis-Vijayanagar (India)
+- `brecke-0091` — 1411–1411: China-Rayigama (West Ceylon)
+- `brecke-0108` — 1414–1421: Delhi-northern India
+- `brecke-0109` — 1414–1414: Punjab (Mongols)-India
+- `brecke-0138` — 1420–1420: Bahmanis-Vijayanagar (India)
+- `brecke-0255` — 1449–1449: Afghanistan (coup in Herat)
+- `brecke-0271` — 1451–1451: Afghanistan (Lodis)-India (Delhi)
+- `brecke-0404` — 1473–1473: Arakan-Bengal
+- `brecke-0521` — 1494–1494: Arghuns-Baluchistan (Pishin, Quetta, Mastung)
+- `brecke-0542` — 1498–1498: Portugal-Calicut (India)
+- `brecke-0581` — 1504–1504: Moghuls-Arghuns (Kabul and Ghazni)
+- `brecke-0615` — 1509–1509: Persia-Afghanistan (Herat)
+- `brecke-0616` — 1509–1509: Portugal-Moslem India
+- `brecke-0625` — 1510–1510: Portugal-Goa (India)
+- `brecke-0743` — 1525–1526: Moguls (Afghanistan)-Lodis (Punjab)
+- `brecke-0757` — 1526–1527: Arghuns-Khaljis (Multan)
+- `brecke-0765` — 1527–1527: Moguls (Afghanistan)-Rajputs (Hindus) (India)
+- `brecke-0782` — 1529–1529: Moguls (Afghanistan)-India (Delhi)
+- `brecke-0835` — 1540–1540: Afghans-India
+- `brecke-0926` — 1555–1555: Moguls-Afghans (in India)
+- `brecke-0935` — 1556–1556: Moguls-Hindus (Panipat, India)
+- `brecke-0947` — 1558–1558: India-Gwalior
+- `brecke-0955` — 1560–1560: Moguls-Rajput, Bengalis
+- `brecke-0989` — 1565–1565: India (Muslims vs south Indians (Vija Yahagar)
+- `brecke-1048` — 1573–1573: Moguls-Gujarat (west India)
+- `brecke-1055` — 1574–1576: Moguls-Bengal
+- `brecke-1095` — 1581–1581: Moguls-Afghanistan
+- `brecke-1122` — 1586–1595: Moghuls-Kashmir, Sind, Orissa, Baluchistan
+- `brecke-1163` — 1592–1594: Moguls-Sind, Kandahar
+- `brecke-1210` — 1600–1600: Moguls-central India (Deccan)
+- `brecke-1261` — 1612–1630: England-Portugal (Indian Ocean)
+- `brecke-1390` — 1631–1632: Moguls-Portugal
+- `brecke-1404` — 1633–1636: Moguls-Ahmadnagar (India)
+- `brecke-1416` — 1635–1636: Moguls-Golconda, Bijapur (India)
+- `brecke-1421` — 1636–1636: United Provinces-Ceylon
+- `brecke-1438` — 1638–1638: Portugal-Kandy (Sri Lanka)
+- `brecke-1437` — 1638–1640: United Provinces-Portugal (Ceylon and Goa)
+- `brecke-1534` — 1655–1655: United Provinces-Ceylon
+- `brecke-1538` — 1656–1656: United Provinces, Kandy-Portugal (Sri Lanka)
+- `brecke-1545` — 1657–1659: Moguls
+- `brecke-1598` — 1668–1668: Oman-Portugal (Diu, India)
+- `brecke-1616` — 1672–1672: France-India
+- `brecke-1676` — 1686–1686: Britain-Bengal
+- `brecke-1680` — 1686–1687: Moguls-Bijapur, Golkonda (India)
+- `brecke-1712` — 1693–1693: United Provinces-France (Pondicherry, India)
+- `brecke-1758` — 1707–1707: India (succession)
+- `brecke-1773` — 1710–1718: India (Shiku religion rebellion)
+- `brecke-1783` — 1712–1712: India (succession)
+- `brecke-1800` — 1717–1719: Afghanistan-Persia
+- `brecke-1812` — 1720–1722: Afghanistan-Persia
+- `brecke-1841` — 1729–1730: Afghanistan-Turkey
+- `brecke-1846` — 1730–1730: Persia-Afghanistan
+- `brecke-1862` — 1736–1736: Persia-Afghanistan
+- `brecke-1865` — 1737–1737: Afsharids-Bukhara (Balkh)
+- `brecke-1866` — 1738–1739: Persia-Afghanistan, India
+- `brecke-1874` — 1740–1743: Marathas-Carnatic-Nizam (with British and French intervention)
+- `brecke-1888` — 1744–1748: France-England (India)
+- `brecke-1904` — 1747–1757: Afghanistan-Moguls (India)
+- `brecke-1903` — 1747–1747: Afghanistan-Persia
+- `brecke-1907` — 1749–1754: France-England (India)
+- `brecke-1912` — 1750–1750: Afghanistan-Persia (Herat)
+- `brecke-1919` — 1753–1753: Moguls (Marathas) (India)
+- `brecke-1928` — 1756–1757: Britain-Bengal, France
+- `brecke-1936` — 1758–1761: France-England (India)
+- `brecke-1938` — 1759–1759: Britain-Dutch (Bengal)
+- `brecke-1939` — 1759–1759: Burma (Ava)-Manipur (India)
+- `brecke-1944` — 1760–1761: Marathas-Afghanistan
+- `brecke-1947` — 1761–1761: India (Panipat)
+- `brecke-1946` — 1761–1765: United Provinces, Tamils-Kandy (Sri Lanka)
+- `brecke-1952` — 1763–1765: Britain-Bengalis
+- `brecke-1953` — 1763–1765: Britain-India (Emperor Shar Alam)
+- `brecke-1957` — 1764–1764: Burma-Manipuri (India)
+- `brecke-1958` — 1764–1765: China (Qing)-Afghans (Afghanistan)
+- `brecke-1962` — 1766–1769: Mysore-Britain (India)
+- `brecke-1970` — 1769–1770: Afghanistan-Persia (Khorasan)
+- `brecke-1979` — 1771–1771: Mysore-Maratha (India)
+- `brecke-1996` — 1775–1782: Marathas-Britain (India)
+- `brecke-2005` — 1779–1779: Afghanistan-Sind
+- `brecke-2008` — 1781–1784: Mysore-Britain (India)
+- `brecke-2034` — 1789–1792: Mysore-Britain (South Africa)
+- `brecke-2056` — 1793–1793: Afghanistan
+- `brecke-2066` — 1795–1796: Britain-Netherlands (Sri Lanka)
+- `brecke-2067` — 1795–1796: England-Holland, France (Sri Lanka)
+- `brecke-2065` — 1795–1796: Maratha-Nizamu (India)
+- `brecke-2077` — 1798–1798: Afghanistan (with intervention by Persia)
+- `brecke-2078` — 1798–1798: Sikhs-Afghanistan (Lahore)
+- `brecke-2082` — 1799–1802: India-Sikhs
+- `brecke-2081` — 1799–1799: Mysore-Britain, Hyderabad
+- `brecke-2089` — 1801–1801: Afghanistan (Ghilzais)
+- `brecke-2095` — 1802–1804: Britain-Sri Lanka (Kandy)
+- `brecke-2094` — 1802–1802: India (Marathas)
+- `brecke-2101` — 1803–1803: Afghanistan (Kabul)
+- `brecke-2102` — 1803–1805: Britain-Marathas
+- `brecke-2111` — 1805–1805: Afghanistan (Kabul)
+- `brecke-2112` — 1805–1805: Afghanistan-Persia (Herat)
+- `brecke-2115` — 1806–1806: Britain-Bengalis
+- `brecke-2140` — 1809–1809: Afghanistan (Gandomak)
+- `brecke-2150` — 1810–1810: Afghanistan-Punjab
+- `brecke-2175` — 1814–1816: Britain-Gurkhas (Nepal)
+- `brecke-2180` — 1815–1815: Britain, Tamils-Kandy (Sri Lanka)
+- `brecke-2186` — 1816–1816: Persia-Afghanistan (Herat)
+- `brecke-2188` — 1817–1818: Britain-Marathas (India)
+- `brecke-2187` — 1817–1818: Britain-Pindaris (India
+- `brecke-2189` — 1817–1818: Britain-Sri Lanka (Kandyans)
+- `brecke-2196` — 1818–1818: Afghanistan (Barakzai)
+- `brecke-2203` — 1819–1819: Sikhs-Kashmir
+- `brecke-2241` — 1823–1823: Afghanistan-Sikhs (Peshawar)
+- `brecke-2255` — 1825–1826: Britain-India (Bharatpur)
+- `brecke-2259` — 1826–1826: Afghanistan (Kabul)
+- `brecke-2277` — 1829–1837: Afghanistan-Sikhs
+- `brecke-2320` — 1833–1834: Persia-Afghanistan (Herat)
+- `brecke-2327` — 1834–1834: Afghanistan (Kandahar)
+- `brecke-2345` — 1837–1838: Afghanistan-Persia, Russia (Herat)
+- `brecke-2344` — 1837–1837: Afghanistan-Sikhs (Jamrud)
+- `brecke-2358` — 1839–1842: Britain-Afghanistan
+- `brecke-2359` — 1839–1839: Britain-Khelat (India)
+- `brecke-2370` — 1841–1841: Dogras-Tibet
+- `brecke-2382` — 1843–1843: Britain-India (Gwalior)
+- `brecke-2381` — 1843–1843: Britain-Sind (Baluchis)
+- `brecke-2391` — 1845–1846: Britain-Sikhs
+- `brecke-2418` — 1848–1849: Britain-Sikhs
+- `brecke-2434` — 1848–1848: Ceylon-Britain
+- `brecke-2447` — 1850–1870: Afghanistan
+- `brecke-2461` — 1852–1852: Dards-Dogras (northern Pakistan)
+- `brecke-2494` — 1855–1855: Afghanistan (Kandahar)
+- `brecke-2493` — 1855–1856: Britain-Santals (Bengal)
+- `brecke-2498` — 1856–1857: Persia-Afghanistan
+- `brecke-2511` — 1857–1859: India-Britain
+- `brecke-2566` — 1863–1863: Afghanistan-Persia (Herat)
+- `brecke-2570` — 1863–1863: Bengal (Muslims)-Britain
+- `brecke-2580` — 1864–1864: Afghanistan
+- `brecke-2591` — 1865–1865: Britain-Bhutan
+- `brecke-2599` — 1866–1869: Afghanistan
+- `brecke-2656` — 1873–1873: Afghanistan (Kabul)
+- `brecke-2689` — 1878–1880: Britain-Afghanistan
+- `brecke-2731` — 1881–1881: Afghanistan (Ghilzai)
+- `brecke-2733` — 1881–1883: Afghanistan (Hazara)
+- `brecke-2730` — 1881–1881: Afghanistan (Kandahar)
+- `brecke-2732` — 1881–1881: Afghanistan (Kunar)
+- `brecke-2747` — 1883–1883: Afghanistan (Meymeneh)
+- `brecke-2748` — 1883–1883: Afghanistan (Shinwari)
+- `brecke-2777` — 1886–1887: Afghanistan (Ghilzai with Hazara support)
+- `brecke-2787` — 1888–1888: Afghanistan (Afghan Turkestan)
+- `brecke-2805` — 1891–1893: Afghanistan (Hazara)
+- `brecke-2817` — 1892–1894: Russia-Afghanistan
+- `brecke-2852` — 1895–1896: Afghanistan-Kafiristan
+- `brecke-2851` — 1895–1895: Britain-India (Chitral)
+- `brecke-2880` — 1897–1898: Britain-India (Afridi Muslims)
+- `brecke-2979` — 1908–1908: Britain-India
+- `brecke-3016` — 1912–1912: Afghanistan (Mangals)
+- `brecke-3051` — 1915–1915: Britain-Sri Lanka
+- `brecke-3111` — 1919–1919: Afghanistan-Britain
+- `brecke-3113` — 1919–1919: Britain-Punjabis (Amritsar)
+- `brecke-3112` — 1919–1920: Britain-Waziristan (Pakistan)
+- `brecke-3129` — 1921–1922: Indians (Moplahs)-Britain
+- `brecke-3150` — 1924–1925: Afghanistan (Khosts, Mangals, Sulaiman Khel, Ali Khel)
+- `brecke-3151` — 1924–1924: India (Hindu-Muslim)
+- `brecke-3169` — 1928–1929: Afghanistan
+- `brecke-3183` — 1930–1931: Afghanistan (Koh Daman)
+- `brecke-3184` — 1930–1930: Afghanistan (Shinwari)
+- `brecke-3185` — 1930–1931: Afghanistan, Russia (Ibrahim Bey)
+- `brecke-3182` — 1930–1931: India-Britain (Peshawar)
+- `brecke-3203` — 1932–1932: Afghanistan (Ghilzai)
+- `brecke-3204` — 1932–1932: Afghanistan (Khosts)
+- `brecke-3225` — 1935–1935: Afghanistan (Mohmand)
+- `brecke-3231` — 1936–1938: Britain, Hindus-Waziri Moslems
+- `brecke-3230` — 1936–1938: Britain-Hindus (India)
+- `brecke-3238` — 1937–1937: Afghanistan (Ghilzai)
+- `brecke-3268` — 1942–1942: India
+- `brecke-3293` — 1946–1948: India (inter-communal)
+- `brecke-3297` — 1947–1949: Pakistan-India (Kashmir)
+- `brecke-3310` — 1948–1948: India-Hyderabad
+- `brecke-3348` — 1955–1964: India-Nagas
+- `brecke-3349` — 1955–1955: Pakistan-Afghanistan
+- `brecke-3364` — 1957–1957: Maldives-Britain
+- `brecke-3393` — 1959–1959: China-India
+- `brecke-3407` — 1961–1961: India-Portugal (Goa)
+- `brecke-3418` — 1961–1961: Nepal
+- `brecke-3465` — 1965–1965: Pakistan-India
+- `brecke-3481` — 1966–1968: India (Mizos)
+- `brecke-3487` — 1967–1967: China-India (Sikkim-Tibet border)
+- `brecke-3494` — 1968–1982: India, 1968-82 G
+- `brecke-3507` — 1969–1969: China-India (Uttar Pradesh)
+- `brecke-3516` — 1971–1971: Pakistan (East Bengal with intervention by India), 1971 G
+- `brecke-3517` — 1971–1971: Pakistan-India
+- `brecke-3518` — 1971–1971: Sri Lanka (Ceylon)
+- `brecke-3526` — 1973–1977: Pakistan (Baluchistan), 1973-77 G
+- `brecke-3535` — 1975–1992: Bangladesh
+- `brecke-3585` — 1981–1993: India (Punjab)
+- `brecke-3595` — 1983–open: India (Assam), 1983-
+- `brecke-3594` — 1983–open: Sri Lanka (Tamils), 1983-
+- `brecke-3601` — 1984–open: India (Sikhs), 1984-
+- `brecke-3606` — 1986–1987: Pakistan
+- `brecke-3613` — 1987–1987: India-Pakistan (Kashmir)
+- `brecke-3614` — 1987–1990: Sri Lanka (JVP)
+- `brecke-3633` — 1989–1991: Bangladesh
+- `brecke-3634` — 1989–1990: India-Pakistan
+- `brecke-3643` — 1990–open: India (Jammu and Kashmir), 1990-
+- `brecke-3667` — 1992–1992: India-Pakistan
+- `brecke-3681` — 1996–1996: India-Pakistan
+- `brecke-3682` — 1996–open: Nepal (Maoist rebellion), 1996-
+- `brecke-3701` — 1998–open: India (Jammu and Kashmir), 1998-
+- `brecke-3700` — 1998–1998: India-Pakistan
+- `brecke-3706` — 1999–1999: India
+- `brecke-3703` — 1999–1999: India (Kashmir)
+
+#### Brecke region 11
+
+- `brecke-0012` — 1401–1410: Arakon-Ava (Burma)
+- `brecke-0013` — 1401–1401: Pegu-Ava (Burma)
+- `brecke-0038` — 1404–1404: Ava-Arakan
+- `brecke-0045` — 1405–1428: China-Annam (Vietnam)
+- `brecke-0054` — 1406–1406: Ava-Shan (Burma)
+- `brecke-0053` — 1406–1410: Pegu-Ava (Burma)
+- `brecke-0062` — 1407–1412: Ava-Mon (Burma)
+- `brecke-0070` — 1408–1412: Maw Shan-Ava (with Chinese intervention) (Burma)
+- `brecke-0110` — 1414–1414: Ava-Pegu (Burma)
+- `brecke-0111` — 1414–1414: China-Ava
+- `brecke-0112` — 1414–1414: China-Indonesia
+- `brecke-0160` — 1426–1426: Burmese-Ava
+- `brecke-0173` — 1430–1430: Arakan, Ganesas-Ava (Burma)
+- `brecke-0179` — 1431–1431: India-Cambodia
+- `brecke-0309` — 1459–1459: Arakan-Bengal
+- `brecke-0440` — 1479–1479: Vietnam-Laos
+- `brecke-0604` — 1507–1507: Shans-Ava (Burma)
+- `brecke-0637` — 1511–1511: Portugal-Malacca
+- `brecke-0725` — 1522–1522: Portugal-Molucca Island (Indonesia)
+- `brecke-0735` — 1524–1527: Shans-Ava (Burma)
+- `brecke-0766` — 1527–1527: Shans-Ava (Burma)
+- `brecke-0894` — 1550–1569: Ava (Burma)-Thailand, Laos, Shans
+- `brecke-0910` — 1552–1565: Portugal-Moluccans (Ternate)
+- `brecke-0980` — 1564–1569: Moluccas-Portugal (aided by Spain)
+- `brecke-0979` — 1564–1567: Spain-Filipinos
+- `brecke-1029` — 1570–1574: Portugal-Moluccans (Ternate)
+- `brecke-1062` — 1575–1585: Portugal-Malabar
+- `brecke-1096` — 1581–1581: Portugal-Moluccans (Ternate)
+- `brecke-1109` — 1584–1593: Thai-Ava (Burma)
+- `brecke-1132` — 1588–1588: Spain, Portugal-Moluccans (Ternate)
+- `brecke-1216` — 1601–1603: Portugal-Ceylon
+- `brecke-1228` — 1605–1605: United Provinces-Malaysia
+- `brecke-1229` — 1605–1606: United Provinces-Portugal (Molucca)
+- `brecke-1259` — 1611–1628: United Provinces-Ceylon (Portugal)
+- `brecke-1268` — 1613–1613: Ava-Portuguese (Synam)
+- `brecke-1283` — 1615–1615: Ava-Chiangmai (Thailand)
+- `brecke-1282` — 1615–1615: United Provinces-Portugal (Molucca)
+- `brecke-1289` — 1616–1619: United Provinces-Macassar
+- `brecke-1305` — 1619–1619: United Provinces-Djakarta
+- `brecke-1334` — 1623–1623: United Provinces-England (Molucca)
+- `brecke-1369` — 1628–1628: Mataram, Molucca, Java-United Provinces
+- `brecke-1446` — 1640–1641: United Provinces, Jahore-Portugal (Melaka) (Malaysia)
+- `brecke-1484` — 1646–1646: Moluccas-United Provinces
+- `brecke-1488` — 1647–1688: Siam (revolution)
+- `brecke-1508` — 1650–1680: United Provinces-Java
+- `brecke-1507` — 1650–1656: United Provinces-Molucca
+- `brecke-1513` — 1651–1651: United Provinces-Ceram (Indonesia)
+- `brecke-1525` — 1654–1670: United Provinces-Sumatra
+- `brecke-1562` — 1661–1661: China (Qing)-South Ming (Burma)
+- `brecke-1599` — 1669–1681: United Provinces-Java (intervention in local conflict)
+- `brecke-1689` — 1687–1687: Britain-Siam
+- `brecke-1749` — 1703–1705: United Provinces-Mataram (Java)
+- `brecke-1825` — 1724–1724: Manipur (India)-Ava (Burma)
+- `brecke-1875` — 1740–1747: Burma (Mon rebellion against Toungoo)
+- `brecke-1908` — 1749–1749: Manipur (India)-Ava (Burma)
+- `brecke-1917` — 1752–1753: Pegu-Ava (Burma)
+- `brecke-1929` — 1756–1757: Burma-Pegu, Mon
+- `brecke-1932` — 1757–1757: Burma-Siam
+- `brecke-1955` — 1763–1763: Burma-China (Yunnan)
+- `brecke-1960` — 1765–1770: Burma-China (Burma)
+- `brecke-1980` — 1771–1802: Vietnam (peasant rebellion)
+- `brecke-2011` — 1782–1782: Siam
+- `brecke-2021` — 1784–1784: Burma-Arakan (western Burma)
+- `brecke-2023` — 1784–1789: China-Vietnam (Vietnam)
+- `brecke-2022` — 1784–1784: Holland-Bugis (Melaka) (Malaysia)
+- `brecke-2030` — 1788–1789: China-Annam (Vietnam)
+- `brecke-2108` — 1804–1804: Australia
+- `brecke-2119` — 1806–1806: Australia
+- `brecke-2130` — 1807–1811: Holland-Sumatra, 1807-11 ?
+- `brecke-2131` — 1807–1837: Sumatra (Malays vs. Padris)
+- `brecke-2136` — 1808–1808: Australia
+- `brecke-2135` — 1808–1808: Netherlands-Bantams (Indonesia)
+- `brecke-2142` — 1810–1811: Britain-Holland (Java)
+- `brecke-2160` — 1811–1815: Burma (Arakan)
+- `brecke-2165` — 1812–1812: Cambodia (with intervention by Thailand and Vietnam)
+- `brecke-2204` — 1819–1822: Burma-Assam
+- `brecke-2197` — 1819–1821: Holland-Sumatra
+- `brecke-2224` — 1821–1825: Holland, Maningkabau-Padri (Sumatra)
+- `brecke-2219` — 1821–1821: Siam-Kedah (Malay Peninsula)
+- `brecke-2233` — 1823–1826: Britain-Burma
+- `brecke-2250` — 1825–1830: Britain-Tasmanians
+- `brecke-2251` — 1825–1825: Holland-Celebes (Bonians) (Indonesia)
+- `brecke-2252` — 1825–1830: Java-Holland
+- `brecke-2260` — 1826–1829: Laos-Thailand
+- `brecke-2294` — 1830–1837: Holland-Sumatra (Padris)
+- `brecke-2305` — 1831–1834: Cambodia-Thailand
+- `brecke-2321` — 1833–1839: France-Annam (Vietnam)
+- `brecke-2346` — 1837–1860: Indonesian Pirates-Britain, Netherlands, Spain
+- `brecke-2351` — 1838–1845: Burma
+- `brecke-2360` — 1839–1849: Indonesia (Bali)-Netherlands
+- `brecke-2383` — 1843–1847: Britain-Maoris (New Zealand)
+- `brecke-2390` — 1844–1844: Spain-Philippines (Manila)
+- `brecke-2392` — 1845–1845: Britain-Borneo Pirates
+- `brecke-2399` — 1846–1849: Holland-Bali
+- `brecke-2410` — 1847–1847: France-Cochin China (Southern Vietnam)
+- `brecke-2419` — 1848–1850: Filipinos (Moslems)-Spain
+- `brecke-2458` — 1851–1851: Sumatrans-Holland
+- `brecke-2460` — 1852–1853: Britain-Burma
+- `brecke-2465` — 1852–1852: Tahiti-France
+- `brecke-2517` — 1858–1863: France, Spain-Cochin China, Annam (Vietnam)
+- `brecke-2526` — 1859–1863: Holland-Banjermasinese (South Borneo)
+- `brecke-2527` — 1859–1860: Holland-Celebes (Boninese or Bonians)
+- `brecke-2536` — 1860–1861: Britain-Maoris (New Zealand)
+- `brecke-2553` — 1862–1863: Siam-Cambodia, France
+- `brecke-2567` — 1863–1866: Britain-Maoris (New Zealand)
+- `brecke-2619` — 1868–1870: Britain-Maoris (New Zealand)
+- `brecke-2657` — 1873–1874: France-Tonkin, Vietnam
+- `brecke-2658` — 1873–1879: Holland-Atjeh (Sumatra)
+- `brecke-2718` — 1880–1908: Holland-Atjeh (Sumatra)
+- `brecke-2739` — 1882–1883: France-Tonkin (Vietnam) (with Chinese support)
+- `brecke-2751` — 1883–1885: China, Vietnam-France
+- `brecke-2771` — 1885–1894: Britain-Burma
+- `brecke-2772` — 1885–1893: Siam-Laos, France
+- `brecke-2806` — 1891–1894: Balinese-Sasaks (with Dutch intervention) (Indonesia)
+- `brecke-2818` — 1892–1893: France-Siam
+- `brecke-2836` — 1894–1894: France-Tonkinese
+- `brecke-2837` — 1894–1894: Netherlands-Lombok (Indonesia)
+- `brecke-2865` — 1896–1898: Filipinos-Spain
+- `brecke-2864` — 1896–1896: Netherlands-Achin (Indonesia)
+- `brecke-2906` — 1899–1902: Filipinos-USA
+- `brecke-2917` — 1901–1906: USA-Moros (Mindanao, Philippines)
+- `brecke-3155` — 1926–1927: Javanese (Communists)-Netherlands
+- `brecke-3190` — 1930–1931: Burma-Britain
+- `brecke-3189` — 1930–1930: France-Indochina
+- `brecke-3205` — 1932–1932: Thailand
+- `brecke-3257` — 1940–1941: Thailand-France
+- `brecke-3256` — 1940–1940: Vietnam (South)-France
+- `brecke-3269` — 1942–1945: Japan-Burma, Britain, India
+- `brecke-3279` — 1945–1946: Britain-Burma
+- `brecke-3282` — 1945–1953: Cambodia-France
+- `brecke-3281` — 1945–1945: Laos-France
+- `brecke-3283` — 1945–1946: Netherlands, Britain-Indonesia
+- `brecke-3280` — 1945–1946: Vietnam-France (with British and Chinese support)
+- `brecke-3291` — 1946–1954: Laos-France
+- `brecke-3292` — 1946–1954: Philippines (Huks)
+- `brecke-3288` — 1946–1954: Vietnam-France
+- `brecke-3299` — 1947–1948: Indonesia-Netherlands
+- `brecke-3312` — 1948–1950: Burma (Karens)
+- `brecke-3311` — 1948–1954: Burma (communists)
+- `brecke-3314` — 1948–1949: Indonesia-Netherlands
+- `brecke-3313` — 1948–1960: Malayans-Britain
+- `brecke-3325` — 1950–1950: Indonesia (South Moluccas)
+- `brecke-3324` — 1950–1954: Nationalist Chinese-Burma
+- `brecke-3326` — 1950–1952: Philippines
+- `brecke-3329` — 1951–1951: Thailand
+- `brecke-3337` — 1953–1959: Indonesia (Aceh)
+- `brecke-3339` — 1953–1954: North Vietnam, 1953-54 G
+- `brecke-3365` — 1956–1956: China-Burma
+- `brecke-3361` — 1956–1961: Indonesia (communists)
+- `brecke-3366` — 1956–1956: North Vietnam
+- `brecke-3367` — 1956–1964: South Vietnam (with intervention by North Vietnam, USA and others)
+- `brecke-3370` — 1957–1957: Indonesia (north Celebes, Sumatra)
+- `brecke-3383` — 1958–1958: Indonesia
+- `brecke-3384` — 1958–1962: Netherlands-Indonesia (West Irian )
+- `brecke-3382` — 1958–1962: Thailand-Cambodia
+- `brecke-3394` — 1959–1962: Laos (with intervention by US and South Vietnam)
+- `brecke-3405` — 1960–1962: Indonesia (western Java)
+- `brecke-3419` — 1961–1974: Thailand
+- `brecke-3421` — 1962–1962: Brunei
+- `brecke-3428` — 1962–1962: Brunei (with Malaysian, British, and Indonesian intervention)
+- `brecke-3427` — 1962–1962: Indonesia-Netherlands (West Irian)
+- `brecke-3444` — 1963–1966: Indonesia-Malaysia (assisted by Britain, Australia, New Zealand)
+- `brecke-3443` — 1963–1975: Laos (with intervention by US, North Vietnam)
+- `brecke-3446` — 1964–1986: Philippines (Huks, then New Peoples' Army) (Luzon)
+- `brecke-3462` — 1965–1966: Indonesia, 1965-66 G
+- `brecke-3463` — 1965–1972: South Vietnam, 1965-72 G
+- `brecke-3489` — 1968–1980: Burma
+- `brecke-3509` — 1969–1975: Cambodia (with intervention by USA and North Vietnam)
+- `brecke-3508` — 1969–1986: Philippines (Moros on Mindanao)
+- `brecke-3542` — 1975–1979: Cambodia, 1975-79 G
+- `brecke-3537` — 1975–1978: Indonesia-East Timor, 1975-78 G
+- `brecke-3543` — 1975–1979: Laos
+- `brecke-3541` — 1976–1979: Vietnam (Montagnards)
+- `brecke-3559` — 1978–1978: Burma, 1978 G
+- `brecke-3568` — 1979–1991: Cambodia
+- `brecke-3577` — 1980–1995: Burma (Karens)
+- `brecke-3574` — 1980–1991: Cambodia (with intervention by Vietnam and from Thailand)
+- `brecke-3602` — 1984–1989: Indonesia-East Timor
+- `brecke-3605` — 1985–1987: China-Vietnam
+- `brecke-3611` — 1986–1994: Philippines (New Peoples' Army)
+- `brecke-3615` — 1987–1988: Laos-Thailand
+- `brecke-3619` — 1988–1988: Burma
+- `brecke-3620` — 1988–1997: Papua New Guinea (Bouganville)
+- `brecke-3636` — 1989–1991: Indonesia (Aceh)
+- `brecke-3635` — 1989–1990: Laos
+- `brecke-3625` — 1989–1990: Philippines (RAM)
+- `brecke-3656` — 1991–open: Cambodia, 1991-
+- `brecke-3655` — 1991–1991: Indonesia-East Timor
+- `brecke-3668` — 1992–1992: Indonesia-East Timor
+- `brecke-3693` — 1998–1998: Indonesia
+- `brecke-3702` — 1999–open: Indonesia (Ambon), 1999-
+- `brecke-3707` — 1999–open: Indonesia (Celebes, Christians vs Muslims)
+- `brecke-3705` — 1999–1999: Indonesia (East Timor)
+
+#### Brecke region 12
+
+- `brecke-0007` — 1400–1402: China (minority in Hebei, Shandong, Anhui, Jiangsu)
+- `brecke-0015` — 1401–1401: China-Japanese pirates (Zhejiang)
+- `brecke-0016` — 1401–1401: Korea (coup)
+- `brecke-0033` — 1403–1403: China (Jiangxi)
+- `brecke-0032` — 1403–1403: China-Tartars (Liaoning)
+- `brecke-0046` — 1405–1405: China (Yunnan)
+- `brecke-0056` — 1406–1406: China (Henan)
+- `brecke-0057` — 1406–1407: China (Yunnan)
+- `brecke-0058` — 1406–1406: China-Japanese pirates (Liaoning)
+- `brecke-0063` — 1407–1407: China (Guangxi)
+- `brecke-0071` — 1408–1409: China (Yunnan)
+- `brecke-0079` — 1409–1409: China-Japanese pirates (Guangdong)
+- `brecke-0078` — 1409–1409: China-Japanese pirates (Zhejiang)
+- `brecke-0084` — 1410–1410: China (Hui in Gansu)
+- `brecke-0085` — 1410–1410: China (Hunan)
+- `brecke-0086` — 1410–1410: China-Japanese pirates (Fujian)
+- `brecke-0083` — 1410–1410: Mongols-China (Yellow River)
+- `brecke-0089` — 1411–1414: China (Guizhou)
+- `brecke-0090` — 1411–1411: China (Xilan)
+- `brecke-0092` — 1411–1411: China-Japanese pirates (Guangzhou)
+- `brecke-0093` — 1411–1411: China-Japanese pirates (Zhejiang)
+- `brecke-0097` — 1412–1413: China (Gansu)
+- `brecke-0104` — 1413–1413: China (Miao in Guizhou, Sichuan, Hube)
+- `brecke-0103` — 1413–1413: China-Japan (Zhejiang)
+- `brecke-0113` — 1414–1414: China (Sichuan)
+- `brecke-0128` — 1414–1418: China-Japanese pirates (Zhejing)
+- `brecke-0120` — 1415–1415: China (Guangxi)
+- `brecke-0124` — 1416–1416: China (peasants in Shanxi)
+- `brecke-0123` — 1416–1417: Japan (Kamagura bakufu vs governors (Kanto)
+- `brecke-0125` — 1417–1417: China (Yunan)
+- `brecke-0129` — 1418–1427: China (Yunnan and Lao)
+- `brecke-0134` — 1419–1419: China-Japanese pirates (Liaoning)
+- `brecke-0133` — 1419–1419: Korea-Japanese pirates (Tsushima Island or Nagasaki)
+- `brecke-0140` — 1420–1420: China (peasants in Shandong)
+- `brecke-0143` — 1421–1421: China (Guangxi)
+- `brecke-0148` — 1422–1422: China-Japanese pirates (Zhejiang)
+- `brecke-0147` — 1422–1423: China-Tartars (Inner Mongolia, Shanxi, Hebei)
+- `brecke-0154` — 1424–1424: China (Guangxi)
+- `brecke-0153` — 1424–1424: China-Tartars (Inner Mongolia)
+- `brecke-0158` — 1425–1425: China (Qinghai)
+- `brecke-0161` — 1426–1426: China (Shangdong)
+- `brecke-0163` — 1427–1428: China (Songpan in Sichuan)
+- `brecke-0164` — 1427–1427: China-Tartars (Inner Mongolia)
+- `brecke-0166` — 1428–1430: China (Guangxi)
+- `brecke-0168` — 1429–1429: China-Tartars (Inner Mongolia, Hebei)
+- `brecke-0174` — 1430–1430: China (Liaodong)
+- `brecke-0175` — 1430–1430: China (Qinghai)
+- `brecke-0185` — 1433–1435: China (Guangxi, Sichuan)
+- `brecke-0184` — 1433–1433: China (Guizhou)
+- `brecke-0186` — 1433–1433: China-Tartars (Gansu)
+- `brecke-0192` — 1434–1435: China (peasants in Jiangxi)
+- `brecke-0195` — 1435–1436: China-Tartars (Gansu)
+- `brecke-0198` — 1436–1436: China (peasants in Guangxi, Hunan, Hubei)
+- `brecke-0205` — 1438–1438: China (Yunnan)
+- `brecke-0204` — 1438–1439: Japan (Shogun, governor-Mochiuji) (Gunma ken)
+- `brecke-0206` — 1439–1439: China (Miao in Guizhou)
+- `brecke-0207` — 1439–1439: China (Shanchahe)
+- `brecke-0208` — 1439–1440: China (Sichuan)
+- `brecke-0209` — 1439–1439: China-Japanese pirates
+- `brecke-0212` — 1440–1445: China (Yunnan)
+- `brecke-0213` — 1440–1441: Japan (governor-governor) (Ibaragi ken)
+- `brecke-0216` — 1441–1441: Japan (shogun, govt army-governor) (Kyoto, Hyogo ken)
+- `brecke-0221` — 1442–1442: China (Liaoning)
+- `brecke-0220` — 1442–1442: China-Japanese pirates (Zhejiang)
+- `brecke-0226` — 1443–1443: China (Japanese minority in Zhejing)
+- `brecke-0230` — 1444–1441: China (Hebei, Liaoning)
+- `brecke-0233` — 1445–1445: China (Xinjiang)
+- `brecke-0241` — 1446–1446: China (Yao) (Guangdong?)
+- `brecke-0240` — 1446–1446: China (Zhejiang, Fujian, Jiangxi)
+- `brecke-0242` — 1446–1446: China-Japanese pirates (Zhejiang)
+- `brecke-0248` — 1448–1449: China (peasants in Fujian, Zhejiang)
+- `brecke-0260` — 1449–1453: China (Miao in Hunan and Guizhou)
+- `brecke-0256` — 1449–1450: China (Ming)-Mongolia (Liaoning to Gansu)
+- `brecke-0258` — 1449–1450: China (Shanxi)
+- `brecke-0257` — 1449–1449: China (Yao in Guangdong)
+- `brecke-0259` — 1449–1449: China (Yunnan and Burma)
+- `brecke-0252` — 1449–1452: Mongols-China
+- `brecke-0267` — 1450–1450: China (Hebei)
+- `brecke-0266` — 1450–1451: China (Zhejiang)
+- `brecke-0277` — 1453–1453: China (minority group and Tartars in Liaoning)
+- `brecke-0282` — 1454–1454: China (Miao in Sichuan)
+- `brecke-0289` — 1455–1455: China (Miao in Guizhou and Hunan)
+- `brecke-0291` — 1456–1457: China (Miao in Hubei and Hunan)
+- `brecke-0292` — 1456–1456: Korea (coup)
+- `brecke-0293` — 1456–1468: Korea-Manchurians
+- `brecke-0299` — 1457–1457: China (Guangxi)
+- `brecke-0297` — 1457–1457: China (Ningxia)
+- `brecke-0296` — 1457–1457: China (Shenxi)
+- `brecke-0295` — 1457–1457: China (peasants in Guangxi)
+- `brecke-0298` — 1457–1457: China-Tartars (Shanxi)
+- `brecke-0294` — 1457–1457: Japan (Aio-governor) (Hokkaido)
+- `brecke-0304` — 1458–1458: China-Tartars (Gansu)
+- `brecke-0312` — 1459–1459: China (Miao in Guizhou and Yunnan)
+- `brecke-0310` — 1459–1459: China (Shenxi)
+- `brecke-0311` — 1459–1459: China (Yao in Guangxi and Guangdong)
+- `brecke-0315` — 1460–1460: China (Zhuang in Guangxi)
+- `brecke-0314` — 1460–1460: China (peasants in Guizhou)
+- `brecke-0316` — 1460–1460: China-Tartars (Shanxi)
+- `brecke-0322` — 1461–1461: China (Miao in Guangxi)
+- `brecke-0323` — 1461–1461: China (Sichuan)
+- `brecke-0321` — 1461–1461: China-Tartars (Gansu, Ningxia)
+- `brecke-0327` — 1462–1462: China (Tartars in Ningxi)
+- `brecke-0326` — 1462–1462: China (Yao in Guangxi, Hunan)
+- `brecke-0337` — 1463–1463: China (Fujian)
+- `brecke-0335` — 1463–1463: China (Miao in Guizhou)
+- `brecke-0336` — 1463–1463: China (Yao in Guangxi)
+- `brecke-0343` — 1464–1465: China (Sichuan)
+- `brecke-0352` — 1465–1471: China (Hubei, Gansu, Guangxi)
+- `brecke-0356` — 1465–1465: China (Shenxi)
+- `brecke-0353` — 1465–1465: China (Yao in Guangxi, Hua[n]?an)
+- `brecke-0355` — 1465–1466: China (peasants in Hubei)
+- `brecke-0354` — 1465–1465: China-Tartars (Liaoning)
+- `brecke-0358` — 1466–1467: China (Guangxi)
+- `brecke-0357` — 1466–1467: China (Miao in Hunan, Guizhou)
+- `brecke-0359` — 1466–1466: China-Tartars (Shenxi, Shanxi, Ningxi)
+- `brecke-0369` — 1467–1467: China (Jiangsu)
+- `brecke-0368` — 1467–1468: China (Sichuan)
+- `brecke-0367` — 1467–1477: Japan (struggle for shogunate) (Kyoto)
+- `brecke-0366` — 1467–1467: Korea (peasant rebellion)
+- `brecke-0376` — 1468–1468: China (Ningxia)
+- `brecke-0377` — 1468–1470: China-Tartars (Liaoning, Shanxi)
+- `brecke-0387` — 1470–1470: China (Hubei)
+- `brecke-0386` — 1470–1470: China-Tartars (Gansu, Shenxi)
+- `brecke-0394` — 1471–1472: China (Ningxia)
+- `brecke-0393` — 1471–1471: China (Shenxi)
+- `brecke-0400` — 1472–1472: China (Gansu)
+- `brecke-0399` — 1472–1473: China-Tartars (Shanxi, Gansu, Ningxia, Inner Mongolia)
+- `brecke-0407` — 1473–1473: China (Gansu)
+- `brecke-0405` — 1473–1473: China-Tartars (Gansu, Inner Mongolia)
+- `brecke-0406` — 1473–1473: China-Tartars (Liaoning)
+- `brecke-0412` — 1474–1474: China-Tartars (Hebie)
+- `brecke-0418` — 1475–1475: China (Miao in Hunan)
+- `brecke-0419` — 1475–1475: China (miners' rebellion in Zhejiang)
+- `brecke-0423` — 1476–1476: China (Miao in Guazhou)
+- `brecke-0431` — 1477–1477: China (Miao in Sichuan)
+- `brecke-0439` — 1478–1478: China (rebellion in Fujian)
+- `brecke-0445` — 1479–1479: China (Liaoning)
+- `brecke-0444` — 1479–1479: China (Miao in Sichuan)
+- `brecke-0453` — 1480–1480: China (rebellion in Guangxi)
+- `brecke-0452` — 1480–1480: China-Tartars (Shanxi, Inner Mongolia)
+- `brecke-0460` — 1481–1481: China-Tartars (Shanxi)
+- `brecke-0467` — 1483–1483: China (Yao in Guangxi)
+- `brecke-0468` — 1483–1486: China-Tartars (Shanxi, Hebei, Gansu)
+- `brecke-0477` — 1485–1485: China (rebellion in Sichuan)
+- `brecke-0484` — 1487–1487: China (rebellion in Guangxi)
+- `brecke-0490` — 1488–1488: China-Tartars (Guasu)
+- `brecke-0489` — 1488–1488: Japan (Hongan-Kaga) (Ishakawa ken)
+- `brecke-0493` — 1489–1489: China (peasants in Sichuan, Hubei)
+- `brecke-0501` — 1491–1491: Japan (governor-governor) (Izi, Shizioka ken)
+- `brecke-0509` — 1492–1492: China (Miao in Guangxi)
+- `brecke-0508` — 1492–1492: China (rebellion in Guangxi)
+- `brecke-0515` — 1493–1493: China (Xinjiang)
+- `brecke-0514` — 1493–1493: China-Tartars (Ningxia)
+- `brecke-0531` — 1495–1495: China (Fujian)
+- `brecke-0529` — 1495–1495: China (Gansu, Liaoning)
+- `brecke-0532` — 1495–1495: China (Gansu, Liaoning)
+- `brecke-0530` — 1495–1495: China (Miao in Guangxi)
+- `brecke-0541` — 1497–1497: China (Gansu)
+- `brecke-0546` — 1498–1498: China-Tartars (Gansu)
+- `brecke-0545` — 1498–1498: Korea
+- `brecke-0552` — 1499–1502: China (Guizhou)
+- `brecke-0553` — 1499–1501: China (Guizhou)
+- `brecke-0557` — 1500–1500: China-Tartars (Shanxi)
+- `brecke-0566` — 1501–1501: China (Liaoning)
+- `brecke-0564` — 1501–1501: China (Ningxia)
+- `brecke-0565` — 1501–1505: China (Ningxia)
+- `brecke-0573` — 1502–1502: China (Jiangxi)
+- `brecke-0572` — 1502–1502: China (peasants in Hainan)
+- `brecke-0583` — 1504–1504: China (Guangxi)
+- `brecke-0584` — 1504–1504: China (Ningxi)
+- `brecke-0582` — 1504–1504: China-Tartars (Shanxi)
+- `brecke-0585` — 1504–1504: Korea (coup)
+- `brecke-0591` — 1505–1505: China-Tartars (Ningxia, Hebei, Gansu)
+- `brecke-0597` — 1506–1506: China (Guangxi)
+- `brecke-0598` — 1506–1506: Korea (revolt)
+- `brecke-0608` — 1508–1508: China (Guangxi)
+- `brecke-0607` — 1508–1508: China (Shandong)
+- `brecke-0609` — 1508–1508: China (Sichuan)
+- `brecke-0606` — 1508–1512: China (rebellion)
+- `brecke-0618` — 1509–1513: China (Jiangxi)
+- `brecke-0619` — 1509–1534: China (Ningxia)
+- `brecke-0620` — 1509–1509: China (Shanxi)
+- `brecke-0617` — 1509–1511: China (Sichuan, Shanxi)
+- `brecke-0629` — 1510–1510: China (Hebei)
+- `brecke-0630` — 1510–1510: China (Hunan)
+- `brecke-0627` — 1510–1510: China (Ningxia)
+- `brecke-0631` — 1510–1510: China (Sichuan)
+- `brecke-0628` — 1510–1512: China (peasants)
+- `brecke-0642` — 1511–1511: China (Gansu, Hebei)
+- `brecke-0641` — 1511–1512: China (Guizhou, Shanxi)
+- `brecke-0643` — 1511–1519: China (Jiangxi, Fujian, Guangdong)
+- `brecke-0640` — 1511–1513: China (Sichuan)
+- `brecke-0639` — 1511–1511: Japan (Kyoto)
+- `brecke-0650` — 1512–1512: China (Jiangxi)
+- `brecke-0656` — 1513–1513: China (Guizhou)
+- `brecke-0655` — 1513–1513: China (Shanxi)
+- `brecke-0663` — 1514–1517: China-Tartars (Hebei, Shanxi, Ningxia)
+- `brecke-0662` — 1514–1514: Chingizids-Chaghatais (western China)
+- `brecke-0678` — 1515–1515: China (Guangdong)
+- `brecke-0677` — 1515–1515: China (Guangxi)
+- `brecke-0675` — 1515–1515: China (Hunan, Jiangxi)
+- `brecke-0676` — 1515–1515: China (Ningxia)
+- `brecke-0685` — 1516–1518: China (Fujian)
+- `brecke-0686` — 1516–1517: China (Jiangxi)
+- `brecke-0689` — 1517–1517: China (Gansu)
+- `brecke-0690` — 1517–1517: China (Hebei)
+- `brecke-0694` — 1518–1518: China (Guangdong)
+- `brecke-0695` — 1518–1518: China-Portugal (Guangdong)
+- `brecke-0704` — 1519–1519: China (Shangdong)
+- `brecke-0703` — 1519–1519: China (rebellion in Jiangxi)
+- `brecke-0705` — 1519–1519: Korea
+- `brecke-0711` — 1520–1526: China (Yunnan)
+- `brecke-0710` — 1520–1520: China-Tartars (Hebei, Shanxi, Ningxia)
+- `brecke-0716` — 1521–1521: China (Guizhou)
+- `brecke-0726` — 1522–1522: China (Guangxi)
+- `brecke-0727` — 1522–1522: China (Shangdong)
+- `brecke-0731` — 1523–1523: China-Japan (Zhejiang)
+- `brecke-0732` — 1523–1523: China-Portugal (Guangdong)
+- `brecke-0730` — 1523–1523: China-Tartars (Lianoning)
+- `brecke-0737` — 1524–1524: China (Gansu)
+- `brecke-0736` — 1524–1524: China (Guangdong)
+- `brecke-0738` — 1524–1524: China (Hebei)
+- `brecke-0746` — 1525–1525: China (Guangxi)
+- `brecke-0745` — 1525–1525: China (Yunnan)
+- `brecke-0744` — 1525–1525: China-Tartars (Gansu)
+- `brecke-0767` — 1527–1527: China (Guangxi)
+- `brecke-0769` — 1527–1527: China (Ningxia)
+- `brecke-0768` — 1527–1527: China-Tartars (Hebei, Ningxia)
+- `brecke-0772` — 1528–1528: China (Guangxi)
+- `brecke-0773` — 1528–1528: China (Shanxi, Henan)
+- `brecke-0774` — 1528–1528: China (Yunnan)
+- `brecke-0775` — 1528–1528: China-Tartars (Shanxi, Hebei, Gansu)
+- `brecke-0783` — 1529–1529: China-Tartars (Ningxia)
+- `brecke-0785` — 1530–1530: Japan (warlords in Saga ken)
+- `brecke-0791` — 1531–1531: China-Tartars (Gansu, Shanxi)
+- `brecke-0802` — 1533–1533: China (Guangdong)
+- `brecke-0803` — 1533–1534: China (Shanxi)
+- `brecke-0801` — 1533–1533: China-Tartars (Gansu, Hebei)
+- `brecke-0811` — 1534–1534: Japan (warlords in north Kyushu)
+- `brecke-0819` — 1536–1536: China (Gansu)
+- `brecke-0820` — 1536–1536: China (Shanxi, Shang-xi, Ningxia with Tartar intervention),
+- `brecke-0821` — 1536–1536: Japan (religious, Kyoto)
+- `brecke-0825` — 1537–1537: China (Guangxi, Vietnam)
+- `brecke-0830` — 1538–1538: Japan (warlords in Chiba ken)
+- `brecke-0841` — 1540–1540: China (Hebei, Shanxi, Gansu, Ningxia)
+- `brecke-0842` — 1540–1540: China (Ningxia)
+- `brecke-0846` — 1541–1542: China (Ming)-Anda (Hebei, Shanxi)
+- `brecke-0847` — 1541–1541: Japan (warlords in Hiroshima ken)
+- `brecke-0854` — 1542–1542: China (Guangdong, Hainan)
+- `brecke-0853` — 1542–1542: China (Guangxi)
+- `brecke-0856` — 1543–1543: China (Hunan)
+- `brecke-0857` — 1543–1543: China (Shenxi, Hebei)
+- `brecke-0858` — 1543–1543: Japan (warlords in Aichi ken)
+- `brecke-0862` — 1544–1545: China (Liaoning)
+- `brecke-0861` — 1544–1544: China (Shanxi, Hebei)
+- `brecke-0867` — 1545–1546: China (Shanxi, Hebei, Shenxi, Liaoning, Mongolia), 1545-6
+- `brecke-0871` — 1546–1547: China (Sichuan)
+- `brecke-0872` — 1546–1546: Japan (warlords in Saitama ken)
+- `brecke-0876` — 1547–1547: China (Gansu)
+- `brecke-0877` — 1547–1548: Ching (Ming)-Japanese pirates, rebels (Zhejiang, Fujian, Guangxi)
+- `brecke-0881` — 1548–1549: China (Shanxi, Hebei)
+- `brecke-0883` — 1548–1548: Japan (Yamanashi ken)
+- `brecke-0882` — 1548–1548: Japan (warlords in Aichi ken)
+- `brecke-0887` — 1549–1550: China (Guizhou)
+- `brecke-0888` — 1549–1549: China (Shanxi, Liaoning)
+- `brecke-0898` — 1550–1550: China (Guangdong, Hainan)
+- `brecke-0897` — 1550–1550: China (Guizhou)
+- `brecke-0899` — 1550–1550: China (Hebei)
+- `brecke-0896` — 1550–1550: China (Ming)-Anda (Beijing)
+- `brecke-0900` — 1550–1553: China (Yunnan)
+- `brecke-0895` — 1550–1550: Mongolia-China (Beijing)
+- `brecke-0912` — 1552–1567: China (Liaoning, Hebei, Shenxi, Shanxi, Gansu, Ningxia, Mongolia)
+- `brecke-0911` — 1552–1557: China-Japanese pirates (Zhejiang, Shanghai, Jiangsu)
+- `brecke-0915` — 1553–1553: China (Henan)
+- `brecke-0916` — 1553–1553: Japan (warlords in Nagano ken)
+- `brecke-0927` — 1555–1555: China (Hebei)
+- `brecke-0929` — 1555–1555: Japan (warlords in Hiroshima ken)
+- `brecke-0930` — 1555–1555: Japan (warlords in Nagano ken)
+- `brecke-0928` — 1555–1555: Japan-China (Nanking)
+- `brecke-0936` — 1556–1556: China (Guangdong)
+- `brecke-0938` — 1556–1556: Japan (warlords in Chibu ken)
+- `brecke-0937` — 1556–1556: Japan (warlords in Kanagawa ken)
+- `brecke-0944` — 1557–1557: Japan (warlords in Nagano ken)
+- `brecke-0954` — 1559–1559: China-Japanese pirates (Zhejiang, Jiangsu)
+- `brecke-0959` — 1560–1561: China (Fujian, Jiangxi)
+- `brecke-0958` — 1560–1560: China (Guangdong)
+- `brecke-0960` — 1560–1560: Japan (warlords in Aichi ken)
+- `brecke-0961` — 1560–1560: Japan (warlords in Kouchi ken)
+- `brecke-0964` — 1561–1563: China (Guangdong)
+- `brecke-0965` — 1561–1562: China (Sichuan, Guizhou)
+- `brecke-0966` — 1561–1568: China-Japanese pirates, rebels (Zhejiang, Fujian Guangdong)
+- `brecke-0967` — 1561–1561: Japan (warlords in Nagano ken)
+- `brecke-0973` — 1562–1562: China (Guangdong, Jiangxi)
+- `brecke-0974` — 1562–1562: Japan (warlords in Kochi ken)
+- `brecke-0982` — 1564–1564: Japan (warlords in Chiba ken)
+- `brecke-0983` — 1564–1564: Japan (warlords in Nagano ken)
+- `brecke-0990` — 1565–1565: China (Guangdong)
+- `brecke-0991` — 1565–1566: China (Sichuan)
+- `brecke-0997` — 1566–1566: China (Anhui, Jiangsu, Jiangxi, Zhejiang)
+- `brecke-1008` — 1568–1572: China (Hebei, Liaoning, Shanxi)
+- `brecke-1009` — 1568–1569: Japan (rebellion in Fukooka ken)
+- `brecke-1021` — 1569–1569: China (Gansu)
+- `brecke-1031` — 1570–1580: Japan (Osaka)
+- `brecke-1030` — 1570–1570: Japan (warlords in Shiga ken)
+- `brecke-1035` — 1571–1580: China (Guangxi)
+- `brecke-1036` — 1571–1571: Japan (Kyoto)
+- `brecke-1045` — 1572–1572: China (Guangdong)
+- `brecke-1046` — 1572–1572: China (peasants in Guangdong)
+- `brecke-1044` — 1572–1572: China-Japanese pirates (Guangdong)
+- `brecke-1047` — 1572–1572: Japan (Shizioka ken)
+- `brecke-1052` — 1573–1573: China (Tartars in Liaoning and Inner Mongolia)
+- `brecke-1049` — 1573–1573: China (minorities in Guangxi and Guangdong)
+- `brecke-1050` — 1573–1573: China (minority in Guangxi)
+- `brecke-1051` — 1573–1573: China (minority in Sichuan)
+- `brecke-1056` — 1574–1574: China (Guangdong)
+- `brecke-1057` — 1574–1574: China (Liaoning)
+- `brecke-1058` — 1574–1574: China-Japanese pirates (Zhejiang, Guangdong)
+- `brecke-1063` — 1575–1576: China (minority in Liaoning and Hebei)
+- `brecke-1064` — 1575–1575: Japan (Aichi ken)
+- `brecke-1065` — 1575–1575: Japan (Kochi ken)
+- `brecke-1066` — 1575–1575: Korea (court factional strife)
+- `brecke-1074` — 1577–1577: China (minority in Guangdong)
+- `brecke-1075` — 1577–1582: Japan (Chukoku area)
+- `brecke-1082` — 1578–1579: China (Tartars in Liaoning)
+- `brecke-1083` — 1578–1578: Japan (warlords in Miyazaki ken)
+- `brecke-1090` — 1580–1580: China (minority in Guangxi)
+- `brecke-1089` — 1580–1580: China (minority in Liaoning)
+- `brecke-1091` — 1580–1582: Japan (warlords in Takaamakami )
+- `brecke-1097` — 1581–1583: China (Tartars in Liaoning)
+- `brecke-1099` — 1582–1582: China (Liaoning)
+- `brecke-1102` — 1582–1582: Japan (Kyoto)
+- `brecke-1101` — 1582–1582: Japan (Okayama ken)
+- `brecke-1100` — 1582–1582: Japan (Yamanashi ken)
+- `brecke-1103` — 1582–1582: Japan (warlords in Takamatsu)
+- `brecke-1107` — 1583–1583: China-Burma (Yunnan)
+- `brecke-1108` — 1583–1583: Japan (Shiga ken)
+- `brecke-1110` — 1584–1584: Japan (Aichi ken)
+- `brecke-1111` — 1584–1584: Japan (Nagasaki ken)
+- `brecke-1117` — 1585–1586: China (Tartars in Liaoning)
+- `brecke-1118` — 1585–1586: China (minority in Sichuan)
+- `brecke-1119` — 1585–1585: Japan (Shikoku)
+- `brecke-1124` — 1586–1587: Japan (Kyushu)
+- `brecke-1135` — 1588–1588: China (minority in Qinghai)
+- `brecke-1134` — 1588–1588: China (minority in Sichuan)
+- `brecke-1140` — 1589–1589: China (Guangdong)
+- `brecke-1141` — 1589–1591: China (Tartars in Liaoning)
+- `brecke-1142` — 1589–1589: China (peasants in Hubei)
+- `brecke-1143` — 1589–1589: Japan (Fukushima ken)
+- `brecke-1152` — 1590–1590: China (Tartars in Gansu)
+- `brecke-1153` — 1590–1590: China (minority in Qinghai)
+- `brecke-1154` — 1590–1590: Japan (Kanagawa ken)
+- `brecke-1160` — 1591–1591: Japan (Iwate ken)
+- `brecke-1166` — 1592–1592: China (minority in Ningxia, Hebei, Gansu)
+- `brecke-1164` — 1592–1593: Japan-Korea, China (in Korea)
+- `brecke-1165` — 1592–1592: Mongols-China (Ningxia)
+- `brecke-1179` — 1594–1596: China (Guizhou), 1594-96?
+- `brecke-1178` — 1594–1594: China (Tartars in Liaoning)
+- `brecke-1177` — 1594–1596: China (Tartars in Shenxi and Ningxia)
+- `brecke-1190` — 1596–1599: China (Guizhou)
+- `brecke-1194` — 1597–1598: China (Tartars in Liaoning)
+- `brecke-1193` — 1597–1600: China (rebellion)
+- `brecke-1192` — 1597–1599: Japan-Korea, China (in Korea)
+- `brecke-1200` — 1598–1598: China (Tartars in Gansu)
+- `brecke-1201` — 1598–1598: China (minority in Qinghai)
+- `brecke-1211` — 1600–1600: Japan (Gifu ken)
+- `brecke-1250` — 1609–1609: Japan-Okinawa
+- `brecke-1276` — 1614–1615: Japan (Osaka)
+- `brecke-1290` — 1616–1620: Tartars (Manchu)-China (with Korean intervention)
+- `brecke-1302` — 1618–1623: Manchus-Korea, China
+- `brecke-1309` — 1619–1635: Caqars-Manchus (China)
+- `brecke-1307` — 1619–1619: China (Ming)-Jin (Jilin)
+- `brecke-1308` — 1619–1622: China (Ming)-Jin (Liaoning)
+- `brecke-1322` — 1621–1621: China (Qing)-Korea (Korea)
+- `brecke-1326` — 1622–1622: United Provinces-Portugal (Macao)
+- `brecke-1336` — 1623–1623: Korea (coup)
+- `brecke-1337` — 1623–1623: Korea (revolt), 1623 (or 1624?)
+- `brecke-1335` — 1623–1633: Manchus-Mongolia (Inner)
+- `brecke-1356` — 1626–1626: Manchus-Ming (China) (Ningyuan)
+- `brecke-1361` — 1627–1627: China (Manchus)-Korea
+- `brecke-1362` — 1627–1629: China (Ming)-Houjin (Liaoning, Hebei)
+- `brecke-1363` — 1627–1627: Tumed-Caqars (China)
+- `brecke-1370` — 1628–1645: China (Ming) (regional rebellion)
+- `brecke-1374` — 1629–1629: Manchus-Ming (China) (Hongshangkou)
+- `brecke-1373` — 1629–1629: Tumed-Caqars (China)
+- `brecke-1391` — 1631–1641: China (Ming)-Houjin (Liaoning, Hebei)
+- `brecke-1392` — 1631–1645: China (peasant rebellion in Shanxi)
+- `brecke-1409` — 1635–1635: United Provinces-Formosa
+- `brecke-1423` — 1636–1644: Manchus-China
+- `brecke-1422` — 1636–1637: Manchus-Korea (in Korea)
+- `brecke-1432` — 1637–1638: Japan (Nagasaka and Kumamoto kens)
+- `brecke-1433` — 1637–1637: Mongols, Manchus-Korea
+- `brecke-1444` — 1639–1642: Kalmuck Mongols-Tibet
+- `brecke-1460` — 1642–1642: Kalmuck Mongols-Tibet
+- `brecke-1473` — 1644–1662: China (Ming)-Qing (Jiangsu, Zhejiang, Fujian)
+- `brecke-1472` — 1644–1644: China (rebellion with Manchu intervention)
+- `brecke-1515` — 1651–1651: Japan (coup attempt at Edo)
+- `brecke-1557` — 1660–1670: Korea
+- `brecke-1563` — 1661–1661: Chinese-United Provinces (Formosa)
+- `brecke-1603` — 1669–1672: Japan (Hokkaido)
+- `brecke-1622` — 1673–1681: China (Qing) (Ming rebellion) (Yunnan, Guangdong, Fujian)
+- `brecke-1651` — 1679–1679: Dzungars-East Turkestan (China)
+- `brecke-1666` — 1683–1683: China-Formosa
+- `brecke-1681` — 1686–1686: Dzungars-Khalkhas (west China)
+- `brecke-1706` — 1690–1697: China (Qing)-Geerdan, Zhungeer (Inner Mongolia, Hebei, Ningxia)
+- `brecke-1756` — 1705–1705: Mongols-Tibet
+- `brecke-1769` — 1709–1709: China-Tibet
+- `brecke-1798` — 1716–1718: China-Dzoungar Mongols (Tibet)
+- `brecke-1803` — 1718–1718: China (Qing)-Zhungeer (Tibet)
+- `brecke-1804` — 1718–1720: China-Tibet
+- `brecke-1813` — 1720–1720: China-Dzoungar Mongols (Tibet, East Turkestan)
+- `brecke-1816` — 1721–1721: China (Formosa)
+- `brecke-1822` — 1723–1723: Khosot Mongols (civil war) (China) (with Qing intervention)
+- `brecke-1826` — 1724–1724: China (Qing)-Ruobozhangdanjun (Qinghai)
+- `brecke-1853` — 1732–1732: Dzungars-Khalkas (western China)
+- `brecke-1863` — 1736–1736: China (Qing)-Miao (Guizhou, Guangxi)
+- `brecke-1876` — 1740–1740: China (Hunan)
+- `brecke-1880` — 1741–1741: China (Kieuchou)
+- `brecke-1897` — 1746–1746: China (Christians)
+- `brecke-1905` — 1747–1749: China (Jinchuan in Szechuan)
+- `brecke-1913` — 1750–1751: China-Tibet
+- `brecke-1930` — 1756–1757: China (Khalka Mongol rebellion)
+- `brecke-1933` — 1757–1759: China-Khojas (Xinjiang and Kashgaria, Turkestan)
+- `brecke-1945` — 1760–1760: China (Qing)-Mongols (in Xinjiang?)
+- `brecke-1981` — 1771–1776: China (Jinchuan in Szechuan)
+- `brecke-1990` — 1774–1774: China (Shantung rebellion)
+- `brecke-2009` — 1781–1783: China (Moslems in Kansong)
+- `brecke-2026` — 1786–1787: China (Formosa)
+- `brecke-2039` — 1789–1789: Japan (Hokkaido with Russian involvement)
+- `brecke-2043` — 1790–1792: China-Tibet
+- `brecke-2068` — 1795–1797: China (Miao-tseu)
+- `brecke-2072` — 1796–1804: China (White Lotus sect)
+- `brecke-2090` — 1801–1801: Korea (catholics)
+- `brecke-2161` — 1811–1812: Korea (rebellion in north)
+- `brecke-2172` — 1813–1814: China (Peking and Honan)
+- `brecke-2213` — 1820–1828: China (Jahangirs in Xinjiang)
+- `brecke-2228` — 1822–1828: China (Kokand, Khojas), (East Turkestan)
+- `brecke-2347` — 1837–1837: Japan (Osaka)
+- `brecke-2356` — 1839–1842: Britain, France-China
+- `brecke-2361` — 1839–1839: Korea (catholics)
+- `brecke-2396` — 1845–1848: China (Islamic rebellion) (Yunnan)
+- `brecke-2466` — 1852–1863: China (peasants)
+- `brecke-2475` — 1853–1868: China (Anhwei, Honan, Shantung)
+- `brecke-2474` — 1853–1855: China (Triads in Shanghai)
+- `brecke-2497` — 1855–1873: China (Muslim revolt in Yunnan)
+- `brecke-2505` — 1856–1860: Britain, France-China
+- `brecke-2506` — 1856–1873: China (Islamic rebellion) (Yunnan)
+- `brecke-2537` — 1860–1872: China
+- `brecke-2545` — 1861–1873: China (Moslems in Shensi and Kansu)
+- `brecke-2555` — 1862–1864: China (Moslems in Sinkiang) (Khojas)
+- `brecke-2554` — 1862–1864: France-China
+- `brecke-2568` — 1863–1869: Japan
+- `brecke-2600` — 1866–1868: China (peasants)
+- `brecke-2603` — 1866–1866: France-Korea
+- `brecke-2601` — 1866–1866: Japan
+- `brecke-2602` — 1866–1866: Korea
+- `brecke-2609` — 1867–1873: China (Islamic rebellion) (Gansu, Ningxia, Shanxi)
+- `brecke-2622` — 1868–1880: China (Islamic rebellion) (Xinjiang)
+- `brecke-2620` — 1868–1868: Japan
+- `brecke-2621` — 1868–1868: Korea (catholics)
+- `brecke-2642` — 1871–1871: China-Russia (Yili, China)
+- `brecke-2643` — 1871–1871: Korea-USA
+- `brecke-2663` — 1874–1874: Japan (Shiga ken)
+- `brecke-2664` — 1874–1874: Japan-Formosa
+- `brecke-2671` — 1875–1875: Japan-Korea
+- `brecke-2678` — 1876–1878: China (Moslems in Sinkiang) (Khojas)
+- `brecke-2679` — 1876–1877: China-East Turkestan (Kashgar and Dongas)
+- `brecke-2681` — 1876–1876: Japan (Fukuoka ken)
+- `brecke-2680` — 1876–1876: Japan (Kumamoto ken)
+- `brecke-2682` — 1876–1876: Japan (Yamaguchi ken)
+- `brecke-2740` — 1882–1882: Korea (with Chinese and Japanese intervention)
+- `brecke-2758` — 1884–1884: Korea (with Chinese and Japanese intervention)
+- `brecke-2773` — 1885–1885: Korea, Russia-Britain (Korea)
+- `brecke-2838` — 1894–1894: Korea (with Chinese and Japanese intervention)
+- `brecke-2854` — 1895–1895: Korea (Bingfei)
+- `brecke-2894` — 1898–1898: Britain-China (Weihaiwei)
+- `brecke-2895` — 1898–1898: China (Beijing)
+- `brecke-2893` — 1898–1898: France-China (Guanjuang?)
+- `brecke-2911` — 1900–1900: Russia-China (Manchuria)
+- `brecke-2935` — 1903–1904: Britain-Tibet
+- `brecke-2959` — 1905–1910: China
+- `brecke-2960` — 1905–1906: China-Tibet
+- `brecke-2971` — 1906–1906: Korea-Japan (Hongju and elsewhere)
+- `brecke-2976` — 1907–1907: Korea-Japan
+- `brecke-3004` — 1911–1912: China (Hubei)
+- `brecke-3018` — 1912–1912: China
+- `brecke-3017` — 1912–1913: Tibet-China
+- `brecke-3023` — 1913–1913: China (Yangzi valley and south)
+- `brecke-3026` — 1914–1914: China
+- `brecke-3040` — 1914–1914: Japan-Germany (China)
+- `brecke-3050` — 1915–1916: China (Yunnan)
+- `brecke-3062` — 1916–1916: Japan-China (Jilin)
+- `brecke-3077` — 1917–1918: China (Kweichow)
+- `brecke-3076` — 1917–1917: China (Yunnan)
+- `brecke-3094` — 1918–1918: China-Tibet
+- `brecke-3114` — 1919–1920: Japan-Korea
+- `brecke-3123` — 1920–1920: China (Beijing)
+- `brecke-3124` — 1920–1920: China (Szechuan vs Yunnan)
+- `brecke-3128` — 1921–1936: China (Nationalists, warlords, Peking government, Communists)
+- `brecke-3130` — 1921–1924: Mongolia-China, Russian White Guard (Mongolia)
+- `brecke-3138` — 1922–1923: China
+- `brecke-3137` — 1922–1922: China (warlords)
+- `brecke-3141` — 1923–1923: Japan-Korea (Koreans massacred in Japan)
+- `brecke-3152` — 1924–1924: China (warlords)
+- `brecke-3156` — 1926–1926: China (Guangdong)
+- `brecke-3157` — 1926–1928: China (Nationalists, warlords, Communists)
+- `brecke-3164` — 1927–1928: China (Guangdong)
+- `brecke-3163` — 1927–1927: China (Shanghai)
+- `brecke-3165` — 1927–1936: China (communists)
+- `brecke-3166` — 1927–1928: Japan-China (Shandong)
+- `brecke-3170` — 1928–1928: China (Muslims in Kansu)
+- `brecke-3177` — 1929–1930: China (Chang)
+- `brecke-3176` — 1929–1929: China (Feng)
+- `brecke-3175` — 1929–1929: China (Kuangsi)
+- `brecke-3172` — 1929–1929: Soviet Union-China
+- `brecke-3187` — 1930–1935: China (Sinkiang?)
+- `brecke-3188` — 1930–1935: China (communists)
+- `brecke-3186` — 1930–1930: China (western Honan)
+- `brecke-3196` — 1931–1933: Japan-China (Manchuria)
+- `brecke-3212` — 1933–1934: China (Fujian)
+- `brecke-3211` — 1933–1933: Japan-China (Jehol)
+- `brecke-3226` — 1935–1935: Japan-China (Inner Mongolia)
+- `brecke-3232` — 1936–1936: China-Mongols (Suiyan) (Inner Mongolia)
+- `brecke-3233` — 1936–1936: Japan (Tokyo)
+- `brecke-3236` — 1937–1945: Japan-China, US, USSR, Britain
+- `brecke-3244` — 1938–1938: Japan-Soviet Union
+- `brecke-3251` — 1939–1939: Japan-Soviet Union, Mongolia
+- `brecke-3284` — 1945–1949: China (with US intervention)
+- `brecke-3295` — 1947–1947: China (Taiwan), 1947 G
+- `brecke-3315` — 1948–1948: South Korea
+- `brecke-3322` — 1950–1951: China, 1950-51 G
+- `brecke-3323` — 1950–1951: China-Tibet
+- `brecke-3342` — 1954–1958: China (offshore islands)
+- `brecke-3343` — 1954–1954: China-Tibet
+- `brecke-3356` — 1956–1959: China-Tibet
+- `brecke-3387` — 1959–1959: China (Tibet), 1959 G
+- `brecke-3466` — 1965–1969: China
+- `brecke-3471` — 1966–1975: China, 1966-75 G
+- `brecke-3578` — 1980–1980: South Korea
+
+#### Brecke region 2
+
+- `brecke-0610` — 1509–1509: Spain-Indians (Turbaco, Columbia)
+- `brecke-0622` — 1510–1510: Spain-Indians (San Sebastian, Colombia)
+- `brecke-0657` — 1514–1514: Spain-Indians (northwest Colombia)
+- `brecke-0794` — 1532–1533: Spain-Peru
+- `brecke-0814` — 1535–1536: Spain-Peru
+- `brecke-0824` — 1537–1538: Spanish Peru
+- `brecke-0840` — 1540–1561: Spain-Chile
+- `brecke-0845` — 1541–1542: Spanish Peru
+- `brecke-0870` — 1546–1546: Spanish Peru
+- `brecke-0879` — 1548–1548: Spain (separatist movement in Peru)
+- `brecke-0907` — 1552–1554: Spain-Peru
+- `brecke-0924` — 1555–1555: France-Portugal (Brazil)
+- `brecke-0993` — 1566–1567: Portugal-France (Brazil)
+- `brecke-1339` — 1624–1629: United Provinces-Portugal (Brazil)
+- `brecke-1375` — 1630–1630: Holland-Spain (Pernambuco, Caracas, Surinam)
+- `brecke-1383` — 1631–1631: Holland-Spain (Curacao)
+- `brecke-1408` — 1635–1635: United Provinces-Portugal (Pernambuco)
+- `brecke-1476` — 1645–1646: United Provinces-Portugal (Brazil)
+- `brecke-1514` — 1651–1654: United Provinces-Portugal (Brazil)
+- `brecke-1761` — 1708–1708: Portugal-Paulistas (Brazilian slave raiders)
+- `brecke-1770` — 1710–1711: France, Brazilian Indians-Portugal
+- `brecke-1814` — 1721–1725: Paraguay (rebellion)
+- `brecke-1857` — 1735–1737: Spain-Portugal (Uruguay, Sacramento)
+- `brecke-1860` — 1736–1737: Peru
+- `brecke-1906` — 1749–1749: Venezuela (creole uprising)
+- `brecke-1909` — 1750–1756: Paraguay
+- `brecke-1937` — 1759–1768: Spain, Portugal-Paraguay (Jesuits)
+- `brecke-1950` — 1762–1763: Guiana (slave revolt), 1762-63 ?
+- `brecke-1983` — 1772–1777: Guiana (slave revolt), 1772-77 ?
+- `brecke-1997` — 1776–1777: Spain-Portugal (South America)
+- `brecke-2061` — 1795–1796: Guiana (slave revolt), 1795-96 ?
+- `brecke-2116` — 1806–1806: Britain-Spain (Buenos Aires)
+- `brecke-2120` — 1807–1807: Britain-Spain (Montevideo)
+- `brecke-2145` — 1810–1816: Argentina-Spain
+- `brecke-2144` — 1810–1818: Chile-Spain
+- `brecke-2146` — 1810–1811: Paraguay-Spain
+- `brecke-2147` — 1810–1811: Venezuela-Spain
+- `brecke-2152` — 1811–1821: Uruguay-Spain, Brazil
+- `brecke-2167` — 1813–1814: Venezuela-Spain
+- `brecke-2178` — 1815–1815: Colombia-Spain
+- `brecke-2181` — 1816–1821: Venezuela, Colombia-Spain
+- `brecke-2190` — 1817–1821: Argentina, Chile, Peru-Spain
+- `brecke-2198` — 1819–1820: Argentina
+- `brecke-2225` — 1822–1824: Ecuador, Peru, Bolivia-Spain
+- `brecke-2227` — 1822–1823: Portugal-Brazil
+- `brecke-2244` — 1825–1828: Argentina, Uruguay-Brazil
+- `brecke-2263` — 1827–1829: Peru-Bolivia, Ecuador
+- `brecke-2266` — 1828–1831: Argentina
+- `brecke-2272` — 1829–1830: Chile
+- `brecke-2273` — 1829–1829: Peru-Ecuador
+- `brecke-2297` — 1831–1840: Brazil
+- `brecke-2313` — 1833–1834: Argentina-Indians
+- `brecke-2330` — 1835–1835: Bolivia-Peru
+- `brecke-2331` — 1835–1845: Brazil
+- `brecke-2335` — 1836–1839: Chile-Bolivia, Peru
+- `brecke-2336` — 1836–1840: Uruguay (intervention by France, Britain, Argentina)
+- `brecke-2364` — 1840–1842: Colombia (with intervention by Ecuador), 1840-42 ??
+- `brecke-2373` — 1841–1851: Argentina
+- `brecke-2374` — 1841–1841: Peru-Bolivia
+- `brecke-2376` — 1842–1851: Uruguay (with intervention by Argentina, France, Britain, Brazil, Paraguay)
+- `brecke-2400` — 1846–1846: Peru-Spain
+- `brecke-2407` — 1847–1855: Argentina
+- `brecke-2450` — 1851–1852: Argentina-Brazil, Uruguay, Argentine province
+- `brecke-2459` — 1851–1851: Chile (Liberals)
+- `brecke-2467` — 1853–1855: Peru
+- `brecke-2476` — 1854–1854: Colombia (Democrats)
+- `brecke-2501` — 1856–1858: Peru
+- `brecke-2519` — 1859–1859: Argentina
+- `brecke-2520` — 1859–1859: Peru-Ecuador
+- `brecke-2518` — 1859–1863: Venezuela
+- `brecke-2531` — 1860–1862: Colombia (Liberals)
+- `brecke-2539` — 1861–1861: Argentina
+- `brecke-2558` — 1863–1863: Argentina (Montoneros, Northwest provinces)
+- `brecke-2556` — 1863–1863: Colombia-Ecuador
+- `brecke-2559` — 1863–1872: Uruguay
+- `brecke-2572` — 1864–1870: Paraguay-Brazil, Uruguay, Argentina
+- `brecke-2583` — 1865–1866: Spain-Peru, Chile (supported by Bolivia and Ecuador)
+- `brecke-2592` — 1866–1867: Argentina (Federalists)
+- `brecke-2607` — 1867–1870: Bolivia
+- `brecke-2612` — 1868–1871: Venezuela
+- `brecke-2632` — 1870–1871: Argentina (Provinces)
+- `brecke-2648` — 1873–1874: Argentina
+- `brecke-2649` — 1873–1874: Peru
+- `brecke-2660` — 1874–1875: Argentina (Buenos Aires)
+- `brecke-2673` — 1876–1877: Colombia (Conservatives)
+- `brecke-2690` — 1878–1883: Argentina-Indians (Patagonians)
+- `brecke-2705` — 1879–1879: Argentina (Patagonia)
+- `brecke-2706` — 1879–1879: Colombia (massacre of revolutionaries
+- `brecke-2707` — 1880–1880: Argentina (Buenos Aires)
+- `brecke-2719` — 1881–1883: Chile-Araucaninan Indians
+- `brecke-2743` — 1883–1884: Peru
+- `brecke-2752` — 1884–1885: Colombia (Panama, with US intervention)
+- `brecke-2792` — 1890–1890: Argentina
+- `brecke-2799` — 1891–1895: Brazil (Rio Grande do Sol)
+- `brecke-2798` — 1891–1891: Chile (Congress)
+- `brecke-2820` — 1893–1893: Argentina
+- `brecke-2819` — 1893–1894: Brazil (Conservatives)
+- `brecke-2829` — 1894–1895: Peru
+- `brecke-2855` — 1896–1897: Brazil (Canudos in Bahia)
+- `brecke-2867` — 1897–1897: Uruguay
+- `brecke-2881` — 1898–1899: Venezuela
+- `brecke-2896` — 1899–1903: Colombia (Liberals)
+- `brecke-2918` — 1902–1902: Brazil-Bolivia
+- `brecke-2919` — 1902–1903: Britain, Germany, Italy-Venezuela
+- `brecke-2936` — 1903–1903: Colombia-Panamanians (with US intervention)
+- `brecke-2938` — 1904–1904: Paraguay
+- `brecke-2937` — 1904–1904: Uruguay
+- `brecke-2977` — 1908–1908: Netherlands-Venezuela
+- `brecke-3002` — 1911–1912: Paraguay
+- `brecke-3010` — 1912–1915: Brazil
+- `brecke-3125` — 1921–1921: Panama-Costa Rica
+- `brecke-3180` — 1930–1930: Argentina
+- `brecke-3179` — 1930–1930: Brazil
+- `brecke-3194` — 1931–1931: Chile
+- `brecke-3193` — 1931–1932: Peru
+- `brecke-3202` — 1932–1932: Brazil (states, Sao Paulo)
+- `brecke-3201` — 1932–1932: Ecuador (Quito)
+- `brecke-3200` — 1932–1932: Peru-Colombia
+- `brecke-3224` — 1935–1935: Brazil
+- `brecke-3258` — 1941–1942: Peru-Ecuador
+- `brecke-3273` — 1944–1944: El Salvador
+- `brecke-3290` — 1946–1946: Bolivia
+- `brecke-3296` — 1947–1947: Paraguay
+- `brecke-3306` — 1948–1948: Colombia (Conservatives)
+- `brecke-3301` — 1948–1949: Paraguay
+- `brecke-3316` — 1949–1962: Colombia
+- `brecke-3334` — 1952–1952: Bolivia
+- `brecke-3345` — 1955–1955: Argentina (armed forces, Peron)
+- `brecke-3355` — 1956–1956: Peru (Iquilas)
+- `brecke-3368` — 1957–1968: Venezuela (Communists)
+- `brecke-3375` — 1958–1958: Venezuela
+- `brecke-3397` — 1960–1974: Venezuela
+- `brecke-3424` — 1962–1972: Paraguay, 1962-72 G
+- `brecke-3457` — 1964–1964: Brazil
+- `brecke-3460` — 1964–1965: Peru
+- `brecke-3470` — 1965–1972: Colombia (various left-wing groups)
+- `brecke-3478` — 1966–1967: Bolivia
+- `brecke-3527` — 1973–1973: Chile
+- `brecke-3528` — 1973–1974: Chile, 1973-74 G
+- `brecke-3540` — 1976–1979: Argentina
+- `brecke-3546` — 1976–1983: Colombia
+- `brecke-3573` — 1980–1980: Brazil (rightists)
+- `brecke-3580` — 1981–1981: Ecuador-Peru
+- `brecke-3587` — 1982–1994: Peru, 1982-94 ?
+- `brecke-3600` — 1984–open: Colombia, 1984-
+- `brecke-3603` — 1985–1986: Ecuador
+- `brecke-3612` — 1987–1987: Chile (miners)
+- `brecke-3624` — 1989–1989: Paraguay
+- `brecke-3677` — 1995–1995: Ecuador-Peru
+
+#### Brecke region 3
+
+- `brecke-0002` — 1400–1400: England (Henry IV vs Richard II)
+- `brecke-0003` — 1400–1402: England-Scotland
+- `brecke-0008` — 1401–1402: Emperor (Rupert)-Milan, 1401-2
+- `brecke-0009` — 1401–1401: Hungary
+- `brecke-0020` — 1402–1409: England (Wales, with intervention by France)
+- `brecke-0019` — 1402–1412: Milan (succession, with intervention by Venice)
+- `brecke-0023` — 1402–1403: Naples-Hungary, 1402-3
+- `brecke-0022` — 1402–1403: Scotland-England
+- `brecke-0021` — 1402–1422: Spain-Canary Islands
+- `brecke-0027` — 1403–1411: Appenzell, Swiss Confederation-Abbey of St. Gall, Austria, Germany
+- `brecke-0025` — 1403–1403: England
+- `brecke-0029` — 1403–1403: France (Jews)
+- `brecke-0028` — 1403–1416: Swiss Confederation-Savoy
+- `brecke-0026` — 1403–1403: Venice-Genoa
+- `brecke-0036` — 1404–1435: Denmark-Holstein, Hanse towns (from 1426)
+- `brecke-0035` — 1404–1408: Swiss Confederation-Austria
+- `brecke-0034` — 1404–1405: Venice-Padua, Verona, Vicenze
+- `brecke-0039` — 1405–1405: England (York and Nottingham)
+- `brecke-0043` — 1405–1407: France (Burgundian civil war)
+- `brecke-0042` — 1405–1412: Naples-pope, Anjou, Florence, Siena, emperor
+- `brecke-0050` — 1406–1410: Castile-Granada
+- `brecke-0051` — 1406–1406: Florence-Pisa
+- `brecke-0052` — 1406–1406: France-England (Normandy)
+- `brecke-0060` — 1407–1427: Holland
+- `brecke-0059` — 1407–1412: Naples (succession)
+- `brecke-0065` — 1408–1408: England
+- `brecke-0064` — 1408–1410: France (Burgundian civil war)
+- `brecke-0073` — 1409–1413: Aragon (Catalonia)
+- `brecke-0072` — 1409–1409: France (Genoa)
+- `brecke-0074` — 1409–1409: Hungary (Sigismund)-Venice
+- `brecke-0076` — 1409–1435: Norway, Sweden, Denmark-Holstein, Hanseatic League
+- `brecke-0080` — 1410–1410: Aragon (Spain)
+- `brecke-0081` — 1410–1412: Sicily (succession)
+- `brecke-0087` — 1411–1412: Emperor (Sigismund)-Venice
+- `brecke-0088` — 1411–1413: France (with intervention by England)
+- `brecke-0095` — 1412–1415: Brandenburg
+- `brecke-0096` — 1412–1412: England-France (Normandy, Bordeaux)
+- `brecke-0094` — 1412–1420: Milan-Lombard cities, Genoa
+- `brecke-0099` — 1413–1413: England
+- `brecke-0098` — 1413–1414: France (Paris)
+- `brecke-0100` — 1413–1414: Naples-Pope
+- `brecke-0105` — 1414–1414: Spain (Jews)
+- `brecke-0115` — 1415–1415: Emperor, Swiss Confederation-Austria (Aargau)
+- `brecke-0116` — 1415–1444: England-France
+- `brecke-0114` — 1415–1435: France (Burgundy)
+- `brecke-0122` — 1416–1416: Venice-Turkey
+- `brecke-0126` — 1418–1418: Burgundy (civil disturbance)
+- `brecke-0127` — 1418–1418: Portugal-Madeira
+- `brecke-0131` — 1419–1431: Emperor (Sigismund)-Venice
+- `brecke-0136` — 1420–1420: Genoa-Aragon
+- `brecke-0137` — 1420–1424: Naples (succession, Anjou and Aragon)
+- `brecke-0135` — 1420–1426: Pope-Papal States
+- `brecke-0141` — 1421–1421: Genoa-Milan
+- `brecke-0145` — 1422–1426: Swiss Confederation-Milan
+- `brecke-0150` — 1423–1424: Bohemia
+- `brecke-0149` — 1423–1426: Milan-Florence, Venice (from 1425)
+- `brecke-0155` — 1425–1425: Portugal-Canary Islands
+- `brecke-0162` — 1427–1428: Milan-Florence, Venice
+- `brecke-0171` — 1430–1431: Castile-Granada (Moors)
+- `brecke-0172` — 1430–1433: Florence, Venice-Lucca, Milan
+- `brecke-0170` — 1430–1430: Liege (with intervention by Burgundy)
+- `brecke-0169` — 1430–1430: Turkey-Venice
+- `brecke-0177` — 1431–1431: Anjou-Lorraine
+- `brecke-0189` — 1434–1439: Denmark (peasants in Sweden and Norway)
+- `brecke-0187` — 1434–1441: Milan, emperor-Florence, Venice, pope
+- `brecke-0194` — 1435–1442: Genoa-Aragon
+- `brecke-0193` — 1435–1442: Naples (succession, Anjou and Aragon, with intervention by Genoa and pope)
+- `brecke-0196` — 1436–1440: Burgundy (Ghent and Bruges)
+- `brecke-0197` — 1436–1450: Swiss Confederation (Zurich)
+- `brecke-0203` — 1438–1439: Bohemia (succession)
+- `brecke-0210` — 1440–1440: France (nobles)
+- `brecke-0215` — 1441–1450: Castile (nobles)
+- `brecke-0219` — 1442–1446: Emperor-Swiss Confederation
+- `brecke-0217` — 1442–1447: Sforza, Venice, Florence-pope, Naples, Milan
+- `brecke-0223` — 1443–1443: France (Armagnac)
+- `brecke-0222` — 1443–1451: Saxony (Wettin family dispute)
+- `brecke-0225` — 1443–1453: Turkey-Venice
+- `brecke-0227` — 1444–1444: France-Swiss
+- `brecke-0234` — 1446–1448: Cologne-Westphalian towns
+- `brecke-0243` — 1447–1450: Milan (succession, with intervention by Venice, Naples)
+- `brecke-0245` — 1448–1451: Bohemia (religious)
+- `brecke-0246` — 1448–1453: Burgundy (Ghent)
+- `brecke-0250` — 1449–1450: Brandenburg-Franconian towns
+- `brecke-0253` — 1449–1453: England-France
+- `brecke-0249` — 1449–1452: Navarre (succession)
+- `brecke-0268` — 1451–1457: Denmark (Sweden, Norway)
+- `brecke-0274` — 1452–1453: Burgundy-Ghent
+- `brecke-0275` — 1452–1454: Milan, Genoa, Florence, Bologna, Mantua-Venice, Naples, Siena
+- `brecke-0284` — 1455–1457: Castile-Granada
+- `brecke-0286` — 1455–1455: England
+- `brecke-0302` — 1458–1463: Germany
+- `brecke-0306` — 1459–1460: Denmark-Holstein
+- `brecke-0305` — 1459–1461: England
+- `brecke-0313` — 1460–1464: Naples (succession, Anjou and Aragon)
+- `brecke-0320` — 1461–1472: Aragon (Catalonia)
+- `brecke-0318` — 1461–1461: France, (Genoa)
+- `brecke-0317` — 1461–1463: Scotland-England
+- `brecke-0325` — 1462–1462: Emperor-Bohemia
+- `brecke-0328` — 1463–1463: Denmark-Russia
+- `brecke-0339` — 1464–1464: Denmark (Sweden, peasants)
+- `brecke-0338` — 1464–1464: England
+- `brecke-0341` — 1464–1464: Milan-Genoa
+- `brecke-0346` — 1465–1467: Bohemia (religion, with intervention by Hungary)
+- `brecke-0347` — 1465–1472: Brandenburg-Pomerania
+- `brecke-0344` — 1465–1466: France (nobles, with intervention by Burgundy, Brittany)
+- `brecke-0345` — 1465–1468: Liege (with intervention by Burgundy)
+- `brecke-0360` — 1467–1467: Burgundy (Ghent)
+- `brecke-0363` — 1467–1474: Castile (succession)
+- `brecke-0361` — 1467–1471: Denmark-Sweden
+- `brecke-0362` — 1467–1468: Florence (with intervention by Venice)
+- `brecke-0364` — 1467–1468: Swiss Confederation-Tyrol
+- `brecke-0372` — 1468–1474: England-Hanseatic League, Denmark
+- `brecke-0371` — 1468–1468: France-Brittany
+- `brecke-0370` — 1468–1468: France-Burgundy
+- `brecke-0378` — 1469–1471: England
+- `brecke-0382` — 1470–1471: Denmark (Sweden)
+- `brecke-0388` — 1471–1471: England (Kent)
+- `brecke-0389` — 1471–1472: France-Burgundy
+- `brecke-0395` — 1472–1473: Burgundy-Gelderland
+- `brecke-0398` — 1472–1475: France-Aragon (Cerdagne and Roussillon)
+- `brecke-0401` — 1473–1473: France (Guyenne)
+- `brecke-0409` — 1474–1477: Burgundy, Savoy-Swiss confederation, Tyrol, Lorraine, France
+- `brecke-0408` — 1474–1474: Burgundy-Cologne
+- `brecke-0417` — 1475–1479: Castile (succession, with intervention by Portugal)
+- `brecke-0413` — 1475–1475: England-France
+- `brecke-0421` — 1476–1479: Milan (Genoa)
+- `brecke-0420` — 1476–1479: Spain-Portugal
+- `brecke-0427` — 1477–1492: Austria (Netherlands)
+- `brecke-0426` — 1477–1479: France-Burgundy, Austria
+- `brecke-0424` — 1477–1477: Swiss Confederation (Zurich, Lucerne and Berne)
+- `brecke-0435` — 1478–1480: Pope, Naples, Siena-Florence (aided by Milan and Venice)
+- `brecke-0432` — 1478–1479: Swiss Confederation-Milan
+- `brecke-0449` — 1480–1480: England-Scotland
+- `brecke-0446` — 1480–1480: Spain-Morocco
+- `brecke-0447` — 1480–1481: Turkey-Naples (Otranto)
+- `brecke-0454` — 1481–1481: Naples
+- `brecke-0459` — 1481–1492: Spain-Granada (Moors)
+- `brecke-0461` — 1482–1484: England-Scotland
+- `brecke-0463` — 1482–1484: Venice, pope-Ferrara (aided by Milan, Naples and Florence,)
+- `brecke-0466` — 1483–1485: Burgundy (Utrecht, Ghent)
+- `brecke-0464` — 1483–1483: England
+- `brecke-0475` — 1485–1485: England (dynastic)
+- `brecke-0474` — 1485–1485: Naples (nobles, with intervention by pope and Venice)
+- `brecke-0473` — 1485–1487: Savoy-Saluzzo
+- `brecke-0479` — 1486–1486: England
+- `brecke-0478` — 1486–1489: France-Emperor
+- `brecke-0481` — 1487–1487: England
+- `brecke-0480` — 1487–1487: Spain-Morocco
+- `brecke-0487` — 1488–1492: Brittany, England-France
+- `brecke-0486` — 1488–1493: Burgundy, Emperor-Flanders (Ghent, Bruges, Cleves, aided by France)
+- `brecke-0485` — 1488–1488: Scotland
+- `brecke-0496` — 1490–1490: Spain-Morocco
+- `brecke-0502` — 1492–1493: Emperor-France
+- `brecke-0505` — 1492–1492: France (Brittany)
+- `brecke-0506` — 1492–1492: Spain (Jews in Aragon and Castile)
+- `brecke-0513` — 1493–1497: Denmark-Sweden
+- `brecke-0511` — 1493–1496: England (Ireland)
+- `brecke-0512` — 1493–1496: Spain-Canary Islands (Tenerife)
+- `brecke-0516` — 1494–1494: Burgundy (Gelderland)
+- `brecke-0517` — 1494–1495: France-Naples
+- `brecke-0527` — 1495–1497: England
+- `brecke-0525` — 1495–1509: Florence-Pisa
+- `brecke-0526` — 1495–1497: Hungary-France
+- `brecke-0523` — 1495–1498: Pope, Spain, emperor, Venice, Milan-France
+- `brecke-0533` — 1496–1496: Portugal (Jews)
+- `brecke-0535` — 1496–1497: Scotland-England
+- `brecke-0536` — 1497–1497: Spain-Morocco
+- `brecke-0544` — 1498–1503: Turkey-Venice
+- `brecke-0549` — 1499–1500: France, Venice-Milan, emperor
+- `brecke-0547` — 1499–1500: Spain (Moors)
+- `brecke-0548` — 1499–1499: Swiss Confederation, Grisons-Tyrol, Swabian League, emperor
+- `brecke-0555` — 1500–1500: Denmark-Golschtein (Ditmarshes)
+- `brecke-0556` — 1500–1502: France, Spain-Milan, Naples
+- `brecke-0561` — 1501–1513: Denmark-Sweden, Norway, Hanseatic cities (Lubeck)
+- `brecke-0559` — 1501–1508: Popes-Tuscany, Romagna
+- `brecke-0560` — 1501–1501: Spain (Morisco)
+- `brecke-0568` — 1502–1504: Spain-France (Naples)
+- `brecke-0576` — 1503–1504: Palatinate-Bavaria, Swabian League, emperor
+- `brecke-0586` — 1505–1505: Burgundy-Castile (Gelderland)
+- `brecke-0599` — 1507–1507: France (Genoa)
+- `brecke-0612` — 1509–1511: Spain (Moors)
+- `brecke-0648` — 1512–1512: Spain (aided by England)-Navarre
+- `brecke-0653` — 1513–1514: Germany (Black Forest, Wuerttemberg)
+- `brecke-0652` — 1513–1513: Scotland-England
+- `brecke-0667` — 1515–1515: Austria (Styrian peasants)
+- `brecke-0671` — 1515–1515: Austria (peasants)
+- `brecke-0668` — 1515–1517: Burgundy (Gelderland)
+- `brecke-0666` — 1515–1516: France, Venice-Milan, Swiss Confederation, emperor, pope
+- `brecke-0679` — 1516–1516: Navarre-Spain
+- `brecke-0683` — 1516–1517: Spain (Sicily)
+- `brecke-0680` — 1516–1517: Sweden
+- `brecke-0691` — 1518–1520: Denmark-Sweden
+- `brecke-0698` — 1519–1523: Gildesgeim, Luneburg-Kalenberg, Minden
+- `brecke-0696` — 1519–1522: Spain (Barcelona)
+- `brecke-0697` — 1519–1519: Swabian League-Wurttemberg
+- `brecke-0707` — 1520–1523: Spain (Castile and Valencia)
+- `brecke-0706` — 1520–1523: Sweden-Kalmar (Denmark)
+- `brecke-0713` — 1521–1525: France, Navarre-emperor, Spain, England, Italian states (from 1523),pope
+- `brecke-0715` — 1521–1521: Spain (Majorca)
+- `brecke-0718` — 1522–1524: Denmark-Holstein, Lubeck
+- `brecke-0717` — 1522–1523: England-Scotland, France
+- `brecke-0720` — 1522–1524: Netherlands (Friesland)
+- `brecke-0719` — 1522–1523: Trier, Hesse, Palatinate-(imperial knights)
+- `brecke-0733` — 1524–1525: German states (peasants in Saxony)
+- `brecke-0739` — 1525–1527: Sweden
+- `brecke-0740` — 1525–1525: Tyrol (peasants)
+- `brecke-0748` — 1526–1530: France, Venice, England, Genoa (till June 1528)-emperor, Spain, Genoa
+- `brecke-0750` — 1526–1526: Papal States (Colonna revolt)
+- `brecke-0747` — 1526–1528: Pope, Venice, Florence-emperor, Spain 1526-28
+- `brecke-0759` — 1527–1530: Florence-pope, emperor
+- `brecke-0760` — 1527–1527: Spain (Brussels, Gelderland), 1527 ?
+- `brecke-0777` — 1529–1529: Sweden
+- `brecke-0778` — 1529–1529: Switzerland (religious)
+- `brecke-0790` — 1531–1532: Denmark (succession, with intervention by Lubeck and Netherlands)
+- `brecke-0788` — 1531–1536: Lubeck, Hansa cities-Sweden, Denmark
+- `brecke-0789` — 1531–1532: Sweden
+- `brecke-0787` — 1531–1531: Switzerland (religious)
+- `brecke-0797` — 1532–1533: Emperor-Italy
+- `brecke-0795` — 1532–1534: Scotland-England
+- `brecke-0792` — 1532–1532: Spain (Brussels)
+- `brecke-0798` — 1533–1536: Denmark (succession, with intervention by Lubeck and Sweden)
+- `brecke-0807` — 1534–1534: Algiers-France
+- `brecke-0810` — 1534–1536: England (Ireland)
+- `brecke-0804` — 1534–1535: Hesse, protestant German states-Wurttemberg
+- `brecke-0812` — 1535–1536: Savoy-Geneva, Berne
+- `brecke-0818` — 1536–1537: England (religious)
+- `brecke-0817` — 1536–1537: France-Savoy, emperor
+- `brecke-0823` — 1537–1539: Turkey, Algiers-Venice
+- `brecke-0832` — 1539–1540: Spain (Ghent)
+- `brecke-0838` — 1540–1540: France (massacre of Vaudois protestants)
+- `brecke-0834` — 1540–1545: Pope-Papal States, Camerino
+- `brecke-0851` — 1542–1542: England-Scotland
+- `brecke-0848` — 1542–1544: France, Cleves, Denmark, Sweden-emperor
+- `brecke-0850` — 1542–1542: Saxony, Hesse-Brunswick
+- `brecke-0859` — 1544–1546: England-France
+- `brecke-0860` — 1544–1547: England-Scotland (with French involvement)
+- `brecke-0863` — 1545–1545: France (massacre of Vaudois protestants)
+- `brecke-0873` — 1547–1550: Scotland (with French support)-England
+- `brecke-0878` — 1548–1548: France (Bordelais)
+- `brecke-0880` — 1548–1550: France-England
+- `brecke-0886` — 1549–1550: England (Cornwall)
+- `brecke-0884` — 1549–1550: England (Devonshire, Catholic)
+- `brecke-0889` — 1550–1551: German Protestants-Emperor
+- `brecke-0902` — 1551–1551: Pope-Parma
+- `brecke-0904` — 1551–1555: Spain, Emperor-France, Saxony
+- `brecke-0909` — 1552–1553: German Protestants-Emperor
+- `brecke-0914` — 1553–1555: Florence-Siena
+- `brecke-0913` — 1553–1553: Kulmbach-Emperor
+- `brecke-0920` — 1554–1554: England
+- `brecke-0925` — 1555–1555: Geneva (anti-Calvinist rising)
+- `brecke-0931` — 1556–1559: Pope (till 1557), France-Emperor, Savoy
+- `brecke-0939` — 1557–1559: France-England
+- `brecke-0940` — 1557–1557: Scotland-England
+- `brecke-0952` — 1559–1559: Denmark-Golschtein (Ditmarshes)
+- `brecke-0951` — 1559–1567: Ireland (succession to the earldom of Tyrone)
+- `brecke-0950` — 1559–1560: Scotland-France (with intervention by England)
+- `brecke-0957` — 1560–1560: France
+- `brecke-0956` — 1560–1561: Savoy (Vaudois)
+- `brecke-0971` — 1562–1563: England-France
+- `brecke-0968` — 1562–1563: France (Huguenots, with intervention by England)
+- `brecke-0969` — 1562–1562: Scotland (rebellion)
+- `brecke-0970` — 1562–1568: Sweden
+- `brecke-0981` — 1564–1568: Genoa (Corsica)
+- `brecke-0984` — 1565–1567: Scotland (religious)
+- `brecke-0986` — 1565–1565: Spain (Moriscos in Andalusia)
+- `brecke-0994` — 1566–1609: Netherlands-Spain
+- `brecke-0995` — 1566–1568: Netherlands-Spain
+- `brecke-0999` — 1567–1568: France (Huguenots)
+- `brecke-0998` — 1567–1567: Scotland
+- `brecke-1003` — 1568–1570: France (Huguenots)
+- `brecke-1002` — 1568–1571: Spain (Moriscos in Granada)
+- `brecke-1011` — 1569–1570: England (Catholic lords of the north)
+- `brecke-1016` — 1569–1583: England-Munster (southern Ireland)
+- `brecke-1010` — 1569–1572: Spain-Netherlands
+- `brecke-1014` — 1569–1580: Turkey-Spain
+- `brecke-1023` — 1570–1573: Scotland (Marians)
+- `brecke-1041` — 1572–1573: France (Huguenots)
+- `brecke-1037` — 1572–1576: Spain-Netherlands
+- `brecke-1053` — 1574–1576: France (Huguenots)
+- `brecke-1059` — 1575–1575: France, Switzerland-Venice
+- `brecke-1070` — 1577–1577: France (Huguenots)
+- `brecke-1076` — 1578–1587: Spain-Netherlands (with intervention from France and England)
+- `brecke-1084` — 1579–1580: England (Ireland, with intervention by pope, Spain)
+- `brecke-1085` — 1579–1581: Spain-Portugal
+- `brecke-1087` — 1580–1580: France (Huguenots)
+- `brecke-1098` — 1582–1583: France-Spain (Azores)
+- `brecke-1106` — 1583–1589: Cologne (with intervention by Spain, Palatinate and others)
+- `brecke-1104` — 1583–1583: France-Spain (Antwerp)
+- `brecke-1112` — 1585–1589: France (Huguenots, with intervention by Spain and England)
+- `brecke-1126` — 1587–1587: England
+- `brecke-1125` — 1587–1604: England-Spain
+- `brecke-1129` — 1588–1588: Savoy-France
+- `brecke-1130` — 1588–1589: Savoy-Geneva
+- `brecke-1137` — 1589–1589: England
+- `brecke-1138` — 1589–1598: France (with intervention by Spain)
+- `brecke-1136` — 1589–1607: Spain-Netherlands
+- `brecke-1144` — 1590–1598: Savoy-France
+- `brecke-1157` — 1591–1591: Spain (Aragon)
+- `brecke-1161` — 1592–1598: Sweden (succession)
+- `brecke-1167` — 1593–1593: England (Ireland)
+- `brecke-1175` — 1594–1597: Austria (Austrian peasants)
+- `brecke-1174` — 1594–1603: England (Ireland, with intervention by Spain in 1601)
+- `brecke-1173` — 1594–1595: France (peasants)
+- `brecke-1182` — 1595–1598: France-Spain
+- `brecke-1181` — 1595–1595: Scotland (Catholic lords)
+- `brecke-1206` — 1600–1601: France-Savoy
+- `brecke-1213` — 1601–1601: England (London)
+- `brecke-1217` — 1602–1602: Savoy, Spain-Geneva
+- `brecke-1219` — 1604–1604: Spain-Turkey
+- `brecke-1223` — 1605–1605: England
+- `brecke-1236` — 1607–1607: Bavaria-Donauworth
+- `brecke-1234` — 1607–1607: England
+- `brecke-1240` — 1608–1608: England (Ireland)
+- `brecke-1246` — 1609–1610: Emperor-Julich (Germany) (aided by France, Brandenburg)
+- `brecke-1245` — 1609–1609: Spain (Moors and Moriscoes)
+- `brecke-1263` — 1613–1617: Italy (Venice?)-Spain
+- `brecke-1271` — 1614–1614: France (Brittany)
+- `brecke-1269` — 1614–1615: Scotland
+- `brecke-1272` — 1614–1614: Sweden
+- `brecke-1278` — 1615–1616: France (nobles)
+- `brecke-1277` — 1615–1617: Savoy-Spain
+- `brecke-1279` — 1615–1618: Venice (aided by United Provinces)-Uskoks, Austria (Styria)
+- `brecke-1288` — 1616–1618: Sweden-Denmark
+- `brecke-1295` — 1617–1621: Spain-Venice
+- `brecke-1291` — 1617–1617: Sweden
+- `brecke-1297` — 1618–1622: Emperor, Bavaria, Spain, Sax-Boh, Silesia, Moravia, Palatinate, Transylvania
+- `brecke-1298` — 1618–1620: Emperor-Palatinate
+- `brecke-1299` — 1618–1618: United Provinces (Oldenbarnveldt)
+- `brecke-1304` — 1619–1620: France (nobles)
+- `brecke-1314` — 1620–1635: Graubinden-Waltelin
+- `brecke-1312` — 1620–1620: Spain (Naples)
+- `brecke-1315` — 1620–1622: Sweden-Denmark
+- `brecke-1313` — 1620–1623: Switzerland (Valtellina, with Spanish intervention) 1620-23
+- `brecke-1318` — 1621–1622: France (Huguenots)
+- `brecke-1319` — 1621–1648: Spain-United Provinces
+- `brecke-1328` — 1623–1631: Palatinate, Brunswick, Baden, Saxe-Weimar, Transyl-emperor, Spain, Bavaria
+- `brecke-1341` — 1624–1630: England-Spain
+- `brecke-1340` — 1624–1626: France, Savoy, Venice, England-Spain, emperor, Genoa (Valtellina)
+- `brecke-1345` — 1625–1629: Denmark, Brunswick, Saxe-Weimar, Mecklenburg, emperor, Spain, Bavaria
+- `brecke-1349` — 1625–1626: France (Huguenots)
+- `brecke-1346` — 1625–1629: Sweden-Denmark
+- `brecke-1353` — 1626–1626: Austria (Upper Austria)
+- `brecke-1358` — 1627–1628: England-France
+- `brecke-1357` — 1627–1629: France (Huguenots, with intervention by England)
+- `brecke-1364` — 1628–1631: England
+- `brecke-1365` — 1628–1631: Savoy, Spain, emperor-Mantua, France
+- `brecke-1372` — 1629–1630: France (tax revolts)
+- `brecke-1378` — 1630–1630: Denmark-Hamburg
+- `brecke-1376` — 1630–1648: Sweden, Saxe-Weimar, Hesse-Cassel, Brunswick, Saxony, emperor, Spain
+- `brecke-1385` — 1631–1635: Brandenburg-emperor, Spain, Bavaria, etc.
+- `brecke-1384` — 1631–1631: Spain (Vizcaya) (Basques)
+- `brecke-1397` — 1632–1633: Austria (Upper Austria, peasants)
+- `brecke-1393` — 1632–1632: France (nobles revolt)
+- `brecke-1399` — 1633–1634: Bavaria (peasants)
+- `brecke-1400` — 1633–1633: Spanish Netherlands (Brussels)
+- `brecke-1412` — 1635–1648: France, Savoy, Parma-Spain, emperor, Bavaria, Brandenburg, Saxony
+- `brecke-1414` — 1635–1640: Sweden-Saxony, Brandenburg
+- `brecke-1417` — 1636–1636: France
+- `brecke-1418` — 1636–1637: France
+- `brecke-1428` — 1637–1639: Savoy
+- `brecke-1429` — 1637–1637: Spain (Portugal)
+- `brecke-1442` — 1639–1639: England (Scotland)
+- `brecke-1443` — 1639–1639: France (Normandy)
+- `brecke-1445` — 1640–1640: England (Scotland)
+- `brecke-1447` — 1640–1659: Spain (Catalonia)
+- `brecke-1448` — 1640–1640: Spain (Portugal)
+- `brecke-1451` — 1641–1649: England (Ireland)
+- `brecke-1450` — 1641–1641: Spain (Andalusia)
+- `brecke-1449` — 1641–1644: Spain-Portugal (with English and French support)
+- `brecke-1457` — 1642–1646: England
+- `brecke-1456` — 1642–1644: Pope-Parma, Venice, Tuscany
+- `brecke-1462` — 1643–1643: Denmark-Hamburg
+- `brecke-1461` — 1643–1644: France (south-west)
+- `brecke-1463` — 1643–1645: Sweden-Denmark
+- `brecke-1467` — 1644–1646: Ireland (Donalds), Highland Scots-Scotland (Campbells and Covenanters)
+- `brecke-1479` — 1646–1647: Spain (Sicily)
+- `brecke-1487` — 1647–1648: Spain (Naples, with intervention by France)
+- `brecke-1490` — 1648–1648: England (with Scottish involvement)
+- `brecke-1493` — 1648–1653: France
+- `brecke-1500` — 1649–1652: England (Ireland)
+- `brecke-1501` — 1650–1652: England (Scotland)
+- `brecke-1503` — 1650–1658: France-Spain
+- `brecke-1502` — 1650–1654: Portugal-England
+- `brecke-1504` — 1650–1650: Sweden
+- `brecke-1511` — 1651–1651: Prussia (Neuburg)
+- `brecke-1516` — 1652–1652: Sweden-Bremen
+- `brecke-1518` — 1652–1653: Switzerland (peasants)
+- `brecke-1517` — 1652–1653: United Provinces-England
+- `brecke-1530` — 1655–1655: England (Wiltshire)
+- `brecke-1535` — 1656–1659: England, France, Lorraine-Spain, Savoy
+- `brecke-1536` — 1656–1656: Switzerland
+- `brecke-1541` — 1657–1660: Brandenburg-Sweden
+- `brecke-1543` — 1657–1665: Portugal (with British assistance)-Spain
+- `brecke-1542` — 1657–1661: United Provinces-Portugal
+- `brecke-1546` — 1658–1658: France
+- `brecke-1554` — 1660–1660: France
+- `brecke-1558` — 1661–1661: England
+- `brecke-1568` — 1663–1663: France
+- `brecke-1569` — 1663–1669: United Provinces-Portugal (Malabar?), 1663-69 ?
+- `brecke-1573` — 1664–1664: Mainz (Erfurt)
+- `brecke-1576` — 1665–1667: England, Muenster-United Provinces, Denmark, France
+- `brecke-1577` — 1665–1666: Sweden-Bremen
+- `brecke-1583` — 1666–1666: England (Covenanters in Scotland)
+- `brecke-1586` — 1667–1668: France-Spain (with Dutch, English, Swedish intervention)
+- `brecke-1587` — 1667–1667: Portugal (revolt)
+- `brecke-1591` — 1668–1668: Spain (Moors)
+- `brecke-1607` — 1670–1670: Austria (Bohemian peasants)
+- `brecke-1605` — 1670–1670: France-Lorraine
+- `brecke-1620` — 1672–1674: England-United Provinces
+- `brecke-1621` — 1672–1678: France, Cologne, UK, Sweden-UP, Brandenburg, Spain, Austria, Germany, Denmark
+- `brecke-1618` — 1672–1674: Savoy-Genoa
+- `brecke-1625` — 1674–1679: Spain (Sicily, with intervention by France and Holland)
+- `brecke-1634` — 1675–1679: Denmark, Brandenburg, Lunenburg, Munster, emperor, UP-Sweden
+- `brecke-1630` — 1675–1675: France
+- `brecke-1631` — 1675–1675: France
+- `brecke-1635` — 1676–1679: Denmark-Hamburg
+- `brecke-1645` — 1679–1679: England (Scottish Covenanters)
+- `brecke-1652` — 1680–1680: Emperor (Bohemia)
+- `brecke-1660` — 1682–1682: Denmark-Holstein
+- `brecke-1663` — 1683–1684: France-Spain, emperor
+- `brecke-1668` — 1684–1685: France-Genoa
+- `brecke-1669` — 1684–1684: France-Luxembourg, Trier
+- `brecke-1672` — 1685–1685: England
+- `brecke-1673` — 1685–1685: England
+- `brecke-1675` — 1686–1687: Denmark-Hamburg
+- `brecke-1691` — 1688–1689: England (religious)
+- `brecke-1698` — 1689–1690: England (Scotland)
+- `brecke-1699` — 1689–1691: England-Ireland (with intervention by France)
+- `brecke-1708` — 1692–1692: England (massacre of MacDonalds)
+- `brecke-1720` — 1696–1697: Austria-Sardinia
+- `brecke-1733` — 1699–1700: Sweden-Denmark
+- `brecke-1740` — 1701–1703: Austria-Sardinia
+- `brecke-1744` — 1702–1706: France (Cevennes, Languedoc)
+- `brecke-1754` — 1705–1715: Spain (Catalonia)
+- `brecke-1767` — 1709–1720: Sweden-Denmark
+- `brecke-1766` — 1709–1719: Sweden-Saxony, Poland
+- `brecke-1782` — 1712–1712: Switzerland
+- `brecke-1790` — 1715–1716: Britain (Scotland)
+- `brecke-1788` — 1715–1719: Britain-Sweden
+- `brecke-1789` — 1715–1720: Prussia-Sweden
+- `brecke-1799` — 1717–1717: Spain-Austria (Sardinia)
+- `brecke-1801` — 1717–1720: Spain-Austria, Britain, France, United Provinces
+- `brecke-1802` — 1718–1718: Spain-Savoy (Sicily)
+- `brecke-1805` — 1719–1721: Hanover-Sweden
+- `brecke-1806` — 1719–1719: Sweden (succession)
+- `brecke-1830` — 1727–1727: Britain-Hesse (Hanover)
+- `brecke-1829` — 1727–1727: Spain-Britain, France
+- `brecke-1836` — 1729–1745: Genoa (Corsica with intervention by Austria and France)
+- `brecke-1847` — 1731–1731: Austria-Corsica
+- `brecke-1871` — 1740–1748: Britain, Austria, United Provinces-Spain, Prussia, France, Bavaria
+- `brecke-1870` — 1740–1742: Prussia-Austria
+- `brecke-1872` — 1740–1740: Switzerland
+- `brecke-1884` — 1744–1745: Prussia-Austria
+- `brecke-1890` — 1745–1746: Britain (Scotland)
+- `brecke-1898` — 1747–1747: United Provinces (Orange revolt)
+- `brecke-1924` — 1755–1768: Genoa (Corsican revolt)
+- `brecke-1925` — 1755–1755: Switzerland
+- `brecke-1935` — 1758–1758: Portugal (revolution)
+- `brecke-1948` — 1762–1762: Spain-Portugal, England
+- `brecke-1951` — 1763–1763: England (Ireland)
+- `brecke-1961` — 1766–1766: Spain (Madrid)
+- `brecke-1963` — 1766–1768: Switzerland
+- `brecke-1965` — 1768–1769: France (Corsica)
+- `brecke-1984` — 1772–1772: Denmark
+- `brecke-2000` — 1778–1783: France, Spain (from 1779), Holland (from 1780)-Britain
+- `brecke-2001` — 1778–1779: Prussia, Bavaria-Austria, Saxony
+- `brecke-2006` — 1780–1783: Britain-Holland
+- `brecke-2013` — 1783–1784: Spain-Argel?
+- `brecke-2024` — 1785–1787: Holland (with intervention by Austria and by Prussia in 1787)
+- `brecke-2036` — 1789–1789: Austria (Steiermark and Karnten)
+- `brecke-2033` — 1789–1790: Austrian Netherlands (Brabant)
+- `brecke-2035` — 1789–1789: France
+- `brecke-2044` — 1791–1802: Wars of the French Revolution
+- `brecke-2047` — 1792–1792: France (mobs)
+- `brecke-2046` — 1792–1798: France-Austria, Prussia, Spain, Sardinia, Holland, Naples
+- `brecke-2053` — 1793–1794: France (Vendee revolt, Reign of Terror)
+- `brecke-2050` — 1793–1800: France-England
+- `brecke-2051` — 1793–1795: France-Spain (Pyrenees)
+- `brecke-2062` — 1795–1798: Ireland-Britain
+- `brecke-2059` — 1795–1801: Spain-England
+- `brecke-2076` — 1798–1802: France-Britain, Russia, Austria, Turkey, Portugal, Naples
+- `brecke-2085` — 1801–1801: Britain-Denmark
+- `brecke-2086` — 1801–1801: Spain-Portugal
+- `brecke-2099` — 1803–1803: Britain (Ireland)
+- `brecke-2097` — 1803–1814: France-Britain
+- `brecke-2098` — 1803–1808: Spain-Britain
+- `brecke-2109` — 1805–1807: France-Britain, Russia, Austria, Sweden
+- `brecke-2113` — 1806–1806: France-Prussia, Saxony
+- `brecke-2125` — 1807–1807: Britain-Denmark
+- `brecke-2126` — 1807–1814: France-Spain, Portugal, Britain
+- `brecke-2138` — 1809–1809: France-Austria
+- `brecke-2137` — 1809–1810: Tyrol-France (Bavarian garrison)
+- `brecke-2141` — 1810–1810: Britain-Sweden
+- `brecke-2168` — 1813–1814: France-Britain, Russia, Sweden, Austria, Prussia
+- `brecke-2169` — 1813–1814: Sweden-Denmark
+- `brecke-2177` — 1815–1815: (Austria-Hungary)-Naples
+- `brecke-2176` — 1815–1815: France-Britain, Austria, Holland
+- `brecke-2182` — 1816–1819: Spain
+- `brecke-2199` — 1819–1819: Britain
+- `brecke-2211` — 1820–1821: Naples (with support from Austria-Hungary) (Carbonarists)
+- `brecke-2209` — 1820–1820: Portugal
+- `brecke-2210` — 1820–1820: Spain (revolution suppressed with help from France)
+- `brecke-2216` — 1821–1821: Piedmont (with support from Austria-Hungary) (Carbonarists)
+- `brecke-2215` — 1821–1823: Spain (Castile, Toledo, Andalusia)
+- `brecke-2236` — 1823–1824: Portugal
+- `brecke-2257` — 1826–1827: Portugal (with intervention by Britain)
+- `brecke-2267` — 1828–1834: Portugal (with intervention by Britain, France, and Spain)
+- `brecke-2281` — 1830–1830: France (Paris)
+- `brecke-2283` — 1830–1831: Germany (revolts in Saxony, Hesse, and Brunswick)
+- `brecke-2279` — 1830–1830: Holland (Belgium)
+- `brecke-2280` — 1830–1830: Spain
+- `brecke-2282` — 1830–1856: Switzerland
+- `brecke-2295` — 1831–1833: Belgium (aided by France, Britain)-Holland
+- `brecke-2300` — 1831–1831: France (Lyon)
+- `brecke-2296` — 1831–1834: Italy (revolts in Modena, Parma and Papal States suppressed by Austria)
+- `brecke-2314` — 1833–1840: Spain (with intervention by Britain)
+- `brecke-2323` — 1834–1834: France (Lyon and Paris)
+- `brecke-2324` — 1834–1834: France, Britain, Spain-Portugal
+- `brecke-2357` — 1839–1839: Britain (Chartist Rising in Monmouth)
+- `brecke-2363` — 1840–1843: Spain
+- `brecke-2404` — 1846–1850: Portugal (with intervention by Spain and Britain)
+- `brecke-2403` — 1846–1846: Spain
+- `brecke-2408` — 1847–1849: Spain
+- `brecke-2405` — 1847–1847: Switzerland
+- `brecke-2426` — 1848–1848: Austria
+- `brecke-2424` — 1848–1848: Austria-Czechs
+- `brecke-2421` — 1848–1848: France
+- `brecke-2430` — 1848–1848: Germany (Baden)
+- `brecke-2428` — 1848–1848: Germany (Berlin)
+- `brecke-2429` — 1848–1850: Germany (risings in German states suppressed by Prussia)
+- `brecke-2413` — 1848–1849: Italy-Austria, France, Spain
+- `brecke-2416` — 1848–1848: Milan-Austria
+- `brecke-2414` — 1848–1849: Naples (Liberals) (with Spanish intervention)
+- `brecke-2422` — 1848–1849: Prussia-Denmark, Sweden (Schleswig-Holstein)
+- `brecke-2420` — 1848–1849: Rome-France, Spain, Austria, Naples
+- `brecke-2415` — 1848–1849: Sardinia-Austria (with French intervention)
+- `brecke-2417` — 1848–1849: Venice-Austria
+- `brecke-2437` — 1849–1849: Germany (Saxony)
+- `brecke-2451` — 1851–1851: France
+- `brecke-2477` — 1854–1854: Spain
+- `brecke-2500` — 1856–1856: Spain
+- `brecke-2522` — 1859–1860: Italy
+- `brecke-2521` — 1859–1859: Piedmont, France-Austria
+- `brecke-2528` — 1860–1861: Garibaldeans, Piedmont-Naples
+- `brecke-2529` — 1860–1860: Piedmont-Papal States (with French intervention)
+- `brecke-2548` — 1862–1862: Italy (Garibaldians)
+- `brecke-2594` — 1866–1866: Italy-Austria
+- `brecke-2593` — 1866–1866: Prussia, German states-Austria, German states
+- `brecke-2595` — 1866–1866: Spain
+- `brecke-2606` — 1867–1867: Italians (Garibaldians)-Papal States, France
+- `brecke-2613` — 1868–1870: Spain
+- `brecke-2629` — 1870–1870: France
+- `brecke-2633` — 1870–1870: Italy-Papal States
+- `brecke-2644` — 1872–1876: Spain (Carlists with Basque support)
+- `brecke-2674` — 1876–1885: Spain (Carlists)
+- `brecke-2883` — 1898–1898: Italy
+- `brecke-2981` — 1908–1910: Portugal
+- `brecke-2989` — 1909–1909: Spain (Catalonia)
+- `brecke-2998` — 1910–1910: Portugal
+- `brecke-3025` — 1914–1914: Britain-Ireland
+- `brecke-3037` — 1914–1918: First World War
+- `brecke-3053` — 1916–1916: Britain-Ireland
+- `brecke-3086` — 1918–1918: Germany
+- `brecke-3087` — 1918–1923: Germany
+- `brecke-3097` — 1919–1919: Germany
+- `brecke-3098` — 1919–1919: Germany
+- `brecke-3099` — 1919–1922: Irish-Britain
+- `brecke-3115` — 1920–1920: Germany (Ruhr)
+- `brecke-3133` — 1922–1922: Ireland
+- `brecke-3132` — 1922–1922: Italy
+- `brecke-3143` — 1923–1923: Spain
+- `brecke-3178` — 1930–1931: Spain
+- `brecke-3195` — 1931–1931: Spain
+- `brecke-3198` — 1932–1932: Spain (Seville)
+- `brecke-3207` — 1933–1945: Germany, 1933-45 G
+- `brecke-3208` — 1933–1933: Spain (Barcelona)
+- `brecke-3216` — 1934–1934: Austria
+- `brecke-3217` — 1934–1936: France
+- `brecke-3218` — 1934–1934: Germany
+- `brecke-3213` — 1934–1934: Spain (Asturias)
+- `brecke-3214` — 1934–1934: Spain (Catalonia)
+- `brecke-3228` — 1936–1939: Spain (with intervention by Germany, Italy)
+- `brecke-3242` — 1938–1938: Germany (Jews)
+- `brecke-3240` — 1938–1938: Germany-Austria
+- `brecke-3241` — 1938–1939: Germany-Czechoslovakia
+- `brecke-3248` — 1939–1945: Ger, Ita, Hung-Pol, Brit, Fra, Nor, Belg, Neth, Greece, USSR, USA
+- `brecke-3261` — 1941–1942: Germany (massacre of Jews), 1941-42 G
+- `brecke-3302` — 1948–1949: East Germany
+- `brecke-3488` — 1968–1993: Britain (Northern Ireland)
+- `brecke-3529` — 1974–1974: Portugal
+- `brecke-3538` — 1975–1975: Portugal
+- `brecke-3651` — 1991–1992: Spain (Basque)
+
+#### Brecke region 4
+
+- `brecke-0004` — 1400–1400: Mongols (Timur)-Georgia
+- `brecke-0005` — 1400–1400: Mongols (Timur)-Turkey
+- `brecke-0010` — 1401–1404: Russia-Lithuania
+- `brecke-0018` — 1402–1402: Mongols (Timur)-Rhodes (Knights of) (Smyrna)
+- `brecke-0017` — 1402–1402: Mongols (Timur)-Turkey (Ottomans)
+- `brecke-0031` — 1403–1403: Mongols (Timur)-Georgia
+- `brecke-0030` — 1403–1413: Turkey
+- `brecke-0041` — 1405–1405: Hungary (Sigismund)-Bosnia (Waldenses)
+- `brecke-0040` — 1405–1405: Lithuania-Russia
+- `brecke-0049` — 1406–1409: Hungary (Sigismund)-Bosnia
+- `brecke-0047` — 1406–1408: Muscovy-Poland, Lithuania
+- `brecke-0048` — 1406–1408: Muscovy-Volga, Tartars
+- `brecke-0061` — 1407–1407: Hungary (Sigismund)-Bosnia (Waldenses)
+- `brecke-0067` — 1408–1408: Moguls-Novgorod
+- `brecke-0066` — 1408–1408: Tartars-Muscovy
+- `brecke-0075` — 1409–1411: (Poland-Lithuania)-Teutonic Order
+- `brecke-0102` — 1413–1422: (Poland-Lithuania)-Teutonic Order
+- `brecke-0101` — 1413–1421: Turkey-Wallachia, Bosnia, Hungary, Venice, Serbia
+- `brecke-0121` — 1416–1416: Tartars-Muscovy
+- `brecke-0130` — 1419–1419: Sweden, Norway-Muscovy (Novgorod)
+- `brecke-0142` — 1421–1421: Turkey (succession)
+- `brecke-0144` — 1422–1422: Turkey-Byzantium
+- `brecke-0151` — 1424–1426: Egypt-Cyprus
+- `brecke-0156` — 1425–1440: Muscovy (succession)
+- `brecke-0157` — 1425–1425: Turkey
+- `brecke-0159` — 1426–1428: Novgorod, Pskov-Lithuania
+- `brecke-0167` — 1429–1440: Turkey-Serbia, Greece,  Hungary
+- `brecke-0178` — 1431–1431: Poland-Lithuanian Russia (Volynia)
+- `brecke-0176` — 1431–1431: Turkey-Albania, Kraina, Wallachia
+- `brecke-0181` — 1433–1452: Galicia-Muscovy
+- `brecke-0180` — 1433–1439: Lithuanian Russia
+- `brecke-0188` — 1434–1435: Teutonic Order-(Poland-Lithuania)
+- `brecke-0202` — 1437–1439: Golden Horde-Russia
+- `brecke-0199` — 1437–1437: Hungary (peasants)
+- `brecke-0200` — 1437–1438: Hungary-Turkey
+- `brecke-0211` — 1440–1442: Hungary (succession)
+- `brecke-0218` — 1442–1448: Hungary, (Poland-Lithuania), pope-Turkey
+- `brecke-0224` — 1443–1461: Albanians-Turkey
+- `brecke-0229` — 1444–1445: Golden Horde-Russia
+- `brecke-0228` — 1444–1444: Turkey-Greece-Hungary (Bulgaria)
+- `brecke-0231` — 1445–1445: Muscovy-Lithuania
+- `brecke-0239` — 1446–1446: Hungary-emperor (Austria)
+- `brecke-0237` — 1446–1446: Muscovy (Novgorod)-Ugrians
+- `brecke-0235` — 1446–1454: Muscovy (succession)
+- `brecke-0236` — 1446–1446: Sweden, Norway-Muscovy (Novgorod)
+- `brecke-0238` — 1446–1446: Turkey-Morea (Greece)
+- `brecke-0244` — 1447–1447: Muscovy-Tartars
+- `brecke-0247` — 1448–1448: Albania-Turkey
+- `brecke-0251` — 1449–1449: Hungary-Turkey (Serbia)
+- `brecke-0254` — 1449–1451: Tartars-Muscovy
+- `brecke-0263` — 1450–1450: Albania-Turkey
+- `brecke-0264` — 1450–1453: Muscovy (Shemyaka)
+- `brecke-0269` — 1451–1451: Austria
+- `brecke-0270` — 1451–1451: Hungary
+- `brecke-0272` — 1452–1452: Byzantium (Constantinople)
+- `brecke-0273` — 1452–1453: Turkey-Byzantium
+- `brecke-0278` — 1454–1466: Prussian League, (Poland-Lithuania)-Teutonic Order
+- `brecke-0279` — 1454–1456: Turkey-Hungary
+- `brecke-0280` — 1454–1459: Turkey-Serbia
+- `brecke-0283` — 1455–1456: Muscovy-Novgorod
+- `brecke-0288` — 1455–1461: Muscovy-Tatars
+- `brecke-0287` — 1455–1455: Turkey-Rhodes (Ionic Knights)
+- `brecke-0290` — 1456–1461: Turkey-Athens, Morea, Trebizond, Greek islands
+- `brecke-0301` — 1458–1460: Bohemia-Moravia, Silesia, Lausits?
+- `brecke-0303` — 1458–1459: Muscovy (Viatka)
+- `brecke-0308` — 1459–1463: Turkey-Bosnia
+- `brecke-0307` — 1459–1467: Turkey-Wallachia, 1459-67 ?
+- `brecke-0319` — 1461–1462: Emperor-Hungary
+- `brecke-0324` — 1462–1464: Hungary-Turkey
+- `brecke-0330` — 1463–1465: Denmark-Sweden (Scania)
+- `brecke-0333` — 1463–1470: Persia-Turkey
+- `brecke-0329` — 1463–1463: Sweden-Russia
+- `brecke-0332` — 1463–1478: Turkey-Albania
+- `brecke-0331` — 1463–1479: Venice, Albania, Moldova, Genoa-Turkey
+- `brecke-0340` — 1464–1464: Cyprus-Genoa
+- `brecke-0342` — 1464–1465: Russia-Pskov
+- `brecke-0350` — 1465–1465: Russia-Tartars
+- `brecke-0348` — 1465–1466: Turkey-Karaman
+- `brecke-0365` — 1467–1469: Muscovy-Kazan Tartars
+- `brecke-0373` — 1468–1469: Hungary-Bohemia, emperor, (Poland-Lithuania)
+- `brecke-0379` — 1469–1475: Emperor-Turkey
+- `brecke-0385` — 1470–1478: Hungary-Bohemia
+- `brecke-0383` — 1470–1474: Turkey (Anatolia)
+- `brecke-0384` — 1470–1470: Turkey-Karaman
+- `brecke-0391` — 1471–1478: Hungary-Poland
+- `brecke-0392` — 1471–1475: Muscovy-Novgorod
+- `brecke-0390` — 1471–1475: Teutonic Order-(Poland-Lithuania)
+- `brecke-0396` — 1472–1472: Kazan Tartars-Muscovy
+- `brecke-0397` — 1472–1472: Muscovy-Perm
+- `brecke-0411` — 1474–1474: Turkey-Albania
+- `brecke-0410` — 1474–1474: Turkey-Karaman
+- `brecke-0414` — 1475–1475: Hungary-Turkey
+- `brecke-0416` — 1475–1476: Turkey-Crimea
+- `brecke-0415` — 1475–1476: Turkey-Moldavia
+- `brecke-0425` — 1477–1478: Hungary-Austria
+- `brecke-0428` — 1477–1478: Muscovy, Pskov, Tver-Novgorod
+- `brecke-0433` — 1478–1478: Austria (Carinthian peasants)
+- `brecke-0437` — 1478–1479: Kazan Tartars-Crimean Tartars
+- `brecke-0436` — 1478–1478: Muscovy-Kazan Tartars
+- `brecke-0438` — 1478–1489: Muscovy-Lithuania
+- `brecke-0434` — 1478–1479: Turkey-Albania, Ionian islands
+- `brecke-0441` — 1479–1479: Muscovy-Novgorod
+- `brecke-0443` — 1479–1483: Turkey-Herzigovina
+- `brecke-0442` — 1479–1481: Turkey-Hungary
+- `brecke-0451` — 1480–1491: Hungary-emperor
+- `brecke-0450` — 1480–1480: Muscovy-Kazan Tartars
+- `brecke-0455` — 1480–1483: Muscovy-Teutonic (Livonian) Order, 1480-83 *
+- `brecke-0448` — 1480–1480: Turkey-Rhodes
+- `brecke-0456` — 1481–1482: Turkey (succession)
+- `brecke-0457` — 1481–1483: Turkey-Hungary
+- `brecke-0462` — 1482–1482: Crimean Tartars-(Poland-Lithuania)
+- `brecke-0470` — 1484–1485: Muscovy-Tver
+- `brecke-0469` — 1484–1489: Turkey, Tartars-Moldavia, (Poland-Lithuania)
+- `brecke-0483` — 1487–1491: Golden Horde-(Poland-Lithuania)
+- `brecke-0482` — 1487–1487: Muscovy-Kazan Tartars
+- `brecke-0491` — 1489–1490: Muscovy-(Poland-Lithuania), 1489-90 *
+- `brecke-0492` — 1489–1489: Muscovy-Vyatka
+- `brecke-0495` — 1490–1491: Bohemia-Poland
+- `brecke-0494` — 1490–1495: Turkey-Bohemia, Hungary, emperor
+- `brecke-0499` — 1491–1502: Crimean Tartars-Kazan Tartars
+- `brecke-0503` — 1492–1494: Muscovy-Lithuania
+- `brecke-0504` — 1492–1493: Turkey-Dalmatia, Croatia
+- `brecke-0524` — 1495–1497: Muscovy-Sweden
+- `brecke-0534` — 1496–1497: Muscovy-Kazan Tartars
+- `brecke-0537` — 1497–1498: (Poland-Lithuania)-Moldavia
+- `brecke-0539` — 1497–1499: (Poland-Lithuania)-Turkey, Tartars (Wallachia)
+- `brecke-0543` — 1498–1498: Turkey-Galicia, Ruthenia (Russia)
+- `brecke-0550` — 1499–1503: Turkey-Montenegro, Hungary, pope
+- `brecke-0554` — 1500–1503: Muscovy, Tartars-(Poland-Lithuania), Livonian Order
+- `brecke-0562` — 1501–1506: Poland-Moldavia
+- `brecke-0569` — 1502–1502: Crimean Tartars-Kazan Tartars
+- `brecke-0578` — 1503–1509: Russia-Livonian Order
+- `brecke-0587` — 1505–1505: Kazan Tartars-Novgorod
+- `brecke-0593` — 1506–1506: Crimean Tartars-Lithuania, Cossacks
+- `brecke-0595` — 1506–1507: Emperor-(Bohemia-Hungary)
+- `brecke-0594` — 1506–1507: Muscovy-Kazan Tartars
+- `brecke-0592` — 1506–1506: Poland-Crimean Tartars
+- `brecke-0600` — 1507–1508: (Poland-Lithuania)-Muscovy
+- `brecke-0601` — 1507–1507: Crimean Tartars-Muscovy
+- `brecke-0611` — 1509–1509: Turkey, Egypt-Knights of Malta
+- `brecke-0623` — 1510–1510: Muscovy-Pskov
+- `brecke-0621` — 1510–1510: Poland-Tatars
+- `brecke-0636` — 1511–1512: Turkey (succession)
+- `brecke-0647` — 1512–1519: Austria-Turkey
+- `brecke-0645` — 1512–1512: Crimean Tartars-Muscovy, Cossacks
+- `brecke-0646` — 1512–1512: Crimean Tartars-Poland
+- `brecke-0644` — 1512–1514: Muscovy, Teutonic Order-(Poland-Lithuania)
+- `brecke-0654` — 1513–1513: Turkey (succession)
+- `brecke-0658` — 1514–1514: Hungary (peasants)
+- `brecke-0669` — 1515–1523: Muscovy-Crimean Tartars
+- `brecke-0681` — 1516–1516: Poland-Crimean Tartars
+- `brecke-0692` — 1518–1518: Turkey (Shias)
+- `brecke-0701` — 1519–1522: (Poland-Lithuania)-Muscovy
+- `brecke-0700` — 1519–1520: (Poland-Lithuania)-Teutonic Order
+- `brecke-0699` — 1519–1519: Poland-Crimean Tartars
+- `brecke-0714` — 1521–1521: Crimean and Kazan Tartars, Cossacks-Muscovy
+- `brecke-0712` — 1521–1526: Turkey-Hungary
+- `brecke-0722` — 1522–1522: Turkey-Knights of St. John (Rhodes)
+- `brecke-0728` — 1523–1524: Russia-Kazan and Crimean Tatars
+- `brecke-0749` — 1526–1528: Hungary (with Turkish and German intervention)
+- `brecke-0751` — 1526–1528: Poland-Crimean Tartars
+- `brecke-0752` — 1526–1526: Turkey (Cilicia) (Turkomans)
+- `brecke-0753` — 1526–1528: Turkey (Karaman) (Mamelukes)
+- `brecke-0761` — 1527–1529: Crimean Tartars-Muscovy
+- `brecke-0762` — 1527–1538: Hungary (succession)
+- `brecke-0763` — 1527–1531: Poland-Moldavia
+- `brecke-0779` — 1529–1533: Turkey-(Hungary-Bohemia), emperor, Florence
+- `brecke-0784` — 1530–1531: Muscovy-Kazan Tartars
+- `brecke-0796` — 1532–1533: Emperor-(Poland-Lithuania), Moldavia
+- `brecke-0799` — 1533–1533: Russia-Tatars
+- `brecke-0808` — 1534–1534: (Poland-Lithuania) (Khmelnitzky)-Crimean Tartars
+- `brecke-0809` — 1534–1537: Russia-(Poland-Lithuania)
+- `brecke-0805` — 1534–1536: Sweden-Lubeck
+- `brecke-0816` — 1535–1535: Russia-Kazan Tatars
+- `brecke-0815` — 1535–1535: Russia-Tatars
+- `brecke-0822` — 1537–1538: Turkey-emperor, Papal states
+- `brecke-0826` — 1538–1538: Turkey, Tatars-Moldavia
+- `brecke-0837` — 1540–1541: Emperor-Hungary
+- `brecke-0836` — 1540–1572: Russia-Crimean Tartars
+- `brecke-0843` — 1541–1544: Turkey-emperor, Papal states
+- `brecke-0874` — 1547–1547: Muscovy-Kazan Tatars
+- `brecke-0890` — 1550–1552: Muscovy-Kazan Tartars
+- `brecke-0901` — 1551–1562: Turkey, Transylvania-emperor, Hungary
+- `brecke-0903` — 1551–1552: Turkey-Knights of Malta (Tripoli)
+- `brecke-0906` — 1552–1552: Poland (intervention in Wallachia)
+- `brecke-0919` — 1554–1556: Muscovy-Astrakhan
+- `brecke-0918` — 1554–1559: Muscovy-Crimea
+- `brecke-0917` — 1554–1557: Muscovy-Sweden
+- `brecke-0932` — 1556–1557: Poland-Knights of Livonia
+- `brecke-0945` — 1558–1561: Muscovy-Lithuania
+- `brecke-0946` — 1558–1561: Muscovy-Sweden
+- `brecke-0949` — 1559–1565: Spain, Venice-Turkey, Tripoli
+- `brecke-0948` — 1559–1559: Turkey (succession)
+- `brecke-0963` — 1561–1571: Russia-(Poland-Lithuania)
+- `brecke-0962` — 1561–1570: Russia-Livonian Order, Denmark
+- `brecke-0976` — 1563–1570: Denmark, Poland, Lubeck-Sweden
+- `brecke-0978` — 1564–1566: Emperor-Transylvania
+- `brecke-0987` — 1565–1565: Turkey-Malta (Knights of St. John), Spain
+- `brecke-0992` — 1566–1566: Turkey-Emperor (Austria)
+- `brecke-1004` — 1568–1569: Turkey-Russia (Astrakhan)
+- `brecke-1012` — 1569–1569: Poland-Crimean Tartars
+- `brecke-1013` — 1569–1569: Russia-Tatars
+- `brecke-1026` — 1570–1573: Austria (Croatia, Hapsburg Hungary)
+- `brecke-1024` — 1570–1570: Muscovy-Novgorod
+- `brecke-1025` — 1570–1573: Turkey-Venice, Papal states
+- `brecke-1032` — 1571–1572: Crimean Tartars-Muscovy
+- `brecke-1038` — 1572–1572: Muscovy (Volga Tartars)
+- `brecke-1040` — 1572–1575: Russia-Poland
+- `brecke-1039` — 1572–1583: Russia-Sweden
+- `brecke-1042` — 1572–1574: Turkey (Moldavia)
+- `brecke-1043` — 1572–1574: Turkey, Barbary states-Spain, pope, emperor
+- `brecke-1054` — 1574–1574: Ukraine-Moldavia
+- `brecke-1061` — 1575–1576: Poland (Galicia)-Crimean Tartars
+- `brecke-1060` — 1575–1575: Transylvania
+- `brecke-1067` — 1576–1583: Emperor-Turkey
+- `brecke-1071` — 1577–1577: Poland (Danzig)
+- `brecke-1105` — 1583–1590: Poland-Turkey
+- `brecke-1127` — 1587–1588: Emperor-Poland
+- `brecke-1147` — 1590–1590: Poland (Confederation and Sapolski)
+- `brecke-1145` — 1590–1595: Russia, Lithuania-Sweden
+- `brecke-1148` — 1590–1593: Turkey-Emperor (western Hungary)
+- `brecke-1158` — 1591–1598: Crimean Tartars-Muscovy
+- `brecke-1155` — 1591–1593: Poland (Cossacks)
+- `brecke-1168` — 1593–1606: Turkey, Tartars-emperor, pope
+- `brecke-1172` — 1594–1595: Cossacks-Turkey, Tartars, Moldavia
+- `brecke-1171` — 1594–1598: Turkey (Wallachia and Moldavia, with intervention by Transylvania)
+- `brecke-1183` — 1595–1595: Poland-Turkey
+- `brecke-1184` — 1595–1606: Transylvania, Moldavia, Wallachia-Turkey
+- `brecke-1188` — 1596–1596: Poland (Cossacks of Nalivaiko)
+- `brecke-1186` — 1596–1597: Russia-Terek Cossacks
+- `brecke-1189` — 1596–1597: Sweden (Finland)
+- `brecke-1191` — 1597–1599: Poland (Cossacks of Sagaidatchny)
+- `brecke-1196` — 1598–1598: Russia-Kuchum ?
+- `brecke-1195` — 1598–1599: Sweden-Poland
+- `brecke-1202` — 1599–1600: Wallachia-Transylvania, Moldavia
+- `brecke-1203` — 1600–1600: Poland-Moldavia, Wallachia
+- `brecke-1205` — 1600–1611: Poland-Sweden
+- `brecke-1212` — 1601–1604: Emperor-Transylvania (protestants)
+- `brecke-1220` — 1604–1613: Muscovy (with intervention by Poland, Sweden, Cossacks)
+- `brecke-1227` — 1605–1606: Crimean Tartars-Muscovy
+- `brecke-1225` — 1605–1605: Poland (Cossacks of Sagaidatchny)
+- `brecke-1226` — 1605–1605: Poland-Crimean Tartars
+- `brecke-1224` — 1605–1605: Russia-Caucasus (Daghestan)
+- `brecke-1230` — 1606–1609: Poland (Gentry)
+- `brecke-1231` — 1606–1607: Russia (Cossacks)
+- `brecke-1237` — 1607–1609: Russia-Sweden
+- `brecke-1235` — 1607–1608: Transylvania (Haiduks)
+- `brecke-1238` — 1607–1609: Turkey-Cossacks (Black Sea)
+- `brecke-1241` — 1608–1612: Poland-Russia
+- `brecke-1247` — 1609–1611: Sweden-Russia
+- `brecke-1252` — 1610–1611: Russia-Sweden
+- `brecke-1251` — 1610–1614: Spain-Turkey
+- `brecke-1256` — 1611–1612: Emperor-Transylvania
+- `brecke-1267` — 1613–1613: Polish Cossacks-Turkey (Black Sea)
+- `brecke-1265` — 1613–1613: Turkey (Moldavia) (with Polish intervention)
+- `brecke-1266` — 1613–1613: Turkey (Wallachia) (with Polish intervention)
+- `brecke-1264` — 1613–1613: Turkey-Hungary
+- `brecke-1270` — 1614–1615: Emperor-Transylvania
+- `brecke-1273` — 1614–1614: Russia-Cossacks (Zarutskoi)
+- `brecke-1280` — 1615–1616: Poland (Cossack rebellion)
+- `brecke-1284` — 1616–1617: Poland-Turkey, Tartars
+- `brecke-1285` — 1616–1617: Turkey- ? (sea raids of Jean Pierre)
+- `brecke-1294` — 1617–1617: Poland (Cossack rebellion)
+- `brecke-1293` — 1617–1618: Russia-Poland
+- `brecke-1292` — 1617–1618: Sweden-Poland
+- `brecke-1300` — 1618–1619: Spain-Turkey
+- `brecke-1306` — 1619–1627: Emperor-Transylvania
+- `brecke-1311` — 1620–1621: Poland, Moldavians, Cossacks-Turkey, Tartars
+- `brecke-1316` — 1620–1622: Sweden, Estonia-Poland
+- `brecke-1330` — 1623–1625: Austria-Transylvania
+- `brecke-1331` — 1623–1625: Poland (Cossacks)
+- `brecke-1350` — 1625–1629: Sweden-Prussia, Poland
+- `brecke-1347` — 1625–1634: Turkey, Tartars-Poland, Hungary, 1625-27
+- `brecke-1348` — 1625–1626: Turkey-Cossacks (Black Sea)
+- `brecke-1354` — 1626–1627: Austria-Transylvania
+- `brecke-1359` — 1627–1627: Turkey-Cossacks (Black Sea)
+- `brecke-1360` — 1627–1645: Turkey-Moldavia
+- `brecke-1366` — 1628–1628: Poland (Cossacks of Taras)
+- `brecke-1367` — 1628–1628: Turkey-Cossacks (Black Sea)
+- `brecke-1377` — 1630–1630: Poland (Cossacks)
+- `brecke-1396` — 1632–1641: Crimean Tartars-Russia
+- `brecke-1395` — 1632–1634: Poland-Turkey
+- `brecke-1406` — 1634–1634: Poland (Cossack revolt)
+- `brecke-1425` — 1637–1638: Cossacks-Tartars (Azov)
+- `brecke-1427` — 1637–1637: Poland (Cossacks of Pavluk)
+- `brecke-1426` — 1637–1637: Turkey-Cossacks (Black Sea)
+- `brecke-1436` — 1638–1638: Denmark-Poland
+- `brecke-1435` — 1638–1638: Poland (Cossacks of Ostraniitza)
+- `brecke-1474` — 1645–1645: Transylvania-emperor
+- `brecke-1475` — 1645–1669: Turkey-Venice (assisted by France, German states) (Crete)
+- `brecke-1482` — 1646–1648: Poland-Turkey, Tatars
+- `brecke-1481` — 1646–1649: Russia-Tatars
+- `brecke-1485` — 1647–1647: Russia (Moscow)
+- `brecke-1495` — 1648–1649: Poland (Cossacks in Ukraine supported by Tartars)
+- `brecke-1497` — 1648–1654: Russia (Cossacks)
+- `brecke-1496` — 1648–1648: Russia (Moscow)
+- `brecke-1489` — 1648–1649: Turkey (Anatolia)
+- `brecke-1494` — 1648–1649: Ukraine
+- `brecke-1509` — 1650–1650: Russia (Novgorod and Pskov)
+- `brecke-1512` — 1651–1654: Poland (Cossacks) (with intervention by Tatars)
+- `brecke-1524` — 1654–1656: Russia, Cossacks-Poland
+- `brecke-1526` — 1654–1658: Turkey-Venice
+- `brecke-1531` — 1655–1656: Brandenburg-Poland
+- `brecke-1532` — 1655–1661: Sweden-Denmark, Austria, Poland, Tartars, Russia, Transylvania (with Dutch and English intervention)
+- `brecke-1537` — 1656–1656: Turkey
+- `brecke-1540` — 1657–1658: Sweden-Russia
+- `brecke-1539` — 1657–1657: Transylvania-Poland, Tartars
+- `brecke-1547` — 1658–1667: Russia, Cossacks-Poland, Tartars
+- `brecke-1548` — 1658–1662: Transylvania-Turkey, Tartars
+- `brecke-1555` — 1660–1660: Cossacks-Hungary
+- `brecke-1564` — 1662–1664: Turkey-Austria (assisted by France, Spain and German states)
+- `brecke-1572` — 1664–1666: Poland (Lubomirski revolt)
+- `brecke-1588` — 1667–1670: Don Cossacks (Stenka Razin)-Persia, Astrakhan
+- `brecke-1585` — 1667–1669: Venice-Turkey (with French participation)
+- `brecke-1594` — 1668–1669: Poland (Cossacks, aided by Tartars)
+- `brecke-1593` — 1668–1676: Russia (Solovetsky Monastery)
+- `brecke-1592` — 1668–1668: Russia (Ukraine)
+- `brecke-1601` — 1669–1669: France-Turkey
+- `brecke-1606` — 1670–1670: Austria (Hungarian rebellion)
+- `brecke-1608` — 1670–1671: Russia (Stenka Razin revolt)
+- `brecke-1619` — 1672–1675: Austria (Hungarian rebellion)
+- `brecke-1615` — 1672–1673: Turkey, Tartars, Cossacks-Poland
+- `brecke-1627` — 1674–1681: Russia (Bashkirs)
+- `brecke-1624` — 1674–1674: Russia-Cossacks, Turks, Tartars
+- `brecke-1633` — 1675–1675: Crimea-Cossacks
+- `brecke-1632` — 1675–1676: Turkey, Tartars-Poland
+- `brecke-1637` — 1677–1681: Turkey, Cossacks-Russia (Ukraine)
+- `brecke-1640` — 1678–1683: Austria (Hungary)
+- `brecke-1641` — 1678–1678: Russia-Sweden
+- `brecke-1661` — 1682–1684: Russia
+- `brecke-1665` — 1683–1699: Turkey, Hungary (until 1687), Transylvania-Austria, German states, Poland, Venice, Russia (from 1685)
+- `brecke-1684` — 1687–1689: Crimea-Cossacks
+- `brecke-1683` — 1687–1687: Russia-Crimean Tartars
+- `brecke-1685` — 1687–1687: Turkey (revolution)
+- `brecke-1686` — 1687–1687: Turkey-Venice (Athens, Morea)
+- `brecke-1696` — 1689–1689: Russia
+- `brecke-1695` — 1689–1689: Russia-Crimean Tartars
+- `brecke-1716` — 1695–1700: Russia-Turkey (Azov)
+- `brecke-1729` — 1698–1698: Russia
+- `brecke-1732` — 1699–1699: Poland (Lithuanian peasants)
+- `brecke-1736` — 1700–1721: Denmark, Saxony, Poland, Russia, Prussia, Hanover, Britain-Sweden, Turkey
+- `brecke-1737` — 1700–1706: Saxony, Poland-Sweden
+- `brecke-1745` — 1703–1711: Austria (Hungarian rebellion)
+- `brecke-1753` — 1705–1706: Russia (Astrakhan), 1705-06 ?
+- `brecke-1752` — 1705–1711: Russia (Bashkirs)
+- `brecke-1771` — 1710–1711: Turkey-Russia
+- `brecke-1776` — 1711–1711: Russia-Turkey (Moldavia, Prut River)
+- `brecke-1786` — 1714–1714: Turkey (Montenegro)
+- `brecke-1785` — 1714–1718: Venice-Turkey
+- `brecke-1792` — 1715–1717: Poland
+- `brecke-1794` — 1716–1718: Austria-Turkey
+- `brecke-1795` — 1716–1717: Russia-Khiva
+- `brecke-1811` — 1720–1721: Russia-Britain
+- `brecke-1817` — 1722–1723: Russia-Persia
+- `brecke-1818` — 1722–1724: Turkey-Persia
+- `brecke-1843` — 1730–1731: Turkey
+- `brecke-1854` — 1733–1735: France, Spain, Sardinia-Austria, Russia, Saxony, Prussia
+- `brecke-1856` — 1734–1734: Hungary (and Serbia?) (peasant rebellion)
+- `brecke-1855` — 1734–1735: Poland (Cossacks)
+- `brecke-1859` — 1735–1735: Russia (Bashkirs)
+- `brecke-1877` — 1741–1743: Sweden-Russia
+- `brecke-1914` — 1751–1753: Russia (peasants)
+- `brecke-1922` — 1754–1755: Russia (Bashkirs)
+- `brecke-1956` — 1764–1764: Russia-Poland
+- `brecke-1966` — 1768–1769: Poland (Gaidamacks in Ukraine)
+- `brecke-1967` — 1768–1772: Poland (with Russian, French, Turkish and Austrian intervention)
+- `brecke-1968` — 1768–1774: Russia-Turkey
+- `brecke-1964` — 1768–1774: Turkey, Tartars-Russia
+- `brecke-1971` — 1770–1770: Turkey (Greece)
+- `brecke-1987` — 1773–1774: Russia (Pugachev revolt)
+- `brecke-1988` — 1774–1775: Austria (peasant's revolt in Bohemia)
+- `brecke-2012` — 1783–1784: Russia-Crimea
+- `brecke-2016` — 1784–1785: Austria (Transylvania and Wallachia)
+- `brecke-2017` — 1784–1785: Russia (Caucasus)
+- `brecke-2029` — 1787–1792: Turkey-Russia, Austria, Montenegro
+- `brecke-2031` — 1788–1790: Sweden-Russia, Denmark
+- `brecke-2048` — 1792–1793: Russia, Prussia-Poland
+- `brecke-2057` — 1794–1795: Poland-Russia, Austria, Prussia
+- `brecke-2063` — 1795–1796: Persia-Georgia
+- `brecke-2069` — 1796–1797: Russia-Persia
+- `brecke-2070` — 1796–1796: Turkey-Montenegro
+- `brecke-2083` — 1800–1829: Russia (Caucasus)
+- `brecke-2092` — 1802–1803: Turkey (Suliots)
+- `brecke-2104` — 1804–1813: Russia-Persia
+- `brecke-2103` — 1804–1813: Serbia-Turkey
+- `brecke-2114` — 1806–1812: Russia-Turkey
+- `brecke-2123` — 1807–1812: Britain-Russia
+- `brecke-2124` — 1807–1807: Britain-Turkey
+- `brecke-2132` — 1808–1809: Russia, Denmark-Sweden, Finland
+- `brecke-2133` — 1808–1809: Turkey (Janissaries)
+- `brecke-2163` — 1812–1812: France-Russia
+- `brecke-2173` — 1814–1815: Turkey-Serbia
+- `brecke-2183` — 1816–1825: Russia-Georgia
+- `brecke-2208` — 1820–1822: Albania
+- `brecke-2207` — 1820–1822: Turkey-Janina
+- `brecke-2218` — 1821–1825: Crete-Turkey
+- `brecke-2217` — 1821–1824: Moldavia, Wallachia-Turkey (aided by Russia)
+- `brecke-2254` — 1825–1828: Persia-Russia (Georgia, Armenia)
+- `brecke-2253` — 1825–1826: Russia
+- `brecke-2256` — 1826–1826: Turkey
+- `brecke-2262` — 1827–1827: France, England, Russia-Turkey, Egypt
+- `brecke-2268` — 1828–1828: Turkey-Crete
+- `brecke-2278` — 1829–1840: Russia (Caucasus) (Abkhasia? Circassians?)
+- `brecke-2285` — 1830–1831: Albania, Bosnians, Herzogovinians-Turkey
+- `brecke-2284` — 1830–1831: Poland-Russia
+- `brecke-2301` — 1831–1837: Bosnia-Turkey
+- `brecke-2309` — 1832–1833: Greece
+- `brecke-2308` — 1832–1839: Russia-Circassians (Caucasus)
+- `brecke-2315` — 1833–1833: Turkey (Crete)
+- `brecke-2332` — 1835–1846: (Austria-Hungary)-Bosnians, Herzogovinians
+- `brecke-2337` — 1836–1837: Turkey-Bosnians
+- `brecke-2349` — 1838–1838: (Austria-Hungary)-Montenegro
+- `brecke-2372` — 1841–1841: Turkey (Crete)
+- `brecke-2375` — 1841–1841: Turkey-Bosnia
+- `brecke-2371` — 1841–1841: Turkey-Bulgaria
+- `brecke-2402` — 1846–1846: Poland (Galicia)-(Austria-Hungary), Prussia
+- `brecke-2423` — 1848–1849: Austria, Russia-Hungary
+- `brecke-2425` — 1848–1848: Austria-Poland (Cracow)
+- `brecke-2412` — 1848–1848: Moldavia, Wallachia-Russia, Turkey
+- `brecke-2427` — 1848–1848: Romania (Wallachia, with Russian and Turkish intervention)
+- `brecke-2438` — 1849–1850: Turkey-Bosnians
+- `brecke-2441` — 1850–1850: Turkey-Bulgarians
+- `brecke-2464` — 1852–1853: Montenegro-Turkey
+- `brecke-2496` — 1855–1859: Russia-Circassians (Caucusus)
+- `brecke-2507` — 1857–1858: Russia-Georgia
+- `brecke-2514` — 1858–1859: Montenegro-Turkey
+- `brecke-2515` — 1858–1858: Turkey (Crete)
+- `brecke-2524` — 1859–1864: Russia-Circassians (Caucasus)
+- `brecke-2530` — 1860–1861: Turkey-Herzogovina
+- `brecke-2541` — 1861–1861: Russia-Poland
+- `brecke-2540` — 1861–1862: Turkey-Montenegro
+- `brecke-2550` — 1862–1862: Greece
+- `brecke-2549` — 1862–1862: Serbia-Turkey
+- `brecke-2561` — 1863–1864: Poland, Lithuania, Byelorussia-Russia (aided by Prussia)
+- `brecke-2573` — 1864–1864: Prussia, Austria-Denmark
+- `brecke-2574` — 1864–1864: Russia-Georgia
+- `brecke-2596` — 1866–1868: Turkey-Crete (with intervention by Greece, Britain, France)
+- `brecke-2624` — 1869–1870: (Austria-Hungary)-Dalmatia
+- `brecke-2665` — 1875–1878: Bosnia, Herzegovina (aided by Montenegro, Serbia, Russia)-Turkey
+- `brecke-2666` — 1875–1876: Bulgaria-Turkey
+- `brecke-2675` — 1876–1876: Turkey
+- `brecke-2691` — 1878–1878: Bosnia, Hergezovina-(Austria-Hungary)
+- `brecke-2692` — 1878–1878: Crete (aided by Greece)-Turkey
+- `brecke-2720` — 1881–1881: (Austria-Hungary)-Bosnia, Herzegovina
+- `brecke-2735` — 1882–1882: (Austria-Hungary)-Dalmatia
+- `brecke-2761` — 1885–1886: Serbia-Bulgaria (with Austrian intervention)
+- `brecke-2783` — 1888–1889: Crete-Turkey
+- `brecke-2821` — 1893–1897: Turkey, Kurds-Armenians, 1893-97 G
+- `brecke-2856` — 1896–1898: Turkey (Crete aided by Greece)
+- `brecke-2868` — 1897–1897: Greece-Turkey
+- `brecke-2931` — 1903–1911: Macedonia (Albania)-Turkey
+- `brecke-2948` — 1905–1905: Crete-international force
+- `brecke-2949` — 1905–1906: Russia (St. Petersburg, Moscow)
+- `brecke-2950` — 1905–1905: Russia (against Jews)
+- `brecke-2951` — 1905–1911: Russia (against Jews)
+- `brecke-2972` — 1907–1907: Romania (peasants)
+- `brecke-2980` — 1908–1909: Turkey (Macedonia)
+- `brecke-2990` — 1909–1909: Romania (peasants)
+- `brecke-2991` — 1909–1918: Turkey, 1909-18 G
+- `brecke-2992` — 1909–1909: Turkey-Armenia
+- `brecke-2999` — 1910–1910: Turkey-Albania
+- `brecke-3012` — 1912–1912: Albania-Turkey
+- `brecke-3011` — 1912–1913: Montenegro, Bulgaria, Greece, Serbia-Turkey
+- `brecke-3019` — 1913–1913: Bulgaria-Serbia, Greece, Romania, Turkey
+- `brecke-3042` — 1915–1915: Britain, Australia, France-Turkey (Gallipoli)
+- `brecke-3043` — 1915–1918: Turkey-Armenia
+- `brecke-3067` — 1917–1917: Russia
+- `brecke-3068` — 1917–1917: Russia
+- `brecke-3069` — 1917–1921: Russia
+- `brecke-3066` — 1917–1917: Russia (Petrograd)
+- `brecke-3065` — 1917–1917: Russia (St. Petersburg)
+- `brecke-3071` — 1917–1920: Russia (Ukraine)
+- `brecke-3084` — 1918–1918: Bulgaria
+- `brecke-3079` — 1918–1918: Finland
+- `brecke-3080` — 1918–1920: Finland-Russia
+- `brecke-3081` — 1918–1920: Lithuania-Russia
+- `brecke-3089` — 1918–1919: Poland-Germany (Poznan)
+- `brecke-3088` — 1918–1919: Poland-Ukraine (Galicia)
+- `brecke-3082` — 1918–1920: Russia (Caucasus)
+- `brecke-3083` — 1918–1920: Russia-Britain, France, US
+- `brecke-3085` — 1918–1919: Serbia-Montenegro
+- `brecke-3101` — 1919–1920: France-Turkey
+- `brecke-3105` — 1919–1919: Hungary-Czechoslovakia, Romania
+- `brecke-3106` — 1919–1920: Latvia-Germany, Russia
+- `brecke-3096` — 1919–1919: Poland-Czechoslovakia (Teschen)
+- `brecke-3103` — 1919–1922: Turkey
+- `brecke-3102` — 1919–1921: Turkey-Armenia
+- `brecke-3116` — 1920–1920: Poland-Lithuania (Vilna)
+- `brecke-3117` — 1920–1921: Russia (Greens)
+- `brecke-3126` — 1921–1922: Finland-Soviet Union
+- `brecke-3127` — 1921–1921: Poland-Germany (Silesia)
+- `brecke-3145` — 1923–1923: Albania
+- `brecke-3140` — 1923–1923: Bulgaria
+- `brecke-3144` — 1923–1924: Greece
+- `brecke-3153` — 1925–1925: Turkey-Kurds
+- `brecke-3159` — 1926–1926: Albania (with Yugoslav intervention)
+- `brecke-3173` — 1929–1936: Soviet Union, 1929-36 G
+- `brecke-3219` — 1934–1934: Soviet Union
+- `brecke-3223` — 1935–1935: Albania
+- `brecke-3227` — 1936–1939: Soviet Union, 1936-39 G
+- `brecke-3237` — 1937–1937: USSR
+- `brecke-3243` — 1938–1939: Hungary-Slovakia, Ukraine
+- `brecke-3246` — 1939–1939: Germany-Lithuania
+- `brecke-3247` — 1939–1939: Italy-Albania
+- `brecke-3245` — 1939–1941: Soviet Union, 1939-41 G
+- `brecke-3249` — 1939–1940: Soviet Union-Finland
+- `brecke-3259` — 1941–1946: Yugoslavia (with fighting against Germany)
+- `brecke-3270` — 1943–1947: Soviet Union, 1943-47 G
+- `brecke-3271` — 1943–1957: Soviet Union, 1943-57 G
+- `brecke-3275` — 1944–1944: Albania
+- `brecke-3272` — 1944–1968: Soviet Union, 1944-68 G
+- `brecke-3276` — 1945–1948: Poland, 1945-48 G
+- `brecke-3298` — 1947–1950: Soviet Union, 1947-50 G
+- `brecke-3350` — 1955–1959: Cypriots-Britain
+- `brecke-3359` — 1956–1956: Soviet Union-Hungary
+- `brecke-3398` — 1960–1960: Turkey (students)
+- `brecke-3434` — 1963–1964: Cyprus (with intervention by Britain and UN forces)
+- `brecke-3490` — 1968–1968: Czechoslovakia-Warsaw Pact
+- `brecke-3530` — 1974–1974: Turkey-Cyprus
+- `brecke-3597` — 1984–open: Turkey (Kurds), 1984-
+- `brecke-3632` — 1989–1989: Romania
+- `brecke-3638` — 1990–1990: Soviet Union (Azerbaijan)
+- `brecke-3645` — 1991–1993: Georgia
+- `brecke-3654` — 1991–1992: Turkey (leftists)
+- `brecke-3653` — 1991–1993: Yugoslavia (Croatia)
+- `brecke-3652` — 1991–1991: Yugoslavia (Slovenia)
+- `brecke-3657` — 1992–1994: Azerbaijan-Armenia
+- `brecke-3659` — 1992–1995: Bosnia (with intervention by Croatia)
+- `brecke-3661` — 1992–1993: Georgia (Abkhazia)
+- `brecke-3660` — 1992–1992: Georgia (South Ossetia)
+- `brecke-3658` — 1992–1992: Moldova
+- `brecke-3669` — 1993–1993: Russia (Moscow)
+- `brecke-3674` — 1994–1996: Russia-Chechnya
+- `brecke-3678` — 1995–1995: Croatia
+- `brecke-3690` — 1998–1998: Georgia (Senaki revolt)
+- `brecke-3689` — 1998–1999: Yugoslavia (Kosovo)
+- `brecke-3704` — 1999–open: Russia (Dagestan), 1999-
+
+#### Brecke region 5
+
+- `brecke-0006` — 1400–1401: Mongols (Timur)-Egypt, Syria (Burji Mamluks)
+- `brecke-0011` — 1401–1401: Mongols-Iraq (revolt in Baghdad)
+- `brecke-0068` — 1408–1413: Timurids (revolt in Kirman) (Iran)
+- `brecke-0182` — 1433–1433: Egypt-Syria
+- `brecke-0276` — 1452–1452: Black Sheep Turkomans-Kirmans (east Iran)
+- `brecke-0381` — 1469–1469: White Sheep Turkomans-Black Sheep Turkomans (Kirman)
+- `brecke-0476` — 1485–1490: Turkey-Egypt (Cilicia)
+- `brecke-0571` — 1502–1502: Safavids-White Sheep Turkomans (Shurur)
+- `brecke-0602` — 1507–1507: Portugal-Persia (Hormuz)
+- `brecke-0659` — 1514–1516: Turkey-Persia
+- `brecke-0670` — 1515–1515: Portugal-Kurdistan
+- `brecke-0682` — 1516–1517: Turkey-Syria, Egypt
+- `brecke-0708` — 1520–1521: Turkey (Syria)
+- `brecke-0723` — 1522–1524: Turkey (Egypt)
+- `brecke-0741` — 1525–1525: Turkey-Yemen
+- `brecke-0754` — 1526–1526: Persia-Turkey
+- `brecke-0770` — 1528–1528: Safavids-Uzbeks (Khurasan)
+- `brecke-0793` — 1532–1535: Spain-Turkey
+- `brecke-0800` — 1533–1535: Turkey-Persia
+- `brecke-0806` — 1534–1563: Algiers-Spain,Italy (Tunis)
+- `brecke-0813` — 1535–1535: Emperor (Spain)-Algiers (Tunis), Turkey
+- `brecke-0829` — 1538–1538: Egypt-Portugal (Diu, Aden)
+- `brecke-0827` — 1538–1538: Turkey-Aden
+- `brecke-0828` — 1538–1539: Turkey-Persia
+- `brecke-0844` — 1541–1541: Emperor (Spain)-Algiers (Turkey)
+- `brecke-0852` — 1542–1544: Algiers-emperor, Spain, Italy
+- `brecke-0855` — 1543–1543: Emperor-Tlemcen
+- `brecke-0864` — 1545–1549: Turkey-Persia
+- `brecke-0875` — 1547–1547: Turkey-Portugal (Aden)
+- `brecke-0905` — 1551–1551: Turkey-Portugal (Muscat)
+- `brecke-0908` — 1552–1554: Turkey-Persia
+- `brecke-1015` — 1569–1570: Algiers-Tunis
+- `brecke-1017` — 1569–1569: Turkey-Arabia
+- `brecke-1068` — 1576–1576: Turkey-Hejaz (Morocco)
+- `brecke-1078` — 1578–1590: Turkey-Persia
+- `brecke-1094` — 1581–1581: Oman-Portugal (Muscat)
+- `brecke-1197` — 1598–1598: Safavids-Uzbegs (Khurasan)
+- `brecke-1218` — 1602–1612: Persia-Turkey
+- `brecke-1286` — 1616–1618: Turkey-Persia
+- `brecke-1324` — 1622–1622: Persia-Portugal (Hormuz)
+- `brecke-1329` — 1623–1631: Persia-Turkey
+- `brecke-1410` — 1635–1635: Turkey-Yemen
+- `brecke-1439` — 1638–1638: Turkey-Persia
+- `brecke-1491` — 1648–1648: Arabs-Portugal (Muscat)
+- `brecke-1505` — 1650–1650: Oman-Portugal (Muscat)
+- `brecke-1768` — 1709–1711: Abdalis-Persia (Herat)
+- `brecke-1797` — 1716–1716: Abdalis (coup)
+- `brecke-1807` — 1719–1747: Oman
+- `brecke-1819` — 1722–1722: Abdalis (Ghilzai)-Persia
+- `brecke-1823` — 1724–1724: Persia (massacre)
+- `brecke-1828` — 1725–1729: Persia (Ghilzais)-Turkey, Safavids
+- `brecke-1845` — 1730–1735: Persia-Turkey
+- `brecke-1885` — 1744–1746: Persia
+- `brecke-1891` — 1745–1745: Persia-Turkey
+- `brecke-1899` — 1747–1747: Oman-Persia
+- `brecke-1974` — 1770–1770: Egypt-Arabia (Mecca)
+- `brecke-1977` — 1771–1771: Egypt-Syria (Damascus)
+- `brecke-1995` — 1775–1777: Turkey-Persia
+- `brecke-2071` — 1796–1796: Durranis (Afghanistan)-Khorasan (Persia)
+- `brecke-2093` — 1802–1802: Khorasan-Durranis (Afghanistan)
+- `brecke-2105` — 1804–1804: Wahhabis-? (Mecca, Medina)
+- `brecke-2153` — 1811–1813: Egypt-Wahhabis (Arabia)
+- `brecke-2184` — 1816–1818: Egypt-Wahhabis
+- `brecke-2205` — 1820–1820: Turkey-Arabs (Aleppo)
+- `brecke-2221` — 1821–1821: Turkey-Persia
+- `brecke-2302` — 1831–1833: Egypt-Turkey (Syria) (with Russian, French and British intervention)
+- `brecke-2322` — 1834–1834: Turkey-Palestinians
+- `brecke-2353` — 1839–1845: Britain-Arabs
+- `brecke-2354` — 1839–1840: Egypt-Turkey, Maronites, Druzes (assisted by Britain and Austria)
+- `brecke-2394` — 1845–1845: Turkey, Maronites-Druzes
+- `brecke-2431` — 1848–1850: Iran (religious)
+- `brecke-2532` — 1860–1861: Syria (Lebanon) (with intervention by France)
+- `brecke-2562` — 1863–1863: Britain-Wahabis (Arabia)
+- `brecke-2614` — 1868–1868: Oman (Imamate)
+- `brecke-2746` — 1883–1884: Oman
+- `brecke-2857` — 1896–1896: Turkey-Syria (Druzes)
+- `brecke-2958` — 1905–1909: Iran (with Russian intervention)
+- `brecke-2978` — 1908–1909: Persia (with intervention by Russia)
+- `brecke-2993` — 1909–1909: Persia (Rasht and Ishfahan)
+- `brecke-3039` — 1914–1918: Britain, India-Turkey (Iraq)
+- `brecke-3054` — 1916–1916: Arabs-? (Hijaz, Saudi Arabia)
+- `brecke-3107` — 1919–1920: France-Syria
+- `brecke-3119` — 1920–1920: Britain-Iran
+- `brecke-3118` — 1920–1921: Britain-Iraq
+- `brecke-3147` — 1924–1925: Hejaz-Wahhabi (Saudi Arabia)
+- `brecke-3148` — 1924–1924: Persia
+- `brecke-3154` — 1925–1927: Syrians (Druzes and Arabs)-France
+- `brecke-3168` — 1928–1928: Yemen-Britain
+- `brecke-3210` — 1933–1933: Iraq (Assyrian Christians in Mosul)
+- `brecke-3209` — 1933–1933: Iraq-Kurds
+- `brecke-3215` — 1934–1939: Britain-Palestinians
+- `brecke-3220` — 1934–1934: Saudi Arabia-Yemen
+- `brecke-3229` — 1936–1939: Britain-Palestinians
+- `brecke-3253` — 1940–1948: Jews-Palestinians, British
+- `brecke-3260` — 1941–1941: Britain, Free France-Syria, Vichy France
+- `brecke-3262` — 1941–1941: Britain, Russia-Iran
+- `brecke-3263` — 1941–1941: Britain-Iraq
+- `brecke-3277` — 1945–1945: France-Syria, Lebanon (with British intervention)
+- `brecke-3285` — 1945–1946: Iran (Azerbaijan, with intervention by USSR)
+- `brecke-3289` — 1946–1946: Iran (southern tribesmen)
+- `brecke-3294` — 1946–1948: Russia-Iran
+- `brecke-3308` — 1948–open: Israel-Palestinians, 1948-
+- `brecke-3307` — 1948–1949: Transjordan, Egypt, Syria, Iraq, Lebanon-Israel
+- `brecke-3309` — 1948–1948: Yemen
+- `brecke-3305` — 1948–1948: Yemen Arab Republic
+- `brecke-3317` — 1949–1950: Yemen-Britain
+- `brecke-3320` — 1950–1963: South Yemen-Britain
+- `brecke-3328` — 1951–1953: Iran-Britain
+- `brecke-3336` — 1953–1953: Britain-Kuwait
+- `brecke-3335` — 1953–1954: Syria (Druzes)
+- `brecke-3341` — 1954–1954: Yemen-Aden
+- `brecke-3351` — 1955–1955: Britain, Oman-Saudi Arabia
+- `brecke-3353` — 1955–1956: Britain-Jordan
+- `brecke-3352` — 1955–1955: Yemen
+- `brecke-3358` — 1956–1958: Yemen-Aden
+- `brecke-3369` — 1957–1957: Oman (imam of Oman)
+- `brecke-3377` — 1958–1958: Iraq
+- `brecke-3378` — 1958–1958: Jordan (with British support)
+- `brecke-3376` — 1958–1958: Lebanon (with intervention by Syria, USA)
+- `brecke-3379` — 1958–1959: Oman
+- `brecke-3388` — 1959–1959: Iraq
+- `brecke-3406` — 1960–1975: Iraq, 1960-75 G
+- `brecke-3411` — 1961–1970: Iraq (Kurds)
+- `brecke-3426` — 1962–1970: Yemen (with intervention by Egypt, Saudi Arabia)
+- `brecke-3435` — 1963–1963: Iraq
+- `brecke-3437` — 1963–1967: South Yemen-Britain
+- `brecke-3436` — 1963–1963: Syria (coup)
+- `brecke-3461` — 1964–1975: Oman (Dhufar)
+- `brecke-3447` — 1964–1964: Syria
+- `brecke-3482` — 1966–1966: Syria
+- `brecke-3492` — 1968–1983: Oman (with intervention by South Yemen)
+- `brecke-3491` — 1968–1968: South Yemen
+- `brecke-3501` — 1969–1970: Egypt-Israel
+- `brecke-3504` — 1969–1970: Iran-Iraq
+- `brecke-3502` — 1969–1969: Lebanon
+- `brecke-3503` — 1969–1969: Saudi Arabia-South Yemen
+- `brecke-3512` — 1970–1970: Jordan
+- `brecke-3514` — 1970–1970: Syria (coup)
+- `brecke-3513` — 1970–1970: Syria-Jordan
+- `brecke-3515` — 1971–1971: Jordan
+- `brecke-3522` — 1972–1973: South Yemen-Yemen
+- `brecke-3525` — 1973–1973: Lebanon
+- `brecke-3533` — 1974–1975: Iraq, Iran-Kurds
+- `brecke-3539` — 1975–1990: Lebanon (with intervention by Syria)
+- `brecke-3547` — 1976–1982: Syria
+- `brecke-3560` — 1978–1979: Iran
+- `brecke-3557` — 1978–1979: Yemen (with intervention by South Yemen)
+- `brecke-3565` — 1979–1980: Iran (Kurds and other groups)
+- `brecke-3566` — 1979–1980: Iraq (Kurds)
+- `brecke-3581` — 1981–1984: Iran
+- `brecke-3582` — 1981–1989: Iran, 1981-89 G
+- `brecke-3583` — 1981–1982: Syria, 1981-82 G
+- `brecke-3592` — 1982–1982: Israel-Palestinians in Lebanon, Syria
+- `brecke-3588` — 1982–1982: Syria (Hama)
+- `brecke-3604` — 1985–1991: Iraq
+- `brecke-3608` — 1986–1986: South Yemen
+- `brecke-3607` — 1986–1986: Syria
+- `brecke-3621` — 1988–1994: Armenia-Azerbaijan (Nagorno-Karabakh)
+- `brecke-3617` — 1988–1994: Iraq (Kurds), 1988-94 G
+- `brecke-3639` — 1990–1990: Iran (Kurds)
+- `brecke-3646` — 1991–1993: Iran (Khalq)
+- `brecke-3647` — 1991–1991: Iraq (Shias)
+- `brecke-3670` — 1993–1993: Iran (Kurds)
+- `brecke-3676` — 1994–1994: Yemen
+- `brecke-3680` — 1996–1996: Iraq (Kurds)
+- `brecke-3691` — 1998–open: Yemen (tribal uprising)
+- `brecke-3709` — 2000–open: Israel-Palestine
+
+#### Brecke region 6
+
+- `brecke-0037` — 1404–1405: France-Marinid Caliphate?(Morocco)
+- `brecke-0044` — 1405–1405: Spain-Western Sahara (Cape Bogador)
+- `brecke-0082` — 1410–1410: Hafsids-Zayyanids (Algeria)
+- `brecke-0117` — 1415–1415: Moors (revolt in Mahgreb)
+- `brecke-0119` — 1415–1415: Portugal-Marinid Caliphate?(Ceuta)
+- `brecke-0190` — 1434–1434: Portugal-Marinid Caliphate?(Morocco, Cape Bojador?)
+- `brecke-0201` — 1437–1437: Portugal-Tangier
+- `brecke-0262` — 1450–1453: Spain-Portugal (Canary Islands)
+- `brecke-0300` — 1458–1459: Portugal-Morocco
+- `brecke-0334` — 1463–1476: Portugal-Morocco
+- `brecke-0429` — 1477–1477: Spain-Canary Islands
+- `brecke-0497` — 1490–1490: Spain-Canary Islands (Palma)
+- `brecke-0518` — 1494–1497: Spain-Fez, Mellilla
+- `brecke-0577` — 1503–1505: Spain-Mers-el-Kebir, Oran, Tripoli, etc
+- `brecke-0588` — 1505–1514: Morocco-Portugal
+- `brecke-0603` — 1507–1507: Portugal-Egypt (Red Sea)
+- `brecke-0614` — 1509–1509: Portugal-Egypt (Red Sea)
+- `brecke-0613` — 1509–1511: Spain-Morocco, Algiers, Tunis, Tripoli
+- `brecke-0635` — 1511–1514: Algiers-Spain (Tunis, Bone, Tlemcen)
+- `brecke-0660` — 1514–1521: Turkey (Corsairs)-Spain, Hafsids (Algiers, Djidjelli, Tlemcen)
+- `brecke-0709` — 1520–1520: Turkey-Funj (Sudan)
+- `brecke-0742` — 1525–1525: Portugal-Morocco
+- `brecke-0780` — 1529–1529: Algiers-Spain
+- `brecke-0892` — 1550–1550: Spain-pirates (Tunisia)
+- `brecke-0891` — 1550–1550: Turkey-Funj (Sudan)
+- `brecke-0921` — 1554–1554: Morocco (Sharifs)-Portugal (Fez)
+- `brecke-0933` — 1556–1560: Spain-pirates (Tunisia)
+- `brecke-0972` — 1562–1562: Morocco-Portugal (Mazagan)
+- `brecke-1079` — 1578–1578: Portugal-Morocco
+- `brecke-1092` — 1581–1581: Morocco-Tuaregs (Algeria)
+- `brecke-1120` — 1586–1586: Turkey (Egypt)
+- `brecke-1139` — 1589–1589: Turkey (Egypt)
+- `brecke-1149` — 1590–1591: Morocco-Songhay (Mali)
+- `brecke-1187` — 1595–1596: Morocco
+- `brecke-1198` — 1598–1598: Turkey (Egypt)
+- `brecke-1214` — 1601–1601: Turkey (Egypt)
+- `brecke-1244` — 1609–1609: Spain, France-Tunis
+- `brecke-1253` — 1610–1613: Morocco-Spain
+- `brecke-1303` — 1619–1619: France-Algiers
+- `brecke-1320` — 1621–1622: England-Algiers
+- `brecke-1338` — 1624–1625: England-Morocco
+- `brecke-1371` — 1629–1629: France-Morocco
+- `brecke-1415` — 1635–1635: England-Algiers
+- `brecke-1411` — 1635–1637: England-Morocco
+- `brecke-1419` — 1636–1643: France-Algiers
+- `brecke-1441` — 1638–1638: Filali (Morocco)-Morocco
+- `brecke-1440` — 1638–1638: Venice-Barbary states
+- `brecke-1452` — 1641–1641: Morocco
+- `brecke-1528` — 1655–1655: England-Tunis, Algiers
+- `brecke-1549` — 1658–1659: Turkey (Egypt)
+- `brecke-1559` — 1661–1661: France-Algiers
+- `brecke-1565` — 1662–1662: United Provinces-Algiers
+- `brecke-1574` — 1664–1666: France-Algeria (Jidjel)
+- `brecke-1575` — 1664–1666: Morocco
+- `brecke-1581` — 1666–1666: France-Tunis
+- `brecke-1582` — 1666–1667: Spain-Algiers, Tunis
+- `brecke-1596` — 1668–1668: Morocco (Dila)
+- `brecke-1600` — 1669–1672: England-Algiers
+- `brecke-1604` — 1670–1672: France-Tunis
+- `brecke-1617` — 1672–1673: Spain-Algiers
+- `brecke-1626` — 1674–1674: Morocco-Spain (Ceuta)
+- `brecke-1638` — 1677–1677: Morocco-Spain
+- `brecke-1646` — 1679–1680: United Provinces-Algiers
+- `brecke-1654` — 1681–1684: England-Algiers
+- `brecke-1653` — 1681–1681: Spain-Algiers
+- `brecke-1658` — 1682–1683: France-Algiers
+- `brecke-1659` — 1682–1692: Tunis-Venice
+- `brecke-1687` — 1687–1687: Morocco (Rifs)-Spain (Melilla)
+- `brecke-1692` — 1688–1689: France-Algiers
+- `brecke-1693` — 1688–1689: Spain-Algiers
+- `brecke-1701` — 1689–1702: Algiers, Tripoli-Morocco, Tunis
+- `brecke-1709` — 1693–1694: Spain-Algiers
+- `brecke-1713` — 1694–1694: Morocco (assisted by France)-Spain (Ceuta)
+- `brecke-1721` — 1696–1696: Morocco (Rifs)-Spain
+- `brecke-1726` — 1697–1697: Morocco (Rifs)-Spain
+- `brecke-1741` — 1701–1701: Morocco-Turkey
+- `brecke-1755` — 1705–1705: Tunis-Turkey
+- `brecke-1760` — 1708–1708: Algiers-Spain (Oran and Mers-el-Kebir)
+- `brecke-1777` — 1711–1711: Turkey (Egypt)
+- `brecke-1793` — 1715–1726: Algiers-United Provinces
+- `brecke-1810` — 1720–1720: Spain-Morocco
+- `brecke-1831` — 1727–1750: Morocco (succession)
+- `brecke-1832` — 1727–1727: Morocco-Spain (Ceuta)
+- `brecke-1834` — 1728–1729: France-Tripoli
+- `brecke-1837` — 1729–1729: Turkey (Tunis)
+- `brecke-1844` — 1730–1730: Turkey (Egypt)
+- `brecke-1852` — 1732–1732: Spain-Algiers (Oran and Mers-el-Kebir)
+- `brecke-1869` — 1739–1739: Darfur-Wadai (Chad)
+- `brecke-1878` — 1741–1741: France-Tunis
+- `brecke-1886` — 1744–1744: Ethiopia-Funj (Sudan)
+- `brecke-1900` — 1747–1747: Funj-Musabaat Arabs (Sudan)
+- `brecke-1915` — 1752–1752: Darfur-Kordofan (Sudan)
+- `brecke-1923` — 1754–1756: Algiers-Tunis
+- `brecke-1959` — 1765–1765: France-Morocco
+- `brecke-1969` — 1769–1769: Morocco-Portugal, Spain
+- `brecke-1973` — 1770–1770: Denmark-Algiers
+- `brecke-1972` — 1770–1770: France-Tunis
+- `brecke-1985` — 1772–1772: Egypt
+- `brecke-1986` — 1772–1772: Kordofan-Musabaat Arabs (Sudan)
+- `brecke-1991` — 1774–1774: Morocco-Spain (Melilla)
+- `brecke-1994` — 1775–1775: Spain-Algiers
+- `brecke-2010` — 1782–1792: Tunis-Venice
+- `brecke-2014` — 1783–1784: Spain, Portugal, Knights of Malta-Algiers
+- `brecke-2018` — 1784–1784: Funj (Sudan)
+- `brecke-2019` — 1784–1785: Kordofan-Darfur (Sudan)
+- `brecke-2027` — 1786–1786: Turkey (Egypt)
+- `brecke-2041` — 1790–1792: Morocco-Spain
+- `brecke-2073` — 1797–1797: Denmark-Tripoli
+- `brecke-2075` — 1798–1801: France-Egypt, Britain, Turkey, Russia
+- `brecke-2088` — 1801–1811: Egypt-Wahhabis (Arabia)
+- `brecke-2087` — 1801–1805: USA-Tripoli
+- `brecke-2106` — 1804–1804: Algiers (Darqawiyyah)
+- `brecke-2110` — 1805–1811: Egypt, Turkey-Britain, Egyptian rebels
+- `brecke-2127` — 1807–1807: Algiers-Tunis
+- `brecke-2154` — 1811–1818: Morocco (Berbers)
+- `brecke-2170` — 1813–1813: Algiers-Tunis
+- `brecke-2179` — 1815–1815: USA-Algiers
+- `brecke-2185` — 1816–1816: Britain, Holland-Algiers, Turkey
+- `brecke-2206` — 1820–1821: Egypt-Sudan
+- `brecke-2230` — 1822–1822: Egypt (central Sudan)
+- `brecke-2246` — 1825–1825: Britain-Algiers
+- `brecke-2245` — 1825–1825: Sardinia-Tripoli
+- `brecke-2286` — 1830–1830: Egypt-Shilluk (Sudan)
+- `brecke-2287` — 1830–1830: France-Algiers
+- `brecke-2303` — 1831–1831: Egypt-Hadendowa (Kassala in Sudan)
+- `brecke-2311` — 1832–1837: Egypt-Ethiopia (Sudan)
+- `brecke-2310` — 1832–1834: France-Algeria (Abd el Kadar)
+- `brecke-2316` — 1833–1833: Egypt (northern Sudan)
+- `brecke-2328` — 1835–1837: France-Algeria (Abd el Kadar)
+- `brecke-2333` — 1835–1835: Turkey-Tripoli
+- `brecke-2338` — 1836–1836: Egypt (Bishariyan)?
+- `brecke-2365` — 1840–1840: Egypt (Hadendowa in Sudan)
+- `brecke-2387` — 1844–1844: Egypt (Hadendowa in Sudan)
+- `brecke-2386` — 1844–1844: France-Morocco
+- `brecke-2439` — 1849–1854: France-Algeria
+- `brecke-2502` — 1856–1857: Algeria-France
+- `brecke-2523` — 1859–1860: Spain-Morocco (French and British intervention)
+- `brecke-2575` — 1864–1864: Egypt (mutiny in Sudan)
+- `brecke-2625` — 1869–1870: Egypt-Zobeir's Army
+- `brecke-2631` — 1870–1876: Egypt-Sudan, Somalia, Ethiopia
+- `brecke-2630` — 1870–1870: France-Algeria (Kabyles)
+- `brecke-2637` — 1871–1872: Algeria-France
+- `brecke-2645` — 1872–1872: Egypt-Sudan (Zubair in Bahr al-Ghazal)
+- `brecke-2651` — 1873–1875: Egypt-Darfur
+- `brecke-2652` — 1873–1874: Sudan (Zubair)-Darfur
+- `brecke-2662` — 1874–1874: Morocco (Rifs)
+- `brecke-2676` — 1876–1876: Morocco (RIfs)
+- `brecke-2693` — 1878–1879: Egypt-Slavers
+- `brecke-2701` — 1878–1878: France-Algeria
+- `brecke-2724` — 1881–1885: Britain, Egypt-Sudan
+- `brecke-2723` — 1881–1882: Egypt (with British intervention)
+- `brecke-2722` — 1881–1883: France-Algeria
+- `brecke-2721` — 1881–1882: France-Tunisia
+- `brecke-2762` — 1885–1895: Ethiopia-Egyptians (Suakins)-Sudanese (Dafurians)-Shiluks
+- `brecke-2764` — 1885–1893: France-Niger (Tuaregs)
+- `brecke-2763` — 1885–1889: Sudan (Mahdists)-Ethiopia
+- `brecke-2796` — 1890–1894: France-Sudan
+- `brecke-2801` — 1891–1891: England, Egypt-Sudan (Dongola)
+- `brecke-2800` — 1891–1891: France-Tunisia
+- `brecke-2810` — 1892–1893: Bornu (Chad)-Rabah (Zobeir's) Army
+- `brecke-2823` — 1893–1894: France-Morocco
+- `brecke-2825` — 1893–1895: France-Tuaregs (Mali)
+- `brecke-2822` — 1893–1894: Morocco-Spain (Melilla)
+- `brecke-2858` — 1896–1899: Britain, Egypt-Sudan-France
+- `brecke-2897` — 1899–1901: France-Chad (Bornu)
+- `brecke-2907` — 1900–1901: France-Algeria
+- `brecke-2920` — 1902–1914: France-Chad, Borkou, Tibesti
+- `brecke-2921` — 1902–1909: Morocco (with Spanish and French intervention)
+- `brecke-2945` — 1904–1911: France-Senussi (Libya)
+- `brecke-2973` — 1907–1907: France-Morocco
+- `brecke-2982` — 1908–1908: Morocco
+- `brecke-2994` — 1909–1910: Spain-Morocco (Melilla)
+- `brecke-3000` — 1910–1911: Morocco (Fez)-France
+- `brecke-3006` — 1911–1917: Libyans-Italy
+- `brecke-3007` — 1911–1911: Spain-Morocco
+- `brecke-3013` — 1912–1912: Morocco (Fez)
+- `brecke-3014` — 1912–1913: Morocco (South Morocco)
+- `brecke-3027` — 1914–1917: Morocco (Middle Atlas) (Zaians, with French involvement)
+- `brecke-3044` — 1915–1919: France-Sanusis (Chad)
+- `brecke-3056` — 1916–1917: France, Spain-Caids (Morocco)
+- `brecke-3055` — 1916–1917: France-Chief Kaossen (Mauritania)
+- `brecke-3109` — 1919–1919: Egypt-Britain
+- `brecke-3108` — 1919–1927: Moroccans (Rifs)-Spain, France (with support from Moors)
+- `brecke-3120` — 1920–1932: Libyans (Senussi)-Italy
+- `brecke-3121` — 1920–1924: Spain-Morocco (Rifs)
+- `brecke-3134` — 1922–1922: Egypt-Britain
+- `brecke-3139` — 1923–1923: France-Tache de Taza (Morocco)
+- `brecke-3167` — 1928–1933: France-Morocco
+- `brecke-3252` — 1940–1943: Britain, USA-Italy, Germany (Egypt, Libya)
+- `brecke-3278` — 1945–1945: France-Algeria
+- `brecke-3318` — 1949–1949: Algeria-France
+- `brecke-3327` — 1951–1952: Egypt-Britain
+- `brecke-3333` — 1952–1952: Egypt
+- `brecke-3331` — 1952–1954: Tunisians-France
+- `brecke-3338` — 1953–1956: Moroccans-France, Spain
+- `brecke-3347` — 1955–1972: Sudan (south-north)
+- `brecke-3362` — 1956–1972: Sudan, 1956-72 G
+- `brecke-3373` — 1957–1958: France-Tunisia
+- `brecke-3374` — 1957–1958: Spain-Morocco
+- `brecke-3372` — 1957–1958: Western Saharans-Spain, France
+- `brecke-3389` — 1959–1960: Morocco (Rifs)
+- `brecke-3399` — 1960–1960: Algeria (French Rightists)
+- `brecke-3415` — 1961–1961: Algeria
+- `brecke-3417` — 1961–1962: France-Morocco
+- `brecke-3416` — 1961–1961: Tunisia-France
+- `brecke-3422` — 1962–1963: Algeria
+- `brecke-3423` — 1962–1962: Algeria, 1962 G
+- `brecke-3429` — 1962–1964: Algeria-Morocco
+- `brecke-3425` — 1962–1971: Chad (with intervention by Libya and France)
+- `brecke-3464` — 1965–1971: Chad (Tibesti)
+- `brecke-3493` — 1968–1969: Chad (with French intervention)
+- `brecke-3536` — 1975–1988: Morocco, Mauritania (until 1979)-Western Saharans (aided by Algeria)
+- `brecke-3548` — 1976–1979: Chad
+- `brecke-3570` — 1980–1988: Chad
+- `brecke-3589` — 1982–open: Sudan (south), 1982-
+- `brecke-3596` — 1983–open: Sudan, 1983- G
+- `brecke-3609` — 1986–1987: Chad-Libya
+- `brecke-3631` — 1989–1994: Chad
+- `brecke-3626` — 1989–1989: Morocco-Western Sahara
+- `brecke-3628` — 1989–1989: Niger
+- `brecke-3642` — 1990–1994: Niger
+- `brecke-3649` — 1991–1991: Morocco-Western Sahara
+- `brecke-3663` — 1992–1999: Algeria
+- `brecke-3666` — 1992–open: Egypt, 1992-
+
+#### Brecke region 7
+
+- `brecke-0183` — 1433–1433: Tuaregs-Songhai (Timbuktu in Mali)
+- `brecke-0265` — 1450–1450: Benin-Oyo (Ijebu in Nigeria)
+- `brecke-0351` — 1465–1465: Songhai-Bandiagara, Hombori, Gourma
+- `brecke-0374` — 1468–1468: Gao (Songhai)-Timbuktu (Mali)
+- `brecke-0380` — 1469–1470: Songhai-Mossi, Gourmantche (Mali?)
+- `brecke-0402` — 1473–1473: Gao (Songhai)-Djenne (Mali)
+- `brecke-0422` — 1476–1476: Songhai-Bandiagara (Mali)
+- `brecke-0430` — 1477–1483: Songhai-Mossi, Gourmantche (Burkina Faso)
+- `brecke-0471` — 1484–1484: Songhai-Bandiagara, Hombori (Mali?)
+- `brecke-0488` — 1488–1488: Songhai-Gourma (Mali)
+- `brecke-0500` — 1491–1491: Kongo-Tyo (Congo)
+- `brecke-0507` — 1492–1493: Songhai-Gourma (Mali)
+- `brecke-0528` — 1495–1506: Kano-Katsina (Nigeria)
+- `brecke-0580` — 1504–1504: Benin-Udo (Nigeria)
+- `brecke-0649` — 1512–1512: Songhai-Katsina, Zaria, Kano (Nigeria)
+- `brecke-0674` — 1515–1515: Benin-Idah (Nigeria)
+- `brecke-0673` — 1515–1515: Kebbi-Songhai
+- `brecke-0893` — 1550–1550: Yoruba-Nupe (Nigeria)
+- `brecke-0922` — 1554–1554: Songhai-Katsina (Nigeria)
+- `brecke-0996` — 1566–1567: Tyo-Kongo (Congo)
+- `brecke-1027` — 1570–1570: Katsina-Kano (Nigeria)
+- `brecke-1069` — 1576–1576: Portugal-tribesmen (Accra in Ghana)
+- `brecke-1077` — 1578–1578: England-Portugal (Cape Verde Islands)
+- `brecke-1114` — 1585–1585: England-Portugal (Cape Verde Islands)
+- `brecke-1159` — 1591–1594: Tuaregs-Songhai (Mali)
+- `brecke-1208` — 1600–1600: Bornu-Katsina (Nigeria)
+- `brecke-1207` — 1600–1600: Kano-Kworofa (Nigeria)
+- `brecke-1248` — 1609–1609: Fulani-Bornu (Nigeria)
+- `brecke-1352` — 1625–1625: Abomey (Benin)-Fons
+- `brecke-1351` — 1625–1625: United Provinces-Portugal (Elmina in Ghana)
+- `brecke-1430` — 1637–1637: United Provinced-Portugal (Ghana)
+- `brecke-1431` — 1637–1642: United Provinces-Portugal (Angola, Sao Tome, Brazil)
+- `brecke-1434` — 1638–1638: United Provinces-Spain (Arguin) (Sierra Leone)
+- `brecke-1455` — 1641–1641: United Provinces-Portugal (Angola)
+- `brecke-1458` — 1642–1642: United Provinces-England (Ghana)
+- `brecke-1459` — 1642–1642: United Provinces-Portugal (Ghana)
+- `brecke-1483` — 1646–1647: (Guinea-Bissau)-Portugal
+- `brecke-1506` — 1650–1650: Yoruba-Dahomey (Benin)
+- `brecke-1522` — 1653–1653: Kwarafa-Katsina (Nigeria)
+- `brecke-1544` — 1657–1657: Denmark-Sweden (Ghana)
+- `brecke-1556` — 1660–1660: Akramu-Accra (Ghana)
+- `brecke-1560` — 1661–1661: England-Courlanders (Germans) (Gambia)
+- `brecke-1567` — 1663–1666: England-United Provinces (West Africa, Senegal, Sierra Leone)
+- `brecke-1578` — 1665–1665: Portugal-Kongo (Zaire)
+- `brecke-1589` — 1667–1667: Betsimisaraka-Sihanaka (Zaire?)
+- `brecke-1610` — 1670–1670: Kwarafa-Kano, Katsina (Nigeria?)
+- `brecke-1609` — 1670–1670: Segu-Tuaregs (Timbuktoo) (Mali)
+- `brecke-1642` — 1678–1678: France-United Provinces (Arguin) (Sierra Leone)
+- `brecke-1643` — 1678–1678: Kongo (Zaire)
+- `brecke-1647` — 1679–1679: Mata, Mompataz-Portugal (Senegal?)
+- `brecke-1662` — 1682–1682: Great Popo-Kwitta, Ardra, Whydah (Benin)
+- `brecke-1688` — 1687–1687: United Provinces-Brandenburg (Germans) (Akwida) (Ghana)
+- `brecke-1702` — 1689–1693: England-France (Gambia and Senegal)
+- `brecke-1710` — 1693–1693: Akwamu-Denmark (Ghana)
+- `brecke-1714` — 1694–1694: United Provinces-Kommenda (Ghana)
+- `brecke-1722` — 1696–1696: Ahanta-England (Ghana)
+- `brecke-1728` — 1697–1697: Portugal-Mandingo (Guinea-Bissau)
+- `brecke-1727` — 1697–1697: Portugal-Wolof (Guinea-Bissau)
+- `brecke-1730` — 1698–1698: Yoruba-Great Ardra (Nigeria and Benin?)
+- `brecke-1734` — 1699–1701: Ashanti-Denkyera (Ghana)
+- `brecke-1746` — 1703–1703: France-England (Gambia)
+- `brecke-1751` — 1704–1704: France-England (Gambia)
+- `brecke-1762` — 1708–1708: France-England (Gambia)
+- `brecke-1779` — 1711–1712: Asante? (John Conny)-England, Ahanta (Ghana)
+- `brecke-1778` — 1711–1711: English, Dutch-Brandenburgers (Germans) (Ghana)
+- `brecke-1808` — 1719–1719: Pirates-England (Gambia)
+- `brecke-1815` — 1721–1721: France-pirates (Arguin) (Sierra Leone)
+- `brecke-1821` — 1723–1723: Abomey-Allada (Benin)
+- `brecke-1824` — 1724–1724: Dahomey-Great Ardra (Benin and Nigeria)
+- `brecke-1827` — 1725–1725: Futa Jalon (Guinea) (jihad)
+- `brecke-1833` — 1727–1729: Dahomey, Abomey-England, Portugal, Whydah, Oyo (Benin)
+- `brecke-1835` — 1728–1728: Sierra Leone-England
+- `brecke-1839` — 1729–1731: Dahomey-Yoruba (Benin)
+- `brecke-1848` — 1731–1743: Bornu-Kano (Nigeria)
+- `brecke-1864` — 1737–1737: Ashanti-Wassaw (Ghana)
+- `brecke-1881` — 1742–1742: Ashanti-Denmark (Ghana)
+- `brecke-1882` — 1743–1743: Ashanti-Akwamu, Denmark (Ghana)
+- `brecke-1893` — 1745–1745: Ashanti-Dahomey (Benin and Togo)
+- `brecke-1892` — 1745–1745: England-France (Gambia)
+- `brecke-1901` — 1747–1747: Yoruba (Oyo)-Dahomey
+- `brecke-1910` — 1750–1767: Ewe (Anlo vs Krepi)
+- `brecke-1931` — 1757–1757: France-England (Ghana)
+- `brecke-1942` — 1760–1760: Ahanta-England (Ghana)
+- `brecke-1940` — 1760–1760: Biu-Fulani (Nigeria)
+- `brecke-1941` — 1760–1760: Oyo-Bornu (Nigeria)
+- `brecke-1975` — 1770–1770: Ashanti-Oyo? (Gomba) (Ghana)
+- `brecke-1998` — 1776–1784: Ewe (Anlo vs Krepi)
+- `brecke-1999` — 1776–1776: Terobe Fulani-Futa Toro, Walo, Jolof, Bondu, Galam (Nigeria)
+- `brecke-2002` — 1778–1778: Dahomey-Yoruba (Nigeria and Benin)
+- `brecke-2003` — 1779–1779: France-England (Gambia)
+- `brecke-2007` — 1781–1781: Oyo-Dahomey (Benin)
+- `brecke-2020` — 1784–1784: Dahomey-Badagri (Nigeria)
+- `brecke-2028` — 1786–1786: Dahomey-Weme (Benin)
+- `brecke-2037` — 1789–1789: Dahomey-Ketou (Benin)
+- `brecke-2042` — 1790–1801: Fulani-Hausa (Nigeria)
+- `brecke-2049` — 1792–1792: France-England (Benin)
+- `brecke-2054` — 1793–1793: Oyo-Ife, Yoruba (Nigeria)
+- `brecke-2058` — 1794–1794: France-England (Sierra Leone)
+- `brecke-2064` — 1795–1795: Katsina-Gobir (Nigeria)
+- `brecke-2084` — 1800–1802: Sierra Leone
+- `brecke-2107` — 1804–1810: Fulani-Hausa, Bornu
+- `brecke-2118` — 1806–1807: Ashanti-Fante (Ghana)
+- `brecke-2121` — 1807–1807: France-Central Africa ? (Koukou-Nor)
+- `brecke-2139` — 1809–1809: Fante-Ashanti (Ghana)
+- `brecke-2148` — 1810–1810: Senegal-Bambara
+- `brecke-2149` — 1810–1810: Yoruba (Ilorin) (Nigeria)
+- `brecke-2155` — 1811–1811: Ashanti, Akim-Fante (Ghana)
+- `brecke-2157` — 1811–1812: Fulani-Hausa (Nigeria)
+- `brecke-2156` — 1811–1811: Fulani-Oyo (Nigeria)
+- `brecke-2174` — 1814–1816: Ashanti-Fante (Ghana)
+- `brecke-2193` — 1818–1818: Ashanti-Gyaman (Ghana)
+- `brecke-2192` — 1818–1858: Dahomey-tribes
+- `brecke-2237` — 1823–1826: Ashantis (Ghana)-Britain
+- `brecke-2242` — 1824–1824: Sokoto-Bornu (Nigeria)
+- `brecke-2247` — 1825–1825: Guinea-Bissau (mutiny)
+- `brecke-2248` — 1825–1825: Portuguese Guinea (Guinea-Bissau)-Sierra Leone
+- `brecke-2258` — 1826–1826: Guinea-Bissau (mutiny)
+- `brecke-2289` — 1830–1830: Luba-Kazembe (Zaire)
+- `brecke-2304` — 1831–1841: Temne-Loko
+- `brecke-2312` — 1832–1832: Trarzas-France (Mauritania)
+- `brecke-2334` — 1835–1835: Guinea-Bissau (Miguelist revolution)
+- `brecke-2380` — 1843–1843: Fulani-Yoruba (Nigeria)
+- `brecke-2389` — 1844–1845: (Guinea-Bissau)-Portugal
+- `brecke-2388` — 1844–1844: Hausa-Bornu (Nigeria)
+- `brecke-2432` — 1848–1850: France-slave traders (Liberia)
+- `brecke-2442` — 1850–1850: Futa Jalon-Segu, Kaarta, Massina (Guinea)
+- `brecke-2452` — 1851–1851: (Guinea-Bissau)
+- `brecke-2453` — 1851–1851: Britain-Yoruba (Nigeria)
+- `brecke-2454` — 1851–1851: Dahomey-Yoruba (Nigeria)
+- `brecke-2470` — 1853–1853: (Guinea-Bissau)
+- `brecke-2471` — 1853–1853: (Guinea-Bissau)
+- `brecke-2478` — 1854–1861: France-Tukulors (Senegal, Mali)
+- `brecke-2487` — 1855–1855: Britain-Sierra Leone
+- `brecke-2491` — 1855–1855: Britain-Sierra Leone (Maligia)
+- `brecke-2490` — 1855–1855: France-Ivory Coast (Jack-Jack)
+- `brecke-2489` — 1855–1855: France-Oualo, Braknas (Mauritania)
+- `brecke-2486` — 1855–1855: Soninki-Marabout (Gambia)
+- `brecke-2488` — 1855–1855: Trarza-Oualo (Mauritania)
+- `brecke-2492` — 1855–1855: Wovea (Berber)-Bimbia (Zaire?)
+- `brecke-2503` — 1856–1858: France-Senegal (Sine-Saloun)
+- `brecke-2508` — 1857–1857: France-Fulas (Trarza?) (Senegal)
+- `brecke-2533` — 1860–1860: (Guinea-Bissau)-Portugal
+- `brecke-2542` — 1861–1861: Britain-Koya (Nigeria?)
+- `brecke-2543` — 1861–1862: Protugal-Jaga (Zaire?)
+- `brecke-2551` — 1862–1862: France-Futa (Guinea)
+- `brecke-2563` — 1863–1864: Britain-Ashanti (Ghana)
+- `brecke-2564` — 1863–1863: Tukulors-Segu (Timbuktoo, Mali)
+- `brecke-2577` — 1864–1865: Dahomey-Egba, Britain (Abeokuta, Nigeria)
+- `brecke-2576` — 1864–1864: France-Cayor (Senegal)
+- `brecke-2585` — 1865–1865: Ashantis-Britain (Ghana)
+- `brecke-2587` — 1865–1865: France-Senegal (Saloun)
+- `brecke-2586` — 1865–1865: Fula-Mandingos (Guinea)
+- `brecke-2597` — 1866–1866: Akwa-Bell (Cameroon?)
+- `brecke-2617` — 1868–1870: Arabs, Swahili-Kazembe (Zaire)
+- `brecke-2616` — 1868–1869: Britain-Ashantis (Ghana)
+- `brecke-2626` — 1869–1869: France-Cayor (Senegal)
+- `brecke-2638` — 1871–1871: Portugal-(Guinea-Bissau)
+- `brecke-2653` — 1873–1874: Ashantis (Ghana)-Britain, Kpa-Mende
+- `brecke-2668` — 1875–1875: Ashanti-Bagru (Ghana)
+- `brecke-2667` — 1875–1875: France-Toro (Senegal, Gambia)
+- `brecke-2684` — 1877–1886: Ibadan-Egbas, Ijebus, Fulani (Nigeria?)
+- `brecke-2695` — 1878–1878: Bolor-Jufunco-Portugal (Guinea?)
+- `brecke-2696` — 1878–1878: Britain-Awuna (Ghana)
+- `brecke-2697` — 1878–1878: Britain-Dahomey (Benin)
+- `brecke-2702` — 1878–1882: France-Moreah
+- `brecke-2710` — 1880–1880: Bambara-Dio (Mali)
+- `brecke-2708` — 1880–1881: France-Senegal
+- `brecke-2709` — 1880–1884: Sierra Leone
+- `brecke-2717` — 1880–1880: Tyo-Bobangi (Zaire?)
+- `brecke-2726` — 1881–1888: France-Almamy Samori (Guinea, Mali)
+- `brecke-2725` — 1881–1881: France-Bosseyabes (Guinea)
+- `brecke-2727` — 1881–1882: Nupe (rebels) (with United Africa Company involvement) (Nigeria)
+- `brecke-2728` — 1881–1881: Opabo-Kwa Ibo (Nigeria)
+- `brecke-2737` — 1882–1882: Abomey-Porto Novo (Benin)
+- `brecke-2736` — 1882–1882: Portugal-Jubada (Guinea-Bissau?)
+- `brecke-2745` — 1883–1884: Ashanti (Ghana)
+- `brecke-2741` — 1883–1883: Msidi-Other tribes (east Congo)
+- `brecke-2744` — 1883–1883: Portugal-Fula (Guinea? Saint Belchier)
+- `brecke-2754` — 1884–1885: Germany-Togo
+- `brecke-2753` — 1884–1884: Portugal-Guinea Bissau? (Jebelor, Jeboucer, Beri)
+- `brecke-2766` — 1885–1887: Chokwe-Lunda (Zaire)
+- `brecke-2765` — 1885–1886: France-Samori (Ivory Coast)
+- `brecke-2775` — 1886–1886: Adansi-Ashanti (Ghana)
+- `brecke-2776` — 1886–1886: Britain-Nigeria (Ibo?)
+- `brecke-2774` — 1886–1886: Portugal-Fulas (Guinea?)
+- `brecke-2778` — 1887–1896: Ashanti (Ghana)
+- `brecke-2784` — 1888–1891: France-Samory (Mali, Ivory Coast)
+- `brecke-2789` — 1889–1890: France-Dahomey (Benin, Nigeria)
+- `brecke-2790` — 1889–1889: Ganadu-Portugal
+- `brecke-2793` — 1890–1892: France-Senegal
+- `brecke-2794` — 1890–1898: France-Upper Volta, Niger
+- `brecke-2795` — 1890–1890: Portugal-Xime (Guinea?)
+- `brecke-2802` — 1891–1891: Msiri (Basanga revolt) (Zaire)
+- `brecke-2813` — 1892–1894: Belgium-Arabs in eastern Congo (Kasai)
+- `brecke-2811` — 1892–1892: Britain-Egbados
+- `brecke-2807` — 1892–1893: France-Dahomey (Benin)
+- `brecke-2808` — 1892–1894: France-Senegal
+- `brecke-2812` — 1892–1892: Kano (Nigeria)
+- `brecke-2809` — 1892–1892: Xime-Portugal (Guinea?)
+- `brecke-2824` — 1893–1894: Britain-Ashantis (Ghana)
+- `brecke-2831` — 1894–1895: Bissau-Portugal
+- `brecke-2830` — 1894–1895: France-Samori (Ivory Coast)
+- `brecke-2841` — 1895–1896: Britain-Ashantis (Ghana)
+- `brecke-2843` — 1895–1895: Forrea-Portugal (Guinea?)
+- `brecke-2844` — 1895–1895: France (Batetela mutiny in Zaire)
+- `brecke-2846` — 1895–1897: France-northeast Congo (Zaire)
+- `brecke-2845` — 1895–1895: Manyema (Tippu Tib)-Chokwe (Zaire)
+- `brecke-2842` — 1895–1895: Nigeria (Brass)-Britain
+- `brecke-2873` — 1897–1897: Belgium (mutiny of Congolese troops in Uvira)
+- `brecke-2869` — 1897–1897: Britain-western Nigeria (Benin)
+- `brecke-2870` — 1897–1897: Forrea-Portugal (Guinea?)
+- `brecke-2888` — 1898–1898: Belgium-Tyo (Zaire?)
+- `brecke-2885` — 1898–1898: Britain-Sierra Leone
+- `brecke-2887` — 1898–1898: Equatorial Guinea (Rio Muni)-Spain
+- `brecke-2886` — 1898–1898: France-Samori (Ivory Coast)
+- `brecke-2889` — 1898–1898: Lunda-Chokwe (Zaire)
+- `brecke-2898` — 1899–1899: France-Mali
+- `brecke-2909` — 1900–1903: Britain-Ashanti (Ghana)
+- `brecke-2910` — 1900–1900: Canhabaque-Portugal (Guinea?)
+- `brecke-2908` — 1900–1902: France-Niger (Zinder)
+- `brecke-2916` — 1901–1901: France-Baoule (Kolumbo, Ivory Coast)
+- `brecke-2915` — 1901–1901: Jufunco-Portugal (Guinea?)
+- `brecke-2924` — 1902–1902: Britain-Bornu
+- `brecke-2925` — 1902–1902: Britain-Fulani (Yolo, Zaria)
+- `brecke-2922` — 1902–1902: Britain-Nigeria (Bauchi, Bornu, Nassarawa)
+- `brecke-2923` — 1902–1902: France-Baoule (Ivory Coast)
+- `brecke-2926` — 1902–1902: France-Mauritania (Sout-el-Ma)
+- `brecke-2927` — 1902–1902: Oio-Portugal (Guinea?)
+- `brecke-2933` — 1903–1903: Britain-northern Nigeria (Hausa Muslims, Sokoto, Kano)
+- `brecke-2944` — 1904–1905: Cameroons-Germany
+- `brecke-2941` — 1904–1904: France-Conaguis
+- `brecke-2942` — 1904–1911: France-Fang, Bakota, Mitshogo (Congo?)
+- `brecke-2940` — 1904–1904: Portugal-Xura
+- `brecke-2957` — 1905–1905: Belgian Congo (insurrection in Welle district)
+- `brecke-2953` — 1905–1905: France-Agbas, Baoule, Ebries (Ivory Coast)
+- `brecke-2956` — 1905–1905: French Congo-France
+- `brecke-2952` — 1905–1905: French Guinea-France
+- `brecke-2966` — 1906–1906: Betes-France (Haut Sassandra, Ivory Coast)
+- `brecke-2965` — 1906–1906: Nigeria-Britain (Satiru)
+- `brecke-2967` — 1906–1906: Portuguese Guinea (Cuor)-Portugal
+- `brecke-2968` — 1906–1906: Sokoto (Northwest Nigeria)-Britain
+- `brecke-2964` — 1906–1906: Tiv, Jukon-Hausa (Nigeria)
+- `brecke-2983` — 1908–1908: Bissau-Portugal
+- `brecke-2984` — 1908–1908: France-Mauritania (Adrar)
+- `brecke-2995` — 1909–1909: Britain-Portugal (Lake Kivu, eastern Zaire)
+- `brecke-3008` — 1911–1911: France-Baoule (Ivory Coast)
+- `brecke-3015` — 1912–1913: Yoruba-Britain (Abeokuta, Nigeria)
+- `brecke-3022` — 1913–1918: Portugal-Congo (Zaire)
+- `brecke-3028` — 1914–1914: Benin-France (north of Porto Novo)
+- `brecke-3030` — 1914–1914: Britain, France-Germany (Togo)
+- `brecke-3031` — 1914–1916: France, Britain-Germany (Cameroon)
+- `brecke-3029` — 1914–1916: Niger-France
+- `brecke-3048` — 1915–1915: Belgium-Belgian Congo
+- `brecke-3046` — 1915–1916: Benin-France
+- `brecke-3047` — 1915–1915: France-Samori (Burkina Faso)
+- `brecke-3045` — 1915–1915: Mali-France (Beledougou, near Bamako)
+- `brecke-3058` — 1916–1916: Nikki-France (Borgou, Benin)
+- `brecke-3057` — 1916–1916: Samori-France (Koutiala and Bandiagara, Mali)
+- `brecke-3073` — 1917–1918: Ivory Coast (Dida)-France
+- `brecke-3074` — 1917–1917: Portuguese Guinea-Portugal (Bijagos Islands)
+- `brecke-3090` — 1918–1919: Adja-France (Mono, Benin)
+- `brecke-3110` — 1919–1919: Egbas-Britain (Nigeria)
+- `brecke-3254` — 1940–1940: Free French-Germany (Cameroon, Congo, Gabon)
+- `brecke-3264` — 1941–1941: Belgium-Belgian Congo (Luluabourg)
+- `brecke-3354` — 1955–1959: Cameroonians-France, Britain
+- `brecke-3380` — 1958–1960: Congo-Belgium
+- `brecke-3390` — 1959–1961: Cameroon
+- `brecke-3391` — 1959–1959: Congo (Brazzaville)-France
+- `brecke-3392` — 1959–1959: Gabon-France
+- `brecke-3400` — 1960–1965: Congo (with intervention by the UN)
+- `brecke-3408` — 1961–1974: Angola-Portugal
+- `brecke-3438` — 1963–1963: Congo (Brazzaville)
+- `brecke-3453` — 1964–1964: Gabon
+- `brecke-3456` — 1964–1965: Zaire, 1964-65 G
+- `brecke-3473` — 1966–1966: Ghana
+- `brecke-3474` — 1966–1966: Nigeria, 1966 G
+- `brecke-3476` — 1966–1966: Zaire
+- `brecke-3486` — 1967–1970: Nigeria (Biafra)
+- `brecke-3485` — 1967–1967: Zaire
+- `brecke-3505` — 1969–1979: Equatorial Guinea, 1969-79 G
+- `brecke-3510` — 1970–1970: Guinea (with Portuguese support for rebels)
+- `brecke-3553` — 1977–1983: Zaire, 1977-83 G
+- `brecke-3572` — 1980–1981: Nigeria
+- `brecke-3598` — 1984–1984: Nigeria
+- `brecke-3629` — 1989–1990: Liberia
+- `brecke-3627` — 1989–1990: Mauritania-Senegal
+- `brecke-3650` — 1991–1999: Sierra Leone
+- `brecke-3664` — 1992–1995: Liberia
+- `brecke-3671` — 1993–1993: Congo (Brazzaville)
+- `brecke-3683` — 1996–1996: Cameroon-Nigeria
+- `brecke-3684` — 1996–1997: Zaire
+- `brecke-3686` — 1997–1997: Congo (Brazzaville)
+- `brecke-3687` — 1997–open: Liberia, 1997-
+- `brecke-3688` — 1997–1997: Sierra Leone
+- `brecke-3696` — 1998–open: Congo (Brazzaville), 1998-
+- `brecke-3697` — 1998–1999: Congo (Zaire), 1998-
+- `brecke-3694` — 1998–1998: Guinea-Bissau (with intervention by Senegal and Guinea)
+- `brecke-3695` — 1998–open: Sierra Leone, 1998-
+- `brecke-3708` — 2000–open: Nigeria (Muslim vs Christian, Hausa vs Ibo)
+
+#### Brecke region 8
+
+- `brecke-0106` — 1414–1415: Ethiopia-Zaila (Somaliland)
+- `brecke-0118` — 1415–1415: Ethiopia-Ifat (Djibouti)
+- `brecke-0146` — 1422–1422: Ethiopia-Ifat (Djibouti)
+- `brecke-0152` — 1424–1424: Ifat-Jedaya (Djibouti)
+- `brecke-0165` — 1428–1428: Ethiopia-Sidama (Ethiopia?)
+- `brecke-0191` — 1434–1434: Ethiopia-Adal (Somaliland)
+- `brecke-0232` — 1445–1445: Ethiopia-Mogadishu, Adal (Somalia)
+- `brecke-0403` — 1473–1474: Ethiopia-Adal (Somaliland)
+- `brecke-0498` — 1490–1490: Changamire-Monomotapa (Mozambique and Zimbabwe)
+- `brecke-0519` — 1494–1502: Changamire-Monomotapa (Mozambique and Zimbabwe)
+- `brecke-0520` — 1494–1494: Monomotapa (Butwa)
+- `brecke-0570` — 1502–1502: Portugal-Kilwa, Mombasa
+- `brecke-0589` — 1505–1505: Mozambique-Portugal (Sofala)
+- `brecke-0590` — 1505–1506: Portugal-Zanj (Tanzania, Kenya, Somalia)
+- `brecke-0596` — 1506–1508: Malindi (Kenya)
+- `brecke-0624` — 1510–1510: Hottentots-Portugal (South Africa)
+- `brecke-0661` — 1514–1514: Kongo-Ambundu (northwest Angola)
+- `brecke-0684` — 1516–1516: Adal-Ethiopia
+- `brecke-0688` — 1517–1517: Kongo-Ambundu (northwest Angola)
+- `brecke-0687` — 1517–1517: Portugal-Zaila (Somaliland)
+- `brecke-0693` — 1518–1518: Portugal-Berbera (Somalia)
+- `brecke-0724` — 1522–1522: Portugal-Kerimba Island
+- `brecke-0755` — 1526–1526: Kongo-Portugal (northwest Angola)
+- `brecke-0764` — 1527–1527: Bali (Ethiopia)-Adal (Somaliland)
+- `brecke-0771` — 1528–1528: Kenya-Portugal (Mombasa, Mtangata, Utondwe)
+- `brecke-0781` — 1529–1543: Somaliland-Ethiopia (with Portuguese intervention in 1541)
+- `brecke-0865` — 1545–1545: Ethiopia-muslim state of Dawaro, Fatajar, Bali)
+- `brecke-0866` — 1545–1547: Galla-Dawaro (Ethiopia)
+- `brecke-0923` — 1554–1555: Ethiopia-Galla
+- `brecke-0934` — 1556–1556: Kongo-Ndongo (Angola)
+- `brecke-0943` — 1557–1557: Tigre-Turkey (Ethiopia)
+- `brecke-0942` — 1557–1557: Turkey-Portugal (Zaila, Somaliland)
+- `brecke-0953` — 1559–1559: Harar-Ethiopia
+- `brecke-0977` — 1563–1563: Ndongo-Benguella (Angola)
+- `brecke-0988` — 1565–1565: Ndongo (Angola)
+- `brecke-1000` — 1567–1567: Galla-Harar, Ethiopia
+- `brecke-1006` — 1568–1568: Holland (Kafirs)-Zanzibar
+- `brecke-1005` — 1568–1569: Jaga-Kongo (Angola?)
+- `brecke-1007` — 1568–1568: Turkey-Kenya (Cambo)
+- `brecke-1019` — 1569–1569: Harar-Galla (Ethiopia)
+- `brecke-1020` — 1569–1569: Kenya-Portugal (Pate)
+- `brecke-1018` — 1569–1569: Portugal-Monomotapa (Mozambique)
+- `brecke-1028` — 1570–1570: Zimba-others (Zimbabwe)
+- `brecke-1033` — 1571–1572: Portugal, Kongo-Jaga (northwest Angola)
+- `brecke-1034` — 1571–1574: Portugal-Mozambique (Manica)
+- `brecke-1073` — 1577–1577: Harar-Ethiopia
+- `brecke-1080` — 1578–1589: Ethiopia-Turkey
+- `brecke-1086` — 1579–1585: Ndongo-Portugal (Angola)
+- `brecke-1088` — 1580–1580: Makua-Portugal (Mozambique)
+- `brecke-1116` — 1585–1590: East Africans-Portugal (Kilwa and Mombasa)
+- `brecke-1115` — 1585–1585: Turkey-Portugal (Somalia and Kenya)
+- `brecke-1121` — 1586–1586: Ethiopia-Sidama
+- `brecke-1128` — 1587–1588: Zimba-Tanzania, Kenya, Portugal
+- `brecke-1131` — 1588–1588: Turkey-Portugal (Kenya, Pemba)
+- `brecke-1150` — 1590–1590: Ndongo, Kongo, Matamba, Jaga-Portugal (Zaire and Angola)
+- `brecke-1151` — 1590–1590: Wallo Galla-Aussa (Ethiopia)
+- `brecke-1162` — 1592–1592: Portugal-Zimba (Sena and Tete, Mozambique)
+- `brecke-1169` — 1593–1594: Portugal-Kisama (Angola)
+- `brecke-1170` — 1593–1593: Portugal-Zimba (Mozambique)
+- `brecke-1199` — 1598–1598: Netherlands-Mauritius
+- `brecke-1209` — 1600–1600: Bunyoro-Buganda (Uganda)
+- `brecke-1221` — 1604–1605: Portugal-Angola (Shilla Mbanza)
+- `brecke-1239` — 1607–1607: United Provinces-Portugal (Mozambique)
+- `brecke-1242` — 1608–1608: United Provinces-Portugal (Mozambique)
+- `brecke-1249` — 1609–1609: Portugal-Mozambique (Motoposso and Matuzianhe)
+- `brecke-1254` — 1610–1613: Monomotapa-Portugal (Zimbabwe)
+- `brecke-1258` — 1611–1615: Portugal-Mbundu (Angola)
+- `brecke-1260` — 1612–1612: Ndembu-Portugal (Angola)
+- `brecke-1274` — 1614–1641: Kongo (Angola) (succession)
+- `brecke-1275` — 1614–1614: Portugal-Mombasa (Kenya)
+- `brecke-1281` — 1615–1616: Portugal-Libollo (Angola?)
+- `brecke-1301` — 1618–1618: Portugal-Ndongo (Angola)
+- `brecke-1317` — 1620–1620: Portugal-Ndongo (Angola)
+- `brecke-1321` — 1621–1623: Portugal-Kasanje, Ngongo (Angola)
+- `brecke-1325` — 1622–1622: Wallo Galla-Amhara (Ethiopia)
+- `brecke-1333` — 1623–1623: Portugal-Jaga (Angola)
+- `brecke-1332` — 1623–1623: United Provinces-Portugal (Angola)
+- `brecke-1343` — 1624–1624: Jaga-Lunda (Bungu, Zaire)
+- `brecke-1342` — 1624–1624: United Provinces-Portugal (Angola)
+- `brecke-1355` — 1626–1627: Portugal-Mbundu (Angola)
+- `brecke-1368` — 1628–1628: Monomotapa-Portugal (Zimbabwe)
+- `brecke-1379` — 1630–1635: Mbundu-Lunda? (Matamba, Zaire)
+- `brecke-1380` — 1630–1635: Portugal-Ndembu (Angola)
+- `brecke-1381` — 1630–1630: Somali-Zaila (Somaliland)
+- `brecke-1386` — 1631–1631: Monomotapa (Zimbabwe)
+- `brecke-1387` — 1631–1631: Monomotapa-Portugal (Zimbabwe)
+- `brecke-1388` — 1631–1632: Portugal-Kenya (muslims)
+- `brecke-1398` — 1632–1632: Portugal-Karanga (Angola?)
+- `brecke-1402` — 1633–1637: Comoros Islands-Portugal
+- `brecke-1401` — 1633–1635: Dembo-Portugal (Angola?)
+- `brecke-1464` — 1643–1643: United Provinces-Portugal (Bango, Angola?)
+- `brecke-1470` — 1644–1644: Pemba-Faza (Tanzania)
+- `brecke-1469` — 1644–1644: Portugal-Ngola (Angola?)
+- `brecke-1468` — 1644–1644: United Provinces-Nzinga (Angola?)
+- `brecke-1477` — 1645–1645: Portugal-Imbangala (Angola)
+- `brecke-1478` — 1645–1645: United Provinces, Nzinga-Portugal (Massangano, Angola?)
+- `brecke-1498` — 1648–1648: Portugal-United Provinces, Kongo, Matambo (Angola)
+- `brecke-1519` — 1652–1653: Oman, Pemba-Portugal (Kenya, Tanzania)
+- `brecke-1523` — 1653–1653: United Provinces-Hottentots (South Africa)
+- `brecke-1550` — 1658–1660: United Provinces-Hottentots (South Africa)
+- `brecke-1553` — 1659–1659: Portugal (mutinies in Angola)
+- `brecke-1561` — 1661–1661: Oman, Swahili-Portugal (Mombassa, Kenya)
+- `brecke-1570` — 1663–1663: United Provinces-Portugal (Mozambique)
+- `brecke-1597` — 1668–1668: Monomotapa-Portugal (Zimbabwe)
+- `brecke-1612` — 1670–1670: Oman-Portugal (Mozambique)
+- `brecke-1611` — 1670–1671: Portugal-Ndongo (Angola)
+- `brecke-1628` — 1674–1674: France-Madagascar
+- `brecke-1644` — 1678–1678: Portugal-Pate (Kenya)
+- `brecke-1648` — 1679–1679: Oman-Portugal (Kenya)
+- `brecke-1649` — 1679–1679: Pemba-Portugal (Tanzania)
+- `brecke-1656` — 1681–1681: Changamire-Butua, Monomotapa, Portugal (Zimbabwe)
+- `brecke-1655` — 1681–1681: Matamba-Portugal (Angola)
+- `brecke-1677` — 1686–1686: France-Madagascar
+- `brecke-1678` — 1686–1686: Monomotapa (revolt by Gochu) (Zimbabwe)
+- `brecke-1679` — 1686–1686: Pate-Portugal (Kenya)
+- `brecke-1703` — 1690–1690: Changamire-Monomotapa (Zimbabwe)
+- `brecke-1711` — 1693–1693: Changamire-Portugal, Monomotapa (Zimbabwe and Mozambique)
+- `brecke-1715` — 1694–1694: Pemba-Portugal (Tanzania)
+- `brecke-1717` — 1695–1695: Changamire-Portugal (Mozambique)
+- `brecke-1723` — 1696–1698: Oman-Portugal (Mombassa, Kenya)
+- `brecke-1731` — 1698–1698: Kakonda-Portugal (Angola)
+- `brecke-1735` — 1699–1699: Oman-Portugal (Zanzibar, Tanzania)
+- `brecke-1747` — 1703–1703: Ethiopia-Macha Galla (Ethiopia)
+- `brecke-1796` — 1716–1722: Kakonda-Portugal (Angola)
+- `brecke-1840` — 1729–1729: Oman-Portugal (Kenya)
+- `brecke-1838` — 1729–1729: Portugal-Muscat Arabs (Mombasa)
+- `brecke-1858` — 1735–1735: Ethiopia-Funj (northwest Ethiopia)
+- `brecke-1887` — 1744–1744: Matamba-Portugal (Ngola, Angola)
+- `brecke-1894` — 1745–1745: Oman (east coast of Africa)
+- `brecke-1902` — 1747–1747: Kenya-Pemba (Tanzania)
+- `brecke-1911` — 1750–1750: Tembe (civil war) (South Africa)
+- `brecke-1943` — 1760–1760: Meru-Mweko (?)
+- `brecke-1978` — 1771–1771: Ethiopia (Sarbakuse)
+- `brecke-1992` — 1774–1776: Portugal-Mbailundu, Ndulu, Bihe (Angola)
+- `brecke-2004` — 1779–1779: Holland-Xhosa (South Africa)
+- `brecke-2015` — 1783–1783: Portugal-Dembos (Angola)
+- `brecke-2032` — 1788–1792: Portugal-Mosul (Angola)
+- `brecke-2055` — 1793–1795: Bantu-Boers (South Africa)
+- `brecke-2080` — 1799–1801: Boers-Xhosa (South Africa)
+- `brecke-2100` — 1803–1803: Xhosa-Hottentots, Kaffirs (South Africa)
+- `brecke-2129` — 1807–1807: Mombasa-Pate (Omanis?) (Kenya)
+- `brecke-2128` — 1807–1817: Mtetwa (Bantu)-tribes (South Africa)
+- `brecke-2158` — 1811–1819: Britain, Boers-Xhosa (South Africa)
+- `brecke-2159` — 1811–1811: Britain-France (Madagascar and Mauritius)
+- `brecke-2164` — 1812–1812: Hottentots, Kaffirs-Xhosas (South Africa)
+- `brecke-2171` — 1813–1813: Mombasa-Lamu (Omanis?) (Kenya)
+- `brecke-2194` — 1818–1819: Zulu-Ndwandwe (Bantu)
+- `brecke-2202` — 1819–1819: Britain-Xhosas (South Africa)
+- `brecke-2200` — 1819–1821: France-Senegal
+- `brecke-2201` — 1819–1828: Zulu-tribes
+- `brecke-2212` — 1820–1820: Sakalava-Merina (Madagascar)
+- `brecke-2223` — 1821–1823: Mthethwa Ngoni-Natal, Pondo, Swazi, Ngoni, Shangaa (South Africa)
+- `brecke-2222` — 1821–1821: Ndandwe Ngoni-Tsonga (South Africa)
+- `brecke-2232` — 1822–1824: Muscat-Mombassans (Kenya, Tanzania, Mozambique)
+- `brecke-2231` — 1822–1822: Portugal (uprising and mutiny in Luanda, Angola)
+- `brecke-2240` — 1823–1823: Merina-France (Madagascar)
+- `brecke-2239` — 1823–1823: Namaqua-Herrero (Namibia)
+- `brecke-2238` — 1823–1823: Sakalava-Mafia Island (Tanzania)
+- `brecke-2243` — 1824–1824: Merina-Sihanaka (Madagascar)
+- `brecke-2249` — 1825–1825: Merina-France (Madagascar)
+- `brecke-2270` — 1828–1828: Sakalava-Merina
+- `brecke-2276` — 1829–1829: France-Merina (Madagascar)
+- `brecke-2275` — 1829–1830: Muscat (Oman)-Zanzibar
+- `brecke-2290` — 1830–1830: Baputi, Bamaru, Hlubi (Basutos)-Zulus, Fingos, Griquas, Matabele (South Africa)
+- `brecke-2292` — 1830–1830: Makua-Yao (Madagascar?)
+- `brecke-2291` — 1830–1831: Matabele-Basutos?, Griquas, Koranas (South Africa)
+- `brecke-2288` — 1830–1842: Nama-Herrero (Namibia)
+- `brecke-2319` — 1833–1836: Abagaza-Portugal, Shangaa (Delagoa Bay to eastern Zimbabwe)
+- `brecke-2317` — 1833–1833: Muscat (Oman)-Zanzibar
+- `brecke-2318` — 1833–1836: Portugal-Matahaganans (Mozambique)
+- `brecke-2325` — 1834–1835: Britain, Hottentots, Boers-Kaffirs
+- `brecke-2326` — 1834–1835: Xhosa-Britain (Cape Colony, South Africa)
+- `brecke-2339` — 1836–1837: Boers-Matabele Bantu (South Africa)
+- `brecke-2340` — 1837–1837: (Ma-Kalanga)-Matabele (South Africa)
+- `brecke-2348` — 1838–1840: Boers-Zulus
+- `brecke-2369` — 1840–1840: Afrikaners-Pondo (South Africa)
+- `brecke-2368` — 1840–1840: Matabele-Kalanga, Rozwi
+- `brecke-2367` — 1840–1840: Matabele-Mashonas (South Africa)
+- `brecke-2366` — 1840–1840: Ovimbundu-Imbangala (Angola)
+- `brecke-2377` — 1842–1843: Britain-Boers (Natal, South Africa)
+- `brecke-2378` — 1842–1852: Muscat-East African coast
+- `brecke-2393` — 1845–1846: France, England-Madagascar
+- `brecke-2397` — 1846–1848: Britain-Kaffirs (South Africa)
+- `brecke-2398` — 1846–1847: Britain-Xhosas (Cape Colony, South Africa)
+- `brecke-2433` — 1848–1852: Portugal-Angola? (Bonde, Cassange, Angola?)
+- `brecke-2444` — 1850–1853: Britain-Kaffirs (South Africa)
+- `brecke-2445` — 1850–1850: Kenya (Takaungu-Gazi)
+- `brecke-2443` — 1850–1852: Portugal-Imbangala (Angola?)
+- `brecke-2456` — 1851–1852: Basutos-Kaffirs (South Africa)
+- `brecke-2457` — 1851–1853: Britain-Basutos (South Africa)
+- `brecke-2455` — 1851–1852: Britain-Hottentots (South Africa)
+- `brecke-2472` — 1853–1853: Ethiopia (Kwara-Gojjam, Begemder, Tigrai, Shoa)
+- `brecke-2480` — 1854–1854: Boers-Bantu
+- `brecke-2479` — 1854–1854: Britain-Bantu (South Africa)
+- `brecke-2481` — 1854–1854: Ethiopia-Tigre
+- `brecke-2504` — 1856–1856: Zulus
+- `brecke-2509` — 1857–1857: Pretorius Afrikaners-Orange Free State Afrikaners (South Africa)
+- `brecke-2516` — 1858–1858: Basutos, Bushmen, Koranas, Batalpin-Afrikaners (Orange Free State, South Africa)
+- `brecke-2525` — 1859–1859: Britain-Oman (Zanzibar)
+- `brecke-2535` — 1860–1869: Arabs-Africans (Gazi, Siu with British intervention) (Tanzania)
+- `brecke-2544` — 1861–1861: Ethiopia
+- `brecke-2552` — 1862–1862: Egypt-Ethiopia
+- `brecke-2565` — 1863–1870: Nama-Herrero (Namibia)
+- `brecke-2579` — 1864–1864: Barotse-Makololo (Zambia)
+- `brecke-2578` — 1864–1866: Boers-Basutos (South Africa)
+- `brecke-2588` — 1865–1865: Ethiopia-Shoa
+- `brecke-2598` — 1866–1868: Ethiopia (Gondor rebellion)
+- `brecke-2605` — 1867–1868: Britain-Ethiopia
+- `brecke-2604` — 1867–1867: Ethiopia
+- `brecke-2618` — 1868–1870: Britain?-Herero (Namibia)
+- `brecke-2615` — 1868–1878: Egypt-Eritrea
+- `brecke-2627` — 1869–1872: Ajuran, Boran Galla-Warday (Wajir, Ethiopia )
+- `brecke-2640` — 1871–1876: Ethiopia-Wallo Galla
+- `brecke-2639` — 1871–1871: Mirambo-Tabora (Tanzania)
+- `brecke-2646` — 1872–1872: Gazi-Zanzibar
+- `brecke-2654` — 1873–1873: Gazi-Zanzibar
+- `brecke-2661` — 1874–1876: Egypt-Ethiopia
+- `brecke-2669` — 1875–1875: Nyungu ya Mawe-Kirurumo (Tanzania)
+- `brecke-2677` — 1876–1877: Britain?-Secocoeni (?)
+- `brecke-2685` — 1877–1878: Britain-Kaffirs (South Africa)
+- `brecke-2686` — 1877–1878: Britain?-Galekas (?)
+- `brecke-2700` — 1878–1878: Barotseland (Zambia)
+- `brecke-2694` — 1878–1878: France-Senegal, Gambia
+- `brecke-2699` — 1878–1881: Hehe-Ngoni (Tanzania)
+- `brecke-2698` — 1878–1878: Nyungu ya Mawe-British (White Fathers) (Tanzania)
+- `brecke-2703` — 1879–1879: Britain-Zulus (South Africa)
+- `brecke-2715` — 1880–1880: Arabs, Swahili-Mombasa (Kenya)
+- `brecke-2712` — 1880–1881: Basutos (Kaffirs?)-Britain (Cape Colony)
+- `brecke-2716` — 1880–1882: Ethiopia-Galla
+- `brecke-2711` — 1880–1892: Nama-Herrero (Namibia)
+- `brecke-2713` — 1880–1881: Transvaal (Boors)-Britain
+- `brecke-2714` — 1880–1880: Uganda
+- `brecke-2729` — 1881–1882: Boers-? (western Transvaal)
+- `brecke-2738` — 1882–1882: Hehe-Nyamwezi, Ngoni (Tanzania)
+- `brecke-2734` — 1882–1889: Italy-Eritrea
+- `brecke-2749` — 1883–1885: France-Hovas (Madagascar) (with British support for Hovas)
+- `brecke-2742` — 1883–1884: Zulu (civil war) (South Africa)
+- `brecke-2750` — 1883–1884: Zululand (South Africa)
+- `brecke-2755` — 1884–1885: Barotseland (rebellion) (Zambia)
+- `brecke-2756` — 1884–1884: Maseko-Yao? (Madagascar?)
+- `brecke-2769` — 1885–1896: Britain-Arabs, Yaos (Nyasaland (Mozambique))
+- `brecke-2768` — 1885–1895: Britain-Italy (in Ethiopia and Eritrea?)
+- `brecke-2767` — 1885–1893: Uganda (religious)
+- `brecke-2782` — 1887–1894: Ethiopia (Galla and Sidama)
+- `brecke-2780` — 1887–1888: Italy-Ethiopia
+- `brecke-2781` — 1887–1889: Italy-Somalis
+- `brecke-2779` — 1887–1889: LCATC-Arabs (Tanzania)
+- `brecke-2786` — 1888–1888: Barotse-Ila (Zambia)
+- `brecke-2785` — 1888–1890: Tanganyikans (Swahili), Arabs (Zanzibar)-Germany (with assistance from Britain)
+- `brecke-2797` — 1890–1890: Germany-Bwana Heri (Tanzania)
+- `brecke-2804` — 1891–1891: Comoros Islands
+- `brecke-2803` — 1891–1893: Germany-Wahehe, (Tanzania)
+- `brecke-2815` — 1892–1893: Chagga-Germany (Moshi, Tanzania)
+- `brecke-2816` — 1892–1892: Matabele-Mashona (South Africa)
+- `brecke-2814` — 1892–1892: Uganda (with British intervention)
+- `brecke-2827` — 1893–1894: Britain-Matabele, Shonas (Zimbabwe)
+- `brecke-2826` — 1893–1894: Germany-Nama (Namibia)
+- `brecke-2828` — 1893–1893: Uganda
+- `brecke-2832` — 1894–1894: Britain-Bunyoro (Uganda)
+- `brecke-2833` — 1894–1905: France-Madagascar
+- `brecke-2834` — 1894–1898: Germans-Wahemes (Tanzania)
+- `brecke-2835` — 1894–1896: Italy-Ethiopia, Sudan
+- `brecke-2848` — 1895–1895: Britain, Makonde-Arabs (Kalonga, Malawi)
+- `brecke-2849` — 1895–1896: Britain-Boers (Transvaal, South Africa)
+- `brecke-2847` — 1895–1896: Britain-Masrui (Kenya)
+- `brecke-2850` — 1895–1899: Mozambique-Portugal
+- `brecke-2859` — 1896–1899: Britain-Mashonas, Matabele (Zimbabwe)
+- `brecke-2862` — 1896–1896: Britain-Yao, Chewa (Mozambique)
+- `brecke-2861` — 1896–1896: Britain-Zanzibar
+- `brecke-2860` — 1896–1896: Germany, Herrero, Nama-Herrero, Khoi (eastern Namibia)
+- `brecke-2871` — 1897–1900: Belgium-Batetela (Upper Congo)
+- `brecke-2872` — 1897–1897: Britain-Bunyoro, Buganda (Uganda)
+- `brecke-2879` — 1897–1899: Ethiopia-Galla
+- `brecke-2878` — 1897–1900: Ethiopia-Somalia
+- `brecke-2874` — 1897–1899: Germany (mutiny in Dirfi (Rwanda?))
+- `brecke-2877` — 1897–1898: Germany-Hehe (Tanzania)
+- `brecke-2876` — 1897–1897: Germany-Ngoni (Tanzania)
+- `brecke-2875` — 1897–1901: Sudanese mercenaries in Uganda and Kenya-Britain
+- `brecke-2892` — 1898–1898: Britain, Portugal-Yao (Mozambique)
+- `brecke-2891` — 1898–1898: Britain-Ngoni (Zambia)
+- `brecke-2890` — 1898–1900: Kenya (Masai civil war)
+- `brecke-2903` — 1899–1899: Britain-Arabs (Malawi)
+- `brecke-2902` — 1899–1899: Britain-Kazembe (?)
+- `brecke-2900` — 1899–1901: Britain-Uganda
+- `brecke-2901` — 1899–1899: Comoros Islands
+- `brecke-2904` — 1899–1905: Somalis-Britain, Italy, Ethiopia
+- `brecke-2905` — 1899–1900: Tanzania-Germany
+- `brecke-2914` — 1901–1901: Britain-Nigeria (Aros, Kantogoro, Nupe)
+- `brecke-2930` — 1902–1903: Burundi (anarchy and terrorism)
+- `brecke-2928` — 1902–1902: Portugal-? (Barue, ?)
+- `brecke-2929` — 1902–1902: Portugal-Angola (central Angola)
+- `brecke-2934` — 1903–1903: Germany-Burundi
+- `brecke-2932` — 1903–1907: Germany-Herreros, Nama, Bondzelwarts (Namibia)
+- `brecke-2946` — 1904–1905: France-Madagasgar
+- `brecke-2943` — 1904–1905: Nama-Germany (Namibia, Angola)
+- `brecke-2954` — 1905–1905: Britain-Nandi (Kenya)
+- `brecke-2955` — 1905–1907: Tanganyikans (Maji-Maji)-Germany
+- `brecke-2970` — 1906–1910: Portugal-Mozambique
+- `brecke-2969` — 1906–1906: Zulus-Britain (Natal? South Africa)
+- `brecke-2974` — 1907–1910: Angola (Dembo)-Portugal
+- `brecke-2975` — 1907–1907: Germany-? (Namibia)
+- `brecke-2985` — 1908–1912: Burundi
+- `brecke-2986` — 1908–1912: Portugal-Yao (Mozambique)
+- `brecke-2996` — 1909–1909: Ethiopia-Boran Galla (Wajir)
+- `brecke-3001` — 1910–1911: Portugal-Kasanje, Mahungo (Angola)
+- `brecke-3021` — 1913–1913: Bakongo-Portugal
+- `brecke-3020` — 1913–1920: Britain-Somalis (Dervishes)
+- `brecke-3038` — 1914–1917: Britain, India, South Africa-Germany (Tanzania)
+- `brecke-3033` — 1914–1918: Britain-Germany (Tanzania, Zambia)
+- `brecke-3032` — 1914–1916: Germany-Belgium (Rwanda)
+- `brecke-3034` — 1914–1915: Germany-Britain (South Africa)
+- `brecke-3035` — 1914–1914: South Africa (Transvaal)
+- `brecke-3036` — 1914–1914: Uganda (Abamalaki separatists)
+- `brecke-3049` — 1915–1915: Malawi-Britain
+- `brecke-3059` — 1916–1916: Ethiopia
+- `brecke-3075` — 1917–1917: Portugal?-? (Barue, ?)
+- `brecke-3122` — 1920–1920: Britain-Somaliland ("Mad Mullah")
+- `brecke-3135` — 1922–1922: South Africa
+- `brecke-3149` — 1924–1924: Bondelswarts Hottentots-Britain (Namibia)
+- `brecke-3160` — 1926–1926: Namibia (Bastards)
+- `brecke-3181` — 1930–1930: Ethiopia
+- `brecke-3221` — 1934–1934: Italy-Ethiopia (Ualual)
+- `brecke-3250` — 1939–1941: Ethiopia (with British assistance)-Italy
+- `brecke-3255` — 1940–1941: Italy-Britain (Ethiopia and Somaliland)
+- `brecke-3267` — 1942–1942: Britain-Germany (Madagascar)
+- `brecke-3265` — 1942–1942: Ethiopia (tribal clashes at Kenya border)
+- `brecke-3266` — 1942–1942: Uganda (Kitawala revolt)
+- `brecke-3287` — 1946–1946: Britain-Eritrea
+- `brecke-3300` — 1947–1948: France-Madagascar
+- `brecke-3319` — 1949–1949: South Africa (Durban)
+- `brecke-3330` — 1952–1956: Kenyans (Mau-Mau)-Britain
+- `brecke-3332` — 1952–1952: South Africa (Kimberly)
+- `brecke-3381` — 1958–1958: Britain-Malawi
+- `brecke-3385` — 1959–1961: Rwanda
+- `brecke-3386` — 1959–1959: South Africa (Durban)
+- `brecke-3403` — 1960–1960: Angola-Portugal
+- `brecke-3401` — 1960–1960: Somalia-Ethiopia
+- `brecke-3404` — 1960–1960: South Africa (Durban and Sharpeville)
+- `brecke-3402` — 1960–1960: Uganda-Britain
+- `brecke-3409` — 1961–1962: Angola, 1961-62 G
+- `brecke-3412` — 1961–1991: Ethiopia (Eritrea) (with Cuban intervention)
+- `brecke-3410` — 1961–1961: Zambia
+- `brecke-3432` — 1962–1963: Burundi (with intervention by Rwanda)
+- `brecke-3440` — 1963–1964: Egypt-Somalia, 1963-64 ?
+- `brecke-3442` — 1963–1964: Rwanda (with intervention from Burundi), 1963-64 G
+- `brecke-3439` — 1963–1968: Somalia-Ethiopia
+- `brecke-3441` — 1963–1967: Somalia-Kenya
+- `brecke-3450` — 1964–1964: Kenya (with British intervention)
+- `brecke-3454` — 1964–1974: Mozambique-Portugal
+- `brecke-3452` — 1964–1964: Sudan
+- `brecke-3451` — 1964–1964: Sudan-Uganda
+- `brecke-3448` — 1964–1964: Tanzania (Zanzibar) (with British intervention)
+- `brecke-3449` — 1964–1964: Uganda (with British intervention)
+- `brecke-3455` — 1964–1964: Zambia
+- `brecke-3469` — 1965–1973: Burundi, 1965-73 G
+- `brecke-3468` — 1965–1965: Zaire-Uganda
+- `brecke-3475` — 1966–1989: South Africa-Namibia
+- `brecke-3477` — 1966–1966: Sudan-Chad
+- `brecke-3472` — 1966–1966: Uganda
+- `brecke-3483` — 1966–1979: Zimbabwe
+- `brecke-3496` — 1968–1968: Sudan-Uganda, 1968 ?
+- `brecke-3519` — 1971–1979: Uganda, 1971-79 G
+- `brecke-3520` — 1971–1971: Uganda-Tanzania
+- `brecke-3521` — 1972–1972: Burundi (Hutus)
+- `brecke-3523` — 1972–1972: Uganda-Tanzania
+- `brecke-3531` — 1974–1974: Ethiopia
+- `brecke-3532` — 1974–1979: Ethiopia, 1974-79 G
+- `brecke-3544` — 1975–1991: Angola (with intervention by South Africa and Cuba), 1975-95 G
+- `brecke-3534` — 1975–1991: Ethiopia (Tigre)
+- `brecke-3549` — 1976–1993: South Africa
+- `brecke-3550` — 1977–1977: Ethiopia (Addis Ababa)
+- `brecke-3551` — 1977–1977: Ethiopia (Ogaden)
+- `brecke-3555` — 1978–1979: Ethiopia (Ogaden)
+- `brecke-3556` — 1978–1979: Uganda-Tanzanians
+- `brecke-3563` — 1979–1992: Mozambique
+- `brecke-3564` — 1979–1986: Uganda, 1979-86 G
+- `brecke-3571` — 1980–1988: Ethiopia-Somalia
+- `brecke-3576` — 1980–1992: Mozambique, 1980-92 G
+- `brecke-3575` — 1980–1986: Uganda
+- `brecke-3584` — 1981–1987: Zimbabwe (Matabeleland and Midlands)
+- `brecke-3586` — 1982–1991: Somalia (Somaliland)
+- `brecke-3599` — 1984–1988: Ethiopia, 1984-88 ? G
+- `brecke-3610` — 1986–1991: Uganda
+- `brecke-3616` — 1988–1988: Burundi, 1988 G
+- `brecke-3618` — 1988–1992: Somalia
+- `brecke-3630` — 1989–1989: Comoros
+- `brecke-3641` — 1990–1992: Burundi
+- `brecke-3640` — 1990–1994: Rwanda
+- `brecke-3648` — 1991–1994: Djibouti
+- `brecke-3665` — 1992–1995: Angola
+- `brecke-3672` — 1993–open: Somalia, 1993-
+- `brecke-3675` — 1994–1994: Rwanda, 1994 G
+- `brecke-3679` — 1995–open: Burundi, 1995-
+- `brecke-3685` — 1996–open: Uganda (near Sudan), 1996-
+- `brecke-3699` — 1998–open: Angola, 1998-
+- `brecke-3692` — 1998–1999: Ethiopia-Eritrea
+- `brecke-3698` — 1998–1998: Lesotho (with South African intervention)
+
+#### Brecke region 9
+
+- `brecke-0024` — 1402–1402: Turkey-India (Turco?)
+- `brecke-0069` — 1408–1408: Uzbekistan (coup in Samarkand)
+- `brecke-0077` — 1409–1424: China (Ming)-Mongols (Mongolia)
+- `brecke-0107` — 1414–1415: Mongols (Tartars)-China (Mongolia)
+- `brecke-0139` — 1420–1420: Shiban Khanate-Siber Khanate (Uzbekistan)
+- `brecke-0281` — 1454–1460: Uzbeks-Persia
+- `brecke-0349` — 1465–1465: Russia-Ugrians
+- `brecke-0375` — 1468–1468: Shiban Khanate (with intervention by Nogai) (Uzbekistan)
+- `brecke-0458` — 1481–1481: Siberian Tartars-Kazan Tartars
+- `brecke-0465` — 1483–1483: Muscovy-Ugrians
+- `brecke-0540` — 1497–1497: Mughals-Timurids, (with Uzbek intervention) (Samarkand)
+- `brecke-0551` — 1499–1500: Muscovy-Ugrians
+- `brecke-0558` — 1501–1501: Ardabil-Persia
+- `brecke-0563` — 1501–1507: Uzbeks-Timurids
+- `brecke-0626` — 1510–1512: Uzbeks (Khorasan)-Persia (Safavids) (Marv)
+- `brecke-0638` — 1511–1514: Uzbeks-Timurids (Babur) (Bukhara)
+- `brecke-0729` — 1523–1526: Persia (Safavids)-Uzbeks
+- `brecke-0756` — 1526–1528: Persia-Uzbeks (Khurasan)
+- `brecke-0975` — 1563–1563: Russia-Siberian Tsar
+- `brecke-1081` — 1578–1581: Muscovy-Siberian Tartars
+- `brecke-1093` — 1581–1585: Muscovy-Siberian Tatars
+- `brecke-1123` — 1586–1598: Russia-Tartars (Siberia)
+- `brecke-1133` — 1588–1598: Persia-Uzbeks
+- `brecke-1146` — 1590–1590: Russia-Pelym Mansi (Urals)
+- `brecke-1156` — 1591–1591: Russia-Konda Mansi
+- `brecke-1176` — 1594–1632: China (Qing)-Mongolia (Mongolia)
+- `brecke-1185` — 1595–1596: Russia-Selkups
+- `brecke-1204` — 1600–1600: Russia, (Komi-Zyrians)-Samoyeds (Siberia)
+- `brecke-1215` — 1601–1601: Russia-Nanets Samoyeds (Mangazeya)
+- `brecke-1222` — 1604–1604: Russia-Nanets Samoyeds (Mangazeya)
+- `brecke-1232` — 1606–1606: Russia-Khanty tribes (middle Ob)
+- `brecke-1233` — 1606–1606: Russia-Nanets Samoyeds (Mangazeya)
+- `brecke-1243` — 1608–1608: Russia-Khanty tribes
+- `brecke-1255` — 1610–1633: Russia-Tungus, Kets (central Siberia)
+- `brecke-1287` — 1616–1616: Russia-Khanty tribes
+- `brecke-1327` — 1622–1623: Russia-Samoyeds
+- `brecke-1382` — 1630–1630: Russia-Tuba Kirgiz, Altan Khan, Taiji (Oirats) (south central Siberia)
+- `brecke-1389` — 1631–1631: Russia-Buryats (central Siberia)
+- `brecke-1403` — 1633–1634: Russia-Buryats (central Siberia)
+- `brecke-1405` — 1633–1634: Russia-Yakuts (central Siberia)
+- `brecke-1420` — 1636–1636: Russia-Yakuts (central Siberia)
+- `brecke-1454` — 1641–1641: Russia-Buryats (central Siberia)
+- `brecke-1453` — 1641–1641: Russia-Yakuts
+- `brecke-1466` — 1643–1643: Russia-Tungus (Lake Baikal)
+- `brecke-1465` — 1643–1646: Siberian Cossacks-China
+- `brecke-1471` — 1644–1646: Russia-Buryats (central Siberia)
+- `brecke-1486` — 1647–1658: Russia-China, Korea (Amur)
+- `brecke-1499` — 1648–1653: Persia, Turkey-Moguls (India)
+- `brecke-1510` — 1650–1651: Russia-Dahurs, Juchers, Manchus (Amur)
+- `brecke-1520` — 1652–1652: Russia-Buryats (east of Lake Baikal)
+- `brecke-1521` — 1652–1652: Russia-Gilyaks (southeastern Siberia)
+- `brecke-1527` — 1654–1654: Russia-Lamut Tungas (eastern Siberia)
+- `brecke-1533` — 1655–1655: Russia (Cossack revolt in central Siberia)
+- `brecke-1551` — 1658–1658: Russia-Buryats (central Siberia)
+- `brecke-1552` — 1658–1658: Russia-China (Amur)
+- `brecke-1571` — 1663–1663: Russia-Altan Khan (Tuva)
+- `brecke-1580` — 1665–1665: Russia (Cossack revolt in central Siberia)
+- `brecke-1579` — 1665–1665: Russia-Lamut Tungas (eastern Siberia)
+- `brecke-1584` — 1666–1669: Russia-Nanets Samoyeds (Mangazeya)
+- `brecke-1590` — 1667–1667: Oirat Mongols-Altan Khan (central Siberia)
+- `brecke-1602` — 1669–1669: Russia-Koraks (eastern Siberia near Magaden)
+- `brecke-1613` — 1670–1670: China-Russia (Amur)
+- `brecke-1639` — 1677–1677: Russia-Lamut Tungas (eastern Siberia)
+- `brecke-1650` — 1679–1679: Russia, Samoyeds-Taz Samoyeds
+- `brecke-1657` — 1681–1682: Russia-Yakuts (central Siberia)
+- `brecke-1667` — 1683–1684: Russia-China (eastern Siberia)
+- `brecke-1671` — 1684–1685: Russia, Lamut Tungus-Koraks (eastern Siberia)
+- `brecke-1670` — 1684–1684: Russia-Yakuts (central Siberia)
+- `brecke-1674` — 1685–1685: Russia-China
+- `brecke-1694` — 1688–1688: Oirat Mongols-Khalkas (Mongolia)
+- `brecke-1697` — 1689–1689: Russia-China (Amur)
+- `brecke-1704` — 1690–1690: Oirat Mongols-China
+- `brecke-1705` — 1690–1692: Russia-Kirgiz (south central Siberia)
+- `brecke-1707` — 1691–1691: Russia-Tabunut Mongols, Khori Mongols (Lake Baikal)
+- `brecke-1719` — 1695–1698: Russia (Cossack revolt in southeast Siberia)
+- `brecke-1718` — 1695–1696: Russia-Buryats (Irkutsk)
+- `brecke-1725` — 1696–1697: China-Mongols
+- `brecke-1724` — 1696–1696: Russia-Kamchatka
+- `brecke-1738` — 1700–1701: Russia-Kirgiz (south central Siberia)
+- `brecke-1742` — 1701–1701: Russia-Chukchis (eastern Siberia)
+- `brecke-1748` — 1703–1703: Russia-Kirgiz
+- `brecke-1757` — 1706–1707: Russia-Itelmens (Kamchatka)
+- `brecke-1764` — 1708–1708: Russia, Kalmyks-Bashkirs (western Siberia)
+- `brecke-1763` — 1708–1709: Russia-Chukchis (eastern Siberia)
+- `brecke-1765` — 1708–1715: Russia-Koraks (Kamchatka)
+- `brecke-1772` — 1710–1710: Kalmuks-Kashgaria
+- `brecke-1780` — 1711–1711: Russia-Chukchis (eastern Siberia)
+- `brecke-1781` — 1711–1711: Russian Cossacks-Itelmens (Kamchatka)
+- `brecke-1784` — 1713–1713: Russia, Itelmens-Avacha Itelmens (Kamchatka)
+- `brecke-1787` — 1714–1714: Russia-Yukagirs, Koraks (Kamchatka)
+- `brecke-1820` — 1722–1722: Russia-Tatars (Tara, western Siberia)
+- `brecke-1842` — 1729–1731: Russia-Chukchi (eastern Siberia)
+- `brecke-1850` — 1731–1731: China (Qing)-Dzungars (western Mongolia)
+- `brecke-1851` — 1731–1731: Dzungars-Khalka Mongols (Mongolia)
+- `brecke-1849` — 1731–1732: Russia-Itelmens (Kamchatka)
+- `brecke-1867` — 1738–1738: Chukchi-Koraks (eastern Siberia)
+- `brecke-1873` — 1740–1740: Afsharids-Bukhara
+- `brecke-1879` — 1741–1742: Russia-Itelmens (Kamchatka)
+- `brecke-1889` — 1744–1747: Russia-Chukchis (eastern Siberia)
+- `brecke-1895` — 1745–1756: Russia-Koraks (Kamchatka)
+- `brecke-1896` — 1746–1746: Russia-Chukchis, Koraks, Yukagirs, Itelmens (northeast Kamchatka)
+- `brecke-1916` — 1752–1752: Russia-Koraks (eastern Siberia)
+- `brecke-1920` — 1753–1758: China-Altai tribes (central Siberia)
+- `brecke-1918` — 1753–1754: Russia-Koraks (eastern Siberia)
+- `brecke-1926` — 1755–1757: China-Dzoungars (northwest China)
+- `brecke-2038` — 1789–1804: Suliots-Janin (muslim Asia?)
+- `brecke-2261` — 1826–1828: China (Muslims in East Turkestan)
+- `brecke-2293` — 1830–1830: China-Kokand (West Turkestan) (Kirghistan)
+- `brecke-2355` — 1839–1840: Russia-Khiva (Uzbekistan)
+- `brecke-2411` — 1847–1848: China (Kashgaria) (East Turkestan)
+- `brecke-2409` — 1847–1853: Russia-Kazakhs
+- `brecke-2446` — 1850–1850: Russia-Kokand (Kirghistan)
+- `brecke-2463` — 1852–1852: Russia-Kokand (Kirghistan)
+- `brecke-2462` — 1852–1864: Russia-Turkestan
+- `brecke-2473` — 1853–1853: Russia-Turkestan (Akh-Mechet)
+- `brecke-2482` — 1854–1860: Russia-China (Maritime Province)
+- `brecke-2510` — 1857–1857: China-Kokand (Kashgaria) (Kirghistan)
+- `brecke-2534` — 1860–1866: Russia-Turkestan (Kokand) (Kirghistan)
+- `brecke-2571` — 1863–1878: China (Muslims in Turkestan)
+- `brecke-2590` — 1865–1868: Russia-Bokhara (Tadjikistan, Uzbekistan)
+- `brecke-2589` — 1865–1868: Russia-Uzbekistan (Bokhara)
+- `brecke-2634` — 1870–1870: Russia-Shakrisabs (?)
+- `brecke-2641` — 1871–1871: Russia-Kulja (?) (Turkestan?)
+- `brecke-2650` — 1873–1873: Russia-Khiva (Uzbekistan)
+- `brecke-2655` — 1873–1876: Russia-Kokand (West Turkestan) (Kirghistan)
+- `brecke-2670` — 1875–1876: Russia-Turkestan (Kokand)
+- `brecke-2687` — 1877–1881: Russia-Turkomans (Turkmenistan)
+- `brecke-2757` — 1884–1884: Russia-Turkomans (Turkmenistan)
+- `brecke-2770` — 1885–1885: Russia-Afghanistan
+- `brecke-2853` — 1895–1895: China-Dongas, 1895 ?
+- `brecke-2863` — 1896–1896: Russia (Chinese outlaws)
+- `brecke-2884` — 1898–1898: Russia-Ishan?
+- `brecke-2912` — 1900–1900: Russia (Blagoveshchensk)
+- `brecke-3061` — 1916–1916: Kirghiz-Russia
+- `brecke-3060` — 1916–1916: Russia-Turkestan 1916
+- `brecke-3070` — 1917–1917: Russia (Irkutsk)
+- `brecke-3091` — 1918–1924: Russia (Siberia, Turkestan)
+- `brecke-3092` — 1918–1920: Russia-Czechs
+- `brecke-3093` — 1918–1925: Russia-Japan
+- `brecke-3131` — 1921–1922: Russia-Yakuts
+- `brecke-3136` — 1922–1922: Bukhara-Bolsheviks (Bukhara)
+- `brecke-3174` — 1929–1929: Soviet Union (Buryats) (Lake Baikal)
+- `brecke-3197` — 1931–1934: China, Soviet Union-Turkestan
+- `brecke-3506` — 1969–1969: China-Soviet Union (Ussuri)
+- `brecke-3662` — 1992–1993: Tadjikistan
+
+#### Unclassified
+
+- `brecke-3235` — 1937–1945: Japan, Germany-US,USSR,Britain, China,others
+
+## Interpretation limits
+
+- Wikidata P17 is a source-asserted jurisdiction claim, not modern sovereign truth or guaranteed battlefield geography.
+- Region counts are non-exclusive when a candidate has claims in more than one mapped lane; unmapped QIDs are preserved rather than guessed.
+- Missing coordinates make strict deduplication indeterminate, not evidence that two same-name events are distinct.
+- Brecke aliases use exact normalized matching only; plural, spelling, and fuzzy variants are intentionally not merged.
+- Automated extraction never approves rating data. Unknown is not a draw.
