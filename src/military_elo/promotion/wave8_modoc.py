@@ -34,6 +34,7 @@ from .common import _slug, normalize_label
 from .wave7_global import canonical_hced_row_sha256
 from .wave8_exact import (
     install_exact_entities,
+    operationalize_campaign_outcomes,
     install_exact_sources,
     promote_exact_hced_contracts,
     validate_exact_hced_inventory,
@@ -1465,6 +1466,7 @@ def _apply_event_review(events: list[dict[str, Any]]) -> None:
                 "force or the result of the whole war. "
                 + str(contract["audit_note"])
             )
+            operationalize_campaign_outcomes(event)
             for participant in event["participants"]:
                 if participant["side"] == "side_a":
                     participant["termination"] = "campaign_victory"

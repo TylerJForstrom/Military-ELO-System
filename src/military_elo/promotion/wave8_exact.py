@@ -98,6 +98,44 @@ def _entity_covers(entity: Mapping[str, Any], low: int, high: int) -> bool:
     return start is not None and int(start) <= low and (end is None or int(end) >= high)
 
 
+# Operational outcome vectors for lane-reclassified campaign events, mirroring
+# the reviewed Chadian urban-campaign convention. An exact-contract event that
+# a lane reclassifies from "engagement" to "campaign" moves to the operational
+# rating track, so its participants must carry the operational dimension set:
+# leaving the tactical vector in place makes the release audit warn on every
+# dimension of every participant.
+_OPERATIONAL_CAMPAIGN_WIN: dict[str, float] = {
+    "campaign_objective": 0.86,
+    "theater_control": 0.82,
+    "force_preservation": 0.72,
+    "tempo_initiative": 0.84,
+    "logistics_sustainment": 0.78,
+}
+_OPERATIONAL_CAMPAIGN_LOSS: dict[str, float] = {
+    key: round(1.0 - value, 2) for key, value in _OPERATIONAL_CAMPAIGN_WIN.items()
+}
+
+
+def operationalize_campaign_outcomes(event: dict[str, Any]) -> None:
+    """Swap a reclassified campaign event's outcome vectors to operational.
+
+    Side A is the winner side for every exact-contract win emission; no lane
+    reclassifies a drawn engagement to a campaign, and this fails closed if
+    one ever does rather than inventing a drawn operational vector.
+    """
+    for participant in event["participants"]:
+        if "inconclusive" in str(participant.get("termination", "")):
+            raise ValueError(
+                f"campaign reclassification of a drawn engagement is not "
+                f"supported: {event['id']}"
+            )
+        participant["outcome"] = dict(
+            _OPERATIONAL_CAMPAIGN_WIN
+            if participant["side"] == "side_a"
+            else _OPERATIONAL_CAMPAIGN_LOSS
+        )
+
+
 def promote_exact_hced_contracts(
     hced_rows: list[dict[str, Any]],
     release_entities: Mapping[str, Mapping[str, Any]],
