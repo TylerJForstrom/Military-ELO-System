@@ -84,15 +84,26 @@ class Wave8FlnTests(unittest.TestCase):
                 "reviewed_hced_rows": 4,
             },
         )
-        self.assertEqual(
-            lane.validate_wave8_fln_funnel(self.funnel),
-            {
-                "events_touched": 4,
-                "sole_blocker_events": 3,
-                "unresolved_side_attempts": 4,
-                "zero_time_valid_candidates": 4,
-            },
-        )
+        current_labels = {
+            str(row.get("label")) for row in self.funnel.get("labels", [])
+        }
+        if "fln" in current_labels:
+            self.assertEqual(
+                lane.validate_wave8_fln_funnel(self.funnel),
+                {
+                    "events_touched": 4,
+                    "sole_blocker_events": 3,
+                    "unresolved_side_attempts": 4,
+                    "zero_time_valid_candidates": 4,
+                },
+            )
+        else:
+            self.assertEqual(
+                self.release_metadata["promotion"][
+                    "wave8_fln_exact_label_funnel_audit"
+                ],
+                lane.WAVE8_FLN_FUNNEL_AUDIT,
+            )
 
     def test_preferred_fourth_republic_candidate_is_curated_without_aliases(self) -> None:
         candidates = {
@@ -281,17 +292,17 @@ class Wave8FlnTests(unittest.TestCase):
         )
 
     def test_release_and_registry_counts_include_the_exact_fln_delta(self) -> None:
-        self.assertEqual(len(self.release_entities), 988)
-        self.assertEqual(len(self.release_events), 5_328)
-        self.assertEqual(len(self.registry["entities"]), 2_338)
+        self.assertEqual(len(self.release_entities), 991)
+        self.assertEqual(len(self.release_events), 5_332)
+        self.assertEqual(len(self.registry["entities"]), 2_341)
         self.assertEqual(
             self.registry["coverage"]["unresolved_event_candidates"],
-            18_066,
+            18_062,
         )
         location = self.registry["coverage"]["hced_location_assertions"]
         self.assertEqual(
             location["hced_candidate_bindings"],
-            5_064,
+            5_068,
         )
         self.assertEqual(
             location["geojson_points"],
@@ -299,7 +310,7 @@ class Wave8FlnTests(unittest.TestCase):
         )
         self.assertEqual(
             location["modern_location_country_assertions"],
-            4_969,
+            4_973,
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:

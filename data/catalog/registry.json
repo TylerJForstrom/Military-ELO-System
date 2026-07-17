@@ -14552,6 +14552,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "mir_sher_muhammad_talpur_resistance_1843",
+      "name": "Mir Sher Muhammad's Talpur resistance (1843)",
+      "kind": "campaign_bounded_dynastic_force",
+      "start_year": 1843,
+      "end_year": 1843,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Hyderabad, Mirpur Khas, and Shahdadpur, Sindh"
+    },
+    {
       "id": "clio_sy_mitanni_k_bce1500_b1424233",
       "name": "Mitanni",
       "kind": "polity",
@@ -17952,6 +17962,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Columbia Plateau, North America"
+    },
+    {
+      "id": "raja_dahir_sindh_force_raor_712",
+      "name": "Raja Dahir's Sindh force at Raor (712)",
+      "kind": "event_bounded_royal_army",
+      "start_year": 712,
+      "end_year": 712,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Indus valley, Sindh"
     },
     {
       "id": "clio_q4401071_1497_8af5707f",
@@ -22148,6 +22168,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "talpur_amirs_coalition_miani_1843",
+      "name": "Talpur amirs' coalition at Miani (1843)",
+      "kind": "event_bounded_dynastic_coalition",
+      "start_year": 1843,
+      "end_year": 1843,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Miani and Hyderabad, Sindh"
+    },
+    {
       "id": "clio_q28057_263_c4be9e8a",
       "name": "Tamna",
       "kind": "polity",
@@ -24748,11 +24778,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2338,
-    "rated_entities": 981,
-    "rated_events": 5328,
+    "registry_polities": 2341,
+    "rated_entities": 984,
+    "rated_events": 5332,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18066,
+    "unresolved_event_candidates": 18062,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24846,6 +24876,7 @@
     "candidate_keyed_wave8_carnatic_hced_events": 3,
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
     "candidate_keyed_wave8_fln_hced_events": 1,
+    "candidate_keyed_wave8_sindh_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24856,21 +24887,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5064,
-      "candidate_keyed_reviewed_contracts": 754,
+      "hced_candidate_bindings": 5068,
+      "candidate_keyed_reviewed_contracts": 758,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4969,
-      "location_provenance_objects": 5018,
-      "point_fields_withheld_by_quarantine": 330,
+      "modern_location_country_assertions": 4973,
+      "location_provenance_objects": 5022,
+      "point_fields_withheld_by_quarantine": 334,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 378,
-      "point_quarantine_candidate_manifest_sha256": "d5c90bd98b7da82daee6b8739a7a3fbb4ea0e83590cecda178084268ec98a043",
+      "unique_events_with_any_quarantined_field": 382,
+      "point_quarantine_candidate_manifest_sha256": "bf2796e79b9c1e3f0052b39f0c695614b55fe17fe07dc276cb516fec1d1c9d47",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "77f8f25acbda0182dc2dd6ce6dd22e3830103918de0af1ec1d9cb27e68394084",
+      "quarantine_policy_sha256": "cdf9316d736f201150f138de96cf260d12ffb0330e67aada8a771b295cc36631",
       "assertion_status": {
-        "unreviewed_source_assertion": 5018
+        "unreviewed_source_assertion": 5022
       },
       "verified_location_assertions": {
         "availability": "not_available",

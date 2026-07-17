@@ -17299,6 +17299,144 @@
     ]
   },
   {
+    "id": "wave8_sindh_basham_raor",
+    "title": "The Wonder That Was India",
+    "url": "https://www.mahitoshnm.ac.in/studyMaterial/133147THE%20WONDER%20THAT%20WAS%20INDIA.pdf",
+    "publisher": "A. L. Basham / Sidgwick & Jackson",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "basham_wonder_india",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_bl_dubba",
+    "title": "Military and Naval Personnel: Battle of Dubba correspondence",
+    "url": "https://searcharchives.bl.uk/catalog/041-003792252",
+    "publisher": "British Library, India Office Records",
+    "license": "Citation and link only",
+    "source_type": "primary_archive_catalog_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "british_library_dubba_correspondence",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_goi_raor",
+    "title": "The Battle of Raor",
+    "url": "https://ignca.gov.in/Asi_data/75359.pdf",
+    "publisher": "Government of India / IGNCA digitized collection",
+    "license": "Citation and link only",
+    "source_type": "government_digitized_historical_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "goi_battle_raor_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_heritage_miani",
+    "title": "Miani War Memorial, Hyderabad",
+    "url": "https://heritage.eftsindh.com/districts/hyderabad/miani-war-memorial.php",
+    "publisher": "Endowment Fund Trust for Preservation of the Heritage of Sindh",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "sindh_heritage_miani_memorial",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_iranica_chachnama",
+    "title": "CAC-NAMA",
+    "url": "https://www.iranicaonline.org/articles/cac-nama/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_chachnama",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sindh_lambrick_battles",
+    "title": "The Sind Battles, 1843: Hyderabad (Dubba), Pir Ari and Shahdadpur",
+    "url": "https://kitaab.sindh.org/The_Journal_of_the_Sindh_Historical_Society_%28Vol_6_No_4%29-N_M_Billimoria-1943-CS.pdf",
+    "publisher": "Journal of the Sindh Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "lambrick_sind_battles_1943",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_nam_miani",
+    "title": "Scinde Campaign Medal 1843",
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1962-09-35-73",
+    "publisher": "National Army Museum, London",
+    "license": "Citation and link only",
+    "source_type": "official_museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum_scinde_medal",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sindh_napier_scinde",
+    "title": "The Conquest of Scinde",
+    "url": "https://www.cambridge.org/core/books/conquest-of-scinde/900CEF0B09612986DC3417A3A0AF1DAD",
+    "publisher": "W. F. P. Napier / Cambridge University Press reissue",
+    "license": "Citation and link only",
+    "source_type": "contemporary_campaign_narrative",
+    "accessed": "2026-07-16",
+    "source_family_id": "napier_conquest_scinde_1845",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sindh_sindh_forest_history",
+    "title": "History of Sindh",
+    "url": "https://sindhforests.gov.pk/page-history-of-sindh",
+    "publisher": "Sindh Forest Department, Government of Sindh",
+    "license": "Citation and link only",
+    "source_type": "official_historical_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "sindh_government_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sindh_talpur_structure",
+    "title": "Talpur Mirs: An Introduction",
+    "url": "https://talpur.org/royaltalpurs/talpurs-introduction/",
+    "publisher": "The Royal Talpurs and the Heritage of Sindh",
+    "license": "Citation and link only",
+    "source_type": "dynastic_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "royal_talpurs_structure",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_spanish_liberals_aunamendi_alegria",
     "title": "Batalla de Alegría",
     "url": "https://aunamendi.eusko-ikaskuntza.eus/es/batalla-de-alegria/ar-8633/",

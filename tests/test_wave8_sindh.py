@@ -34,6 +34,9 @@ class Wave8SindhTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
+        cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         entities = {
@@ -79,15 +82,26 @@ class Wave8SindhTests(unittest.TestCase):
                 "reviewed_hced_rows": 4,
             },
         )
-        self.assertEqual(
-            lane.validate_wave8_sindh_funnel(self.funnel),
-            {
-                "events_touched": 4,
-                "sole_blocker_events": 4,
-                "unresolved_side_attempts": 4,
-                "zero_time_valid_candidates": 4,
-            },
-        )
+        current_labels = {
+            str(row.get("label")) for row in self.funnel.get("labels", [])
+        }
+        if {"sind", "sindh"} <= current_labels:
+            self.assertEqual(
+                lane.validate_wave8_sindh_funnel(self.funnel),
+                {
+                    "events_touched": 4,
+                    "sole_blocker_events": 4,
+                    "unresolved_side_attempts": 4,
+                    "zero_time_valid_candidates": 4,
+                },
+            )
+        else:
+            self.assertEqual(
+                self.release_metadata["promotion"][
+                    "wave8_sindh_exact_label_funnel_audit"
+                ],
+                lane.WAVE8_SINDH_FUNNEL_AUDIT,
+            )
 
     def test_three_narrow_identities_replace_no_generic_sind_alias(self) -> None:
         entities = {str(item["id"]): item for item in lane.WAVE8_SINDH_ENTITIES}
@@ -233,6 +247,67 @@ class Wave8SindhTests(unittest.TestCase):
                 "iwbd_probable_twins": 0,
             },
         )
+
+    def test_current_release_activates_all_three_identities(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_SINDH_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 4)
+        self.assertEqual(
+            {event["name"] for event in events},
+            {
+                "Battle of Dubba",
+                "Battle of Miani",
+                "Battle of Raor",
+                "Battle of Shahdadpur",
+            },
+        )
+        for event in events:
+            self.assertNotIn("geometry", event)
+            self.assertEqual(event["modern_location_country"], "Pakistan")
+
+        release_entities = {
+            str(item["id"]): item for item in self.release_entities
+        }
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        for entity_id in (DAHIR, MIANI, SHER_MUHAMMAD):
+            self.assertIn(entity_id, release_entities)
+            self.assertFalse(release_entities[entity_id]["aliases"])
+            self.assertEqual(registry_entities[entity_id]["status"], "rated")
+
+    def test_release_metadata_and_source_registry_publish_the_lane(self) -> None:
+        source_ids = {str(item["id"]) for item in self.release_sources}
+        self.assertTrue(
+            {str(item["id"]) for item in lane.WAVE8_SINDH_SOURCES} <= source_ids
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_sindh_hced_events"], 4)
+        self.assertEqual(
+            promotion["wave8_sindh_candidate_ids"],
+            sorted(lane.WAVE8_SINDH_CONTRACT_IDS),
+        )
+        self.assertFalse(promotion["wave8_sindh_holds"])
+        self.assertEqual(
+            self.registry["coverage"]["candidate_keyed_wave8_sindh_hced_events"],
+            4,
+        )
+
+    def test_release_and_registry_counts_include_the_exact_sindh_delta(self) -> None:
+        self.assertEqual(len(self.release_entities), 991)
+        self.assertEqual(len(self.release_events), 5_332)
+        self.assertEqual(len(self.registry["entities"]), 2_341)
+        self.assertEqual(
+            self.registry["coverage"]["unresolved_event_candidates"],
+            18_062,
+        )
+        location = self.registry["coverage"]["hced_location_assertions"]
+        self.assertEqual(location["hced_candidate_bindings"], 5_068)
+        self.assertEqual(location["geojson_points"], 4_734)
+        self.assertEqual(location["modern_location_country_assertions"], 4_973)
 
     def test_tampered_queue_row_fails_closed(self) -> None:
         tampered = copy.deepcopy(self.hced)

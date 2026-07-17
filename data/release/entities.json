@@ -1772,6 +1772,22 @@
     ]
   },
   {
+    "id": "raja_dahir_sindh_force_raor_712",
+    "name": "Raja Dahir's Sindh force at Raor (712)",
+    "kind": "event_bounded_royal_army",
+    "start_year": 712,
+    "end_year": 712,
+    "region": "Lower Indus valley, Sindh",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Raja Dahir's defending force in the pitched battle at Raor/Rawar in the 712 conquest narrative. The Chach-Nama's exact calendar chronology is internally disputed, so only HCED's year is asserted. No Elo is inherited from a generic Sindh identity, the whole Brahman dynasty, later resistance by Dahir's family, or any modern state or community.",
+    "source_ids": [
+      "wave8_sindh_basham_raor",
+      "wave8_sindh_goi_raor",
+      "wave8_sindh_iranica_chachnama"
+    ]
+  },
+  {
     "id": "clio_iq_abbasid_cal_1_750_82ab6afc",
     "name": "Abbasid Caliphate",
     "kind": "caliphate",
@@ -10083,6 +10099,42 @@
     "continuity_note": "The thirteen Tonkawa participants directly identified with Edward Burleson's volunteers at Plum Creek. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
     "source_ids": [
       "wave8_comanche_thc_plum_creek"
+    ]
+  },
+  {
+    "id": "mir_sher_muhammad_talpur_resistance_1843",
+    "name": "Mir Sher Muhammad's Talpur resistance (1843)",
+    "kind": "campaign_bounded_dynastic_force",
+    "start_year": 1843,
+    "end_year": 1843,
+    "region": "Hyderabad, Mirpur Khas, and Shahdadpur, Sindh",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Mir Sher Muhammad Talpur's surviving field force from Dubba/Hyderabad on 24 March through its final Shahdadpur action on 14 June 1843. It is not merged with the distinct Miani coalition, other Talpur branches, a generic Sindh identity, later princely Khairpur, or modern Pakistan.",
+    "source_ids": [
+      "wave8_sindh_bl_dubba",
+      "wave8_sindh_lambrick_battles",
+      "wave8_sindh_napier_scinde",
+      "wave8_sindh_sindh_forest_history",
+      "wave8_sindh_talpur_structure"
+    ]
+  },
+  {
+    "id": "talpur_amirs_coalition_miani_1843",
+    "name": "Talpur amirs' coalition at Miani (1843)",
+    "kind": "event_bounded_dynastic_coalition",
+    "start_year": 1843,
+    "end_year": 1843,
+    "region": "Miani and Hyderabad, Sindh",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the combined Talpur forces that opposed Charles Napier at Miani on 17 February 1843. Talpur Sindh comprised multiple branches and states, and Mir Sher Muhammad's Mirpur Khas force did not reach this battlefield; the coalition therefore does not share Elo with his later resistance, Khairpur, a timeless Sindh, or modern Pakistan.",
+    "source_ids": [
+      "wave8_sindh_heritage_miani",
+      "wave8_sindh_lambrick_battles",
+      "wave8_sindh_nam_miani",
+      "wave8_sindh_sindh_forest_history",
+      "wave8_sindh_talpur_structure"
     ]
   },
   {

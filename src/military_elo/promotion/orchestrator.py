@@ -1892,6 +1892,26 @@ from .wave8_fln import (
     wave8_fln_cohort_counts,
     wave8_fln_counts,
 )
+from .wave8_sindh import (
+    WAVE8_SINDH_CONTRACT_IDS,
+    WAVE8_SINDH_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_SINDH_ENTITIES,
+    WAVE8_SINDH_FINAL_AUDIT_SIGNATURE,
+    WAVE8_SINDH_FUNNEL_AUDIT,
+    WAVE8_SINDH_HOLDS,
+    WAVE8_SINDH_LOCATION_QUARANTINE_REASONS,
+    WAVE8_SINDH_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_SINDH_RESERVED_IDS,
+    WAVE8_SINDH_SOURCES,
+    install_wave8_sindh_entities,
+    install_wave8_sindh_sources,
+    promote_wave8_sindh_contracts,
+    validate_wave8_sindh_integration_dispositions,
+    validate_wave8_sindh_queue_contracts,
+    wave8_sindh_audit_signature,
+    wave8_sindh_cohort_counts,
+    wave8_sindh_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -2000,6 +2020,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_CARNATIC_RESERVED_IDS
     | WAVE8_GOGURYEO_RESERVED_IDS
     | WAVE8_FLN_RESERVED_IDS
+    | WAVE8_SINDH_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2421,7 +2442,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 330
+        len(HCED_POINT_QUARANTINE_IDS) != 334
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2717,6 +2738,7 @@ def build_expanded_release(
     wave8_carnatic_queue_validation = validate_wave8_carnatic_queue_contracts(hced)
     wave8_goguryeo_queue_validation = validate_wave8_goguryeo_queue_contracts(hced)
     wave8_fln_queue_validation = validate_wave8_fln_queue_contracts(hced)
+    wave8_sindh_queue_validation = validate_wave8_sindh_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -3112,6 +3134,7 @@ def build_expanded_release(
     install_wave8_carnatic_entities(release_entities)
     install_wave8_goguryeo_entities(release_entities)
     install_wave8_fln_entities(release_entities)
+    install_wave8_sindh_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4629,6 +4652,15 @@ def build_expanded_release(
         release_entities,
         wave8_fln_existing_events,
     )
+    wave8_sindh_existing_events = [
+        *wave8_fln_existing_events,
+        *wave8_fln_events,
+    ]
+    wave8_sindh_events = promote_wave8_sindh_contracts(
+        hced,
+        release_entities,
+        wave8_sindh_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4719,6 +4751,7 @@ def build_expanded_release(
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
         *wave8_fln_events,
+        *wave8_sindh_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4986,6 +5019,7 @@ def build_expanded_release(
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
         *wave8_fln_events,
+        *wave8_sindh_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -5505,6 +5539,13 @@ def build_expanded_release(
         iwbd_candidates,
         [*wave8_fln_existing_events, *wave8_fln_events],
     )
+    wave8_sindh_integration_validation = (
+        validate_wave8_sindh_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [*wave8_sindh_existing_events, *wave8_sindh_events],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5752,6 +5793,7 @@ def build_expanded_release(
     install_wave8_carnatic_sources(sources_by_id)
     install_wave8_goguryeo_sources(sources_by_id)
     install_wave8_fln_sources(sources_by_id)
+    install_wave8_sindh_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5847,6 +5889,7 @@ def build_expanded_release(
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
         *wave8_fln_events,
+        *wave8_sindh_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5942,6 +5985,7 @@ def build_expanded_release(
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
         *wave8_fln_events,
+        *wave8_sindh_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -6036,6 +6080,7 @@ def build_expanded_release(
             | WAVE8_CARNATIC_CONTRACT_IDS
             | WAVE8_GOGURYEO_CONTRACT_IDS
             | WAVE8_FLN_CONTRACT_IDS
+            | WAVE8_SINDH_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -6183,6 +6228,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_CARNATIC_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_GOGURYEO_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FLN_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_SINDH_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -6446,6 +6492,7 @@ def build_expanded_release(
         - len(wave8_carnatic_events)
         - len(wave8_goguryeo_events)
         - len(wave8_fln_events)
+        - len(wave8_sindh_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -6646,6 +6693,7 @@ def build_expanded_release(
             wave8_goguryeo_events
         ),
         "candidate_keyed_wave8_fln_hced_events": len(wave8_fln_events),
+        "candidate_keyed_wave8_sindh_hced_events": len(wave8_sindh_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -6988,6 +7036,7 @@ def build_expanded_release(
                 wave8_goguryeo_events
             ),
             "accepted_wave8_fln_hced_events": len(wave8_fln_events),
+            "accepted_wave8_sindh_hced_events": len(wave8_sindh_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -11016,6 +11065,36 @@ def build_expanded_release(
             ),
             "wave8_fln_entities_added": len(WAVE8_FLN_ENTITIES),
             "wave8_fln_sources_added": len(WAVE8_FLN_SOURCES),
+            "wave8_sindh_counts": wave8_sindh_counts(),
+            "wave8_sindh_cohort_counts": wave8_sindh_cohort_counts(),
+            "wave8_sindh_audit_signature": wave8_sindh_audit_signature(),
+            "wave8_sindh_final_audit_signature": (
+                WAVE8_SINDH_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_sindh_queue_validation": wave8_sindh_queue_validation,
+            "wave8_sindh_integration_validation": (
+                wave8_sindh_integration_validation
+            ),
+            "wave8_sindh_candidate_ids": sorted(WAVE8_SINDH_CONTRACT_IDS),
+            "wave8_sindh_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_SINDH_HOLDS.items())
+            ],
+            "wave8_sindh_exact_label_funnel_audit": WAVE8_SINDH_FUNNEL_AUDIT,
+            "wave8_sindh_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_SINDH_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_sindh_point_quarantine_additions": sorted(
+                WAVE8_SINDH_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_sindh_country_quarantine_additions": sorted(
+                WAVE8_SINDH_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_sindh_entities_added": len(WAVE8_SINDH_ENTITIES),
+            "wave8_sindh_sources_added": len(WAVE8_SINDH_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -11343,6 +11422,7 @@ def build_expanded_release(
             wave8_goguryeo_events
         ),
         "candidate_keyed_wave8_fln_hced_events": len(wave8_fln_events),
+        "candidate_keyed_wave8_sindh_hced_events": len(wave8_sindh_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

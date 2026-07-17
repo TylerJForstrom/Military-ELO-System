@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 988,
-    "events": 5328,
-    "sources": 1382,
-    "registry_polities": 2338
+    "entities": 991,
+    "events": 5332,
+    "sources": 1392,
+    "registry_polities": 2341
   },
   "year_range": {
     "start": -1274,
@@ -164,6 +164,7 @@
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
     "accepted_wave8_fln_hced_events": 1,
+    "accepted_wave8_sindh_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19177,7 +19178,123 @@
     "wave8_fln_country_quarantine_additions": [],
     "wave8_fln_entities_added": 2,
     "wave8_fln_sources_added": 11,
-    "hced_label_pass_input_rows": 5584,
+    "wave8_sindh_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 3,
+      "new_sources": 10,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_sindh_cohort_counts": {
+      "sind_sindh_exact_labels_712_1843": 4
+    },
+    "wave8_sindh_audit_signature": "1aca1949e53457432c212934415b7c9a0d7ed3525aedd0971636338fa46a03aa",
+    "wave8_sindh_final_audit_signature": "1aca1949e53457432c212934415b7c9a0d7ed3525aedd0971636338fa46a03aa",
+    "wave8_sindh_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 0,
+      "reviewed_hced_rows": 4,
+      "exact_label_rows": 4
+    },
+    "wave8_sindh_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_sindh_candidate_ids": [
+      "hced-Hyderabad, Pakistan1843-1",
+      "hced-Miani1843-1",
+      "hced-Raor712-1",
+      "hced-Shahdadpur1843-1"
+    ],
+    "wave8_sindh_holds": [],
+    "wave8_sindh_exact_label_funnel_audit": {
+      "sind": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "bdb91af86844a890e6256e0a0346bf2ee28aeefb651d0e85cb9a26f6d74502cd",
+        "events_touched": 1,
+        "label": "sind",
+        "rated_counterpart_entities": 1,
+        "sole_blocker_events": 1,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "sindh": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "aec463faa2f53cc19140db2efb63dbe8505ffe8bf2e2ab4dcd7979706c2d5281",
+        "events_touched": 3,
+        "label": "sindh",
+        "rated_counterpart_entities": 2,
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      }
+    },
+    "wave8_sindh_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Hyderabad, Pakistan1843-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The modern country is supported, but HCED supplies an unexplained city or regional point that is not independently verified as the reviewed battlefield; retain Pakistan and withhold geometry.",
+        "evidence_refs": [
+          "wave8_sindh_bl_dubba",
+          "wave8_sindh_lambrick_battles",
+          "wave8_sindh_napier_scinde"
+        ]
+      },
+      {
+        "candidate_id": "hced-Miani1843-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The modern country is supported, but HCED supplies an unexplained city or regional point that is not independently verified as the reviewed battlefield; retain Pakistan and withhold geometry.",
+        "evidence_refs": [
+          "wave8_sindh_heritage_miani",
+          "wave8_sindh_lambrick_battles",
+          "wave8_sindh_nam_miani"
+        ]
+      },
+      {
+        "candidate_id": "hced-Raor712-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The modern country is supported, but HCED supplies an unexplained city or regional point that is not independently verified as the reviewed battlefield; retain Pakistan and withhold geometry.",
+        "evidence_refs": [
+          "wave8_sindh_basham_raor",
+          "wave8_sindh_goi_raor"
+        ]
+      },
+      {
+        "candidate_id": "hced-Shahdadpur1843-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The modern country is supported, but HCED supplies an unexplained city or regional point that is not independently verified as the reviewed battlefield; retain Pakistan and withhold geometry.",
+        "evidence_refs": [
+          "wave8_sindh_lambrick_battles",
+          "wave8_sindh_napier_scinde"
+        ]
+      }
+    ],
+    "wave8_sindh_point_quarantine_additions": [
+      "hced-Hyderabad, Pakistan1843-1",
+      "hced-Miani1843-1",
+      "hced-Raor712-1",
+      "hced-Shahdadpur1843-1"
+    ],
+    "wave8_sindh_country_quarantine_additions": [],
+    "wave8_sindh_entities_added": 3,
+    "wave8_sindh_sources_added": 10,
+    "hced_label_pass_input_rows": 5580,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19190,7 +19307,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1026,
+      "reserved_candidate_contract": 1030,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19202,7 +19319,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2084,
+      "no_unique_time_valid_label_match": 2080,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
