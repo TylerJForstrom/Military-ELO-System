@@ -158,12 +158,23 @@ class Wave8ZuluForcesTests(unittest.TestCase):
             },
         )
         self.assertEqual(
-            lane.validate_wave8_zulu_forces_funnel(self.funnel),
+            lane.WAVE8_ZULU_FORCES_FUNNEL_AUDIT,
             {
+                "event_candidate_id_sha256": (
+                    "3286de59ed56479a5da77b5adc9ae8a6170e9cdc2bfec87a43898c87668db53c"
+                ),
                 "events_touched": 5,
+                "label": "zulu rebels",
                 "sole_blocker_events": 3,
                 "zero_time_valid_candidates": 5,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "zulu rebels"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Zulu lane must not remain in the live unresolved funnel",
         )
 
     def test_all_rows_promote_and_unknown_is_not_manufactured(self) -> None:

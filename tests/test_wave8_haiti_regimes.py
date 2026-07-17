@@ -157,12 +157,20 @@ class Wave8HaitiRegimesTests(unittest.TestCase):
             },
         )
         self.assertEqual(
-            lane.validate_wave8_haiti_regimes_funnel(self.funnel),
+            lane.WAVE8_HAITI_REGIMES_FUNNEL_AUDIT,
             {
+                "event_candidate_id_sha256": (
+                    "d335346c74accdde228bcbb518484d8edb67019c67eb69a90c7f2720d1253baf"
+                ),
                 "events_touched": 5,
+                "label": "haiti",
                 "sole_blocker_events": 3,
                 "zero_time_valid_candidates": 5,
             },
+        )
+        self.assertFalse(
+            any(row.get("label") == "haiti" for row in self.funnel.get("labels", [])),
+            "the completed Haiti lane must not remain in the live unresolved funnel",
         )
 
     def test_dispositions_are_four_promotions_and_one_unknown_hold(self) -> None:
