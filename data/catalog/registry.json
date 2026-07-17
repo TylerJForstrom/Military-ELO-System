@@ -13875,6 +13875,16 @@
       "region": "Kyiv Voivodeship"
     },
     {
+      "id": "otomo_bungo_army_1586_1587",
+      "name": "Otomo Bungo army in the Hetsugigawa campaign (1586-1587)",
+      "kind": "campaign_bounded_daimyo_army",
+      "start_year": 1586,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bungo Province, Kyushu, Japan"
+    },
+    {
       "id": "otto_ii_imperial_calabrian_army_982",
       "name": "Otto II's imperial Calabrian army (982)",
       "kind": "event_bounded_imperial_field_army",
@@ -17199,6 +17209,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "saigo_satsuma_rebel_army_1877",
+      "name": "Saigo-led Satsuma rebel army (1877)",
+      "kind": "campaign_bounded_rebel_army",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kyushu, Japan"
+    },
+    {
       "id": "clio_q204989_1967_3626d565",
       "name": "Saint Kitts",
       "kind": "polity",
@@ -17408,6 +17428,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "satsuma_domain_kagoshima_batteries_1863",
+      "name": "Satsuma Domain Kagoshima batteries and field force (1863)",
+      "kind": "campaign_bounded_domain_force",
+      "start_year": 1863,
+      "end_year": 1863,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kagoshima Bay, Satsuma Domain, Japan"
     },
     {
       "id": "savoyard_state_ducal_1416_1713",
@@ -17873,6 +17903,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "shimazu_kyushu_war_army_1586_1587",
+      "name": "Shimazu Kyushu campaign army (1586-1587)",
+      "kind": "campaign_bounded_daimyo_army",
+      "start_year": 1586,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kyushu, Japan"
     },
     {
       "id": "clio_q638064_825_a65860a7",
@@ -19917,6 +19957,26 @@
       "region": "Republic of Texas"
     },
     {
+      "id": "toyotomi_kyushu_expedition_army_1587",
+      "name": "Toyotomi Kyushu expedition army (1587)",
+      "kind": "campaign_bounded_expedition_army",
+      "start_year": 1587,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kyushu, Japan"
+    },
+    {
+      "id": "toyotomi_shikoku_relief_contingent_1586_1587",
+      "name": "Toyotomi-Shikoku relief contingent at Hetsugigawa (1586-1587)",
+      "kind": "campaign_bounded_relief_contingent",
+      "start_year": 1586,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bungo Province, Kyushu, Japan"
+    },
+    {
       "id": "clio_gb_british_emp_1_1820_c50025b6",
       "name": "Trucial States",
       "kind": "polity",
@@ -21764,11 +21824,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2039,
-    "rated_entities": 676,
-    "rated_events": 5143,
+    "registry_polities": 2045,
+    "rated_entities": 682,
+    "rated_events": 5149,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18251,
+    "unresolved_event_candidates": 18245,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21820,6 +21880,7 @@
     "candidate_keyed_wave8_vietnam_hced_events": 7,
     "candidate_keyed_wave8_hussites_hced_events": 12,
     "candidate_keyed_wave8_livonian_order_hced_events": 4,
+    "candidate_keyed_wave8_satsuma_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21830,21 +21891,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4879,
-      "candidate_keyed_reviewed_contracts": 569,
+      "hced_candidate_bindings": 4885,
+      "candidate_keyed_reviewed_contracts": 575,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4788,
-      "location_provenance_objects": 4837,
-      "point_fields_withheld_by_quarantine": 145,
+      "modern_location_country_assertions": 4794,
+      "location_provenance_objects": 4843,
+      "point_fields_withheld_by_quarantine": 151,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 193,
-      "point_quarantine_candidate_manifest_sha256": "731d74a77c54e7b65aa0fc379375418e8377a0b23bb65e79a9205a704837934f",
+      "unique_events_with_any_quarantined_field": 199,
+      "point_quarantine_candidate_manifest_sha256": "2d1c2a3c5b996f264914b85854834c8501b496abd0682daac30acdbb638a5e18",
       "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "696caab76c81be16e1adcd55b0100cc7b21c1b25f78c939ad11958ad9137a7ec",
+      "quarantine_policy_sha256": "26411ec89ae47651af938e6f38adc00e1af7ba5ded57f5a3dd6b281d57acc0d3",
       "assertion_status": {
-        "unreviewed_source_assertion": 4837
+        "unreviewed_source_assertion": 4843
       },
       "verified_location_assertions": {
         "availability": "not_available",

@@ -4365,6 +4365,70 @@
     ]
   },
   {
+    "id": "otomo_bungo_army_1586_1587",
+    "name": "Otomo Bungo army in the Hetsugigawa campaign (1586-1587)",
+    "kind": "campaign_bounded_daimyo_army",
+    "start_year": 1586,
+    "end_year": 1587,
+    "region": "Bungo Province, Kyushu, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Otomo force opposing the Shimazu advance in Bungo. No rating is inherited by Bungo, Kyushu, an Otomo lineage generally, or any modern state or prefecture.",
+    "source_ids": [
+      "wave8_satsuma_iriki_documents",
+      "wave8_satsuma_oita_otomo"
+    ]
+  },
+  {
+    "id": "shimazu_kyushu_war_army_1586_1587",
+    "name": "Shimazu Kyushu campaign army (1586-1587)",
+    "kind": "campaign_bounded_daimyo_army",
+    "start_year": 1586,
+    "end_year": 1587,
+    "region": "Kyushu, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Shimazu campaign force in the Otomo-Toyotomi war. No rating is inherited by the 1863 Satsuma Domain force, the 1877 rebels, a clan or regional population generally, or modern Kagoshima.",
+    "source_ids": [
+      "wave8_satsuma_iriki_documents",
+      "wave8_satsuma_kagoshima_hideyoshi",
+      "wave8_satsuma_kijo_takajo",
+      "wave8_satsuma_oita_otomo"
+    ]
+  },
+  {
+    "id": "toyotomi_shikoku_relief_contingent_1586_1587",
+    "name": "Toyotomi-Shikoku relief contingent at Hetsugigawa (1586-1587)",
+    "kind": "campaign_bounded_relief_contingent",
+    "start_year": 1586,
+    "end_year": 1587,
+    "region": "Bungo Province, Kyushu, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Shikoku commanders and troops sent to aid the Otomo at Hetsugigawa; Hideyoshi was not personally this battlefield actor. No rating is inherited by the later main expedition or modern Japan.",
+    "source_ids": [
+      "wave8_satsuma_iriki_documents",
+      "wave8_satsuma_oita_otomo"
+    ]
+  },
+  {
+    "id": "toyotomi_kyushu_expedition_army_1587",
+    "name": "Toyotomi Kyushu expedition army (1587)",
+    "kind": "campaign_bounded_expedition_army",
+    "start_year": 1587,
+    "end_year": 1587,
+    "region": "Kyushu, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Toyotomi expedition and its operational columns in Kyushu during 1587. No rating is inherited by the Hetsugigawa relief contingent, Japan across eras, or the later Tokugawa polity.",
+    "source_ids": [
+      "wave8_satsuma_iriki_documents",
+      "wave8_satsuma_kagoshima_hideyoshi",
+      "wave8_satsuma_kijo_takajo",
+      "wave8_satsuma_morton_sendai"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Kandyan state; Portuguese-employed Indian and African troops are command components, not extra sovereign participants. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1815,
@@ -7765,6 +7829,22 @@
     ]
   },
   {
+    "id": "satsuma_domain_kagoshima_batteries_1863",
+    "name": "Satsuma Domain Kagoshima batteries and field force (1863)",
+    "kind": "campaign_bounded_domain_force",
+    "start_year": 1863,
+    "end_year": 1863,
+    "region": "Kagoshima Bay, Satsuma Domain, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the domain batteries and troops engaged with the British squadron in 1863. No rating is inherited by the 1587 Shimazu army, the 1877 rebels, the abolished domain after 1871, or Kagoshima Prefecture.",
+    "source_ids": [
+      "wave8_satsuma_archives_domain_abolition",
+      "wave8_satsuma_jacar_domain",
+      "wave8_satsuma_kagoshima_anglo"
+    ]
+  },
+  {
     "id": "taranaki_resistance_forces_1863",
     "name": "Taranaki resistance forces (1863–1864)",
     "kind": "indigenous_coalition",
@@ -8380,6 +8460,23 @@
       "wave8_nez_perce_army_white_bird",
       "wave8_nez_perce_greene_campaign",
       "wave8_nez_perce_nps_white_bird"
+    ]
+  },
+  {
+    "id": "saigo_satsuma_rebel_army_1877",
+    "name": "Saigo-led Satsuma rebel army (1877)",
+    "kind": "campaign_bounded_rebel_army",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "Kyushu, Japan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Saigo Takamori's private-school and former-samurai rebel army in 1877. The domains had been abolished in 1871; no rating is inherited from the Satsuma Domain, its population, or modern Kagoshima.",
+    "source_ids": [
+      "wave8_satsuma_archives_domain_abolition",
+      "wave8_satsuma_bunka_rebellion",
+      "wave8_satsuma_kumamoto_city",
+      "wave8_satsuma_ndl_rebellion"
     ]
   },
   {

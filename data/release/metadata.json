@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 683,
-    "events": 5143,
-    "sources": 855,
-    "registry_polities": 2039
+    "entities": 689,
+    "events": 5149,
+    "sources": 869,
+    "registry_polities": 2045
   },
   "year_range": {
     "start": -1274,
@@ -122,6 +122,7 @@
     "accepted_wave8_vietnam_hced_events": 7,
     "accepted_wave8_hussites_hced_events": 12,
     "accepted_wave8_livonian_order_hced_events": 4,
+    "accepted_wave8_satsuma_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6155,7 +6156,137 @@
     ],
     "wave8_livonian_order_entities_added": 5,
     "wave8_livonian_order_sources_added": 16,
-    "hced_label_pass_input_rows": 5832,
+    "wave8_satsuma_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 1,
+      "holds": 0,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 7,
+      "new_entities": 6,
+      "new_sources": 14,
+      "newly_rated_events": 6,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1
+    },
+    "wave8_satsuma_cohort_counts": {
+      "anglo_satsuma_war_1863": 1,
+      "satsuma_rebellion_1877": 3,
+      "shimazu_toyotomi_kyushu_campaign_1586_1587": 3
+    },
+    "wave8_satsuma_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1
+    },
+    "wave8_satsuma_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 1,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 7
+    },
+    "wave8_satsuma_candidate_ids": [
+      "hced-Kagoshima1863-1",
+      "hced-Kumamoto1877-1",
+      "hced-Sendaigawa1587-1",
+      "hced-Tabaruzaka1877-1",
+      "hced-Takashiro1587-1",
+      "hced-Toshimitsu1587-1"
+    ],
+    "wave8_satsuma_holds": [],
+    "wave8_satsuma_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Kagoshima1877-1",
+        "raw_row_sha256": "e77f5c4f437e05c55403d16fdc81e38ef10d8dbee6f8d6d196863375e6a2216c",
+        "canonical_event": {
+          "name": "Battle of Shiroyama",
+          "year": 1877,
+          "year_low": 1877,
+          "year_high": 1877,
+          "date_text": "24 September 1877",
+          "date_precision": "day",
+          "granularity": "engagement",
+          "canonical_key": "battle_of_shiroyama:1877:1877"
+        },
+        "cohort": "satsuma_rebellion_1877",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "same_event_duplicate_and_place_conflation",
+        "reviewed_outcome": "Imperial victory over the surviving Saigo-led rebel force at Shiroyama",
+        "reviewed_actor_description": [
+          "Empire of Japan assault force",
+          "surviving Saigo-led Satsuma rebel force"
+        ],
+        "reviewed_granularity": "duplicate_final_engagement_assertion",
+        "hold_reason": "The Kagoshima row's participant field explicitly names Shiroyama, and the same locked snapshot contains hced-Shiroyama1877-1 for the final 24 September engagement. No independent Kagoshima battle is identified. Emitting both would double-rate one imperial victory, so this exact-label row is terminally excluded and the Shiroyama row remains cross-lane.",
+        "evidence_refs": [
+          "wave8_satsuma_bunka_rebellion",
+          "wave8_satsuma_ndl_rebellion"
+        ],
+        "full_row_audited": true,
+        "duplicate_of_hced_candidate_id": "hced-Shiroyama1877-1",
+        "duplicate_raw_row_sha256": "8afa15c8db32ca76099ffdd8b8d03c180f5d7d361dac7824d84a6a5b92dfa4d3",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_satsuma",
+          "status": "terminal_duplicate_exclusion"
+        }
+      }
+    ],
+    "wave8_satsuma_hced_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Kagoshima1877-1",
+        "source_dataset": "hced",
+        "related_hced_candidate_id": "hced-Shiroyama1877-1",
+        "disposition": "terminally_exclude_duplicate_from_exact_label_lane",
+        "relationship": "same_final_engagement_same_year_same_outcome",
+        "raw_row_sha256": "e77f5c4f437e05c55403d16fdc81e38ef10d8dbee6f8d6d196863375e6a2216c",
+        "related_raw_row_sha256": "8afa15c8db32ca76099ffdd8b8d03c180f5d7d361dac7824d84a6a5b92dfa4d3",
+        "evidence_refs": [
+          "wave8_satsuma_bunka_rebellion",
+          "wave8_satsuma_ndl_rebellion"
+        ],
+        "reason": "The Kagoshima row names Shiroyama in its participants and has no separate engagement boundary; retain only the separately staged Shiroyama assertion for its own actor-label review."
+      }
+    ],
+    "wave8_satsuma_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Shiroyama1877-1",
+        "source_dataset": "hced",
+        "disposition": "cross_lane_candidate_pending_actor_review",
+        "owner_module": null,
+        "raw_row_sha256": "8afa15c8db32ca76099ffdd8b8d03c180f5d7d361dac7824d84a6a5b92dfa4d3",
+        "related_excluded_candidate_id": "hced-Kagoshima1877-1",
+        "relationship": "canonical_same_event_candidate_for_terminal_duplicate",
+        "reason": "The row uses the distinct exact actor label 'Saiga Takamori' and is outside this lane. It is fingerprinted but neither claimed nor rated here; a separate actor-label review must correct that spelling and adjudicate the Shiroyama contract."
+      }
+    ],
+    "wave8_satsuma_iwbd_duplicate_dispositions": [],
+    "wave8_satsuma_existing_release_duplicate_dispositions": [],
+    "wave8_satsuma_integration_dispositions": [
+      {
+        "disposition_id": "hced-Shiroyama1877-1",
+        "source_dataset": "hced",
+        "disposition": "cross_lane_candidate_pending_actor_review",
+        "owner_module": null,
+        "raw_row_sha256": "8afa15c8db32ca76099ffdd8b8d03c180f5d7d361dac7824d84a6a5b92dfa4d3",
+        "related_excluded_candidate_id": "hced-Kagoshima1877-1",
+        "relationship": "canonical_same_event_candidate_for_terminal_duplicate",
+        "reason": "The row uses the distinct exact actor label 'Saiga Takamori' and is outside this lane. It is fingerprinted but neither claimed nor rated here; a separate actor-label review must correct that spelling and adjudicate the Shiroyama contract."
+      }
+    ],
+    "wave8_satsuma_outcome_overrides": [],
+    "wave8_satsuma_entities_added": 6,
+    "wave8_satsuma_sources_added": 14,
+    "hced_label_pass_input_rows": 5825,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6168,7 +6299,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 772,
+      "reserved_candidate_contract": 779,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6180,7 +6311,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 175,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2318,
+      "no_unique_time_valid_label_match": 2311,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

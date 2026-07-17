@@ -10496,6 +10496,212 @@
     ]
   },
   {
+    "id": "wave8_satsuma_archives_domain_abolition",
+    "title": "Abolition of domains and establishment of prefectures",
+    "url": "https://www.archives.go.jp/ayumi/kobetsu/m04_1871_04.html",
+    "publisher": "National Archives of Japan",
+    "license": "Citation and link only",
+    "source_type": "national_archival_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_archives_japan_haihan_chiken",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_bunka_rebellion",
+    "title": "Satsuma Rebellion sites (Seinan Senso iseki)",
+    "url": "https://kunishitei.bunka.go.jp/heritage/detail/401/00003787",
+    "publisher": "Agency for Cultural Affairs, Government of Japan",
+    "license": "Citation and link only",
+    "source_type": "national_heritage_register_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "agency_cultural_affairs_satsuma_rebellion_sites",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_cardiff_anglo",
+    "title": "A 'New Diplomatic History' of Anglo-Japanese Relations: The Namamugi Incident and Anglo-Satsuma War",
+    "url": "https://orca.cardiff.ac.uk/id/eprint/169100/1/2024trullmphd.pdf",
+    "publisher": "Cardiff University",
+    "license": "Citation and link only",
+    "source_type": "doctoral_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "trull_cardiff_anglo_japanese_relations",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_iriki_documents",
+    "title": "The Documents of Iriki, no. 148: Hideyoshi's Demand of Hostages, 1592",
+    "url": "https://www.hi.u-tokyo.ac.jp/IRIKI/ETXT/eng_text148.html",
+    "publisher": "Historiographical Institute, University of Tokyo",
+    "license": "Citation and link only",
+    "source_type": "scholarly_translation_and_primary_document_apparatus",
+    "accessed": "2026-07-16",
+    "source_family_id": "tokyo_historiographical_institute_iriki_148",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_jacar_domain",
+    "title": "Satsuma Domain",
+    "url": "https://www.jacar.archives.go.jp/das/term-en/00003293",
+    "publisher": "Japan Center for Asian Historical Records, National Archives of Japan",
+    "license": "Citation and link only",
+    "source_type": "national_archival_identity_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "jacar_satsuma_domain_term",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_kagoshima_anglo",
+    "title": "Anglo-Satsuma War",
+    "url": "https://www.pref.kagoshima.jp/ab23/pr/gaiyou/rekishi/bakumatu/satuei.html",
+    "publisher": "Kagoshima Prefecture and Reimeikan",
+    "license": "Citation and link only",
+    "source_type": "prefectural_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kagoshima_reimeikan_anglo_satsuma",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_kagoshima_hideyoshi",
+    "title": "Hideyoshi's Kyushu expedition",
+    "url": "https://www.pref.kagoshima.jp/ab23/pr/gaiyou/rekishi/tyuusei/kyusyu.html",
+    "publisher": "Kagoshima Prefecture and Reimeikan",
+    "license": "Citation and link only",
+    "source_type": "prefectural_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kagoshima_reimeikan_hideyoshi_kyushu",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_kijo_takajo",
+    "title": "Second Battle of Takajo (Nejirozaka battlefield site)",
+    "url": "https://www.town.kijo.lg.jp/sosikikarasagasu/kyouikuiinkai_kyouikuka/1_1/1/3299.html",
+    "publisher": "Kijo Town",
+    "license": "Citation and link only",
+    "source_type": "municipal_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kijo_official_second_takajo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_kumamoto_castle",
+    "title": "History of Kumamoto Castle",
+    "url": "https://castle.kumamoto-guide.jp/en/history/",
+    "publisher": "Kumamoto Castle official site",
+    "license": "Citation and link only",
+    "source_type": "municipal_official_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kumamoto_castle_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_kumamoto_city",
+    "title": "Kumamoto City and the Satsuma Rebellion",
+    "url": "https://kumamoto-guide.jp/en/article/detail/366",
+    "publisher": "Kumamoto City Official Guide",
+    "license": "Citation and link only",
+    "source_type": "municipal_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "kumamoto_city_satsuma_rebellion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_mlit_tabaruzaka",
+    "title": "Tabaruzaka Seinan Civil War Museum",
+    "url": "https://www.mlit.go.jp/tagengo-db/en/R2-02042.html",
+    "publisher": "Japan Tourism Agency, Ministry of Land, Infrastructure and Transport",
+    "license": "Citation and link only",
+    "source_type": "national_government_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "japan_tourism_agency_tabaruzaka",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_morton_sendai",
+    "title": "Japan: Its History and Culture",
+    "url": "https://books.google.com/books/about/Japan_Its_History_and_Culture.html?id=NC1bDncgKCQC",
+    "publisher": "McGraw-Hill Professional",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_survey",
+    "accessed": "2026-07-16",
+    "source_family_id": "morton_olenik_japan_history_culture",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_ndl_rebellion",
+    "title": "Satsuma Rebellion",
+    "url": "https://www.ndl.go.jp/modern/e/cha1/description11.html",
+    "publisher": "National Diet Library",
+    "license": "Citation and link only",
+    "source_type": "national_library_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "ndl_satsuma_rebellion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_satsuma_oita_otomo",
+    "title": "The later Otomo clan (Otomo-shi no sono go)",
+    "url": "https://www.city.oita.oita.jp/o205/documents/ootomosinosonogo.pdf",
+    "publisher": "Oita City",
+    "license": "Citation and link only",
+    "source_type": "municipal_official_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "oita_city_otomo_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_savoy_bnf_cassano",
     "title": "La Victoire remportee par l'armee du Roy sur l'armee Imperialle pres de Cassano, 16 aout 1705",
     "url": "https://catalogue.bnf.fr/ark:/12148/cb415058702",
