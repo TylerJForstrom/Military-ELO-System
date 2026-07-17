@@ -7006,6 +7006,41 @@
     ]
   },
   {
+    "id": "dessalines_indigenous_army_arcahaie_coalition_1803",
+    "name": "Dessalines's united Indigenous Army (1803)",
+    "kind": "campaign_bounded_independence_army",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "French Saint-Domingue",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Black and free-coloured military coalition united under Dessalines in 1803 and represented at Port-au-Prince and Vertieres; it is not a retroactive name for Haiti before independence. No rating is inherited from or transferred to Louverture's 1802 autonomous colonial army, a generic Haitian or French identity, the independent Haitian state proclaimed in 1804, or the northern and southern civil-war regimes and armies created after 1806.",
+    "source_ids": [
+      "wave8_haitian_rebels_cambridge_defenders",
+      "wave8_haitian_rebels_dorsainvil_manual",
+      "wave8_haitian_rebels_embassy_flag",
+      "wave8_haitian_rebels_madiou_tome2",
+      "wave8_haitian_rebels_oxford_leclerc"
+    ]
+  },
+  {
+    "id": "rochambeau_saint_domingue_expedition_1803",
+    "name": "French Saint-Domingue expedition under Rochambeau (1803)",
+    "kind": "campaign_and_command_bounded_colonial_expedition",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "French Saint-Domingue",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the expedition's Rochambeau-command phase in 1803, including Lavalette's Port-au-Prince garrison and Rochambeau's Vertieres force; it does not stand for France in other theatres. No rating is inherited from or transferred to Louverture's 1802 autonomous colonial army, a generic Haitian or French identity, the independent Haitian state proclaimed in 1804, or the northern and southern civil-war regimes and armies created after 1806.",
+    "source_ids": [
+      "wave8_haitian_rebels_dorsainvil_manual",
+      "wave8_haitian_rebels_fondation_santo_domingo",
+      "wave8_haitian_rebels_oxford_leclerc",
+      "wave8_haitian_rebels_shd_leclerc_archive"
+    ]
+  },
+  {
     "id": "austrian_empire",
     "name": "Austrian Empire",
     "kind": "empire",

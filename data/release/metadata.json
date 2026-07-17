@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 796,
-    "events": 5218,
-    "sources": 1073,
-    "registry_polities": 2152
+    "entities": 798,
+    "events": 5220,
+    "sources": 1086,
+    "registry_polities": 2154
   },
   "year_range": {
     "start": -1274,
@@ -139,6 +139,7 @@
     "accepted_wave8_france_bavaria_hced_events": 3,
     "accepted_wave8_eritrean_rebels_hced_events": 4,
     "accepted_wave8_inca_rebels_hced_events": 3,
+    "accepted_wave8_haitian_rebels_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -9773,7 +9774,262 @@
     "wave8_inca_rebels_outcome_overrides": [],
     "wave8_inca_rebels_entities_added": 6,
     "wave8_inca_rebels_sources_added": 10,
-    "hced_label_pass_input_rows": 5741,
+    "wave8_haitian_rebels_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "holds": 2,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 2,
+      "new_sources": 13,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "related_hced_dispositions": 6,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_haitian_rebels_cohort_counts": {
+      "dessalines_indigenous_army_1803": 2,
+      "louverture_autonomous_saint_domingue_army_1802": 2
+    },
+    "wave8_haitian_rebels_queue_validation": {
+      "external_owner_contracts": 0,
+      "holds": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_haitian_rebels_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "related_hced_dispositions": 6
+    },
+    "wave8_haitian_rebels_candidate_ids": [
+      "hced-Port-au-Prince1803-1",
+      "hced-Vertieres1803-1"
+    ],
+    "wave8_haitian_rebels_holds": [
+      {
+        "candidate_id": "hced-Crete-a-Perriot1802-1",
+        "raw_row_sha256": "475b546926eed3714b697787d43ed5b58b3805b59c85408f9d9457322b539ea1",
+        "canonical_event": {
+          "canonical_key": "siege_of_crete_a_pierrot:1802:1802",
+          "date_precision": "day_range",
+          "date_text": "4-24 March 1802",
+          "granularity": "multi_assault_siege_and_breakout",
+          "name": "Siege of Crete-a-Pierrot",
+          "year_low": 1802,
+          "year_high": 1802
+        },
+        "cohort": "louverture_autonomous_saint_domingue_army_1802",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_haitian_rebels_fondation_land_operations",
+          "wave8_haitian_rebels_ispan_crete",
+          "wave8_haitian_rebels_madiou_tome2",
+          "wave8_haitian_rebels_shd_leclerc_archive"
+        ],
+        "hold_reason": "Not promoted: the year-only row merges French assaults repulsed by the garrison, Lamartiniere's successful breakout, and final French occupation of the abandoned fort. Those tactical endpoints do not support one unqualified winner; uncertainty is not a draw."
+      },
+      {
+        "candidate_id": "hced-Gonaives1802-1",
+        "raw_row_sha256": "823cf0351421929b0ceddfa9ebe93d388f4fe34db3402033cb87bce96de651d4",
+        "canonical_event": {
+          "canonical_key": "battle_of_ravine_a_couleuvres:1802:1802",
+          "date_precision": "day",
+          "date_text": "23 February 1802",
+          "granularity": "engagement",
+          "name": "Battle of Ravine-a-Couleuvres",
+          "year_low": 1802,
+          "year_high": 1802
+        },
+        "cohort": "louverture_autonomous_saint_domingue_army_1802",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_haitian_rebels_ardouin_tome5",
+          "wave8_haitian_rebels_dorsainvil_manual",
+          "wave8_haitian_rebels_fondation_land_operations",
+          "wave8_haitian_rebels_madiou_tome2"
+        ],
+        "hold_reason": "Not promoted: HCED's Gonaives record identifies Ravine-a-Couleuvres, but reputable accounts conflict over whether Toussaint held the field or Rochambeau forced his withdrawal. Selecting either tactical winner would invent certainty; the conflict is not encoded as a draw."
+      }
+    ],
+    "wave8_haitian_rebels_terminal_exclusions": [],
+    "wave8_haitian_rebels_cross_lane_dispositions": [],
+    "wave8_haitian_rebels_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Azua1844-1",
+        "raw_row_sha256": "2c59fbed65521ed79b5d5b6004c5275db64da25638db65d2f6d97fbae1b6c4cb",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+      },
+      {
+        "candidate_id": "hced-Cabeza de las Marias and las Hicoteas1844-1",
+        "raw_row_sha256": "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+      },
+      {
+        "candidate_id": "hced-El Numero1849-1",
+        "raw_row_sha256": "fac408e00c7ebe0beae2880f30a8640bfa254fd48dbcb5be557256b9b92d27a2",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+      },
+      {
+        "candidate_id": "hced-Sabana Larga1856-1",
+        "raw_row_sha256": "b1e041908f7fcf8f14bb28f203671a43c9929f485b7b2a3e737c1d2757dfc3cf",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+      },
+      {
+        "candidate_id": "hced-Santo Domingo1802-1803-1",
+        "raw_row_sha256": "557c799311d8310f1c7ce76107b663d802d3f30de1d873007169bf93ecd30082",
+        "disposition": "distinct_british_french_naval_event",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Same expedition period but a British-French naval record, not one of the four exact Haitian Rebels engagements."
+      },
+      {
+        "candidate_id": "hced-Santo Domingo1805-1",
+        "raw_row_sha256": "100b9326b4d08e44f7e10a2bc51ab70346637df2d57ffa692e551cf4033f36fe",
+        "disposition": "distinct_post_independence_haitian_imperial_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dessalines's independent 1805 empire and Napoleon's First Empire are outside both 1802 and 1803 actor windows."
+      }
+    ],
+    "wave8_haitian_rebels_hced_duplicate_dispositions": [],
+    "wave8_haitian_rebels_iwbd_duplicate_dispositions": [],
+    "wave8_haitian_rebels_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Crete-a-Perriot1802-1",
+        "aliases": [
+          "battle of crete a pierrot",
+          "crete a perriot",
+          "crete a pierrot",
+          "siege of crete a pierrot"
+        ],
+        "years": [
+          1802,
+          1802
+        ]
+      },
+      {
+        "audit_id": "hced-Gonaives1802-1",
+        "aliases": [
+          "battle of ravine a couleuvres",
+          "gonaives",
+          "ravine a couleuvres",
+          "ravine aux couleuvres"
+        ],
+        "years": [
+          1802,
+          1802
+        ]
+      },
+      {
+        "audit_id": "hced-Port-au-Prince1803-1",
+        "aliases": [
+          "port au prince",
+          "siege and evacuation of port au prince 1803",
+          "siege of port au prince"
+        ],
+        "years": [
+          1803,
+          1803
+        ]
+      },
+      {
+        "audit_id": "hced-Vertieres1803-1",
+        "aliases": [
+          "battle of vertieres",
+          "vertieres"
+        ],
+        "years": [
+          1803,
+          1803
+        ]
+      }
+    ],
+    "wave8_haitian_rebels_existing_release_duplicate_dispositions": [],
+    "wave8_haitian_rebels_integration_dispositions": [
+      {
+        "disposition_id": "related_hced:hced-Azua1844-1",
+        "raw_row_sha256": "2c59fbed65521ed79b5d5b6004c5275db64da25638db65d2f6d97fbae1b6c4cb",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+      },
+      {
+        "disposition_id": "related_hced:hced-Cabeza de las Marias and las Hicoteas1844-1",
+        "raw_row_sha256": "60efe67f6f9cff2c3305003890e4c01cc30ce90278fe010caa125266c99eb8b4",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dominican independence war; not the 1803 Indigenous Army."
+      },
+      {
+        "disposition_id": "related_hced:hced-El Numero1849-1",
+        "raw_row_sha256": "fac408e00c7ebe0beae2880f30a8640bfa254fd48dbcb5be557256b9b92d27a2",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+      },
+      {
+        "disposition_id": "related_hced:hced-Sabana Larga1856-1",
+        "raw_row_sha256": "b1e041908f7fcf8f14bb28f203671a43c9929f485b7b2a3e737c1d2757dfc3cf",
+        "disposition": "distinct_post_independence_haitian_state_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Later Soulouque-era campaign; not the 1803 Indigenous Army."
+      },
+      {
+        "disposition_id": "related_hced:hced-Santo Domingo1802-1803-1",
+        "raw_row_sha256": "557c799311d8310f1c7ce76107b663d802d3f30de1d873007169bf93ecd30082",
+        "disposition": "distinct_british_french_naval_event",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Same expedition period but a British-French naval record, not one of the four exact Haitian Rebels engagements."
+      },
+      {
+        "disposition_id": "related_hced:hced-Santo Domingo1805-1",
+        "raw_row_sha256": "100b9326b4d08e44f7e10a2bc51ab70346637df2d57ffa692e551cf4033f36fe",
+        "disposition": "distinct_post_independence_haitian_imperial_campaign",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "boundary_note": "Dessalines's independent 1805 empire and Napoleon's First Empire are outside both 1802 and 1803 actor windows."
+      }
+    ],
+    "wave8_haitian_rebels_outcome_overrides": [],
+    "wave8_haitian_rebels_entities_added": 2,
+    "wave8_haitian_rebels_sources_added": 13,
+    "hced_label_pass_input_rows": 5737,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -9786,7 +10042,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 863,
+      "reserved_candidate_contract": 867,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -9798,7 +10054,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2230,
+      "no_unique_time_valid_label_match": 2226,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

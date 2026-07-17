@@ -9081,6 +9081,195 @@
     ]
   },
   {
+    "id": "wave8_haitian_rebels_ardouin_tome5",
+    "title": "Etudes sur l'histoire d'Haiti, Tome V, chapter 3",
+    "url": "https://fr.wikisource.org/wiki/%C3%89tudes_sur_l%E2%80%99histoire_d%E2%80%99Ha%C3%AFti/Tome_5/5.3",
+    "publisher": "Dezobry et E. Magdeleine; Wikisource transcription",
+    "license": "Citation and link only",
+    "source_type": "haitian_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "beaubrun_ardouin_etudes_haiti_tome5",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_cambridge_defenders",
+    "title": "Defenders of Liberty: The Congos and the Question of African Agency in the Haitian Revolution",
+    "url": "https://www.cambridge.org/core/journals/americas/article/defenders-of-liberty-the-congos-and-the-question-of-african-agency-in-the-haitian-revolution/4F0DAEF562FF70B55AD47135E376150C",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "mobley_defenders_of_liberty",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_dorsainvil_manual",
+    "title": "Manuel d'histoire d'Haiti",
+    "url": "https://beta-omk.manioc.org/files/original/2821/PAP11077.pdf",
+    "publisher": "Procure des Freres de l'Instruction Chretienne; Manioc",
+    "license": "Citation and link only",
+    "source_type": "haitian_historical_manual",
+    "accessed": "2026-07-16",
+    "source_family_id": "dorsainvil_manuel_histoire_haiti",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_embassy_flag",
+    "title": "Flag and Coat of Arms: flags of Haiti, 1697-1986",
+    "url": "https://www.haiti.org/flag-and-coat-of-arms/",
+    "publisher": "Embassy of Haiti in the United States",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "haiti_embassy_flag_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_fondation_land_operations",
+    "title": "L'expedition de Saint-Domingue: les operations terrestres (fevrier-juin 1802)",
+    "url": "https://www.napoleon.org/histoire-des-2-empires/articles/lexpedition-de-saint-domingue-les-operations-terrestres-fevrier-juin-1802/",
+    "publisher": "Fondation Napoleon",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "fondation_napoleon_saint_domingue_land_operations",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_fondation_santo_domingo",
+    "title": "Napoleon and Santo Domingo (Haiti and Santo Domingo)",
+    "url": "https://www.napoleon.org/en/history-of-the-two-empires/articles/napoleon-the-dark-side-napoleon-and-santo-domingo-haiti-and-santo-domingo-4-min-read/",
+    "publisher": "Fondation Napoleon",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "fondation_napoleon_santo_domingo_synthesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_government_vertieres",
+    "title": "18 novembre 1803: au nom de la liberte et de la dignite",
+    "url": "https://communication.gouv.ht/in/18-novembre-1803-18-novembre-2020-au-nom-de-la-liberte-et-de-la-dignite/",
+    "publisher": "Government of the Republic of Haiti",
+    "license": "Citation and link only",
+    "source_type": "official_commemoration",
+    "accessed": "2026-07-16",
+    "source_family_id": "haiti_government_vertieres_commemoration",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_ispan_crete",
+    "title": "La Crete-a-Pierrot, site de hauts faits d'armes",
+    "url": "https://www.haiti.org/wp-content/uploads/2012/09/BULLETIN%20DE%20L%27ISPAN%20No%2022%20WEB.pdf",
+    "publisher": "Institut de Sauvegarde du Patrimoine National d'Haiti",
+    "license": "Citation and link only",
+    "source_type": "official_historic_site_bulletin",
+    "accessed": "2026-07-16",
+    "source_family_id": "ispan_bulletin_22_crete_a_pierrot",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_ispan_port_republicain",
+    "title": "Prise de possession du Port Republicain par l'armee indigene",
+    "url": "https://ambassade-haiti.ca/wp-content/uploads/Patrimoine%20culturelle/HTML5/files/basic-html/page20.html",
+    "publisher": "Institut de Sauvegarde du Patrimoine National d'Haiti",
+    "license": "Citation and link only",
+    "source_type": "official_historic_site_bulletin",
+    "accessed": "2026-07-16",
+    "source_family_id": "ispan_bulletin_40_port_republicain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_madiou_capitulation",
+    "title": "Capitulation du Cap (1803): episode de l'histoire d'Haiti",
+    "url": "https://www.manioc.org/en/patrimon/BBX19098",
+    "publisher": "Imprimerie de la Feuille du Commerce; Manioc",
+    "license": "Citation and link only",
+    "source_type": "haitian_near_contemporary_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "thomas_madiou_histoire_haiti",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_madiou_tome2",
+    "title": "Histoire d'Haiti, Tome II: 1799-1803",
+    "url": "https://cidihca.com/couvertures/LCID2744.pdf",
+    "publisher": "Editions Henri Deschamps; CIDIHCA",
+    "license": "Citation and link only",
+    "source_type": "haitian_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "thomas_madiou_histoire_haiti",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_oxford_leclerc",
+    "title": "The Leclerc Expedition to Saint-Domingue and the Independence of Haiti, 1802-1804",
+    "url": "https://academic.oup.com/edited-volume/61800/chapter-abstract/546414970",
+    "publisher": "Oxford Research Encyclopedia of Latin American History",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_research_encyclopedia_leclerc_expedition",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_haitian_rebels_shd_leclerc_archive",
+    "title": "Saint-Domingue Expedition Leclerc (1802-1803)",
+    "url": "https://www.servicehistorique.sga.defense.gouv.fr/ark/489234",
+    "publisher": "Service historique de la Defense",
+    "license": "Citation and link only",
+    "source_type": "official_archival_collection_description",
+    "accessed": "2026-07-16",
+    "source_family_id": "shd_leclerc_expedition_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_harvard_imperiia_pugachev_bashkir",
     "title": "Pugachev's Rebellion in the Bashkir Lands: 1773-1775",
     "url": "https://scalar.fas.harvard.edu/imperiia/pugachevs-rebellion-in-the-bashkir-lands-1773-1775",
