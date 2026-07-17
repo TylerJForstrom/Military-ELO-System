@@ -8,8 +8,8 @@
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
     "entities": 819,
-    "events": 5230,
-    "sources": 1117,
+    "events": 5234,
+    "sources": 1126,
     "registry_polities": 2175
   },
   "year_range": {
@@ -142,6 +142,7 @@
     "accepted_wave8_haitian_rebels_hced_events": 2,
     "accepted_wave8_kingdom_kandy_hced_events": 2,
     "accepted_wave8_hospitallers_hced_events": 8,
+    "accepted_wave8_murids_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -10596,7 +10597,377 @@
     "wave8_hospitallers_outcome_overrides": [],
     "wave8_hospitallers_entities_added": 17,
     "wave8_hospitallers_sources_added": 18,
-    "hced_label_pass_input_rows": 5725,
+    "wave8_murids_counts": {
+      "adjacent_hced_dispositions": 3,
+      "campaign_events": 2,
+      "country_quarantine_additions": 0,
+      "dagestan_lane_dispositions": 6,
+      "engagement_events": 2,
+      "existing_lane_overlap_audits": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 9,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 0,
+      "new_sources": 9,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "required_existing_entities": 3,
+      "reviewed_hced_rows": 4,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_murids_cohort_counts": {
+      "ghazi_muhammad_final_gimry_1832": 1,
+      "shamil_dargo_operations_1842_1845": 2,
+      "shamil_final_gunib_1859": 1
+    },
+    "wave8_murids_metadata": {
+      "audit": "candidate_keyed_exact_label_with_time_bounded_regime_reuse",
+      "counts": {
+        "adjacent_hced_dispositions": 3,
+        "campaign_events": 2,
+        "country_quarantine_additions": 0,
+        "dagestan_lane_dispositions": 6,
+        "engagement_events": 2,
+        "existing_lane_overlap_audits": 3,
+        "existing_release_duplicate_dispositions": 0,
+        "holds": 0,
+        "integration_dispositions": 9,
+        "iwbd_duplicate_dispositions": 0,
+        "iwbd_zero_overlap_candidates": 4,
+        "new_entities": 0,
+        "new_sources": 9,
+        "newly_rated_events": 4,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 4,
+        "promotion_contracts": 4,
+        "required_existing_entities": 3,
+        "reviewed_hced_rows": 4,
+        "sole_blocker_rows": 4,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "ghazi_muhammad_final_gimry_1832": 1,
+        "shamil_dargo_operations_1842_1845": 2,
+        "shamil_final_gunib_1859": 1
+      },
+      "final_audit_signature": "6b312e21d254917756958209cf5a136072231b88b9a3e52c2c2139849ae318d8",
+      "module_owner": "military_elo.promotion.wave8_murids",
+      "row_dispositions": {
+        "hced-Darghiyya1842-1": "promote",
+        "hced-Darghiyya1845-1": "promote",
+        "hced-Gimrah1832-1": "promote",
+        "hced-Gunib1859-1": "promote"
+      }
+    },
+    "wave8_murids_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_murids_integration_validation": {
+      "adjacent_hced_dispositions": 3,
+      "dagestan_lane_dispositions": 6,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 9,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0
+    },
+    "wave8_murids_candidate_ids": [
+      "hced-Darghiyya1842-1",
+      "hced-Darghiyya1845-1",
+      "hced-Gimrah1832-1",
+      "hced-Gunib1859-1"
+    ],
+    "wave8_murids_holds": [],
+    "wave8_murids_terminal_exclusions": [],
+    "wave8_murids_dagestan_lane_dispositions": [
+      {
+        "candidate_id": "hced-Aghdash Awkh1831-1",
+        "raw_row_sha256": "5635a7072bf490c68cf2d692e429ab59ee88afbedebae681aead7c3bdf3e1130",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_aghdash_awkh1831_1",
+        "owner_entity_id": "dagestani_imamate_ghazi_muhammad_1829_1832",
+        "disposition": "distinct_prior_engagement_same_regime"
+      },
+      {
+        "candidate_id": "hced-Akhulgo1839-1",
+        "raw_row_sha256": "483b74e08c8da8308115a51462f852a26f377a63907986109c3caf19d5693a68",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_akhulgo1839_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_siege"
+      },
+      {
+        "candidate_id": "hced-Burtinah1839-1",
+        "raw_row_sha256": "c5cc816acd0ee80ee738cb2edfee935859c0612873b31e355b735ff7f5380f79",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_burtinah1839_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_battle"
+      },
+      {
+        "candidate_id": "hced-Girgil1847-1",
+        "raw_row_sha256": "a571f76e08358a4871d253ea40c9c6cd7e455b3d53f6b188af96f5e289e5abeb",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_girgil1847_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_battle_with_reviewed_opposite_raw_result"
+      },
+      {
+        "candidate_id": "hced-Saltah1847-1",
+        "raw_row_sha256": "cd3afc6860b7ac4d3390ff279e93d17cfa31ef4926e91b658800a77f7b0a4a2e",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_saltah1847_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_siege"
+      },
+      {
+        "candidate_id": "hced-Zakataly1853-1",
+        "raw_row_sha256": "72be61df57fa08a282ad29b8cc7b78392e59ae833ba058538956b24a93b90972",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_zakataly1853_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_battle"
+      }
+    ],
+    "wave8_murids_adjacent_hced_dispositions": [
+      {
+        "candidate_id": "hced-Anapa1789-1",
+        "raw_row_sha256": "5081861ce9beff84380a73fede9bb074ee11c71e2e79732c74edd5cc207f1445",
+        "literal_label": "ottoman empire chechen rebels",
+        "disposition": "distinct_pre_imamate_composite_actor_event",
+        "owner_event_id": "hced_hced_anapa1789_1",
+        "boundary_note": "Forty years before Ghazi Muhammad's imamate; no identity continuity."
+      },
+      {
+        "candidate_id": "hced-Grozny1995-1",
+        "raw_row_sha256": "256bbb6c2f8ef129737f43bb33e0aa3e9293bdb5f8ec459806e8d3775e9db138",
+        "literal_label": "chechen rebels",
+        "disposition": "distinct_post_soviet_chechen_conflict",
+        "owner_event_id": null,
+        "boundary_note": "A post-Soviet actor cannot inherit Shamil's 1834-1859 Elo."
+      },
+      {
+        "candidate_id": "hced-Grozny2000-1",
+        "raw_row_sha256": "6c38219e9c2726c114a7261e7dc38f5f2ef218cf3cea5194349f29519f88aa9b",
+        "literal_label": "chechen rebels",
+        "disposition": "distinct_post_soviet_chechen_conflict",
+        "owner_event_id": null,
+        "boundary_note": "A post-Soviet actor cannot inherit Shamil's 1834-1859 Elo."
+      }
+    ],
+    "wave8_murids_existing_lane_overlap_audit": [
+      {
+        "entity_id": "caucasian_imamate_shamil_1834_1859",
+        "name": "Caucasian Imamate under Imam Shamil",
+        "kind": "theocratic_imamate",
+        "start_year": 1834,
+        "end_year": 1859,
+        "existing_owner": "military_elo.promotion.wave8_dagestan",
+        "disposition": "reuse_exact_regime_without_generic_murid_alias",
+        "candidate_id_overlap": []
+      },
+      {
+        "entity_id": "dagestani_imamate_ghazi_muhammad_1829_1832",
+        "name": "Dagestani Imamate under Ghazi Muhammad",
+        "kind": "theocratic_imamate",
+        "start_year": 1829,
+        "end_year": 1832,
+        "existing_owner": "military_elo.promotion.wave8_dagestan",
+        "disposition": "reuse_exact_regime_without_generic_murid_alias",
+        "candidate_id_overlap": []
+      },
+      {
+        "entity_id": "russian_empire",
+        "name": "Russian Empire",
+        "kind": "empire",
+        "start_year": 1721,
+        "end_year": 1917,
+        "existing_owner": "curated_release",
+        "disposition": "reuse_time_bounded_russian_regime",
+        "candidate_id_overlap": []
+      }
+    ],
+    "wave8_murids_iwbd_duplicate_dispositions": [],
+    "wave8_murids_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Darghiyya1842-1",
+        "aliases": [
+          "battle of ichkeria",
+          "darghiyya",
+          "dargo expedition 1842",
+          "grabbe dargo expedition",
+          "ichkeria expedition",
+          "itchkeri expedition"
+        ],
+        "years": [
+          1842,
+          1842
+        ]
+      },
+      {
+        "audit_id": "hced-Darghiyya1845-1",
+        "aliases": [
+          "battle of dargo",
+          "darghiyya",
+          "dargin expedition",
+          "dargo campaign",
+          "dargo expedition",
+          "dargo expedition 1845",
+          "vorontsov dargo expedition"
+        ],
+        "years": [
+          1845,
+          1845
+        ]
+      },
+      {
+        "audit_id": "hced-Gimrah1832-1",
+        "aliases": [
+          "assault of gimrah",
+          "assault of gimry",
+          "battle of gimrah",
+          "battle of gimry",
+          "gimrah",
+          "gimry"
+        ],
+        "years": [
+          1832,
+          1832
+        ]
+      },
+      {
+        "audit_id": "hced-Gunib1859-1",
+        "aliases": [
+          "assault of ghunib",
+          "assault of gunib",
+          "battle of ghunib",
+          "battle of gunib",
+          "capture of gunib",
+          "ghunib",
+          "gunib",
+          "siege of ghunib",
+          "siege of gunib",
+          "storming of gunib"
+        ],
+        "years": [
+          1859,
+          1859
+        ]
+      }
+    ],
+    "wave8_murids_existing_release_duplicate_dispositions": [],
+    "wave8_murids_integration_dispositions": [
+      {
+        "disposition_id": "adjacent_hced:hced-Anapa1789-1",
+        "raw_row_sha256": "5081861ce9beff84380a73fede9bb074ee11c71e2e79732c74edd5cc207f1445",
+        "literal_label": "ottoman empire chechen rebels",
+        "disposition": "distinct_pre_imamate_composite_actor_event",
+        "owner_event_id": "hced_hced_anapa1789_1",
+        "boundary_note": "Forty years before Ghazi Muhammad's imamate; no identity continuity."
+      },
+      {
+        "disposition_id": "adjacent_hced:hced-Grozny1995-1",
+        "raw_row_sha256": "256bbb6c2f8ef129737f43bb33e0aa3e9293bdb5f8ec459806e8d3775e9db138",
+        "literal_label": "chechen rebels",
+        "disposition": "distinct_post_soviet_chechen_conflict",
+        "owner_event_id": null,
+        "boundary_note": "A post-Soviet actor cannot inherit Shamil's 1834-1859 Elo."
+      },
+      {
+        "disposition_id": "adjacent_hced:hced-Grozny2000-1",
+        "raw_row_sha256": "6c38219e9c2726c114a7261e7dc38f5f2ef218cf3cea5194349f29519f88aa9b",
+        "literal_label": "chechen rebels",
+        "disposition": "distinct_post_soviet_chechen_conflict",
+        "owner_event_id": null,
+        "boundary_note": "A post-Soviet actor cannot inherit Shamil's 1834-1859 Elo."
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Aghdash Awkh1831-1",
+        "raw_row_sha256": "5635a7072bf490c68cf2d692e429ab59ee88afbedebae681aead7c3bdf3e1130",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_aghdash_awkh1831_1",
+        "owner_entity_id": "dagestani_imamate_ghazi_muhammad_1829_1832",
+        "disposition": "distinct_prior_engagement_same_regime"
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Akhulgo1839-1",
+        "raw_row_sha256": "483b74e08c8da8308115a51462f852a26f377a63907986109c3caf19d5693a68",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_akhulgo1839_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_siege"
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Burtinah1839-1",
+        "raw_row_sha256": "c5cc816acd0ee80ee738cb2edfee935859c0612873b31e355b735ff7f5380f79",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_burtinah1839_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_battle"
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Girgil1847-1",
+        "raw_row_sha256": "a571f76e08358a4871d253ea40c9c6cd7e455b3d53f6b188af96f5e289e5abeb",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_girgil1847_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_battle_with_reviewed_opposite_raw_result"
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Saltah1847-1",
+        "raw_row_sha256": "cd3afc6860b7ac4d3390ff279e93d17cfa31ef4926e91b658800a77f7b0a4a2e",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_saltah1847_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_siege"
+      },
+      {
+        "disposition_id": "dagestan_lane:hced-Zakataly1853-1",
+        "raw_row_sha256": "72be61df57fa08a282ad29b8cc7b78392e59ae833ba058538956b24a93b90972",
+        "owner_module": "military_elo.promotion.wave8_dagestan",
+        "owner_event_id": "hced_wave8_dagestan_hced_zakataly1853_1",
+        "owner_entity_id": "caucasian_imamate_shamil_1834_1859",
+        "disposition": "distinct_later_battle"
+      }
+    ],
+    "wave8_murids_scope_and_opposite_result_audit": {
+      "hced-Gimrah1832-1": {
+        "audited_unit": "fortified_village_assault",
+        "attested_result": "russian_assault_victory",
+        "opposite_result_disposition": "no_supported_imamate_victory",
+        "scope_note": "The assault and capture are rated, not the whole Caucasus War."
+      },
+      "hced-Darghiyya1842-1": {
+        "audited_unit": "multi_day_operational_expedition",
+        "attested_result": "imamate_operational_victory",
+        "opposite_result_disposition": "no_russian_objective_reached",
+        "scope_note": "The complete failed advance and withdrawal are rated; no point battle at Darghiyya is invented."
+      },
+      "hced-Darghiyya1845-1": {
+        "audited_unit": "multi_week_operational_expedition",
+        "attested_result": "imamate_operational_victory",
+        "opposite_result_disposition": "temporary_russian_occupation_of_burned_dargo_is_nested_subaction",
+        "scope_note": "The full expedition is rated; its component fights and temporary occupation are not emitted as additional outcomes."
+      },
+      "hced-Gunib1859-1": {
+        "audited_unit": "blockade_assault_and_capitulation",
+        "attested_result": "russian_assault_and_capitulation_victory",
+        "opposite_result_disposition": "no_supported_imamate_holdout_victory",
+        "scope_note": "The bounded Gunib operation is rated, not later Caucasian fighting."
+      }
+    },
+    "wave8_murids_outcome_overrides": [],
+    "wave8_murids_entities_added": 0,
+    "wave8_murids_sources_added": 9,
+    "hced_label_pass_input_rows": 5721,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -10609,7 +10980,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 879,
+      "reserved_candidate_contract": 883,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -10621,7 +10992,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2214,
+      "no_unique_time_valid_label_match": 2210,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

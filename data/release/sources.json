@@ -12113,6 +12113,141 @@
     ]
   },
   {
+    "id": "wave8_murids_baddeley_russian_conquest",
+    "title": "The Russian Conquest of the Caucasus",
+    "url": "https://commons.wikimedia.org/wiki/File:The_Russian_conquest_of_the_Caucasus_(IA_cu31924028754616).pdf",
+    "publisher": "Longmans, Green and Co.; Cornell University / Internet Archive scan",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "baddeley_russian_conquest_1908",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_baumann_unconventional_wars",
+    "title": "Russian-Soviet Unconventional Wars in the Caucasus, Central Asia, and Afghanistan",
+    "url": "https://history.army.mil/Publications/Publications-Catalog/Leavenworth-Papers-No20-Russian-Soviet/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "baumann_leavenworth_paper_20",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_bre_dargo_1845",
+    "title": "Dargo Expedition of 1845",
+    "url": "https://old.bigenc.ru/military_science/text/1941105",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_dargo_1845",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_bre_ghazi_muhammad",
+    "title": "Ghazi Muhammad",
+    "url": "https://old.bigenc.ru/domestic_history/text/2339442",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_ghazi_muhammad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_bre_gunib_1859",
+    "title": "Storming of Gunib, 1859",
+    "url": "https://old.bigenc.ru/military_science/text/1935832",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_gunib_1859",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_bre_shamil",
+    "title": "Shamil",
+    "url": "https://old.bigenc.ru/domestic_history/text/4690031",
+    "publisher": "Great Russian Encyclopedia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "great_russian_encyclopedia_shamil",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_gammer_muslim_resistance",
+    "title": "Muslim Resistance to the Tsar: Shamil and the Conquest of Chechnia and Daghestan",
+    "url": "https://api.pageplace.de/preview/DT0400.9781135308988_A24427534/preview-9781135308988_A24427534.pdf",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_preview",
+    "accessed": "2026-07-16",
+    "source_family_id": "gammer_muslim_resistance_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_statiev_mountain_warfare",
+    "title": "Russia's Historical Experience in Mountain Warfare",
+    "url": "https://www.cambridge.org/core/books/at-wars-summit/russias-historical-experience-in-mountain-warfare/DDFF5F586D273F8165ED1DED9431C8D1",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "statiev_mountain_warfare_dargo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_murids_tdv_shamil",
+    "title": "Seyh Samil",
+    "url": "https://islamansiklopedisi.org.tr/seyh-samil",
+    "publisher": "TDV Encyclopedia of Islam",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tdv_islam_encyclopedia_shamil",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_muslim_forces_barcelona_iberia_711",
     "title": "La conquista islámica de la península ibérica y la tergiversación del pasado",
     "url": "https://diposit.ub.edu/dspace/bitstream/2445/116723/1/JSA_TESIS.pdf",
