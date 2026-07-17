@@ -2628,6 +2628,38 @@
     ]
   },
   {
+    "id": "king_john_royal_siege_army_rochester_1215",
+    "name": "King John's royal siege army at Rochester (1215)",
+    "kind": "event_bounded_siege_army",
+    "start_year": 1215,
+    "end_year": 1215,
+    "region": "Rochester Castle, Kent",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to John's army during the 11 October-30 November siege and capture of Rochester Castle. No rating is inherited by King John, England, Plantagenets generally, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_english_heritage_rochester",
+      "wave8_rebel_barons_historic_england_rochester",
+      "wave8_rebel_barons_magna_carta_rochester"
+    ]
+  },
+  {
+    "id": "william_d_aubigny_baronial_garrison_rochester_1215",
+    "name": "William d'Aubigny's baronial garrison at Rochester (1215)",
+    "kind": "event_bounded_siege_garrison",
+    "start_year": 1215,
+    "end_year": 1215,
+    "region": "Rochester Castle, Kent",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to William d'Aubigny and the castle defenders who surrendered on 30 November. No rating is inherited by d'Aubigny, the London baronial coalition, rebel barons generally, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_english_heritage_rochester",
+      "wave8_rebel_barons_historic_england_rochester",
+      "wave8_rebel_barons_magna_carta_rochester"
+    ]
+  },
+  {
     "id": "kingdom_serbia_medieval",
     "name": "Medieval Kingdom of Serbia",
     "kind": "kingdom",
@@ -2639,6 +2671,70 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
+    "id": "aumale_bytham_garrison_1221",
+    "name": "Aumale's garrison at Castle Bytham (1221)",
+    "kind": "event_bounded_siege_garrison",
+    "start_year": 1221,
+    "end_year": 1221,
+    "region": "Castle Bytham, Lincolnshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the garrison that remained, resisted, and surrendered at Castle Bytham after William de Forz had fled. No rating is inherited by Aumale personally, his affinities, rebel barons, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_carpenter_minority",
+      "wave8_rebel_barons_norgate_minority"
+    ]
+  },
+  {
+    "id": "henry_iii_royal_siege_host_bytham_1221",
+    "name": "Henry III's royal siege host at Castle Bytham (1221)",
+    "kind": "event_bounded_siege_host",
+    "start_year": 1221,
+    "end_year": 1221,
+    "region": "Castle Bytham, Lincolnshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the regency government's host that marched against and assaulted Castle Bytham on 3-8 February. No rating is inherited by Henry III, England, the royal household, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_carpenter_minority",
+      "wave8_rebel_barons_fine_rolls_bytham",
+      "wave8_rebel_barons_norgate_minority"
+    ]
+  },
+  {
+    "id": "henry_iii_royal_siege_host_bedford_1224",
+    "name": "Henry III's royal siege host at Bedford Castle (1224)",
+    "kind": "event_bounded_siege_host",
+    "start_year": 1224,
+    "end_year": 1224,
+    "region": "Bedford Castle, Bedfordshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal host conducting the June-August siege of Bedford Castle. No rating is inherited by Henry III, England, later royal armies, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_bedfordshire_archives",
+      "wave8_rebel_barons_carpenter_minority",
+      "wave8_rebel_barons_fine_rolls_bedford",
+      "wave8_rebel_barons_norgate_minority"
+    ]
+  },
+  {
+    "id": "william_de_breaute_bedford_garrison_1224",
+    "name": "William de Breaute's garrison at Bedford Castle (1224)",
+    "kind": "event_bounded_siege_garrison",
+    "start_year": 1224,
+    "end_year": 1224,
+    "region": "Bedford Castle, Bedfordshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the garrison commanded by William de Breaute while Falkes was absent. No rating is inherited by Falkes, William after surrender, their household, rebel barons, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_bedfordshire_archives",
+      "wave8_rebel_barons_fine_rolls_bedford",
+      "wave8_rebel_barons_norgate_minority"
     ]
   },
   {
@@ -2822,6 +2918,98 @@
     "continuity_note": "This identity is limited to the Rūm Seljuq contingent accompanying Hülegü at Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
     "source_ids": [
       "wave8_muslim_forces_cambridge_mongols_aleppo"
+    ]
+  },
+  {
+    "id": "leybourne_warenne_garrison_and_royal_relief_force_rochester_1264",
+    "name": "Leybourne-Warenne garrison and royal relief force at Rochester (1264)",
+    "kind": "event_bounded_defense_and_relief_force",
+    "start_year": 1264,
+    "end_year": 1264,
+    "region": "Rochester, Kent",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the castle defense associated with Roger de Leybourne and John de Warenne together with the approaching royal relief that ended the siege. No rating is inherited by Henry III, royalists, the named lords in other actions, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_english_heritage_rochester",
+      "wave8_rebel_barons_historic_england_rochester",
+      "wave8_rebel_barons_oakes_barons_war"
+    ]
+  },
+  {
+    "id": "montfort_clare_baronial_siege_force_rochester_1264",
+    "name": "Montfort-Clare baronial siege force at Rochester (1264)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1264,
+    "end_year": 1264,
+    "region": "Rochester, Kent",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Simon de Montfort and Gilbert de Clare's besieging force from 17 to 26 April. No rating is inherited by either leader, their affinities, rebel barons generally, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_english_heritage_rochester",
+      "wave8_rebel_barons_historic_england_rochester",
+      "wave8_rebel_barons_oakes_barons_war"
+    ]
+  },
+  {
+    "id": "lord_edward_royalist_containment_force_axholme_1265",
+    "name": "Lord Edward's royalist containment force in Axholme (1265)",
+    "kind": "campaign_bounded_containment_force",
+    "start_year": 1265,
+    "end_year": 1265,
+    "region": "Isle of Axholme, Lincolnshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royalist forces and county levies used to contain the Axholme rebels through the November-December operation. No rating is inherited by Lord Edward, England, royalists generally, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_oakes_barons_war",
+      "wave8_rebel_barons_prestwich_edward_i"
+    ]
+  },
+  {
+    "id": "montfort_de_eyville_wake_disinherited_force_axholme_1265",
+    "name": "Montfort-de Eyville-Wake Disinherited force in Axholme (1265)",
+    "kind": "campaign_bounded_rebel_force",
+    "start_year": 1265,
+    "end_year": 1265,
+    "region": "Isle of Axholme, Lincolnshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Disinherited concentration contained in Axholme and represented in the Bickerdyke submission. No rating is inherited by the named leaders, rebel barons generally, their kin, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_oakes_barons_war",
+      "wave8_rebel_barons_prestwich_edward_i"
+    ]
+  },
+  {
+    "id": "ferrers_de_eyville_disinherited_force_chesterfield_1266",
+    "name": "Ferrers-de Eyville Disinherited force at Chesterfield (1266)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1266,
+    "end_year": 1266,
+    "region": "Chesterfield, Derbyshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Disinherited fighters present at the Chesterfield base when Henry of Almain attacked; absent hunting contingents are excluded. No rating is inherited by Ferrers, de Eyville, their followers in other actions, rebel barons generally, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_derbyshire_her",
+      "wave8_rebel_barons_oakes_barons_war"
+    ]
+  },
+  {
+    "id": "henry_of_almain_royalist_force_chesterfield_1266",
+    "name": "Henry of Almain's royalist force at Chesterfield (1266)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1266,
+    "end_year": 1266,
+    "region": "Chesterfield, Derbyshire",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royalist force that surprised and routed the rebel base at Chesterfield on 15 May. No rating is inherited by Henry of Almain, royalists generally, England, or any modern state.",
+    "source_ids": [
+      "wave8_rebel_barons_derbyshire_her",
+      "wave8_rebel_barons_oakes_barons_war"
     ]
   },
   {

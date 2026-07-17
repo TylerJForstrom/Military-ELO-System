@@ -1155,6 +1155,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "aumale_bytham_garrison_1221",
+      "name": "Aumale's garrison at Castle Bytham (1221)",
+      "kind": "event_bounded_siege_garrison",
+      "start_year": 1221,
+      "end_year": 1221,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Castle Bytham, Lincolnshire"
+    },
+    {
       "id": "austria_hungary",
       "name": "Austria-Hungary",
       "kind": "union_state",
@@ -5512,6 +5522,16 @@
       "region": "Fellin (Viljandi), Livonia"
     },
     {
+      "id": "ferrers_de_eyville_disinherited_force_chesterfield_1266",
+      "name": "Ferrers-de Eyville Disinherited force at Chesterfield (1266)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1266,
+      "end_year": 1266,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Chesterfield, Derbyshire"
+    },
+    {
       "id": "clio_eg_thebes_hyksos_bce1600_7d663dea",
       "name": "Fifteenth Dynasty of Egypt",
       "kind": "dynastic_state",
@@ -7394,6 +7414,26 @@
       "region": "Central Europe"
     },
     {
+      "id": "henry_iii_royal_siege_host_bedford_1224",
+      "name": "Henry III's royal siege host at Bedford Castle (1224)",
+      "kind": "event_bounded_siege_host",
+      "start_year": 1224,
+      "end_year": 1224,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bedford Castle, Bedfordshire"
+    },
+    {
+      "id": "henry_iii_royal_siege_host_bytham_1221",
+      "name": "Henry III's royal siege host at Castle Bytham (1221)",
+      "kind": "event_bounded_siege_host",
+      "start_year": 1221,
+      "end_year": 1221,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Castle Bytham, Lincolnshire"
+    },
+    {
       "id": "ireton_new_model_army_limerick_1651",
       "name": "Henry Ireton’s New Model Army at Limerick (1651)",
       "kind": "siege_army",
@@ -7412,6 +7452,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "England and Wales"
+    },
+    {
+      "id": "henry_of_almain_royalist_force_chesterfield_1266",
+      "name": "Henry of Almain's royalist force at Chesterfield (1266)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1266,
+      "end_year": 1266,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Chesterfield, Derbyshire"
     },
     {
       "id": "clio_ye_himyar_1_bce110_8dfe05b7",
@@ -9303,6 +9353,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "king_john_royal_siege_army_rochester_1215",
+      "name": "King John's royal siege army at Rochester (1215)",
+      "kind": "event_bounded_siege_army",
+      "start_year": 1215,
+      "end_year": 1215,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rochester Castle, Kent"
     },
     {
       "id": "clio_q149747_bce63_d3819dda",
@@ -11417,6 +11477,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "leybourne_warenne_garrison_and_royal_relief_force_rochester_1264",
+      "name": "Leybourne-Warenne garrison and royal relief force at Rochester (1264)",
+      "kind": "event_bounded_defense_and_relief_force",
+      "start_year": 1264,
+      "end_year": 1264,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rochester, Kent"
+    },
+    {
       "id": "clio_q333567_1632_7dbdf900",
       "name": "Li Zicheng",
       "kind": "polity",
@@ -11628,6 +11698,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "lord_edward_royalist_containment_force_axholme_1265",
+      "name": "Lord Edward's royalist containment force in Axholme (1265)",
+      "kind": "campaign_bounded_containment_force",
+      "start_year": 1265,
+      "end_year": 1265,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Isle of Axholme, Lincolnshire"
     },
     {
       "id": "clio_q738264_1840_0223c46d",
@@ -12720,6 +12800,26 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "montfort_clare_baronial_siege_force_rochester_1264",
+      "name": "Montfort-Clare baronial siege force at Rochester (1264)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1264,
+      "end_year": 1264,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rochester, Kent"
+    },
+    {
+      "id": "montfort_de_eyville_wake_disinherited_force_axholme_1265",
+      "name": "Montfort-de Eyville-Wake Disinherited force in Axholme (1265)",
+      "kind": "campaign_bounded_rebel_force",
+      "start_year": 1265,
+      "end_year": 1265,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Isle of Axholme, Lincolnshire"
     },
     {
       "id": "montgomerie_british_sc_force_echoe_1760",
@@ -21251,6 +21351,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "william_d_aubigny_baronial_garrison_rochester_1215",
+      "name": "William d'Aubigny's baronial garrison at Rochester (1215)",
+      "kind": "event_bounded_siege_garrison",
+      "start_year": 1215,
+      "end_year": 1215,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rochester Castle, Kent"
+    },
+    {
+      "id": "william_de_breaute_bedford_garrison_1224",
+      "name": "William de Breaute's garrison at Bedford Castle (1224)",
+      "kind": "event_bounded_siege_garrison",
+      "start_year": 1224,
+      "end_year": 1224,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bedford Castle, Bedfordshire"
+    },
+    {
       "id": "irish_williamite_army_1689",
       "name": "Williamite Army in Ireland",
       "kind": "claimant_army",
@@ -21944,11 +22064,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2057,
-    "rated_entities": 694,
-    "rated_events": 5159,
+    "registry_polities": 2069,
+    "rated_entities": 706,
+    "rated_events": 5165,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18235,
+    "unresolved_event_candidates": 18229,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22003,6 +22123,7 @@
     "candidate_keyed_wave8_satsuma_hced_events": 6,
     "candidate_keyed_wave8_rajputs_hced_events": 6,
     "candidate_keyed_wave8_mamluk_egypt_hced_events": 4,
+    "candidate_keyed_wave8_rebel_barons_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22013,21 +22134,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4895,
-      "candidate_keyed_reviewed_contracts": 585,
+      "hced_candidate_bindings": 4901,
+      "candidate_keyed_reviewed_contracts": 591,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4804,
-      "location_provenance_objects": 4853,
-      "point_fields_withheld_by_quarantine": 161,
+      "modern_location_country_assertions": 4810,
+      "location_provenance_objects": 4859,
+      "point_fields_withheld_by_quarantine": 167,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 209,
-      "point_quarantine_candidate_manifest_sha256": "0f3803b68cdb587f61055992130a028b1e12e81389c1e8ed356df10b7f8ff04c",
+      "unique_events_with_any_quarantined_field": 215,
+      "point_quarantine_candidate_manifest_sha256": "ad2320370540238048a2ecb8b0c0b5e3c90c3613f4cb9f31752df9f986aed562",
       "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "ededa116c6c8666d91252309227583bde3896a87922c46750271f39dab355447",
+      "quarantine_policy_sha256": "123c795dc54a00d0ec6e0771e7dbe7837641dda859bdc59a1d60df8ff164cc45",
       "assertion_status": {
-        "unreviewed_source_assertion": 4853
+        "unreviewed_source_assertion": 4859
       },
       "verified_location_assertions": {
         "availability": "not_available",

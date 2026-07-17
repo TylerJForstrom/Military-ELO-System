@@ -10812,6 +10812,169 @@
     ]
   },
   {
+    "id": "wave8_rebel_barons_bedfordshire_archives",
+    "title": "Bedford Castle",
+    "url": "https://bedsarchives.bedford.gov.uk/CommunityArchives/Bedford/BedfordCastle.aspx",
+    "publisher": "Bedfordshire Archives and Bedford Borough Council",
+    "license": "Citation and link only",
+    "source_type": "institutional_archival_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "bedfordshire_archives_bedford_castle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_carpenter_minority",
+    "title": "The Minority of Henry III",
+    "url": "https://books.google.com/books/about/The_Minority_of_Henry_III.html?id=93nNNQUyFwAC",
+    "publisher": "University of California Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "carpenter_minority_henry_iii_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_derbyshire_her",
+    "title": "Site of the Battle of Chesterfield (apparent site), MDR5341",
+    "url": "https://her.derbyshire.gov.uk/Monument/MDR5341",
+    "publisher": "Derbyshire County Council Historic Environment Record",
+    "license": "Citation and link only",
+    "source_type": "official_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "derbyshire_her_mdr5341",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_english_heritage_rochester",
+    "title": "History of Rochester Castle",
+    "url": "https://www.english-heritage.org.uk/visit/places/rochester-castle/history/",
+    "publisher": "English Heritage",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "english_heritage_rochester_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_fine_rolls_bedford",
+    "title": "The Companions of Falkes de Breaute and the siege of Bedford Castle",
+    "url": "https://finerollshenry3.org.uk/content/month/fm-07-2007.html",
+    "publisher": "Henry III Fine Rolls Project",
+    "license": "Citation and link only",
+    "source_type": "scholarly_primary_source_commentary",
+    "accessed": "2026-07-16",
+    "source_family_id": "ray_fine_rolls_bedford_2007",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_fine_rolls_bytham",
+    "title": "5 Henry III (28 October 1220-27 October 1221)",
+    "url": "https://finerollshenry3.org.uk/content/calendar/roll_015.html",
+    "publisher": "Henry III Fine Rolls Project",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edition_of_primary_administrative_records",
+    "accessed": "2026-07-16",
+    "source_family_id": "fine_rolls_henry_iii_roll_015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_historic_england_rochester",
+    "title": "Rochester Castle, National Heritage List for England entry 1011030",
+    "url": "https://historicengland.org.uk/listing/the-list/list-entry/1011030",
+    "publisher": "Historic England",
+    "license": "Citation and link only",
+    "source_type": "statutory_historic_environment_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "historic_england_rochester_1011030",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_magna_carta_rochester",
+    "title": "The fall of Rochester Castle",
+    "url": "https://magnacarta.cmp.uea.ac.uk/read/itinerary/The_fall_of_Rochester_Castle",
+    "publisher": "Magna Carta Project, University of East Anglia",
+    "license": "Citation and link only",
+    "source_type": "university_scholarly_primary_source_commentary",
+    "accessed": "2026-07-16",
+    "source_family_id": "vincent_magna_carta_rochester_1215",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_norgate_minority",
+    "title": "The Minority of Henry the Third",
+    "url": "https://www.gutenberg.org/files/54953/54953-h/54953-h.htm",
+    "publisher": "Macmillan; Project Gutenberg transcription",
+    "license": "Citation and link only",
+    "source_type": "primary_source_based_scholarly_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "norgate_minority_henry_iii_1912",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_oakes_barons_war",
+    "title": "The Nature of War and its Impact on Society during the Barons' War, 1264-67",
+    "url": "https://theses.gla.ac.uk/6406/",
+    "publisher": "University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "doctoral_scholarly_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "oakes_barons_war_thesis_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rebel_barons_prestwich_edward_i",
+    "title": "Edward I",
+    "url": "https://yalebooks.co.uk/book/9780300071573/edward-i/",
+    "publisher": "Yale University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "prestwich_edward_i_1997",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_rmg_bugia_bay_1671",
     "title": "Action at Bugia Bay, 8 May 1671",
     "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-141785",

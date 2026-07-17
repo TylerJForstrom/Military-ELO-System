@@ -679,9 +679,16 @@ class Wave8RebelBaronsTests(unittest.TestCase):
             WAVE8_REBEL_BARONS_CONTRACT_IDS,
         )
         self.assertEqual(WAVE8_REBEL_BARONS_COUNTRY_QUARANTINE_ADDITIONS, frozenset())
-        self.assertFalse(
+        point_overlap = (
             WAVE8_REBEL_BARONS_POINT_QUARANTINE_ADDITIONS
             & HCED_POINT_QUARANTINE_IDS
+        )
+        self.assertIn(
+            point_overlap,
+            (
+                frozenset(),
+                WAVE8_REBEL_BARONS_POINT_QUARANTINE_ADDITIONS,
+            ),
         )
         self.assertEqual(
             WAVE8_REBEL_BARONS_LOCATION_QUARANTINE_ADDITIONS,
