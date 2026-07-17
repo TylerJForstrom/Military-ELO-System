@@ -15188,6 +15188,103 @@
     ]
   },
   {
+    "id": "wave8_oman_indian_ocean_history",
+    "title": "Indian Ocean in World History: Historical Background",
+    "url": "https://www.indianoceanhistory.org/An-Ocean-of-Paper/Historical-Background.aspx",
+    "publisher": "Indian Ocean in World History educational project",
+    "license": "Citation and link only",
+    "source_type": "scholarly_educational_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "indian_ocean_world_history_project",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_oman_iranica_portugal",
+    "title": "Portugal i. Relations with Persia in the Early Modern Age (1500-1750)",
+    "url": "https://www.iranicaonline.org/articles/portugal-i/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_portugal_persia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oman_kunstkamera_zanzibar",
+    "title": "From Oases to the Cities: The Origin of Urbanization in Oman and Zanzibar",
+    "url": "https://etnografia.kunstkamera.ru/files/etnografia_journal/2018_02/as_salmi.pdf",
+    "publisher": "Peter the Great Museum of Anthropology and Ethnography / Etnografia",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "kunstkamera_etnografia_al_salmi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_oman_nyuad_state_formation",
+    "title": "Slavery in Arabia and East Africa, 1800-1913",
+    "url": "https://nyuad.nyu.edu/content/dam/nyuad/academics/divisions/social-science/working-papers/2021/0066.pdf",
+    "publisher": "Robert C. Allen / New York University Abu Dhabi",
+    "license": "Citation and link only",
+    "source_type": "scholarly_working_paper",
+    "accessed": "2026-07-16",
+    "source_family_id": "nyuad_allen_slavery_arabia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_oman_ona_yarubis",
+    "title": "The Ya'rubis and the expulsion of the Portuguese",
+    "url": "https://omannews.gov.om/pages/161/show/572",
+    "publisher": "Oman News Agency",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "oman_news_agency_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oman_ucpress_mombasa",
+    "title": "Inland from Mombasa: East Africa and the Making of the Indian Ocean World",
+    "url": "https://webfiles.ucpress.edu/oa/9780520400498_WEB.pdf",
+    "publisher": "University of California Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucpress_inland_from_mombasa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oman_unesco_fort_jesus",
+    "title": "Fort Jesus, Mombasa: World Heritage nomination dossier",
+    "url": "https://whc.unesco.org/uploads/nominations/1295rev.pdf",
+    "publisher": "Republic of Kenya / UNESCO World Heritage Centre",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_nomination",
+    "accessed": "2026-07-16",
+    "source_family_id": "kenya_unesco_fort_jesus_nomination",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_oupress_war_party_in_blue",
     "title": "War Party in Blue: Pawnee Scouts in the U.S. Army",
     "url": "https://www.oupress.com/9780806184418/war-party-in-blue/",

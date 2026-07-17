@@ -6780,6 +6780,21 @@
     ]
   },
   {
+    "id": "yarubid_imamate_oman_1624_1742",
+    "name": "Ya'rubid Imamate of Oman",
+    "kind": "ibadi_imamate",
+    "start_year": 1624,
+    "end_year": 1742,
+    "region": "Oman and the western Indian Ocean",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The time-bounded Ya'rubid state begins with Nasir bin Murshid's election in 1624 and ends with the dynasty's loss of effective rule amid the 1742 succession crisis. Only the two fingerprinted Portuguese-war events below activate its Elo. No rating is inherited by earlier Omani imamates, the later Al Bu Sa'id state, modern Oman, or any East African successor or governor.",
+    "source_ids": [
+      "wave8_oman_nyuad_state_formation",
+      "wave8_oman_ona_yarubis"
+    ]
+  },
+  {
     "id": "montmorency_royal_fleet_re_1625",
     "name": "Montmorency's royal fleet off Île de Ré (1625)",
     "kind": "event_bounded_royal_fleet",

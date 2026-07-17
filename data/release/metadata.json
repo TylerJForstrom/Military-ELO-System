@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 991,
-    "events": 5332,
-    "sources": 1392,
-    "registry_polities": 2341
+    "entities": 992,
+    "events": 5334,
+    "sources": 1399,
+    "registry_polities": 2342
   },
   "year_range": {
     "start": -1274,
@@ -165,6 +165,7 @@
     "accepted_wave8_goguryeo_hced_events": 3,
     "accepted_wave8_fln_hced_events": 1,
     "accepted_wave8_sindh_hced_events": 4,
+    "accepted_wave8_oman_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19294,7 +19295,114 @@
     "wave8_sindh_country_quarantine_additions": [],
     "wave8_sindh_entities_added": 3,
     "wave8_sindh_sources_added": 10,
-    "hced_label_pass_input_rows": 5580,
+    "wave8_oman_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 1,
+      "new_entities": 1,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 0
+    },
+    "wave8_oman_cohort_counts": {
+      "yarubid_portuguese_wars_1650_1698": 3
+    },
+    "wave8_oman_audit_signature": "5cdfe2633a6bd2bbba482b4e92054b708588037e518c88bbb29913206864c83b",
+    "wave8_oman_final_audit_signature": "5cdfe2633a6bd2bbba482b4e92054b708588037e518c88bbb29913206864c83b",
+    "wave8_oman_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 1,
+      "reviewed_hced_rows": 3,
+      "exact_label_rows": 4,
+      "out_of_cohort_exact_label_rows": 1,
+      "target_exact_label_rows": 3
+    },
+    "wave8_oman_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_oman_candidate_ids": [
+      "hced-Mombasa1696-1698-1",
+      "hced-Muscat1650-1"
+    ],
+    "wave8_oman_holds": [
+      {
+        "candidate_id": "hced-Zanzibar1652-1",
+        "raw_row_sha256": "93463f26ff2a4649a44471c1e0b185485bbc86ec905c54f98bffed7035fd7bf9",
+        "canonical_event": {
+          "canonical_key": "zanzibar_expedition:1652:1652",
+          "date_precision": "year",
+          "granularity": "raiding_expedition",
+          "name": "Zanzibar expedition",
+          "year_low": 1652,
+          "year_high": 1652
+        },
+        "cohort": "yarubid_portuguese_wars_1650_1698",
+        "disposition": "hold",
+        "hold_category": "contradictory_outcome_and_actor_evidence",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "raiding_expedition",
+        "evidence_refs": [
+          "wave8_oman_indian_ocean_history",
+          "wave8_oman_kunstkamera_zanzibar"
+        ],
+        "hold_reason": "One reviewed synthesis says the Ya'rubid expedition sacked Zanzibar, while the peer-reviewed account says the attack killed Portuguese defenders but was ultimately repulsed; other histories foreground a local Arab-Swahili uprising. HCED's unqualified Omani victory is therefore not promoted, and the unknown result is not a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_oman",
+          "status": "review_hold_owner"
+        }
+      }
+    ],
+    "wave8_oman_exact_label_funnel_audit": {
+      "candidate_ids": [
+        "clio_om_busaidi_imamate_1_1744_c23501c3"
+      ],
+      "event_candidate_id_sha256": "34e19a1aa5fd593d47f4ce723a29ff10690e27d7bbce842026567c86f471129e",
+      "events_touched": 3,
+      "label": "oman",
+      "one_wrong_interval_candidate": 3,
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 3,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 3
+    },
+    "wave8_oman_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Mombasa1696-1698-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies an unexplained city centroid rather than an independently verified battlefield or siege-footprint point; retain the provenance-bound modern jurisdiction and withhold geometry.",
+        "evidence_refs": [
+          "wave8_oman_ucpress_mombasa",
+          "wave8_oman_unesco_fort_jesus"
+        ]
+      },
+      {
+        "candidate_id": "hced-Muscat1650-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies an unexplained city centroid rather than an independently verified battlefield or siege-footprint point; retain the provenance-bound modern jurisdiction and withhold geometry.",
+        "evidence_refs": [
+          "wave8_oman_iranica_portugal",
+          "wave8_oman_ona_yarubis"
+        ]
+      }
+    ],
+    "wave8_oman_point_quarantine_additions": [
+      "hced-Mombasa1696-1698-1",
+      "hced-Muscat1650-1"
+    ],
+    "wave8_oman_country_quarantine_additions": [],
+    "wave8_oman_entities_added": 1,
+    "wave8_oman_sources_added": 7,
+    "hced_label_pass_input_rows": 5577,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19307,7 +19415,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1030,
+      "reserved_candidate_contract": 1033,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19319,7 +19427,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2080,
+      "no_unique_time_valid_label_match": 2077,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

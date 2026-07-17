@@ -24173,6 +24173,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "yarubid_imamate_oman_1624_1742",
+      "name": "Ya'rubid Imamate of Oman",
+      "kind": "ibadi_imamate",
+      "start_year": 1624,
+      "end_year": 1742,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Oman and the western Indian Ocean"
+    },
+    {
       "id": "clio_in_yadava_dyn_1188_bdbc7940",
       "name": "Yadava Dynasty",
       "kind": "dynastic_state",
@@ -24778,11 +24788,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2341,
-    "rated_entities": 984,
-    "rated_events": 5332,
+    "registry_polities": 2342,
+    "rated_entities": 985,
+    "rated_events": 5334,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18062,
+    "unresolved_event_candidates": 18060,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24877,6 +24887,7 @@
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
     "candidate_keyed_wave8_fln_hced_events": 1,
     "candidate_keyed_wave8_sindh_hced_events": 4,
+    "candidate_keyed_wave8_oman_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24887,21 +24898,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5068,
-      "candidate_keyed_reviewed_contracts": 758,
+      "hced_candidate_bindings": 5070,
+      "candidate_keyed_reviewed_contracts": 760,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4973,
-      "location_provenance_objects": 5022,
-      "point_fields_withheld_by_quarantine": 334,
+      "modern_location_country_assertions": 4975,
+      "location_provenance_objects": 5024,
+      "point_fields_withheld_by_quarantine": 336,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 382,
-      "point_quarantine_candidate_manifest_sha256": "bf2796e79b9c1e3f0052b39f0c695614b55fe17fe07dc276cb516fec1d1c9d47",
+      "unique_events_with_any_quarantined_field": 384,
+      "point_quarantine_candidate_manifest_sha256": "d62b623cef519c5753e585113edeca2c063d0cf9564ac709fd31f89d92389b87",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "cdf9316d736f201150f138de96cf260d12ffb0330e67aada8a771b295cc36631",
+      "quarantine_policy_sha256": "330fa5cd80cc50e862d52fdec6148571469c78eaf823d773562702eda8d647bd",
       "assertion_status": {
-        "unreviewed_source_assertion": 5022
+        "unreviewed_source_assertion": 5024
       },
       "verified_location_assertions": {
         "availability": "not_available",
