@@ -488,11 +488,12 @@ WAVE8_UZBEKS_CONTRACTS: dict[str, dict[str, Any]] = {
         [_SAFAVID],
         [_HERAT_UBAYDALLAH],
         [
+            "wave8_uzbeks_iranica_abukhayrids",
             "wave8_uzbekistan_iranica_khorasan_safavid",
             "wave8_uzbekistan_iranica_tahmasp",
         ],
         [
-            "wave8_uzbekistan_iranica_khorasan_safavid",
+            "wave8_uzbeks_iranica_abukhayrids",
             "wave8_uzbekistan_iranica_tahmasp",
         ],
         (
@@ -558,7 +559,6 @@ WAVE8_UZBEKS_CONTRACTS: dict[str, dict[str, Any]] = {
             "wave8_uzbeks_iranica_safavids",
         ],
         [
-            "wave8_uzbekistan_iranica_khorasan_safavid",
             "wave8_uzbeks_iranica_abukhayrids",
             "wave8_uzbeks_iranica_safavids",
         ],
@@ -687,7 +687,7 @@ def wave8_uzbeks_audit_signature() -> str:
 
 
 WAVE8_UZBEKS_FINAL_AUDIT_SIGNATURE = (
-    "a8b0d1dc16e547030677e635548d1ed533ce90206bea45426bf313e6d499b7f0"
+    "c5d6ab5ccc5624fadc17d20186fec95925cf5a99955cc10aba5c6b9d7fbcc524"
 )
 
 

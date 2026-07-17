@@ -291,7 +291,7 @@ class Wave8UzbeksTests(unittest.TestCase):
             {str(item["id"]) for item in lane.WAVE8_UZBEKS_SOURCES},
             release_source_ids,
         )
-        registry_ids = {str(item["id"]) for item in self.registry}
+        registry_ids = {str(item["id"]) for item in self.registry["entities"]}
         self.assertLessEqual(
             {str(item["id"]) for item in lane.WAVE8_UZBEKS_ENTITIES},
             registry_ids,

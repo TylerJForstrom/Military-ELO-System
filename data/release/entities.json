@@ -5405,6 +5405,22 @@
     ]
   },
   {
+    "id": "clio_uz_shaybanid_k_1497_9cfc6dff",
+    "name": "Muhammad Shaybani's Abu'l-Khayrid Khanate",
+    "kind": "khanate",
+    "start_year": 1500,
+    "end_year": 1510,
+    "region": "Transoxiana, Ferghana, Khwarazm, and Khorasan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated to Muhammad Shaybani's attested reign and state, from his 1500 consolidation through his death at Merv in 1510. It reuses the Cliopatria Shaybanids candidate ID but opens no Uzbek or Uzbeks alias. Later Abu'l-Khayrid appanages and rulers inherit no rating.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_uzbeks_iranica_abukhayrids",
+      "wave8_uzbeks_iranica_central_asia_vi"
+    ]
+  },
+  {
     "id": "aragonese_neapolitan_taranto_garrison_1501_1502",
     "name": "Aragonese Neapolitan Garrison of Taranto (1501-1502)",
     "kind": "royal_garrison",
@@ -5466,6 +5482,52 @@
     ]
   },
   {
+    "id": "babur_timurid_force_akhsi_1503",
+    "name": "Babur's Timurid force at Akhsi (1503)",
+    "kind": "engagement_bounded_polity_force",
+    "start_year": 1503,
+    "end_year": 1503,
+    "region": "Ferghana",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Babur's pre-Kabul, pre-Mughal Timurid following at Akhsi. The Mughal Empire was not founded until 1526 and inherits no result from this force.",
+    "source_ids": [
+      "wave8_uzbekistan_baburnama_beveridge",
+      "wave8_uzbekistan_cambridge_babur",
+      "wave8_uzbeks_bregel_atlas"
+    ]
+  },
+  {
+    "id": "sultan_ahmad_alaq_eastern_moghul_force_akhsi_1503",
+    "name": "Sultan Ahmad Alaq Khan's eastern Moghul force at Akhsi (1503)",
+    "kind": "engagement_bounded_polity_force",
+    "start_year": 1503,
+    "end_year": 1503,
+    "region": "Ferghana",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Sultan Ahmad Alaq Khan's separately attested contingent at Akhsi. It does not merge the eastern and western Moghul domains or confer a rating on a modern population.",
+    "source_ids": [
+      "wave8_uzbekistan_baburnama_beveridge",
+      "wave8_uzbeks_bregel_atlas"
+    ]
+  },
+  {
+    "id": "sultan_mahmud_western_moghul_force_akhsi_1503",
+    "name": "Sultan Mahmud Khan's western Moghul force at Akhsi (1503)",
+    "kind": "engagement_bounded_polity_force",
+    "start_year": 1503,
+    "end_year": 1503,
+    "region": "Ferghana",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Sultan Mahmud Khan's separately attested contingent at Akhsi. It creates no generic Moghulistan or Chagatai alias and no rating passes to later khanates.",
+    "source_ids": [
+      "wave8_uzbekistan_baburnama_beveridge",
+      "wave8_uzbeks_bregel_atlas"
+    ]
+  },
+  {
     "id": "duchy_bavaria_unified_1506",
     "name": "Unified Duchy of Bavaria",
     "kind": "duchy",
@@ -5477,6 +5539,21 @@
     "continuity_note": "Begins with the 1506 inheritance statute and ends before electoral status. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "source_ids": [
       "wave7_west_hdbg_duchy"
+    ]
+  },
+  {
+    "id": "timurid_herat_citadel_garrison_1507",
+    "name": "Timurid citadel garrison at Herat (1507)",
+    "kind": "siege_bounded_polity_garrison",
+    "start_year": 1507,
+    "end_year": 1507,
+    "region": "Herat, Khorasan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Timurid garrison that alone continued resistance in Herat's citadel after the city notables surrendered. It does not extend the broad Timurid Empire envelope beyond this final defense.",
+    "source_ids": [
+      "wave8_uzbekistan_iranica_herat",
+      "wave8_uzbeks_iranica_abukhayrids"
     ]
   },
   {
@@ -5642,6 +5719,21 @@
     "continuity_note": "Bounded to Ubaydallah Khan's opposing army at Jam/Sāruqameš; it does not merge other Shaybanid commands or the Uzbek population. No rating is inherited by a dynasty as a whole, an ethnic label, a descendant population, a later armed force, or any modern state including the Republic of Uzbekistan.",
     "source_ids": [
       "wave8_uzbekistan_iranica_chronology",
+      "wave8_uzbekistan_iranica_khorasan_safavid",
+      "wave8_uzbekistan_iranica_tahmasp"
+    ]
+  },
+  {
+    "id": "ubaydallah_shaybanid_herat_besieging_army_1528",
+    "name": "Ubaydallah Khan's besieging army at Herat (1528)",
+    "kind": "siege_bounded_field_army",
+    "start_year": 1528,
+    "end_year": 1528,
+    "region": "Herat, Khorasan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the seven-month Herat siege that Ubaydallah ended under pressure from Shah Tahmasp's relief advance. It is distinct from the later Jam field army and opens no generic Shaybanid alias.",
+    "source_ids": [
       "wave8_uzbekistan_iranica_khorasan_safavid",
       "wave8_uzbekistan_iranica_tahmasp"
     ]
@@ -6398,6 +6490,23 @@
     "source_ids": [
       "wave8_french_religious_knecht_wars",
       "wave8_french_religious_musee_armee_guise"
+    ]
+  },
+  {
+    "id": "abdullah_ii_abul_khayrid_khanate_1583_1598",
+    "name": "Abdullah Khan II's Abu'l-Khayrid Khanate",
+    "kind": "khanate",
+    "start_year": 1583,
+    "end_year": 1598,
+    "region": "Bukhara, Transoxiana, and conquered Khorasan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated to Abdullah II's formal khanship from 1583 until his death in 1598. Earlier appanage rule, successor claimants, Janids, later Bukhara, and the modern Republic of Uzbekistan inherit no rating.",
+    "source_ids": [
+      "wave8_uzbeks_burton_herat_1588",
+      "wave8_uzbeks_haider_abdullah_akbar",
+      "wave8_uzbeks_iranica_abukhayrids",
+      "wave8_uzbeks_iranica_central_asia_vi"
     ]
   },
   {

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1001,
-    "events": 5345,
-    "sources": 1435,
-    "registry_polities": 2350
+    "entities": 1008,
+    "events": 5350,
+    "sources": 1442,
+    "registry_polities": 2356
   },
   "year_range": {
     "start": -1274,
@@ -170,6 +170,7 @@
     "accepted_wave8_bannock_sheepeater_hced_events": 2,
     "accepted_wave8_catholic_rebels_hced_events": 3,
     "accepted_wave8_macedon_hced_events": 4,
+    "accepted_wave8_uzbeks_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19939,7 +19940,142 @@
     "wave8_macedon_country_quarantine_additions": [],
     "wave8_macedon_entities_added": 3,
     "wave8_macedon_sources_added": 14,
-    "hced_label_pass_input_rows": 5559,
+    "wave8_uzbeks_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 1,
+      "new_entities": 7,
+      "new_sources": 7,
+      "newly_rated_events": 5,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 5,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 6,
+      "source_date_overrides": 1
+    },
+    "wave8_uzbeks_cohort_counts": {
+      "abdullah_ii_khorasan_conquest": 1,
+      "safavid_shaybani_war_1510": 1,
+      "safavid_uzbek_khorasan_1528": 1,
+      "shaybani_conquests_1500_1510": 2
+    },
+    "wave8_uzbeks_audit_signature": "c5d6ab5ccc5624fadc17d20186fec95925cf5a99955cc10aba5c6b9d7fbcc524",
+    "wave8_uzbeks_final_audit_signature": "c5d6ab5ccc5624fadc17d20186fec95925cf5a99955cc10aba5c6b9d7fbcc524",
+    "wave8_uzbeks_queue_validation": {
+      "exact_label_rows": 6,
+      "promotion_contracts": 5,
+      "holds": 1,
+      "reviewed_hced_rows": 6
+    },
+    "wave8_uzbeks_integration_validation": {
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 6,
+      "release_lane_events": 5,
+      "related_hced_dispositions": 3
+    },
+    "wave8_uzbeks_candidate_ids": [
+      "hced-Akhsikath1503-1",
+      "hced-Herat1507-1",
+      "hced-Herat1528-1",
+      "hced-Herat1588-1",
+      "hced-Merv1510-1"
+    ],
+    "wave8_uzbeks_holds": [
+      {
+        "candidate_id": "hced-Samarkand1497-1498-1",
+        "raw_row_sha256": "b500e31eca6f3c2b10268fb1ec08dcc22ffd63f60ddcb0ccaa8b5f25db3c7b85",
+        "disposition": "hold",
+        "hold_category": "wrong_actors_and_reversed_outcome",
+        "hold_reason": "Babur and Sultan Ali's Timurid forces captured Samarkand after the 1497 siege. Muhammad Shaybani approached but withdrew without battle; the later Uzbek capture belongs to 1500-01. Replacing both HCED sides and reversing its outcome would turn this row into a different event, so it remains unrated rather than becoming a draw.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbeks_bregel_atlas"
+        ]
+      }
+    ],
+    "wave8_uzbeks_exact_label_funnel_audit": {
+      "event_candidate_id_sha256": "12f5c770c6b3ca595f074fb0c046d91506b0f71f9ce3f9b8fa1d95462baead56",
+      "events_touched": 6,
+      "label": "uzbeks",
+      "marginal_events": 3,
+      "newly_unblocked_candidate_id_sha256": "e4f816c932ea8b99ef822c2301eb4adb443b21fbaa806bd7b82533f313d9964b",
+      "sole_blocker_events": 3,
+      "unresolved_side_attempts": 6,
+      "zero_time_valid_candidates": 6
+    },
+    "wave8_uzbeks_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Akhsikath1503-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named city or battlefield and modern jurisdiction but do not bind HCED's exact coordinate to the closed release provenance contract. Retain the source country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_uzbekistan_baburnama_beveridge",
+          "wave8_uzbekistan_cambridge_babur",
+          "wave8_uzbeks_bregel_atlas"
+        ]
+      },
+      {
+        "candidate_id": "hced-Herat1507-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named city or battlefield and modern jurisdiction but do not bind HCED's exact coordinate to the closed release provenance contract. Retain the source country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_herat",
+          "wave8_uzbeks_iranica_abukhayrids"
+        ]
+      },
+      {
+        "candidate_id": "hced-Herat1528-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named city or battlefield and modern jurisdiction but do not bind HCED's exact coordinate to the closed release provenance contract. Retain the source country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbekistan_iranica_tahmasp",
+          "wave8_uzbeks_iranica_abukhayrids"
+        ]
+      },
+      {
+        "candidate_id": "hced-Herat1588-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named city or battlefield and modern jurisdiction but do not bind HCED's exact coordinate to the closed release provenance contract. Retain the source country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_uzbeks_burton_herat_1588",
+          "wave8_uzbeks_iranica_ali_qoli",
+          "wave8_uzbeks_iranica_central_asia_vi"
+        ]
+      },
+      {
+        "candidate_id": "hced-Merv1510-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named city or battlefield and modern jurisdiction but do not bind HCED's exact coordinate to the closed release provenance contract. Retain the source country and withhold the unexplained point.",
+        "evidence_refs": [
+          "wave8_uzbekistan_iranica_chronology",
+          "wave8_uzbekistan_iranica_khorasan_safavid",
+          "wave8_uzbeks_iranica_abukhayrids",
+          "wave8_uzbeks_iranica_safavids"
+        ]
+      }
+    ],
+    "wave8_uzbeks_point_quarantine_additions": [
+      "hced-Akhsikath1503-1",
+      "hced-Herat1507-1",
+      "hced-Herat1528-1",
+      "hced-Herat1588-1",
+      "hced-Merv1510-1"
+    ],
+    "wave8_uzbeks_country_quarantine_additions": [],
+    "wave8_uzbeks_entities_added": 7,
+    "wave8_uzbeks_sources_added": 7,
+    "hced_label_pass_input_rows": 5553,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19952,7 +20088,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1051,
+      "reserved_candidate_contract": 1057,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19964,7 +20100,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2059,
+      "no_unique_time_valid_label_match": 2053,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

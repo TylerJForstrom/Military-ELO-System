@@ -19041,6 +19041,104 @@
     ]
   },
   {
+    "id": "wave8_uzbeks_bregel_atlas",
+    "title": "An Historical Atlas of Central Asia",
+    "url": "https://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf",
+    "publisher": "Yuri Bregel / Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_atlas",
+    "accessed": "2026-07-17",
+    "source_family_id": "bregel_historical_atlas_central_asia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_burton_herat_1588",
+    "title": "The Fall of Herat to the Uzbegs in 1588",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/05786967.1988.11834352",
+    "publisher": "Audrey Burton / Iran",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "burton_fall_herat_1588",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_haider_abdullah_akbar",
+    "title": "Relations of Abdullah Khan Uzbeg with Akbar",
+    "url": "https://www.persee.fr/doc/cmr_0008-0160_1982_num_23_3_1953",
+    "publisher": "Mansura Haider / Cahiers du Monde Russe",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "haider_abdullah_khan_akbar",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_iranica_abukhayrids",
+    "title": "Abu'l-Khayrids",
+    "url": "https://www.iranicaonline.org/articles/abul-khayrids-dynasty/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "iranica_abul_khayrids",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_iranica_ali_qoli",
+    "title": "Ali-Qoli Khan Shamlu",
+    "url": "https://www.iranicaonline.org/articles/ali-qoli-khan-samlu-b/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "iranica_ali_qoli_khan_shamlu",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_iranica_central_asia_vi",
+    "title": "Central Asia vi. In the 16th-18th Centuries",
+    "url": "https://www.iranicaonline.org/articles/central-asia-vi/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "iranica_central_asia_vi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_uzbeks_iranica_safavids",
+    "title": "Safavid Dynasty",
+    "url": "https://www.iranicaonline.org/articles/safavids/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "iranica_safavid_dynasty",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_vietnam_anderson_siming_frontier",
     "title": "Commissioner Li and Prefect Huang: Sino-Vietnamese Frontier Trade Networks and Political Alliances in the Southern Song",
     "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/2168LqNtBFy.pdf",
