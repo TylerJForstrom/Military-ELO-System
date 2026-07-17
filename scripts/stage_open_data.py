@@ -21,6 +21,7 @@ from military_elo.ingest.stage_open_data import (
     stage_ucdp_archive,
     stage_ucdp_csv,
     stage_wikidata,
+    stage_wikidata_battles,
     verify_staging_inputs,
 )
 
@@ -53,9 +54,16 @@ STAGERS: dict[str, Stager] = {
     "wikidata": lambda raw, output, lock: stage_wikidata(
         raw, output, corpus_lock=lock
     ),
+    "wikidata-battles": lambda raw, output, lock: stage_wikidata_battles(
+        raw, output, corpus_lock=lock
+    ),
 }
 
-CORE_STAGERS = tuple(dataset_id for dataset_id in STAGERS if dataset_id != "wikidata")
+CORE_STAGERS = tuple(
+    dataset_id
+    for dataset_id in STAGERS
+    if dataset_id not in {"wikidata", "wikidata-battles"}
+)
 CORPUS_STAGERS = tuple(STAGERS)
 
 

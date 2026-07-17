@@ -21,6 +21,7 @@ from .provenance import (
     resolve_locked_snapshot,
     write_review_candidates,
 )
+from .wikidata import parse_wikidata_battle_rows
 
 
 TRANSFORMATION_IDS_BY_DATASET = {
@@ -34,6 +35,7 @@ TRANSFORMATION_IDS_BY_DATASET = {
     "ucdp-termination-conflict": "ucdp-termination-conflict-review",
     "ucdp-termination-dyad": "ucdp-termination-dyad-review",
     "wikidata": "wikidata-review",
+    "wikidata-battles": "wikidata-battles-review",
 }
 
 TRANSFORMERS_BY_DATASET = {
@@ -47,6 +49,7 @@ TRANSFORMERS_BY_DATASET = {
     "ucdp-termination-conflict": "stage_ucdp_csv",
     "ucdp-termination-dyad": "stage_ucdp_csv",
     "wikidata": "stage_wikidata",
+    "wikidata-battles": "stage_wikidata_battles",
 }
 
 TRANSFORMATION_INPUT_DATASETS_BY_DATASET: dict[str, dict[str, str]] = {
@@ -69,6 +72,7 @@ TRANSFORMER_VERSIONS = {
     "stage_ucdp_archive": "1",
     "stage_ucdp_csv": "1",
     "stage_wikidata": "1",
+    "stage_wikidata_battles": "1",
 }
 
 
@@ -111,22 +115,25 @@ def verify_transformation_contracts(
             role: locked_input.dataset_id
             for role, locked_input in transformation.inputs.items()
         }
-        if dataset_id == "wikidata":
+        if dataset_id in {"wikidata", "wikidata-battles"}:
             page_numbers: set[int] = set()
             for role, input_dataset_id in actual_inputs.items():
                 match = re.fullmatch(r"page-(\d+)", role)
-                if match is None or input_dataset_id != "wikidata":
+                if match is None or input_dataset_id != dataset_id:
                     raise CorpusLockError(
-                        "wikidata-review requires numeric page-* roles from wikidata"
+                        f"{transformation_id} requires numeric page-* roles from "
+                        f"{dataset_id}"
                     )
                 page_number = int(match.group(1))
                 if page_number in page_numbers:
                     raise CorpusLockError(
-                        f"wikidata-review repeats numeric page {page_number}"
+                        f"{transformation_id} repeats numeric page {page_number}"
                     )
                 page_numbers.add(page_number)
             if not page_numbers:
-                raise CorpusLockError("wikidata-review must lock at least one page")
+                raise CorpusLockError(
+                    f"{transformation_id} must lock at least one page"
+                )
         else:
             expected_inputs = TRANSFORMATION_INPUT_DATASETS_BY_DATASET[dataset_id]
             if actual_inputs != expected_inputs:
@@ -631,6 +638,44 @@ def _wikidata_value(row: dict[str, Any], key: str) -> str | None:
     return str(item.get("value")) if isinstance(item, dict) and item.get("value") is not None else None
 
 
+def _numbered_wikidata_pages(
+    sources: Mapping[str, Path], transformation_id: str
+) -> list[tuple[int, str]]:
+    numbered_pages: list[tuple[int, str]] = []
+    seen_page_numbers: set[int] = set()
+    for role in sources:
+        match = re.fullmatch(r"page-(\d+)", role)
+        if match is None:
+            raise CorpusLockError(
+                f"{transformation_id} inputs must use numeric page-* roles"
+            )
+        page_number = int(match.group(1))
+        if page_number in seen_page_numbers:
+            raise CorpusLockError(
+                f"{transformation_id} repeats numeric page {page_number}"
+            )
+        seen_page_numbers.add(page_number)
+        numbered_pages.append((page_number, role))
+    if not numbered_pages:
+        raise CorpusLockError(f"{transformation_id} must lock at least one page")
+    return sorted(numbered_pages)
+
+
+def _load_wikidata_page_rows(
+    sources: Mapping[str, Path], transformation_id: str
+) -> list[dict[str, Any]]:
+    all_rows: list[dict[str, Any]] = []
+    for _, role in _numbered_wikidata_pages(sources, transformation_id):
+        with sources[role].open("r", encoding="utf-8") as handle:
+            document = json.load(handle)
+        results = document.get("results")
+        rows = results.get("bindings") if isinstance(results, dict) else None
+        if not isinstance(rows, list):
+            raise ValueError(f"Wikidata snapshot {sources[role]} has invalid bindings")
+        all_rows.extend(rows)
+    return all_rows
+
+
 def stage_wikidata(
     raw_root: str | Path = "data/raw",
     destination: str | Path = "data/review/wikidata-candidates.jsonl",
@@ -640,28 +685,7 @@ def stage_wikidata(
     lock, transformation, sources = _locked_transformation(
         raw_root, corpus_lock, "wikidata-review", "stage_wikidata"
     )
-    numbered_pages: list[tuple[int, str]] = []
-    seen_page_numbers: set[int] = set()
-    for role in sources:
-        match = re.fullmatch(r"page-(\d+)", role)
-        if match is None:
-            raise CorpusLockError("wikidata-review inputs must use numeric page-* roles")
-        page_number = int(match.group(1))
-        if page_number in seen_page_numbers:
-            raise CorpusLockError(f"wikidata-review repeats numeric page {page_number}")
-        seen_page_numbers.add(page_number)
-        numbered_pages.append((page_number, role))
-    if not numbered_pages:
-        raise CorpusLockError("wikidata-review must lock at least one page")
-
-    all_rows: list[dict[str, Any]] = []
-    for _, role in sorted(numbered_pages):
-        with sources[role].open("r", encoding="utf-8") as handle:
-            document = json.load(handle)
-        rows = document.get("results", {}).get("bindings", [])
-        if not isinstance(rows, list):
-            raise ValueError(f"Wikidata snapshot {sources[role]} has invalid bindings")
-        all_rows.extend(rows)
+    all_rows = _load_wikidata_page_rows(sources, "wikidata-review")
 
     grouped: dict[str, dict[str, Any]] = {}
     for row in all_rows:
@@ -708,6 +732,27 @@ def stage_wikidata(
                 {"uri": uri, "label": label} for uri, label in candidate[key].items()
             ]
         candidates.append(candidate)
+    write_review_candidates(
+        candidates, destination, expected=transformation.output, corpus_lock=lock
+    )
+    return candidates
+
+
+def stage_wikidata_battles(
+    raw_root: str | Path = "data/raw",
+    destination: str | Path = "data/review/wikidata-battle-candidates.jsonl",
+    *,
+    corpus_lock: CorpusLock | str | Path = DEFAULT_CORPUS_LOCK,
+) -> list[dict[str, Any]]:
+    lock, transformation, sources = _locked_transformation(
+        raw_root,
+        corpus_lock,
+        "wikidata-battles-review",
+        "stage_wikidata_battles",
+    )
+    candidates = parse_wikidata_battle_rows(
+        _load_wikidata_page_rows(sources, "wikidata-battles-review")
+    )
     write_review_candidates(
         candidates, destination, expected=transformation.output, corpus_lock=lock
     )

@@ -13,7 +13,9 @@ from military_elo.ingest.stage_open_data import (
     _cluster_temporal_segments,
     _year_range,
     stage_iwbd,
+    stage_wikidata_battles,
 )
+from military_elo.ingest.wikidata import parse_wikidata_battle_rows
 from scripts.stage_open_data import stage_selected
 
 
@@ -92,6 +94,82 @@ def _iwbd_lock() -> dict[str, object]:
             }
         },
     }
+
+
+def _wikidata_battle_binding(qid: str, label: str, year: int) -> dict[str, object]:
+    return {
+        "event": {"type": "uri", "value": f"http://www.wikidata.org/entity/{qid}"},
+        "eventLabel": {"type": "literal", "value": label},
+        "date": {"type": "literal", "value": f"{year:04d}-01-01T00:00:00Z"},
+        "classes": {"type": "literal", "value": "Q178561"},
+        "participants": {"type": "literal", "value": "Q1~Alpha|Q2~Beta"},
+        "countries": {"type": "literal", "value": "Q30"},
+    }
+
+
+def _wikidata_battle_fixture() -> tuple[dict[str, object], dict[str, bytes], bytes]:
+    first = _wikidata_battle_binding("Q100", "First-page label", 1200)
+    repeated = _wikidata_battle_binding("Q100", "Later-page label", 1201)
+    second = _wikidata_battle_binding("Q200", "Second event", 1300)
+    pages = {
+        "page-0001.json": json.dumps(
+            {"results": {"bindings": [first]}}, sort_keys=True
+        ).encode("utf-8"),
+        "page-0002.json": json.dumps(
+            {"results": {"bindings": [repeated, second]}}, sort_keys=True
+        ).encode("utf-8"),
+    }
+    output = review_candidates_bytes(parse_wikidata_battle_rows([first, repeated, second]))
+    lock = {
+        "schema_version": 1,
+        "corpus_id": "wikidata-battles-fixture",
+        "created_at": "2026-07-17T00:00:00Z",
+        "transformation_version": "open-data-review-v1",
+        "datasets": {
+            "wikidata-battles": {
+                "title": "Wikidata battles fixture",
+                "source_url": "https://query.wikidata.org/sparql",
+                "dataset_version": "fixture",
+                "license": {"id": "CC0-1.0", "classification": "open_core"},
+                "retrieval": {
+                    "retrieved_at": "2026-07-17T00:00:00Z",
+                    "method": "https",
+                },
+                "files": [
+                    {
+                        "filename": filename,
+                        "sha256": hashlib.sha256(payload).hexdigest(),
+                        "size_bytes": len(payload),
+                    }
+                    for filename, payload in pages.items()
+                ],
+            }
+        },
+        "transformations": {
+            "wikidata-battles-review": {
+                "transformer": "stage_wikidata_battles",
+                "version": "1",
+                "inputs": {
+                    "page-0002": {
+                        "dataset": "wikidata-battles",
+                        "filename": "page-0002.json",
+                    },
+                    "page-0001": {
+                        "dataset": "wikidata-battles",
+                        "filename": "page-0001.json",
+                    },
+                },
+                "output": {
+                    "kind": "generated_review_queue",
+                    "filename": "wikidata-battle-candidates.jsonl",
+                    "sha256": hashlib.sha256(output).hexdigest(),
+                    "size_bytes": len(output),
+                    "record_count": 2,
+                },
+            }
+        },
+    }
+    return lock, pages, output
 
 
 class YearRangeTests(unittest.TestCase):
@@ -214,6 +292,35 @@ class LockedStagingTests(unittest.TestCase):
                     stage_iwbd(raw_root, destination, corpus_lock=lock_path)
 
                 self.assertEqual(destination.read_bytes(), b"existing\n")
+
+    def test_wikidata_battles_pages_sort_numerically_and_first_page_wins(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            document, pages, expected = _wikidata_battle_fixture()
+            lock_path = self._write_lock(root, document)
+            raw_root = root / "raw"
+            source_root = raw_root / "wikidata-battles"
+            source_root.mkdir(parents=True)
+            for filename, payload in pages.items():
+                (source_root / filename).write_bytes(payload)
+
+            direct = root / "direct" / "wikidata-battle-candidates.jsonl"
+            candidates = stage_wikidata_battles(
+                raw_root, direct, corpus_lock=lock_path
+            )
+            batch_root = root / "batch"
+            counts = stage_selected(
+                ["wikidata-battles"], raw_root, batch_root, lock_path
+            )
+
+            self.assertEqual(counts, {"wikidata-battles": 2})
+            self.assertEqual([row["candidate_id"] for row in candidates], ["Q100", "Q200"])
+            self.assertEqual(candidates[0]["name"], "First-page label")
+            self.assertEqual(direct.read_bytes(), expected)
+            self.assertEqual(
+                (batch_root / "wikidata-battle-candidates.jsonl").read_bytes(),
+                expected,
+            )
 
 
 if __name__ == "__main__":
