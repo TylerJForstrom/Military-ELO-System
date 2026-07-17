@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 753,
-    "events": 5191,
-    "sources": 971,
-    "registry_polities": 2109
+    "entities": 759,
+    "events": 5194,
+    "sources": 985,
+    "registry_polities": 2115
   },
   "year_range": {
     "start": -1274,
@@ -131,6 +131,7 @@
     "accepted_wave8_madagascar_hced_events": 5,
     "accepted_wave8_kickapoo_hced_events": 4,
     "accepted_wave8_lordship_isles_hced_events": 3,
+    "accepted_wave8_armenia_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -7481,7 +7482,154 @@
     "wave8_lordship_isles_outcome_overrides": [],
     "wave8_lordship_isles_entities_added": 6,
     "wave8_lordship_isles_sources_added": 11,
-    "hced_label_pass_input_rows": 5774,
+    "wave8_armenia_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 1,
+      "external_owner_hced_dispositions": 1,
+      "holds": 0,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 1,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 6,
+      "new_sources": 14,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 5,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 1,
+      "touched_hced_rows": 5
+    },
+    "wave8_armenia_cohort_counts": {
+      "rubenid_byzantine_war_1152": 1,
+      "third_mithridatic_war_armenia_69_bce": 1,
+      "vardanants_rebellion_451": 1
+    },
+    "wave8_armenia_queue_validation": {
+      "external_owner_contracts": 1,
+      "holds": 0,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 5,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_armenia_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 1,
+      "external_owner_hced_dispositions": 1,
+      "integration_dispositions": 2,
+      "iwbd_duplicate_dispositions": 1,
+      "iwbd_probable_twins": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_armenia_candidate_ids": [
+      "hced-Avarayr451-1",
+      "hced-Mopsuestia1152-1",
+      "hced-Tigranocerta-69-1"
+    ],
+    "wave8_armenia_holds": [],
+    "wave8_armenia_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Artaxata58-1",
+        "disposition": "terminal_exclusion",
+        "evidence_refs": [
+          "wave8_armenia_iranica_armenia_iran",
+          "wave8_armenia_iranica_artaxata",
+          "wave8_armenia_tacitus_annals_13"
+        ],
+        "exclusion_reason": "no_attested_battle_unopposed_surrender",
+        "raw_row_sha256": "4b33aa2b5bf713252f4660ee2c37eb7a9e33dbcd82a66ef398fc1d8f0e60a1b9",
+        "reviewed_granularity": "city_surrender_and_subsequent_demolition",
+        "reviewed_outcome": "not_rateable_no_contested_engagement",
+        "unknown_is_never_draw": true,
+        "audit_note": "Tiridates withdrew; Artaxata opened its gates without resistance. Corbulo occupied the city and later destroyed it because he could not garrison it. Those facts support a campaign disposition, not a battle Elo update between armies at Artaxata."
+      }
+    ],
+    "wave8_armenia_cross_lane_dispositions": [],
+    "wave8_armenia_iwbd_duplicate_dispositions": [
+      {
+        "disposition_id": "iwbd-106-38-742",
+        "disposition": "deduplicate_to_existing_hced_release_event",
+        "existing_release_event_id": "hced_label_hced_sardarapat1918_1",
+        "fingerprint": {
+          "source_row": "742",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Sardarapat",
+          "war_name": "World War I (Caucasus Front)",
+          "start_date": "1918-05-28",
+          "end_date": "1918-05-28",
+          "duration_days": "1",
+          "attacker_raw": "Central Powers",
+          "defender_raw": "Allied Powers",
+          "winner_raw": "Allied Powers",
+          "battle_level_victor_role": "Defender"
+        },
+        "hced_candidate_id": "hced-Sardarapat1918-1",
+        "relationship": "same_battle_same_year_matching_defender_victory",
+        "source_dataset": "iwbd",
+        "reason": "IWBD's one-day Sardarapat row is the same battle already represented by the HCED release event. Its alliance labels are less actor-specific, so it is retained only as a deduplication disposition."
+      }
+    ],
+    "wave8_armenia_existing_release_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Sardarapat1918-1",
+        "canonical_event_name": "Battle of Sardarapat",
+        "disposition": "existing_release_owner",
+        "evidence_refs": [
+          "wave8_armenia_central_bank_sardarapat",
+          "wave8_armenia_history_museum_sardarapat"
+        ],
+        "owner_event_id": "hced_label_hced_sardarapat1918_1",
+        "raw_row_sha256": "dc25d91b404dfceef4b161ce23fb1b338a48af3e1f47631e08c087036502dd1a",
+        "source_dataset": "hced",
+        "year": 1918,
+        "reason": "The current release already rates this exact HCED candidate once. Official Armenian sources corroborate the Armenian tactical victory; this lane must not emit a second event."
+      }
+    ],
+    "wave8_armenia_integration_dispositions": [
+      {
+        "disposition_id": "hced-Sardarapat1918-1",
+        "canonical_event_name": "Battle of Sardarapat",
+        "disposition": "existing_release_owner",
+        "evidence_refs": [
+          "wave8_armenia_central_bank_sardarapat",
+          "wave8_armenia_history_museum_sardarapat"
+        ],
+        "owner_event_id": "hced_label_hced_sardarapat1918_1",
+        "raw_row_sha256": "dc25d91b404dfceef4b161ce23fb1b338a48af3e1f47631e08c087036502dd1a",
+        "source_dataset": "hced",
+        "year": 1918,
+        "reason": "The current release already rates this exact HCED candidate once. Official Armenian sources corroborate the Armenian tactical victory; this lane must not emit a second event."
+      },
+      {
+        "disposition_id": "iwbd-106-38-742",
+        "disposition": "deduplicate_to_existing_hced_release_event",
+        "existing_release_event_id": "hced_label_hced_sardarapat1918_1",
+        "fingerprint": {
+          "source_row": "742",
+          "source_snapshot": "data/raw/iwbd/20260713T161518Z-fcf5747cf94b.bin",
+          "name": "Sardarapat",
+          "war_name": "World War I (Caucasus Front)",
+          "start_date": "1918-05-28",
+          "end_date": "1918-05-28",
+          "duration_days": "1",
+          "attacker_raw": "Central Powers",
+          "defender_raw": "Allied Powers",
+          "winner_raw": "Allied Powers",
+          "battle_level_victor_role": "Defender"
+        },
+        "hced_candidate_id": "hced-Sardarapat1918-1",
+        "relationship": "same_battle_same_year_matching_defender_victory",
+        "source_dataset": "iwbd",
+        "reason": "IWBD's one-day Sardarapat row is the same battle already represented by the HCED release event. Its alliance labels are less actor-specific, so it is retained only as a deduplication disposition."
+      }
+    ],
+    "wave8_armenia_outcome_overrides": [],
+    "wave8_armenia_entities_added": 6,
+    "wave8_armenia_sources_added": 14,
+    "hced_label_pass_input_rows": 5770,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -7494,7 +7642,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 830,
+      "reserved_candidate_contract": 834,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -7506,7 +7654,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2263,
+      "no_unique_time_valid_label_match": 2259,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

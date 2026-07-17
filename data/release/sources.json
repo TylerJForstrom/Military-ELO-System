@@ -6098,6 +6098,216 @@
     ]
   },
   {
+    "id": "wave8_armenia_central_bank_sardarapat",
+    "title": "100th Anniversary of Sardarapat Battle",
+    "url": "https://www.cba.am/en/collector-coins/284/",
+    "publisher": "Central Bank of Armenia",
+    "license": "Citation and link only",
+    "source_type": "official_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "central_bank_armenia_sardarapat_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_demir_tigranocerta",
+    "title": "The Battle of Tigranocerta (69 BC): A Reconsideration",
+    "url": "https://doi.org/10.26650/anar.2021.24.898025",
+    "publisher": "Anatolian Research / Istanbul University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "demir_tigranocerta_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_der_nersessian_cilicia",
+    "title": "The Kingdom of Cilician Armenia",
+    "url": "https://www.attalus.org/armenian/KCA1.htm",
+    "publisher": "A History of the Crusades, vol. II; Attalus transcription",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "der_nersessian_cilician_armenia_1962",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_elishe_nla",
+    "title": "The History of Vartan and of the Battle of the Armenians",
+    "url": "https://dspace.nla.am/handle/123456789/14223",
+    "publisher": "National Library of Armenia digital repository",
+    "license": "Citation and link only",
+    "source_type": "digitized_translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "elishe_neumann_translation_1830",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_ghazarian_cilicia",
+    "title": "The Armenian Kingdom in Cilicia During the Crusades",
+    "url": "https://www.routledge.com/The-Armenian-Kingdom-in-Cilicia-During-the-Crusades-The-Integration-of-Cilician-Armenians-with-the-Latins-1080-1393/Ghazarian/p/book/9780700714186",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "ghazarian_cilician_armenia_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_history_museum_sardarapat",
+    "title": "Heroic Battles in May 1918 and the First Republic of Armenia",
+    "url": "https://historymuseum.am/en/map_content_type/heroic-battles-in-may-1918-the-first-republic-of-armenia-1918-1920/",
+    "publisher": "History Museum of Armenia",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "history_museum_armenia_sardarapat",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_iranica_armenia_iran",
+    "title": "Armenia and Iran ii. The pre-Islamic period",
+    "url": "https://www.iranicaonline.org/articles/armenia-ii/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_armenia_iran_pre_islamic",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_iranica_artaxata",
+    "title": "Artaxata",
+    "url": "https://www.iranicaonline.org/articles/artaxata-gk/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_artaxata_1986",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_iranica_avarayr",
+    "title": "Avarayr",
+    "url": "https://www.iranicaonline.org/articles/avarayr-a-village-in-armenia-in-the-principality-of-artaz-southeast-of-the-iranian-town-of-maku/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_avarayr_1987",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_iranica_elise",
+    "title": "Ełišē",
+    "url": "https://www.iranicaonline.org/articles/elise/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_elise_thomson_1998",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_oxford_tigranocerta",
+    "title": "Tigranocerta",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548214284",
+    "publisher": "Oxford Classical Dictionary / Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_classical_dictionary_tigranocerta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_plutarch_lucullus",
+    "title": "Plutarch, Life of Lucullus 24-29",
+    "url": "https://classics.mit.edu/Plutarch/lucullus.html",
+    "publisher": "MIT Internet Classics Archive",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "plutarch_lucullus_dryden_clough",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_smbat_chronicle",
+    "title": "Smbat Sparapet's Chronicle",
+    "url": "https://www.attalus.org/armenian/cssint.htm",
+    "publisher": "Attalus; Robert Bedrosian translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "smbat_sparapet_chronicle_bedrosian",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_armenia_tacitus_annals_13",
+    "title": "Tacitus, Annals 13.34-41: Corbulo's Armenian campaign",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0078%3Abook%3D13",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "tacitus_annals_fisher",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_boe_algiers_expedition_1775",
     "title": "Historical account of the expedition against Algiers in 1775",
     "url": "https://www.boe.es/gazeta/dias/1857/11/29/pdfs/GMD-1857-1790.pdf",

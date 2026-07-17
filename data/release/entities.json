@@ -861,6 +861,38 @@
     ]
   },
   {
+    "id": "lucullus_roman_army_tigranocerta_69_bce",
+    "name": "Lucullus's Roman army at Tigranocerta (69 BCE)",
+    "kind": "event_bounded_field_army",
+    "start_year": -69,
+    "end_year": -69,
+    "region": "Tigranocerta and Arzanene",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Lucullus's Roman expeditionary army and the detachments engaged against Tigranes during the 69 BCE battle and siege. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_demir_tigranocerta",
+      "wave8_armenia_oxford_tigranocerta",
+      "wave8_armenia_plutarch_lucullus"
+    ]
+  },
+  {
+    "id": "tigranes_ii_armenian_royal_army_tigranocerta_69_bce",
+    "name": "Tigranes II's Armenian royal army at Tigranocerta (69 BCE)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": -69,
+    "end_year": -69,
+    "region": "Tigranocerta and Arzanene",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Tigranes II's Armenian royal army and its subject and allied contingents in the pitched battle; it is not timeless Armenia. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_demir_tigranocerta",
+      "wave8_armenia_oxford_tigranocerta",
+      "wave8_armenia_plutarch_lucullus"
+    ]
+  },
+  {
     "id": "roman_empire",
     "name": "Roman Empire",
     "kind": "empire",
@@ -1152,6 +1184,38 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "vardan_mamikonian_armenian_rebel_army_avarayr_451",
+    "name": "Vardan Mamikonian's Armenian rebel army at Avarayr (451)",
+    "kind": "event_bounded_rebel_army",
+    "start_year": 451,
+    "end_year": 451,
+    "region": "Avarayr plain, Vaspurakan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Vardan Mamikonian's Christian Armenian nobles, retainers, clergy, and common soldiers in the 451 uprising. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_elishe_nla",
+      "wave8_armenia_iranica_avarayr",
+      "wave8_armenia_iranica_elise"
+    ]
+  },
+  {
+    "id": "yazdegerd_ii_sasanian_army_avarayr_451",
+    "name": "Yazdegerd II's Sasanian army at Avarayr (451)",
+    "kind": "event_bounded_imperial_army",
+    "start_year": 451,
+    "end_year": 451,
+    "region": "Avarayr plain, Vaspurakan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Sasanian imperial army, including its elephant corps and aligned contingents, that fought the Armenian uprising. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_elishe_nla",
+      "wave8_armenia_iranica_avarayr",
+      "wave8_armenia_iranica_elise"
     ]
   },
   {
@@ -2792,6 +2856,38 @@
     "source_ids": [
       "wave8_germany_oxford_dorylaeum",
       "wave8_germany_st_andrews_dorylaeum"
+    ]
+  },
+  {
+    "id": "andronikos_komnenos_byzantine_allied_army_mamistra_1152",
+    "name": "Andronikos Komnenos's Byzantine-allied army at Mamistra (1152)",
+    "kind": "event_bounded_besieging_army",
+    "start_year": 1152,
+    "end_year": 1152,
+    "region": "Mamistra, Cilicia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Andronikos Komnenos's Byzantine expedition and the local Armenian baronial contingents that joined its siege of Mamistra. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_der_nersessian_cilicia",
+      "wave8_armenia_ghazarian_cilicia",
+      "wave8_armenia_smbat_chronicle"
+    ]
+  },
+  {
+    "id": "thoros_ii_rubenid_cilician_army_mamistra_1152",
+    "name": "Thoros II's Rubenid Cilician army at Mamistra (1152)",
+    "kind": "event_bounded_siege_relief_force",
+    "start_year": 1152,
+    "end_year": 1152,
+    "region": "Mamistra, Cilicia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Thoros II and his brothers' Cilician Armenian force that sortied from besieged Mamistra and routed the besiegers. No rating is inherited from or passed to another Armenian, Roman, Sasanian, Byzantine, Cilician, dynastic, ethnic, or modern state identity.",
+    "source_ids": [
+      "wave8_armenia_der_nersessian_cilicia",
+      "wave8_armenia_ghazarian_cilicia",
+      "wave8_armenia_smbat_chronicle"
     ]
   },
   {
