@@ -9593,6 +9593,73 @@
     ]
   },
   {
+    "id": "haller_fourth_infantry_column_toppenish_creek_1855",
+    "name": "Haller's U.S. Fourth Infantry column at Toppenish Creek (1855)",
+    "kind": "event_bounded_expeditionary_column",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Columbia Plateau, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Fourth Infantry punitive column commanded by Major Granville O. Haller, including only its attached combatants and scouts. This identity exists only for the named 1855 event. No rating is inherited by the Yakama or Palouse peoples, the fourteen treaty tribes, the modern Yakama Nation, the United States, the U.S. Army, Oregon or Washington volunteers, noncombatants, families, or any later force.",
+    "source_ids": [
+      "wave8_yakima_carpenter_dissertation",
+      "wave8_yakima_historylink_toppenish",
+      "wave8_yakima_usfs_cultural_overview"
+    ]
+  },
+  {
+    "id": "kamiakin_yakama_allied_defenders_union_gap_1855",
+    "name": "Kamiakin-led Yakama and allied defense force at Union Gap (1855)",
+    "kind": "event_bounded_indigenous_defense_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Columbia Plateau, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded warriors who defended and evacuated the Union Gap positions; unnamed allied participants are not expanded into tribes. This identity exists only for the named 1855 event. No rating is inherited by the Yakama or Palouse peoples, the fourteen treaty tribes, the modern Yakama Nation, the United States, the U.S. Army, Oregon or Washington volunteers, noncombatants, families, or any later force.",
+    "source_ids": [
+      "wave8_yakima_historylink_union_gap",
+      "wave8_yakima_nara_bia_m5",
+      "wave8_yakima_ruby_brown_pacific_northwest",
+      "wave8_yakima_wa_parks_union_gap"
+    ]
+  },
+  {
+    "id": "kamiakin_yakama_palouse_coalition_toppenish_creek_1855",
+    "name": "Kamiakin-led Yakama-Palouse fighting coalition at Toppenish Creek (1855)",
+    "kind": "event_bounded_indigenous_coalition",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Columbia Plateau, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded fighters under Kamiakin, Owhi, Qualchan, and allied leaders who opposed Haller's column during the battle and retreat. This identity exists only for the named 1855 event. No rating is inherited by the Yakama or Palouse peoples, the fourteen treaty tribes, the modern Yakama Nation, the United States, the U.S. Army, Oregon or Washington volunteers, noncombatants, families, or any later force.",
+    "source_ids": [
+      "wave8_yakima_carpenter_dissertation",
+      "wave8_yakima_historylink_kamiakin",
+      "wave8_yakima_historylink_toppenish",
+      "wave8_yakima_nara_bia_m5"
+    ]
+  },
+  {
+    "id": "rains_regular_volunteer_force_union_gap_1855",
+    "name": "Rains's combined regular-volunteer force at Union Gap (1855)",
+    "kind": "event_bounded_combined_assault_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Columbia Plateau, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded U.S. regulars and Oregon and Washington volunteers that attacked the Two Buttes positions under Major Gabriel J. Rains. This identity exists only for the named 1855 event. No rating is inherited by the Yakama or Palouse peoples, the fourteen treaty tribes, the modern Yakama Nation, the United States, the U.S. Army, Oregon or Washington volunteers, noncombatants, families, or any later force.",
+    "source_ids": [
+      "wave8_yakima_govinfo_indian_disturbances",
+      "wave8_yakima_historylink_union_gap",
+      "wave8_yakima_painter_journals",
+      "wave8_yakima_ruby_brown_pacific_northwest"
+    ]
+  },
+  {
     "id": "clio_q218023_1856_cfb4e08e",
     "name": "Free Orange State",
     "kind": "polity",

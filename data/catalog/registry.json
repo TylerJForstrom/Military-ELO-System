@@ -7693,6 +7693,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "haller_fourth_infantry_column_toppenish_creek_1855",
+      "name": "Haller's U.S. Fourth Infantry column at Toppenish Creek (1855)",
+      "kind": "event_bounded_expeditionary_column",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Columbia Plateau, North America"
+    },
+    {
       "id": "clio_q239502_1056_b44742c2",
       "name": "Halych-Volhynia occupation",
       "kind": "polity",
@@ -9605,6 +9615,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kamiakin_yakama_allied_defenders_union_gap_1855",
+      "name": "Kamiakin-led Yakama and allied defense force at Union Gap (1855)",
+      "kind": "event_bounded_indigenous_defense_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Columbia Plateau, North America"
+    },
+    {
+      "id": "kamiakin_yakama_palouse_coalition_toppenish_creek_1855",
+      "name": "Kamiakin-led Yakama-Palouse fighting coalition at Toppenish Creek (1855)",
+      "kind": "event_bounded_indigenous_coalition",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Columbia Plateau, North America"
     },
     {
       "id": "clio_in_kampili_k_1285_c1ba5a23",
@@ -16768,6 +16798,16 @@
       "region": "Gouwe channel off Zierikzee"
     },
     {
+      "id": "rains_regular_volunteer_force_union_gap_1855",
+      "name": "Rains's combined regular-volunteer force at Union Gap (1855)",
+      "kind": "event_bounded_combined_assault_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Columbia Plateau, North America"
+    },
+    {
       "id": "clio_q4401071_1497_8af5707f",
       "name": "Rajahnate of Cebu",
       "kind": "polity",
@@ -23324,11 +23364,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2195,
-    "rated_entities": 832,
-    "rated_events": 5244,
+    "registry_polities": 2199,
+    "rated_entities": 836,
+    "rated_events": 5246,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18150,
+    "unresolved_event_candidates": 18148,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23405,6 +23445,7 @@
     "candidate_keyed_wave8_modoc_hced_events": 3,
     "candidate_keyed_wave8_sauk_hced_events": 3,
     "candidate_keyed_wave8_ute_hced_events": 2,
+    "candidate_keyed_wave8_yakima_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23415,21 +23456,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4980,
-      "candidate_keyed_reviewed_contracts": 670,
+      "hced_candidate_bindings": 4982,
+      "candidate_keyed_reviewed_contracts": 672,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4887,
-      "location_provenance_objects": 4936,
-      "point_fields_withheld_by_quarantine": 246,
+      "modern_location_country_assertions": 4889,
+      "location_provenance_objects": 4938,
+      "point_fields_withheld_by_quarantine": 248,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 294,
-      "point_quarantine_candidate_manifest_sha256": "251e06cec1c44f4c43668f6c1b43f94dc0c57b7672f102c7d15ba275e153c20a",
+      "unique_events_with_any_quarantined_field": 296,
+      "point_quarantine_candidate_manifest_sha256": "09987cfb176bf46cd410174886055682b977a7c9040ac28e8af12838f9c633dc",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "cac63cc79a8626874f7977f332b97f4edcadeaa1bde856fba722314fb162fcf9",
+      "quarantine_policy_sha256": "ed1ca980ea9bd081b86bddc6c8490a550c71954d8d195ec6455e0f2fe6c8210c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4936
+        "unreviewed_source_assertion": 4938
       },
       "verified_location_assertions": {
         "availability": "not_available",

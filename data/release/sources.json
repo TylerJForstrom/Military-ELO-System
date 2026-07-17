@@ -16327,6 +16327,228 @@
     ]
   },
   {
+    "id": "wave8_yakima_carpenter_dissertation",
+    "title": "Rake Up No Old Stories of Evil: Settler Colonialism and the War on Illahee, 1846-1877",
+    "url": "https://scholarsbank.uoregon.edu/server/api/core/bitstreams/da87f1de-6c77-42a6-95ed-1824a7a8155c/content",
+    "publisher": "University of Oregon",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "carpenter_war_on_illahee_dissertation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_govinfo_indian_disturbances",
+    "title": "Indian Disturbances in California, Oregon, and Washington",
+    "url": "https://www.govinfo.gov/content/pkg/SERIALSET-00819_00_00-006-0026-0000/pdf/SERIALSET-00819_00_00-006-0026-0000.pdf",
+    "publisher": "U.S. War Department, 34th Congress, Senate Executive Document 26",
+    "license": "Citation and link only",
+    "source_type": "congressional_serial_set_primary_correspondence",
+    "accessed": "2026-07-16",
+    "source_family_id": "war_department_indian_disturbances_1855",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_cascades",
+    "title": "Native Americans attack at the Cascades of the Columbia on March 26, 1856",
+    "url": "https://www.historylink.org/file/5190",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_cascades_5190",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_four_lakes",
+    "title": "U.S. Army defeats Native Americans at Battle of Four Lakes",
+    "url": "https://www.historylink.org/File/5143",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_four_lakes_5143",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_kamiakin",
+    "title": "Chief Kamiakin (ca. 1800-1877)",
+    "url": "https://www.historylink.org/file/10096",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_kamiakin_10096",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_satus",
+    "title": "Oregon volunteers battle Yakamas and Klickitats along Satus Creek",
+    "url": "https://www.historylink.org/File/8152",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_satus_8152",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_toppenish",
+    "title": "Yakama War begins on October 5, 1855",
+    "url": "https://www.historylink.org/file/5311",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_toppenish_5311",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_historylink_union_gap",
+    "title": "Major Gabriel Rains and soldiers and volunteers skirmish at Union Gap",
+    "url": "https://www.historylink.org/File/8124",
+    "publisher": "HistoryLink",
+    "license": "Citation and link only",
+    "source_type": "state_historical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "historylink_union_gap_8124",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_nara_bia_m5",
+    "title": "Microfilm Publication M5: Records of the Washington Superintendency of Indian Affairs",
+    "url": "https://www.archives.gov/files/research/native-americans/bia/m5.pdf",
+    "publisher": "U.S. National Archives and Records Administration",
+    "license": "Citation and link only",
+    "source_type": "federal_archival_finding_aid",
+    "accessed": "2026-07-16",
+    "source_family_id": "nara_bia_m5_washington_superintendency",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_oregon_encyclopedia_grande_ronde",
+    "title": "Grande Ronde Massacre, 1856",
+    "url": "https://www.oregonencyclopedia.org/articles/grande-ronde-massacre/",
+    "publisher": "Oregon Historical Society and Portland State University",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "oregon_encyclopedia_grande_ronde",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_painter_journals",
+    "title": "Journals of the Indian War of 1855-56",
+    "url": "https://journals.lib.washington.edu/index.php/WHQ/article/download/9230/8265",
+    "publisher": "Washington Historical Quarterly / University of Washington",
+    "license": "Citation and link only",
+    "source_type": "edited_participant_diaries",
+    "accessed": "2026-07-16",
+    "source_family_id": "painter_oregon_volunteer_journals",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_ruby_brown_pacific_northwest",
+    "title": "Indians of the Pacific Northwest: A History",
+    "url": "https://books.google.com/books?id=Ww8odDD86oAC&pg=PA264",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "ruby_brown_indians_pacific_northwest",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_splawn_kamiakin",
+    "title": "Ka-mi-akin, the Last Hero of the Yakimas",
+    "url": "https://www.sos.wa.gov/library/research-collections/classics-washington-history/ka-mi-akin-last-hero-yakimas",
+    "publisher": "Washington State Library, Office of the Secretary of State",
+    "license": "Citation and link only",
+    "source_type": "digitized_regional_history_and_oral_accounts",
+    "accessed": "2026-07-16",
+    "source_family_id": "splawn_kamiakin_state_library",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_usfs_cultural_overview",
+    "title": "A Cultural Resource Overview of the Gifford Pinchot National Forest",
+    "url": "https://npshistory.com/publications/usfs/region/6/gifford-pinchot/cro.pdf",
+    "publisher": "U.S. Forest Service",
+    "license": "Citation and link only",
+    "source_type": "federal_cultural_resource_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "usfs_gifford_pinchot_cultural_overview",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yakima_wa_parks_steptoe",
+    "title": "Steptoe Battlefield State Park Heritage Site History",
+    "url": "https://parks.wa.gov/about/news-center/field-guide-blog/steptoe-battlefield-state-park-heritage-site-history",
+    "publisher": "Washington State Parks",
+    "license": "Citation and link only",
+    "source_type": "state_government_battlefield_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "washington_state_parks_steptoe",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_yakima_wa_parks_union_gap",
+    "title": "Yakima Sportsman State Park History",
+    "url": "https://parks.wa.gov/about/news-center/field-guide-blog/yakima-sportsman-state-park-history",
+    "publisher": "Washington State Parks",
+    "license": "Citation and link only",
+    "source_type": "state_government_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "washington_state_parks_union_gap",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"

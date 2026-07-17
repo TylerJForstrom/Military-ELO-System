@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 839,
-    "events": 5244,
-    "sources": 1173,
-    "registry_polities": 2195
+    "entities": 843,
+    "events": 5246,
+    "sources": 1189,
+    "registry_polities": 2199
   },
   "year_range": {
     "start": -1274,
@@ -147,6 +147,7 @@
     "accepted_wave8_modoc_hced_events": 3,
     "accepted_wave8_sauk_hced_events": 3,
     "accepted_wave8_ute_hced_events": 2,
+    "accepted_wave8_yakima_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -12315,7 +12316,481 @@
     "wave8_ute_outcome_overrides": [],
     "wave8_ute_entities_added": 4,
     "wave8_ute_sources_added": 13,
-    "hced_label_pass_input_rows": 5705,
+    "wave8_yakima_counts": {
+      "adjacent_hced_dispositions": 4,
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 7,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 16,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1,
+      "yakima_war_rows_audited": 8
+    },
+    "wave8_yakima_cohort_counts": {
+      "yakama_war_1855_1856": 4
+    },
+    "wave8_yakima_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_yakima_integration_validation": {
+      "adjacent_hced_dispositions": 4,
+      "cross_lane_hced_dispositions": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 7,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "release_overlap": 0,
+      "yakima_war_rows_audited": 8
+    },
+    "wave8_yakima_candidate_ids": [
+      "hced-Toppenish1855-1",
+      "hced-Union Gap1855-1"
+    ],
+    "wave8_yakima_war_candidate_ids": [
+      "hced-Cascades1856-1",
+      "hced-Four Lakes1858-1",
+      "hced-Grande Ronde Valley1856-1",
+      "hced-Pine Creek1858-1",
+      "hced-Satus1856-1",
+      "hced-Spokane Plain1858-1",
+      "hced-Toppenish1855-1",
+      "hced-Union Gap1855-1"
+    ],
+    "wave8_yakima_holds": [
+      {
+        "candidate_id": "hced-Satus1856-1",
+        "raw_row_sha256": "a751cac298c4d60aba5453cea5adc6fe748e61d3bae9c0867cf9a8cc25314a37",
+        "canonical_event": {
+          "canonical_key": "battle_of_satus_creek:1856:1856",
+          "date_precision": "day",
+          "date_text": "10 April 1856",
+          "granularity": "ambush_counterattack_and_disengagement",
+          "name": "Battle of Satus Creek",
+          "year_low": 1856,
+          "year_high": 1856
+        },
+        "cohort": "yakama_war_1855_1856",
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "outcome_not_uniquely_defensible",
+        "hold_reason": "Yakama and Klickitat fighters successfully ambushed Hembree's scout party and captured much of the volunteer stock, but Cornelius's main body counterattacked, drove fighters from successive hills, and continued its withdrawal. The reviewed primary diary and secondary histories do not establish one common tactical winner for the whole row. HCED's Yakima win is therefore neither promoted, reversed, nor converted into a draw; unknown is never a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "ambush_counterattack_and_disengagement",
+        "evidence_refs": [
+          "wave8_yakima_historylink_satus",
+          "wave8_yakima_painter_journals",
+          "wave8_yakima_splawn_kamiakin"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_yakima",
+          "status": "held_hced_owner"
+        },
+        "historical_review": {
+          "attested_indigenous_side": "Yakama and Klickitat fighters under Kamiakin",
+          "attested_us_side": "Thomas Cornelius's Oregon volunteer column",
+          "indigenous_successes": [
+            "Hembree reconnaissance ambushed",
+            "volunteer stock captured"
+          ],
+          "volunteer_successes": [
+            "main camp held",
+            "fighters driven from successive hill positions"
+          ],
+          "whole_event_winner": "not uniquely defensible"
+        }
+      }
+    ],
+    "wave8_yakima_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Grande Ronde Valley1856-1",
+        "raw_row_sha256": "b26008b8d496c7d4d7fbe80d3e75db87e05066117bae64bf4202ffe49574a643",
+        "canonical_event": {
+          "canonical_key": "grande_ronde_massacre:1856:1856",
+          "date_precision": "day",
+          "date_text": "17 July 1856",
+          "granularity": "civilian_village_massacre",
+          "name": "Grande Ronde Massacre",
+          "year_low": 1856,
+          "year_high": 1856
+        },
+        "cohort": "yakama_war_1855_1856",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "wrong_actor_and_noncompetitive_civilian_massacre",
+        "hold_reason": "The Oregon Encyclopedia and archival scholarship identify the victims as Walla Walla, Umatilla, and Cayuse families, with only a few armed young men, attacked while gathering food. The event was a massacre, not a competitive United States-versus-Yakima engagement. Repairing the row would require replacing its actor and rating civilian victims, so no Elo outcome is emitted; unknown is never a draw.",
+        "reviewed_outcome": "not_rateable_wrong_actor_massacre",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "civilian_village_massacre",
+        "evidence_refs": [
+          "wave8_yakima_carpenter_dissertation",
+          "wave8_yakima_oregon_encyclopedia_grande_ronde"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_yakima",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "raw_opposing_label": "Yakima Indians",
+          "attested_communities": [
+            "Cayuse families",
+            "Umatilla families",
+            "Walla Walla families"
+          ],
+          "competitive_event": false,
+          "massacre_raw": "Yes",
+          "repair_risk": "would substitute actors and rate civilian victims"
+        }
+      }
+    ],
+    "wave8_yakima_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Cascades1856-1",
+        "raw_row_sha256": "d93d3ffc159854f35bf2c064fe922248d2c929f19b30e972c6a20d84aff0ee06",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_date_place_scope_and_composite_label",
+        "owner_scope": "separate Yakama-Klickitat-Cascades coalition audit",
+        "reason": "The 26 March Cascades attack is a distinct siege and civilian attack whose composite label is not the exact Yakima Indians lane.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_cascades"
+        ]
+      },
+      {
+        "candidate_id": "hced-Four Lakes1858-1",
+        "raw_row_sha256": "be8b342066f693c95b755bd3ba28cdd7e5be4972ea3bd988b895a30f651c6b72",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_coalition",
+        "owner_scope": "separate Four Lakes coalition audit",
+        "reason": "Four Lakes on 1 September 1858 is a separate Wright campaign battle with multiple allied nations, irrespective of its Yakima War tag.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "candidate_id": "hced-Pine Creek1858-1",
+        "raw_row_sha256": "92a1fb313385a973a7f4639e974da6ffada42406a45937e2e80926e49d0bf88a",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_and_allied_force",
+        "owner_scope": "separate Steptoe-Tohotonimme coalition audit",
+        "reason": "The May 1858 Steptoe/Tohotonimme battle belongs to an allied Spokane-Coeur d'Alene-Palouse-Yakama context and is not a 1855 twin.",
+        "evidence_refs": [
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "candidate_id": "hced-Spokane Plain1858-1",
+        "raw_row_sha256": "af9198a2c2e5036babdaa4aaf6d54b981d433fa420d1f83f9bcb0a699d260ecc",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_explicit_composite_label",
+        "owner_scope": "separate Spokane Plains coalition audit",
+        "reason": "Spokane Plains on 5 September 1858 explicitly names a multi-nation opposing side and remains outside this exact-label ownership.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_historylink_kamiakin",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      }
+    ],
+    "wave8_yakima_adjacent_hced_dispositions": [
+      {
+        "candidate_id": "hced-Cascades1856-1",
+        "raw_row_sha256": "d93d3ffc159854f35bf2c064fe922248d2c929f19b30e972c6a20d84aff0ee06",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_date_place_scope_and_composite_label",
+        "owner_scope": "separate Yakama-Klickitat-Cascades coalition audit",
+        "reason": "The 26 March Cascades attack is a distinct siege and civilian attack whose composite label is not the exact Yakima Indians lane.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_cascades"
+        ]
+      },
+      {
+        "candidate_id": "hced-Four Lakes1858-1",
+        "raw_row_sha256": "be8b342066f693c95b755bd3ba28cdd7e5be4972ea3bd988b895a30f651c6b72",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_coalition",
+        "owner_scope": "separate Four Lakes coalition audit",
+        "reason": "Four Lakes on 1 September 1858 is a separate Wright campaign battle with multiple allied nations, irrespective of its Yakima War tag.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "candidate_id": "hced-Pine Creek1858-1",
+        "raw_row_sha256": "92a1fb313385a973a7f4639e974da6ffada42406a45937e2e80926e49d0bf88a",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_and_allied_force",
+        "owner_scope": "separate Steptoe-Tohotonimme coalition audit",
+        "reason": "The May 1858 Steptoe/Tohotonimme battle belongs to an allied Spokane-Coeur d'Alene-Palouse-Yakama context and is not a 1855 twin.",
+        "evidence_refs": [
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "candidate_id": "hced-Spokane Plain1858-1",
+        "raw_row_sha256": "af9198a2c2e5036babdaa4aaf6d54b981d433fa420d1f83f9bcb0a699d260ecc",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_explicit_composite_label",
+        "owner_scope": "separate Spokane Plains coalition audit",
+        "reason": "Spokane Plains on 5 September 1858 explicitly names a multi-nation opposing side and remains outside this exact-label ownership.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_historylink_kamiakin",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      }
+    ],
+    "wave8_yakima_cross_lane_dispositions": [
+      {
+        "disposition_id": "modern_yakama_nation",
+        "disposition": "modern_and_treaty_identity_not_retroactive_rating_alias",
+        "owned_candidate_ids": [
+          "hced-Grande Ronde Valley1856-1",
+          "hced-Satus1856-1",
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "yakama",
+          "yakama_nation",
+          "yakima",
+          "yakima_indians"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_historylink_kamiakin",
+          "wave8_yakima_nara_bia_m5"
+        ],
+        "reason": "The modern Nation and fourteen treaty tribes are not replaced by one timeless military identity; only attested event formations are rated."
+      },
+      {
+        "disposition_id": "united_states_and_territorial_volunteers",
+        "disposition": "event_bounded_formations_not_generic_state_or_service",
+        "owned_candidate_ids": [
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "united_states",
+          "us_antebellum",
+          "us_army"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_carpenter_dissertation",
+          "wave8_yakima_govinfo_indian_disturbances",
+          "wave8_yakima_painter_journals"
+        ],
+        "reason": "Haller's regular column and Rains's mixed regular-volunteer force are separate event formations; no service or state rating bridges them."
+      },
+      {
+        "disposition_id": "yakima_war_composite_labels",
+        "disposition": "adjacent_war_family_without_candidate_overlap",
+        "owned_candidate_ids": [
+          "hced-Grande Ronde Valley1856-1",
+          "hced-Satus1856-1",
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "adjacent_candidate_ids": [
+          "hced-Cascades1856-1",
+          "hced-Four Lakes1858-1",
+          "hced-Pine Creek1858-1",
+          "hced-Spokane Plain1858-1"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_historylink_cascades",
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_wa_parks_steptoe"
+        ],
+        "reason": "A shared Yakima War tag or Yakama participant does not make four composite-coalition rows exact-label property or event duplicates."
+      }
+    ],
+    "wave8_yakima_iwbd_duplicate_dispositions": [],
+    "wave8_yakima_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Grande Ronde Valley1856-1",
+        "aliases": [
+          "battle of grande ronde",
+          "grande ronde",
+          "grande ronde massacre",
+          "grande ronde valley"
+        ],
+        "years": [
+          1856
+        ]
+      },
+      {
+        "audit_id": "hced-Satus1856-1",
+        "aliases": [
+          "battle of satus",
+          "battle of satus creek",
+          "hembree fight",
+          "satus",
+          "satus creek"
+        ],
+        "years": [
+          1856
+        ]
+      },
+      {
+        "audit_id": "hced-Toppenish1855-1",
+        "aliases": [
+          "battle of toppenish",
+          "battle of toppenish creek",
+          "battle of toppenish creek haller s defeat",
+          "haller s defeat",
+          "toppenish",
+          "toppenish creek"
+        ],
+        "years": [
+          1855
+        ]
+      },
+      {
+        "audit_id": "hced-Union Gap1855-1",
+        "aliases": [
+          "battle at union gap",
+          "battle of two buttes",
+          "battle of union gap",
+          "battle of union gap two buttes",
+          "pah qy ti koot",
+          "two buttes",
+          "union gap"
+        ],
+        "years": [
+          1855
+        ]
+      }
+    ],
+    "wave8_yakima_existing_release_duplicate_dispositions": [],
+    "wave8_yakima_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:modern_yakama_nation",
+        "disposition": "modern_and_treaty_identity_not_retroactive_rating_alias",
+        "owned_candidate_ids": [
+          "hced-Grande Ronde Valley1856-1",
+          "hced-Satus1856-1",
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "yakama",
+          "yakama_nation",
+          "yakima",
+          "yakima_indians"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_historylink_kamiakin",
+          "wave8_yakima_nara_bia_m5"
+        ],
+        "reason": "The modern Nation and fourteen treaty tribes are not replaced by one timeless military identity; only attested event formations are rated."
+      },
+      {
+        "disposition_id": "cross_lane:united_states_and_territorial_volunteers",
+        "disposition": "event_bounded_formations_not_generic_state_or_service",
+        "owned_candidate_ids": [
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "forbidden_generic_entity_ids": [
+          "united_states",
+          "us_antebellum",
+          "us_army"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_carpenter_dissertation",
+          "wave8_yakima_govinfo_indian_disturbances",
+          "wave8_yakima_painter_journals"
+        ],
+        "reason": "Haller's regular column and Rains's mixed regular-volunteer force are separate event formations; no service or state rating bridges them."
+      },
+      {
+        "disposition_id": "cross_lane:yakima_war_composite_labels",
+        "disposition": "adjacent_war_family_without_candidate_overlap",
+        "owned_candidate_ids": [
+          "hced-Grande Ronde Valley1856-1",
+          "hced-Satus1856-1",
+          "hced-Toppenish1855-1",
+          "hced-Union Gap1855-1"
+        ],
+        "adjacent_candidate_ids": [
+          "hced-Cascades1856-1",
+          "hced-Four Lakes1858-1",
+          "hced-Pine Creek1858-1",
+          "hced-Spokane Plain1858-1"
+        ],
+        "evidence_refs": [
+          "wave8_yakima_historylink_cascades",
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_wa_parks_steptoe"
+        ],
+        "reason": "A shared Yakima War tag or Yakama participant does not make four composite-coalition rows exact-label property or event duplicates."
+      },
+      {
+        "disposition_id": "related_hced:hced-Cascades1856-1",
+        "raw_row_sha256": "d93d3ffc159854f35bf2c064fe922248d2c929f19b30e972c6a20d84aff0ee06",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_date_place_scope_and_composite_label",
+        "owner_scope": "separate Yakama-Klickitat-Cascades coalition audit",
+        "reason": "The 26 March Cascades attack is a distinct siege and civilian attack whose composite label is not the exact Yakima Indians lane.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_cascades"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Four Lakes1858-1",
+        "raw_row_sha256": "be8b342066f693c95b755bd3ba28cdd7e5be4972ea3bd988b895a30f651c6b72",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_coalition",
+        "owner_scope": "separate Four Lakes coalition audit",
+        "reason": "Four Lakes on 1 September 1858 is a separate Wright campaign battle with multiple allied nations, irrespective of its Yakima War tag.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Pine Creek1858-1",
+        "raw_row_sha256": "92a1fb313385a973a7f4639e974da6ffada42406a45937e2e80926e49d0bf88a",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_and_allied_force",
+        "owner_scope": "separate Steptoe-Tohotonimme coalition audit",
+        "reason": "The May 1858 Steptoe/Tohotonimme battle belongs to an allied Spokane-Coeur d'Alene-Palouse-Yakama context and is not a 1855 twin.",
+        "evidence_refs": [
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Spokane Plain1858-1",
+        "raw_row_sha256": "af9198a2c2e5036babdaa4aaf6d54b981d433fa420d1f83f9bcb0a699d260ecc",
+        "disposition": "distinct_composite_coalition_event",
+        "relationship": "different_campaign_year_battle_and_explicit_composite_label",
+        "owner_scope": "separate Spokane Plains coalition audit",
+        "reason": "Spokane Plains on 5 September 1858 explicitly names a multi-nation opposing side and remains outside this exact-label ownership.",
+        "evidence_refs": [
+          "wave8_yakima_historylink_four_lakes",
+          "wave8_yakima_historylink_kamiakin",
+          "wave8_yakima_wa_parks_steptoe"
+        ]
+      }
+    ],
+    "wave8_yakima_outcome_overrides": [],
+    "wave8_yakima_entities_added": 4,
+    "wave8_yakima_sources_added": 16,
+    "hced_label_pass_input_rows": 5701,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -12328,7 +12803,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 899,
+      "reserved_candidate_contract": 903,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -12340,7 +12815,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2194,
+      "no_unique_time_valid_label_match": 2190,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

@@ -1499,6 +1499,32 @@ from .wave8_ute import (
     wave8_ute_cohort_counts,
     wave8_ute_counts,
 )
+from .wave8_yakima import (
+    WAVE8_YAKIMA_ADJACENT_HCED_DISPOSITIONS,
+    WAVE8_YAKIMA_CONTRACT_IDS,
+    WAVE8_YAKIMA_CROSS_LANE_DISPOSITIONS,
+    WAVE8_YAKIMA_ENTITIES,
+    WAVE8_YAKIMA_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_YAKIMA_HOLD_IDS,
+    WAVE8_YAKIMA_HOLDS,
+    WAVE8_YAKIMA_INTEGRATION_DISPOSITIONS,
+    WAVE8_YAKIMA_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_YAKIMA_IWBD_ZERO_OVERLAP_AUDIT,
+    WAVE8_YAKIMA_OUTCOME_OVERRIDES,
+    WAVE8_YAKIMA_RELATED_HCED_DISPOSITIONS,
+    WAVE8_YAKIMA_RESERVED_IDS,
+    WAVE8_YAKIMA_SOURCES,
+    WAVE8_YAKIMA_TERMINAL_EXCLUSION_IDS,
+    WAVE8_YAKIMA_TERMINAL_EXCLUSIONS,
+    WAVE8_YAKIMA_WAR_CANDIDATE_IDS,
+    install_wave8_yakima_entities,
+    install_wave8_yakima_sources,
+    promote_wave8_yakima_contracts,
+    validate_wave8_yakima_integration_dispositions,
+    validate_wave8_yakima_queue_contracts,
+    wave8_yakima_cohort_counts,
+    wave8_yakima_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1590,6 +1616,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_MODOC_RESERVED_IDS
     | WAVE8_SAUK_RESERVED_IDS
     | WAVE8_UTE_RESERVED_IDS
+    | WAVE8_YAKIMA_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1994,7 +2021,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 246
+        len(HCED_POINT_QUARANTINE_IDS) != 248
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2253,6 +2280,7 @@ def build_expanded_release(
     wave8_modoc_queue_validation = validate_wave8_modoc_queue_contracts(hced)
     wave8_sauk_queue_validation = validate_wave8_sauk_queue_contracts(hced)
     wave8_ute_queue_validation = validate_wave8_ute_queue_contracts(hced)
+    wave8_yakima_queue_validation = validate_wave8_yakima_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2631,6 +2659,7 @@ def build_expanded_release(
     install_wave8_modoc_entities(release_entities)
     install_wave8_sauk_entities(release_entities)
     install_wave8_ute_entities(release_entities)
+    install_wave8_yakima_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3985,6 +4014,15 @@ def build_expanded_release(
         release_entities,
         wave8_ute_existing_events,
     )
+    wave8_yakima_existing_events = [
+        *wave8_ute_existing_events,
+        *wave8_ute_events,
+    ]
+    wave8_yakima_events = promote_wave8_yakima_contracts(
+        hced,
+        release_entities,
+        wave8_yakima_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4058,6 +4096,7 @@ def build_expanded_release(
         *wave8_modoc_events,
         *wave8_sauk_events,
         *wave8_ute_events,
+        *wave8_yakima_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4195,6 +4234,8 @@ def build_expanded_release(
             *WAVE8_SAUK_TERMINAL_EXCLUSION_IDS,
             *WAVE8_UTE_HOLD_IDS,
             *WAVE8_UTE_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_YAKIMA_HOLD_IDS,
+            *WAVE8_YAKIMA_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -4294,6 +4335,7 @@ def build_expanded_release(
         *wave8_modoc_events,
         *wave8_sauk_events,
         *wave8_ute_events,
+        *wave8_yakima_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4676,6 +4718,13 @@ def build_expanded_release(
         iwbd_candidates,
         wave8_ute_existing_events,
     )
+    wave8_yakima_integration_validation = (
+        validate_wave8_yakima_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_yakima_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4894,6 +4943,7 @@ def build_expanded_release(
     install_wave8_modoc_sources(sources_by_id)
     install_wave8_sauk_sources(sources_by_id)
     install_wave8_ute_sources(sources_by_id)
+    install_wave8_yakima_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4972,6 +5022,7 @@ def build_expanded_release(
         *wave8_modoc_events,
         *wave8_sauk_events,
         *wave8_ute_events,
+        *wave8_yakima_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5050,6 +5101,7 @@ def build_expanded_release(
         *wave8_modoc_events,
         *wave8_sauk_events,
         *wave8_ute_events,
+        *wave8_yakima_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5127,6 +5179,7 @@ def build_expanded_release(
             | WAVE8_MODOC_CONTRACT_IDS
             | WAVE8_SAUK_CONTRACT_IDS
             | WAVE8_UTE_CONTRACT_IDS
+            | WAVE8_YAKIMA_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5246,6 +5299,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_MODOC_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_SAUK_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_UTE_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_YAKIMA_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5492,6 +5546,7 @@ def build_expanded_release(
         - len(wave8_modoc_events)
         - len(wave8_sauk_events)
         - len(wave8_ute_events)
+        - len(wave8_yakima_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5651,6 +5706,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_modoc_hced_events": len(wave8_modoc_events),
         "candidate_keyed_wave8_sauk_hced_events": len(wave8_sauk_events),
         "candidate_keyed_wave8_ute_hced_events": len(wave8_ute_events),
+        "candidate_keyed_wave8_yakima_hced_events": len(wave8_yakima_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -5952,6 +6008,7 @@ def build_expanded_release(
             "accepted_wave8_modoc_hced_events": len(wave8_modoc_events),
             "accepted_wave8_sauk_hced_events": len(wave8_sauk_events),
             "accepted_wave8_ute_hced_events": len(wave8_ute_events),
+            "accepted_wave8_yakima_hced_events": len(wave8_yakima_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -9036,6 +9093,76 @@ def build_expanded_release(
             ],
             "wave8_ute_entities_added": len(WAVE8_UTE_ENTITIES),
             "wave8_ute_sources_added": len(WAVE8_UTE_SOURCES),
+            "wave8_yakima_counts": wave8_yakima_counts(),
+            "wave8_yakima_cohort_counts": wave8_yakima_cohort_counts(),
+            "wave8_yakima_queue_validation": wave8_yakima_queue_validation,
+            "wave8_yakima_integration_validation": (
+                wave8_yakima_integration_validation
+            ),
+            "wave8_yakima_candidate_ids": sorted(WAVE8_YAKIMA_CONTRACT_IDS),
+            "wave8_yakima_war_candidate_ids": sorted(
+                WAVE8_YAKIMA_WAR_CANDIDATE_IDS
+            ),
+            "wave8_yakima_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_YAKIMA_HOLDS.items())
+            ],
+            "wave8_yakima_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_YAKIMA_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_yakima_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_YAKIMA_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_adjacent_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_YAKIMA_ADJACENT_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_YAKIMA_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_YAKIMA_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_iwbd_zero_overlap_audit": [
+                {"audit_id": audit_id, **contract}
+                for audit_id, contract in sorted(
+                    WAVE8_YAKIMA_IWBD_ZERO_OVERLAP_AUDIT.items()
+                )
+            ],
+            "wave8_yakima_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_YAKIMA_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_YAKIMA_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_yakima_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_YAKIMA_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_yakima_entities_added": len(WAVE8_YAKIMA_ENTITIES),
+            "wave8_yakima_sources_added": len(WAVE8_YAKIMA_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -9322,6 +9449,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_modoc_hced_events": len(wave8_modoc_events),
         "candidate_keyed_wave8_sauk_hced_events": len(wave8_sauk_events),
         "candidate_keyed_wave8_ute_hced_events": len(wave8_ute_events),
+        "candidate_keyed_wave8_yakima_hced_events": len(wave8_yakima_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
