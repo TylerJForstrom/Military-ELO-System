@@ -2540,7 +2540,7 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_368 + len(pre1500_candidate_ids),
+        2_426 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(

@@ -504,6 +504,38 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1955, 1959, "cuban_26_july_movement"),
     ),
     "carlists": ((1833, 1840, "carlist_army_first_war"),),
+    # ---- Funnel-ranked identity tranche (greedy batch ranks 1-20) ----
+    # Windows are the scorability source: rows outside a window stage as
+    # label_outside_policy_window rather than resolving. Deliberate gaps:
+    # "hyderabad" starts 1724 (the Asaf Jahi identity begins with the
+    # post-Shakar Kheda settlement; the 1720 Balapur/Ratanpur rows await a
+    # Mughal-era follow-up contract), "new zealand" covers only the 1907-1947
+    # Dominion (post-1948 rows stage until a successor identity is curated,
+    # the France/Russia/Persia gap pattern), and "mombassa" has no coverage
+    # 1590-1630 or after 1638 (no continuity between the sultanate and the
+    # 1631 revolt).
+    "norman sicily": ((1139, 1194, "clio_it_sicily_k_1_1139_c1640de5"),),
+    "hungarian revolutionaries": ((1848, 1849, "hungarian_honved_army_1848"),),
+    "judean rebels": ((66, 73, "great_jewish_revolt_judean_forces_66_73"),),
+    "hyderabad": ((1724, 1948, "hyderabad_asaf_jahi_state_1724"),),
+    "irish rebels": ((1798, 1803, "united_irishmen"),),
+    "palestinian arabs": ((1947, 1949, "palestinian_arab_forces_1947_1949"),),
+    "mandingos": ((1878, 1898, "wassoulou_empire_samori_ture"),),
+    "ottawa indians": ((1763, 1763, "pontiac_detroit_coalition_1763"),),
+    "new zealand": ((1907, 1947, "dominion_new_zealand"),),
+    "hauhau": ((1864, 1866, "pai_marire_forces_1864"),),
+    "inca": ((1780, 1783, "tupac_amaru_rebellion_forces"),),
+    "flemish rebels": ((1379, 1385, "ghent_rebel_regime_1379_1385"),),
+    # "huang chao" is deliberately deferred: its counterpart rows alias-bind
+    # the Tang identity that the Wave 8 Goguryeo lane installs as a curated
+    # fixture, and the record-precedence contract for that collision has not
+    # been adjudicated. The huang_chao_rebel_movement identity stays
+    # registered; the policy lands with that contract.
+    "cayuse indians": ((1848, 1848, "cayuse_war_allied_fighting_bands_1848"),),
+    "mombassa": (
+        (1500, 1589, "sultanate_of_mombasa"),
+        (1631, 1638, "mombasa_revolt_yusuf_ibn_al_hasan"),
+    ),
 }
 
 
@@ -515,15 +547,16 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
 # mapping it to a curated identity.
 HCED_FACTION_LABELS: frozenset[str] = frozenset({
     # war-faction / party / movement labels (royalists, parliamentarians,
-    # taiping, chinese communists, spanish republicans/nationalists, and
-    # carlists migrated to curated actor policies in HCED_LABEL_POLICIES)
+    # taiping, chinese communists, spanish republicans/nationalists, carlists,
+    # and irish rebels migrated to curated actor policies in
+    # HCED_LABEL_POLICIES)
     "indian rebels",
     "chinese nationalists", "kuomintang", "guomindang",
     "communists", "nationalists",
     "republicans", "loyalists", "rebels", "insurgents", "jacobites",
     "huguenots", "catholics", "protestants", "covenanters", "confederates",
     "unionists", "boxers", "whites", "reds", "bolsheviks", "mujahideen",
-    "cristinos", "mexican rebels", "irish rebels", "vendeen rebels",
+    "cristinos", "mexican rebels", "vendeen rebels",
     "russian whites", "white russians", "seminole indians",
     # collective-peoples labels with no unique time-bounded polity referent
     "vikings", "norsemen", "danes", "tatars", "crusaders", "moors",
@@ -1254,6 +1287,10 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Beijing-Tianjin1948-1": (
         "campaign envelope duplicates separately rated Tianjin and related component battles"
     ),
+    "hced-Bloody Run1763-1": (
+        "inverted outcome: HCED codes the United Kingdom as winner but Pontiac's "
+        "coalition defeated Dalyell's sortie from Fort Detroit"
+    ),
     "hced-Brest1513-1": "inverted outcome: Howard's English attack on Brest failed",
     "hced-Brienne1814-1": (
         "wrong belligerent: the action was fought against Russian and Prussian forces, not Austria"
@@ -1382,6 +1419,21 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
         "wrong belligerent: the defeated force was Russian-Prussian, not Austrian"
     ),
     "hced-Verdun1792-1": "wrong belligerent: the siege was conducted by Prussian forces",
+    # ---- Funnel-ranked identity tranche (greedy batch ranks 1-20) ----
+    "hced-Keniera1882-1": (
+        "inverted outcome: HCED codes the French side as winner but Keniera "
+        "fell to Samori Ture on 21 February 1882 before the relief column "
+        "arrived"
+    ),
+    "hced-Romani1916-1": (
+        "incomplete coalition: the British 52nd (Lowland) Division of the EEF "
+        "was a principal combatant omitted from the source's 'Australia, New "
+        "Zealand' side"
+    ),
+    "hced-Strymon1185-1": (
+        "duplicate of hced-Demetritsa1185-1: both rows encode the 7 November "
+        "1185 destruction of the Norman field army on the Strymon"
+    ),
 }
 
 

@@ -1120,5 +1120,38 @@
     "accessed": "2026-07-15",
     "source_family_id": "turkiye_ministry_culture_tourism",
     "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "ctext_zizhi_tongjian",
+    "title": "Zizhi Tongjian (Sima Guang)",
+    "url": "https://ctext.org/zizhi-tongjian",
+    "publisher": "Chinese Text Project",
+    "license": "Citation and link only",
+    "source_type": "primary_chronicle",
+    "accessed": "2026-07-17",
+    "source_family_id": "chinese_text_project",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "ebsco_cayuse_war",
+    "title": "Cayuse War (Research Starter)",
+    "url": "https://www.ebsco.com/research-starters/history/cayuse-war",
+    "publisher": "EBSCO Information Services",
+    "license": "Citation and link only",
+    "source_type": "reference_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "ebsco_research_starters",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
+  },
+  {
+    "id": "oregon_encyclopedia_cayuse_war",
+    "title": "Cayuse War",
+    "url": "https://www.oregonencyclopedia.org/articles/cayuse_war/",
+    "publisher": "The Oregon Encyclopedia, Oregon Historical Society",
+    "license": "Citation and link only",
+    "source_type": "reference_article",
+    "accessed": "2026-07-17",
+    "source_family_id": "oregon_encyclopedia",
+    "evidence_roles": ["identity_boundary_or_context_reference"]
   }
 ]
