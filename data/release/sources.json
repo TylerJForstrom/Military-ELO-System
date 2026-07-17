@@ -8540,6 +8540,311 @@
     ]
   },
   {
+    "id": "wave8_french_religious_bangor_elizabeth_wars",
+    "title": "Elizabeth's French Wars, 1562-1598: English intervention in the French Wars of Religion",
+    "url": "https://research.bangor.ac.uk/en/studentTheses/elizabeths-french-wars-1562-1598/",
+    "publisher": "Bangor University",
+    "license": "Citation and link only",
+    "source_type": "doctoral_historical_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "bangor_elizabeth_french_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_bnf_montauban",
+    "title": "Siège de Montauban (1621)",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb14423376m",
+    "publisher": "Bibliothèque nationale de France",
+    "license": "Citation and link only",
+    "source_type": "national_library_authority_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "bnf_siege_montauban_1621",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_british_museum_vassy",
+    "title": "The massacre at Vassy, 1562",
+    "url": "https://www.britishmuseum.org/collection/object/P_1855-0414-189",
+    "publisher": "British Museum",
+    "license": "Citation and link only",
+    "source_type": "national_museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "british_museum_vassy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_bryson_queen_jeanne",
+    "title": "Queen Jeanne and the Promised Land: Dynasty, Homeland, Religion and Violence in Sixteenth-Century France",
+    "url": "https://brill.com/display/title/6641",
+    "publisher": "Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "david_bryson_queen_jeanne",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_cambridge_rouen_1591",
+    "title": "Queen Elizabeth and the Siege of Rouen, 1591",
+    "url": "https://www.cambridge.org/core/journals/transactions-of-the-royal-historical-society/article/abs/queen-elizabeth-and-the-siege-of-rouen-1591/B53F2D7E420C6B6FDD8AFD63170ECF9E",
+    "publisher": "Cambridge University Press; Royal Historical Society",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "wernham_elizabeth_rouen_1591",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_culture_paris_1590",
+    "title": "Siège de Paris par Henri IV en 1590",
+    "url": "https://pop.culture.gouv.fr/notice/joconde/50170005866",
+    "publisher": "Ministère de la Culture, France",
+    "license": "Citation and link only",
+    "source_type": "national_museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_ministry_culture_pop",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_culture_vassy",
+    "title": "Massacre de Vassy, 1er mars 1562",
+    "url": "https://pop.culture.gouv.fr/notice/joconde/50170005854",
+    "publisher": "Ministère de la Culture, France",
+    "license": "Citation and link only",
+    "source_type": "national_museum_collection_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_ministry_culture_pop",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_holt_last_war",
+    "title": "Epilogue: The Last War of Religion, 1610-1629",
+    "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/A4AF17F3A3C9C0C78BE41CC0F3DBBB72/9780511817922c7_p178-194_CBO.pdf/epilogue_the_last_war_of_religion_16101629.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "mack_holt_last_war_religion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_knecht_wars",
+    "title": "The French Wars of Religion, 1559-1598",
+    "url": "https://www.routledge.com/The-French-Wars-of-Religion-1559-1598/Knecht/p/book/9781138418301",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "robert_knecht_french_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_michigan_henry_iv",
+    "title": "A Prince-like Soldier and a Soldier-like Prince: Contemporary Views of Henry IV",
+    "url": "https://quod.lib.umich.edu/w/wsfh/0642292.0033.004/--princelike-soldier-and-soldierlike-prince-contemporary-views?rgn=main%3Bview%3Dfulltext",
+    "publisher": "University of Michigan Library",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "michigan_henry_iv_military_image",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_musee_armee_guise",
+    "title": "Henri de Guise",
+    "url": "https://www.musee-armee.fr/au-programme/expositions/haine-des-clans-personnages/henri-de-guise.html",
+    "publisher": "Musée de l'Armée",
+    "license": "Citation and link only",
+    "source_type": "national_museum_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "musee_armee_henri_de_guise",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_musee_conde_coutras",
+    "title": "Bataille de Coutras, 20 octobre 1587",
+    "url": "https://www.musee-conde.fr/fr/notice/est-h-71-bataille-de-coutras-20-octobre-1587-0802df74-374f-4c61-affc-c6c84797e399",
+    "publisher": "Musée Condé",
+    "license": "Citation and link only",
+    "source_type": "museum_collection_historical_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "musee_conde_coutras",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_musee_eight_wars",
+    "title": "The eight wars of religion (1562-1598)",
+    "url": "https://museeprotestant.org/notice/les-huit-guerres-de-religion-1562-1598/",
+    "publisher": "Musée protestant",
+    "license": "Citation and link only",
+    "source_type": "institutional_historical_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "musee_protestant",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_musee_last_wars",
+    "title": "The last religious wars (1610-1629)",
+    "url": "https://museeprotestant.org/en/notice/the-last-religious-wars/",
+    "publisher": "Musée protestant",
+    "license": "Citation and link only",
+    "source_type": "institutional_historical_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "musee_protestant",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_oxford_orleans",
+    "title": "The Assassination of François de Lorraine, Duke of Guise, February 1563",
+    "url": "https://academic.oup.com/fh/article-abstract/21/3/247/593198",
+    "publisher": "Oxford University Press, French History",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_french_history_guise_assassination",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_pennington_1625",
+    "title": "The ships and seamen of the French Mediterranean fleet in 1625",
+    "url": "https://academic.oup.com/histres/article/96/273/318/7143618",
+    "publisher": "Oxford University Press, Historical Research",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_historical_research_french_fleet_1625",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_royal_collection_poitiers",
+    "title": "View of the Siege of Poitiers, 1569",
+    "url": "https://militarymaps.rct.uk/other-16th-century-conflicts/view-of-the-siege-of-poitiers-1569-poitiers-poitou-charentes-france-46deg3500n-00deg2000e-0",
+    "publisher": "Royal Collection Trust",
+    "license": "Citation and link only",
+    "source_type": "royal_collection_military_map_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "royal_collection_siege_poitiers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_thompson_wars",
+    "title": "The Wars of Religion in France, 1559-1576",
+    "url": "https://www.loc.gov/item/09014063/",
+    "publisher": "University of Chicago Press; Library of Congress catalog",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "james_westfall_thompson_french_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_tierce_poitiers",
+    "title": "Poitiers assiégée en 1569",
+    "url": "https://tierce.edel.univ-poitiers.fr/index.php?id=437",
+    "publisher": "Université de Poitiers",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "universite_poitiers_siege_1569",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_tolosana_re_1625",
+    "title": "Combat naval de l'île de Ré, 1625: digitized source record",
+    "url": "https://tolosana.univ-toulouse.fr/fr/notice/24488532x",
+    "publisher": "Université Toulouse Capitole, Tolosana",
+    "license": "Citation and link only",
+    "source_type": "academic_library_primary_source_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "tolosana_naval_re_1625",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_french_religious_wood_kings_army",
+    "title": "The King's Army: Warfare, Soldiers and Society during the Wars of Religion in France, 1562-1576",
+    "url": "https://www.cambridge.org/core/books/kings-army/716F6506ECD0412E1AAAB3E63A6CE011",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "james_wood_kings_army",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_garibaldi_guerzoni_1889",
     "title": "Garibaldi, volume I (1807-1859)",
     "url": "https://www.gutenberg.org/files/75122/75122-h/75122-h.htm",

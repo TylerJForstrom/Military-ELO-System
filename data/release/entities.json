@@ -5576,6 +5576,126 @@
     ]
   },
   {
+    "id": "conde_coligny_huguenot_german_army_dreux_1562",
+    "name": "Condé-Coligny Huguenot-German army at Dreux (1562)",
+    "kind": "event_bounded_huguenot_foreign_coalition_army",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "duras_huguenot_relief_army_vergt_1562",
+    "name": "Duras's Huguenot relief army at Vergt (1562)",
+    "kind": "event_bounded_huguenot_relief_army",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "guise_royal_siege_army_rouen_1562",
+    "name": "Guise's royal siege army at Rouen (1562)",
+    "kind": "event_bounded_royal_siege_army",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bangor_elizabeth_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "montluc_royalist_army_vergt_1562",
+    "name": "Montluc's royalist army at Vergt (1562)",
+    "kind": "event_bounded_royalist_field_army",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "montmorency_guise_royal_army_dreux_1562",
+    "name": "Montmorency-Guise royal army at Dreux (1562)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "rouen_huguenot_english_garrison_1562",
+    "name": "Rouen Huguenot-English garrison (1562)",
+    "kind": "event_bounded_huguenot_foreign_garrison",
+    "start_year": 1562,
+    "end_year": 1562,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1562. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bangor_elizabeth_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "conde_huguenot_field_army_saint_denis_1567",
+    "name": "Condé's Huguenot field army at Saint-Denis (1567)",
+    "kind": "event_bounded_huguenot_field_army",
+    "start_year": 1567,
+    "end_year": 1567,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1567. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "montmorency_royal_army_saint_denis_1567",
+    "name": "Montmorency's royal army at Saint-Denis (1567)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1567,
+    "end_year": 1567,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1567. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
     "id": "dutch_republic",
     "name": "Dutch Revolt and Republic",
     "kind": "republic",
@@ -5595,6 +5715,126 @@
     ]
   },
   {
+    "id": "anjou_royal_coalition_army_moncontour_1569",
+    "name": "Anjou's royal and foreign coalition army at Moncontour (1569)",
+    "kind": "event_bounded_royal_foreign_coalition_army",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "anjou_tavannes_royal_army_jarnac_1569",
+    "name": "Anjou-Tavannes royal army at Jarnac (1569)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "coligny_huguenot_army_moncontour_1569",
+    "name": "Coligny's Huguenot army at Moncontour (1569)",
+    "kind": "event_bounded_huguenot_field_army",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "coligny_huguenot_siege_army_poitiers_1569",
+    "name": "Coligny's Huguenot siege army at Poitiers (1569)",
+    "kind": "event_bounded_huguenot_siege_army",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_royal_collection_poitiers",
+      "wave8_french_religious_tierce_poitiers"
+    ]
+  },
+  {
+    "id": "coligny_huguenot_german_force_roche_1569",
+    "name": "Coligny's Huguenot-German force at La Roche-l'Abeille (1569)",
+    "kind": "event_bounded_huguenot_foreign_force",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "conde_coligny_huguenot_army_jarnac_1569",
+    "name": "Condé-Coligny Huguenot army at Jarnac (1569)",
+    "kind": "event_bounded_huguenot_field_army",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "guise_poitiers_royalist_garrison_1569",
+    "name": "Guise's Poitiers royalist garrison and defenders (1569)",
+    "kind": "event_bounded_royalist_garrison",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_royal_collection_poitiers",
+      "wave8_french_religious_tierce_poitiers"
+    ]
+  },
+  {
+    "id": "montgomery_huguenot_bearn_force_orthez_1569",
+    "name": "Montgomery's Huguenot-Béarn force at Orthez (1569)",
+    "kind": "event_bounded_huguenot_regional_force",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bryson_queen_jeanne",
+      "wave8_french_religious_thompson_wars"
+    ]
+  },
+  {
     "id": "polish_lithuanian_commonwealth",
     "name": "Polish-Lithuanian Commonwealth",
     "kind": "union_state",
@@ -5611,6 +5851,66 @@
       "cliopatria_polities",
       "britannica_union_of_lublin",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "strozzi_royal_detachment_roche_1569",
+    "name": "Strozzi's royal detachment at La Roche-l'Abeille (1569)",
+    "kind": "event_bounded_royal_detachment",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_thompson_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "terride_royalist_bearn_force_orthez_1569",
+    "name": "Terride's royalist Béarn force at Orthez (1569)",
+    "kind": "event_bounded_royalist_regional_force",
+    "start_year": 1569,
+    "end_year": 1569,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1569. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bryson_queen_jeanne",
+      "wave8_french_religious_thompson_wars"
+    ]
+  },
+  {
+    "id": "coligny_huguenot_field_army_arnay_1570",
+    "name": "Coligny's Huguenot field army at Arnay-le-Duc (1570)",
+    "kind": "event_bounded_huguenot_field_army",
+    "start_year": 1570,
+    "end_year": 1570,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1570. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "cosse_royal_interception_force_arnay_1570",
+    "name": "Cossé's royal interception force at Arnay-le-Duc (1570)",
+    "kind": "event_bounded_royal_field_force",
+    "start_year": 1570,
+    "end_year": 1570,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1570. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_eight_wars",
+      "wave8_french_religious_wood_kings_army"
     ]
   },
   {
@@ -5667,6 +5967,36 @@
     ]
   },
   {
+    "id": "guise_royal_army_dormans_1575",
+    "name": "Guise's royal army at Dormans (1575)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1575,
+    "end_year": 1575,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1575. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_armee_guise"
+    ]
+  },
+  {
+    "id": "thore_german_malcontent_army_dormans_1575",
+    "name": "Thoré's German-Protestant and Malcontent army at Dormans (1575)",
+    "kind": "event_bounded_mixed_relief_army",
+    "start_year": 1575,
+    "end_year": 1575,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1575. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_armee_guise"
+    ]
+  },
+  {
     "id": "otomo_bungo_army_1586_1587",
     "name": "Otomo Bungo army in the Hetsugigawa campaign (1586-1587)",
     "kind": "campaign_bounded_daimyo_army",
@@ -5711,6 +6041,66 @@
     "source_ids": [
       "wave8_satsuma_iriki_documents",
       "wave8_satsuma_oita_otomo"
+    ]
+  },
+  {
+    "id": "dohna_german_protestant_relief_army_auneau_1587",
+    "name": "Dohna's German Protestant relief army at Auneau (1587)",
+    "kind": "event_bounded_foreign_relief_army",
+    "start_year": 1587,
+    "end_year": 1587,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1587. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_armee_guise"
+    ]
+  },
+  {
+    "id": "guise_catholic_league_army_auneau_1587",
+    "name": "Guise's Catholic League army at Auneau (1587)",
+    "kind": "event_bounded_catholic_league_army",
+    "start_year": 1587,
+    "end_year": 1587,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1587. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_armee_guise"
+    ]
+  },
+  {
+    "id": "joyeuse_royal_army_coutras_1587",
+    "name": "Joyeuse's royal army at Coutras (1587)",
+    "kind": "event_bounded_royal_field_army",
+    "start_year": 1587,
+    "end_year": 1587,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1587. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_conde_coutras"
+    ]
+  },
+  {
+    "id": "navarre_huguenot_army_coutras_1587",
+    "name": "Navarre's Huguenot army at Coutras (1587)",
+    "kind": "event_bounded_huguenot_field_army",
+    "start_year": 1587,
+    "end_year": 1587,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1587. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_knecht_wars",
+      "wave8_french_religious_musee_conde_coutras"
     ]
   },
   {
@@ -5947,6 +6337,66 @@
     "start_year": 1618
   },
   {
+    "id": "louis_xiii_royal_siege_army_montauban_1621",
+    "name": "Louis XIII's royal siege army at Montauban (1621)",
+    "kind": "event_bounded_royal_siege_army",
+    "start_year": 1621,
+    "end_year": 1621,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1621. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bnf_montauban",
+      "wave8_french_religious_musee_last_wars"
+    ]
+  },
+  {
+    "id": "louis_xiii_royal_siege_army_saint_jean_1621",
+    "name": "Louis XIII's royal siege army at Saint-Jean-d'Angély (1621)",
+    "kind": "event_bounded_royal_siege_army",
+    "start_year": 1621,
+    "end_year": 1621,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1621. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_holt_last_war",
+      "wave8_french_religious_musee_last_wars"
+    ]
+  },
+  {
+    "id": "montauban_huguenot_garrison_civic_defenders_1621",
+    "name": "Montauban Huguenot garrison and civic defenders (1621)",
+    "kind": "event_bounded_garrison_civic_defence_force",
+    "start_year": 1621,
+    "end_year": 1621,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1621. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_bnf_montauban",
+      "wave8_french_religious_musee_last_wars"
+    ]
+  },
+  {
+    "id": "soubise_saint_jean_huguenot_garrison_1621",
+    "name": "Soubise's Saint-Jean-d'Angély Huguenot garrison (1621)",
+    "kind": "event_bounded_huguenot_garrison",
+    "start_year": 1621,
+    "end_year": 1621,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1621. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_holt_last_war",
+      "wave8_french_religious_musee_last_wars"
+    ]
+  },
+  {
     "id": "palatine_protestant_forces_1622",
     "name": "Palatine Protestant Forces at Heidelberg",
     "kind": "campaign_force",
@@ -5972,6 +6422,38 @@
     "continuity_note": "Begins with the electoral dignity in 1623 and ends before the 1806 kingdom. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "source_ids": [
       "wave7_west_hdbg_electorate"
+    ]
+  },
+  {
+    "id": "montmorency_royal_fleet_re_1625",
+    "name": "Montmorency's royal fleet off Île de Ré (1625)",
+    "kind": "event_bounded_royal_fleet",
+    "start_year": 1625,
+    "end_year": 1625,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1625. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_last_wars",
+      "wave8_french_religious_pennington_1625",
+      "wave8_french_religious_tolosana_re_1625"
+    ]
+  },
+  {
+    "id": "soubise_rochelais_fleet_re_1625",
+    "name": "Soubise's Rochelais-Huguenot fleet off Île de Ré (1625)",
+    "kind": "event_bounded_huguenot_fleet",
+    "start_year": 1625,
+    "end_year": 1625,
+    "region": "France",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The side is the commander-led formation actually contesting this action, including named allied contingents where the HCED side is compound. This fighting identity exists only for the named action and the year 1625. No rating is inherited by or transferred to the generic HCED labels French Protestants or French Catholics, a religion or denomination, a civilian population, the French Crown, a dynasty, a commander personally, a later formation, or another event.",
+    "source_ids": [
+      "wave8_french_religious_musee_last_wars",
+      "wave8_french_religious_pennington_1625",
+      "wave8_french_religious_tolosana_re_1625"
     ]
   },
   {

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 861,
-    "events": 5250,
-    "sources": 1206,
-    "registry_polities": 2217
+    "entities": 893,
+    "events": 5266,
+    "sources": 1227,
+    "registry_polities": 2249
   },
   "year_range": {
     "start": -1274,
@@ -149,6 +149,7 @@
     "accepted_wave8_ute_hced_events": 2,
     "accepted_wave8_yakima_hced_events": 2,
     "accepted_wave8_taliban_al_qaeda_hced_events": 4,
+    "accepted_wave8_french_religious_forces_hced_events": 16,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -13334,7 +13335,1024 @@
     "wave8_taliban_al_qaeda_outcome_overrides": [],
     "wave8_taliban_al_qaeda_entities_added": 18,
     "wave8_taliban_al_qaeda_sources_added": 17,
-    "hced_label_pass_input_rows": 5697,
+    "wave8_french_religious_forces_counts": {
+      "adjacent_hced_dispositions": 3,
+      "country_quarantine_additions": 0,
+      "cross_event_boundaries": 3,
+      "cross_label_twins": 11,
+      "existing_release_boundaries": 2,
+      "existing_release_duplicate_dispositions": 0,
+      "french_catholic_exact_rows": 17,
+      "french_protestant_exact_rows": 16,
+      "hced_duplicate_dispositions": 1,
+      "holds": 5,
+      "integration_dispositions": 20,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 22,
+      "new_entities": 32,
+      "new_sources": 21,
+      "newly_rated_events": 16,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 16,
+      "promotion_contracts": 16,
+      "reviewed_hced_rows": 22,
+      "shared_exact_rows": 11,
+      "terminal_exclusions": 1
+    },
+    "wave8_french_religious_forces_cohort_counts": {
+      "eighth_french_war_1587": 2,
+      "fifth_french_war_1575": 1,
+      "first_french_war_1562_1563": 5,
+      "fourth_french_war_1572_1573": 1,
+      "huguenot_rebellion_1621": 2,
+      "huguenot_rebellion_1625": 1,
+      "ninth_french_war_1589_1598": 3,
+      "second_french_war_1567": 1,
+      "third_french_war_1568_1570": 6
+    },
+    "wave8_french_religious_forces_metadata": {
+      "counts": {
+        "adjacent_hced_dispositions": 3,
+        "country_quarantine_additions": 0,
+        "cross_event_boundaries": 3,
+        "cross_label_twins": 11,
+        "existing_release_boundaries": 2,
+        "existing_release_duplicate_dispositions": 0,
+        "french_catholic_exact_rows": 17,
+        "french_protestant_exact_rows": 16,
+        "hced_duplicate_dispositions": 1,
+        "holds": 5,
+        "integration_dispositions": 20,
+        "iwbd_duplicate_dispositions": 0,
+        "iwbd_zero_overlap_candidates": 22,
+        "new_entities": 32,
+        "new_sources": 21,
+        "newly_rated_events": 16,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 16,
+        "promotion_contracts": 16,
+        "reviewed_hced_rows": 22,
+        "shared_exact_rows": 11,
+        "terminal_exclusions": 1
+      },
+      "cohorts": {
+        "eighth_french_war_1587": 2,
+        "fifth_french_war_1575": 1,
+        "first_french_war_1562_1563": 5,
+        "fourth_french_war_1572_1573": 1,
+        "huguenot_rebellion_1621": 2,
+        "huguenot_rebellion_1625": 1,
+        "ninth_french_war_1589_1598": 3,
+        "second_french_war_1567": 1,
+        "third_french_war_1568_1570": 6
+      },
+      "exact_label_digests": {
+        "french catholics": "4ce4b7550abeb80060b2e0075b7d2e20b09576d62e922580ab5653752c36d475",
+        "french protestants": "1987e8717d053c927e84f35492dd77ffd5db82f079b46ccf4590a4e8c75f606e"
+      },
+      "final_audit_signature": "cbca7f8a20ae78e87ea5becc5a73df0cde6272771015e8019d98e77f08df2a70",
+      "hold_ids": [
+        "hced-Caudebec1592-1",
+        "hced-La Rochelle1572-1",
+        "hced-Orleans1563-1",
+        "hced-Paris1590-1",
+        "hced-Rouen1591-1"
+      ],
+      "promoted_candidate_ids": [
+        "hced-Arnay-le-Duc1570-1",
+        "hced-Auneau1587-1",
+        "hced-Coutras1587-1",
+        "hced-Dormans1575-1",
+        "hced-Dreux1562-1",
+        "hced-Jarnac1569-1",
+        "hced-La Roche-LAbeille1569-1",
+        "hced-La Rochelle1625-1",
+        "hced-Moncontour1569-1",
+        "hced-Montauban1621-1",
+        "hced-Orthez1569-1",
+        "hced-Poitiers1569-1",
+        "hced-Rouen1562-1",
+        "hced-St Denis, France1567-1",
+        "hced-St Jean dAngely1621-1",
+        "hced-Vergt1562-1"
+      ],
+      "shared_exact_candidate_ids": [
+        "hced-Arnay-le-Duc1570-1",
+        "hced-Caudebec1592-1",
+        "hced-Coutras1587-1",
+        "hced-La Rochelle1572-1",
+        "hced-Montauban1621-1",
+        "hced-Orleans1563-1",
+        "hced-Orthez1569-1",
+        "hced-Poitiers1569-1",
+        "hced-St Denis, France1567-1",
+        "hced-Vassy1562-1",
+        "hced-Vergt1562-1"
+      ],
+      "terminal_exclusion_ids": [
+        "hced-Vassy1562-1"
+      ]
+    },
+    "wave8_french_religious_forces_queue_validation": {
+      "french_catholic_exact_rows": 17,
+      "french_protestant_exact_rows": 16,
+      "holds": 5,
+      "promotion_contracts": 16,
+      "reviewed_hced_rows": 22,
+      "shared_exact_rows": 11,
+      "terminal_exclusions": 1
+    },
+    "wave8_french_religious_forces_integration_validation": {
+      "adjacent_hced_dispositions": 3,
+      "cross_event_boundaries": 3,
+      "cross_label_twins": 11,
+      "existing_release_boundaries_found": 2,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 1,
+      "integration_dispositions": 20,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 22,
+      "release_lane_overlap": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_french_religious_forces_candidate_ids": [
+      "hced-Arnay-le-Duc1570-1",
+      "hced-Auneau1587-1",
+      "hced-Coutras1587-1",
+      "hced-Dormans1575-1",
+      "hced-Dreux1562-1",
+      "hced-Jarnac1569-1",
+      "hced-La Roche-LAbeille1569-1",
+      "hced-La Rochelle1625-1",
+      "hced-Moncontour1569-1",
+      "hced-Montauban1621-1",
+      "hced-Orthez1569-1",
+      "hced-Poitiers1569-1",
+      "hced-Rouen1562-1",
+      "hced-St Denis, France1567-1",
+      "hced-St Jean dAngely1621-1",
+      "hced-Vergt1562-1"
+    ],
+    "wave8_french_religious_forces_holds": [
+      {
+        "candidate_id": "hced-Caudebec1592-1",
+        "raw_row_sha256": "efae7cf23eb895cf2beb23ab1a623e3bb7cc71837a4b69328ac379244b86cb2b",
+        "canonical_event": {
+          "canonical_key": "caudebec_campaign_action:1592:1592",
+          "date_precision": "month",
+          "date_text": "May 1592",
+          "granularity": "compound_trap_relief_and_escape_maneuver",
+          "name": "Caudebec campaign action",
+          "year_low": 1592,
+          "year_high": 1592
+        },
+        "cohort": "ninth_french_war_1589_1598",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "hold_category": "compound_maneuver_without_undivided_tactical_result",
+        "evidence_refs": [
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_michigan_henry_iv"
+        ],
+        "hold_reason": "Not promoted: the Caudebec episode combines investment, Parma's relief, and Henry IV's escape across the Seine. HCED marks a draw but leaves the winner/loser incomplete; the bounded tactical result remains unknown, and unknown is not a draw."
+      },
+      {
+        "candidate_id": "hced-La Rochelle1572-1",
+        "raw_row_sha256": "76216489e2747c83938abacc25018f62e79a6048011fab366c18eb228652e733",
+        "canonical_event": {
+          "canonical_key": "siege_of_la_rochelle_1572_1573:1572:1573",
+          "date_precision": "month_range",
+          "date_text": "November 1572-July 1573",
+          "granularity": "multi_year_siege_and_negotiated_settlement",
+          "name": "Siege of La Rochelle (1572-1573)",
+          "year_low": 1572,
+          "year_high": 1573
+        },
+        "cohort": "fourth_french_war_1572_1573",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "hold_category": "truncated_multi_year_siege_and_nuanced_settlement",
+        "evidence_refs": [
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_thompson_wars"
+        ],
+        "hold_reason": "Not promoted: HCED truncates the 1572-1573 siege to 1572 and assigns a simple Protestant win. The siege, losses, and negotiated settlement do not yield a defensible undivided tactical winner at that row granularity. The result is unknown, never a draw."
+      },
+      {
+        "candidate_id": "hced-Orleans1563-1",
+        "raw_row_sha256": "be505efe254719fb1ce447b70c04792795554e53cdcff5702881b9569ceb4c67",
+        "canonical_event": {
+          "canonical_key": "siege_of_orleans_1563:1563:1563",
+          "date_precision": "month",
+          "date_text": "February 1563",
+          "granularity": "siege_terminated_by_assassination_and_peace",
+          "name": "Siege of Orléans (1563)",
+          "year_low": 1563,
+          "year_high": 1563
+        },
+        "cohort": "first_french_war_1562_1563",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "hold_category": "siege_terminated_without_clean_competitive_winner",
+        "evidence_refs": [
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_oxford_orleans",
+          "wave8_french_religious_wood_kings_army"
+        ],
+        "hold_reason": "Not promoted: Guise's assassination interrupted the royal siege and the Edict of Amboise followed. Treating that interruption as the HCED side's tactical victory would invent an outcome; it remains unknown, not a draw."
+      },
+      {
+        "candidate_id": "hced-Paris1590-1",
+        "raw_row_sha256": "07e8b3c944f82fc2a5f7fc67c8677741b585920ee238843ffd82e710297dd4c1",
+        "canonical_event": {
+          "canonical_key": "siege_of_paris_1590:1590:1590",
+          "date_precision": "month_range",
+          "date_text": "May-September 1590",
+          "granularity": "siege_and_external_relief",
+          "name": "Siege of Paris (1590)",
+          "year_low": 1590,
+          "year_high": 1590
+        },
+        "cohort": "ninth_french_war_1589_1598",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "hold_category": "raw_date_contamination_and_existing_event_collision",
+        "evidence_refs": [
+          "wave8_french_religious_culture_paris_1590",
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_michigan_henry_iv"
+        ],
+        "hold_reason": "Not promoted: source_record_id and participants identify the 1590 siege, but every HCED year field is 1436, colliding with the distinct released liberation of Paris in 1436. Repairing the date and choosing a single siege/relief result exceeds this lane; the result is unknown, not a draw."
+      },
+      {
+        "candidate_id": "hced-Rouen1591-1",
+        "raw_row_sha256": "cfcc4a7a84e8b7d33e748a396387392a0cdba056a1d70959159da128eed32691",
+        "canonical_event": {
+          "canonical_key": "siege_of_rouen_1591_1592:1591:1592",
+          "date_precision": "month_range",
+          "date_text": "November 1591-April 1592",
+          "granularity": "multi_year_siege_and_relief",
+          "name": "Siege of Rouen (1591-1592)",
+          "year_low": 1591,
+          "year_high": 1592
+        },
+        "cohort": "ninth_french_war_1589_1598",
+        "disposition": "hold",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "hold_category": "truncated_siege_and_misbounded_royal_coalition",
+        "evidence_refs": [
+          "wave8_french_religious_bangor_elizabeth_wars",
+          "wave8_french_religious_cambridge_rouen_1591",
+          "wave8_french_religious_knecht_wars"
+        ],
+        "hold_reason": "Not promoted: the siege crosses 1591-1592, and Henry IV's besieging army included royal, English, and Dutch forces rather than a clean generic French-Protestant side. The siege/relief result is unknown here, not a draw."
+      }
+    ],
+    "wave8_french_religious_forces_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Vassy1562-1",
+        "raw_row_sha256": "aaa336e4a6665261ce0c6ea07831a6ed5d76141786ddcc3c7af34ad3f1288d94",
+        "canonical_event": {
+          "canonical_key": "massacre_of_vassy:1562:1562",
+          "date_precision": "day",
+          "date_text": "1 March 1562",
+          "granularity": "civilian_congregation_massacre",
+          "name": "Massacre of Vassy",
+          "year_low": 1562,
+          "year_high": 1562
+        },
+        "cohort": "first_french_war_1562_1563",
+        "disposition": "terminal_exclude",
+        "result_type": "not_rateable",
+        "exclusion_category": "civilian_massacre_without_competitive_military_outcome",
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [
+          "wave8_french_religious_british_museum_vassy",
+          "wave8_french_religious_culture_vassy",
+          "wave8_french_religious_knecht_wars"
+        ],
+        "exclusion_reason": "Terminally excluded: HCED itself records 'Massacre', no loser, an incomplete result, and massacre=Yes. The attack on a worshipping civilian congregation was not a competitive engagement, so no winner, loser, draw, or military formation rating may be invented."
+      }
+    ],
+    "wave8_french_religious_forces_adjacent_hced_dispositions": [
+      {
+        "candidate_id": "hced-Havana1555-1",
+        "raw_row_sha256": "1de7eb7513b9a087ceee6845b8f7f9edd9e00e8a884eac8f71117e29d97766ef",
+        "literal_label": "hugenot pirate jacques de sores",
+        "disposition": "distinct_named_privateering_force_outside_exact_labels",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [],
+        "boundary_note": "A named Huguenot privateer at Havana is not the exact French Protestants actor and cannot inherit a French field-army identity."
+      },
+      {
+        "candidate_id": "hced-Ivry1590-1",
+        "raw_row_sha256": "b989307ae7765f7d142a280732c021818a87bf42982c72faaeca8ea0f5a73d88",
+        "literal_label": "hugenots",
+        "disposition": "distinct_plural_spelling_separate_exact_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_michigan_henry_iv"
+        ],
+        "boundary_note": "Ivry uses the literal Hugenots/Catholics pair rather than either exact label. This lane records the adjacency but does not adjudicate or own it."
+      },
+      {
+        "candidate_id": "hced-La Rochelle1627-1",
+        "raw_row_sha256": "2f82ca248892bdd779f9251cdcc14a6826a9cf44034224d876af155db2909ff0",
+        "literal_label": "england french protestants",
+        "disposition": "distinct_compound_side_and_later_siege",
+        "owner_module": "existing_release",
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [
+          "wave8_french_religious_holt_last_war",
+          "wave8_french_religious_musee_last_wars"
+        ],
+        "boundary_note": "The 1627 row is a later France-versus-English/Huguenot episode already owned by the release, not the 1625 naval battle in this lane."
+      }
+    ],
+    "wave8_french_religious_forces_cross_label_dispositions": [
+      {
+        "candidate_id": "hced-Arnay-le-Duc1570-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Caudebec1592-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Coutras1587-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-La Rochelle1572-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Montauban1621-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Orleans1563-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Orthez1569-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Poitiers1569-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-St Denis, France1567-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Vassy1562-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "terminal_exclude",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "candidate_id": "hced-Vergt1562-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      }
+    ],
+    "wave8_french_religious_forces_hced_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Paris1436-1",
+        "raw_row_sha256": "dcba1619d6bc4a918e73b3c8c5d564d08c4804d8a619c94d3cc8bf1a19d729ea",
+        "matched_exact_candidate_id": "hced-Paris1590-1",
+        "disposition": "distinct_1436_event_exposes_1590_row_date_contamination",
+        "owner_module": "existing_release",
+        "outcome_not_adjudicated": true,
+        "boundary_note": "This France/Burgundy-versus-England liberation of Paris is the genuine 1436 row already released. The exact-label Paris1590 source record's 1436 year fields are contamination, not authority to duplicate this event."
+      }
+    ],
+    "wave8_french_religious_forces_iwbd_duplicate_dispositions": [],
+    "wave8_french_religious_forces_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Arnay-le-Duc1570-1",
+        "aliases": [
+          "arnay le duc",
+          "battle of arnay le duc"
+        ],
+        "years": [
+          1570
+        ]
+      },
+      {
+        "audit_id": "hced-Auneau1587-1",
+        "aliases": [
+          "auneau",
+          "battle of auneau"
+        ],
+        "years": [
+          1587
+        ]
+      },
+      {
+        "audit_id": "hced-Caudebec1592-1",
+        "aliases": [
+          "battle of caudebec",
+          "caudebec",
+          "siege of caudebec"
+        ],
+        "years": [
+          1592
+        ]
+      },
+      {
+        "audit_id": "hced-Coutras1587-1",
+        "aliases": [
+          "battle of coutras",
+          "coutras"
+        ],
+        "years": [
+          1587
+        ]
+      },
+      {
+        "audit_id": "hced-Dormans1575-1",
+        "aliases": [
+          "battle of dormans",
+          "dormans"
+        ],
+        "years": [
+          1575
+        ]
+      },
+      {
+        "audit_id": "hced-Dreux1562-1",
+        "aliases": [
+          "battle of dreux",
+          "dreux"
+        ],
+        "years": [
+          1562
+        ]
+      },
+      {
+        "audit_id": "hced-Jarnac1569-1",
+        "aliases": [
+          "battle of jarnac",
+          "jarnac"
+        ],
+        "years": [
+          1569
+        ]
+      },
+      {
+        "audit_id": "hced-La Roche-LAbeille1569-1",
+        "aliases": [
+          "battle of la roche l abeille",
+          "la roche l abeille",
+          "la roche labeille"
+        ],
+        "years": [
+          1569
+        ]
+      },
+      {
+        "audit_id": "hced-La Rochelle1572-1",
+        "aliases": [
+          "la rochelle",
+          "siege of la rochelle",
+          "siege of la rochelle 1572 1573"
+        ],
+        "years": [
+          1572,
+          1573
+        ]
+      },
+      {
+        "audit_id": "hced-La Rochelle1625-1",
+        "aliases": [
+          "battle of re",
+          "la rochelle",
+          "naval battle off ile de re"
+        ],
+        "years": [
+          1625
+        ]
+      },
+      {
+        "audit_id": "hced-Moncontour1569-1",
+        "aliases": [
+          "battle of moncontour",
+          "moncontour"
+        ],
+        "years": [
+          1569
+        ]
+      },
+      {
+        "audit_id": "hced-Montauban1621-1",
+        "aliases": [
+          "montauban",
+          "siege of montauban",
+          "siege of montauban 1621"
+        ],
+        "years": [
+          1621
+        ]
+      },
+      {
+        "audit_id": "hced-Orleans1563-1",
+        "aliases": [
+          "orleans",
+          "siege of orleans"
+        ],
+        "years": [
+          1563
+        ]
+      },
+      {
+        "audit_id": "hced-Orthez1569-1",
+        "aliases": [
+          "battle and capture of orthez",
+          "battle of orthez",
+          "orthez"
+        ],
+        "years": [
+          1569
+        ]
+      },
+      {
+        "audit_id": "hced-Paris1590-1",
+        "aliases": [
+          "paris",
+          "siege of paris",
+          "siege of paris 1590"
+        ],
+        "years": [
+          1436,
+          1590
+        ]
+      },
+      {
+        "audit_id": "hced-Poitiers1569-1",
+        "aliases": [
+          "poitiers",
+          "siege of poitiers",
+          "siege of poitiers 1569"
+        ],
+        "years": [
+          1569
+        ]
+      },
+      {
+        "audit_id": "hced-Rouen1562-1",
+        "aliases": [
+          "rouen",
+          "siege of rouen",
+          "siege of rouen 1562"
+        ],
+        "years": [
+          1562
+        ]
+      },
+      {
+        "audit_id": "hced-Rouen1591-1",
+        "aliases": [
+          "rouen",
+          "siege of rouen",
+          "siege of rouen 1591"
+        ],
+        "years": [
+          1591,
+          1592
+        ]
+      },
+      {
+        "audit_id": "hced-St Denis, France1567-1",
+        "aliases": [
+          "battle of saint denis",
+          "saint denis",
+          "st denis france"
+        ],
+        "years": [
+          1567
+        ]
+      },
+      {
+        "audit_id": "hced-St Jean dAngely1621-1",
+        "aliases": [
+          "saint jean d angely",
+          "siege of saint jean d angely 1621",
+          "st jean dangely"
+        ],
+        "years": [
+          1621
+        ]
+      },
+      {
+        "audit_id": "hced-Vassy1562-1",
+        "aliases": [
+          "massacre of vassy",
+          "massacre of wassy",
+          "vassy",
+          "wassy"
+        ],
+        "years": [
+          1562
+        ]
+      },
+      {
+        "audit_id": "hced-Vergt1562-1",
+        "aliases": [
+          "battle of vergt",
+          "vergt"
+        ],
+        "years": [
+          1562
+        ]
+      }
+    ],
+    "wave8_french_religious_forces_existing_release_boundaries": [
+      {
+        "event_id": "hced_hced_la_rochelle1627_1",
+        "candidate_id": "hced-La Rochelle1627-1",
+        "name": "La Rochelle",
+        "year": 1627,
+        "participant_entity_ids": [
+          "kingdom_england",
+          "kingdom_france"
+        ],
+        "disposition": "retain_distinct_existing_release_owner",
+        "boundary_note": "The released 1627 English expedition/siege row is later than and compositionally distinct from the lane's 1625 fleet action."
+      },
+      {
+        "event_id": "hced_hced_paris1436_1",
+        "candidate_id": "hced-Paris1436-1",
+        "name": "Paris",
+        "year": 1436,
+        "participant_entity_ids": [
+          "kingdom_england",
+          "kingdom_france"
+        ],
+        "disposition": "retain_distinct_existing_release_owner",
+        "boundary_note": "The released 1436 liberation is genuine; the exact-label Paris1590 row is held because its year fields collide with this event."
+      }
+    ],
+    "wave8_french_religious_forces_existing_release_duplicate_dispositions": [],
+    "wave8_french_religious_forces_cross_event_boundaries": [
+      {
+        "boundary_id": "la_rochelle_1572_1625_1627",
+        "candidate_ids": [
+          "hced-La Rochelle1572-1",
+          "hced-La Rochelle1625-1",
+          "hced-La Rochelle1627-1"
+        ],
+        "dispositions": [
+          "hold",
+          "promote",
+          "existing_release"
+        ],
+        "boundary_note": "The 1572-1573 siege, 1625 naval battle, and 1627 expedition/siege are three events; place-name equality grants no duplicate ownership."
+      },
+      {
+        "boundary_id": "paris_1436_1590",
+        "candidate_ids": [
+          "hced-Paris1436-1",
+          "hced-Paris1590-1"
+        ],
+        "dispositions": [
+          "existing_release",
+          "hold"
+        ],
+        "boundary_note": "A malformed year creates a raw name/year collision, but the participant and source-record evidence identifies distinct fifteenth- and sixteenth-century events. The malformed row stays held."
+      },
+      {
+        "boundary_id": "rouen_1562_1591",
+        "candidate_ids": [
+          "hced-Rouen1562-1",
+          "hced-Rouen1591-1"
+        ],
+        "dispositions": [
+          "promote",
+          "hold"
+        ],
+        "boundary_note": "The 1562 royal capture and 1591-1592 siege/relief are distinct. Only the formation- and time-bounded 1562 result is promoted."
+      }
+    ],
+    "wave8_french_religious_forces_integration_dispositions": [
+      {
+        "disposition_id": "adjacent_hced:hced-Havana1555-1",
+        "raw_row_sha256": "1de7eb7513b9a087ceee6845b8f7f9edd9e00e8a884eac8f71117e29d97766ef",
+        "literal_label": "hugenot pirate jacques de sores",
+        "disposition": "distinct_named_privateering_force_outside_exact_labels",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [],
+        "boundary_note": "A named Huguenot privateer at Havana is not the exact French Protestants actor and cannot inherit a French field-army identity."
+      },
+      {
+        "disposition_id": "adjacent_hced:hced-Ivry1590-1",
+        "raw_row_sha256": "b989307ae7765f7d142a280732c021818a87bf42982c72faaeca8ea0f5a73d88",
+        "literal_label": "hugenots",
+        "disposition": "distinct_plural_spelling_separate_exact_lane",
+        "owner_module": null,
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [
+          "wave8_french_religious_knecht_wars",
+          "wave8_french_religious_michigan_henry_iv"
+        ],
+        "boundary_note": "Ivry uses the literal Hugenots/Catholics pair rather than either exact label. This lane records the adjacency but does not adjudicate or own it."
+      },
+      {
+        "disposition_id": "adjacent_hced:hced-La Rochelle1627-1",
+        "raw_row_sha256": "2f82ca248892bdd779f9251cdcc14a6826a9cf44034224d876af155db2909ff0",
+        "literal_label": "england french protestants",
+        "disposition": "distinct_compound_side_and_later_siege",
+        "owner_module": "existing_release",
+        "outcome_not_adjudicated": true,
+        "evidence_refs": [
+          "wave8_french_religious_holt_last_war",
+          "wave8_french_religious_musee_last_wars"
+        ],
+        "boundary_note": "The 1627 row is a later France-versus-English/Huguenot episode already owned by the release, not the 1625 naval battle in this lane."
+      },
+      {
+        "disposition_id": "cross_event:la_rochelle_1572_1625_1627",
+        "candidate_ids": [
+          "hced-La Rochelle1572-1",
+          "hced-La Rochelle1625-1",
+          "hced-La Rochelle1627-1"
+        ],
+        "dispositions": [
+          "hold",
+          "promote",
+          "existing_release"
+        ],
+        "boundary_note": "The 1572-1573 siege, 1625 naval battle, and 1627 expedition/siege are three events; place-name equality grants no duplicate ownership."
+      },
+      {
+        "disposition_id": "cross_event:paris_1436_1590",
+        "candidate_ids": [
+          "hced-Paris1436-1",
+          "hced-Paris1590-1"
+        ],
+        "dispositions": [
+          "existing_release",
+          "hold"
+        ],
+        "boundary_note": "A malformed year creates a raw name/year collision, but the participant and source-record evidence identifies distinct fifteenth- and sixteenth-century events. The malformed row stays held."
+      },
+      {
+        "disposition_id": "cross_event:rouen_1562_1591",
+        "candidate_ids": [
+          "hced-Rouen1562-1",
+          "hced-Rouen1591-1"
+        ],
+        "dispositions": [
+          "promote",
+          "hold"
+        ],
+        "boundary_note": "The 1562 royal capture and 1591-1592 siege/relief are distinct. Only the formation- and time-bounded 1562 result is promoted."
+      },
+      {
+        "disposition_id": "cross_label:hced-Arnay-le-Duc1570-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Caudebec1592-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Coutras1587-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-La Rochelle1572-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Montauban1621-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Orleans1563-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "hold",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Orthez1569-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Poitiers1569-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-St Denis, France1567-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Vassy1562-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "terminal_exclude",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "cross_label:hced-Vergt1562-1",
+        "exact_labels": [
+          "french catholics",
+          "french protestants"
+        ],
+        "disposition": "promote",
+        "owner_module": "military_elo.promotion.wave8_french_religious_forces",
+        "single_candidate_single_disposition": true,
+        "boundary_note": "This raw row is an exact-label twin, reviewed once in the coordinated lane; it must never be emitted or reserved independently by either label."
+      },
+      {
+        "disposition_id": "hced_duplicate:hced-Paris1436-1",
+        "raw_row_sha256": "dcba1619d6bc4a918e73b3c8c5d564d08c4804d8a619c94d3cc8bf1a19d729ea",
+        "matched_exact_candidate_id": "hced-Paris1590-1",
+        "disposition": "distinct_1436_event_exposes_1590_row_date_contamination",
+        "owner_module": "existing_release",
+        "outcome_not_adjudicated": true,
+        "boundary_note": "This France/Burgundy-versus-England liberation of Paris is the genuine 1436 row already released. The exact-label Paris1590 source record's 1436 year fields are contamination, not authority to duplicate this event."
+      },
+      {
+        "disposition_id": "release_boundary:hced_hced_la_rochelle1627_1",
+        "candidate_id": "hced-La Rochelle1627-1",
+        "name": "La Rochelle",
+        "year": 1627,
+        "participant_entity_ids": [
+          "kingdom_england",
+          "kingdom_france"
+        ],
+        "disposition": "retain_distinct_existing_release_owner",
+        "boundary_note": "The released 1627 English expedition/siege row is later than and compositionally distinct from the lane's 1625 fleet action."
+      },
+      {
+        "disposition_id": "release_boundary:hced_hced_paris1436_1",
+        "candidate_id": "hced-Paris1436-1",
+        "name": "Paris",
+        "year": 1436,
+        "participant_entity_ids": [
+          "kingdom_england",
+          "kingdom_france"
+        ],
+        "disposition": "retain_distinct_existing_release_owner",
+        "boundary_note": "The released 1436 liberation is genuine; the exact-label Paris1590 row is held because its year fields collide with this event."
+      }
+    ],
+    "wave8_french_religious_forces_outcome_overrides": [],
+    "wave8_french_religious_forces_entities_added": 32,
+    "wave8_french_religious_forces_sources_added": 21,
+    "hced_label_pass_input_rows": 5675,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -13347,7 +14365,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 907,
+      "reserved_candidate_contract": 929,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -13356,10 +14374,10 @@
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 459,
-      "label_outcome_not_aligned": 80,
+      "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2186,
+      "no_unique_time_valid_label_match": 2165,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

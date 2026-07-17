@@ -936,6 +936,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "anjou_royal_coalition_army_moncontour_1569",
+      "name": "Anjou's royal and foreign coalition army at Moncontour (1569)",
+      "kind": "event_bounded_royal_foreign_coalition_army",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "anjou_tavannes_royal_army_jarnac_1569",
+      "name": "Anjou-Tavannes royal army at Jarnac (1569)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_q489289_bce197_4402a1fc",
       "name": "Ankhwennefer",
       "kind": "polity",
@@ -3154,6 +3174,46 @@
       "region": "Unclassified"
     },
     {
+      "id": "coligny_huguenot_army_moncontour_1569",
+      "name": "Coligny's Huguenot army at Moncontour (1569)",
+      "kind": "event_bounded_huguenot_field_army",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "coligny_huguenot_field_army_arnay_1570",
+      "name": "Coligny's Huguenot field army at Arnay-le-Duc (1570)",
+      "kind": "event_bounded_huguenot_field_army",
+      "start_year": 1570,
+      "end_year": 1570,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "coligny_huguenot_siege_army_poitiers_1569",
+      "name": "Coligny's Huguenot siege army at Poitiers (1569)",
+      "kind": "event_bounded_huguenot_siege_army",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "coligny_huguenot_german_force_roche_1569",
+      "name": "Coligny's Huguenot-German force at La Roche-l'Abeille (1569)",
+      "kind": "event_bounded_huguenot_foreign_force",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "upper_canada_colonial_government_1791_1841",
       "name": "Colonial Government of Upper Canada (1791–1841)",
       "kind": "colony",
@@ -3351,6 +3411,36 @@
       "region": "Unclassified"
     },
     {
+      "id": "conde_huguenot_field_army_saint_denis_1567",
+      "name": "Condé's Huguenot field army at Saint-Denis (1567)",
+      "kind": "event_bounded_huguenot_field_army",
+      "start_year": 1567,
+      "end_year": 1567,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "conde_coligny_huguenot_army_jarnac_1569",
+      "name": "Condé-Coligny Huguenot army at Jarnac (1569)",
+      "kind": "event_bounded_huguenot_field_army",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "conde_coligny_huguenot_german_army_dreux_1562",
+      "name": "Condé-Coligny Huguenot-German army at Dreux (1562)",
+      "kind": "event_bounded_huguenot_foreign_coalition_army",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_q81931_1861_f3bc20bd",
       "name": "Confederate States of America",
       "kind": "confederation",
@@ -3441,6 +3531,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "cosse_royal_interception_force_arnay_1570",
+      "name": "Cossé's royal interception force at Arnay-le-Duc (1570)",
+      "kind": "event_bounded_royal_field_force",
+      "start_year": 1570,
+      "end_year": 1570,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "clio_q1541699_1000_bdeb307d",
@@ -4355,6 +4455,16 @@
       "region": "Gageby Creek-Washita divide, Texas Panhandle"
     },
     {
+      "id": "dohna_german_protestant_relief_army_auneau_1587",
+      "name": "Dohna's German Protestant relief army at Auneau (1587)",
+      "kind": "event_bounded_foreign_relief_army",
+      "start_year": 1587,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_q43048_1206_80d83511",
       "name": "Domain of Rhodes",
       "kind": "polity",
@@ -4994,6 +5104,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "duras_huguenot_relief_army_vergt_1562",
+      "name": "Duras's Huguenot relief army at Vergt (1562)",
+      "kind": "event_bounded_huguenot_relief_army",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "clio_q5316729_1840_f0c79081",
@@ -7636,6 +7756,46 @@
       "region": "Unclassified"
     },
     {
+      "id": "guise_catholic_league_army_auneau_1587",
+      "name": "Guise's Catholic League army at Auneau (1587)",
+      "kind": "event_bounded_catholic_league_army",
+      "start_year": 1587,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "guise_poitiers_royalist_garrison_1569",
+      "name": "Guise's Poitiers royalist garrison and defenders (1569)",
+      "kind": "event_bounded_royalist_garrison",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "guise_royal_army_dormans_1575",
+      "name": "Guise's royal army at Dormans (1575)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1575,
+      "end_year": 1575,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "guise_royal_siege_army_rouen_1562",
+      "name": "Guise's royal siege army at Rouen (1562)",
+      "kind": "event_bounded_royal_siege_army",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "gujarat_sultanate_1407",
       "name": "Gujarat Sultanate",
       "kind": "sultanate",
@@ -9534,6 +9694,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Near Chalons-sur-Marne in Roman Gaul"
+    },
+    {
+      "id": "joyeuse_royal_army_coutras_1587",
+      "name": "Joyeuse's royal army at Coutras (1587)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1587,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "ramirez_royalist_division_chacaltaya_1814",
@@ -12621,6 +12791,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "louis_xiii_royal_siege_army_montauban_1621",
+      "name": "Louis XIII's royal siege army at Montauban (1621)",
+      "kind": "event_bounded_royal_siege_army",
+      "start_year": 1621,
+      "end_year": 1621,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "louis_xiii_royal_siege_army_saint_jean_1621",
+      "name": "Louis XIII's royal siege army at Saint-Jean-d'Angély (1621)",
+      "kind": "event_bounded_royal_siege_army",
+      "start_year": 1621,
+      "end_year": 1621,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_q33242_860_eb21d11f",
       "name": "Lower Burgundy",
       "kind": "polity",
@@ -13752,6 +13942,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "montauban_huguenot_garrison_civic_defenders_1621",
+      "name": "Montauban Huguenot garrison and civic defenders (1621)",
+      "kind": "event_bounded_garrison_civic_defence_force",
+      "start_year": 1621,
+      "end_year": 1621,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_q236_1853_31d59baa",
       "name": "Montenegro",
       "kind": "polity",
@@ -13790,6 +13990,56 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Cherokee Middle Towns, present-day North Carolina"
+    },
+    {
+      "id": "montgomery_huguenot_bearn_force_orthez_1569",
+      "name": "Montgomery's Huguenot-Béarn force at Orthez (1569)",
+      "kind": "event_bounded_huguenot_regional_force",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "montluc_royalist_army_vergt_1562",
+      "name": "Montluc's royalist army at Vergt (1562)",
+      "kind": "event_bounded_royalist_field_army",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "montmorency_royal_army_saint_denis_1567",
+      "name": "Montmorency's royal army at Saint-Denis (1567)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1567,
+      "end_year": 1567,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "montmorency_royal_fleet_re_1625",
+      "name": "Montmorency's royal fleet off Île de Ré (1625)",
+      "kind": "event_bounded_royal_fleet",
+      "start_year": 1625,
+      "end_year": 1625,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "montmorency_guise_royal_army_dreux_1562",
+      "name": "Montmorency-Guise royal army at Dreux (1562)",
+      "kind": "event_bounded_royal_field_army",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "morenga_johannes_christian_hartebeestmund_coalition_1905",
@@ -14210,6 +14460,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "navarre_huguenot_army_coutras_1587",
+      "name": "Navarre's Huguenot army at Coutras (1587)",
+      "kind": "event_bounded_huguenot_field_army",
+      "start_year": 1587,
+      "end_year": 1587,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "clio_q2614237_1727_d8d537c1",
@@ -18242,6 +18502,16 @@
       "region": "Pansky Bor (Maly Bor), Bohemia"
     },
     {
+      "id": "rouen_huguenot_english_garrison_1562",
+      "name": "Rouen Huguenot-English garrison (1562)",
+      "kind": "event_bounded_huguenot_foreign_garrison",
+      "start_year": 1562,
+      "end_year": 1562,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_mn_rouran_khaganate_402_da4f7a8a",
       "name": "Rouran Khaganate",
       "kind": "polity",
@@ -19646,6 +19916,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "soubise_rochelais_fleet_re_1625",
+      "name": "Soubise's Rochelais-Huguenot fleet off Île de Ré (1625)",
+      "kind": "event_bounded_huguenot_fleet",
+      "start_year": 1625,
+      "end_year": 1625,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
+      "id": "soubise_saint_jean_huguenot_garrison_1621",
+      "name": "Soubise's Saint-Jean-d'Angély Huguenot garrison (1621)",
+      "kind": "event_bounded_huguenot_garrison",
+      "start_year": 1621,
+      "end_year": 1621,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_sa_south_africa_rep_1932_8a5c7c70",
       "name": "South Africa",
       "kind": "polity",
@@ -20053,6 +20343,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "strozzi_royal_detachment_roche_1569",
+      "name": "Strozzi's royal detachment at La Roche-l'Abeille (1569)",
+      "kind": "event_bounded_royal_detachment",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "sucre_quito_liberating_army_1821_1822",
@@ -21160,6 +21460,16 @@
       "region": "North America"
     },
     {
+      "id": "terride_royalist_bearn_force_orthez_1569",
+      "name": "Terride's royalist Béarn force at Orthez (1569)",
+      "kind": "event_bounded_royalist_regional_force",
+      "start_year": 1569,
+      "end_year": 1569,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
+    },
+    {
       "id": "clio_de_empire_2_1236_22361181",
       "name": "Teutonic Order",
       "kind": "polity",
@@ -21325,6 +21635,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Mamistra, Cilicia"
+    },
+    {
+      "id": "thore_german_malcontent_army_dormans_1575",
+      "name": "Thoré's German-Protestant and Malcontent army at Dormans (1575)",
+      "kind": "event_bounded_mixed_relief_army",
+      "start_year": 1575,
+      "end_year": 1575,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France"
     },
     {
       "id": "clio_q104815700_bce87_7d7f8b54",
@@ -23544,11 +23864,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2217,
-    "rated_entities": 854,
-    "rated_events": 5250,
+    "registry_polities": 2249,
+    "rated_entities": 886,
+    "rated_events": 5266,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18144,
+    "unresolved_event_candidates": 18128,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23627,6 +23947,7 @@
     "candidate_keyed_wave8_ute_hced_events": 2,
     "candidate_keyed_wave8_yakima_hced_events": 2,
     "candidate_keyed_wave8_taliban_al_qaeda_hced_events": 4,
+    "candidate_keyed_wave8_french_religious_forces_hced_events": 16,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23637,21 +23958,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4986,
-      "candidate_keyed_reviewed_contracts": 676,
+      "hced_candidate_bindings": 5002,
+      "candidate_keyed_reviewed_contracts": 692,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4893,
-      "location_provenance_objects": 4942,
-      "point_fields_withheld_by_quarantine": 252,
+      "modern_location_country_assertions": 4909,
+      "location_provenance_objects": 4958,
+      "point_fields_withheld_by_quarantine": 268,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 300,
-      "point_quarantine_candidate_manifest_sha256": "7168ac73c9c8d8a17a1f03a521691523c182473adc5c006758d34de83f23ca50",
+      "unique_events_with_any_quarantined_field": 316,
+      "point_quarantine_candidate_manifest_sha256": "97ae0f1c68bbcd8244531a27d8cc8506928d7c3d94ad4799084a31a146d8a88f",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "6c607f234943ecd4828fda7df7c8c0c31d66f3fb11eeac492b739cb64f4c658d",
+      "quarantine_policy_sha256": "6aef19632b234690c4456e0566171fc974f56c5244a7efecad6b89711e8ba716",
       "assertion_status": {
-        "unreviewed_source_assertion": 4942
+        "unreviewed_source_assertion": 4958
       },
       "verified_location_assertions": {
         "availability": "not_available",
