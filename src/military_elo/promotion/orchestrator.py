@@ -1395,6 +1395,30 @@ from .wave8_murids import (
     wave8_murids_counts,
     wave8_murids_metadata,
 )
+from .wave8_punjabi_sikhs import (
+    WAVE8_PUNJABI_SIKHS_CONTRACT_IDS,
+    WAVE8_PUNJABI_SIKHS_CROSS_LANE_DISPOSITIONS,
+    WAVE8_PUNJABI_SIKHS_ENTITIES,
+    WAVE8_PUNJABI_SIKHS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_PUNJABI_SIKHS_HOLD_IDS,
+    WAVE8_PUNJABI_SIKHS_HOLDS,
+    WAVE8_PUNJABI_SIKHS_INTEGRATION_DISPOSITIONS,
+    WAVE8_PUNJABI_SIKHS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_PUNJABI_SIKHS_IWBD_ZERO_OVERLAP_AUDIT,
+    WAVE8_PUNJABI_SIKHS_OUTCOME_OVERRIDES,
+    WAVE8_PUNJABI_SIKHS_RELATED_HCED_DISPOSITIONS,
+    WAVE8_PUNJABI_SIKHS_RESERVED_IDS,
+    WAVE8_PUNJABI_SIKHS_SOURCES,
+    WAVE8_PUNJABI_SIKHS_TERMINAL_EXCLUSION_IDS,
+    WAVE8_PUNJABI_SIKHS_TERMINAL_EXCLUSIONS,
+    install_wave8_punjabi_sikhs_entities,
+    install_wave8_punjabi_sikhs_sources,
+    promote_wave8_punjabi_sikhs_contracts,
+    validate_wave8_punjabi_sikhs_integration_dispositions,
+    validate_wave8_punjabi_sikhs_queue_contracts,
+    wave8_punjabi_sikhs_cohort_counts,
+    wave8_punjabi_sikhs_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1482,6 +1506,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_KINGDOM_KANDY_RESERVED_IDS
     | WAVE8_HOSPITALLERS_RESERVED_IDS
     | WAVE8_MURIDS_RESERVED_IDS
+    | WAVE8_PUNJABI_SIKHS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1886,7 +1911,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 236
+        len(HCED_POINT_QUARANTINE_IDS) != 238
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2139,6 +2164,9 @@ def build_expanded_release(
         validate_wave8_hospitallers_queue_contracts(hced)
     )
     wave8_murids_queue_validation = validate_wave8_murids_queue_contracts(hced)
+    wave8_punjabi_sikhs_queue_validation = (
+        validate_wave8_punjabi_sikhs_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2513,6 +2541,7 @@ def build_expanded_release(
     install_wave8_kingdom_kandy_entities(release_entities)
     install_wave8_hospitallers_entities(release_entities)
     install_wave8_murids_entities(release_entities)
+    install_wave8_punjabi_sikhs_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3831,6 +3860,15 @@ def build_expanded_release(
         release_entities,
         wave8_murids_existing_events,
     )
+    wave8_punjabi_sikhs_existing_events = [
+        *wave8_murids_existing_events,
+        *wave8_murids_events,
+    ]
+    wave8_punjabi_sikhs_events = promote_wave8_punjabi_sikhs_contracts(
+        hced,
+        release_entities,
+        wave8_punjabi_sikhs_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3900,6 +3938,7 @@ def build_expanded_release(
         *wave8_kingdom_kandy_events,
         *wave8_hospitallers_events,
         *wave8_murids_events,
+        *wave8_punjabi_sikhs_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4029,6 +4068,8 @@ def build_expanded_release(
             *WAVE8_HOSPITALLERS_TERMINAL_EXCLUSION_IDS,
             *WAVE8_MURIDS_HOLD_IDS,
             *WAVE8_MURIDS_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_PUNJABI_SIKHS_HOLD_IDS,
+            *WAVE8_PUNJABI_SIKHS_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -4124,6 +4165,7 @@ def build_expanded_release(
         *wave8_kingdom_kandy_events,
         *wave8_hospitallers_events,
         *wave8_murids_events,
+        *wave8_punjabi_sikhs_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4480,6 +4522,13 @@ def build_expanded_release(
             wave8_murids_existing_events,
         )
     )
+    wave8_punjabi_sikhs_integration_validation = (
+        validate_wave8_punjabi_sikhs_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_punjabi_sikhs_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4694,6 +4743,7 @@ def build_expanded_release(
     install_wave8_kingdom_kandy_sources(sources_by_id)
     install_wave8_hospitallers_sources(sources_by_id)
     install_wave8_murids_sources(sources_by_id)
+    install_wave8_punjabi_sikhs_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4768,6 +4818,7 @@ def build_expanded_release(
         *wave8_kingdom_kandy_events,
         *wave8_hospitallers_events,
         *wave8_murids_events,
+        *wave8_punjabi_sikhs_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -4842,6 +4893,7 @@ def build_expanded_release(
         *wave8_kingdom_kandy_events,
         *wave8_hospitallers_events,
         *wave8_murids_events,
+        *wave8_punjabi_sikhs_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4915,6 +4967,7 @@ def build_expanded_release(
             | WAVE8_KINGDOM_KANDY_CONTRACT_IDS
             | WAVE8_HOSPITALLERS_CONTRACT_IDS
             | WAVE8_MURIDS_CONTRACT_IDS
+            | WAVE8_PUNJABI_SIKHS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5030,6 +5083,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_KINGDOM_KANDY_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_HOSPITALLERS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_MURIDS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_PUNJABI_SIKHS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5272,6 +5326,7 @@ def build_expanded_release(
         - len(wave8_kingdom_kandy_events)
         - len(wave8_hospitallers_events)
         - len(wave8_murids_events)
+        - len(wave8_punjabi_sikhs_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5425,6 +5480,9 @@ def build_expanded_release(
             wave8_hospitallers_events
         ),
         "candidate_keyed_wave8_murids_hced_events": len(wave8_murids_events),
+        "candidate_keyed_wave8_punjabi_sikhs_hced_events": len(
+            wave8_punjabi_sikhs_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -5720,6 +5778,9 @@ def build_expanded_release(
                 wave8_hospitallers_events
             ),
             "accepted_wave8_murids_hced_events": len(wave8_murids_events),
+            "accepted_wave8_punjabi_sikhs_hced_events": len(
+                wave8_punjabi_sikhs_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -8535,6 +8596,79 @@ def build_expanded_release(
             ],
             "wave8_murids_entities_added": len(WAVE8_MURIDS_ENTITIES),
             "wave8_murids_sources_added": len(WAVE8_MURIDS_SOURCES),
+            "wave8_punjabi_sikhs_counts": wave8_punjabi_sikhs_counts(),
+            "wave8_punjabi_sikhs_cohort_counts": (
+                wave8_punjabi_sikhs_cohort_counts()
+            ),
+            "wave8_punjabi_sikhs_queue_validation": (
+                wave8_punjabi_sikhs_queue_validation
+            ),
+            "wave8_punjabi_sikhs_integration_validation": (
+                wave8_punjabi_sikhs_integration_validation
+            ),
+            "wave8_punjabi_sikhs_candidate_ids": sorted(
+                WAVE8_PUNJABI_SIKHS_CONTRACT_IDS
+            ),
+            "wave8_punjabi_sikhs_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_HOLDS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_iwbd_zero_overlap_audit": [
+                {"audit_id": audit_id, **contract}
+                for audit_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_IWBD_ZERO_OVERLAP_AUDIT.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_PUNJABI_SIKHS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_punjabi_sikhs_entities_added": len(
+                WAVE8_PUNJABI_SIKHS_ENTITIES
+            ),
+            "wave8_punjabi_sikhs_sources_added": len(
+                WAVE8_PUNJABI_SIKHS_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -8815,6 +8949,9 @@ def build_expanded_release(
             wave8_hospitallers_events
         ),
         "candidate_keyed_wave8_murids_hced_events": len(wave8_murids_events),
+        "candidate_keyed_wave8_punjabi_sikhs_hced_events": len(
+            wave8_punjabi_sikhs_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

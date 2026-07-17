@@ -6310,6 +6310,71 @@
     ]
   },
   {
+    "id": "guru_gobind_singh_khalsa_garrison_anandgarh_1704",
+    "name": "Guru Gobind Singh's Khalsa garrison at Anandgarh (1704)",
+    "kind": "event_bounded_khalsa_fortress_garrison",
+    "start_year": 1704,
+    "end_year": 1704,
+    "region": "Anandpur-Anandgarh fort complex, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Guru Gobind Singh, the remaining Khalsa formations, and the inhabitants defending the forts during the final blockade. No rating is inherited from or passed to a timeless Punjabi or Sikh identity, another Anandpur campaign phase, Banda Singh's force, the Sikh misls, the Sikh Empire, the Lahore Khalsa army, Punjab, modern India or Pakistan, or any religious or ethnic community.",
+    "source_ids": [
+      "wave8_punjabi_sikhs_grewal_white_hawk",
+      "wave8_punjabi_sikhs_khushwant_vol1",
+      "wave8_punjabi_sikhs_shah_sri_gursobha"
+    ]
+  },
+  {
+    "id": "guru_gobind_singh_withdrawal_column_sarsa_1704",
+    "name": "Guru Gobind Singh's withdrawing Khalsa column at the Sarsa (1704)",
+    "kind": "event_bounded_khalsa_withdrawal_column",
+    "start_year": 1704,
+    "end_year": 1704,
+    "region": "Sarsa crossing and eastern Punjab approaches",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Guru's withdrawing force, its rearguards, household groups, and escorts attacked during the crossing and dispersal. No rating is inherited from or passed to a timeless Punjabi or Sikh identity, another Anandpur campaign phase, Banda Singh's force, the Sikh misls, the Sikh Empire, the Lahore Khalsa army, Punjab, modern India or Pakistan, or any religious or ethnic community.",
+    "source_ids": [
+      "wave8_punjabi_sikhs_gupta_vol1",
+      "wave8_punjabi_sikhs_kaur_march_thesis",
+      "wave8_punjabi_sikhs_shah_sri_gursobha"
+    ]
+  },
+  {
+    "id": "mughal_hill_siege_coalition_anandgarh_1704",
+    "name": "Mughal-hill siege coalition at Anandgarh (1704)",
+    "kind": "event_bounded_mughal_hill_siege_coalition",
+    "start_year": 1704,
+    "end_year": 1704,
+    "region": "Anandpur-Anandgarh fort complex, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Wazir Khan/Sirhind, Lahore, Jammu, Ranghar, Gujar, Pathan, and allied hill-state forces maintaining the final blockade. No rating is inherited from or passed to a timeless Punjabi or Sikh identity, another Anandpur campaign phase, Banda Singh's force, the Sikh misls, the Sikh Empire, the Lahore Khalsa army, Punjab, modern India or Pakistan, or any religious or ethnic community.",
+    "source_ids": [
+      "wave8_punjabi_sikhs_eos_anandpur",
+      "wave8_punjabi_sikhs_grewal_white_hawk",
+      "wave8_punjabi_sikhs_gupta_vol1",
+      "wave8_punjabi_sikhs_shah_sri_gursobha"
+    ]
+  },
+  {
+    "id": "wazir_khan_mughal_hill_pursuit_force_sarsa_1704",
+    "name": "Wazir Khan's Mughal-hill pursuit force at the Sarsa (1704)",
+    "kind": "event_bounded_mughal_hill_pursuit_force",
+    "start_year": 1704,
+    "end_year": 1704,
+    "region": "Sarsa crossing and eastern Punjab approaches",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Mughal and allied hill contingents that attacked the evacuating columns before and during the Sarsa crossing. No rating is inherited from or passed to a timeless Punjabi or Sikh identity, another Anandpur campaign phase, Banda Singh's force, the Sikh misls, the Sikh Empire, the Lahore Khalsa army, Punjab, modern India or Pakistan, or any religious or ethnic community.",
+    "source_ids": [
+      "wave8_punjabi_sikhs_gupta_vol1",
+      "wave8_punjabi_sikhs_kaur_march_thesis",
+      "wave8_punjabi_sikhs_macauliffe_vol5"
+    ]
+  },
+  {
     "id": "united_kingdom",
     "name": "United Kingdom",
     "kind": "state_empire",

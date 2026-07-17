@@ -7498,6 +7498,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "guru_gobind_singh_khalsa_garrison_anandgarh_1704",
+      "name": "Guru Gobind Singh's Khalsa garrison at Anandgarh (1704)",
+      "kind": "event_bounded_khalsa_fortress_garrison",
+      "start_year": 1704,
+      "end_year": 1704,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anandpur-Anandgarh fort complex, Punjab"
+    },
+    {
+      "id": "guru_gobind_singh_withdrawal_column_sarsa_1704",
+      "name": "Guru Gobind Singh's withdrawing Khalsa column at the Sarsa (1704)",
+      "kind": "event_bounded_khalsa_withdrawal_column",
+      "start_year": 1704,
+      "end_year": 1704,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sarsa crossing and eastern Punjab approaches"
+    },
+    {
       "id": "guru_hargobind_akal_sena_amritsar_1634",
       "name": "Guru Hargobind's Akal Sena at Amritsar (1634)",
       "kind": "event_bounded_sikh_defense_force",
@@ -13612,6 +13632,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Gurdas Nangal, Punjab"
+    },
+    {
+      "id": "mughal_hill_siege_coalition_anandgarh_1704",
+      "name": "Mughal-hill siege coalition at Anandgarh (1704)",
+      "kind": "event_bounded_mughal_hill_siege_coalition",
+      "start_year": 1704,
+      "end_year": 1704,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Anandpur-Anandgarh fort complex, Punjab"
     },
     {
       "id": "clio_eg_egypt_modern_1_1805_a1a2c6a5",
@@ -22134,6 +22164,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "wazir_khan_mughal_hill_pursuit_force_sarsa_1704",
+      "name": "Wazir Khan's Mughal-hill pursuit force at the Sarsa (1704)",
+      "kind": "event_bounded_mughal_hill_pursuit_force",
+      "start_year": 1704,
+      "end_year": 1704,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sarsa crossing and eastern Punjab approaches"
+    },
+    {
       "id": "clio_cn_wei_dyn_warring_states_bce404_8cec0006",
       "name": "Wei",
       "kind": "polity",
@@ -23124,11 +23164,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2175,
-    "rated_entities": 812,
-    "rated_events": 5234,
+    "registry_polities": 2179,
+    "rated_entities": 816,
+    "rated_events": 5236,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18160,
+    "unresolved_event_candidates": 18158,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23201,6 +23241,7 @@
     "candidate_keyed_wave8_kingdom_kandy_hced_events": 2,
     "candidate_keyed_wave8_hospitallers_hced_events": 8,
     "candidate_keyed_wave8_murids_hced_events": 4,
+    "candidate_keyed_wave8_punjabi_sikhs_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23211,21 +23252,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4970,
-      "candidate_keyed_reviewed_contracts": 660,
+      "hced_candidate_bindings": 4972,
+      "candidate_keyed_reviewed_contracts": 662,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4877,
-      "location_provenance_objects": 4926,
-      "point_fields_withheld_by_quarantine": 236,
+      "modern_location_country_assertions": 4879,
+      "location_provenance_objects": 4928,
+      "point_fields_withheld_by_quarantine": 238,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 284,
-      "point_quarantine_candidate_manifest_sha256": "03c9c3fc2de24c41dfe04c19115ca2aa6f31215063ba5bff5befe4f6e083fe9a",
+      "unique_events_with_any_quarantined_field": 286,
+      "point_quarantine_candidate_manifest_sha256": "4695295a84fb3b471ff154b0cea974f09f3c1bbd99230e34e577c9473b79d987",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "8355ef67630f432764f04599d421b537940eeca1c111e945f987edf04b4b29af",
+      "quarantine_policy_sha256": "b19606524622c83a23104ae2a1a15b43d76812b11c24a80bb3e7bc240f0ff34c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4926
+        "unreviewed_source_assertion": 4928
       },
       "verified_location_assertions": {
         "availability": "not_available",

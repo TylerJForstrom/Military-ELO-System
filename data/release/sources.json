@@ -13421,6 +13421,109 @@
     ]
   },
   {
+    "id": "wave8_punjabi_sikhs_eos_anandpur",
+    "title": "Anandpur",
+    "url": "https://eos.learnpunjabi.org/ANANDPUR%20%2831%C2%BA-13%27N%2C%2076%C2%BA-32%27E%29.html",
+    "publisher": "Encyclopaedia of Sikhism, Punjabi University",
+    "license": "Citation and link only",
+    "source_type": "academic_encyclopedia_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "punjabi_university_encyclopaedia_anandpur",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_grewal_white_hawk",
+    "title": "Ouster from Anandpur (1699-1704)",
+    "url": "https://academic.oup.com/book/36926/chapter-abstract/322205546",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "js_grewal_master_white_hawk_2020",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_gupta_vol1",
+    "title": "History of the Sikhs, Volume I: The Sikh Gurus (1469-1708)",
+    "url": "https://apnaorg.com/books/english/history-of-sikhs-v1/history-of-sikhs-v1.pdf",
+    "publisher": "Munshiram Manoharlal Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hari_ram_gupta_history_sikhs_vol1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_kaur_march_thesis",
+    "title": "Guru Gobind Singh's March from Anandpur Sahib to Damdama Sahib: An Historical Analysis of the Oral Tradition",
+    "url": "https://gurmatveechar.com/books/English_Books/English_Thesis_Papers/Guru.Gobind.Singhs.march.from.Anandpur.Sahib.to.Damdama.Sahib.an.historical.analysis.of.the.oral.tradition.%28GurmatVeechar.com%29.pdf",
+    "publisher": "Punjabi University, Patiala",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "gurvinderpal_kaur_anandpur_damdama_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_khushwant_vol1",
+    "title": "A History of the Sikhs, Volume 1: 1469-1838",
+    "url": "https://academic.oup.com/book/25977",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "khushwant_singh_history_sikhs_vol1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_macauliffe_vol5",
+    "title": "The Sikh Religion, Volume 5",
+    "url": "https://www.cambridge.org/core/books/the-sikh-religion/BCAD868779C7502C8A2727447DC9828B",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "edited_historical_and_traditional_source_collection",
+    "accessed": "2026-07-16",
+    "source_family_id": "max_arthur_macauliffe_sikh_religion_vol5",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_punjabi_sikhs_shah_sri_gursobha",
+    "title": "In Praise of the Guru: A Translation and Study of Sainapati's Sri Gursobha",
+    "url": "https://www.gurmatveechar.com/books/English_Books/English_Thesis_Papers/In.Praise.of.the.Guru.A.Translation.and.Study.of.Sainapatis.Sri.Gursobha.by.Ami.Praful.Shah.%28GurmatVeechar.com%29.pdf",
+    "publisher": "University of California, Santa Barbara",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation_and_near_contemporary_text_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ami_praful_shah_sri_gursobha",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_pur_algiers_bombardments_1688",
     "title": "Les bombardements d'Alger de 1682, 1683 et 1688",
     "url": "https://books.openedition.org/pur/129300?lang=fr",

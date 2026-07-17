@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 819,
-    "events": 5234,
-    "sources": 1126,
-    "registry_polities": 2175
+    "entities": 823,
+    "events": 5236,
+    "sources": 1133,
+    "registry_polities": 2179
   },
   "year_range": {
     "start": -1274,
@@ -143,6 +143,7 @@
     "accepted_wave8_kingdom_kandy_hced_events": 2,
     "accepted_wave8_hospitallers_hced_events": 8,
     "accepted_wave8_murids_hced_events": 4,
+    "accepted_wave8_punjabi_sikhs_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -10967,7 +10968,337 @@
     "wave8_murids_outcome_overrides": [],
     "wave8_murids_entities_added": 0,
     "wave8_murids_sources_added": 9,
-    "hced_label_pass_input_rows": 5721,
+    "wave8_punjabi_sikhs_counts": {
+      "company_era_boundary_rows": 13,
+      "country_quarantine_additions": 0,
+      "cross_lane_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 2,
+      "integration_dispositions": 8,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "related_hced_dispositions": 7,
+      "reviewed_hced_rows": 4,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 0,
+      "touched_hced_rows": 11
+    },
+    "wave8_punjabi_sikhs_cohort_counts": {
+      "final_anandgarh_siege_1704": 1,
+      "sarsa_withdrawal_action_1704": 1
+    },
+    "wave8_punjabi_sikhs_queue_validation": {
+      "company_era_boundary_rows": 13,
+      "cross_lane_dispositions": 1,
+      "holds": 2,
+      "promotion_contracts": 2,
+      "related_hced_dispositions": 7,
+      "reviewed_hced_rows": 4,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_punjabi_sikhs_integration_validation": {
+      "cross_lane_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 8,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "related_hced_dispositions": 7,
+      "release_lane_overlap": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_punjabi_sikhs_candidate_ids": [
+      "hced-Anandpur (2nd)1704-1",
+      "hced-Sarsa1704-1"
+    ],
+    "wave8_punjabi_sikhs_holds": [
+      {
+        "candidate_id": "hced-Anandpur (1st)1704-1",
+        "canonical_event": {
+          "canonical_key": "purported_first_anandpur_battle_of_1704:1704:1704",
+          "date_precision": "year_uncertain",
+          "date_text": "1704 label; operation and chronology not uniquely established",
+          "granularity": "ambiguous_multi_operation_or_chronology_twin",
+          "name": "Purported first Anandpur battle of 1704",
+          "year_low": 1704,
+          "year_high": 1704
+        },
+        "disposition": "hold",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_punjabi_sikhs",
+          "status": "held_hced_owner"
+        },
+        "evidence_refs": [
+          "wave8_punjabi_sikhs_grewal_white_hawk",
+          "wave8_punjabi_sikhs_gupta_vol1",
+          "wave8_punjabi_sikhs_shah_sri_gursobha"
+        ],
+        "hold_category": "unsupported_unique_engagement_boundary",
+        "hold_reason": "The HCED numbering is not reproduced by the reviewed independent chronologies. Grewal and Sainapati place the earlier Anandpur battle before Nirmoh and Basoli, while Gupta numbers several actions before the final 1704 siege. The row cannot be tied to one separate 1704 Sikh victory without inventing a boundary, and is held as unknown, never as a draw.",
+        "raw_row_sha256": "aa3745fbe0ebe64ec9b7ed0869838758a688f787bba3fc513ca6736b97cd8994",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "terminal_exclusion": false,
+        "unknown_is_never_draw": true
+      },
+      {
+        "candidate_id": "hced-Anandpur1700-1",
+        "canonical_event": {
+          "canonical_key": "anandpur_operations_1700_1701_chronology_unresolved:1700:1700",
+          "date_precision": "year_uncertain",
+          "date_text": "1700-1701 in competing chronologies",
+          "granularity": "ambiguous_multi_operation_or_chronology_twin",
+          "name": "Anandpur operations (1700-1701 chronology unresolved)",
+          "year_low": 1700,
+          "year_high": 1700
+        },
+        "disposition": "hold",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_punjabi_sikhs",
+          "status": "held_hced_owner"
+        },
+        "evidence_refs": [
+          "wave8_punjabi_sikhs_grewal_white_hawk",
+          "wave8_punjabi_sikhs_gupta_vol1",
+          "wave8_punjabi_sikhs_shah_sri_gursobha"
+        ],
+        "hold_category": "reciprocal_cross_lane_chronology_twin",
+        "hold_reason": "This exact Punjabi Sikhs row and the Sikh Punjab lane's Anandpur 1701 row may encode the same first-siege/Nirmoh/Basoli sequence under different chronologies and side labels. Neither can be assigned a unique event boundary and tactical result, so neither is promoted or converted to a draw.",
+        "raw_row_sha256": "3f992b5f13d444a3178aab638c90b8a7fd465615d6b8c6cc9f1fa95bf6146590",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "terminal_exclusion": false,
+        "unknown_is_never_draw": true
+      }
+    ],
+    "wave8_punjabi_sikhs_terminal_exclusions": [],
+    "wave8_punjabi_sikhs_cross_lane_dispositions": [
+      {
+        "disposition_id": "wave8_sikh_punjab",
+        "counterpart_module": "military_elo.promotion.wave8_sikh_punjab",
+        "counterpart_reserved_candidate_ids": [
+          "hced-Amritsar1634-1",
+          "hced-Anandpur1701-1",
+          "hced-Baddowal1846-1",
+          "hced-Gujrat, Pakistan1797-1",
+          "hced-Gurdas Nangal1715-1"
+        ],
+        "disposition": "reciprocal_chronology_twin_hold",
+        "evidence_refs": [
+          "wave8_punjabi_sikhs_grewal_white_hawk",
+          "wave8_punjabi_sikhs_gupta_vol1",
+          "wave8_punjabi_sikhs_shah_sri_gursobha"
+        ],
+        "owner_module": "military_elo.promotion.wave8_punjabi_sikhs",
+        "owned_candidate_ids": [
+          "hced-Anandpur (1st)1704-1",
+          "hced-Anandpur (2nd)1704-1",
+          "hced-Anandpur1700-1",
+          "hced-Sarsa1704-1"
+        ],
+        "related_candidate_id": "hced-Anandpur1701-1",
+        "relationship": "possible_same_anandpur_operation_or_adjacent_phase",
+        "shared_boundary_candidate_id": "hced-Anandpur1700-1"
+      }
+    ],
+    "wave8_punjabi_sikhs_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Anandpur1701-1",
+        "disposition": "counterpart_lane_hold",
+        "owner_module": "military_elo.promotion.wave8_sikh_punjab",
+        "raw_row_sha256": "f67a4c4086cc928cdf58b7e704691a5f593035460d03011d684f5d2e82173e0e",
+        "relationship": "possible_chronology_twin_of_anandpur_1700"
+      },
+      {
+        "candidate_id": "hced-Baddowal1846-1",
+        "disposition": "counterpart_lane_company_era_event",
+        "owner_module": "military_elo.promotion.wave8_sikh_punjab",
+        "raw_row_sha256": "afddca7611c520558de29a1c545e089f1efd688ba8e4b84ca56989f8c838e6f4",
+        "relationship": "different_lahore_khalsa_and_british_indian_war"
+      },
+      {
+        "candidate_id": "hced-Basoli1702-1",
+        "disposition": "distinct_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "33036f404dbb10982d8c875e9204b34ef4402dd2e4008a8d890efdecc20ccf6e",
+        "relationship": "earlier_distinct_anandpur_campaign_engagement"
+      },
+      {
+        "candidate_id": "hced-Chamkaur (1st)1704-1",
+        "disposition": "distinct_hced_engagement_pending_its_own_audit",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "a428499be12c5c3feff731d029662bd93f950a678eac230b7cde257546263122",
+        "relationship": "different_event_boundary_not_owned_by_sarsa_contract"
+      },
+      {
+        "candidate_id": "hced-Chamkaur (2nd)1704-1",
+        "disposition": "distinct_follow_on_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "64794620d65bfaf8183983028f0e37b260e6a69626164421aefb0412158071d9",
+        "relationship": "next_day_fortified_battle_not_sarsa_duplicate"
+      },
+      {
+        "candidate_id": "hced-Muktsar1705-1",
+        "disposition": "distinct_later_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "030d0af0687ba7e5935cc68c517d51f0ad6e8a6cb48e311dd875943de4086baf",
+        "relationship": "later_campaign_battle_not_sarsa_duplicate"
+      },
+      {
+        "candidate_id": "hced-Nirmohgarh1702-1",
+        "disposition": "distinct_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "ce4ee17069bfb62e2be6520aa5afcbfca84e7f6dd2341bc53c5ff06302acd75e",
+        "relationship": "earlier_distinct_anandpur_campaign_engagement"
+      }
+    ],
+    "wave8_punjabi_sikhs_iwbd_duplicate_dispositions": [],
+    "wave8_punjabi_sikhs_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Anandpur (1st)1704-1",
+        "aliases": [
+          "anandpur 1st",
+          "first battle of anandpur",
+          "first battle of anandpur 1704"
+        ],
+        "years": [
+          1703,
+          1704,
+          1705
+        ]
+      },
+      {
+        "audit_id": "hced-Anandpur (2nd)1704-1",
+        "aliases": [
+          "anandpur 2nd",
+          "final siege and evacuation of anandgarh",
+          "second siege of anandpur",
+          "siege of anandgarh",
+          "siege of anandpur"
+        ],
+        "years": [
+          1704,
+          1705
+        ]
+      },
+      {
+        "audit_id": "hced-Anandpur1700-1",
+        "aliases": [
+          "anandpur",
+          "anandpur operations",
+          "first siege of anandpur"
+        ],
+        "years": [
+          1699,
+          1700,
+          1701
+        ]
+      },
+      {
+        "audit_id": "hced-Sarsa1704-1",
+        "aliases": [
+          "battle at the sarsa crossing",
+          "battle of sarsa",
+          "battle of sirsa",
+          "sarsa",
+          "sarsa river",
+          "sirsa"
+        ],
+        "years": [
+          1704,
+          1705
+        ]
+      }
+    ],
+    "wave8_punjabi_sikhs_existing_release_duplicate_dispositions": [],
+    "wave8_punjabi_sikhs_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:wave8_sikh_punjab",
+        "counterpart_module": "military_elo.promotion.wave8_sikh_punjab",
+        "counterpart_reserved_candidate_ids": [
+          "hced-Amritsar1634-1",
+          "hced-Anandpur1701-1",
+          "hced-Baddowal1846-1",
+          "hced-Gujrat, Pakistan1797-1",
+          "hced-Gurdas Nangal1715-1"
+        ],
+        "disposition": "reciprocal_chronology_twin_hold",
+        "evidence_refs": [
+          "wave8_punjabi_sikhs_grewal_white_hawk",
+          "wave8_punjabi_sikhs_gupta_vol1",
+          "wave8_punjabi_sikhs_shah_sri_gursobha"
+        ],
+        "owner_module": "military_elo.promotion.wave8_punjabi_sikhs",
+        "owned_candidate_ids": [
+          "hced-Anandpur (1st)1704-1",
+          "hced-Anandpur (2nd)1704-1",
+          "hced-Anandpur1700-1",
+          "hced-Sarsa1704-1"
+        ],
+        "related_candidate_id": "hced-Anandpur1701-1",
+        "relationship": "possible_same_anandpur_operation_or_adjacent_phase",
+        "shared_boundary_candidate_id": "hced-Anandpur1700-1"
+      },
+      {
+        "disposition_id": "related_hced:hced-Anandpur1701-1",
+        "disposition": "counterpart_lane_hold",
+        "owner_module": "military_elo.promotion.wave8_sikh_punjab",
+        "raw_row_sha256": "f67a4c4086cc928cdf58b7e704691a5f593035460d03011d684f5d2e82173e0e",
+        "relationship": "possible_chronology_twin_of_anandpur_1700"
+      },
+      {
+        "disposition_id": "related_hced:hced-Baddowal1846-1",
+        "disposition": "counterpart_lane_company_era_event",
+        "owner_module": "military_elo.promotion.wave8_sikh_punjab",
+        "raw_row_sha256": "afddca7611c520558de29a1c545e089f1efd688ba8e4b84ca56989f8c838e6f4",
+        "relationship": "different_lahore_khalsa_and_british_indian_war"
+      },
+      {
+        "disposition_id": "related_hced:hced-Basoli1702-1",
+        "disposition": "distinct_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "33036f404dbb10982d8c875e9204b34ef4402dd2e4008a8d890efdecc20ccf6e",
+        "relationship": "earlier_distinct_anandpur_campaign_engagement"
+      },
+      {
+        "disposition_id": "related_hced:hced-Chamkaur (1st)1704-1",
+        "disposition": "distinct_hced_engagement_pending_its_own_audit",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "a428499be12c5c3feff731d029662bd93f950a678eac230b7cde257546263122",
+        "relationship": "different_event_boundary_not_owned_by_sarsa_contract"
+      },
+      {
+        "disposition_id": "related_hced:hced-Chamkaur (2nd)1704-1",
+        "disposition": "distinct_follow_on_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "64794620d65bfaf8183983028f0e37b260e6a69626164421aefb0412158071d9",
+        "relationship": "next_day_fortified_battle_not_sarsa_duplicate"
+      },
+      {
+        "disposition_id": "related_hced:hced-Muktsar1705-1",
+        "disposition": "distinct_later_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "030d0af0687ba7e5935cc68c517d51f0ad6e8a6cb48e311dd875943de4086baf",
+        "relationship": "later_campaign_battle_not_sarsa_duplicate"
+      },
+      {
+        "disposition_id": "related_hced:hced-Nirmohgarh1702-1",
+        "disposition": "distinct_hced_engagement",
+        "owner_module": "unassigned",
+        "raw_row_sha256": "ce4ee17069bfb62e2be6520aa5afcbfca84e7f6dd2341bc53c5ff06302acd75e",
+        "relationship": "earlier_distinct_anandpur_campaign_engagement"
+      }
+    ],
+    "wave8_punjabi_sikhs_outcome_overrides": [],
+    "wave8_punjabi_sikhs_entities_added": 4,
+    "wave8_punjabi_sikhs_sources_added": 7,
+    "hced_label_pass_input_rows": 5717,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -10980,7 +11311,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 883,
+      "reserved_candidate_contract": 887,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -10992,7 +11323,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2210,
+      "no_unique_time_valid_label_match": 2206,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
