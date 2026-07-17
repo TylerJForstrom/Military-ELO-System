@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1008,
-    "events": 5350,
-    "sources": 1442,
-    "registry_polities": 2356
+    "entities": 1013,
+    "events": 5354,
+    "sources": 1450,
+    "registry_polities": 2361
   },
   "year_range": {
     "start": -1274,
@@ -171,6 +171,7 @@
     "accepted_wave8_catholic_rebels_hced_events": 3,
     "accepted_wave8_macedon_hced_events": 4,
     "accepted_wave8_uzbeks_hced_events": 5,
+    "accepted_wave8_etruria_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -20075,7 +20076,125 @@
     "wave8_uzbeks_country_quarantine_additions": [],
     "wave8_uzbeks_entities_added": 7,
     "wave8_uzbeks_sources_added": 7,
-    "hced_label_pass_input_rows": 5553,
+    "wave8_etruria_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 5,
+      "new_sources": 8,
+      "newly_rated_events": 4,
+      "outcome_overrides": 1,
+      "outcome_reversals": 1,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "source_date_overrides": 2,
+      "terminal_exclusions": 0
+    },
+    "wave8_etruria_cohort_counts": {
+      "early_roman_latin_war_regillus": 1,
+      "syracusan_etruscan_war_cumae": 1,
+      "third_veientine_war_siege": 1,
+      "veientine_war_cremera": 1
+    },
+    "wave8_etruria_audit_signature": "5f880aa13df1c6b04e761323190f9641c075f844a0b29477aa2f5a85c2984969",
+    "wave8_etruria_final_audit_signature": "5f880aa13df1c6b04e761323190f9641c075f844a0b29477aa2f5a85c2984969",
+    "wave8_etruria_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 0,
+      "reviewed_hced_rows": 4,
+      "exact_label_rows": 4
+    },
+    "wave8_etruria_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_etruria_candidate_ids": [
+      "hced-Cremera-477-1",
+      "hced-Cumae-474-1",
+      "hced-Lake Regillus-496-1",
+      "hced-Veii-405-1"
+    ],
+    "wave8_etruria_holds": [],
+    "wave8_etruria_exact_label_funnel_audit": {
+      "etruria": {
+        "candidate_ids": [],
+        "centuries": {
+          "BCE_05": 4
+        },
+        "components_bridged": 0,
+        "components_touched": 1,
+        "event_candidate_id_sha256": "bfa71c0be064800bba01754aca6ccacfbd218a5134fdd58103efebf37ae309e7",
+        "events_touched": 4,
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 4
+        },
+        "label": "etruria",
+        "rated_counterpart_entities": 1,
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 4
+      }
+    },
+    "wave8_etruria_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Cremera-477-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed histories locate the action on the Cremera frontier but do not validate HCED's exact modern point. Retain Italy only.",
+        "evidence_refs": [
+          "wave8_etruria_dionysius_cremera",
+          "wave8_etruria_treccani_cremera"
+        ]
+      },
+      {
+        "candidate_id": "hced-Cumae-474-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The event was a naval battle off Cumae; HCED's city geocode is not a source-bound sea-battle coordinate. Retain Italy only.",
+        "evidence_refs": [
+          "wave8_etruria_british_museum_cumae_helmet",
+          "wave8_etruria_diodorus_cumae"
+        ]
+      },
+      {
+        "candidate_id": "hced-Lake Regillus-496-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The Oxford Classical Dictionary gives multiple modern site possibilities for the alleged battle, so HCED's exact point is not promoted. Retain Italy only.",
+        "evidence_refs": [
+          "wave8_etruria_ocd_regillus"
+        ]
+      },
+      {
+        "candidate_id": "hced-Veii-405-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED supplies a settlement geocode rather than a documented siege or breach coordinate. Retain Italy only.",
+        "evidence_refs": [
+          "wave8_etruria_livius_veii",
+          "wave8_etruria_plutarch_veii"
+        ]
+      }
+    ],
+    "wave8_etruria_point_quarantine_additions": [
+      "hced-Cremera-477-1",
+      "hced-Cumae-474-1",
+      "hced-Lake Regillus-496-1",
+      "hced-Veii-405-1"
+    ],
+    "wave8_etruria_country_quarantine_additions": [],
+    "wave8_etruria_entities_added": 5,
+    "wave8_etruria_sources_added": 8,
+    "hced_label_pass_input_rows": 5549,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -20088,7 +20207,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1057,
+      "reserved_candidate_contract": 1061,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -20100,11 +20219,11 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2053,
+      "no_unique_time_valid_label_match": 2050,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
-      "wave6_pre1500_candidate_not_in_manifest": 41
+      "wave6_pre1500_candidate_not_in_manifest": 40
     },
     "hced_label_policy_labels": [
       "afghanistan",

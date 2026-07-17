@@ -9394,6 +9394,118 @@
     ]
   },
   {
+    "id": "wave8_etruria_british_museum_cumae_helmet",
+    "title": "Etruscan helmet dedicated from the spoils at Cumae",
+    "url": "https://www.britishmuseum.org/collection/object/G_1823-0610-1",
+    "publisher": "The British Museum",
+    "license": "Citation and link only",
+    "source_type": "museum_collection_record",
+    "accessed": "2026-07-17",
+    "source_family_id": "british_museum_collection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_diodorus_cumae",
+    "title": "Diodorus Siculus, Library of History 11.51 (Peter Green translation)",
+    "url": "https://assets-us-01.kc-usercontent.com/c7bb3f89-eb78-007e-971a-d5864cf7a236/0fa32b90-feb4-4a8d-a853-9ddc8178f510/Diodorus-Siculus-11.50.pdf",
+    "publisher": "University of Texas Press",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "diodorus_library_history_green_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_dionysius_cremera",
+    "title": "Dionysius of Halicarnassus, Roman Antiquities 9.15-23",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Dionysius_of_Halicarnassus/9A%2A.html",
+    "publisher": "Dionysius of Halicarnassus / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "dionysius_roman_antiquities",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_dionysius_regillus",
+    "title": "Dionysius of Halicarnassus, Roman Antiquities 6.4-13",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Dionysius_of_Halicarnassus/6A%2A.html",
+    "publisher": "Dionysius of Halicarnassus / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "dionysius_roman_antiquities",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_livius_veii",
+    "title": "Veii",
+    "url": "https://www.livius.org/articles/place/veii/",
+    "publisher": "Livius.org",
+    "license": "Citation and link only",
+    "source_type": "expert_historical_reference",
+    "accessed": "2026-07-17",
+    "source_family_id": "livius_ancient_history_reference",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_ocd_regillus",
+    "title": "Regillus lake",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter/550490415",
+    "publisher": "Andrew Drummond / Oxford Classical Dictionary",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia_entry",
+    "accessed": "2026-07-17",
+    "source_family_id": "oxford_classical_dictionary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_plutarch_veii",
+    "title": "Plutarch, Life of Camillus 4-5",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Camillus%2A.html",
+    "publisher": "Plutarch / LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-17",
+    "source_family_id": "plutarch_parallel_lives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_etruria_treccani_cremera",
+    "title": "Cremera",
+    "url": "https://www.treccani.it/enciclopedia/cremera_%28Enciclopedia-Italiana%29/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia_entry",
+    "accessed": "2026-07-17",
+    "source_family_id": "treccani_enciclopedia_italiana",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",

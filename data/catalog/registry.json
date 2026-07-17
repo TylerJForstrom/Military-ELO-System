@@ -4334,6 +4334,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "cumae_city_state_battle_474_bce",
+      "name": "Cumaean city force at the naval battle of 474 BCE",
+      "kind": "engagement_bounded_city_polity",
+      "start_year": -474,
+      "end_year": -474,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cumae and the Bay of Naples"
+    },
+    {
       "id": "clio_q1122052_1056_9c09a518",
       "name": "Cuman-Kipchak Confederation",
       "kind": "confederation",
@@ -6392,6 +6402,16 @@
       "region": "Northeast Africa"
     },
     {
+      "id": "etruscan_maritime_force_cumae_474_bce",
+      "name": "Etruscan maritime force at Cumae (474 BCE)",
+      "kind": "engagement_bounded_maritime_force",
+      "start_year": -474,
+      "end_year": -474,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tyrrhenian Sea off Cumae"
+    },
+    {
       "id": "clio_q17161_bce750_5d71ef0b",
       "name": "Etruscans",
       "kind": "polity",
@@ -6411,6 +6431,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central Africa"
+    },
+    {
+      "id": "fabian_clan_client_force_cremera_477_bce",
+      "name": "Fabian clan and client force at the Cremera (477 BCE)",
+      "kind": "engagement_bounded_clan_client_force",
+      "start_year": -477,
+      "end_year": -477,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cremera frontier north of Rome"
     },
     {
       "id": "faisal_sultan_rebel_ikhwan_sabilla_1929",
@@ -13187,6 +13217,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Macedonia and Thessaly"
+    },
+    {
+      "id": "latin_tarquin_coalition_regillus_499_496_bce",
+      "name": "Latin and Tarquin coalition at Lake Regillus",
+      "kind": "engagement_bounded_multistate_coalition",
+      "start_year": -499,
+      "end_year": -496,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Latium near Tusculum"
     },
     {
       "id": "clio_th_lavo_k_1_638_a2331424",
@@ -23605,6 +23645,16 @@
       "region": "Avarayr plain, Vaspurakan"
     },
     {
+      "id": "veii_city_state_reviewed_477_396_bce",
+      "name": "Veii (reviewed 477-396 BCE series)",
+      "kind": "city_state",
+      "start_year": -477,
+      "end_year": -396,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Etruria"
+    },
+    {
       "id": "veldman_bikitsha_mfengu_levies_ibeka_1877",
       "name": "Veldman Bikitsha's Mfengu levies at Ibeka",
       "kind": "indigenous_allied_force",
@@ -24926,11 +24976,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2356,
-    "rated_entities": 1001,
-    "rated_events": 5350,
+    "registry_polities": 2361,
+    "rated_entities": 1006,
+    "rated_events": 5354,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18044,
+    "unresolved_event_candidates": 18040,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25031,6 +25081,7 @@
     "candidate_keyed_wave8_catholic_rebels_hced_events": 3,
     "candidate_keyed_wave8_macedon_hced_events": 4,
     "candidate_keyed_wave8_uzbeks_hced_events": 5,
+    "candidate_keyed_wave8_etruria_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -25041,21 +25092,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5086,
-      "candidate_keyed_reviewed_contracts": 776,
+      "hced_candidate_bindings": 5090,
+      "candidate_keyed_reviewed_contracts": 780,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4991,
-      "location_provenance_objects": 5040,
-      "point_fields_withheld_by_quarantine": 352,
+      "modern_location_country_assertions": 4995,
+      "location_provenance_objects": 5044,
+      "point_fields_withheld_by_quarantine": 356,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 400,
-      "point_quarantine_candidate_manifest_sha256": "54cf4d26df18bc8995812bc077c869f3fe1edad5171de58b92e28d88e20b07e0",
+      "unique_events_with_any_quarantined_field": 404,
+      "point_quarantine_candidate_manifest_sha256": "07acfcd9c074ca9bb085d3024262ec109a984c26b6c6972c649944950a314110",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "1e01cdfeb684f229dae98ea4133b733b4b4cff92a19cba4f5d71962ea1f30525",
+      "quarantine_policy_sha256": "2c1e5b7a7990ec971f9353c2b865ada97bd02776bd8f60223aea8e939a410bc4",
       "assertion_status": {
-        "unreviewed_source_assertion": 5040
+        "unreviewed_source_assertion": 5044
       },
       "verified_location_assertions": {
         "availability": "not_available",

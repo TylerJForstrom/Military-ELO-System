@@ -297,17 +297,17 @@ class Wave8SindhTests(unittest.TestCase):
         )
 
     def test_release_and_registry_counts_include_the_exact_sindh_delta(self) -> None:
-        self.assertEqual(len(self.release_entities), 1_008)
-        self.assertEqual(len(self.release_events), 5_350)
-        self.assertEqual(len(self.registry["entities"]), 2_356)
+        self.assertEqual(len(self.release_entities), 1_013)
+        self.assertEqual(len(self.release_events), 5_354)
+        self.assertEqual(len(self.registry["entities"]), 2_361)
         self.assertEqual(
             self.registry["coverage"]["unresolved_event_candidates"],
-            18_044,
+            18_040,
         )
         location = self.registry["coverage"]["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_086)
+        self.assertEqual(location["hced_candidate_bindings"], 5_090)
         self.assertEqual(location["geojson_points"], 4_734)
-        self.assertEqual(location["modern_location_country_assertions"], 4_991)
+        self.assertEqual(location["modern_location_country_assertions"], 4_995)
 
     def test_tampered_queue_row_fails_closed(self) -> None:
         tampered = copy.deepcopy(self.hced)

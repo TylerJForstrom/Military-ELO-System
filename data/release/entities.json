@@ -280,6 +280,21 @@
     ]
   },
   {
+    "id": "latin_tarquin_coalition_regillus_499_496_bce",
+    "name": "Latin and Tarquin coalition at Lake Regillus",
+    "kind": "engagement_bounded_multistate_coalition",
+    "start_year": -499,
+    "end_year": -496,
+    "region": "Latium near Tusculum",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the traditional Lake Regillus opposing army: Latins led by Octavius Mamilius together with Tarquin supporters and Roman exiles. The 499-496 BCE window expresses the two ancient chronologies; it is not a continuous four-year polity or a generic Latin League.",
+    "source_ids": [
+      "wave8_etruria_dionysius_regillus",
+      "wave8_etruria_ocd_regillus"
+    ]
+  },
+  {
     "id": "hellenic_coalition_artemisium_480_bce",
     "name": "Hellenic Coalition Fleet at Artemisium",
     "kind": "military_coalition",
@@ -291,6 +306,68 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_artemisium_perseus"
+    ]
+  },
+  {
+    "id": "fabian_clan_client_force_cremera_477_bce",
+    "name": "Fabian clan and client force at the Cremera (477 BCE)",
+    "kind": "engagement_bounded_clan_client_force",
+    "start_year": -477,
+    "end_year": -477,
+    "region": "Cremera frontier north of Rome",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Fabii, clients, and friends who held the Cremera fortress and were destroyed in the reviewed engagement. It does not substitute for the Roman Republic, the wider Roman army, or the Fabian family in another year.",
+    "source_ids": [
+      "wave8_etruria_dionysius_cremera",
+      "wave8_etruria_treccani_cremera"
+    ]
+  },
+  {
+    "id": "veii_city_state_reviewed_477_396_bce",
+    "name": "Veii (reviewed 477-396 BCE series)",
+    "kind": "city_state",
+    "start_year": -477,
+    "end_year": -396,
+    "region": "Southern Etruria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Release identity bounded to the two independently reviewed HCED actions at Cremera and the final Roman siege. The boundary is an evidence window, not a founding date. It opens no Veii, Etruria, or Etruscan alias and ends with the conventional 396 BCE Roman capture.",
+    "source_ids": [
+      "wave8_etruria_dionysius_cremera",
+      "wave8_etruria_livius_veii",
+      "wave8_etruria_plutarch_veii",
+      "wave8_etruria_treccani_cremera"
+    ]
+  },
+  {
+    "id": "cumae_city_state_battle_474_bce",
+    "name": "Cumaean city force at the naval battle of 474 BCE",
+    "kind": "engagement_bounded_city_polity",
+    "start_year": -474,
+    "end_year": -474,
+    "region": "Cumae and the Bay of Naples",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the inhabitants of Cumae who joined Hieron's Syracusan squadron in Diodorus's account. It does not create a generic Cumae identity for the city's Greek, Oscan, or Roman periods.",
+    "source_ids": [
+      "wave8_etruria_british_museum_cumae_helmet",
+      "wave8_etruria_diodorus_cumae"
+    ]
+  },
+  {
+    "id": "etruscan_maritime_force_cumae_474_bce",
+    "name": "Etruscan maritime force at Cumae (474 BCE)",
+    "kind": "engagement_bounded_maritime_force",
+    "start_year": -474,
+    "end_year": -474,
+    "region": "Tyrrhenian Sea off Cumae",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Tyrrhenian ships defeated off Cumae and corroborated by Hieron's inscribed dedication of captured Etruscan spoils. No single Etruscan city, league, or people inherits this fleet rating.",
+    "source_ids": [
+      "wave8_etruria_british_museum_cumae_helmet",
+      "wave8_etruria_diodorus_cumae"
     ]
   },
   {
