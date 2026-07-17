@@ -138,8 +138,24 @@ def promote_exact_hced_contracts(
         canonical = contract["canonical_event"]
         low = int(canonical["year_low"])
         high = int(canonical["year_high"])
-        if (low, high) != (int(candidate["year_low"]), int(candidate["year_high"])):
+        raw_low = int(candidate["year_low"])
+        raw_high = int(candidate["year_high"])
+        date_changed = (low, high) != (raw_low, raw_high)
+        source_date_override = contract.get("source_date_override") is True
+        if date_changed != source_date_override:
             raise ValueError(f"{lane_name} date drift for {candidate_id}")
+        if source_date_override:
+            date_source_ids = list(map(str, contract.get("date_source_ids", [])))
+            evidence_refs = set(map(str, contract.get("evidence_refs", [])))
+            if (
+                not date_source_ids
+                or date_source_ids != sorted(set(date_source_ids))
+                or not set(date_source_ids) <= evidence_refs
+            ):
+                raise ValueError(
+                    f"{lane_name} date override lacks closed direct sources for "
+                    f"{candidate_id}"
+                )
         side_1 = list(map(str, contract["side_1_entity_ids"]))
         side_2 = list(map(str, contract["side_2_entity_ids"]))
         if not side_1 or not side_2 or set(side_1) & set(side_2):
@@ -183,7 +199,7 @@ def promote_exact_hced_contracts(
 
         name = str(canonical["name"])
         key = _event_key(name, low)
-        raw_key = _event_key(str(candidate["name"]), low)
+        raw_key = _event_key(str(candidate["name"]), raw_low)
         if key in existing_keys or raw_key in existing_keys or key in accepted_keys:
             raise ValueError(f"{lane_name} duplicate event for {candidate_id}")
         accepted_keys.add(key)
