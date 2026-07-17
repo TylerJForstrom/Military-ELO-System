@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 980,
-    "events": 5314,
-    "sources": 1344,
-    "registry_polities": 2336
+    "entities": 981,
+    "events": 5316,
+    "sources": 1351,
+    "registry_polities": 2337
   },
   "year_range": {
     "start": -1274,
@@ -158,6 +158,7 @@
     "accepted_wave8_zulu_forces_hced_events": 5,
     "accepted_wave8_montenegro_1796_hced_events": 2,
     "accepted_wave8_bohemia_hced_events": 4,
+    "accepted_wave8_spanish_liberals_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18480,7 +18481,104 @@
     "wave8_bohemia_country_quarantine_additions": [],
     "wave8_bohemia_entities_added": 6,
     "wave8_bohemia_sources_added": 10,
-    "hced_label_pass_input_rows": 5609,
+    "wave8_spanish_liberals_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 2,
+      "new_entities": 1,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_spanish_liberals_cohort_counts": {
+      "first_carlist_war_1833_1840": 2,
+      "source_critical_holds": 2
+    },
+    "wave8_spanish_liberals_audit_signature": "3d259d1dcd15f760474a546d217970f8129a84c0afd29d3d587fa7cbe274a101",
+    "wave8_spanish_liberals_final_audit_signature": "3d259d1dcd15f760474a546d217970f8129a84c0afd29d3d587fa7cbe274a101",
+    "wave8_spanish_liberals_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 2,
+      "reviewed_hced_rows": 4,
+      "exact_label_rows": 4
+    },
+    "wave8_spanish_liberals_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_spanish_liberals_candidate_ids": [
+      "hced-Alegria1834-1",
+      "hced-Gulina1834-1"
+    ],
+    "wave8_spanish_liberals_holds": [
+      {
+        "candidate_id": "hced-Artaza1834-1",
+        "raw_row_sha256": "cd81f724365721250146a3c770797d27784a79b18a9381d3e770cf739db1dc79",
+        "cohort": "source_critical_holds",
+        "disposition": "hold",
+        "reason_code": "locked_year_conflicts_with_attested_action",
+        "evidence_refs": [
+          "wave8_spanish_liberals_museum_artaza"
+        ],
+        "audit_note": "The museum chronology places the Artaza action in the Améscoas operations of 19-24 April 1835, while the locked HCED row says 1834. The year cannot be silently repaired inside an exact-row promotion."
+      },
+      {
+        "candidate_id": "hced-Asarta1833-1",
+        "raw_row_sha256": "bd305efe2efa6c551c7c6950bac089f478c4f689a6acae330e0e0d458ac07ddc",
+        "cohort": "source_critical_holds",
+        "disposition": "hold",
+        "reason_code": "locked_winner_conflicts_with_tactical_record",
+        "evidence_refs": [
+          "wave8_spanish_liberals_gee_asarta",
+          "wave8_spanish_liberals_museum_asarta"
+        ],
+        "audit_note": "HCED marks a Carlist win, but the museum account records a decisive Liberal flank attack followed by Zumalacárregui's retreat, and the edited national encyclopedia classifies the action as a Liberal triumph. A moral success or casualty imbalance cannot be substituted for the locked tactical winner."
+      }
+    ],
+    "wave8_spanish_liberals_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "935b85664b28e3be3f7262bb8fa3e72877b51169a4c11c7aa055409029005838",
+      "events_touched": 4,
+      "label": "spanish liberals",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 4
+    },
+    "wave8_spanish_liberals_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Alegria1834-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named battlefield and Spain but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_spanish_liberals_aunamendi_alegria",
+          "wave8_spanish_liberals_gee_alegria"
+        ]
+      },
+      {
+        "candidate_id": "hced-Gulina1834-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named battlefield and Spain but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_spanish_liberals_mod_gulina",
+          "wave8_spanish_liberals_revue_gulina"
+        ]
+      }
+    ],
+    "wave8_spanish_liberals_point_quarantine_additions": [
+      "hced-Alegria1834-1",
+      "hced-Gulina1834-1"
+    ],
+    "wave8_spanish_liberals_country_quarantine_additions": [],
+    "wave8_spanish_liberals_entities_added": 1,
+    "wave8_spanish_liberals_sources_added": 7,
+    "hced_label_pass_input_rows": 5605,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18493,7 +18591,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1001,
+      "reserved_candidate_contract": 1005,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18505,7 +18603,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2106,
+      "no_unique_time_valid_label_match": 2102,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

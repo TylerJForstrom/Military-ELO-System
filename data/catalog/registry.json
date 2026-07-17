@@ -9632,6 +9632,16 @@
       "region": "Ireland"
     },
     {
+      "id": "isabeline_government_forces_first_carlist_war",
+      "name": "Isabeline Government Forces (First Carlist War)",
+      "kind": "civil_war_faction",
+      "start_year": 1833,
+      "end_year": 1840,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Spain"
+    },
+    {
       "id": "islamic_republic_afghanistan",
       "name": "Islamic Republic of Afghanistan",
       "kind": "state",
@@ -24734,11 +24744,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2336,
-    "rated_entities": 973,
-    "rated_events": 5314,
+    "registry_polities": 2337,
+    "rated_entities": 974,
+    "rated_events": 5316,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18080,
+    "unresolved_event_candidates": 18078,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24826,6 +24836,7 @@
     "candidate_keyed_wave8_zulu_forces_hced_events": 5,
     "candidate_keyed_wave8_montenegro_1796_hced_events": 2,
     "candidate_keyed_wave8_bohemia_hced_events": 4,
+    "candidate_keyed_wave8_spanish_liberals_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24836,21 +24847,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5050,
-      "candidate_keyed_reviewed_contracts": 740,
+      "hced_candidate_bindings": 5052,
+      "candidate_keyed_reviewed_contracts": 742,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4955,
-      "location_provenance_objects": 5004,
-      "point_fields_withheld_by_quarantine": 316,
+      "modern_location_country_assertions": 4957,
+      "location_provenance_objects": 5006,
+      "point_fields_withheld_by_quarantine": 318,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 364,
-      "point_quarantine_candidate_manifest_sha256": "04bacba761e166851df3349de4bb014b52c0adcdbb7d6005e99b97520073cb22",
+      "unique_events_with_any_quarantined_field": 366,
+      "point_quarantine_candidate_manifest_sha256": "db77f2e9bbbbb0d47e8270d6ee1663053ebc8e1a1cd8d9a3e733b41eef2a89bd",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "93937a3ac9676f4a3993b6271ba8b4a3203fccb52229eb17d1e2fc514180b9d6",
+      "quarantine_policy_sha256": "67a1d75204430132cf8aac7f1393ab2dcd24a0064600af1bfdcb0f89e60d3328",
       "assertion_status": {
-        "unreviewed_source_assertion": 5004
+        "unreviewed_source_assertion": 5006
       },
       "verified_location_assertions": {
         "availability": "not_available",

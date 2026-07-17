@@ -16878,6 +16878,104 @@
     ]
   },
   {
+    "id": "wave8_spanish_liberals_aunamendi_alegria",
+    "title": "Batalla de Alegría",
+    "url": "https://aunamendi.eusko-ikaskuntza.eus/es/batalla-de-alegria/ar-8633/",
+    "publisher": "Auñamendi Eusko Entziklopedia / Eusko Ikaskuntza",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "aunamendi_alegria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_gee_alegria",
+    "title": "Batalla de Alegría",
+    "url": "https://gee.enciclo.es/articulo/batalla-de-alegria",
+    "publisher": "Gran Enciclopedia de España",
+    "license": "Citation and link only",
+    "source_type": "edited_national_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "gran_enciclopedia_espana_alegria",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_gee_asarta",
+    "title": "Batalla de Asarta y Mendaza",
+    "url": "https://gee.enciclo.es/articulo/batalla-de-asarta-y-mendaza",
+    "publisher": "Gran Enciclopedia de España",
+    "license": "Citation and link only",
+    "source_type": "edited_national_encyclopedia",
+    "accessed": "2026-07-17",
+    "source_family_id": "gran_enciclopedia_espana_asarta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_mod_gulina",
+    "title": "Infantes Caballeros de la Orden de San Fernando: Linares de Butrón",
+    "url": "https://publicaciones.defensa.gob.es/media/downloadable/files/links/m/e/memorial_infanteria_52.pdf",
+    "publisher": "Ministerio de Defensa de España, Memorial de Infantería 52",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "spanish_mod_memorial_infanteria_52",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_museum_artaza",
+    "title": "Améscoas (19/24-IV-1835)",
+    "url": "https://www.zumalakarregimuseoa.eus/es/actividades/investigacion-y-documentacion/historia-del-siglo-xix-en-el-pais-vasco/batallas-y-acciones/amescoas-19-24-iv-1835",
+    "publisher": "Museo Zumalakarregi Museoa",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "zumalakarregi_museum_artaza",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_museum_asarta",
+    "title": "Nazar y Asarta (29-XII-1833)",
+    "url": "https://www.zumalakarregimuseoa.eus/es/actividades/investigacion-y-documentacion/historia-del-siglo-xix-en-el-pais-vasco/batallas-y-acciones/nazar-y-asarta-29-xii-1833",
+    "publisher": "Museo Zumalakarregi Museoa",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "zumalakarregi_museum_asarta",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_spanish_liberals_revue_gulina",
+    "title": "Zumalacárregui et la guerre civile de Navarre: combat de Gulina",
+    "url": "https://fr.wikisource.org/wiki/Page:Revue_des_Deux_Mondes_-_1851_-_tome_9.djvu/686",
+    "publisher": "Revue des Deux Mondes (1851 facsimile transcription)",
+    "license": "Citation and link only",
+    "source_type": "near_contemporary_historical_narrative",
+    "accessed": "2026-07-17",
+    "source_family_id": "revue_deux_mondes_1851_gulina",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_ssau_campaign_kazan_pugachev",
     "title": "Campaign against Kazan: the fatal misadventure of Pugachev's Rebellion",
     "url": "https://journals.ssau.ru/hpp/article/view/29591",

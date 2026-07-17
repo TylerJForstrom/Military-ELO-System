@@ -49,7 +49,9 @@ class Wave8SpanishLiberalsTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
         cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         lane_entity_ids = {
@@ -221,6 +223,51 @@ class Wave8SpanishLiberalsTests(unittest.TestCase):
                 "iwbd_probable_twins": 0,
             },
         )
+
+    def test_current_release_and_registry_include_the_lane_exactly_once(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id")
+            in lane.WAVE8_SPANISH_LIBERALS_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 2)
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in events},
+            lane.WAVE8_SPANISH_LIBERALS_CONTRACT_IDS,
+        )
+        self.assertFalse(
+            lane.WAVE8_SPANISH_LIBERALS_HOLD_IDS
+            & {str(event.get("hced_candidate_id")) for event in self.release_events}
+        )
+        entities = {str(item["id"]): item for item in self.release_entities}
+        self.assertIn(ISABELINE, entities)
+        sources = {str(item["id"]) for item in self.release_sources}
+        self.assertLessEqual(
+            {str(item["id"]) for item in lane.WAVE8_SPANISH_LIBERALS_SOURCES},
+            sources,
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_spanish_liberals_hced_events"], 2)
+        self.assertEqual(
+            promotion["wave8_spanish_liberals_candidate_ids"],
+            sorted(lane.WAVE8_SPANISH_LIBERALS_CONTRACT_IDS),
+        )
+        self.assertEqual(
+            {item["candidate_id"] for item in promotion["wave8_spanish_liberals_holds"]},
+            lane.WAVE8_SPANISH_LIBERALS_HOLD_IDS,
+        )
+        self.assertEqual(
+            self.registry["coverage"][
+                "candidate_keyed_wave8_spanish_liberals_hced_events"
+            ],
+            2,
+        )
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertEqual(registry_entities[ISABELINE]["status"], "rated")
 
     def test_row_drift_fails_closed(self) -> None:
         tampered = copy.deepcopy(self.hced)

@@ -9659,6 +9659,23 @@
     ]
   },
   {
+    "id": "isabeline_government_forces_first_carlist_war",
+    "name": "Isabeline Government Forces (First Carlist War)",
+    "kind": "civil_war_faction",
+    "start_year": 1833,
+    "end_year": 1840,
+    "region": "Spain",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed forces supporting Isabella II and the regency during the First Carlist War. This conflict-bounded rating identity is not an alias for the Spanish state, every Spanish liberal movement, or later Isabeline forces, and it inherits no Elo from any of them. Only fingerprinted candidate-keyed contracts may use it.",
+    "source_ids": [
+      "wave8_spanish_liberals_aunamendi_alegria",
+      "wave8_spanish_liberals_gee_alegria",
+      "wave8_spanish_liberals_mod_gulina",
+      "wave8_spanish_liberals_revue_gulina"
+    ]
+  },
+  {
     "id": "caucasian_imamate_shamil_1834_1859",
     "name": "Caucasian Imamate under Imam Shamil",
     "kind": "theocratic_imamate",
