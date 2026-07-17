@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 835,
-    "events": 5242,
-    "sources": 1160,
-    "registry_polities": 2191
+    "entities": 839,
+    "events": 5244,
+    "sources": 1173,
+    "registry_polities": 2195
   },
   "year_range": {
     "start": -1274,
@@ -146,6 +146,7 @@
     "accepted_wave8_punjabi_sikhs_hced_events": 2,
     "accepted_wave8_modoc_hced_events": 3,
     "accepted_wave8_sauk_hced_events": 3,
+    "accepted_wave8_ute_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -11876,7 +11877,445 @@
     "wave8_sauk_outcome_overrides": [],
     "wave8_sauk_entities_added": 6,
     "wave8_sauk_sources_added": 17,
-    "hced_label_pass_input_rows": 5709,
+    "wave8_ute_counts": {
+      "adjacent_hced_dispositions": 4,
+      "country_quarantine_additions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 9,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 13,
+      "newly_rated_events": 2,
+      "opposite_result_pairs": 1,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "related_hced_dispositions": 1,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_ute_cohort_counts": {
+      "fauntleroy_ute_campaign_1855": 1,
+      "utah_black_hawk_war_precursor_1863": 1,
+      "white_river_ute_campaign_1879": 2
+    },
+    "wave8_ute_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 1,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_ute_integration_validation": {
+      "adjacent_hced_dispositions": 4,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 9,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0,
+      "related_hced_dispositions": 1
+    },
+    "wave8_ute_candidate_ids": [
+      "hced-Poncha Pass1855-1",
+      "hced-White River1879-1"
+    ],
+    "wave8_ute_holds": [
+      {
+        "candidate_id": "hced-Spanish Fork Canon1863-1",
+        "raw_row_sha256": "32ac76f122bb911d8d037842e95f26e883bff06c28e8004b91d3e4c57f47b78e",
+        "canonical_event": {
+          "canonical_key": "spanish_fork_canyon_actions:1863:1863",
+          "date_precision": "multiple_days",
+          "date_text": "4 and 15 April 1863",
+          "granularity": "ambiguous_same_name_engagements",
+          "name": "Spanish Fork Canyon actions",
+          "year_low": 1863,
+          "year_high": 1863
+        },
+        "cohort": "utah_black_hawk_war_precursor_1863",
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "hold_category": "same_name_same_year_actions_and_actor_ambiguity",
+        "hold_reason": "The Official Records and NPS unit chronology separately list actions on 4 April under Capt. George F. Price and 15 April under Col. George S. Evans. HCED supplies only a year and one name, so selecting either action, merging their losses, or assigning one Ute band would invent scope. The row remains unknown and unknown is never a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "ambiguous_same_name_engagements",
+        "evidence_refs": [
+          "wave8_ute_colorado_ute_unit",
+          "wave8_ute_nps_second_california_cavalry",
+          "wave8_ute_official_records_1863",
+          "wave8_ute_usu_mccarthy_thesis"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_ute",
+          "status": "held_hced_owner"
+        },
+        "historical_review": {
+          "alternative_1": {
+            "date": "4 April 1863",
+            "us_formation": "Capt. George F. Price's 2nd California Cavalry detachment",
+            "scope": "initial Spanish Fork Canyon action and 5 April pursuit"
+          },
+          "alternative_2": {
+            "date": "15 April 1863",
+            "us_formation": "Col. George S. Evans's 2nd California Cavalry column",
+            "scope": "separate fourteen-mile canyon pursuit"
+          },
+          "source_actor_boundary": "Contemporary reports use a generic Indian label while later accounts vary between Ute and Gosiute identification.",
+          "selection_rule": "no unique event, force, or band can be selected"
+        }
+      }
+    ],
+    "wave8_ute_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Red Canyon1879-1",
+        "raw_row_sha256": "822ff39ebc665f8a41b2ce31135dfeff869ed21084be151162cdc235ebe7ddae",
+        "canonical_event": {
+          "canonical_key": "opening_action_at_milk_creek:1879:1879",
+          "date_precision": "day",
+          "date_text": "29 September 1879",
+          "granularity": "engagement_phase",
+          "name": "Opening action at Milk Creek",
+          "year_low": 1879,
+          "year_high": 1879
+        },
+        "cohort": "white_river_ute_campaign_1879",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "opposite_result_duplicate_and_campaign_phase_conflation",
+        "hold_reason": "Red Canyon and White River point to the Thornburgh-Milk Creek action, but HCED gives them opposite winners. The reviewed sources support a Ute tactical success in the opening action and a later relief/withdrawal without a second, independently bounded U.S. battlefield victory. The White River row owns the narrow rateable action; this duplicate is not a draw and no second outcome is invented.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "engagement_phase",
+        "evidence_refs": [
+          "wave8_ute_army_csi_campaign_1879",
+          "wave8_ute_army_history_74",
+          "wave8_ute_clodfelter_warfare",
+          "wave8_ute_oupress_last_war_trail",
+          "wave8_ute_uofutah_troubled_trails"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_ute",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "canonical_owner_candidate_id": "hced-White River1879-1",
+          "canonical_owner_scope": "opening action at Milk Creek, 29 September 1879",
+          "raw_claimed_result": "United States victory",
+          "reviewed_opening_result": "White River Ute tactical victory",
+          "later_scope": "siege through relief and negotiated campaign aftermath",
+          "independent_second_engagement": false
+        }
+      }
+    ],
+    "wave8_ute_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Red Canyon1879-1",
+        "raw_row_sha256": "822ff39ebc665f8a41b2ce31135dfeff869ed21084be151162cdc235ebe7ddae",
+        "related_hced_candidate_id": "hced-White River1879-1",
+        "related_raw_row_sha256": "068abe411a8e81640c22e348c631ebab434968445d2ba747df47f2f345e4d8aa",
+        "disposition": "opposite_result_duplicate",
+        "relationship": "same_thornburgh_milk_creek_action_and_campaign_scope",
+        "owner_module": "wave8_ute",
+        "canonical_owner_candidate_id": "hced-White River1879-1",
+        "reason": "The Red Canyon U.S.-win row cannot be separated into a second rated event from the White River Ute-win row without double-rating Milk Creek.",
+        "evidence_refs": [
+          "wave8_ute_army_csi_campaign_1879",
+          "wave8_ute_army_history_74",
+          "wave8_ute_clodfelter_warfare"
+        ]
+      }
+    ],
+    "wave8_ute_adjacent_hced_dispositions": [
+      {
+        "candidate_id": "hced-Adobe Walls1864-1",
+        "raw_row_sha256": "957ce353c339375d96c44d93768d5d52f58efd863c9a2163cd230a894faf548d",
+        "disposition": "separate_comanche_lane_hold",
+        "owner_module": "wave8_comanche",
+        "boundary": "Ute scouts in Carson's coalition do not make the opposing Comanche row a Ute event",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Bear River1863-1",
+        "raw_row_sha256": "9f87f9ea40ce0222c7b8923c0e944645717bbaebdb8ac8f2c466ac0714ce7ffc",
+        "disposition": "separate_shoshone_event",
+        "owner_module": "not_wave8_ute",
+        "boundary": "Utah geography and spelling are not a Ute actor identity; HCED names Shoshone",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Cieneguilla1854-1",
+        "raw_row_sha256": "6277589d940190b3e8f6e1d5c13e49b75c5a22f8d999860b6e8b6fb97e5daac3",
+        "disposition": "existing_north_america_lane_hold",
+        "owner_module": "wave8_north_america",
+        "boundary": "accounts vary on Jicarilla and Ute participation, so no Ute force is inferred",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Spanish Armada1588-1",
+        "raw_row_sha256": "b98b8a606d1bf7067f59d7e5fc9a1ea5f7626fca2e6a3cf4328f8c16fac9027a",
+        "disposition": "participant_token_false_positive",
+        "owner_module": "not_wave8_ute",
+        "boundary": "the word Ute appears only in noisy participants metadata; the sides are England and Spain",
+        "evidence_refs": []
+      }
+    ],
+    "wave8_ute_cross_lane_dispositions": [
+      {
+        "candidate_id": "hced-Adobe Walls1864-1",
+        "raw_row_sha256": "957ce353c339375d96c44d93768d5d52f58efd863c9a2163cd230a894faf548d",
+        "disposition": "separate_comanche_lane_hold",
+        "owner_module": "wave8_comanche",
+        "boundary": "Ute scouts in Carson's coalition do not make the opposing Comanche row a Ute event",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Bear River1863-1",
+        "raw_row_sha256": "9f87f9ea40ce0222c7b8923c0e944645717bbaebdb8ac8f2c466ac0714ce7ffc",
+        "disposition": "separate_shoshone_event",
+        "owner_module": "not_wave8_ute",
+        "boundary": "Utah geography and spelling are not a Ute actor identity; HCED names Shoshone",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Cieneguilla1854-1",
+        "raw_row_sha256": "6277589d940190b3e8f6e1d5c13e49b75c5a22f8d999860b6e8b6fb97e5daac3",
+        "disposition": "existing_north_america_lane_hold",
+        "owner_module": "wave8_north_america",
+        "boundary": "accounts vary on Jicarilla and Ute participation, so no Ute force is inferred",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "hced-Spanish Armada1588-1",
+        "raw_row_sha256": "b98b8a606d1bf7067f59d7e5fc9a1ea5f7626fca2e6a3cf4328f8c16fac9027a",
+        "disposition": "participant_token_false_positive",
+        "owner_module": "not_wave8_ute",
+        "boundary": "the word Ute appears only in noisy participants metadata; the sides are England and Spain",
+        "evidence_refs": []
+      }
+    ],
+    "wave8_ute_alternate_label_audit": {
+      "exact_source_labels": [
+        "Ute Indians"
+      ],
+      "reviewed_alternate_side_labels": [
+        "capote ute",
+        "moache ute",
+        "mouache ute",
+        "muache ute",
+        "pahvant ute",
+        "sanpete ute",
+        "tabeguache ute",
+        "taviwac ute",
+        "uintah ute",
+        "uncompahgre ute",
+        "unitah ute",
+        "ute",
+        "ute indian",
+        "utes",
+        "weeminuche ute",
+        "white river ute",
+        "white river utes",
+        "yampa ute"
+      ],
+      "matched_alternate_side_candidate_ids": [],
+      "participant_only_false_positive_candidate_ids": [
+        "hced-Spanish Armada1588-1"
+      ],
+      "same_campaign_component_candidate_ids": [
+        "hced-Adobe Walls1864-1",
+        "hced-Cieneguilla1854-1"
+      ],
+      "separate_neighbor_candidate_ids": [
+        "hced-Bear River1863-1"
+      ]
+    },
+    "wave8_ute_opposite_result_audit": {
+      "same_event_opposite_result_pairs": [
+        [
+          "hced-Red Canyon1879-1",
+          "hced-White River1879-1"
+        ]
+      ],
+      "canonical_owner_candidate_id": "hced-White River1879-1",
+      "terminal_exclusion_candidate_id": "hced-Red Canyon1879-1",
+      "owner_result": "White River Ute tactical victory in the opening action",
+      "excluded_raw_result": "United States victory",
+      "campaign_result_inferred": false
+    },
+    "wave8_ute_cross_spelling_duplicate_audit": {
+      "exact_source_labels": [
+        "Ute Indians"
+      ],
+      "alternate_side_labels": [
+        "capote ute",
+        "moache ute",
+        "mouache ute",
+        "muache ute",
+        "pahvant ute",
+        "sanpete ute",
+        "tabeguache ute",
+        "taviwac ute",
+        "uintah ute",
+        "uncompahgre ute",
+        "unitah ute",
+        "ute",
+        "ute indian",
+        "utes",
+        "weeminuche ute",
+        "white river ute",
+        "white river utes",
+        "yampa ute"
+      ],
+      "same_event_candidate_pairs": [
+        [
+          "hced-Red Canyon1879-1",
+          "hced-White River1879-1"
+        ]
+      ],
+      "iwbd_matching_candidate_ids": [],
+      "existing_release_matching_event_ids": []
+    },
+    "wave8_ute_iwbd_duplicate_dispositions": [],
+    "wave8_ute_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Poncha Pass1855-1",
+        "aliases": [
+          "battle near poncha pass",
+          "battle of poncha pass",
+          "poncha pass"
+        ],
+        "years": [
+          1855
+        ]
+      },
+      {
+        "audit_id": "hced-Red Canyon1879-1",
+        "aliases": [
+          "battle of milk creek",
+          "milk creek",
+          "milk creek siege",
+          "opening action at milk creek",
+          "red canyon",
+          "thornburgh ambush",
+          "thornburgh ambush at milk creek",
+          "thornburgh disaster",
+          "white river"
+        ],
+        "years": [
+          1879
+        ]
+      },
+      {
+        "audit_id": "hced-Spanish Fork Canon1863-1",
+        "aliases": [
+          "battle of spanish fork canyon",
+          "spanish fork canon",
+          "spanish fork canyon",
+          "spanish fork canyon actions"
+        ],
+        "years": [
+          1863
+        ]
+      },
+      {
+        "audit_id": "hced-White River1879-1",
+        "aliases": [
+          "battle of milk creek",
+          "milk creek",
+          "milk creek siege",
+          "opening action at milk creek",
+          "red canyon",
+          "thornburgh ambush",
+          "thornburgh ambush at milk creek",
+          "thornburgh disaster",
+          "white river"
+        ],
+        "years": [
+          1879
+        ]
+      }
+    ],
+    "wave8_ute_existing_release_duplicate_dispositions": [],
+    "wave8_ute_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:hced-Adobe Walls1864-1",
+        "raw_row_sha256": "957ce353c339375d96c44d93768d5d52f58efd863c9a2163cd230a894faf548d",
+        "disposition": "separate_comanche_lane_hold",
+        "owner_module": "wave8_comanche",
+        "boundary": "Ute scouts in Carson's coalition do not make the opposing Comanche row a Ute event",
+        "evidence_refs": []
+      },
+      {
+        "disposition_id": "cross_lane:hced-Bear River1863-1",
+        "raw_row_sha256": "9f87f9ea40ce0222c7b8923c0e944645717bbaebdb8ac8f2c466ac0714ce7ffc",
+        "disposition": "separate_shoshone_event",
+        "owner_module": "not_wave8_ute",
+        "boundary": "Utah geography and spelling are not a Ute actor identity; HCED names Shoshone",
+        "evidence_refs": []
+      },
+      {
+        "disposition_id": "cross_lane:hced-Cieneguilla1854-1",
+        "raw_row_sha256": "6277589d940190b3e8f6e1d5c13e49b75c5a22f8d999860b6e8b6fb97e5daac3",
+        "disposition": "existing_north_america_lane_hold",
+        "owner_module": "wave8_north_america",
+        "boundary": "accounts vary on Jicarilla and Ute participation, so no Ute force is inferred",
+        "evidence_refs": []
+      },
+      {
+        "disposition_id": "cross_lane:hced-Spanish Armada1588-1",
+        "raw_row_sha256": "b98b8a606d1bf7067f59d7e5fc9a1ea5f7626fca2e6a3cf4328f8c16fac9027a",
+        "disposition": "participant_token_false_positive",
+        "owner_module": "not_wave8_ute",
+        "boundary": "the word Ute appears only in noisy participants metadata; the sides are England and Spain",
+        "evidence_refs": []
+      },
+      {
+        "disposition_id": "exact:hced-Poncha Pass1855-1",
+        "disposition": "promotion_contract",
+        "owner_module": "wave8_ute",
+        "raw_row_sha256": "e69abdca457c25fd6f53d53246d9ee5e022ad11198a4c88bebf69b0de4ecd56f"
+      },
+      {
+        "disposition_id": "exact:hced-Red Canyon1879-1",
+        "disposition": "terminal_exclusion",
+        "owner_module": "wave8_ute",
+        "raw_row_sha256": "822ff39ebc665f8a41b2ce31135dfeff869ed21084be151162cdc235ebe7ddae"
+      },
+      {
+        "disposition_id": "exact:hced-Spanish Fork Canon1863-1",
+        "disposition": "hold",
+        "owner_module": "wave8_ute",
+        "raw_row_sha256": "32ac76f122bb911d8d037842e95f26e883bff06c28e8004b91d3e4c57f47b78e"
+      },
+      {
+        "disposition_id": "exact:hced-White River1879-1",
+        "disposition": "promotion_contract",
+        "owner_module": "wave8_ute",
+        "raw_row_sha256": "068abe411a8e81640c22e348c631ebab434968445d2ba747df47f2f345e4d8aa"
+      },
+      {
+        "disposition_id": "related_hced:hced-Red Canyon1879-1",
+        "raw_row_sha256": "822ff39ebc665f8a41b2ce31135dfeff869ed21084be151162cdc235ebe7ddae",
+        "related_hced_candidate_id": "hced-White River1879-1",
+        "related_raw_row_sha256": "068abe411a8e81640c22e348c631ebab434968445d2ba747df47f2f345e4d8aa",
+        "disposition": "opposite_result_duplicate",
+        "relationship": "same_thornburgh_milk_creek_action_and_campaign_scope",
+        "owner_module": "wave8_ute",
+        "canonical_owner_candidate_id": "hced-White River1879-1",
+        "reason": "The Red Canyon U.S.-win row cannot be separated into a second rated event from the White River Ute-win row without double-rating Milk Creek.",
+        "evidence_refs": [
+          "wave8_ute_army_csi_campaign_1879",
+          "wave8_ute_army_history_74",
+          "wave8_ute_clodfelter_warfare"
+        ]
+      }
+    ],
+    "wave8_ute_outcome_overrides": [],
+    "wave8_ute_entities_added": 4,
+    "wave8_ute_sources_added": 13,
+    "hced_label_pass_input_rows": 5705,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -11889,7 +12328,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 895,
+      "reserved_candidate_contract": 899,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -11901,7 +12340,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2198,
+      "no_unique_time_valid_label_match": 2194,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

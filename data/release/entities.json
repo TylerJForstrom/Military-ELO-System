@@ -9543,6 +9543,22 @@
     "start_year": 1854
   },
   {
+    "id": "blancos_moache_ute_fighting_force_poncha_1855",
+    "name": "Chief Blanco's Moache Ute fighting force near Poncha Pass (1855)",
+    "kind": "event_bounded_band_fighting_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded fighters identified in the reviewed campaign account with Chief Blanco and the Moache band; families who escaped the camp are expressly not participants. This identity exists only for the named event and year. No rating is inherited by the Ute people, any ethnic label or historical band outside this action, noncombatants, a modern tribal government, the United States, the U.S. Army, or another formation.",
+    "source_ids": [
+      "wave8_ute_colorado_ute_unit",
+      "wave8_ute_nps_fort_union_study",
+      "wave8_ute_southern_ute_history"
+    ]
+  },
+  {
     "id": "ethiopian_empire",
     "name": "Ethiopian Empire",
     "kind": "empire",
@@ -9559,6 +9575,21 @@
       "cliopatria_polities",
       "britannica_ethiopia_history",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "fauntleroy_poncha_pass_column_1855",
+    "name": "Fauntleroy's regular-volunteer column near Poncha Pass (1855)",
+    "kind": "event_bounded_military_column",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force under Lt. Col. Thomas T. Fauntleroy, comprising the regular and New Mexico volunteer companies used in this action. This identity exists only for the named event and year. No rating is inherited by the Ute people, any ethnic label or historical band outside this action, noncombatants, a modern tribal government, the United States, the U.S. Army, or another formation.",
+    "source_ids": [
+      "wave8_ute_army_historical_foundation_almanac",
+      "wave8_ute_nps_fort_union_study"
     ]
   },
   {
@@ -10817,6 +10848,38 @@
     "source_ids": [
       "london_gazette_centane_1878",
       "mnquma_centane_memorial"
+    ]
+  },
+  {
+    "id": "chief_jack_white_river_ute_force_milk_creek_1879",
+    "name": "Chief Jack's White River Ute fighting force at Milk Creek (1879)",
+    "kind": "event_bounded_band_fighting_force",
+    "start_year": 1879,
+    "end_year": 1879,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded White River Ute fighters under Chief Jack in the opening Thornburgh action; no rating is assigned to agency residents. This identity exists only for the named event and year. No rating is inherited by the Ute people, any ethnic label or historical band outside this action, noncombatants, a modern tribal government, the United States, the U.S. Army, or another formation.",
+    "source_ids": [
+      "wave8_ute_army_csi_campaign_1879",
+      "wave8_ute_oupress_last_war_trail",
+      "wave8_ute_uofutah_troubled_trails"
+    ]
+  },
+  {
+    "id": "thornburgh_5th_cavalry_expedition_milk_creek_1879",
+    "name": "Thornburgh's 5th Cavalry expedition at Milk Creek (1879)",
+    "kind": "event_bounded_cavalry_expedition",
+    "start_year": 1879,
+    "end_year": 1879,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded expedition under Maj. Thomas T. Thornburgh, including the 5th Cavalry companies engaged and forced back to the wagon defense. This identity exists only for the named event and year. No rating is inherited by the Ute people, any ethnic label or historical band outside this action, noncombatants, a modern tribal government, the United States, the U.S. Army, or another formation.",
+    "source_ids": [
+      "wave8_ute_army_csi_campaign_1879",
+      "wave8_ute_army_history_74",
+      "wave8_ute_nps_fort_da_russell_nhl"
     ]
   },
   {

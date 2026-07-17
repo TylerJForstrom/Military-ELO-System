@@ -15441,6 +15441,191 @@
     ]
   },
   {
+    "id": "wave8_ute_army_csi_campaign_1879",
+    "title": "The Ute Campaign of 1879: A Study in the Use of the Military Instrument",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/the-ute-campaign-1879.pdf",
+    "publisher": "U.S. Army Combat Studies Institute Press",
+    "license": "Citation and link only",
+    "source_type": "federal_military_campaign_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "santala_ute_campaign_1879",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_army_historical_foundation_almanac",
+    "title": "Army Almanac 2025, Volume 30, Issue 2",
+    "url": "https://armyhistory.org/army-almanac-2025-volume-30-issue-2/",
+    "publisher": "The Army Historical Foundation",
+    "license": "Citation and link only",
+    "source_type": "institutional_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "army_historical_foundation_almanac_2025",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_army_history_74",
+    "title": "Army History, No. 74",
+    "url": "https://ky.ng.mil/Portals/59/Army%20History%20Magazine/Issues%20by%20PDF/Army_History_Magazine_74.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "federal_peer_reviewed_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "army_history_magazine_74",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_clodfelter_warfare",
+    "title": "Warfare and Armed Conflicts: A Statistical Encyclopedia",
+    "url": "https://books.google.com/books?id=8urEDgAAQBAJ&pg=PA266&vq=Poncha",
+    "publisher": "McFarland / Google Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_work",
+    "accessed": "2026-07-16",
+    "source_family_id": "clodfelter_warfare_armed_conflicts",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_colorado_ute_unit",
+    "title": "Ute People: Colorado's Original Inhabitants",
+    "url": "https://ccia.colorado.gov/sites/ccia/files/documents/Ute%20Unit%201%20Pages.pdf",
+    "publisher": "Colorado Commission of Indian Affairs",
+    "license": "Citation and link only",
+    "source_type": "state_government_tribal_history_curriculum",
+    "accessed": "2026-07-16",
+    "source_family_id": "colorado_commission_indian_affairs_ute_unit",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ute_nps_fort_da_russell_nhl",
+    "title": "Fort D. A. Russell National Historic Landmark documentation",
+    "url": "https://npgallery.nps.gov/NRHP/GetAsset/NHLS/69000191_text",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_historic_landmark_documentation",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_fort_da_russell_nhl",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ute_nps_fort_union_study",
+    "title": "Fort Union National Monument Historic Resource Study, Chapter 3",
+    "url": "https://npshistory.com/publications/foun/hrs/chap3.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_historic_resource_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_fort_union_historic_resource_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_nps_second_california_cavalry",
+    "title": "2nd Regiment, California Cavalry",
+    "url": "https://www.nps.gov/civilwar/search-battle-units-detail.htm?battleUnitCode=UCA0002RC",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_military_unit_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_second_california_cavalry",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_official_records_1863",
+    "title": "The War of the Rebellion: Official Records, Series I, Volume L, Part I",
+    "url": "https://archive.org/details/cu31924077730129",
+    "publisher": "U.S. War Department / Cornell University Library",
+    "license": "Citation and link only",
+    "source_type": "digitized_government_primary_documents",
+    "accessed": "2026-07-16",
+    "source_family_id": "official_records_pacific_coast_1863",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_ute_oupress_last_war_trail",
+    "title": "The Last War Trail: The Utes and the Settlement of Colorado",
+    "url": "https://www.oupress.com/9780806110431/the-last-war-trail/",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_with_ute_oral_account",
+    "accessed": "2026-07-16",
+    "source_family_id": "jefferson_last_war_trail",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ute_southern_ute_history",
+    "title": "Southern Ute Indian Tribe history",
+    "url": "https://www.southernute-nsn.gov/history/",
+    "publisher": "Southern Ute Indian Tribe",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "southern_ute_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ute_uofutah_troubled_trails",
+    "title": "Troubled Trails: The Meeker Affair and the Expulsion of Utes from Colorado",
+    "url": "https://uofupress.com/books/troubled-trails/",
+    "publisher": "University of Utah Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "simmons_troubled_trails",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_ute_usu_mccarthy_thesis",
+    "title": "Civil War Military Operations in Utah and Nevada, 1862-1865",
+    "url": "https://digitalcommons.usu.edu/context/etd/article/4122/viewcontent/1975_McCarthy_Max.pdf",
+    "publisher": "Utah State University",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "mccarthy_utah_nevada_operations_1975",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_uzbekistan_baburnama_beveridge",
     "title": "The Bābur-nāma in English (Annette Beveridge translation)",
     "url": "https://uzbekliterature.uz/sites/default/files/baburnama_2.pdf",

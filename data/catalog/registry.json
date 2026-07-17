@@ -2852,6 +2852,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "blancos_moache_ute_fighting_force_poncha_1855",
+      "name": "Chief Blanco's Moache Ute fighting force near Poncha Pass (1855)",
+      "kind": "event_bounded_band_fighting_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
+      "id": "chief_jack_white_river_ute_force_milk_creek_1879",
+      "name": "Chief Jack's White River Ute fighting force at Milk Creek (1879)",
+      "kind": "event_bounded_band_fighting_force",
+      "start_year": 1879,
+      "end_year": 1879,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "clio_q581741_911_13f92299",
       "name": "Chimor",
       "kind": "polity",
@@ -5843,6 +5863,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Levantine coast"
+    },
+    {
+      "id": "fauntleroy_poncha_pass_column_1855",
+      "name": "Fauntleroy's regular-volunteer column near Poncha Pass (1855)",
+      "kind": "event_bounded_military_column",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q2625228_1814_6fff5b44",
@@ -21107,6 +21137,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "thornburgh_5th_cavalry_expedition_milk_creek_1879",
+      "name": "Thornburgh's 5th Cavalry expedition at Milk Creek (1879)",
+      "kind": "event_bounded_cavalry_expedition",
+      "start_year": 1879,
+      "end_year": 1879,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
+    },
+    {
       "id": "thoros_ii_rubenid_cilician_army_mamistra_1152",
       "name": "Thoros II's Rubenid Cilician army at Mamistra (1152)",
       "kind": "event_bounded_siege_relief_force",
@@ -23284,11 +23324,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2191,
-    "rated_entities": 828,
-    "rated_events": 5242,
+    "registry_polities": 2195,
+    "rated_entities": 832,
+    "rated_events": 5244,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18152,
+    "unresolved_event_candidates": 18150,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23364,6 +23404,7 @@
     "candidate_keyed_wave8_punjabi_sikhs_hced_events": 2,
     "candidate_keyed_wave8_modoc_hced_events": 3,
     "candidate_keyed_wave8_sauk_hced_events": 3,
+    "candidate_keyed_wave8_ute_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23374,21 +23415,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4978,
-      "candidate_keyed_reviewed_contracts": 668,
+      "hced_candidate_bindings": 4980,
+      "candidate_keyed_reviewed_contracts": 670,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4885,
-      "location_provenance_objects": 4934,
-      "point_fields_withheld_by_quarantine": 244,
+      "modern_location_country_assertions": 4887,
+      "location_provenance_objects": 4936,
+      "point_fields_withheld_by_quarantine": 246,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 292,
-      "point_quarantine_candidate_manifest_sha256": "0b0675cc67c15fb352ba172ed68fba3b142167807c4e15b92824c2eaddb71aa0",
+      "unique_events_with_any_quarantined_field": 294,
+      "point_quarantine_candidate_manifest_sha256": "251e06cec1c44f4c43668f6c1b43f94dc0c57b7672f102c7d15ba275e153c20a",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "0b67247dbfb36b6b84e2ddd1b0f825e542b3a3aec55573f4da4180bfceacaa48",
+      "quarantine_policy_sha256": "cac63cc79a8626874f7977f332b97f4edcadeaa1bde856fba722314fb162fcf9",
       "assertion_status": {
-        "unreviewed_source_assertion": 4934
+        "unreviewed_source_assertion": 4936
       },
       "verified_location_assertions": {
         "availability": "not_available",
