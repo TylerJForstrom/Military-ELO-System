@@ -5791,6 +5791,24 @@
     "start_year": 1549
   },
   {
+    "id": "western_rebellion_insurgent_army_1549",
+    "name": "Western Rebellion insurgent army (1549)",
+    "kind": "conflict_bounded_rebel_force",
+    "start_year": 1549,
+    "end_year": 1549,
+    "region": "Devon and Cornwall",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the armed Devonian and Cornish insurgent force in the Western or Prayer Book Rebellion from its 1549 mobilization through the final field action at Sampford Courtenay. It is not a rating for Catholics, Cornwall, Devon, later religious resistance, or a modern community, and it inherits no Elo from any of them.",
+    "source_ids": [
+      "wave8_catholic_rebels_battlefields_clyst",
+      "wave8_catholic_rebels_battlefields_sampford",
+      "wave8_catholic_rebels_hodgkins_thesis",
+      "wave8_catholic_rebels_rose_troup",
+      "wave8_catholic_rebels_stoyle_western_rising"
+    ]
+  },
+  {
     "id": "hospitaller_tripoli_garrison_1551",
     "name": "Hospitaller garrison of Tripoli (1551)",
     "kind": "event_bounded_hospitaller_outpost_garrison",
@@ -6219,6 +6237,38 @@
     "source_ids": [
       "wave8_french_religious_musee_eight_wars",
       "wave8_french_religious_wood_kings_army"
+    ]
+  },
+  {
+    "id": "adam_gordon_marian_force_craibstone_1571",
+    "name": "Adam Gordon's Marian force at Craibstone (1571)",
+    "kind": "engagement_bounded_civil_war_force",
+    "start_year": 1571,
+    "end_year": 1571,
+    "region": "Aberdeen and north-eastern Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Adam Gordon of Auchindoun's Gordon and allied force at Craibstone on 20 November 1571 while fighting in Mary, Queen of Scots' cause. It is not a generic Gordon clan, Catholic, Marian, or Scottish polity and carries no rating beyond this reviewed action.",
+    "source_ids": [
+      "wave8_catholic_rebels_hes_craibstone",
+      "wave8_catholic_rebels_nls_gazetteer",
+      "wave8_catholic_rebels_scottish_state_papers"
+    ]
+  },
+  {
+    "id": "forbes_regent_force_craibstone_1571",
+    "name": "Forbes and Regent force at Craibstone (1571)",
+    "kind": "engagement_bounded_civil_war_force",
+    "start_year": 1571,
+    "end_year": 1571,
+    "region": "Aberdeen and north-eastern Scotland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Forbes force and attached Regent soldiers that opposed Adam Gordon at Craibstone on 20 November 1571. It is not the whole Kingdom of Scotland, a generic Forbes clan identity, or every supporter of James VI, and it inherits no national Elo.",
+    "source_ids": [
+      "wave8_catholic_rebels_hes_craibstone",
+      "wave8_catholic_rebels_nls_gazetteer",
+      "wave8_catholic_rebels_scottish_state_papers"
     ]
   },
   {

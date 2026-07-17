@@ -504,6 +504,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "adam_gordon_marian_force_craibstone_1571",
+      "name": "Adam Gordon's Marian force at Craibstone (1571)",
+      "kind": "engagement_bounded_civil_war_force",
+      "start_year": 1571,
+      "end_year": 1571,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aberdeen and north-eastern Scotland"
+    },
+    {
       "id": "aemilius_atilius_roman_consular_armies_telamon_225_bce",
       "name": "Aemilius Papus-Atilius Regulus Roman consular armies at Telamon (225 BCE)",
       "kind": "event_bounded_joint_command",
@@ -6747,6 +6757,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Mons-en-Pévèle"
+    },
+    {
+      "id": "forbes_regent_force_craibstone_1571",
+      "name": "Forbes and Regent force at Craibstone (1571)",
+      "kind": "engagement_bounded_civil_war_force",
+      "start_year": 1571,
+      "end_year": 1571,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Aberdeen and north-eastern Scotland"
     },
     {
       "id": "balsa_ii_forces_savra_1385",
@@ -23918,6 +23938,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "western_rebellion_insurgent_army_1549",
+      "name": "Western Rebellion insurgent army (1549)",
+      "kind": "conflict_bounded_rebel_force",
+      "start_year": 1549,
+      "end_year": 1549,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Devon and Cornwall"
+    },
+    {
       "id": "clio_it_western_roman_emp_395_b38604c0",
       "name": "Western Roman Empire",
       "kind": "empire",
@@ -24818,11 +24848,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2345,
-    "rated_entities": 988,
-    "rated_events": 5338,
+    "registry_polities": 2348,
+    "rated_entities": 991,
+    "rated_events": 5341,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18056,
+    "unresolved_event_candidates": 18053,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24920,6 +24950,7 @@
     "candidate_keyed_wave8_oman_hced_events": 2,
     "candidate_keyed_wave8_irish_civil_war_hced_events": 2,
     "candidate_keyed_wave8_bannock_sheepeater_hced_events": 2,
+    "candidate_keyed_wave8_catholic_rebels_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24930,21 +24961,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5074,
-      "candidate_keyed_reviewed_contracts": 764,
+      "hced_candidate_bindings": 5077,
+      "candidate_keyed_reviewed_contracts": 767,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4979,
-      "location_provenance_objects": 5028,
-      "point_fields_withheld_by_quarantine": 340,
+      "modern_location_country_assertions": 4982,
+      "location_provenance_objects": 5031,
+      "point_fields_withheld_by_quarantine": 343,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 388,
-      "point_quarantine_candidate_manifest_sha256": "ba3c7f9aa91471414c2d05fb267e16000ee3a09a63defbaaf5ca9d04fe48c211",
+      "unique_events_with_any_quarantined_field": 391,
+      "point_quarantine_candidate_manifest_sha256": "3ccf66a299360a529044a9d4780db0b575fe26e0c04d58f14c44dba06b749d7c",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "a127e1f6a8583f49e089dc38d58e426e72ad0aee0701450bdf0153ce2fab370e",
+      "quarantine_policy_sha256": "6cc6776eb4e6b68270e701b755e553d8c6ab27a471664a118bae51eb0ee6f1c7",
       "assertion_status": {
-        "unreviewed_source_assertion": 5028
+        "unreviewed_source_assertion": 5031
       },
       "verified_location_assertions": {
         "availability": "not_available",

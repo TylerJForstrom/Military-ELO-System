@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 995,
-    "events": 5338,
-    "sources": 1413,
-    "registry_polities": 2345
+    "entities": 998,
+    "events": 5341,
+    "sources": 1421,
+    "registry_polities": 2348
   },
   "year_range": {
     "start": -1274,
@@ -168,6 +168,7 @@
     "accepted_wave8_oman_hced_events": 2,
     "accepted_wave8_irish_civil_war_hced_events": 2,
     "accepted_wave8_bannock_sheepeater_hced_events": 2,
+    "accepted_wave8_catholic_rebels_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19697,7 +19698,103 @@
     "wave8_bannock_sheepeater_country_quarantine_additions": [],
     "wave8_bannock_sheepeater_entities_added": 3,
     "wave8_bannock_sheepeater_sources_added": 9,
-    "hced_label_pass_input_rows": 5568,
+    "wave8_catholic_rebels_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 3,
+      "new_sources": 8,
+      "newly_rated_events": 3,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 0
+    },
+    "wave8_catholic_rebels_cohort_counts": {
+      "marian_civil_war_catholic_rebels_1571": 1,
+      "western_rebellion_catholic_rebels_1549": 2
+    },
+    "wave8_catholic_rebels_audit_signature": "a7bd59959eb77cf5f21a4e48cde24cbad599f7b645ebeb73f2e3a991edbd2af1",
+    "wave8_catholic_rebels_final_audit_signature": "a7bd59959eb77cf5f21a4e48cde24cbad599f7b645ebeb73f2e3a991edbd2af1",
+    "wave8_catholic_rebels_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 0,
+      "reviewed_hced_rows": 3,
+      "exact_label_rows": 3
+    },
+    "wave8_catholic_rebels_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_catholic_rebels_candidate_ids": [
+      "hced-Craibstane1571-1",
+      "hced-Sampford Courtenay1549-1",
+      "hced-St Marys Clyst1549-1"
+    ],
+    "wave8_catholic_rebels_holds": [],
+    "wave8_catholic_rebels_exact_label_funnel_audit": {
+      "catholic rebels": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "d3c9642b88174e8a0759b85351f1eeb192b648507662a65380963783f060796f",
+        "events_touched": 3,
+        "label": "catholic rebels",
+        "rated_counterpart_entities": 2,
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      }
+    },
+    "wave8_catholic_rebels_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Craibstane1571-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern United Kingdom jurisdiction, but their grid/site records are not bound into the release's closed HCED location-provenance contract. Retain the source-transcribed country and withhold the unexplained HCED point.",
+        "evidence_refs": [
+          "wave8_catholic_rebels_hes_craibstone",
+          "wave8_catholic_rebels_nls_gazetteer",
+          "wave8_catholic_rebels_scottish_state_papers"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sampford Courtenay1549-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern United Kingdom jurisdiction, but their grid/site records are not bound into the release's closed HCED location-provenance contract. Retain the source-transcribed country and withhold the unexplained HCED point.",
+        "evidence_refs": [
+          "wave8_catholic_rebels_battlefields_sampford",
+          "wave8_catholic_rebels_hodgkins_thesis",
+          "wave8_catholic_rebels_rose_troup",
+          "wave8_catholic_rebels_stoyle_western_rising"
+        ]
+      },
+      {
+        "candidate_id": "hced-St Marys Clyst1549-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern United Kingdom jurisdiction, but their grid/site records are not bound into the release's closed HCED location-provenance contract. Retain the source-transcribed country and withhold the unexplained HCED point.",
+        "evidence_refs": [
+          "wave8_catholic_rebels_battlefields_clyst",
+          "wave8_catholic_rebels_hodgkins_thesis",
+          "wave8_catholic_rebels_rose_troup",
+          "wave8_catholic_rebels_stoyle_western_rising"
+        ]
+      }
+    ],
+    "wave8_catholic_rebels_point_quarantine_additions": [
+      "hced-Craibstane1571-1",
+      "hced-Sampford Courtenay1549-1",
+      "hced-St Marys Clyst1549-1"
+    ],
+    "wave8_catholic_rebels_country_quarantine_additions": [],
+    "wave8_catholic_rebels_entities_added": 3,
+    "wave8_catholic_rebels_sources_added": 8,
+    "hced_label_pass_input_rows": 5565,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19710,7 +19807,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1042,
+      "reserved_candidate_contract": 1045,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19722,7 +19819,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2068,
+      "no_unique_time_valid_label_match": 2065,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

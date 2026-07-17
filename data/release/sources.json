@@ -6865,6 +6865,117 @@
     ]
   },
   {
+    "id": "wave8_catholic_rebels_battlefields_clyst",
+    "title": "Battle of Clyst St Mary, 4 August 1549",
+    "url": "https://www.battlefieldstrust.com/resource-centre/early-modern/battleview.asp?BattleFieldId=108",
+    "publisher": "Battlefields Trust",
+    "license": "Citation and link only",
+    "source_type": "expert_battlefield_record",
+    "accessed": "2026-07-17",
+    "source_family_id": "battlefields_trust_western_rebellion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_battlefields_sampford",
+    "title": "Battle of Sampford Courtenay, 18 August 1549",
+    "url": "https://www.battlefieldstrust.com/resource-centre/battleview.asp?BattleFieldId=110",
+    "publisher": "Battlefields Trust",
+    "license": "Citation and link only",
+    "source_type": "expert_battlefield_record",
+    "accessed": "2026-07-17",
+    "source_family_id": "battlefields_trust_western_rebellion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_hes_craibstone",
+    "title": "Aberdeen, Crabe Stone",
+    "url": "https://www.trove.scot/place/20119",
+    "publisher": "Historic Environment Scotland / trove.scot",
+    "license": "Citation and link only",
+    "source_type": "national_historic_environment_record",
+    "accessed": "2026-07-17",
+    "source_family_id": "historic_environment_scotland_craibstone",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_hodgkins_thesis",
+    "title": "Rebellion and Warfare in the Tudor State",
+    "url": "https://etheses.whiterose.ac.uk/id/eprint/6439/1/Alexander%20Hodgkins%20eThesis.pdf",
+    "publisher": "University of Leeds / White Rose eTheses",
+    "license": "Citation and link only",
+    "source_type": "doctoral_historical_thesis",
+    "accessed": "2026-07-17",
+    "source_family_id": "hodgkins_tudor_rebellion_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_nls_gazetteer",
+    "title": "Ordnance Gazetteer of Scotland: Aberdeen and Craibstone",
+    "url": "https://deriv.nls.uk/dcn23/9736/97368777.23.pdf",
+    "publisher": "National Library of Scotland",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_gazetteer",
+    "accessed": "2026-07-17",
+    "source_family_id": "groome_ordnance_gazetteer_scotland",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_rose_troup",
+    "title": "The Western Rebellion of 1549",
+    "url": "https://archive.org/details/westernrebellion00rose",
+    "publisher": "Frances Rose-Troup / Internet Archive",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_monograph",
+    "accessed": "2026-07-17",
+    "source_family_id": "rose_troup_western_rebellion_1913",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_scottish_state_papers",
+    "title": "Calendar of the State Papers Relating to Scotland, 1571-1574",
+    "url": "https://books.google.com/books/about/Calendar_of_the_State_Papers_Relating_to.html?id=kW79vwEACAAJ",
+    "publisher": "Great Britain Public Record Office / Google Books",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_source_calendar",
+    "accessed": "2026-07-17",
+    "source_family_id": "calendar_state_papers_scotland_1571_1574",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_catholic_rebels_stoyle_western_rising",
+    "title": "The Western Rising of 1549",
+    "url": "https://books.google.com/books/about/The_Western_Rising_of_1549.html?id=XvR-EAAAQBAJ",
+    "publisher": "Mark Stoyle / Yale University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_campaign_monograph",
+    "accessed": "2026-07-17",
+    "source_family_id": "stoyle_western_rising_1549",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_chadian_rebels_air_university",
     "title": "Prolonged Wars: A Post-Nuclear Challenge",
     "url": "https://www.airuniversity.af.edu/Portals/10/AUPress/Books/B_0059_MAGYAR_PROLONGED_WARS.pdf",

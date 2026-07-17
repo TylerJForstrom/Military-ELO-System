@@ -1971,6 +1971,26 @@ from .wave8_bannock_sheepeater import (
     wave8_bannock_sheepeater_cohort_counts,
     wave8_bannock_sheepeater_counts,
 )
+from .wave8_catholic_rebels import (
+    WAVE8_CATHOLIC_REBELS_CONTRACT_IDS,
+    WAVE8_CATHOLIC_REBELS_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_CATHOLIC_REBELS_ENTITIES,
+    WAVE8_CATHOLIC_REBELS_FINAL_AUDIT_SIGNATURE,
+    WAVE8_CATHOLIC_REBELS_FUNNEL_AUDIT,
+    WAVE8_CATHOLIC_REBELS_HOLDS,
+    WAVE8_CATHOLIC_REBELS_LOCATION_QUARANTINE_REASONS,
+    WAVE8_CATHOLIC_REBELS_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_CATHOLIC_REBELS_RESERVED_IDS,
+    WAVE8_CATHOLIC_REBELS_SOURCES,
+    install_wave8_catholic_rebels_entities,
+    install_wave8_catholic_rebels_sources,
+    promote_wave8_catholic_rebels_contracts,
+    validate_wave8_catholic_rebels_integration_dispositions,
+    validate_wave8_catholic_rebels_queue_contracts,
+    wave8_catholic_rebels_audit_signature,
+    wave8_catholic_rebels_cohort_counts,
+    wave8_catholic_rebels_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -2083,6 +2103,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_OMAN_RESERVED_IDS
     | WAVE8_IRISH_CIVIL_WAR_RESERVED_IDS
     | WAVE8_BANNOCK_SHEEPEATER_RESERVED_IDS
+    | WAVE8_CATHOLIC_REBELS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2504,7 +2525,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 340
+        len(HCED_POINT_QUARANTINE_IDS) != 343
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2807,6 +2828,9 @@ def build_expanded_release(
     )
     wave8_bannock_sheepeater_queue_validation = (
         validate_wave8_bannock_sheepeater_queue_contracts(hced)
+    )
+    wave8_catholic_rebels_queue_validation = (
+        validate_wave8_catholic_rebels_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -3206,6 +3230,7 @@ def build_expanded_release(
     install_wave8_sindh_entities(release_entities)
     install_wave8_oman_entities(release_entities)
     install_wave8_bannock_sheepeater_entities(release_entities)
+    install_wave8_catholic_rebels_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4759,6 +4784,15 @@ def build_expanded_release(
         release_entities,
         wave8_bannock_sheepeater_existing_events,
     )
+    wave8_catholic_rebels_existing_events = [
+        *wave8_bannock_sheepeater_existing_events,
+        *wave8_bannock_sheepeater_events,
+    ]
+    wave8_catholic_rebels_events = promote_wave8_catholic_rebels_contracts(
+        hced,
+        release_entities,
+        wave8_catholic_rebels_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4853,6 +4887,7 @@ def build_expanded_release(
         *wave8_oman_events,
         *wave8_irish_civil_war_events,
         *wave8_bannock_sheepeater_events,
+        *wave8_catholic_rebels_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -5124,6 +5159,7 @@ def build_expanded_release(
         *wave8_oman_events,
         *wave8_irish_civil_war_events,
         *wave8_bannock_sheepeater_events,
+        *wave8_catholic_rebels_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -5677,6 +5713,16 @@ def build_expanded_release(
             ],
         )
     )
+    wave8_catholic_rebels_integration_validation = (
+        validate_wave8_catholic_rebels_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_catholic_rebels_existing_events,
+                *wave8_catholic_rebels_events,
+            ],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5928,6 +5974,7 @@ def build_expanded_release(
     install_wave8_oman_sources(sources_by_id)
     install_wave8_irish_civil_war_sources(sources_by_id)
     install_wave8_bannock_sheepeater_sources(sources_by_id)
+    install_wave8_catholic_rebels_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -6027,6 +6074,7 @@ def build_expanded_release(
         *wave8_oman_events,
         *wave8_irish_civil_war_events,
         *wave8_bannock_sheepeater_events,
+        *wave8_catholic_rebels_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -6126,6 +6174,7 @@ def build_expanded_release(
         *wave8_oman_events,
         *wave8_irish_civil_war_events,
         *wave8_bannock_sheepeater_events,
+        *wave8_catholic_rebels_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -6224,6 +6273,7 @@ def build_expanded_release(
             | WAVE8_OMAN_CONTRACT_IDS
             | WAVE8_IRISH_CIVIL_WAR_CONTRACT_IDS
             | WAVE8_BANNOCK_SHEEPEATER_CONTRACT_IDS
+            | WAVE8_CATHOLIC_REBELS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -6380,6 +6430,10 @@ def build_expanded_release(
         *map(
             lambda entity: str(entity["id"]),
             WAVE8_BANNOCK_SHEEPEATER_ENTITIES,
+        ),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_CATHOLIC_REBELS_ENTITIES,
         ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
@@ -6648,6 +6702,7 @@ def build_expanded_release(
         - len(wave8_oman_events)
         - len(wave8_irish_civil_war_events)
         - len(wave8_bannock_sheepeater_events)
+        - len(wave8_catholic_rebels_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -6855,6 +6910,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_bannock_sheepeater_hced_events": len(
             wave8_bannock_sheepeater_events
+        ),
+        "candidate_keyed_wave8_catholic_rebels_hced_events": len(
+            wave8_catholic_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -7205,6 +7263,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_bannock_sheepeater_hced_events": len(
                 wave8_bannock_sheepeater_events
+            ),
+            "accepted_wave8_catholic_rebels_hced_events": len(
+                wave8_catholic_rebels_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -11385,6 +11446,52 @@ def build_expanded_release(
             ),
             "wave8_bannock_sheepeater_sources_added": len(
                 WAVE8_BANNOCK_SHEEPEATER_SOURCES
+            ),
+            "wave8_catholic_rebels_counts": wave8_catholic_rebels_counts(),
+            "wave8_catholic_rebels_cohort_counts": (
+                wave8_catholic_rebels_cohort_counts()
+            ),
+            "wave8_catholic_rebels_audit_signature": (
+                wave8_catholic_rebels_audit_signature()
+            ),
+            "wave8_catholic_rebels_final_audit_signature": (
+                WAVE8_CATHOLIC_REBELS_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_catholic_rebels_queue_validation": (
+                wave8_catholic_rebels_queue_validation
+            ),
+            "wave8_catholic_rebels_integration_validation": (
+                wave8_catholic_rebels_integration_validation
+            ),
+            "wave8_catholic_rebels_candidate_ids": sorted(
+                WAVE8_CATHOLIC_REBELS_CONTRACT_IDS
+            ),
+            "wave8_catholic_rebels_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CATHOLIC_REBELS_HOLDS.items()
+                )
+            ],
+            "wave8_catholic_rebels_exact_label_funnel_audit": (
+                WAVE8_CATHOLIC_REBELS_FUNNEL_AUDIT
+            ),
+            "wave8_catholic_rebels_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CATHOLIC_REBELS_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_catholic_rebels_point_quarantine_additions": sorted(
+                WAVE8_CATHOLIC_REBELS_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_catholic_rebels_country_quarantine_additions": sorted(
+                WAVE8_CATHOLIC_REBELS_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_catholic_rebels_entities_added": len(
+                WAVE8_CATHOLIC_REBELS_ENTITIES
+            ),
+            "wave8_catholic_rebels_sources_added": len(
+                WAVE8_CATHOLIC_REBELS_SOURCES
             ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
