@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 974,
-    "events": 5310,
-    "sources": 1334,
-    "registry_polities": 2330
+    "entities": 980,
+    "events": 5314,
+    "sources": 1344,
+    "registry_polities": 2336
   },
   "year_range": {
     "start": -1274,
@@ -157,6 +157,7 @@
     "accepted_wave8_haiti_regimes_hced_events": 4,
     "accepted_wave8_zulu_forces_hced_events": 5,
     "accepted_wave8_montenegro_1796_hced_events": 2,
+    "accepted_wave8_bohemia_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18379,7 +18380,107 @@
     "wave8_montenegro_1796_country_quarantine_additions": [],
     "wave8_montenegro_1796_entities_added": 2,
     "wave8_montenegro_1796_sources_added": 7,
-    "hced_label_pass_input_rows": 5613,
+    "wave8_bohemia_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 6,
+      "new_sources": 10,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_bohemia_cohort_counts": {
+      "bohemian_estates_revolt": 2,
+      "ottokar_ii_royal_wars": 2
+    },
+    "wave8_bohemia_audit_signature": "903e280d26411c4605be5f97b1a42124ff98bec40184c5fa82334b1dee782813",
+    "wave8_bohemia_final_audit_signature": "903e280d26411c4605be5f97b1a42124ff98bec40184c5fa82334b1dee782813",
+    "wave8_bohemia_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 0,
+      "reviewed_hced_rows": 4,
+      "exact_label_rows": 4
+    },
+    "wave8_bohemia_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_bohemia_candidate_ids": [
+      "hced-Kressenbrunn1260-1",
+      "hced-Marchfeld1278-1",
+      "hced-Sablat1619-1",
+      "hced-White Mountain1620-1"
+    ],
+    "wave8_bohemia_holds": [],
+    "wave8_bohemia_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "74e0345fa1ff4b4929c547db72cdc8430464a4e91f7f0cc66dce1e90281c3650",
+      "events_touched": 4,
+      "label": "bohemia",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 4
+    },
+    "wave8_bohemia_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Kressenbrunn1260-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently establish HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_bohemia_deutsche_biographie_ottokar",
+          "wave8_bohemia_vhu_kressenbrunn"
+        ]
+      },
+      {
+        "candidate_id": "hced-Marchfeld1278-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently establish HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_bohemia_deutsche_biographie_ottokar",
+          "wave8_bohemia_habsburger_marchfeld",
+          "wave8_bohemia_orf_lbi_marchfeld"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sablat1619-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently establish HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_bohemia_jcu_zablati",
+          "wave8_bohemia_npu_buquoy"
+        ]
+      },
+      {
+        "candidate_id": "hced-White Mountain1620-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently establish HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_bohemia_czech_mod_white_mountain",
+          "wave8_bohemia_oxford_white_mountain"
+        ]
+      }
+    ],
+    "wave8_bohemia_point_quarantine_additions": [
+      "hced-Kressenbrunn1260-1",
+      "hced-Marchfeld1278-1",
+      "hced-Sablat1619-1",
+      "hced-White Mountain1620-1"
+    ],
+    "wave8_bohemia_country_quarantine_additions": [],
+    "wave8_bohemia_entities_added": 6,
+    "wave8_bohemia_sources_added": 10,
+    "hced_label_pass_input_rows": 5609,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18392,7 +18493,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 997,
+      "reserved_candidate_contract": 1001,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18404,8 +18505,8 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2109,
-      "no_unique_time_valid_polity": 84,
+      "no_unique_time_valid_label_match": 2106,
+      "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 41

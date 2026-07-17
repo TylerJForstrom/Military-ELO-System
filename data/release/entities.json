@@ -3508,6 +3508,21 @@
     ]
   },
   {
+    "id": "bela_iv_hungarian_led_coalition_kressenbrunn_1260",
+    "name": "Béla IV's Hungarian-led coalition at Kressenbrunn (1260)",
+    "kind": "event_bounded_royal_coalition",
+    "start_year": 1260,
+    "end_year": 1260,
+    "region": "Hungary, Galicia, and the Marchfeld",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Béla IV's Hungarian-led coalition defeated at Kressenbrunn; it is not the Kingdom of Hungary alone or its forces in another war. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_deutsche_biographie_ottokar",
+      "wave8_bohemia_vhu_kressenbrunn"
+    ]
+  },
+  {
     "id": "cilician_armenian_aleppo_contingent_1260",
     "name": "Cilician Armenian contingent at Aleppo in 1260",
     "kind": "event_bounded_allied_contingent",
@@ -3533,6 +3548,23 @@
     "continuity_note": "This identity is limited to the Georgian contingent accompanying Hülegü at Aleppo. No rating is inherited by a generic Muslim identity, another dynasty, a later polity, or a force in another century.",
     "source_ids": [
       "wave8_muslim_forces_cambridge_mongols_aleppo"
+    ]
+  },
+  {
+    "id": "ottokar_ii_bohemian_royal_host_1260_1278",
+    "name": "Ottokar II's Bohemian royal host (1260-1278)",
+    "kind": "ruler_bounded_royal_force",
+    "start_year": 1260,
+    "end_year": 1278,
+    "region": "Bohemia, Austria, Styria, and the Marchfeld",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded from the Kressenbrunn campaign through Ottokar II's death at Marchfeld. It represents the king's Bohemian-led royal host in these two reviewed actions, not every contingent or the Kingdom of Bohemia under another ruler. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_czech_mfa_history",
+      "wave8_bohemia_deutsche_biographie_ottokar",
+      "wave8_bohemia_national_museum_premyslids",
+      "wave8_bohemia_vhu_kressenbrunn"
     ]
   },
   {
@@ -3684,6 +3716,22 @@
     "source_ids": [
       "wave8_hospitallers_cambridge_krak_1271",
       "wave8_hospitallers_unesco_krak"
+    ]
+  },
+  {
+    "id": "rudolf_ladislaus_allied_host_marchfeld_1278",
+    "name": "Rudolf I and Ladislaus IV's allied host at Marchfeld (1278)",
+    "kind": "event_bounded_royal_coalition",
+    "start_year": 1278,
+    "end_year": 1278,
+    "region": "Dürnkrut-Jedenspeigen, Marchfeld",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the allied German-royal, Austrian, Hungarian, and Cuman host that defeated Ottokar II on 26 August 1278. It does not merge the Holy Roman Empire and Hungary outside this event. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_deutsche_biographie_ottokar",
+      "wave8_bohemia_habsburger_marchfeld",
+      "wave8_bohemia_orf_lbi_marchfeld"
     ]
   },
   {
@@ -6502,6 +6550,23 @@
     ]
   },
   {
+    "id": "bohemian_estates_revolt_forces_1618_1620",
+    "name": "Bohemian Estates' revolt forces (1618-1620)",
+    "kind": "conflict_bounded_estates_force",
+    "start_year": 1618,
+    "end_year": 1620,
+    "region": "Crown of Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the military forces of the rebellious Bohemian Estates, including Mansfeld's corps at Záblatí and the estates-and-mercenary army at White Mountain. It ends with the revolt's battlefield defeat. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_czech_mfa_history",
+      "wave8_bohemia_czech_mod_white_mountain",
+      "wave8_bohemia_jcu_zablati",
+      "wave8_bohemia_oxford_white_mountain"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Composite Hohenzollern state through 1700; the Kingdom of Prussia begins in 1701, and neither identity inherits the other's rating across that reset. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1700,
@@ -6515,6 +6580,36 @@
       "ddb_fehrbellin_rathenow"
     ],
     "start_year": 1618
+  },
+  {
+    "id": "buquoy_imperial_army_zablati_1619",
+    "name": "Buquoy's imperial army at Záblatí (1619)",
+    "kind": "event_bounded_imperial_force",
+    "start_year": 1619,
+    "end_year": 1619,
+    "region": "South Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Karel Bonaventura Buquoy's imperial mercenary corps in the 10 June 1619 battle, not the Habsburg Monarchy or every imperial army in the Bohemian Revolt. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_jcu_zablati",
+      "wave8_bohemia_npu_buquoy"
+    ]
+  },
+  {
+    "id": "imperial_catholic_league_army_white_mountain_1620",
+    "name": "Combined Imperial-Catholic League army at White Mountain (1620)",
+    "kind": "event_bounded_allied_army",
+    "start_year": 1620,
+    "end_year": 1620,
+    "region": "White Mountain near Prague",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Ferdinand II's imperial army and the German Catholic League force combined for White Mountain. The umbrella prevents the source shorthand 'Habsburg Empire' from omitting a decisive ally. No generic Bohemia, Czechia, Germany, Hungary, Habsburg, or religious-population alias resolves to this identity. It inherits no Elo from a predecessor, successor, dynasty, state namesake, or modern country.",
+    "source_ids": [
+      "wave8_bohemia_czech_mod_white_mountain",
+      "wave8_bohemia_oxford_white_mountain"
+    ]
   },
   {
     "id": "louis_xiii_royal_siege_army_montauban_1621",

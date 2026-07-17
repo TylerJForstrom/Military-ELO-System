@@ -55,7 +55,9 @@ class Wave8BohemiaTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
         cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
         cls.exact_rows = [
             row
             for row in cls.hced_rows
@@ -121,13 +123,34 @@ class Wave8BohemiaTests(unittest.TestCase):
                 "reviewed_hced_rows": 4,
             },
         )
+        historical_funnel = {
+            "labels": [
+                {
+                    "candidate_ids": [],
+                    "event_candidate_id_sha256": (
+                        "74e0345fa1ff4b4929c547db72cdc8430464a4e91f7f0cc66dce1e90281c3650"
+                    ),
+                    "events_touched": 4,
+                    "failure_cases": {"zero_time_valid_candidates": 4},
+                    "label": "bohemia",
+                    "sole_blocker_events": 3,
+                }
+            ]
+        }
         self.assertEqual(
-            lane.validate_wave8_bohemia_funnel(self.funnel),
+            lane.validate_wave8_bohemia_funnel(historical_funnel),
             {
                 "events_touched": 4,
                 "sole_blocker_events": 3,
                 "zero_time_valid_candidates": 4,
             },
+        )
+        self.assertFalse(
+            any(
+                row.get("label") == "bohemia"
+                for row in self.funnel.get("labels", [])
+            ),
+            "the completed Bohemia lane must not remain unresolved",
         )
 
     def test_all_four_rows_promote_without_invented_draws_or_reversals(self) -> None:
@@ -270,6 +293,78 @@ class Wave8BohemiaTests(unittest.TestCase):
                 expected_countries[candidate_id],
             )
             self.assertIn("location_provenance", event)
+
+    def test_current_release_artifacts_include_the_lane_exactly_once(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_BOHEMIA_CONTRACT_IDS
+        ]
+        self.assertEqual(
+            {str(event["hced_candidate_id"]) for event in events},
+            lane.WAVE8_BOHEMIA_CONTRACT_IDS,
+        )
+        self.assertEqual(len(events), 4)
+        self.assertTrue(
+            all(str(event["id"]).startswith(EVENT_ID_PREFIX) for event in events)
+        )
+        expected_countries = {
+            "hced-Kressenbrunn1260-1": "Austria",
+            "hced-Marchfeld1278-1": "Austria",
+            "hced-Sablat1619-1": "Czechia",
+            "hced-White Mountain1620-1": "Czechia",
+        }
+        for event in events:
+            self.assertNotIn("geometry", event)
+            self.assertEqual(
+                event["modern_location_country"],
+                expected_countries[str(event["hced_candidate_id"])],
+            )
+            Event.from_dict(event)
+
+        entity_ids = {str(item["id"]) for item in lane.WAVE8_BOHEMIA_ENTITIES}
+        release_entities = {str(item["id"]): item for item in self.release_entities}
+        self.assertLessEqual(entity_ids, set(release_entities))
+        self.assertTrue(
+            all(not release_entities[entity_id]["aliases"] for entity_id in entity_ids)
+        )
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertLessEqual(entity_ids, set(registry_entities))
+        self.assertTrue(
+            all(
+                registry_entities[entity_id]["status"] == "rated"
+                for entity_id in entity_ids
+            )
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_bohemia_hced_events"], 4)
+        self.assertEqual(
+            promotion["wave8_bohemia_candidate_ids"],
+            sorted(lane.WAVE8_BOHEMIA_CONTRACT_IDS),
+        )
+        self.assertEqual(promotion["wave8_bohemia_holds"], [])
+        self.assertEqual(
+            promotion["wave8_bohemia_final_audit_signature"],
+            lane.WAVE8_BOHEMIA_FINAL_AUDIT_SIGNATURE,
+        )
+
+        coverage = self.registry["coverage"]
+        self.assertEqual(coverage["candidate_keyed_wave8_bohemia_hced_events"], 4)
+        self.assertEqual(coverage["rated_events"], len(self.release_events))
+        self.assertEqual(coverage["registry_polities"], len(self.registry["entities"]))
+        self.assertEqual(
+            coverage["rated_entities"],
+            len(
+                {
+                    participant["entity_id"]
+                    for event in self.release_events
+                    for participant in event["participants"]
+                }
+            ),
+        )
 
     def test_duplicate_audit_is_zero_and_future_spelling_twins_fail_closed(self) -> None:
         _, _, existing = self._installed()

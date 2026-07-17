@@ -6322,6 +6322,154 @@
     ]
   },
   {
+    "id": "wave8_bohemia_czech_mfa_history",
+    "title": "Czech History: the Přemyslid Dynasty and the Bohemian Estates",
+    "url": "https://mzv.gov.cz/abuja/en/about_the_czech_republic/history/index.html",
+    "publisher": "Ministry of Foreign Affairs of the Czech Republic",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "czech_mfa_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_czech_mod_white_mountain",
+    "title": "Battle of White Mountain",
+    "url": "https://valecnehroby.mo.gov.cz/aktuality/bitva-na-bile-hore",
+    "publisher": "Ministry of Defence of the Czech Republic",
+    "license": "Citation and link only",
+    "source_type": "official_military_commemoration_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "czech_mod_white_mountain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_deutsche_biographie_ottokar",
+    "title": "Přemysl Otakar II (Ottokar II), King of Bohemia",
+    "url": "https://www.deutsche-biographie.de/sfz74566.html",
+    "publisher": "Historische Kommission bei der Bayerischen Akademie der Wissenschaften",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-16",
+    "source_family_id": "deutsche_biographie_ottokar_ii",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_habsburger_marchfeld",
+    "title": "Rudolf I: The decisive battle",
+    "url": "https://www.habsburger.net/en/chapter/rudolf-i-decisive-battle",
+    "publisher": "Schönbrunn Group / Die Welt der Habsburger",
+    "license": "Citation and link only",
+    "source_type": "official_museum_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "habsburger_net_marchfeld",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_jcu_zablati",
+    "title": "The Communicative Image of Military Clashes during the Czech Estates Uprising",
+    "url": "https://dspace.jcu.cz/bitstream/handle/20.500.14390/36154/Komunikativni_obraz_vojenskych_stretu_za_ceskeho_stavovskeho_povstani.pdf?sequence=1",
+    "publisher": "University of South Bohemia in České Budějovice",
+    "license": "Citation and link only",
+    "source_type": "university_source_critical_history_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "cizek_jcu_zablati_2017",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_national_museum_premyslids",
+    "title": "The Přemyslids: A Ruling Dynasty and Its Age",
+    "url": "https://www.nm.cz/en/e-shop/publications-in-english/the-premyslids-a-ruling-dynasty-and-its-age",
+    "publisher": "National Museum, Prague",
+    "license": "Citation and link only",
+    "source_type": "official_museum_scholarly_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "czech_national_museum_premyslids",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_npu_buquoy",
+    "title": "Four hundred years since the death of Karel Bonaventura Buquoy",
+    "url": "https://www.npu.cz/cs/novinky/74148-ctyri-sta-let-od-hrdinske-smrti-karla-bonaventury-buquoye",
+    "publisher": "National Heritage Institute of the Czech Republic",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "czech_npu_buquoy_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_orf_lbi_marchfeld",
+    "title": "1278: Mass graves from the Battle of Marchfeld discovered",
+    "url": "https://science.orf.at/stories/3210776/",
+    "publisher": "ORF Science with Ludwig Boltzmann Institute battlefield archaeology",
+    "license": "Citation and link only",
+    "source_type": "public_broadcaster_archaeology_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "orf_lbi_marchfeld_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_oxford_white_mountain",
+    "title": "Battle of White Mountain, 8 November 1620",
+    "url": "https://www.cabinet.ox.ac.uk/battle-white-mountain-8-november-1620",
+    "publisher": "University of Oxford Cabinet",
+    "license": "Citation and link only",
+    "source_type": "university_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_cabinet_white_mountain",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bohemia_vhu_kressenbrunn",
+    "title": "The Second Czech-Hungarian War over the Babenberg Heritage and the Battle at Kressenbrunn",
+    "url": "https://www.vhu.sk/8653-sk/ii-cesko-uhorska-vojna-o-babenberske-dedicstvo-1260-a-bitka-pri-kressenbrune/",
+    "publisher": "Military History Institute, Bratislava / Vojenská história 20.2",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_military_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "rohac_kressenbrunn_2016",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_cambridge_algeria_dey_regency",
     "title": "Ecologies, Societies, Cultures and the State, 1516–1830",
     "url": "https://www.cambridge.org/core/books/history-of-algeria/ecologies-societies-cultures-and-the-state-15161830/6C59DEAD9F70913EC060EDD1465FA6A5",

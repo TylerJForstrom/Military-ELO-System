@@ -1751,6 +1751,26 @@ from .wave8_montenegro_1796 import (
     wave8_montenegro_1796_cohort_counts,
     wave8_montenegro_1796_counts,
 )
+from .wave8_bohemia import (
+    WAVE8_BOHEMIA_CONTRACT_IDS,
+    WAVE8_BOHEMIA_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_BOHEMIA_ENTITIES,
+    WAVE8_BOHEMIA_FINAL_AUDIT_SIGNATURE,
+    WAVE8_BOHEMIA_FUNNEL_AUDIT,
+    WAVE8_BOHEMIA_HOLDS,
+    WAVE8_BOHEMIA_LOCATION_QUARANTINE_REASONS,
+    WAVE8_BOHEMIA_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_BOHEMIA_RESERVED_IDS,
+    WAVE8_BOHEMIA_SOURCES,
+    install_wave8_bohemia_entities,
+    install_wave8_bohemia_sources,
+    promote_wave8_bohemia_contracts,
+    validate_wave8_bohemia_integration_dispositions,
+    validate_wave8_bohemia_queue_contracts,
+    wave8_bohemia_audit_signature,
+    wave8_bohemia_cohort_counts,
+    wave8_bohemia_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1852,6 +1872,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_HAITI_REGIMES_RESERVED_IDS
     | WAVE8_ZULU_FORCES_RESERVED_IDS
     | WAVE8_MONTENEGRO_1796_RESERVED_IDS
+    | WAVE8_BOHEMIA_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2273,7 +2294,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 312
+        len(HCED_POINT_QUARANTINE_IDS) != 316
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2558,6 +2579,7 @@ def build_expanded_release(
     wave8_montenegro_1796_queue_validation = (
         validate_wave8_montenegro_1796_queue_contracts(hced)
     )
+    wave8_bohemia_queue_validation = validate_wave8_bohemia_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2946,6 +2968,7 @@ def build_expanded_release(
     install_wave8_haiti_regimes_entities(release_entities)
     install_wave8_zulu_forces_entities(release_entities)
     install_wave8_montenegro_1796_entities(release_entities)
+    install_wave8_bohemia_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4400,6 +4423,15 @@ def build_expanded_release(
         release_entities,
         wave8_montenegro_1796_existing_events,
     )
+    wave8_bohemia_existing_events = [
+        *wave8_montenegro_1796_existing_events,
+        *wave8_montenegro_1796_events,
+    ]
+    wave8_bohemia_events = promote_wave8_bohemia_contracts(
+        hced,
+        release_entities,
+        wave8_bohemia_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4483,6 +4515,7 @@ def build_expanded_release(
         *wave8_haiti_regimes_events,
         *wave8_zulu_forces_events,
         *wave8_montenegro_1796_events,
+        *wave8_bohemia_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4743,6 +4776,7 @@ def build_expanded_release(
         *wave8_haiti_regimes_events,
         *wave8_zulu_forces_events,
         *wave8_montenegro_1796_events,
+        *wave8_bohemia_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -5212,6 +5246,13 @@ def build_expanded_release(
             ],
         )
     )
+    wave8_bohemia_integration_validation = (
+        validate_wave8_bohemia_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [*wave8_bohemia_existing_events, *wave8_bohemia_events],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5452,6 +5493,7 @@ def build_expanded_release(
     install_wave8_haiti_regimes_sources(sources_by_id)
     install_wave8_zulu_forces_sources(sources_by_id)
     install_wave8_montenegro_1796_sources(sources_by_id)
+    install_wave8_bohemia_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5540,6 +5582,7 @@ def build_expanded_release(
         *wave8_haiti_regimes_events,
         *wave8_zulu_forces_events,
         *wave8_montenegro_1796_events,
+        *wave8_bohemia_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5628,6 +5671,7 @@ def build_expanded_release(
         *wave8_haiti_regimes_events,
         *wave8_zulu_forces_events,
         *wave8_montenegro_1796_events,
+        *wave8_bohemia_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5715,6 +5759,7 @@ def build_expanded_release(
             | WAVE8_HAITI_REGIMES_CONTRACT_IDS
             | WAVE8_ZULU_FORCES_CONTRACT_IDS
             | WAVE8_MONTENEGRO_1796_CONTRACT_IDS
+            | WAVE8_BOHEMIA_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5853,6 +5898,7 @@ def build_expanded_release(
             lambda entity: str(entity["id"]),
             WAVE8_MONTENEGRO_1796_ENTITIES,
         ),
+        *map(lambda entity: str(entity["id"]), WAVE8_BOHEMIA_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -6109,6 +6155,7 @@ def build_expanded_release(
         - len(wave8_haiti_regimes_events)
         - len(wave8_zulu_forces_events)
         - len(wave8_montenegro_1796_events)
+        - len(wave8_bohemia_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -6294,6 +6341,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_montenegro_1796_hced_events": len(
             wave8_montenegro_1796_events
         ),
+        "candidate_keyed_wave8_bohemia_hced_events": len(wave8_bohemia_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -6621,6 +6669,7 @@ def build_expanded_release(
             "accepted_wave8_montenegro_1796_hced_events": len(
                 wave8_montenegro_1796_events
             ),
+            "accepted_wave8_bohemia_hced_events": len(wave8_bohemia_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -10404,6 +10453,36 @@ def build_expanded_release(
             "wave8_montenegro_1796_sources_added": len(
                 WAVE8_MONTENEGRO_1796_SOURCES
             ),
+            "wave8_bohemia_counts": wave8_bohemia_counts(),
+            "wave8_bohemia_cohort_counts": wave8_bohemia_cohort_counts(),
+            "wave8_bohemia_audit_signature": wave8_bohemia_audit_signature(),
+            "wave8_bohemia_final_audit_signature": (
+                WAVE8_BOHEMIA_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_bohemia_queue_validation": wave8_bohemia_queue_validation,
+            "wave8_bohemia_integration_validation": (
+                wave8_bohemia_integration_validation
+            ),
+            "wave8_bohemia_candidate_ids": sorted(WAVE8_BOHEMIA_CONTRACT_IDS),
+            "wave8_bohemia_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_BOHEMIA_HOLDS.items())
+            ],
+            "wave8_bohemia_exact_label_funnel_audit": WAVE8_BOHEMIA_FUNNEL_AUDIT,
+            "wave8_bohemia_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_BOHEMIA_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_bohemia_point_quarantine_additions": sorted(
+                WAVE8_BOHEMIA_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_bohemia_country_quarantine_additions": sorted(
+                WAVE8_BOHEMIA_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_bohemia_entities_added": len(WAVE8_BOHEMIA_ENTITIES),
+            "wave8_bohemia_sources_added": len(WAVE8_BOHEMIA_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -10716,6 +10795,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_montenegro_1796_hced_events": len(
             wave8_montenegro_1796_events
         ),
+        "candidate_keyed_wave8_bohemia_hced_events": len(wave8_bohemia_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
