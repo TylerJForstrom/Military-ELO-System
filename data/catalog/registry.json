@@ -10511,6 +10511,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kara_mahmud_scutari_campaign_army_1796",
+      "name": "Kara Mahmud Pasha's Scutari campaign army (1796)",
+      "kind": "campaign_bounded_pashalik_army",
+      "start_year": 1796,
+      "end_year": 1796,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Scutari, Zeta valley, and Old Montenegro"
+    },
+    {
       "id": "clio_kg_kara_khanid_dyn_850_44b154de",
       "name": "Kara-Khanids",
       "kind": "polity",
@@ -16539,6 +16549,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "petar_i_montenegro_brda_force_1796",
+      "name": "Petar I's Montenegrin-Brda field force (1796)",
+      "kind": "campaign_bounded_confederate_force",
+      "start_year": 1796,
+      "end_year": 1796,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Old Montenegro and Brda"
     },
     {
       "id": "peter_i_alexandria_crusade_force_1365",
@@ -24654,11 +24674,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2328,
-    "rated_entities": 965,
-    "rated_events": 5308,
+    "registry_polities": 2330,
+    "rated_entities": 967,
+    "rated_events": 5310,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18086,
+    "unresolved_event_candidates": 18084,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24744,6 +24764,7 @@
     "candidate_keyed_wave8_egypt_forces_hced_events": 16,
     "candidate_keyed_wave8_haiti_regimes_hced_events": 4,
     "candidate_keyed_wave8_zulu_forces_hced_events": 5,
+    "candidate_keyed_wave8_montenegro_1796_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24754,21 +24775,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5044,
-      "candidate_keyed_reviewed_contracts": 734,
+      "hced_candidate_bindings": 5046,
+      "candidate_keyed_reviewed_contracts": 736,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4949,
-      "location_provenance_objects": 4998,
-      "point_fields_withheld_by_quarantine": 310,
+      "modern_location_country_assertions": 4951,
+      "location_provenance_objects": 5000,
+      "point_fields_withheld_by_quarantine": 312,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 358,
-      "point_quarantine_candidate_manifest_sha256": "048474219ebdbb69aaa07295de346943cb22e14f756ac8f8b1282b8246e231ef",
+      "unique_events_with_any_quarantined_field": 360,
+      "point_quarantine_candidate_manifest_sha256": "26e557283ad61d1b067f653891c9064ff4065db9d411f04fc5e5d13643e002e5",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "52ca31aae0c0b7e347758f58c95c299bea292cbb59ad1a3801d30f64d66d3beb",
+      "quarantine_policy_sha256": "3909db5a99ebfe9f1de3a4b544c34c8ca87a521ec532f2c5cfdc51dc91645821",
       "assertion_status": {
-        "unreviewed_source_assertion": 4998
+        "unreviewed_source_assertion": 5000
       },
       "verified_location_assertions": {
         "availability": "not_available",

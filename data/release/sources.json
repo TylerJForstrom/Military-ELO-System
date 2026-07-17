@@ -13347,6 +13347,110 @@
     ]
   },
   {
+    "id": "wave8_montenegro_balcanica_1796",
+    "title": "Political Developments and Unrests in Stara Raška (Old Rascia) and Old Herzegovina during Ottoman Rule",
+    "url": "https://doiserbia.nb.rs/img/doi/0350-7653/2015/0350-76531546079S.pdf",
+    "publisher": "Balcanica XLVI / Institute for Balkan Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article_with_archival_references",
+    "accessed": "2026-07-16",
+    "source_family_id": "scekic_lekovic_premovic_balcanica_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_belgrade_law_1796",
+    "title": "The Application of the General Montenegrin and Mountains Code and the Issue of the Intensity of Compulsion",
+    "url": "https://www.ceeol.com/search/article-detail?id=1059598",
+    "publisher": "University of Belgrade Faculty of Law",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_legal_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "jovicevic_montenegrin_code_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_historical_lexicon_krusi",
+    "title": "Why the Battle of Krusi is central to Montenegro's history",
+    "url": "https://www.portalanalitika.me/clanak/247625--dragulji-istorije-zasto-je-bitka-na-krusima-najznacajnija-u-istoriji-crne-gore",
+    "publisher": "Portal Analitika, citing the Historical Lexicon of Montenegro",
+    "license": "Citation and link only",
+    "source_type": "public_history_article_with_scholarly_lexicon_citations",
+    "accessed": "2026-07-16",
+    "source_family_id": "historical_lexicon_montenegro_krusi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_national_museum_history",
+    "title": "Historical Museum of Montenegro: Creation of the Modern State",
+    "url": "https://narodnimuzej.me/wp-content/uploads/2020/09/Istorijski-muzej-ENG.pdf",
+    "publisher": "National Museum of Montenegro",
+    "license": "Citation and link only",
+    "source_type": "official_museum_historical_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_museum_montenegro_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_petar_speeches_1796",
+    "title": "Speeches before the battles of Martinići and Krusi, 1796",
+    "url": "https://www.rastko.rs/rastko-cg/povijest/sveti_petar-1796e.html",
+    "publisher": "Project Rastko transcription of History of Montenegro (Zemun, 1850)",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_text_transcription",
+    "accessed": "2026-07-16",
+    "source_family_id": "petar_i_battle_speeches_1796",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_ucg_carev_laz_critique",
+    "title": "Battle of Carev Laz: Between Legend and Truth",
+    "url": "https://www.ucg.ac.me/skladiste/blog_21704/objava_186808/fajlovi/Zapisi%202024-1-2%20web.pdf",
+    "publisher": "Historical Institute, University of Montenegro",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_source_critical_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "bajovic_carev_laz_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_montenegro_vakanuvis_scepan",
+    "title": "The Era of Little Stepan in Montenegro (1767-1773)",
+    "url": "https://dergipark.org.tr/tr/pub/vakanuvis/article/1336135",
+    "publisher": "Vakanüvis International Journal of Historical Research",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_ottoman_archival_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "yuksel_scepan_mali_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_moros_22d_infantry_datu_ali_archive",
     "title": "The Datu Ali Expedition",
     "url": "https://www.1-22infantry.org/history3/ali.htm",

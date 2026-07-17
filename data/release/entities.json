@@ -7777,6 +7777,39 @@
     ]
   },
   {
+    "id": "kara_mahmud_scutari_campaign_army_1796",
+    "name": "Kara Mahmud Pasha's Scutari campaign army (1796)",
+    "kind": "campaign_bounded_pashalik_army",
+    "start_year": 1796,
+    "end_year": 1796,
+    "region": "Scutari, Zeta valley, and Old Montenegro",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Kara Mahmud Pasha Bushatli's Scutari-led invasion armies opposed at Martinići and Krusi in 1796. It is not every Ottoman unit or every force of the Scutari pashalik in another year. No generic Montenegro, Scutari, Albania, Ottoman Empire, or modern-state alias resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, tribe, or broader imperial actor.",
+    "source_ids": [
+      "wave8_montenegro_balcanica_1796",
+      "wave8_montenegro_historical_lexicon_krusi",
+      "wave8_montenegro_national_museum_history"
+    ]
+  },
+  {
+    "id": "petar_i_montenegro_brda_force_1796",
+    "name": "Petar I's Montenegrin-Brda field force (1796)",
+    "kind": "campaign_bounded_confederate_force",
+    "start_year": 1796,
+    "end_year": 1796,
+    "region": "Old Montenegro and Brda",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Montenegrin and Brda tribes organized by Metropolitan Petar I for the two 1796 campaigns at Martinići and Krusi. The shared campaign identity does not back-project later state institutions. No generic Montenegro, Scutari, Albania, Ottoman Empire, or modern-state alias resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, tribe, or broader imperial actor.",
+    "source_ids": [
+      "wave8_montenegro_balcanica_1796",
+      "wave8_montenegro_belgrade_law_1796",
+      "wave8_montenegro_national_museum_history",
+      "wave8_montenegro_petar_speeches_1796"
+    ]
+  },
+  {
     "id": "shahanchibashi_durrani_field_force_gujrat_1797",
     "name": "Ahmad Khan Shahanchibashi's Durrani force at Gujrat (1797)",
     "kind": "event_bounded_durrani_field_force",

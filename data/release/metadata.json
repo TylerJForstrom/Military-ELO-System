@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 972,
-    "events": 5308,
-    "sources": 1327,
-    "registry_polities": 2328
+    "entities": 974,
+    "events": 5310,
+    "sources": 1334,
+    "registry_polities": 2330
   },
   "year_range": {
     "start": -1274,
@@ -156,6 +156,7 @@
     "accepted_wave8_egypt_forces_hced_events": 16,
     "accepted_wave8_haiti_regimes_hced_events": 4,
     "accepted_wave8_zulu_forces_hced_events": 5,
+    "accepted_wave8_montenegro_1796_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18274,7 +18275,111 @@
     "wave8_zulu_forces_country_quarantine_additions": [],
     "wave8_zulu_forces_entities_added": 5,
     "wave8_zulu_forces_sources_added": 11,
-    "hced_label_pass_input_rows": 5617,
+    "wave8_montenegro_1796_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 2,
+      "new_entities": 2,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_montenegro_1796_cohort_counts": {
+      "montenegro_scutari_campaigns_1796": 2,
+      "source_critical_holds": 2
+    },
+    "wave8_montenegro_1796_audit_signature": "2bf96ff247ffa0a3c8eb78ed4b0f27f48836714d5f771992b97ac73d003ddf0d",
+    "wave8_montenegro_1796_final_audit_signature": "2bf96ff247ffa0a3c8eb78ed4b0f27f48836714d5f771992b97ac73d003ddf0d",
+    "wave8_montenegro_1796_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 2,
+      "reviewed_hced_rows": 4,
+      "already_promoted_baseline_rows": 5,
+      "exact_label_rows": 10,
+      "existing_curated_exclusion_rows": 1
+    },
+    "wave8_montenegro_1796_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_montenegro_1796_candidate_ids": [
+      "hced-Krusi1796-1",
+      "hced-Martinici1796-1"
+    ],
+    "wave8_montenegro_1796_holds": [
+      {
+        "candidate_id": "hced-Cevo1768-1",
+        "raw_row_sha256": "69eb2d4b6c218aba38b65b2b5f08289c2215fa92ccd5c719c4b6776020a6183b",
+        "cohort": "source_critical_holds",
+        "disposition": "hold",
+        "reason_code": "historically_contradictory_outcome_and_event_identity",
+        "evidence_refs": [
+          "wave8_montenegro_vakanuvis_scepan"
+        ],
+        "audit_note": "HCED supplies only Čevo and the year. Ottoman-archival scholarship finds Šćepan Mali's army surrounded and defeated in the documented 5 September 1768 action, while broader campaign narratives contain several axes and phases. The row cannot be aligned to a unique Montenegrin victory without reversing or inventing an outcome."
+      },
+      {
+        "candidate_id": "hced-Podgoritza1712-1",
+        "raw_row_sha256": "9c854f0b522fd10d3150c078ef36415b7770006e8bc41c316654917ff4dd5980",
+        "cohort": "source_critical_holds",
+        "disposition": "hold",
+        "reason_code": "historically_contradictory_outcome_and_event_identity",
+        "evidence_refs": [
+          "wave8_montenegro_ucg_carev_laz_critique"
+        ],
+        "audit_note": "HCED's place-only 'Podgoritza' row appears to encode the disputed 1712 Carev Laz tradition as a categorical Montenegrin win. The 2024 University of Montenegro source-critical study finds that Venetian records do not support a great victory and that Ottoman forces reached Cetinje. Unknown or disputed is never converted into a win."
+      }
+    ],
+    "wave8_montenegro_1796_exact_label_funnel_audit": {
+      "candidate_ids": [
+        "clio_q236_1853_31d59baa"
+      ],
+      "event_candidate_id_sha256": "43d2d5fa715e71c6a7f6cfa5f676a09c029767633fd254b773a1215e826221a4",
+      "events_touched": 4,
+      "label": "montenegro",
+      "one_wrong_interval_candidates": 4,
+      "sole_blocker_events": 3
+    },
+    "wave8_montenegro_1796_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Krusi1796-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently verify HCED's exact coordinate; retain the Montenegro country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_montenegro_balcanica_1796",
+          "wave8_montenegro_belgrade_law_1796",
+          "wave8_montenegro_historical_lexicon_krusi",
+          "wave8_montenegro_national_museum_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Martinici1796-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and present-day country but do not independently verify HCED's exact coordinate; retain the Montenegro country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_montenegro_balcanica_1796",
+          "wave8_montenegro_belgrade_law_1796",
+          "wave8_montenegro_historical_lexicon_krusi",
+          "wave8_montenegro_national_museum_history"
+        ]
+      }
+    ],
+    "wave8_montenegro_1796_point_quarantine_additions": [
+      "hced-Krusi1796-1",
+      "hced-Martinici1796-1"
+    ],
+    "wave8_montenegro_1796_country_quarantine_additions": [],
+    "wave8_montenegro_1796_entities_added": 2,
+    "wave8_montenegro_1796_sources_added": 7,
+    "hced_label_pass_input_rows": 5613,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18287,7 +18392,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 993,
+      "reserved_candidate_contract": 997,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18299,7 +18404,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2113,
+      "no_unique_time_valid_label_match": 2109,
       "no_unique_time_valid_polity": 84,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
