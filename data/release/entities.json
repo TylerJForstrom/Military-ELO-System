@@ -11909,6 +11909,22 @@
     ]
   },
   {
+    "id": "bannock_resistance_force_1878",
+    "name": "Bannock resistance force in the Bannock War (1878)",
+    "kind": "conflict_bounded_indigenous_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Idaho and eastern Oregon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Bannock fighters who left Fort Hall and joined the Northern Paiute campaign in eastern Oregon during 1878. No generic Bannock, Paiute, Shoshone, Sheepeater, reservation, or modern tribal-government alias resolves to this identity. It inherits no Elo from another conflict, band, people, or successor.",
+    "source_ids": [
+      "wave8_bannock_ebsco_history",
+      "wave8_bannock_nps_john_day",
+      "wave8_bannock_wa_guard_official_history"
+    ]
+  },
+  {
     "id": "cape_colonial_forces_centane_1878",
     "name": "Cape colonial forces at Centane",
     "kind": "colonial_state_force",
@@ -11966,6 +11982,22 @@
     "source_ids": [
       "london_gazette_centane_1878",
       "mnquma_centane_memorial"
+    ]
+  },
+  {
+    "id": "northern_paiute_resistance_force_1878",
+    "name": "Northern Paiute resistance force in the Bannock War (1878)",
+    "kind": "conflict_bounded_indigenous_force",
+    "start_year": 1878,
+    "end_year": 1878,
+    "region": "Malheur Reservation and eastern Oregon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the minority of Northern Paiute fighters led by Egan and Oytes who joined the 1878 Bannock campaign; it excludes Northern Paiute people who did not participate. No generic Bannock, Paiute, Shoshone, Sheepeater, reservation, or modern tribal-government alias resolves to this identity. It inherits no Elo from another conflict, band, people, or successor.",
+    "source_ids": [
+      "wave8_bannock_ebsco_history",
+      "wave8_bannock_nps_john_day",
+      "wave8_bannock_wa_guard_official_history"
     ]
   },
   {
@@ -12043,6 +12075,22 @@
       "wave8_ute_army_csi_campaign_1879",
       "wave8_ute_army_history_74",
       "wave8_ute_nps_fort_da_russell_nhl"
+    ]
+  },
+  {
+    "id": "tukudeka_sheepeater_defenders_vinegar_hill_1879",
+    "name": "Tukudeka/Sheepeater defenders at Vinegar Hill (1879)",
+    "kind": "engagement_bounded_indigenous_force",
+    "start_year": 1879,
+    "end_year": 1879,
+    "region": "Big Creek and the Middle Fork Salmon River, central Idaho",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the small Tukudeka/Sheepeater defending force that opposed Lieutenant Henry Catley's column around Big Creek and Vinegar Hill in July 1879. No generic Bannock, Paiute, Shoshone, Sheepeater, reservation, or modern tribal-government alias resolves to this identity. It inherits no Elo from another conflict, band, people, or successor.",
+    "source_ids": [
+      "wave8_sheepeater_muhlenberg_account",
+      "wave8_sheepeater_nps_ethnohistory",
+      "wave8_sheepeater_usfs_campaign_report"
     ]
   },
   {

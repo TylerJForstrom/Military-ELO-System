@@ -292,17 +292,17 @@ class Wave8FlnTests(unittest.TestCase):
         )
 
     def test_release_and_registry_counts_include_the_exact_fln_delta(self) -> None:
-        self.assertEqual(len(self.release_entities), 992)
-        self.assertEqual(len(self.release_events), 5_336)
-        self.assertEqual(len(self.registry["entities"]), 2_342)
+        self.assertEqual(len(self.release_entities), 995)
+        self.assertEqual(len(self.release_events), 5_338)
+        self.assertEqual(len(self.registry["entities"]), 2_345)
         self.assertEqual(
             self.registry["coverage"]["unresolved_event_candidates"],
-            18_058,
+            18_056,
         )
         location = self.registry["coverage"]["hced_location_assertions"]
         self.assertEqual(
             location["hced_candidate_bindings"],
-            5_072,
+            5_074,
         )
         self.assertEqual(
             location["geojson_points"],
@@ -310,7 +310,7 @@ class Wave8FlnTests(unittest.TestCase):
         )
         self.assertEqual(
             location["modern_location_country_assertions"],
-            4_977,
+            4_979,
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:

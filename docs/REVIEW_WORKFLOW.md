@@ -9,7 +9,7 @@
 
 Raw facts are never overwritten. Corrections produce a new curated version and preserve the prior decision history.
 
-The current release catalogues 1,727 polity identities and contains 371 release entity records, of which 369 actually participate across 4,888 rated events. Its 318 registered sources span 186 provenance families. It reports all 27,014 staged source records separately. The staged total includes identity records and promoted evidence; of 23,390 event-like candidates, 18,506 remain outside the rating ledger. These are different denominators and must never be collapsed into a claim that every catalogued or released polity has been rated.
+The current release catalogues 2,345 polity identities and contains 995 release entity records, of which 988 actually participate across 5,338 rated events. Its 1,413 registered sources span 1,158 provenance families. It reports all 27,014 staged source records separately. The staged total includes identity records and promoted evidence; of 23,390 event-like candidates, 18,056 remain outside the rating ledger. These are different denominators and must never be collapsed into a claim that every catalogued or released polity has been rated.
 
 ## Provisional source promotion
 

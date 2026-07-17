@@ -372,6 +372,20 @@ class Wave8BannockSheepeaterTests(unittest.TestCase):
             sorted(lane.WAVE8_BANNOCK_SHEEPEATER_CONTRACT_IDS),
         )
         self.assertEqual(len(promotion["wave8_bannock_sheepeater_holds"]), 3)
+        coverage = self.registry["coverage"]
+        self.assertEqual(len(self.release_entities), 995)
+        self.assertEqual(len(self.release_events), 5_338)
+        self.assertEqual(len(self.registry["entities"]), 2_345)
+        self.assertEqual(coverage["rated_entities"], 988)
+        self.assertEqual(coverage["unresolved_event_candidates"], 18_056)
+        location = coverage["hced_location_assertions"]
+        self.assertEqual(location["hced_candidate_bindings"], 5_074)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 764)
+        self.assertEqual(location["geojson_points"], 4_734)
+        self.assertEqual(location["modern_location_country_assertions"], 4_979)
+        self.assertEqual(location["location_provenance_objects"], 5_028)
+        self.assertEqual(location["point_fields_withheld_by_quarantine"], 340)
+        self.assertEqual(location["unique_events_with_any_quarantined_field"], 388)
 
 
 if __name__ == "__main__":

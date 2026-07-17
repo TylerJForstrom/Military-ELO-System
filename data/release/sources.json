@@ -6378,6 +6378,90 @@
     ]
   },
   {
+    "id": "wave8_bannock_columbus_dispatch_miles",
+    "title": "Dispatch on Miles's Pendleton fight, 16 July 1878",
+    "url": "https://gahistoricnewspapers.galileo.usg.edu/lccn/sn89053815/1878-07-16/ed-1/seq-1/ocr/",
+    "publisher": "Columbus Daily Enquirer-Sun / Digital Library of Georgia",
+    "license": "Citation and link only",
+    "source_type": "contemporary_newspaper_dispatch",
+    "accessed": "2026-07-17",
+    "source_family_id": "columbus_enquirer_sun_1878_miles_dispatch",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bannock_ebsco_history",
+    "title": "Bannock War",
+    "url": "https://www.ebsco.com/research-starters/history/bannock-war",
+    "publisher": "EBSCO Research Starters",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_entry",
+    "accessed": "2026-07-17",
+    "source_family_id": "ebsco_bannock_war_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bannock_idaho_state_history",
+    "title": "Bannock War at Camas Prairie",
+    "url": "https://history.idaho.gov/wp-content/uploads/0474_Bannock-War-at-Camas-Prairie.pdf",
+    "publisher": "Idaho State Historical Society",
+    "license": "Citation and link only",
+    "source_type": "state_historical_reference_series",
+    "accessed": "2026-07-17",
+    "source_family_id": "idaho_historical_reference_474_bannock_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bannock_nps_john_day",
+    "title": "The Peoples of John Day: An Ethnographic and Ethnohistoric Overview",
+    "url": "https://irma.nps.gov/DataStore/DownloadFile/707094",
+    "publisher": "U.S. National Park Service and Portland State University",
+    "license": "Citation and link only",
+    "source_type": "federal_ethnographic_and_ethnohistoric_study",
+    "accessed": "2026-07-17",
+    "source_family_id": "deur_bloom_wynia_brown_john_day_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_bannock_nps_miles_fight",
+    "title": "Preserving Miles's Fight of the 1878 Bannock War",
+    "url": "https://home.nps.gov/articles/000/preserving-mile-s-fight-of-the-1878-bannock-war.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_public_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "nps_miles_fight_bannock_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bannock_wa_guard_official_history",
+    "title": "The Official History of the Washington National Guard, Volume 4: Washington Territorial Militia in the Bannock Indian War of 1878",
+    "url": "https://mil.wa.gov/asset/5ba41fe2e4c77",
+    "publisher": "Washington Military Department",
+    "license": "Citation and link only",
+    "source_type": "official_history_with_transcribed_field_telegrams",
+    "accessed": "2026-07-17",
+    "source_family_id": "washington_guard_bannock_war_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_boe_algiers_expedition_1775",
     "title": "Historical account of the expedition against Algiers in 1775",
     "url": "https://www.boe.es/gazeta/dias/1857/11/29/pdfs/GMD-1857-1790.pdf",
@@ -17269,6 +17353,48 @@
     "source_type": "scholarly_encyclopedia",
     "accessed": "2026-07-16",
     "source_family_id": "tdv_islam_encyclopedia_besasiri",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sheepeater_muhlenberg_account",
+    "title": "Sheepeater Indian Campaign: Vinegar Hill participant account",
+    "url": "https://objects.lib.uidaho.edu/twrs/Parker__1968_Indian_Wars.pdf",
+    "publisher": "University of Idaho Library Digital Initiatives",
+    "license": "Citation and link only",
+    "source_type": "edited_participant_account_compilation",
+    "accessed": "2026-07-17",
+    "source_family_id": "muhlenberg_shearer_vinegar_hill_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sheepeater_nps_ethnohistory",
+    "title": "An Ethnohistorical Overview of Groups with Ties to Fort Vancouver",
+    "url": "https://www.nps.gov/fova/learn/historyculture/upload/Ethnohistorical-Overview-by-Deur-Accessible-PDF.pdf",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_ethnohistorical_study",
+    "accessed": "2026-07-17",
+    "source_family_id": "deur_fort_vancouver_ethnohistory",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sheepeater_usfs_campaign_report",
+    "title": "The Sheepeater Campaign: an archaeological and historical assessment",
+    "url": "https://objects.lib.uidaho.edu/taylorarchive/b08-PayetteNationalForestLiterature79.pdf",
+    "publisher": "USDA Forest Service / University of Idaho Library",
+    "license": "Citation and link only",
+    "source_type": "federal_cultural_resource_history_report",
+    "accessed": "2026-07-17",
+    "source_family_id": "usfs_sheepeater_campaign_assessment",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome",

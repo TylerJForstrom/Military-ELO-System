@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 992,
-    "events": 5336,
-    "sources": 1404,
-    "registry_polities": 2342
+    "entities": 995,
+    "events": 5338,
+    "sources": 1413,
+    "registry_polities": 2345
   },
   "year_range": {
     "start": -1274,
@@ -167,6 +167,7 @@
     "accepted_wave8_sindh_hced_events": 4,
     "accepted_wave8_oman_hced_events": 2,
     "accepted_wave8_irish_civil_war_hced_events": 2,
+    "accepted_wave8_bannock_sheepeater_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19542,7 +19543,161 @@
     "wave8_irish_civil_war_country_quarantine_additions": [],
     "wave8_irish_civil_war_entities_added": 0,
     "wave8_irish_civil_war_sources_added": 5,
-    "hced_label_pass_input_rows": 5573,
+    "wave8_bannock_sheepeater_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 3,
+      "new_entities": 3,
+      "new_sources": 9,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_bannock_sheepeater_cohort_counts": {
+      "bannock_and_sheepeater_exact_force_audit": 5
+    },
+    "wave8_bannock_sheepeater_audit_signature": "ca71631f9a2c01edd2dee39cee2cacd8b15748c240291473d693d0d1f38e5f93",
+    "wave8_bannock_sheepeater_final_audit_signature": "ca71631f9a2c01edd2dee39cee2cacd8b15748c240291473d693d0d1f38e5f93",
+    "wave8_bannock_sheepeater_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 3,
+      "reviewed_hced_rows": 5,
+      "complete_bannock_label_rows": 5,
+      "distinct_source_conflicts": 2
+    },
+    "wave8_bannock_sheepeater_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_bannock_sheepeater_candidate_ids": [
+      "hced-Birch Creek1878-1",
+      "hced-Vinegar Hill, Idaho1879-1"
+    ],
+    "wave8_bannock_sheepeater_holds": [
+      {
+        "candidate_id": "hced-Battle Creek, Idaho1878-1",
+        "raw_row_sha256": "e33005c170ca723cbe411d8145e3c293558d244dc0b6cd74eec7fffb2cae2544",
+        "cohort": "bannock_and_sheepeater_exact_force_audit",
+        "disposition": "hold",
+        "hold_category": "source_outcome_contradiction",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_bannock_ebsco_history",
+          "wave8_bannock_idaho_state_history"
+        ],
+        "hold_reason": "The row is the 8 June South Mountain action near Silver City. The Idaho history records deaths on both sides without a tactical winner, while EBSCO describes Buffalo Horn's unit as defeated by volunteers. Neither supports HCED's categorical Bannock victory, so the result remains unknown rather than reversed or drawn.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_bannock_sheepeater",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Pendleton1878-1",
+        "raw_row_sha256": "071a2d7e63931dd3b4b9e685b3b333b31b03bd6a987d820d864e8adb0c99cc69",
+        "cohort": "bannock_and_sheepeater_exact_force_audit",
+        "disposition": "hold",
+        "hold_category": "coalition_identity_conflict",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_bannock_columbus_dispatch_miles",
+          "wave8_bannock_nps_miles_fight",
+          "wave8_bannock_wa_guard_official_history"
+        ],
+        "hold_reason": "Miles's field result is defensible, but the participant contract is not: the modern NPS account places Umatilla fighters with the United States and labels the opposition Shoshone-Bannock, while a contemporary dispatch says the Umatillas remained spectators and HCED lists Bannock-Paiute. The row stays staged until that coalition conflict is resolved.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_bannock_sheepeater",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Silver Creek, Oregon1878-1",
+        "raw_row_sha256": "8b2a7040bd3b5a2b276e5be9a006f5a23afeeb5462bf8aeb7c2f31b79d35b8c9",
+        "cohort": "bannock_and_sheepeater_exact_force_audit",
+        "disposition": "hold",
+        "hold_category": "tactical_outcome_not_uniquely_defensible",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_bannock_idaho_state_history",
+          "wave8_bannock_nps_john_day",
+          "wave8_bannock_wa_guard_official_history"
+        ],
+        "hold_reason": "The initial field report records a surprise and charge, but also an enemy rally and Bernard's request for reinforcements. A later Idaho summary calls Silver Creek a defeat, while the NPS chronology only records the force moving on. The available evidence does not support one bounded tactical winner with the required confidence.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_bannock_sheepeater",
+          "status": "review_hold_owner"
+        }
+      }
+    ],
+    "wave8_bannock_sheepeater_exact_label_funnel_audit": {
+      "bannock indians": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "7aa376c2bda025659e86fc804f92b0807faf0ca45d89ea1782a1ef826ab99236",
+        "events_touched": 3,
+        "label": "bannock indians",
+        "sole_blocker_events": 3,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      },
+      "bannock indians peyoute indians": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "d40885be9d0669d6e14a58ed6e5d20566e85bcfd8a943f8dbc727b43ece11c61",
+        "events_touched": 1,
+        "label": "bannock indians peyoute indians",
+        "sole_blocker_events": 1,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "bannock indians shoshoni indians": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "e8f919ade19bcc08dbf9da600d850aec25e2143efc2d446076f68ab240e520c1",
+        "events_touched": 1,
+        "label": "bannock indians shoshoni indians",
+        "sole_blocker_events": 1,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      }
+    },
+    "wave8_bannock_sheepeater_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Birch Creek1878-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's coordinate is in Idaho, while the reviewed sources place the battle near the heads of Birch and Butter Creeks south of Pilot Rock, Oregon. Retain the United States country assertion and withhold the mismatched point.",
+        "evidence_refs": [
+          "wave8_bannock_nps_john_day",
+          "wave8_bannock_wa_guard_official_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Vinegar Hill, Idaho1879-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the Big Creek/Vinegar Hill setting but do not independently verify HCED's exact coordinate. Retain the United States country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_sheepeater_muhlenberg_account",
+          "wave8_sheepeater_usfs_campaign_report"
+        ]
+      }
+    ],
+    "wave8_bannock_sheepeater_point_quarantine_additions": [
+      "hced-Birch Creek1878-1",
+      "hced-Vinegar Hill, Idaho1879-1"
+    ],
+    "wave8_bannock_sheepeater_country_quarantine_additions": [],
+    "wave8_bannock_sheepeater_entities_added": 3,
+    "wave8_bannock_sheepeater_sources_added": 9,
+    "hced_label_pass_input_rows": 5568,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19555,7 +19710,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1037,
+      "reserved_candidate_contract": 1042,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19567,7 +19722,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2073,
+      "no_unique_time_valid_label_match": 2068,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

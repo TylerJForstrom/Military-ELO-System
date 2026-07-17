@@ -2,7 +2,7 @@
 
 An auditable, uncertainty-aware system for exploring the military success of historical countries, empires and other autonomous actors.
 
-The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 1,727 catalogued, time-bounded polity identities, of which 369 actually participate in rated evidence across 4,888 events. It currently includes:
+The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 2,345 catalogued, time-bounded polity identities, of which 988 actually participate in rated evidence across 5,338 events. It currently includes:
 
 - separate tactical, operational and strategic ratings;
 - participant-specific outcome vectors, so limited withdrawals and terminal defeats are not equivalent;
@@ -49,46 +49,41 @@ python scripts/build_dashboard.py --data data/release --registry data/catalog/re
 The test suite cross-checks the committed artifact against the release and
 registry so a stale or partial rebuild fails before it ships.
 
-The dashboard deliberately separates the polity registry from the rating ledger. The 1,727-entry registry includes unrated and explicitly superseded source candidates; absence from the ledger is not a defeat. The release entity file has 371 records, of which 369 distinct entity IDs actually participate in rated events. The 4,888-event ledger combines 40 manually curated seed events, 1,887 crosswalk-resolved, 2,423 label-resolved, and 314 candidate-keyed HCED tactical encounters: 76 from Wave 6, 192 from Wave 7, and 46 from Wave 8 (9 in the African-states lane, 15 in New Zealand, and 22 in North America). It also contains 64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
+The dashboard deliberately separates the polity registry from the rating ledger. The 2,345-entry registry includes unrated and explicitly superseded source candidates; absence from the ledger is not a defeat. The release entity file has 995 records, of which 988 distinct entity IDs actually participate in rated events. The 5,338-event ledger combines 40 manually curated seed events, 1,887 crosswalk-resolved, 2,423 label-resolved, and 764 candidate-keyed HCED tactical encounters: 76 from Wave 6, 192 from Wave 7, and 496 from Wave 8. It also contains 64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
-The 4,624 already-rated HCED events also carry an audited, rating-neutral
+The 5,074 already-rated HCED events also carry an audited, rating-neutral
 location tranche where the source assertion survives fail-closed quarantine:
-4,587 exact GeoJSON Points, 4,544 source-transcribed
-geographic-jurisdiction labels in `modern_location_country`, and 4,591 closed
-`location_provenance` objects. These are modern, unreviewed HCED source
-assertions with unknown coordinate precision, not verified historical
-locations or sovereign-country truth. Candidate-ID manifests withhold 37 Point
-fields and 79 jurisdiction-label fields; 33 events overlap and 83 unique events
-have at least one quarantined field. Quarantined values are omitted, never
-corrected. Of 49 separately reviewed disputed or non-sovereign jurisdiction
-rows, 46 remain exact source transcriptions and 3 are already withheld under
-independent quarantine criteria. None may be normalized into sovereign-country
-truth. This metadata-only tranche adds no rated event and leaves every
-participant, outcome, rating, leaderboard value, and sensitivity result
-unchanged. Outcome validation and promotion are separate, score-changing
-workflows.
+4,734 exact GeoJSON Points, 4,979 source-transcribed geographic-jurisdiction
+labels in `modern_location_country`, and 5,028 closed `location_provenance`
+objects. These are modern, unreviewed HCED source assertions with unknown
+coordinate precision, not verified historical locations or sovereign-country
+truth. Candidate-ID manifests withhold 340 Point fields and 94 jurisdiction
+fields; 46 events overlap and 388 unique events have at least one quarantined
+field. Quarantined values are omitted, never corrected. None may be normalized
+into sovereign-country truth. This metadata-only tranche adds no rated event
+and leaves every participant, outcome, rating, leaderboard value, and
+sensitivity result unchanged. Outcome validation and promotion are separate,
+score-changing workflows.
 
-The 318-source registry spans 186 provenance families and also makes the
-outcome-provenance contract explicit. Of the 4,888 rated events, 4,848 map
-through explicit event outcome metadata to exactly one direct outcome family:
-4,624 HCED-derived events, 64 IWD parent wars, 153 IWBD battles, and 7 UCDP
-conflict-termination episodes. Sixteen HCED-derived events use reviewed
-historical-reference families rather than the HCED family. The 40 curated seed
-events remain
+The 1,413-source registry spans 1,158 provenance families and also makes the
+outcome-provenance contract explicit. Of the 5,338 rated events, 5,298 map
+through explicit event outcome metadata to at least one direct outcome family:
+5,074 HCED-derived events, 64 IWD parent wars, 153 IWBD battles, and 7 UCDP
+conflict-termination episodes. Of those mapped events, 4,959 cite one direct
+outcome family and 339 cite more than one. The 40 curated seed events remain
 explicitly unknown until claim-level outcome locators and human review identify
-which linked sources support the scored assertions. No event currently has two
-independently established direct outcome families. A `source_family_id` is a
+which linked sources support the scored assertions. A `source_family_id` is a
 provenance and deduplication label, while `evidence_roles` declares source
-capabilities; neither is proof of independent corroboration. URLs, publishers,
-identity crosswalks, polity registries, UCDP dyad checks, and
-generic consulted references do not become outcome evidence merely because an
-event links to them.
+capabilities; neither is proof of independence by itself. URLs, publishers,
+identity crosswalks, polity registries, UCDP dyad checks, and generic consulted
+references do not become outcome evidence merely because an event links to
+them.
 
 ## Data already staged
 
 The live ingestion pipeline has immutable snapshots and review candidates from:
 
-- Cliopatria v0.2.0: 1,637 time-bounded identity candidates spanning 3400 BCE–2024, consolidated with the curated identities into the 1,727-entry registry;
+- Cliopatria v0.2.0: 1,637 time-bounded identity candidates spanning 3400 BCE–2024, consolidated with curated and explicitly superseded identities into the 2,345-entry registry;
 - Historical Conflict Event Dataset (HCED): 8,881 encounter candidates;
 - Interstate War Data (IWD) v1.21: 265 component-war candidates derived once per war rather than once per annual row;
 - Interstate War Battle Dataset (IWBD): 1,708 battle candidates;
@@ -100,7 +95,7 @@ The live ingestion pipeline has immutable snapshots and review candidates from:
 
 These records remain in `data/review/` and are not silently treated as accurate Elo matches.
 
-Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution; rows lacking Seshat coding are retried in a second, declared label-resolution pass in which a side promotes only through an explicit time-bounded label policy or an exact, uniquely matching, time-valid alias, and the resulting events carry visibly lower identity confidence. For post-1500 rows only, that pass may split a side on an explicit comma, semicolon, or ampersand; every member must independently resolve through the ordinary label resolver to a distinct full-interval-valid identity. Plain `and` is never a delimiter. Superseded member IDs are canonicalized through the shared audited supersession inventory before the coalition is accepted, and the frozen pre-1500 cohort is never reopened by this rule. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 64 currently pass those checks; the rest stay staged. IWBD battles enter only as tactical engagements, and only when they duplicate no seed event, non-curated-excluded HCED candidate, or earlier accepted IWBD row by exact normalized name and year; a same-year ordinal/base-name match additionally requires one recognized suffix path to extend the other with agreeing oriented outcomes. They must not be campaign umbrellas over sibling battles, must carry a victor matching a named side, and must resolve both sides to unique time-bounded identities; their war-level victor codes are ignored. UCDP termination records promote only as conflict-level terminal victory episodes (codes 3/4) between state parties with unique time-bounded identities, after cross-source deduplication and dyad- and linked-episode consistency checks; peace agreements, ceasefires, and low activity are never scored as outcomes, and secondary supporters receive no outcome. Battle winners, conflict intensity, and deaths still do not by themselves establish participant-specific strategic success, and every promoted event remains visibly provisional pending claim-level review. The post-Wave 7 crisp-boundary identity tranche adds Mahdist State (Sudan, 1881–1899), the post-Pavon Argentine Republic, the Principality/Kingdom of Bulgaria split, the Republic of Texas, and pre- and post-UAR Syrian republic windows. Boundary years overlap where year-only evidence is ambiguous; Texas labels stop at 1845, Syria deliberately resolves to nothing in 1958–1961, and no successor inherits a predecessor rating. Mexico resolves to the reviewed 1824–1863 republic and the 1868–2024 series in the current Cliopatria snapshot, while 1864–1867 remains a global deny gap; newly resolvable Argentina rows still fail when their source coalition or outcome is incomplete. The current post-Wave-8 planning funnel excludes every candidate ID already published in the ledger and reports 2,908 touched deferred rows, 2,394 unresolved normalized labels, and 1,530 sole-blocker rows; it and the co-war report rank future work only and never change the ledger.
+Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution; rows lacking Seshat coding are retried in a second, declared label-resolution pass in which a side promotes only through an explicit time-bounded label policy or an exact, uniquely matching, time-valid alias, and the resulting events carry visibly lower identity confidence. For post-1500 rows only, that pass may split a side on an explicit comma, semicolon, or ampersand; every member must independently resolve through the ordinary label resolver to a distinct full-interval-valid identity. Plain `and` is never a delimiter. Superseded member IDs are canonicalized through the shared audited supersession inventory before the coalition is accepted, and the frozen pre-1500 cohort is never reopened by this rule. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 64 currently pass those checks; the rest stay staged. IWBD battles enter only as tactical engagements, and only when they duplicate no seed event, non-curated-excluded HCED candidate, or earlier accepted IWBD row by exact normalized name and year; a same-year ordinal/base-name match additionally requires one recognized suffix path to extend the other with agreeing oriented outcomes. They must not be campaign umbrellas over sibling battles, must carry a victor matching a named side, and must resolve both sides to unique time-bounded identities; their war-level victor codes are ignored. UCDP termination records promote only as conflict-level terminal victory episodes (codes 3/4) between state parties with unique time-bounded identities, after cross-source deduplication and dyad- and linked-episode consistency checks; peace agreements, ceasefires, and low activity are never scored as outcomes, and secondary supporters receive no outcome. Battle winners, conflict intensity, and deaths still do not by themselves establish participant-specific strategic success, and every promoted event remains visibly provisional pending claim-level review. The post-Wave 7 crisp-boundary identity tranche adds Mahdist State (Sudan, 1881–1899), the post-Pavon Argentine Republic, the Principality/Kingdom of Bulgaria split, the Republic of Texas, and pre- and post-UAR Syrian republic windows. Boundary years overlap where year-only evidence is ambiguous; Texas labels stop at 1845, Syria deliberately resolves to nothing in 1958–1961, and no successor inherits a predecessor rating. Mexico resolves to the reviewed 1824–1863 republic and the 1868–2024 series in the current Cliopatria snapshot, while 1864–1867 remains a global deny gap; newly resolvable Argentina rows still fail when their source coalition or outcome is incomplete. The current post-Wave-8 planning funnel excludes every candidate ID already published in the ledger and reports 2,293 touched deferred rows, 2,223 unresolved normalized labels, and 1,069 sole-blocker rows; it and the co-war report rank future work only and never change the ledger.
 
 ## Refresh the open source corpus
 

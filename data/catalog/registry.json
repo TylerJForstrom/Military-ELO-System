@@ -1772,6 +1772,16 @@
       "region": "Gurdas Nangal, Punjab"
     },
     {
+      "id": "bannock_resistance_force_1878",
+      "name": "Bannock resistance force in the Bannock War (1878)",
+      "kind": "conflict_bounded_indigenous_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Idaho and eastern Oregon"
+    },
+    {
       "id": "bar_confederation_forces",
       "name": "Bar Confederation Forces",
       "kind": "confederate_forces",
@@ -15774,6 +15784,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "northern_paiute_resistance_force_1878",
+      "name": "Northern Paiute resistance force in the Bannock War (1878)",
+      "kind": "conflict_bounded_indigenous_force",
+      "start_year": 1878,
+      "end_year": 1878,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Malheur Reservation and eastern Oregon"
+    },
+    {
       "id": "clio_q1143524_555_93f9de17",
       "name": "Northern Qi",
       "kind": "polity",
@@ -22785,6 +22805,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "tukudeka_sheepeater_defenders_vinegar_hill_1879",
+      "name": "Tukudeka/Sheepeater defenders at Vinegar Hill (1879)",
+      "kind": "engagement_bounded_indigenous_force",
+      "start_year": 1879,
+      "end_year": 1879,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Big Creek and the Middle Fork Salmon River, central Idaho"
+    },
+    {
       "id": "tulayha_asad_ghatafan_force_buzakha_632",
       "name": "Tulayha's Asad–Ghatafan force at Buzakha in 632",
       "kind": "event_bounded_tribal_coalition",
@@ -24788,11 +24818,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2342,
-    "rated_entities": 985,
-    "rated_events": 5336,
+    "registry_polities": 2345,
+    "rated_entities": 988,
+    "rated_events": 5338,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18058,
+    "unresolved_event_candidates": 18056,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24889,6 +24919,7 @@
     "candidate_keyed_wave8_sindh_hced_events": 4,
     "candidate_keyed_wave8_oman_hced_events": 2,
     "candidate_keyed_wave8_irish_civil_war_hced_events": 2,
+    "candidate_keyed_wave8_bannock_sheepeater_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24899,21 +24930,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5072,
-      "candidate_keyed_reviewed_contracts": 762,
+      "hced_candidate_bindings": 5074,
+      "candidate_keyed_reviewed_contracts": 764,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4977,
-      "location_provenance_objects": 5026,
-      "point_fields_withheld_by_quarantine": 338,
+      "modern_location_country_assertions": 4979,
+      "location_provenance_objects": 5028,
+      "point_fields_withheld_by_quarantine": 340,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 386,
-      "point_quarantine_candidate_manifest_sha256": "f5a7d133169526cc8a42f6cb16d76b9d7fe5bf5849c787c209333bf9e0e36d7a",
+      "unique_events_with_any_quarantined_field": 388,
+      "point_quarantine_candidate_manifest_sha256": "ba3c7f9aa91471414c2d05fb267e16000ee3a09a63defbaaf5ca9d04fe48c211",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "cce17399a963d1544cd6280427c5954671d3e57a590b51e47a8afdfaea9142f6",
+      "quarantine_policy_sha256": "a127e1f6a8583f49e089dc38d58e426e72ad0aee0701450bdf0153ce2fab370e",
       "assertion_status": {
-        "unreviewed_source_assertion": 5026
+        "unreviewed_source_assertion": 5028
       },
       "verified_location_assertions": {
         "availability": "not_available",
