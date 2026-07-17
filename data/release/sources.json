@@ -8726,6 +8726,240 @@
     ]
   },
   {
+    "id": "wave8_livonian_order_balcerek_daugava",
+    "title": "Wars on the Daugava River in the Sixteenth Century on the Margins of Vitalii Penskoi's Books",
+    "url": "https://doi.org/10.22364/lviz.117.10",
+    "publisher": "Institute of Latvian History, University of Latvia",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "balcerek_daugava_wars_review",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_baranauskas_armies",
+    "title": "The Composition and Sizes of the Armies at the Battle of Pabaiskas",
+    "url": "https://doi.org/10.6001/lituanistica.v62i3.3374",
+    "publisher": "Lithuanian Academy of Sciences, Lituanistica",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "baranauskas_pabaiskas_armies_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_baranauskas_dissertation",
+    "title": "The Battle of Pabaiskas 1435: Pivotal Years in the Development of Lithuanian Statehood",
+    "url": "https://hdl.handle.net/20.500.12259/36823",
+    "publisher": "Vytautas Magnus University",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "baranauskas_pabaiskas_dissertation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_baranov_smolino",
+    "title": "Contra Multitudinem Ruthenorum Armatorum: The Russian-Livonian Battle of Lake Smolino (1502) Reconsidered",
+    "url": "https://doi.org/10.2307/j.ctv13nb9q8.28",
+    "publisher": "Brill",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "baranov_lake_smolino_reconsidered",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_esper_russia_baltic",
+    "title": "Russia and the Baltic 1494-1558",
+    "url": "https://doi.org/10.2307/2492857",
+    "publisher": "Cambridge University Press, Slavic Review",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "esper_russia_baltic_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_frost_northern_wars",
+    "title": "The Northern Wars: War, State and Society in Northeastern Europe, 1558-1721",
+    "url": "https://doi.org/10.4324/9781315845678",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "frost_northern_wars_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_kirby_northern_europe",
+    "title": "Northern Europe in the Early Modern Period: The Baltic World 1492-1772",
+    "url": "https://www.routledge.com/Northern-Europe-in-the-Early-Modern-Period-The-Baltic-World-1492-1772/Kirby/p/book/9780582004115",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "kirby_baltic_world_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_militzer_recruitment",
+    "title": "The Recruitment of Brethren for the Teutonic Order in Livonia, 1237-1562",
+    "url": "https://doi.org/10.4324/9781315085937-28",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "militzer_livonian_branch_recruitment",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_narva_city_history",
+    "title": "Narva linn: ajalugu",
+    "url": "https://www.narva.ee/linn-uudised-kontaktid/linn/narva-linn",
+    "publisher": "City of Narva",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "narva_city_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_narva_museum_history",
+    "title": "Our History",
+    "url": "https://narvamuuseum.ee/en/muuseum/meie-ajalugu/",
+    "publisher": "Narva Museum",
+    "license": "Citation and link only",
+    "source_type": "institutional_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "narva_museum_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_ostrowski_poe_old_russia",
+    "title": "Portraits of Old Russia: Imagined Lives of Ordinary People, 1300-1745",
+    "url": "https://www.routledge.com/Portraits-of-Old-Russia-Imagined-Lives-of-Ordinary-People-1300-1745/Ostrowski-Poe/p/book/9780765627292",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "ostrowski_poe_old_russia_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_oxford_baltic_crusades",
+    "title": "Baltic Crusades",
+    "url": "https://doi.org/10.1093/obo/9780199791279-0257",
+    "publisher": "Oxford University Press, Oxford Bibliographies",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_bibliographies_baltic_crusades",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_rudolph_viterbo",
+    "title": "Die Union von Viterbo (1237): Zur Inkorporation der Schwertbrüder in den Deutschen Orden im urkundlichen Befund",
+    "url": "https://doi.org/10.18452/20180",
+    "publisher": "Humboldt-Universität zu Berlin",
+    "license": "Citation and link only",
+    "source_type": "scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "rudolph_viterbo_incorporation_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_sproule_mercenary",
+    "title": "Livonian Mercenary Warfare and Fiscal Responses to the Military Crisis of 1558-1561",
+    "url": "https://doi.org/10.1017/S0008938921000042",
+    "publisher": "Cambridge University Press, Central European History",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "sproule_livonian_mercenary_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_viljandi_museum_fellin",
+    "title": "The Livonian War and the Fall of Fellin",
+    "url": "https://muuseum.viljandimaa.ee/vana/indexbf72.html?id=52&op=body",
+    "publisher": "Museum of Viljandi",
+    "license": "Citation and link only",
+    "source_type": "institutional_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "viljandi_museum_fellin_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_livonian_order_vle_aizkraukle",
+    "title": "Aizkrauklės mūšis",
+    "url": "https://www.vle.lt/straipsnis/aizkraukles-musis/",
+    "publisher": "Visuotinė lietuvių enciklopedija",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "vle_aizkraukle_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_louvre_algiers_1688",
     "title": "Le bombardement d'Alger par le maréchal d'Estrées, 1er juillet 1688",
     "url": "https://arts-graphiques.louvre.fr/detail/oeuvres/0/536169-Le-bombardement-dAlger-par-le-marechal-dEstrees-le-1er-juillet-1688",

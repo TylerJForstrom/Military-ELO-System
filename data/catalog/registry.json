@@ -5482,6 +5482,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "fellin_order_garrison_defence_1560",
+      "name": "Fellin city and Order-castle defence (1560)",
+      "kind": "event_bounded_mixed_garrison",
+      "start_year": 1560,
+      "end_year": 1560,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Fellin (Viljandi), Livonia"
+    },
+    {
       "id": "clio_eg_thebes_hyksos_bce1600_7d663dea",
       "name": "Fifteenth Dynasty of Egypt",
       "kind": "dynastic_state",
@@ -11517,6 +11527,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "ergeme_order_auxiliary_field_force_1560",
+      "name": "Livonian Order and auxiliary field force at Ērģeme (1560)",
+      "kind": "event_bounded_order_auxiliary_force",
+      "start_year": 1560,
+      "end_year": 1560,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ērģeme, Livonia"
+    },
+    {
+      "id": "livonian_branch_teutonic_order_1237_1561",
+      "name": "Livonian branch of the Teutonic Order (1237-1561)",
+      "kind": "era_bounded_military_order_branch",
+      "start_year": 1237,
+      "end_year": 1561,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Livonia"
+    },
+    {
       "id": "llywelyn_ap_gruffudd_final_war_forces_1282",
       "name": "Llywelyn ap Gruffudd's final-war forces (1282)",
       "kind": "regime_bounded_princely_force",
@@ -12766,6 +12796,16 @@
       "region": "Southern Europe and the central Mediterranean"
     },
     {
+      "id": "muscovite_novgorodian_pskovian_smolino_coalition_1502",
+      "name": "Muscovite, Novgorodian, and Pskovian field coalition at Lake Smolino (1502)",
+      "kind": "event_bounded_field_coalition",
+      "start_year": 1502,
+      "end_year": 1502,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Pskov region"
+    },
+    {
       "id": "mutawakkilite_kingdom_yemen",
       "name": "Mutawakkilite Kingdom of Yemen",
       "kind": "kingdom",
@@ -12969,6 +13009,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "narva_order_city_castle_defence_1558",
+      "name": "Narva city and Order-castle defence (1558)",
+      "kind": "event_bounded_city_castle_defence",
+      "start_year": 1558,
+      "end_year": 1558,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Narva, Livonia"
     },
     {
       "id": "clio_q1029847_1840_0f3e6e4e",
@@ -21714,11 +21764,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2034,
-    "rated_entities": 671,
-    "rated_events": 5139,
+    "registry_polities": 2039,
+    "rated_entities": 676,
+    "rated_events": 5143,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18255,
+    "unresolved_event_candidates": 18251,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21769,6 +21819,7 @@
     "candidate_keyed_wave8_uzbekistan_hced_events": 4,
     "candidate_keyed_wave8_vietnam_hced_events": 7,
     "candidate_keyed_wave8_hussites_hced_events": 12,
+    "candidate_keyed_wave8_livonian_order_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21779,21 +21830,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4875,
-      "candidate_keyed_reviewed_contracts": 565,
-      "geojson_points": 4732,
-      "modern_location_country_assertions": 4784,
-      "location_provenance_objects": 4833,
-      "point_fields_withheld_by_quarantine": 143,
+      "hced_candidate_bindings": 4879,
+      "candidate_keyed_reviewed_contracts": 569,
+      "geojson_points": 4734,
+      "modern_location_country_assertions": 4788,
+      "location_provenance_objects": 4837,
+      "point_fields_withheld_by_quarantine": 145,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 191,
-      "point_quarantine_candidate_manifest_sha256": "a795a467a9b319f37babe916126fb91e61e7646d888167710b88905d9d5c7010",
+      "unique_events_with_any_quarantined_field": 193,
+      "point_quarantine_candidate_manifest_sha256": "731d74a77c54e7b65aa0fc379375418e8377a0b23bb65e79a9205a704837934f",
       "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "bc22014dd0b969de706c10c063c6caa23a3b213ee0b62dab66d919e40af74a8e",
+      "quarantine_policy_sha256": "696caab76c81be16e1adcd55b0100cc7b21c1b25f78c939ad11958ad9137a7ec",
       "assertion_status": {
-        "unreviewed_source_assertion": 4833
+        "unreviewed_source_assertion": 4837
       },
       "verified_location_assertions": {
         "availability": "not_available",

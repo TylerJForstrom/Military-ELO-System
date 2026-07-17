@@ -2654,6 +2654,23 @@
     ]
   },
   {
+    "id": "livonian_branch_teutonic_order_1237_1561",
+    "name": "Livonian branch of the Teutonic Order (1237-1561)",
+    "kind": "era_bounded_military_order_branch",
+    "start_year": 1237,
+    "end_year": 1561,
+    "region": "Livonia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Livonian branch formed after the documented 1237 incorporation and ending with its secular dissolution. It is not an alias for the pre-1237 Sword Brothers, the Prussian Teutonic state, all five Livonian territorial polities, or their coalition partners. No rating is inherited from or transferred to the independent Livonian Brothers of the Sword, another Teutonic branch, the wider Livonian Confederation, an omitted coalition ally, or a secular successor.",
+    "source_ids": [
+      "wave8_livonian_order_baranov_smolino",
+      "wave8_livonian_order_militzer_recruitment",
+      "wave8_livonian_order_oxford_baltic_crusades",
+      "wave8_livonian_order_rudolph_viterbo"
+    ]
+  },
+  {
     "id": "rum_sultanate_kaykhusraw_ii_1237_1246",
     "name": "Sultanate of Rum under Kaykhusraw II",
     "kind": "sultanate_regime",
@@ -3987,6 +4004,21 @@
     ]
   },
   {
+    "id": "muscovite_novgorodian_pskovian_smolino_coalition_1502",
+    "name": "Muscovite, Novgorodian, and Pskovian field coalition at Lake Smolino (1502)",
+    "kind": "event_bounded_field_coalition",
+    "start_year": 1502,
+    "end_year": 1502,
+    "region": "Pskov region",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the combined host directly identified at Lake Smolino; it does not reduce Novgorodian and Pskovian forces to a timeless Moscow label or rate every force of the Grand Duchy of Moscow. No rating is inherited from or transferred to the independent Livonian Brothers of the Sword, another Teutonic branch, the wider Livonian Confederation, an omitted coalition ally, or a secular successor.",
+    "source_ids": [
+      "wave8_livonian_order_baranov_smolino",
+      "wave8_livonian_order_kirby_northern_europe"
+    ]
+  },
+  {
     "id": "duchy_bavaria_unified_1506",
     "name": "Unified Duchy of Bavaria",
     "kind": "duchy",
@@ -4226,6 +4258,54 @@
       "thornton_atlantic_africa"
     ],
     "start_year": 1549
+  },
+  {
+    "id": "narva_order_city_castle_defence_1558",
+    "name": "Narva city and Order-castle defence (1558)",
+    "kind": "event_bounded_city_castle_defence",
+    "start_year": 1558,
+    "end_year": 1558,
+    "region": "Narva, Livonia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the city and castle defenders during the May 1558 Russian capture. It does not treat Narva's inhabitants, the whole Order branch, or the Livonian Confederation as interchangeable. No rating is inherited from or transferred to the independent Livonian Brothers of the Sword, another Teutonic branch, the wider Livonian Confederation, an omitted coalition ally, or a secular successor.",
+    "source_ids": [
+      "wave8_livonian_order_narva_city_history",
+      "wave8_livonian_order_narva_museum_history",
+      "wave8_livonian_order_oxford_baltic_crusades"
+    ]
+  },
+  {
+    "id": "fellin_order_garrison_defence_1560",
+    "name": "Fellin city and Order-castle defence (1560)",
+    "kind": "event_bounded_mixed_garrison",
+    "start_year": 1560,
+    "end_year": 1560,
+    "region": "Fellin (Viljandi), Livonia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the citizens, Order servants, mercenaries, and local defenders of Fellin's city and castle under Wilhelm von Fürstenberg. It is not a proxy for every Livonian Order formation in 1560. No rating is inherited from or transferred to the independent Livonian Brothers of the Sword, another Teutonic branch, the wider Livonian Confederation, an omitted coalition ally, or a secular successor.",
+    "source_ids": [
+      "wave8_livonian_order_oxford_baltic_crusades",
+      "wave8_livonian_order_sproule_mercenary",
+      "wave8_livonian_order_viljandi_museum_fellin"
+    ]
+  },
+  {
+    "id": "ergeme_order_auxiliary_field_force_1560",
+    "name": "Livonian Order and auxiliary field force at Ērģeme (1560)",
+    "kind": "event_bounded_order_auxiliary_force",
+    "start_year": 1560,
+    "end_year": 1560,
+    "region": "Ērģeme, Livonia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the few hundred Order members and roughly five hundred auxiliaries under Philipp Schall von Bell at Ērģeme. Auxiliary partners are kept inside this one event-specific formation. No rating is inherited from or transferred to the independent Livonian Brothers of the Sword, another Teutonic branch, the wider Livonian Confederation, an omitted coalition ally, or a secular successor.",
+    "source_ids": [
+      "wave8_livonian_order_balcerek_daugava",
+      "wave8_livonian_order_frost_northern_wars",
+      "wave8_livonian_order_oxford_baltic_crusades"
+    ]
   },
   {
     "id": "dutch_republic",

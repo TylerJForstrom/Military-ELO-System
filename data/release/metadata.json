@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 678,
-    "events": 5139,
-    "sources": 839,
-    "registry_polities": 2034
+    "entities": 683,
+    "events": 5143,
+    "sources": 855,
+    "registry_polities": 2039
   },
   "year_range": {
     "start": -1274,
@@ -121,6 +121,7 @@
     "accepted_wave8_uzbekistan_hced_events": 4,
     "accepted_wave8_vietnam_hced_events": 7,
     "accepted_wave8_hussites_hced_events": 12,
+    "accepted_wave8_livonian_order_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -5923,7 +5924,238 @@
     "wave8_hussites_outcome_overrides": [],
     "wave8_hussites_entities_added": 22,
     "wave8_hussites_sources_added": 16,
-    "hced_label_pass_input_rows": 5839,
+    "wave8_livonian_order_counts": {
+      "country_quarantine_additions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 3,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 7,
+      "new_entities": 5,
+      "new_sources": 16,
+      "newly_rated_events": 4,
+      "outcome_overrides": 2,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 1,
+      "reviewed_hced_rows": 7,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_livonian_order_cohort_counts": {
+      "livonian_war_1558_1561": 3,
+      "muscovite_livonian_war_1501_1503": 1
+    },
+    "wave8_livonian_order_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 3,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 0
+    },
+    "wave8_livonian_order_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_livonian_order_candidate_ids": [
+      "hced-Fellin1560-1",
+      "hced-Lake Smolino1502-1",
+      "hced-Narva1558-1",
+      "hced-Oomuli1560-1"
+    ],
+    "wave8_livonian_order_holds": [
+      {
+        "candidate_id": "hced-Aizkraulke1279-1",
+        "raw_row_sha256": "0b72cf4fed12e0d8aeca1dc2dca7c500d22a8e449566fc55ad2ebe536384c4b9",
+        "canonical_event": {
+          "canonical_key": "battle_of_aizkraukle:1279:1279",
+          "date_precision": "day",
+          "date_text": "5 March 1279",
+          "granularity": "engagement",
+          "name": "Battle of Aizkraukle",
+          "year_low": 1279,
+          "year_high": 1279
+        },
+        "disposition": "hold",
+        "hold_category": "paired_identity_and_livonian_coalition_hold",
+        "reviewed_outcome": "lithuanian_victory_attested_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "the Lithuanian force",
+          "the later Livonian branch's army with a Danish Tallinn contingent and Curonian and Semigallian auxiliaries"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The national scholarly encyclopedia establishes the Lithuanian victory and names the Danish, Curonian, and Semigallian components. The exact row is also blocked on Lithuania, and its raw dyad omits coalition partners. It is not promoted in this single-label tranche; the unrated result remains unknown and is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_livonian_order_oxford_baltic_crusades",
+          "wave8_livonian_order_rudolph_viterbo",
+          "wave8_livonian_order_vle_aizkraukle"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_livonian_order",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Helmed1501-1",
+        "raw_row_sha256": "50fa7b8198b114a0bbe117dea2d1d740264273038cf0ebed49e5e1f473049296",
+        "canonical_event": {
+          "canonical_key": "battle_near_helme:1501:1501",
+          "date_precision": "month",
+          "date_text": "November 1501",
+          "granularity": "engagement",
+          "name": "Battle near Helme",
+          "year_low": 1501,
+          "year_high": 1501
+        },
+        "disposition": "hold",
+        "hold_category": "paired_pre_tsardom_identity_and_force_composition_hold",
+        "reviewed_outcome": "russian_victory_attested_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "the pre-tsardom Muscovite and allied Russian host",
+          "the bounded Livonian force defeated near Helme"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "Kirby and the Old Russia chronology attest the November 1501 Russian defeat of the Livonian force, but HCED's Russia opponent is outside the current Tsardom window and the exact host is not bounded here. The row is not promoted; its unrated result is unknown, never a draw.",
+        "evidence_refs": [
+          "wave8_livonian_order_kirby_northern_europe",
+          "wave8_livonian_order_ostrowski_poe_old_russia",
+          "wave8_livonian_order_oxford_baltic_crusades"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_livonian_order",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Wilkomierz1435-1",
+        "raw_row_sha256": "319ba2bb8c3cb1dcf9d2f18d23433c8ad67da6a1cfe23fa24581de193f5840c5",
+        "canonical_event": {
+          "canonical_key": "battle_of_pabaiskas_wi_komierz:1435:1435",
+          "date_precision": "day",
+          "date_text": "1 September 1435",
+          "granularity": "engagement",
+          "name": "Battle of Pabaiskas (Wiłkomierz)",
+          "year_low": 1435,
+          "year_high": 1435
+        },
+        "disposition": "hold",
+        "hold_category": "raw_dyad_omits_both_coalitions",
+        "reviewed_outcome": "sigismund_coalition_victory_attested_but_not_rateable_in_this_tranche",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Žygimantas Kęstutaitis's Lithuanian army with Polish auxiliaries",
+          "Švitrigaila's Lithuanian coalition with the Livonian landmaster's force and Tatar allies"
+        ],
+        "reviewed_granularity": "engagement",
+        "hold_reason": "The dissertation and peer-reviewed army study establish the 1 September 1435 victory and show that HCED's Poland-versus-Livonian-Order dyad omits the principal Lithuanian formations and Tatar partners on both sides. It is not promoted until both coalitions are independently owned; the unrated result remains unknown, not a draw.",
+        "evidence_refs": [
+          "wave8_livonian_order_baranauskas_armies",
+          "wave8_livonian_order_baranauskas_dissertation",
+          "wave8_livonian_order_oxford_baltic_crusades"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_livonian_order",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_livonian_order_terminal_exclusions": [],
+    "wave8_livonian_order_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Seritsa1501-1",
+        "raw_row_sha256": "99228750fd4befc033f4d0334bef4038647e11c9343d7a9511055e70c3174a4f",
+        "related_candidate_ids": [
+          "hced-Helmed1501-1"
+        ],
+        "disposition": "defer_non_exact_composite_side_for_independent_coalition_audit",
+        "owner_module": null,
+        "reason": "Kirby identifies the Livonian victory at Seritsa, but HCED's non-exact side string combines an anachronistically named Lithuanian-Polish Commonwealth with the Livonian Order. This exact-label lane does not split or claim that composite coalition.",
+        "evidence_refs": [
+          "wave8_livonian_order_kirby_northern_europe",
+          "wave8_livonian_order_oxford_baltic_crusades"
+        ]
+      }
+    ],
+    "wave8_livonian_order_iwbd_duplicate_dispositions": [],
+    "wave8_livonian_order_existing_release_duplicate_dispositions": [],
+    "wave8_livonian_order_integration_dispositions": [
+      {
+        "disposition_id": "related_hced:hced-Seritsa1501-1",
+        "raw_row_sha256": "99228750fd4befc033f4d0334bef4038647e11c9343d7a9511055e70c3174a4f",
+        "related_candidate_ids": [
+          "hced-Helmed1501-1"
+        ],
+        "disposition": "defer_non_exact_composite_side_for_independent_coalition_audit",
+        "owner_module": null,
+        "reason": "Kirby identifies the Livonian victory at Seritsa, but HCED's non-exact side string combines an anachronistically named Lithuanian-Polish Commonwealth with the Livonian Order. This exact-label lane does not split or claim that composite coalition.",
+        "evidence_refs": [
+          "wave8_livonian_order_kirby_northern_europe",
+          "wave8_livonian_order_oxford_baltic_crusades"
+        ]
+      }
+    ],
+    "wave8_livonian_order_outcome_overrides": [
+      {
+        "candidate_id": "hced-Lake Smolino1502-1",
+        "raw_winner_raw": "Draw",
+        "raw_loser_raw": null,
+        "raw_winner_loser_complete": false,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 1,
+        "corrected_winner_entity_ids": [
+          "livonian_branch_teutonic_order_1237_1561"
+        ],
+        "corrected_loser_entity_ids": [
+          "muscovite_novgorodian_pskovian_smolino_coalition_1502"
+        ],
+        "override_kind": "unknown_draw_placeholder_to_sourced_livonian_victory",
+        "rationale": "The raw Draw is incomplete, while the direct academic sources identify a Livonian tactical victory over the combined Russian host.",
+        "outcome_source_ids": [
+          "wave8_livonian_order_baranov_smolino",
+          "wave8_livonian_order_kirby_northern_europe"
+        ],
+        "outcome_source_family_ids": [
+          "baranov_lake_smolino_reconsidered",
+          "kirby_baltic_world_monograph"
+        ]
+      },
+      {
+        "candidate_id": "hced-Narva1558-1",
+        "raw_winner_raw": "Livonian Order",
+        "raw_loser_raw": "Russia",
+        "raw_winner_loser_complete": true,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "clio_ru_moskva_rurik_dyn_1547_93deb0e2"
+        ],
+        "corrected_loser_entity_ids": [
+          "narva_order_city_castle_defence_1558"
+        ],
+        "override_kind": "sourced_tactical_outcome_reversal",
+        "rationale": "The official and academic histories agree that Ivan IV's forces captured Narva, directly reversing HCED's proposed orientation.",
+        "outcome_source_ids": [
+          "wave8_livonian_order_esper_russia_baltic",
+          "wave8_livonian_order_narva_city_history",
+          "wave8_livonian_order_narva_museum_history"
+        ],
+        "outcome_source_family_ids": [
+          "esper_russia_baltic_article",
+          "narva_city_official_history",
+          "narva_museum_history"
+        ]
+      }
+    ],
+    "wave8_livonian_order_entities_added": 5,
+    "wave8_livonian_order_sources_added": 16,
+    "hced_label_pass_input_rows": 5832,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -5936,7 +6168,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 765,
+      "reserved_candidate_contract": 772,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -5946,9 +6178,9 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 460,
       "label_outcome_not_aligned": 81,
-      "label_outside_policy_window": 177,
+      "label_outside_policy_window": 175,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2323,
+      "no_unique_time_valid_label_match": 2318,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
