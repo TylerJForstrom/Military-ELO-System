@@ -8376,6 +8376,16 @@
       "region": "Upper Peru"
     },
     {
+      "id": "non_treaty_nimiipuu_allied_campaign_force_1877",
+      "name": "Joined non-treaty nimíipuu and allied campaign fighting force (July-October 1877)",
+      "kind": "campaign_bounded_indigenous_allied_fighting_force",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Idaho and Montana Territories during the 1877 flight"
+    },
+    {
       "id": "joseon",
       "name": "Joseon",
       "kind": "kingdom",
@@ -13087,6 +13097,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "white_bird_non_treaty_nimiipuu_fighting_force_1877",
+      "name": "Non-treaty nimíipuu fighting force at White Bird Canyon (1877)",
+      "kind": "engagement_bounded_indigenous_fighting_force",
+      "start_year": 1877,
+      "end_year": 1877,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "White Bird Canyon, Idaho Territory"
     },
     {
       "id": "clio_gb_england_norman_1072_631fb68a",
@@ -20964,11 +20984,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1959,
-    "rated_entities": 596,
-    "rated_events": 5093,
+    "registry_polities": 1961,
+    "rated_entities": 598,
+    "rated_events": 5098,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18301,
+    "unresolved_event_candidates": 18296,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21010,6 +21030,7 @@
     "candidate_keyed_wave8_danish_vikings_hced_events": 4,
     "candidate_keyed_wave8_epirus_hced_events": 6,
     "candidate_keyed_wave8_savoy_hced_events": 5,
+    "candidate_keyed_wave8_nez_perce_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21020,21 +21041,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4829,
-      "candidate_keyed_reviewed_contracts": 519,
-      "geojson_points": 4730,
-      "modern_location_country_assertions": 4741,
-      "location_provenance_objects": 4790,
-      "point_fields_withheld_by_quarantine": 99,
+      "hced_candidate_bindings": 4834,
+      "candidate_keyed_reviewed_contracts": 524,
+      "geojson_points": 4731,
+      "modern_location_country_assertions": 4746,
+      "location_provenance_objects": 4795,
+      "point_fields_withheld_by_quarantine": 103,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 39,
-      "unique_events_with_any_quarantined_field": 147,
-      "point_quarantine_candidate_manifest_sha256": "3ad7798f860881cae2940ad4df4280eeb9b784153aef021868abaedb2257e202",
+      "unique_events_with_any_quarantined_field": 151,
+      "point_quarantine_candidate_manifest_sha256": "ed6c718037b11396d3d436f57fe74cd07a1c39938e40d1b24f31c20f9d980dfa",
       "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
-      "quarantine_policy_sha256": "e9ede18567dfc578454fbe59f933969d24fecee3000b521d7554b0bd89fdc42c",
+      "quarantine_policy_sha256": "f11c03fdb1296f43289a50f514f31bb22c648250733c6e8bb1b9eef1a5924a69",
       "assertion_status": {
-        "unreviewed_source_assertion": 4790
+        "unreviewed_source_assertion": 4795
       },
       "verified_location_assertions": {
         "availability": "not_available",

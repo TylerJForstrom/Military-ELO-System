@@ -7248,6 +7248,40 @@
     ]
   },
   {
+    "id": "non_treaty_nimiipuu_allied_campaign_force_1877",
+    "name": "Joined non-treaty nimíipuu and allied campaign fighting force (July-October 1877)",
+    "kind": "campaign_bounded_indigenous_allied_fighting_force",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "Idaho and Montana Territories during the 1877 flight",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded continuity begins after Looking Glass's band joined the mobile formation in July and ends with the Bear Paw surrender and escape in October. It covers the changing body of armed warriors from the joined non-treaty bands and attached Palouse, Cayuse, or other allies only while fighting with that formation. Noncombatants and the travelling families are excluded. No rating is inherited by any band or allied people separately, the nimíipuu as a people, descendants, or any modern tribal government.",
+    "source_ids": [
+      "wave8_nez_perce_greene_campaign",
+      "wave8_nez_perce_nps_bear_paw",
+      "wave8_nez_perce_nps_big_hole",
+      "wave8_nez_perce_nps_canyon_creek",
+      "wave8_nez_perce_nps_clearwater"
+    ]
+  },
+  {
+    "id": "white_bird_non_treaty_nimiipuu_fighting_force_1877",
+    "name": "Non-treaty nimíipuu fighting force at White Bird Canyon (1877)",
+    "kind": "engagement_bounded_indigenous_fighting_force",
+    "start_year": 1877,
+    "end_year": 1877,
+    "region": "White Bird Canyon, Idaho Territory",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the armed warriors from the associated non-treaty bands who fought on 17 June are rated. This formation closes before Looking Glass's band joined in July. Noncombatants and the travelling families are excluded. No rating is inherited by the nimíipuu as a people, a treaty band, a descendant community, or any modern tribal government.",
+    "source_ids": [
+      "wave8_nez_perce_army_white_bird",
+      "wave8_nez_perce_greene_campaign",
+      "wave8_nez_perce_nps_white_bird"
+    ]
+  },
+  {
     "id": "sigcawu_sarhili_gcaleka_force_ibeka_1877",
     "name": "Sigcawu–Sarhili Gcaleka force at Ibeka",
     "kind": "indigenous_war_party",

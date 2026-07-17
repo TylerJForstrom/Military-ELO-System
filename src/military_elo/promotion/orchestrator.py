@@ -685,6 +685,27 @@ from .wave8_savoy import (
     wave8_savoy_cohort_counts,
     wave8_savoy_counts,
 )
+from .wave8_nez_perce import (
+    WAVE8_NEZ_PERCE_CONTRACT_IDS,
+    WAVE8_NEZ_PERCE_CROSS_LANE_DISPOSITIONS,
+    WAVE8_NEZ_PERCE_ENTITIES,
+    WAVE8_NEZ_PERCE_HOLD_IDS,
+    WAVE8_NEZ_PERCE_HOLDS,
+    WAVE8_NEZ_PERCE_INTEGRATION_DISPOSITIONS,
+    WAVE8_NEZ_PERCE_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_NEZ_PERCE_OUTCOME_OVERRIDES,
+    WAVE8_NEZ_PERCE_RESERVED_IDS,
+    WAVE8_NEZ_PERCE_SOURCES,
+    WAVE8_NEZ_PERCE_TERMINAL_EXCLUSION_IDS,
+    WAVE8_NEZ_PERCE_TERMINAL_EXCLUSIONS,
+    install_wave8_nez_perce_entities,
+    install_wave8_nez_perce_sources,
+    promote_wave8_nez_perce_contracts,
+    validate_wave8_nez_perce_integration_dispositions,
+    validate_wave8_nez_perce_queue_contracts,
+    wave8_nez_perce_cohort_counts,
+    wave8_nez_perce_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -741,6 +762,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_DANISH_VIKINGS_RESERVED_IDS
     | WAVE8_EPIRUS_RESERVED_IDS
     | WAVE8_SAVOY_RESERVED_IDS
+    | WAVE8_NEZ_PERCE_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1145,7 +1167,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 99
+        len(HCED_POINT_QUARANTINE_IDS) != 103
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 87
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1335,6 +1357,9 @@ def build_expanded_release(
     )
     wave8_epirus_queue_validation = validate_wave8_epirus_queue_contracts(hced)
     wave8_savoy_queue_validation = validate_wave8_savoy_queue_contracts(hced)
+    wave8_nez_perce_queue_validation = validate_wave8_nez_perce_queue_contracts(
+        hced
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1678,6 +1703,7 @@ def build_expanded_release(
     install_wave8_danish_vikings_entities(release_entities)
     install_wave8_epirus_entities(release_entities)
     install_wave8_savoy_entities(release_entities)
+    install_wave8_nez_perce_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -2717,6 +2743,15 @@ def build_expanded_release(
         release_entities,
         wave8_savoy_existing_events,
     )
+    wave8_nez_perce_existing_events = [
+        *wave8_savoy_existing_events,
+        *wave8_savoy_events,
+    ]
+    wave8_nez_perce_events = promote_wave8_nez_perce_contracts(
+        hced,
+        release_entities,
+        wave8_nez_perce_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -2755,6 +2790,7 @@ def build_expanded_release(
         *wave8_danish_vikings_events,
         *wave8_epirus_events,
         *wave8_savoy_events,
+        *wave8_nez_perce_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -2825,6 +2861,8 @@ def build_expanded_release(
             *WAVE8_EPIRUS_HOLD_IDS,
             *WAVE8_SAVOY_HOLD_IDS,
             *WAVE8_SAVOY_EXCLUSION_IDS,
+            *WAVE8_NEZ_PERCE_HOLD_IDS,
+            *WAVE8_NEZ_PERCE_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -2889,6 +2927,7 @@ def build_expanded_release(
         *wave8_danish_vikings_events,
         *wave8_epirus_events,
         *wave8_savoy_events,
+        *wave8_nez_perce_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3030,6 +3069,13 @@ def build_expanded_release(
             hced,
             iwbd_candidates,
             wave8_savoy_existing_events,
+        )
+    )
+    wave8_nez_perce_integration_validation = (
+        validate_wave8_nez_perce_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_nez_perce_existing_events,
         )
     )
     iwd_parent_ids = {
@@ -3215,6 +3261,7 @@ def build_expanded_release(
     install_wave8_danish_vikings_sources(sources_by_id)
     install_wave8_epirus_sources(sources_by_id)
     install_wave8_savoy_sources(sources_by_id)
+    install_wave8_nez_perce_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3258,6 +3305,7 @@ def build_expanded_release(
         *wave8_danish_vikings_events,
         *wave8_epirus_events,
         *wave8_savoy_events,
+        *wave8_nez_perce_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3301,6 +3349,7 @@ def build_expanded_release(
         *wave8_danish_vikings_events,
         *wave8_epirus_events,
         *wave8_savoy_events,
+        *wave8_nez_perce_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3343,6 +3392,7 @@ def build_expanded_release(
             | WAVE8_DANISH_VIKINGS_CONTRACT_IDS
             | WAVE8_EPIRUS_CONTRACT_IDS
             | WAVE8_SAVOY_CONTRACT_IDS
+            | WAVE8_NEZ_PERCE_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -3427,6 +3477,7 @@ def build_expanded_release(
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_EPIRUS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_SAVOY_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_NEZ_PERCE_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -3638,6 +3689,7 @@ def build_expanded_release(
         - len(wave8_danish_vikings_events)
         - len(wave8_epirus_events)
         - len(wave8_savoy_events)
+        - len(wave8_nez_perce_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -3726,6 +3778,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_epirus_hced_events": len(wave8_epirus_events),
         "candidate_keyed_wave8_savoy_hced_events": len(wave8_savoy_events),
+        "candidate_keyed_wave8_nez_perce_hced_events": len(
+            wave8_nez_perce_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -3958,6 +4013,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_epirus_hced_events": len(wave8_epirus_events),
             "accepted_wave8_savoy_hced_events": len(wave8_savoy_events),
+            "accepted_wave8_nez_perce_hced_events": len(
+                wave8_nez_perce_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -4938,6 +4996,55 @@ def build_expanded_release(
             ],
             "wave8_savoy_entities_added": len(WAVE8_SAVOY_ENTITIES),
             "wave8_savoy_sources_added": len(WAVE8_SAVOY_SOURCES),
+            "wave8_nez_perce_counts": wave8_nez_perce_counts(),
+            "wave8_nez_perce_cohort_counts": wave8_nez_perce_cohort_counts(),
+            "wave8_nez_perce_queue_validation": (
+                wave8_nez_perce_queue_validation
+            ),
+            "wave8_nez_perce_integration_validation": (
+                wave8_nez_perce_integration_validation
+            ),
+            "wave8_nez_perce_candidate_ids": sorted(
+                WAVE8_NEZ_PERCE_CONTRACT_IDS
+            ),
+            "wave8_nez_perce_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_HOLDS.items()
+                )
+            ],
+            "wave8_nez_perce_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_nez_perce_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_nez_perce_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_nez_perce_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_nez_perce_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_NEZ_PERCE_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_nez_perce_entities_added": len(WAVE8_NEZ_PERCE_ENTITIES),
+            "wave8_nez_perce_sources_added": len(WAVE8_NEZ_PERCE_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -5153,6 +5260,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_epirus_hced_events": len(wave8_epirus_events),
         "candidate_keyed_wave8_savoy_hced_events": len(wave8_savoy_events),
+        "candidate_keyed_wave8_nez_perce_hced_events": len(
+            wave8_nez_perce_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

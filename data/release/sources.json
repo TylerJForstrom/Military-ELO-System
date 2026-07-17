@@ -8581,6 +8581,154 @@
     ]
   },
   {
+    "id": "wave8_nez_perce_army_campaign",
+    "title": "The Nez Perce War of 1877",
+    "url": "https://www.army.mil/article/28124/the_nez_perce_war_of_1877",
+    "publisher": "U.S. Army Heritage and Education Center",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "army_heritage_nez_perce_war_1877",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_army_white_bird",
+    "title": "Staff Ride Handbook and Atlas for the Battle of White Bird Canyon, 17 June 1877",
+    "url": "https://www.armyupress.army.mil/Portals/7/educational-services/staff-rides/StaffRideHB_AtlasofWhiteBirdCanyon.pdf",
+    "publisher": "U.S. Army Combat Studies Institute Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "collins_army_white_bird_staff_ride",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_greene_campaign",
+    "title": "Nez Perce Summer, 1877: The U.S. Army and the Nee-Me-Poo Crisis",
+    "url": "https://npshistory.com/publications/nepe/greene/contents.htm",
+    "publisher": "Montana Historical Society Press; National Park Service historic resource study",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "greene_nez_perce_summer_1877",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_bear_paw",
+    "title": "Visit Bear Paw Battlefield",
+    "url": "https://www.nps.gov/nepe/planyourvisit/visit-bear-paw-battlefield.htm",
+    "publisher": "U.S. National Park Service, Nez Perce National Historical Park",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_history_and_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_big_hole",
+    "title": "Montana: Big Hole National Battlefield",
+    "url": "https://www.nps.gov/articles/bighole.htm",
+    "publisher": "U.S. National Park Service",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_big_hole_location",
+    "title": "Directions - Big Hole National Battlefield",
+    "url": "https://www.nps.gov/biho/planyourvisit/directions.htm",
+    "publisher": "U.S. National Park Service, Big Hole National Battlefield",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_canyon_creek",
+    "title": "Visit Canyon Creek",
+    "url": "https://www.nps.gov/nepe/planyourvisit/visit-canyon-creek.htm",
+    "publisher": "U.S. National Park Service, Nez Perce National Historical Park",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_history_and_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_clearwater",
+    "title": "Visit Clearwater Battlefield",
+    "url": "https://www.nps.gov/nepe/planyourvisit/visit-clearwater-battlefield.htm",
+    "publisher": "U.S. National Park Service, Nez Perce National Historical Park",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_history_and_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_nps_white_bird",
+    "title": "Visit White Bird Battlefield",
+    "url": "https://www.nps.gov/nepe/planyourvisit/visit-white-bird-battlefield.htm",
+    "publisher": "U.S. National Park Service, Nez Perce National Historical Park",
+    "license": "Citation and link only",
+    "source_type": "federal_battlefield_history_and_location_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_nez_perce_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_nez_perce_scott_big_hole",
+    "title": "A Sharp Little Affair: The Archeology of the Big Hole Battlefield",
+    "url": "https://npshistory.com/publications/biho/sharp-little-affair.pdf",
+    "publisher": "National Park Service Midwest Archeological Center; J & L Reprint Company",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_archaeology_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "scott_big_hole_battlefield_archaeology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_nhhc_macedonian_1815",
     "title": "Macedonian I",
     "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/m/macedonian-i.html",
