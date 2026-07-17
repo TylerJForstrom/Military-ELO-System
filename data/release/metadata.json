@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 606,
-    "events": 5100,
-    "sources": 735,
-    "registry_polities": 1962
+    "entities": 614,
+    "events": 5104,
+    "sources": 744,
+    "registry_polities": 1970
   },
   "year_range": {
     "start": -1274,
@@ -114,6 +114,7 @@
     "accepted_wave8_savoy_hced_events": 5,
     "accepted_wave8_nez_perce_hced_events": 5,
     "accepted_wave8_dacia_hced_events": 2,
+    "accepted_wave8_cherokee_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4716,7 +4717,109 @@
     ],
     "wave8_dacia_entities_added": 1,
     "wave8_dacia_sources_added": 7,
-    "hced_label_pass_input_rows": 5892,
+    "wave8_cherokee_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "holds": 1,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 8,
+      "new_sources": 9,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 4,
+      "reviewed_hced_rows": 5
+    },
+    "wave8_cherokee_cohort_counts": {
+      "anglo_cherokee_war_1760_1761": 3,
+      "texas_cherokee_san_saba_1839": 1
+    },
+    "wave8_cherokee_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 1,
+      "reviewed_hced_rows": 5
+    },
+    "wave8_cherokee_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "integration_dispositions": 1,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_cherokee_candidate_ids": [
+      "hced-Etchoe1760-1",
+      "hced-Etchoe1761-1",
+      "hced-Fort Loudoun1760-1",
+      "hced-San Saba1839-1"
+    ],
+    "wave8_cherokee_holds": [
+      {
+        "candidate_id": "hced-Fort Prince George1760-1",
+        "raw_row_sha256": "40e068d04f40a97e280e15bbeccf5a43f21e61ba9da0a36749ae9ac4543b0a87",
+        "canonical_event": {
+          "canonical_key": "fort_prince_george_ambush_hostage_killings_and_siege:1760:1760",
+          "date_precision": "month_range",
+          "date_text": "16 February-June 1760",
+          "granularity": "compound_ambush_massacre_and_siege",
+          "name": "Fort Prince George ambush, hostage killings, and siege",
+          "year_low": 1760,
+          "year_high": 1760
+        },
+        "hold_category": "compound_violence_without_single_tactical_outcome",
+        "hold_reason": "On 16 February Oconostota's concealed warriors mortally wounded the fort commander during a parley; the Independent Company garrison then killed the confined Cherokee hostages, and a sporadic siege continued until Montgomery relieved the post in June. HCED's North Carolina actor is wrong, the hostage killings are not a competitive British victory, and the compound sequence has no single defensible tactical winner. It cannot produce an Elo result and is never made a draw.",
+        "evidence_refs": [
+          "wave8_cherokee_ncpedia_etchoe",
+          "wave8_cherokee_scencyclopedia_fort_prince_george"
+        ]
+      }
+    ],
+    "wave8_cherokee_exclusions": [
+      {
+        "candidate_id": "hced-Fort Prince George1760-1",
+        "raw_row_sha256": "40e068d04f40a97e280e15bbeccf5a43f21e61ba9da0a36749ae9ac4543b0a87",
+        "canonical_event": {
+          "canonical_key": "fort_prince_george_ambush_hostage_killings_and_siege:1760:1760",
+          "date_precision": "month_range",
+          "date_text": "16 February-June 1760",
+          "granularity": "compound_ambush_massacre_and_siege",
+          "name": "Fort Prince George ambush, hostage killings, and siege",
+          "year_low": 1760,
+          "year_high": 1760
+        },
+        "hold_category": "compound_violence_without_single_tactical_outcome",
+        "hold_reason": "On 16 February Oconostota's concealed warriors mortally wounded the fort commander during a parley; the Independent Company garrison then killed the confined Cherokee hostages, and a sporadic siege continued until Montgomery relieved the post in June. HCED's North Carolina actor is wrong, the hostage killings are not a competitive British victory, and the compound sequence has no single defensible tactical winner. It cannot produce an Elo result and is never made a draw.",
+        "evidence_refs": [
+          "wave8_cherokee_ncpedia_etchoe",
+          "wave8_cherokee_scencyclopedia_fort_prince_george"
+        ]
+      }
+    ],
+    "wave8_cherokee_iwbd_duplicate_dispositions": [],
+    "wave8_cherokee_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Neches1839-1",
+        "source_dataset": "hced",
+        "disposition": "related_distinct_event",
+        "relationship": "same_war_different_engagement_date_and_fighting_force",
+        "raw_row_sha256": "cec8def02dd30a11a3178061abf24892984e76f77e45529c56a8770e69f3c3e1",
+        "reason": "Neches records the 15-16 July battle against Chief Bowl's larger East Texas force. San Saba records Burleson's separate 25 December fight against the refugee party led by Egg and John Bowles."
+      }
+    ],
+    "wave8_cherokee_integration_dispositions": [
+      {
+        "disposition_id": "hced-Neches1839-1",
+        "source_dataset": "hced",
+        "disposition": "related_distinct_event",
+        "relationship": "same_war_different_engagement_date_and_fighting_force",
+        "raw_row_sha256": "cec8def02dd30a11a3178061abf24892984e76f77e45529c56a8770e69f3c3e1",
+        "reason": "Neches records the 15-16 July battle against Chief Bowl's larger East Texas force. San Saba records Burleson's separate 25 December fight against the refugee party led by Egg and John Bowles."
+      }
+    ],
+    "wave8_cherokee_outcome_overrides": [],
+    "wave8_cherokee_entities_added": 8,
+    "wave8_cherokee_sources_added": 9,
+    "hced_label_pass_input_rows": 5887,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4729,7 +4832,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 712,
+      "reserved_candidate_contract": 717,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4741,7 +4844,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2375,
+      "no_unique_time_valid_label_match": 2370,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

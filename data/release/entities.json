@@ -4358,6 +4358,98 @@
     ]
   },
   {
+    "id": "montgomerie_british_sc_force_echoe_1760",
+    "name": "Montgomerie's British-South Carolina expedition at Echoe (1760)",
+    "kind": "event_bounded_colonial_force",
+    "start_year": 1760,
+    "end_year": 1760,
+    "region": "Cherokee Middle Towns, present-day North Carolina",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The exact expeditionary force of British regulars and South Carolina provincials led by Archibald Montgomerie at Echoe. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_dncr_echoe_1760",
+      "wave8_cherokee_ncpedia_etchoe"
+    ]
+  },
+  {
+    "id": "first_echoe_cherokee_fighting_force_1760",
+    "name": "Oconostota's Cherokee fighting force at the First Battle of Echoe (1760)",
+    "kind": "event_bounded_indigenous_force",
+    "start_year": 1760,
+    "end_year": 1760,
+    "region": "Cherokee Middle Towns, present-day North Carolina",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The warriors directly attested under Oconostota at the 27 June ambush; this record neither absorbs noncombatants nor opens a generic Cherokee fallback. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_dncr_echoe_1760",
+      "wave8_cherokee_ncpedia_etchoe"
+    ]
+  },
+  {
+    "id": "fort_loudoun_overhill_cherokee_siege_force_1760",
+    "name": "Overhill Cherokee siege force at Fort Loudoun (1760)",
+    "kind": "event_bounded_indigenous_siege_force",
+    "start_year": 1760,
+    "end_year": 1760,
+    "region": "Overhill Cherokee country, present-day Tennessee",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Overhill warriors directly attested in the March-August siege that forced the fort's capitulation; the later attack on the evacuating column is excluded from this identity and result. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_fort_loudoun_state_history",
+      "wave8_cherokee_ncpedia_french_indian_war",
+      "wave8_cherokee_tn_archaeology_fort_loudoun"
+    ]
+  },
+  {
+    "id": "fort_loudoun_south_carolina_garrison_1760",
+    "name": "South Carolina Independent Company garrison at Fort Loudoun (1760)",
+    "kind": "event_bounded_colonial_garrison",
+    "start_year": 1760,
+    "end_year": 1760,
+    "region": "Fort Loudoun, present-day Tennessee",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The fort garrison commanded by Paul Demere through the capitulation; civilian family members and the later attacked evacuation column are not rated as additional participants. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_fort_loudoun_state_history",
+      "wave8_cherokee_ncpedia_french_indian_war",
+      "wave8_cherokee_tn_archaeology_fort_loudoun"
+    ]
+  },
+  {
+    "id": "grant_british_sc_indigenous_allied_force_echoe_1761",
+    "name": "Grant's British-South Carolina-Indigenous allied force at Echoe (1761)",
+    "kind": "event_bounded_allied_colonial_force",
+    "start_year": 1761,
+    "end_year": 1761,
+    "region": "Cherokee Middle Towns, present-day North Carolina",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "James Grant's exact battle force, including British regulars, South Carolina provincials, and the directly attested Catawba, Chickasaw, and Mohawk allies; no component receives a separate result. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_dncr_echoe_1761",
+      "wave8_cherokee_ncpedia_etchoe"
+    ]
+  },
+  {
+    "id": "second_echoe_cherokee_fighting_force_1761",
+    "name": "Oconostota's Cherokee fighting force at the Second Battle of Echoe (1761)",
+    "kind": "event_bounded_indigenous_force",
+    "start_year": 1761,
+    "end_year": 1761,
+    "region": "Cherokee Middle Towns, present-day North Carolina",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The warriors directly attested under Oconostota in the 10 June engagement; this is not an Elo continuation from the distinct 1760 force or from any later Cherokee polity. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_dncr_echoe_1761",
+      "wave8_cherokee_ncpedia_etchoe"
+    ]
+  },
+  {
     "id": "bar_confederation_forces",
     "name": "Bar Confederation Forces",
     "kind": "confederate_forces",
@@ -6008,6 +6100,36 @@
     "source_ids": [
       "wave8_canada_upper_canada_rebellion",
       "wave8_canada_montgomery_tavern"
+    ]
+  },
+  {
+    "id": "burleson_texas_lipan_tonkawa_force_san_saba_1839",
+    "name": "Burleson's Republic of Texas-Lipan-Tonkawa force at San Saba (1839)",
+    "kind": "event_bounded_allied_frontier_force",
+    "start_year": 1839,
+    "end_year": 1839,
+    "region": "Colorado-San Saba river confluence, Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Edward Burleson's exact field force, including Republic regulars and volunteers with Lipan and Tonkawa scouts and battlefield allies. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_tsha_cherokee_war",
+      "wave8_cherokee_unt_indian_allies_thesis"
+    ]
+  },
+  {
+    "id": "egg_bowles_cherokee_fighting_party_san_saba_1839",
+    "name": "Egg and John Bowles's Cherokee fighting party at San Saba (1839)",
+    "kind": "event_bounded_refugee_fighting_party",
+    "start_year": 1839,
+    "end_year": 1839,
+    "region": "Colorado-San Saba river confluence, Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the armed party led by Egg and John Bowles in the Christmas Day fight is rated. The accompanying women and children, the July Neches force, and Cherokee governments elsewhere are excluded. No rating is inherited by a Cherokee nation, clan, town, modern tribal government, colonial province, constituent regiment, allied people, descendant community, or later force.",
+    "source_ids": [
+      "wave8_cherokee_tsha_cherokee_war",
+      "wave8_cherokee_unt_indian_allies_thesis"
     ]
   },
   {

@@ -2020,6 +2020,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "burleson_texas_lipan_tonkawa_force_san_saba_1839",
+      "name": "Burleson's Republic of Texas-Lipan-Tonkawa force at San Saba (1839)",
+      "kind": "event_bounded_allied_frontier_force",
+      "start_year": 1839,
+      "end_year": 1839,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Colorado-San Saba river confluence, Republic of Texas"
+    },
+    {
       "id": "clio_q836_1820_f17c2530",
       "name": "Burma",
       "kind": "polity",
@@ -4780,6 +4790,16 @@
       "region": "Wessex and Surrey"
     },
     {
+      "id": "egg_bowles_cherokee_fighting_party_san_saba_1839",
+      "name": "Egg and John Bowles's Cherokee fighting party at San Saba (1839)",
+      "kind": "event_bounded_refugee_fighting_party",
+      "start_year": 1839,
+      "end_year": 1839,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Colorado-San Saba river confluence, Republic of Texas"
+    },
+    {
       "id": "egypt_muhammad_ali",
       "name": "Egypt (Muhammad Ali dynasty)",
       "kind": "dynastic_state",
@@ -6631,6 +6651,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "grant_british_sc_indigenous_allied_force_echoe_1761",
+      "name": "Grant's British-South Carolina-Indigenous allied force at Echoe (1761)",
+      "kind": "event_bounded_allied_colonial_force",
+      "start_year": 1761,
+      "end_year": 1761,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cherokee Middle Towns, present-day North Carolina"
     },
     {
       "id": "great_heathen_army_wessex_campaign_871",
@@ -12362,6 +12392,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "montgomerie_british_sc_force_echoe_1760",
+      "name": "Montgomerie's British-South Carolina expedition at Echoe (1760)",
+      "kind": "event_bounded_colonial_force",
+      "start_year": 1760,
+      "end_year": 1760,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cherokee Middle Towns, present-day North Carolina"
+    },
+    {
       "id": "morenga_johannes_christian_hartebeestmund_coalition_1905",
       "name": "Morenga–Johannes Christian coalition at Hartebeestmund",
       "kind": "event_bounded_resistance_coalition",
@@ -13336,6 +13376,26 @@
       "region": "Western Himalaya"
     },
     {
+      "id": "first_echoe_cherokee_fighting_force_1760",
+      "name": "Oconostota's Cherokee fighting force at the First Battle of Echoe (1760)",
+      "kind": "event_bounded_indigenous_force",
+      "start_year": 1760,
+      "end_year": 1760,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cherokee Middle Towns, present-day North Carolina"
+    },
+    {
+      "id": "second_echoe_cherokee_fighting_force_1761",
+      "name": "Oconostota's Cherokee fighting force at the Second Battle of Echoe (1761)",
+      "kind": "event_bounded_indigenous_force",
+      "start_year": 1761,
+      "end_year": 1761,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cherokee Middle Towns, present-day North Carolina"
+    },
+    {
       "id": "clio_q870517_bce450_46c0fb51",
       "name": "Odrysian Kingdom",
       "kind": "kingdom",
@@ -13514,6 +13574,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "fort_loudoun_overhill_cherokee_siege_force_1760",
+      "name": "Overhill Cherokee siege force at Fort Loudoun (1760)",
+      "kind": "event_bounded_indigenous_siege_force",
+      "start_year": 1760,
+      "end_year": 1760,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Overhill Cherokee country, present-day Tennessee"
     },
     {
       "id": "owain_glyndwr_bryn_glas_force_1402",
@@ -17726,6 +17796,16 @@
       "region": "Southern Africa"
     },
     {
+      "id": "fort_loudoun_south_carolina_garrison_1760",
+      "name": "South Carolina Independent Company garrison at Fort Loudoun (1760)",
+      "kind": "event_bounded_colonial_garrison",
+      "start_year": 1760,
+      "end_year": 1760,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Fort Loudoun, present-day Tennessee"
+    },
+    {
       "id": "clio_q958_2014_9e72d4ed",
       "name": "South Sudan",
       "kind": "polity",
@@ -20994,11 +21074,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1962,
-    "rated_entities": 599,
-    "rated_events": 5100,
+    "registry_polities": 1970,
+    "rated_entities": 607,
+    "rated_events": 5104,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18294,
+    "unresolved_event_candidates": 18290,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21042,6 +21122,7 @@
     "candidate_keyed_wave8_savoy_hced_events": 5,
     "candidate_keyed_wave8_nez_perce_hced_events": 5,
     "candidate_keyed_wave8_dacia_hced_events": 2,
+    "candidate_keyed_wave8_cherokee_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21052,21 +21133,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4836,
-      "candidate_keyed_reviewed_contracts": 526,
-      "geojson_points": 4731,
-      "modern_location_country_assertions": 4748,
-      "location_provenance_objects": 4797,
-      "point_fields_withheld_by_quarantine": 105,
+      "hced_candidate_bindings": 4840,
+      "candidate_keyed_reviewed_contracts": 530,
+      "geojson_points": 4732,
+      "modern_location_country_assertions": 4752,
+      "location_provenance_objects": 4801,
+      "point_fields_withheld_by_quarantine": 108,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 39,
-      "unique_events_with_any_quarantined_field": 153,
-      "point_quarantine_candidate_manifest_sha256": "4affaeeeda46af043022a6a319b83ef28c5568344a9040ac38a87da98bcce79c",
+      "unique_events_with_any_quarantined_field": 156,
+      "point_quarantine_candidate_manifest_sha256": "2be13925538bd0040568f1d48839ec0c1aef6dd76dbdddf36bf47f35b9ff05f9",
       "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
-      "quarantine_policy_sha256": "89a3c0cbe53811d811b7965a1b88b8272ea9ecb7f3a2925cc6c77d2d0390b1da",
+      "quarantine_policy_sha256": "0f2a09d891646a077c8400d0d0907d520a77f52ac431ee43a12f060e2add223d",
       "assertion_status": {
-        "unreviewed_source_assertion": 4797
+        "unreviewed_source_assertion": 4801
       },
       "verified_location_assertions": {
         "availability": "not_available",

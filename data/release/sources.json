@@ -6057,6 +6057,139 @@
     ]
   },
   {
+    "id": "wave8_cherokee_dncr_echoe_1760",
+    "title": "Cherokee Victory (Q-6)",
+    "url": "https://www.dncr.nc.gov/blog/2024/01/23/cherokee-victory-q-6",
+    "publisher": "North Carolina Department of Natural and Cultural Resources",
+    "license": "Citation and link only",
+    "source_type": "state_historical_marker_research",
+    "accessed": "2026-07-16",
+    "source_family_id": "nc_historical_marker_program_q6",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_dncr_echoe_1761",
+    "title": "Cherokee Defeat (Q-5)",
+    "url": "https://www.dncr.nc.gov/blog/2024/01/23/cherokee-defeat-q-5",
+    "publisher": "North Carolina Department of Natural and Cultural Resources",
+    "license": "Citation and link only",
+    "source_type": "state_historical_marker_research",
+    "accessed": "2026-07-16",
+    "source_family_id": "nc_historical_marker_program_q5",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_fort_loudoun_state_history",
+    "title": "History - Fort Loudoun State Historic Area",
+    "url": "https://fortloudoun.com/history/",
+    "publisher": "Fort Loudoun State Historic Area, Tennessee",
+    "license": "Citation and link only",
+    "source_type": "state_historic_site_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "fort_loudoun_state_historic_area",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_ncpedia_etchoe",
+    "title": "Etchoe, Battle of",
+    "url": "https://www.ncpedia.org/etchoe-battle",
+    "publisher": "NC Government & Heritage Library; University of North Carolina Press",
+    "license": "Citation and link only",
+    "source_type": "state_library_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "unc_press_encyclopedia_of_north_carolina",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_ncpedia_french_indian_war",
+    "title": "French and Indian War",
+    "url": "https://www.ncpedia.org/french-and-indian-war",
+    "publisher": "NC Government & Heritage Library; University of North Carolina Press",
+    "license": "Citation and link only",
+    "source_type": "state_library_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "unc_press_french_indian_war_entry",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_scencyclopedia_fort_prince_george",
+    "title": "Fort Prince George",
+    "url": "https://www.scencyclopedia.org/sce/entries/fort-prince-george/",
+    "publisher": "University of South Carolina, Institute for Southern Studies",
+    "license": "Citation and link only",
+    "source_type": "university_scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "usc_south_carolina_encyclopedia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_tn_archaeology_fort_loudoun",
+    "title": "Fort Loudoun in Tennessee: 1756-1760",
+    "url": "https://www.tn.gov/content/dam/tn/environment/archaeology/documents/researchseries/arch_rs17_fort_loudoun_2010.pdf",
+    "publisher": "Tennessee Division of Archaeology",
+    "license": "Citation and link only",
+    "source_type": "state_archaeology_research_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "tennessee_archaeology_research_series_17",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_tsha_cherokee_war",
+    "title": "Cherokee War",
+    "url": "https://www.tshaonline.org/handbook/entries/cherokee-war",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_state_historical_association_cherokee_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cherokee_unt_indian_allies_thesis",
+    "title": "In Justice to Our Indian Allies: The Government of Texas and Her Indian Allies, 1836-1867",
+    "url": "https://digital.library.unt.edu/ark:/67531/metadc9010/m2/1/high_res_d/thesis.pdf",
+    "publisher": "University of North Texas",
+    "license": "Citation and link only",
+    "source_type": "institutional_scholarly_thesis_with_primary_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "unt_miller_texas_indian_allies_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_comanche_army_mcoe_raids",
     "title": "Learning the Long-Distance Raid: Comanche, Rangers and 2nd U.S. Cavalry on the Texas Frontier",
     "url": "https://www.benning.army.mil/armor/eARMOR/content/issues/2014/JUL_SEP/Jennings.html",
