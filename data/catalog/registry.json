@@ -25093,7 +25093,7 @@
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
       "hced_candidate_bindings": 5090,
-      "candidate_keyed_reviewed_contracts": 780,
+      "candidate_keyed_reviewed_contracts": 777,
       "geojson_points": 4734,
       "modern_location_country_assertions": 4995,
       "location_provenance_objects": 5044,
