@@ -635,8 +635,9 @@ class Wave8ChadianRebelsTests(unittest.TestCase):
             self.assertNotIn(normalize_label(event["name"]), {"erdi", "ati", "n djamena"})
 
     def test_integration_validator_accepts_base_or_complete_lane_only(self) -> None:
+        _, _, existing = self._installed()
         base = lane.validate_wave8_chadian_rebels_integration_dispositions(
-            self.hced_rows, self.iwbd_rows, self.release_events, self.ucdp_rows
+            self.hced_rows, self.iwbd_rows, existing, self.ucdp_rows
         )
         self.assertEqual(base["release_lane_overlap"], 0)
         self.assertEqual(base["ucdp_overlap_dispositions"], 28)
@@ -644,7 +645,7 @@ class Wave8ChadianRebelsTests(unittest.TestCase):
         complete = lane.validate_wave8_chadian_rebels_integration_dispositions(
             self.hced_rows,
             self.iwbd_rows,
-            [*self.release_events, *events],
+            [*existing, *events],
             self.ucdp_rows,
         )
         self.assertEqual(complete["release_lane_overlap"], 3)
@@ -653,14 +654,14 @@ class Wave8ChadianRebelsTests(unittest.TestCase):
             lane.validate_wave8_chadian_rebels_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                [*self.release_events, events[0]],
+                [*existing, events[0]],
                 self.ucdp_rows,
             )
         with self.assertRaisesRegex(ValueError, "partial or duplicated"):
             lane.validate_wave8_chadian_rebels_integration_dispositions(
                 self.hced_rows,
                 self.iwbd_rows,
-                [*self.release_events, *events, copy.deepcopy(events[0])],
+                [*existing, *events, copy.deepcopy(events[0])],
                 self.ucdp_rows,
             )
 

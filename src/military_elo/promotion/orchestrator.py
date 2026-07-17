@@ -1580,6 +1580,31 @@ from .wave8_french_religious_forces import (
     wave8_french_religious_forces_counts,
     wave8_french_religious_forces_metadata,
 )
+from .wave8_chadian_rebels import (
+    WAVE8_CHADIAN_REBELS_ADJACENT_HCED_DISPOSITIONS,
+    WAVE8_CHADIAN_REBELS_CONTRACT_IDS,
+    WAVE8_CHADIAN_REBELS_CURRENT_RELEASE_BOUNDARIES,
+    WAVE8_CHADIAN_REBELS_DUPLICATE_AUDITS,
+    WAVE8_CHADIAN_REBELS_ENTITIES,
+    WAVE8_CHADIAN_REBELS_HOLD_IDS,
+    WAVE8_CHADIAN_REBELS_HOLDS,
+    WAVE8_CHADIAN_REBELS_INTEGRATION_DISPOSITIONS,
+    WAVE8_CHADIAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_CHADIAN_REBELS_OUTCOME_OVERRIDES,
+    WAVE8_CHADIAN_REBELS_RESERVED_IDS,
+    WAVE8_CHADIAN_REBELS_SOURCES,
+    WAVE8_CHADIAN_REBELS_TERMINAL_EXCLUSION_IDS,
+    WAVE8_CHADIAN_REBELS_TERMINAL_EXCLUSIONS,
+    WAVE8_CHADIAN_REBELS_UCDP_OVERLAP_DISPOSITIONS,
+    install_wave8_chadian_rebels_entities,
+    install_wave8_chadian_rebels_sources,
+    promote_wave8_chadian_rebels_contracts,
+    validate_wave8_chadian_rebels_integration_dispositions,
+    validate_wave8_chadian_rebels_queue_contracts,
+    wave8_chadian_rebels_cohort_counts,
+    wave8_chadian_rebels_counts,
+    wave8_chadian_rebels_metadata,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1674,6 +1699,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_YAKIMA_RESERVED_IDS
     | WAVE8_TALIBAN_AL_QAEDA_RESERVED_IDS
     | WAVE8_FRENCH_RELIGIOUS_FORCES_RESERVED_IDS
+    | WAVE8_CHADIAN_REBELS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1725,6 +1751,14 @@ EFFECTIVE_IWBD_CURATED_EXCLUSIONS = {
     # Preserve the older candidate-specific adjudication when a Wave 6 audit
     # fingerprints the same row under a broader hold inventory.
     **IWBD_CURATED_EXCLUSIONS,
+    # The later Chadian cross-source audit fingerprints the contradictory Erdi
+    # pair and supplies the narrower reason for retaining the hold.
+    **{
+        candidate_id: str(contract["reason"])
+        for candidate_id, contract in (
+            WAVE8_CHADIAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS.items()
+        )
+    },
 }
 EFFECTIVE_IWBD_REVIEWED_IDENTITY_BINDINGS = {
     **IWBD_REVIEWED_IDENTITY_BINDINGS,
@@ -2087,7 +2121,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 268
+        len(HCED_POINT_QUARANTINE_IDS) != 271
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2352,6 +2386,9 @@ def build_expanded_release(
     )
     wave8_french_religious_forces_queue_validation = (
         validate_wave8_french_religious_forces_queue_contracts(hced)
+    )
+    wave8_chadian_rebels_queue_validation = (
+        validate_wave8_chadian_rebels_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -2734,6 +2771,7 @@ def build_expanded_release(
     install_wave8_yakima_entities(release_entities)
     install_wave8_taliban_al_qaeda_entities(release_entities)
     install_wave8_french_religious_forces_entities(release_entities)
+    install_wave8_chadian_rebels_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4117,6 +4155,15 @@ def build_expanded_release(
             wave8_french_religious_forces_existing_events,
         )
     )
+    wave8_chadian_rebels_existing_events = [
+        *wave8_french_religious_forces_existing_events,
+        *wave8_french_religious_forces_events,
+    ]
+    wave8_chadian_rebels_events = promote_wave8_chadian_rebels_contracts(
+        hced,
+        release_entities,
+        wave8_chadian_rebels_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4193,6 +4240,7 @@ def build_expanded_release(
         *wave8_yakima_events,
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
+        *wave8_chadian_rebels_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4336,6 +4384,8 @@ def build_expanded_release(
             *WAVE8_TALIBAN_AL_QAEDA_TERMINAL_EXCLUSION_IDS,
             *WAVE8_FRENCH_RELIGIOUS_FORCES_HOLD_IDS,
             *WAVE8_FRENCH_RELIGIOUS_FORCES_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_CHADIAN_REBELS_HOLD_IDS,
+            *WAVE8_CHADIAN_REBELS_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -4438,6 +4488,7 @@ def build_expanded_release(
         *wave8_yakima_events,
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
+        *wave8_chadian_rebels_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4875,6 +4926,18 @@ def build_expanded_release(
     iwbd_rejections: Counter[str] = iwbd_promotion["rejections"]
     for polity in iwbd_promotion["resolved_polities"].values():
         ensure_candidate_entity(polity)
+    wave8_chadian_rebels_integration_validation = (
+        validate_wave8_chadian_rebels_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_chadian_rebels_existing_events,
+                *wave8_chadian_rebels_events,
+                *iwbd_events,
+            ],
+            wave8_taliban_al_qaeda_ucdp_rows,
+        )
+    )
 
     # UCDP conflict-termination episodes: the strategic-layer promotion path.
     # The promoted-war index (curated seed wars plus IWD parents) drives the
@@ -5073,6 +5136,7 @@ def build_expanded_release(
     install_wave8_yakima_sources(sources_by_id)
     install_wave8_taliban_al_qaeda_sources(sources_by_id)
     install_wave8_french_religious_forces_sources(sources_by_id)
+    install_wave8_chadian_rebels_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5154,6 +5218,7 @@ def build_expanded_release(
         *wave8_yakima_events,
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
+        *wave8_chadian_rebels_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5235,6 +5300,7 @@ def build_expanded_release(
         *wave8_yakima_events,
         *wave8_taliban_al_qaeda_events,
         *wave8_french_religious_forces_events,
+        *wave8_chadian_rebels_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5315,6 +5381,7 @@ def build_expanded_release(
             | WAVE8_YAKIMA_CONTRACT_IDS
             | WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS
             | WAVE8_FRENCH_RELIGIOUS_FORCES_CONTRACT_IDS
+            | WAVE8_CHADIAN_REBELS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5443,6 +5510,7 @@ def build_expanded_release(
             lambda entity: str(entity["id"]),
             WAVE8_FRENCH_RELIGIOUS_FORCES_ENTITIES,
         ),
+        *map(lambda entity: str(entity["id"]), WAVE8_CHADIAN_REBELS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5692,6 +5760,7 @@ def build_expanded_release(
         - len(wave8_yakima_events)
         - len(wave8_taliban_al_qaeda_events)
         - len(wave8_french_religious_forces_events)
+        - len(wave8_chadian_rebels_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5857,6 +5926,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_french_religious_forces_hced_events": len(
             wave8_french_religious_forces_events
+        ),
+        "candidate_keyed_wave8_chadian_rebels_hced_events": len(
+            wave8_chadian_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -6165,6 +6237,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_french_religious_forces_hced_events": len(
                 wave8_french_religious_forces_events
+            ),
+            "accepted_wave8_chadian_rebels_hced_events": len(
+                wave8_chadian_rebels_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -9504,6 +9579,77 @@ def build_expanded_release(
             "wave8_french_religious_forces_sources_added": len(
                 WAVE8_FRENCH_RELIGIOUS_FORCES_SOURCES
             ),
+            "wave8_chadian_rebels_counts": wave8_chadian_rebels_counts(),
+            "wave8_chadian_rebels_cohort_counts": (
+                wave8_chadian_rebels_cohort_counts()
+            ),
+            "wave8_chadian_rebels_metadata": wave8_chadian_rebels_metadata(),
+            "wave8_chadian_rebels_queue_validation": (
+                wave8_chadian_rebels_queue_validation
+            ),
+            "wave8_chadian_rebels_integration_validation": (
+                wave8_chadian_rebels_integration_validation
+            ),
+            "wave8_chadian_rebels_candidate_ids": sorted(
+                WAVE8_CHADIAN_REBELS_CONTRACT_IDS
+            ),
+            "wave8_chadian_rebels_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_HOLDS.items()
+                )
+            ],
+            "wave8_chadian_rebels_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_chadian_rebels_adjacent_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_ADJACENT_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_chadian_rebels_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_chadian_rebels_ucdp_overlap_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_UCDP_OVERLAP_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_chadian_rebels_current_release_boundaries": [
+                {"event_id": event_id, **contract}
+                for event_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_CURRENT_RELEASE_BOUNDARIES.items()
+                )
+            ],
+            "wave8_chadian_rebels_duplicate_audits": (
+                WAVE8_CHADIAN_REBELS_DUPLICATE_AUDITS
+            ),
+            "wave8_chadian_rebels_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_chadian_rebels_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_CHADIAN_REBELS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_chadian_rebels_entities_added": len(
+                WAVE8_CHADIAN_REBELS_ENTITIES
+            ),
+            "wave8_chadian_rebels_sources_added": len(
+                WAVE8_CHADIAN_REBELS_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -9796,6 +9942,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_french_religious_forces_hced_events": len(
             wave8_french_religious_forces_events
+        ),
+        "candidate_keyed_wave8_chadian_rebels_hced_events": len(
+            wave8_chadian_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

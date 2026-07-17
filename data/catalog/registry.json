@@ -6045,6 +6045,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "fap_frolinat_ati_assault_force_1978",
+      "name": "FAP/FROLINAT assault force at Ati (1978)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1978,
+      "end_year": 1978,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
       "id": "fatimid_beirut_garrison_1110",
       "name": "Fatimid Beirut garrison in 1110",
       "kind": "event_bounded_city_garrison",
@@ -6826,6 +6836,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "french_operation_tacaud_ati_force_1978",
+      "name": "French Operation Tacaud force at Ati (1978)",
+      "kind": "event_bounded_intervention_force",
+      "start_year": 1978,
+      "end_year": 1978,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
       "id": "rochambeau_saint_domingue_expedition_1803",
       "name": "French Saint-Domingue expedition under Rochambeau (1803)",
       "kind": "campaign_and_command_bounded_colonial_expedition",
@@ -7412,6 +7432,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "fap_goukouni_ndjamena_entry_force_february_1979",
+      "name": "Goukouni FAP entry force in N'Djamena (February 1979)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1979,
+      "end_year": 1979,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
+      "id": "gunt_fap_ndjamena_campaign_force_1980",
+      "name": "Goukouni GUNT/FAP N'Djamena campaign force (1980)",
+      "kind": "event_bounded_government_coalition_force",
+      "start_year": 1980,
+      "end_year": 1980,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
       "id": "clio_co_colombia_rep_1_1822_118274ea",
       "name": "Gran Colombia",
       "kind": "polity",
@@ -7899,6 +7939,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "fan_habre_ndjamena_campaign_force_1980",
+      "name": "Habré FAN N'Djamena campaign force (1980)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1980,
+      "end_year": 1980,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
+      "id": "fan_habre_ndjamena_force_february_1979",
+      "name": "Habré FAN force in N'Djamena (12-22 February 1979)",
+      "kind": "event_bounded_rebel_force",
+      "start_year": 1979,
+      "end_year": 1979,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
     },
     {
       "id": "habsburg_monarchy",
@@ -12622,6 +12682,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "libyan_ndjamena_intervention_force_1980",
+      "name": "Libyan intervention force in the N'Djamena campaign (1980)",
+      "kind": "event_bounded_intervention_force",
+      "start_year": 1980,
+      "end_year": 1980,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
       "id": "clio_q659312_1797_8f1b7332",
       "name": "Ligurian Republic",
       "kind": "republic",
@@ -13255,6 +13325,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "malloum_fat_ati_defense_force_1978",
+      "name": "Malloum FAT defense and relief force at Ati (1978)",
+      "kind": "event_bounded_government_force",
+      "start_year": 1978,
+      "end_year": 1978,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
+    },
+    {
+      "id": "malloum_fat_ndjamena_force_february_1979",
+      "name": "Malloum FAT force in N'Djamena (February 1979)",
+      "kind": "event_bounded_government_force",
+      "start_year": 1979,
+      "end_year": 1979,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Africa"
     },
     {
       "id": "clio_q233_1967_341da9fc",
@@ -23864,11 +23954,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2249,
-    "rated_entities": 886,
-    "rated_events": 5266,
+    "registry_polities": 2258,
+    "rated_entities": 895,
+    "rated_events": 5269,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18128,
+    "unresolved_event_candidates": 18125,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23948,6 +24038,7 @@
     "candidate_keyed_wave8_yakima_hced_events": 2,
     "candidate_keyed_wave8_taliban_al_qaeda_hced_events": 4,
     "candidate_keyed_wave8_french_religious_forces_hced_events": 16,
+    "candidate_keyed_wave8_chadian_rebels_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23958,21 +24049,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5002,
-      "candidate_keyed_reviewed_contracts": 692,
+      "hced_candidate_bindings": 5005,
+      "candidate_keyed_reviewed_contracts": 695,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4909,
-      "location_provenance_objects": 4958,
-      "point_fields_withheld_by_quarantine": 268,
+      "modern_location_country_assertions": 4912,
+      "location_provenance_objects": 4961,
+      "point_fields_withheld_by_quarantine": 271,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 316,
-      "point_quarantine_candidate_manifest_sha256": "97ae0f1c68bbcd8244531a27d8cc8506928d7c3d94ad4799084a31a146d8a88f",
+      "unique_events_with_any_quarantined_field": 319,
+      "point_quarantine_candidate_manifest_sha256": "67395dc142508fb601660e022d8c2a3564194547469d0532896c0042d6e66d8f",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "6aef19632b234690c4456e0566171fc974f56c5244a7efecad6b89711e8ba716",
+      "quarantine_policy_sha256": "c8972690e443bed586291879ab1908c7d977c195f0fb5d37aa556d27a21d030c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4958
+        "unreviewed_source_assertion": 4961
       },
       "verified_location_assertions": {
         "availability": "not_available",

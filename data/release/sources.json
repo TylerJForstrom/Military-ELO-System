@@ -6457,6 +6457,236 @@
     ]
   },
   {
+    "id": "wave8_chadian_rebels_air_university",
+    "title": "Prolonged Wars: A Post-Nuclear Challenge",
+    "url": "https://www.airuniversity.af.edu/Portals/10/AUPress/Books/B_0059_MAGYAR_PROLONGED_WARS.pdf",
+    "publisher": "Air University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_defense_studies_volume",
+    "accessed": "2026-07-16",
+    "source_family_id": "air_university_prolonged_wars_chad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_au_mays",
+    "title": "Frustrations of Regional Peacekeeping: The OAU in Chad, 1977-1982",
+    "url": "https://au.int/sites/default/files/documents/39217-doc-171._frustrations_of_regional_peacekeeping.the_oau_in_chad_1977-1982.pdf",
+    "publisher": "African Union",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_organization_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "mays_oau_chad_1977_1982",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_csm_abeche_1983",
+    "title": "Rebels retreat before Chad government forces",
+    "url": "https://www.csmonitor.com/1983/0726/072645.html",
+    "publisher": "The Christian Science Monitor",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_reporting",
+    "accessed": "2026-07-16",
+    "source_family_id": "csm_chad_abeche_1983",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_french_defense_tacaud",
+    "title": "Opération Tacaud",
+    "url": "https://www.cheminsdememoire.gouv.fr/sites/default/files/2019-06/op%C3%A9ration%20Tacaud.pdf",
+    "publisher": "French Ministry of the Armed Forces / ECPAD",
+    "license": "Citation and link only",
+    "source_type": "official_military_archive_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_defense_tacaud_ecpad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_frus_1980",
+    "title": "Foreign Relations of the United States, 1977-1980, Volume XVII, Part 3, document 53",
+    "url": "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d53",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "declassified_diplomatic_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_1977_1980_chad_document_53",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_hrw_en_habre",
+    "title": "Enabling a Dictator: The United States and Chad's Hissène Habré 1982-1990",
+    "url": "https://www.hrw.org/report/2016/06/28/enabling-dictator/united-states-and-chads-hissene-habre-1982-1990",
+    "publisher": "Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "archival_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_enabling_habre_2016",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_hrw_fr_habre",
+    "title": "Allié de la France, condamné par l'Afrique: Les relations entre la France et le régime de Hissène Habré",
+    "url": "https://www.hrw.org/fr/report/2016/06/28/allie-de-la-france-condamne-par-lafrique/les-relations-entre-la-france-et-le",
+    "publisher": "Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "archival_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hrw_france_habre_2016",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_ina_1990",
+    "title": "Tchad: rapport de forces entre Déby et Habré",
+    "url": "https://www.ina.fr/ina-eclaire-actu/video/cab90045503/tchad-rapport-de-forces-entre-deby-et-habre",
+    "publisher": "Institut national de l'audiovisuel",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_broadcast_archive",
+    "accessed": "2026-07-16",
+    "source_family_id": "ina_chad_deby_habre_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_iwbd_dataset",
+    "title": "International Wars and Battles Dataset",
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
+    "publisher": "Harvard Dataverse",
+    "license": "Citation and link only",
+    "source_type": "research_dataset",
+    "accessed": "2026-07-16",
+    "source_family_id": "iwbd_dataverse_release",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_loc_country_study",
+    "title": "Chad: A Country Study",
+    "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/ch/chadcountrystudy00coll/chadcountrystudy00coll.pdf",
+    "publisher": "Library of Congress, Federal Research Division",
+    "license": "Citation and link only",
+    "source_type": "federal_country_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "loc_chad_country_study_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_powell_cambridge",
+    "title": "France's Wars in Chad: Military Intervention and Decolonization in Africa",
+    "url": "https://www.cambridge.org/core/books/frances-wars-in-chad/6B7D8F9C8A81E0A83028C24EA0CF8D28",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "archival_scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "powell_frances_wars_chad_2020",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_ucdp_v26_1",
+    "title": "UCDP Conflict, Dyadic, and Conflict Termination datasets, version 26.1/4.2024.002",
+    "url": "https://ucdp.uu.se/downloads/",
+    "publisher": "Uppsala Conflict Data Program",
+    "license": "Citation and link only",
+    "source_type": "research_dataset_documentation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ucdp_release_26_1_and_termination_4_2024_002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_un_sc_1983",
+    "title": "Security Council Official Records, Thirty-eighth Year, Supplement for July-September 1983",
+    "url": "https://digitallibrary.un.org/record/100573/files/S_SUPP_1983_3--%5EOR_SC_1983_III%5E-EN.pdf",
+    "publisher": "United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_contemporaneous_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_security_council_1983_q3_chad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_un_wako_1991",
+    "title": "Report on extrajudicial, summary or arbitrary executions, E/CN.4/1991/36",
+    "url": "https://digitallibrary.un.org/record/107512",
+    "publisher": "United Nations Commission on Human Rights",
+    "license": "Citation and link only",
+    "source_type": "un_special_rapporteur_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_wako_chad_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_un_yearbook_1986",
+    "title": "Yearbook of the United Nations 1986",
+    "url": "https://digitallibrary.un.org/record/147661/files/284532-EN.pdf",
+    "publisher": "United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_yearbook",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_yearbook_1986_chad",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_chadian_rebels_washpost_oum_1983",
+    "title": "Chad Rebels Mount Major Drive in North",
+    "url": "https://www.washingtonpost.com/archive/politics/1983/09/03/chad-rebels-mount-major-drive-in-north/fbbccece-fd42-456e-a32f-49ef300ea17f/",
+    "publisher": "The Washington Post",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_reporting",
+    "accessed": "2026-07-16",
+    "source_family_id": "washington_post_oum_chalouba_1983",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_cherokee_dncr_echoe_1760",
     "title": "Cherokee Victory (Q-6)",
     "url": "https://www.dncr.nc.gov/blog/2024/01/23/cherokee-victory-q-6",

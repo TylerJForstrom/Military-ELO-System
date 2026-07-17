@@ -13440,6 +13440,85 @@
     ]
   },
   {
+    "id": "fap_frolinat_ati_assault_force_1978",
+    "name": "FAP/FROLINAT assault force at Ati (1978)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1978,
+    "end_year": 1978,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Forces Armées Populaires/FROLINAT force contesting Ati is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_french_defense_tacaud",
+      "wave8_chadian_rebels_loc_country_study",
+      "wave8_chadian_rebels_powell_cambridge"
+    ]
+  },
+  {
+    "id": "french_operation_tacaud_ati_force_1978",
+    "name": "French Operation Tacaud force at Ati (1978)",
+    "kind": "event_bounded_intervention_force",
+    "start_year": 1978,
+    "end_year": 1978,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the French detachment and air support participating in the Ati action are rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_french_defense_tacaud",
+      "wave8_chadian_rebels_loc_country_study",
+      "wave8_chadian_rebels_powell_cambridge"
+    ]
+  },
+  {
+    "id": "malloum_fat_ati_defense_force_1978",
+    "name": "Malloum FAT defense and relief force at Ati (1978)",
+    "kind": "event_bounded_government_force",
+    "start_year": 1978,
+    "end_year": 1978,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Forces Armées Tchadiennes formation defending and relieving Ati is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_air_university",
+      "wave8_chadian_rebels_loc_country_study",
+      "wave8_chadian_rebels_powell_cambridge"
+    ]
+  },
+  {
+    "id": "fap_goukouni_ndjamena_entry_force_february_1979",
+    "name": "Goukouni FAP entry force in N'Djamena (February 1979)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1979,
+    "end_year": 1979,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Goukouni Oueddei's FAP force entering the capital during the takeover sequence is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_loc_country_study",
+      "wave8_chadian_rebels_powell_cambridge"
+    ]
+  },
+  {
+    "id": "fan_habre_ndjamena_force_february_1979",
+    "name": "Habré FAN force in N'Djamena (12-22 February 1979)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1979,
+    "end_year": 1979,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Hissène Habré's Forces Armées du Nord in the February capital fighting are rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_au_mays",
+      "wave8_chadian_rebels_loc_country_study",
+      "wave8_chadian_rebels_powell_cambridge"
+    ]
+  },
+  {
     "id": "clio_q794_1979_8535ea94",
     "name": "Islamic Republic of Iran",
     "kind": "republic",
@@ -13453,6 +13532,69 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "malloum_fat_ndjamena_force_february_1979",
+    "name": "Malloum FAT force in N'Djamena (February 1979)",
+    "kind": "event_bounded_government_force",
+    "start_year": 1979,
+    "end_year": 1979,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only President Félix Malloum's Forces Armées Tchadiennes in the February capital fighting are rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_au_mays",
+      "wave8_chadian_rebels_loc_country_study"
+    ]
+  },
+  {
+    "id": "gunt_fap_ndjamena_campaign_force_1980",
+    "name": "Goukouni GUNT/FAP N'Djamena campaign force (1980)",
+    "kind": "event_bounded_government_coalition_force",
+    "start_year": 1980,
+    "end_year": 1980,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Goukouni Oueddei's GUNT/FAP coalition in the March-December capital campaign is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_air_university",
+      "wave8_chadian_rebels_hrw_en_habre",
+      "wave8_chadian_rebels_loc_country_study"
+    ]
+  },
+  {
+    "id": "fan_habre_ndjamena_campaign_force_1980",
+    "name": "Habré FAN N'Djamena campaign force (1980)",
+    "kind": "event_bounded_rebel_force",
+    "start_year": 1980,
+    "end_year": 1980,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Hissène Habré's FAN formation in the March-December capital campaign is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_air_university",
+      "wave8_chadian_rebels_hrw_en_habre",
+      "wave8_chadian_rebels_loc_country_study"
+    ]
+  },
+  {
+    "id": "libyan_ndjamena_intervention_force_1980",
+    "name": "Libyan intervention force in the N'Djamena campaign (1980)",
+    "kind": "event_bounded_intervention_force",
+    "start_year": 1980,
+    "end_year": 1980,
+    "region": "Central Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Libyan formation intervening in the closing phase of the 1980 capital campaign is rated. No rating is inherited from or passed to generic Chadian Rebels, FROLINAT, FAN, FAP, GUNT, MPS, the government or state of Chad, France, Libya, another event formation, or the strategic civil-war outcome.",
+    "source_ids": [
+      "wave8_chadian_rebels_air_university",
+      "wave8_chadian_rebels_frus_1980",
+      "wave8_chadian_rebels_loc_country_study"
     ]
   },
   {
