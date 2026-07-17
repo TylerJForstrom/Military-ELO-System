@@ -820,6 +820,16 @@
       "region": "Thebes, Boeotia"
     },
     {
+      "id": "algerian_national_liberation_army_1954_1962",
+      "name": "Algerian National Liberation Army",
+      "kind": "national_liberation_army",
+      "start_year": 1954,
+      "end_year": 1962,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Algeria and Tunisian-Moroccan border bases"
+    },
+    {
       "id": "algerine_corsair_squadron_bugia_1671",
       "name": "Algerine corsair squadron and Bugia garrison (1671)",
       "kind": "state_naval_garrison_force",
@@ -7123,12 +7133,11 @@
       "id": "clio_fr_france_modern_2_1945_396ed149",
       "name": "French Fourth Republic",
       "kind": "republic",
-      "start_year": 1945,
-      "end_year": 1957,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "start_year": 1946,
+      "end_year": 1958,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France and the French Union"
     },
     {
       "id": "clio_fr_bourbon_k_2_1673_f3b7ac23",
@@ -24739,11 +24748,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2337,
-    "rated_entities": 979,
-    "rated_events": 5327,
+    "registry_polities": 2338,
+    "rated_entities": 981,
+    "rated_events": 5328,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18067,
+    "unresolved_event_candidates": 18066,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24836,6 +24845,7 @@
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
+    "candidate_keyed_wave8_fln_hced_events": 1,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24846,21 +24856,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5063,
-      "candidate_keyed_reviewed_contracts": 753,
+      "hced_candidate_bindings": 5064,
+      "candidate_keyed_reviewed_contracts": 754,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4968,
-      "location_provenance_objects": 5017,
-      "point_fields_withheld_by_quarantine": 329,
+      "modern_location_country_assertions": 4969,
+      "location_provenance_objects": 5018,
+      "point_fields_withheld_by_quarantine": 330,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 377,
-      "point_quarantine_candidate_manifest_sha256": "c547b9102c1711765e599ec61064ea00c429af56c910579698e40118e1518bee",
+      "unique_events_with_any_quarantined_field": 378,
+      "point_quarantine_candidate_manifest_sha256": "d5c90bd98b7da82daee6b8739a7a3fbb4ea0e83590cecda178084268ec98a043",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "52b520e3161cfbd2139ee0f03df64b83127c783759e5442c5b4dacf78e251c7e",
+      "quarantine_policy_sha256": "77f8f25acbda0182dc2dd6ce6dd22e3830103918de0af1ec1d9cb27e68394084",
       "assertion_status": {
-        "unreviewed_source_assertion": 5017
+        "unreviewed_source_assertion": 5018
       },
       "verified_location_assertions": {
         "availability": "not_available",

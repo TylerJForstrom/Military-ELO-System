@@ -13872,6 +13872,22 @@
     ]
   },
   {
+    "id": "clio_fr_france_modern_2_1945_396ed149",
+    "name": "French Fourth Republic",
+    "kind": "republic",
+    "start_year": 1946,
+    "end_year": 1958,
+    "region": "France and the French Union",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curates the preferred non-parenthesized Cliopatria source candidate to the constitutional Fourth Republic, inaugurated on 27 October 1946 and ending when the Fifth Republic constitution entered force on 4 October 1958. The April-May 1958 Souk Ahras event is therefore inside this identity. No generic France alias is opened, no Elo is inherited from wartime or provisional regimes, and no rating crosses into the separately rated French Fifth Republic.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_fln_assemblee_fourth_republic",
+      "wave8_fln_constitutional_council_fifth_republic"
+    ]
+  },
+  {
     "id": "clio_id_indonesian_rep_1946_87b95608",
     "name": "Republic of Indonesia",
     "kind": "republic",
@@ -14063,6 +14079,22 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "algerian_national_liberation_army_1954_1962",
+    "name": "Algerian National Liberation Army",
+    "kind": "national_liberation_army",
+    "start_year": 1954,
+    "end_year": 1962,
+    "region": "Algeria and Tunisian-Moroccan border bases",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Time-bounded armed wing of the Algerian National Liberation Front during the 1954-1962 war. The 1 November 1954 declaration created the FLN and its armed section, the ALN; after independence in July 1962 ALN cadres formed the army of the new republic. Only exact, fingerprinted military events may use this identity. The political FLN party, civilian networks, the post-independence People's National Army, and the modern Algerian state do not inherit its Elo.",
+    "source_ids": [
+      "wave8_fln_algerian_mdn_aln_origin",
+      "wave8_fln_algerian_mdn_pna_transition",
+      "wave8_fln_army_algiers_1957"
     ]
   },
   {

@@ -9459,6 +9459,155 @@
     ]
   },
   {
+    "id": "wave8_fln_ageron_borders",
+    "title": "Un versant de la guerre d'Algérie: la bataille des frontières (1956-1962)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1999_num_46_2_1966",
+    "publisher": "Revue d'histoire moderne & contemporaine / Persée",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "ageron_algerian_border_battle_1999",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_fln_algerian_mdn_aln_origin",
+    "title": "History of the National Liberation Army",
+    "url": "https://www.mdn.dz/site_principal/sommaire/presentation/histoire_an.php",
+    "publisher": "Ministry of National Defence, Algeria",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "algerian_mdn_aln_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_fln_algerian_mdn_pna_transition",
+    "title": "From the National Liberation Army to the People's National Army",
+    "url": "https://www.mdn.dz/site_principal/sommaire/presentation/histoire1_an.php",
+    "publisher": "Ministry of National Defence, Algeria",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "algerian_mdn_pna_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_fln_army_algiers_1957",
+    "title": "Algiers-1957: An Approach to Urban Counterinsurgency",
+    "url": "https://www.armyupress.army.mil/Journals/Military-Review/English-Edition-Archives/mr-history-page/MR-Categories-Guerrilla-Warfare/Algiers-1957-Kee/",
+    "publisher": "Military Review / Army University Press",
+    "license": "Citation and link only",
+    "source_type": "professional_military_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "kee_algiers_1957",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_fln_assemblee_fourth_republic",
+    "title": "Quatrième République",
+    "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/quatrieme-republique",
+    "publisher": "Assemblée nationale",
+    "license": "Citation and link only",
+    "source_type": "official_constitutional_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "assemblee_nationale_fourth_republic",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_fln_chemins_1958",
+    "title": "1958, une nouvelle République en guerre",
+    "url": "https://www.cheminsdememoire.gouv.fr/fr/revue/1958-une-nouvelle-republique-en-guerre",
+    "publisher": "Ministère des Armées, Chemins de mémoire",
+    "license": "Citation and link only",
+    "source_type": "official_historical_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "chemins_memoire_algeria_1958",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_fln_connelly_souk_ahras",
+    "title": "A Diplomatic Revolution: Algeria's Fight for Independence",
+    "url": "https://global.oup.com/academic/product/a-diplomatic-revolution-9780195170955",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "connelly_diplomatic_revolution_2002",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_fln_constitutional_council_fifth_republic",
+    "title": "La Constitution et mes droits (1)",
+    "url": "https://qpc360.conseil-constitutionnel.fr/constitution-et-mes-droits-1",
+    "publisher": "Conseil constitutionnel",
+    "license": "Citation and link only",
+    "source_type": "official_constitutional_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "conseil_constitutionnel_fifth_republic",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_fln_ecpad_algiers",
+    "title": "La seconde bataille d'Alger: le 3e RPC revient dans la capitale",
+    "url": "https://imagesdefense.gouv.fr/fr/parachutistes-encadrant-la-foule-sur-la-place-du-gouvernement-a-alger.html",
+    "publisher": "ECPAD / ImagesDéfense",
+    "license": "Citation and link only",
+    "source_type": "official_archival_reportage_notice",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecpad_second_battle_algiers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_fln_ecpad_jumelles",
+    "title": "L'opération Jumelles en Kabylie sous le commandement du général Challe",
+    "url": "https://imagesdefense.gouv.fr/fr/l-operation-jumelles-en-kabylie-sous-le-commandement-du-general-challe.html",
+    "publisher": "ECPAD / ImagesDéfense",
+    "license": "Citation and link only",
+    "source_type": "official_archival_reportage_notice",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecpad_operation_jumelles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_fln_fsale_souk_ahras",
+    "title": "La bataille de la frontière tunisienne en 1958",
+    "url": "https://www.legionetrangere.fr/la-fsale/actualites-de-la-fsale/1627-la-bataille-de-la-frontiere-tunisienne-en-1958.html",
+    "publisher": "Fédération des Sociétés d'Anciens de la Légion étrangère",
+    "license": "Citation and link only",
+    "source_type": "veterans_historical_synthesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "fsale_tunisian_frontier_1958",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_france_bavaria_bamberg_gefrees",
     "title": "Noth, Thränen und Excesse aller Art: Der Krieg von 1806/07 in Franken",
     "url": "https://fis.uni-bamberg.de/bitstreams/20ed743a-9bb6-49f6-887a-123f78db4827/download",

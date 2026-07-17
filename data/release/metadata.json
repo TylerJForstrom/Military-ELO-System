@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 986,
-    "events": 5327,
-    "sources": 1371,
-    "registry_polities": 2337
+    "entities": 988,
+    "events": 5328,
+    "sources": 1382,
+    "registry_polities": 2338
   },
   "year_range": {
     "start": -1274,
@@ -163,6 +163,7 @@
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
+    "accepted_wave8_fln_hced_events": 1,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -19012,7 +19013,171 @@
     "wave8_goguryeo_country_quarantine_additions": [],
     "wave8_goguryeo_entities_added": 3,
     "wave8_goguryeo_sources_added": 4,
-    "hced_label_pass_input_rows": 5588,
+    "wave8_fln_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 3,
+      "new_entities": 2,
+      "new_sources": 11,
+      "newly_rated_events": 1,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 1,
+      "promotion_contracts": 1,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_fln_cohort_counts": {
+      "algerian_war_fln_exact_label_1956_1959": 4
+    },
+    "wave8_fln_audit_signature": "1e24533279bfe83a88bf62170f430f3507837e96b6195742d25d762e10b83966",
+    "wave8_fln_final_audit_signature": "1e24533279bfe83a88bf62170f430f3507837e96b6195742d25d762e10b83966",
+    "wave8_fln_queue_validation": {
+      "promotion_contracts": 1,
+      "holds": 3,
+      "reviewed_hced_rows": 4,
+      "exact_label_rows": 4
+    },
+    "wave8_fln_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_fln_candidate_ids": [
+      "hced-Souk-Ahras1958-1"
+    ],
+    "wave8_fln_holds": [
+      {
+        "candidate_id": "hced-Algiers1956-1957-1",
+        "raw_row_sha256": "40802ae9cdff20369a8c16c448e6461a25e3480cc1e35f46303243322ce940bc",
+        "canonical_event": {
+          "canonical_key": "battle_of_algiers_urban_campaign:1956:1956",
+          "date_precision": "month_range",
+          "date_text": "September 1956-October 1957",
+          "granularity": "multi_phase_urban_counterinsurgency_campaign",
+          "name": "Battle of Algiers urban campaign",
+          "year_low": 1956,
+          "year_high": 1956
+        },
+        "cohort": "algerian_war_fln_exact_label_1956_1959",
+        "disposition": "hold",
+        "hold_category": "multi_episode_urban_campaign_not_single_elo_event",
+        "reviewed_outcome": "broad_french_tactical_suppression_attested_but_not_a_single_engagement",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "French Fourth or Fifth Republic forces, as date-bounded",
+          "Algerian National Liberation Army and associated FLN networks"
+        ],
+        "reviewed_granularity": "multi_phase_urban_counterinsurgency_campaign",
+        "hold_reason": "The archival and military studies describe a nine-month sequence with distinct first and second phases, bombings, a general strike, police powers, arrests, intelligence operations, and destruction of urban networks. HCED's one-line 1956 row is therefore not a single head-to-head battle result. It remains unrated and is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_fln_army_algiers_1957",
+          "wave8_fln_chemins_1958",
+          "wave8_fln_ecpad_algiers"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_fln",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Frontier1958-1",
+        "raw_row_sha256": "f4cd85fddd524170cb57b8a33a7bad34714d2a5761f973585a8d58cee8186834",
+        "canonical_event": {
+          "canonical_key": "battle_of_the_tunisian_frontier_campaign:1958:1958",
+          "date_precision": "month_range",
+          "date_text": "January-May 1958",
+          "granularity": "multi_month_border_campaign_envelope",
+          "name": "Battle of the Tunisian Frontier campaign",
+          "year_low": 1958,
+          "year_high": 1958
+        },
+        "cohort": "algerian_war_fln_exact_label_1956_1959",
+        "disposition": "hold",
+        "hold_category": "campaign_envelope_contains_promoted_souk_ahras_battle",
+        "reviewed_outcome": "broad_french_tactical_interdiction_success_not_rated_as_one_event",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "French Fourth or Fifth Republic forces, as date-bounded",
+          "Algerian National Liberation Army and associated FLN networks"
+        ],
+        "reviewed_granularity": "multi_month_border_campaign_envelope",
+        "hold_reason": "The sources identify a continuous series of attempted crossings and engagements from January through May. That umbrella contains the separately fingerprinted Souk Ahras battle promoted by this lane. Rating the Frontier row would double-count its constituent battle and collapse many other actions into a synthetic result, so it remains an explicit hold.",
+        "evidence_refs": [
+          "wave8_fln_ageron_borders",
+          "wave8_fln_chemins_1958",
+          "wave8_fln_fsale_souk_ahras"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_fln",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Kabylie1959-1",
+        "raw_row_sha256": "b61fa4b8a19dd02f6ef1ed2fa815faf0b9831ed7368f6359a558410336c14b12",
+        "canonical_event": {
+          "canonical_key": "operation_jumelles:1959:1959",
+          "date_precision": "day_range",
+          "date_text": "22 July 1959-4 April 1960",
+          "granularity": "multi_month_counterinsurgency_sweep",
+          "name": "Operation Jumelles",
+          "year_low": 1959,
+          "year_high": 1959
+        },
+        "cohort": "algerian_war_fln_exact_label_1956_1959",
+        "disposition": "hold",
+        "hold_category": "multi_month_sweep_not_single_elo_event",
+        "reviewed_outcome": "operation_level_attrition_claim_not_a_discrete_battle_outcome",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "French Fourth or Fifth Republic forces, as date-bounded",
+          "Algerian National Liberation Army and associated FLN networks"
+        ],
+        "reviewed_granularity": "multi_month_counterinsurgency_sweep",
+        "hold_reason": "ECPAD describes Operation Jumelles as a roughly eight-month effort using about 40,000 personnel to dismantle political, administrative, and military structures through repeated sweeps, patrols, searches, and engagements. HCED's Kabylie row cannot defensibly convert that aggregate operation into one tactical Elo result.",
+        "evidence_refs": [
+          "wave8_fln_ecpad_jumelles"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_fln",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_fln_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "59f7398284696021f111723f276fe0274096b6147df82c3d706288a30c550484",
+      "events_touched": 4,
+      "label": "fln",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 3,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 4,
+      "zero_time_valid_candidates": 4
+    },
+    "wave8_fln_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Souk-Ahras1958-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Souk Ahras border battle and modern country but describe fighting across several nearby sectors; retain Algeria and withhold HCED's unexplained point.",
+        "evidence_refs": [
+          "wave8_fln_ageron_borders",
+          "wave8_fln_connelly_souk_ahras",
+          "wave8_fln_fsale_souk_ahras"
+        ]
+      }
+    ],
+    "wave8_fln_point_quarantine_additions": [
+      "hced-Souk-Ahras1958-1"
+    ],
+    "wave8_fln_country_quarantine_additions": [],
+    "wave8_fln_entities_added": 2,
+    "wave8_fln_sources_added": 11,
+    "hced_label_pass_input_rows": 5584,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -19025,7 +19190,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1022,
+      "reserved_candidate_contract": 1026,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -19035,9 +19200,9 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 457,
       "label_outcome_not_aligned": 79,
-      "label_outside_policy_window": 173,
+      "label_outside_policy_window": 172,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2087,
+      "no_unique_time_valid_label_match": 2084,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

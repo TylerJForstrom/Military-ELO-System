@@ -36,6 +36,9 @@ class Wave8FlnTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
+        cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         entities = {
@@ -232,6 +235,71 @@ class Wave8FlnTests(unittest.TestCase):
                 "hced_probable_twins": 0,
                 "iwbd_probable_twins": 0,
             },
+        )
+
+    def test_current_release_activates_both_curated_identities(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_FLN_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["name"], "Battle of Souk Ahras")
+        self.assertNotIn("geometry", events[0])
+        self.assertEqual(events[0]["modern_location_country"], "Algeria")
+
+        release_entities = {
+            str(item["id"]): item for item in self.release_entities
+        }
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        for entity_id in (FOURTH_REPUBLIC, ALN):
+            self.assertIn(entity_id, release_entities)
+            self.assertFalse(release_entities[entity_id]["aliases"])
+            self.assertEqual(registry_entities[entity_id]["status"], "rated")
+            self.assertEqual(
+                registry_entities[entity_id]["identity_status"],
+                "curated",
+            )
+
+        source_ids = {str(item["id"]) for item in self.release_sources}
+        self.assertLessEqual(
+            {str(item["id"]) for item in lane.WAVE8_FLN_SOURCES},
+            source_ids,
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_fln_hced_events"], 1)
+        self.assertEqual(
+            promotion["wave8_fln_candidate_ids"],
+            ["hced-Souk-Ahras1958-1"],
+        )
+        self.assertEqual(len(promotion["wave8_fln_holds"]), 3)
+        self.assertEqual(
+            self.registry["coverage"]["candidate_keyed_wave8_fln_hced_events"],
+            1,
+        )
+
+    def test_release_and_registry_counts_include_the_exact_fln_delta(self) -> None:
+        self.assertEqual(len(self.release_entities), 988)
+        self.assertEqual(len(self.release_events), 5_328)
+        self.assertEqual(len(self.registry["entities"]), 2_338)
+        self.assertEqual(
+            self.registry["coverage"]["unresolved_event_candidates"],
+            18_066,
+        )
+        location = self.registry["coverage"]["hced_location_assertions"]
+        self.assertEqual(
+            location["hced_candidate_bindings"],
+            5_064,
+        )
+        self.assertEqual(
+            location["geojson_points"],
+            4_734,
+        )
+        self.assertEqual(
+            location["modern_location_country_assertions"],
+            4_969,
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:
