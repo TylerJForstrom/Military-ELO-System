@@ -3583,6 +3583,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "decebalus_dacian_kingdom_87_106",
+      "name": "Dacian kingdom under Decebalus (87-106)",
+      "kind": "monarchical_polity",
+      "start_year": 87,
+      "end_year": 106,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Carpathian Dacia and the lower-Danube frontier"
+    },
+    {
       "id": "dafydd_cynan_gwynedd_ambush_force_1157",
       "name": "Dafydd and Cynan's Gwynedd ambush force at Coleshill (1157)",
       "kind": "event_bounded_princely_force",
@@ -20984,11 +20994,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1961,
-    "rated_entities": 598,
-    "rated_events": 5098,
+    "registry_polities": 1962,
+    "rated_entities": 599,
+    "rated_events": 5100,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18296,
+    "unresolved_event_candidates": 18294,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21031,6 +21041,7 @@
     "candidate_keyed_wave8_epirus_hced_events": 6,
     "candidate_keyed_wave8_savoy_hced_events": 5,
     "candidate_keyed_wave8_nez_perce_hced_events": 5,
+    "candidate_keyed_wave8_dacia_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21041,21 +21052,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4834,
-      "candidate_keyed_reviewed_contracts": 524,
+      "hced_candidate_bindings": 4836,
+      "candidate_keyed_reviewed_contracts": 526,
       "geojson_points": 4731,
-      "modern_location_country_assertions": 4746,
-      "location_provenance_objects": 4795,
-      "point_fields_withheld_by_quarantine": 103,
+      "modern_location_country_assertions": 4748,
+      "location_provenance_objects": 4797,
+      "point_fields_withheld_by_quarantine": 105,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 39,
-      "unique_events_with_any_quarantined_field": 151,
-      "point_quarantine_candidate_manifest_sha256": "ed6c718037b11396d3d436f57fe74cd07a1c39938e40d1b24f31c20f9d980dfa",
+      "unique_events_with_any_quarantined_field": 153,
+      "point_quarantine_candidate_manifest_sha256": "4affaeeeda46af043022a6a319b83ef28c5568344a9040ac38a87da98bcce79c",
       "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
-      "quarantine_policy_sha256": "f11c03fdb1296f43289a50f514f31bb22c648250733c6e8bb1b9eef1a5924a69",
+      "quarantine_policy_sha256": "89a3c0cbe53811d811b7965a1b88b8272ea9ecb7f3a2925cc6c77d2d0390b1da",
       "assertion_status": {
-        "unreviewed_source_assertion": 4795
+        "unreviewed_source_assertion": 4797
       },
       "verified_location_assertions": {
         "availability": "not_available",

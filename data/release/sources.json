@@ -6197,6 +6197,107 @@
     ]
   },
   {
+    "id": "wave8_dacia_dio_book_67",
+    "title": "Cassius Dio, Roman History, Epitome of Book 67",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/67%2A.html",
+    "publisher": "University of Chicago LacusCurtius; Loeb translation by Earnest Cary",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "cassius_dio_roman_history_cary_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_dacia_dio_book_68",
+    "title": "Cassius Dio, Roman History, Epitome of Book 68",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/68%2A.html",
+    "publisher": "University of Chicago LacusCurtius; Loeb translation by Earnest Cary",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "cassius_dio_roman_history_cary_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_dacia_oltean_gis_conquest",
+    "title": "GIS Analysis and Spatial Networking Patterns in Upland Ancient Warfare: The Roman Conquest of Dacia",
+    "url": "https://doi.org/10.3390/geosciences11010017",
+    "publisher": "Geosciences",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "oltean_roman_conquest_dacia_gis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dacia_opreanu_first_war_topography",
+    "title": "The Topography of the First Dacian War of Trajan (A.D. 101-102)",
+    "url": "https://csiatim.uvt.ro/NOU/BHAUT/ro/pdf/2000_art4.pdf",
+    "publisher": "Bibliotheca Historica et Archaeologica Universitatis Timisiensis",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "opreanu_first_dacian_war_topography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dacia_oxford_decebalus",
+    "title": "Decebalus, king of Dacia",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548778681?login=false",
+    "publisher": "Oxford University Press, Oxford Classical Dictionary",
+    "license": "Citation and link only",
+    "source_type": "scholarly_classical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_classical_dictionary_decebalus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dacia_sidebottom_dacian_wars",
+    "title": "The Dacian Wars, 84-106",
+    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119099000.wbabat0640",
+    "publisher": "Wiley, The Encyclopedia of Ancient Battles",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "sidebottom_encyclopedia_ancient_battles_dacian_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_dacia_tekir_domitian_war",
+    "title": "Domitian's Dacian War",
+    "url": "https://dergipark.org.tr/en/pub/anasay/article/714329",
+    "publisher": "Anasay",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "tekir_domitian_dacian_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_dagestan_bre_akhulgo",
     "title": "Storming of Akhulgo, 1839",
     "url": "https://old.bigenc.ru/domestic_history/text/1842769",

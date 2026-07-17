@@ -575,6 +575,23 @@
     ]
   },
   {
+    "id": "decebalus_dacian_kingdom_87_106",
+    "name": "Dacian kingdom under Decebalus (87-106)",
+    "kind": "monarchical_polity",
+    "start_year": 87,
+    "end_year": 106,
+    "region": "Carpathian Dacia and the lower-Danube frontier",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Polity bounded to Decebalus's reign, including the client-kingdom interval between Domitian's and Trajan's wars, and ending with the Roman conquest in 106. No rating is inherited by Dacians as an ethnic group, an earlier Getic or Dacian kingdom, Roman Dacia, modern Romania, or any predecessor or successor.",
+    "source_ids": [
+      "wave8_dacia_dio_book_67",
+      "wave8_dacia_dio_book_68",
+      "wave8_dacia_oxford_decebalus",
+      "wave8_dacia_sidebottom_dacian_wars"
+    ]
+  },
+  {
     "id": "hatra_kingdom_defenders_199",
     "name": "Kingdom of Hatra defenders in the second siege",
     "kind": "city_kingdom_garrison",

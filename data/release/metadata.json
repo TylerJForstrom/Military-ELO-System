@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 605,
-    "events": 5098,
-    "sources": 728,
-    "registry_polities": 1961
+    "entities": 606,
+    "events": 5100,
+    "sources": 735,
+    "registry_polities": 1962
   },
   "year_range": {
     "start": -1274,
@@ -113,6 +113,7 @@
     "accepted_wave8_epirus_hced_events": 6,
     "accepted_wave8_savoy_hced_events": 5,
     "accepted_wave8_nez_perce_hced_events": 5,
+    "accepted_wave8_dacia_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4563,7 +4564,159 @@
     ],
     "wave8_nez_perce_entities_added": 2,
     "wave8_nez_perce_sources_added": 10,
-    "hced_label_pass_input_rows": 5897,
+    "wave8_dacia_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 3,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 1,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 1,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_dacia_cohort_counts": {
+      "domitianic_dacian_war_86_89": 2,
+      "trajans_first_dacian_war_101_102": 2,
+      "trajans_second_dacian_war_105_106": 1
+    },
+    "wave8_dacia_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 3,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_dacia_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_dacia_candidate_ids": [
+      "hced-Tapae101-1",
+      "hced-Tapae88-1"
+    ],
+    "wave8_dacia_holds": [
+      {
+        "candidate_id": "hced-Sarmizegethusa102-1",
+        "raw_row_sha256": "6ff526de7f910b39f33f5779ee40c66a03a885f250d1b2f17e669af3b437f90a",
+        "cohort": "trajans_first_dacian_war_101_102",
+        "disposition": "hold",
+        "hold_category": "named_tactical_engagement_not_uniquely_attested",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_dacia_dio_book_68",
+          "wave8_dacia_oltean_gis_conquest",
+          "wave8_dacia_opreanu_first_war_topography",
+          "wave8_dacia_oxford_decebalus"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_dacia",
+          "status": "canonical_hced_nonpromotion"
+        },
+        "hold_reason": "The sources support Trajan's 102 campaign pressure, Decebalus's surrender, and a Roman garrison or occupation at Sarmizegetusa, but they do not isolate the HCED row as a distinct competitive battle at the city with its own tactical result. Scholarship also disputes the site sequence. Campaign occupation and treaty submission are not invented as an engagement or a draw.",
+        "historical_review": {
+          "raw_year": 102,
+          "raw_winner": "Rome",
+          "attested_process": "campaign advance, surrender, and occupation",
+          "issue": "distinct tactical battle boundary is unverified"
+        }
+      },
+      {
+        "candidate_id": "hced-Sarmizegethusa105-1",
+        "raw_row_sha256": "392b9d29a10565324a86ba335ee61b33c7b5fd0c3896eefb1f858e0d339badba",
+        "cohort": "trajans_second_dacian_war_105_106",
+        "disposition": "hold",
+        "hold_category": "siege_year_and_event_boundary_not_uniquely_defensible",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_dacia_oltean_gis_conquest",
+          "wave8_dacia_opreanu_first_war_topography",
+          "wave8_dacia_oxford_decebalus"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_dacia",
+          "status": "canonical_hced_nonpromotion"
+        },
+        "hold_reason": "The second war began in 105, but the Oxford reference places the capture of the Dacian capital and creation of the province in 106. Archaeological scholarship treats the siege as a 105-106 campaign and questions which final Column scene belongs to Sarmizegetusa. The single-year 105 row cannot receive the later campaign outcome; its result remains unknown and never becomes a draw.",
+        "historical_review": {
+          "raw_year": 105,
+          "capture_year": 106,
+          "raw_winner": "Rome",
+          "issue": "multi-year siege and disputed site boundary"
+        }
+      },
+      {
+        "candidate_id": "hced-Tapae86-1",
+        "raw_row_sha256": "5ccb8f512f244ba8063bd6290d51b75073bf030c8b27d5cf853bcc7803b8c886",
+        "cohort": "domitianic_dacian_war_86_89",
+        "disposition": "hold",
+        "hold_category": "event_year_and_battle_site_not_uniquely_defensible",
+        "result_type": "unknown",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_dacia_dio_book_67",
+          "wave8_dacia_sidebottom_dacian_wars",
+          "wave8_dacia_tekir_domitian_war"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_dacia",
+          "status": "canonical_hced_nonpromotion"
+        },
+        "hold_reason": "The Wiley chronology places the Roman strike and Fuscus's defeat in 86, while the reviewed campaign study dates Fuscus's expedition to 87. Cassius Dio records the defeat but does not identify that episode as a battle at Tapae. A distinct Tapae engagement in exactly 86 is therefore not uniquely defensible; the row remains unknown and is never converted to a draw or silently moved to 87.",
+        "historical_review": {
+          "raw_year": 86,
+          "competing_year": 87,
+          "raw_winner": "Dacia",
+          "issue": "chronology and named-site attribution conflict"
+        }
+      }
+    ],
+    "wave8_dacia_terminal_exclusions": [],
+    "wave8_dacia_iwbd_duplicate_dispositions": [],
+    "wave8_dacia_cross_lane_dispositions": [],
+    "wave8_dacia_integration_dispositions": [],
+    "wave8_dacia_outcome_overrides": [
+      {
+        "candidate_id": "hced-Tapae101-1",
+        "raw_winner_raw": "Draw",
+        "raw_loser_raw": null,
+        "raw_winner_loser_complete": false,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 1,
+        "corrected_winner_entity_ids": [
+          "roman_empire"
+        ],
+        "corrected_loser_entity_ids": [
+          "decebalus_dacian_kingdom_87_106"
+        ],
+        "override_kind": "unknown_draw_placeholder_to_sourced_roman_victory",
+        "outcome_source_ids": [
+          "wave8_dacia_dio_book_68",
+          "wave8_dacia_oxford_decebalus",
+          "wave8_dacia_sidebottom_dacian_wars"
+        ],
+        "outcome_source_family_ids": [
+          "cassius_dio_roman_history_cary_translation",
+          "oxford_classical_dictionary_decebalus",
+          "sidebottom_encyclopedia_ancient_battles_dacian_wars"
+        ]
+      }
+    ],
+    "wave8_dacia_entities_added": 1,
+    "wave8_dacia_sources_added": 7,
+    "hced_label_pass_input_rows": 5892,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4576,7 +4729,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 707,
+      "reserved_candidate_contract": 712,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4588,7 +4741,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2380,
+      "no_unique_time_valid_label_match": 2375,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,
