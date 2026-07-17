@@ -301,7 +301,21 @@
               <p class="eyebrow">Recent horizon</p>
               <h2 id="modern-chart-heading">Last 250 years</h2>
             </div>
+            <div class="year-readout">
+              <span>Window ends</span>
+              <output id="modern-selected-year" for="modern-year-slider">—</output>
+            </div>
           </header>
+          <div class="time-control">
+            <label class="slider-label" for="modern-year-slider">
+              <span class="sr-only">End year of the 250-year window</span>
+              <span class="slider-range-labels" aria-hidden="true">
+                <span id="modern-slider-min">—</span>
+                <span id="modern-slider-max">—</span>
+              </span>
+              <input id="modern-year-slider" type="range" min="0" max="1" value="1" step="1">
+            </label>
+          </div>
           <div class="chart-frame" id="chart-frame-modern">
             <svg
               id="timeline-chart-modern"

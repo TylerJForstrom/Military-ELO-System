@@ -90,6 +90,10 @@
     chartModern: document.getElementById("timeline-chart-modern"),
     chartEmptyModern: document.getElementById("chart-empty-modern"),
     chartSummaryModern: document.getElementById("chart-summary-modern"),
+    modernSlider: document.getElementById("modern-year-slider"),
+    modernSliderMin: document.getElementById("modern-slider-min"),
+    modernSliderMax: document.getElementById("modern-slider-max"),
+    modernSelectedYear: document.getElementById("modern-selected-year"),
     timelineRankingTitle: document.getElementById("timeline-ranking-title"),
     timelineRankingMetric: document.getElementById("timeline-ranking-metric"),
     timelineRankingList: document.getElementById("timeline-ranking-list"),
@@ -221,6 +225,11 @@
     elements.slider.addEventListener("input", () => {
       state.selectedYear = Number(elements.slider.value);
       scheduleRender();
+    });
+
+    elements.modernSlider.addEventListener("input", () => {
+      state.modernEndYear = Number(elements.modernSlider.value);
+      renderModernChart(state.visibleEntityIds ?? []);
     });
 
     elements.previousEvent.addEventListener("click", () => jumpToAdjacentEvent(-1));
@@ -647,6 +656,13 @@
     elements.slider.value = String(state.selectedYear);
     elements.sliderMin.textContent = formatYear(state.minYear);
     elements.sliderMax.textContent = formatYear(state.maxYear);
+
+    state.modernEndYear = state.maxYear;
+    elements.modernSlider.min = String(state.minYear);
+    elements.modernSlider.max = String(state.maxYear);
+    elements.modernSlider.value = String(state.modernEndYear);
+    elements.modernSliderMin.textContent = formatYear(state.minYear);
+    elements.modernSliderMax.textContent = formatYear(state.maxYear);
 
     const domains = [...new Set(state.data.events.map((event) => event.domain).filter(Boolean))].sort((a, b) =>
       a.localeCompare(b),
@@ -1454,8 +1470,11 @@
     const plotWidth = width - margins.left - margins.right;
     const plotHeight = height - margins.top - margins.bottom;
     const metric = state.metric;
-    const windowMaxYear = state.selectedYear;
+    const windowMaxYear = state.modernEndYear ?? state.maxYear;
     const windowMinYear = windowMaxYear - 250;
+    if (elements.modernSelectedYear) {
+      elements.modernSelectedYear.textContent = formatYear(windowMaxYear);
+    }
 
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.replaceChildren();
@@ -1586,32 +1605,34 @@
     });
     svg.append(bands, lines);
 
-    const selectionX = xScale(state.selectedYear);
-    const selection = svgElement("g", { "aria-hidden": "true" });
-    selection.append(
-      svgElement("line", {
-        class: "selection-rule",
-        x1: selectionX,
-        x2: selectionX,
-        y1: margins.top,
-        y2: height - margins.bottom,
-      }),
-    );
-    for (const series of chartSeries) {
-      if (!isEntityActive(series.entity, state.selectedYear)) continue;
-      const point = pointAt(series.id, state.selectedYear);
-      if (!point || point[metric] === null) continue;
+    if (state.selectedYear >= windowMinYear && state.selectedYear <= windowMaxYear) {
+      const selectionX = xScale(state.selectedYear);
+      const selection = svgElement("g", { "aria-hidden": "true" });
       selection.append(
-        svgElement("circle", {
-          class: "selection-dot",
-          cx: selectionX,
-          cy: yScale(point[metric]),
-          r: state.pinned.has(series.id) ? 4.5 : 3.5,
-          fill: series.color,
+        svgElement("line", {
+          class: "selection-rule",
+          x1: selectionX,
+          x2: selectionX,
+          y1: margins.top,
+          y2: height - margins.bottom,
         }),
       );
+      for (const series of chartSeries) {
+        if (!isEntityActive(series.entity, state.selectedYear)) continue;
+        const point = pointAt(series.id, state.selectedYear);
+        if (!point || point[metric] === null) continue;
+        selection.append(
+          svgElement("circle", {
+            class: "selection-dot",
+            cx: selectionX,
+            cy: yScale(point[metric]),
+            r: state.pinned.has(series.id) ? 4.5 : 3.5,
+            fill: series.color,
+          }),
+        );
+      }
+      svg.append(selection);
     }
-    svg.append(selection);
 
     const interaction = svgElement("rect", {
       class: "interaction-layer",
@@ -1630,8 +1651,8 @@
 
     const activeRows = chartSeries
       .map((series) => {
-        if (!isEntityActive(series.entity, state.selectedYear)) return null;
-        const point = pointAt(series.id, state.selectedYear);
+        if (!isEntityActive(series.entity, windowMaxYear)) return null;
+        const point = pointAt(series.id, windowMaxYear);
         return point ? { series, point } : null;
       })
       .filter(Boolean)
