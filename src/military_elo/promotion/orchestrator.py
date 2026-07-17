@@ -767,6 +767,28 @@ from .wave8_druze_rebels import (
     wave8_druze_rebels_cohort_counts,
     wave8_druze_rebels_counts,
 )
+from .wave8_insubrian_gauls import (
+    WAVE8_INSUBRIAN_GAULS_CONTRACT_IDS,
+    WAVE8_INSUBRIAN_GAULS_CROSS_LANE_DISPOSITIONS,
+    WAVE8_INSUBRIAN_GAULS_ENTITIES,
+    WAVE8_INSUBRIAN_GAULS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_INSUBRIAN_GAULS_HOLD_IDS,
+    WAVE8_INSUBRIAN_GAULS_HOLDS,
+    WAVE8_INSUBRIAN_GAULS_INTEGRATION_DISPOSITIONS,
+    WAVE8_INSUBRIAN_GAULS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_INSUBRIAN_GAULS_OUTCOME_OVERRIDES,
+    WAVE8_INSUBRIAN_GAULS_RESERVED_IDS,
+    WAVE8_INSUBRIAN_GAULS_SOURCES,
+    WAVE8_INSUBRIAN_GAULS_TERMINAL_EXCLUSION_IDS,
+    WAVE8_INSUBRIAN_GAULS_TERMINAL_EXCLUSIONS,
+    install_wave8_insubrian_gauls_entities,
+    install_wave8_insubrian_gauls_sources,
+    promote_wave8_insubrian_gauls_contracts,
+    validate_wave8_insubrian_gauls_integration_dispositions,
+    validate_wave8_insubrian_gauls_queue_contracts,
+    wave8_insubrian_gauls_cohort_counts,
+    wave8_insubrian_gauls_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -827,6 +849,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_DACIA_RESERVED_IDS
     | WAVE8_CHEROKEE_RESERVED_IDS
     | WAVE8_DRUZE_REBELS_RESERVED_IDS
+    | WAVE8_INSUBRIAN_GAULS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1231,7 +1254,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 112
+        len(HCED_POINT_QUARANTINE_IDS) != 116
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 88
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1428,6 +1451,9 @@ def build_expanded_release(
     wave8_cherokee_queue_validation = validate_wave8_cherokee_queue_contracts(hced)
     wave8_druze_rebels_queue_validation = (
         validate_wave8_druze_rebels_queue_contracts(hced)
+    )
+    wave8_insubrian_gauls_queue_validation = (
+        validate_wave8_insubrian_gauls_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -1776,6 +1802,7 @@ def build_expanded_release(
     install_wave8_dacia_entities(release_entities)
     install_wave8_cherokee_entities(release_entities)
     install_wave8_druze_rebels_entities(release_entities)
+    install_wave8_insubrian_gauls_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -2851,6 +2878,15 @@ def build_expanded_release(
         release_entities,
         wave8_druze_rebels_existing_events,
     )
+    wave8_insubrian_gauls_existing_events = [
+        *wave8_druze_rebels_existing_events,
+        *wave8_druze_rebels_events,
+    ]
+    wave8_insubrian_gauls_events = promote_wave8_insubrian_gauls_contracts(
+        hced,
+        release_entities,
+        wave8_insubrian_gauls_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -2893,6 +2929,7 @@ def build_expanded_release(
         *wave8_dacia_events,
         *wave8_cherokee_events,
         *wave8_druze_rebels_events,
+        *wave8_insubrian_gauls_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -2970,6 +3007,8 @@ def build_expanded_release(
             *WAVE8_CHEROKEE_HOLD_IDS,
             *WAVE8_CHEROKEE_EXCLUSION_IDS,
             *WAVE8_DRUZE_REBELS_HOLD_IDS,
+            *WAVE8_INSUBRIAN_GAULS_HOLD_IDS,
+            *WAVE8_INSUBRIAN_GAULS_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3038,6 +3077,7 @@ def build_expanded_release(
         *wave8_dacia_events,
         *wave8_cherokee_events,
         *wave8_druze_rebels_events,
+        *wave8_insubrian_gauls_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3207,6 +3247,13 @@ def build_expanded_release(
             hced,
             iwbd_candidates,
             wave8_druze_rebels_existing_events,
+        )
+    )
+    wave8_insubrian_gauls_integration_validation = (
+        validate_wave8_insubrian_gauls_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_insubrian_gauls_existing_events,
         )
     )
     iwd_parent_ids = {
@@ -3396,6 +3443,7 @@ def build_expanded_release(
     install_wave8_dacia_sources(sources_by_id)
     install_wave8_cherokee_sources(sources_by_id)
     install_wave8_druze_rebels_sources(sources_by_id)
+    install_wave8_insubrian_gauls_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3443,6 +3491,7 @@ def build_expanded_release(
         *wave8_dacia_events,
         *wave8_cherokee_events,
         *wave8_druze_rebels_events,
+        *wave8_insubrian_gauls_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3490,6 +3539,7 @@ def build_expanded_release(
         *wave8_dacia_events,
         *wave8_cherokee_events,
         *wave8_druze_rebels_events,
+        *wave8_insubrian_gauls_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3536,6 +3586,7 @@ def build_expanded_release(
             | WAVE8_DACIA_CONTRACT_IDS
             | WAVE8_CHEROKEE_CONTRACT_IDS
             | WAVE8_DRUZE_REBELS_CONTRACT_IDS
+            | WAVE8_INSUBRIAN_GAULS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -3624,6 +3675,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_DACIA_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CHEROKEE_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_DRUZE_REBELS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_INSUBRIAN_GAULS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -3839,6 +3891,7 @@ def build_expanded_release(
         - len(wave8_dacia_events)
         - len(wave8_cherokee_events)
         - len(wave8_druze_rebels_events)
+        - len(wave8_insubrian_gauls_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -3936,6 +3989,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_druze_rebels_hced_events": len(
             wave8_druze_rebels_events
+        ),
+        "candidate_keyed_wave8_insubrian_gauls_hced_events": len(
+            wave8_insubrian_gauls_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -4176,6 +4232,9 @@ def build_expanded_release(
             "accepted_wave8_cherokee_hced_events": len(wave8_cherokee_events),
             "accepted_wave8_druze_rebels_hced_events": len(
                 wave8_druze_rebels_events
+            ),
+            "accepted_wave8_insubrian_gauls_hced_events": len(
+                wave8_insubrian_gauls_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -5339,6 +5398,67 @@ def build_expanded_release(
                 WAVE8_DRUZE_REBELS_ENTITIES
             ),
             "wave8_druze_rebels_sources_added": len(WAVE8_DRUZE_REBELS_SOURCES),
+            "wave8_insubrian_gauls_counts": wave8_insubrian_gauls_counts(),
+            "wave8_insubrian_gauls_cohort_counts": (
+                wave8_insubrian_gauls_cohort_counts()
+            ),
+            "wave8_insubrian_gauls_queue_validation": (
+                wave8_insubrian_gauls_queue_validation
+            ),
+            "wave8_insubrian_gauls_integration_validation": (
+                wave8_insubrian_gauls_integration_validation
+            ),
+            "wave8_insubrian_gauls_candidate_ids": sorted(
+                WAVE8_INSUBRIAN_GAULS_CONTRACT_IDS
+            ),
+            "wave8_insubrian_gauls_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_HOLDS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_insubrian_gauls_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_INSUBRIAN_GAULS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_insubrian_gauls_entities_added": len(
+                WAVE8_INSUBRIAN_GAULS_ENTITIES
+            ),
+            "wave8_insubrian_gauls_sources_added": len(
+                WAVE8_INSUBRIAN_GAULS_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -5563,6 +5683,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_druze_rebels_hced_events": len(
             wave8_druze_rebels_events
+        ),
+        "candidate_keyed_wave8_insubrian_gauls_hced_events": len(
+            wave8_insubrian_gauls_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

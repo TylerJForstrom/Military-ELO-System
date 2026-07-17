@@ -495,6 +495,100 @@
     ]
   },
   {
+    "id": "aemilius_atilius_roman_consular_armies_telamon_225_bce",
+    "name": "Aemilius Papus-Atilius Regulus Roman consular armies at Telamon (225 BCE)",
+    "kind": "event_bounded_joint_command",
+    "start_year": -225,
+    "end_year": -225,
+    "region": "Etruria near Telamon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The two consular forces that trapped the returning Gallic army from opposite directions at Telamon. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_polybius_book_2",
+      "wave8_insubrian_szubelak_telamon"
+    ]
+  },
+  {
+    "id": "boii_insubres_taurisci_gaesatae_coalition_telamon_225_bce",
+    "name": "Boii-Insubres-Taurisci-Gaesatae coalition at Telamon (225 BCE)",
+    "kind": "event_bounded_coalition",
+    "start_year": -225,
+    "end_year": -225,
+    "region": "Etruria on the coalition's northward withdrawal",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Polybius and the modern battle study identify all four formations in the double-facing battle line. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_polybius_book_2",
+      "wave8_insubrian_rawlings_225_222",
+      "wave8_insubrian_szubelak_telamon"
+    ]
+  },
+  {
+    "id": "insubrian_gaesatae_diversionary_force_clastidium_222_bce",
+    "name": "Insubrian-Gaesatae diversionary force at Clastidium (222 BCE)",
+    "kind": "event_bounded_coalition",
+    "start_year": -222,
+    "end_year": -222,
+    "region": "Clastidium and the lower Po",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Insubrian diversionary force, reinforced by hired Gaesatae, that raised its siege and met Marcellus in battle. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_plutarch_marcellus",
+      "wave8_insubrian_polybius_book_2",
+      "wave8_insubrian_rawlings_225_222"
+    ]
+  },
+  {
+    "id": "marcellus_roman_relief_detachment_clastidium_222_bce",
+    "name": "Marcellus's Roman relief detachment at Clastidium (222 BCE)",
+    "kind": "event_bounded_field_command",
+    "start_year": -222,
+    "end_year": -222,
+    "region": "Clastidium and the lower Po",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The cavalry and light infantry detached by consul Marcus Claudius Marcellus to relieve Clastidium. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_oxford_marcellus",
+      "wave8_insubrian_plutarch_marcellus",
+      "wave8_insubrian_polybius_book_2"
+    ]
+  },
+  {
+    "id": "cethegus_roman_consular_army_mincio_197_bce",
+    "name": "Gaius Cornelius Cethegus's Roman consular army at the Mincio (197 BCE)",
+    "kind": "event_bounded_field_command",
+    "start_year": -197,
+    "end_year": -197,
+    "region": "The Mincius frontier near Cenomanian territory",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The consular army commanded by Gaius Cornelius Cethegus in Livy's Mincio engagement. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_livy_32_30",
+      "wave8_insubrian_rawlings_201_191"
+    ]
+  },
+  {
+    "id": "insubrian_field_force_hamilcar_mincio_197_bce",
+    "name": "Insubrian field force with Hamilcar at the Mincio (197 BCE)",
+    "kind": "event_bounded_field_force",
+    "start_year": -197,
+    "end_year": -197,
+    "region": "The Mincius frontier near Cenomanian territory",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Insubrian force defeated at the Mincio, with the Carthaginian Hamilcar attested among the captives. Cenomanian allegiance is not invented because Livy reports neutrality or a rear attack in variant accounts. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_cambridge_expansion_west",
+      "wave8_insubrian_livy_32_30",
+      "wave8_insubrian_oxford_insubres"
+    ]
+  },
+  {
     "id": "clio_dz_numidia_bce197_0f528fc7",
     "name": "Kingdom of Numidia",
     "kind": "kingdom",
@@ -508,6 +602,38 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "insubrian_comenses_field_force_comum_196_bce",
+    "name": "Insubrian-Comenses field force in Comum territory (196 BCE)",
+    "kind": "event_bounded_coalition",
+    "start_year": -196,
+    "end_year": -196,
+    "region": "Comum territory south of Lake Larius",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Insubres and armed Comenses whom Livy places in camp in Comum territory before the Roman victory and capture of the town. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_livy_33_36",
+      "wave8_insubrian_oxford_insubres",
+      "wave8_insubrian_una_cisalpine_towns"
+    ]
+  },
+  {
+    "id": "marcellus_roman_consular_army_comum_196_bce",
+    "name": "Marcus Claudius Marcellus's Roman consular army at Comum (196 BCE)",
+    "kind": "event_bounded_field_command",
+    "start_year": -196,
+    "end_year": -196,
+    "region": "Comum territory south of Lake Larius",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The 196 BCE consular army in the distinct victory in Comum territory, separate from its Boian campaign action. No rating is inherited by an ethnic Insubrian or Gallic label, another Roman command, an earlier or later campaign, or any modern state.",
+    "source_ids": [
+      "wave8_insubrian_hoyos_strategy",
+      "wave8_insubrian_livy_33_36",
+      "wave8_insubrian_rawlings_201_191"
     ]
   },
   {

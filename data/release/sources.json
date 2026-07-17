@@ -7767,6 +7767,191 @@
     ]
   },
   {
+    "id": "wave8_insubrian_cambridge_expansion_west",
+    "title": "Roman expansion in the west",
+    "url": "https://doi.org/10.1017/CHOL9780521234481.006",
+    "publisher": "Cambridge University Press, The Cambridge Ancient History",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_ancient_history_roman_expansion_west",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_hoyos_strategy",
+    "title": "Roman Strategy in Cisalpina, 224-222 and 203-191 B.C.",
+    "url": "https://doi.org/10.1017/S0066477400002185",
+    "publisher": "Cambridge University Press, Antichthon",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "hoyos_roman_strategy_cisalpina",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_livy_32_30",
+    "title": "Livy, History of Rome, Book 32, chapter 30",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Liv.+32.30",
+    "publisher": "Perseus Digital Library; Cyrus Edmonds translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "livy_book_32_edmonds_translation",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_livy_33_36",
+    "title": "Livy, History of Rome, Book 33, chapter 36",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Liv.+33.36",
+    "publisher": "Perseus Digital Library; Canon Roberts translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "livy_book_33_roberts_translation",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_oxford_insubres",
+    "title": "Insubres",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548938739",
+    "publisher": "Oxford University Press, Oxford Classical Dictionary",
+    "license": "Citation and link only",
+    "source_type": "scholarly_classical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_classical_dictionary_insubres",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_oxford_marcellus",
+    "title": "Claudius Marcellus, Marcus, consul 222, 214, 210, 208 BCE",
+    "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548730436",
+    "publisher": "Oxford University Press, Oxford Classical Dictionary",
+    "license": "Citation and link only",
+    "source_type": "scholarly_classical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "oxford_classical_dictionary_marcellus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_plutarch_marcellus",
+    "title": "Plutarch, Life of Marcellus",
+    "url": "https://classics.mit.edu/Plutarch/marcellu.html",
+    "publisher": "MIT Internet Classics Archive",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "plutarch_marcellus_dryden_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_polybius_book_2",
+    "title": "Polybius, Histories, Book 2: the Gallic war in northern Italy",
+    "url": "https://www.perseus.tufts.edu/hopper/text.jsp?doc=Perseus%3Atext%3A1999.01.0234%3Abook%3D2",
+    "publisher": "Perseus Digital Library; Evelyn S. Shuckburgh translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "polybius_histories_book_2_shuckburgh",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_rawlings_201_191",
+    "title": "The Roman Conquest of Cisalpine Gaul, 201-191 BC",
+    "url": "https://doi.org/10.1002/9781119099000.wbabat0330",
+    "publisher": "Wiley, The Encyclopedia of Ancient Battles",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "rawlings_cisalpine_conquest_201_191",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_rawlings_225_222",
+    "title": "The Gallic Wars, Northern Italy, 225-222 BC",
+    "url": "https://doi.org/10.1002/9781119099000.wbabat0310",
+    "publisher": "Wiley, The Encyclopedia of Ancient Battles",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "rawlings_gallic_wars_225_222",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_szubelak_telamon",
+    "title": "The Gallic disaster at Telamon in 225 BC: the military and psychological aspect",
+    "url": "https://doi.org/10.4467/20844069PH.17.024.6939",
+    "publisher": "Prace Historyczne, Jagiellonian University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_open_access_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "szubelak_telamon_2017",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_insubrian_una_cisalpine_towns",
+    "title": "Les agglomerations celtiques en Cisalpine a l'epreuve de la conquete romaine",
+    "url": "https://una-editions.fr/les-agglomerations-celtiques-en-cisalpine/",
+    "publisher": "Ausonius Editions, Universite Bordeaux Montaigne",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "tarpin_cisalpine_settlements_conquest",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_irish_aia_tara_landscape",
     "title": "The Impact of the Proposed M3 Motorway on Tara and its Cultural Landscape",
     "url": "https://www.archaeological.org/pdfs/archaeologywatch/Tara/Tara_statement.pdf",

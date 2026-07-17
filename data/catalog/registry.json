@@ -474,6 +474,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "aemilius_atilius_roman_consular_armies_telamon_225_bce",
+      "name": "Aemilius Papus-Atilius Regulus Roman consular armies at Telamon (225 BCE)",
+      "kind": "event_bounded_joint_command",
+      "start_year": -225,
+      "end_year": -225,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Etruria near Telamon"
+    },
+    {
       "id": "clio_q245273_bce284_abebfa72",
       "name": "Aetolian League",
       "kind": "polity",
@@ -1742,6 +1752,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Northern Syria and Antioch"
+    },
+    {
+      "id": "boii_insubres_taurisci_gaesatae_coalition_telamon_225_bce",
+      "name": "Boii-Insubres-Taurisci-Gaesatae coalition at Telamon (225 BCE)",
+      "kind": "event_bounded_coalition",
+      "start_year": -225,
+      "end_year": -225,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Etruria on the coalition's northward withdrawal"
     },
     {
       "id": "clio_bo_bolivia_modern_1825_016dfcaa",
@@ -6124,6 +6144,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "cethegus_roman_consular_army_mincio_197_bce",
+      "name": "Gaius Cornelius Cethegus's Roman consular army at the Mincio (197 BCE)",
+      "kind": "event_bounded_field_command",
+      "start_year": -197,
+      "end_year": -197,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "The Mincius frontier near Cenomanian territory"
+    },
+    {
       "id": "clio_q26847_bce279_181f21e9",
       "name": "Galatia",
       "kind": "polity",
@@ -7908,6 +7938,36 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "insubrian_field_force_hamilcar_mincio_197_bce",
+      "name": "Insubrian field force with Hamilcar at the Mincio (197 BCE)",
+      "kind": "event_bounded_field_force",
+      "start_year": -197,
+      "end_year": -197,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "The Mincius frontier near Cenomanian territory"
+    },
+    {
+      "id": "insubrian_comenses_field_force_comum_196_bce",
+      "name": "Insubrian-Comenses field force in Comum territory (196 BCE)",
+      "kind": "event_bounded_coalition",
+      "start_year": -196,
+      "end_year": -196,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Comum territory south of Lake Larius"
+    },
+    {
+      "id": "insubrian_gaesatae_diversionary_force_clastidium_222_bce",
+      "name": "Insubrian-Gaesatae diversionary force at Clastidium (222 BCE)",
+      "kind": "event_bounded_coalition",
+      "start_year": -222,
+      "end_year": -222,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Clastidium and the lower Po"
     },
     {
       "id": "clio_iq_iraq_rep_1960_89655724",
@@ -11878,6 +11938,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "South Asia"
+    },
+    {
+      "id": "marcellus_roman_relief_detachment_clastidium_222_bce",
+      "name": "Marcellus's Roman relief detachment at Clastidium (222 BCE)",
+      "kind": "event_bounded_field_command",
+      "start_year": -222,
+      "end_year": -222,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Clastidium and the lower Po"
+    },
+    {
+      "id": "marcellus_roman_consular_army_comum_196_bce",
+      "name": "Marcus Claudius Marcellus's Roman consular army at Comum (196 BCE)",
+      "kind": "event_bounded_field_command",
+      "start_year": -196,
+      "end_year": -196,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Comum territory south of Lake Larius"
     },
     {
       "id": "odo_lusatian_march_force_cedynia_972",
@@ -21144,11 +21224,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1977,
-    "rated_entities": 614,
-    "rated_events": 5108,
+    "registry_polities": 1985,
+    "rated_entities": 622,
+    "rated_events": 5112,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18286,
+    "unresolved_event_candidates": 18282,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21194,6 +21274,7 @@
     "candidate_keyed_wave8_dacia_hced_events": 2,
     "candidate_keyed_wave8_cherokee_hced_events": 4,
     "candidate_keyed_wave8_druze_rebels_hced_events": 4,
+    "candidate_keyed_wave8_insubrian_gauls_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21204,21 +21285,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4844,
-      "candidate_keyed_reviewed_contracts": 534,
+      "hced_candidate_bindings": 4848,
+      "candidate_keyed_reviewed_contracts": 538,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4755,
-      "location_provenance_objects": 4804,
-      "point_fields_withheld_by_quarantine": 112,
+      "modern_location_country_assertions": 4759,
+      "location_provenance_objects": 4808,
+      "point_fields_withheld_by_quarantine": 116,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 88,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 40,
-      "unique_events_with_any_quarantined_field": 160,
-      "point_quarantine_candidate_manifest_sha256": "dc20d63b93a0b8c008409c2a9e7e48f61430392e83055a149da5aaed052b3edd",
+      "unique_events_with_any_quarantined_field": 164,
+      "point_quarantine_candidate_manifest_sha256": "9a013634fffe7056bd148c3ec28d190a55b365c09e64d038298585433948b075",
       "country_quarantine_candidate_manifest_sha256": "a6393fab3d4e9f22ae3c70b982df1f315725a098086de8b054675673d2fb1336",
-      "quarantine_policy_sha256": "05d4db87244486fd1e9f067bcf99e87e31fe4b417c1b95fcdd362c56670b0eb1",
+      "quarantine_policy_sha256": "37ed825dfd1eac6f487c866f91663ad5c4b36fe39289b839646108271d2cfafd",
       "assertion_status": {
-        "unreviewed_source_assertion": 4804
+        "unreviewed_source_assertion": 4808
       },
       "verified_location_assertions": {
         "availability": "not_available",
