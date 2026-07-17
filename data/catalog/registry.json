@@ -25089,8 +25089,8 @@
     "registry_polities": 2372,
     "rated_entities": 1016,
     "rated_events": 5412,
-    "staged_source_records": 27014,
-    "unresolved_event_candidates": 17982,
+    "staged_source_records": 45968,
+    "unresolved_event_candidates": 36936,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25234,6 +25234,7 @@
       "ucdp-dyadic-26.1-candidates.jsonl": 3518,
       "ucdp-termination-conflict-candidates.jsonl": 2752,
       "ucdp-termination-dyad-candidates.jsonl": 3432,
+      "wikidata-battle-candidates.jsonl": 18954,
       "wikidata-candidates.jsonl": 18
     }
   }

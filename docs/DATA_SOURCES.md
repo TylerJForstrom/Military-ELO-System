@@ -1,6 +1,6 @@
 # Data sources and ingestion policy
 
-Last verified: 2026-07-15.
+Last verified: 2026-07-17.
 
 This document records the datasets evaluated for the Military History Elo
 system, what each source can establish, and what it cannot. The central rule is
@@ -39,7 +39,7 @@ an actor merely falling below a fatality threshold are also different outcomes.
 | IWD | Yes | Terminal component-war outcome from the initiator's perspective: victory, defeat, or draw | Rated only through parent-war coalition aggregation: at most one strategic update per parent conflict, with consistent sides, unanimous outcomes, and time-bounded identities; unresolved parents stay staged. |
 | UCDP conflict/dyadic/GED/deaths | No | Actors, conflict type, intensity, events, and deaths | No. Intensity and fatalities are not victory labels. |
 | UCDP Conflict Termination | Yes, for terminated episodes | Peace, ceasefire, government-side victory, non-state-side victory, low activity, or actor cessation | Rated only through the declared conflict-episode termination ruleset (victory codes 3/4, state primaries, time-bounded GW policies, cross-source dedup); all other rows stay staged. It is episode-level and may not describe every supporter or coalition participant, so secondary parties are recorded without outcomes. |
-| Wikidata | Sometimes through `winner` (P1346) | A community-maintained sourced statement | No. Preserve statement references and qualifiers and verify against scholarly sources. |
+| Wikidata | Only about 60 winner assertions across the whole graph | Sparse community-maintained `winner` statements and winner-role qualifiers | No. It is a discovery and enrichment source, not a usable outcome source. |
 | Cliopatria | No | Polity identity, time, relationships, and geography | Identity evidence only. |
 | Pleiades / GeoNames | No | Place identity, aliases, and coordinates | Location evidence only. |
 | COW war data | Yes | Participant-level coded war outcome and battle deaths | Permission-gated and still requires scope/participant review. |
@@ -47,7 +47,7 @@ an actor merely falling below a fatality threshold are also different outcomes.
 | ACLED | No | Political-violence event type, actors, location, and reported fatalities | No, and its terms make this project an unsuitable use without written authorization. |
 | PA-X | No simple winner | Terms and provisions in peace agreements | Settlement evidence only and permission/reuse restricted. |
 | DBpedia | Sometimes an extracted value | Automatically extracted Wikipedia assertions | Discovery only; lower priority than Wikidata. |
-| Brecke Conflict Catalog | Not systematically | Participants, initiator where possible, dates, location, and fatalities | Gap discovery only; unfinished and no explicit reusable license. |
+| Brecke Conflict Catalog | No | The workbook has no winner or outcome field | Gap discovery only; unfinished and no clear redistributable license. |
 
 ### Explicit source-family and outcome-role contract
 
@@ -563,12 +563,28 @@ references.
 
 Relevant properties include instance/subclass (`P31`, `P279`), part of (`P361`),
 participant (`P710`), winner (`P1346`), conflict (`P607`), start/end/point in
-time (`P580`, `P582`, `P585`), location (`P276`), and coordinates (`P625`).
+time (`P580`, `P582`, `P585`), location (`P276`), coordinates (`P625`), and
+country (`P17`).
+
+The corpus preserves two additive contracts. The original bounded `wikidata`
+snapshot and its 18-candidate queue remain byte-for-byte unchanged. The
+separate `wikidata-battles` acquisition walks the `Q178561` battle subclass
+tree and adds siege-tree items not already in that tree. Era-bucketed queries
+produced 15,658 unique dated battle-tree candidates and 3,296 unique
+siege-only candidates, or 18,954 in the new review queue. Of these, 4,908 are
+pre-1500. The extraction also preserves participants, part-of relationships,
+coordinates, and country QIDs for deduplication and gap analysis.
+
+Wikidata is not an outcome source at this scale. Only about 60 events across
+the whole graph carry either a direct `winner` statement or a participant
+qualified with the winner role. Every extracted battle remains
+`needs_review` and `do_not_rate_automatically`; none enters the rating ledger.
 
 Use QIDs as crosswalk identifiers, not as automatic polity boundaries or proof
 of victory. Preserve statement rank, qualifiers, references, and retrieval date.
 Missing `winner` is unknown, not a draw. The public query service is unsuitable
-for extracting the entire graph; use paged, bounded queries or a versioned dump.
+for an unbounded extraction; use deterministic era buckets, paged bounded
+queries, or a versioned dump.
 
 ### Pleiades and GeoNames
 
@@ -687,15 +703,30 @@ separately attributed resolver after a license review.
 ### Brecke Conflict Catalog
 
 - Project and downloads: <https://brecke.inta.gatech.edu/research/conflict/>
+- Verified workbook:
+  <https://brecke.inta.gatech.edu/wp-content/uploads/sites/19/2018/09/Conflict-Catalog-18-vars.xlsx>
 - Author's notes:
   <https://brecke.inta.gatech.edu/wp-content/uploads/sites/19/2018/09/Notes-about-Conflict-Catalog.pdf>
 
-The catalog aims to record conflicts since 1400 with at least 32 fatalities and
-has a European extension to 900. It includes participants, initiation where
-possible, dates, locations, and military/total fatalities. The author calls it
-unfinished, expects substantial growth, and warns that errors increase backward
-in time and in poorly documented regions. No explicit data license is stated.
-Do not redistribute or ingest it into the public corpus without permission.
+The verified workbook contains 3,708 war-level records across 18 columns. It
+aims to record conflicts since 1400 with at least 32 fatalities and has a
+European extension to 900. It includes participants, initiation where
+possible, dates, locations, and military/total fatalities, but no winner or
+outcome field. The author calls it unfinished, expects substantial growth, and
+warns that errors increase backward in time and in poorly documented regions.
+
+No clear redistributable license is stated. The workbook remains machine-local
+under ignored `data/raw/brecke-conflict-catalog/` and must not be committed.
+Only the parsed 3,708-record `data/reference/brecke-wars.jsonl` war-name
+sidecar is versioned for coverage analysis; it never supplies a rating outcome.
+
+### Dincecco-Onorato battle data
+
+The publicly downloadable supplementary material is a city-century regression
+panel and contains zero battle rows. The cited 1,091-battle list was not
+publicly downloadable; it remains available only through copyrighted print or
+an author request. It was therefore not ingested, and the public ESM must not
+be mistaken for an event catalog.
 
 ### Broader Seshat data
 
@@ -714,8 +745,9 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 3. **Polity registry:** seed time-bounded entities from Cliopatria and Wikidata,
    then apply the project's historiographic continuity rule. A successor starts
    at baseline even when linked to a predecessor.
-4. **Candidate staging:** stage HCED, IWD, IWBD, and UCDP records into
-   `data/review/*.jsonl` with raw labels, row location, source snapshot, and
+4. **Candidate staging:** stage HCED, IWD, IWBD, UCDP, and both Wikidata
+   discovery contracts into `data/review/*.jsonl` with raw labels, row
+   location, source snapshot where available, and
    `do_not_rate_automatically=true`.
 5. **Entity resolution:** resolve aliases to a polity that existed on the event
    date. Preserve unresolved, coalition, rebel, colonial, and dependency actors
@@ -836,12 +868,12 @@ alias-free identity records. Continued Wave 8 identity and candidate-keyed
 review now produces the current measured 2,372-row registry; every release
 identity still has an exact registry row.
 
-The review queues contain 27,014 staged source records across Cliopatria, HCED,
-IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
-holds 18 candidates on this machine). That total includes
+The review queues contain 45,968 staged source records across Cliopatria, HCED,
+IWD, IWBD, UCDP, the unchanged 18-candidate Wikidata sample, and the additive
+18,954-candidate Wikidata battle/siege queue. That total includes
 identity records and the source-derived evidence promoted into this
-provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 17,982 remain outside the rating ledger because their layer,
+provisional release; it is not an unresolved-record count. Of 42,344 event-like
+candidates, 36,936 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.

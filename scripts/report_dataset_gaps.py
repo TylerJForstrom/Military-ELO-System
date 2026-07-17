@@ -569,6 +569,25 @@ def _counter_rows(counter: Counter[str], key_name: str) -> list[dict[str, Any]]:
     ]
 
 
+def _brecke_source_provenance(
+    rows: Iterable[dict[str, Any]],
+) -> dict[str, str | None]:
+    fields = ("source_url", "source_snapshot", "source_snapshot_sha256")
+    provenance: dict[str, str | None] = {}
+    for field in fields:
+        values = sorted(
+            {
+                str(row.get(field)).strip()
+                for row in rows
+                if row.get(field) is not None and str(row.get(field)).strip()
+            }
+        )
+        if len(values) > 1:
+            raise ValueError(f"Brecke sidecar mixes {field} values: {values}")
+        provenance[field] = values[0] if values else None
+    return provenance
+
+
 def build_report(
     wikidata_path: str | Path,
     hced_path: str | Path,
@@ -668,6 +687,7 @@ def build_report(
     )
 
     brecke = brecke_coverage(brecke_rows, hced_rows)
+    brecke["source_provenance"] = _brecke_source_provenance(brecke_rows)
     matched = [row for row in annotations if row["hced_match_candidates"]]
     return {
         "schema_version": 1,
@@ -877,6 +897,18 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "",
         ]
     )
+    brecke_source = brecke.get("source_provenance", {})
+    if brecke_source.get("source_url") and brecke_source.get(
+        "source_snapshot_sha256"
+    ):
+        lines.extend(
+            [
+                "Verified source workbook: "
+                f"<{brecke_source['source_url']}>; SHA-256 "
+                f"`{brecke_source['source_snapshot_sha256']}`.",
+                "",
+            ]
+        )
     lines.extend(
         _markdown_table(
             ["Brecke region", "Wars with zero matching HCED battles"],

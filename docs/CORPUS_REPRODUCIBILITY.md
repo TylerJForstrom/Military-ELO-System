@@ -17,17 +17,20 @@ derivative.
 
 Each dataset entry identifies one or more immutable files. Each transformation
 names its input roles and one replaceable `*-candidates.jsonl` output. The
-current transformation set covers the core open-data stagers plus the exact
-bounded Wikidata discovery page used by the machine-local build. The locked
+current transformation set covers the core open-data stagers, the exact
+bounded Wikidata discovery page, and the separate era-bucketed Wikidata
+battle/siege discovery pull used by the machine-local build. The locked
 queue names and record counts are tested against
 `data/release/metadata.json` so an omitted or rewritten queue cannot silently
 change the staged corpus arithmetic.
 
-The Wikidata entry is a bounded discovery snapshot, not a complete Wikidata
-export and not a second automatic download contract. Its locked raw page is
-restaged offline through `stage_wikidata`; numeric `page-*` input roles define
-page order. The ordinary live Wikidata fetcher remains acquisition tooling and
-does not update the lock.
+The legacy `wikidata` entry is a bounded discovery snapshot whose 18-candidate
+queue remains unchanged. The additive `wikidata-battles` entry locks the
+snapshots behind a separate 18,954-candidate queue: 15,658 dated battle-tree
+items and 3,296 siege-only items, including 4,908 pre-1500 candidates. Both are
+restaged offline through their own transformers; numeric `page-*` input roles
+define deterministic snapshot order. Live Wikidata fetchers remain acquisition
+tooling and do not update either lock implicitly.
 
 ## Obtain blobs on another machine
 
@@ -51,21 +54,23 @@ locked file:
    `authorized_copy` entry and is also suitable when network access is
    unavailable. Do not commit the copied blob.
 
-3. For the bounded Wikidata page, use an authorized copy of the exact locked
-   blob. A live query is only a proposed lock refresh because the service can
-   change. If a fresh acquisition is needed, isolate both outputs under
-   `build/` and use a non-locked queue basename, for example:
+3. For both Wikidata contracts, use authorized copies of the exact locked
+   blobs. A live query is only a proposed lock refresh because the service can
+   change. If a fresh acquisition is needed, isolate its outputs under
+   `build/` and use non-locked queue basenames, for example:
 
    ```powershell
    python scripts/ingest_wikidata.py `
      --raw-root build/acquisition/raw `
      --review build/acquisition/wikidata-live.jsonl `
      --page-size 50 --max-pages 1
+
+   python scripts/ingest_wikidata_battles.py
    ```
 
-   The provenance writer refuses an unlocked write to the locked
-   `wikidata-candidates.jsonl` basename. Adopting new pages requires a reviewed
-   lock and transformation update; the live fetch never does that implicitly.
+   The provenance writer refuses an unlocked write to either locked Wikidata
+   queue basename. Adopting new pages requires a reviewed lock and
+   transformation update; live fetches never do that implicitly.
 
 Verify the acquired bytes without downloading anything:
 
@@ -94,9 +99,10 @@ python scripts/stage_open_data.py corpus
 python scripts/verify_corpus_lock.py
 ```
 
-`corpus` includes the bounded Wikidata transformation; `core` retains the
-historical core-stager selection. Staging resolves exact locked filenames and
-never chooses a file by modification time. Candidate provenance uses logical
+`corpus` includes both Wikidata transformations; `core` retains the historical
+core-stager selection and excludes both machine-local Wikidata pulls. Staging
+resolves exact locked filenames and never chooses a file by modification time.
+Candidate provenance uses logical
 `data/raw/<dataset>/<filename>` references, so absolute cache roots cannot
 change output bytes.
 
@@ -162,6 +168,8 @@ A corpus refresh is a reviewed change, not an in-place download:
 5. Run the focused tests, full suite, offline verifier, `git diff --check`, and
    `git status --short`.
 
-Commit only the lock, code, tests, and documentation. Never stage the source
-blobs, generated review queues, local decisions, or temporary acquisition
-outputs.
+Commit only the lock, code, tests, documentation, and permitted derived
+reference artifacts. Never stage the source blobs, generated review queues,
+local decisions, or temporary acquisition outputs. In particular, the Brecke
+workbook remains ignored because it has no clear redistributable license; only
+its parsed war-name sidecar is versioned.

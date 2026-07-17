@@ -15,7 +15,7 @@ from military_elo.ingest.open_data import (
     validate_dataset_lock,
 )
 from military_elo.ingest.provenance import CorpusLockError, load_corpus_lock
-from military_elo.ingest.wikidata import fetch_wikidata
+from military_elo.ingest.wikidata import fetch_wikidata, fetch_wikidata_battles
 from scripts.report_ingestion import build_ingestion_report
 
 
@@ -69,6 +69,47 @@ class CommittedCorpusLockTests(unittest.TestCase):
         transformation = lock.transformation("wikidata-review")
         self.assertEqual(list(transformation.inputs), ["page-0001"])
         self.assertEqual(transformation.output.filename, "wikidata-candidates.jsonl")
+
+    def test_expanded_wikidata_battle_lock_is_additive_and_page_ordered(self) -> None:
+        lock = load_corpus_lock()
+        legacy = lock.dataset("wikidata")
+        self.assertEqual(len(legacy.files), 1)
+        self.assertEqual(legacy.files[0].filename, "20260713T161324Z-3d6f3047aeb0.json")
+        self.assertEqual(
+            legacy.files[0].sha256,
+            "3d6f3047aeb075a3e65ad87f18df8a40c7cd10c9a797c5d69f8e7c7499dbdfb1",
+        )
+        legacy_output = lock.transformation("wikidata-review").output
+        self.assertEqual(legacy_output.record_count, 18)
+        self.assertEqual(legacy_output.size_bytes, 13415)
+        self.assertEqual(
+            legacy_output.sha256,
+            "39467451d913c11b197b7b9a0b4ed0c8cc203f3a213da4db377c0f877fbbcf85",
+        )
+
+        self.assertNotIn("wikidata-battles", DATASETS)
+        expanded = lock.dataset("wikidata-battles")
+        self.assertEqual(len(expanded.files), 24)
+        transformation = lock.transformation("wikidata-battles-review")
+        self.assertEqual(
+            list(transformation.inputs),
+            [f"page-{page:04d}" for page in range(1, 25)],
+        )
+        self.assertTrue(
+            all(
+                locked_input.dataset_id == "wikidata-battles"
+                for locked_input in transformation.inputs.values()
+            )
+        )
+        self.assertEqual(
+            transformation.output.filename, "wikidata-battle-candidates.jsonl"
+        )
+        self.assertEqual(transformation.output.record_count, 18954)
+        self.assertEqual(transformation.output.size_bytes, 15986258)
+        self.assertEqual(
+            transformation.output.sha256,
+            "721facbb469bf874f45fd8699dfa4a76178eed8095793d92ff92b81b015550e9",
+        )
 
     def test_locked_queue_counts_reconcile_with_committed_release_metadata(self) -> None:
         lock = load_corpus_lock()
@@ -171,6 +212,22 @@ class OfflineVerificationAndReportingTests(unittest.TestCase):
                         raw_root=raw_root,
                         review_path=review_path,
                         max_pages=1,
+                        pause_seconds=0,
+                    )
+            get_bytes.assert_not_called()
+            self.assertFalse(raw_root.exists())
+            self.assertFalse(review_path.exists())
+
+    def test_live_battle_acquisition_cannot_overwrite_locked_expanded_queue(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            raw_root = root / "raw"
+            review_path = root / "wikidata-battle-candidates.jsonl"
+            with patch("military_elo.ingest.wikidata.get_bytes") as get_bytes:
+                with self.assertRaises(CorpusLockError):
+                    fetch_wikidata_battles(
+                        raw_root=raw_root,
+                        review_path=review_path,
                         pause_seconds=0,
                     )
             get_bytes.assert_not_called()

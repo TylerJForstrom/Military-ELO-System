@@ -361,7 +361,7 @@ class Wave8CatholicRebelsTests(unittest.TestCase):
         self.assertEqual(len(self.release_events), 5_412)
         self.assertEqual(len(self.registry["entities"]), 2_372)
         self.assertEqual(coverage["rated_entities"], 1_016)
-        self.assertEqual(coverage["unresolved_event_candidates"], 17_982)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_936)
         location = coverage["hced_location_assertions"]
         self.assertEqual(location["hced_candidate_bindings"], 5_148)
         self.assertEqual(location["candidate_keyed_reviewed_contracts"], 780)

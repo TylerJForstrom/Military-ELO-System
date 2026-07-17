@@ -178,17 +178,23 @@ class LockedFileTests(unittest.TestCase):
             self.assertEqual(destination.read_bytes(), b"existing\n")
 
     def test_unlocked_writer_cannot_overwrite_a_locked_queue_basename(self) -> None:
-        for filename in (
+        for basename in (
             "wikidata-candidates.jsonl",
-            "WIKIDATA-CANDIDATES.JSONL",
-            "wikidata-candidates.jsonl.",
-            "wikidata-candidates.jsonl ",
+            "wikidata-battle-candidates.jsonl",
         ):
-            with self.subTest(filename=filename), tempfile.TemporaryDirectory() as temporary:
-                destination = Path(temporary) / filename
-                with self.assertRaises(CorpusLockError):
-                    write_review_candidates([{"candidate_id": "live-fetch"}], destination)
-                self.assertFalse((Path(temporary) / "wikidata-candidates.jsonl").exists())
+            for filename in (
+                basename,
+                basename.upper(),
+                basename + ".",
+                basename + " ",
+            ):
+                with self.subTest(filename=filename), tempfile.TemporaryDirectory() as temporary:
+                    destination = Path(temporary) / filename
+                    with self.assertRaises(CorpusLockError):
+                        write_review_candidates(
+                            [{"candidate_id": "live-fetch"}], destination
+                        )
+                    self.assertFalse((Path(temporary) / basename).exists())
 
     def test_fabricated_expected_contract_cannot_bypass_locked_queue_guard(self) -> None:
         records = [{"candidate_id": "fabricated"}]

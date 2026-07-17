@@ -79,7 +79,7 @@ identity crosswalks, polity registries, UCDP dyad checks, and generic consulted
 references do not become outcome evidence merely because an event links to
 them.
 
-## Data already staged
+## Data staged and referenced
 
 The live ingestion pipeline has immutable snapshots and review candidates from:
 
@@ -91,9 +91,17 @@ The live ingestion pipeline has immutable snapshots and review candidates from:
 - UCDP dyadic v26.1: 3,518 candidates;
 - UCDP actor v26.1: 1,987 identity candidates;
 - UCDP termination data: 2,752 conflict and 3,432 dyad candidates;
-- a tested Wikidata discovery page, currently holding 18 candidates on this machine.
+- a legacy bounded Wikidata discovery page with 18 candidates, plus an additive
+  battle-tree and siege-only discovery queue with 18,954 candidates; and
+- a 3,708-record Brecke war-name reference sidecar, derived from a
+  machine-local, ignored workbook with no clear redistributable license.
 
-These records remain in `data/review/` and are not silently treated as accurate Elo matches.
+The review queues now contain 45,968 staged source records. Of 42,344
+event-like candidates, 36,936 remain outside the rating ledger. The additive
+Wikidata queue contributes discovery metadata only: automated extraction is
+never approved rating data, and Wikidata's roughly 60 winner assertions across
+the whole graph are far too sparse to supply outcomes. These records remain in
+`data/review/` and are not silently treated as accurate Elo matches.
 
 Promotion into the provisional ledger is conservative and reproducible. HCED records require nonduplicate IDs, aligned winner/loser labels, both Seshat-coded sides, and unique time-valid polity resolution; rows lacking Seshat coding are retried in a second, declared label-resolution pass in which a side promotes only through an explicit time-bounded label policy or an exact, uniquely matching, time-valid alias, and the resulting events carry visibly lower identity confidence. For post-1500 rows only, that pass may split a side on an explicit comma, semicolon, or ampersand; every member must independently resolve through the ordinary label resolver to a distinct full-interval-valid identity. Plain `and` is never a delimiter. Superseded member IDs are canonicalized through the shared audited supersession inventory before the coalition is accepted, and the frozen pre-1500 cohort is never reopened by this rule. IWD component rows never enter individually because they can repeat one umbrella war across many dyads; each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Of 93 IWD parent wars, 64 currently pass those checks; the rest stay staged. IWBD battles enter only as tactical engagements, and only when they duplicate no seed event, non-curated-excluded HCED candidate, or earlier accepted IWBD row by exact normalized name and year; a same-year ordinal/base-name match additionally requires one recognized suffix path to extend the other with agreeing oriented outcomes. They must not be campaign umbrellas over sibling battles, must carry a victor matching a named side, and must resolve both sides to unique time-bounded identities; their war-level victor codes are ignored. UCDP termination records promote only as conflict-level terminal victory episodes (codes 3/4) between state parties with unique time-bounded identities, after cross-source deduplication and dyad- and linked-episode consistency checks; peace agreements, ceasefires, and low activity are never scored as outcomes, and secondary supporters receive no outcome. Battle winners, conflict intensity, and deaths still do not by themselves establish participant-specific strategic success, and every promoted event remains visibly provisional pending claim-level review. The post-Wave 7 crisp-boundary identity tranche adds Mahdist State (Sudan, 1881–1899), the post-Pavon Argentine Republic, the Principality/Kingdom of Bulgaria split, the Republic of Texas, and pre- and post-UAR Syrian republic windows. Boundary years overlap where year-only evidence is ambiguous; Texas labels stop at 1845, Syria deliberately resolves to nothing in 1958–1961, and no successor inherits a predecessor rating. Mexico resolves to the reviewed 1824–1863 republic and the 1868–2024 series in the current Cliopatria snapshot, while 1864–1867 remains a global deny gap; newly resolvable Argentina rows still fail when their source coalition or outcome is incomplete. The current post-Wave-8 planning funnel excludes every candidate ID already published in the ledger and reports 2,274 touched deferred rows, 2,217 unresolved normalized labels, and 1,057 sole-blocker rows; it and the co-war report rank future work only and never change the ledger.
 
@@ -108,13 +116,15 @@ python scripts/build_release.py
 python scripts/build_dashboard.py --data data/release --registry data/catalog/registry.json --simulations 1000
 ```
 
-The bounded Wikidata blob must also be obtained by its locked checksum before
-staging `corpus`; see [corpus reproducibility](docs/CORPUS_REPRODUCIBILITY.md).
-Live Wikidata discovery is paged and resumable, but it is acquisition-only and
-now defaults to ignored `build/acquisition/` paths:
+Both the legacy bounded Wikidata blob and the additive era-bucketed battle
+snapshots must be obtained by their locked checksums before staging `corpus`;
+see [corpus reproducibility](docs/CORPUS_REPRODUCIBILITY.md). Live Wikidata
+discovery is acquisition-only and defaults to ignored `build/acquisition/`
+paths:
 
 ```powershell
 python scripts/ingest_wikidata.py --max-pages 10
+python scripts/ingest_wikidata_battles.py
 ```
 
 UCDP's API now requires a free access token in the `x-ucdp-access-token` header. Versioned CSV downloads work without it. If a token is obtained, set `UCDP_API_TOKEN` and run `scripts/ingest_ucdp.py`; its live acquisition also defaults to `build/acquisition/` and does not alter the locked review queues.

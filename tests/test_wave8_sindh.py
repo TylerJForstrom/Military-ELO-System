@@ -302,7 +302,7 @@ class Wave8SindhTests(unittest.TestCase):
         self.assertEqual(len(self.registry["entities"]), 2_372)
         self.assertEqual(
             self.registry["coverage"]["unresolved_event_candidates"],
-            17_982,
+            36_936,
         )
         location = self.registry["coverage"]["hced_location_assertions"]
         self.assertEqual(location["hced_candidate_bindings"], 5_148)

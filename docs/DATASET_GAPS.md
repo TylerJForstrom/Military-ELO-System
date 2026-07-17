@@ -116,6 +116,8 @@ Materiality rule: The leading classified discovery lane is absent from the regio
 
 Of **3,708** Brecke war records, **78** have at least one exact-name, time-overlapping HCED battle and **3,630** have none. Brecke has no winner field and no reusable license grant; the sidecar is a war-name coverage registry only.
 
+Verified source workbook: <https://brecke.inta.gatech.edu/wp-content/uploads/sites/19/2018/09/Conflict-Catalog-18-vars.xlsx>; SHA-256 `8e685bbf9c67b38e5ba1474cc2a836e6eb9bff98bc223beca681363523a14ea8`.
+
 | Brecke region | Wars with zero matching HCED battles |
 | --- | --- |
 | Brecke region 1 | 182 |
