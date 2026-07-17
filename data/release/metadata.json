@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 823,
-    "events": 5236,
-    "sources": 1133,
-    "registry_polities": 2179
+    "entities": 829,
+    "events": 5239,
+    "sources": 1143,
+    "registry_polities": 2185
   },
   "year_range": {
     "start": -1274,
@@ -144,6 +144,7 @@
     "accepted_wave8_hospitallers_hced_events": 8,
     "accepted_wave8_murids_hced_events": 4,
     "accepted_wave8_punjabi_sikhs_hced_events": 2,
+    "accepted_wave8_modoc_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -11298,7 +11299,291 @@
     "wave8_punjabi_sikhs_outcome_overrides": [],
     "wave8_punjabi_sikhs_entities_added": 4,
     "wave8_punjabi_sikhs_sources_added": 7,
-    "hced_label_pass_input_rows": 5717,
+    "wave8_modoc_counts": {
+      "adjacent_literal_labels_audited": 6,
+      "country_quarantine_additions": 0,
+      "cross_event_boundaries": 3,
+      "engagement_events": 2,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 6,
+      "new_sources": 10,
+      "newly_rated_events": 3,
+      "operation_events": 1,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "scope_audits": 4,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 0,
+      "touched_hced_rows": 4
+    },
+    "wave8_modoc_cohort_counts": {
+      "first_stronghold_assault_1873_01_17": 1,
+      "second_stronghold_operation_1873_04_15_17": 1,
+      "thomas_wright_ambush_1873_04_26": 1
+    },
+    "wave8_modoc_metadata": {
+      "audit": "candidate_keyed_exact_label_event_bounded_formations",
+      "counts": {
+        "adjacent_literal_labels_audited": 6,
+        "country_quarantine_additions": 0,
+        "cross_event_boundaries": 3,
+        "engagement_events": 2,
+        "existing_release_duplicate_dispositions": 0,
+        "holds": 1,
+        "integration_dispositions": 3,
+        "iwbd_duplicate_dispositions": 0,
+        "iwbd_zero_overlap_candidates": 4,
+        "new_entities": 6,
+        "new_sources": 10,
+        "newly_rated_events": 3,
+        "operation_events": 1,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 3,
+        "promotion_contracts": 3,
+        "reviewed_hced_rows": 4,
+        "scope_audits": 4,
+        "sole_blocker_rows": 4,
+        "terminal_exclusions": 0,
+        "touched_hced_rows": 4
+      },
+      "cohorts": {
+        "first_stronghold_assault_1873_01_17": 1,
+        "second_stronghold_operation_1873_04_15_17": 1,
+        "thomas_wright_ambush_1873_04_26": 1
+      },
+      "final_audit_signature": "cbd881130cfb28e9ff147dd2da71b3751ad7fa833996f40b54a75f9963040e71",
+      "module_owner": "military_elo.promotion.wave8_modoc",
+      "row_dispositions": {
+        "hced-Lava Beds (1st)1873-1": "promote",
+        "hced-Lava Beds (2nd)1873-1": "promote",
+        "hced-Lost River, California1872-1": "hold",
+        "hced-Schonchin Flow1873-1": "promote"
+      }
+    },
+    "wave8_modoc_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_modoc_integration_validation": {
+      "cross_event_boundaries": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 3,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_modoc_candidate_ids": [
+      "hced-Lava Beds (1st)1873-1",
+      "hced-Lava Beds (2nd)1873-1",
+      "hced-Schonchin Flow1873-1"
+    ],
+    "wave8_modoc_holds": [
+      {
+        "candidate_id": "hced-Lost River, California1872-1",
+        "audit_note": "The encounter combined a failed disarmament/arrest operation, an Army occupation and burning of Kintpuash's village, a separate civilian fight across the river, and the Modoc bands' successful escape to the Lava Beds. Authoritative accounts agree on those facts but do not establish one shared result scope. HCED's winner field says Draw while winner_loser_complete is false. No true draw, U.S. victory, or Modoc victory is asserted.",
+        "canonical_event": {
+          "canonical_key": "battle_of_lost_river:1872:1872",
+          "date_precision": "day",
+          "date_text": "29 November 1872",
+          "granularity": "multi_site_disarmament_and_village_fight",
+          "name": "Battle of Lost River",
+          "year_low": 1872,
+          "year_high": 1872
+        },
+        "disposition": "hold",
+        "evidence_refs": [
+          "wave8_modoc_army_cmh",
+          "wave8_modoc_murray_ou_press",
+          "wave8_modoc_nation_history",
+          "wave8_modoc_nps_modoc_war",
+          "wave8_modoc_oregon_encyclopedia",
+          "wave8_modoc_thompson_history"
+        ],
+        "hold_reason": "scope_dependent_mixed_result_not_a_defensible_draw",
+        "raw_row_sha256": "3cd4ed9cedaef60433d726dd2a308942c829a14b4b2f61cd5d1fca30ef542739",
+        "reviewed_outcome": "unknown_at_locked_event_scope",
+        "source_winner_raw": "Draw",
+        "source_winner_loser_complete": false,
+        "unknown_is_never_draw": true
+      }
+    ],
+    "wave8_modoc_terminal_exclusions": [],
+    "wave8_modoc_cross_event_boundaries": [
+      {
+        "boundary_id": "first_to_second_stronghold",
+        "candidate_ids": [
+          "hced-Lava Beds (1st)1873-1",
+          "hced-Lava Beds (2nd)1873-1"
+        ],
+        "disposition": "same_position_distinct_assaults_and_results",
+        "reason": "The January attack was repulsed; the separately organized 15-17 April operation occupied the evacuated Stronghold."
+      },
+      {
+        "boundary_id": "lost_river_to_first_stronghold",
+        "candidate_ids": [
+          "hced-Lost River, California1872-1",
+          "hced-Lava Beds (1st)1873-1"
+        ],
+        "disposition": "distinct_opening_action_and_later_fortress_assault",
+        "reason": "Lost River occurred on 29 November 1872 at two village sites; the first Stronghold assault occurred seven weeks later at a new position."
+      },
+      {
+        "boundary_id": "second_stronghold_to_schonchin",
+        "candidate_ids": [
+          "hced-Lava Beds (2nd)1873-1",
+          "hced-Schonchin Flow1873-1"
+        ],
+        "disposition": "distinct_position_operation_and_patrol_ambush",
+        "reason": "The Thomas-Wright patrol left camp nine days after the Stronghold occupation and was ambushed by a different bounded Modoc party."
+      }
+    ],
+    "wave8_modoc_iwbd_duplicate_dispositions": [],
+    "wave8_modoc_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Lava Beds (1st)1873-1",
+        "aliases": [
+          "captain jack s stronghold",
+          "first battle for captain jack s stronghold",
+          "first battle of the stronghold",
+          "lava beds 1st"
+        ],
+        "years": [
+          1873,
+          1873
+        ]
+      },
+      {
+        "audit_id": "hced-Lava Beds (2nd)1873-1",
+        "aliases": [
+          "captain jack s stronghold",
+          "lava beds 2nd",
+          "second battle for captain jack s stronghold",
+          "second battle of the stronghold"
+        ],
+        "years": [
+          1873,
+          1873
+        ]
+      },
+      {
+        "audit_id": "hced-Lost River, California1872-1",
+        "aliases": [
+          "battle of lost river",
+          "lost river",
+          "lost river california"
+        ],
+        "years": [
+          1872,
+          1872
+        ]
+      },
+      {
+        "audit_id": "hced-Schonchin Flow1873-1",
+        "aliases": [
+          "battle of sand butte",
+          "hardin butte",
+          "schonchin flow",
+          "thomas wright battle",
+          "thomas wright battlefield"
+        ],
+        "years": [
+          1873,
+          1873
+        ]
+      }
+    ],
+    "wave8_modoc_existing_release_duplicate_dispositions": [],
+    "wave8_modoc_integration_dispositions": [
+      {
+        "disposition_id": "event_boundary:first_to_second_stronghold",
+        "candidate_ids": [
+          "hced-Lava Beds (1st)1873-1",
+          "hced-Lava Beds (2nd)1873-1"
+        ],
+        "disposition": "same_position_distinct_assaults_and_results",
+        "reason": "The January attack was repulsed; the separately organized 15-17 April operation occupied the evacuated Stronghold."
+      },
+      {
+        "disposition_id": "event_boundary:lost_river_to_first_stronghold",
+        "candidate_ids": [
+          "hced-Lost River, California1872-1",
+          "hced-Lava Beds (1st)1873-1"
+        ],
+        "disposition": "distinct_opening_action_and_later_fortress_assault",
+        "reason": "Lost River occurred on 29 November 1872 at two village sites; the first Stronghold assault occurred seven weeks later at a new position."
+      },
+      {
+        "disposition_id": "event_boundary:second_stronghold_to_schonchin",
+        "candidate_ids": [
+          "hced-Lava Beds (2nd)1873-1",
+          "hced-Schonchin Flow1873-1"
+        ],
+        "disposition": "distinct_position_operation_and_patrol_ambush",
+        "reason": "The Thomas-Wright patrol left camp nine days after the Stronghold occupation and was ambushed by a different bounded Modoc party."
+      }
+    ],
+    "wave8_modoc_scope_and_opposite_result_audit": {
+      "hced-Lost River, California1872-1": {
+        "aliases": [
+          "Battle of Lost River",
+          "Lost River, California"
+        ],
+        "audited_unit": "multi_site_disarmament_and_village_fight",
+        "disposition": "hold_unknown_not_draw",
+        "opposite_result_disposition": "Village occupation and band escape answer different objectives; neither is converted into a win or a draw for this locked row.",
+        "owner_module": "military_elo.promotion.wave8_modoc",
+        "scope_note": "Opening Lost River action only; no later Lava Beds result."
+      },
+      "hced-Lava Beds (1st)1873-1": {
+        "aliases": [
+          "First Battle for Captain Jack's Stronghold",
+          "First Battle of the Stronghold",
+          "Lava Beds (1st)"
+        ],
+        "audited_unit": "single_day_coordinated_stronghold_assault",
+        "disposition": "promote_modoc_defensive_victory",
+        "opposite_result_disposition": "The U.S. result in the April second assault is a distinct operation, not an opposite-result duplicate of the January defeat.",
+        "owner_module": "military_elo.promotion.wave8_modoc",
+        "scope_note": "Only the 17 January assault and withdrawal are rated."
+      },
+      "hced-Lava Beds (2nd)1873-1": {
+        "aliases": [
+          "Lava Beds (2nd)",
+          "Second Battle for Captain Jack's Stronghold",
+          "Second Battle of the Stronghold"
+        ],
+        "audited_unit": "three_day_stronghold_assault_and_position_capture",
+        "disposition": "promote_us_positional_operation_victory",
+        "opposite_result_disposition": "The Modoc escape is preserved as a qualification, not promoted as an opposite result or erased by a claim of capture.",
+        "owner_module": "military_elo.promotion.wave8_modoc",
+        "scope_note": "The operation ends with occupation on 17 April."
+      },
+      "hced-Schonchin Flow1873-1": {
+        "aliases": [
+          "Battle of Sand Butte",
+          "Schonchin Flow",
+          "Thomas-Wright Battle"
+        ],
+        "audited_unit": "reconnaissance_patrol_ambush",
+        "disposition": "promote_modoc_tactical_victory",
+        "opposite_result_disposition": "The U.S. victory at Dry Lake on 10 May is a later engagement and not an opposite-result twin of the Thomas-Wright patrol disaster.",
+        "owner_module": "military_elo.promotion.wave8_modoc",
+        "scope_note": "Only the 26 April Thomas-Wright patrol is rated."
+      }
+    },
+    "wave8_modoc_outcome_overrides": [],
+    "wave8_modoc_entities_added": 6,
+    "wave8_modoc_sources_added": 10,
+    "hced_label_pass_input_rows": 5713,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -11311,7 +11596,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 887,
+      "reserved_candidate_contract": 891,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -11323,7 +11608,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2206,
+      "no_unique_time_valid_label_match": 2202,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

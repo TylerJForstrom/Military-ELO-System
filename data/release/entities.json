@@ -10282,6 +10282,105 @@
     ]
   },
   {
+    "id": "gillem_joint_stronghold_operation_1873_04_15_17",
+    "name": "Gillem's joint Stronghold operation force (15-17 April 1873)",
+    "kind": "event_bounded_joint_operational_force",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Captain Jack's Stronghold and approaches, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Gillem, Green, and Mason's regular Army components and Warm Springs scouts in the 15-17 April operation; it ends when the deserted Stronghold is occupied. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_california_geology",
+      "wave8_modoc_nps_modoc_war",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
+    "id": "kintpuash_modoc_stronghold_defenders_1873_04_15_17",
+    "name": "Kintpuash's Modoc Stronghold defenders (15-17 April 1873)",
+    "kind": "event_bounded_indigenous_defense_force",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Captain Jack's Stronghold and southern escape route, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Modoc defenders resisting the second assault and evacuating through the southern lava trenches on 15-17 April; the successful escape is retained without converting position loss into capture or whole-war defeat. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_nation_history",
+      "wave8_modoc_nps_modoc_war",
+      "wave8_modoc_nrhp_stronghold",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
+    "id": "kintpuash_modoc_stronghold_defenders_1873_01_17",
+    "name": "Kintpuash's Modoc Stronghold defenders (17 January 1873)",
+    "kind": "event_bounded_indigenous_defense_force",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Captain Jack's Stronghold, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Modoc warriors under Kintpuash who defended the Stronghold during the first coordinated assault on 17 January 1873. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_california_geology",
+      "wave8_modoc_nation_history",
+      "wave8_modoc_nps_modoc_war",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
+    "id": "scarfaced_charley_modoc_ambush_party_1873_04_26",
+    "name": "Scarfaced Charley's Modoc ambush party (26 April 1873)",
+    "kind": "event_bounded_indigenous_ambush_force",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Schonchin Flow and Hardin Butte approaches, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Scarfaced Charley's small party during the Thomas-Wright ambush on 26 April, after the Stronghold evacuation and before the later Dry Lake action. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_nation_history",
+      "wave8_modoc_nps_thomas_wright",
+      "wave8_modoc_oregon_encyclopedia",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
+    "id": "thomas_wright_us_reconnaissance_patrol_1873_04_26",
+    "name": "Thomas-Wright U.S. reconnaissance patrol (26 April 1873)",
+    "kind": "event_bounded_reconnaissance_patrol",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Schonchin Flow and Hardin Butte approaches, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Captain Evan Thomas and Lieutenant Thomas Wright's Army reconnaissance patrol in the 26 April ambush. The twelve Warm Springs scouts trying to approach did not become a rated combatant formation in this contract. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_nps_thomas_wright",
+      "wave8_modoc_oregon_encyclopedia",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
+    "id": "wheaton_joint_stronghold_assault_force_1873_01_17",
+    "name": "Wheaton's joint Stronghold assault force (17 January 1873)",
+    "kind": "event_bounded_joint_assault_force",
+    "start_year": 1873,
+    "end_year": 1873,
+    "region": "Captain Jack's Stronghold approaches, Lava Beds",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Wheaton and Green's regular Army, Oregon and California volunteer, and Klamath-scout components committed to the 17 January assault; it is not a generic U.S. or state-militia identity. The mechanical year window exists only because entity records use year precision; the prose date is the actual boundary. No rating is inherited from or passed to the Modoc people or Modoc Nation, the United States, state volunteers, Klamath or Warm Springs peoples, another Modoc War force, or any later formation.",
+    "source_ids": [
+      "wave8_modoc_army_cmh",
+      "wave8_modoc_california_geology",
+      "wave8_modoc_thompson_history"
+    ]
+  },
+  {
     "id": "palo_duro_comanche_kiowa_cheyenne_war_parties_1874",
     "name": "Comanche-Kiowa-Cheyenne defending war parties at Palo Duro (1874)",
     "kind": "event_bounded_allied_war_parties",

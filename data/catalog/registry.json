@@ -6981,6 +6981,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "gillem_joint_stronghold_operation_1873_04_15_17",
+      "name": "Gillem's joint Stronghold operation force (15-17 April 1873)",
+      "kind": "event_bounded_joint_operational_force",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Captain Jack's Stronghold and approaches, Lava Beds"
+    },
+    {
       "id": "gillespie_mawby_eic_doon_force_1814",
       "name": "Gillespie–Mawby East India Company Doon force",
       "kind": "company_field_force",
@@ -11673,6 +11683,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "kintpuash_modoc_stronghold_defenders_1873_04_15_17",
+      "name": "Kintpuash's Modoc Stronghold defenders (15-17 April 1873)",
+      "kind": "event_bounded_indigenous_defense_force",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Captain Jack's Stronghold and southern escape route, Lava Beds"
+    },
+    {
+      "id": "kintpuash_modoc_stronghold_defenders_1873_01_17",
+      "name": "Kintpuash's Modoc Stronghold defenders (17 January 1873)",
+      "kind": "event_bounded_indigenous_defense_force",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Captain Jack's Stronghold, Lava Beds"
     },
     {
       "id": "lyman_buffalo_wallow_kiowa_comanche_warriors_1874",
@@ -18637,6 +18667,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "scarfaced_charley_modoc_ambush_party_1873_04_26",
+      "name": "Scarfaced Charley's Modoc ambush party (26 April 1873)",
+      "kind": "event_bounded_indigenous_ambush_force",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Schonchin Flow and Hardin Butte approaches, Lava Beds"
+    },
+    {
       "id": "scindia_de_boigne_rajputana_campaign_army_1790",
       "name": "Scindia-de Boigne Rajputana campaign army (1790)",
       "kind": "regime_bounded_campaign_command",
@@ -20986,6 +21026,16 @@
       "region": "North America"
     },
     {
+      "id": "thomas_wright_us_reconnaissance_patrol_1873_04_26",
+      "name": "Thomas-Wright U.S. reconnaissance patrol (26 April 1873)",
+      "kind": "event_bounded_reconnaissance_patrol",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Schonchin Flow and Hardin Butte approaches, Lava Beds"
+    },
+    {
       "id": "clio_q1115291_1769_a42fc38c",
       "name": "Thonburi Kingdom",
       "kind": "kingdom",
@@ -22398,6 +22448,16 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "wheaton_joint_stronghold_assault_force_1873_01_17",
+      "name": "Wheaton's joint Stronghold assault force (17 January 1873)",
+      "kind": "event_bounded_joint_assault_force",
+      "start_year": 1873,
+      "end_year": 1873,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Captain Jack's Stronghold approaches, Lava Beds"
+    },
+    {
       "id": "clio_q2553863_1363_974b2d4a",
       "name": "White Horde",
       "kind": "polity",
@@ -23164,11 +23224,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2179,
-    "rated_entities": 816,
-    "rated_events": 5236,
+    "registry_polities": 2185,
+    "rated_entities": 822,
+    "rated_events": 5239,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18158,
+    "unresolved_event_candidates": 18155,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -23242,6 +23302,7 @@
     "candidate_keyed_wave8_hospitallers_hced_events": 8,
     "candidate_keyed_wave8_murids_hced_events": 4,
     "candidate_keyed_wave8_punjabi_sikhs_hced_events": 2,
+    "candidate_keyed_wave8_modoc_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -23252,21 +23313,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4972,
-      "candidate_keyed_reviewed_contracts": 662,
+      "hced_candidate_bindings": 4975,
+      "candidate_keyed_reviewed_contracts": 665,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4879,
-      "location_provenance_objects": 4928,
-      "point_fields_withheld_by_quarantine": 238,
+      "modern_location_country_assertions": 4882,
+      "location_provenance_objects": 4931,
+      "point_fields_withheld_by_quarantine": 241,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 286,
-      "point_quarantine_candidate_manifest_sha256": "4695295a84fb3b471ff154b0cea974f09f3c1bbd99230e34e577c9473b79d987",
+      "unique_events_with_any_quarantined_field": 289,
+      "point_quarantine_candidate_manifest_sha256": "c6110d12aa260e1ec3edc660cbd11f82730cf7b4f24fae52a2cb4c28937bd1fd",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "b19606524622c83a23104ae2a1a15b43d76812b11c24a80bb3e7bc240f0ff34c",
+      "quarantine_policy_sha256": "5eb9628323e4d438a17d420f4d6009237b470dc766833982c6cf7eae4c47c629",
       "assertion_status": {
-        "unreviewed_source_assertion": 4928
+        "unreviewed_source_assertion": 4931
       },
       "verified_location_assertions": {
         "availability": "not_available",

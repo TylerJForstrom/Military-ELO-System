@@ -11963,6 +11963,151 @@
     ]
   },
   {
+    "id": "wave8_modoc_army_cmh",
+    "title": "Indian Wars: Modocs, 1872-1873",
+    "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Indian-Wars/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "us_army_cmh_indian_wars_modocs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_california_geology",
+    "title": "Captain Jack's Stronghold",
+    "url": "https://npshistory.com/publications/geology/state/ca/cg-v45n5-1992-1.pdf",
+    "publisher": "California Department of Conservation, California Geology",
+    "license": "Citation and link only",
+    "source_type": "technical_historical_terrain_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "wagner_captain_jacks_stronghold_1992",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_murray_ou_press",
+    "title": "The Modocs and Their War",
+    "url": "https://www.oupress.com/9780806113319/the-modocs-and-their-war/",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "murray_modocs_and_their_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_nahc_timeline",
+    "title": "Timeline of Genocide Incidents in the Northeast California Region",
+    "url": "https://nahc.ca.gov/cp/timelines/northeast/",
+    "publisher": "California Native American Heritage Commission",
+    "license": "Citation and link only",
+    "source_type": "official_evidence_timeline",
+    "accessed": "2026-07-16",
+    "source_family_id": "california_nahc_northeast_timeline",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_modoc_nation_history",
+    "title": "Modoc Nation History",
+    "url": "https://modocnation.com/modoc-nation-history/",
+    "publisher": "Modoc Nation",
+    "license": "Citation and link only",
+    "source_type": "official_tribal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "modoc_nation_official_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_modoc_nps_modoc_war",
+    "title": "Modoc War: War in the Lava Beds",
+    "url": "https://www.nps.gov/labe/learn/historyculture/modoc-war.htm",
+    "publisher": "U.S. National Park Service, Lava Beds National Monument",
+    "license": "Citation and link only",
+    "source_type": "official_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_lava_beds_modoc_war_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_nps_thomas_wright",
+    "title": "Thomas-Wright Battlefield, Tulelake, California",
+    "url": "https://www.nps.gov/places/thomas-wright-battlefield-tulelake-ca.htm",
+    "publisher": "U.S. National Park Service, Lava Beds National Monument",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_interpretation",
+    "accessed": "2026-07-16",
+    "source_family_id": "nps_thomas_wright_battlefield_interpretation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_nrhp_stronghold",
+    "title": "Captain Jack's Stronghold National Register nomination",
+    "url": "https://npshistory.com/publications/labe/nr-stronghold.pdf",
+    "publisher": "National Register of Historic Places / National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_nomination",
+    "accessed": "2026-07-16",
+    "source_family_id": "nrhp_captain_jacks_stronghold_nomination",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_oregon_encyclopedia",
+    "title": "Modoc War",
+    "url": "https://www.oregonencyclopedia.org/articles/modoc_war/",
+    "publisher": "The Oregon Encyclopedia / Oregon Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "mark_oregon_encyclopedia_modoc_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_modoc_thompson_history",
+    "title": "Modoc War: Its Military History and Topography",
+    "url": "https://npshistory.com/publications/labe/thompson/index.htm",
+    "publisher": "National Park Service historical study / NPS History archive",
+    "license": "Citation and link only",
+    "source_type": "official_scholarly_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "thompson_modoc_war_1971",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_moros_22d_infantry_datu_ali_archive",
     "title": "The Datu Ali Expedition",
     "url": "https://www.1-22infantry.org/history3/ali.htm",
