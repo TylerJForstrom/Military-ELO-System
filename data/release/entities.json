@@ -953,6 +953,22 @@
     ]
   },
   {
+    "id": "clio_kr_goguryeo_k_bce36_8b810bef",
+    "name": "Goguryeo",
+    "kind": "kingdom",
+    "start_year": -36,
+    "end_year": 681,
+    "region": "Korean Peninsula and Manchuria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate. Only fingerprinted, candidate-keyed events may use this identity. The HCED spelling 'Koguryo' is not opened as a global alias, the 668 defeat does not transfer Elo to a successor, and the source coverage end is not treated as evidence that the kingdom survived the reviewed fall of Pyongyang.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_goguryeo_aks_history",
+      "wave8_goguryeo_hwang_history"
+    ]
+  },
+  {
     "id": "roman_empire",
     "name": "Roman Empire",
     "kind": "empire",
@@ -1192,6 +1208,22 @@
     "source_ids": [
       "wave8_alemanni_ammianus_book_27",
       "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "clio_q28456_378_7ba3b7e4",
+    "name": "Silla",
+    "kind": "kingdom",
+    "start_year": 378,
+    "end_year": 681,
+    "region": "Korean Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate for the reviewed 668 coalition participant. Only fingerprinted, candidate-keyed events may use this identity; no Elo is inherited by later Silla coverage or inferred from the Tang alliance itself.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_goguryeo_aks_history",
+      "wave8_goguryeo_lim_silla_2023"
     ]
   },
   {
@@ -1485,6 +1517,22 @@
     "source_ids": [
       "sunypress_tabari_volume_8",
       "ucpress_quran_and_conquest_chapter_1"
+    ]
+  },
+  {
+    "id": "clio_cn_tang_dyn_1_623_3e98c37b",
+    "name": "Tang Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 623,
+    "end_year": 910,
+    "region": "East Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate for the reviewed 645 and 668 campaigns. Only fingerprinted, candidate-keyed events may use this identity; generic China labels remain closed and no dynastic predecessor or successor inherits Elo.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_goguryeo_aks_history",
+      "wave8_goguryeo_hwang_history"
     ]
   },
   {

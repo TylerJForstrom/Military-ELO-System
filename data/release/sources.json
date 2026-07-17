@@ -10456,6 +10456,61 @@
     ]
   },
   {
+    "id": "wave8_goguryeo_ahn_645_thesis",
+    "title": "Ahn Hee-sang, The 645 Goguryeo-Tang War and Causes of Goguryeo's Victory",
+    "url": "https://www.dbpia.co.kr/journal/detail?nodeId=T16061002",
+    "publisher": "Dongguk University / DBpia",
+    "license": "Citation and link only",
+    "source_type": "graduate_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "ahn_goguryeo_tang_war_2022",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_goguryeo_aks_history",
+    "title": "Song Ho-jung et al., A History of Korea",
+    "url": "https://contents.history.go.kr/resources/common/pdf/A%20History%20of%20Korea_The%20Understanding%20Korea%20Series.pdf",
+    "publisher": "Academy of Korean Studies",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "academy_korean_studies_history_2019",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_goguryeo_hwang_history",
+    "title": "Kyung Moon Hwang, A History of Korea: An Episodic Narrative, 3rd ed.",
+    "url": "https://api.pageplace.de/preview/DT0400.9781350932784_A42745559/preview-9781350932784_A42745559.pdf",
+    "publisher": "Macmillan Education / Red Globe Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hwang_history_korea_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_goguryeo_lim_silla_2023",
+    "title": "Lim Gihwan, A Study on Silla's Military Activities during the Fall of Koguryo",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002935429",
+    "publisher": "The Society for the Studies of Korean History / KCI",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_journal_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "lim_silla_fall_koguryo_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_great_russian_encyclopedia_pugachev",
     "title": "Pugachev Uprising, 1773-1775",
     "url": "https://old.bigenc.ru/domestic_history/text/3172674",
