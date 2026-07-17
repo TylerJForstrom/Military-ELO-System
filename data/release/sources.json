@@ -6660,6 +6660,248 @@
     ]
   },
   {
+    "id": "wave8_druze_rebels_bailony_dissertation",
+    "title": "Transnationalism and the Syrian Migrant Politic, pp. 128, 142-145",
+    "url": "https://escholarship.org/uc/item/99q9f2k0",
+    "publisher": "UCLA Electronic Theses and Dissertations",
+    "license": "Citation and link only",
+    "source_type": "scholarly_dissertation_with_archival_sources",
+    "accessed": "2026-07-16",
+    "source_family_id": "bailony_ucla_dissertation",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_bailony_transnational_rebellion",
+    "title": "Syria's Transnational Rebellion: Damascus and Rashaya chapters",
+    "url": "https://www.jstor.org/stable/10.3366/jj.25700607",
+    "publisher": "Edinburgh University Press / JSTOR",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "bailony_transnational_rebellion_2025",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_betts_druze",
+    "title": "The Druze, Great Syrian Revolt account, pp. 87-88",
+    "url": "https://yalebooks.yale.edu/book/9780300048100/the-druze/",
+    "publisher": "Yale University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "betts_druze_yale",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_firro_history_druzes",
+    "title": "A History of the Druzes, volume 1, p. 286",
+    "url": "https://books.google.com/books?id=usEUXYnYWxAC&pg=PA286",
+    "publisher": "Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "firro_history_druzes_1992",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_foreign_legion_rachaya",
+    "title": "1925 Battle of Rachaya, including General Order no. 393",
+    "url": "https://foreignlegion.info/1925-battle-of-rachaya/",
+    "publisher": "French Foreign Legion Information historical archive",
+    "license": "Citation and link only",
+    "source_type": "specialist_unit_history_with_transcribed_primary_order",
+    "accessed": "2026-07-16",
+    "source_family_id": "foreign_legion_rachaya_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_frus_1925_damascus",
+    "title": "FRUS 1925, document 78: revolutionists controlling Damascus",
+    "url": "https://history.state.gov/historicaldocuments/frus1925v02/d78",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "U.S. Government work",
+    "source_type": "official_diplomatic_primary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_1925_syrian_insurrection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_frus_1925_mazraa",
+    "title": "FRUS 1925, document 74: report on the battle of 3 August",
+    "url": "https://history.state.gov/historicaldocuments/frus1925v02/d74",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "U.S. Government work",
+    "source_type": "official_diplomatic_primary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_1925_syrian_insurrection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_frus_1925_rashaya",
+    "title": "FRUS 1925, document 110: relief of the Rashaya garrison",
+    "url": "https://history.state.gov/historicaldocuments/frus1925v02/d110",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "U.S. Government work",
+    "source_type": "official_diplomatic_primary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_1925_syrian_insurrection",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_frus_1926_february_maydan",
+    "title": "FRUS 1926, document 95: 17 February bombardment of the Meidan quarter",
+    "url": "https://history.state.gov/historicaldocuments/frus1926v02/d95",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "U.S. Government work",
+    "source_type": "official_diplomatic_primary_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_1926_syrian_insurrection",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_ieg_damascus_atlas",
+    "title": "Damascus, 1925: The Bombing of the City",
+    "url": "https://hhr-atlas.ieg-mainz.de/articles/bogliolo-damascus",
+    "publisher": "Leibniz Institute of European History",
+    "license": "Citation and link only",
+    "source_type": "scholarly_research_atlas",
+    "accessed": "2026-07-16",
+    "source_family_id": "ieg_humanitarianism_atlas_damascus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_kadhim_maydan_may_1926",
+    "title": "The Poetics of Anti-Colonialism: May 7, 1926 Maydan offensive",
+    "url": "https://brill.com/display/book/9789047404408/9789047404408_webready_content_text.pdf",
+    "publisher": "Brill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "kadhim_poetics_anti_colonialism_2004",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_khoury_syria_french_mandate",
+    "title": "Syria and the French Mandate, pp. 151, 189, 196",
+    "url": "https://books.google.com/books?id=tvP_AwAAQBAJ&pg=PA151",
+    "publisher": "Princeton University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "khoury_syria_french_mandate_1987",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_miller_syrian_revolt",
+    "title": "The Syrian Revolt of 1925",
+    "url": "https://doi.org/10.1017/S0020743800026118",
+    "publisher": "International Journal of Middle East Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "miller_ijmes_syrian_revolt_1977",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_neep_occupying_syria",
+    "title": "Occupying Syria Under the French Mandate, pp. 113-114",
+    "url": "https://books.google.com/books?id=1Z7TbtGaAX8C&pg=PA113",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "neep_occupying_syria_2012",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_provence_great_syrian_revolt",
+    "title": "The Great Syrian Revolt and the Rise of Arab Nationalism, pp. 59-64",
+    "url": "https://utpress.utexas.edu/9780292706804/",
+    "publisher": "University of Texas Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "provence_great_syrian_revolt_2005",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_druze_rebels_wright_bombardment_damascus",
+    "title": "The Bombardment of Damascus",
+    "url": "https://doi.org/10.2307/2188917",
+    "publisher": "American Journal of International Law",
+    "license": "Citation and link only",
+    "source_type": "contemporary_scholarly_article_using_official_and_eyewitness_records",
+    "accessed": "2026-07-16",
+    "source_family_id": "wright_ajil_bombardment_1926",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_ecuador_anh_guayaquil_flags",
     "title": "The flags of Guayaquil in the independence process, 1820-1822",
     "url": "https://www.academiahistoria.org.ec/index.php/boletinesANHE/article/download/313/598",

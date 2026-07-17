@@ -2209,6 +2209,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "normand_levant_column_al_kafr_1925",
+      "name": "Captain Normand's Army of the Levant column at al-Kafr (1925)",
+      "kind": "engagement_bounded_colonial_column",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
+    },
+    {
       "id": "clio_q501754_661_07bf377c",
       "name": "Carantania",
       "kind": "polity",
@@ -5879,6 +5889,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "french_damascus_suppression_force_october_1925",
+      "name": "French Damascus suppression force (October 1925)",
+      "kind": "engagement_bounded_colonial_garrison_and_fire_support",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
+    },
+    {
       "id": "clio_fr_bourbon_k_2_1796_aaa4ec17",
       "name": "French Directory",
       "kind": "polity",
@@ -6230,6 +6250,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Africa"
+    },
+    {
+      "id": "michaud_levant_column_al_mazraa_1925",
+      "name": "General Michaud's Army of the Levant column at al-Mazraa (1925)",
+      "kind": "engagement_bounded_colonial_column",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
     },
     {
       "id": "genoese_beirut_blockade_fleet_1110",
@@ -8954,6 +8984,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "damascus_october_insurgent_force_1925",
+      "name": "Kharrat-Bakri Damascus insurgent force (October 1925)",
+      "kind": "engagement_bounded_anti_colonial_urban_force",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
     },
     {
       "id": "khaybar_oasis_defenders_628",
@@ -15270,6 +15310,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "rashaya_citadel_garrison_1925",
+      "name": "Rashaya citadel garrison and relief force (1925)",
+      "kind": "engagement_bounded_colonial_garrison_and_relief_force",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
+    },
+    {
       "id": "rashidun_caliphate",
       "name": "Rashidun Caliphate",
       "kind": "caliphate",
@@ -18167,6 +18217,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sultan_al_atrash_jabal_hawran_field_force_1925",
+      "name": "Sultan al-Atrash's Jabal Hawran field force (1925)",
+      "kind": "campaign_bounded_anti_colonial_field_force",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
+    },
+    {
       "id": "bacolod_grande_defenders_1903",
       "name": "Sultan of Bacolod Grande's kota defenders (1903)",
       "kind": "engagement_bounded_maranao_sultanate_force",
@@ -20816,6 +20876,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "zayd_al_atrash_rashaya_besiegers_1925",
+      "name": "Zayd al-Atrash's Rashaya besieging force (1925)",
+      "kind": "engagement_bounded_anti_colonial_siege_force",
+      "start_year": 1925,
+      "end_year": 1925,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
+    },
+    {
       "id": "clio_q1990528_866_66f62e53",
       "name": "Zaydi Alid dynasties",
       "kind": "polity",
@@ -21074,11 +21144,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1970,
-    "rated_entities": 607,
-    "rated_events": 5104,
+    "registry_polities": 1977,
+    "rated_entities": 614,
+    "rated_events": 5108,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18290,
+    "unresolved_event_candidates": 18286,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21123,6 +21193,7 @@
     "candidate_keyed_wave8_nez_perce_hced_events": 5,
     "candidate_keyed_wave8_dacia_hced_events": 2,
     "candidate_keyed_wave8_cherokee_hced_events": 4,
+    "candidate_keyed_wave8_druze_rebels_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21133,21 +21204,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4840,
-      "candidate_keyed_reviewed_contracts": 530,
+      "hced_candidate_bindings": 4844,
+      "candidate_keyed_reviewed_contracts": 534,
       "geojson_points": 4732,
-      "modern_location_country_assertions": 4752,
-      "location_provenance_objects": 4801,
-      "point_fields_withheld_by_quarantine": 108,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
+      "modern_location_country_assertions": 4755,
+      "location_provenance_objects": 4804,
+      "point_fields_withheld_by_quarantine": 112,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 88,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 39,
-      "unique_events_with_any_quarantined_field": 156,
-      "point_quarantine_candidate_manifest_sha256": "2be13925538bd0040568f1d48839ec0c1aef6dd76dbdddf36bf47f35b9ff05f9",
-      "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
-      "quarantine_policy_sha256": "0f2a09d891646a077c8400d0d0907d520a77f52ac431ee43a12f060e2add223d",
+      "point_country_quarantine_overlap": 40,
+      "unique_events_with_any_quarantined_field": 160,
+      "point_quarantine_candidate_manifest_sha256": "dc20d63b93a0b8c008409c2a9e7e48f61430392e83055a149da5aaed052b3edd",
+      "country_quarantine_candidate_manifest_sha256": "a6393fab3d4e9f22ae3c70b982df1f315725a098086de8b054675673d2fb1336",
+      "quarantine_policy_sha256": "05d4db87244486fd1e9f067bcf99e87e31fe4b417c1b95fcdd362c56670b0eb1",
       "assertion_status": {
-        "unreviewed_source_assertion": 4801
+        "unreviewed_source_assertion": 4804
       },
       "verified_location_assertions": {
         "availability": "not_available",

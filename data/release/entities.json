@@ -8520,6 +8520,55 @@
     ]
   },
   {
+    "id": "normand_levant_column_al_kafr_1925",
+    "name": "Captain Normand's Army of the Levant column at al-Kafr (1925)",
+    "kind": "engagement_bounded_colonial_column",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Algerian spahi, Syrian auxiliary, and Army of the Levant column commanded by Gabriel Normand at al-Kafr. No rating is inherited by the French Army as a whole, other colonial formations, or the modern French or Syrian state.",
+    "source_ids": [
+      "wave8_druze_rebels_firro_history_druzes",
+      "wave8_druze_rebels_neep_occupying_syria",
+      "wave8_druze_rebels_provence_great_syrian_revolt"
+    ]
+  },
+  {
+    "id": "french_damascus_suppression_force_october_1925",
+    "name": "French Damascus suppression force (October 1925)",
+    "kind": "engagement_bounded_colonial_garrison_and_fire_support",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Army of the Levant garrison, armor, artillery, and air elements used against the October Damascus incursion. Civilian victims are not participants. No rating is inherited by the French Army as a whole, another mandate formation, or the modern French or Syrian state.",
+    "source_ids": [
+      "wave8_druze_rebels_bailony_transnational_rebellion",
+      "wave8_druze_rebels_ieg_damascus_atlas",
+      "wave8_druze_rebels_miller_syrian_revolt",
+      "wave8_druze_rebels_wright_bombardment_damascus"
+    ]
+  },
+  {
+    "id": "michaud_levant_column_al_mazraa_1925",
+    "name": "General Michaud's Army of the Levant column at al-Mazraa (1925)",
+    "kind": "engagement_bounded_colonial_column",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The mixed French, colonial, and Syrian-auxiliary expedition commanded by General Roger Michaud at al-Mazraa. No rating is inherited by the French Army as a whole, its component peoples, or the modern French, Syrian, Senegalese, or Malagasy states.",
+    "source_ids": [
+      "wave8_druze_rebels_betts_druze",
+      "wave8_druze_rebels_frus_1925_mazraa",
+      "wave8_druze_rebels_provence_great_syrian_revolt"
+    ]
+  },
+  {
     "id": "imperial_state_iran_pahlavi",
     "name": "Imperial State of Iran under the Pahlavi Dynasty",
     "kind": "monarchy",
@@ -8531,6 +8580,73 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_iran_pahlavi_loc"
+    ]
+  },
+  {
+    "id": "damascus_october_insurgent_force_1925",
+    "name": "Kharrat-Bakri Damascus insurgent force (October 1925)",
+    "kind": "engagement_bounded_anti_colonial_urban_force",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed Great Syrian Revolt bands led into Damascus by Hasan al-Kharrat and Nasib al-Bakri and joined by local insurgents during 18-20 October. No rating is inherited by all Druze or Damascenes, another rebel band, or any modern Syrian polity or community.",
+    "source_ids": [
+      "wave8_druze_rebels_bailony_transnational_rebellion",
+      "wave8_druze_rebels_frus_1925_damascus",
+      "wave8_druze_rebels_ieg_damascus_atlas",
+      "wave8_druze_rebels_miller_syrian_revolt",
+      "wave8_druze_rebels_wright_bombardment_damascus"
+    ]
+  },
+  {
+    "id": "rashaya_citadel_garrison_1925",
+    "name": "Rashaya citadel garrison and relief force (1925)",
+    "kind": "engagement_bounded_colonial_garrison_and_relief_force",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Foreign Legion cavalry, Tunisian spahis, Lebanese gendarmes, and relief columns documented in the defense of Rashaya citadel. No rating is inherited by those component peoples, the French Army as a whole, or any modern French, Tunisian, Algerian, Lebanese, or Syrian state.",
+    "source_ids": [
+      "wave8_druze_rebels_bailony_dissertation",
+      "wave8_druze_rebels_foreign_legion_rachaya",
+      "wave8_druze_rebels_frus_1925_rashaya"
+    ]
+  },
+  {
+    "id": "sultan_al_atrash_jabal_hawran_field_force_1925",
+    "name": "Sultan al-Atrash's Jabal Hawran field force (1925)",
+    "kind": "campaign_bounded_anti_colonial_field_force",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed field force assembled under Sultan al-Atrash for the opening Jabal Hawran campaign, including locally documented Druze and Bedouin fighters at al-Kafr and al-Mazraa. No rating is inherited by Druze people generally, another revolt formation, or any modern Syrian, Lebanese, Jordanian, or Israeli polity or community.",
+    "source_ids": [
+      "wave8_druze_rebels_betts_druze",
+      "wave8_druze_rebels_firro_history_druzes",
+      "wave8_druze_rebels_neep_occupying_syria",
+      "wave8_druze_rebels_provence_great_syrian_revolt"
+    ]
+  },
+  {
+    "id": "zayd_al_atrash_rashaya_besiegers_1925",
+    "name": "Zayd al-Atrash's Rashaya besieging force (1925)",
+    "kind": "engagement_bounded_anti_colonial_siege_force",
+    "start_year": 1925,
+    "end_year": 1925,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The armed force led from Syria into Wadi al-Taym by Zayd al-Atrash and committed against Rashaya citadel. No rating is inherited by Druze people generally, residents of Rashaya, other rebel bands, or any modern Syrian or Lebanese polity or community.",
+    "source_ids": [
+      "wave8_druze_rebels_bailony_dissertation",
+      "wave8_druze_rebels_bailony_transnational_rebellion",
+      "wave8_druze_rebels_foreign_legion_rachaya"
     ]
   },
   {

@@ -748,6 +748,25 @@ from .wave8_cherokee import (
     wave8_cherokee_cohort_counts,
     wave8_cherokee_counts,
 )
+from .wave8_druze_rebels import (
+    WAVE8_DRUZE_REBELS_CONTRACT_IDS,
+    WAVE8_DRUZE_REBELS_CROSS_LANE_DUPLICATE_DISPOSITIONS,
+    WAVE8_DRUZE_REBELS_ENTITIES,
+    WAVE8_DRUZE_REBELS_HOLD_IDS,
+    WAVE8_DRUZE_REBELS_HOLDS,
+    WAVE8_DRUZE_REBELS_INTEGRATION_DISPOSITIONS,
+    WAVE8_DRUZE_REBELS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_DRUZE_REBELS_OUTCOME_OVERRIDES,
+    WAVE8_DRUZE_REBELS_RESERVED_IDS,
+    WAVE8_DRUZE_REBELS_SOURCES,
+    install_wave8_druze_rebels_entities,
+    install_wave8_druze_rebels_sources,
+    promote_wave8_druze_rebels_contracts,
+    validate_wave8_druze_rebels_integration_dispositions,
+    validate_wave8_druze_rebels_queue_contracts,
+    wave8_druze_rebels_cohort_counts,
+    wave8_druze_rebels_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -807,6 +826,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_NEZ_PERCE_RESERVED_IDS
     | WAVE8_DACIA_RESERVED_IDS
     | WAVE8_CHEROKEE_RESERVED_IDS
+    | WAVE8_DRUZE_REBELS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1211,8 +1231,8 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 108
-        or len(HCED_COUNTRY_QUARANTINE_IDS) != 87
+        len(HCED_POINT_QUARANTINE_IDS) != 112
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 88
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
         != HCED_EXPECTED_QUARANTINE_OVERLAP
@@ -1406,6 +1426,9 @@ def build_expanded_release(
     )
     wave8_dacia_queue_validation = validate_wave8_dacia_queue_contracts(hced)
     wave8_cherokee_queue_validation = validate_wave8_cherokee_queue_contracts(hced)
+    wave8_druze_rebels_queue_validation = (
+        validate_wave8_druze_rebels_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1752,6 +1775,7 @@ def build_expanded_release(
     install_wave8_nez_perce_entities(release_entities)
     install_wave8_dacia_entities(release_entities)
     install_wave8_cherokee_entities(release_entities)
+    install_wave8_druze_rebels_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -2818,6 +2842,15 @@ def build_expanded_release(
         release_entities,
         wave8_cherokee_existing_events,
     )
+    wave8_druze_rebels_existing_events = [
+        *wave8_cherokee_existing_events,
+        *wave8_cherokee_events,
+    ]
+    wave8_druze_rebels_events = promote_wave8_druze_rebels_contracts(
+        hced,
+        release_entities,
+        wave8_druze_rebels_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -2859,6 +2892,7 @@ def build_expanded_release(
         *wave8_nez_perce_events,
         *wave8_dacia_events,
         *wave8_cherokee_events,
+        *wave8_druze_rebels_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -2935,6 +2969,7 @@ def build_expanded_release(
             *WAVE8_DACIA_TERMINAL_EXCLUSION_IDS,
             *WAVE8_CHEROKEE_HOLD_IDS,
             *WAVE8_CHEROKEE_EXCLUSION_IDS,
+            *WAVE8_DRUZE_REBELS_HOLD_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3002,6 +3037,7 @@ def build_expanded_release(
         *wave8_nez_perce_events,
         *wave8_dacia_events,
         *wave8_cherokee_events,
+        *wave8_druze_rebels_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3164,6 +3200,13 @@ def build_expanded_release(
             hced,
             iwbd_candidates,
             wave8_cherokee_existing_events,
+        )
+    )
+    wave8_druze_rebels_integration_validation = (
+        validate_wave8_druze_rebels_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_druze_rebels_existing_events,
         )
     )
     iwd_parent_ids = {
@@ -3352,6 +3395,7 @@ def build_expanded_release(
     install_wave8_nez_perce_sources(sources_by_id)
     install_wave8_dacia_sources(sources_by_id)
     install_wave8_cherokee_sources(sources_by_id)
+    install_wave8_druze_rebels_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3398,6 +3442,7 @@ def build_expanded_release(
         *wave8_nez_perce_events,
         *wave8_dacia_events,
         *wave8_cherokee_events,
+        *wave8_druze_rebels_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3444,6 +3489,7 @@ def build_expanded_release(
         *wave8_nez_perce_events,
         *wave8_dacia_events,
         *wave8_cherokee_events,
+        *wave8_druze_rebels_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3489,6 +3535,7 @@ def build_expanded_release(
             | WAVE8_NEZ_PERCE_CONTRACT_IDS
             | WAVE8_DACIA_CONTRACT_IDS
             | WAVE8_CHEROKEE_CONTRACT_IDS
+            | WAVE8_DRUZE_REBELS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -3576,6 +3623,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_NEZ_PERCE_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_DACIA_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CHEROKEE_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_DRUZE_REBELS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -3790,6 +3838,7 @@ def build_expanded_release(
         - len(wave8_nez_perce_events)
         - len(wave8_dacia_events)
         - len(wave8_cherokee_events)
+        - len(wave8_druze_rebels_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -3884,6 +3933,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_dacia_hced_events": len(wave8_dacia_events),
         "candidate_keyed_wave8_cherokee_hced_events": len(
             wave8_cherokee_events
+        ),
+        "candidate_keyed_wave8_druze_rebels_hced_events": len(
+            wave8_druze_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -4122,6 +4174,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_dacia_hced_events": len(wave8_dacia_events),
             "accepted_wave8_cherokee_hced_events": len(wave8_cherokee_events),
+            "accepted_wave8_druze_rebels_hced_events": len(
+                wave8_druze_rebels_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -5237,6 +5292,53 @@ def build_expanded_release(
             ],
             "wave8_cherokee_entities_added": len(WAVE8_CHEROKEE_ENTITIES),
             "wave8_cherokee_sources_added": len(WAVE8_CHEROKEE_SOURCES),
+            "wave8_druze_rebels_counts": wave8_druze_rebels_counts(),
+            "wave8_druze_rebels_cohort_counts": (
+                wave8_druze_rebels_cohort_counts()
+            ),
+            "wave8_druze_rebels_queue_validation": (
+                wave8_druze_rebels_queue_validation
+            ),
+            "wave8_druze_rebels_integration_validation": (
+                wave8_druze_rebels_integration_validation
+            ),
+            "wave8_druze_rebels_candidate_ids": sorted(
+                WAVE8_DRUZE_REBELS_CONTRACT_IDS
+            ),
+            "wave8_druze_rebels_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_DRUZE_REBELS_HOLDS.items()
+                )
+            ],
+            "wave8_druze_rebels_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_DRUZE_REBELS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_druze_rebels_cross_lane_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_DRUZE_REBELS_CROSS_LANE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_druze_rebels_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_DRUZE_REBELS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_druze_rebels_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_DRUZE_REBELS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_druze_rebels_entities_added": len(
+                WAVE8_DRUZE_REBELS_ENTITIES
+            ),
+            "wave8_druze_rebels_sources_added": len(WAVE8_DRUZE_REBELS_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -5458,6 +5560,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_dacia_hced_events": len(wave8_dacia_events),
         "candidate_keyed_wave8_cherokee_hced_events": len(
             wave8_cherokee_events
+        ),
+        "candidate_keyed_wave8_druze_rebels_hced_events": len(
+            wave8_druze_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
