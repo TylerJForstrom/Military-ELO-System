@@ -2975,6 +2975,16 @@
       "region": "Northeastern Caucasus"
     },
     {
+      "id": "cayuse_war_allied_fighting_bands_1848",
+      "name": "Cayuse-led allied war bands (Cayuse War expedition season, 1848)",
+      "kind": "campaign_bounded_indigenous_allied_fighting_force",
+      "start_year": 1848,
+      "end_year": 1848,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Columbia Plateau, North America"
+    },
+    {
       "id": "cenek_vartenberk_lords_union_force_horice_1423",
       "name": "Cenek of Vartenberk's Lords' Union force at Horice (1423)",
       "kind": "event_bounded_field_coalition",
@@ -4773,6 +4783,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "dominion_new_zealand",
+      "name": "Dominion of New Zealand",
+      "kind": "dominion",
+      "start_year": 1907,
+      "end_year": 1947,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Oceania"
     },
     {
       "id": "clio_q1057292_1552_62ba3c65",
@@ -7727,6 +7747,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ghent_rebel_regime_1379_1385",
+      "name": "Ghent rebel regime (Revolt of Ghent, 1379-1385)",
+      "kind": "rebel_polity",
+      "start_year": 1379,
+      "end_year": 1385,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Low Countries"
+    },
+    {
       "id": "clio_af_ghur_principality_1152_abe855e0",
       "name": "Ghurid Dynasty",
       "kind": "dynastic_state",
@@ -9158,6 +9188,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "huang_chao_rebel_movement",
+      "name": "Huang Chao rebel movement",
+      "kind": "insurgent_army",
+      "start_year": 875,
+      "end_year": 884,
+      "status": "unrated",
+      "identity_status": "curated",
+      "region": "East Asia"
     },
     {
       "id": "clio_q698239_892_d6c48077",
@@ -14714,6 +14754,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "mombasa_revolt_yusuf_ibn_al_hasan",
+      "name": "Mombasa revolt of Yusuf ibn al-Hasan (1631-1638)",
+      "kind": "rebel_forces",
+      "start_year": 1631,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Swahili Coast, East Africa"
+    },
+    {
       "id": "mongol_empire",
       "name": "Mongol Empire",
       "kind": "empire",
@@ -16356,10 +16406,10 @@
     },
     {
       "id": "pai_marire_forces_1864",
-      "name": "Pai Mārire forces (1864–1865)",
+      "name": "Pai Mārire forces (1864–1866)",
       "kind": "religious_movement_force",
       "start_year": 1864,
-      "end_year": 1865,
+      "end_year": 1866,
       "status": "rated",
       "identity_status": "curated",
       "region": "Aotearoa New Zealand"
@@ -16395,6 +16445,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "palestinian_arab_forces_1947_1949",
+      "name": "Palestinian Arab Irregular Forces",
+      "kind": "insurgent_army",
+      "start_year": 1947,
+      "end_year": 1949,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Levant"
     },
     {
       "id": "clio_q201190_1948_a823aed0",
@@ -16992,6 +17052,16 @@
       "status": "provisional",
       "identity_status": "source_candidate",
       "region": "Unclassified"
+    },
+    {
+      "id": "pontiac_detroit_coalition_1763",
+      "name": "Pontiac's Odawa-led Detroit coalition (1763)",
+      "kind": "indigenous_coalition",
+      "start_year": 1763,
+      "end_year": 1763,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North America"
     },
     {
       "id": "clio_q3048747_1772_61c1e64b",
@@ -20805,6 +20875,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "united_irishmen",
+      "name": "Society of United Irishmen",
+      "kind": "revolutionary_movement",
+      "start_year": 1791,
+      "end_year": 1803,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ireland"
+    },
+    {
       "id": "clio_q600524_1805_f3208b01",
       "name": "Sokoto Caliphate",
       "kind": "caliphate",
@@ -21648,6 +21728,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "sultanate_of_mombasa",
+      "name": "Sultanate of Mombasa",
+      "kind": "sultanate",
+      "start_year": 1500,
+      "end_year": 1589,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Swahili Coast, East Africa"
     },
     {
       "id": "clio_q157734_1900_0b687959",
@@ -22964,6 +23054,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "tupac_amaru_rebellion_forces",
+      "name": "Tupac Amaru rebellion forces (Great Rebellion, 1780-1783)",
+      "kind": "rebel_forces",
+      "start_year": 1780,
+      "end_year": 1783,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South America"
+    },
+    {
       "id": "tupac_amaru_vilcabamba_defenders_huayna_pucara_1572",
       "name": "Tupac Amaru's Vilcabamba defenders at Huayna Pucara (1572)",
       "kind": "event_bounded_fortress_defense",
@@ -23892,6 +23992,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "England"
+    },
+    {
+      "id": "wassoulou_empire_samori_ture",
+      "name": "Wassoulou Empire (Samori Ture)",
+      "kind": "empire",
+      "start_year": 1878,
+      "end_year": 1898,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "West Africa"
     },
     {
       "id": "clio_kh_chenla_718_751e159b",
@@ -24976,15 +25086,15 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2361,
-    "rated_entities": 1006,
-    "rated_events": 5354,
+    "registry_polities": 2372,
+    "rated_entities": 1016,
+    "rated_events": 5412,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18040,
+    "unresolved_event_candidates": 17982,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
-    "provisional_hced_label_events": 2423,
+    "provisional_hced_label_events": 2481,
     "candidate_keyed_wave6_hced_events": 76,
     "candidate_keyed_wave7_root_hced_events": 62,
     "candidate_keyed_wave7_central_hced_events": 33,
@@ -25092,11 +25202,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5090,
-      "candidate_keyed_reviewed_contracts": 777,
-      "geojson_points": 4734,
-      "modern_location_country_assertions": 4995,
-      "location_provenance_objects": 5044,
+      "hced_candidate_bindings": 5148,
+      "candidate_keyed_reviewed_contracts": 780,
+      "geojson_points": 4792,
+      "modern_location_country_assertions": 5053,
+      "location_provenance_objects": 5102,
       "point_fields_withheld_by_quarantine": 356,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
@@ -25106,7 +25216,7 @@
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
       "quarantine_policy_sha256": "2c1e5b7a7990ec971f9353c2b865ada97bd02776bd8f60223aea8e939a410bc4",
       "assertion_status": {
-        "unreviewed_source_assertion": 5044
+        "unreviewed_source_assertion": 5102
       },
       "verified_location_assertions": {
         "availability": "not_available",

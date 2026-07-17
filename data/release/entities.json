@@ -2118,6 +2118,21 @@
     ]
   },
   {
+    "id": "huang_chao_rebel_movement",
+    "name": "Huang Chao rebel movement",
+    "kind": "insurgent_army",
+    "start_year": 875,
+    "end_year": 884,
+    "region": "East Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Roving rebel movement of Huang Chao from the 875 rising through Huang's death in 884, including the Qi regime proclaimed at Chang'an. It never maps to any registered Qi entity, and no rating passes to or from Later Liang or Later Tang.",
+    "source_ids": [
+      "ctext_zizhi_tongjian",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "clio_gb_anglo_saxon_2_878_2c940fa9",
     "name": "Danelaw",
     "kind": "polity",
@@ -4451,6 +4466,20 @@
     ]
   },
   {
+    "id": "ghent_rebel_regime_1379_1385",
+    "name": "Ghent rebel regime (Revolt of Ghent, 1379-1385)",
+    "kind": "rebel_polity",
+    "start_year": 1379,
+    "end_year": 1385,
+    "region": "Low Countries",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Ghent-led rebel regime of the Revolt of Ghent, from the 1379 rising against the Count of Flanders through the 1385 Peace of Tournai. The 1302 Matins of Bruges belongs to a different actor eighty years earlier and never resolves to this identity, and flemish_communal_army_courtrai_1302 is never reused or widened. No rating passes to Burgundian Flanders or to later Ghent revolts.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "balsa_ii_forces_savra_1385",
     "name": "Forces of Balsha II at Savra",
     "kind": "dynastic_forces",
@@ -5495,6 +5524,20 @@
       "cliopatria_v020",
       "wave8_uzbeks_iranica_abukhayrids",
       "wave8_uzbeks_iranica_central_asia_vi"
+    ]
+  },
+  {
+    "id": "sultanate_of_mombasa",
+    "name": "Sultanate of Mombasa",
+    "kind": "sultanate",
+    "start_year": 1500,
+    "end_year": 1589,
+    "region": "Swahili Coast, East Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Shirazi-line Sultanate of Mombasa across the sixteenth-century Portuguese sacks, ending with the 1589 Ottoman-expedition and Zimba-sack collapse era that destroyed the dynasty. It has no continuity with the 1631 revolt of Yusuf ibn al-Hasan, a Portuguese-installed Malindi-line actor, and no bridged 1500-1638 identity exists. No rating crosses the 1589-1593 break.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {
@@ -7109,6 +7152,20 @@
     ]
   },
   {
+    "id": "mombasa_revolt_yusuf_ibn_al_hasan",
+    "name": "Mombasa revolt of Yusuf ibn al-Hasan (1631-1638)",
+    "kind": "rebel_forces",
+    "start_year": 1631,
+    "end_year": 1638,
+    "region": "Swahili Coast, East Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Revolt regime of the Portuguese-installed Malindi-line king Yusuf ibn al-Hasan, from the 1631 seizure of the Fort Jesus garrison through the end of his corsair campaign in 1638. It inherits nothing from sultanate_of_mombasa across the 1589-1593 dynastic break. Scoring covers combat elements only, and the 1696-1698 siege of Mombasa belongs to the Ya'rubid lane, not this identity.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "guru_hargobind_akal_sena_amritsar_1634",
     "name": "Guru Hargobind's Akal Sena at Amritsar (1634)",
     "kind": "event_bounded_sikh_defense_force",
@@ -7947,6 +8004,20 @@
     ]
   },
   {
+    "id": "pontiac_detroit_coalition_1763",
+    "name": "Pontiac's Odawa-led Detroit coalition (1763)",
+    "kind": "indigenous_coalition",
+    "start_year": 1763,
+    "end_year": 1763,
+    "region": "North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Odawa-led multi-nation coalition under Pontiac in the Detroit theater during the 1763 campaign season. The one-year window keeps the identity off other Pontiac's War theaters - Bushy Run, Devil's Hole, and Fort Pitt were fought by different autonomous actors - and any 1764-1766 coverage requires a separate continuity decision. No rating inheritance to the Odawa people or any successor tribal government.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "bar_confederation_forces",
     "name": "Bar Confederation Forces",
     "kind": "confederate_forces",
@@ -8039,6 +8110,20 @@
       "britannica_american_revolution",
       "state_vietnam",
       "sigar_afghanistan"
+    ]
+  },
+  {
+    "id": "tupac_amaru_rebellion_forces",
+    "name": "Tupac Amaru rebellion forces (Great Rebellion, 1780-1783)",
+    "kind": "rebel_forces",
+    "start_year": 1780,
+    "end_year": 1783,
+    "region": "South America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Great Rebellion movement of Tupac Amaru II, rated from the November 1780 rising through the collapse of organized resistance in 1783. It never inherits from and never maps to the Inca Empire (clio_pe_inca_emp_1440_816cd40c), which ends in 1571, and it is distinct from the 1572 Vilcabamba resistance of the earlier Tupac Amaru, a different person. The 'inca' label binds here only within this window.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {
@@ -8149,6 +8234,20 @@
     "source_ids": [
       "wave8_canada_upper_canada_rebellion",
       "wave8_canada_montgomery_tavern"
+    ]
+  },
+  {
+    "id": "united_irishmen",
+    "name": "Society of United Irishmen",
+    "kind": "revolutionary_movement",
+    "start_year": 1791,
+    "end_year": 1803,
+    "region": "Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Society of United Irishmen from its founding in Belfast in October 1791 (first meeting 14 October, resolutions adopted 18 October) through the collapse of Emmet's rising in 1803. It is distinct from the Irish Catholic Confederation (clio_q1407718_1642_62c9bc24) and passes no rating to later Irish republican actors. Coalition rows with France resolve as separate members; no merged coalition entity exists.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {
@@ -10616,6 +10715,22 @@
     ]
   },
   {
+    "id": "cayuse_war_allied_fighting_bands_1848",
+    "name": "Cayuse-led allied war bands (Cayuse War expedition season, 1848)",
+    "kind": "campaign_bounded_indigenous_allied_fighting_force",
+    "start_year": 1848,
+    "end_year": 1848,
+    "region": "Columbia Plateau, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded coalition of Cayuse-led allied war bands that fought the Oregon Provisional Government's volunteer expedition in the January-March 1848 season. The single-year window structurally excludes the 1847 Whitman Massacre and the low-activity 1849-1850 years; sporadic violence to 1855 is excluded by design. No rating inheritance to the Cayuse people or the Confederated Tribes of the Umatilla Indian Reservation.",
+    "source_ids": [
+      "ebsco_cayuse_war",
+      "oregon_encyclopedia_cayuse_war",
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "durando_vicenza_defense_force_1848",
     "name": "Durando's Vicenza Defense Force (1848)",
     "kind": "event_bounded_defense_coalition",
@@ -11393,14 +11508,14 @@
   },
   {
     "id": "pai_marire_forces_1864",
-    "name": "Pai Mārire forces (1864–1865)",
+    "name": "Pai Mārire forces (1864–1866)",
     "kind": "religious_movement_force",
     "start_year": 1864,
-    "end_year": 1865,
+    "end_year": 1866,
     "region": "Aotearoa New Zealand",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Conflict-bounded Pai Mārire combatants; later Tītokowaru and Te Kooti forces remain separate. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
+    "continuity_note": "Conflict-bounded Pai Mārire combatants through the 1866 Otapawa fighting; later Tītokowaru and Te Kooti forces remain separate. No rating is inherited by broader Māori, iwi, Crown, or successor identities.",
     "source_ids": [
       "nzhistory_taranaki_second_war",
       "nzhistory_moutoa_1864"
@@ -12328,6 +12443,22 @@
     ]
   },
   {
+    "id": "wassoulou_empire_samori_ture",
+    "name": "Wassoulou Empire (Samori Ture)",
+    "kind": "empire",
+    "start_year": 1878,
+    "end_year": 1898,
+    "region": "West Africa",
+    "aliases": [
+      "Mandingos"
+    ],
+    "predecessors": [],
+    "continuity_note": "Samori Ture's Wassoulou Empire on the curated 1878-1898 window; some sources date the polity from 1860, but the window is never widened below 1878. The post-1893 eastward relocation is the same polity, and no successor inherits the rating. Kenedougou was Wassoulou's enemy and is never conflated with this identity.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "chief_jack_white_river_ute_force_milk_creek_1879",
     "name": "Chief Jack's White River Ute fighting force at Milk Creek (1879)",
     "kind": "event_bounded_band_fighting_force",
@@ -13200,6 +13331,20 @@
       "wave8_zulu_gillings_mome",
       "wave8_zulu_paterson_1906",
       "wave8_zulu_umvoti_field_force"
+    ]
+  },
+  {
+    "id": "dominion_new_zealand",
+    "name": "Dominion of New Zealand",
+    "kind": "dominion",
+    "start_year": 1907,
+    "end_year": 1947,
+    "region": "Oceania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Dominion of New Zealand from the dominion proclamation of 26 September 1907 through the 1947 adoption of the Statute of Westminster, on the dominion_canada_1867_1931 pattern. No predecessor or successor rating linkage exists to any colonial-era or post-1947 New Zealand identity, and clio_q664_1948_27949772 is never widened back to 1907. Trans-Tasman coalition rows resolve as separate members; no merged ANZAC entity exists.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {
@@ -14378,6 +14523,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "palestinian_arab_forces_1947_1949",
+    "name": "Palestinian Arab Irregular Forces",
+    "kind": "insurgent_army",
+    "start_year": 1947,
+    "end_year": 1949,
+    "region": "Levant",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Palestinian Arab irregular forces of the 1947-1949 war, covering the Holy War Army and local National Committee militias under mixed AHC/ALA command. The Arab Liberation Army and the Arab Legion (arab_legion_transjordan) are separate actors that never merge with or share rating with this identity. No predecessor or successor links run to later Palestinian actors.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {
