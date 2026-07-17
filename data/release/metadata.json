@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 967,
-    "events": 5303,
-    "sources": 1316,
-    "registry_polities": 2323
+    "entities": 972,
+    "events": 5308,
+    "sources": 1327,
+    "registry_polities": 2328
   },
   "year_range": {
     "start": -1274,
@@ -155,6 +155,7 @@
     "accepted_wave8_yaqui_hced_events": 3,
     "accepted_wave8_egypt_forces_hced_events": 16,
     "accepted_wave8_haiti_regimes_hced_events": 4,
+    "accepted_wave8_zulu_forces_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18156,7 +18157,124 @@
     "wave8_haiti_regimes_country_quarantine_additions": [],
     "wave8_haiti_regimes_entities_added": 5,
     "wave8_haiti_regimes_sources_added": 12,
-    "hced_label_pass_input_rows": 5622,
+    "wave8_zulu_forces_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 5,
+      "new_sources": 11,
+      "newly_rated_events": 5,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 5,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_zulu_forces_cohort_counts": {
+      "bambatha_rebellion_1906": 3,
+      "usuthu_rebellion_1888": 2
+    },
+    "wave8_zulu_forces_audit_signature": "2dff7d7890332360082184f05777b73b76a1f235d647d47b196c5cc373d3b941",
+    "wave8_zulu_forces_final_audit_signature": "2dff7d7890332360082184f05777b73b76a1f235d647d47b196c5cc373d3b941",
+    "wave8_zulu_forces_queue_validation": {
+      "promotion_contracts": 5,
+      "holds": 0,
+      "reviewed_hced_rows": 5,
+      "exact_label_rows": 5
+    },
+    "wave8_zulu_forces_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_zulu_forces_candidate_ids": [
+      "hced-Bobe1906-1",
+      "hced-Hlophekhulu1888-1",
+      "hced-Ivuna1888-1",
+      "hced-Mome1906-1",
+      "hced-Mpukonyoni1906-1"
+    ],
+    "wave8_zulu_forces_holds": [],
+    "wave8_zulu_forces_exact_label_funnel_audit": {
+      "event_candidate_id_sha256": "3286de59ed56479a5da77b5adc9ae8a6170e9cdc2bfec87a43898c87668db53c",
+      "events_touched": 5,
+      "label": "zulu rebels",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 5
+    },
+    "wave8_zulu_forces_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Bobe1906-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and modern country but do not independently verify HCED's exact coordinate; retain the South Africa country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_zulu_coghlan_harte",
+          "wave8_zulu_colenbrander_report",
+          "wave8_zulu_gillings_mome"
+        ]
+      },
+      {
+        "candidate_id": "hced-Hlophekhulu1888-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and modern country but do not independently verify HCED's exact coordinate; retain the South Africa country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_zulu_cambridge_prisoners",
+          "wave8_zulu_laband_dictionary",
+          "wave8_zulu_laband_divided_command"
+        ]
+      },
+      {
+        "candidate_id": "hced-Ivuna1888-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and modern country but do not independently verify HCED's exact coordinate; retain the South Africa country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_zulu_cambridge_prisoners",
+          "wave8_zulu_laband_dictionary",
+          "wave8_zulu_laband_ivuna"
+        ]
+      },
+      {
+        "candidate_id": "hced-Mome1906-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and modern country but do not independently verify HCED's exact coordinate; retain the South Africa country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_zulu_coghlan_harte",
+          "wave8_zulu_gillings_mome",
+          "wave8_zulu_saho_bambatha"
+        ]
+      },
+      {
+        "candidate_id": "hced-Mpukonyoni1906-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources identify the named battlefield and modern country but do not independently verify HCED's exact coordinate; retain the South Africa country assertion and withhold the unaudited point.",
+        "evidence_refs": [
+          "wave8_zulu_colenbrander_report",
+          "wave8_zulu_paperspast_mpukunyoni",
+          "wave8_zulu_paterson_1906",
+          "wave8_zulu_umvoti_field_force"
+        ]
+      }
+    ],
+    "wave8_zulu_forces_point_quarantine_additions": [
+      "hced-Bobe1906-1",
+      "hced-Hlophekhulu1888-1",
+      "hced-Ivuna1888-1",
+      "hced-Mome1906-1",
+      "hced-Mpukonyoni1906-1"
+    ],
+    "wave8_zulu_forces_country_quarantine_additions": [],
+    "wave8_zulu_forces_entities_added": 5,
+    "wave8_zulu_forces_sources_added": 11,
+    "hced_label_pass_input_rows": 5617,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18169,7 +18287,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 988,
+      "reserved_candidate_contract": 993,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18181,7 +18299,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2118,
+      "no_unique_time_valid_label_match": 2113,
       "no_unique_time_valid_polity": 84,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

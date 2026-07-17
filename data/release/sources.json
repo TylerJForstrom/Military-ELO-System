@@ -18369,6 +18369,171 @@
     ]
   },
   {
+    "id": "wave8_zulu_cambridge_prisoners",
+    "title": "Zulu Political Prisoners, 1872-1897",
+    "url": "https://www.cambridge.org/core/books/imperial-incarceration/zulu-political-prisoners-18721897/21354AD11338C07AD5C1BF6288893297",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter_with_primary_parliamentary_sources",
+    "accessed": "2026-07-16",
+    "source_family_id": "hynd_imperial_incarceration_zulu_prisoners",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_coghlan_harte",
+    "title": "The record of a racist killer?",
+    "url": "https://www.natalia.org.za/Files/35/Natalia%2035%20pp29-56%20C.pdf",
+    "publisher": "Natalia 35, Natal Society Foundation",
+    "license": "Citation and link only",
+    "source_type": "scholarly_article_with_archival_soldier_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "coghlan_harte_natalia_2005",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_colenbrander_report",
+    "title": "An Account of the Zulu Rebellion of 1906",
+    "url": "https://www.natalia.org.za/Files/35/Natalia%2035%20pp10-28%20C.pdf",
+    "publisher": "Natalia 35, Natal Society Foundation",
+    "license": "Citation and link only",
+    "source_type": "edited_contemporaneous_administrative_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "colenbrander_spencer_natalia_1906_report",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_gillings_mome",
+    "title": "The Bambata Rebellion of 1906: Nkandla Operations and Mome Gorge",
+    "url": "https://samilitaryhistory.org/vol081kg.html",
+    "publisher": "South African Military History Society, Military History Journal",
+    "license": "Citation and link only",
+    "source_type": "military_history_article_with_operational_sources",
+    "accessed": "2026-07-16",
+    "source_family_id": "gillings_bambata_mome_1989",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_laband_dictionary",
+    "title": "Historical Dictionary of the Zulu Wars",
+    "url": "https://sahistory.org.za/sites/default/files/archive-files/john_laband_historical_dictionary_of_the_zulu_wabook4me.org_.pdf",
+    "publisher": "Scarecrow Press / South African History Online archive",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_book",
+    "accessed": "2026-07-16",
+    "source_family_id": "laband_historical_dictionary_zulu_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_laband_divided_command",
+    "title": "The Danger of Divided Command: British civil and military disputes over the conduct of the Zululand campaigns of 1879 and 1888",
+    "url": "https://pdfs.semanticscholar.org/b66a/724464f70ccc2ff0b0533fefbc693c172d47.pdf",
+    "publisher": "Journal of the Society for Army Historical Research 81(328)",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_military_history_with_archival_sources",
+    "accessed": "2026-07-16",
+    "source_family_id": "laband_divided_command_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_laband_ivuna",
+    "title": "The Battle of Ivuna (or Ndunu Hill)",
+    "url": "https://www.scribd.com/document/39469892/Natalia-10-1980-complete",
+    "publisher": "Natalia 10, Natal Society Foundation",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_battle_study_with_primary_reports_and_oral_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "laband_natalia_ivuna_1980",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_paperspast_mpukunyoni",
+    "title": "The Natal Rising: The Bunkinyoni Fight, 1 June 1906",
+    "url": "https://paperspast.natlib.govt.nz/newspapers/WT19060601.2.13.6",
+    "publisher": "Waikato Times / National Library of New Zealand Papers Past",
+    "license": "Citation and link only",
+    "source_type": "contemporary_newspaper_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "waikato_times_mpukunyoni_1906",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_paterson_1906",
+    "title": "The Natal Rebellion 1906: Some Military Perspectives",
+    "url": "https://samilitaryhistory.org/vol135hp.html",
+    "publisher": "South African Military History Society, Military History Journal",
+    "license": "Citation and link only",
+    "source_type": "military_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "paterson_natal_rebellion_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_saho_bambatha",
+    "title": "Bambatha Rebellion 1906",
+    "url": "https://sahistory.org.za/article/bambatha-rebellion-1906",
+    "publisher": "South African History Online",
+    "license": "Citation and link only",
+    "source_type": "scholarly_public_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "saho_bambatha_rebellion",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_zulu_umvoti_field_force",
+    "title": "Umvoti Mounted Rifles 1906-7",
+    "url": "https://samilitaryhistory.org/vol136mc.html",
+    "publisher": "South African Military History Society, Military History Journal",
+    "license": "Citation and link only",
+    "source_type": "regimental_and_operational_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "coghlan_umvoti_field_force_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"

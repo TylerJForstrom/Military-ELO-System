@@ -12014,6 +12014,38 @@
     ]
   },
   {
+    "id": "british_zululand_hlophekhulu_force_1888",
+    "name": "British Zululand field force at Hlophekhulu (1888)",
+    "kind": "event_bounded_colonial_field_force",
+    "start_year": 1888,
+    "end_year": 1888,
+    "region": "British Zululand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Colonel Stabb's British troops and African auxiliaries that stormed Hlophekhulu on 2 July 1888; it is not a timeless United Kingdom result or an assertion that every auxiliary fought elsewhere. No generic Zulu, Zulu Rebels, United Kingdom, South Africa, or campaign label resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, ethnic umbrella, or modern state.",
+    "source_ids": [
+      "wave8_zulu_cambridge_prisoners",
+      "wave8_zulu_laband_dictionary",
+      "wave8_zulu_laband_divided_command"
+    ]
+  },
+  {
+    "id": "usuthu_dinuzulu_rebellion_force_1888",
+    "name": "Dinuzulu's uSuthu rebellion force (1888)",
+    "kind": "insurgent_coalition",
+    "start_year": 1888,
+    "end_year": 1888,
+    "region": "British Zululand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the uSuthu adherents of Dinuzulu and aligned forces in the 1888 rebellion, including Shingana's Hlophekhulu contingent. It is not the pre-1879 Zulu Kingdom or all uSuthu in another period. No generic Zulu, Zulu Rebels, United Kingdom, South Africa, or campaign label resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, ethnic umbrella, or modern state.",
+    "source_ids": [
+      "wave8_zulu_cambridge_prisoners",
+      "wave8_zulu_laband_dictionary",
+      "wave8_zulu_laband_ivuna"
+    ]
+  },
+  {
     "id": "dufile_garrison_1888",
     "name": "Dufile garrison (1888)",
     "kind": "event_bounded_formation",
@@ -12041,6 +12073,21 @@
     "source_ids": [
       "wave8_egypt_sabanci_dufile",
       "wave8_egypt_vandeleur_dufile"
+    ]
+  },
+  {
+    "id": "mandlakazi_zibhebhu_force_ivuna_1888",
+    "name": "Zibhebhu's Mandlakazi force at Ivuna (1888)",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1888,
+    "end_year": 1888,
+    "region": "Ndwandwe District, British Zululand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Zibhebhu's Mandlakazi fighting force at Ivuna on 23 June 1888. British alignment does not merge it with the nearby Zululand Police garrison, which the uSuthu did not assault. No generic Zulu, Zulu Rebels, United Kingdom, South Africa, or campaign label resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, ethnic umbrella, or modern state.",
+    "source_ids": [
+      "wave8_zulu_laband_dictionary",
+      "wave8_zulu_laband_ivuna"
     ]
   },
   {
@@ -12485,6 +12532,22 @@
     ]
   },
   {
+    "id": "bambatha_sigananda_insurgent_coalition_1906",
+    "name": "Bambatha-Sigananda insurgent coalition (1906)",
+    "kind": "insurgent_coalition",
+    "start_year": 1906,
+    "end_year": 1906,
+    "region": "Natal and British Zululand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the anti-poll-tax insurgent coalition associated with Bambatha, Sigananda, and aligned chiefs during the 1906 campaign. It does not represent all Zulu people, clans, or later political actors. No generic Zulu, Zulu Rebels, United Kingdom, South Africa, or campaign label resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, ethnic umbrella, or modern state.",
+    "source_ids": [
+      "wave8_zulu_colenbrander_report",
+      "wave8_zulu_gillings_mome",
+      "wave8_zulu_saho_bambatha"
+    ]
+  },
+  {
     "id": "ibn_saud_rawdat_muhanna_force_1906",
     "name": "Ibn Saud's force at Rawdat Muhanna in 1906",
     "kind": "event_bounded_field_force",
@@ -12498,6 +12561,23 @@
       "wave8_saudi_rashidi_abedin_kcl_2002",
       "wave8_saudi_rashidi_almutairi_uea_2019",
       "wave8_saudi_rashidi_saudipedia_rawdat"
+    ]
+  },
+  {
+    "id": "natal_led_bambatha_suppression_force_1906",
+    "name": "Natal-led colonial forces in the Bambatha Rebellion (1906)",
+    "kind": "campaign_coalition_army",
+    "start_year": 1906,
+    "end_year": 1906,
+    "region": "Natal and British Zululand",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the 1906 colonial command and its event-specific columns, militia, police, and levies at Bobe, Mpukunyoni, and Mome. The shared campaign identity does not claim every component fought in each action. No generic Zulu, Zulu Rebels, United Kingdom, South Africa, or campaign label resolves to this record. It inherits no Elo from a predecessor, successor, dynasty, ethnic umbrella, or modern state.",
+    "source_ids": [
+      "wave8_zulu_colenbrander_report",
+      "wave8_zulu_gillings_mome",
+      "wave8_zulu_paterson_1906",
+      "wave8_zulu_umvoti_field_force"
     ]
   },
   {

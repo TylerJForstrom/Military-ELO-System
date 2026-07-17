@@ -1711,6 +1711,26 @@ from .wave8_haiti_regimes import (
     wave8_haiti_regimes_cohort_counts,
     wave8_haiti_regimes_counts,
 )
+from .wave8_zulu_forces import (
+    WAVE8_ZULU_FORCES_CONTRACT_IDS,
+    WAVE8_ZULU_FORCES_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_ZULU_FORCES_ENTITIES,
+    WAVE8_ZULU_FORCES_FINAL_AUDIT_SIGNATURE,
+    WAVE8_ZULU_FORCES_FUNNEL_AUDIT,
+    WAVE8_ZULU_FORCES_HOLDS,
+    WAVE8_ZULU_FORCES_LOCATION_QUARANTINE_REASONS,
+    WAVE8_ZULU_FORCES_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_ZULU_FORCES_RESERVED_IDS,
+    WAVE8_ZULU_FORCES_SOURCES,
+    install_wave8_zulu_forces_entities,
+    install_wave8_zulu_forces_sources,
+    promote_wave8_zulu_forces_contracts,
+    validate_wave8_zulu_forces_integration_dispositions,
+    validate_wave8_zulu_forces_queue_contracts,
+    wave8_zulu_forces_audit_signature,
+    wave8_zulu_forces_cohort_counts,
+    wave8_zulu_forces_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1810,6 +1830,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_YAQUI_RESERVED_IDS
     | WAVE8_EGYPT_FORCES_RESERVED_IDS
     | WAVE8_HAITI_REGIMES_RESERVED_IDS
+    | WAVE8_ZULU_FORCES_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2231,7 +2252,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 305
+        len(HCED_POINT_QUARANTINE_IDS) != 310
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2509,6 +2530,9 @@ def build_expanded_release(
     )
     wave8_haiti_regimes_queue_validation = (
         validate_wave8_haiti_regimes_queue_contracts(hced)
+    )
+    wave8_zulu_forces_queue_validation = validate_wave8_zulu_forces_queue_contracts(
+        hced
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -2896,6 +2920,7 @@ def build_expanded_release(
     install_wave8_yaqui_entities(release_entities)
     install_wave8_egypt_forces_entities(release_entities)
     install_wave8_haiti_regimes_entities(release_entities)
+    install_wave8_zulu_forces_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -4332,6 +4357,15 @@ def build_expanded_release(
         release_entities,
         wave8_haiti_regimes_existing_events,
     )
+    wave8_zulu_forces_existing_events = [
+        *wave8_haiti_regimes_existing_events,
+        *wave8_haiti_regimes_events,
+    ]
+    wave8_zulu_forces_events = promote_wave8_zulu_forces_contracts(
+        hced,
+        release_entities,
+        wave8_zulu_forces_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -4413,6 +4447,7 @@ def build_expanded_release(
         *wave8_yaqui_events,
         *wave8_egypt_forces_events,
         *wave8_haiti_regimes_events,
+        *wave8_zulu_forces_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -4671,6 +4706,7 @@ def build_expanded_release(
         *wave8_yaqui_events,
         *wave8_egypt_forces_events,
         *wave8_haiti_regimes_events,
+        *wave8_zulu_forces_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -5120,6 +5156,16 @@ def build_expanded_release(
             ],
         )
     )
+    wave8_zulu_forces_integration_validation = (
+        validate_wave8_zulu_forces_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_zulu_forces_existing_events,
+                *wave8_zulu_forces_events,
+            ],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -5358,6 +5404,7 @@ def build_expanded_release(
     install_wave8_yaqui_sources(sources_by_id)
     install_wave8_egypt_forces_sources(sources_by_id)
     install_wave8_haiti_regimes_sources(sources_by_id)
+    install_wave8_zulu_forces_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -5444,6 +5491,7 @@ def build_expanded_release(
         *wave8_yaqui_events,
         *wave8_egypt_forces_events,
         *wave8_haiti_regimes_events,
+        *wave8_zulu_forces_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -5530,6 +5578,7 @@ def build_expanded_release(
         *wave8_yaqui_events,
         *wave8_egypt_forces_events,
         *wave8_haiti_regimes_events,
+        *wave8_zulu_forces_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -5615,6 +5664,7 @@ def build_expanded_release(
             | WAVE8_YAQUI_CONTRACT_IDS
             | WAVE8_EGYPT_FORCES_CONTRACT_IDS
             | WAVE8_HAITI_REGIMES_CONTRACT_IDS
+            | WAVE8_ZULU_FORCES_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -5748,6 +5798,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_YAQUI_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_EGYPT_FORCES_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_HAITI_REGIMES_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_ZULU_FORCES_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -6002,6 +6053,7 @@ def build_expanded_release(
         - len(wave8_yaqui_events)
         - len(wave8_egypt_forces_events)
         - len(wave8_haiti_regimes_events)
+        - len(wave8_zulu_forces_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -6180,6 +6232,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_haiti_regimes_hced_events": len(
             wave8_haiti_regimes_events
+        ),
+        "candidate_keyed_wave8_zulu_forces_hced_events": len(
+            wave8_zulu_forces_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -6501,6 +6556,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_haiti_regimes_hced_events": len(
                 wave8_haiti_regimes_events
+            ),
+            "accepted_wave8_zulu_forces_hced_events": len(
+                wave8_zulu_forces_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -10203,6 +10261,42 @@ def build_expanded_release(
             "wave8_haiti_regimes_sources_added": len(
                 WAVE8_HAITI_REGIMES_SOURCES
             ),
+            "wave8_zulu_forces_counts": wave8_zulu_forces_counts(),
+            "wave8_zulu_forces_cohort_counts": wave8_zulu_forces_cohort_counts(),
+            "wave8_zulu_forces_audit_signature": (
+                wave8_zulu_forces_audit_signature()
+            ),
+            "wave8_zulu_forces_final_audit_signature": (
+                WAVE8_ZULU_FORCES_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_zulu_forces_queue_validation": wave8_zulu_forces_queue_validation,
+            "wave8_zulu_forces_integration_validation": (
+                wave8_zulu_forces_integration_validation
+            ),
+            "wave8_zulu_forces_candidate_ids": sorted(
+                WAVE8_ZULU_FORCES_CONTRACT_IDS
+            ),
+            "wave8_zulu_forces_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_ZULU_FORCES_HOLDS.items())
+            ],
+            "wave8_zulu_forces_exact_label_funnel_audit": (
+                WAVE8_ZULU_FORCES_FUNNEL_AUDIT
+            ),
+            "wave8_zulu_forces_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ZULU_FORCES_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_zulu_forces_point_quarantine_additions": sorted(
+                WAVE8_ZULU_FORCES_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_zulu_forces_country_quarantine_additions": sorted(
+                WAVE8_ZULU_FORCES_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_zulu_forces_entities_added": len(WAVE8_ZULU_FORCES_ENTITIES),
+            "wave8_zulu_forces_sources_added": len(WAVE8_ZULU_FORCES_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -10508,6 +10602,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_haiti_regimes_hced_events": len(
             wave8_haiti_regimes_events
+        ),
+        "candidate_keyed_wave8_zulu_forces_hced_events": len(
+            wave8_zulu_forces_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
