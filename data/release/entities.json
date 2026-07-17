@@ -947,6 +947,162 @@
     ]
   },
   {
+    "id": "alamannic_invasion_force_lake_benacus_268",
+    "name": "Alamannic invasion force near Lake Benacus (268)",
+    "kind": "event_bounded_invasion_force",
+    "start_year": 268,
+    "end_year": 268,
+    "region": "Northern Italy near Lake Benacus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Alamannic force defeated near Lake Benacus in the 268 invasion. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_bleckmann_lake_garda",
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanni_epitome_caesaribus_34_35"
+    ]
+  },
+  {
+    "id": "claudius_ii_roman_field_army_lake_benacus_268",
+    "name": "Claudius II's Roman field army near Lake Benacus (268)",
+    "kind": "event_bounded_field_command",
+    "start_year": 268,
+    "end_year": 268,
+    "region": "Northern Italy near Lake Benacus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The field army credited with the Lake Benacus victory. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_bleckmann_lake_garda",
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanni_epitome_caesaribus_34_35",
+      "wave8_alemanni_ric_online_history"
+    ]
+  },
+  {
+    "id": "alamannic_iuthungian_invasion_force_italy_270_271",
+    "name": "Alamannic-Juthungian invasion force in Italy (270-271)",
+    "kind": "campaign_bounded_coalition",
+    "start_year": 270,
+    "end_year": 271,
+    "region": "Northern and central Italy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The invasion coalition opposed by Aurelian from Placentia through Fanum Fortunae and the Ticinensian Fields. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanni_historia_augusta_aurelian",
+      "wave8_alemanni_ric_online_history",
+      "wave8_alemanni_watson_aurelian"
+    ]
+  },
+  {
+    "id": "aurelian_roman_field_army_italy_271",
+    "name": "Aurelian's Roman field army in the Italian campaign (271)",
+    "kind": "campaign_bounded_field_command",
+    "start_year": 271,
+    "end_year": 271,
+    "region": "Northern and central Italy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Aurelian's field army across the linked Placentia, Metaurus-Fanum Fortunae, and Ticinensian engagements. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_historia_augusta_aurelian",
+      "wave8_alemanni_ric_online_history",
+      "wave8_alemanni_watson_aurelian"
+    ]
+  },
+  {
+    "id": "alamannic_besieging_host_sens_356",
+    "name": "Alamannic besieging host at Sens (356)",
+    "kind": "event_bounded_besieging_force",
+    "start_year": 356,
+    "end_year": 356,
+    "region": "Sens in Roman Gaul",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The host that invested Sens and withdrew after failing to take it. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_16",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "julian_roman_garrison_sens_356",
+    "name": "Julian's Roman garrison at Sens (356)",
+    "kind": "event_bounded_garrison",
+    "start_year": 356,
+    "end_year": 356,
+    "region": "Sens in Roman Gaul",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Julian and the available Roman defenders who held Sens during the month-long siege. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_16",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "jovinus_roman_field_army_chalons_366",
+    "name": "Jovinus's Roman field army near Chalons-sur-Marne (366)",
+    "kind": "event_bounded_field_command",
+    "start_year": 366,
+    "end_year": 366,
+    "region": "Near Chalons-sur-Marne in Roman Gaul",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Jovinus's army in Ammianus' third and decisive engagement of the 366 campaign. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_27",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "alamannic_third_raiding_division_chalons_366",
+    "name": "Third Alamannic raiding division near Chalons-sur-Marne (366)",
+    "kind": "event_bounded_raiding_force",
+    "start_year": 366,
+    "end_year": 366,
+    "region": "Near Chalons-sur-Marne in Roman Gaul",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The third separated Alamannic division found and defeated near Chalons-sur-Marne. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_27",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "alamannic_mountain_force_solicinium_368",
+    "name": "Alamannic mountain force at Solicinium (368)",
+    "kind": "event_bounded_defending_force",
+    "start_year": 368,
+    "end_year": 368,
+    "region": "Alamannic territory at the unidentified Mount Solicinium",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Alamannic force holding the mountain position before its rout. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_27",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "valentinian_sebastianus_roman_army_solicinium_368",
+    "name": "Valentinian-Sebastianus Roman army at Solicinium (368)",
+    "kind": "event_bounded_joint_command",
+    "start_year": 368,
+    "end_year": 368,
+    "region": "Alamannic territory at the unidentified Mount Solicinium",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The coordinated Roman force described by Ammianus in the assault at Solicinium. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_27",
+      "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
     "id": "byzantine_empire",
     "name": "Byzantine Empire",
     "kind": "empire",
@@ -996,6 +1152,38 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "alamannic_raiding_band_campi_cannini_457",
+    "name": "Alamannic raiding band at Campi Cannini (457)",
+    "kind": "event_bounded_raiding_force",
+    "start_year": 457,
+    "end_year": 457,
+    "region": "Campi Canini route near Bellinzona",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The roughly nine-hundred-person raiding band in Sidonius, not a timeless ethnic army. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_campi_canini_location",
+      "wave8_alemanni_hummer_ethnogenesis",
+      "wave8_alemanni_sidonius_poem_5"
+    ]
+  },
+  {
+    "id": "burco_roman_detachment_campi_cannini_457",
+    "name": "Burco's Roman detachment at Campi Cannini (457)",
+    "kind": "event_bounded_detachment",
+    "start_year": 457,
+    "end_year": 457,
+    "region": "Campi Canini route near Bellinzona",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The small detachment sent by Majorian under Burco against the returning raiders. No rating is inherited by a timeless Alamannic, Alemanni, Alemmani, Roman, Frankish, or modern-state identity, or by another campaign formation.",
+    "source_ids": [
+      "wave8_alemanni_campi_canini_location",
+      "wave8_alemanni_hummer_ethnogenesis",
+      "wave8_alemanni_sidonius_poem_5"
     ]
   },
   {

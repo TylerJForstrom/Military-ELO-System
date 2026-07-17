@@ -19,19 +19,19 @@ HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
 HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
-    "c5a46e26cb7b61300684418bfb8bb80d0b5847a6daf46895fb95dd664aa742a3"
+    "ecfc0427af121f9bcbc3f45c00246c1de94dacd0ae6c49f66071e77151e1dccb"
 )
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "42ed9deb3c05f65dea1e6f575112b069ac629b454aecf607c5d9dd7c91105792"
+    "539accb5f15ead8c32c3566304d3d095dfa71893f61d9a96892baff95169e0b7"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
-    "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c"
+    "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "05e055cf2fcaf34c69e2db7f9e51ebcc28490cbc87b6f3cbd8125cfbbddc8f43"
+    "589196be27b653cc936c7f5a27d8ccdc01b01b7903c93b21b2abedea6014461a"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
-    "464332055831161ebeda892b0f147579364ac1ba28438dec707294f8c86491a1"
+    "d8074615b834de2ad237ff5b1b51ebed3ab96cb02e9feb2c2234c2d08fe384e0"
 )
 # Wave 5 is the immutable base to which reviewed lane manifests are added
 # during release construction. The final pins below are independently measured
@@ -41,13 +41,13 @@ HCED_WAVE5_CANDIDATE_BINDINGS = 4_195
 HCED_WAVE5_POINT_ASSERTIONS = 4_158
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_115
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_162
-HCED_EXPECTED_CANDIDATE_BINDINGS = 4_907
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 597
+HCED_EXPECTED_CANDIDATE_BINDINGS = 4_915
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 605
 HCED_EXPECTED_POINT_ASSERTIONS = 4_734
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_816
-HCED_EXPECTED_PROVENANCE_OBJECTS = 4_865
-HCED_EXPECTED_QUARANTINE_UNION = 221
-HCED_EXPECTED_QUARANTINE_OVERLAP = 42
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 4_823
+HCED_EXPECTED_PROVENANCE_OBJECTS = 4_872
+HCED_EXPECTED_QUARANTINE_UNION = 229
+HCED_EXPECTED_QUARANTINE_OVERLAP = 43
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
     "HCED location fields are unreviewed source assertions. Quarantined values "
@@ -91,9 +91,11 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Buffalo Wallow1874-1",
     "hced-Burtinah1839-1",
     "hced-Bytham1221-1",
+    "hced-Campi Cannini457-1",
     "hced-Canyon Creek1877-1",
     "hced-Cape St Vincent1797-1",
     "hced-Chacaltaya1814-1",
+    "hced-Chalons366-1",
     "hced-Chesterfield1266-1",
     "hced-Chi Lang Pass1427-1",
     "hced-Clastidium-222-1",
@@ -115,6 +117,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Empress Augusta Bay1943-1",
     "hced-Etchoe1760-1",
     "hced-Etchoe1761-1",
+    "hced-Fano271-1",
     "hced-Farnham893-1",
     "hced-Fatehpur1799-1",
     "hced-Focchies1649-1",
@@ -142,6 +145,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Kota Bharu1941-1",
     "hced-Kudarangan1904-1",
     "hced-Kumamoto1877-1",
+    "hced-Lake Benacus268-1",
     "hced-Lake Como-196-1",
     "hced-Lake Seit1903-1",
     "hced-Lake Smolino1502-1",
@@ -170,8 +174,10 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Palo Duro1874-1",
     "hced-Pandosia-331-1",
     "hced-Patan1790-1",
+    "hced-Pavia271-1",
     "hced-Pearl Harbour1941-1",
     "hced-Perimeter (2nd)1950-1",
+    "hced-Placentia271-1",
     "hced-Plum Creek, Nebraska1867-1",
     "hced-Plum Creek, Texas1840-1",
     "hced-Porici1420-1",
@@ -194,9 +200,11 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Sas van Gent1644-1",
     "hced-Sediman1798-1",
     "hced-Sendaigawa1587-1",
+    "hced-Sens356-1",
     "hced-Shubra Khit1798-1",
     "hced-Skalice1424-1",
     "hced-Slaak1631-1",
+    "hced-Solicinium368-1",
     "hced-Solomon Forks1857-1",
     "hced-St Pierre and Miquelon1793-1",
     "hced-Tabaruzaka1877-1",
@@ -250,6 +258,7 @@ HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS = (
     "hced-Belfast1901-1",
     "hced-Bismarck1941-1",
     "hced-Burtinah1839-1",
+    "hced-Campi Cannini457-1",
     "hced-Cape Engano1944-1",
     "hced-Cape St Vincent1797-1",
     "hced-Chieveley1899-1",

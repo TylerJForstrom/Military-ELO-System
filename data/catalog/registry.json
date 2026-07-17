@@ -618,6 +618,56 @@
       "region": "Iraq"
     },
     {
+      "id": "alamannic_besieging_host_sens_356",
+      "name": "Alamannic besieging host at Sens (356)",
+      "kind": "event_bounded_besieging_force",
+      "start_year": 356,
+      "end_year": 356,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sens in Roman Gaul"
+    },
+    {
+      "id": "alamannic_invasion_force_lake_benacus_268",
+      "name": "Alamannic invasion force near Lake Benacus (268)",
+      "kind": "event_bounded_invasion_force",
+      "start_year": 268,
+      "end_year": 268,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Italy near Lake Benacus"
+    },
+    {
+      "id": "alamannic_mountain_force_solicinium_368",
+      "name": "Alamannic mountain force at Solicinium (368)",
+      "kind": "event_bounded_defending_force",
+      "start_year": 368,
+      "end_year": 368,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alamannic territory at the unidentified Mount Solicinium"
+    },
+    {
+      "id": "alamannic_raiding_band_campi_cannini_457",
+      "name": "Alamannic raiding band at Campi Cannini (457)",
+      "kind": "event_bounded_raiding_force",
+      "start_year": 457,
+      "end_year": 457,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Campi Canini route near Bellinzona"
+    },
+    {
+      "id": "alamannic_iuthungian_invasion_force_italy_270_271",
+      "name": "Alamannic-Juthungian invasion force in Italy (270-271)",
+      "kind": "campaign_bounded_coalition",
+      "start_year": 270,
+      "end_year": 271,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern and central Italy"
+    },
+    {
       "id": "clio_q178054_414_498ecc98",
       "name": "Alans",
       "kind": "polity",
@@ -1183,6 +1233,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Castle Bytham, Lincolnshire"
+    },
+    {
+      "id": "aurelian_roman_field_army_italy_271",
+      "name": "Aurelian's Roman field army in the Italian campaign (271)",
+      "kind": "campaign_bounded_field_command",
+      "start_year": 271,
+      "end_year": 271,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern and central Italy"
     },
     {
       "id": "austria_hungary",
@@ -2077,6 +2137,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "burco_roman_detachment_campi_cannini_457",
+      "name": "Burco's Roman detachment at Campi Cannini (457)",
+      "kind": "event_bounded_detachment",
+      "start_year": 457,
+      "end_year": 457,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Campi Canini route near Bellinzona"
+    },
+    {
       "id": "clio_fr_burgundian_k_414_c56e09c8",
       "name": "Burgundian Kingdom",
       "kind": "kingdom",
@@ -2801,6 +2871,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "claudius_ii_roman_field_army_lake_benacus_268",
+      "name": "Claudius II's Roman field army near Lake Benacus (268)",
+      "kind": "event_bounded_field_command",
+      "start_year": 268,
+      "end_year": 268,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Italy near Lake Benacus"
     },
     {
       "id": "cleombrotus_lacedaemonian_allied_army_leuctra_371_bce",
@@ -8776,6 +8856,16 @@
       "region": "Upper Peru"
     },
     {
+      "id": "jovinus_roman_field_army_chalons_366",
+      "name": "Jovinus's Roman field army near Chalons-sur-Marne (366)",
+      "kind": "event_bounded_field_command",
+      "start_year": 366,
+      "end_year": 366,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Near Chalons-sur-Marne in Roman Gaul"
+    },
+    {
       "id": "ramirez_royalist_division_chacaltaya_1814",
       "name": "Juan Ramirez Orozco's royalist division at Chacaltaya (1814)",
       "kind": "event_bounded_royalist_division",
@@ -8815,6 +8905,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Judea"
+    },
+    {
+      "id": "julian_roman_garrison_sens_356",
+      "name": "Julian's Roman garrison at Sens (356)",
+      "kind": "event_bounded_garrison",
+      "start_year": 356,
+      "end_year": 356,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sens in Roman Gaul"
     },
     {
       "id": "junta_grande_auxiliary_army_huaqui_1811",
@@ -20084,6 +20184,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "alamannic_third_raiding_division_chalons_366",
+      "name": "Third Alamannic raiding division near Chalons-sur-Marne (366)",
+      "kind": "event_bounded_raiding_force",
+      "start_year": 366,
+      "end_year": 366,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Near Chalons-sur-Marne in Roman Gaul"
+    },
+    {
       "id": "third_carlist_army",
       "name": "Third Carlist Army",
       "kind": "civil_war_faction",
@@ -20919,6 +21029,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "valentinian_sebastianus_roman_army_solicinium_368",
+      "name": "Valentinian-Sebastianus Roman army at Solicinium (368)",
+      "kind": "event_bounded_joint_command",
+      "start_year": 368,
+      "end_year": 368,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alamannic territory at the unidentified Mount Solicinium"
     },
     {
       "id": "vaman_rao_george_thomas_fatehpur_expedition_1799",
@@ -22184,11 +22304,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2081,
-    "rated_entities": 718,
-    "rated_events": 5171,
+    "registry_polities": 2093,
+    "rated_entities": 730,
+    "rated_events": 5179,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18223,
+    "unresolved_event_candidates": 18215,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22245,6 +22365,7 @@
     "candidate_keyed_wave8_mamluk_egypt_hced_events": 4,
     "candidate_keyed_wave8_rebel_barons_hced_events": 6,
     "candidate_keyed_wave8_thebes_hced_events": 6,
+    "candidate_keyed_wave8_alemanni_hced_events": 8,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22255,21 +22376,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4907,
-      "candidate_keyed_reviewed_contracts": 597,
+      "hced_candidate_bindings": 4915,
+      "candidate_keyed_reviewed_contracts": 605,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4816,
-      "location_provenance_objects": 4865,
-      "point_fields_withheld_by_quarantine": 173,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
+      "modern_location_country_assertions": 4823,
+      "location_provenance_objects": 4872,
+      "point_fields_withheld_by_quarantine": 181,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 91,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 221,
-      "point_quarantine_candidate_manifest_sha256": "42ed9deb3c05f65dea1e6f575112b069ac629b454aecf607c5d9dd7c91105792",
-      "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "c5a46e26cb7b61300684418bfb8bb80d0b5847a6daf46895fb95dd664aa742a3",
+      "point_country_quarantine_overlap": 43,
+      "unique_events_with_any_quarantined_field": 229,
+      "point_quarantine_candidate_manifest_sha256": "539accb5f15ead8c32c3566304d3d095dfa71893f61d9a96892baff95169e0b7",
+      "country_quarantine_candidate_manifest_sha256": "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd",
+      "quarantine_policy_sha256": "ecfc0427af121f9bcbc3f45c00246c1de94dacd0ae6c49f66071e77151e1dccb",
       "assertion_status": {
-        "unreviewed_source_assertion": 4865
+        "unreviewed_source_assertion": 4872
       },
       "verified_location_assertions": {
         "availability": "not_available",

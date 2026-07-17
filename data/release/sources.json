@@ -5688,6 +5688,196 @@
     ]
   },
   {
+    "id": "wave8_alemanni_ammianus_book_16",
+    "title": "Ammianus Marcellinus, Roman History, Book 16",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/16%2A.html",
+    "publisher": "LacusCurtius; Loeb Classical Library translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ammianus_roman_history_loeb",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_ammianus_book_27",
+    "title": "Ammianus Marcellinus, Roman History, Book 27",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/27%2A.html",
+    "publisher": "LacusCurtius; Loeb Classical Library translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "ammianus_roman_history_loeb",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_bleckmann_lake_garda",
+    "title": "Epitome de Caesaribus, Landolfus Sagax und 300 000 Alamannen",
+    "url": "https://journals.ub.uni-heidelberg.de/index.php/gfa/article/download/76988/70848",
+    "publisher": "Goettinger Forum fuer Altertumswissenschaft 2 (1999), 139-149",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_source_critical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "bleckmann_alamanni_lake_garda_1999",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_campi_canini_location",
+    "title": "Alle origini dei Grigioni: fatti d'arme combattuti sui Campi Canini, presso Bellinzona, nei secoli IV-VI d.C.",
+    "url": "https://oaj.fupress.net/index.php/prometheus/article/view/513/513",
+    "publisher": "Prometheus, Firenze University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "campi_canini_bellinzona_prometheus",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_drinkwater_alamanni_rome",
+    "title": "The Alamanni and Rome 213-496: Caracalla to Clovis",
+    "url": "https://doi.org/10.1093/acprof:oso/9780199295685.001.0001",
+    "publisher": "Oxford University Press; John F. Drinkwater",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "drinkwater_alamanni_and_rome_2007",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_epitome_caesaribus_34_35",
+    "title": "Epitome de Caesaribus, chapters 34-35",
+    "url": "https://la.wikisource.org/wiki/Epitome_de_Caesaribus",
+    "publisher": "Wikisource transcription of the Latin primary text",
+    "license": "Citation and link only",
+    "source_type": "primary_source_transcription",
+    "accessed": "2026-07-16",
+    "source_family_id": "epitome_de_caesaribus_34_35",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_gregory_tours_book_2",
+    "title": "Gregory of Tours, History of the Franks, Book 2, chapters 30 and 37",
+    "url": "https://sourcebooks.web.fordham.edu/source/gregory-clovisconv.asp",
+    "publisher": "Fordham University Internet Medieval Sourcebook",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "gregory_tours_book_2_dalton_translation",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_historia_augusta_aurelian",
+    "title": "Historia Augusta, Life of Aurelian, chapters 18-21",
+    "url": "https://penelope.uchicago.edu/thayer/e/roman/texts/historia_augusta/aurelian/2%2A.html",
+    "publisher": "LacusCurtius; Loeb Classical Library translation and notes",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "historia_augusta_aurelian_loeb",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_hummer_ethnogenesis",
+    "title": "The fluidity of barbarian identity: the ethnogenesis of Alemanni and Suebi, AD 200-500",
+    "url": "https://www.ffzg.unizg.hr/arheo/ska/tekstovi/alemanni_suebi.pdf",
+    "publisher": "Early Medieval Europe 7.1 (1998); Hans J. Hummer",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "hummer_alemanni_suebi_1998",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_ric_online_history",
+    "title": "Roman Imperial Coinage Online: historical introduction, AD 268-276",
+    "url": "https://ric.mom.fr/en/info/hist",
+    "publisher": "CNRS HiSoMA and Maison de l'Orient et de la Mediterranee",
+    "license": "Citation and link only",
+    "source_type": "scholarly_numismatic_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "ric_online_268_276_history",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_sidonius_poem_5",
+    "title": "Sidonius Apollinaris, Complete Poems, Poem 5, lines 373-383",
+    "url": "https://urn.ub.unibe.ch/urn%3Ach%3Aslsp%3A9781800348592%3Aihv%3Apdf",
+    "publisher": "Liverpool University Press, Translated Texts for Historians 76",
+    "license": "Citation and link only",
+    "source_type": "critical_translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "sidonius_complete_poems_green_2022",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanni_watson_aurelian",
+    "title": "Aurelian and the Third Century",
+    "url": "https://www.routledge.com/Aurelian-and-the-Third-Century/Watson/p/book/9780415301879",
+    "publisher": "Routledge; Alaric Watson",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "watson_aurelian_third_century",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_argentine_independence_anh_index",
     "title": "Historia de la Nación Argentina, volume XI: General index",
     "url": "https://repositorio.anh.org.ar/jspui/bitstream/anh/57/1/BaANH44820_Historia_de_la_Nacion_Argentina_11_-_Academia_Nacional_de_la_Historia.pdf",

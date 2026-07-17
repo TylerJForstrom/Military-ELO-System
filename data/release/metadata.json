@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 725,
-    "events": 5171,
-    "sources": 918,
-    "registry_polities": 2081
+    "entities": 737,
+    "events": 5179,
+    "sources": 930,
+    "registry_polities": 2093
   },
   "year_range": {
     "start": -1274,
@@ -127,6 +127,7 @@
     "accepted_wave8_mamluk_egypt_hced_events": 4,
     "accepted_wave8_rebel_barons_hced_events": 6,
     "accepted_wave8_thebes_hced_events": 6,
+    "accepted_wave8_alemanni_hced_events": 8,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6835,7 +6836,143 @@
     ],
     "wave8_thebes_entities_added": 12,
     "wave8_thebes_sources_added": 15,
-    "hced_label_pass_input_rows": 5800,
+    "wave8_alemanni_counts": {
+      "country_quarantine_additions": 1,
+      "cross_lane_hced_dispositions": 0,
+      "exact_alemanni_rows": 5,
+      "exact_alemmani_rows": 5,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 10,
+      "new_entities": 12,
+      "new_sources": 12,
+      "newly_rated_events": 8,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 8,
+      "promotion_contracts": 8,
+      "reviewed_hced_rows": 10,
+      "terminal_exclusions": 2
+    },
+    "wave8_alemanni_cohort_counts": {
+      "aurelian_italian_campaign_271": 3,
+      "claudius_alamannic_campaign_268": 1,
+      "clovis_alamannic_war_source_conflation": 1,
+      "jovinus_alamannic_campaign_366": 1,
+      "julian_gaul_campaign_356": 2,
+      "majorian_northern_italy_457": 1,
+      "valentinian_alamannic_campaign_368": 1
+    },
+    "wave8_alemanni_spelling_counts": {
+      "Alemanni": 5,
+      "Alemmani": 5
+    },
+    "wave8_alemanni_queue_validation": {
+      "exact_alemanni_rows": 5,
+      "exact_alemmani_rows": 5,
+      "holds": 0,
+      "promotion_contracts": 8,
+      "reviewed_hced_rows": 10,
+      "terminal_exclusions": 2
+    },
+    "wave8_alemanni_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 10
+    },
+    "wave8_alemanni_candidate_ids": [
+      "hced-Campi Cannini457-1",
+      "hced-Chalons366-1",
+      "hced-Fano271-1",
+      "hced-Lake Benacus268-1",
+      "hced-Pavia271-1",
+      "hced-Placentia271-1",
+      "hced-Sens356-1",
+      "hced-Solicinium368-1"
+    ],
+    "wave8_alemanni_holds": [],
+    "wave8_alemanni_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Rheims356-1",
+        "raw_row_sha256": "e07194549d39eb9b7aeb017c7b3f3dc2369abdf83d946ec11c123e4962527d51",
+        "canonical_event": {
+          "canonical_key": "roman_army_assembly_at_rheims_in_julian_s_campaign:356:356",
+          "date_precision": "year",
+          "date_text": "356 CE",
+          "granularity": "campaign_assembly_not_battle",
+          "name": "Roman army assembly at Rheims in Julian's campaign",
+          "year_low": 356,
+          "year_high": 356
+        },
+        "cohort": "julian_gaul_campaign_356",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "named_place_is_an_assembly_point_not_an_attested_engagement",
+        "hold_reason": "Ammianus identifies Rheims as the place where the army assembled and received provisions before marching onward; his narrated battle is at Brumath, not Rheims.  The exact HCED battle has no source-attested result, cannot produce an Elo event, and unknown is never made a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "campaign_assembly_not_battle",
+        "evidence_refs": [
+          "wave8_alemanni_ammianus_book_16",
+          "wave8_alemanni_drinkwater_alamanni_rome"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_alemanni",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "attested_action": "army assembly and provisioning",
+          "excluded_inference": "a Roman victory at Rheims",
+          "nearby_battle_boundary": "the later engagement is at Brumath, not Rheims"
+        }
+      },
+      {
+        "candidate_id": "hced-Zulpich496-1",
+        "raw_row_sha256": "6c143ed6bdf3a8e1ec3c12b595a764af57485558908363f86672759427da369f",
+        "canonical_event": {
+          "canonical_key": "conflated_clovis_victory_and_sigibert_battle_near_zulp:496:496",
+          "date_precision": "year",
+          "date_text": "traditionally 496 CE",
+          "granularity": "source_conflation",
+          "name": "Conflated Clovis victory and Sigibert battle near Zulpich",
+          "year_low": 496,
+          "year_high": 496
+        },
+        "cohort": "clovis_alamannic_war_source_conflation",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "date_place_and_victor_are_combined_from_separate_source_passages",
+        "hold_reason": "Gregory of Tours reports Clovis defeating the Alamanni without naming Zulpich or an exact year, then separately says Sigibert had once been wounded in a battle with Alamanni near Zulpich.  Assigning Clovis's victory to HCED's exact Zulpich 496 row would fuse those passages.  It cannot produce an Elo event, and unknown is never made a draw.",
+        "reviewed_outcome": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_granularity": "source_conflation",
+        "evidence_refs": [
+          "wave8_alemanni_drinkwater_alamanni_rome",
+          "wave8_alemanni_gregory_tours_book_2"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_alemanni",
+          "status": "terminal_hced_owner"
+        },
+        "historical_review": {
+          "clovis_passage": "victory attested without Zulpich or an exact year",
+          "sigibert_passage": "separate past battle near Zulpich",
+          "repair_risk": "would merge different actors and source episodes"
+        }
+      }
+    ],
+    "wave8_alemanni_cross_lane_dispositions": [],
+    "wave8_alemanni_iwbd_duplicate_dispositions": [],
+    "wave8_alemanni_existing_release_duplicate_dispositions": [],
+    "wave8_alemanni_integration_dispositions": [],
+    "wave8_alemanni_outcome_overrides": [],
+    "wave8_alemanni_entities_added": 12,
+    "wave8_alemanni_sources_added": 12,
+    "hced_label_pass_input_rows": 5790,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6848,7 +6985,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 804,
+      "reserved_candidate_contract": 814,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6856,11 +6993,11 @@
       "curated_row_exclusion": 71,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 460,
+      "faction_label_not_a_polity": 459,
       "label_outcome_not_aligned": 81,
-      "label_outside_policy_window": 175,
+      "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2286,
+      "no_unique_time_valid_label_match": 2278,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
