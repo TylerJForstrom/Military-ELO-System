@@ -6730,6 +6730,164 @@
     ]
   },
   {
+    "id": "wave8_comanches_dickinson_little_robe",
+    "title": "Comanches defeated at the Battle of Little Robe Creek",
+    "url": "https://hd.housedivided.dickinson.edu/node/21702",
+    "publisher": "House Divided, Dickinson College",
+    "license": "Citation and link only",
+    "source_type": "university_civil_war_research_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "dickinson_house_divided_little_robe_1858",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_ohs_antelope_hills",
+    "title": "Antelope Hills, Battle of the",
+    "url": "https://www.okhistory.org/publications/enc/entry?entry=AN008",
+    "publisher": "Oklahoma Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "rea_ohs_antelope_hills_2010",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_thc_brushy_marker",
+    "title": "Battle of Brushy Creek historical marker, Atlas 5491009037",
+    "url": "https://atlas.thc.texas.gov/Details/5491009037",
+    "publisher": "Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "government_historical_marker_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "thc_brushy_creek_marker_9037",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_comanches_thc_freshwater_fork",
+    "title": "Battle of the Freshwater Fork of the Brazos, Atlas 5507018175",
+    "url": "https://atlas.thc.texas.gov/Details/5507018175",
+    "publisher": "Texas Historical Commission",
+    "license": "Citation and link only",
+    "source_type": "government_historical_marker_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "thc_freshwater_fork_marker_18175",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_tsha_aaron_burleson",
+    "title": "Burleson, Aaron B.",
+    "url": "https://www.tshaonline.org/handbook/entries/burleson-aaron-b",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "cutrer_tsha_aaron_burleson",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_tsha_bandera_county",
+    "title": "Bandera County",
+    "url": "https://www.tshaonline.org/handbook/entries/bandera-county",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_bandera_county_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_tsha_blanco_canyon",
+    "title": "Blanco Canyon, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/blanco-canyon-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "anderson_tsha_blanco_canyon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_tsha_brushy_creek",
+    "title": "Brushy Creek, Battle of",
+    "url": "https://www.tshaonline.org/handbook/entries/brushy-creek-battle-of",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "thompson_tsha_brushy_creek",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_tsha_quanah_parker",
+    "title": "Parker, Quanah",
+    "url": "https://www.tshaonline.org/handbook/entries/parker-quanah",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_biographical_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "tsha_quanah_parker_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_ut_bandera_legend",
+    "title": "The Battle of Bandera Pass and the Making of Lone Star Legend",
+    "url": "https://notevenpast.org/the-battle-of-bandera-pass-and-the-making-of-lone-star-legend/",
+    "publisher": "Department of History, University of Texas at Austin",
+    "license": "Citation and link only",
+    "source_type": "university_archival_public_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "jennings_ut_bandera_pass_legend_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_comanches_williamson_county_brushy",
+    "title": "Williamson County history, 1837 to 1845",
+    "url": "https://www.wilcotx.gov/1568/1837-to-1845",
+    "publisher": "Williamson County, Texas",
+    "license": "Citation and link only",
+    "source_type": "official_local_government_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "williamson_county_brushy_creek_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_dacia_dio_book_67",
     "title": "Cassius Dio, Roman History, Epitome of Book 67",
     "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/67%2A.html",

@@ -8083,6 +8083,22 @@
     ]
   },
   {
+    "id": "comanche_raiding_party_brushy_creek_1839",
+    "name": "Comanche raiding party at Brushy Creek (1839)",
+    "kind": "event_bounded_raiding_party",
+    "start_year": 1839,
+    "end_year": 1839,
+    "region": "Williamson County, Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the armed raiding party pursued and engaged north of Brushy Creek on 25 February. No band affiliation is supplied by the reviewed sources, and captives or other noncombatants are not rated. No rating is inherited by any named commander, constituent nation, tribe, band, modern people, descendant community, or modern state.",
+    "source_ids": [
+      "wave8_comanches_tsha_aaron_burleson",
+      "wave8_comanches_tsha_brushy_creek",
+      "wave8_comanches_williamson_county_brushy"
+    ]
+  },
+  {
     "id": "egg_bowles_cherokee_fighting_party_san_saba_1839",
     "name": "Egg and John Bowles's Cherokee fighting party at San Saba (1839)",
     "kind": "event_bounded_refugee_fighting_party",
@@ -8095,6 +8111,23 @@
     "source_ids": [
       "wave8_cherokee_tsha_cherokee_war",
       "wave8_cherokee_unt_indian_allies_thesis"
+    ]
+  },
+  {
+    "id": "texas_ranger_militia_force_brushy_creek_1839",
+    "name": "Republic of Texas ranger and militia force at Brushy Creek (1839)",
+    "kind": "event_bounded_ranger_militia_force",
+    "start_year": 1839,
+    "end_year": 1839,
+    "region": "Williamson County, Republic of Texas",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the ranger and local-militia parties in the 25 February running engagement, including Jacob Burleson's initial party and the Edward Burleson-Jesse Billingsley pursuit. Earlier and later frontier operations are excluded. No rating is inherited by any named commander, constituent nation, tribe, band, modern people, descendant community, or modern state.",
+    "source_ids": [
+      "wave8_comanches_thc_brushy_marker",
+      "wave8_comanches_tsha_aaron_burleson",
+      "wave8_comanches_tsha_brushy_creek",
+      "wave8_comanches_williamson_county_brushy"
     ]
   },
   {
@@ -8689,6 +8722,35 @@
     ]
   },
   {
+    "id": "comanche_fighting_forces_little_robe_creek_1858",
+    "name": "Comanche fighting forces at Little Robe Creek (1858)",
+    "kind": "event_bounded_fighting_force",
+    "start_year": 1858,
+    "end_year": 1858,
+    "region": "Indian Territory, near Little Robe Creek",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to armed defenders of the attacked village and the neighboring Comanche reinforcements repulsed during the 12 May running action. Noncombatants in the village are not rated participants. No rating is inherited by any named commander, constituent nation, tribe, band, modern people, descendant community, or modern state.",
+    "source_ids": [
+      "wave8_comanches_dickinson_little_robe",
+      "wave8_comanches_ohs_antelope_hills"
+    ]
+  },
+  {
+    "id": "ford_indigenous_allied_force_antelope_hills_1858",
+    "name": "Indigenous allied fighting force at Antelope Hills (1858)",
+    "kind": "event_bounded_allied_force",
+    "start_year": 1858,
+    "end_year": 1858,
+    "region": "Indian Territory, near Little Robe Creek",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the 113 allied fighters, identified by the Oklahoma Historical Society as mainly Tonkawa, Anadarko, and Caddo, who fought with Ford's Rangers on 12 May. Unattested membership is not expanded. No rating is inherited by any named commander, constituent nation, tribe, band, modern people, descendant community, or modern state.",
+    "source_ids": [
+      "wave8_comanches_ohs_antelope_hills"
+    ]
+  },
+  {
     "id": "wichita_expedition_indigenous_auxiliaries_1858_1859",
     "name": "Indigenous auxiliaries in the Wichita Expedition (1858–1859)",
     "kind": "campaign_bounded_allied_force",
@@ -8700,6 +8762,21 @@
     "continuity_note": "Campaign-bounded Native scouts and auxiliaries directly attested with Van Dorn's column; uncertain constituent labels are not expanded. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
     "source_ids": [
       "wave8_comanche_army_mcoe_raids"
+    ]
+  },
+  {
+    "id": "ford_texas_ranger_force_antelope_hills_1858",
+    "name": "John S. Ford's Texas Ranger force at Antelope Hills (1858)",
+    "kind": "event_bounded_ranger_force",
+    "start_year": 1858,
+    "end_year": 1858,
+    "region": "Indian Territory, near Little Robe Creek",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the 102-ranger force led by John S. Ford in the 12 May Antelope Hills actions; it is not the United States Army and does not inherit a general Republic or State of Texas identity. No rating is inherited by any named commander, constituent nation, tribe, band, modern people, descendant community, or modern state.",
+    "source_ids": [
+      "wave8_comanches_dickinson_little_robe",
+      "wave8_comanches_ohs_antelope_hills"
     ]
   },
   {

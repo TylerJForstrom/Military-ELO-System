@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 759,
-    "events": 5194,
-    "sources": 985,
-    "registry_polities": 2115
+    "entities": 764,
+    "events": 5196,
+    "sources": 996,
+    "registry_polities": 2120
   },
   "year_range": {
     "start": -1274,
@@ -132,6 +132,7 @@
     "accepted_wave8_kickapoo_hced_events": 4,
     "accepted_wave8_lordship_isles_hced_events": 3,
     "accepted_wave8_armenia_hced_events": 3,
+    "accepted_wave8_comanches_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -7629,7 +7630,145 @@
     "wave8_armenia_outcome_overrides": [],
     "wave8_armenia_entities_added": 6,
     "wave8_armenia_sources_added": 14,
-    "hced_label_pass_input_rows": 5770,
+    "wave8_comanches_counts": {
+      "country_quarantine_additions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 1,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 5,
+      "new_sources": 11,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "singular_lane_owned_rows": 6,
+      "terminal_exclusions": 1
+    },
+    "wave8_comanches_cohort_counts": {
+      "antelope_hills_expedition_1858": 1,
+      "brushy_creek_running_engagement_1839": 1
+    },
+    "wave8_comanches_queue_validation": {
+      "holds": 1,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_comanches_integration_validation": {
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "singular_lane_owned_rows": 6
+    },
+    "wave8_comanches_candidate_ids": [
+      "hced-Antelope Hills1858-1",
+      "hced-Brushy Creek1839-1"
+    ],
+    "wave8_comanches_holds": [
+      {
+        "candidate_id": "hced-Blanco Canyon1871-1",
+        "raw_row_sha256": "1dbaf68b8632e8c3d7bfa17852daf9d29f31ebb9a6235b0decfa028c6be4d006",
+        "canonical_event": {
+          "canonical_key": "blanco_canyon_campaign_actions:1871:1871",
+          "date_precision": "day_range",
+          "date_text": "9-15 October 1871",
+          "granularity": "compound_raid_ambush_relief_and_pursuit",
+          "name": "Blanco Canyon campaign actions",
+          "year_low": 1871,
+          "year_high": 1871
+        },
+        "hold_category": "compound_action_without_unique_tactical_winner",
+        "hold_reason": "HCED's single Comanche victory label collapses several different actions. Quanah Parker's force successfully stampeded the cavalry horses and ambushed a pursuing detachment; Mackenzie's main column and Tonkawa scouts then relieved that detachment and forced the warriors to withdraw; later pursuit and a separate skirmish produced additional losses on both sides. Sources characterize Mackenzie's overall campaign as unsuccessful, but that strategic assessment is not a unique tactical winner for the compound HCED row. The row remains staged and is not converted to a draw.",
+        "documented_components": [
+          "9 October Comanche horse raid",
+          "10 October Comanche ambush and U.S.-Tonkawa relief",
+          "10-13 October pursuit ending in weather",
+          "15 October skirmish during the return through Blanco Canyon"
+        ],
+        "evidence_refs": [
+          "wave8_comanches_thc_freshwater_fork",
+          "wave8_comanches_tsha_blanco_canyon",
+          "wave8_comanches_tsha_quanah_parker"
+        ]
+      }
+    ],
+    "wave8_comanches_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Bandera Pass1841-1",
+        "raw_row_sha256": "cf2f183c29b15cdc78593adb1fb173582db33229264ca8e9d416bb89b1755039",
+        "canonical_event": {
+          "canonical_key": "purported_battle_of_bandera_pass:1841:1841",
+          "date_precision": "conflicting_year",
+          "date_text": "purported 1841; published accounts also assign 1842 or 1843",
+          "granularity": "unverifiable_legendary_assertion",
+          "name": "Purported Battle of Bandera Pass",
+          "year_low": 1841,
+          "year_high": 1841
+        },
+        "exclusion_category": "unverifiable_legend_and_conflicting_year",
+        "exclusion_reason": "The University of Texas archival review finds no memoir, official report, or contemporary press account for a fight of the claimed scale; it also shows that named participants do not fit the 1841 roster and that the probable location differs from the marker. The TSHA county history assigns 1842, while other retellings use 1843. The staged 1841 row therefore cannot be bound to a unique attested event, side roster, or outcome and is terminally excluded rather than promoted from legend.",
+        "evidence_refs": [
+          "wave8_comanches_tsha_bandera_county",
+          "wave8_comanches_ut_bandera_legend"
+        ]
+      }
+    ],
+    "wave8_comanches_related_singular_lane_dispositions": [
+      {
+        "candidate_id": "hced-Adobe Walls1864-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "held_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      },
+      {
+        "candidate_id": "hced-Colorado1840-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "held_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      },
+      {
+        "candidate_id": "hced-Crooked Creek1859-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "promoted_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      },
+      {
+        "candidate_id": "hced-Plum Creek, Texas1840-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "promoted_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      },
+      {
+        "candidate_id": "hced-Rush Springs1858-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "promoted_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      },
+      {
+        "candidate_id": "hced-Walkers Creek1844-1",
+        "owner_module": "military_elo.promotion.wave8_comanche",
+        "owner_status": "promoted_by_singular_lane",
+        "shared_component": "Comanche participants",
+        "reason": "The existing singular Comanche lane owns this different candidate-keyed event. It shares an ethnonym but neither a candidate ID nor a canonical name-year key with the exact plural Comanches cohort."
+      }
+    ],
+    "wave8_comanches_iwbd_duplicate_dispositions": [],
+    "wave8_comanches_existing_release_duplicate_dispositions": [],
+    "wave8_comanches_integration_dispositions": [],
+    "wave8_comanches_outcome_overrides": [],
+    "wave8_comanches_entities_added": 5,
+    "wave8_comanches_sources_added": 11,
+    "hced_label_pass_input_rows": 5766,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -7642,7 +7781,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 834,
+      "reserved_candidate_contract": 838,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -7654,7 +7793,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2259,
+      "no_unique_time_valid_label_match": 2255,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

@@ -2994,6 +2994,26 @@
       "region": "Indian Territory"
     },
     {
+      "id": "comanche_fighting_forces_little_robe_creek_1858",
+      "name": "Comanche fighting forces at Little Robe Creek (1858)",
+      "kind": "event_bounded_fighting_force",
+      "start_year": 1858,
+      "end_year": 1858,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Indian Territory, near Little Robe Creek"
+    },
+    {
+      "id": "comanche_raiding_party_brushy_creek_1839",
+      "name": "Comanche raiding party at Brushy Creek (1839)",
+      "kind": "event_bounded_raiding_party",
+      "start_year": 1839,
+      "end_year": 1839,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Williamson County, Republic of Texas"
+    },
+    {
       "id": "palo_duro_comanche_kiowa_cheyenne_war_parties_1874",
       "name": "Comanche-Kiowa-Cheyenne defending war parties at Palo Duro (1874)",
       "kind": "event_bounded_allied_war_parties",
@@ -8234,6 +8254,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ford_indigenous_allied_force_antelope_hills_1858",
+      "name": "Indigenous allied fighting force at Antelope Hills (1858)",
+      "kind": "event_bounded_allied_force",
+      "start_year": 1858,
+      "end_year": 1858,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Indian Territory, near Little Robe Creek"
+    },
+    {
       "id": "wichita_expedition_indigenous_auxiliaries_1858_1859",
       "name": "Indigenous auxiliaries in the Wichita Expedition (1858–1859)",
       "kind": "campaign_bounded_allied_force",
@@ -8904,6 +8934,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Sutherland, Scotland"
+    },
+    {
+      "id": "ford_texas_ranger_force_antelope_hills_1858",
+      "name": "John S. Ford's Texas Ranger force at Antelope Hills (1858)",
+      "kind": "event_bounded_ranger_force",
+      "start_year": 1858,
+      "end_year": 1858,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Indian Territory, near Little Robe Creek"
     },
     {
       "id": "non_treaty_nimiipuu_allied_campaign_force_1877",
@@ -17051,6 +17091,16 @@
       "region": "Republic of Texas"
     },
     {
+      "id": "texas_ranger_militia_force_brushy_creek_1839",
+      "name": "Republic of Texas ranger and militia force at Brushy Creek (1839)",
+      "kind": "event_bounded_ranger_militia_force",
+      "start_year": 1839,
+      "end_year": 1839,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Williamson County, Republic of Texas"
+    },
+    {
       "id": "clio_q1005_1967_d5c215ca",
       "name": "Republic of The Gambia",
       "kind": "republic",
@@ -22524,11 +22574,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2115,
-    "rated_entities": 752,
-    "rated_events": 5194,
+    "registry_polities": 2120,
+    "rated_entities": 757,
+    "rated_events": 5196,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18200,
+    "unresolved_event_candidates": 18198,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22590,6 +22640,7 @@
     "candidate_keyed_wave8_kickapoo_hced_events": 4,
     "candidate_keyed_wave8_lordship_isles_hced_events": 3,
     "candidate_keyed_wave8_armenia_hced_events": 3,
+    "candidate_keyed_wave8_comanches_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22600,21 +22651,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4930,
-      "candidate_keyed_reviewed_contracts": 620,
+      "hced_candidate_bindings": 4932,
+      "candidate_keyed_reviewed_contracts": 622,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4838,
-      "location_provenance_objects": 4887,
-      "point_fields_withheld_by_quarantine": 196,
+      "modern_location_country_assertions": 4840,
+      "location_provenance_objects": 4889,
+      "point_fields_withheld_by_quarantine": 198,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 91,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 43,
-      "unique_events_with_any_quarantined_field": 244,
-      "point_quarantine_candidate_manifest_sha256": "ff2271b2915f550b14bc641909318c0571e2648d2eaad736747d55bdbc000a1a",
+      "unique_events_with_any_quarantined_field": 246,
+      "point_quarantine_candidate_manifest_sha256": "64f909b23c0c6d66f8e39f427e9e1e3f6668f6633b368febb1634da7844627b2",
       "country_quarantine_candidate_manifest_sha256": "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd",
-      "quarantine_policy_sha256": "a24eede30ecbf33e64d2e1c7bab9f600350c97445b981fa1b5e0a53101eb7560",
+      "quarantine_policy_sha256": "943b875d100c9160bc54a4482e51b005a763e4ff2e25f9d70c427b0984a9f897",
       "assertion_status": {
-        "unreviewed_source_assertion": 4887
+        "unreviewed_source_assertion": 4889
       },
       "verified_location_assertions": {
         "availability": "not_available",
