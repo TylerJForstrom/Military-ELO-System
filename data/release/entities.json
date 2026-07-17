@@ -297,6 +297,21 @@
     ]
   },
   {
+    "id": "alexander_i_epirote_kingdom_343_331_bce",
+    "name": "Epirote kingdom under Alexander I (343-331 BCE)",
+    "kind": "monarchical_polity",
+    "start_year": -343,
+    "end_year": -331,
+    "region": "Epirus and Alexander's southern Italian expedition",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Alexander I's reign and the expedition ending with his death at Pandosia. No rating is inherited by earlier or later Epirote states, Molossians generally, Pyrrhus, a medieval despotate, or a modern state.",
+    "source_ids": [
+      "wave8_epirus_cambridge_south_italy",
+      "wave8_epirus_livy_pandosia"
+    ]
+  },
+  {
     "id": "samnite_confederation_wars",
     "name": "Samnite Confederation of the Samnite Wars",
     "kind": "tribal_confederation",
@@ -329,6 +344,21 @@
     ]
   },
   {
+    "id": "lucanian_bruttian_pandosia_coalition_331_bce",
+    "name": "Lucanian-Bruttian coalition at Pandosia (331 BCE)",
+    "kind": "event_bounded_coalition",
+    "start_year": -331,
+    "end_year": -331,
+    "region": "Lucania and Bruttium",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded coalition attested against Alexander I at Pandosia. No rating is inherited by Lucanians, Bruttians, later Italian polities, or a modern state, and the coalition is not projected beyond 331 BCE.",
+    "source_ids": [
+      "wave8_epirus_cambridge_south_italy",
+      "wave8_epirus_livy_pandosia"
+    ]
+  },
+  {
     "id": "clio_ir_seleucid_emp_bce318_21d0ee32",
     "name": "Seleucid Empire",
     "kind": "empire",
@@ -357,6 +387,21 @@
       "met_ptolemaic_egypt"
     ],
     "start_year": -305
+  },
+  {
+    "id": "pyrrhus_epirote_kingdom_297_272_bce",
+    "name": "Epirote kingdom under Pyrrhus (297-272 BCE)",
+    "kind": "monarchical_polity",
+    "start_year": -297,
+    "end_year": -272,
+    "region": "Epirus and Pyrrhus's western campaigns",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Pyrrhus's restored Epirote reign through his death at Argos. No rating is inherited by Alexander I's earlier kingdom, Macedon, Sicilian allies, medieval Epirus, an ethnic label, or a modern state.",
+    "source_ids": [
+      "wave8_epirus_cambridge_pyrrhus",
+      "wave8_epirus_plutarch_pyrrhus"
+    ]
   },
   {
     "id": "clio_q245273_bce284_abebfa72",
@@ -418,6 +463,20 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "argos_antigonid_spartan_defensive_coalition_272_bce",
+    "name": "Argive-Antigonid-Spartan defensive coalition at Argos (272 BCE)",
+    "kind": "event_bounded_coalition",
+    "start_year": -272,
+    "end_year": -272,
+    "region": "Argos and the Argolid",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defenders and relief forces opposing Pyrrhus inside Argos. No rating is inherited by Argos, Macedon, Sparta, Antigonus II, their later states, or a modern state outside this coalition event.",
+    "source_ids": [
+      "wave8_epirus_plutarch_pyrrhus"
     ]
   },
   {
@@ -2345,6 +2404,21 @@
     ]
   },
   {
+    "id": "latin_kingdom_thessalonica_1204_1224",
+    "name": "Latin Kingdom of Thessalonica (1204-1224)",
+    "kind": "crusader_successor_polity",
+    "start_year": 1204,
+    "end_year": 1224,
+    "region": "Macedonia and Thessaly",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded from the post-Fourth-Crusade kingdom to Theodore's capture of Thessalonica. No rating is inherited by the Latin Empire, a later titular claim, Thessaly, Byzantium, the city itself, or a modern state.",
+    "source_ids": [
+      "wave8_epirus_cambridge_byzantium_exile",
+      "wave8_epirus_cambridge_nicol_thessalonica"
+    ]
+  },
+  {
     "id": "mongol_empire",
     "name": "Mongol Empire",
     "kind": "empire",
@@ -2359,6 +2433,21 @@
     "source_ids": [
       "cliopatria_polities",
       "britannica_ain_jalut"
+    ]
+  },
+  {
+    "id": "theodore_komnenos_doukas_epirote_state_1215_1230",
+    "name": "Epirote state under Theodore Komnenos Doukas (1215-1230)",
+    "kind": "medieval_successor_polity",
+    "start_year": 1215,
+    "end_year": 1230,
+    "region": "Epirus, Thessaly, and Macedonia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Theodore's rule before and after the 1224 capture of Thessalonica, ending at Klokotnitsa. No rating is inherited by ancient Epirus, later Epirote regimes, Byzantium generally, or a modern state.",
+    "source_ids": [
+      "wave8_epirus_cambridge_byzantium_exile",
+      "wave8_epirus_cambridge_nicol_thessalonica"
     ]
   },
   {

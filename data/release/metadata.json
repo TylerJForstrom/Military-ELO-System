@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 593,
-    "events": 5082,
-    "sources": 692,
-    "registry_polities": 1949
+    "entities": 599,
+    "events": 5088,
+    "sources": 702,
+    "registry_polities": 1955
   },
   "year_range": {
     "start": -1274,
@@ -110,6 +110,7 @@
     "accepted_wave8_germany_hced_events": 13,
     "accepted_wave8_seljuks_hced_events": 5,
     "accepted_wave8_danish_vikings_hced_events": 4,
+    "accepted_wave8_epirus_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -4214,7 +4215,133 @@
     "wave8_danish_vikings_outcome_overrides": [],
     "wave8_danish_vikings_entities_added": 6,
     "wave8_danish_vikings_sources_added": 8,
-    "hced_label_pass_input_rows": 5917,
+    "wave8_epirus_counts": {
+      "country_quarantine_additions": 1,
+      "cross_lane_hced_dispositions": 0,
+      "exclusions": 2,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 2,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "new_entities": 6,
+      "new_sources": 10,
+      "newly_rated_events": 6,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 8
+    },
+    "wave8_epirus_cohort_counts": {
+      "alexander_i_south_italy_331_bce": 1,
+      "epirote_latin_war_1215_1224": 1,
+      "pyrrhic_war_280_275_bce": 3,
+      "pyrrhus_peloponnese_campaign_272_bce": 1
+    },
+    "wave8_epirus_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 2,
+      "reviewed_hced_rows": 8
+    },
+    "wave8_epirus_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_epirus_candidate_ids": [
+      "hced-Argos-272-1",
+      "hced-Asculum, Apulia-279-1",
+      "hced-Beneventum-275-1",
+      "hced-Heraclea, Lucania-280-1",
+      "hced-Pandosia-331-1",
+      "hced-Thessalonica1224-1"
+    ],
+    "wave8_epirus_holds": [
+      {
+        "candidate_id": "hced-Lilybaeum-277-1",
+        "raw_row_sha256": "b5a3431d7bbfa4e40d1658784b9e3e2bbc32f9e2605f752a8c2683cc3f15aba7",
+        "canonical_event": {
+          "canonical_key": "proposed_siege_of_lilybaeum:-277:-277",
+          "date_precision": "year_uncertain",
+          "date_text": "late 277 or 276 BCE",
+          "granularity": "chronology_unresolved_siege",
+          "name": "Proposed siege of Lilybaeum",
+          "year_low": -277,
+          "year_high": -277
+        },
+        "hold_category": "event_year_not_uniquely_defensible",
+        "evidence_refs": [
+          "wave8_epirus_cambridge_pyrrhus",
+          "wave8_epirus_routledge_pyrrhic_war"
+        ],
+        "hold_reason": "The failed Carthaginian-held siege is historically attested, but the reviewed scholarship places it in late 277 or 276 BCE. The exact HCED year -277 cannot be widened by this candidate-keyed helper or silently treated as certain. The row stays unrated; uncertainty is never a draw."
+      },
+      {
+        "candidate_id": "hced-Thessalonica1264-1",
+        "raw_row_sha256": "d886ca74fb2dc085ffcc715f75fd6d8413d60bc808666681bb495000bbbb65c4",
+        "canonical_event": {
+          "canonical_key": "unverified_thessalonica_engagement:1264:1264",
+          "date_precision": "year",
+          "date_text": "1264",
+          "granularity": "unsupported_named_engagement",
+          "name": "Unverified Thessalonica engagement",
+          "year_low": 1264,
+          "year_high": 1264
+        },
+        "hold_category": "named_engagement_not_attested_by_reviewed_sources",
+        "evidence_refs": [
+          "wave8_epirus_ime_late_byzantine_politics"
+        ],
+        "hold_reason": "The Foundation of the Hellenic World documents John Palaiologos's 1264 intervention in Epirus and the resulting peace and suzerainty, but not a distinct battle at Thessalonica. A campaign result cannot be invented as this tactical event, and the unknown event outcome is never a draw."
+      }
+    ],
+    "wave8_epirus_exclusions": [
+      {
+        "candidate_id": "hced-Lilybaeum-277-1",
+        "raw_row_sha256": "b5a3431d7bbfa4e40d1658784b9e3e2bbc32f9e2605f752a8c2683cc3f15aba7",
+        "canonical_event": {
+          "canonical_key": "proposed_siege_of_lilybaeum:-277:-277",
+          "date_precision": "year_uncertain",
+          "date_text": "late 277 or 276 BCE",
+          "granularity": "chronology_unresolved_siege",
+          "name": "Proposed siege of Lilybaeum",
+          "year_low": -277,
+          "year_high": -277
+        },
+        "hold_category": "event_year_not_uniquely_defensible",
+        "evidence_refs": [
+          "wave8_epirus_cambridge_pyrrhus",
+          "wave8_epirus_routledge_pyrrhic_war"
+        ],
+        "hold_reason": "The failed Carthaginian-held siege is historically attested, but the reviewed scholarship places it in late 277 or 276 BCE. The exact HCED year -277 cannot be widened by this candidate-keyed helper or silently treated as certain. The row stays unrated; uncertainty is never a draw."
+      },
+      {
+        "candidate_id": "hced-Thessalonica1264-1",
+        "raw_row_sha256": "d886ca74fb2dc085ffcc715f75fd6d8413d60bc808666681bb495000bbbb65c4",
+        "canonical_event": {
+          "canonical_key": "unverified_thessalonica_engagement:1264:1264",
+          "date_precision": "year",
+          "date_text": "1264",
+          "granularity": "unsupported_named_engagement",
+          "name": "Unverified Thessalonica engagement",
+          "year_low": 1264,
+          "year_high": 1264
+        },
+        "hold_category": "named_engagement_not_attested_by_reviewed_sources",
+        "evidence_refs": [
+          "wave8_epirus_ime_late_byzantine_politics"
+        ],
+        "hold_reason": "The Foundation of the Hellenic World documents John Palaiologos's 1264 intervention in Epirus and the resulting peace and suzerainty, but not a distinct battle at Thessalonica. A campaign result cannot be invented as this tactical event, and the unknown event outcome is never a draw."
+      }
+    ],
+    "wave8_epirus_iwbd_duplicate_dispositions": [],
+    "wave8_epirus_cross_lane_dispositions": [],
+    "wave8_epirus_integration_dispositions": [],
+    "wave8_epirus_outcome_overrides": [],
+    "wave8_epirus_entities_added": 6,
+    "wave8_epirus_sources_added": 10,
+    "hced_label_pass_input_rows": 5909,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -4227,7 +4354,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 687,
+      "reserved_candidate_contract": 695,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -4237,9 +4364,9 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 460,
       "label_outcome_not_aligned": 81,
-      "label_outside_policy_window": 178,
+      "label_outside_policy_window": 177,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2398,
+      "no_unique_time_valid_label_match": 2391,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 101,
       "same_or_empty_opposing_side": 38,

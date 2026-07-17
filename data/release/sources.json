@@ -6537,6 +6537,150 @@
     ]
   },
   {
+    "id": "wave8_epirus_cambridge_byzantium_exile",
+    "title": "Byzantium in exile",
+    "url": "https://www.cambridge.org/core/books/abs/new-cambridge-medieval-history/byzantium-in-exile/543456566FA16509830EC0FED0B8B871",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "new_cambridge_medieval_history_byzantium_exile",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_epirus_cambridge_cicero_brutus",
+    "title": "The Politics and Poetics of Cicero's Brutus",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/E3CFAF05525AFF343B0CA224E641DCF5/9781009281355AR.pdf/The_Politics_and_Poetics_of_Cicero_s__I_Brutus__I_.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_cicero_brutus_pyrrhic_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_cambridge_nicol_thessalonica",
+    "title": "Venice: champion of a lost cause",
+    "url": "https://www.cambridge.org/core/books/byzantium-and-venice/venice-champion-of-a-lost-cause/26FEAAE54E8A0AF269FD67671CF9A510",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "nicol_byzantium_and_venice_chapter_10",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_cambridge_pyrrhus",
+    "title": "Pyrrhus",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/65B53CFFF06DECD5AAFF25B3A082E8F0/9781139054355c10_p456-485_CBO.pdf/pyrrhus.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_ancient_history_pyrrhus",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_cambridge_roman_commonwealth",
+    "title": "Law and Power in the Making of the Roman Commonwealth",
+    "url": "https://assets.cambridge.org/97811070/71971/frontmatter/9781107071971_frontmatter.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chronology",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_roman_commonwealth_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_cambridge_south_italy",
+    "title": "South Italy in the Fourth Century B.C.",
+    "url": "https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/7495A504A36E668A627BBE7CA7D1B976/9781139054331c9b_p381-403_CBO.pdf/south_italy_in_the_fourth_century_bc.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "cambridge_ancient_history_south_italy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_ime_late_byzantine_politics",
+    "title": "Politics in the Late Byzantine Period: Operations in the Balkans",
+    "url": "https://www.ime.gr/CHRONOS/10/en/p/pb2/pb2b2.html",
+    "publisher": "Foundation of the Hellenic World",
+    "license": "Citation and link only",
+    "source_type": "institutional_historical_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "foundation_hellenic_world_late_byzantine_politics",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_epirus_livy_pandosia",
+    "title": "Livy 8.24: Alexander of Molossis at Pandosia",
+    "url": "https://www.livius.org/sources/content/livy/livy-on-alexander-of-molossis/",
+    "publisher": "Livius.org scholarly ancient-history reference",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "livy_ab_urbe_condita_8_24",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_plutarch_pyrrhus",
+    "title": "Plutarch, Life of Pyrrhus",
+    "url": "https://penelope.uchicago.edu/Thayer/e/roman/texts/plutarch/lives/pyrrhus%2A.html",
+    "publisher": "University of Chicago LacusCurtius",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "plutarch_life_pyrrhus_perrin_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_epirus_routledge_pyrrhic_war",
+    "title": "A History of the Pyrrhic War",
+    "url": "https://www.routledge.com/A-History-of-the-Pyrrhic-War/Kent/p/book/9781032090306",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "kent_history_pyrrhic_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",

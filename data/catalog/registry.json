@@ -956,6 +956,16 @@
       "region": "South America"
     },
     {
+      "id": "argos_antigonid_spartan_defensive_coalition_272_bce",
+      "name": "Argive-Antigonid-Spartan defensive coalition at Argos (272 BCE)",
+      "kind": "event_bounded_coalition",
+      "start_year": -272,
+      "end_year": -272,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Argos and the Argolid"
+    },
+    {
       "id": "clio_q399_1918_2f11ffcf",
       "name": "Armenia",
       "kind": "polity",
@@ -5081,6 +5091,36 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "alexander_i_epirote_kingdom_343_331_bce",
+      "name": "Epirote kingdom under Alexander I (343-331 BCE)",
+      "kind": "monarchical_polity",
+      "start_year": -343,
+      "end_year": -331,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Epirus and Alexander's southern Italian expedition"
+    },
+    {
+      "id": "pyrrhus_epirote_kingdom_297_272_bce",
+      "name": "Epirote kingdom under Pyrrhus (297-272 BCE)",
+      "kind": "monarchical_polity",
+      "start_year": -297,
+      "end_year": -272,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Epirus and Pyrrhus's western campaigns"
+    },
+    {
+      "id": "theodore_komnenos_doukas_epirote_state_1215_1230",
+      "name": "Epirote state under Theodore Komnenos Doukas (1215-1230)",
+      "kind": "medieval_successor_polity",
+      "start_year": 1215,
+      "end_year": 1230,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Epirus, Thessaly, and Macedonia"
     },
     {
       "id": "clio_q983_1969_309cd47b",
@@ -11004,6 +11044,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "latin_kingdom_thessalonica_1204_1224",
+      "name": "Latin Kingdom of Thessalonica (1204-1224)",
+      "kind": "crusader_successor_polity",
+      "start_year": 1204,
+      "end_year": 1224,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Macedonia and Thessaly"
+    },
+    {
       "id": "clio_th_lavo_k_1_638_a2331424",
       "name": "Lavo Kingdom",
       "kind": "kingdom",
@@ -11292,6 +11342,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "lucanian_bruttian_pandosia_coalition_331_bce",
+      "name": "Lucanian-Bruttian coalition at Pandosia (331 BCE)",
+      "kind": "event_bounded_coalition",
+      "start_year": -331,
+      "end_year": -331,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lucania and Bruttium"
     },
     {
       "id": "clio_q2719360_1890_12b5fa7b",
@@ -20864,11 +20924,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 1949,
-    "rated_entities": 586,
-    "rated_events": 5082,
+    "registry_polities": 1955,
+    "rated_entities": 592,
+    "rated_events": 5088,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18312,
+    "unresolved_event_candidates": 18306,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -20908,6 +20968,7 @@
     "candidate_keyed_wave8_germany_hced_events": 13,
     "candidate_keyed_wave8_seljuks_hced_events": 5,
     "candidate_keyed_wave8_danish_vikings_hced_events": 4,
+    "candidate_keyed_wave8_epirus_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -20918,21 +20979,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4818,
-      "candidate_keyed_reviewed_contracts": 508,
+      "hced_candidate_bindings": 4824,
+      "candidate_keyed_reviewed_contracts": 514,
       "geojson_points": 4725,
-      "modern_location_country_assertions": 4731,
-      "location_provenance_objects": 4780,
-      "point_fields_withheld_by_quarantine": 93,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 86,
+      "modern_location_country_assertions": 4736,
+      "location_provenance_objects": 4785,
+      "point_fields_withheld_by_quarantine": 99,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 87,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 38,
-      "unique_events_with_any_quarantined_field": 141,
-      "point_quarantine_candidate_manifest_sha256": "59db4fa35875aa39599c42d37981780f49b55c1393b5c07561d244101ee5e47c",
-      "country_quarantine_candidate_manifest_sha256": "84d8ef956f580256e028f07d4ca988a30b17bdd3b601cfe6db5f60153b335ad9",
-      "quarantine_policy_sha256": "2215ce767048005707a2b94297d7f95de53b660c956fc6dc23891c853ba98992",
+      "point_country_quarantine_overlap": 39,
+      "unique_events_with_any_quarantined_field": 147,
+      "point_quarantine_candidate_manifest_sha256": "3ad7798f860881cae2940ad4df4280eeb9b784153aef021868abaedb2257e202",
+      "country_quarantine_candidate_manifest_sha256": "3352ad949a34ec64ce3f47fd798279b6a62378232f850199c47cd3825751d367",
+      "quarantine_policy_sha256": "e9ede18567dfc578454fbe59f933969d24fecee3000b521d7554b0bd89fdc42c",
       "assertion_status": {
-        "unreviewed_source_assertion": 4780
+        "unreviewed_source_assertion": 4785
       },
       "verified_location_assertions": {
         "availability": "not_available",
