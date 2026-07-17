@@ -12804,6 +12804,195 @@
     ]
   },
   {
+    "id": "wave8_sikh_punjab_ajmer_singh_thesis",
+    "title": "Military Campaigns of Maharaja Ranjit Singh and Under His Successors",
+    "url": "https://gurmatveechar.com/books/English_Books/English_Thesis_Papers/Military.campaigns.of.Maharaja.Ranjit.Singh.and.under.his.successors.%28GurmatVeechar.com%29.pdf",
+    "publisher": "Panjab University Chandigarh",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ajmer_singh_military_campaigns_thesis_1997",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_eos_anandpur",
+    "title": "Anandpur",
+    "url": "https://eos.learnpunjabi.org/ANANDPUR%20%2831%C2%BA-13%27N%2C%2076%C2%BA-32%27E%29.html",
+    "publisher": "Encyclopaedia of Sikhism, Punjabi University",
+    "license": "Citation and link only",
+    "source_type": "academic_encyclopedia_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "punjabi_university_encyclopaedia_anandpur",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_eos_ram_singh_bedi",
+    "title": "Ram Singh Bedi, Baba (d. 1797)",
+    "url": "https://eos.learnpunjabi.org/RAM%20SINGH%20BEDI%20BABA%20%28D.%201797%29.html",
+    "publisher": "Encyclopaedia of Sikhism, Punjabi University",
+    "license": "Citation and link only",
+    "source_type": "academic_encyclopedia_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "punjabi_university_encyclopaedia_ram_singh_bedi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_gupta_vol1",
+    "title": "History of the Sikhs, Volume I: The Sikh Gurus (1469-1708)",
+    "url": "https://apnaorg.com/books/english/history-of-sikhs-v1/history-of-sikhs-v1.pdf",
+    "publisher": "Munshiram Manoharlal Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hari_ram_gupta_history_sikhs_vol1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_gupta_vol2",
+    "title": "History of the Sikhs, Volume II: Evolution of Sikh Confederacies",
+    "url": "https://apnaorg.com/books/english/history-of-sikhs-v2/history-of-sikhs-v2.pdf",
+    "publisher": "Munshiram Manoharlal Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hari_ram_gupta_history_sikhs_vol2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_gupta_vol4",
+    "title": "History of the Sikhs, Volume IV: The Sikh Commonwealth",
+    "url": "https://apnaorg.com/books/english/history-of-sikhs-v4/history-of-sikhs-v4.pdf",
+    "publisher": "Munshiram Manoharlal Publishers",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "hari_ram_gupta_history_sikhs_vol4",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_ibratnamah",
+    "title": "Ibratnamah 2",
+    "url": "https://eos.learnpunjabi.org/IBRATNAMAH%202.html",
+    "publisher": "Encyclopaedia of Sikhism, Punjabi University",
+    "license": "Citation and link only",
+    "source_type": "academic_encyclopedia_of_contemporary_persian_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "mirza_muhammad_harisi_ibratnamah",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_nam_aliwal",
+    "title": "Battle of Aliwal",
+    "url": "https://www.nam.ac.uk/explore/battle-aliwal",
+    "publisher": "National Army Museum",
+    "license": "Citation and link only",
+    "source_type": "national_military_museum_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "national_army_museum_aliwal",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_oxford_banda",
+    "title": "The Rise and Fall of Banda Bahadur",
+    "url": "https://academic.oup.com/book/25977/chapter-abstract/193789599",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "khushwant_singh_banda_bahadur_chapter",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_oxford_vol2",
+    "title": "A History of the Sikhs, Volume 2: 1839-2004",
+    "url": "https://academic.oup.com/book/40079",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "khushwant_singh_history_sikhs_vol2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_routledge_hargobind",
+    "title": "The Routledge Companion to the Life and Legacy of Guru Hargobind",
+    "url": "https://www.routledge.com/The-Routledge-Companion-to-the-Life-and-Legacy-of-Guru-Hargobind-Sovereignty-Militancy-and-Empowerment-of-the-Sikh-Panth/Singh/p/book/9781032827421",
+    "publisher": "Routledge",
+    "license": "Citation and link only",
+    "source_type": "scholarly_companion",
+    "accessed": "2026-07-16",
+    "source_family_id": "pashaura_singh_routledge_hargobind",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_shah_sri_gursobha",
+    "title": "In Praise of the Guru: A Translation and Study of Sainapati's Sri Gursobha",
+    "url": "https://www.gurmatveechar.com/books/English_Books/English_Thesis_Papers/In.Praise.of.the.Guru.A.Translation.and.Study.of.Sainapatis.Sri.Gursobha.by.Ami.Praful.Shah.%28GurmatVeechar.com%29.pdf",
+    "publisher": "University of California, Santa Barbara",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation_and_primary_text_translation",
+    "accessed": "2026-07-16",
+    "source_family_id": "ami_praful_shah_sri_gursobha",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_sikh_punjab_smith_autobiography",
+    "title": "The Autobiography of Lieutenant-General Sir Harry Smith",
+    "url": "https://www.gutenberg.org/cache/epub/57094/pg57094-images.html",
+    "publisher": "John Murray; Project Gutenberg transcription",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_military_memoir",
+    "accessed": "2026-07-16",
+    "source_family_id": "harry_smith_autobiography_1903",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_ssau_campaign_kazan_pugachev",
     "title": "Campaign against Kazan: the fatal misadventure of Pugachev's Rebellion",
     "url": "https://journals.ssau.ru/hpp/article/view/29591",

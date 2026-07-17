@@ -5499,6 +5499,36 @@
     ]
   },
   {
+    "id": "guru_hargobind_akal_sena_amritsar_1634",
+    "name": "Guru Hargobind's Akal Sena at Amritsar (1634)",
+    "kind": "event_bounded_sikh_defense_force",
+    "start_year": 1634,
+    "end_year": 1634,
+    "region": "Amritsar, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Guru Hargobind's armed followers defending near Amritsar. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_gupta_vol1",
+      "wave8_sikh_punjab_routledge_hargobind"
+    ]
+  },
+  {
+    "id": "mukhlis_khan_mughal_expedition_amritsar_1634",
+    "name": "Mukhlis Khan's Mughal expedition at Amritsar (1634)",
+    "kind": "event_bounded_imperial_expedition",
+    "start_year": 1634,
+    "end_year": 1634,
+    "region": "Amritsar, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Mughal detachment commanded by Mukhlis Khan in this action. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_gupta_vol1",
+      "wave8_sikh_punjab_routledge_hargobind"
+    ]
+  },
+  {
     "id": "clio_q917_1636_f706aa87",
     "name": "Kingdom of Bhutan",
     "kind": "kingdom",
@@ -5823,6 +5853,22 @@
     ]
   },
   {
+    "id": "banda_singh_sikh_garrison_gurdas_nangal_1715",
+    "name": "Banda Singh Bahadur's Sikh garrison at Gurdas Nangal (1715)",
+    "kind": "event_bounded_besieged_sikh_force",
+    "start_year": 1715,
+    "end_year": 1715,
+    "region": "Gurdas Nangal, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Banda Singh Bahadur and the defenders captured after the siege. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_gupta_vol2",
+      "wave8_sikh_punjab_ibratnamah",
+      "wave8_sikh_punjab_oxford_banda"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Campaign-bounded government force; kept separate from the later 1745–46 force. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1716,
@@ -5849,6 +5895,22 @@
       "nam_jacobites"
     ],
     "start_year": 1715
+  },
+  {
+    "id": "mughal_imperial_siege_coalition_gurdas_nangal_1715",
+    "name": "Mughal imperial siege coalition at Gurdas Nangal (1715)",
+    "kind": "event_bounded_imperial_siege_coalition",
+    "start_year": 1715,
+    "end_year": 1715,
+    "region": "Gurdas Nangal, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Delhi, Lahore, Jammu, Sarhind, and local contingents that invested and captured the enclosure. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_gupta_vol2",
+      "wave8_sikh_punjab_ibratnamah",
+      "wave8_sikh_punjab_oxford_banda"
+    ]
   },
   {
     "aliases": [],
@@ -6476,6 +6538,38 @@
     "source_ids": [
       "wave8_cambridge_yusuf_karamanli_1795",
       "wave8_cambridge_yusuf_karamanli_1832"
+    ]
+  },
+  {
+    "id": "shahanchibashi_durrani_field_force_gujrat_1797",
+    "name": "Ahmad Khan Shahanchibashi's Durrani force at Gujrat (1797)",
+    "kind": "event_bounded_durrani_field_force",
+    "start_year": 1797,
+    "end_year": 1797,
+    "region": "Gujrat and Chenab approaches, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Shah Zaman's detachment commanded by Ahmad Khan Shahanchibashi. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_ajmer_singh_thesis",
+      "wave8_sikh_punjab_eos_ram_singh_bedi",
+      "wave8_sikh_punjab_gupta_vol4"
+    ]
+  },
+  {
+    "id": "ram_singh_bedi_sikh_misl_coalition_gujrat_1797",
+    "name": "Ram Singh Bedi's Sikh misl coalition at Gujrat (1797)",
+    "kind": "event_bounded_misl_field_coalition",
+    "start_year": 1797,
+    "end_year": 1797,
+    "region": "Gujrat and Chenab approaches, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Sikh sardars and volunteers assembled for the Gujrat action. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_ajmer_singh_thesis",
+      "wave8_sikh_punjab_eos_ram_singh_bedi",
+      "wave8_sikh_punjab_gupta_vol4"
     ]
   },
   {
@@ -8280,6 +8374,23 @@
     ]
   },
   {
+    "id": "harry_smith_british_indian_relief_column_baddowal_1846",
+    "name": "Harry Smith's British-Indian relief column at Baddowal (1846)",
+    "kind": "event_bounded_british_indian_relief_column",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Baddowal-Ludhiana corridor, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the British-Indian column moving to relieve Ludhiana. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_ajmer_singh_thesis",
+      "wave8_sikh_punjab_nam_aliwal",
+      "wave8_sikh_punjab_oxford_vol2",
+      "wave8_sikh_punjab_smith_autobiography"
+    ]
+  },
+  {
     "id": "fort_peddie_mfengu_contingent_1846",
     "name": "Mfengu contingent defending Fort Peddie",
     "kind": "indigenous_allied_force",
@@ -8337,6 +8448,23 @@
     "source_ids": [
       "ward_fort_peddie_1846",
       "saho_peddie"
+    ]
+  },
+  {
+    "id": "ranjodh_ajit_khalsa_field_force_baddowal_1846",
+    "name": "Ranjodh Singh Majithia-Ajit Singh Khalsa field force at Baddowal (1846)",
+    "kind": "event_bounded_khalsa_field_force",
+    "start_year": 1846,
+    "end_year": 1846,
+    "region": "Baddowal-Ludhiana corridor, Punjab",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Lahore Khalsa and allied Ladwa force harrying Smith's column. No rating is inherited by another Sikh formation, a dynasty, religious or ethnic community, successor polity, or modern state.",
+    "source_ids": [
+      "wave8_sikh_punjab_ajmer_singh_thesis",
+      "wave8_sikh_punjab_nam_aliwal",
+      "wave8_sikh_punjab_oxford_vol2",
+      "wave8_sikh_punjab_smith_autobiography"
     ]
   },
   {
