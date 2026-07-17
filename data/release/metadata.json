@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 924,
-    "events": 5280,
-    "sources": 1257,
-    "registry_polities": 2280
+    "entities": 930,
+    "events": 5283,
+    "sources": 1266,
+    "registry_polities": 2286
   },
   "year_range": {
     "start": -1274,
@@ -152,6 +152,7 @@
     "accepted_wave8_french_religious_forces_hced_events": 16,
     "accepted_wave8_chadian_rebels_hced_events": 3,
     "accepted_wave8_saudi_rashidi_hced_events": 11,
+    "accepted_wave8_yaqui_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -16356,7 +16357,416 @@
     ],
     "wave8_saudi_rashidi_entities_added": 22,
     "wave8_saudi_rashidi_sources_added": 14,
-    "hced_label_pass_input_rows": 5651,
+    "wave8_yaqui_counts": {
+      "adjacent_literal_labels_audited": 8,
+      "country_quarantine_additions": 0,
+      "cross_event_boundaries": 3,
+      "cross_lane_dispositions": 3,
+      "engagement_events": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 6,
+      "new_sources": 9,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "scope_audits": 4,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 1,
+      "touched_hced_rows": 4,
+      "war_labels_audited": 3,
+      "war_rows_audited": 4
+    },
+    "wave8_yaqui_cohort_counts": {
+      "cajeme_campaign_1886": 2,
+      "yaqui_mayo_revolt_1740": 1,
+      "yaqui_war_1867_1868": 1
+    },
+    "wave8_yaqui_metadata": {
+      "audit": "candidate_keyed_exact_label_event_bounded_formations",
+      "cohorts": {
+        "cajeme_campaign_1886": 2,
+        "yaqui_mayo_revolt_1740": 1,
+        "yaqui_war_1867_1868": 1
+      },
+      "counts": {
+        "adjacent_literal_labels_audited": 8,
+        "country_quarantine_additions": 0,
+        "cross_event_boundaries": 3,
+        "cross_lane_dispositions": 3,
+        "engagement_events": 3,
+        "existing_release_duplicate_dispositions": 0,
+        "hced_duplicate_dispositions": 0,
+        "holds": 0,
+        "integration_dispositions": 6,
+        "iwbd_duplicate_dispositions": 0,
+        "iwbd_zero_overlap_candidates": 4,
+        "new_entities": 6,
+        "new_sources": 9,
+        "newly_rated_events": 3,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 3,
+        "promotion_contracts": 3,
+        "reviewed_hced_rows": 4,
+        "scope_audits": 4,
+        "sole_blocker_rows": 4,
+        "terminal_exclusions": 1,
+        "touched_hced_rows": 4,
+        "war_labels_audited": 3,
+        "war_rows_audited": 4
+      },
+      "final_audit_signature": "b140805f5a808448872e1680d3557b4f32f49164ac137607c7030fd8b93d5cb5",
+      "module_owner": "military_elo.promotion.wave8_yaqui",
+      "row_dispositions": {
+        "hced-Anil1886-1": "promote",
+        "hced-Bacum1868-1": "terminal_exclusion",
+        "hced-Buatachive1886-1": "promote",
+        "hced-Mount Tambor1740-1": "promote"
+      }
+    },
+    "wave8_yaqui_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_yaqui_integration_validation": {
+      "cross_event_boundaries": 3,
+      "cross_lane_dispositions": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "hced_probable_twins": 0,
+      "integration_dispositions": 6,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 0,
+      "release_probable_twins": 0
+    },
+    "wave8_yaqui_candidate_ids": [
+      "hced-Anil1886-1",
+      "hced-Buatachive1886-1",
+      "hced-Mount Tambor1740-1"
+    ],
+    "wave8_yaqui_war_candidate_ids": [
+      "hced-Anil1886-1",
+      "hced-Bacum1868-1",
+      "hced-Buatachive1886-1",
+      "hced-Mount Tambor1740-1"
+    ],
+    "wave8_yaqui_holds": [],
+    "wave8_yaqui_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Bacum1868-1",
+        "audit_note": "The locked massacre flag aligns with the 18 February 1868 church episode. Six hundred peace-seeking Yaqui people were detained; after limited weapons were surrendered, 450 prisoners were confined in the Santa Rosa church. Ten leaders were executed and artillery fired on the unarmed crowd as the church burned. This was not a competitive Mexico-versus-Yaqui engagement.",
+        "canonical_event": {
+          "canonical_key": "bacum_church_massacre:1868:1868",
+          "date_precision": "day",
+          "date_text": "18 February 1868",
+          "granularity": "massacre_of_confined_peace_seeking_prisoners",
+          "name": "Bacum church massacre",
+          "year_low": 1868,
+          "year_high": 1868
+        },
+        "cohort": "yaqui_war_1867_1868",
+        "disposition": "terminal_exclusion",
+        "evidence_refs": [
+          "wave8_yaqui_gouy_gilbert",
+          "wave8_yaqui_inah_padilla_territorio",
+          "wave8_yaqui_sonora_bacum_chronology",
+          "wave8_yaqui_spicer_cycles",
+          "wave8_yaqui_texas_band_history",
+          "wave8_yaqui_troncoso_tomo_i"
+        ],
+        "exclusion_category": "noncompetitive_massacre_of_prisoners",
+        "exclusion_reason": "The victims were a confined peace-seeking prisoner population, not an opposing battlefield formation. A distinct 10 January battle at Bacum cannot be substituted for this massacre-tagged locked row. No Elo winner or loser is emitted; non-rateable is never a draw.",
+        "historical_review": {
+          "attested_event": "Bacum church massacre",
+          "attested_mexican_side": "Salazar Bustamante's custodial force and artillery",
+          "attested_victim_group": "confined Yaqui men, women, children, and elders seeking peace",
+          "competitive_event": false,
+          "distinct_bacum_battle": "10 January 1868",
+          "locked_massacre_raw": "Yes",
+          "rating_risk": "would rate civilian and prisoner victimization"
+        },
+        "raw_row_sha256": "62df82df26a541d4328a19319e00d7050a3c6715e503e330e5c0e24b4f51db54",
+        "reviewed_outcome": "not_rateable_prisoner_massacre",
+        "terminal_exclusion": true,
+        "unknown_is_never_draw": true
+      }
+    ],
+    "wave8_yaqui_event_boundaries": [
+      {
+        "boundary_id": "anil_to_buatachive_1886",
+        "candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Buatachive1886-1"
+        ],
+        "disposition": "distinct_fortifications_and_sequential_actions",
+        "reason": "El Anil was occupied on 5 May. The defenders withdrew toward the separately fortified Buatachive position, assaulted on 12 May."
+      },
+      {
+        "boundary_id": "bacum_battle_to_church_massacre_1868",
+        "candidate_ids": [
+          "hced-Bacum1868-1"
+        ],
+        "disposition": "do_not_substitute_adjacent_battle_for_massacre_row",
+        "reason": "The 10 January fight and 18 February prisoner massacre occurred at Bacum in the same year, but the locked row's massacre flag owns the noncompetitive February episode."
+      },
+      {
+        "boundary_id": "tambor_to_otancahui_1740",
+        "candidate_ids": [
+          "hced-Mount Tambor1740-1"
+        ],
+        "disposition": "distinct_successive_battles",
+        "reason": "Sources place Vildosola's Cerro del Tambor victory before a separate advance and battle at Otancahui; casualty totals for the two are not collapsed into one event."
+      }
+    ],
+    "wave8_yaqui_cross_lane_dispositions": [
+      {
+        "disposition_id": "exact_label_boundary",
+        "disposition": "own_exact_yaqui_rows_only",
+        "evidence_refs": [
+          "wave8_yaqui_spicer_cycles",
+          "wave8_yaqui_texas_band_history"
+        ],
+        "excluded_labels": [
+          "Hiaki",
+          "Yaqui Indian",
+          "Yaqui Indians",
+          "Yaqui Nation",
+          "Yaqui people",
+          "Yaquis",
+          "Yoeme"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Bacum1868-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ]
+      },
+      {
+        "disposition_id": "modern_tribal_governments",
+        "disposition": "no_identity_or_rating_inheritance",
+        "evidence_refs": [
+          "wave8_yaqui_inah_padilla_territorio",
+          "wave8_yaqui_texas_band_history"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Bacum1868-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ],
+        "reason": "Historical action formations are not aliases for any modern Yaqui or Pascua Yaqui government or community."
+      },
+      {
+        "disposition_id": "raw_state_and_coalition_labels",
+        "disposition": "resolve_only_event_bounded_formations",
+        "evidence_refs": [
+          "wave8_yaqui_mapping_rebellions_1740",
+          "wave8_yaqui_spicer_cycles",
+          "wave8_yaqui_troncoso_tomo_i"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ],
+        "reason": "Spain, Mexico, Sonora, Yaqui, and Mayo remain raw context labels; only the six action-bounded formations are installed."
+      }
+    ],
+    "wave8_yaqui_scope_and_opposite_result_audit": {
+      "hced-Anil1886-1": {
+        "aliases": [
+          "Anil",
+          "Battle of El Anil",
+          "El Anil"
+        ],
+        "audited_unit": "fortification_attack_withdrawal_and_occupation",
+        "disposition": "promote_mexican_1886_anil_victory",
+        "opposite_result_disposition": "Topete's Mexican defeat at the same fortification occurred in 1885. It is not merged with Carrillo's separately organized 1886 action.",
+        "owner_module": "military_elo.promotion.wave8_yaqui",
+        "scope_note": "Only the fought occupation on 5 May 1886 is rated."
+      },
+      "hced-Bacum1868-1": {
+        "aliases": [
+          "Bacum",
+          "Bacum church massacre"
+        ],
+        "audited_unit": "massacre_of_confined_peace_seeking_prisoners",
+        "disposition": "terminally_exclude_noncompetitive_massacre",
+        "opposite_result_disposition": "Prado's 10 January battle at Bacum is a distinct event and cannot supply a competitive result to the massacre-tagged February row.",
+        "owner_module": "military_elo.promotion.wave8_yaqui",
+        "scope_note": "The 18 February prisoner massacre is not Elo-rateable."
+      },
+      "hced-Buatachive1886-1": {
+        "aliases": [
+          "Battle of Buatachive",
+          "Buatachive"
+        ],
+        "audited_unit": "four_day_siege_and_three_hour_final_assault",
+        "disposition": "promote_mexican_buatachive_victory",
+        "opposite_result_disposition": "Cajeme's escape and continued guerrilla resistance do not reverse the attested loss of the bounded fortified position.",
+        "owner_module": "military_elo.promotion.wave8_yaqui",
+        "scope_note": "Only the 9-12 May siege and assault are rated."
+      },
+      "hced-Mount Tambor1740-1": {
+        "aliases": [
+          "Battle of Cerro del Tambor",
+          "Mount Tambor"
+        ],
+        "audited_unit": "single_battle_at_cerro_del_tambor",
+        "disposition": "promote_vildosola_tambor_victory",
+        "opposite_result_disposition": "Huidobro's earlier retreat and the later Otancahui battle are separate campaign episodes, not alternate results for Tambor.",
+        "owner_module": "military_elo.promotion.wave8_yaqui",
+        "scope_note": "Only Cerro del Tambor is rated; Otancahui remains distinct."
+      }
+    },
+    "wave8_yaqui_hced_duplicate_dispositions": [],
+    "wave8_yaqui_iwbd_duplicate_dispositions": [],
+    "wave8_yaqui_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Anil1886-1",
+        "aliases": [
+          "action at el anil",
+          "anil",
+          "battle of anil",
+          "battle of el anil",
+          "el anil"
+        ],
+        "years": [
+          1886
+        ]
+      },
+      {
+        "audit_id": "hced-Bacum1868-1",
+        "aliases": [
+          "bacum",
+          "bacum church massacre",
+          "bacum massacre",
+          "massacre at bacum",
+          "santa rosa de bacum church massacre"
+        ],
+        "years": [
+          1868
+        ]
+      },
+      {
+        "audit_id": "hced-Buatachive1886-1",
+        "aliases": [
+          "battle of buatachive",
+          "buatachive",
+          "siege of buatachive"
+        ],
+        "years": [
+          1886
+        ]
+      },
+      {
+        "audit_id": "hced-Mount Tambor1740-1",
+        "aliases": [
+          "battle of cerro del tambor",
+          "battle of mount tambor",
+          "cerro del tambor",
+          "mount tambor"
+        ],
+        "years": [
+          1740
+        ]
+      }
+    ],
+    "wave8_yaqui_existing_release_duplicate_dispositions": [],
+    "wave8_yaqui_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:exact_label_boundary",
+        "disposition": "own_exact_yaqui_rows_only",
+        "evidence_refs": [
+          "wave8_yaqui_spicer_cycles",
+          "wave8_yaqui_texas_band_history"
+        ],
+        "excluded_labels": [
+          "Hiaki",
+          "Yaqui Indian",
+          "Yaqui Indians",
+          "Yaqui Nation",
+          "Yaqui people",
+          "Yaquis",
+          "Yoeme"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Bacum1868-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ]
+      },
+      {
+        "disposition_id": "cross_lane:modern_tribal_governments",
+        "disposition": "no_identity_or_rating_inheritance",
+        "evidence_refs": [
+          "wave8_yaqui_inah_padilla_territorio",
+          "wave8_yaqui_texas_band_history"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Bacum1868-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ],
+        "reason": "Historical action formations are not aliases for any modern Yaqui or Pascua Yaqui government or community."
+      },
+      {
+        "disposition_id": "cross_lane:raw_state_and_coalition_labels",
+        "disposition": "resolve_only_event_bounded_formations",
+        "evidence_refs": [
+          "wave8_yaqui_mapping_rebellions_1740",
+          "wave8_yaqui_spicer_cycles",
+          "wave8_yaqui_troncoso_tomo_i"
+        ],
+        "owned_candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Buatachive1886-1",
+          "hced-Mount Tambor1740-1"
+        ],
+        "reason": "Spain, Mexico, Sonora, Yaqui, and Mayo remain raw context labels; only the six action-bounded formations are installed."
+      },
+      {
+        "disposition_id": "event_boundary:anil_to_buatachive_1886",
+        "candidate_ids": [
+          "hced-Anil1886-1",
+          "hced-Buatachive1886-1"
+        ],
+        "disposition": "distinct_fortifications_and_sequential_actions",
+        "reason": "El Anil was occupied on 5 May. The defenders withdrew toward the separately fortified Buatachive position, assaulted on 12 May."
+      },
+      {
+        "disposition_id": "event_boundary:bacum_battle_to_church_massacre_1868",
+        "candidate_ids": [
+          "hced-Bacum1868-1"
+        ],
+        "disposition": "do_not_substitute_adjacent_battle_for_massacre_row",
+        "reason": "The 10 January fight and 18 February prisoner massacre occurred at Bacum in the same year, but the locked row's massacre flag owns the noncompetitive February episode."
+      },
+      {
+        "disposition_id": "event_boundary:tambor_to_otancahui_1740",
+        "candidate_ids": [
+          "hced-Mount Tambor1740-1"
+        ],
+        "disposition": "distinct_successive_battles",
+        "reason": "Sources place Vildosola's Cerro del Tambor victory before a separate advance and battle at Otancahui; casualty totals for the two are not collapsed into one event."
+      }
+    ],
+    "wave8_yaqui_outcome_overrides": [],
+    "wave8_yaqui_entities_added": 6,
+    "wave8_yaqui_sources_added": 9,
+    "hced_label_pass_input_rows": 5647,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -16369,7 +16779,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 953,
+      "reserved_candidate_contract": 957,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -16381,7 +16791,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2141,
+      "no_unique_time_valid_label_match": 2137,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

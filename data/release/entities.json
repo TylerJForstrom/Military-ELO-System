@@ -7063,6 +7063,39 @@
     ]
   },
   {
+    "id": "vildosola_provincial_force_cerro_tambor_1740",
+    "name": "Vildosola's provincial force at Cerro del Tambor (1740)",
+    "kind": "event_bounded_colonial_provincial_force",
+    "start_year": 1740,
+    "end_year": 1740,
+    "region": "Cerro del Tambor between the Tecoripa frontier and Yaqui country",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Agustin de Vildosola's soldiers and militia in the single Cerro del Tambor action during the 1740 revolt. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_acosta_sonora",
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
+    "id": "yaqui_mayo_rebel_force_cerro_tambor_1740",
+    "name": "Yaqui-Mayo rebel force at Cerro del Tambor (1740)",
+    "kind": "event_bounded_indigenous_coalition_force",
+    "start_year": 1740,
+    "end_year": 1740,
+    "region": "Cerro del Tambor at the edge of Yaqui country",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Yaqui- and Mayo-associated fighting force defeated at Cerro del Tambor. The coalition description does not create a generic Yaqui, Mayo, Pima, or Four Rivers actor. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_acosta_sonora",
+      "wave8_yaqui_mapping_rebellions_1740",
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
     "id": "clio_om_busaidi_imamate_1_1744_c23501c3",
     "name": "Sultanate of Oman",
     "kind": "sultanate",
@@ -11580,6 +11613,71 @@
     "continuity_note": "Conflict-bounded provisional government at Batoche. No rating is inherited by Métis communities, the 1869–1870 Red River government, First Nations allies, or any generic Canadian-rebels label.",
     "source_ids": [
       "wave8_canada_batoche_history"
+    ]
+  },
+  {
+    "id": "cajeme_yaqui_buatachive_defenders_1886_05_09_12",
+    "name": "Cajeme's Yaqui Buatachive defenders (9-12 May 1886)",
+    "kind": "event_bounded_indigenous_fortified_defense_force",
+    "start_year": 1886,
+    "end_year": 1886,
+    "region": "Buatachive positions and mountain escape routes, Sierra del Bacatete",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Cajeme's armed defenders in the Buatachive positions. Families confined within the position are not made combatants and are not assigned the force's Elo result. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_gouy_gilbert",
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_texas_band_history",
+      "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
+    "id": "cajeme_yaqui_anil_defenders_1886_05_05",
+    "name": "Cajeme's Yaqui El Anil defenders (5 May 1886)",
+    "kind": "event_bounded_indigenous_defense_force",
+    "start_year": 1886,
+    "end_year": 1886,
+    "region": "El Anil fortification and withdrawal route toward Buatachive",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Yaqui fighters who attacked Carrillo's working line and then withdrew from El Anil toward Buatachive on 5 May 1886. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_gouy_gilbert",
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
+    "id": "carrillo_mexican_anil_operation_force_1886_05_03_05",
+    "name": "Carrillo's Mexican El Anil operation force (3-5 May 1886)",
+    "kind": "event_bounded_mixed_federal_state_force",
+    "start_year": 1886,
+    "end_year": 1886,
+    "region": "El Anil fortification in the Yaqui River country",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Marcos Carrillo's Mexican federal and Sonora components performing reconnaissance, siege works, and the fought occupation of El Anil from 3 through 5 May 1886. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_texas_band_history",
+      "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
+    "id": "martinez_mexican_buatachive_assault_force_1886_05_09_12",
+    "name": "Martinez's Mexican Buatachive assault force (9-12 May 1886)",
+    "kind": "event_bounded_combined_siege_force",
+    "start_year": 1886,
+    "end_year": 1886,
+    "region": "Buatachive positions in the Sierra del Bacatete",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Angel Martinez's combined columns under Carrillo, Otero, Torres, and subordinate commanders during the Buatachive siege and final assault of 9-12 May 1886. The mechanical year window exists only because entity records use year precision; the prose dates are the actual boundary. No rating is inherited from or passed to the Yaqui or Mayo peoples, a modern tribal government, Spain, Mexico, Sonora, or another campaign formation.",
+    "source_ids": [
+      "wave8_yaqui_cardenas_historia_mexicana",
+      "wave8_yaqui_spicer_cycles",
+      "wave8_yaqui_troncoso_tomo_i"
     ]
   },
   {

@@ -17533,6 +17533,138 @@
     ]
   },
   {
+    "id": "wave8_yaqui_acosta_sonora",
+    "title": "Apuntes historicos sonorenses",
+    "url": "https://bibliotecadigital.sonora.gob.mx/images/libros_digitales/Acosta_Roberto_-_Apuntes_histricos_sonorenses_copy_1.pdf",
+    "publisher": "Biblioteca Digital de Sonora / Gobierno del Estado de Sonora",
+    "license": "Citation and link only",
+    "source_type": "regional_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "acosta_apuntes_historicos_sonorenses",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_cardenas_historia_mexicana",
+    "title": "Lo que queremos es que salgan los blancos y las tropas: Yaquis y mexicanos en tiempos de revolucion (1910-1920)",
+    "url": "https://historiamexicana.colmex.mx/index.php/RHM/article/view/3421",
+    "publisher": "Historia Mexicana / El Colegio de Mexico",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "cardenas_historia_mexicana_3421",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_gouy_gilbert",
+    "title": "Una resistencia india: II. Las guerras del Yaqui (siglo XIX)",
+    "url": "https://books.openedition.org/cemca/3359?lang=en",
+    "publisher": "Centro de Estudios Mexicanos y Centroamericanos / OpenEdition",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "gouy_gilbert_una_resistencia_india",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_inah_padilla_territorio",
+    "title": "Cicatrizando el Territorio: Los ductos y la criminalizacion de las luchas yaquis",
+    "url": "https://revistas.inah.gob.mx/index.php/noroestedemexico/article/view/17176",
+    "publisher": "Noroeste de Mexico / Instituto Nacional de Antropologia e Historia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_government_journal",
+    "accessed": "2026-07-16",
+    "source_family_id": "padilla_cicatrizando_territorio_inah",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_mapping_rebellions_1740",
+    "title": "Yaqui rebellion 1740",
+    "url": "https://mappingrebellions.com/encyclopaedia/?name_of_revolt=yaqui-rebellion-1740",
+    "publisher": "Encyclopaedia of Rebellions in the Early Modern Iberian World",
+    "license": "Citation and link only",
+    "source_type": "academic_rebellion_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "mapping_rebellions_yaqui_1740",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_sonora_bacum_chronology",
+    "title": "Bacum municipal historical chronology",
+    "url": "https://boletinoficial.sonora.gob.mx/images/boletines/2024/01/2024CCXIII6V.pdf",
+    "publisher": "Boletin Oficial del Gobierno del Estado de Sonora",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "sonora_bacum_official_chronology_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_spicer_cycles",
+    "title": "Cycles of Conquest, Chapter 2: Mayos and Yaquis",
+    "url": "https://openaz-tst.library.arizona.edu/read/cycles-of-conquest/section/64cb831a-598b-47dc-b6e1-0a2b2a89ce20",
+    "publisher": "University of Arizona Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "spicer_cycles_of_conquest_mayos_yaquis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_texas_band_history",
+    "title": "History",
+    "url": "https://www.tbyi.gov/history",
+    "publisher": "Texas Band of Yaqui Indians",
+    "license": "Citation and link only",
+    "source_type": "official_indigenous_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "texas_band_of_yaqui_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_yaqui_troncoso_tomo_i",
+    "title": "Las guerras con las tribus Yaqui y Mayo del Estado de Sonora, Tomo I",
+    "url": "https://bibliotecadigital.sonora.gob.mx/images/libros_digitales/Troncoso_Francisco_-_Las_guerras_con_las_tribus_yaqui_y_mayo._Tomo_I.pdf",
+    "publisher": "Secretaria de Guerra y Marina; Gobierno del Estado de Sonora digital edition",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_and_primary_report_compilation",
+    "accessed": "2026-07-16",
+    "source_family_id": "troncoso_yaqui_mayo_tomo_i",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "accessed": "2026-07-15",
     "evidence_roles": [
       "identity_boundary_or_context_reference"

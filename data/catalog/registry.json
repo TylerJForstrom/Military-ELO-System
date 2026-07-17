@@ -2553,6 +2553,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "cajeme_yaqui_buatachive_defenders_1886_05_09_12",
+      "name": "Cajeme's Yaqui Buatachive defenders (9-12 May 1886)",
+      "kind": "event_bounded_indigenous_fortified_defense_force",
+      "start_year": 1886,
+      "end_year": 1886,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Buatachive positions and mountain escape routes, Sierra del Bacatete"
+    },
+    {
+      "id": "cajeme_yaqui_anil_defenders_1886_05_05",
+      "name": "Cajeme's Yaqui El Anil defenders (5 May 1886)",
+      "kind": "event_bounded_indigenous_defense_force",
+      "start_year": 1886,
+      "end_year": 1886,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "El Anil fortification and withdrawal route toward Buatachive"
+    },
+    {
       "id": "clio_q17557_1846_355b5ee5",
       "name": "California Republic",
       "kind": "republic",
@@ -2700,6 +2720,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "carrillo_mexican_anil_operation_force_1886_05_03_05",
+      "name": "Carrillo's Mexican El Anil operation force (3-5 May 1886)",
+      "kind": "event_bounded_mixed_federal_state_force",
+      "start_year": 1886,
+      "end_year": 1886,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "El Anil fortification in the Yaqui River country"
     },
     {
       "id": "carthage",
@@ -13713,6 +13743,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "martinez_mexican_buatachive_assault_force_1886_05_09_12",
+      "name": "Martinez's Mexican Buatachive assault force (9-12 May 1886)",
+      "kind": "event_bounded_combined_siege_force",
+      "start_year": 1886,
+      "end_year": 1886,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Buatachive positions in the Sierra del Bacatete"
+    },
+    {
       "id": "clio_q635394_1820_c6f1c5a2",
       "name": "Massina Empire",
       "kind": "empire",
@@ -23048,6 +23088,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "vildosola_provincial_force_cerro_tambor_1740",
+      "name": "Vildosola's provincial force at Cerro del Tambor (1740)",
+      "kind": "event_bounded_colonial_provincial_force",
+      "start_year": 1740,
+      "end_year": 1740,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cerro del Tambor between the Tecoripa frontier and Yaqui country"
+    },
+    {
       "id": "villaret_hospitaller_rhodes_conquest_force_1310",
       "name": "Villaret's Hospitaller conquest force on Rhodes (1310 completion)",
       "kind": "event_bounded_hospitaller_conquest_force",
@@ -23632,6 +23682,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "yaqui_mayo_rebel_force_cerro_tambor_1740",
+      "name": "Yaqui-Mayo rebel force at Cerro del Tambor (1740)",
+      "kind": "event_bounded_indigenous_coalition_force",
+      "start_year": 1740,
+      "end_year": 1740,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cerro del Tambor at the edge of Yaqui country"
+    },
+    {
       "id": "clio_q1752110_1626_66067cfa",
       "name": "Yarubid dynasty",
       "kind": "dynastic_state",
@@ -24174,11 +24234,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2280,
-    "rated_entities": 917,
-    "rated_events": 5280,
+    "registry_polities": 2286,
+    "rated_entities": 923,
+    "rated_events": 5283,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18114,
+    "unresolved_event_candidates": 18111,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24260,6 +24320,7 @@
     "candidate_keyed_wave8_french_religious_forces_hced_events": 16,
     "candidate_keyed_wave8_chadian_rebels_hced_events": 3,
     "candidate_keyed_wave8_saudi_rashidi_hced_events": 11,
+    "candidate_keyed_wave8_yaqui_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24270,21 +24331,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5016,
-      "candidate_keyed_reviewed_contracts": 706,
+      "hced_candidate_bindings": 5019,
+      "candidate_keyed_reviewed_contracts": 709,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4923,
-      "location_provenance_objects": 4972,
-      "point_fields_withheld_by_quarantine": 282,
+      "modern_location_country_assertions": 4926,
+      "location_provenance_objects": 4975,
+      "point_fields_withheld_by_quarantine": 285,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 330,
-      "point_quarantine_candidate_manifest_sha256": "c5a7085b375aebbe3ce4487dfe2e8ff7ba92e618db9d81cb9c4cef7411f41cb2",
+      "unique_events_with_any_quarantined_field": 333,
+      "point_quarantine_candidate_manifest_sha256": "38aff2211cc2c0024ce1121fb54b16a058c4fb40cf9d08cf2487bda9accb54ee",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "60fec31b56bcd8aa6d6d71df42fcd5a40e3a8f194ca7370aa17a4b6e460594f0",
+      "quarantine_policy_sha256": "8552a5dae72af1291aa0601a58b3175a00fb8e4a084de0aded4fda1bb4dc32e8",
       "assertion_status": {
-        "unreviewed_source_assertion": 4972
+        "unreviewed_source_assertion": 4975
       },
       "verified_location_assertions": {
         "availability": "not_available",
