@@ -46,7 +46,9 @@ class Wave8AcheaTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
         cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         entities = {
@@ -204,6 +206,49 @@ class Wave8AcheaTests(unittest.TestCase):
                 "hced_probable_twins": 0,
                 "iwbd_probable_twins": 0,
             },
+        )
+
+    def test_current_release_extends_the_existing_provisional_identity(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_ACHEA_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 3)
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in events},
+            lane.WAVE8_ACHEA_CONTRACT_IDS,
+        )
+        self.assertEqual(
+            len({event["id"] for event in events}),
+            len(lane.WAVE8_ACHEA_CONTRACT_IDS),
+        )
+        release_entities = {str(item["id"]): item for item in self.release_entities}
+        self.assertIn(ACHAEAN, release_entities)
+        sources = {str(item["id"]) for item in self.release_sources}
+        self.assertLessEqual(
+            {str(item["id"]) for item in lane.WAVE8_ACHEA_SOURCES},
+            sources,
+        )
+
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_achea_hced_events"], 3)
+        self.assertEqual(
+            promotion["wave8_achea_candidate_ids"],
+            sorted(lane.WAVE8_ACHEA_CONTRACT_IDS),
+        )
+        self.assertEqual(promotion["wave8_achea_holds"], [])
+        self.assertEqual(
+            self.registry["coverage"]["candidate_keyed_wave8_achea_hced_events"],
+            3,
+        )
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertEqual(registry_entities[ACHAEAN]["status"], "provisional")
+        self.assertEqual(
+            registry_entities[ACHAEAN]["identity_status"],
+            "source_candidate",
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:

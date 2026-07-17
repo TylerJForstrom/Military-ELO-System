@@ -5688,6 +5688,76 @@
     ]
   },
   {
+    "id": "wave8_achea_livy_book35_barbosthenes",
+    "title": "Livy, History of Rome 35.29-30: Philopoemen's victory over Nabis",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0165%3Abook%3D35",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_in_scholarly_edition",
+    "accessed": "2026-07-17",
+    "source_family_id": "livy_ab_urbe_condita",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_achea_plutarch_cleomenes_ladoceia",
+    "title": "Plutarch, Life of Cleomenes 6: Lydiadas and the rout of the Achaeans",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cleomenes%2A.html",
+    "publisher": "LacusCurtius, University of Chicago",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_in_scholarly_edition",
+    "accessed": "2026-07-17",
+    "source_family_id": "plutarch_parallel_lives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_achea_plutarch_philopoemen",
+    "title": "Plutarch, Life of Philopoemen: Mantinea and the campaign against Nabis",
+    "url": "https://classics.mit.edu/Plutarch/philopoe.html",
+    "publisher": "Internet Classics Archive, Massachusetts Institute of Technology",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_translation",
+    "accessed": "2026-07-17",
+    "source_family_id": "plutarch_parallel_lives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_achea_polybius_book11_mantinea",
+    "title": "Polybius, Histories 11.11-18: the Battle of Mantinea (207 BCE)",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0234%3Abook%3D11",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_in_scholarly_edition",
+    "accessed": "2026-07-17",
+    "source_family_id": "polybius_histories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_achea_polybius_book2_ladoceia",
+    "title": "Polybius, Histories 2.51: the Achaean defeat at Ladoceia",
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0234%3Abook%3D2",
+    "publisher": "Perseus Digital Library, Tufts University",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_in_scholarly_edition",
+    "accessed": "2026-07-17",
+    "source_family_id": "polybius_histories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_alemanni_ammianus_book_16",
     "title": "Ammianus Marcellinus, Roman History, Book 16",
     "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/16%2A.html",

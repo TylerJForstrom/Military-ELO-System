@@ -8,8 +8,8 @@
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
     "entities": 981,
-    "events": 5316,
-    "sources": 1351,
+    "events": 5319,
+    "sources": 1356,
     "registry_polities": 2337
   },
   "year_range": {
@@ -159,6 +159,7 @@
     "accepted_wave8_montenegro_1796_hced_events": 2,
     "accepted_wave8_bohemia_hced_events": 4,
     "accepted_wave8_spanish_liberals_hced_events": 2,
+    "accepted_wave8_achea_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18578,7 +18579,92 @@
     "wave8_spanish_liberals_country_quarantine_additions": [],
     "wave8_spanish_liberals_entities_added": 1,
     "wave8_spanish_liberals_sources_added": 7,
-    "hced_label_pass_input_rows": 5605,
+    "wave8_achea_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 0,
+      "new_sources": 5,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 0
+    },
+    "wave8_achea_cohort_counts": {
+      "achaean_league_spartan_wars_227_192_bce": 3
+    },
+    "wave8_achea_audit_signature": "54a097ca2b6d7b7ce28d68ad6eecf0a5692903f777137f1c53257af176a62291",
+    "wave8_achea_final_audit_signature": "54a097ca2b6d7b7ce28d68ad6eecf0a5692903f777137f1c53257af176a62291",
+    "wave8_achea_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 0,
+      "reviewed_hced_rows": 3,
+      "exact_label_rows": 3
+    },
+    "wave8_achea_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_achea_candidate_ids": [
+      "hced-Ladoceia-227-1",
+      "hced-Mantinea-207-1",
+      "hced-Mount Barbosthene-192-1"
+    ],
+    "wave8_achea_holds": [],
+    "wave8_achea_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "38f02d97127f467d00b055bd789b10ba4b1fe93c29b00e5e81b3be87b86aa657",
+      "events_touched": 3,
+      "label": "achea",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 3
+    },
+    "wave8_achea_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Ladoceia-227-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed texts establish the named battlefield and Greek setting but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_achea_plutarch_cleomenes_ladoceia",
+          "wave8_achea_polybius_book2_ladoceia"
+        ]
+      },
+      {
+        "candidate_id": "hced-Mantinea-207-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed texts establish the named battlefield and Greek setting but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_achea_plutarch_philopoemen",
+          "wave8_achea_polybius_book11_mantinea"
+        ]
+      },
+      {
+        "candidate_id": "hced-Mount Barbosthene-192-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed texts establish the named battlefield and Greek setting but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_achea_livy_book35_barbosthenes",
+          "wave8_achea_plutarch_philopoemen"
+        ]
+      }
+    ],
+    "wave8_achea_point_quarantine_additions": [
+      "hced-Ladoceia-227-1",
+      "hced-Mantinea-207-1",
+      "hced-Mount Barbosthene-192-1"
+    ],
+    "wave8_achea_country_quarantine_additions": [],
+    "wave8_achea_entities_added": 0,
+    "wave8_achea_sources_added": 5,
+    "hced_label_pass_input_rows": 5602,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18591,7 +18677,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1005,
+      "reserved_candidate_contract": 1008,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18603,7 +18689,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2102,
+      "no_unique_time_valid_label_match": 2099,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

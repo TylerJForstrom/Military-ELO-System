@@ -138,9 +138,11 @@ WAVE8_ACHEA_SOURCES: tuple[dict[str, Any], ...] = (
 _SOURCE_BY_ID = {str(source["id"]): source for source in WAVE8_ACHEA_SOURCES}
 
 
-# The correct identity already exists in the release candidate catalogue.  An
-# empty tranche is intentional: promotion changes its registry status to rated
-# without manufacturing a duplicate identity or opening a generic alias.
+# The correct identity already exists in the release candidate catalogue and
+# already participates in provisional events.  An empty tranche is intentional:
+# these exact contracts extend that Elo history without manufacturing a
+# duplicate identity, opening a generic alias, or silently upgrading the
+# source-candidate identity to curated status.
 WAVE8_ACHEA_ENTITIES: tuple[dict[str, Any], ...] = ()
 
 
