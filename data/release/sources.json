@@ -9163,6 +9163,190 @@
     ]
   },
   {
+    "id": "wave8_madagascar_annales_tamatave_1845",
+    "title": "Madagascar: Combat livre a Tamatave le 15 juin 1845",
+    "url": "https://books.google.com/books?id=mesZAAAAYAAJ",
+    "publisher": "Imprimerie royale; French Ministry of Marine and Colonies",
+    "license": "Citation and link only",
+    "source_type": "contemporary_official_naval_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "annales_maritimes_tamatave_1845",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_army_tananarive",
+    "title": "L'histoire du 1er regiment de chasseurs d'Afrique",
+    "url": "https://www.terre.defense.gouv.fr/1rca/traditions-du-1er-rca/lhistoire-du-1er-rca",
+    "publisher": "French Army, Ministry of the Armed Forces",
+    "license": "Citation and link only",
+    "source_type": "official_unit_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_army_first_rca_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_bnf_andriba_map",
+    "title": "Prise d'Andriba, journees des 21 et 22 aout 1895",
+    "url": "https://catalogue.bnf.fr/ark:/12148/cb45231187j",
+    "publisher": "Service geographique de l'Armee; Bibliotheque nationale de France",
+    "license": "Citation and link only",
+    "source_type": "official_campaign_map_catalogue",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_army_andriba_map_1897",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_britannica_tamatave_1883",
+    "title": "Madagascar",
+    "url": "https://britannica11.org/article/17-0285-s2/madagascar",
+    "publisher": "Encyclopaedia Britannica, 11th edition",
+    "license": "Citation and link only",
+    "source_type": "reference_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "britannica_madagascar_1911",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_bulletin_tsarasoatra",
+    "title": "Bulletin du Comite de Madagascar: Les evenements de Madagascar",
+    "url": "https://www.bibliothequemalgache.com/pdf/BME10.pdf",
+    "publisher": "Comite de Madagascar; Bibliotheque malgache numerique",
+    "license": "Citation and link only",
+    "source_type": "contemporary_campaign_bulletin",
+    "accessed": "2026-07-16",
+    "source_family_id": "comite_madagascar_bulletin_1895",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_cambridge_imperial",
+    "title": "An Economic History of Imperial Madagascar, 1750-1895",
+    "url": "https://assets.cambridge.org/052183/9351/excerpt/0521839351_excerpt.htm",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "campbell_imperial_madagascar_2005",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_cnrs_july_monarchy",
+    "title": "La monarchie de Juillet",
+    "url": "https://www.cnrseditions.fr/catalogue/histoire/la-monarchie-de-juillet/",
+    "publisher": "CNRS Editions",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "robert_july_monarchy_2017",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_duchesne_report_1895",
+    "title": "Rapport sur l'expedition de Madagascar",
+    "url": "https://www.deutsche-digitale-bibliothek.de/item/KPQU7XND5LCZYOZHTUIDTRF3Y5GUU3SZ",
+    "publisher": "Berger-Levrault; Bayerische Staatsbibliothek digitization",
+    "license": "Citation and link only",
+    "source_type": "commanding_general_primary_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "duchesne_madagascar_report_1897",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_france_july_monarchy",
+    "title": "La Restauration et la Monarchie de Juillet (1815-1848)",
+    "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-restauration-et-la-monarchie-de-juillet-1815-1848/",
+    "publisher": "French Ministry of the Interior",
+    "license": "Citation and link only",
+    "source_type": "official_regime_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "french_interior_july_monarchy_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_high_deeds_1895",
+    "title": "Les hauts faits de l'armee: Madagascar",
+    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k6365829c.pdf",
+    "publisher": "Librairie Hachette; Bibliotheque nationale de France",
+    "license": "Citation and link only",
+    "source_type": "contemporary_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "hauts_faits_armee_madagascar_1899",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_imagesdefense_tamatave_1883",
+    "title": "Promotion de Madagascar 83-85",
+    "url": "https://imagesdefense.gouv.fr/fr/promotion-de-madagascar-83-85-menu-30-mars-1892-legende-d-origine.html",
+    "publisher": "ECPAD, French Ministry of the Armed Forces",
+    "license": "Citation and link only",
+    "source_type": "official_defence_archive",
+    "accessed": "2026-07-16",
+    "source_family_id": "ecpad_madagascar_1883_1885",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_mcleod_tamatave_1845",
+    "title": "Madagascar and Its People",
+    "url": "https://archive.org/details/madagascaritspeo00mclerich/page/104/mode/2up",
+    "publisher": "Longmans, Green, and Co.; Internet Archive scan",
+    "license": "Citation and link only",
+    "source_type": "historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "mcleod_madagascar_people_1865",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_madagascar_met_merina",
+    "title": "Kingdoms of Madagascar: Maroserana and Merina",
+    "url": "https://www.metmuseum.org/essays/kingdoms-of-madagascar-maroserana-and-merina",
+    "publisher": "Metropolitan Museum of Art",
+    "license": "Citation and link only",
+    "source_type": "museum_scholarly_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "met_heilbrunn_merina_bortolot_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_mamluk_egypt_alexandria_portal",
     "title": "Alexandria in the Ottoman Era",
     "url": "https://www.alexandria.gov.eg/alex/english/Ottoman%20Era.html",

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 737,
-    "events": 5179,
-    "sources": 930,
-    "registry_polities": 2093
+    "entities": 739,
+    "events": 5184,
+    "sources": 943,
+    "registry_polities": 2095
   },
   "year_range": {
     "start": -1274,
@@ -128,6 +128,7 @@
     "accepted_wave8_rebel_barons_hced_events": 6,
     "accepted_wave8_thebes_hced_events": 6,
     "accepted_wave8_alemanni_hced_events": 8,
+    "accepted_wave8_madagascar_hced_events": 5,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6972,7 +6973,66 @@
     "wave8_alemanni_outcome_overrides": [],
     "wave8_alemanni_entities_added": 12,
     "wave8_alemanni_sources_added": 12,
-    "hced_label_pass_input_rows": 5790,
+    "wave8_madagascar_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 5,
+      "new_entities": 2,
+      "new_sources": 13,
+      "newly_rated_events": 5,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 5,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_madagascar_cohort_counts": {
+      "anglo_french_tamatave_expedition_1845": 1,
+      "first_franco_hova_war_1883_1885": 1,
+      "second_franco_hova_war_1894_1895": 3
+    },
+    "wave8_madagascar_queue_validation": {
+      "external_owner_contracts": 0,
+      "holds": 0,
+      "promotion_contracts": 5,
+      "reviewed_hced_rows": 5,
+      "terminal_exclusions": 0
+    },
+    "wave8_madagascar_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "external_owner_hced_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "integration_dispositions": 0,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 5
+    },
+    "wave8_madagascar_candidate_ids": [
+      "hced-Andriba1895-1",
+      "hced-Tamatave1845-1",
+      "hced-Tamatave1883-1",
+      "hced-Tananarive1895-1",
+      "hced-Tsarasoatra1895-1"
+    ],
+    "wave8_madagascar_holds": [],
+    "wave8_madagascar_terminal_exclusions": [],
+    "wave8_madagascar_external_owner_dispositions": [],
+    "wave8_madagascar_hced_duplicate_dispositions": [],
+    "wave8_madagascar_cross_lane_dispositions": [],
+    "wave8_madagascar_iwbd_duplicate_dispositions": [],
+    "wave8_madagascar_existing_release_duplicate_dispositions": [],
+    "wave8_madagascar_integration_dispositions": [],
+    "wave8_madagascar_outcome_overrides": [],
+    "wave8_madagascar_entities_added": 2,
+    "wave8_madagascar_sources_added": 13,
+    "hced_label_pass_input_rows": 5785,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6985,7 +7045,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 814,
+      "reserved_candidate_contract": 819,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6997,7 +7057,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2278,
+      "no_unique_time_valid_label_match": 2273,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

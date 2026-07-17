@@ -6244,6 +6244,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "french_july_monarchy",
+      "name": "French July Monarchy",
+      "kind": "constitutional_monarchy",
+      "start_year": 1830,
+      "end_year": 1848,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "France and overseas operations"
+    },
+    {
       "id": "clio_q5501836_1800_019af7d4",
       "name": "French Louisiana",
       "kind": "polity",
@@ -10481,6 +10491,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kingdom_madagascar_merina_1817_1895",
+      "name": "Kingdom of Madagascar under the Merina monarchy (1817-1895)",
+      "kind": "kingdom",
+      "start_year": 1817,
+      "end_year": 1895,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Madagascar"
     },
     {
       "id": "clio_q836676_1279_b3af7dda",
@@ -22304,11 +22324,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2093,
-    "rated_entities": 730,
-    "rated_events": 5179,
+    "registry_polities": 2095,
+    "rated_entities": 732,
+    "rated_events": 5184,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18215,
+    "unresolved_event_candidates": 18210,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22366,6 +22386,7 @@
     "candidate_keyed_wave8_rebel_barons_hced_events": 6,
     "candidate_keyed_wave8_thebes_hced_events": 6,
     "candidate_keyed_wave8_alemanni_hced_events": 8,
+    "candidate_keyed_wave8_madagascar_hced_events": 5,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22376,21 +22397,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4915,
-      "candidate_keyed_reviewed_contracts": 605,
+      "hced_candidate_bindings": 4920,
+      "candidate_keyed_reviewed_contracts": 610,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4823,
-      "location_provenance_objects": 4872,
-      "point_fields_withheld_by_quarantine": 181,
+      "modern_location_country_assertions": 4828,
+      "location_provenance_objects": 4877,
+      "point_fields_withheld_by_quarantine": 186,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 91,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 43,
-      "unique_events_with_any_quarantined_field": 229,
-      "point_quarantine_candidate_manifest_sha256": "539accb5f15ead8c32c3566304d3d095dfa71893f61d9a96892baff95169e0b7",
+      "unique_events_with_any_quarantined_field": 234,
+      "point_quarantine_candidate_manifest_sha256": "b8f1421c94266627efb4f0fca13ca8e62c8b824e3ce57dcbcd81f56add9ee98b",
       "country_quarantine_candidate_manifest_sha256": "d84630db63f54ea4e97f4a0ab0d6bbbd0f0b0a93ac2c150d2a957460fd8620fd",
-      "quarantine_policy_sha256": "ecfc0427af121f9bcbc3f45c00246c1de94dacd0ae6c49f66071e77151e1dccb",
+      "quarantine_policy_sha256": "90e54391453d96830e12b771f1e77801576fd877d6636170722a7648f75bd743",
       "assertion_status": {
-        "unreviewed_source_assertion": 4872
+        "unreviewed_source_assertion": 4877
       },
       "verified_location_assertions": {
         "availability": "not_available",

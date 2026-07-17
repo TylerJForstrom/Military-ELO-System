@@ -7227,6 +7227,21 @@
     ]
   },
   {
+    "id": "kingdom_madagascar_merina_1817_1895",
+    "name": "Kingdom of Madagascar under the Merina monarchy (1817-1895)",
+    "kind": "kingdom",
+    "start_year": 1817,
+    "end_year": 1895,
+    "region": "Madagascar",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The internationally styled Kingdom of Madagascar governed by the Merina monarchy from Radama I's 1817 British recognition through the capitulation at Tananarive in 1895. No rating is inherited by the French protectorate or colony, the post-1960 republic, a generic Malagasy people, or any modern state. The identity is installed only for candidate-keyed contracts and opens no Madagascar alias fallback.",
+    "source_ids": [
+      "wave8_madagascar_cambridge_imperial",
+      "wave8_madagascar_met_merina"
+    ]
+  },
+  {
     "id": "maqoma_ngqika_rharhabe_force_1818",
     "name": "Maqoma's Ngqika-Rharhabe force at Amalinde",
     "kind": "indigenous_war_party",
@@ -7605,6 +7620,21 @@
     "continuity_note": "Regime-bounded imamate from Ghazi Muhammad's proclamation as imam of Dagestan in 1829 through his death at Gimrah in 1832. No rating is inherited by a generic Dagestan label, Hamza Bek's intervening regime, Shamil's later imamate, any ethnic community, or a modern state.",
     "source_ids": [
       "wave8_dagestan_gammer_muslim_resistance"
+    ]
+  },
+  {
+    "id": "french_july_monarchy",
+    "name": "French July Monarchy",
+    "kind": "constitutional_monarchy",
+    "start_year": 1830,
+    "end_year": 1848,
+    "region": "France and overseas operations",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The constitutional regime of Louis-Philippe from August 1830 until the February 1848 revolution. No rating is inherited by Bourbon Restoration France, the Second Republic, any later French regime, or the modern state. No generic France alias is opened.",
+    "source_ids": [
+      "wave8_madagascar_cnrs_july_monarchy",
+      "wave8_madagascar_france_july_monarchy"
     ]
   },
   {

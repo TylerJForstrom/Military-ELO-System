@@ -1031,6 +1031,30 @@ from .wave8_alemanni import (
     wave8_alemanni_counts,
     wave8_alemanni_spelling_counts,
 )
+from .wave8_madagascar import (
+    WAVE8_MADAGASCAR_CONTRACT_IDS,
+    WAVE8_MADAGASCAR_CROSS_LANE_DISPOSITIONS,
+    WAVE8_MADAGASCAR_ENTITIES,
+    WAVE8_MADAGASCAR_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_MADAGASCAR_EXTERNAL_OWNER_DISPOSITIONS,
+    WAVE8_MADAGASCAR_HCED_DUPLICATE_DISPOSITIONS,
+    WAVE8_MADAGASCAR_HOLD_IDS,
+    WAVE8_MADAGASCAR_HOLDS,
+    WAVE8_MADAGASCAR_INTEGRATION_DISPOSITIONS,
+    WAVE8_MADAGASCAR_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_MADAGASCAR_OUTCOME_OVERRIDES,
+    WAVE8_MADAGASCAR_RESERVED_IDS,
+    WAVE8_MADAGASCAR_SOURCES,
+    WAVE8_MADAGASCAR_TERMINAL_EXCLUSION_IDS,
+    WAVE8_MADAGASCAR_TERMINAL_EXCLUSIONS,
+    install_wave8_madagascar_entities,
+    install_wave8_madagascar_sources,
+    promote_wave8_madagascar_contracts,
+    validate_wave8_madagascar_integration_dispositions,
+    validate_wave8_madagascar_queue_contracts,
+    wave8_madagascar_cohort_counts,
+    wave8_madagascar_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1103,6 +1127,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_REBEL_BARONS_RESERVED_IDS
     | WAVE8_THEBES_RESERVED_IDS
     | WAVE8_ALEMANNI_RESERVED_IDS
+    | WAVE8_MADAGASCAR_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1507,7 +1532,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 181
+        len(HCED_POINT_QUARANTINE_IDS) != 186
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 91
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1727,6 +1752,9 @@ def build_expanded_release(
     )
     wave8_thebes_queue_validation = validate_wave8_thebes_queue_contracts(hced)
     wave8_alemanni_queue_validation = validate_wave8_alemanni_queue_contracts(hced)
+    wave8_madagascar_queue_validation = (
+        validate_wave8_madagascar_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -2086,6 +2114,7 @@ def build_expanded_release(
     install_wave8_rebel_barons_entities(release_entities)
     install_wave8_thebes_entities(release_entities)
     install_wave8_alemanni_entities(release_entities)
+    install_wave8_madagascar_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3269,6 +3298,15 @@ def build_expanded_release(
         release_entities,
         wave8_alemanni_existing_events,
     )
+    wave8_madagascar_existing_events = [
+        *wave8_alemanni_existing_events,
+        *wave8_alemanni_events,
+    ]
+    wave8_madagascar_events = promote_wave8_madagascar_contracts(
+        hced,
+        release_entities,
+        wave8_madagascar_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3323,6 +3361,7 @@ def build_expanded_release(
         *wave8_rebel_barons_events,
         *wave8_thebes_events,
         *wave8_alemanni_events,
+        *wave8_madagascar_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3422,6 +3461,8 @@ def build_expanded_release(
             *WAVE8_THEBES_TERMINAL_EXCLUSION_IDS,
             *WAVE8_ALEMANNI_HOLD_IDS,
             *WAVE8_ALEMANNI_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_MADAGASCAR_HOLD_IDS,
+            *WAVE8_MADAGASCAR_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3502,6 +3543,7 @@ def build_expanded_release(
         *wave8_rebel_barons_events,
         *wave8_thebes_events,
         *wave8_alemanni_events,
+        *wave8_madagascar_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3753,6 +3795,13 @@ def build_expanded_release(
             wave8_alemanni_existing_events,
         )
     )
+    wave8_madagascar_integration_validation = (
+        validate_wave8_madagascar_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_madagascar_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -3952,6 +4001,7 @@ def build_expanded_release(
     install_wave8_rebel_barons_sources(sources_by_id)
     install_wave8_thebes_sources(sources_by_id)
     install_wave8_alemanni_sources(sources_by_id)
+    install_wave8_madagascar_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4011,6 +4061,7 @@ def build_expanded_release(
         *wave8_rebel_barons_events,
         *wave8_thebes_events,
         *wave8_alemanni_events,
+        *wave8_madagascar_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -4070,6 +4121,7 @@ def build_expanded_release(
         *wave8_rebel_barons_events,
         *wave8_thebes_events,
         *wave8_alemanni_events,
+        *wave8_madagascar_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4128,6 +4180,7 @@ def build_expanded_release(
             | WAVE8_REBEL_BARONS_CONTRACT_IDS
             | WAVE8_THEBES_CONTRACT_IDS
             | WAVE8_ALEMANNI_CONTRACT_IDS
+            | WAVE8_MADAGASCAR_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4228,6 +4281,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_REBEL_BARONS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_THEBES_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_ALEMANNI_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_MADAGASCAR_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4455,6 +4509,7 @@ def build_expanded_release(
         - len(wave8_rebel_barons_events)
         - len(wave8_thebes_events)
         - len(wave8_alemanni_events)
+        - len(wave8_madagascar_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4575,6 +4630,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_thebes_hced_events": len(wave8_thebes_events),
         "candidate_keyed_wave8_alemanni_hced_events": len(wave8_alemanni_events),
+        "candidate_keyed_wave8_madagascar_hced_events": len(
+            wave8_madagascar_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4837,6 +4895,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_thebes_hced_events": len(wave8_thebes_events),
             "accepted_wave8_alemanni_hced_events": len(wave8_alemanni_events),
+            "accepted_wave8_madagascar_hced_events": len(
+                wave8_madagascar_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -6648,6 +6709,73 @@ def build_expanded_release(
             ],
             "wave8_alemanni_entities_added": len(WAVE8_ALEMANNI_ENTITIES),
             "wave8_alemanni_sources_added": len(WAVE8_ALEMANNI_SOURCES),
+            "wave8_madagascar_counts": wave8_madagascar_counts(),
+            "wave8_madagascar_cohort_counts": wave8_madagascar_cohort_counts(),
+            "wave8_madagascar_queue_validation": (
+                wave8_madagascar_queue_validation
+            ),
+            "wave8_madagascar_integration_validation": (
+                wave8_madagascar_integration_validation
+            ),
+            "wave8_madagascar_candidate_ids": sorted(
+                WAVE8_MADAGASCAR_CONTRACT_IDS
+            ),
+            "wave8_madagascar_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MADAGASCAR_HOLDS.items()
+                )
+            ],
+            "wave8_madagascar_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MADAGASCAR_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_madagascar_external_owner_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MADAGASCAR_EXTERNAL_OWNER_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_hced_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MADAGASCAR_HCED_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_MADAGASCAR_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_MADAGASCAR_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_MADAGASCAR_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_MADAGASCAR_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_madagascar_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_MADAGASCAR_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_madagascar_entities_added": len(WAVE8_MADAGASCAR_ENTITIES),
+            "wave8_madagascar_sources_added": len(WAVE8_MADAGASCAR_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -6895,6 +7023,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_thebes_hced_events": len(wave8_thebes_events),
         "candidate_keyed_wave8_alemanni_hced_events": len(wave8_alemanni_events),
+        "candidate_keyed_wave8_madagascar_hced_events": len(
+            wave8_madagascar_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
