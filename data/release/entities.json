@@ -5172,6 +5172,40 @@
     "start_year": 1531
   },
   {
+    "id": "pizarro_spanish_allied_garrison_cuzco_1536_1537",
+    "name": "Hernando Pizarro's Spanish-allied garrison at Cuzco (1536-1537)",
+    "kind": "event_bounded_siege_defense_coalition",
+    "start_year": 1536,
+    "end_year": 1537,
+    "region": "Cuzco and its immediate defenses",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Spaniards and Cañari, Chachapoya, Huanca, and other Andean allies who held Cuzco during Manco Inca's siege. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_himmerich_cuzco",
+      "wave8_inca_rebels_lavalle_pizarro",
+      "wave8_inca_rebels_sheppard_cuzco",
+      "wave8_inca_rebels_titu_cusi_bauer"
+    ]
+  },
+  {
+    "id": "manco_inca_rebel_siege_army_cuzco_1536_1537",
+    "name": "Manco Inca's siege army at Cuzco (1536-1537)",
+    "kind": "event_bounded_rebel_siege_coalition",
+    "start_year": 1536,
+    "end_year": 1537,
+    "region": "Cuzco basin",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Manco Inca's four-suyu mobilization and commanders around Cuzco; it ends with the failed siege and withdrawal. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_himmerich_cuzco",
+      "wave8_inca_rebels_lavalle_pizarro",
+      "wave8_inca_rebels_sheppard_cuzco",
+      "wave8_inca_rebels_titu_cusi_bauer"
+    ]
+  },
+  {
     "id": "republic_geneva_1536_1798",
     "name": "Republic of Geneva (1536-1798)",
     "kind": "sovereign_city_republic",
@@ -5185,6 +5219,40 @@
       "wave8_savoy_geneva_archives_escalade",
       "wave8_savoy_hls_geneva_republic",
       "wave8_savoy_swiss_museum_escalade"
+    ]
+  },
+  {
+    "id": "hernando_pizarro_ollantaytambo_expedition_1537",
+    "name": "Hernando Pizarro's expedition at Ollantaytambo (1537)",
+    "kind": "event_bounded_assault_coalition",
+    "start_year": 1537,
+    "end_year": 1537,
+    "region": "Ollantaytambo and the Mascabamba plain",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Hernando Pizarro's mounted and foot expedition and its Andean auxiliaries in the failed January assault. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_lavalle_pizarro",
+      "wave8_inca_rebels_pbs_ollantaytambo",
+      "wave8_inca_rebels_sheppard_cuzco",
+      "wave8_inca_rebels_titu_cusi_bauer"
+    ]
+  },
+  {
+    "id": "manco_inca_ollantaytambo_defenders_1537",
+    "name": "Manco Inca's defenders at Ollantaytambo (1537)",
+    "kind": "event_bounded_fortified_field_force",
+    "start_year": 1537,
+    "end_year": 1537,
+    "region": "Ollantaytambo and the Mascabamba plain",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Manco Inca's troops defending the terraces, town, river approaches, and flooded plain during the January action. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_lavalle_pizarro",
+      "wave8_inca_rebels_pbs_ollantaytambo",
+      "wave8_inca_rebels_sheppard_cuzco",
+      "wave8_inca_rebels_titu_cusi_bauer"
     ]
   },
   {
@@ -5319,6 +5387,23 @@
     ]
   },
   {
+    "id": "hurtado_arbieto_spanish_andean_expedition_huayna_pucara_1572",
+    "name": "Hurtado de Arbieto's Spanish-Andean force at Huayna Pucara (1572)",
+    "kind": "event_bounded_colonial_expedition",
+    "start_year": 1572,
+    "end_year": 1572,
+    "region": "Vilcabamba road and Huayna Pucara",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal expedition under Martin Hurtado de Arbieto, including Spanish companies and Cañari, Chachapoya, and other Andean allies engaged at the fortified ridge. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_bauer_vilcabamba",
+      "wave8_inca_rebels_casevitz_huayna_pucara",
+      "wave8_inca_rebels_murua_huayna_pucara",
+      "wave8_inca_rebels_oxford_vilcabamba"
+    ]
+  },
+  {
     "id": "kingdom_mysore",
     "name": "Kingdom of Mysore",
     "kind": "kingdom",
@@ -5335,6 +5420,23 @@
       "cliopatria_polities",
       "britannica_mysore_wars",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "tupac_amaru_vilcabamba_defenders_huayna_pucara_1572",
+    "name": "Tupac Amaru's Vilcabamba defenders at Huayna Pucara (1572)",
+    "kind": "event_bounded_fortress_defense",
+    "start_year": 1572,
+    "end_year": 1572,
+    "region": "Vilcabamba road and Huayna Pucara",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Vilcabamba captains and Anti archers defending the last fortified approach under Tupac Amaru's royal authority. No rating is inherited from or passed to the Inca Empire, the Neo-Inca state outside this operation, Peru, Spain, Indigenous allies as timeless peoples, or another rebel or colonial force.",
+    "source_ids": [
+      "wave8_inca_rebels_bauer_vilcabamba",
+      "wave8_inca_rebels_casevitz_huayna_pucara",
+      "wave8_inca_rebels_murua_huayna_pucara",
+      "wave8_inca_rebels_oxford_vilcabamba"
     ]
   },
   {

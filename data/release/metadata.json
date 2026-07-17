@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 790,
-    "events": 5215,
-    "sources": 1063,
-    "registry_polities": 2146
+    "entities": 796,
+    "events": 5218,
+    "sources": 1073,
+    "registry_polities": 2152
   },
   "year_range": {
     "start": -1274,
@@ -138,6 +138,7 @@
     "accepted_wave8_flanders_hced_events": 4,
     "accepted_wave8_france_bavaria_hced_events": 3,
     "accepted_wave8_eritrean_rebels_hced_events": 4,
+    "accepted_wave8_inca_rebels_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -9462,7 +9463,317 @@
     "wave8_eritrean_rebels_outcome_overrides": [],
     "wave8_eritrean_rebels_entities_added": 4,
     "wave8_eritrean_rebels_sources_added": 12,
-    "hced_label_pass_input_rows": 5745,
+    "wave8_inca_rebels_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_dispositions": 2,
+      "existing_release_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 6,
+      "new_sources": 10,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "related_hced_dispositions": 3,
+      "reviewed_hced_rows": 4,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 1,
+      "touched_hced_rows": 4
+    },
+    "wave8_inca_rebels_cohort_counts": {
+      "manco_inca_cuzco_revolt_1536_1537": 1,
+      "manco_inca_ollantaytambo_defense_1537": 1,
+      "vilcabamba_final_campaign_1572": 1
+    },
+    "wave8_inca_rebels_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 4,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_inca_rebels_integration_validation": {
+      "cross_lane_dispositions": 2,
+      "existing_inca_release_owners_verified": 3,
+      "existing_release_duplicate_dispositions": 0,
+      "integration_dispositions": 5,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "related_hced_dispositions": 3,
+      "release_probable_twins": 0
+    },
+    "wave8_inca_rebels_candidate_ids": [
+      "hced-Cuzco1537-1",
+      "hced-Huayna Pucara1572-1",
+      "hced-Ollantaytambo1537-1"
+    ],
+    "wave8_inca_rebels_holds": [],
+    "wave8_inca_rebels_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Cuzco1535-1",
+        "audit_note": "Independent Indigenous, scholarly-journal, monograph, and reference chronologies place Manco Inca's Cuzco siege in 1536-1537. No separate Spain-versus-Inca-Rebels battle at Cuzco in 1535 was located. The 1537 queue row owns the siege's terminal outcome; changing this locked row's year or rating both rows would invent or duplicate an event.",
+        "canonical_event": {
+          "canonical_key": "siege_of_cuzco:1536:1537",
+          "date_precision": "year_range",
+          "date_text": "1536-1537",
+          "granularity": "siege_campaign",
+          "name": "Siege of Cuzco",
+          "year_low": 1536,
+          "year_high": 1537
+        },
+        "disposition": "terminal_exclusion",
+        "duplicate_ownership": {
+          "owner_candidate_id": "hced-Cuzco1537-1",
+          "owner_module": "military_elo.promotion.wave8_inca_rebels",
+          "status": "same_siege_single_owner"
+        },
+        "evidence_refs": [
+          "wave8_inca_rebels_himmerich_cuzco",
+          "wave8_inca_rebels_lavalle_pizarro",
+          "wave8_inca_rebels_sheppard_cuzco",
+          "wave8_inca_rebels_titu_cusi_bauer",
+          "wave8_inca_rebels_treccani_cuzco"
+        ],
+        "exclusion_reason": "misdated_duplicate_of_1536_1537_siege",
+        "raw_row_sha256": "3709c9a9a7ca767d971d893c552ced7ba0001fb8f68896252a12fdf6608cf875",
+        "reviewed_outcome": "not_rateable_misdated_duplicate",
+        "terminal_exclusion": true,
+        "unknown_is_never_draw": true
+      }
+    ],
+    "wave8_inca_rebels_cross_lane_dispositions": [
+      {
+        "disposition_id": "existing_inca_empire_release_lane",
+        "disposition": "distinct_pre_rebellion_events_and_identity_boundary",
+        "evidence_refs": [
+          "wave8_inca_rebels_oxford_vilcabamba",
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "existing_candidate_ids": [
+          "hced-Cajamarca1532-1",
+          "hced-Teocajas1534-1",
+          "hced-Vilcaconga1524-1"
+        ],
+        "existing_entity_id": "clio_pe_inca_emp_1440_816cd40c",
+        "existing_event_ids": [
+          "hced_label_hced_cajamarca1532_1",
+          "hced_label_hced_teocajas1534_1",
+          "hced_label_hced_vilcaconga1524_1"
+        ],
+        "other_module": "core_hced_label_promotion",
+        "owned_candidate_ids": [
+          "hced-Cuzco1535-1",
+          "hced-Cuzco1537-1",
+          "hced-Huayna Pucara1572-1",
+          "hced-Ollantaytambo1537-1"
+        ],
+        "reason": "Cajamarca, Teocajas, and Vilcaconga are separately owned conquest events. This lane does not reuse their broad Inca Empire identity for Manco Inca's revolt or Tupac Amaru's Vilcabamba defense."
+      },
+      {
+        "disposition_id": "wave8_peruvian_rebels",
+        "disposition": "distinct_later_anti_colonial_lane",
+        "evidence_refs": [
+          "wave8_inca_rebels_oxford_vilcabamba"
+        ],
+        "other_module": "wave8_peruvian_rebels",
+        "owned_candidate_ids": [
+          "hced-Cuzco1535-1",
+          "hced-Cuzco1537-1",
+          "hced-Huayna Pucara1572-1",
+          "hced-Ollantaytambo1537-1"
+        ],
+        "reason": "The Peruvian Rebels lane begins with nineteenth-century Cuzco and independence forces. Shared geography and anti-colonial context do not create common event or polity ownership."
+      }
+    ],
+    "wave8_inca_rebels_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Cuzco1532-1",
+        "disposition": "distinct_cuzco_event",
+        "evidence_refs": [
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "ef0ad8dc6df7febc7b9ab58f66b7c4b9be3a3a6d7ca02fa22fbbf6554ceeadb7",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "different_war_year_and_actors",
+        "reason": "The 1532 row is an Atahualpa-Huascar succession-war event, not Manco Inca's later anti-Spanish siege."
+      },
+      {
+        "candidate_id": "hced-Cuzco1535-1",
+        "disposition": "same_siege_single_owner",
+        "evidence_refs": [
+          "wave8_inca_rebels_himmerich_cuzco",
+          "wave8_inca_rebels_sheppard_cuzco",
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "3709c9a9a7ca767d971d893c552ced7ba0001fb8f68896252a12fdf6608cf875",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "misdated_duplicate_of_1536_1537_siege",
+        "reason": "Both rows describe the one Manco Inca siege. The 1537 row owns its terminal result; the unsupported 1535 row is terminally excluded."
+      },
+      {
+        "candidate_id": "hced-Cuzco1780-1",
+        "disposition": "distinct_cuzco_event",
+        "evidence_refs": [
+          "wave8_inca_rebels_treccani_cuzco"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "90523a9a652fdff3cc7a2de53aa0e686ae9493105b9ca80d0ad3398df5464b4a",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "different_century_rebellion_and_actors",
+        "reason": "The 1780 row belongs to the Tupac Amaru II rebellion more than two centuries later and shares only the city label."
+      }
+    ],
+    "wave8_inca_rebels_iwbd_duplicate_dispositions": [],
+    "wave8_inca_rebels_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Cuzco1535-1",
+        "aliases": [
+          "cusco",
+          "cuzco",
+          "siege of cusco",
+          "siege of cuzco"
+        ],
+        "years": [
+          1535
+        ]
+      },
+      {
+        "audit_id": "hced-Cuzco1537-1",
+        "aliases": [
+          "cusco",
+          "cuzco",
+          "end of the siege of cuzco",
+          "siege of cusco",
+          "siege of cuzco"
+        ],
+        "years": [
+          1537
+        ]
+      },
+      {
+        "audit_id": "hced-Huayna Pucara1572-1",
+        "aliases": [
+          "capture of huayna pucara",
+          "huayna pucara",
+          "huayna pukara",
+          "wayna pucara",
+          "wayna pukara"
+        ],
+        "years": [
+          1572
+        ]
+      },
+      {
+        "audit_id": "hced-Ollantaytambo1537-1",
+        "aliases": [
+          "battle of ollantaytambo",
+          "ollantaytambo",
+          "ollantaytampu",
+          "tambo"
+        ],
+        "years": [
+          1537
+        ]
+      }
+    ],
+    "wave8_inca_rebels_existing_release_duplicate_dispositions": [],
+    "wave8_inca_rebels_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:existing_inca_empire_release_lane",
+        "disposition": "distinct_pre_rebellion_events_and_identity_boundary",
+        "evidence_refs": [
+          "wave8_inca_rebels_oxford_vilcabamba",
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "existing_candidate_ids": [
+          "hced-Cajamarca1532-1",
+          "hced-Teocajas1534-1",
+          "hced-Vilcaconga1524-1"
+        ],
+        "existing_entity_id": "clio_pe_inca_emp_1440_816cd40c",
+        "existing_event_ids": [
+          "hced_label_hced_cajamarca1532_1",
+          "hced_label_hced_teocajas1534_1",
+          "hced_label_hced_vilcaconga1524_1"
+        ],
+        "other_module": "core_hced_label_promotion",
+        "owned_candidate_ids": [
+          "hced-Cuzco1535-1",
+          "hced-Cuzco1537-1",
+          "hced-Huayna Pucara1572-1",
+          "hced-Ollantaytambo1537-1"
+        ],
+        "reason": "Cajamarca, Teocajas, and Vilcaconga are separately owned conquest events. This lane does not reuse their broad Inca Empire identity for Manco Inca's revolt or Tupac Amaru's Vilcabamba defense."
+      },
+      {
+        "disposition_id": "cross_lane:wave8_peruvian_rebels",
+        "disposition": "distinct_later_anti_colonial_lane",
+        "evidence_refs": [
+          "wave8_inca_rebels_oxford_vilcabamba"
+        ],
+        "other_module": "wave8_peruvian_rebels",
+        "owned_candidate_ids": [
+          "hced-Cuzco1535-1",
+          "hced-Cuzco1537-1",
+          "hced-Huayna Pucara1572-1",
+          "hced-Ollantaytambo1537-1"
+        ],
+        "reason": "The Peruvian Rebels lane begins with nineteenth-century Cuzco and independence forces. Shared geography and anti-colonial context do not create common event or polity ownership."
+      },
+      {
+        "disposition_id": "related_hced:hced-Cuzco1532-1",
+        "disposition": "distinct_cuzco_event",
+        "evidence_refs": [
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "ef0ad8dc6df7febc7b9ab58f66b7c4b9be3a3a6d7ca02fa22fbbf6554ceeadb7",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "different_war_year_and_actors",
+        "reason": "The 1532 row is an Atahualpa-Huascar succession-war event, not Manco Inca's later anti-Spanish siege."
+      },
+      {
+        "disposition_id": "related_hced:hced-Cuzco1535-1",
+        "disposition": "same_siege_single_owner",
+        "evidence_refs": [
+          "wave8_inca_rebels_himmerich_cuzco",
+          "wave8_inca_rebels_sheppard_cuzco",
+          "wave8_inca_rebels_titu_cusi_bauer"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "3709c9a9a7ca767d971d893c552ced7ba0001fb8f68896252a12fdf6608cf875",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "misdated_duplicate_of_1536_1537_siege",
+        "reason": "Both rows describe the one Manco Inca siege. The 1537 row owns its terminal result; the unsupported 1535 row is terminally excluded."
+      },
+      {
+        "disposition_id": "related_hced:hced-Cuzco1780-1",
+        "disposition": "distinct_cuzco_event",
+        "evidence_refs": [
+          "wave8_inca_rebels_treccani_cuzco"
+        ],
+        "owner_module": "military_elo.promotion.wave8_inca_rebels",
+        "raw_row_sha256": "90523a9a652fdff3cc7a2de53aa0e686ae9493105b9ca80d0ad3398df5464b4a",
+        "related_hced_candidate_id": "hced-Cuzco1537-1",
+        "related_raw_row_sha256": "3447079fefdc651c7b57d59c6b12093726b80513d17d8d9e52a848bab9c3d178",
+        "relationship": "different_century_rebellion_and_actors",
+        "reason": "The 1780 row belongs to the Tupac Amaru II rebellion more than two centuries later and shares only the city label."
+      }
+    ],
+    "wave8_inca_rebels_outcome_overrides": [],
+    "wave8_inca_rebels_entities_added": 6,
+    "wave8_inca_rebels_sources_added": 10,
+    "hced_label_pass_input_rows": 5741,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -9475,7 +9786,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 859,
+      "reserved_candidate_contract": 863,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -9487,7 +9798,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2234,
+      "no_unique_time_valid_label_match": 2230,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

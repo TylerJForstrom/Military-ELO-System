@@ -9347,6 +9347,156 @@
     ]
   },
   {
+    "id": "wave8_inca_rebels_bauer_vilcabamba",
+    "title": "Voices from Vilcabamba: Accounts Chronicling the Fall of the Inca Empire",
+    "url": "https://upcolorado.com/media/acfupload/9781607324263_sample.pdf",
+    "publisher": "University Press of Colorado",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edited_primary_sources",
+    "accessed": "2026-07-16",
+    "source_family_id": "bauer_vilcabamba_2016",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_casevitz_huayna_pucara",
+    "title": "Al este de los Andes: sociedades amazonicas y andinas, siglos XV-XVII",
+    "url": "https://centroderecursos.cultura.pe/sites/default/files/rb/pdf/Al-este-de-los-Andes-Relaciones-entre-las-sociedades-amazonicas-y-andinas-entre-los-siglos-XV-y-XVII.pdf",
+    "publisher": "Ministerio de Cultura del Peru / IFEA",
+    "license": "Citation and link only",
+    "source_type": "scholarly_edited_volume",
+    "accessed": "2026-07-16",
+    "source_family_id": "renard_casevitz_east_andes_2008",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_himmerich_cuzco",
+    "title": "The 1536 Siege of Cuzco: An Analysis of Inca and Spanish Warfare",
+    "url": "https://digitalrepository.unm.edu/clahr/vol7/iss4/2/",
+    "publisher": "Colonial Latin American Historical Review, University of New Mexico",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "himmerich_y_valencia_cuzco_1998",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_lavalle_pizarro",
+    "title": "Francisco Pizarro: El ano de todos los peligros (1536-1537)",
+    "url": "https://books.openedition.org/ifea/940",
+    "publisher": "Institut francais d'etudes andines",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "lavalle_francisco_pizarro_2004",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_murua_huayna_pucara",
+    "title": "The General History of Peru, Book 1, chapter 81",
+    "url": "https://www.jstor.org/stable/jj.20367929.88",
+    "publisher": "University Press of Colorado / JSTOR",
+    "license": "Citation and link only",
+    "source_type": "translated_early_colonial_chronicle",
+    "accessed": "2026-07-16",
+    "source_family_id": "murua_bauer_gamarra_gonzales_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_oxford_vilcabamba",
+    "title": "Vilcabamba: Last Stronghold of the Inca",
+    "url": "https://doi.org/10.1093/oxfordhb/9780190219352.013.27",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_handbook_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "lee_oxford_vilcabamba_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_pbs_ollantaytambo",
+    "title": "Conquistadors: Pizarro - the Great Rebellion and Ollantaytambo",
+    "url": "https://www.pbs.org/conquistadors/pizarro/pizarro_i03.html",
+    "publisher": "PBS",
+    "license": "Citation and link only",
+    "source_type": "public_history_documentary_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "pbs_conquistadors_pizarro_2001",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_sheppard_cuzco",
+    "title": "Cuzco 1536-37: Battle for the Heart of the Inca Empire",
+    "url": "https://books.google.com/books?id=ADctEAAAQBAJ",
+    "publisher": "Bloomsbury / Osprey Campaign",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "sheppard_cuzco_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_titu_cusi_bauer",
+    "title": "An Inca Account of the Conquest of Peru",
+    "url": "https://www.ubcpress.ca/an-inca-account-of-the-conquest-of-peru",
+    "publisher": "University Press of Colorado / UBC Press",
+    "license": "Citation and link only",
+    "source_type": "translated_indigenous_primary_source",
+    "accessed": "2026-07-16",
+    "source_family_id": "titu_cusi_bauer_2005",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_inca_rebels_treccani_cuzco",
+    "title": "Cuzco",
+    "url": "https://www.treccani.it/enciclopedia/cuzco/",
+    "publisher": "Istituto della Enciclopedia Italiana",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "treccani_cuzco",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_insubrian_cambridge_expansion_west",
     "title": "Roman expansion in the west",
     "url": "https://doi.org/10.1017/CHOL9780521234481.006",

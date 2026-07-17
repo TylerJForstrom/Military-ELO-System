@@ -7864,6 +7864,26 @@
       "region": "Chesterfield, Derbyshire"
     },
     {
+      "id": "pizarro_spanish_allied_garrison_cuzco_1536_1537",
+      "name": "Hernando Pizarro's Spanish-allied garrison at Cuzco (1536-1537)",
+      "kind": "event_bounded_siege_defense_coalition",
+      "start_year": 1536,
+      "end_year": 1537,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cuzco and its immediate defenses"
+    },
+    {
+      "id": "hernando_pizarro_ollantaytambo_expedition_1537",
+      "name": "Hernando Pizarro's expedition at Ollantaytambo (1537)",
+      "kind": "event_bounded_assault_coalition",
+      "start_year": 1537,
+      "end_year": 1537,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ollantaytambo and the Mascabamba plain"
+    },
+    {
       "id": "clio_ye_himyar_1_bce110_8dfe05b7",
       "name": "Himyarite Kingdom",
       "kind": "kingdom",
@@ -8228,6 +8248,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hurtado_arbieto_spanish_andean_expedition_huayna_pucara_1572",
+      "name": "Hurtado de Arbieto's Spanish-Andean force at Huayna Pucara (1572)",
+      "kind": "event_bounded_colonial_expedition",
+      "start_year": 1572,
+      "end_year": 1572,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vilcabamba road and Huayna Pucara"
     },
     {
       "id": "clio_q5949588_1534_61e1d64c",
@@ -12698,6 +12728,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Egypt and the Levant"
+    },
+    {
+      "id": "manco_inca_ollantaytambo_defenders_1537",
+      "name": "Manco Inca's defenders at Ollantaytambo (1537)",
+      "kind": "event_bounded_fortified_field_force",
+      "start_year": 1537,
+      "end_year": 1537,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ollantaytambo and the Mascabamba plain"
+    },
+    {
+      "id": "manco_inca_rebel_siege_army_cuzco_1536_1537",
+      "name": "Manco Inca's siege army at Cuzco (1536-1537)",
+      "kind": "event_bounded_rebel_siege_coalition",
+      "start_year": 1536,
+      "end_year": 1537,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cuzco basin"
     },
     {
       "id": "maqoma_ngqika_rharhabe_force_1818",
@@ -21012,6 +21062,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "tupac_amaru_vilcabamba_defenders_huayna_pucara_1572",
+      "name": "Tupac Amaru's Vilcabamba defenders at Huayna Pucara (1572)",
+      "kind": "event_bounded_fortress_defense",
+      "start_year": 1572,
+      "end_year": 1572,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vilcabamba road and Huayna Pucara"
+    },
+    {
       "id": "clio_q654380_561_f7b201cd",
       "name": "Turk Shahis",
       "kind": "polity",
@@ -22834,11 +22894,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2146,
-    "rated_entities": 783,
-    "rated_events": 5215,
+    "registry_polities": 2152,
+    "rated_entities": 789,
+    "rated_events": 5218,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18179,
+    "unresolved_event_candidates": 18176,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22906,6 +22966,7 @@
     "candidate_keyed_wave8_flanders_hced_events": 4,
     "candidate_keyed_wave8_france_bavaria_hced_events": 3,
     "candidate_keyed_wave8_eritrean_rebels_hced_events": 4,
+    "candidate_keyed_wave8_inca_rebels_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22916,21 +22977,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4951,
-      "candidate_keyed_reviewed_contracts": 641,
+      "hced_candidate_bindings": 4954,
+      "candidate_keyed_reviewed_contracts": 644,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4858,
-      "location_provenance_objects": 4907,
-      "point_fields_withheld_by_quarantine": 217,
+      "modern_location_country_assertions": 4861,
+      "location_provenance_objects": 4910,
+      "point_fields_withheld_by_quarantine": 220,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 265,
-      "point_quarantine_candidate_manifest_sha256": "e9366bc8d7817b3b63111507dfc5a089f4bc626c45a0c53b1b5c35fe5db76e02",
+      "unique_events_with_any_quarantined_field": 268,
+      "point_quarantine_candidate_manifest_sha256": "34d698e942205a1c2605cc3ba279f36786f374f568c8ad677a475ba22dde3377",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "977dca107057092cc8e6ca1ff6c843033faa0d39f94b41a113f628edafde2f09",
+      "quarantine_policy_sha256": "7c1b293bff583c61d6851888bd77d7ee2b5272a9b5097f69a828b56ebd0d5142",
       "assertion_status": {
-        "unreviewed_source_assertion": 4907
+        "unreviewed_source_assertion": 4910
       },
       "verified_location_assertions": {
         "availability": "not_available",
