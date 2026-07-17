@@ -2486,6 +2486,23 @@
     ]
   },
   {
+    "id": "muizz_al_din_ghurid_eastern_army_1173_1206",
+    "name": "Mu'izz al-Din Muhammad's Ghurid eastern army (1173-1206)",
+    "kind": "ruler_bounded_regime_command",
+    "start_year": 1173,
+    "end_year": 1206,
+    "region": "Ghazna-Punjab-northern India campaign sphere",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Ghurid eastern campaigning regime and command under Mu'izz al-Din Muhammad are rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_cambridge_talbot_prithviraj",
+      "wave8_rajputs_ignou_invasions_resistance",
+      "wave8_rajputs_ignou_tarain",
+      "wave8_rajputs_iranica_ghurids"
+    ]
+  },
+  {
     "id": "frederick_i_imperial_field_army_legnano_1176",
     "name": "Frederick I's imperial field army at Legnano (1176)",
     "kind": "event_bounded_imperial_field_army",
@@ -2529,6 +2546,23 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "prithviraja_iii_chahamana_regime_and_army_1178_1192",
+    "name": "Prithviraja III's Chahamana kingdom and field army (1178-1192)",
+    "kind": "ruler_bounded_dynastic_regime",
+    "start_year": 1178,
+    "end_year": 1192,
+    "region": "Ajmer-Delhi Chahamana realm",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Chahamana regime and army under Prithviraja III are rated; later literary claims of a timeless pan-Rajput host are not adopted. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_cambridge_talbot_prithviraj",
+      "wave8_rajputs_ignou_invasions_resistance",
+      "wave8_rajputs_ignou_tarain",
+      "wave8_rajputs_iranica_ghurids"
     ]
   },
   {
@@ -4185,6 +4219,38 @@
     ]
   },
   {
+    "id": "afghan_bengal_river_defense_ghaghra_1529",
+    "name": "Afghan-Bengal river defense at Ghaghra (1529)",
+    "kind": "event_bounded_coalition",
+    "start_year": 1529,
+    "end_year": 1529,
+    "region": "Ghaghra-Ganges confluence campaign, northern India",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Afghan force associated with Mahmud Lodi and the Bengal river defense associated with Nusrat Shah in this action are rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_baburnama_beveridge",
+      "wave8_rajputs_banglapedia_babur",
+      "wave8_rajputs_inflibnet_mughal_foundation"
+    ]
+  },
+  {
+    "id": "babur_mughal_field_army_ghaghra_1529",
+    "name": "Babur's Mughal field army at Ghaghra (1529)",
+    "kind": "event_bounded_imperial_field_army",
+    "start_year": 1529,
+    "end_year": 1529,
+    "region": "Ghaghra-Ganges confluence campaign, northern India",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Babur's army in the May 1529 river action is rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_baburnama_beveridge",
+      "wave8_rajputs_banglapedia_babur",
+      "wave8_rajputs_inflibnet_mughal_foundation"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Campaign-bounded Adal forces for the 1531–1543 invasion period identified by the reviewed source. No rating is inherited from a broader or namesake Adal polity.",
     "end_year": 1543,
@@ -5462,6 +5528,54 @@
     ]
   },
   {
+    "id": "jaipur_jodhpur_ismail_beg_coalition_patan_1790",
+    "name": "Jaipur-Jodhpur-Ismail Beg coalition at Patan (1790)",
+    "kind": "event_bounded_coalition",
+    "start_year": 1790,
+    "end_year": 1790,
+    "region": "Patan, Rajputana",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Jaipur and Jodhpur forces joined with Ismail Beg for the Patan engagement are rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_cambridge_grant_duff",
+      "wave8_rajputs_oxford_sahai",
+      "wave8_rajputs_usi_de_boigne"
+    ]
+  },
+  {
+    "id": "scindia_de_boigne_rajputana_campaign_army_1790",
+    "name": "Scindia-de Boigne Rajputana campaign army (1790)",
+    "kind": "regime_bounded_campaign_command",
+    "start_year": 1790,
+    "end_year": 1790,
+    "region": "Rajputana campaign under Mahadji Scindia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Mahadji Scindia's 1790 Hindustan army under de Boigne in the Patan-Merta campaign is rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_cambridge_grant_duff",
+      "wave8_rajputs_oxford_sahai",
+      "wave8_rajputs_usi_de_boigne"
+    ]
+  },
+  {
+    "id": "vijai_singh_marwar_rathor_army_merta_1790",
+    "name": "Vijai Singh's Marwar Rathor army at Merta (1790)",
+    "kind": "ruler_and_event_bounded_kingdom_command",
+    "start_year": 1790,
+    "end_year": 1790,
+    "region": "Marwar kingdom and Merta, Rajputana",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Maharaja Vijai Singh's Marwar Rathor army in the Merta action is rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_cambridge_grant_duff",
+      "wave8_rajputs_oxford_sahai",
+      "wave8_rajputs_usi_de_boigne"
+    ]
+  },
+  {
     "id": "upper_canada_colonial_government_1791_1841",
     "name": "Colonial Government of Upper Canada (1791–1841)",
     "kind": "colony",
@@ -5678,6 +5792,22 @@
     ]
   },
   {
+    "id": "sawai_pratap_singh_jaipur_army_fatehpur_1799",
+    "name": "Sawai Pratap Singh's Jaipur army at Fatehpur (1799)",
+    "kind": "ruler_and_event_bounded_kingdom_command",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Jaipur kingdom and Fatehpur Shekhawati, Rajasthan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Jaipur kingdom's Fatehpur force under Sawai Pratap Singh's authority and its named field command is rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_compton_adventurers",
+      "wave8_rajputs_culture_fatehpur",
+      "wave8_rajputs_francklin_george_thomas"
+    ]
+  },
+  {
     "id": "sikh_empire",
     "name": "Sikh Empire",
     "kind": "empire",
@@ -5693,6 +5823,22 @@
       "cliopatria_polities",
       "britannica_ranjit_singh",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "vaman_rao_george_thomas_fatehpur_expedition_1799",
+    "name": "Vamana Rao-George Thomas Fatehpur expedition (1799)",
+    "kind": "event_bounded_coalition_command",
+    "start_year": 1799,
+    "end_year": 1799,
+    "region": "Fatehpur Shekhawati, Rajasthan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the March 1799 Maratha-associated expedition under Vamana Rao with George Thomas's contingent is rated. No rating is inherited by or from a generic Rajput identity, another kingdom or dynasty, another ruler or command, a later state, or any modern ethnic or political community.",
+    "source_ids": [
+      "wave8_rajputs_compton_adventurers",
+      "wave8_rajputs_culture_fatehpur",
+      "wave8_rajputs_francklin_george_thomas"
     ]
   },
   {

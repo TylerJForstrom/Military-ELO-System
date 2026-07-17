@@ -494,6 +494,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "afghan_bengal_river_defense_ghaghra_1529",
+      "name": "Afghan-Bengal river defense at Ghaghra (1529)",
+      "kind": "event_bounded_coalition",
+      "start_year": 1529,
+      "end_year": 1529,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ghaghra-Ganges confluence campaign, northern India"
+    },
+    {
       "id": "clio_af_afghanistan_rep_1979_be079286",
       "name": "Afghanistan",
       "kind": "polity",
@@ -1258,6 +1268,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "babur_mughal_field_army_ghaghra_1529",
+      "name": "Babur's Mughal field army at Ghaghra (1529)",
+      "kind": "event_bounded_imperial_field_army",
+      "start_year": 1529,
+      "end_year": 1529,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ghaghra-Ganges confluence campaign, northern India"
     },
     {
       "id": "clio_iq_babylonia_1_bce1800_120c81a4",
@@ -8250,6 +8270,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "jaipur_jodhpur_ismail_beg_coalition_patan_1790",
+      "name": "Jaipur-Jodhpur-Ismail Beg coalition at Patan (1790)",
+      "kind": "event_bounded_coalition",
+      "start_year": 1790,
+      "end_year": 1790,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Patan, Rajputana"
+    },
+    {
       "id": "jakob_morenga_resistance_force_1903_1907",
       "name": "Jakob Morenga's resistance force (1903–1907)",
       "kind": "multi_community_resistance_force",
@@ -12744,6 +12774,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "muizz_al_din_ghurid_eastern_army_1173_1206",
+      "name": "Mu'izz al-Din Muhammad's Ghurid eastern army (1173-1206)",
+      "kind": "ruler_bounded_regime_command",
+      "start_year": 1173,
+      "end_year": 1206,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ghazna-Punjab-northern India campaign sphere"
+    },
+    {
       "id": "mughal_empire",
       "name": "Mughal Empire",
       "kind": "empire",
@@ -15296,6 +15336,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "prithviraja_iii_chahamana_regime_and_army_1178_1192",
+      "name": "Prithviraja III's Chahamana kingdom and field army (1178-1192)",
+      "kind": "ruler_bounded_dynastic_regime",
+      "start_year": 1178,
+      "end_year": 1192,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ajmer-Delhi Chahamana realm"
+    },
+    {
       "id": "clio_q600093_1702_f0946fde",
       "name": "Pro-Habsburg Spain",
       "kind": "polity",
@@ -17450,6 +17500,16 @@
       "region": "Savoy, Piedmont, Aosta, and Nice"
     },
     {
+      "id": "sawai_pratap_singh_jaipur_army_fatehpur_1799",
+      "name": "Sawai Pratap Singh's Jaipur army at Fatehpur (1799)",
+      "kind": "ruler_and_event_bounded_kingdom_command",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Jaipur kingdom and Fatehpur Shekhawati, Rajasthan"
+    },
+    {
       "id": "clio_q158151_1806_8c3f0e60",
       "name": "Saxe-Altenburg",
       "kind": "polity",
@@ -17555,6 +17615,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "scindia_de_boigne_rajputana_campaign_army_1790",
+      "name": "Scindia-de Boigne Rajputana campaign army (1790)",
+      "kind": "regime_bounded_campaign_command",
+      "start_year": 1790,
+      "end_year": 1790,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rajputana campaign under Mahadji Scindia"
     },
     {
       "id": "scottish_jacobite_army_1689",
@@ -20601,6 +20671,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "vaman_rao_george_thomas_fatehpur_expedition_1799",
+      "name": "Vamana Rao-George Thomas Fatehpur expedition (1799)",
+      "kind": "event_bounded_coalition_command",
+      "start_year": 1799,
+      "end_year": 1799,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Fatehpur Shekhawati, Rajasthan"
+    },
+    {
       "id": "wichita_expedition_us_army_force_1858_1859",
       "name": "Van Dorn's U.S. Army force in the Wichita Expedition (1858–1859)",
       "kind": "campaign_force",
@@ -20734,6 +20814,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "vijai_singh_marwar_rathor_army_merta_1790",
+      "name": "Vijai Singh's Marwar Rathor army at Merta (1790)",
+      "kind": "ruler_and_event_bounded_kingdom_command",
+      "start_year": 1790,
+      "end_year": 1790,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Marwar kingdom and Merta, Rajputana"
     },
     {
       "id": "clio_in_vijayanagara_emp_1344_0fe07dd4",
@@ -21824,11 +21914,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2045,
-    "rated_entities": 682,
-    "rated_events": 5149,
+    "registry_polities": 2054,
+    "rated_entities": 691,
+    "rated_events": 5155,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18245,
+    "unresolved_event_candidates": 18239,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -21881,6 +21971,7 @@
     "candidate_keyed_wave8_hussites_hced_events": 12,
     "candidate_keyed_wave8_livonian_order_hced_events": 4,
     "candidate_keyed_wave8_satsuma_hced_events": 6,
+    "candidate_keyed_wave8_rajputs_hced_events": 6,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -21891,21 +21982,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4885,
-      "candidate_keyed_reviewed_contracts": 575,
+      "hced_candidate_bindings": 4891,
+      "candidate_keyed_reviewed_contracts": 581,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4794,
-      "location_provenance_objects": 4843,
-      "point_fields_withheld_by_quarantine": 151,
+      "modern_location_country_assertions": 4800,
+      "location_provenance_objects": 4849,
+      "point_fields_withheld_by_quarantine": 157,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 90,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 42,
-      "unique_events_with_any_quarantined_field": 199,
-      "point_quarantine_candidate_manifest_sha256": "2d1c2a3c5b996f264914b85854834c8501b496abd0682daac30acdbb638a5e18",
+      "unique_events_with_any_quarantined_field": 205,
+      "point_quarantine_candidate_manifest_sha256": "e6c1e73f81a7969b168372470c07f06f00b55416ad00244edbb007f7ac607f1e",
       "country_quarantine_candidate_manifest_sha256": "2d73fb95ef1008b4a7129d1b9257e97833fb6f9a792d24ee02e5de7d082de90c",
-      "quarantine_policy_sha256": "26411ec89ae47651af938e6f38adc00e1af7ba5ded57f5a3dd6b281d57acc0d3",
+      "quarantine_policy_sha256": "e389f664e9fc7909853ffa8934233f1cb1d47cf6bf3d55e0ef3eb4fecf57eec3",
       "assertion_status": {
-        "unreviewed_source_assertion": 4843
+        "unreviewed_source_assertion": 4849
       },
       "verified_location_assertions": {
         "availability": "not_available",

@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 689,
-    "events": 5149,
-    "sources": 869,
-    "registry_polities": 2045
+    "entities": 698,
+    "events": 5155,
+    "sources": 884,
+    "registry_polities": 2054
   },
   "year_range": {
     "start": -1274,
@@ -123,6 +123,7 @@
     "accepted_wave8_hussites_hced_events": 12,
     "accepted_wave8_livonian_order_hced_events": 4,
     "accepted_wave8_satsuma_hced_events": 6,
+    "accepted_wave8_rajputs_hced_events": 6,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -6286,7 +6287,270 @@
     "wave8_satsuma_outcome_overrides": [],
     "wave8_satsuma_entities_added": 6,
     "wave8_satsuma_sources_added": 14,
-    "hced_label_pass_input_rows": 5825,
+    "wave8_rajputs_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "greedy_eligible_rows": 7,
+      "hced_duplicate_dispositions": 0,
+      "holds": 0,
+      "integration_dispositions": 7,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 7,
+      "new_entities": 9,
+      "new_sources": 15,
+      "newly_rated_events": 6,
+      "outcome_overrides": 2,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 7,
+      "sole_blocker_promotions": 3,
+      "sole_blocker_rows": 4,
+      "terminal_exclusions": 1
+    },
+    "wave8_rajputs_cohort_counts": {
+      "babur_eastern_campaign_1529": 1,
+      "jaipur_maratha_fatehpur_1799": 1,
+      "scindia_rajputana_campaign_1790": 2,
+      "tarain_ghurid_chahamana_wars_1191_1192": 2
+    },
+    "wave8_rajputs_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 0,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 1
+    },
+    "wave8_rajputs_integration_validation": {
+      "cross_lane_hced_dispositions": 0,
+      "existing_release_duplicate_dispositions": 0,
+      "hced_duplicate_dispositions": 0,
+      "integration_dispositions": 7,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 7
+    },
+    "wave8_rajputs_candidate_ids": [
+      "hced-Fatehpur1799-1",
+      "hced-Gogra1529-1",
+      "hced-Merta1790-1",
+      "hced-Patan1790-1",
+      "hced-Taraori1191-1",
+      "hced-Taraori1192-1"
+    ],
+    "wave8_rajputs_holds": [],
+    "wave8_rajputs_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Chitor1567-1",
+        "raw_row_sha256": "58def3bd76ea1d59bfdf3674e681f5561fce30370de465951be4e81b3bd2bab9",
+        "canonical_event": {
+          "canonical_key": "siege_of_chittor:1567:1568",
+          "date_precision": "month_range",
+          "date_text": "October 1567-February 1568",
+          "granularity": "siege",
+          "name": "Siege of Chittor",
+          "year_low": 1567,
+          "year_high": 1568
+        },
+        "disposition": "terminal_exclusion",
+        "exclusion_category": "locked_interval_truncates_siege",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Akbar's Mughal siege army",
+          "Mewar's Chittor garrison under Jaimal and Patta"
+        ],
+        "reviewed_granularity": "siege",
+        "reviewed_date": "October 1567-February 1568",
+        "reviewed_outcome": "The Mughal capture followed the fortress's fall in February 1568, outside HCED's locked 1567 interval.",
+        "exclusion_reason": "The direct scholarly chronology runs from October 1567 through the fall of Chittor in February 1568. Promotion against the locked 1567-1567 row would attach Akbar's victory before it occurred and truncate the siege. The row is explicitly not promoted, and its unrateable locked result is never encoded as a draw.",
+        "evidence_refs": [
+          "wave8_rajputs_cambridge_kolff_chitor",
+          "wave8_rajputs_unesco_chittorgarh"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "wave8_rajputs",
+          "status": "terminal_hced_owner"
+        }
+      }
+    ],
+    "wave8_rajputs_hced_duplicate_dispositions": [],
+    "wave8_rajputs_cross_lane_dispositions": [],
+    "wave8_rajputs_iwbd_duplicate_dispositions": [],
+    "wave8_rajputs_existing_release_duplicate_dispositions": [],
+    "wave8_rajputs_integration_dispositions": [
+      {
+        "disposition_id": "hced-Chitor1567-1",
+        "disposition": "TERMINAL_EXCLUSION",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "rajputs",
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [
+          "mughal_empire"
+        ],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Fatehpur1799-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "hariana",
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Gogra1529-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "rajputs",
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [
+          "mughal_empire"
+        ],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Merta1790-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "rajputs",
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [
+          "maratha_confederacy"
+        ],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Patan1790-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": "rajputs",
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [
+          "maratha_confederacy"
+        ],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Taraori1191-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "ghor",
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      },
+      {
+        "disposition_id": "hced-Taraori1192-1",
+        "disposition": "PROMOTE",
+        "full_row_audited": true,
+        "blocker_labels": [
+          "ghor",
+          "rajputs"
+        ],
+        "greedy_eligible": true,
+        "sole_blocker_label": null,
+        "other_blockers": [],
+        "resolved_counterpart_entity_ids": [],
+        "all_opposing_actors_resolved": true,
+        "release_duplicate_scan": "no_existing_release_event_twin_found",
+        "owner_module": "wave8_rajputs"
+      }
+    ],
+    "wave8_rajputs_outcome_overrides": [
+      {
+        "candidate_id": "hced-Fatehpur1799-1",
+        "raw_winner_raw": "Hariana",
+        "raw_loser_raw": "Rajputs",
+        "raw_winner_loser_complete": true,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "sawai_pratap_singh_jaipur_army_fatehpur_1799"
+        ],
+        "corrected_loser_entity_ids": [
+          "vaman_rao_george_thomas_fatehpur_expedition_1799"
+        ],
+        "override_kind": "sourced_tactical_outcome_reversal",
+        "outcome_reversal": true,
+        "outcome_source_ids": [
+          "wave8_rajputs_compton_adventurers",
+          "wave8_rajputs_culture_fatehpur",
+          "wave8_rajputs_francklin_george_thomas"
+        ],
+        "outcome_source_family_ids": [
+          "compton_european_military_adventurers",
+          "francklin_george_thomas_1803",
+          "ministry_culture_fatehpur_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Merta1790-1",
+        "raw_winner_raw": "Draw",
+        "raw_loser_raw": null,
+        "raw_winner_loser_complete": false,
+        "corrected_result_type": "win",
+        "corrected_winner_side": 2,
+        "corrected_winner_entity_ids": [
+          "scindia_de_boigne_rajputana_campaign_army_1790"
+        ],
+        "corrected_loser_entity_ids": [
+          "vijai_singh_marwar_rathor_army_merta_1790"
+        ],
+        "override_kind": "unknown_draw_placeholder_to_sourced_scindia_victory",
+        "outcome_reversal": false,
+        "outcome_source_ids": [
+          "wave8_rajputs_cambridge_grant_duff",
+          "wave8_rajputs_oxford_sahai",
+          "wave8_rajputs_usi_de_boigne"
+        ],
+        "outcome_source_family_ids": [
+          "grant_duff_history_mahrattas_volume_3",
+          "sahai_politics_patronage_protest",
+          "usi_de_boigne_archive_study"
+        ]
+      }
+    ],
+    "wave8_rajputs_entities_added": 9,
+    "wave8_rajputs_sources_added": 15,
+    "hced_label_pass_input_rows": 5818,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -6299,7 +6563,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 779,
+      "reserved_candidate_contract": 786,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -6311,7 +6575,7 @@
       "label_outcome_not_aligned": 81,
       "label_outside_policy_window": 175,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2311,
+      "no_unique_time_valid_label_match": 2304,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

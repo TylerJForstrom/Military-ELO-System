@@ -919,6 +919,29 @@ from .wave8_satsuma import (
     wave8_satsuma_cohort_counts,
     wave8_satsuma_counts,
 )
+from .wave8_rajputs import (
+    WAVE8_RAJPUTS_CONTRACT_IDS,
+    WAVE8_RAJPUTS_CROSS_LANE_DISPOSITIONS,
+    WAVE8_RAJPUTS_ENTITIES,
+    WAVE8_RAJPUTS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_RAJPUTS_HCED_DUPLICATE_DISPOSITIONS,
+    WAVE8_RAJPUTS_HOLD_IDS,
+    WAVE8_RAJPUTS_HOLDS,
+    WAVE8_RAJPUTS_INTEGRATION_DISPOSITIONS,
+    WAVE8_RAJPUTS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_RAJPUTS_OUTCOME_OVERRIDES,
+    WAVE8_RAJPUTS_RESERVED_IDS,
+    WAVE8_RAJPUTS_SOURCES,
+    WAVE8_RAJPUTS_TERMINAL_EXCLUSION_IDS,
+    WAVE8_RAJPUTS_TERMINAL_EXCLUSIONS,
+    install_wave8_rajputs_entities,
+    install_wave8_rajputs_sources,
+    promote_wave8_rajputs_contracts,
+    validate_wave8_rajputs_integration_dispositions,
+    validate_wave8_rajputs_queue_contracts,
+    wave8_rajputs_cohort_counts,
+    wave8_rajputs_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -986,6 +1009,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_HUSSITES_RESERVED_IDS
     | WAVE8_LIVONIAN_ORDER_RESERVED_IDS
     | WAVE8_SATSUMA_RESERVED_IDS
+    | WAVE8_RAJPUTS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1390,7 +1414,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 151
+        len(HCED_POINT_QUARANTINE_IDS) != 157
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 90
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1601,6 +1625,7 @@ def build_expanded_release(
         validate_wave8_livonian_order_queue_contracts(hced)
     )
     wave8_satsuma_queue_validation = validate_wave8_satsuma_queue_contracts(hced)
+    wave8_rajputs_queue_validation = validate_wave8_rajputs_queue_contracts(hced)
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -1955,6 +1980,7 @@ def build_expanded_release(
     install_wave8_hussites_entities(release_entities)
     install_wave8_livonian_order_entities(release_entities)
     install_wave8_satsuma_entities(release_entities)
+    install_wave8_rajputs_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3093,6 +3119,15 @@ def build_expanded_release(
         release_entities,
         wave8_satsuma_existing_events,
     )
+    wave8_rajputs_existing_events = [
+        *wave8_satsuma_existing_events,
+        *wave8_satsuma_events,
+    ]
+    wave8_rajputs_events = promote_wave8_rajputs_contracts(
+        hced,
+        release_entities,
+        wave8_rajputs_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3142,6 +3177,7 @@ def build_expanded_release(
         *wave8_hussites_events,
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
+        *wave8_rajputs_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3231,6 +3267,8 @@ def build_expanded_release(
             *WAVE8_LIVONIAN_ORDER_TERMINAL_EXCLUSION_IDS,
             *WAVE8_SATSUMA_HOLD_IDS,
             *WAVE8_SATSUMA_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_RAJPUTS_HOLD_IDS,
+            *WAVE8_RAJPUTS_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3306,6 +3344,7 @@ def build_expanded_release(
         *wave8_hussites_events,
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
+        *wave8_rajputs_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -3522,6 +3561,13 @@ def build_expanded_release(
             wave8_satsuma_existing_events,
         )
     )
+    wave8_rajputs_integration_validation = (
+        validate_wave8_rajputs_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_rajputs_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -3716,6 +3762,7 @@ def build_expanded_release(
     install_wave8_hussites_sources(sources_by_id)
     install_wave8_livonian_order_sources(sources_by_id)
     install_wave8_satsuma_sources(sources_by_id)
+    install_wave8_rajputs_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -3770,6 +3817,7 @@ def build_expanded_release(
         *wave8_hussites_events,
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
+        *wave8_rajputs_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -3824,6 +3872,7 @@ def build_expanded_release(
         *wave8_hussites_events,
         *wave8_livonian_order_events,
         *wave8_satsuma_events,
+        *wave8_rajputs_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -3877,6 +3926,7 @@ def build_expanded_release(
             | WAVE8_HUSSITES_CONTRACT_IDS
             | WAVE8_LIVONIAN_ORDER_CONTRACT_IDS
             | WAVE8_SATSUMA_CONTRACT_IDS
+            | WAVE8_RAJPUTS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -3972,6 +4022,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_HUSSITES_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_LIVONIAN_ORDER_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_SATSUMA_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_RAJPUTS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4194,6 +4245,7 @@ def build_expanded_release(
         - len(wave8_hussites_events)
         - len(wave8_livonian_order_events)
         - len(wave8_satsuma_events)
+        - len(wave8_rajputs_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -4305,6 +4357,7 @@ def build_expanded_release(
             wave8_livonian_order_events
         ),
         "candidate_keyed_wave8_satsuma_hced_events": len(wave8_satsuma_events),
+        "candidate_keyed_wave8_rajputs_hced_events": len(wave8_rajputs_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -4558,6 +4611,7 @@ def build_expanded_release(
                 wave8_livonian_order_events
             ),
             "accepted_wave8_satsuma_hced_events": len(wave8_satsuma_events),
+            "accepted_wave8_rajputs_hced_events": len(wave8_rajputs_events),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -6093,6 +6147,61 @@ def build_expanded_release(
             ],
             "wave8_satsuma_entities_added": len(WAVE8_SATSUMA_ENTITIES),
             "wave8_satsuma_sources_added": len(WAVE8_SATSUMA_SOURCES),
+            "wave8_rajputs_counts": wave8_rajputs_counts(),
+            "wave8_rajputs_cohort_counts": wave8_rajputs_cohort_counts(),
+            "wave8_rajputs_queue_validation": wave8_rajputs_queue_validation,
+            "wave8_rajputs_integration_validation": (
+                wave8_rajputs_integration_validation
+            ),
+            "wave8_rajputs_candidate_ids": sorted(WAVE8_RAJPUTS_CONTRACT_IDS),
+            "wave8_rajputs_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_RAJPUTS_HOLDS.items())
+            ],
+            "wave8_rajputs_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_RAJPUTS_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_rajputs_hced_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_RAJPUTS_HCED_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_rajputs_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_RAJPUTS_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_rajputs_iwbd_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_RAJPUTS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_rajputs_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_RAJPUTS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_rajputs_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_RAJPUTS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_rajputs_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_RAJPUTS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_rajputs_entities_added": len(WAVE8_RAJPUTS_ENTITIES),
+            "wave8_rajputs_sources_added": len(WAVE8_RAJPUTS_SOURCES),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -6331,6 +6440,7 @@ def build_expanded_release(
             wave8_livonian_order_events
         ),
         "candidate_keyed_wave8_satsuma_hced_events": len(wave8_satsuma_events),
+        "candidate_keyed_wave8_rajputs_hced_events": len(wave8_rajputs_events),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

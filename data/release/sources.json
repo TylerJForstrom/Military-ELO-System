@@ -10482,6 +10482,224 @@
     ]
   },
   {
+    "id": "wave8_rajputs_baburnama_beveridge",
+    "title": "The Bābur-nāma in English (Annette Beveridge translation)",
+    "url": "https://www.gutenberg.org/ebooks/44608",
+    "publisher": "Project Gutenberg; translated primary chronicle",
+    "license": "Citation and link only",
+    "source_type": "digitized_translated_primary_narrative",
+    "accessed": "2026-07-16",
+    "source_family_id": "baburnama_beveridge_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_banglapedia_babur",
+    "title": "Babur",
+    "url": "https://en.banglapedia.org/index.php/Babur",
+    "publisher": "Banglapedia, Asiatic Society of Bangladesh",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "banglapedia_babur",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_cambridge_grant_duff",
+    "title": "A History of the Mahrattas, Volume 3",
+    "url": "https://www.cambridge.org/core/books/history-of-the-mahrattas/83A101524D6B33237889445DA674A6F9",
+    "publisher": "Cambridge University Press, Cambridge Library Collection",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reissued_historical_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "grant_duff_history_mahrattas_volume_3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_cambridge_kolff_chitor",
+    "title": "Naukar, Rajput and Sepoy: The Ethnohistory of the Military Labour Market in Hindustan, 1450-1850",
+    "url": "https://assets.cambridge.org/97805213/81321/sample/9780521381321ws.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "kolff_naukar_rajput_sepoy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_cambridge_talbot_prithviraj",
+    "title": "The Last Hindu Emperor: Prithviraj Chauhan and the Indian Past",
+    "url": "https://assets.cambridge.org/97811071/18560/excerpt/9781107118560_excerpt.pdf",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "talbot_last_hindu_emperor",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_compton_adventurers",
+    "title": "A Particular Account of the European Military Adventurers of Hindustan, from 1784 to 1803",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/A_particular_account_of_the_European_military_adventures_of_Hindustan%2C_from_1784_to_1803_%28IA_particularaccoun00compiala%29.pdf",
+    "publisher": "Herbert Compton (1893); Internet Archive scan",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_military_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "compton_european_military_adventurers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_culture_fatehpur",
+    "title": "Battle of Fatehpur, 1799",
+    "url": "https://cmsadmin.amritmahotsav.nic.in/district-reopsitory-detail.htm?17818=",
+    "publisher": "Ministry of Culture, Government of India",
+    "license": "Citation and link only",
+    "source_type": "government_historical_repository",
+    "accessed": "2026-07-16",
+    "source_family_id": "ministry_culture_fatehpur_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_francklin_george_thomas",
+    "title": "Military Memoirs of Mr. George Thomas",
+    "url": "https://archive.org/download/dli.ernet.231230/231230-Military%20Memoirs%20Of%20Mr.%20George%20Thomas.pdf",
+    "publisher": "William Francklin (1803); Government of India Digital Library scan",
+    "license": "Citation and link only",
+    "source_type": "digitized_near_contemporary_military_memoir",
+    "accessed": "2026-07-16",
+    "source_family_id": "francklin_george_thomas_1803",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_ignou_invasions_resistance",
+    "title": "Mahmud Ghazni and Mohd. Ghouri: Invasions and Resistance",
+    "url": "https://egyankosh.ac.in/bitstream/123456789/53714/1/BHIC-132E.pdf",
+    "publisher": "Indira Gandhi National Open University",
+    "license": "Citation and link only",
+    "source_type": "academic_history_course_block",
+    "accessed": "2026-07-16",
+    "source_family_id": "ignou_bhic132_invasions_resistance",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_ignou_tarain",
+    "title": "Unit 12: Establishment and Territorial Consolidation of the Delhi Sultanate",
+    "url": "https://egyankosh.ac.in/bitstream/123456789/61926/1/Unit-12.pdf",
+    "publisher": "Indira Gandhi National Open University",
+    "license": "Citation and link only",
+    "source_type": "academic_history_module",
+    "accessed": "2026-07-16",
+    "source_family_id": "ignou_medieval_india_unit_12",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_inflibnet_mughal_foundation",
+    "title": "Origin and Foundation of Mughal Empire: Babar, Humayun and Sher Shah Interregnum",
+    "url": "https://ebooks.inflibnet.ac.in/icp01/chapter/origin-and-foundation-of-mughal-empire-babar-humayun-and-sher-shah-interregnum/",
+    "publisher": "INFLIBNET Centre, University Grants Commission of India",
+    "license": "Citation and link only",
+    "source_type": "academic_history_module",
+    "accessed": "2026-07-16",
+    "source_family_id": "inflibnet_mughal_history_module",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_iranica_ghurids",
+    "title": "Ghurids",
+    "url": "https://www.iranicaonline.org/articles/ghurids/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-16",
+    "source_family_id": "iranica_ghurids",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_oxford_sahai",
+    "title": "Escalation in Stresses and Artisanal Responses",
+    "url": "https://academic.oup.com/book/27262/chapter-abstract/196884893",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "sahai_politics_patronage_protest",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_unesco_chittorgarh",
+    "title": "Hill Forts of Rajasthan: World Heritage nomination dossier",
+    "url": "https://whc.unesco.org/uploads/nominations/247rev.pdf",
+    "publisher": "UNESCO World Heritage Centre; Archaeological Survey of India",
+    "license": "Citation and link only",
+    "source_type": "official_heritage_nomination_dossier",
+    "accessed": "2026-07-16",
+    "source_family_id": "unesco_hill_forts_rajasthan_nomination",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_rajputs_usi_de_boigne",
+    "title": "From the Archives: The European Military Adventurers in India: Benoit de Boigne",
+    "url": "https://usiofindia.org/pdf/USI_Journal_July_Sept_2025_Issue_97_102.pdf",
+    "publisher": "United Service Institution of India",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "usi_de_boigne_archive_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_rmg_bugia_bay_1671",
     "title": "Action at Bugia Bay, 8 May 1671",
     "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-141785",
