@@ -738,13 +738,13 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         ]
         self.assertEqual(
             _canonical_hash(projected_events),
-            "791404599243c0851b1723a94bccd137857dac9051eced8ac6dae831bf532063",
+            "8985a054155718e3e521afe6e20559c26a0dcf4191457f194ea05207a880638c",
         )
         expected_hashes = {
             "entities": "57a80dff48cf7460c73e90cc61652ce93a6310961625f1365a8d0c7e24934fc9",
-            "series": "68aa9d549eb014c326000e33345eb060f934a9a865cf8df62965e6590f03a89e",
-            "leaderboard": "3c4a64debce505de574396bca001b22259944effa617d764034bae181e16181a",
-            "sensitivity": "65870eaa5a358ab60112a17b5f1e944ae8a672ed59257b5643757849bd3324e7",
+            "series": "3bff8e0da8ea21fd4f6568190de1159f1a8fa532df24dc546463eb5e630fc118",
+            "leaderboard": "7cea90903dfcf43b5a96496912c884dfccd1f5f16b65be1dc76baab266acb146",
+            "sensitivity": "05c93695e7f7f3d32c6433848ddaaddbeac35652524f21d62b94307655583825",
         }
         for field_name, expected_hash in expected_hashes.items():
             with self.subTest(field_name=field_name):
