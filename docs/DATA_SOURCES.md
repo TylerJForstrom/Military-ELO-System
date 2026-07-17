@@ -63,9 +63,9 @@ roles are never unioned into an event that already has an explicit mapping.
 Titles, URLs, publishers, source counts, and family labels are never used to
 infer an outcome role.
 
-The 1,450-source registry contains 860 sources carrying the direct outcome role
+The 1,453-source registry contains 860 sources carrying the direct outcome role
 across 784 dependency families. Current event-level contracts select 749 of
-those sources across 687 families. This maps 5,314 of 5,354 rated events:
+those sources across 687 families. This maps 5,372 of 5,412 rated events:
 5,090 HCED encounters, 64 IWD parent wars, 153 IWBD battles, and 7 UCDP
 termination episodes. Of the mapped events, 4,959 cite one declared direct
 outcome family and 355 cite between two and six. Family cardinality is an audit
@@ -126,7 +126,7 @@ participant-level casualty field, so its scale must not be interpreted as a
 casualty ratio or decisiveness score.
 
 For the 5,090 rated HCED events, the release-to-candidate join is an
-exact bijection: 1,887 crosswalk-resolved events, 2,423 label-resolved events,
+exact bijection: 1,887 crosswalk-resolved events, 2,481 label-resolved events,
 and 776 candidate-keyed reviewed events: 76 from Wave 6, 192 from Wave 7, and
 512 from Wave 8, with no missing, ambiguous, or colliding bindings.
 Candidate-ID-only policy manifests withhold 356 Point fields and 94
@@ -742,12 +742,12 @@ Cliopatria, whose v0.2.0 release is expressly CC BY 4.0.
 
 The current release publishes distinct coverage units separately:
 
-- 2,361 time-bounded polity identities in the rated-and-unrated registry;
-- 1,013 release entity records, of which 1,006 distinct IDs actually participate
+- 2,372 time-bounded polity identities in the rated-and-unrated registry;
+- 1,024 release entity records, of which 1,016 distinct IDs actually participate
   in rated events;
-- 1,450 registered provenance sources across 1,188 source families; and
-- 5,354 rating events: 40 manually curated events, 1,887 crosswalk-resolved,
-  2,423 label-resolved, and 776 candidate-keyed HCED tactical encounters
+- 1,453 registered provenance sources across 1,191 source families; and
+- 5,412 rating events: 40 manually curated events, 1,887 crosswalk-resolved,
+  2,481 label-resolved, and 776 candidate-keyed HCED tactical encounters
   (76 Wave 6 + 192 Wave 7 + 512 Wave 8),
   64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical
   battles, and 7 UCDP conflict-termination strategic episodes.
@@ -762,7 +762,7 @@ events. Those are prioritization units, not extra rating events.
 The seven-record entity/evidence difference is intentional. These inactive
 release identities are retained as curated boundary records, reviewed
 campaign-specific identities whose proposed rows remain held, or an explicit
-superseded source envelope. None receives a rating or counts among the 1,006
+superseded source envelope. None receives a rating or counts among the 1,016
 participant IDs.
 
 Relative to the Wave 4 artifact, Wave 5 adds 161 events and removes none of the
@@ -833,7 +833,7 @@ added reviewed identities and explicit supersession records to produce 1,702
 registry rows. The post-Wave 7 composite tranche consolidated reused source
 identities and produced 1,701 rows. The initial Wave 8 batch added 26 exact,
 alias-free identity records. Continued Wave 8 identity and candidate-keyed
-review now produces the current measured 2,361-row registry; every release
+review now produces the current measured 2,372-row registry; every release
 identity still has an exact registry row.
 
 The review queues contain 27,014 staged source records across Cliopatria, HCED,
@@ -841,13 +841,13 @@ IWD, IWBD, UCDP, and the small Wikidata discovery sample (the Wikidata queue
 holds 18 candidates on this machine). That total includes
 identity records and the source-derived evidence promoted into this
 provisional release; it is not an unresolved-record count. Of 23,390 event-like
-candidates, 18,040 remain outside the rating ledger because their layer,
+candidates, 17,982 remain outside the rating ledger because their layer,
 identity, outcome, duplication, or continuity requirements are unresolved.
 The registry and queue sizes document coverage work; neither is evidence that
 the historical record is complete.
 
 Outcome-family coverage uses a different denominator from corpus coverage.
-Exactly 5,314 rated events have an explicit direct-outcome mapping; the
+Exactly 5,372 rated events have an explicit direct-outcome mapping; the
 remaining 40 are the curated seed events and stay unknown pending claim-level
 locator review. Of the mapped events, 4,959 cite one declared direct-outcome
 family and 355 cite more than one.

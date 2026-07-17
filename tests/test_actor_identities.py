@@ -22,6 +22,7 @@ RELEASE_EVENTS = PROJECT_ROOT / "data" / "release" / "events.json"
 MIGRATED_TO_POLICIES = {
     "carlists",
     "chinese communists",
+    "irish rebels",
     "parliamentarians",
     "royalists",
     "spanish nationalists",
@@ -30,7 +31,6 @@ MIGRATED_TO_POLICIES = {
 }
 NEWLY_BLOCKED = {
     "cristinos",
-    "irish rebels",
     "mexican rebels",
     "russian whites",
     "seminole indians",
@@ -127,7 +127,7 @@ class ActorLabelPolicyTests(unittest.TestCase):
                 )
 
     def test_blocklist_migration_kept_the_front_gate_complete(self) -> None:
-        self.assertEqual(len(HCED_FACTION_LABELS), 80)
+        self.assertEqual(len(HCED_FACTION_LABELS), 79)
         for label in MIGRATED_TO_POLICIES:
             with self.subTest(label=label, direction="out"):
                 self.assertNotIn(label, HCED_FACTION_LABELS)
@@ -334,10 +334,10 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
-        self.assertEqual(len(label_events), 2_423)
+        self.assertEqual(len(label_events), 2_481)
         self.assertEqual(
             sum(e.get("identity_resolution") == "label" for e in label_events),
-            2_418,
+            2_476,
         )
         self.assertEqual(
             sum(

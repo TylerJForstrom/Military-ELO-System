@@ -227,8 +227,13 @@ class Wave6EarlyModernInventoryTests(unittest.TestCase):
         self.assertEqual(result["deferred_label_rows"], [])
         self.assertEqual(result["rejections"]["reserved_candidate_contract"], 1)
 
+        # "hyderabad" carries a funnel-tranche policy window (1724-1948) onto
+        # the lane's own hyderabad_asaf_jahi_state_1724 identity. The
+        # reserved-candidate runtime guard exercised above keeps every
+        # lane-reserved row out of the generic paths, so the policy can only
+        # promote non-reserved rows; the lane's six reserved Hyderabad
+        # promotions remain contract-owned.
         prohibited_labels = {
-            "hyderabad",
             "saxony",
             "transylvania",
             "bengal",
@@ -239,13 +244,18 @@ class Wave6EarlyModernInventoryTests(unittest.TestCase):
             "williamites",
         }
         self.assertFalse(prohibited_labels & set(HCED_LABEL_POLICIES))
+        self.assertEqual(
+            HCED_LABEL_POLICIES["hyderabad"],
+            ((1724, 1948, "hyderabad_asaf_jahi_state_1724"),),
+        )
         policy_targets = {
             entity_id
             for windows in HCED_LABEL_POLICIES.values()
             for _, _, entity_id in windows
         }
-        self.assertFalse(
-            policy_targets & {str(entity["id"]) for entity in WAVE6_ENTITIES}
+        self.assertEqual(
+            policy_targets & {str(entity["id"]) for entity in WAVE6_ENTITIES},
+            {"hyderabad_asaf_jahi_state_1724"},
         )
 
 

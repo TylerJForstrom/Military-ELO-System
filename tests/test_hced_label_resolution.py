@@ -1554,7 +1554,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
         # 1,445 + 3,126 + 1,887 + 2,423 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (1445, 3126, 1887, 2423, 8881),
+            (1445, 3068, 1887, 2481, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
@@ -1568,7 +1568,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 71
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 75
         )
         self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 158)
         # uncoded_side is gone from pass 1: replaced by the deferral.
@@ -1579,7 +1579,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_423)
+        self.assertEqual(len(label_events), 2_481)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

@@ -312,9 +312,27 @@ class StateCodePolicyTests(unittest.TestCase):
             "french_third_republic",
         )
 
+    # Funnel-tranche label policies may bind identities installed by reviewed
+    # crosswalk or lane machinery rather than the seed file; each such target
+    # is pinned here and must exist in the released registry.
+    LANE_OR_CROSSWALK_POLICY_TARGETS = frozenset({
+        "clio_it_sicily_k_1_1139_c1640de5",
+        "hungarian_honved_army_1848",
+        "great_jewish_revolt_judean_forces_66_73",
+        "hyderabad_asaf_jahi_state_1724",
+        "pai_marire_forces_1864",
+    })
+
     def test_every_policy_window_targets_an_existing_seed_identity(self) -> None:
         seed_path = PROJECT_ROOT / "data" / "seed" / "entities.json"
         seed_ids = {e["id"] for e in json.loads(seed_path.read_text(encoding="utf-8"))}
+        registry_path = PROJECT_ROOT / "data" / "catalog" / "registry.json"
+        registry_ids = {
+            e["id"]
+            for e in json.loads(registry_path.read_text(encoding="utf-8"))["entities"]
+        }
+        self.assertLessEqual(self.LANE_OR_CROSSWALK_POLICY_TARGETS, registry_ids)
+        seed_ids |= self.LANE_OR_CROSSWALK_POLICY_TARGETS
         tables = {
             "seed_code": SEED_CODE_POLICIES,
             "hced_label": HCED_LABEL_POLICIES,
@@ -441,7 +459,7 @@ class PipelineAsymmetryTests(unittest.TestCase):
 class CuratedExclusionTableTests(unittest.TestCase):
     def test_exclusion_tables_are_enumerated_and_documented(self) -> None:
         self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 86)
-        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 71)
+        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 75)
         self.assertEqual(
             set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "10", "17", "42"}
         )
@@ -522,14 +540,14 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_354)
+        self.assertEqual(len(self.events), 5_412)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2_423)
+        self.assertEqual(len(label), 2_481)
         self.assertEqual(len(crosswalk), 1_826)
         self.assertEqual(
             sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64
@@ -541,7 +559,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
             sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7
         )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 1_006)
+        self.assertEqual(len(rated), 1_016)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -573,7 +591,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 2_361)
+        self.assertEqual(len(self.registry["entities"]), 2_372)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:
