@@ -2113,6 +2113,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "british_ceylon_hanwella_defense_force_1803",
+      "name": "British Ceylon garrison and relief force at Hanwella (1803)",
+      "kind": "event_bounded_colonial_garrison_and_relief_force",
+      "start_year": 1803,
+      "end_year": 1803,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Hanwella, British Ceylon"
+    },
+    {
       "id": "clio_gb_british_emp_2_1961_111b3cb4",
       "name": "British East Africa",
       "kind": "polity",
@@ -12611,6 +12621,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "davie_british_ceylon_garrison_kandy_1803",
+      "name": "Major Davie's British Ceylon garrison at Kandy (1803)",
+      "kind": "event_bounded_colonial_garrison",
+      "start_year": 1803,
+      "end_year": 1803,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kandy and the Mahaweli crossing, Kingdom of Kandy"
+    },
+    {
       "id": "makana_amandlambe_led_coalition_1819",
       "name": "Makana's amaNdlambe-led coalition at Grahamstown",
       "kind": "indigenous_coalition",
@@ -19480,6 +19500,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "sri_vikrama_kandyan_kandy_counterattack_force_1803",
+      "name": "Sri Vikrama Rajasinha's Kandyan counterattack force at Kandy (1803)",
+      "kind": "event_bounded_royal_counterattack_force",
+      "start_year": 1803,
+      "end_year": 1803,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kandy and the Mahaweli crossing, Kingdom of Kandy"
+    },
+    {
+      "id": "sri_vikrama_kandyan_hanwella_field_force_1803",
+      "name": "Sri Vikrama Rajasinha's Kandyan field force at Hanwella (1803)",
+      "kind": "event_bounded_royal_invasion_force",
+      "start_year": 1803,
+      "end_year": 1803,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Hanwella and the western frontier of the Kingdom of Kandy"
+    },
+    {
       "id": "clio_id_srivijaya_emp_674_c9334060",
       "name": "Srivijaya",
       "kind": "polity",
@@ -22914,11 +22954,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2154,
-    "rated_entities": 791,
-    "rated_events": 5220,
+    "registry_polities": 2158,
+    "rated_entities": 795,
+    "rated_events": 5222,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18174,
+    "unresolved_event_candidates": 18172,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22988,6 +23028,7 @@
     "candidate_keyed_wave8_eritrean_rebels_hced_events": 4,
     "candidate_keyed_wave8_inca_rebels_hced_events": 3,
     "candidate_keyed_wave8_haitian_rebels_hced_events": 2,
+    "candidate_keyed_wave8_kingdom_kandy_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22998,21 +23039,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4956,
-      "candidate_keyed_reviewed_contracts": 646,
+      "hced_candidate_bindings": 4958,
+      "candidate_keyed_reviewed_contracts": 648,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4863,
-      "location_provenance_objects": 4912,
-      "point_fields_withheld_by_quarantine": 222,
+      "modern_location_country_assertions": 4865,
+      "location_provenance_objects": 4914,
+      "point_fields_withheld_by_quarantine": 224,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 270,
-      "point_quarantine_candidate_manifest_sha256": "bf6d7efad7348cdceed8a7f42f327971c8af7b797d7776c0f8145cf46a8a3dd2",
+      "unique_events_with_any_quarantined_field": 272,
+      "point_quarantine_candidate_manifest_sha256": "672681b8f11ba5be23b148c892bdb6767d6f3ff45ed5939ffebcf68d59e7ed82",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "a0bb5061793d3a4fbb5925ed44a7ecbacf72ca420bcbbd01fe4071d77e8ae9c8",
+      "quarantine_policy_sha256": "fd9fe9e9e3092f994f0b801e0bb027bd4b93282d39dc218d7124e60986f9ebfa",
       "assertion_status": {
-        "unreviewed_source_assertion": 4912
+        "unreviewed_source_assertion": 4914
       },
       "verified_location_assertions": {
         "availability": "not_available",

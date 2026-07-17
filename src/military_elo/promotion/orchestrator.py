@@ -1317,6 +1317,31 @@ from .wave8_haitian_rebels import (
     wave8_haitian_rebels_cohort_counts,
     wave8_haitian_rebels_counts,
 )
+from .wave8_kingdom_kandy import (
+    WAVE8_KINGDOM_KANDY_CONTRACT_IDS,
+    WAVE8_KINGDOM_KANDY_CROSS_LANE_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_ENTITIES,
+    WAVE8_KINGDOM_KANDY_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_EXTERNAL_OWNER_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_HOLD_IDS,
+    WAVE8_KINGDOM_KANDY_HOLDS,
+    WAVE8_KINGDOM_KANDY_INTEGRATION_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_IWBD_ZERO_OVERLAP_AUDIT,
+    WAVE8_KINGDOM_KANDY_OUTCOME_OVERRIDES,
+    WAVE8_KINGDOM_KANDY_RELATED_HCED_DISPOSITIONS,
+    WAVE8_KINGDOM_KANDY_RESERVED_IDS,
+    WAVE8_KINGDOM_KANDY_SOURCES,
+    WAVE8_KINGDOM_KANDY_TERMINAL_EXCLUSION_IDS,
+    WAVE8_KINGDOM_KANDY_TERMINAL_EXCLUSIONS,
+    install_wave8_kingdom_kandy_entities,
+    install_wave8_kingdom_kandy_sources,
+    promote_wave8_kingdom_kandy_contracts,
+    validate_wave8_kingdom_kandy_integration_dispositions,
+    validate_wave8_kingdom_kandy_queue_contracts,
+    wave8_kingdom_kandy_cohort_counts,
+    wave8_kingdom_kandy_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1401,6 +1426,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ERITREAN_REBELS_RESERVED_IDS
     | WAVE8_INCA_REBELS_RESERVED_IDS
     | WAVE8_HAITIAN_REBELS_RESERVED_IDS
+    | WAVE8_KINGDOM_KANDY_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1805,7 +1831,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 222
+        len(HCED_POINT_QUARANTINE_IDS) != 224
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -2050,6 +2076,9 @@ def build_expanded_release(
     )
     wave8_haitian_rebels_queue_validation = (
         validate_wave8_haitian_rebels_queue_contracts(hced)
+    )
+    wave8_kingdom_kandy_queue_validation = (
+        validate_wave8_kingdom_kandy_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -2422,6 +2451,7 @@ def build_expanded_release(
     install_wave8_eritrean_rebels_entities(release_entities)
     install_wave8_inca_rebels_entities(release_entities)
     install_wave8_haitian_rebels_entities(release_entities)
+    install_wave8_kingdom_kandy_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3713,6 +3743,15 @@ def build_expanded_release(
         release_entities,
         wave8_haitian_rebels_existing_events,
     )
+    wave8_kingdom_kandy_existing_events = [
+        *wave8_haitian_rebels_existing_events,
+        *wave8_haitian_rebels_events,
+    ]
+    wave8_kingdom_kandy_events = promote_wave8_kingdom_kandy_contracts(
+        hced,
+        release_entities,
+        wave8_kingdom_kandy_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3779,6 +3818,7 @@ def build_expanded_release(
         *wave8_eritrean_rebels_events,
         *wave8_inca_rebels_events,
         *wave8_haitian_rebels_events,
+        *wave8_kingdom_kandy_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3902,6 +3942,8 @@ def build_expanded_release(
             *WAVE8_INCA_REBELS_TERMINAL_EXCLUSION_IDS,
             *WAVE8_HAITIAN_REBELS_HOLD_IDS,
             *WAVE8_HAITIAN_REBELS_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_KINGDOM_KANDY_HOLD_IDS,
+            *WAVE8_KINGDOM_KANDY_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3994,6 +4036,7 @@ def build_expanded_release(
         *wave8_eritrean_rebels_events,
         *wave8_inca_rebels_events,
         *wave8_haitian_rebels_events,
+        *wave8_kingdom_kandy_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4329,6 +4372,13 @@ def build_expanded_release(
             wave8_haitian_rebels_existing_events,
         )
     )
+    wave8_kingdom_kandy_integration_validation = (
+        validate_wave8_kingdom_kandy_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_kingdom_kandy_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4540,6 +4590,7 @@ def build_expanded_release(
     install_wave8_eritrean_rebels_sources(sources_by_id)
     install_wave8_inca_rebels_sources(sources_by_id)
     install_wave8_haitian_rebels_sources(sources_by_id)
+    install_wave8_kingdom_kandy_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4611,6 +4662,7 @@ def build_expanded_release(
         *wave8_eritrean_rebels_events,
         *wave8_inca_rebels_events,
         *wave8_haitian_rebels_events,
+        *wave8_kingdom_kandy_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -4682,6 +4734,7 @@ def build_expanded_release(
         *wave8_eritrean_rebels_events,
         *wave8_inca_rebels_events,
         *wave8_haitian_rebels_events,
+        *wave8_kingdom_kandy_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4752,6 +4805,7 @@ def build_expanded_release(
             | WAVE8_ERITREAN_REBELS_CONTRACT_IDS
             | WAVE8_INCA_REBELS_CONTRACT_IDS
             | WAVE8_HAITIAN_REBELS_CONTRACT_IDS
+            | WAVE8_KINGDOM_KANDY_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4864,6 +4918,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_ERITREAN_REBELS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_INCA_REBELS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_HAITIAN_REBELS_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_KINGDOM_KANDY_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -5103,6 +5158,7 @@ def build_expanded_release(
         - len(wave8_eritrean_rebels_events)
         - len(wave8_inca_rebels_events)
         - len(wave8_haitian_rebels_events)
+        - len(wave8_kingdom_kandy_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5248,6 +5304,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_haitian_rebels_hced_events": len(
             wave8_haitian_rebels_events
+        ),
+        "candidate_keyed_wave8_kingdom_kandy_hced_events": len(
+            wave8_kingdom_kandy_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -5536,6 +5595,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_haitian_rebels_hced_events": len(
                 wave8_haitian_rebels_events
+            ),
+            "accepted_wave8_kingdom_kandy_hced_events": len(
+                wave8_kingdom_kandy_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -8129,6 +8191,85 @@ def build_expanded_release(
             "wave8_haitian_rebels_sources_added": len(
                 WAVE8_HAITIAN_REBELS_SOURCES
             ),
+            "wave8_kingdom_kandy_counts": wave8_kingdom_kandy_counts(),
+            "wave8_kingdom_kandy_cohort_counts": (
+                wave8_kingdom_kandy_cohort_counts()
+            ),
+            "wave8_kingdom_kandy_queue_validation": (
+                wave8_kingdom_kandy_queue_validation
+            ),
+            "wave8_kingdom_kandy_integration_validation": (
+                wave8_kingdom_kandy_integration_validation
+            ),
+            "wave8_kingdom_kandy_candidate_ids": sorted(
+                WAVE8_KINGDOM_KANDY_CONTRACT_IDS
+            ),
+            "wave8_kingdom_kandy_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_HOLDS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_external_owner_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_EXTERNAL_OWNER_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_iwbd_zero_overlap_audit": [
+                {"audit_id": audit_id, **contract}
+                for audit_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_IWBD_ZERO_OVERLAP_AUDIT.items()
+                )
+            ],
+            "wave8_kingdom_kandy_existing_release_duplicate_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_kingdom_kandy_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KINGDOM_KANDY_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_kingdom_kandy_entities_added": len(
+                WAVE8_KINGDOM_KANDY_ENTITIES
+            ),
+            "wave8_kingdom_kandy_sources_added": len(
+                WAVE8_KINGDOM_KANDY_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -8401,6 +8542,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_haitian_rebels_hced_events": len(
             wave8_haitian_rebels_events
+        ),
+        "candidate_keyed_wave8_kingdom_kandy_hced_events": len(
+            wave8_kingdom_kandy_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

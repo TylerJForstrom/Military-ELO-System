@@ -10416,6 +10416,189 @@
     ]
   },
   {
+    "id": "wave8_kingdom_kandy_codrington_short_history",
+    "title": "A Short History of Ceylon",
+    "url": "https://noolaham.net/project/46/4531/4531.html",
+    "publisher": "Macmillan and Co.; Noolaham Foundation digitization",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "codrington_short_history_ceylon_1926",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_cordiner_description",
+    "title": "A Description of Ceylon, Volume 2: the Campaign in Candy in 1803",
+    "url": "https://books.google.com/books?id=9M1CAAAAcAAJ",
+    "publisher": "Longman; Google Books",
+    "license": "Citation and link only",
+    "source_type": "near_contemporary_campaign_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "cordiner_description_ceylon_1807",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_herath_massacre",
+    "title": "The British Army Massacre at Kandy in 1803?",
+    "url": "https://doi.org/10.4038/jdrra.v2i2.38",
+    "publisher": "Journal of Desk Research Review and Analysis, University of Kelaniya",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "herath_kandy_1803_massacre_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_jaques_dictionary",
+    "title": "Dictionary of Battles and Sieges",
+    "url": "https://books.google.com/books?id=w_XCEAAAQBAJ",
+    "publisher": "Greenwood / Bloomsbury Academic; Google Books",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "jaques_dictionary_battles_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_johnston_narrative",
+    "title": "Narrative of the Operations of a Detachment in an Expedition to Candy in 1804, with Observations on the Previous Campaign",
+    "url": "https://www.gutenberg.org/ebooks/44408",
+    "publisher": "Project Gutenberg transcription of Arthur Johnston's account",
+    "license": "Citation and link only",
+    "source_type": "participant_primary_military_narrative",
+    "accessed": "2026-07-16",
+    "source_family_id": "johnston_candy_expedition_narrative_1810",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_kodikara_administration",
+    "title": "British Administration in the Kandyan Provinces of Sri Lanka, 1815-1833, with Special Reference to Social Change",
+    "url": "https://soas-repository.worktribe.com/output/388221/british-administration-in-the-kandyan-provinces-of-sri-lanka-1815-1833-with-special-reference-to-social-change",
+    "publisher": "SOAS University of London",
+    "license": "Citation and link only",
+    "source_type": "doctoral_historical_thesis",
+    "accessed": "2026-07-16",
+    "source_family_id": "kodikara_kandyan_administration_1983",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_national_archives_1815",
+    "title": "Kandyan Convention, 1815",
+    "url": "https://archives.gov.lk/English/online-exhibits/path-to-freedom/1-1815-convention",
+    "publisher": "Department of National Archives, Sri Lanka",
+    "license": "Citation and link only",
+    "source_type": "official_archival_exhibit_and_treaty_record",
+    "accessed": "2026-07-16",
+    "source_family_id": "slna_kandyan_convention_lk_na_6_12345",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_national_archives_1818",
+    "title": "Freedom Struggle, 1818",
+    "url": "https://archives.gov.lk/online-exhibits/path-to-freedom/freedom-struggle",
+    "publisher": "Department of National Archives, Sri Lanka",
+    "license": "Citation and link only",
+    "source_type": "official_archival_exhibit_and_colonial_records",
+    "accessed": "2026-07-16",
+    "source_family_id": "slna_freedom_struggle_lk_na_5_10",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_nova_ceylon",
+    "title": "Ceylon",
+    "url": "https://eve.fcsh.unl.pt/en/places/ceylon",
+    "publisher": "Encyclopaedia of Portuguese Expansion, NOVA FCSH",
+    "license": "Citation and link only",
+    "source_type": "academic_encyclopedia_entry",
+    "accessed": "2026-07-16",
+    "source_family_id": "nova_portuguese_expansion_ceylon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_official_chronology",
+    "title": "Sri Lankan history textbook chronology",
+    "url": "https://govdoc.lk/downloadFile/6943",
+    "publisher": "Department of Education, Sri Lanka",
+    "license": "Citation and link only",
+    "source_type": "official_education_history_reference",
+    "accessed": "2026-07-16",
+    "source_family_id": "sri_lanka_education_kandyan_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_powell_wars",
+    "title": "The Kandyan Wars: The British Army in Ceylon, 1803-1818",
+    "url": "https://books.google.lk/books?id=FRNAAAAAIAAJ",
+    "publisher": "Leo Cooper / Navrang; Google Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "powell_kandyan_wars_1973",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_sivasundaram_land",
+    "title": "Tales of the Land: British Geography and Kandyan Resistance in Sri Lanka, c. 1803-1850",
+    "url": "https://eprints.lse.ac.uk/21723/1/Tales_of_the_land-British_geography_and_Kandyan_resistance_in_Sri_Lanka__c_1803-1850.pdf",
+    "publisher": "Cambridge University Press, Modern Asian Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "sivasundaram_tales_land_2007",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_kingdom_kandy_sumana_1818",
+    "title": "A Source Related Study on the Preliminary Plan of the Upcountry Rebellion in 1818",
+    "url": "https://doi.org/10.4038/p.v14i2.48",
+    "publisher": "Pravacana, Bhiksu University of Sri Lanka",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-16",
+    "source_family_id": "sumana_upcountry_rebellion_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_kiowa_army_lawton",
     "title": "Two Decades on the Frontier: Henry W. Lawton",
     "url": "https://history.army.mil/Portals/143/Images/Publications/ArmyHistoryMag/pdf/20002009/AH63%28W%29.pdf?ver=kRfbRJG0lJ6qYd8u3mb3aQ%3D%3D",

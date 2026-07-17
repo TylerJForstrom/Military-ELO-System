@@ -7006,6 +7006,23 @@
     ]
   },
   {
+    "id": "british_ceylon_hanwella_defense_force_1803",
+    "name": "British Ceylon garrison and relief force at Hanwella (1803)",
+    "kind": "event_bounded_colonial_garrison_and_relief_force",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "Hanwella, British Ceylon",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the troops that defended and relieved Hanwella during the September 1803 action. No rating is inherited by the Kingdom of Kandy as a timeless label, British Ceylon, the United Kingdom, post-1815 Kandyan rebels, a successor state, or a modern country.",
+    "source_ids": [
+      "wave8_kingdom_kandy_codrington_short_history",
+      "wave8_kingdom_kandy_cordiner_description",
+      "wave8_kingdom_kandy_jaques_dictionary",
+      "wave8_kingdom_kandy_powell_wars"
+    ]
+  },
+  {
     "id": "dessalines_indigenous_army_arcahaie_coalition_1803",
     "name": "Dessalines's united Indigenous Army (1803)",
     "kind": "campaign_bounded_independence_army",
@@ -7038,6 +7055,56 @@
       "wave8_haitian_rebels_fondation_santo_domingo",
       "wave8_haitian_rebels_oxford_leclerc",
       "wave8_haitian_rebels_shd_leclerc_archive"
+    ]
+  },
+  {
+    "id": "davie_british_ceylon_garrison_kandy_1803",
+    "name": "Major Davie's British Ceylon garrison at Kandy (1803)",
+    "kind": "event_bounded_colonial_garrison",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "Kandy and the Mahaweli crossing, Kingdom of Kandy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Major Davie's British, Malay, and sepoy garrison and withdrawing detachment; the post-capitulation killings are not a second rated event. No rating is inherited by the Kingdom of Kandy as a timeless label, British Ceylon, the United Kingdom, post-1815 Kandyan rebels, a successor state, or a modern country.",
+    "source_ids": [
+      "wave8_kingdom_kandy_herath_massacre",
+      "wave8_kingdom_kandy_johnston_narrative",
+      "wave8_kingdom_kandy_powell_wars",
+      "wave8_kingdom_kandy_sivasundaram_land"
+    ]
+  },
+  {
+    "id": "sri_vikrama_kandyan_kandy_counterattack_force_1803",
+    "name": "Sri Vikrama Rajasinha's Kandyan counterattack force at Kandy (1803)",
+    "kind": "event_bounded_royal_counterattack_force",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "Kandy and the Mahaweli crossing, Kingdom of Kandy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal forces that compelled the British garrison's surrender and destroyed the withdrawing detachment in June 1803. No rating is inherited by the Kingdom of Kandy as a timeless label, British Ceylon, the United Kingdom, post-1815 Kandyan rebels, a successor state, or a modern country.",
+    "source_ids": [
+      "wave8_kingdom_kandy_herath_massacre",
+      "wave8_kingdom_kandy_johnston_narrative",
+      "wave8_kingdom_kandy_powell_wars",
+      "wave8_kingdom_kandy_sivasundaram_land"
+    ]
+  },
+  {
+    "id": "sri_vikrama_kandyan_hanwella_field_force_1803",
+    "name": "Sri Vikrama Rajasinha's Kandyan field force at Hanwella (1803)",
+    "kind": "event_bounded_royal_invasion_force",
+    "start_year": 1803,
+    "end_year": 1803,
+    "region": "Hanwella and the western frontier of the Kingdom of Kandy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the royal army repulsed at Hanwella after the Kandyan counter-invasion of the maritime provinces. No rating is inherited by the Kingdom of Kandy as a timeless label, British Ceylon, the United Kingdom, post-1815 Kandyan rebels, a successor state, or a modern country.",
+    "source_ids": [
+      "wave8_kingdom_kandy_codrington_short_history",
+      "wave8_kingdom_kandy_cordiner_description",
+      "wave8_kingdom_kandy_powell_wars"
     ]
   },
   {

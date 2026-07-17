@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 798,
-    "events": 5220,
-    "sources": 1086,
-    "registry_polities": 2154
+    "entities": 802,
+    "events": 5222,
+    "sources": 1099,
+    "registry_polities": 2158
   },
   "year_range": {
     "start": -1274,
@@ -140,6 +140,7 @@
     "accepted_wave8_eritrean_rebels_hced_events": 4,
     "accepted_wave8_inca_rebels_hced_events": 3,
     "accepted_wave8_haitian_rebels_hced_events": 2,
+    "accepted_wave8_kingdom_kandy_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -10029,7 +10030,290 @@
     "wave8_haitian_rebels_outcome_overrides": [],
     "wave8_haitian_rebels_entities_added": 2,
     "wave8_haitian_rebels_sources_added": 13,
-    "hced_label_pass_input_rows": 5737,
+    "wave8_kingdom_kandy_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 2,
+      "external_owner_hced_dispositions": 3,
+      "holds": 0,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 13,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "related_hced_dispositions": 1,
+      "reviewed_hced_rows": 7,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 2
+    },
+    "wave8_kingdom_kandy_cohort_counts": {
+      "first_kandyan_war_1803": 2
+    },
+    "wave8_kingdom_kandy_queue_validation": {
+      "external_owner_contracts": 3,
+      "holds": 0,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 7,
+      "reviewed_unresolved_hced_rows": 4,
+      "terminal_exclusions": 2
+    },
+    "wave8_kingdom_kandy_integration_validation": {
+      "cross_lane_hced_dispositions": 1,
+      "existing_release_duplicate_dispositions": 2,
+      "external_owner_hced_dispositions": 3,
+      "integration_dispositions": 4,
+      "iwbd_duplicate_dispositions": 0,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "related_hced_dispositions": 1
+    },
+    "wave8_kingdom_kandy_candidate_ids": [
+      "hced-Hanwella1803-1",
+      "hced-Kandy1803-1"
+    ],
+    "wave8_kingdom_kandy_holds": [],
+    "wave8_kingdom_kandy_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Kandy1815-1",
+        "raw_row_sha256": "362cabcf4a7cf955492a31a473ff40022e05dc7880ca96d9542c16be408223f2",
+        "disposition": "terminal_exclusion",
+        "exclusion_reason": "unopposed_annexation_and_treaty_cession_not_battle",
+        "reviewed_granularity": "occupation_deposition_and_sovereignty_transfer",
+        "reviewed_outcome": "not_rateable_no_contested_engagement",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_national_archives_1815",
+          "wave8_kingdom_kandy_powell_wars",
+          "wave8_kingdom_kandy_sivasundaram_land",
+          "wave8_kingdom_kandy_sumana_1818"
+        ],
+        "unknown_is_never_draw": true,
+        "audit_note": "The official Convention record and scholarship describe political manoeuvring, an occupation without resistance, deposition, and a transfer of sovereignty. HCED's winner label is not evidence of a competitive battle at Kandy."
+      },
+      {
+        "candidate_id": "hced-Kandy1818-1",
+        "raw_row_sha256": "fcbb39119bd5c3502f6b6a5cba515d22e3585f5aa49a4c6c66b80852c3578243",
+        "disposition": "terminal_exclusion",
+        "exclusion_reason": "post_annexation_wrong_actor_and_unbounded_rebellion_aggregate",
+        "reviewed_granularity": "multi_year_upcountry_rebellion_aggregate",
+        "reviewed_outcome": "not_rateable_from_this_row",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_kodikara_administration",
+          "wave8_kingdom_kandy_national_archives_1815",
+          "wave8_kingdom_kandy_national_archives_1818",
+          "wave8_kingdom_kandy_sumana_1818"
+        ],
+        "unknown_is_never_draw": true,
+        "audit_note": "The uprising began after the 1815 transfer of sovereignty and was fought by changing chieftain, monastic, pretender, and local rebel formations. The generic Kandy city row identifies neither one engagement nor a time-bounded Kingdom of Kandy belligerent."
+      }
+    ],
+    "wave8_kingdom_kandy_external_owner_dispositions": [
+      {
+        "candidate_id": "hced-Balane1594-1",
+        "disposition": "external_wave6_terminal_exclusion",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": null,
+        "raw_row_sha256": "83daa0566d2bbda3bf7d675c7327c957269073e2d020f0937ec81e3469684d8e",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "Wave 6 already excludes this compound: official chronology places the 1594 defeat at Danture and the battle of Balana in 1602. It cannot be renamed or redated silently in this exact-label lane."
+      },
+      {
+        "candidate_id": "hced-Gannoruwa1638-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_gannoruwa1638_1",
+        "canonical_event_name": "Battle of Gannoruwa",
+        "raw_row_sha256": "ac98a1cbd242c2013a47c364154b3cdce3e0ebb794662fc67141f400ddfdc88c",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      },
+      {
+        "candidate_id": "hced-Radenivela1630-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_radenivela1630_1",
+        "canonical_event_name": "Battle of Randeniwela",
+        "raw_row_sha256": "0ddf33d14eaba4c3120532aea883bc5bd0caea3936863a26c14e95edf57fe73e",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      }
+    ],
+    "wave8_kingdom_kandy_cross_lane_dispositions": [
+      {
+        "disposition_id": "hced-Trincomalee1639-1",
+        "disposition": "adjacent_composite_label_outside_exact_lane",
+        "raw_row_sha256": "599382d1cf30cc7a64ad817299cab5872c684cdd232f94be3df0f30afffba020",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "Trincomalee 1639 uses the distinct composite label 'Netherlands, Kingdom of Kandy'. It needs its own Dutch-Kandyan coalition and duplicate audit and is not captured by this literal-label lane."
+      }
+    ],
+    "wave8_kingdom_kandy_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Trincomalee1639-1",
+        "disposition": "adjacent_composite_label_outside_exact_lane",
+        "raw_row_sha256": "599382d1cf30cc7a64ad817299cab5872c684cdd232f94be3df0f30afffba020",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "Trincomalee 1639 uses the distinct composite label 'Netherlands, Kingdom of Kandy'. It needs its own Dutch-Kandyan coalition and duplicate audit and is not captured by this literal-label lane."
+      }
+    ],
+    "wave8_kingdom_kandy_iwbd_duplicate_dispositions": [],
+    "wave8_kingdom_kandy_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Hanwella1803-1",
+        "aliases": [
+          "battle of hanwella",
+          "battle of hanwella 1803",
+          "defense of hanwella",
+          "hanwella",
+          "repulse at hanwella"
+        ],
+        "years": [
+          1803,
+          1803
+        ]
+      },
+      {
+        "audit_id": "hced-Kandy1803-1",
+        "aliases": [
+          "destruction of davie s detachment",
+          "kandy",
+          "kandy garrison",
+          "massacre at kandy",
+          "siege and surrender of the british garrison at kandy"
+        ],
+        "years": [
+          1803,
+          1803
+        ]
+      },
+      {
+        "audit_id": "hced-Kandy1815-1",
+        "aliases": [
+          "capture of kandy",
+          "kandy",
+          "kandyan convention",
+          "occupation of kandy"
+        ],
+        "years": [
+          1815,
+          1815
+        ]
+      },
+      {
+        "audit_id": "hced-Kandy1818-1",
+        "aliases": [
+          "great rebellion",
+          "kandy",
+          "third kandyan war",
+          "uva rebellion",
+          "uva wellassa rebellion"
+        ],
+        "years": [
+          1818,
+          1818
+        ]
+      }
+    ],
+    "wave8_kingdom_kandy_existing_release_duplicate_dispositions": [
+      {
+        "disposition_id": "hced-Gannoruwa1638-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_gannoruwa1638_1",
+        "canonical_event_name": "Battle of Gannoruwa",
+        "raw_row_sha256": "ac98a1cbd242c2013a47c364154b3cdce3e0ebb794662fc67141f400ddfdc88c",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      },
+      {
+        "disposition_id": "hced-Radenivela1630-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_radenivela1630_1",
+        "canonical_event_name": "Battle of Randeniwela",
+        "raw_row_sha256": "0ddf33d14eaba4c3120532aea883bc5bd0caea3936863a26c14e95edf57fe73e",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      }
+    ],
+    "wave8_kingdom_kandy_integration_dispositions": [
+      {
+        "disposition_id": "external:hced-Balane1594-1",
+        "disposition": "external_wave6_terminal_exclusion",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": null,
+        "raw_row_sha256": "83daa0566d2bbda3bf7d675c7327c957269073e2d020f0937ec81e3469684d8e",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "Wave 6 already excludes this compound: official chronology places the 1594 defeat at Danture and the battle of Balana in 1602. It cannot be renamed or redated silently in this exact-label lane."
+      },
+      {
+        "disposition_id": "external:hced-Gannoruwa1638-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_gannoruwa1638_1",
+        "canonical_event_name": "Battle of Gannoruwa",
+        "raw_row_sha256": "ac98a1cbd242c2013a47c364154b3cdce3e0ebb794662fc67141f400ddfdc88c",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      },
+      {
+        "disposition_id": "external:hced-Radenivela1630-1",
+        "disposition": "existing_release_owner",
+        "owner_module": "military_elo.promotion.wave6_1500_1799",
+        "owner_event_id": "hced_wave6_hced_radenivela1630_1",
+        "canonical_event_name": "Battle of Randeniwela",
+        "raw_row_sha256": "0ddf33d14eaba4c3120532aea883bc5bd0caea3936863a26c14e95edf57fe73e",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "The exact HCED row is already rated once by Wave 6."
+      },
+      {
+        "disposition_id": "related_hced:hced-Trincomalee1639-1",
+        "disposition": "adjacent_composite_label_outside_exact_lane",
+        "raw_row_sha256": "599382d1cf30cc7a64ad817299cab5872c684cdd232f94be3df0f30afffba020",
+        "evidence_refs": [
+          "wave8_kingdom_kandy_nova_ceylon",
+          "wave8_kingdom_kandy_official_chronology"
+        ],
+        "reason": "Trincomalee 1639 uses the distinct composite label 'Netherlands, Kingdom of Kandy'. It needs its own Dutch-Kandyan coalition and duplicate audit and is not captured by this literal-label lane."
+      }
+    ],
+    "wave8_kingdom_kandy_outcome_overrides": [],
+    "wave8_kingdom_kandy_entities_added": 4,
+    "wave8_kingdom_kandy_sources_added": 13,
+    "hced_label_pass_input_rows": 5733,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -10042,7 +10326,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 867,
+      "reserved_candidate_contract": 871,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -10054,7 +10338,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2226,
+      "no_unique_time_valid_label_match": 2222,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
