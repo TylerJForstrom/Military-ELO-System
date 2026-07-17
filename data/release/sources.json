@@ -7939,6 +7939,182 @@
     ]
   },
   {
+    "id": "wave8_eritrean_rebels_africa_watch_evil_days",
+    "title": "Evil Days: 30 Years of War and Famine in Ethiopia",
+    "url": "https://opendata.uni-halle.de/bitstream/1981185920/108557/711/656410639.pdf",
+    "publisher": "Africa Watch / Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "africa_watch_ethiopia_eritrea_reporting_1990_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+    "title": "The Road to Asmara: Eritrea, 1988-91",
+    "url": "https://www.hrw.org/reports/pdfs/e/ethiopia/ethiopia.919/d4afabet.pdf",
+    "publisher": "Africa Watch / Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "africa_watch_ethiopia_eritrea_reporting_1990_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_ayele_ethiopian_army",
+    "title": "The Ethiopian Army: From Victory to Collapse, 1977-1991",
+    "url": "https://nupress.northwestern.edu/9780810168053/the-ethiopian-army/",
+    "publisher": "Northwestern University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-16",
+    "source_family_id": "ayele_ethiopian_army_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_frus_1978",
+    "title": "Eritrea: Prospects for the Coming Ethiopian Offensive",
+    "url": "https://history.state.gov/historicaldocuments/frus1977-80v17p1/d84",
+    "publisher": "U.S. Department of State, Office of the Historian",
+    "license": "Citation and link only",
+    "source_type": "declassified_contemporaneous_intelligence_assessment",
+    "accessed": "2026-07-16",
+    "source_family_id": "frus_horn_of_africa_1978_document_84",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_hrw_world_report_1990",
+    "title": "World Report 1990: Ethiopia",
+    "url": "https://www.hrw.org/reports/1990/WR90/AFRICA.BOU-02.htm",
+    "publisher": "Human Rights Watch",
+    "license": "Citation and link only",
+    "source_type": "independent_contemporaneous_human_rights_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "africa_watch_ethiopia_eritrea_reporting_1990_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_latimes_assab",
+    "title": "Ethiopia Rebels Take No. 2 City; Army Giving Up",
+    "url": "https://www.latimes.com/archives/la-xpm-1991-05-26-mn-3803-story.html",
+    "publisher": "Los Angeles Times",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_newspaper_report",
+    "accessed": "2026-07-16",
+    "source_family_id": "hiltzik_latimes_26_may_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_loc_country_study",
+    "title": "Ethiopia: Government Defeats in Eritrea and Tigray",
+    "url": "https://countrystudies.us/ethiopia/36.htm",
+    "publisher": "U.S. Library of Congress, Federal Research Division",
+    "license": "Citation and link only",
+    "source_type": "federal_country_study",
+    "accessed": "2026-07-16",
+    "source_family_id": "loc_ethiopia_country_study_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_lrb_harding_1987",
+    "title": "Eritrean Revolution",
+    "url": "https://www.lrb.co.uk/the-paper/v09/n18/jeremy-harding/eritrean-revolution",
+    "publisher": "London Review of Books",
+    "license": "Citation and link only",
+    "source_type": "reported_historical_essay_with_field_observation",
+    "accessed": "2026-07-16",
+    "source_family_id": "harding_lrb_eritrean_revolution_1987",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_tareke_massawa",
+    "title": "Massawa: The Denouement",
+    "url": "https://academic.oup.com/yale-scholarship-online/book/16340/chapter-abstract/171472017",
+    "publisher": "Yale University Press / Oxford Academic",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_book_chapter",
+    "accessed": "2026-07-16",
+    "source_family_id": "tareke_ethiopian_revolution_massawa_2009",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_un_coi_history",
+    "title": "Detailed findings of the Commission of Inquiry on Human Rights in Eritrea, chapter III",
+    "url": "https://www.ohchr.org/Documents/HRBodies/HRCouncil/CoIEritrea/A_HRC_29_CRP-1_Chapter_III.pdf",
+    "publisher": "United Nations Human Rights Council",
+    "license": "Citation and link only",
+    "source_type": "united_nations_commission_history",
+    "accessed": "2026-07-16",
+    "source_family_id": "un_coi_eritrea_chapter_iii",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_wapo_eplf_communique",
+    "title": "For the Record: EPLF statement 'Eritrea Liberated at Last!!'",
+    "url": "https://www.washingtonpost.com/archive/opinions/1991/05/31/for-the-record/396ccebb-4a99-4abf-a35b-f8687caae4e7/",
+    "publisher": "The Washington Post; Eritrean People's Liberation Front",
+    "license": "Citation and link only",
+    "source_type": "published_belligerent_primary_communique",
+    "accessed": "2026-07-16",
+    "source_family_id": "eplf_27_may_1991_final_offensive_communique",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_eritrean_rebels_yna_upi_assab",
+    "title": "Ethiopian rebels take complete control of northern region",
+    "url": "https://www.yna.co.kr/view/AKR19910526000200009",
+    "publisher": "United Press International / Yonhap News Agency archive",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_wire_service_archive",
+    "accessed": "2026-07-16",
+    "source_family_id": "upi_wire_assab_25_may_1991",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",

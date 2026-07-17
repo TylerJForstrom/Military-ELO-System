@@ -1243,6 +1243,31 @@ from .wave8_france_bavaria import (
     wave8_france_bavaria_cohort_counts,
     wave8_france_bavaria_counts,
 )
+from .wave8_eritrean_rebels import (
+    WAVE8_ERITREAN_REBELS_CONTRACT_IDS,
+    WAVE8_ERITREAN_REBELS_CROSS_LANE_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_ENTITIES,
+    WAVE8_ERITREAN_REBELS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_HCED_DUPLICATE_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_HOLD_IDS,
+    WAVE8_ERITREAN_REBELS_HOLDS,
+    WAVE8_ERITREAN_REBELS_INTEGRATION_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_IWBD_ZERO_OVERLAP_AUDIT,
+    WAVE8_ERITREAN_REBELS_OUTCOME_OVERRIDES,
+    WAVE8_ERITREAN_REBELS_RELATED_HCED_DISPOSITIONS,
+    WAVE8_ERITREAN_REBELS_RESERVED_IDS,
+    WAVE8_ERITREAN_REBELS_SOURCES,
+    WAVE8_ERITREAN_REBELS_TERMINAL_EXCLUSION_IDS,
+    WAVE8_ERITREAN_REBELS_TERMINAL_EXCLUSIONS,
+    install_wave8_eritrean_rebels_entities,
+    install_wave8_eritrean_rebels_sources,
+    promote_wave8_eritrean_rebels_contracts,
+    validate_wave8_eritrean_rebels_integration_dispositions,
+    validate_wave8_eritrean_rebels_queue_contracts,
+    wave8_eritrean_rebels_cohort_counts,
+    wave8_eritrean_rebels_counts,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -1324,6 +1349,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ERITREA_RESERVED_IDS
     | WAVE8_FLANDERS_RESERVED_IDS
     | WAVE8_FRANCE_BAVARIA_RESERVED_IDS
+    | WAVE8_ERITREAN_REBELS_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -1728,7 +1754,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 213
+        len(HCED_POINT_QUARANTINE_IDS) != 217
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 92
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -1964,6 +1990,9 @@ def build_expanded_release(
     wave8_flanders_queue_validation = validate_wave8_flanders_queue_contracts(hced)
     wave8_france_bavaria_queue_validation = (
         validate_wave8_france_bavaria_queue_contracts(hced)
+    )
+    wave8_eritrean_rebels_queue_validation = (
+        validate_wave8_eritrean_rebels_queue_contracts(hced)
     )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
@@ -2333,6 +2362,7 @@ def build_expanded_release(
     install_wave8_eritrea_entities(release_entities)
     install_wave8_flanders_entities(release_entities)
     install_wave8_france_bavaria_entities(release_entities)
+    install_wave8_eritrean_rebels_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -3597,6 +3627,15 @@ def build_expanded_release(
         release_entities,
         wave8_france_bavaria_existing_events,
     )
+    wave8_eritrean_rebels_existing_events = [
+        *wave8_france_bavaria_existing_events,
+        *wave8_france_bavaria_events,
+    ]
+    wave8_eritrean_rebels_events = promote_wave8_eritrean_rebels_contracts(
+        hced,
+        release_entities,
+        wave8_eritrean_rebels_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -3660,6 +3699,7 @@ def build_expanded_release(
         *wave8_eritrea_events,
         *wave8_flanders_events,
         *wave8_france_bavaria_events,
+        *wave8_eritrean_rebels_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -3777,6 +3817,8 @@ def build_expanded_release(
             *WAVE8_FLANDERS_TERMINAL_EXCLUSION_IDS,
             *WAVE8_FRANCE_BAVARIA_HOLD_IDS,
             *WAVE8_FRANCE_BAVARIA_TERMINAL_EXCLUSION_IDS,
+            *WAVE8_ERITREAN_REBELS_HOLD_IDS,
+            *WAVE8_ERITREAN_REBELS_TERMINAL_EXCLUSION_IDS,
         }:
             continue
         name = str(candidate.get("name") or "")
@@ -3866,6 +3908,7 @@ def build_expanded_release(
         *wave8_eritrea_events,
         *wave8_flanders_events,
         *wave8_france_bavaria_events,
+        *wave8_eritrean_rebels_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -4180,6 +4223,13 @@ def build_expanded_release(
             wave8_france_bavaria_existing_events,
         )
     )
+    wave8_eritrean_rebels_integration_validation = (
+        validate_wave8_eritrean_rebels_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_eritrean_rebels_existing_events,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -4388,6 +4438,7 @@ def build_expanded_release(
     install_wave8_eritrea_sources(sources_by_id)
     install_wave8_flanders_sources(sources_by_id)
     install_wave8_france_bavaria_sources(sources_by_id)
+    install_wave8_eritrean_rebels_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -4456,6 +4507,7 @@ def build_expanded_release(
         *wave8_eritrea_events,
         *wave8_flanders_events,
         *wave8_france_bavaria_events,
+        *wave8_eritrean_rebels_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -4524,6 +4576,7 @@ def build_expanded_release(
         *wave8_eritrea_events,
         *wave8_flanders_events,
         *wave8_france_bavaria_events,
+        *wave8_eritrean_rebels_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -4591,6 +4644,7 @@ def build_expanded_release(
             | WAVE8_ERITREA_CONTRACT_IDS
             | WAVE8_FLANDERS_CONTRACT_IDS
             | WAVE8_FRANCE_BAVARIA_CONTRACT_IDS
+            | WAVE8_ERITREAN_REBELS_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -4700,6 +4754,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_ERITREA_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FLANDERS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FRANCE_BAVARIA_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_ERITREAN_REBELS_ENTITIES),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -4936,6 +4991,7 @@ def build_expanded_release(
         - len(wave8_eritrea_events)
         - len(wave8_flanders_events)
         - len(wave8_france_bavaria_events)
+        - len(wave8_eritrean_rebels_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -5072,6 +5128,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_flanders_hced_events": len(wave8_flanders_events),
         "candidate_keyed_wave8_france_bavaria_hced_events": len(
             wave8_france_bavaria_events
+        ),
+        "candidate_keyed_wave8_eritrean_rebels_hced_events": len(
+            wave8_eritrean_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -5351,6 +5410,9 @@ def build_expanded_release(
             "accepted_wave8_flanders_hced_events": len(wave8_flanders_events),
             "accepted_wave8_france_bavaria_hced_events": len(
                 wave8_france_bavaria_events
+            ),
+            "accepted_wave8_eritrean_rebels_hced_events": len(
+                wave8_eritrean_rebels_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -7721,6 +7783,85 @@ def build_expanded_release(
             "wave8_france_bavaria_sources_added": len(
                 WAVE8_FRANCE_BAVARIA_SOURCES
             ),
+            "wave8_eritrean_rebels_counts": wave8_eritrean_rebels_counts(),
+            "wave8_eritrean_rebels_cohort_counts": (
+                wave8_eritrean_rebels_cohort_counts()
+            ),
+            "wave8_eritrean_rebels_queue_validation": (
+                wave8_eritrean_rebels_queue_validation
+            ),
+            "wave8_eritrean_rebels_integration_validation": (
+                wave8_eritrean_rebels_integration_validation
+            ),
+            "wave8_eritrean_rebels_candidate_ids": sorted(
+                WAVE8_ERITREAN_REBELS_CONTRACT_IDS
+            ),
+            "wave8_eritrean_rebels_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_HOLDS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_cross_lane_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_CROSS_LANE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_related_hced_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_RELATED_HCED_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_hced_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_HCED_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_iwbd_duplicate_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_IWBD_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_iwbd_zero_overlap_audit": [
+                {"audit_id": audit_id, **contract}
+                for audit_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_IWBD_ZERO_OVERLAP_AUDIT.items()
+                )
+            ],
+            "wave8_eritrean_rebels_existing_release_duplicate_dispositions": [
+                {"event_id": event_id, **contract}
+                for event_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_EXISTING_RELEASE_DUPLICATE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_integration_dispositions": [
+                {"disposition_id": disposition_id, **contract}
+                for disposition_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_INTEGRATION_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_eritrean_rebels_outcome_overrides": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ERITREAN_REBELS_OUTCOME_OVERRIDES.items()
+                )
+            ],
+            "wave8_eritrean_rebels_entities_added": len(
+                WAVE8_ERITREAN_REBELS_ENTITIES
+            ),
+            "wave8_eritrean_rebels_sources_added": len(
+                WAVE8_ERITREAN_REBELS_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -7984,6 +8125,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_flanders_hced_events": len(wave8_flanders_events),
         "candidate_keyed_wave8_france_bavaria_hced_events": len(
             wave8_france_bavaria_events
+        ),
+        "candidate_keyed_wave8_eritrean_rebels_hced_events": len(
+            wave8_eritrean_rebels_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

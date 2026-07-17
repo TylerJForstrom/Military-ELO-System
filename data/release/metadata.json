@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 786,
-    "events": 5211,
-    "sources": 1051,
-    "registry_polities": 2142
+    "entities": 790,
+    "events": 5215,
+    "sources": 1063,
+    "registry_polities": 2146
   },
   "year_range": {
     "start": -1274,
@@ -137,6 +137,7 @@
     "accepted_wave8_eritrea_hced_events": 4,
     "accepted_wave8_flanders_hced_events": 4,
     "accepted_wave8_france_bavaria_hced_events": 3,
+    "accepted_wave8_eritrean_rebels_hced_events": 4,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -9068,7 +9069,400 @@
     "wave8_france_bavaria_outcome_overrides": [],
     "wave8_france_bavaria_entities_added": 1,
     "wave8_france_bavaria_sources_added": 11,
-    "hced_label_pass_input_rows": 5749,
+    "wave8_eritrean_rebels_counts": {
+      "country_quarantine_additions": 0,
+      "cross_lane_hced_dispositions": 2,
+      "existing_release_duplicate_dispositions": 1,
+      "hced_duplicate_dispositions": 1,
+      "holds": 0,
+      "integration_dispositions": 8,
+      "iwbd_duplicate_dispositions": 1,
+      "iwbd_zero_overlap_candidates": 4,
+      "new_entities": 4,
+      "new_sources": 12,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 4,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_eritrean_rebels_cohort_counts": {
+      "dekemhare_front_1990_1991": 1,
+      "final_assab_offensive_1991": 1,
+      "first_massawa_battle_1977": 1,
+      "operation_fenkil_1990": 1
+    },
+    "wave8_eritrean_rebels_queue_validation": {
+      "holds": 0,
+      "promotion_contracts": 4,
+      "related_hced_dispositions": 3,
+      "reviewed_hced_rows": 4,
+      "terminal_exclusions": 0
+    },
+    "wave8_eritrean_rebels_integration_validation": {
+      "cross_lane_hced_dispositions": 2,
+      "existing_release_duplicate_dispositions": 1,
+      "hced_duplicate_dispositions": 1,
+      "integration_dispositions": 8,
+      "iwbd_duplicate_dispositions": 1,
+      "iwbd_probable_twins": 0,
+      "iwbd_zero_overlap_candidates": 4,
+      "related_hced_dispositions": 3
+    },
+    "wave8_eritrean_rebels_candidate_ids": [
+      "hced-Assab1991-1",
+      "hced-Dekemhare1990-1991-1",
+      "hced-Massawa1977-1",
+      "hced-Massawa1990-1"
+    ],
+    "wave8_eritrean_rebels_holds": [],
+    "wave8_eritrean_rebels_terminal_exclusions": [],
+    "wave8_eritrean_rebels_cross_lane_dispositions": [
+      {
+        "disposition_id": "ethiopia_related_rows",
+        "disposition": "outside_exact_eritrean_rebels_lane",
+        "other_module": "future_candidate_keyed_composite_lanes",
+        "owned_candidate_ids": [
+          "hced-Assab1991-1",
+          "hced-Dekemhare1990-1991-1",
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "other_candidate_ids": [
+          "hced-Addis Ababa1991-1",
+          "hced-Asosa1990-1991-1",
+          "hced-Inda Silase1989-1"
+        ],
+        "reason": "Generic Ethiopian Rebels and Oromo/Tigrayan composite rows need their own actor and outcome boundaries; this lane claims none.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "wave8_eritrea",
+        "disposition": "disjoint_exact_labels_and_candidate_ownership",
+        "other_module": "wave8_eritrea",
+        "owned_candidate_ids": [
+          "hced-Assab1991-1",
+          "hced-Dekemhare1990-1991-1",
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "other_exact_candidate_ids": [
+          "hced-Afabet1988-1",
+          "hced-Badme1998-1",
+          "hced-Badme1999-1",
+          "hced-Barentu1985-1",
+          "hced-Barentu2000-1",
+          "hced-Keren1977-1978-1",
+          "hced-Nakfa1977-1988-1",
+          "hced-Tsorona1999-1"
+        ],
+        "reason": "The exact Eritrea lane owns only literal Eritrea rows and explicitly marks all four literal Eritrean Rebels rows for this separate audit.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_evil_days",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_related_hced_dispositions": [
+      {
+        "candidate_id": "hced-Addis Ababa1991-1",
+        "raw_row_sha256": "c743004579d8037cec5b470037779bdebac698c21cfe11a3c44413f52fe36538",
+        "disposition": "separate_ethiopian_rebel_coalition_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Ethiopian Rebels"
+        ],
+        "reason": "The EPRDF/TPLF-led Addis Ababa action is not an EPLF-only event; cooperation between fronts cannot transfer ownership or Elo.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_evil_days",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Asosa1990-1991-1",
+        "raw_row_sha256": "3fce1e2431ad7cc42e1122493e6b91c29f1a16d6a96e914c703e3316a45359f7",
+        "disposition": "separate_oromo_eritrean_composite_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Oromo Rebels, Eritrea"
+        ],
+        "reason": "The composite Oromo/Eritrean side requires its own coalition audit and is not reduced to this exact EPLF actor lane.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Inda Silase1989-1",
+        "raw_row_sha256": "4a4ea3108666d6399002a7d7b37bdc834ce467fe0e3b46b8d76b960b4a2f42f0",
+        "disposition": "separate_tigrayan_eritrean_composite_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Tigrayan Rebels, Eritrea"
+        ],
+        "reason": "The TPLF/EPLF composite force is not an EPLF-only formation and cannot inherit one of this lane's campaign identities.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_hced_duplicate_dispositions": [
+      {
+        "candidate_id": "hced-Massawa1941-1",
+        "raw_row_sha256": "086dfc15ad7234ce0e09634f029133accd9db18f3781ab8082f222babe5b7d6c",
+        "disposition": "same_place_name_distinct_world_war_two_battle",
+        "expected_name": "Massawa",
+        "expected_year_low": 1941,
+        "expected_year_high": 1941,
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "The 1941 British/Free French capture from Italy is separated by decades, belligerents, and war from both Eritrean-independence rows.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_iwbd_duplicate_dispositions": [
+      {
+        "candidate_id": "iwbd-139-53-961",
+        "disposition": "same_place_name_distinct_world_war_two_battle",
+        "expected_name": "Massawa",
+        "expected_start_date": "1941-04-08",
+        "expected_end_date": "1941-04-08",
+        "expected_winner_raw": "Allies",
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "IWBD's 1941 Allies-Axis battle is not either EPLF Massawa action.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_iwbd_zero_overlap_audit": [
+      {
+        "audit_id": "hced-Assab1991-1",
+        "aliases": [
+          "aseb",
+          "assab",
+          "asseb",
+          "capture of assab",
+          "siege and capture of assab"
+        ],
+        "years": [
+          1991,
+          1991
+        ]
+      },
+      {
+        "audit_id": "hced-Dekemhare1990-1991-1",
+        "aliases": [
+          "decamere",
+          "decamhare",
+          "dekemhare",
+          "dekemhare front campaign and capture"
+        ],
+        "years": [
+          1990,
+          1991
+        ]
+      },
+      {
+        "audit_id": "hced-Massawa1977-1",
+        "aliases": [
+          "battle of massawa",
+          "first battle of massawa",
+          "massawa",
+          "mitsiwa"
+        ],
+        "years": [
+          1977,
+          1977
+        ]
+      },
+      {
+        "audit_id": "hced-Massawa1990-1",
+        "aliases": [
+          "massawa",
+          "mitsiwa",
+          "operation fenkil",
+          "second battle of massawa",
+          "second battle of massawa operation fenkil"
+        ],
+        "years": [
+          1990,
+          1990
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_existing_release_duplicate_dispositions": [
+      {
+        "event_id": "hced_hced_massawa1941_1",
+        "disposition": "existing_distinct_world_war_two_event",
+        "expected_hced_candidate_id": "hced-Massawa1941-1",
+        "expected_name": "Massawa",
+        "expected_year": 1941,
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "The released 1941 event remains a distinct, valid event.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_integration_dispositions": [
+      {
+        "disposition_id": "cross_lane:ethiopia_related_rows",
+        "disposition": "outside_exact_eritrean_rebels_lane",
+        "other_module": "future_candidate_keyed_composite_lanes",
+        "owned_candidate_ids": [
+          "hced-Assab1991-1",
+          "hced-Dekemhare1990-1991-1",
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "other_candidate_ids": [
+          "hced-Addis Ababa1991-1",
+          "hced-Asosa1990-1991-1",
+          "hced-Inda Silase1989-1"
+        ],
+        "reason": "Generic Ethiopian Rebels and Oromo/Tigrayan composite rows need their own actor and outcome boundaries; this lane claims none.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "cross_lane:wave8_eritrea",
+        "disposition": "disjoint_exact_labels_and_candidate_ownership",
+        "other_module": "wave8_eritrea",
+        "owned_candidate_ids": [
+          "hced-Assab1991-1",
+          "hced-Dekemhare1990-1991-1",
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "other_exact_candidate_ids": [
+          "hced-Afabet1988-1",
+          "hced-Badme1998-1",
+          "hced-Badme1999-1",
+          "hced-Barentu1985-1",
+          "hced-Barentu2000-1",
+          "hced-Keren1977-1978-1",
+          "hced-Nakfa1977-1988-1",
+          "hced-Tsorona1999-1"
+        ],
+        "reason": "The exact Eritrea lane owns only literal Eritrea rows and explicitly marks all four literal Eritrean Rebels rows for this separate audit.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_evil_days",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "existing_release:hced_hced_massawa1941_1",
+        "disposition": "existing_distinct_world_war_two_event",
+        "expected_hced_candidate_id": "hced-Massawa1941-1",
+        "expected_name": "Massawa",
+        "expected_year": 1941,
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "The released 1941 event remains a distinct, valid event.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      },
+      {
+        "disposition_id": "hced_duplicate:hced-Massawa1941-1",
+        "raw_row_sha256": "086dfc15ad7234ce0e09634f029133accd9db18f3781ab8082f222babe5b7d6c",
+        "disposition": "same_place_name_distinct_world_war_two_battle",
+        "expected_name": "Massawa",
+        "expected_year_low": 1941,
+        "expected_year_high": 1941,
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "The 1941 British/Free French capture from Italy is separated by decades, belligerents, and war from both Eritrean-independence rows.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      },
+      {
+        "disposition_id": "iwbd_duplicate:iwbd-139-53-961",
+        "disposition": "same_place_name_distinct_world_war_two_battle",
+        "expected_name": "Massawa",
+        "expected_start_date": "1941-04-08",
+        "expected_end_date": "1941-04-08",
+        "expected_winner_raw": "Allies",
+        "related_owner_candidate_ids": [
+          "hced-Massawa1977-1",
+          "hced-Massawa1990-1"
+        ],
+        "reason": "IWBD's 1941 Allies-Axis battle is not either EPLF Massawa action.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Addis Ababa1991-1",
+        "raw_row_sha256": "c743004579d8037cec5b470037779bdebac698c21cfe11a3c44413f52fe36538",
+        "disposition": "separate_ethiopian_rebel_coalition_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Ethiopian Rebels"
+        ],
+        "reason": "The EPRDF/TPLF-led Addis Ababa action is not an EPLF-only event; cooperation between fronts cannot transfer ownership or Elo.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_evil_days",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Asosa1990-1991-1",
+        "raw_row_sha256": "3fce1e2431ad7cc42e1122493e6b91c29f1a16d6a96e914c703e3316a45359f7",
+        "disposition": "separate_oromo_eritrean_composite_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Oromo Rebels, Eritrea"
+        ],
+        "reason": "The composite Oromo/Eritrean side requires its own coalition audit and is not reduced to this exact EPLF actor lane.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      },
+      {
+        "disposition_id": "related_hced:hced-Inda Silase1989-1",
+        "raw_row_sha256": "4a4ea3108666d6399002a7d7b37bdc834ce467fe0e3b46b8d76b960b4a2f42f0",
+        "disposition": "separate_tigrayan_eritrean_composite_lane",
+        "raw_labels": [
+          "Ethiopia",
+          "Tigrayan Rebels, Eritrea"
+        ],
+        "reason": "The TPLF/EPLF composite force is not an EPLF-only formation and cannot inherit one of this lane's campaign identities.",
+        "evidence_refs": [
+          "wave8_eritrean_rebels_tareke_massawa",
+          "wave8_eritrean_rebels_un_coi_history"
+        ]
+      }
+    ],
+    "wave8_eritrean_rebels_outcome_overrides": [],
+    "wave8_eritrean_rebels_entities_added": 4,
+    "wave8_eritrean_rebels_sources_added": 12,
+    "hced_label_pass_input_rows": 5745,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -9081,7 +9475,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 855,
+      "reserved_candidate_contract": 859,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -9093,7 +9487,7 @@
       "label_outcome_not_aligned": 80,
       "label_outside_policy_window": 174,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2238,
+      "no_unique_time_valid_label_match": 2234,
       "no_unique_time_valid_polity": 89,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

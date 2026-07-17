@@ -12055,6 +12055,22 @@
     ]
   },
   {
+    "id": "eplf_massawa_assault_force_1977",
+    "name": "EPLF Massawa Assault Force (December 1977)",
+    "kind": "engagement_bounded_insurgent_assault_force",
+    "start_year": 1977,
+    "end_year": 1977,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded EPLF force that stormed the remaining Ethiopian port positions at Massawa and was repulsed in December 1977. No rating is inherited by the Eritrean Liberation Front (ELF), a generic Eritrean Rebels label, civilians, another EPLF formation, the Provisional Government, PFDJ, or the State of Eritrea.",
+    "source_ids": [
+      "wave8_eritrean_rebels_africa_watch_evil_days",
+      "wave8_eritrean_rebels_lrb_harding_1987",
+      "wave8_eritrean_rebels_un_coi_history"
+    ]
+  },
+  {
     "id": "eplf_nakfa_front_1977_1988",
     "name": "EPLF Nakfa Front (1977-1988)",
     "kind": "defensive_front",
@@ -12135,6 +12151,57 @@
       "wave8_eritrea_tareke_afabet",
       "wave8_eritrea_ucdp_actor_26_1",
       "wave8_eritrea_un_coi_history"
+    ]
+  },
+  {
+    "id": "eplf_dekemhare_front_force_1990_1991",
+    "name": "EPLF Dekemhare Front Force (1990-1991)",
+    "kind": "campaign_bounded_insurgent_front",
+    "start_year": 1990,
+    "end_year": 1991,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Campaign-bounded EPLF formation on the Dekemhare front from the 1990 fighting through the May 1991 encirclement and capture. No rating is inherited by the Eritrean Liberation Front (ELF), a generic Eritrean Rebels label, civilians, another EPLF formation, the Provisional Government, PFDJ, or the State of Eritrea.",
+    "source_ids": [
+      "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+      "wave8_eritrean_rebels_loc_country_study",
+      "wave8_eritrean_rebels_un_coi_history",
+      "wave8_eritrean_rebels_wapo_eplf_communique"
+    ]
+  },
+  {
+    "id": "eplf_operation_fenkil_force_1990",
+    "name": "EPLF Operation Fenkil Force (8-10 February 1990)",
+    "kind": "engagement_bounded_combined_arms_force",
+    "start_year": 1990,
+    "end_year": 1990,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded EPLF land and maritime force that captured Massawa during Operation Fenkil. No rating is inherited by the Eritrean Liberation Front (ELF), a generic Eritrean Rebels label, civilians, another EPLF formation, the Provisional Government, PFDJ, or the State of Eritrea.",
+    "source_ids": [
+      "wave8_eritrean_rebels_africa_watch_road_to_asmara",
+      "wave8_eritrean_rebels_tareke_massawa",
+      "wave8_eritrean_rebels_un_coi_history"
+    ]
+  },
+  {
+    "id": "eplf_assab_offensive_force_1991",
+    "name": "EPLF Assab Offensive Force (24-25 May 1991)",
+    "kind": "engagement_bounded_insurgent_offensive_force",
+    "start_year": 1991,
+    "end_year": 1991,
+    "region": "Eritrea",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Engagement-bounded EPLF force that completed the Danakil advance and captured the final Ethiopian-held port at Assab. No rating is inherited by the Eritrean Liberation Front (ELF), a generic Eritrean Rebels label, civilians, another EPLF formation, the Provisional Government, PFDJ, or the State of Eritrea.",
+    "source_ids": [
+      "wave8_eritrean_rebels_africa_watch_evil_days",
+      "wave8_eritrean_rebels_latimes_assab",
+      "wave8_eritrean_rebels_un_coi_history",
+      "wave8_eritrean_rebels_wapo_eplf_communique",
+      "wave8_eritrean_rebels_yna_upi_assab"
     ]
   },
   {

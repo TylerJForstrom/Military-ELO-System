@@ -4901,11 +4901,31 @@
       "region": "Eritrea"
     },
     {
+      "id": "eplf_assab_offensive_force_1991",
+      "name": "EPLF Assab Offensive Force (24-25 May 1991)",
+      "kind": "engagement_bounded_insurgent_offensive_force",
+      "start_year": 1991,
+      "end_year": 1991,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
       "id": "eplf_barentu_assault_force_1985",
       "name": "EPLF Barentu Assault Force (July 1985)",
       "kind": "assault_force",
       "start_year": 1985,
       "end_year": 1985,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
+      "id": "eplf_dekemhare_front_force_1990_1991",
+      "name": "EPLF Dekemhare Front Force (1990-1991)",
+      "kind": "campaign_bounded_insurgent_front",
+      "start_year": 1990,
+      "end_year": 1991,
       "status": "rated",
       "identity_status": "curated",
       "region": "Eritrea"
@@ -4921,11 +4941,31 @@
       "region": "Eritrea"
     },
     {
+      "id": "eplf_massawa_assault_force_1977",
+      "name": "EPLF Massawa Assault Force (December 1977)",
+      "kind": "engagement_bounded_insurgent_assault_force",
+      "start_year": 1977,
+      "end_year": 1977,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
       "id": "eplf_nakfa_front_1977_1988",
       "name": "EPLF Nakfa Front (1977-1988)",
       "kind": "defensive_front",
       "start_year": 1977,
       "end_year": 1988,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Eritrea"
+    },
+    {
+      "id": "eplf_operation_fenkil_force_1990",
+      "name": "EPLF Operation Fenkil Force (8-10 February 1990)",
+      "kind": "engagement_bounded_combined_arms_force",
+      "start_year": 1990,
+      "end_year": 1990,
       "status": "rated",
       "identity_status": "curated",
       "region": "Eritrea"
@@ -22794,11 +22834,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2142,
-    "rated_entities": 779,
-    "rated_events": 5211,
+    "registry_polities": 2146,
+    "rated_entities": 783,
+    "rated_events": 5215,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18183,
+    "unresolved_event_candidates": 18179,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -22865,6 +22905,7 @@
     "candidate_keyed_wave8_eritrea_hced_events": 4,
     "candidate_keyed_wave8_flanders_hced_events": 4,
     "candidate_keyed_wave8_france_bavaria_hced_events": 3,
+    "candidate_keyed_wave8_eritrean_rebels_hced_events": 4,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -22875,21 +22916,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 4947,
-      "candidate_keyed_reviewed_contracts": 637,
+      "hced_candidate_bindings": 4951,
+      "candidate_keyed_reviewed_contracts": 641,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4854,
-      "location_provenance_objects": 4903,
-      "point_fields_withheld_by_quarantine": 213,
+      "modern_location_country_assertions": 4858,
+      "location_provenance_objects": 4907,
+      "point_fields_withheld_by_quarantine": 217,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 92,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 44,
-      "unique_events_with_any_quarantined_field": 261,
-      "point_quarantine_candidate_manifest_sha256": "cfccb507bd15b693a7036f6e3e07ab1dc6791006ac87b65d20af8afd0e984bf0",
+      "unique_events_with_any_quarantined_field": 265,
+      "point_quarantine_candidate_manifest_sha256": "e9366bc8d7817b3b63111507dfc5a089f4bc626c45a0c53b1b5c35fe5db76e02",
       "country_quarantine_candidate_manifest_sha256": "4c1aa4901ea4bdc294ccb671667d7328f453649fac6b3d185554f9a0a0b6470a",
-      "quarantine_policy_sha256": "ea63bab2bb1cdda089728fc65a092bd209a7e5a7acdf6856bf7e1004657fceab",
+      "quarantine_policy_sha256": "977dca107057092cc8e6ca1ff6c843033faa0d39f94b41a113f628edafde2f09",
       "assertion_status": {
-        "unreviewed_source_assertion": 4903
+        "unreviewed_source_assertion": 4907
       },
       "verified_location_assertions": {
         "availability": "not_available",
