@@ -6675,6 +6675,112 @@
     ]
   },
   {
+    "id": "wave8_carnatic_alagappa_tamil_nadu",
+    "title": "History of Tamil Nadu (Beginning to 1947 AD)",
+    "url": "https://mis.alagappauniversity.ac.in/siteAdmin/dde-admin/uploads/5/__UG_B.A._History%20%28English%29_108%2051_History%20of%20Tamil%20Nadu%20%28Beginning%20to%201947%20AD%29_BA%20%28History%29_9683.pdf",
+    "publisher": "Alagappa University",
+    "license": "Citation and link only",
+    "source_type": "university_history_text",
+    "accessed": "2026-07-17",
+    "source_family_id": "alagappa_history_tamil_nadu",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_britannica_arcot",
+    "title": "1911 Encyclopaedia Britannica: Arcot",
+    "url": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Arcot",
+    "publisher": "Encyclopaedia Britannica / Wikisource transcription",
+    "license": "Citation and link only",
+    "source_type": "edited_reference_work",
+    "accessed": "2026-07-17",
+    "source_family_id": "britannica_1911_arcot",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_gingee_context",
+    "title": "J. Rickard, Battle of Gingee, 11 September 1750",
+    "url": "https://www.historyofwar.org/articles/battles_gingee_1750.html",
+    "publisher": "HistoryOfWar.org",
+    "license": "Citation and link only",
+    "source_type": "historical_reference",
+    "accessed": "2026-07-17",
+    "source_family_id": "rickard_gingee_1750",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_goi_imperial_gazetteer",
+    "title": "Imperial Gazetteer of India, Provincial Series: Madras II",
+    "url": "https://ignca.gov.in/Asi_data/30077.pdf",
+    "publisher": "Government of India / Indira Gandhi National Centre for the Arts",
+    "license": "Citation and link only",
+    "source_type": "official_historical_gazetteer",
+    "accessed": "2026-07-17",
+    "source_family_id": "imperial_gazetteer_madras_provincial_series_1908",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_hayavadana_mysore",
+    "title": "C. Hayavadana Rao, History of Mysore, Volume II, Chapter IV",
+    "url": "https://statearchives.karnataka.gov.in/gazetteer/public/storage/pdf-files/pdf/History%20of%20Mysore.%20Vol-II%20by%20C.%20Hayavadana%20Rao-1945/Chpt%20-%204.pdf",
+    "publisher": "Karnataka State Archives and Gazetteer Department",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "hayavadana_rao_history_mysore_1945",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_marshman_chapter14",
+    "title": "John Clark Marshman, History of India, Chapter XIV",
+    "url": "https://www.ibiblio.org/britishraj/Marshman1/chapter14.html",
+    "publisher": "ibiblio public-domain British Raj collection",
+    "license": "Citation and link only",
+    "source_type": "historical_monograph",
+    "accessed": "2026-07-17",
+    "source_family_id": "marshman_history_india",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_orme_transactions",
+    "title": "Robert Orme, A History of the Military Transactions of the British Nation in Indostan",
+    "url": "https://www.tamildigitallibrary.in/admin/assets/book/TVA_BOK_0047482/TVA_BOK_0047482_military_transactions_of_British_Nation_in_Indostan_1745.pdf",
+    "publisher": "Tamil Digital Library; eighteenth-century original",
+    "license": "Citation and link only",
+    "source_type": "near_contemporary_narrative",
+    "accessed": "2026-07-17",
+    "source_family_id": "orme_military_transactions_indostan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_carnatic_tn_arcot_history",
+    "title": "Brief History of Arcot",
+    "url": "https://www.tnurbantree.tn.gov.in/wp-content/uploads/sites/113/2020/08/briefhistory-PB-Arcot.pdf",
+    "publisher": "Government of Tamil Nadu, Arcot Municipality",
+    "license": "Citation and link only",
+    "source_type": "official_local_history",
+    "accessed": "2026-07-17",
+    "source_family_id": "tamil_nadu_arcot_municipality_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_chadian_rebels_air_university",
     "title": "Prolonged Wars: A Post-Nuclear Challenge",
     "url": "https://www.airuniversity.af.edu/Portals/10/AUPress/Books/B_0059_MAGYAR_PROLONGED_WARS.pdf",

@@ -7167,6 +7167,22 @@
     ]
   },
   {
+    "id": "clio_in_carnatic_sul_1713_80e63d27",
+    "name": "Carnatic Sultanate (Nawabship of Arcot)",
+    "kind": "nawabship",
+    "start_year": 1713,
+    "end_year": 1802,
+    "region": "South India",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate. The identity represents the Nawabship of the Carnatic across ordinary ruler succession, consistent with the project's treatment of other state polities; rival claimants are not merged into a battle side. Only fingerprinted, candidate-keyed events may use this identity. Neither 'Arcot' nor 'Nawab of Arcot' is opened as a global alias, and predecessors or successors inherit no Elo.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_carnatic_goi_imperial_gazetteer",
+      "wave8_carnatic_tn_arcot_history"
+    ]
+  },
+  {
     "id": "banda_singh_sikh_garrison_gurdas_nangal_1715",
     "name": "Banda Singh Bahadur's Sikh garrison at Gurdas Nangal (1715)",
     "kind": "event_bounded_besieged_sikh_force",

@@ -2791,14 +2791,13 @@
     },
     {
       "id": "clio_in_carnatic_sul_1713_80e63d27",
-      "name": "Carnatic Sultanate",
-      "kind": "sultanate",
+      "name": "Carnatic Sultanate (Nawabship of Arcot)",
+      "kind": "nawabship",
       "start_year": 1713,
       "end_year": 1802,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South India"
     },
     {
       "id": "clio_q146246_718_298ccb19",
@@ -24744,10 +24743,10 @@
   ],
   "coverage": {
     "registry_polities": 2337,
-    "rated_entities": 975,
-    "rated_events": 5321,
+    "rated_entities": 976,
+    "rated_events": 5324,
     "staged_source_records": 27014,
-    "unresolved_event_candidates": 18073,
+    "unresolved_event_candidates": 18070,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -24838,6 +24837,7 @@
     "candidate_keyed_wave8_spanish_liberals_hced_events": 2,
     "candidate_keyed_wave8_achea_hced_events": 3,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
+    "candidate_keyed_wave8_carnatic_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 64,
     "provisional_iwbd_battles": 153,
@@ -24848,21 +24848,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5057,
-      "candidate_keyed_reviewed_contracts": 747,
+      "hced_candidate_bindings": 5060,
+      "candidate_keyed_reviewed_contracts": 750,
       "geojson_points": 4734,
-      "modern_location_country_assertions": 4962,
-      "location_provenance_objects": 5011,
-      "point_fields_withheld_by_quarantine": 323,
+      "modern_location_country_assertions": 4965,
+      "location_provenance_objects": 5014,
+      "point_fields_withheld_by_quarantine": 326,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 371,
-      "point_quarantine_candidate_manifest_sha256": "9810c3b85f72b6b797915d0d6eebc1c1cc05754b47206a9db6d6dd83672906be",
+      "unique_events_with_any_quarantined_field": 374,
+      "point_quarantine_candidate_manifest_sha256": "80383234241495f14ae463ef1a54a29d9ac58aeaeb5f57fa9368f02769fbcac8",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "a08b0d44860e2cd4fe3c277bea120f93b8676e5295aac37a90f17f7e6c521adb",
+      "quarantine_policy_sha256": "1f918e6ee4330065b5bb1158c6763c3e8b9d0e700f6ebaf3c64c65ddd13cc86e",
       "assertion_status": {
-        "unreviewed_source_assertion": 5011
+        "unreviewed_source_assertion": 5014
       },
       "verified_location_assertions": {
         "availability": "not_available",

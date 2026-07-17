@@ -35,6 +35,9 @@ class Wave8CarnaticTests(unittest.TestCase):
         cls.funnel = _json(ROOT / "build/hced-unresolved-label-funnel.json")
         cls.release_entities = _json(ROOT / "data/release/entities.json")
         cls.release_events = _json(ROOT / "data/release/events.json")
+        cls.release_metadata = _json(ROOT / "data/release/metadata.json")
+        cls.release_sources = _json(ROOT / "data/release/sources.json")
+        cls.registry = _json(ROOT / "data/catalog/registry.json")
 
     def _installed(self):
         entities = {
@@ -234,6 +237,62 @@ class Wave8CarnaticTests(unittest.TestCase):
                 "iwbd_probable_twins": 0,
                 "legacy_crosswalk_events_preserved": 3,
             },
+        )
+
+    def test_current_release_activates_one_curated_carnatic_identity(self) -> None:
+        events = [
+            event
+            for event in self.release_events
+            if event.get("hced_candidate_id") in lane.WAVE8_CARNATIC_CONTRACT_IDS
+        ]
+        self.assertEqual(len(events), 3)
+        self.assertEqual(
+            {event["hced_candidate_id"] for event in events},
+            lane.WAVE8_CARNATIC_CONTRACT_IDS,
+        )
+        self.assertFalse(
+            lane.WAVE8_CARNATIC_HOLD_IDS
+            & {
+                str(event.get("hced_candidate_id"))
+                for event in self.release_events
+            }
+        )
+
+        release_entities = {
+            str(item["id"]): item for item in self.release_entities
+        }
+        self.assertIn(CARNATIC, release_entities)
+        self.assertFalse(release_entities[CARNATIC]["aliases"])
+        registry_entities = {
+            str(item["id"]): item for item in self.registry["entities"]
+        }
+        self.assertEqual(registry_entities[CARNATIC]["status"], "rated")
+        self.assertEqual(
+            registry_entities[CARNATIC]["identity_status"],
+            "curated",
+        )
+
+        source_ids = {str(item["id"]) for item in self.release_sources}
+        self.assertLessEqual(
+            {str(item["id"]) for item in lane.WAVE8_CARNATIC_SOURCES},
+            source_ids,
+        )
+        promotion = self.release_metadata["promotion"]
+        self.assertEqual(promotion["accepted_wave8_carnatic_hced_events"], 3)
+        self.assertEqual(
+            promotion["wave8_carnatic_candidate_ids"],
+            sorted(lane.WAVE8_CARNATIC_CONTRACT_IDS),
+        )
+        self.assertEqual(len(promotion["wave8_carnatic_holds"]), 3)
+        self.assertEqual(
+            promotion["wave8_carnatic_legacy_candidate_ids"],
+            sorted(lane.WAVE8_CARNATIC_LEGACY_IDS),
+        )
+        self.assertEqual(
+            self.registry["coverage"][
+                "candidate_keyed_wave8_carnatic_hced_events"
+            ],
+            3,
         )
 
     def test_row_drift_and_duplicate_promotion_fail_closed(self) -> None:

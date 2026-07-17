@@ -7,9 +7,9 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 982,
-    "events": 5321,
-    "sources": 1359,
+    "entities": 983,
+    "events": 5324,
+    "sources": 1367,
     "registry_polities": 2337
   },
   "year_range": {
@@ -161,6 +161,7 @@
     "accepted_wave8_spanish_liberals_hced_events": 2,
     "accepted_wave8_achea_hced_events": 3,
     "accepted_wave8_kievan_rus_hced_events": 2,
+    "accepted_wave8_carnatic_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -18783,7 +18784,148 @@
     "wave8_kievan_rus_country_quarantine_additions": [],
     "wave8_kievan_rus_entities_added": 1,
     "wave8_kievan_rus_sources_added": 3,
-    "hced_label_pass_input_rows": 5596,
+    "wave8_carnatic_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 3,
+      "legacy_crosswalk_rows": 3,
+      "new_entities": 1,
+      "new_sources": 8,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "reserved_hced_rows": 6,
+      "reviewed_hced_rows": 9,
+      "terminal_exclusions": 0
+    },
+    "wave8_carnatic_cohort_counts": {
+      "legacy_crosswalk_event_preserved": 3,
+      "recognized_carnatic_state_forces": 3,
+      "succession_and_coalition_holds": 3
+    },
+    "wave8_carnatic_audit_signature": "9f0fb639464838660fdb1293803e473419f51dd87fdb1a81aceff74b189778b5",
+    "wave8_carnatic_final_audit_signature": "9f0fb639464838660fdb1293803e473419f51dd87fdb1a81aceff74b189778b5",
+    "wave8_carnatic_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 3,
+      "reviewed_hced_rows": 9,
+      "arcot_related_rows": 9,
+      "legacy_crosswalk_rows": 3,
+      "reserved_hced_rows": 6
+    },
+    "wave8_carnatic_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0,
+      "legacy_crosswalk_events_preserved": 3
+    },
+    "wave8_carnatic_candidate_ids": [
+      "hced-Arcot1780-1",
+      "hced-Damalcherry Pass1740-1",
+      "hced-St Thome1746-1"
+    ],
+    "wave8_carnatic_holds": [
+      {
+        "candidate_id": "hced-Ambur1749-1",
+        "raw_row_sha256": "a8d44dd1b958137fb22ce39f82ab79d99d89e6649c65d1a56319a6a9219d6fc6",
+        "cohort": "succession_and_coalition_holds",
+        "disposition": "hold",
+        "reason_code": "historically_contradictory_coalition_alignment",
+        "evidence_refs": [
+          "wave8_carnatic_gingee_context",
+          "wave8_carnatic_orme_transactions"
+        ],
+        "audit_note": "HCED places France in the losing Arcot composite even though French support belonged to Chanda Sahib and Muzaffar Jang's victorious coalition. No side is reversed or invented."
+      },
+      {
+        "candidate_id": "hced-Gingee1750-1",
+        "raw_row_sha256": "eee4c658041f717608a9d3c67b576aeb37d4ca3c8ddd94f040866dbb1e12fb4b",
+        "cohort": "succession_and_coalition_holds",
+        "disposition": "hold",
+        "reason_code": "rival_carnatic_claimants_on_opposing_sides",
+        "evidence_refs": [
+          "wave8_carnatic_gingee_context",
+          "wave8_carnatic_orme_transactions"
+        ],
+        "audit_note": "The defeated troops belonged to British-backed claimant Muhammad Ali while the French fought for rival claimant Chanda Sahib. A generic Carnatic identity would therefore represent both conflict sides and is deliberately withheld."
+      },
+      {
+        "candidate_id": "hced-Trichinopoly1740-1741-1",
+        "raw_row_sha256": "1456aa1ec2335f5c284becdf3e2cf37f2085ec6c8c866571ef0ffb199226d998",
+        "cohort": "succession_and_coalition_holds",
+        "disposition": "hold",
+        "reason_code": "arcot_label_collapses_chanda_sahib_and_safdar_ali",
+        "evidence_refs": [
+          "wave8_carnatic_goi_imperial_gazetteer"
+        ],
+        "audit_note": "Chanda Sahib held Trichinopoly under a separate title and was removed after Dost Ali's death amid a succession struggle. The bare 'Arcot' label cannot uniquely assign his force to the generic Nawabship without merging rival political actors."
+      }
+    ],
+    "wave8_carnatic_legacy_candidate_ids": [
+      "hced-Arcot1751-1",
+      "hced-Seringham1752-1",
+      "hced-Tiruvadi1750-1"
+    ],
+    "wave8_carnatic_exact_label_funnel_audit": {
+      "arcot": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "94bd58ae8bd79cc4c94249054916c3b0e6b29969334ccaeb08606353193614b5",
+        "events_touched": 3,
+        "sole_blocker_events": 3,
+        "zero_time_valid_candidates": 3
+      },
+      "nawab of arcot": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "a6a1227a8dc7c570158391963de8ae723e15a25d960ad55d0b4f8ffe6839bcf5",
+        "events_touched": 2,
+        "sole_blocker_events": 2,
+        "zero_time_valid_candidates": 2
+      }
+    },
+    "wave8_carnatic_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Arcot1780-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named place and modern country but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_carnatic_britannica_arcot",
+          "wave8_carnatic_marshman_chapter14"
+        ]
+      },
+      {
+        "candidate_id": "hced-Damalcherry Pass1740-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named place and modern country but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_carnatic_hayavadana_mysore",
+          "wave8_carnatic_tn_arcot_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-St Thome1746-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named place and modern country but do not independently verify HCED's exact coordinate; retain the country assertion and withhold the point.",
+        "evidence_refs": [
+          "wave8_carnatic_alagappa_tamil_nadu",
+          "wave8_carnatic_orme_transactions"
+        ]
+      }
+    ],
+    "wave8_carnatic_point_quarantine_additions": [
+      "hced-Arcot1780-1",
+      "hced-Damalcherry Pass1740-1",
+      "hced-St Thome1746-1"
+    ],
+    "wave8_carnatic_country_quarantine_additions": [],
+    "wave8_carnatic_entities_added": 1,
+    "wave8_carnatic_sources_added": 8,
+    "hced_label_pass_input_rows": 5591,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -18796,7 +18938,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1014,
+      "reserved_candidate_contract": 1019,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -18808,7 +18950,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 173,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2095,
+      "no_unique_time_valid_label_match": 2090,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
