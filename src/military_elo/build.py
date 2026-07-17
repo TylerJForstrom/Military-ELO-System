@@ -248,7 +248,7 @@ def build_results(
     metadata = {
         **metadata,
         "generated": date.today().isoformat(),
-        "model_version": "0.2.0",
+        "model_version": "0.3.0",
         "baseline": config.baseline,
         "rated_events": len(engine.event_updates),
         "entities": len(entities),

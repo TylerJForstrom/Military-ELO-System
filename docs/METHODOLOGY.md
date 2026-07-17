@@ -234,11 +234,17 @@ Pair weights are normalized within each opposing side, so adding a list of tiny 
 The layer base is multiplied by bounded factors for event scale, stakes, decisiveness, evidence confidence and duration:
 
 ```text
-K_event = clip(4, 96,
+K_event = clip(16, 384,
   K_layer × scale × stakes × decisiveness × confidence × duration)
 ```
 
-Current bases are 28 tactical, 34 operational and 42 strategic. They are model parameters, not historical facts, and must be calibrated on chronological holdouts as the adjudicated dataset grows.
+Current bases are 112 tactical, 136 operational and 168 strategic — a
+uniform 4x rescale of the v0.2.0 bases (28/34/42, clip 4–96) adopted in
+model v0.3.0 so rating movements are legible at dashboard scale. The
+rescale is proportional across layers and bounds: win expectations, rank
+ordering, and the multiplier stacks are unchanged, only point magnitudes
+grow. The bases are model parameters, not historical facts, and must be
+calibrated on chronological holdouts as the adjudicated dataset grows.
 
 ## Uncertainty and inactivity
 

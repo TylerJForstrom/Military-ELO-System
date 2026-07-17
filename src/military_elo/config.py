@@ -93,11 +93,16 @@ DEFAULT_OPERATIONAL_WEIGHTS = {
 class ModelConfig:
     baseline: float = 1500.0
     elo_scale: float = 400.0
-    tactical_k: float = 28.0
-    operational_k: float = 34.0
-    strategic_k: float = 42.0
-    min_k: float = 4.0
-    max_k: float = 96.0
+    # The K family is scaled x4 from the v0.2.0 bases (28/34/42, clip 4-96)
+    # so rating movements are legible on the dashboard scale. The scaling is
+    # proportional across layers and bounds: win expectations, rank ordering,
+    # and every multiplier stack are unchanged; only the point magnitude
+    # grows. Calibration on chronological holdouts still owes a real fit.
+    tactical_k: float = 112.0
+    operational_k: float = 136.0
+    strategic_k: float = 168.0
+    min_k: float = 16.0
+    max_k: float = 384.0
     min_uncertainty: float = 60.0
     max_uncertainty: float = 350.0
     uncertainty_drift_per_year: float = 2.5
