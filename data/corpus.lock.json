@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "corpus_id": "military-history-elo-2026-07-13",
-  "created_at": "2026-07-14T15:55:06Z",
+  "corpus_id": "military-history-elo-2026-07-18",
+  "created_at": "2026-07-18T12:10:23Z",
   "transformation_version": "open-data-review-v1",
   "datasets": {
     "cliopatria-0.2.0": {
@@ -225,156 +225,166 @@
       ]
     },
     "wikidata": {
-      "title": "Wikidata bounded military-event discovery snapshot",
-      "source_url": "https://query.wikidata.org/sparql?query=%0ASELECT+%3Fevent+%3FeventLabel+%3Fkind+%3Fdate+%3FendDate+%3Fparticipant+%3FparticipantLabel%0A+++++++%3Fwinner+%3FwinnerLabel+%3FpartOf+%3FpartOfLabel+%3Flocation+%3FlocationLabel+WHERE+%7B%0A++VALUES+%3Fclass+%7B+wd%3AQ178561+wd%3AQ645883+wd%3AQ198+%7D%0A++%3Fevent+wdt%3AP31+%3Fclass+.%0A++BIND%28IF%28%3Fclass+%3D+wd%3AQ178561%2C+%22engagement%22%2C%0A+++++++IF%28%3Fclass+%3D+wd%3AQ645883%2C+%22campaign%22%2C+%22war%22%29%29+AS+%3Fkind%29%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP585+%3FpointInTime+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP580+%3FstartTime+.+%7D%0A++BIND%28COALESCE%28%3FpointInTime%2C+%3FstartTime%29+AS+%3Fdate%29%0A++FILTER%28BOUND%28%3Fdate%29%29%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP582+%3FendDate+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP710+%3Fparticipant+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP1346+%3Fwinner+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP361+%3FpartOf+.+%7D%0A++OPTIONAL+%7B+%3Fevent+wdt%3AP276+%3Flocation+.+%7D%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%22.+%7D%0A%7D%0ALIMIT+50%0AOFFSET+0%0A&format=json",
-      "dataset_version": "bounded SPARQL page: limit 50, offset 0, retrieved 2026-07-13",
+      "title": "Wikidata bounded legacy 18-event audit snapshots",
+      "source_url": "https://query.wikidata.org/sparql",
+      "dataset_version": "fixed legacy 18-event audit set from HTTPS pages retrieved 2026-07-13",
       "license": {
         "id": "CC0-1.0",
         "classification": "open_core"
       },
       "retrieval": {
-        "retrieved_at": "2026-07-13T16:13:24Z",
+        "retrieved_at": "2026-07-13T21:26:56Z",
         "method": "https"
       },
       "files": [
         {
-          "filename": "20260713T161324Z-3d6f3047aeb0.json",
-          "sha256": "3d6f3047aeb075a3e65ad87f18df8a40c7cd10c9a797c5d69f8e7c7499dbdfb1",
-          "size_bytes": 58339
+          "filename": "20260713T212426Z-d815268b505e.json",
+          "sha256": "d815268b505eaf51e1a6f8618187ef3188aea4256b29fbfb96cb1715c74d5f43",
+          "size_bytes": 1336882
+        },
+        {
+          "filename": "20260713T212436Z-ceb53d90aa5e.json",
+          "sha256": "ceb53d90aa5e13f4b559d2a5222e2500f5fe8ee54ba49aa43ab49db771b84089",
+          "size_bytes": 1287344
+        },
+        {
+          "filename": "20260713T212656Z-94bb01ca6409.json",
+          "sha256": "94bb01ca6409f3ad367d2c269f8383d610351d43cade3fb32162ce0d4f45e39c",
+          "size_bytes": 1230508
         }
       ]
     },
     "wikidata-battles": {
       "title": "Wikidata dated battle-tree and siege-only discovery snapshots",
       "source_url": "https://query.wikidata.org/sparql",
-      "dataset_version": "era-bucketed P31/P279* battle and siege trees, retrieved 2026-07-17",
+      "dataset_version": "era-bucketed P31/P279* battle and siege trees, retrieved 2026-07-18",
       "license": {
         "id": "CC0-1.0",
         "classification": "open_core"
       },
       "retrieval": {
-        "retrieved_at": "2026-07-17T15:54:56Z",
+        "retrieved_at": "2026-07-18T12:04:55Z",
         "method": "https"
       },
       "files": [
         {
-          "filename": "20260717T155150Z-b3a2200b374b.json",
-          "sha256": "b3a2200b374bbb42604ca9c98148946a2f363a1c8d32a42a1aec3c66297a7b7d",
+          "filename": "20260718T120313Z-7c51d7fb65fd.json",
+          "sha256": "7c51d7fb65fdb3e9810732ea86a36cad4b173f73d5e11544edf20547c9b04b2c",
           "size_bytes": 917787
         },
         {
-          "filename": "20260717T155157Z-bc41721e2ee5.json",
-          "sha256": "bc41721e2ee5198cfe8d05466a1d7ed6b201a62e6c0d6b501b70352ad975925d",
+          "filename": "20260718T120320Z-76cecda1a903.json",
+          "sha256": "76cecda1a9034a75b671237c6d3dd441c802d066977594c88239c0bb14d70ff4",
           "size_bytes": 637220
         },
         {
-          "filename": "20260717T155200Z-2e9d12b19c40.json",
-          "sha256": "2e9d12b19c40dd6bc85b8e727f8f094a0b5fd34b1d73357b3a8386763c73ea08",
+          "filename": "20260718T120328Z-ca60113c8e86.json",
+          "sha256": "ca60113c8e86238d6d16559d887d292b3cf9ad24974b05fed477b8df591160ce",
           "size_bytes": 995941
         },
         {
-          "filename": "20260717T155206Z-d150712326a0.json",
-          "sha256": "d150712326a0b31baa9b85cfe722453564ccef9611bbf99b666c16ed31f3e463",
-          "size_bytes": 952831
+          "filename": "20260718T120332Z-221b105ad7e9.json",
+          "sha256": "221b105ad7e9883c8a5e513f5e04baa2794daee5ef4f16a3252ae62c25f91c55",
+          "size_bytes": 952835
         },
         {
-          "filename": "20260717T155210Z-5715787b1ebe.json",
-          "sha256": "5715787b1ebe5d3eed868f64ed7450fb076c058557afd51a70fbc6d8a9e962e1",
+          "filename": "20260718T120340Z-8e2d135521b8.json",
+          "sha256": "8e2d135521b84de984e91936a306bd94ab474b3e813e9c26f57936cceb91c1c6",
           "size_bytes": 950979
         },
         {
-          "filename": "20260717T155216Z-f2046a91c14e.json",
-          "sha256": "f2046a91c14e112a00c0e145d360f93369399ef660dc782057d9b74483f20eda",
-          "size_bytes": 1108019
+          "filename": "20260718T120348Z-64f2b93412cb.json",
+          "sha256": "64f2b93412cb009528d0f89bf84476e6676c38f051fc4e15dc881bd6bad844b2",
+          "size_bytes": 1108155
         },
         {
-          "filename": "20260717T155234Z-ff492672efc9.json",
-          "sha256": "ff492672efc978158d38f8355c431c598704e99936ce66e8caf95dfffcb823e7",
+          "filename": "20260718T120353Z-d96aef915e39.json",
+          "sha256": "d96aef915e39e884eaabae74109bce0bbbfb0e5d1de052937a81722293f49fb3",
           "size_bytes": 1782130
         },
         {
-          "filename": "20260717T155244Z-1d0dc1452d9a.json",
-          "sha256": "1d0dc1452d9a93100ddbf787ba782310458acc398542bdecf583403d4a084ec1",
-          "size_bytes": 1802744
+          "filename": "20260718T120358Z-449d27e328fc.json",
+          "sha256": "449d27e328fc390a6fc89dbac134c5fb340049b36d3e1624f2a8cb0c322657bf",
+          "size_bytes": 1802743
         },
         {
-          "filename": "20260717T155253Z-f330dcfc1f93.json",
-          "sha256": "f330dcfc1f93a9797351c580cc5e79bb9fd7e492b5a3e348bbbd60b33d4cc9c0",
+          "filename": "20260718T120402Z-69b7eea9cf07.json",
+          "sha256": "69b7eea9cf07bfaaa4e8f3634eef58593e163635e8c42afb05147c3a75df95bb",
           "size_bytes": 1829135
         },
         {
-          "filename": "20260717T155300Z-e65d7f096138.json",
-          "sha256": "e65d7f096138b8465f306203b257a08a41b4afbd7f9c92d17f9ae8c4115a4632",
+          "filename": "20260718T120404Z-8b65d525bad6.json",
+          "sha256": "8b65d525bad668c4496e91be64b7410346dad340f6b9a4e63f604a76800687e3",
           "size_bytes": 1164333
         },
         {
-          "filename": "20260717T155306Z-5a43aef9a11c.json",
-          "sha256": "5a43aef9a11cf45185c267966a1115f88abc8ef89bd50c7a3c61895b86c9ce7a",
+          "filename": "20260718T120409Z-6bcd9d89a7b1.json",
+          "sha256": "6bcd9d89a7b199d7b0d080b1ab7524a8ed51788233e55eb95c1b82e27314a9e2",
           "size_bytes": 1682541
         },
         {
-          "filename": "20260717T155314Z-9890c094ed42.json",
-          "sha256": "9890c094ed42c854f8842afc1cd6fad16c31f1ea4e5b4deaffcb8731779615dc",
-          "size_bytes": 1820525
+          "filename": "20260718T120420Z-f400d1e841a1.json",
+          "sha256": "f400d1e841a13a101fa97e9180adb8f78ba0f3ad92346bd5816e0fa910555aa2",
+          "size_bytes": 1820523
         },
         {
-          "filename": "20260717T155318Z-96581a751d82.json",
-          "sha256": "96581a751d827be00d082bac49eb18d5d7bdda1483704cf1e7d74905f800e671",
+          "filename": "20260718T120422Z-bc8879f90f4d.json",
+          "sha256": "bc8879f90f4dbca14502f8aafcc101e1ce7d68d69515f00bf4b98dc73ab91407",
           "size_bytes": 268317
         },
         {
-          "filename": "20260717T155322Z-022d83b47274.json",
-          "sha256": "022d83b472748089abdfd04a3c9727692acc38d044c3ae5a4f7d2177c3648f45",
+          "filename": "20260718T120426Z-9e9978b6192c.json",
+          "sha256": "9e9978b6192cfb45846880fa00b7aaad20165014c52b0d5958b44f1f6c740736",
           "size_bytes": 207959
         },
         {
-          "filename": "20260717T155326Z-af4456bf587b.json",
-          "sha256": "af4456bf587b6f0cd10a9f6f5088d97995908a7eb96b4e2870029258fa28b04e",
+          "filename": "20260718T120427Z-943ce5f627fa.json",
+          "sha256": "943ce5f627fa20892b06dbf5464df16815a37ef1aa8e372ebd2f666ce4f14328",
           "size_bytes": 435959
         },
         {
-          "filename": "20260717T155331Z-34b01a52a137.json",
-          "sha256": "34b01a52a137c0471f9be5caca2182c9a6a6180ea0eb128b351ab818be9787e2",
+          "filename": "20260718T120431Z-ec2e6fb2cf07.json",
+          "sha256": "ec2e6fb2cf0798bfa3d0bcb06a5c958efd727a7d21786fd59e0d04f4ea88e3e9",
           "size_bytes": 470515
         },
         {
-          "filename": "20260717T155335Z-5c6cf48a02c2.json",
-          "sha256": "5c6cf48a02c2af672f91611a74b5c934634b5312c886b00cf865676e88ced40b",
+          "filename": "20260718T120434Z-6493e3930f59.json",
+          "sha256": "6493e3930f59dfc48dfde59ac30ecfbdb0db0e9f5bda35d0340ac12cd29bbcea",
           "size_bytes": 572118
         },
         {
-          "filename": "20260717T155339Z-4e6e7291bfba.json",
-          "sha256": "4e6e7291bfbab4c1000caaf62e95c4aeba7564739096984d9cf17f2e5cef30b8",
+          "filename": "20260718T120440Z-135dc610daa6.json",
+          "sha256": "135dc610daa60e306e7cf60df428280a5927a130868d8a5e9a6d3e46236a5d52",
           "size_bytes": 565758
         },
         {
-          "filename": "20260717T155427Z-06322f7cbd06.json",
-          "sha256": "06322f7cbd06f1529cbf0f3bedce97d324fbfa07f153fc72a0c5ad95eb1d85a1",
+          "filename": "20260718T120447Z-d65b16c8788f.json",
+          "sha256": "d65b16c8788f240ac6aee05008878d16b19444ce4dbc78e51ba22462dce48f71",
           "size_bytes": 461449
         },
         {
-          "filename": "20260717T155434Z-64233770fa3c.json",
-          "sha256": "64233770fa3c2b4008606b51e039c8ed40d078515e78b242db8964a446262a36",
+          "filename": "20260718T120448Z-24d0c2e9ce4a.json",
+          "sha256": "24d0c2e9ce4ae7e339b3c435405c8ee6d8b53541a3317a4d2b0f7c78fdecdd56",
           "size_bytes": 298206
         },
         {
-          "filename": "20260717T155438Z-ad21799b9445.json",
-          "sha256": "ad21799b94459ea33d9ce8d966f1c05f4ae4cf00602332116f944affff90d93a",
+          "filename": "20260718T120452Z-8deb3075c49d.json",
+          "sha256": "8deb3075c49d40a5ee3e9872c670edfb3c9a97d8f0e1f83c758b9b44588b19d1",
           "size_bytes": 117797
         },
         {
-          "filename": "20260717T155448Z-64bb4244dceb.json",
-          "sha256": "64bb4244dcebcdbb9e31372dc01133b38536377a40550ca0d918fb1e350b035f",
+          "filename": "20260718T120453Z-89a11efd790a.json",
+          "sha256": "89a11efd790abfb07ca01a75d16e01c48f3b3c41baa58b40f547a8be39fc6fc0",
           "size_bytes": 35761
         },
         {
-          "filename": "20260717T155453Z-1120f0cdce1d.json",
-          "sha256": "1120f0cdce1d14288c1841c9c68b6b056844420a8faa3f2afe6f71be8ee5ddc4",
+          "filename": "20260718T120454Z-816218ae2168.json",
+          "sha256": "816218ae21683de52b10441e291b61795b165f698e2cddca141e9b8174e6fa4f",
           "size_bytes": 60458
         },
         {
-          "filename": "20260717T155456Z-1cae6de99e02.json",
-          "sha256": "1cae6de99e02f1069aae534a449b11269b61a6063b762e87fc52009b47540c01",
+          "filename": "20260718T120455Z-1273f119ba6f.json",
+          "sha256": "1273f119ba6f321d6ddbf9b6cd4f970b1bae6ca2f7facfc4ba4d8f6b4cd057df",
           "size_bytes": 142788
         }
       ]
@@ -540,18 +550,26 @@
     },
     "wikidata-review": {
       "transformer": "stage_wikidata",
-      "version": "1",
+      "version": "2",
       "inputs": {
         "page-0001": {
           "dataset": "wikidata",
-          "filename": "20260713T161324Z-3d6f3047aeb0.json"
+          "filename": "20260713T212426Z-d815268b505e.json"
+        },
+        "page-0002": {
+          "dataset": "wikidata",
+          "filename": "20260713T212436Z-ceb53d90aa5e.json"
+        },
+        "page-0003": {
+          "dataset": "wikidata",
+          "filename": "20260713T212656Z-94bb01ca6409.json"
         }
       },
       "output": {
         "kind": "generated_review_queue",
         "filename": "wikidata-candidates.jsonl",
-        "sha256": "39467451d913c11b197b7b9a0b4ed0c8cc203f3a213da4db377c0f877fbbcf85",
-        "size_bytes": 13415,
+        "sha256": "9a57ed9dbf4e2c59ea6185c699f00bbea6d07f5c90d5356ce501da449e8d0dd4",
+        "size_bytes": 17242,
         "record_count": 18
       }
     },
@@ -561,106 +579,106 @@
       "inputs": {
         "page-0001": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155150Z-b3a2200b374b.json"
+          "filename": "20260718T120313Z-7c51d7fb65fd.json"
         },
         "page-0002": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155157Z-bc41721e2ee5.json"
+          "filename": "20260718T120320Z-76cecda1a903.json"
         },
         "page-0003": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155200Z-2e9d12b19c40.json"
+          "filename": "20260718T120328Z-ca60113c8e86.json"
         },
         "page-0004": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155206Z-d150712326a0.json"
+          "filename": "20260718T120332Z-221b105ad7e9.json"
         },
         "page-0005": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155210Z-5715787b1ebe.json"
+          "filename": "20260718T120340Z-8e2d135521b8.json"
         },
         "page-0006": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155216Z-f2046a91c14e.json"
+          "filename": "20260718T120348Z-64f2b93412cb.json"
         },
         "page-0007": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155234Z-ff492672efc9.json"
+          "filename": "20260718T120353Z-d96aef915e39.json"
         },
         "page-0008": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155244Z-1d0dc1452d9a.json"
+          "filename": "20260718T120358Z-449d27e328fc.json"
         },
         "page-0009": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155253Z-f330dcfc1f93.json"
+          "filename": "20260718T120402Z-69b7eea9cf07.json"
         },
         "page-0010": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155300Z-e65d7f096138.json"
+          "filename": "20260718T120404Z-8b65d525bad6.json"
         },
         "page-0011": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155306Z-5a43aef9a11c.json"
+          "filename": "20260718T120409Z-6bcd9d89a7b1.json"
         },
         "page-0012": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155314Z-9890c094ed42.json"
+          "filename": "20260718T120420Z-f400d1e841a1.json"
         },
         "page-0013": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155318Z-96581a751d82.json"
+          "filename": "20260718T120422Z-bc8879f90f4d.json"
         },
         "page-0014": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155322Z-022d83b47274.json"
+          "filename": "20260718T120426Z-9e9978b6192c.json"
         },
         "page-0015": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155326Z-af4456bf587b.json"
+          "filename": "20260718T120427Z-943ce5f627fa.json"
         },
         "page-0016": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155331Z-34b01a52a137.json"
+          "filename": "20260718T120431Z-ec2e6fb2cf07.json"
         },
         "page-0017": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155335Z-5c6cf48a02c2.json"
+          "filename": "20260718T120434Z-6493e3930f59.json"
         },
         "page-0018": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155339Z-4e6e7291bfba.json"
+          "filename": "20260718T120440Z-135dc610daa6.json"
         },
         "page-0019": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155427Z-06322f7cbd06.json"
+          "filename": "20260718T120447Z-d65b16c8788f.json"
         },
         "page-0020": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155434Z-64233770fa3c.json"
+          "filename": "20260718T120448Z-24d0c2e9ce4a.json"
         },
         "page-0021": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155438Z-ad21799b9445.json"
+          "filename": "20260718T120452Z-8deb3075c49d.json"
         },
         "page-0022": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155448Z-64bb4244dceb.json"
+          "filename": "20260718T120453Z-89a11efd790a.json"
         },
         "page-0023": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155453Z-1120f0cdce1d.json"
+          "filename": "20260718T120454Z-816218ae2168.json"
         },
         "page-0024": {
           "dataset": "wikidata-battles",
-          "filename": "20260717T155456Z-1cae6de99e02.json"
+          "filename": "20260718T120455Z-1273f119ba6f.json"
         }
       },
       "output": {
         "kind": "generated_review_queue",
         "filename": "wikidata-battle-candidates.jsonl",
-        "sha256": "721facbb469bf874f45fd8699dfa4a76178eed8095793d92ff92b81b015550e9",
-        "size_bytes": 15986258,
+        "sha256": "5f67b193c58fe06947f965283c534d53a43d8ad8644a15995af39c6d6f55f22b",
+        "size_bytes": 15986287,
         "record_count": 18954
       }
     }

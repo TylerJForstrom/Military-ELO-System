@@ -71,7 +71,7 @@ TRANSFORMER_VERSIONS = {
     "stage_iwd": "1",
     "stage_ucdp_archive": "1",
     "stage_ucdp_csv": "1",
-    "stage_wikidata": "1",
+    "stage_wikidata": "2",
     "stage_wikidata_battles": "1",
 }
 
@@ -638,6 +638,34 @@ def _wikidata_value(row: dict[str, Any], key: str) -> str | None:
     return str(item.get("value")) if isinstance(item, dict) and item.get("value") is not None else None
 
 
+# The original bounded discovery page is now represented by three surviving
+# HTTPS snapshots from the same acquisition day.  Keep the audited 18-event
+# inventory explicit so unrelated rows in those source pages cannot enter the
+# queue, and so the Wave 6 row contracts remain byte-for-byte semantic guards.
+WIKIDATA_LEGACY_EVENT_IDS = frozenset(
+    {
+        "Q12551",
+        "Q12583",
+        "Q1419229",
+        "Q1426479",
+        "Q1429256",
+        "Q1441223",
+        "Q1445426",
+        "Q1456170",
+        "Q1478075",
+        "Q1485320",
+        "Q18817",
+        "Q195983",
+        "Q196409",
+        "Q202161",
+        "Q202465",
+        "Q203824",
+        "Q207318",
+        "Q208261",
+    }
+)
+
+
 def _numbered_wikidata_pages(
     sources: Mapping[str, Path], transformation_id: str
 ) -> list[tuple[int, str]]:
@@ -692,10 +720,13 @@ def stage_wikidata(
         event_uri = _wikidata_value(row, "event")
         if not event_uri:
             continue
+        candidate_id = event_uri.rsplit("/", 1)[-1]
+        if candidate_id not in WIKIDATA_LEGACY_EVENT_IDS:
+            continue
         candidate = grouped.setdefault(
             event_uri,
             {
-                "candidate_id": event_uri.rsplit("/", 1)[-1],
+                "candidate_id": candidate_id,
                 "source": "wikidata",
                 "source_url": event_uri,
                 "review_status": "needs_review",
@@ -732,6 +763,11 @@ def stage_wikidata(
                 {"uri": uri, "label": label} for uri, label in candidate[key].items()
             ]
         candidates.append(candidate)
+    candidates.sort(key=lambda candidate: str(candidate["candidate_id"]))
+    if {str(candidate["candidate_id"]) for candidate in candidates} != set(
+        WIKIDATA_LEGACY_EVENT_IDS
+    ):
+        raise CorpusLockError("Legacy Wikidata source pages do not contain the audited 18-event set")
     write_review_candidates(
         candidates, destination, expected=transformation.output, corpus_lock=lock
     )

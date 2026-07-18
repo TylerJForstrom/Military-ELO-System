@@ -76,7 +76,7 @@ class CorpusLockParsingTests(unittest.TestCase):
                 lock = load_corpus_lock()
             finally:
                 os.chdir(previous)
-        self.assertEqual(lock.corpus_id, "military-history-elo-2026-07-13")
+        self.assertEqual(lock.corpus_id, "military-history-elo-2026-07-18")
 
     def test_rejects_absolute_or_traversing_filenames(self) -> None:
         invalid = (

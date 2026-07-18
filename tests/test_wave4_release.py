@@ -49,7 +49,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_412)
+        self.assertEqual(len(self.events), 5_414)
         self.assertEqual(len(self.entities), 1_024)
         self.assertEqual(len(self.registry_by_id), 2_372)
         self.assertEqual(
@@ -178,6 +178,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("cizek_jcu_zablati_2017", "czech_npu_buquoy_2021"): 1,
             ("clio_1950_el_numero_report", "espinal_clio_2020_independence"): 1,
             ("codrington_short_history_ceylon_1926", "cordiner_description_ceylon_1807", "jaques_dictionary_battles_2006", "powell_kandyan_wars_1973"): 1,
+            ("clodfelter_warfare_armed_conflicts", "jaques_dictionary_battles_2006", "real_academia_historia_dbe"): 1,
             ("coghlan_harte_natalia_2005", "colenbrander_spencer_natalia_1906_report", "gillings_bambata_mome_1989"): 1,
             ("coghlan_harte_natalia_2005", "gillings_bambata_mome_1989", "saho_bambatha_rebellion"): 1,
             ("coghlan_umvoti_field_force_2006", "colenbrander_spencer_natalia_1906_report", "paterson_natal_rebellion_2006", "waikato_times_mpukunyoni_1906"): 1,
@@ -322,6 +323,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("italian_army_volturno_1860", "vive_museum_volturno_1860"): 1,
             ("italian_navy_history",): 1,
             ("iwbd",): 153,
+            ("jaques_dictionary_battles_2006", "real_academia_historia_dbe"): 1,
             ("iwd",): 64,
             ("james_westfall_thompson_french_wars", "james_wood_kings_army"): 3,
             ("james_wood_kings_army", "musee_protestant"): 4,
@@ -485,7 +487,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             100,
         )
-        self.assertEqual(len(self.results["events"]), 5_412)
+        self.assertEqual(len(self.results["events"]), 5_414)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -564,10 +566,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_453)
+        self.assertEqual(len(self.sources), 1_457)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_191,
+            1_193,
         )
         new_source_ids = {
             "colombia_constitution_1863",

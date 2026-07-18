@@ -1551,17 +1551,17 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 8 rows:
-        # 1,445 + 3,126 + 1,887 + 2,423 == 8,881.
+        # 1,448 + 3,065 + 1,887 + 2,481 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (1445, 3068, 1887, 2481, 8881),
+            (1448, 3065, 1887, 2481, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
             label_rejected + label_accepted,
             promotion["hced_label_pass_input_rows"],
         )
-        self.assertEqual(promotion["hced_label_pass_input_rows"], 5_549)
+        self.assertEqual(promotion["hced_label_pass_input_rows"], 5_546)
         # All thirteen declared counters are present, including the zeros.
         self.assertEqual(len(promotion["hced_label_rejections"]), 13)
         self.assertEqual(

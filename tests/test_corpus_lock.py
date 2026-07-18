@@ -67,24 +67,39 @@ class CommittedCorpusLockTests(unittest.TestCase):
         self.assertNotIn("wikidata", DATASETS)
         self.assertIn("bounded", lock.dataset("wikidata").title.casefold())
         transformation = lock.transformation("wikidata-review")
-        self.assertEqual(list(transformation.inputs), ["page-0001"])
+        self.assertEqual(
+            list(transformation.inputs),
+            ["page-0001", "page-0002", "page-0003"],
+        )
         self.assertEqual(transformation.output.filename, "wikidata-candidates.jsonl")
 
     def test_expanded_wikidata_battle_lock_is_additive_and_page_ordered(self) -> None:
         lock = load_corpus_lock()
         legacy = lock.dataset("wikidata")
-        self.assertEqual(len(legacy.files), 1)
-        self.assertEqual(legacy.files[0].filename, "20260713T161324Z-3d6f3047aeb0.json")
+        self.assertEqual(len(legacy.files), 3)
         self.assertEqual(
-            legacy.files[0].sha256,
-            "3d6f3047aeb075a3e65ad87f18df8a40c7cd10c9a797c5d69f8e7c7499dbdfb1",
+            [(locked.filename, locked.sha256) for locked in legacy.files],
+            [
+                (
+                    "20260713T212426Z-d815268b505e.json",
+                    "d815268b505eaf51e1a6f8618187ef3188aea4256b29fbfb96cb1715c74d5f43",
+                ),
+                (
+                    "20260713T212436Z-ceb53d90aa5e.json",
+                    "ceb53d90aa5e13f4b559d2a5222e2500f5fe8ee54ba49aa43ab49db771b84089",
+                ),
+                (
+                    "20260713T212656Z-94bb01ca6409.json",
+                    "94bb01ca6409f3ad367d2c269f8383d610351d43cade3fb32162ce0d4f45e39c",
+                ),
+            ],
         )
         legacy_output = lock.transformation("wikidata-review").output
         self.assertEqual(legacy_output.record_count, 18)
-        self.assertEqual(legacy_output.size_bytes, 13415)
+        self.assertEqual(legacy_output.size_bytes, 17242)
         self.assertEqual(
             legacy_output.sha256,
-            "39467451d913c11b197b7b9a0b4ed0c8cc203f3a213da4db377c0f877fbbcf85",
+            "9a57ed9dbf4e2c59ea6185c699f00bbea6d07f5c90d5356ce501da449e8d0dd4",
         )
 
         self.assertNotIn("wikidata-battles", DATASETS)
@@ -105,10 +120,10 @@ class CommittedCorpusLockTests(unittest.TestCase):
             transformation.output.filename, "wikidata-battle-candidates.jsonl"
         )
         self.assertEqual(transformation.output.record_count, 18954)
-        self.assertEqual(transformation.output.size_bytes, 15986258)
+        self.assertEqual(transformation.output.size_bytes, 15986287)
         self.assertEqual(
             transformation.output.sha256,
-            "721facbb469bf874f45fd8699dfa4a76178eed8095793d92ff92b81b015550e9",
+            "5f67b193c58fe06947f965283c534d53a43d8ad8644a15995af39c6d6f55f22b",
         )
 
     def test_locked_queue_counts_reconcile_with_committed_release_metadata(self) -> None:

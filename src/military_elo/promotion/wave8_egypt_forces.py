@@ -1086,9 +1086,9 @@ WAVE8_EGYPT_FORCES_CURRENT_RELEASE_EVENT_AUDIT = {
         WAVE8_EGYPT_FORCES_IDENTITY_BOUNDARY_AUDIT["release_entities"]
     ),
     "audited_entity_id_sha256": "09b5ca9eeef1d2ce527057c0668a6101440179701824f2499d0a18aed61db25b",
-    # Refreshed to the current ledger after the Wave 8 Muslim forces lane
-    # promoted Aleppo 1260 with the audited Ayyubid garrison identity, adding
-    # a 57th Egypt-related release event to this audit's scope.
+    # Refreshed to the final ledger after the Wave 8 Macedon lane promoted
+    # Andros with the audited Ptolemaic identity, adding a 57th Egypt-related
+    # release event to this audit's scope.
     "event_count": 57,
     "event_id_sha256": "dfe4bae0d3013ea5cbb85de41b8a1c080d6e53b1e0645f160e6bd1f91c4d03f1",
     "event_projection_sha256": "a064ed3d44dbbe4faf14cad3684079a3af8547cc67336f77ec357d84b7668b79",

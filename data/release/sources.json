@@ -15895,6 +15895,61 @@
     ]
   },
   {
+    "id": "wave8_oran_clodfelter_warfare",
+    "title": "Warfare and Armed Conflicts: A Statistical Encyclopedia",
+    "url": "https://books.google.com/books?id=8urEDgAAQBAJ&pg=PA75&vq=Oran",
+    "publisher": "McFarland / Google Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_work",
+    "accessed": "2026-07-20",
+    "source_family_id": "clodfelter_warfare_armed_conflicts",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oran_jaques_dictionary",
+    "title": "Dictionary of Battles and Sieges",
+    "url": "https://books.google.com/books?id=w_XCEAAAQBAJ",
+    "publisher": "Greenwood / Bloomsbury Academic; Google Books",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "jaques_dictionary_battles_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oran_rah_dbe_montemar",
+    "title": "Diccionario Biografico espanol: Jose Ignacio Carrillo de Albornoz y Montiel, duque de Montemar",
+    "url": "https://dbe.rah.es/biografias/13738/jose-ignacio-carrillo-de-albornoz-y-montiel",
+    "publisher": "Real Academia de la Historia",
+    "license": "Citation and link only",
+    "source_type": "national_academy_biographical_dictionary",
+    "accessed": "2026-07-20",
+    "source_family_id": "real_academia_historia_dbe",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_oran_wikipedia_spanish_algerian_war",
+    "title": "Spanish-Algerian War (1775-1785): campaign record without a discrete 1780 Oran engagement",
+    "url": "https://en.wikipedia.org/wiki/Spanish%E2%80%93Algerian_War_(1775%E2%80%931785)",
+    "publisher": "Wikipedia (context reference only)",
+    "license": "Citation and link only",
+    "source_type": "collaborative_encyclopedia_context_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "wikipedia_english",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_oupress_war_party_in_blue",
     "title": "War Party in Blue: Pawnee Scouts in the U.S. Army",
     "url": "https://www.oupress.com/9780806184418/war-party-in-blue/",

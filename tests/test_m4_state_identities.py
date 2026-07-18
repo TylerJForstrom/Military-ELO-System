@@ -540,7 +540,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_412)
+        self.assertEqual(len(self.events), 5_414)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e

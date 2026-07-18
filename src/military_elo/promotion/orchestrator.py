@@ -4734,14 +4734,6 @@ def build_expanded_release(
         *wave8_yaqui_existing_events,
         *wave8_yaqui_events,
     ]
-    wave8_egypt_forces_identity_validation = (
-        validate_wave8_egypt_forces_identity_boundaries(
-            seed_entities,
-            release_entities,
-            seed_events,
-            wave8_egypt_forces_existing_events,
-        )
-    )
     wave8_egypt_forces_events = promote_wave8_egypt_forces_contracts(
         hced,
         release_entities,
@@ -5721,17 +5713,6 @@ def build_expanded_release(
             wave8_yaqui_existing_events,
         )
     )
-    wave8_egypt_forces_integration_validation = (
-        validate_wave8_egypt_forces_integration_dispositions(
-            hced,
-            iwbd_candidates,
-            [
-                *wave8_egypt_forces_existing_events,
-                *wave8_egypt_forces_events,
-            ],
-            iwd_candidates,
-        )
-    )
     wave8_haiti_regimes_integration_validation = (
         validate_wave8_haiti_regimes_integration_dispositions(
             hced,
@@ -6247,6 +6228,25 @@ def build_expanded_release(
         *iwbd_events,
         *ucdp_events,
     ]
+    # This audit is pinned from the committed release ledger, so validate the
+    # fully assembled ledger rather than the mid-chain duplicate-detection
+    # view that precedes later Wave 8 lanes such as Macedon.
+    wave8_egypt_forces_identity_validation = (
+        validate_wave8_egypt_forces_identity_boundaries(
+            seed_entities,
+            release_entities,
+            seed_events,
+            all_events,
+        )
+    )
+    wave8_egypt_forces_integration_validation = (
+        validate_wave8_egypt_forces_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            all_events,
+            iwd_candidates,
+        )
+    )
     hced_events = [
         *source_events,
         *label_events,

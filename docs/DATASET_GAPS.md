@@ -8,7 +8,7 @@ This report is staged discovery analysis only. It does not approve an outcome, c
 
 ## Headline
 
-The expanded queue contains **18,954** candidates. The strict three-factor comparison finds **2,385** HCED matches and **16,569** unmatched rows. Before 1500, **4,326** are unmatched and **1,940** also carry at least two distinct P710 participants—the actionable headline expected by the contract.
+The expanded queue contains **18,954** candidates. The strict three-factor comparison finds **2,384** HCED matches and **16,570** unmatched rows. Before 1500, **4,326** are unmatched and **1,940** also carry at least two distinct P710 participants—the actionable headline expected by the contract.
 
 A crucial limitation: **7,900** unmatched rows lack usable coordinates. They fail the strict match contract but are not proof that HCED lacks the same historical event; they remain review candidates.
 
@@ -24,8 +24,8 @@ Region memberships are non-exclusive and derive only from a conservative mapping
 | --- | --- | --- | --- | --- |
 | 1 | Mediterranean Europe | 551 | 1,063 | 2,225 |
 | 2 | West Asia and North Africa | 506 | 770 | 1,911 |
-| 3 | No P17 jurisdiction claim | 411 | 1,026 | 4,226 |
-| 4 | Western and Northern Europe | 206 | 833 | 2,610 |
+| 3 | No P17 jurisdiction claim | 411 | 1,025 | 4,225 |
+| 4 | Western and Northern Europe | 206 | 834 | 2,612 |
 | 5 | Eastern Europe | 101 | 286 | 1,718 |
 | 6 | Unmapped P17 jurisdiction | 75 | 117 | 564 |
 | 7 | Central Asia and Caucasus | 57 | 71 | 229 |
@@ -42,28 +42,28 @@ Region memberships are non-exclusive and derive only from a conservative mapping
 
 | Rank | Unresolved label | Marginal events | Cumulative events |
 | --- | --- | --- | --- |
-| 1 | algeria | 3 | 3 |
-| 2 | cheyenne | 3 | 6 |
-| 3 | commanche | 3 | 9 |
-| 4 | germanic tribes | 3 | 12 |
-| 5 | huang chao | 3 | 15 |
-| 6 | libya | 3 | 18 |
-| 7 | sassanid empire | 3 | 21 |
-| 8 | sioux indians cheyenne indians | 3 | 24 |
-| 9 | tidikelt tribes | 3 | 27 |
-| 10 | tripoli | 3 | 30 |
-| 11 | wurtemburg | 3 | 33 |
-| 12 | zaia | 3 | 36 |
-| 13 | irish royalists | 2 | 38 |
-| 14 | burma | 2 | 40 |
-| 15 | siam | 7 | 47 |
-| 16 | cambodia | 3 | 50 |
-| 17 | mexican government | 2 | 52 |
-| 18 | pancho villa rebels | 2 | 54 |
-| 19 | holy roman empire | 2 | 56 |
-| 20 | swabian league | 2 | 58 |
+| 1 | cheyenne | 3 | 3 |
+| 2 | commanche | 3 | 6 |
+| 3 | germanic tribes | 3 | 9 |
+| 4 | huang chao | 3 | 12 |
+| 5 | libya | 3 | 15 |
+| 6 | sassanid empire | 3 | 18 |
+| 7 | sioux indians cheyenne indians | 3 | 21 |
+| 8 | tidikelt tribes | 3 | 24 |
+| 9 | tripoli | 3 | 27 |
+| 10 | wurtemburg | 3 | 30 |
+| 11 | zaia | 3 | 33 |
+| 12 | irish royalists | 2 | 35 |
+| 13 | burma | 2 | 37 |
+| 14 | siam | 7 | 44 |
+| 15 | cambodia | 3 | 47 |
+| 16 | mexican government | 2 | 49 |
+| 17 | pancho villa rebels | 2 | 51 |
+| 18 | holy roman empire | 2 | 53 |
+| 19 | swabian league | 2 | 55 |
+| 20 | filibusters | 2 | 57 |
 
-Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 58 events.
+Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 57 events.
 
 ## Genuinely-new candidates by century
 
@@ -106,10 +106,10 @@ Materiality rule: The leading classified discovery lane is absent from the regio
 | 14th century CE | 549 |
 | 15th century CE | 684 |
 | 16th century CE | 1,396 |
-| 17th century CE | 1,349 |
+| 17th century CE | 1,350 |
 | 18th century CE | 1,790 |
-| 19th century CE | 3,318 |
-| 20th century CE | 3,428 |
+| 19th century CE | 3,319 |
+| 20th century CE | 3,427 |
 | 21st century CE | 955 |
 
 ## Brecke war-name coverage

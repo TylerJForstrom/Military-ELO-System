@@ -24,12 +24,16 @@ queue names and record counts are tested against
 `data/release/metadata.json` so an omitted or rewritten queue cannot silently
 change the staged corpus arithmetic.
 
-The legacy `wikidata` entry is a bounded discovery snapshot whose 18-candidate
-queue remains unchanged. The additive `wikidata-battles` entry locks the
-snapshots behind a separate 18,954-candidate queue: 15,658 dated battle-tree
-items and 3,296 siege-only items, including 4,908 pre-1500 candidates. Both are
-restaged offline through their own transformers; numeric `page-*` input roles
-define deterministic snapshot order. Live Wikidata fetchers remain acquisition
+The legacy `wikidata` entry is a fixed 18-event audit set drawn from three
+content-locked HTTPS source pages. Its version-2 transformer allowlists those
+18 QIDs, sorts the resulting candidates, and fails closed if any audited item
+is absent. This preserves the Wave 6 row contracts while making the queue
+reproducible from source snapshots that are still present in the authorized
+corpus cache. The additive `wikidata-battles` entry locks snapshots behind a
+separate 18,954-candidate queue: 15,658 dated battle-tree items and 3,296
+siege-only items, including 4,908 pre-1500 candidates. Both are restaged
+offline through their own transformers; numeric `page-*` input roles define
+deterministic snapshot order. Live Wikidata fetchers remain acquisition
 tooling and do not update either lock implicitly.
 
 ## Obtain blobs on another machine

@@ -18,45 +18,35 @@ lanes, four event splices, integration validation, contract-id union,
 ledger arithmetic, two registry coverage counts, accepted-events metadata,
 and the full metadata audit block).
 
-## The one open issue
+## Resolution (2026-07-18)
 
-`python scripts/build_release.py` currently fails closed in
-wave8_egypt_forces.validate_wave8_egypt_forces_identity_boundaries ->
-_validate_current_release_event_inventory ("Egypt-related release event
-count drifted"). The Egypt audit pin was refreshed to the CURRENT release
-(57 events, commit 1382087); the failure fires during the NEW build.
-Diagnose which event view the validator receives at that call site: the
-Oran events contain no audited Egypt entity, so the count should still be
-57 - suspect the validator runs against a mid-build event list whose
-composition differs from the final release (for example before later
-splices), in which case the correct fix is to compare against the same
-projection stage the audit was minted from, or to re-mint the Egypt audit
-from the exact view the builder passes. Do not weaken the guard; make the
-pinned audit and the validated view refer to the same artifact stage.
+The Egypt pin and validator were looking at different artifact stages. The
+builder passed `wave8_egypt_forces_existing_events`, a 5,181-event mid-chain
+duplicate-detection view that projected 56 audited Egypt events. Commit
+1382087 minted the 57-event pin from the final 5,412-event release. The missing
+audited event was the later Macedon lane's Andros event, whose participant is
+`ptolemaic_egypt_305_bce`; neither Oran event carries an audited Egypt identity.
 
-## Remaining steps after the build passes
+Both Egypt validators now run immediately after the final `all_events`
+assembly and receive that complete ledger. The count, event-ID digest, event
+projection digest, entity boundaries, and duplicate guards remain unchanged;
+only the validated view was aligned with the stage from which the audit was
+minted.
 
-1. Verify the new release: 5,414 events (+2), bindings 5,150, reviewed
-   contracts 782, points/countries/provenance each +2, ledger otherwise
-   unchanged; regenerate both funnel artifacts (the algeria label must
-   disappear).
-2. Rebuild the dashboard with --simulations 1000; audit must stay 0/0.
-3. Write tests/test_wave8_oran.py on the achea/bohemia template
-   (integrated-aware funnel branch: historical WAVE8_ORAN_FUNNEL_AUDIT
-   projection + live-absence assertion, pre-integration promoter views,
-   tamper tests reaching the named guards, all-or-none release check).
-4. Cascade pins: hced_location constants (bindings 5_148->5_150,
-   candidate_keyed reviewed contracts 780->782, points 4_792->4_794,
-   countries 5_053->5_055, provenance 5_102->5_104), the exact-marker
-   census in test_hced_location_artifacts (777->779 and the corrections
-   formula), the seven registry-snapshot lane suites, shared suites
-   (m4, wave4 families, coverage, funnel, label_resolution), oracle
-   digests, and count-bearing docs.
-5. Full suite green, verify_corpus_lock both modes, report_ingestion,
-   report_coverage, git diff --check, then commit and push.
+The Oran release is complete and verified:
 
-Then continue HANDOFF-EXACT-OUTCOME-LANES.md Lane 2 (Cheyenne Dog
-Soldiers) and Lane 3 (Libya Chad-war rows with Erdi-style reversal
+- 5,414 events, 5,150 HCED bindings, and 782 reviewed candidate contracts;
+- 4,794 points, 5,055 country assertions, and 5,104 provenance objects;
+- exact `algeria` absent from both the current funnel and all entity aliases;
+- dashboard rebuilt with 1,000 simulations and audit status 0 findings / 0
+  warnings;
+- 1,979 tests passed with 5 skips, including the 16-test Oran suite;
+- both corpus-lock modes verified 38 raw files and all 11 generated queues;
+- ingestion, coverage, dataset-gap, and funnel reports regenerated, with
+  `git diff --check` clean.
+
+Next work is `HANDOFF-EXACT-OUTCOME-LANES.md` Lane 2 (Cheyenne Dog Soldiers),
+followed by Lane 3 (Libya Chad-war rows with Erdi-style reversal
 dispositions).
 
 Invariants: unknown is not a draw; no algeria alias ever; no window

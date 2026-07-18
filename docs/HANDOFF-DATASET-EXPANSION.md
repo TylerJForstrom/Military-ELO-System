@@ -1,5 +1,13 @@
 # Contract: dataset expansion for coverage discovery (Wikidata battles + Brecke)
 
+> Completion note (2026-07-18): the legacy 18-event queue remains semantically
+> unchanged, but its missing original one-page blob was replaced by three
+> surviving content-locked HTTPS pages from the same acquisition day. The
+> version-2 legacy transformer explicitly allowlists the audited QIDs and fails
+> closed on an incomplete set. The separate 18,954-event battle queue was
+> refreshed from the same declared era-bucket queries; its count and
+> non-rating contract are unchanged.
+
 Goal: stage two new open sources so the funnel and a new gap report can show
 where the corpus is thinnest and re-rank promotion priority — especially
 pre-1500 and non-Western theatres. This is discovery/enrichment work: neither
