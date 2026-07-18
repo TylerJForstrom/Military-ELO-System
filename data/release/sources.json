@@ -8006,6 +8006,101 @@
     ]
   },
   {
+    "id": "wave8_dog_soldiers_army_10th_cavalry",
+    "title": "10th Cavalry Regiment: the October 1868 Beaver Creek action",
+    "url": "https://history.army.mil/Research/Reference-Topics/African-Americans-in-the-US-Army/10th-Cavalry-Regiment/",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "U.S. Government work",
+    "source_type": "official_regimental_history",
+    "accessed": "2026-07-18",
+    "source_family_id": "us_army_center_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_cheyenne_wars_atlas",
+    "title": "The Cheyenne Wars Atlas",
+    "url": "https://www.armyupress.army.mil/Portals/7/educational-services/staff-rides/StaffRideHB_AtlasofCheyenneWars.pdf",
+    "publisher": "U.S. Army University Press / Combat Studies Institute",
+    "license": "U.S. Government work",
+    "source_type": "official_military_history_atlas",
+    "accessed": "2026-07-18",
+    "source_family_id": "us_army_university_press_cheyenne_wars_atlas",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_colorado_history_ledgerbook",
+    "title": "Cheyenne Dog Soldiers: A Ledgerbook History of Coups and Combat",
+    "url": "https://books.google.com/books/about/Cheyenne_Dog_Soldiers.html?id=jY4OAQAAMAAJ",
+    "publisher": "Colorado Historical Society; Google Books catalogue record",
+    "license": "Citation and link only",
+    "source_type": "scholarly_museum_monograph",
+    "accessed": "2026-07-18",
+    "source_family_id": "colorado_historical_society_dog_soldiers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_denver_cedar_canyon",
+    "title": "William N. Byers: Contributing to a Massacre",
+    "url": "https://history.denverlibrary.org/news/william-n-byers-contributing-massacre",
+    "publisher": "Denver Public Library, Western History and Genealogy",
+    "license": "Citation and link only",
+    "source_type": "public_history_research_article",
+    "accessed": "2026-07-18",
+    "source_family_id": "denver_public_library_western_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_fowler_cedar_canyon",
+    "title": "Arapaho and Cheyenne Perspectives: Sand Creek and the 1864 Plains Campaign",
+    "url": "https://www.jstor.org/stable/10.5250/amerindiquar.39.4.0364",
+    "publisher": "American Indian Quarterly / University of Nebraska Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-18",
+    "source_family_id": "american_indian_quarterly_fowler_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_nps_10th_timeline",
+    "title": "10th Cavalry Timeline: Beaver Creek, October 1868",
+    "url": "https://www.nps.gov/fols/learn/historyculture/10th-cavalry-timeline.htm",
+    "publisher": "National Park Service, Fort Larned National Historic Site",
+    "license": "U.S. Government work",
+    "source_type": "government_history_timeline",
+    "accessed": "2026-07-18",
+    "source_family_id": "us_national_park_service_fort_larned",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_dog_soldiers_showalter_encyclopedia",
+    "title": "The Encyclopedia of Warfare (Dennis Showalter, 2013), p. 608",
+    "url": "https://archive.org/details/isbn_9781435151260",
+    "publisher": "Metro Books; Internet Archive catalogue record",
+    "license": "Citation and link only",
+    "source_type": "expert_military_reference",
+    "accessed": "2026-07-18",
+    "source_family_id": "showalter_encyclopedia_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_druze_rebels_bailony_dissertation",
     "title": "Transnationalism and the Syrian Migrant Politic, pp. 128, 142-145",
     "url": "https://escholarship.org/uc/item/99q9f2k0",

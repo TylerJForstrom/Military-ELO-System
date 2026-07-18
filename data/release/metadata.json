@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1024,
-    "events": 5414,
-    "sources": 1457,
-    "registry_polities": 2372
+    "entities": 1025,
+    "events": 5416,
+    "sources": 1464,
+    "registry_polities": 2373
   },
   "year_range": {
     "start": -1274,
@@ -161,6 +161,7 @@
     "accepted_wave8_spanish_liberals_hced_events": 2,
     "accepted_wave8_achea_hced_events": 3,
     "accepted_wave8_oran_hced_events": 2,
+    "accepted_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
@@ -18745,6 +18746,107 @@
     },
     "wave8_oran_entities_added": 0,
     "wave8_oran_sources_added": 4,
+    "wave8_cheyenne_dog_soldiers_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 1,
+      "new_sources": 7,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 1,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 1
+    },
+    "wave8_cheyenne_dog_soldiers_cohort_counts": {
+      "cheyenne_dog_soldiers_war_1864_1869": 3
+    },
+    "wave8_cheyenne_dog_soldiers_audit_signature": "da4f9e59326ecd1d04e507390170c2c26fbea562d1fe714251d6304a68cd7f3d",
+    "wave8_cheyenne_dog_soldiers_final_audit_signature": "da4f9e59326ecd1d04e507390170c2c26fbea562d1fe714251d6304a68cd7f3d",
+    "wave8_cheyenne_dog_soldiers_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 0,
+      "reviewed_hced_rows": 3,
+      "exact_label_rows": 3,
+      "terminal_exclusions": 1
+    },
+    "wave8_cheyenne_dog_soldiers_frozen_lane_post_validation": {
+      "promotion_contracts": 8,
+      "holds": 3,
+      "reviewed_hced_rows": 14,
+      "terminal_exclusions": 3
+    },
+    "wave8_cheyenne_dog_soldiers_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_cheyenne_dog_soldiers_candidate_ids": [
+      "hced-Beaver Creek1868-1",
+      "hced-Beecher Island1868-1"
+    ],
+    "wave8_cheyenne_dog_soldiers_holds": [],
+    "wave8_cheyenne_dog_soldiers_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Cedar Canyon1864-1",
+        "raw_row_sha256": "f4f5d0ea6f25277991d0e63b75e9aed46da0cb2f35ef1fd78892a0e4f1f6e843",
+        "canonical_event": {
+          "canonical_key": "attack_at_cedar_canyon:1864:1864",
+          "date_precision": "year",
+          "date_text": "1864",
+          "granularity": "non_ratable_attack",
+          "name": "Attack at Cedar Canyon",
+          "year_low": 1864,
+          "year_high": 1864
+        },
+        "cohort": "cheyenne_dog_soldiers_war_1864_1869",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "hold_category": "noncompetitive_attack_on_peace_village",
+        "reviewed_actor_description": [
+          "Colorado territorial militia",
+          "Cheyenne and Arapaho peace-village residents"
+        ],
+        "reviewed_granularity": "non_ratable_attack",
+        "hold_reason": "The reviewed episode was an attack on a peace-oriented Cheyenne-Arapaho village while most fighting men were absent, not a competitive opposing-force engagement. Civilian vulnerability is not converted into a Cheyenne tactical defeat.",
+        "evidence_refs": [
+          "wave8_dog_soldiers_denver_cedar_canyon",
+          "wave8_dog_soldiers_fowler_cedar_canyon"
+        ]
+      }
+    ],
+    "wave8_cheyenne_dog_soldiers_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "0a5cdc4c3ba57000a58e11f96b3cd8f8d8dd1d2db7bc7e588db0e5debac9c0b5",
+      "events_touched": 3,
+      "label": "cheyenne",
+      "sole_blocker_events": 3,
+      "zero_time_valid_candidates": 3
+    },
+    "wave8_cheyenne_dog_soldiers_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Beaver Creek1868-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_dog_soldiers_army_10th_cavalry",
+          "wave8_dog_soldiers_nps_10th_timeline"
+        ],
+        "raw_point": [
+          -106.5188996,
+          39.6042986
+        ],
+        "retained_country": "United States",
+        "reason": "The reviewed histories identify the Beaver Creek action and its United States setting but do not authenticate HCED's point, which lies far west of the Kansas action. Retain the country assertion and withhold the coordinate."
+      }
+    ],
+    "wave8_cheyenne_dog_soldiers_point_quarantine_additions": [
+      "hced-Beaver Creek1868-1"
+    ],
+    "wave8_cheyenne_dog_soldiers_country_quarantine_additions": [],
+    "wave8_cheyenne_dog_soldiers_entities_added": 1,
+    "wave8_cheyenne_dog_soldiers_sources_added": 7,
     "wave8_kievan_rus_counts": {
       "country_quarantine_additions": 0,
       "holds": 4,
@@ -20263,7 +20365,7 @@
     "wave8_etruria_country_quarantine_additions": [],
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
-    "hced_label_pass_input_rows": 5546,
+    "hced_label_pass_input_rows": 5543,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -20276,7 +20378,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1064,
+      "reserved_candidate_contract": 1067,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -20288,7 +20390,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 2000,
+      "no_unique_time_valid_label_match": 1997,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

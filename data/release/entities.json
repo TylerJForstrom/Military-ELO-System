@@ -10820,6 +10820,21 @@
     ]
   },
   {
+    "id": "cheyenne_dog_soldiers_band_1849_1869",
+    "name": "Cheyenne Dog Soldiers band (1849–1869)",
+    "kind": "indigenous_military_band",
+    "start_year": 1849,
+    "end_year": 1869,
+    "region": "Central Great Plains of North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The identity is limited to the Dog Soldiers after the 1849 Masikota consolidation and through the destruction of Tall Bull's principal band at Summit Springs in 1869. No rating is inherited by Cheyenne ethnicity, another Cheyenne society or band, or any modern tribal government.",
+    "source_ids": [
+      "wave8_dog_soldiers_cheyenne_wars_atlas",
+      "wave8_dog_soldiers_colorado_history_ledgerbook"
+    ]
+  },
+  {
     "id": "roman_republic_1849",
     "name": "Roman Republic of 1849",
     "kind": "republic",

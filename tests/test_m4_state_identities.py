@@ -540,7 +540,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_414)
+        self.assertEqual(len(self.events), 5_416)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
@@ -559,7 +559,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
             sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7
         )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 1_016)
+        self.assertEqual(len(rated), 1_017)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -591,7 +591,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 2_372)
+        self.assertEqual(len(self.registry["entities"]), 2_373)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

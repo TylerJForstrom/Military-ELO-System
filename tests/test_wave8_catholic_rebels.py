@@ -357,19 +357,19 @@ class Wave8CatholicRebelsTests(unittest.TestCase):
             sorted(lane.WAVE8_CATHOLIC_REBELS_CONTRACT_IDS),
         )
         coverage = self.registry["coverage"]
-        self.assertEqual(len(self.release_entities), 1_024)
-        self.assertEqual(len(self.release_events), 5_414)
-        self.assertEqual(len(self.registry["entities"]), 2_372)
-        self.assertEqual(coverage["rated_entities"], 1_016)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_934)
+        self.assertEqual(len(self.release_entities), 1_025)
+        self.assertEqual(len(self.release_events), 5_416)
+        self.assertEqual(len(self.registry["entities"]), 2_373)
+        self.assertEqual(coverage["rated_entities"], 1_017)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_932)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_150)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 782)
-        self.assertEqual(location["geojson_points"], 4_794)
-        self.assertEqual(location["modern_location_country_assertions"], 5_055)
-        self.assertEqual(location["location_provenance_objects"], 5_104)
-        self.assertEqual(location["point_fields_withheld_by_quarantine"], 356)
-        self.assertEqual(location["unique_events_with_any_quarantined_field"], 404)
+        self.assertEqual(location["hced_candidate_bindings"], 5_152)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 784)
+        self.assertEqual(location["geojson_points"], 4_795)
+        self.assertEqual(location["modern_location_country_assertions"], 5_057)
+        self.assertEqual(location["location_provenance_objects"], 5_106)
+        self.assertEqual(location["point_fields_withheld_by_quarantine"], 357)
+        self.assertEqual(location["unique_events_with_any_quarantined_field"], 405)
 
 
 if __name__ == "__main__":

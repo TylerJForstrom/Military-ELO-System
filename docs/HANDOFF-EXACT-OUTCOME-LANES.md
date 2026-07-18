@@ -25,7 +25,7 @@ never change any identity window. Target identity:
   discrete 1780 engagement exists; the coding rests on fallible reference
   transcription. Hold or exclude with that rationale; do not promote.
 
-## Lane 2: Cheyenne Dog Soldiers cohort (label "cheyenne", 3 rows)
+## Lane 2: Cheyenne Dog Soldiers cohort (label "cheyenne", 3 rows) — COMPLETE
 
 Register `cheyenne_dog_soldiers_band_1849_1869` (window 1849–1869) with
 per-candidate binding only — no global "cheyenne" alias ever. Coordinate with
@@ -37,6 +37,13 @@ entity naming and pins its own inventory; run its validators before and after.
   quarantine required for date/location fields.
 - `hced-Cedar Canyon1864-1` — NOT SCORABLE: noncompetitive attack on a peace
   village (mirror the Ash Creek 1864 terminal exclusion).
+
+Landed as exact candidate contracts: Beecher Island and Beaver Creek are
+high-confidence United States tactical wins; Cedar Canyon is terminally
+excluded. The new identity remains alias-free and time-bounded to 1849–1869,
+Beaver Creek's Point is withheld while its source country and provenance stay
+visible, and the frozen `wave8_algiers_cheyenne` audit signature is unchanged.
+The regenerated funnel contains no live exact `cheyenne` label.
 
 ## Lane 3: Libyan Arab Jamahiriya Chad-war cohort (label "libya", 3 rows)
 
