@@ -13419,6 +13419,93 @@
     ]
   },
   {
+    "id": "wave8_libya_elpais_zouar_1987",
+    "title": "Las fuerzas de Chad recuperan el control de un oasis tomado por Libia",
+    "url": "https://elpais.com/diario/1987/01/02/internacional/536540419_850215.html",
+    "publisher": "El País",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_reporting",
+    "accessed": "2026-07-18",
+    "source_family_id": "el_pais_zouar_1987",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_libya_iwbd_zouar",
+    "title": "International Wars and Battles Dataset: Zouar row",
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4435240?format=original",
+    "publisher": "Harvard Dataverse",
+    "license": "Citation and link only",
+    "source_type": "research_dataset",
+    "accessed": "2026-07-18",
+    "source_family_id": "iwbd_dataverse_release",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_libya_loc_chad_country_study",
+    "title": "Chad: A Country Study",
+    "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/ch/chadcountrystudy00coll/chadcountrystudy00coll.pdf",
+    "publisher": "Library of Congress, Federal Research Division",
+    "license": "U.S. Government work",
+    "source_type": "federal_country_study",
+    "accessed": "2026-07-18",
+    "source_family_id": "loc_chad_country_study_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_libya_un_yearbook_1987",
+    "title": "Yearbook of the United Nations 1987",
+    "url": "https://digitallibrary.un.org/nanna/record/143313/files/278477-EN.pdf?registerDownload=1&version=1&withMetadata=0&withWatermark=0",
+    "publisher": "United Nations",
+    "license": "Citation and link only",
+    "source_type": "official_contemporaneous_yearbook",
+    "accessed": "2026-07-18",
+    "source_family_id": "un_yearbook_1987_chad_libya",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_libya_washpost_aozou_1987",
+    "title": "Libya Shows Retaken Town to Reporters",
+    "url": "https://www.washingtonpost.com/archive/politics/1987/08/30/libya-shows-retaken-town-to-reporters/fedef462-4bbd-4fde-b6c2-e4ec46a06faf/",
+    "publisher": "The Washington Post",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_reporting",
+    "accessed": "2026-07-18",
+    "source_family_id": "washington_post_aozou_1987",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_libya_washpost_faya_1983",
+    "title": "Faya Largeau Falls to Libyans, Rebels",
+    "url": "https://www.washingtonpost.com/archive/politics/1983/08/12/president-sets-limit-on-military-support-of-chad-in-struggle/b9214911-92b2-4df0-9eed-68fc67de9fa8/",
+    "publisher": "The Washington Post",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_independent_reporting",
+    "accessed": "2026-07-18",
+    "source_family_id": "washington_post_faya_largeau_1983",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_livonian_order_balcerek_daugava",
     "title": "Wars on the Daugava River in the Sixteenth Century on the Margins of Vitalii Penskoi's Books",
     "url": "https://doi.org/10.22364/lviz.117.10",

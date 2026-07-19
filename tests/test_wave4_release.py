@@ -49,15 +49,18 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_416)
-        self.assertEqual(len(self.entities), 1_025)
-        self.assertEqual(len(self.registry_by_id), 2_373)
+        self.assertEqual(len(self.events), 5_419)
+        self.assertEqual(len(self.entities), 1_026)
+        self.assertEqual(len(self.registry_by_id), 2_374)
         self.assertEqual(
             families,
             {
             (): 40,
             ("showalter_encyclopedia_warfare", "us_army_university_press_cheyenne_wars_atlas"): 1,
             ("us_army_center_military_history", "us_national_park_service_fort_larned"): 1,
+            ("el_pais_zouar_1987", "iwbd_dataverse_release"): 1,
+            ("loc_chad_country_study_1990", "washington_post_faya_largeau_1983"): 1,
+            ("un_yearbook_1987_chad_libya", "washington_post_aozou_1987"): 1,
             ("academia_nacional_historia_argentina",): 1,
             ("academy_korean_studies_history_2019", "ahn_goguryeo_tang_war_2022"): 1,
             ("academy_korean_studies_history_2019", "hwang_history_korea_2021"): 1,
@@ -489,7 +492,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             100,
         )
-        self.assertEqual(len(self.results["events"]), 5_416)
+        self.assertEqual(len(self.results["events"]), 5_419)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -568,10 +571,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_464)
+        self.assertEqual(len(self.sources), 1_470)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_199,
+            1_203,
         )
         new_source_ids = {
             "colombia_constitution_1863",

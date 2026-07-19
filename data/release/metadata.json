@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1025,
-    "events": 5416,
-    "sources": 1464,
-    "registry_polities": 2373
+    "entities": 1026,
+    "events": 5419,
+    "sources": 1470,
+    "registry_polities": 2374
   },
   "year_range": {
     "start": -1274,
@@ -162,6 +162,7 @@
     "accepted_wave8_achea_hced_events": 3,
     "accepted_wave8_oran_hced_events": 2,
     "accepted_wave8_cheyenne_dog_soldiers_hced_events": 2,
+    "accepted_wave8_libya_hced_events": 3,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
@@ -18847,6 +18848,156 @@
     "wave8_cheyenne_dog_soldiers_country_quarantine_additions": [],
     "wave8_cheyenne_dog_soldiers_entities_added": 1,
     "wave8_cheyenne_dog_soldiers_sources_added": 7,
+    "wave8_libya_metadata": {
+      "counts": {
+        "country_quarantine_additions": 0,
+        "existing_release_dispositions": 3,
+        "holds": 0,
+        "iwbd_dispositions": 2,
+        "new_entities": 1,
+        "new_sources": 6,
+        "newly_rated_events": 3,
+        "outcome_overrides": 2,
+        "point_quarantine_additions": 0,
+        "promotion_contracts": 3,
+        "reviewed_hced_rows": 3,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "chadian_libyan_war_1983_1987": 3
+      },
+      "final_audit_signature": "430735c63fd4b67ae76900b9f8f775343335896303cc8e7cbaf52fa52695dfa3",
+      "promoted_candidate_ids": [
+        "hced-Aozou1987-1",
+        "hced-Faya Largeau1983-1",
+        "hced-Zouar1986-1987-1"
+      ]
+    },
+    "wave8_libya_counts": {
+      "country_quarantine_additions": 0,
+      "existing_release_dispositions": 3,
+      "holds": 0,
+      "iwbd_dispositions": 2,
+      "new_entities": 1,
+      "new_sources": 6,
+      "newly_rated_events": 3,
+      "outcome_overrides": 2,
+      "point_quarantine_additions": 0,
+      "promotion_contracts": 3,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 0
+    },
+    "wave8_libya_cohort_counts": {
+      "chadian_libyan_war_1983_1987": 3
+    },
+    "wave8_libya_audit_signature": "430735c63fd4b67ae76900b9f8f775343335896303cc8e7cbaf52fa52695dfa3",
+    "wave8_libya_final_audit_signature": "430735c63fd4b67ae76900b9f8f775343335896303cc8e7cbaf52fa52695dfa3",
+    "wave8_libya_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 0,
+      "reviewed_hced_rows": 3,
+      "exact_label_rows": 6,
+      "existing_release_dispositions": 3,
+      "outcome_reversals": 2
+    },
+    "wave8_libya_frozen_chadian_rebels_pre_validation": "313a118182a7c39fe4ab950c7f627afcc3b597ab8ef2a1d63c1d64e251cad9bc",
+    "wave8_libya_frozen_chadian_rebels_post_validation": "313a118182a7c39fe4ab950c7f627afcc3b597ab8ef2a1d63c1d64e251cad9bc",
+    "wave8_libya_integration_validation": {
+      "existing_release_dispositions": 3,
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_dispositions": 2,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_libya_candidate_ids": [
+      "hced-Aozou1987-1",
+      "hced-Faya Largeau1983-1",
+      "hced-Zouar1986-1987-1"
+    ],
+    "wave8_libya_holds": [],
+    "wave8_libya_existing_release_dispositions": [
+      {
+        "candidate_id": "hced-Fada1987-1",
+        "raw_row_sha256": "63a7cc4122190f20ce9af413fc9ebb56f47d470625164615b75db636e4701981",
+        "owner_event_id": "iwbd_iwbd_207_80_1652_fada",
+        "expected_name": "Fada",
+        "expected_year": 1987,
+        "expected_entity_ids": [
+          "libyan_arab_jamahiriya",
+          "republic_chad"
+        ],
+        "disposition": "existing_iwbd_owner"
+      },
+      {
+        "candidate_id": "hced-Maaten-as-Sarra1987-1",
+        "raw_row_sha256": "2add7231c5894860d7bca804c09140162e8f3db388e2f28f2d2a775a8dcc17b8",
+        "owner_event_id": "iwbd_iwbd_207_80_1655_maaten_as_sarra",
+        "expected_name": "Maaten-as-Sarra",
+        "expected_year": 1987,
+        "expected_entity_ids": [
+          "libyan_arab_jamahiriya",
+          "republic_chad"
+        ],
+        "disposition": "existing_iwbd_owner"
+      },
+      {
+        "candidate_id": "hced-Ouadi Doum1987-1",
+        "raw_row_sha256": "bc281cbb67c6f63ee838035ce8529007ad390df10061995989998f17b177a0db",
+        "owner_event_id": "iwbd_iwbd_207_80_1653_ouadi_doum",
+        "expected_name": "Ouadi Doum",
+        "expected_year": 1987,
+        "expected_entity_ids": [
+          "libyan_arab_jamahiriya",
+          "republic_chad"
+        ],
+        "disposition": "existing_iwbd_owner"
+      }
+    ],
+    "wave8_libya_iwbd_dispositions": [
+      {
+        "candidate_id": "iwbd-207-80-1651",
+        "raw_row_sha256": "fb822bcdc8d2050a8248e27a51cc87cbe0dbdc33900b5b8dd12dff7eabaa8e1c",
+        "owner_hced_candidate_id": "hced-Zouar1986-1987-1",
+        "expected_name": "Zouar",
+        "expected_start_date": "1986-12-14",
+        "expected_end_date": "1987-01-02",
+        "expected_attacker_raw": "Libya",
+        "expected_defender_raw": "Chad",
+        "expected_winner_raw": "Chad",
+        "disposition": "same_action_wave6_hold_hced_reviewed_owner",
+        "date_alignment_claimed": true,
+        "reason": "IWBD corroborates the reviewed Chadian result but remains on its frozen Wave 6 hold; the exact HCED contract owns the single rating."
+      },
+      {
+        "candidate_id": "iwbd-207-80-1654",
+        "raw_row_sha256": "d217d3f995e608c2cb837539f0b692b5d81b508243968af86bbfda361aa9f7c7",
+        "owner_hced_candidate_id": "hced-Aozou1987-1",
+        "expected_name": "Aozou",
+        "expected_start_date": "1987-08-08",
+        "expected_end_date": "1987-08-27",
+        "expected_attacker_raw": "Chad",
+        "expected_defender_raw": "Libya",
+        "expected_winner_raw": "Libya",
+        "disposition": "related_august_sequence_wave6_hold_hced_reviewed_owner",
+        "date_alignment_claimed": false,
+        "reason": "IWBD's 8-27 August range is related to the same named sequence but is not asserted as date-aligned with HCED. Independent sources establish the Libyan recapture on 28 August; IWBD remains non-emitting."
+      }
+    ],
+    "wave8_libya_exact_label_funnel_audit": {
+      "candidate_ids": [
+        "clio_q1016_2014_0f60d924"
+      ],
+      "event_candidate_id_sha256": "c5e90ace8472b2e2235bbe09342762993e673e9c3617480f479384c7893d626b",
+      "events_touched": 3,
+      "label": "libya",
+      "one_wrong_interval_candidate": 3,
+      "sole_blocker_events": 3
+    },
+    "wave8_libya_location_quarantine_reasons": [],
+    "wave8_libya_point_quarantine_additions": [],
+    "wave8_libya_country_quarantine_additions": [],
+    "wave8_libya_entities_added": 1,
+    "wave8_libya_sources_added": 6,
     "wave8_kievan_rus_counts": {
       "country_quarantine_additions": 0,
       "holds": 4,
@@ -20365,7 +20516,7 @@
     "wave8_etruria_country_quarantine_additions": [],
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
-    "hced_label_pass_input_rows": 5543,
+    "hced_label_pass_input_rows": 5540,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -20378,7 +20529,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1067,
+      "reserved_candidate_contract": 1070,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -20390,7 +20541,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 180,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1997,
+      "no_unique_time_valid_label_match": 1994,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

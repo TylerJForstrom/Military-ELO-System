@@ -45,7 +45,7 @@ Beaver Creek's Point is withheld while its source country and provenance stay
 visible, and the frozen `wave8_algiers_cheyenne` audit signature is unchanged.
 The regenerated funnel contains no live exact `cheyenne` label.
 
-## Lane 3: Libyan Arab Jamahiriya Chad-war cohort (label "libya", 3 rows)
+## Lane 3: Libyan Arab Jamahiriya Chad-war cohort (label "libya", 3 rows) — COMPLETE
 
 Route to existing `libyan_arab_jamahiriya` (1977–2011) for these candidate ids
 only. Two of three adjudications REVERSE HCED winner_raw and therefore require
@@ -62,6 +62,15 @@ Erdi-style recorded conflict dispositions inside the contracts:
 - `hced-Zouar1986-1987-1` — winner side_2 (Chad), medium. Reverses winner_raw
   "Libya"; the Chadian army definitively freed Zouar in January 1987 (IWBD
   twin iwbd-207-80-1651, winner Chad, end 1987-01-02).
+
+Landed as three fingerprinted exact contracts. Faya-Largeau rates the joint
+Libyan–GUNT tactical capture through a new alias-free, event-bounded 1983 GUNT
+formation. Aozou and Zouar carry explicit reviewed source-conflict
+dispositions and preserve their two independent outcome-source families;
+their IWBD rows remain non-emitting, and Aozou explicitly makes no date-
+alignment claim. The existing Jamahiriya and Chad windows and aliases are
+unchanged, the frozen Chadian Rebels signature reproduces before and after
+promotion, and the regenerated funnel contains no live exact `libya` label.
 
 ## Follow-up A: huang chao policy behind a Tang record-precedence contract
 

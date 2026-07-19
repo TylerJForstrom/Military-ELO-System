@@ -7938,6 +7938,16 @@
       "region": "Central Africa"
     },
     {
+      "id": "gunt_faya_largeau_assault_force_1983",
+      "name": "Goukouni GUNT assault force at Faya-Largeau (1983)",
+      "kind": "event_bounded_rebel_co_belligerent_force",
+      "start_year": 1983,
+      "end_year": 1983,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Northern Chad"
+    },
+    {
       "id": "gunt_fap_ndjamena_campaign_force_1980",
       "name": "Goukouni GUNT/FAP N'Djamena campaign force (1980)",
       "kind": "event_bounded_government_coalition_force",
@@ -25096,11 +25106,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2373,
-    "rated_entities": 1017,
-    "rated_events": 5416,
+    "registry_polities": 2374,
+    "rated_entities": 1018,
+    "rated_events": 5419,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36932,
+    "unresolved_event_candidates": 36929,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25192,6 +25202,7 @@
     "candidate_keyed_wave8_achea_hced_events": 3,
     "candidate_keyed_wave8_oran_hced_events": 2,
     "candidate_keyed_wave8_cheyenne_dog_soldiers_hced_events": 2,
+    "candidate_keyed_wave8_libya_hced_events": 3,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
@@ -25214,11 +25225,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5152,
-      "candidate_keyed_reviewed_contracts": 784,
-      "geojson_points": 4795,
-      "modern_location_country_assertions": 5057,
-      "location_provenance_objects": 5106,
+      "hced_candidate_bindings": 5155,
+      "candidate_keyed_reviewed_contracts": 787,
+      "geojson_points": 4798,
+      "modern_location_country_assertions": 5060,
+      "location_provenance_objects": 5109,
       "point_fields_withheld_by_quarantine": 357,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
@@ -25228,7 +25239,7 @@
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
       "quarantine_policy_sha256": "62e1df1c0bb6c4c6ed4f4c359fa5afdc633e960e6957c3cc2553ea41cffcd0e5",
       "assertion_status": {
-        "unreviewed_source_assertion": 5106
+        "unreviewed_source_assertion": 5109
       },
       "verified_location_assertions": {
         "availability": "not_available",

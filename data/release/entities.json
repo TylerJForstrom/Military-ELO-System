@@ -15502,6 +15502,21 @@
     ]
   },
   {
+    "id": "gunt_faya_largeau_assault_force_1983",
+    "name": "Goukouni GUNT assault force at Faya-Largeau (1983)",
+    "kind": "event_bounded_rebel_co_belligerent_force",
+    "start_year": 1983,
+    "end_year": 1983,
+    "region": "Northern Chad",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Goukouni Oueddei's GUNT-aligned force participating with Libyan units in the August 1983 Faya-Largeau assault is rated. No rating is inherited from or passed to generic GUNT, FROLINAT, Chadian rebels, Libya, Chad, or another campaign formation.",
+    "source_ids": [
+      "wave8_libya_loc_chad_country_study",
+      "wave8_libya_washpost_faya_1983"
+    ]
+  },
+  {
     "id": "eplf_barentu_assault_force_1985",
     "name": "EPLF Barentu Assault Force (July 1985)",
     "kind": "assault_force",

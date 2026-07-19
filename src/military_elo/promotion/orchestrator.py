@@ -1849,6 +1849,30 @@ from .wave8_cheyenne_dog_soldiers import (
     wave8_cheyenne_dog_soldiers_cohort_counts,
     wave8_cheyenne_dog_soldiers_counts,
 )
+from .wave8_libya import (
+    WAVE8_LIBYA_CONTRACT_IDS,
+    WAVE8_LIBYA_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_LIBYA_ENTITIES,
+    WAVE8_LIBYA_EXISTING_RELEASE_DISPOSITIONS,
+    WAVE8_LIBYA_FINAL_AUDIT_SIGNATURE,
+    WAVE8_LIBYA_FUNNEL_AUDIT,
+    WAVE8_LIBYA_HOLDS,
+    WAVE8_LIBYA_IWBD_DISPOSITIONS,
+    WAVE8_LIBYA_LOCATION_QUARANTINE_REASONS,
+    WAVE8_LIBYA_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_LIBYA_RESERVED_IDS,
+    WAVE8_LIBYA_SOURCES,
+    install_wave8_libya_entities,
+    install_wave8_libya_sources,
+    promote_wave8_libya_contracts,
+    validate_wave8_libya_frozen_chadian_rebels,
+    validate_wave8_libya_integration_dispositions,
+    validate_wave8_libya_queue_contracts,
+    wave8_libya_audit_signature,
+    wave8_libya_cohort_counts,
+    wave8_libya_counts,
+    wave8_libya_metadata,
+)
 from .wave8_kievan_rus import (
     WAVE8_KIEVAN_RUS_CONTRACT_IDS,
     WAVE8_KIEVAN_RUS_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2195,6 +2219,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ACHEA_RESERVED_IDS
     | WAVE8_ORAN_RESERVED_IDS
     | WAVE8_CHEYENNE_DOG_SOLDIERS_RESERVED_IDS
+    | WAVE8_LIBYA_RESERVED_IDS
     | WAVE8_KIEVAN_RUS_RESERVED_IDS
     | WAVE8_CARNATIC_RESERVED_IDS
     | WAVE8_GOGURYEO_RESERVED_IDS
@@ -2922,6 +2947,10 @@ def build_expanded_release(
     wave8_cheyenne_dog_soldiers_queue_validation = (
         validate_wave8_cheyenne_dog_soldiers_queue_contracts(hced)
     )
+    wave8_libya_frozen_chadian_rebels_pre_validation = (
+        validate_wave8_libya_frozen_chadian_rebels()
+    )
+    wave8_libya_queue_validation = validate_wave8_libya_queue_contracts(hced)
     wave8_kievan_rus_queue_validation = validate_wave8_kievan_rus_queue_contracts(
         hced
     )
@@ -3335,6 +3364,7 @@ def build_expanded_release(
     install_wave8_achea_entities(release_entities)
     install_wave8_oran_entities(release_entities)
     install_wave8_cheyenne_dog_soldiers_entities(release_entities)
+    install_wave8_libya_entities(release_entities)
     install_wave8_kievan_rus_entities(release_entities)
     install_wave8_carnatic_entities(release_entities)
     install_wave8_goguryeo_entities(release_entities)
@@ -4850,9 +4880,28 @@ def build_expanded_release(
             "Wave 8 Cheyenne Dog Soldiers lane changed the frozen "
             "Algiers/Cheyenne inventory"
         )
-    wave8_kievan_rus_existing_events = [
+    wave8_libya_existing_events = [
         *wave8_cheyenne_dog_soldiers_existing_events,
         *wave8_cheyenne_dog_soldiers_events,
+    ]
+    wave8_libya_events = promote_wave8_libya_contracts(
+        hced,
+        release_entities,
+        wave8_libya_existing_events,
+    )
+    wave8_libya_frozen_chadian_rebels_post_validation = (
+        validate_wave8_libya_frozen_chadian_rebels()
+    )
+    if (
+        wave8_libya_frozen_chadian_rebels_post_validation
+        != wave8_libya_frozen_chadian_rebels_pre_validation
+    ):
+        raise ValueError(
+            "Wave 8 Libya lane changed the frozen Chadian Rebels lane"
+        )
+    wave8_kievan_rus_existing_events = [
+        *wave8_libya_existing_events,
+        *wave8_libya_events,
     ]
     wave8_kievan_rus_events = promote_wave8_kievan_rus_contracts(
         hced,
@@ -5046,6 +5095,7 @@ def build_expanded_release(
         *wave8_achea_events,
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
+        *wave8_libya_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -5323,6 +5373,7 @@ def build_expanded_release(
         *wave8_achea_events,
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
+        *wave8_libya_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -6170,6 +6221,7 @@ def build_expanded_release(
     install_wave8_achea_sources(sources_by_id)
     install_wave8_oran_sources(sources_by_id)
     install_wave8_cheyenne_dog_soldiers_sources(sources_by_id)
+    install_wave8_libya_sources(sources_by_id)
     install_wave8_kievan_rus_sources(sources_by_id)
     install_wave8_carnatic_sources(sources_by_id)
     install_wave8_goguryeo_sources(sources_by_id)
@@ -6275,6 +6327,7 @@ def build_expanded_release(
         *wave8_achea_events,
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
+        *wave8_libya_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -6293,6 +6346,13 @@ def build_expanded_release(
     # This audit is pinned from the committed release ledger, so validate the
     # fully assembled ledger rather than the mid-chain duplicate-detection
     # view that precedes later Wave 8 lanes such as Macedon.
+    wave8_libya_integration_validation = (
+        validate_wave8_libya_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            all_events,
+        )
+    )
     wave8_egypt_forces_identity_validation = (
         validate_wave8_egypt_forces_identity_boundaries(
             seed_entities,
@@ -6399,6 +6459,7 @@ def build_expanded_release(
         *wave8_achea_events,
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
+        *wave8_libya_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
         *wave8_goguryeo_events,
@@ -6503,6 +6564,7 @@ def build_expanded_release(
             | WAVE8_ACHEA_CONTRACT_IDS
             | WAVE8_ORAN_CONTRACT_IDS
             | WAVE8_CHEYENNE_DOG_SOLDIERS_CONTRACT_IDS
+            | WAVE8_LIBYA_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
             | WAVE8_CARNATIC_CONTRACT_IDS
             | WAVE8_GOGURYEO_CONTRACT_IDS
@@ -6662,6 +6724,7 @@ def build_expanded_release(
             lambda entity: str(entity["id"]),
             WAVE8_CHEYENNE_DOG_SOLDIERS_ENTITIES,
         ),
+        *map(lambda entity: str(entity["id"]), WAVE8_LIBYA_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIEVAN_RUS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CARNATIC_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_GOGURYEO_ENTITIES),
@@ -6944,6 +7007,7 @@ def build_expanded_release(
         - len(wave8_achea_events)
         - len(wave8_oran_events)
         - len(wave8_cheyenne_dog_soldiers_events)
+        - len(wave8_libya_events)
         - len(wave8_kievan_rus_events)
         - len(wave8_carnatic_events)
         - len(wave8_goguryeo_events)
@@ -7150,6 +7214,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_cheyenne_dog_soldiers_hced_events": len(
             wave8_cheyenne_dog_soldiers_events
         ),
+        "candidate_keyed_wave8_libya_hced_events": len(wave8_libya_events),
         "candidate_keyed_wave8_kievan_rus_hced_events": len(
             wave8_kievan_rus_events
         ),
@@ -7510,6 +7575,7 @@ def build_expanded_release(
             "accepted_wave8_cheyenne_dog_soldiers_hced_events": len(
                 wave8_cheyenne_dog_soldiers_events
             ),
+            "accepted_wave8_libya_hced_events": len(wave8_libya_events),
             "accepted_wave8_kievan_rus_hced_events": len(
                 wave8_kievan_rus_events
             ),
@@ -11504,6 +11570,55 @@ def build_expanded_release(
             "wave8_cheyenne_dog_soldiers_sources_added": len(
                 WAVE8_CHEYENNE_DOG_SOLDIERS_SOURCES
             ),
+            "wave8_libya_metadata": wave8_libya_metadata(),
+            "wave8_libya_counts": wave8_libya_counts(),
+            "wave8_libya_cohort_counts": wave8_libya_cohort_counts(),
+            "wave8_libya_audit_signature": wave8_libya_audit_signature(),
+            "wave8_libya_final_audit_signature": (
+                WAVE8_LIBYA_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_libya_queue_validation": wave8_libya_queue_validation,
+            "wave8_libya_frozen_chadian_rebels_pre_validation": (
+                wave8_libya_frozen_chadian_rebels_pre_validation
+            ),
+            "wave8_libya_frozen_chadian_rebels_post_validation": (
+                wave8_libya_frozen_chadian_rebels_post_validation
+            ),
+            "wave8_libya_integration_validation": (
+                wave8_libya_integration_validation
+            ),
+            "wave8_libya_candidate_ids": sorted(WAVE8_LIBYA_CONTRACT_IDS),
+            "wave8_libya_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_LIBYA_HOLDS.items())
+            ],
+            "wave8_libya_existing_release_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LIBYA_EXISTING_RELEASE_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_libya_iwbd_dispositions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LIBYA_IWBD_DISPOSITIONS.items()
+                )
+            ],
+            "wave8_libya_exact_label_funnel_audit": WAVE8_LIBYA_FUNNEL_AUDIT,
+            "wave8_libya_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LIBYA_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_libya_point_quarantine_additions": sorted(
+                WAVE8_LIBYA_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_libya_country_quarantine_additions": sorted(
+                WAVE8_LIBYA_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_libya_entities_added": len(WAVE8_LIBYA_ENTITIES),
+            "wave8_libya_sources_added": len(WAVE8_LIBYA_SOURCES),
             "wave8_kievan_rus_counts": wave8_kievan_rus_counts(),
             "wave8_kievan_rus_cohort_counts": wave8_kievan_rus_cohort_counts(),
             "wave8_kievan_rus_audit_signature": (
@@ -12252,6 +12367,7 @@ def build_expanded_release(
         "candidate_keyed_wave8_cheyenne_dog_soldiers_hced_events": len(
             wave8_cheyenne_dog_soldiers_events
         ),
+        "candidate_keyed_wave8_libya_hced_events": len(wave8_libya_events),
         "candidate_keyed_wave8_kievan_rus_hced_events": len(
             wave8_kievan_rus_events
         ),
