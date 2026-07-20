@@ -317,14 +317,14 @@ class Wave8IrishCivilWarTests(unittest.TestCase):
         )
         self.assertEqual(len(promotion["wave8_irish_civil_war_holds"]), 2)
         coverage = self.registry["coverage"]
-        self.assertEqual(len(self.release_entities), 1_026)
-        self.assertEqual(len(self.release_events), 5_422)
-        self.assertEqual(len(self.registry["entities"]), 2_374)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_926)
+        self.assertEqual(len(self.release_entities), 1_040)
+        self.assertEqual(len(self.release_events), 5_432)
+        self.assertEqual(len(self.registry["entities"]), 2_388)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_916)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_158)
-        self.assertEqual(location["geojson_points"], 4_801)
-        self.assertEqual(location["modern_location_country_assertions"], 5_063)
+        self.assertEqual(location["hced_candidate_bindings"], 5_168)
+        self.assertEqual(location["geojson_points"], 4_803)
+        self.assertEqual(location["modern_location_country_assertions"], 5_073)
 
 
 if __name__ == "__main__":

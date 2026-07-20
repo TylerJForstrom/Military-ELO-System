@@ -4059,17 +4059,17 @@
     ]
   },
   {
+    "id": "telangana_asaf_jahi",
+    "title": "History of Ranga Reddy district",
+    "url": "https://rangareddy.telangana.gov.in/history/",
+    "publisher": "Government of Telangana",
+    "license": "Citation and link only",
+    "source_type": "official_or_academic_reference",
     "accessed": "2026-07-15",
+    "source_family_id": "telangana_district_history",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
-    ],
-    "id": "telangana_asaf_jahi",
-    "license": "Citation and link only",
-    "publisher": "Government of Telangana",
-    "source_family_id": "telangana_district_history",
-    "source_type": "official_or_academic_reference",
-    "title": "History of Ranga Reddy district",
-    "url": "https://rangareddy.telangana.gov.in/history/"
+    ]
   },
   {
     "accessed": "2026-07-15",
@@ -9640,6 +9640,214 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_bolanos_geyer_nicaragua",
+    "title": "William Walker: El predestinado de los ojos grises, tomo III",
+    "url": "https://guerranacional.enriquebolanos.org/bibliografia_pdf/ABG-T3-NICARAGUA.pdf",
+    "publisher": "Fundación Enrique Bolaños",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "bolanos_geyer_gray_eyed_man_volume_3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_founders_eaton_hamet",
+    "title": "William Eaton to James Madison, 4 March 1805",
+    "url": "https://founders.archives.gov/documents/Madison/02-09-02-0103",
+    "publisher": "Founders Online, National Archives",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_document",
+    "accessed": "2026-07-19",
+    "source_family_id": "papers_of_james_madison",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_inehrm_calpulalpan",
+    "title": "La vuelta del liberalismo a la Ciudad de México",
+    "url": "https://www.inehrm.gob.mx/es/inehrm/La_vuelta_del_liberalismo_a_la_Ciudad_de_Mexico",
+    "publisher": "Instituto Nacional de Estudios Históricos de las Revoluciones de México",
+    "license": "Citation and link only",
+    "source_type": "official_scholarly_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "inehrm_gonzalez_lezama_calpulalpan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_kalkriese_varus",
+    "title": "The Varus Battle",
+    "url": "https://www.kalkriese-varusschlacht.de/en/the-varus-battle.html",
+    "publisher": "Museum and Park Kalkriese",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "museum_park_kalkriese_varus_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_mep_santa_rosa",
+    "title": "Unidad didáctica: mes de la Gesta 1856-1857",
+    "url": "https://mep.go.cr/sites/default/files/media/unidad-didactica-mes-de-la-gesta-1856-1857.pdf",
+    "publisher": "Ministerio de Educación Pública, Gobierno de Costa Rica",
+    "license": "Citation and link only",
+    "source_type": "official_educational_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "costa_rica_mep_santa_rosa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_mexico_defensa_calpulalpan",
+    "title": "22 de diciembre de 1860, batalla de Calpulalpan",
+    "url": "https://www.gob.mx/defensa/documentos/22-de-diciembre-de-1860-batalla-de-calpulalpan",
+    "publisher": "Secretaría de la Defensa Nacional, Gobierno de México",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "mexico_secretariat_defense_calpulalpan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_museo_costa_rica_forces",
+    "title": "Las Fuerzas Armadas en Costa Rica: Campaña Nacional, 1856-1857",
+    "url": "https://www.museocostarica.go.cr/museo/historia-cuartel/fuerzas-armadas-en-costa-rica/",
+    "publisher": "Museo Nacional de Costa Rica",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "museo_nacional_costa_rica_campaign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_nhhc_derna",
+    "title": "Barbary Wars, 1801-1805 and 1815-1816",
+    "url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/wars-conflicts-and-operations/barbary-wars.html",
+    "publisher": "Naval History and Heritage Command",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "naval_history_and_heritage_command_derna",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_ohs_twin_villages",
+    "title": "Twin Villages, Battle of the",
+    "url": "https://www.okhistory.org/publications/enc/entry?entry=TW005",
+    "publisher": "Oklahoma Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-19",
+    "source_family_id": "oklahoma_history_twin_villages",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_oxford_arminius",
+    "title": "Resisting Roman Imperialism in Germania",
+    "url": "https://academic.oup.com/book/58059/chapter-abstract/477515317",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_book_chapter",
+    "accessed": "2026-07-19",
+    "source_family_id": "oxford_cartography_resistance_arminius",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_scroggs_granada",
+    "title": "Filibusters and Financiers: The Story of William Walker and His Associates",
+    "url": "https://books.google.com/books/about/Filibusters_and_Financiers.html?id=XbUWAAAAYAAJ",
+    "publisher": "Macmillan; digitized by Google Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "scroggs_filibusters_and_financiers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_tsha_ortiz_parrilla",
+    "title": "Ortiz Parrilla Red River Campaign",
+    "url": "https://www.tshaonline.org/handbook/entries/ortiz-parrilla-red-river-campaign",
+    "publisher": "Texas State Historical Association",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_handbook",
+    "accessed": "2026-07-19",
+    "source_family_id": "handbook_texas_ortiz_parrilla",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_usmcu_obannon_derna",
+    "title": "First Lieutenant Presley Neville O'Bannon",
+    "url": "https://www.usmcu.edu/Research/Marine-Corps-History-Division/People/Whos-Who-in-Marine-Corps-History/Mackie-Ozbourn/First-Lieutenant-Presley-Neville-OBannon/",
+    "publisher": "Marine Corps History Division, Marine Corps University",
+    "license": "Citation and link only",
+    "source_type": "official_military_biography",
+    "accessed": "2026-07-19",
+    "source_family_id": "marine_corps_history_division_obannon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_usni_eaton_derne",
+    "title": "William Eaton—The Hero of Derne",
+    "url": "https://www.usni.org/magazines/proceedings/1941/april/william-eaton-hero-derne",
+    "publisher": "U.S. Naval Institute Proceedings",
+    "license": "Citation and link only",
+    "source_type": "professional_history_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "us_naval_institute_proceedings_derne",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_walker_war_nicaragua",
+    "title": "William Walker, The War in Nicaragua",
+    "url": "https://gutenberg.org/files/76898/76898-h/76898-h.htm",
+    "publisher": "Project Gutenberg",
+    "license": "Citation and link only",
+    "source_type": "participant_primary_memoir",
+    "accessed": "2026-07-19",
+    "source_family_id": "william_walker_war_in_nicaragua",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_first_saudi_abdullah_diriyah",
     "title": "Abdullah Bin Saud Bin Abdulaziz Al Saud",
     "url": "https://saudipedia.com/en/abdullah-bin-saud-bin-abdulaziz-al-saud",
@@ -10046,6 +10254,131 @@
     "evidence_roles": [
       "outcome",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_ird_etats_kong",
+    "title": "Louis Tauxier, Les Etats de Kong (Cote d'Ivoire)",
+    "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/2022-12/010075008.pdf",
+    "publisher": "Editions Karthala; hosted by IRD Horizon",
+    "license": "Citation and link only",
+    "source_type": "scholarly_critical_edition",
+    "accessed": "2026-07-19",
+    "source_family_id": "tauxier_etats_kong_karthala_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_maharashtra_akola_history",
+    "title": "Akola District Gazetteer: History and Archaeology",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Akola%20District/history.html",
+    "publisher": "Maharashtra State Gazetteers",
+    "license": "Citation and link only",
+    "source_type": "official_district_gazetteer",
+    "accessed": "2026-07-19",
+    "source_family_id": "maharashtra_akola_district_gazetteer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_maharashtra_balapur_places",
+    "title": "Akola District Gazetteer: Balapur",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/AKOLA/places_Balapur.html",
+    "publisher": "Maharashtra State Gazetteers",
+    "license": "Citation and link only",
+    "source_type": "official_district_gazetteer",
+    "accessed": "2026-07-19",
+    "source_family_id": "maharashtra_akola_district_gazetteer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_maharashtra_history_ch8",
+    "title": "History of Maharashtra: Maratha Period, Chapter VIII",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_III/chapter_8.pdf",
+    "publisher": "Maharashtra State Gazetteers",
+    "license": "Citation and link only",
+    "source_type": "official_state_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "maharashtra_state_history_maratha_period",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_maharashtra_kharda_places",
+    "title": "Kharda Fort",
+    "url": "https://ahmednagar.nic.in/tourist-place/kharda-fort/",
+    "publisher": "District Administration Ahilyanagar, Government of Maharashtra",
+    "license": "Citation and link only",
+    "source_type": "official_district_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "ahilyanagar_district_kharda_fort",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_maharashtra_solapur_maratha",
+    "title": "Solapur District Gazetteer: Maratha Period",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Solapur/his_maratha%20period.html",
+    "publisher": "Maharashtra State Gazetteers",
+    "license": "Citation and link only",
+    "source_type": "official_district_gazetteer",
+    "accessed": "2026-07-19",
+    "source_family_id": "maharashtra_solapur_district_gazetteer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_openedition_ird_cotton",
+    "title": "Thomas J. Bassett, Le choc des empires, 1880-1911",
+    "url": "https://books.openedition.org/irdeditions/10199",
+    "publisher": "IRD Editions / OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-19",
+    "source_family_id": "bassett_cotton_cote_ivoire_2002",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_persee_sikasso_1898",
+    "title": "La prise de Sikaso",
+    "url": "https://education.persee.fr/doc/magen_1257-5593_1898_num_65_34_32710",
+    "publisher": "Manuel general de l'instruction primaire / Persee",
+    "license": "Citation and link only",
+    "source_type": "digitized_near_contemporary_periodical",
+    "accessed": "2026-07-19",
+    "source_family_id": "manuel_general_instruction_primaire_1898",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_followup_b_persee_tymowski_sikasso",
+    "title": "Michal Tymowski, Le developpement de Sikasso, capitale du Kenedugu",
+    "url": "https://www.persee.fr/doc/outre_0300-9513_1981_num_68_250_2316",
+    "publisher": "Revue francaise d'histoire d'outre-mer / Persee",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "tymowski_sikasso_1981",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {

@@ -1112,6 +1112,21 @@
     ]
   },
   {
+    "id": "arminius_led_germanic_coalition_teutoburg_9",
+    "name": "Arminius-led Germanic coalition in the Varus Battle (9 CE)",
+    "kind": "event_bounded_germanic_coalition",
+    "start_year": 9,
+    "end_year": 9,
+    "region": "Germania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Germanic tribal warriors united under the Cheruscan leader Arminius for the Varus Battle; no unlisted tribal composition or later German identity is inferred. This identity exists only for the named engagement and year 9. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_kalkriese_varus",
+      "wave8_exact_priority_oxford_arminius"
+    ]
+  },
+  {
     "id": "great_jewish_revolt_judean_forces_66_73",
     "name": "Judean forces of the Great Jewish Revolt (66–73)",
     "kind": "rebel_polity",
@@ -7676,6 +7691,37 @@
     "start_year": 1717
   },
   {
+    "id": "alam_ali_khan_sayyid_aligned_coalition_balapur_1720",
+    "name": "Alam Ali Khan's Sayyid-aligned coalition at Balapur (1720)",
+    "kind": "event_bounded_imperial_coalition",
+    "start_year": 1720,
+    "end_year": 1720,
+    "region": "Berar and the northern Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded opposing coalition at Balapur under Alam Ali Khan, aligned with the Sayyid brothers and including source-named Maratha supporters. It is not the undifferentiated Mughal Empire, and no imperial, Maratha, Hyderabad, predecessor, or successor rating is inherited.",
+    "source_ids": [
+      "wave8_followup_b_maharashtra_akola_history",
+      "wave8_followup_b_maharashtra_balapur_places",
+      "wave8_followup_b_maharashtra_history_ch8"
+    ]
+  },
+  {
+    "id": "dilawar_ali_khan_sayyid_aligned_force_ratanpur_1720",
+    "name": "Dilawar Ali Khan's Sayyid-aligned force at Ratanpur (1720)",
+    "kind": "event_bounded_imperial_force",
+    "start_year": 1720,
+    "end_year": 1720,
+    "region": "Khandesh and the northern Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded opposing force at Ratanpur under Dilawar Ali Khan in the Sayyid-aligned campaign against Nizam-ul-Mulk. It is not the undifferentiated Mughal Empire, and no imperial, Hyderabad, predecessor, or successor rating is inherited.",
+    "source_ids": [
+      "wave8_followup_b_maharashtra_akola_history",
+      "wave8_followup_b_maharashtra_history_ch8"
+    ]
+  },
+  {
     "id": "kingdom_sardinia_piedmont",
     "name": "Kingdom of Sardinia (Piedmont)",
     "kind": "kingdom",
@@ -7687,6 +7733,23 @@
     "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_p2_sardinia_identity_cambridge"
+    ]
+  },
+  {
+    "id": "nizam_ul_mulk_deccan_campaign_force_1720",
+    "name": "Nizam-ul-Mulk's Deccan campaign force (1720)",
+    "kind": "campaign_bounded_mughal_formation",
+    "start_year": 1720,
+    "end_year": 1720,
+    "region": "Khandesh, Berar, and the northern Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Chin Kilich Khan Nizam-ul-Mulk's 1720 formation in the campaign against the Sayyid-aligned imperial forces at Ratanpur and Balapur. It was a Mughal-era personal campaign formation, not the Asaf Jahi State of Hyderabad. Telangana's official history places the autonomous Deccan and Asaf Jahi dynastic boundary at Shakarkheda in 1724, so this identity must never be extended to or merged with Hyderabad State (1724-1948). No Nizam, Hyderabad, Deccan, or Mughal label alias is opened, and no successor inherits its Elo.",
+    "source_ids": [
+      "telangana_asaf_jahi",
+      "wave8_followup_b_maharashtra_akola_history",
+      "wave8_followup_b_maharashtra_balapur_places",
+      "wave8_followup_b_maharashtra_history_ch8"
     ]
   },
   {
@@ -7909,6 +7972,36 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "ortiz_parrilla_spanish_led_expedition_1759",
+    "name": "Ortiz Parrilla's Spanish-led expedition at Twin Villages (1759)",
+    "kind": "event_bounded_colonial_expedition",
+    "start_year": 1759,
+    "end_year": 1759,
+    "region": "Red River borderlands, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Spanish-led expedition under Diego Ortiz Parrilla, including source-described Spanish troops, militia, Apache, Tlaxcaltecan, and mission allies. The loss is not assigned to the undifferentiated Spanish Empire or inherited by any constituent. This identity exists only for the named engagement and year 1759. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_ohs_twin_villages",
+      "wave8_exact_priority_tsha_ortiz_parrilla"
+    ]
+  },
+  {
+    "id": "taovaya_fort_defending_coalition_twin_villages_1759",
+    "name": "Taovaya-fort defending coalition at Twin Villages (1759)",
+    "kind": "event_bounded_indigenous_defense_coalition",
+    "start_year": 1759,
+    "end_year": 1759,
+    "region": "Red River borderlands, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defenders of the Taovaya fort, including source-named Taovaya/Wichita, Comanche, Yaceales, and Tawakoni elements. No formal multi-nation command hierarchy is inferred, and the contract does not merge their peoples or modern descendants. This identity exists only for the named engagement and year 1759. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_ohs_twin_villages",
+      "wave8_exact_priority_tsha_ortiz_parrilla"
     ]
   },
   {
@@ -8816,6 +8909,22 @@
     ]
   },
   {
+    "id": "eaton_hamet_arab_greek_auxiliaries_derna_1805",
+    "name": "Eaton-Hamet Arab and Greek expeditionary auxiliaries at Derna (1805)",
+    "kind": "event_bounded_expeditionary_auxiliaries",
+    "start_year": 1805,
+    "end_year": 1805,
+    "region": "North Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Arab and Greek expeditionary auxiliaries assembled around William Eaton and Hamet Karamanli, excluding U.S. personnel and Hamet's separately represented claimant contingent. The record does not imply one uniform contract or permanent organization. This identity exists only for the named engagement and year 1805. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_nhhc_derna",
+      "wave8_exact_priority_usmcu_obannon_derna",
+      "wave8_exact_priority_usni_eaton_derne"
+    ]
+  },
+  {
     "id": "egypt_muhammad_ali",
     "name": "Egypt (Muhammad Ali dynasty)",
     "kind": "dynastic_state",
@@ -8848,6 +8957,22 @@
     "source_ids": [
       "wave8_haiti_clio_dessalines_2022",
       "wave8_haiti_loc_santo_domingo_map"
+    ]
+  },
+  {
+    "id": "hamet_karamanli_claimant_contingent_derna_1805",
+    "name": "Hamet Karamanli's claimant contingent at Derna (1805)",
+    "kind": "event_bounded_claimant_contingent",
+    "start_year": 1805,
+    "end_year": 1805,
+    "region": "North Africa",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded followers and personal escort attached to Hamet Karamanli's restoration attempt, excluding U.S. personnel and the separately represented Arab and Greek expeditionary auxiliaries. This identity exists only for the named engagement and year 1805. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_founders_eaton_hamet",
+      "wave8_exact_priority_nhhc_derna",
+      "wave8_exact_priority_usni_eaton_derne"
     ]
   },
   {
@@ -11121,6 +11246,36 @@
     ]
   },
   {
+    "id": "nicaraguan_democratic_force_la_virgen_1855",
+    "name": "Nicaraguan Democratic force at La Virgen (1855)",
+    "kind": "event_bounded_civil_war_faction_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Central America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Nicaraguan Democratic troops fighting alongside Walker at La Virgen, kept distinct from the foreign expeditionaries. This identity exists only for the named engagement and year 1855. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_bolanos_geyer_nicaragua",
+      "wave8_exact_priority_walker_war_nicaragua"
+    ]
+  },
+  {
+    "id": "nicaraguan_legitimist_force_la_virgen_1855",
+    "name": "Nicaraguan Legitimist force at La Virgen (1855)",
+    "kind": "event_bounded_civil_war_faction_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Central America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Legitimist field force under José Santos Guardiola in the La Virgen action; it is not a timeless Nicaraguan identity. This identity exists only for the named engagement and year 1855. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_bolanos_geyer_nicaragua",
+      "wave8_exact_priority_walker_war_nicaragua"
+    ]
+  },
+  {
     "id": "rains_regular_volunteer_force_union_gap_1855",
     "name": "Rains's combined regular-volunteer force at Union Gap (1855)",
     "kind": "event_bounded_combined_assault_force",
@@ -11138,6 +11293,36 @@
     ]
   },
   {
+    "id": "walker_expeditionary_force_la_virgen_1855",
+    "name": "Walker's expeditionary force at La Virgen (1855)",
+    "kind": "event_bounded_filibuster_expeditionary_force",
+    "start_year": 1855,
+    "end_year": 1855,
+    "region": "Central America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded foreign expeditionaries under William Walker in the 3 September action, excluding the allied Nicaraguan Democratic force. This identity exists only for the named engagement and year 1855. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_bolanos_geyer_nicaragua",
+      "wave8_exact_priority_walker_war_nicaragua"
+    ]
+  },
+  {
+    "id": "costa_rican_national_army_santa_rosa_1856",
+    "name": "Costa Rican national army at Santa Rosa (1856)",
+    "kind": "event_bounded_national_army",
+    "start_year": 1856,
+    "end_year": 1856,
+    "region": "Central America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Costa Rican force that attacked Hacienda Santa Rosa on 20 March, without creating a broad Costa Rica polity identity. This identity exists only for the named engagement and year 1856. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_mep_santa_rosa",
+      "wave8_exact_priority_museo_costa_rica_forces"
+    ]
+  },
+  {
     "id": "clio_q218023_1856_cfb4e08e",
     "name": "Free Orange State",
     "kind": "polity",
@@ -11151,6 +11336,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "schlessinger_walker_filibuster_detachment_santa_rosa_1856",
+    "name": "Schlessinger's Walker filibuster detachment at Santa Rosa (1856)",
+    "kind": "event_bounded_filibuster_detachment",
+    "start_year": 1856,
+    "end_year": 1856,
+    "region": "Central America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Walker-aligned detachment opposed at Hacienda Santa Rosa, distinct from Walker's 1855 La Virgen expeditionary force. This identity exists only for the named engagement and year 1856. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_mep_santa_rosa",
+      "wave8_exact_priority_museo_costa_rica_forces"
     ]
   },
   {
@@ -12765,6 +12965,23 @@
       "wave8_yaqui_cardenas_historia_mexicana",
       "wave8_yaqui_spicer_cycles",
       "wave8_yaqui_troncoso_tomo_i"
+    ]
+  },
+  {
+    "id": "tieba_led_kenedougou_defense_sikasso_1887_1888",
+    "name": "Tieba-led Kenedougou defense at Sikasso (1887-1888)",
+    "kind": "siege_bounded_defending_formation",
+    "start_year": 1887,
+    "end_year": 1888,
+    "region": "Sikasso and the southern Niger bend",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free formation for Tieba's Kenedougou defenders during Samori's 1887-1888 siege of Sikasso. Sources disagree about broader ruler chronology, so this contract asserts neither a reign date nor the state's historical lifetime. No Kenedougou, Sikasso, Traore, Mandingo, Mali, or modern-country alias is opened. This identity is never Wassoulou and no predecessor or successor inherits its Elo.",
+    "source_ids": [
+      "wave8_followup_b_ird_etats_kong",
+      "wave8_followup_b_openedition_ird_cotton",
+      "wave8_followup_b_persee_sikasso_1898",
+      "wave8_followup_b_persee_tymowski_sikasso"
     ]
   },
   {

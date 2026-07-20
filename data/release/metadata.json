@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1026,
-    "events": 5422,
-    "sources": 1470,
-    "registry_polities": 2374
+    "entities": 1040,
+    "events": 5432,
+    "sources": 1494,
+    "registry_polities": 2388
   },
   "year_range": {
     "start": -1274,
@@ -163,6 +163,8 @@
     "accepted_wave8_oran_hced_events": 2,
     "accepted_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "accepted_wave8_libya_hced_events": 3,
+    "accepted_wave8_followup_b_hced_events": 4,
+    "accepted_wave8_exact_priority_hced_events": 6,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
@@ -18998,6 +19000,362 @@
     "wave8_libya_country_quarantine_additions": [],
     "wave8_libya_entities_added": 1,
     "wave8_libya_sources_added": 6,
+    "wave8_followup_b_metadata": {
+      "counts": {
+        "country_quarantine_additions": 0,
+        "holds": 0,
+        "new_entities": 4,
+        "new_sources": 9,
+        "newly_rated_events": 4,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 2,
+        "promotion_contracts": 4,
+        "reused_sources": 1,
+        "reviewed_hced_rows": 4,
+        "source_contracts": 10,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "maratha_nizam_war_1795": 1,
+        "nizam_ul_mulk_1720_deccan_campaign": 2,
+        "tieba_kenedougou_wassoulou_war": 1
+      },
+      "final_audit_signature": "1e8a20c5479c7b887db23b56a948e38bf1a1097d1e6f353e47f9f7440e722061",
+      "promoted_candidate_ids": [
+        "hced-Balapur1720-1",
+        "hced-Kharda1795-1",
+        "hced-Ratanpur1720-1",
+        "hced-Sikasso1887-1888-1"
+      ],
+      "reserved_candidate_ids": [
+        "hced-Balapur1720-1",
+        "hced-Kharda1795-1",
+        "hced-Ratanpur1720-1",
+        "hced-Sikasso1887-1888-1"
+      ],
+      "point_quarantine_candidate_ids": [
+        "hced-Balapur1720-1",
+        "hced-Ratanpur1720-1"
+      ]
+    },
+    "wave8_followup_b_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 4,
+      "new_sources": 9,
+      "newly_rated_events": 4,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 4,
+      "reused_sources": 1,
+      "reviewed_hced_rows": 4,
+      "source_contracts": 10,
+      "terminal_exclusions": 0
+    },
+    "wave8_followup_b_cohort_counts": {
+      "maratha_nizam_war_1795": 1,
+      "nizam_ul_mulk_1720_deccan_campaign": 2,
+      "tieba_kenedougou_wassoulou_war": 1
+    },
+    "wave8_followup_b_audit_signature": "1e8a20c5479c7b887db23b56a948e38bf1a1097d1e6f353e47f9f7440e722061",
+    "wave8_followup_b_final_audit_signature": "1e8a20c5479c7b887db23b56a948e38bf1a1097d1e6f353e47f9f7440e722061",
+    "wave8_followup_b_queue_validation": {
+      "promotion_contracts": 4,
+      "holds": 0,
+      "reviewed_hced_rows": 4,
+      "exact_candidate_rows": 4
+    },
+    "wave8_followup_b_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_followup_b_final_validation": {
+      "candidate_ids": [
+        "hced-Balapur1720-1",
+        "hced-Kharda1795-1",
+        "hced-Ratanpur1720-1",
+        "hced-Sikasso1887-1888-1"
+      ],
+      "final_audit_signature": "1e8a20c5479c7b887db23b56a948e38bf1a1097d1e6f353e47f9f7440e722061",
+      "measured_audit_signature": "1e8a20c5479c7b887db23b56a948e38bf1a1097d1e6f353e47f9f7440e722061",
+      "row_hashes": {
+        "hced-Balapur1720-1": "6c8a5c665b336e0bacd5602d1bb923b1267ea6a0b2f97e8ef8e96186823f42a2",
+        "hced-Kharda1795-1": "83be482c4b3d480c1339f7e7d5d3b551742322f23a551c10fca992562b2d12eb",
+        "hced-Ratanpur1720-1": "692aad2edf66fc1ea31585e2900fee5990ac92c7df626fb2a4a2d2c08d3e476f",
+        "hced-Sikasso1887-1888-1": "2787ccfe72f8d8b9dc04323dd69ad8b175a57047f3622102d8ab9c89b5684c4b"
+      },
+      "release_inventory": {
+        "lane_entities": 4,
+        "lane_events": 4,
+        "new_source_records": 9,
+        "outside_entity_uses": 0,
+        "point_quarantines": 2,
+        "reused_source_records": 1,
+        "source_contracts": 10
+      }
+    },
+    "wave8_followup_b_candidate_ids": [
+      "hced-Balapur1720-1",
+      "hced-Kharda1795-1",
+      "hced-Ratanpur1720-1",
+      "hced-Sikasso1887-1888-1"
+    ],
+    "wave8_followup_b_holds": [],
+    "wave8_followup_b_exact_label_funnel_audit": {
+      "required_absent_labels": [
+        "kenedougou",
+        "marathas tukaji hulkar berar"
+      ],
+      "reserved_candidate_ids": [
+        "hced-Balapur1720-1",
+        "hced-Kharda1795-1",
+        "hced-Ratanpur1720-1",
+        "hced-Sikasso1887-1888-1"
+      ]
+    },
+    "wave8_followup_b_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Balapur1720-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The gazetteer places the 1720 battle six to eight miles west of Balapur, so HCED's town-adjacent coordinate is not an independently verified battlefield point. Retain India and withhold geometry.",
+        "evidence_refs": [
+          "wave8_followup_b_maharashtra_akola_history",
+          "wave8_followup_b_maharashtra_balapur_places"
+        ]
+      },
+      {
+        "candidate_id": "hced-Ratanpur1720-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed histories identify Ratanpur within the campaign near Burhanpur but do not independently establish HCED's exact point. Retain India and withhold geometry.",
+        "evidence_refs": [
+          "wave8_followup_b_maharashtra_akola_history",
+          "wave8_followup_b_maharashtra_history_ch8"
+        ]
+      }
+    ],
+    "wave8_followup_b_point_quarantine_additions": [
+      "hced-Balapur1720-1",
+      "hced-Ratanpur1720-1"
+    ],
+    "wave8_followup_b_country_quarantine_additions": [],
+    "wave8_followup_b_entities_added": 4,
+    "wave8_followup_b_sources_added": 10,
+    "wave8_exact_priority_metadata": {
+      "audit": "candidate_keyed_exact_event_bounded_priority_rows",
+      "counts": {
+        "country_quarantine_additions": 0,
+        "holds": 1,
+        "new_entities": 10,
+        "new_sources": 15,
+        "newly_rated_events": 6,
+        "outcome_overrides": 0,
+        "outcome_reversals": 0,
+        "point_quarantine_additions": 6,
+        "promotion_contracts": 6,
+        "reserved_hced_rows": 7,
+        "reviewed_hced_rows": 7,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "first_barbary_war": 1,
+        "mexican_war_of_reform": 1,
+        "nicaragua_filibuster_conflict": 3,
+        "roman_germania_conflict": 1,
+        "spanish_northern_frontier": 1
+      },
+      "final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
+      "held_candidate_ids": [
+        "hced-Granada, Nicaragua1856-1"
+      ],
+      "module_owner": "military_elo.promotion.wave8_exact_priority",
+      "promoted_candidate_ids": [
+        "hced-Calpulalpam1860-1",
+        "hced-Derna1805-1",
+        "hced-La Virgen1855-1",
+        "hced-Red River1759-1",
+        "hced-Santa Rosa de Copan1856-1",
+        "hced-Teutoburgwald9-1"
+      ],
+      "reserved_candidate_ids": [
+        "hced-Calpulalpam1860-1",
+        "hced-Derna1805-1",
+        "hced-Granada, Nicaragua1856-1",
+        "hced-La Virgen1855-1",
+        "hced-Red River1759-1",
+        "hced-Santa Rosa de Copan1856-1",
+        "hced-Teutoburgwald9-1"
+      ],
+      "row_dispositions": {
+        "hced-Calpulalpam1860-1": "promote",
+        "hced-Derna1805-1": "promote",
+        "hced-Granada, Nicaragua1856-1": "hold",
+        "hced-La Virgen1855-1": "promote",
+        "hced-Red River1759-1": "promote",
+        "hced-Santa Rosa de Copan1856-1": "promote",
+        "hced-Teutoburgwald9-1": "promote"
+      }
+    },
+    "wave8_exact_priority_counts": {
+      "country_quarantine_additions": 0,
+      "holds": 1,
+      "new_entities": 10,
+      "new_sources": 15,
+      "newly_rated_events": 6,
+      "outcome_overrides": 0,
+      "outcome_reversals": 0,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reserved_hced_rows": 7,
+      "reviewed_hced_rows": 7,
+      "terminal_exclusions": 0
+    },
+    "wave8_exact_priority_cohort_counts": {
+      "first_barbary_war": 1,
+      "mexican_war_of_reform": 1,
+      "nicaragua_filibuster_conflict": 3,
+      "roman_germania_conflict": 1,
+      "spanish_northern_frontier": 1
+    },
+    "wave8_exact_priority_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
+    "wave8_exact_priority_final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
+    "wave8_exact_priority_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 1,
+      "reviewed_hced_rows": 7,
+      "audited_candidate_rows": 7,
+      "automated_discovery_rows": 7,
+      "reserved_hced_rows": 7
+    },
+    "wave8_exact_priority_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "held_release_events": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 6
+    },
+    "wave8_exact_priority_final_validation": {
+      "held_candidate_events": 0,
+      "lane_entities": 10,
+      "lane_events": 6,
+      "lane_sources": 15,
+      "outside_entity_uses": 0,
+      "reserved_candidate_ids": 7,
+      "final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9"
+    },
+    "wave8_exact_priority_candidate_ids": [
+      "hced-Calpulalpam1860-1",
+      "hced-Derna1805-1",
+      "hced-La Virgen1855-1",
+      "hced-Red River1759-1",
+      "hced-Santa Rosa de Copan1856-1",
+      "hced-Teutoburgwald9-1"
+    ],
+    "wave8_exact_priority_holds": [
+      {
+        "candidate_id": "hced-Granada, Nicaragua1856-1",
+        "raw_row_sha256": "e00e51d575246bdd94bf6c25cb010d389c5fb90536c73168313973f2f49f7d74",
+        "cohort": "nicaragua_filibuster_conflict",
+        "disposition": "hold",
+        "reason_code": "mixed_siege_relief_retreat_and_occupation_outcome",
+        "evidence_refs": [
+          "wave8_exact_priority_scroggs_granada",
+          "wave8_exact_priority_walker_war_nicaragua"
+        ],
+        "evidence_source_family_ids": [
+          "scroggs_filibusters_and_financiers",
+          "william_walker_war_in_nicaragua"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_exact_priority",
+          "status": "reserved_hced_hold"
+        },
+        "audit_note": "The allied army enclosed and reduced Henningsen's position, but Waters broke through and relieved it, after which the filibuster force completed its destruction of Granada and embarked while the allies occupied the ruins. The row's simple Central American Allies win is known but non-atomic and therefore unrateable as one tactical outcome. It remains unscored for Elo and is not converted to a draw."
+      }
+    ],
+    "wave8_exact_priority_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Calpulalpam1860-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "Sources establish the action near San Miguel Calpulalpan but do not independently authenticate HCED's exact point.",
+        "evidence_refs": [
+          "wave8_exact_priority_inehrm_calpulalpan",
+          "wave8_exact_priority_mexico_defensa_calpulalpan"
+        ]
+      },
+      {
+        "candidate_id": "hced-Derna1805-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed combined operation establishes Derna, not the exact coordinate of the fighting represented by the HCED point.",
+        "evidence_refs": [
+          "wave8_exact_priority_nhhc_derna",
+          "wave8_exact_priority_usmcu_obannon_derna"
+        ]
+      },
+      {
+        "candidate_id": "hced-La Virgen1855-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The sources establish La Virgen/Virgin Bay but do not independently verify HCED's exact battlefield coordinate.",
+        "evidence_refs": [
+          "wave8_exact_priority_bolanos_geyer_nicaragua",
+          "wave8_exact_priority_walker_war_nicaragua"
+        ]
+      },
+      {
+        "candidate_id": "hced-Red River1759-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's coordinate is in northern New Mexico, while both historical references place the Twin Villages on the Texas-Oklahoma Red River.",
+        "evidence_refs": [
+          "wave8_exact_priority_ohs_twin_villages",
+          "wave8_exact_priority_tsha_ortiz_parrilla"
+        ]
+      },
+      {
+        "candidate_id": "hced-Santa Rosa de Copan1856-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The raw title incorrectly adds 'de Copan'; official sources identify Hacienda Santa Rosa in Costa Rica, while the HCED point is not itself authenticated.",
+        "evidence_refs": [
+          "wave8_exact_priority_mep_santa_rosa",
+          "wave8_exact_priority_museo_costa_rica_forces"
+        ]
+      },
+      {
+        "candidate_id": "hced-Teutoburgwald9-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The Varus Battle unfolded across multiple days, and the museum source does not turn HCED's single coordinate into an exact battle point.",
+        "evidence_refs": [
+          "wave8_exact_priority_kalkriese_varus",
+          "wave8_exact_priority_oxford_arminius"
+        ]
+      }
+    ],
+    "wave8_exact_priority_point_quarantine_additions": [
+      "hced-Calpulalpam1860-1",
+      "hced-Derna1805-1",
+      "hced-La Virgen1855-1",
+      "hced-Red River1759-1",
+      "hced-Santa Rosa de Copan1856-1",
+      "hced-Teutoburgwald9-1"
+    ],
+    "wave8_exact_priority_country_quarantine_additions": [],
+    "wave8_exact_priority_entities_added": 10,
+    "wave8_exact_priority_sources_added": 15,
     "wave8_kievan_rus_counts": {
       "country_quarantine_additions": 0,
       "holds": 4,
@@ -20597,7 +20955,7 @@
     "wave8_etruria_country_quarantine_additions": [],
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
-    "hced_label_pass_input_rows": 5540,
+    "hced_label_pass_input_rows": 5529,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -20610,7 +20968,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1070,
+      "reserved_candidate_contract": 1081,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -20620,9 +20978,9 @@
       "duplicate_of_promoted_event": 0,
       "faction_label_not_a_polity": 434,
       "label_outcome_not_aligned": 79,
-      "label_outside_policy_window": 180,
+      "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1991,
+      "no_unique_time_valid_label_match": 1982,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

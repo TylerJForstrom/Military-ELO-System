@@ -738,6 +738,16 @@
       "region": "Qala-i-Jangi fortress, Balkh, Afghanistan"
     },
     {
+      "id": "alam_ali_khan_sayyid_aligned_coalition_balapur_1720",
+      "name": "Alam Ali Khan's Sayyid-aligned coalition at Balapur (1720)",
+      "kind": "event_bounded_imperial_coalition",
+      "start_year": 1720,
+      "end_year": 1720,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Berar and the northern Deccan"
+    },
+    {
       "id": "alamannic_besieging_host_sens_356",
       "name": "Alamannic besieging host at Sens (356)",
       "kind": "event_bounded_besieging_force",
@@ -1264,6 +1274,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "arminius_led_germanic_coalition_teutoburg_9",
+      "name": "Arminius-led Germanic coalition in the Varus Battle (9 CE)",
+      "kind": "event_bounded_germanic_coalition",
+      "start_year": 9,
+      "end_year": 9,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Germania"
     },
     {
       "id": "arnulf_east_frankish_royal_army_dyle_891",
@@ -3811,6 +3831,16 @@
       "region": "France"
     },
     {
+      "id": "costa_rican_national_army_santa_rosa_1856",
+      "name": "Costa Rican national army at Santa Rosa (1856)",
+      "kind": "event_bounded_national_army",
+      "start_year": 1856,
+      "end_year": 1856,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central America"
+    },
+    {
       "id": "clio_q1541699_1000_bdeb307d",
       "name": "County of Ampuria",
       "kind": "polity",
@@ -4721,6 +4751,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Arabian Peninsula"
+    },
+    {
+      "id": "dilawar_ali_khan_sayyid_aligned_force_ratanpur_1720",
+      "name": "Dilawar Ali Khan's Sayyid-aligned force at Ratanpur (1720)",
+      "kind": "event_bounded_imperial_force",
+      "start_year": 1720,
+      "end_year": 1720,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khandesh and the northern Deccan"
     },
     {
       "id": "din_muhammad_shaybanid_rebat_parian_army_1598",
@@ -5846,6 +5886,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "eaton_hamet_arab_greek_auxiliaries_derna_1805",
+      "name": "Eaton-Hamet Arab and Greek expeditionary auxiliaries at Derna (1805)",
+      "kind": "event_bounded_expeditionary_auxiliaries",
+      "start_year": 1805,
+      "end_year": 1805,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
     },
     {
       "id": "edward_iv_royal_army_1470",
@@ -8548,6 +8598,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Upper Mesopotamia"
+    },
+    {
+      "id": "hamet_karamanli_claimant_contingent_derna_1805",
+      "name": "Hamet Karamanli's claimant contingent at Derna (1805)",
+      "kind": "event_bounded_claimant_contingent",
+      "start_year": 1805,
+      "end_year": 1805,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "North Africa"
     },
     {
       "id": "clio_q588672_1018_4c7aa9cb",
@@ -15759,6 +15819,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "nicaraguan_democratic_force_la_virgen_1855",
+      "name": "Nicaraguan Democratic force at La Virgen (1855)",
+      "kind": "event_bounded_civil_war_faction_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central America"
+    },
+    {
+      "id": "nicaraguan_legitimist_force_la_virgen_1855",
+      "name": "Nicaraguan Legitimist force at La Virgen (1855)",
+      "kind": "event_bounded_civil_war_faction_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central America"
+    },
+    {
       "id": "zannekin_flemish_coast_rebel_army_cassel_1328",
       "name": "Nicolaas Zannekin's Flemish coastal rebel army at Cassel (1328)",
       "kind": "event_bounded_rebel_field_army",
@@ -15809,6 +15889,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "nizam_ul_mulk_deccan_campaign_force_1720",
+      "name": "Nizam-ul-Mulk's Deccan campaign force (1720)",
+      "kind": "campaign_bounded_mughal_formation",
+      "start_year": 1720,
+      "end_year": 1720,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khandesh, Berar, and the northern Deccan"
     },
     {
       "id": "clio_q891_1294_7c7161e4",
@@ -16227,6 +16317,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ortiz_parrilla_spanish_led_expedition_1759",
+      "name": "Ortiz Parrilla's Spanish-led expedition at Twin Villages (1759)",
+      "kind": "event_bounded_colonial_expedition",
+      "start_year": 1759,
+      "end_year": 1759,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Red River borderlands, North America"
     },
     {
       "id": "osman_digna_sinkat_force_1884",
@@ -20222,6 +20322,16 @@
       "region": "Schonchin Flow and Hardin Butte approaches, Lava Beds"
     },
     {
+      "id": "schlessinger_walker_filibuster_detachment_santa_rosa_1856",
+      "name": "Schlessinger's Walker filibuster detachment at Santa Rosa (1856)",
+      "kind": "event_bounded_filibuster_detachment",
+      "start_year": 1856,
+      "end_year": 1856,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central America"
+    },
+    {
       "id": "scindia_de_boigne_rajputana_campaign_army_1790",
       "name": "Scindia-de Boigne Rajputana campaign army (1790)",
       "kind": "regime_bounded_campaign_command",
@@ -22468,6 +22578,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "taovaya_fort_defending_coalition_twin_villages_1759",
+      "name": "Taovaya-fort defending coalition at Twin Villages (1759)",
+      "kind": "event_bounded_indigenous_defense_coalition",
+      "start_year": 1759,
+      "end_year": 1759,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Red River borderlands, North America"
+    },
+    {
       "id": "taranaki_resistance_forces_1863",
       "name": "Taranaki resistance forces (1863–1864)",
       "kind": "indigenous_coalition",
@@ -22812,6 +22932,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "tieba_led_kenedougou_defense_sikasso_1887_1888",
+      "name": "Tieba-led Kenedougou defense at Sikasso (1887-1888)",
+      "kind": "siege_bounded_defending_formation",
+      "start_year": 1887,
+      "end_year": 1888,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sikasso and the southern Niger bend"
     },
     {
       "id": "tigranes_ii_armenian_royal_army_tigranocerta_69_bce",
@@ -23974,6 +24104,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "walker_expeditionary_force_la_virgen_1855",
+      "name": "Walker's expeditionary force at La Virgen (1855)",
+      "kind": "event_bounded_filibuster_expeditionary_force",
+      "start_year": 1855,
+      "end_year": 1855,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central America"
+    },
+    {
       "id": "wang_tong_ming_tot_dong_force_1426",
       "name": "Wang Tong's Ming field force at Tốt Động-Chúc Động (1426)",
       "kind": "event_bounded_field_force",
@@ -25106,11 +25246,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2374,
-    "rated_entities": 1019,
-    "rated_events": 5422,
+    "registry_polities": 2388,
+    "rated_entities": 1033,
+    "rated_events": 5432,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36926,
+    "unresolved_event_candidates": 36916,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25203,6 +25343,8 @@
     "candidate_keyed_wave8_oran_hced_events": 2,
     "candidate_keyed_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "candidate_keyed_wave8_libya_hced_events": 3,
+    "candidate_keyed_wave8_followup_b_hced_events": 4,
+    "candidate_keyed_wave8_exact_priority_hced_events": 6,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
@@ -25225,21 +25367,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5158,
-      "candidate_keyed_reviewed_contracts": 787,
-      "geojson_points": 4801,
-      "modern_location_country_assertions": 5063,
-      "location_provenance_objects": 5112,
-      "point_fields_withheld_by_quarantine": 357,
+      "hced_candidate_bindings": 5168,
+      "candidate_keyed_reviewed_contracts": 797,
+      "geojson_points": 4803,
+      "modern_location_country_assertions": 5073,
+      "location_provenance_objects": 5122,
+      "point_fields_withheld_by_quarantine": 365,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 405,
-      "point_quarantine_candidate_manifest_sha256": "13e06b967ad6643396761dfb1ca7190d13cefa44f2526d661b180ad26071c451",
+      "unique_events_with_any_quarantined_field": 413,
+      "point_quarantine_candidate_manifest_sha256": "96993c2b40d5fe3f86df0f22c48424550fc8b031aa668e7e2813fa659bc60057",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "62e1df1c0bb6c4c6ed4f4c359fa5afdc633e960e6957c3cc2553ea41cffcd0e5",
+      "quarantine_policy_sha256": "53fee63ed5dec651983a812896015b8f39b72a463e586e7f48e1284a6795ffdd",
       "assertion_status": {
-        "unreviewed_source_assertion": 5112
+        "unreviewed_source_assertion": 5122
       },
       "verified_location_assertions": {
         "availability": "not_available",

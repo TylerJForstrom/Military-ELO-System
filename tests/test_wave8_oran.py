@@ -623,17 +623,17 @@ class Wave8OranTests(unittest.TestCase):
             {key: promotion[key] for key in expected_metadata},
             expected_metadata,
         )
-        self.assertEqual(len(self.release_events), 5_422)
+        self.assertEqual(len(self.release_events), 5_432)
 
         coverage = self.registry["coverage"]
         self.assertEqual(coverage["candidate_keyed_wave8_oran_hced_events"], 2)
-        self.assertEqual(coverage["rated_events"], 5_422)
+        self.assertEqual(coverage["rated_events"], 5_432)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_158)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 787)
-        self.assertEqual(location["geojson_points"], 4_801)
-        self.assertEqual(location["modern_location_country_assertions"], 5_063)
-        self.assertEqual(location["location_provenance_objects"], 5_112)
+        self.assertEqual(location["hced_candidate_bindings"], 5_168)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 797)
+        self.assertEqual(location["geojson_points"], 4_803)
+        self.assertEqual(location["modern_location_country_assertions"], 5_073)
+        self.assertEqual(location["location_provenance_objects"], 5_122)
 
         lane_source_ids = {str(item["id"]) for item in lane.WAVE8_ORAN_SOURCES}
         release_source_ids = {str(item["id"]) for item in self.release_sources}

@@ -96,17 +96,45 @@ Guangzhou, Liangtian, and Chenzhou with their source-aligned tactical outcomes,
 opens no generic Tang or China alias, changes no identity window, and leaves no
 live exact `huang chao` funnel label.
 
-## Follow-up B: deferred rows from landed labels
+## Follow-up B: deferred rows from landed labels — COMPLETE
 
-- `hced-Sikasso1887-1888-1` (Siege of Sikasso, winner Kenedougou, high) stays
-  staged until a curated `kenedougou` identity (Tieba Traoré's state,
-  Wassoulou's enemy — never conflate) is registered and the "kenedougou" label
-  resolves.
-- `hced-Balapur1720-1` and `hced-Ratanpur1720-1` predate the Asaf Jahi window
-  (1724–1948) by curated design; they need a Mughal-era follow-up contract,
-  never a widened window.
-- `hced-Kharda1795-1` resolves on the Hyderabad side but remains blocked by
-  the composite co-label "marathas tukaji hulkar berar".
+- `hced-Sikasso1887-1888-1` rates the exact Tieba-led Kenedougou defense over
+  the Wassoulou Empire; no generic `kenedougou` identity or alias was opened.
+- `hced-Balapur1720-1` and `hced-Ratanpur1720-1` rate Nizam-ul-Mulk's exact
+  1720 campaign force against separately bounded Sayyid-aligned opponents.
+  Neither event uses or widens the post-1724 Asaf Jahi identity.
+- `hced-Kharda1795-1` rates the reviewed Maratha composite over the existing
+  Hyderabad state through its fingerprinted row only.
+
+All four rows are now candidate-keyed contracts. Their complete raw rows,
+canonical keys, dates, sides, outcome vectors, confidence, evidence families,
+and identity windows fail closed on drift. Balapur and Ratanpur have their
+unverified source Points withheld; Kharda and Sikasso retain provenance-bound
+source locations. Unknown outcomes remain ineligible and are never converted
+to draws.
+
+## Exact priority tranche: six admissions and one hold — COMPLETE
+
+Six additional independently corroborated HCED rows now rate only through
+their exact candidate IDs:
+
+- Calpulalpan (1860): Mexican Liberal victory over the Conservative force;
+- Derna (1805): the United States, Hamet claimant contingent, and Eaton-Hamet
+  Arab/Greek auxiliaries over Yusuf Karamanli's Tripoli;
+- La Virgen (1855): Walker's expedition and the Nicaraguan Democratic force
+  over the Legitimist force;
+- Santa Rosa (1856): Costa Rica over Schlessinger's Walker detachment;
+- Teutoburg Forest (9): Arminius's exact coalition over the Roman Principate;
+  and
+- Twin Villages/Red River (1759): the Taovaya-fort defending coalition over
+  Ortiz Parrilla's Spanish-led expedition.
+
+The Granada, Nicaragua 1856 row is reserved but held. The reviewed siege,
+relief, retreat, destruction, and occupation sequence does not reduce to the
+source's asserted allied tactical win, so no winner, loser, or draw was
+invented. Every new actor is event-bounded and alias-free; no label policy or
+identity window changed. Candidate-keyed point quarantines withhold all six
+source Points pending independent location review.
 
 ## Next tranche: greedy batch ranks 21–50
 

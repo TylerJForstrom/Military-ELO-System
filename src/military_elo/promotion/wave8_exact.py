@@ -68,12 +68,19 @@ def install_exact_sources(
     *,
     lane_name: str,
 ) -> None:
+    prepared: list[tuple[str, dict[str, Any]]] = []
+    fixture_ids: set[str] = set()
     for fixture in fixtures:
         source = copy.deepcopy(dict(fixture))
         source_id = str(source["id"])
+        if source_id in fixture_ids:
+            raise ValueError(f"{lane_name} duplicate source fixture {source_id}")
+        fixture_ids.add(source_id)
         existing = sources_by_id.get(source_id)
         if existing is not None and existing != source:
             raise ValueError(f"{lane_name} source collision for {source_id}")
+        prepared.append((source_id, source))
+    for source_id, source in prepared:
         sources_by_id[source_id] = source
 
 
@@ -83,12 +90,19 @@ def install_exact_entities(
     *,
     lane_name: str,
 ) -> None:
+    prepared: list[tuple[str, dict[str, Any]]] = []
+    fixture_ids: set[str] = set()
     for fixture in fixtures:
         entity = copy.deepcopy(dict(fixture))
         entity_id = str(entity["id"])
+        if entity_id in fixture_ids:
+            raise ValueError(f"{lane_name} duplicate entity fixture {entity_id}")
+        fixture_ids.add(entity_id)
         existing = release_entities.get(entity_id)
         if existing is not None and existing != entity:
             raise ValueError(f"{lane_name} entity collision for {entity_id}")
+        prepared.append((entity_id, entity))
+    for entity_id, entity in prepared:
         release_entities[entity_id] = entity
 
 
@@ -134,6 +148,72 @@ def operationalize_campaign_outcomes(event: dict[str, Any]) -> None:
             if participant["side"] == "side_a"
             else _OPERATIONAL_CAMPAIGN_LOSS
         )
+
+
+def expected_exact_hced_win_participants(
+    side_a: Iterable[str],
+    side_b: Iterable[str],
+    *,
+    confidence: float,
+    scale_level: int,
+    lane_name: str,
+) -> list[dict[str, Any]]:
+    """Return the independently reconstructed tactical-win projection.
+
+    Exact-lane release validators use this instead of trusting emitted
+    participant records.  Keeping the audit reconstruction separate from
+    ``common._participants`` ensures polarity, confidence, result classes,
+    rating dimensions, and coalition weights cannot drift together unnoticed.
+    """
+
+    sides = (list(map(str, side_a)), list(map(str, side_b)))
+    if not sides[0] or not sides[1] or set(sides[0]) & set(sides[1]):
+        raise ValueError(f"{lane_name} invalid expected participant sides")
+    if scale_level not in {1, 2, 3, 4, 5}:
+        raise ValueError(f"{lane_name} invalid expected scale level")
+    margin = min(0.40, 0.22 + 0.035 * scale_level)
+    winner_values = {
+        "battlefield_control": 0.50 + margin,
+        "mission_objective": 0.48 + margin,
+        "force_preservation": 0.50 + margin * 0.45,
+        "positional_gain": 0.48 + margin * 0.75,
+    }
+    loser_values = {key: 1.0 - value for key, value in winner_values.items()}
+    result_classes = (
+        "major_tactical_victory" if scale_level >= 4 else "limited_victory",
+        "major_tactical_defeat" if scale_level >= 4 else "limited_defeat",
+    )
+    output: list[dict[str, Any]] = []
+    for index, (side, entity_ids) in enumerate(
+        (("side_a", sides[0]), ("side_b", sides[1]))
+    ):
+        contribution = round(1.0 / len(entity_ids), 4)
+        for entity_id in entity_ids:
+            output.append(
+                {
+                    "entity_id": entity_id,
+                    "side": side,
+                    "role": "primary" if len(entity_ids) == 1 else "major_ally",
+                    "contribution": contribution,
+                    "stakes": 0.50 if scale_level < 4 else 0.68,
+                    "national_scale": min(0.75, 0.12 + 0.10 * scale_level),
+                    "termination": (
+                        "engagement_victory"
+                        if index == 0
+                        else "engagement_defeat"
+                    ),
+                    "evidence_confidence": confidence,
+                    "result_class": result_classes[index],
+                    "outcome": (
+                        dict(winner_values) if index == 0 else dict(loser_values)
+                    ),
+                    "note": (
+                        f"Candidate-keyed {lane_name} tactical contract; no label "
+                        "fallback or strategic outcome is inferred."
+                    ),
+                }
+            )
+    return output
 
 
 def promote_exact_hced_contracts(

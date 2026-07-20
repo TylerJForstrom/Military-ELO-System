@@ -42,28 +42,28 @@ Region memberships are non-exclusive and derive only from a conservative mapping
 
 | Rank | Unresolved label | Marginal events | Cumulative events |
 | --- | --- | --- | --- |
-| 1 | cheyenne | 3 | 3 |
-| 2 | commanche | 3 | 6 |
-| 3 | germanic tribes | 3 | 9 |
-| 4 | huang chao | 3 | 12 |
-| 5 | libya | 3 | 15 |
-| 6 | sassanid empire | 3 | 18 |
-| 7 | sioux indians cheyenne indians | 3 | 21 |
-| 8 | tidikelt tribes | 3 | 24 |
-| 9 | tripoli | 3 | 27 |
-| 10 | wurtemburg | 3 | 30 |
-| 11 | zaia | 3 | 33 |
-| 12 | irish royalists | 2 | 35 |
-| 13 | burma | 2 | 37 |
-| 14 | siam | 7 | 44 |
-| 15 | cambodia | 3 | 47 |
-| 16 | mexican government | 2 | 49 |
-| 17 | pancho villa rebels | 2 | 51 |
-| 18 | holy roman empire | 2 | 53 |
-| 19 | swabian league | 2 | 55 |
-| 20 | filibusters | 2 | 57 |
+| 1 | sassanid empire | 3 | 3 |
+| 2 | sioux indians cheyenne indians | 3 | 6 |
+| 3 | tidikelt tribes | 3 | 9 |
+| 4 | wurtemburg | 3 | 12 |
+| 5 | zaia | 3 | 15 |
+| 6 | irish royalists | 2 | 17 |
+| 7 | burma | 2 | 19 |
+| 8 | siam | 7 | 26 |
+| 9 | cambodia | 3 | 29 |
+| 10 | holy roman empire | 2 | 31 |
+| 11 | swabian league | 2 | 33 |
+| 12 | ummayad caliphate | 2 | 35 |
+| 13 | vijayanagar | 2 | 37 |
+| 14 | bahman | 3 | 40 |
+| 15 | russian bolsheviks | 2 | 42 |
+| 16 | finnish whites | 2 | 44 |
+| 17 | corinth | 2 | 46 |
+| 18 | liberals | 2 | 48 |
+| 19 | manchu | 2 | 50 |
+| 20 | ming | 3 | 53 |
 
-Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 57 events.
+Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 53 events.
 
 ## Genuinely-new candidates by century
 
