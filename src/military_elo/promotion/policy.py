@@ -526,11 +526,11 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
     "hauhau": ((1864, 1866, "pai_marire_forces_1864"),),
     "inca": ((1780, 1783, "tupac_amaru_rebellion_forces"),),
     "flemish rebels": ((1379, 1385, "ghent_rebel_regime_1379_1385"),),
-    # "huang chao" is deliberately deferred: its counterpart rows alias-bind
-    # the Tang identity that the Wave 8 Goguryeo lane installs as a curated
-    # fixture, and the record-precedence contract for that collision has not
-    # been adjudicated. The huang_chao_rebel_movement identity stays
-    # registered; the policy lands with that contract.
+    # The exact curated Tang payload is pre-seeded before label resolution and
+    # is byte-identical to the Wave 8 Goguryeo fixture. This gives the curated
+    # record precedence over the raw Cliopatria candidate without changing its
+    # identity window or opening a generic China/Tang alias.
+    "huang chao": ((875, 884, "huang_chao_rebel_movement"),),
     "cayuse indians": ((1848, 1848, "cayuse_war_allied_fighting_bands_1848"),),
     "mombassa": (
         (1500, 1589, "sultanate_of_mombasa"),

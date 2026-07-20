@@ -1934,6 +1934,16 @@ from .wave8_goguryeo import (
     wave8_goguryeo_cohort_counts,
     wave8_goguryeo_counts,
 )
+from .huang_chao_policy import (
+    HUANG_CHAO_FINAL_AUDIT_SIGNATURE,
+    HUANG_CHAO_FUNNEL_AUDIT,
+    HUANG_CHAO_TANG_PRECEDENCE_CONTRACT,
+    huang_chao_audit_signature,
+    huang_chao_metadata,
+    validate_huang_chao_queue_contracts,
+    validate_huang_chao_release,
+    validate_huang_chao_seed_precedence,
+)
 from .wave8_fln import (
     WAVE8_FLN_CONTRACT_IDS,
     WAVE8_FLN_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2605,7 +2615,7 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_426 + len(pre1500_candidate_ids),
+        2_429 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -2770,6 +2780,11 @@ def build_expanded_release(
     cliopatria = read_jsonl(review / "cliopatria-entity-candidates.jsonl")
     polities = [row for row in cliopatria if row.get("record_type") == "POLITY"]
     hced = read_jsonl(review / "hced-candidates.jsonl")
+    huang_chao_seed_precedence_validation = validate_huang_chao_seed_precedence(
+        seed_entities,
+        cliopatria,
+    )
+    huang_chao_queue_validation = validate_huang_chao_queue_contracts(hced)
     validate_wave6_pre1500_candidates(hced)
     wave7_root_queue_validation = validate_wave7_root_candidates(hced)
     wave7_central_queue_validation = validate_wave7_central_queue_contracts(hced)
@@ -6343,6 +6358,7 @@ def build_expanded_release(
         *iwbd_events,
         *ucdp_events,
     ]
+    huang_chao_release_validation = validate_huang_chao_release(all_events)
     # This audit is pinned from the committed release ledger, so validate the
     # fully assembled ledger rather than the mid-chain duplicate-detection
     # view that precedes later Wave 8 lanes such as Macedon.
@@ -11732,6 +11748,20 @@ def build_expanded_release(
             ),
             "wave8_goguryeo_entities_added": len(WAVE8_GOGURYEO_ENTITIES),
             "wave8_goguryeo_sources_added": len(WAVE8_GOGURYEO_SOURCES),
+            "huang_chao_policy_metadata": huang_chao_metadata(),
+            "huang_chao_policy_audit_signature": huang_chao_audit_signature(),
+            "huang_chao_policy_final_audit_signature": (
+                HUANG_CHAO_FINAL_AUDIT_SIGNATURE
+            ),
+            "huang_chao_policy_funnel_audit": HUANG_CHAO_FUNNEL_AUDIT,
+            "huang_chao_tang_precedence_contract": (
+                HUANG_CHAO_TANG_PRECEDENCE_CONTRACT
+            ),
+            "huang_chao_seed_precedence_validation": (
+                huang_chao_seed_precedence_validation
+            ),
+            "huang_chao_queue_validation": huang_chao_queue_validation,
+            "huang_chao_release_validation": huang_chao_release_validation,
             "wave8_fln_counts": wave8_fln_counts(),
             "wave8_fln_cohort_counts": wave8_fln_cohort_counts(),
             "wave8_fln_audit_signature": wave8_fln_audit_signature(),

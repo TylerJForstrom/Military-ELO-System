@@ -1866,6 +1866,22 @@
     ]
   },
   {
+    "id": "clio_cn_tang_dyn_1_623_3e98c37b",
+    "name": "Tang Dynasty",
+    "kind": "dynastic_state",
+    "start_year": 623,
+    "end_year": 910,
+    "region": "East Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate for the reviewed 645 and 668 campaigns. Only fingerprinted, candidate-keyed events may use this identity; generic China labels remain closed and no dynastic predecessor or successor inherits Elo.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_goguryeo_aks_history",
+      "wave8_goguryeo_hwang_history"
+    ]
+  },
+  {
     "id": "huang_chao_rebel_movement",
     "name": "Huang Chao rebel movement",
     "kind": "insurgent_army",

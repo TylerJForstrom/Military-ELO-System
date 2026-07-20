@@ -15,12 +15,12 @@ Each layer starts at 1500 with high uncertainty. A successor or newly recognized
 
 ## Coverage and evidence tiers
 
-The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 2,374 time-bounded polity identities. Its entity file contains 1,026 release records, while 1,018 distinct entity IDs actually participate in accepted rating evidence. Its 5,419 events consist of 40 manually curated events, 1,887 crosswalk-resolved, 2,481 label-resolved, and 787 candidate-keyed HCED tactical encounters — 76 from Wave 6, 192 from Wave 7, and 519 from Wave 8 — plus 64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The 1,470 registered sources span 1,203 provenance families. The review queues hold 45,968 staged source records, of which 42,344 are event-like candidates; 36,929 of those remain outside the rating ledger. The additive 18,954-candidate Wikidata battle/siege queue is discovery data only and changes none of those 5,419 rated events. An unrated registry entry or release entity record has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
+The polity registry and rating ledger are separate products. The current expanded provisional release catalogues 2,374 time-bounded polity identities. Its entity file contains 1,026 release records, while 1,019 distinct entity IDs actually participate in accepted rating evidence. Its 5,422 events consist of 40 manually curated events, 1,887 crosswalk-resolved, 2,484 label-resolved, and 787 candidate-keyed HCED tactical encounters — 76 from Wave 6, 192 from Wave 7, and 519 from Wave 8 — plus 64 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 7 UCDP conflict-termination strategic episodes. The 1,470 registered sources span 1,203 provenance families. The review queues hold 45,968 staged source records, of which 42,344 are event-like candidates; 36,926 of those remain outside the rating ledger. The additive 18,954-candidate Wikidata battle/siege queue is discovery data only and changes none of those 5,422 rated events. An unrated registry entry or release entity record has no Elo result; it is not assigned a baseline score, loss, or implied lack of military success.
 
 Location coverage is status-aware. Every rated HCED event is bound to exactly
 one stable source candidate ID, but a location field is published only when it
-survives the frozen candidate-ID quarantine. The release contains 4,798 strict
-GeoJSON Points, 5,060 exact `modern_location_country` transcriptions, and 5,109
+survives the frozen candidate-ID quarantine. The release contains 4,801 strict
+GeoJSON Points, 5,063 exact `modern_location_country` transcriptions, and 5,112
 provenance-bound events with at least one of those fields. Each provenance
 object is closed to `source_id: hced_dataset`, the exact source record ID,
 `assertion_status: unreviewed_source_assertion`, and

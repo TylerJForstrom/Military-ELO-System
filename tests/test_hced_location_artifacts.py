@@ -36,7 +36,7 @@ RELEASE = ROOT / "data" / "release"
 REGISTRY = ROOT / "data" / "catalog" / "registry.json"
 RESULTS = ROOT / "web" / "data" / "results.json"
 HCED_LOCATION_PROJECTION_SHA256 = (
-    "32079fa709da166cc59e9e9403f7a6d50e78ae926a46eafd7a2ea8dbb9b31f19"
+    "d28e728d8c989d2f33644d20e7669e35cc63358a6ea138ff8af567ca6ab57e78"
 )
 
 
@@ -76,7 +76,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         }
 
     def test_exact_candidate_bijection_and_promotion_tranches(self) -> None:
-        self.assertEqual(len(self.events), 5_419)
+        self.assertEqual(len(self.events), 5_422)
         self.assertEqual(len(self.hced_events), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(len(self.by_candidate), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(
@@ -85,7 +85,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(event["id"].startswith("hced_label_") for event in self.hced_events),
-            2_481,
+            2_484,
         )
         self.assertEqual(
             sum(event["id"].startswith("hced_wave6_") for event in self.hced_events),
@@ -706,7 +706,7 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
             projected_events.append(projected)
         self.assertEqual(
             _canonical_hash(projected_events),
-            "504fd465ee870edc1a637862a38f72e44ba913886c4ef0b4a1d7991ead4cdca6",
+            "1fc767c6e8fe9de04d00ce2ad0cbba91c44b89fb3647b4903c2f05869b7db5c0",
         )
         self.assertEqual(
             _canonical_hash(self.entities),
@@ -718,7 +718,7 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         )
         self.assertEqual(
             _canonical_hash(self.registry["entities"]),
-            "72ed1228b82a227ec5de9306093b201faff34bb72bd3fe961ce48d4ce9061010",
+            "15b6ff845f89f008f2873cfacf4a3a768bc1ad95955d609626a46353333e0db0",
         )
 
     def test_dashboard_projection_matches_the_coupled_wave5_build(self) -> None:
@@ -738,13 +738,13 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         ]
         self.assertEqual(
             _canonical_hash(projected_events),
-            "238e3177675c265ab8b133af8766c8d766284a393675ff09dad56af5ade03342",
+            "e7fcd29c4621f2dc966253d0b6a588161d8b1b2847c77c6deaa5285136068a8d",
         )
         expected_hashes = {
-            "entities": "cf8defb5b40762ffece94d7cd184c9551bf9b14338fca7ec81da9507c441f4cc",
-            "series": "88036099dde4f75a86d8218069352b471a7d347f2a73641955987c52c13d8093",
-            "leaderboard": "b420ff0d95ecfac1658807b8b21143813bd835120c338b0c97349a562eedb851",
-            "sensitivity": "e37c7e5c17376cfdf430d4b825fd187ac5793d5894801de449089d9eb92b4325",
+            "entities": "3ea7531851a731754ae5990d1e879ee30e1fb027916a670e093e6cb29cf5e7fd",
+            "series": "7bb700a3c0e879696486cdb607e6ccff3e529e05a0b5464c6dd5f56e33c25ef4",
+            "leaderboard": "1f3e4832aded8eb4b14cbb80a5285e1c9144d356804ba6ef89a5ace74ffa0dc8",
+            "sensitivity": "b35dd0b40d1e74a6414f7d9887a0cf5986a72b1a55b47700a8e4c4a94beeca0e",
         }
         for field_name, expected_hash in expected_hashes.items():
             with self.subTest(field_name=field_name):

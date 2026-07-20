@@ -72,7 +72,7 @@ alignment claim. The existing Jamahiriya and Chad windows and aliases are
 unchanged, the frozen Chadian Rebels signature reproduces before and after
 promotion, and the regenerated funnel contains no live exact `libya` label.
 
-## Follow-up A: huang chao policy behind a Tang record-precedence contract
+## Follow-up A: huang chao policy behind a Tang record-precedence contract — COMPLETE
 
 `huang_chao_rebel_movement` (875–884) is registered but its label policy is
 deliberately absent from `HCED_LABEL_POLICIES`. Enabling it makes the Tang
@@ -84,8 +84,17 @@ in preference order: (1) pre-seed the curated Tang record so the alias tier
 takes the merge branch, then align the Goguryeo fixture's aliases with the
 merged record and its lane pins; (2) an orchestrator-level curated-record
 precedence rule. Either way the decision must be recorded as a contract; the
-three events (Guangzhou 879 → Huang Chao; Liangtian 883 and Chenzhou 883-884 →
-Tang, all high confidence) are already adjudicated.
+three source rows (Guangzhou 879 → Huang Chao; Liangtian 883 and the HCED
+year-only Chenzhou 883 row → Tang, all high confidence) are already
+adjudicated. No wider chronology is imported into the year-only source row.
+
+Landed through the preferred first option: the exact curated, alias-free Tang
+payload is pre-seeded before source-candidate materialization, and a fail-closed
+precedence contract pins it byte-for-byte to the Goguryeo fixture. The
+authoritative `huang chao` policy is limited to 875–884; it promotes exactly
+Guangzhou, Liangtian, and Chenzhou with their source-aligned tactical outcomes,
+opens no generic Tang or China alias, changes no identity window, and leaves no
+live exact `huang chao` funnel label.
 
 ## Follow-up B: deferred rows from landed labels
 

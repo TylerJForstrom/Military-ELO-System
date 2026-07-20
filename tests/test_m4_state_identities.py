@@ -540,14 +540,14 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_419)
+        self.assertEqual(len(self.events), 5_422)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2_481)
+        self.assertEqual(len(label), 2_484)
         self.assertEqual(len(crosswalk), 1_826)
         self.assertEqual(
             sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64
@@ -559,7 +559,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
             sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7
         )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 1_018)
+        self.assertEqual(len(rated), 1_019)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
