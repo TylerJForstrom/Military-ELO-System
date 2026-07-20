@@ -9640,6 +9640,104 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_ammianus_19",
+    "title": "Ammianus Marcellinus, Roman History, Book XIX",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/19%2A.html",
+    "publisher": "LacusCurtius, University of Chicago; Loeb translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-19",
+    "source_family_id": "ammianus_roman_history_book_19",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_ammianus_24",
+    "title": "Ammianus Marcellinus, Roman History, Book XXIV",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/24%2A.html",
+    "publisher": "LacusCurtius, University of Chicago; Loeb translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-19",
+    "source_family_id": "ammianus_roman_history_book_24",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_army_sioux_wars_atlas",
+    "title": "Atlas of the Sioux Wars, Second Edition",
+    "url": "https://www.armyupress.army.mil/Portals/7/educational-services/staff-rides/atlas-of-the-sioux-wars-second-edition.pdf",
+    "publisher": "Combat Studies Institute Press, U.S. Army Command and General Staff College",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_atlas",
+    "accessed": "2026-07-19",
+    "source_family_id": "us_army_combat_studies_institute_sioux_wars_atlas_second_edition",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_asjp_akroinon",
+    "title": "The Battle of Akroinon (122 AH/740 CE) and its consequences",
+    "url": "https://asjp.cerist.dz/en/article/179683",
+    "publisher": "Algerian Scientific Journal Platform",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "asjp_battle_akroinon_740",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_berbere_moha_hammou",
+    "title": "Moha ou Hammou",
+    "url": "https://journals.openedition.org/encyclopedieberbere/621",
+    "publisher": "Encyclopedie berbere, OpenEdition Journals",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "encyclopedie_berbere_moha_ou_hammou",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_berbere_moha_said",
+    "title": "Moha ou Said",
+    "url": "https://journals.openedition.org/encyclopedieberbere/622",
+    "publisher": "Encyclopedie berbere, OpenEdition Journals",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "encyclopedie_berbere_moha_ou_said",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_blm_powder_river",
+    "title": "Commemorating 150 years since the fight along Powder River",
+    "url": "https://www.blm.gov/blog/2026-04-13/commemorating-150-years-st-patricks-day-fight-along-powder-river",
+    "publisher": "Bureau of Land Management",
+    "license": "Citation and link only",
+    "source_type": "official_public_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "blm_powder_river_1876",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_bolanos_geyer_nicaragua",
     "title": "William Walker: El predestinado de los ojos grises, tomo III",
     "url": "https://guerranacional.enriquebolanos.org/bibliografia_pdf/ABG-T3-NICARAGUA.pdf",
@@ -9648,6 +9746,34 @@
     "source_type": "scholarly_historical_monograph",
     "accessed": "2026-07-19",
     "source_family_id": "bolanos_geyer_gray_eyed_man_volume_3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_carey_carthage",
+    "title": "Road to Manzikert: Byzantine and Islamic Warfare, 527-1071",
+    "url": "https://api.nla.am/server/api/core/bitstreams/a5148c38-1233-42b9-9689-b3d2d730d194/content",
+    "publisher": "Pen & Sword Military; digital copy hosted by National Library of Armenia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "carey_road_to_manzikert",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_constantine_tidikelt",
+    "title": "Nécrologie",
+    "url": "https://digi.ub.uni-heidelberg.de/diglit/recconstantine1917_1918/0344/text_ocr",
+    "publisher": "Recueil des notices et mémoires de la Société archéologique de Constantine; Heidelberg University Library",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_obituary",
+    "accessed": "2026-07-19",
+    "source_family_id": "societe_archeologique_constantine_tidikelt",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -9667,6 +9793,20 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_goum_5_campaign",
+    "title": "Historique du 5e goum mixte marocain",
+    "url": "https://www.les-tirailleurs.fr/documents/eaec5c36-01ac-4523-99b7-ec5ebfd510f2/telecharger",
+    "publisher": "Les Tirailleurs",
+    "license": "Citation and link only",
+    "source_type": "digitized_unit_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "fifth_goum_campaign_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_inehrm_calpulalpan",
     "title": "La vuelta del liberalismo a la Ciudad de México",
     "url": "https://www.inehrm.gob.mx/es/inehrm/La_vuelta_del_liberalismo_a_la_Ciudad_de_Mexico",
@@ -9681,6 +9821,48 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_iranica_amida",
+    "title": "Amida",
+    "url": "https://www.iranicaonline.org/articles/amida-pers/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "encyclopaedia_iranica_amida",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_iranica_julian",
+    "title": "Julian: Flavius Claudius Iulianus, Roman emperor",
+    "url": "https://www.iranicaonline.org/articles/julian-flavius-claudius-iulianus-roman-emperor/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "encyclopaedia_iranica_julian",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_iranica_kawad",
+    "title": "Kawad I: Reign",
+    "url": "https://www.iranicaonline.org/articles/kawad-i/kawad-i-reign/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "encyclopaedia_iranica_kawad_i_reign",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_kalkriese_varus",
     "title": "The Varus Battle",
     "url": "https://www.kalkriese-varusschlacht.de/en/the-varus-battle.html",
@@ -9689,6 +9871,20 @@
     "source_type": "official_museum_history",
     "accessed": "2026-07-19",
     "source_family_id": "museum_park_kalkriese_varus_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_martin_oases",
+    "title": "Les oasis sahariennes: Gourara, Touat, Tidikelt",
+    "url": "https://commons.wikimedia.org/wiki/File:Les_oasis_sahariennes_-_(Gourara-Touat-Tidikelt)_(IA_lesoasissaharien00mart).pdf",
+    "publisher": "A. G. P. Martin; Internet Archive scan",
+    "license": "Citation and link only",
+    "source_type": "historical_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "martin_oasis_sahariennes_1908",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -9723,6 +9919,20 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_moderan_carthage",
+    "title": "Les Maures et l'Afrique romaine: Introduction. La conquete arabe",
+    "url": "https://books.openedition.org/efr/1431?lang=fr",
+    "publisher": "Publications de l'Ecole francaise de Rome, OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "moderan_maures_afrique_romaine_conquete",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_museo_costa_rica_forces",
     "title": "Las Fuerzas Armadas en Costa Rica: Campaña Nacional, 1856-1857",
     "url": "https://www.museocostarica.go.cr/museo/historia-cuartel/fuerzas-armadas-en-costa-rica/",
@@ -9751,6 +9961,76 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_nps_fort_cf_smith",
+    "title": "Fort C.F. Smith, Part 2: Harsh Winter and Dangerous Summer",
+    "url": "https://www.nps.gov/bica/learn/historyculture/fort-cf-smith-part-2-harsh-winter-and-dangerous-summer.htm",
+    "publisher": "National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_public_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "nps_bighorn_canyon_fort_cf_smith",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_nps_hayfield",
+    "title": "Hayfield Fight",
+    "url": "https://www.nps.gov/bica/learn/historyculture/hayfield-fight.htm",
+    "publisher": "National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_public_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "nps_bighorn_canyon_hayfield_fight",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_nps_powder_river_study",
+    "title": "Historic Resource Study: Powder River campaign context",
+    "url": "https://www.govinfo.gov/content/pkg/GOVPUB-I29-PURL-gpo189187/pdf/GOVPUB-I29-PURL-gpo189187.pdf",
+    "publisher": "National Park Service; U.S. Government Publishing Office",
+    "license": "Citation and link only",
+    "source_type": "official_historical_study",
+    "accessed": "2026-07-19",
+    "source_family_id": "nps_govinfo_powder_river_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_nps_red_cloud",
+    "title": "Settlement of the Upper Missouri and Red Cloud's War",
+    "url": "https://www.nps.gov/jeff/planyourvisit/settlement-of-the-upper-missouri.htm",
+    "publisher": "National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_public_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "nps_gateway_arch_red_cloud_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_nps_wagon_box",
+    "title": "The Trapdoor Rifle and the Wagon Box Fight",
+    "url": "https://home.nps.gov/spar/learn/historyculture/trapdoor-rifle.htm",
+    "publisher": "National Park Service",
+    "license": "Citation and link only",
+    "source_type": "official_material_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "nps_springfield_armory_wagon_box",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_ohs_twin_villages",
     "title": "Twin Villages, Battle of the",
     "url": "https://www.okhistory.org/publications/enc/entry?entry=TW005",
@@ -9759,6 +10039,20 @@
     "source_type": "scholarly_state_encyclopedia",
     "accessed": "2026-07-19",
     "source_family_id": "oklahoma_history_twin_villages",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_oupress_powder_river",
+    "title": "Powder River: Disastrous Opening of the Great Sioux War",
+    "url": "https://www.oupress.com/9780806156125/powder-river/",
+    "publisher": "University of Oklahoma Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-19",
+    "source_family_id": "university_oklahoma_press_powder_river",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -9779,6 +10073,76 @@
     ]
   },
   {
+    "id": "wave8_exact_priority_pbe_akroinon",
+    "title": "Prosopography of the Byzantine Empire I: al-Battal 1",
+    "url": "https://pbe.kcl.ac.uk/data/D01/F43.htm",
+    "publisher": "Prosopography of the Byzantine Empire, King's College London",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_database",
+    "accessed": "2026-07-19",
+    "source_family_id": "kcl_prosopography_byzantine_empire_akroinon",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_persee_in_rhar",
+    "title": "L'occupation du Touât",
+    "url": "https://www.persee.fr/doc/geo_0003-4010_1900_num_9_45_6259",
+    "publisher": "Annales de Geographie, Persee",
+    "license": "Citation and link only",
+    "source_type": "contemporary_scholarly_report",
+    "accessed": "2026-07-19",
+    "source_family_id": "annales_geographie_in_rhar_1900",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_photographica_zaian",
+    "title": "Photographing the Zaian War",
+    "url": "https://journals.openedition.org/photographica/5537",
+    "publisher": "Photographica, OpenEdition Journals",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-19",
+    "source_family_id": "photographica_zaian_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_procopius_persian_wars",
+    "title": "Procopius, History of the Wars, Book I: The Persian War",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/1A%2A.html",
+    "publisher": "LacusCurtius, University of Chicago; Loeb translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-19",
+    "source_family_id": "procopius_persian_wars_book_1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_pseudo_joshua",
+    "title": "The Chronicle of Pseudo-Joshua the Stylite",
+    "url": "https://www.ccel.org/ccel/pearse/morefathers/files/joshua_the_stylite_02_trans.htm",
+    "publisher": "Christian Classics Ethereal Library; W. Wright translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-19",
+    "source_family_id": "pseudo_joshua_stylite_wright_translation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_exact_priority_scroggs_granada",
     "title": "Filibusters and Financiers: The Story of William Walker and His Associates",
     "url": "https://books.google.com/books/about/Filibusters_and_Financiers.html?id=XbUWAAAAYAAJ",
@@ -9787,6 +10151,34 @@
     "source_type": "scholarly_historical_monograph",
     "accessed": "2026-07-19",
     "source_family_id": "scroggs_filibusters_and_financiers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_tirailleurs_1rta",
+    "title": "Historique du 1er regiment de tirailleurs algeriens",
+    "url": "https://www.les-tirailleurs.fr/documents/983e85ed-975c-407b-82c8-826322e76fd1/telecharger",
+    "publisher": "Les Tirailleurs",
+    "license": "Citation and link only",
+    "source_type": "digitized_unit_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "tirailleurs_first_regiment_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_tirailleurs_sahara",
+    "title": "Historique des campagnes du Sahara",
+    "url": "https://www.les-tirailleurs.fr/documents/bada0597-90ea-4dae-a4dc-cc18549d9d0d/afficher",
+    "publisher": "Les Tirailleurs",
+    "license": "Citation and link only",
+    "source_type": "digitized_campaign_history",
+    "accessed": "2026-07-19",
+    "source_family_id": "tirailleurs_sahara_campaign_history",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
@@ -9842,6 +10234,20 @@
     "source_type": "participant_primary_memoir",
     "accessed": "2026-07-19",
     "source_family_id": "william_walker_war_in_nicaragua",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_exact_priority_wyohistory_wagon_box",
+    "title": "The Wagon Box Fight, 1867",
+    "url": "https://www.wyohistory.org/encyclopedia/wagon-box-fight-1867",
+    "publisher": "WyoHistory.org, Wyoming State Historical Society",
+    "license": "Citation and link only",
+    "source_type": "scholarly_state_encyclopedia",
+    "accessed": "2026-07-19",
+    "source_family_id": "wyoming_history_wagon_box_fight",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"

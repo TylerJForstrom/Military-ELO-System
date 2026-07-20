@@ -358,7 +358,8 @@ def promote_exact_hced_contracts(
                 ),
                 "aliases": (
                     [str(candidate["name"])]
-                    if str(candidate["name"]) != name
+                    if candidate.get("name") not in (None, "")
+                    and str(candidate["name"]) != name
                     else []
                 ),
                 "participants": _participants(

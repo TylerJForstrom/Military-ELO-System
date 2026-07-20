@@ -49,13 +49,25 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_432)
-        self.assertEqual(len(self.entities), 1_040)
-        self.assertEqual(len(self.registry_by_id), 2_388)
+        self.assertEqual(len(self.events), 5_444)
+        self.assertEqual(len(self.entities), 1_047)
+        self.assertEqual(len(self.registry_by_id), 2_395)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("ammianus_roman_history_book_19", "encyclopaedia_iranica_amida"): 1,
+            ("ammianus_roman_history_book_24", "encyclopaedia_iranica_julian"): 1,
+            ("annales_geographie_in_rhar_1900", "martin_oasis_sahariennes_1908"): 1,
+            ("asjp_battle_akroinon_740", "kcl_prosopography_byzantine_empire_akroinon"): 1,
+            ("carey_road_to_manzikert", "moderan_maures_afrique_romaine_conquete"): 1,
+            ("encyclopaedia_iranica_kawad_i_reign", "procopius_persian_wars_book_1", "pseudo_joshua_stylite_wright_translation"): 1,
+            ("encyclopedie_berbere_moha_ou_hammou", "fifth_goum_campaign_history"): 1,
+            ("encyclopedie_berbere_moha_ou_hammou", "photographica_zaian_war"): 1,
+            ("encyclopedie_berbere_moha_ou_said", "fifth_goum_campaign_history"): 1,
+            ("martin_oasis_sahariennes_1908", "tirailleurs_sahara_campaign_history"): 1,
+            ("nps_bighorn_canyon_fort_cf_smith", "nps_bighorn_canyon_hayfield_fight", "us_army_combat_studies_institute_sioux_wars_atlas_second_edition"): 1,
+            ("societe_archeologique_constantine_tidikelt", "tirailleurs_first_regiment_history"): 1,
             ("showalter_encyclopedia_warfare", "us_army_university_press_cheyenne_wars_atlas"): 1,
             ("us_army_center_military_history", "us_national_park_service_fort_larned"): 1,
             ("el_pais_zouar_1987", "iwbd_dataverse_release"): 1,
@@ -501,7 +513,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             100,
         )
-        self.assertEqual(len(self.results["events"]), 5_432)
+        self.assertEqual(len(self.results["events"]), 5_444)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -580,10 +592,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_494)
+        self.assertEqual(len(self.sources), 1_523)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_226,
+            1_255,
         )
         new_source_ids = {
             "colombia_constitution_1863",

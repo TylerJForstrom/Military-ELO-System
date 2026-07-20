@@ -25,10 +25,53 @@ TWIN_VILLAGES_COALITION = (
     "taovaya_fort_defending_coalition_twin_villages_1759"
 )
 ORTIZ_PARRILLA_EXPEDITION = "ortiz_parrilla_spanish_led_expedition_1759"
+HAYFIELD_CHEYENNE_SIOUX_FORCE = "hayfield_cheyenne_sioux_attack_force_1867"
 
 EXPECTED_HASHES = {
+    "hced-El Herri1914-1": (
+        "fe91f6b7992a075ec9e324793d6add09598278368e71a88e0f5b7b64740e4c0b"
+    ),
+    "hced-ElKsiba1913-1": (
+        "1a4671d25d58cbf580cb903855b88338a450a63902b8dcfc5184d6ce68908011"
+    ),
+    "hced-Hayfield Fight1867-1": (
+        "e175dec6e2da69ca1019b170f94ea90001433ec458b61318ac3fe29ce2076dcd"
+    ),
+    "hced-In Rhar1900-1": (
+        "0cb5a31feaac95140b220734afb3f9ace4e0b314863acfd50da68ff1c58eb4c1"
+    ),
+    "hced-In Salah1900-1": (
+        "7639a1aa0dfb82617e1422a9c0e4efcdfe5ef8d6690c171850f551cfb1b907ca"
+    ),
+    "hced-Ingosten1899-1": (
+        "06f8d695e15ac230959f30be7ee6405f3873d8cc6e90c90c76e59d31947b218c"
+    ),
+    "hced-Khenifra1914-1": (
+        "faff20c86502374e75e854c6153b604a02fbf7786e67c93c1233d59eeb1776d5"
+    ),
+    "hced-Powder1876-1": (
+        "c89dd0c7bd9ffe3bff435dc12241995b30f419464627baa7881ba4a27b0dfb10"
+    ),
+    "hced-Wagon Box Fight1867-1": (
+        "8d12e4b1e296e5c2c322d8ed267defcf750718bf99ada52a52ccdc1b69c56dd7"
+    ),
+    "hced-Amida359-1": (
+        "c46a44ab431eca94064d51982cee7947e439524e21bdf4dff6c152898ec01637"
+    ),
+    "hced-Amida502-503-1": (
+        "5e435d325346a25e84234b8f4dea84eac517872c3389198d684a638ee2cb6f9f"
+    ),
+    "hced-Akroinos739-1": (
+        "d342fa6e1910e941bfcdcfd3639b3ac3328ff6d10765179c74e905f6ca187026"
+    ),
     "hced-Calpulalpam1860-1": (
         "f7e420f15234141959bd92b6cd103a4b82d15b0b4b33a4394fa01002c583a32d"
+    ),
+    "hced-Carthage, Tunisia697-1": (
+        "889402c7a7a787e8593769d88f080460abb42722f8d316cdc084bbc2334609a6"
+    ),
+    "hced-Ctesiphon363-1": (
+        "dde39031af8f8654460615651a15a870fdda00badd7f6c8b8457dbbc3f5c9969"
     ),
     "hced-Derna1805-1": (
         "821591e6a4733f91c25f30a2aba17cb199537c3941cf2b55840125a1ff716f87"
@@ -109,7 +152,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         )
         return entities, sources, existing, events
 
-    def test_all_seven_rows_and_sha256_contracts_are_exact(self) -> None:
+    def test_all_reserved_rows_and_sha256_contracts_are_exact(self) -> None:
         rows = {
             str(row["candidate_id"]): row
             for row in self.hced_rows
@@ -120,12 +163,12 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         self.assertEqual(
             lane.validate_wave8_exact_priority_queue_contracts(self.hced_rows),
             {
-                "audited_candidate_rows": 7,
-                "automated_discovery_rows": 7,
-                "holds": 1,
-                "promotion_contracts": 6,
-                "reserved_hced_rows": 7,
-                "reviewed_hced_rows": 7,
+                "audited_candidate_rows": 21,
+                "automated_discovery_rows": 21,
+                "holds": 3,
+                "promotion_contracts": 18,
+                "reserved_hced_rows": 21,
+                "reviewed_hced_rows": 21,
             },
         )
         for candidate_id, expected_hash in EXPECTED_HASHES.items():
@@ -133,13 +176,28 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                 row = rows[candidate_id]
                 self.assertEqual(canonical_hced_row_sha256(row), expected_hash)
                 self.assertIs(row["do_not_rate_automatically"], True)
-                self.assertIs(row["winner_loser_complete"], True)
+                self.assertIs(
+                    row["winner_loser_complete"],
+                    candidate_id != "hced-Powder1876-1",
+                )
 
     def test_reservation_partition_holds_granada_without_inventing_a_draw(self) -> None:
         self.assertEqual(
             lane.WAVE8_EXACT_PRIORITY_CONTRACT_IDS,
             {
+                "hced-El Herri1914-1",
+                "hced-ElKsiba1913-1",
+                "hced-Hayfield Fight1867-1",
+                "hced-In Rhar1900-1",
+                "hced-In Salah1900-1",
+                "hced-Ingosten1899-1",
+                "hced-Khenifra1914-1",
+                "hced-Amida359-1",
+                "hced-Amida502-503-1",
+                "hced-Akroinos739-1",
                 "hced-Calpulalpam1860-1",
+                "hced-Carthage, Tunisia697-1",
+                "hced-Ctesiphon363-1",
                 "hced-Derna1805-1",
                 "hced-La Virgen1855-1",
                 "hced-Red River1759-1",
@@ -149,7 +207,11 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         )
         self.assertEqual(
             lane.WAVE8_EXACT_PRIORITY_HOLD_IDS,
-            {"hced-Granada, Nicaragua1856-1"},
+            {
+                "hced-Granada, Nicaragua1856-1",
+                "hced-Powder1876-1",
+                "hced-Wagon Box Fight1867-1",
+            },
         )
         self.assertEqual(
             lane.WAVE8_EXACT_PRIORITY_RESERVED_IDS,
@@ -167,17 +229,25 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         self.assertNotIn("result_type", hold)
         self.assertNotIn("winner_side", hold)
         self.assertIn("not converted to a draw", hold["audit_note"])
+        powder = lane.WAVE8_EXACT_PRIORITY_HOLDS["hced-Powder1876-1"]
+        self.assertIn("Unknown is not a draw", powder["audit_note"])
+        self.assertNotIn("result_type", powder)
+        wagon = lane.WAVE8_EXACT_PRIORITY_HOLDS[
+            "hced-Wagon Box Fight1867-1"
+        ]
+        self.assertIn("one-for-one", wagon["audit_note"])
         self.assertFalse(
             any(
                 "central_american" in str(entity["id"])
                 for entity in lane.WAVE8_EXACT_PRIORITY_ENTITIES
             )
         )
-        for contract in lane.WAVE8_EXACT_PRIORITY_CONTRACTS.values():
+        for candidate_id, contract in lane.WAVE8_EXACT_PRIORITY_CONTRACTS.items():
             self.assertEqual(contract["result_type"], "win")
-            self.assertEqual(contract["winner_side"], 1)
-            self.assertFalse(contract["source_outcome_override"])
-            self.assertFalse(contract["outcome_reversal"])
+            reversed_outcome = candidate_id == "hced-Ctesiphon363-1"
+            self.assertEqual(contract["winner_side"], 2 if reversed_outcome else 1)
+            self.assertIs(contract["source_outcome_override"], reversed_outcome)
+            self.assertIs(contract["outcome_reversal"], reversed_outcome)
 
     def test_new_identities_are_alias_free_and_event_bounded(self) -> None:
         entities = {
@@ -194,6 +264,13 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             ARMINIUS_COALITION: (9, 9),
             TWIN_VILLAGES_COALITION: (1759, 1759),
             ORTIZ_PARRILLA_EXPEDITION: (1759, 1759),
+            HAYFIELD_CHEYENNE_SIOUX_FORCE: (1867, 1867),
+            "in_salah_ksourian_force_igosten_1899": (1899, 1899),
+            "deghamcha_sali_resistance_force_1900": (1900, 1900),
+            "pasha_timmi_in_rhar_force_1900": (1900, 1900),
+            "moha_ou_said_el_ksiba_force_1913": (1913, 1913),
+            "moha_ou_hammou_khenifra_force_1914": (1914, 1914),
+            "moha_ou_hammou_el_herri_force_1914": (1914, 1914),
         }
         self.assertEqual(set(entities), set(expected_windows))
         for entity_id, entity in entities.items():
@@ -208,11 +285,15 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                 Entity.from_dict(entity)
 
     def test_sources_parse_and_pin_role_and_family_provenance(self) -> None:
-        self.assertEqual(len(lane.WAVE8_EXACT_PRIORITY_SOURCES), 15)
+        self.assertEqual(len(lane.WAVE8_EXACT_PRIORITY_SOURCES), 44)
         sources = {
             str(source["id"]): source
             for source in lane.WAVE8_EXACT_PRIORITY_SOURCES
         }
+        known_sources = {
+            str(source["id"]): source for source in self.release_sources
+        }
+        known_sources.update(sources)
         for source_id, source in sources.items():
             with self.subTest(source_id=source_id):
                 Source.from_dict(source)
@@ -231,30 +312,111 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                     contract["outcome_source_family_ids"],
                     sorted(
                         {
-                            sources[source_id]["source_family_id"]
+                            known_sources[source_id]["source_family_id"]
                             for source_id in contract["outcome_source_ids"]
                         }
                     ),
                 )
                 self.assertTrue(
                     all(
-                        "outcome" in sources[source_id]["evidence_roles"]
+                        "outcome" in known_sources[source_id]["evidence_roles"]
                         for source_id in contract["outcome_source_ids"]
                     )
                 )
-        hold = lane.WAVE8_EXACT_PRIORITY_HOLDS[
-            "hced-Granada, Nicaragua1856-1"
-        ]
-        self.assertEqual(len(hold["evidence_source_family_ids"]), 2)
+        for hold in lane.WAVE8_EXACT_PRIORITY_HOLDS.values():
+            self.assertGreaterEqual(len(hold["evidence_source_family_ids"]), 2)
+        self.assertEqual(
+            sources["wave8_exact_priority_army_sioux_wars_atlas"]["title"],
+            "Atlas of the Sioux Wars, Second Edition",
+        )
+        self.assertEqual(
+            {
+                source_id: (sources[source_id]["title"], sources[source_id]["source_type"])
+                for source_id in (
+                    "wave8_exact_priority_constantine_tidikelt",
+                    "wave8_exact_priority_persee_in_rhar",
+                )
+            },
+            {
+                "wave8_exact_priority_constantine_tidikelt": (
+                    "Nécrologie",
+                    "digitized_historical_obituary",
+                ),
+                "wave8_exact_priority_persee_in_rhar": (
+                    "L'occupation du Touât",
+                    "contemporary_scholarly_report",
+                ),
+            },
+        )
 
     def test_promotions_emit_exact_candidate_keyed_coalitions_and_wins(self) -> None:
         _, _, _, emitted = self._projection()
         events = {str(event["hced_candidate_id"]): event for event in emitted}
         expected = {
+            "hced-El Herri1914-1": (
+                "Battle of El Herri",
+                {"moha_ou_hammou_el_herri_force_1914"},
+                {"french_third_republic"},
+            ),
+            "hced-ElKsiba1913-1": (
+                "Battle of El Ksiba",
+                {"moha_ou_said_el_ksiba_force_1913"},
+                {"french_third_republic"},
+            ),
+            "hced-Hayfield Fight1867-1": (
+                "Hayfield Fight",
+                {"united_states"},
+                {HAYFIELD_CHEYENNE_SIOUX_FORCE},
+            ),
+            "hced-In Rhar1900-1": (
+                "Capture of In Rhar",
+                {"french_third_republic"},
+                {"pasha_timmi_in_rhar_force_1900"},
+            ),
+            "hced-In Salah1900-1": (
+                "Combat of Deghamcha and Sali",
+                {"french_third_republic"},
+                {"deghamcha_sali_resistance_force_1900"},
+            ),
+            "hced-Ingosten1899-1": (
+                "Combat of Igosten",
+                {"french_third_republic"},
+                {"in_salah_ksourian_force_igosten_1899"},
+            ),
+            "hced-Khenifra1914-1": (
+                "Capture of Khenifra",
+                {"french_third_republic"},
+                {"moha_ou_hammou_khenifra_force_1914"},
+            ),
+            "hced-Amida359-1": (
+                "Siege and capture of Amida (359)",
+                {"sasanian_empire"},
+                {"roman_empire"},
+            ),
+            "hced-Amida502-503-1": (
+                "Siege and capture of Amida (502-503)",
+                {"sasanian_empire"},
+                {"byzantine_empire"},
+            ),
+            "hced-Akroinos739-1": (
+                "Battle of Akroinon",
+                {"byzantine_empire"},
+                {"umayyad_caliphate"},
+            ),
             "hced-Calpulalpam1860-1": (
                 "Battle of Calpulalpan",
                 {"mexican_liberal_forces"},
                 {"mexican_conservative_forces"},
+            ),
+            "hced-Carthage, Tunisia697-1": (
+                "Umayyad capture of Carthage",
+                {"umayyad_caliphate"},
+                {"byzantine_empire"},
+            ),
+            "hced-Ctesiphon363-1": (
+                "Battle before Ctesiphon",
+                {"roman_empire"},
+                {"sasanian_empire"},
             ),
             "hced-Derna1805-1": (
                 "Battle of Derna",
@@ -283,7 +445,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             ),
         }
         self.assertEqual(set(events), set(expected))
-        self.assertNotIn("hced-Granada, Nicaragua1856-1", events)
+        self.assertFalse(lane.WAVE8_EXACT_PRIORITY_HOLD_IDS & set(events))
         for candidate_id, (name, winners, losers) in expected.items():
             with self.subTest(candidate_id=candidate_id):
                 event = events[candidate_id]
@@ -293,7 +455,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                     {
                         item["entity_id"]
                         for item in event["participants"]
-                        if item["termination"] == "engagement_victory"
+                        if "victory" in item["termination"]
                     },
                     winners,
                 )
@@ -301,7 +463,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                     {
                         item["entity_id"]
                         for item in event["participants"]
-                        if item["termination"] == "engagement_defeat"
+                        if "defeat" in item["termination"]
                     },
                     losers,
                 )
@@ -313,45 +475,132 @@ class Wave8ExactPriorityTests(unittest.TestCase):
                     )
                 )
                 Event.from_dict(event)
+        self.assertEqual(events["hced-ElKsiba1913-1"]["aliases"], [])
+        self.assertNotIn(
+            "None",
+            {
+                alias
+                for event in emitted
+                for alias in event.get("aliases", [])
+            },
+        )
 
     def test_chronology_and_event_types_are_pinned(self) -> None:
         expected = {
+            "hced-El Herri1914-1": (
+                "13 November 1914",
+                "day",
+                "colonial_anti_colonial",
+                (1914, 1914),
+            ),
+            "hced-ElKsiba1913-1": (
+                "8-10 June 1913",
+                "day_range",
+                "colonial_anti_colonial",
+                (1913, 1913),
+            ),
+            "hced-Hayfield Fight1867-1": (
+                "1 August 1867",
+                "day",
+                "colonial_anti_colonial",
+                (1867, 1867),
+            ),
+            "hced-In Rhar1900-1": (
+                "19 March 1900",
+                "day",
+                "colonial_anti_colonial",
+                (1900, 1900),
+            ),
+            "hced-In Salah1900-1": (
+                "5 January 1900",
+                "day",
+                "colonial_anti_colonial",
+                (1900, 1900),
+            ),
+            "hced-Ingosten1899-1": (
+                "27 or 28 December 1899",
+                "day_conflict",
+                "colonial_anti_colonial",
+                (1899, 1899),
+            ),
+            "hced-Khenifra1914-1": (
+                "12 June 1914",
+                "day",
+                "colonial_anti_colonial",
+                (1914, 1914),
+            ),
+            "hced-Amida359-1": (
+                "359 CE",
+                "year",
+                "interstate_limited",
+                (359, 359),
+            ),
+            "hced-Amida502-503-1": (
+                "late 502-10 January 503",
+                "year_range",
+                "interstate_limited",
+                (502, 503),
+            ),
+            "hced-Akroinos739-1": (
+                "740 CE",
+                "year",
+                "interstate_limited",
+                (740, 740),
+            ),
             "hced-Calpulalpam1860-1": (
                 "22 December 1860",
                 "day",
                 "civil_war",
+                (1860, 1860),
+            ),
+            "hced-Carthage, Tunisia697-1": (
+                "698 CE",
+                "year",
+                "imperial_conquest",
+                (698, 698),
+            ),
+            "hced-Ctesiphon363-1": (
+                "363 CE",
+                "year",
+                "interstate_limited",
+                (363, 363),
             ),
             "hced-Derna1805-1": (
                 "27 April 1805",
                 "day",
                 "interstate_claimant_intervention",
+                (1805, 1805),
             ),
             "hced-La Virgen1855-1": (
                 "3 September 1855",
                 "day",
                 "civil_war_foreign_intervention",
+                (1855, 1855),
             ),
             "hced-Santa Rosa de Copan1856-1": (
                 "20 March 1856",
                 "day",
                 "foreign_filibuster_intervention",
+                (1856, 1856),
             ),
             "hced-Teutoburgwald9-1": (
                 "9 CE",
                 "year",
                 "anti_imperial_revolt",
+                (9, 9),
             ),
             "hced-Red River1759-1": (
                 "7 October 1759",
                 "day",
                 "colonial_anti_colonial",
+                (1759, 1759),
             ),
         }
         events = {
             str(event["hced_candidate_id"]): event
             for event in self._projection()[3]
         }
-        for candidate_id, (date_text, precision, war_type) in expected.items():
+        for candidate_id, (date_text, precision, war_type, years) in expected.items():
             contract = lane.WAVE8_EXACT_PRIORITY_CONTRACTS[candidate_id]
             self.assertEqual(contract["canonical_event"]["date_text"], date_text)
             self.assertEqual(
@@ -359,6 +608,45 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             )
             self.assertEqual(events[candidate_id]["date_precision"], precision)
             self.assertEqual(events[candidate_id]["war_type"], war_type)
+            self.assertEqual(
+                (events[candidate_id]["year"], events[candidate_id]["end_year"]),
+                years,
+            )
+
+        for candidate_id in {
+            "hced-Amida502-503-1",
+            "hced-Akroinos739-1",
+            "hced-Carthage, Tunisia697-1",
+        }:
+            contract = lane.WAVE8_EXACT_PRIORITY_CONTRACTS[candidate_id]
+            self.assertIs(contract["source_date_override"], True)
+            self.assertGreaterEqual(len(contract["date_source_ids"]), 2)
+
+        carthage = events["hced-Carthage, Tunisia697-1"]
+        self.assertEqual(Event.from_dict(carthage).track, "operational")
+        self.assertEqual(carthage["event_type"], "campaign")
+        self.assertEqual(carthage["scale"], "campaign")
+        self.assertEqual(carthage["stakes"], "major")
+        self.assertEqual(carthage["domain"], "mixed")
+        self.assertIn("operational campaign assertion", carthage["summary"])
+        self.assertEqual(
+            {item["termination"] for item in carthage["participants"]},
+            {"campaign_victory", "campaign_defeat"},
+        )
+        for participant in carthage["participants"]:
+            self.assertEqual(
+                set(participant["outcome"]),
+                {
+                    "campaign_objective",
+                    "force_preservation",
+                    "logistics_sustainment",
+                    "tempo_initiative",
+                    "theater_control",
+                },
+            )
+            self.assertEqual(participant["stakes"], 0.68)
+            self.assertEqual(participant["national_scale"], 0.52)
+            self.assertIn("operational_campaign_", participant["result_class"])
 
     def test_all_promoted_points_are_quarantined_and_countries_retained(self) -> None:
         self.assertEqual(
@@ -367,7 +655,19 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         )
         self.assertFalse(lane.WAVE8_EXACT_PRIORITY_COUNTRY_QUARANTINE_ADDITIONS)
         expected_countries = {
+            "hced-El Herri1914-1": "Morocco",
+            "hced-ElKsiba1913-1": "Morocco",
+            "hced-Hayfield Fight1867-1": "United States",
+            "hced-In Rhar1900-1": "Algeria",
+            "hced-In Salah1900-1": "Algeria",
+            "hced-Ingosten1899-1": "Algeria",
+            "hced-Khenifra1914-1": "Morocco",
+            "hced-Amida359-1": "Turkey",
+            "hced-Amida502-503-1": "Turkey",
+            "hced-Akroinos739-1": "Turkey",
             "hced-Calpulalpam1860-1": "Mexico",
+            "hced-Carthage, Tunisia697-1": "Tunisia",
+            "hced-Ctesiphon363-1": "Iraq",
             "hced-Derna1805-1": "Libya",
             "hced-La Virgen1855-1": "Nicaragua",
             "hced-Red River1759-1": "United States",
@@ -393,11 +693,11 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             ),
             {
                 "held_candidate_events": 0,
-                "lane_entities": 10,
-                "lane_events": 6,
-                "lane_sources": 15,
+                "lane_entities": 17,
+                "lane_events": 18,
+                "lane_sources": 44,
                 "outside_entity_uses": 0,
-                "reserved_candidate_ids": 7,
+                "reserved_candidate_ids": 21,
             },
         )
         self.assertEqual(
@@ -409,11 +709,11 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             ),
             {
                 "held_candidate_events": 0,
-                "lane_entities": 10,
-                "lane_events": 6,
-                "lane_sources": 15,
+                "lane_entities": 17,
+                "lane_events": 18,
+                "lane_sources": 44,
                 "outside_entity_uses": 0,
-                "reserved_candidate_ids": 7,
+                "reserved_candidate_ids": 21,
                 "final_audit_signature": (
                     lane.WAVE8_EXACT_PRIORITY_FINAL_AUDIT_SIGNATURE
                 ),
@@ -575,7 +875,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         hold_leak = copy.deepcopy(emitted[0])
         hold_leak["id"] = f"{EVENT_ID_PREFIX}held_granada"
         hold_leak["hced_candidate_id"] = "hced-Granada, Nicaragua1856-1"
-        with self.assertRaisesRegex(ValueError, "held Granada"):
+        with self.assertRaisesRegex(ValueError, "held candidate"):
             lane.validate_wave8_exact_priority_release_inventory(
                 entities,
                 sources,
@@ -671,7 +971,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         entities: dict[str, dict] = {}
         lane.install_wave8_exact_priority_entities(entities)
         lane.install_wave8_exact_priority_entities(entities)
-        self.assertEqual(len(entities), 10)
+        self.assertEqual(len(entities), 17)
         entities[HAMET_DERNA]["end_year"] = 1804
         with self.assertRaisesRegex(ValueError, "entity collision"):
             lane.install_wave8_exact_priority_entities(entities)
@@ -679,7 +979,7 @@ class Wave8ExactPriorityTests(unittest.TestCase):
         sources: dict[str, dict] = {}
         lane.install_wave8_exact_priority_sources(sources)
         lane.install_wave8_exact_priority_sources(sources)
-        self.assertEqual(len(sources), 15)
+        self.assertEqual(len(sources), 44)
         source_id = "wave8_exact_priority_kalkriese_varus"
         sources[source_id]["source_family_id"] = "tampered"
         with self.assertRaisesRegex(ValueError, "source collision"):
@@ -719,27 +1019,35 @@ class Wave8ExactPriorityTests(unittest.TestCase):
             lane.wave8_exact_priority_counts(),
             {
                 "country_quarantine_additions": 0,
-                "holds": 1,
-                "new_entities": 10,
-                "new_sources": 15,
-                "newly_rated_events": 6,
-                "outcome_overrides": 0,
-                "outcome_reversals": 0,
-                "point_quarantine_additions": 6,
-                "promotion_contracts": 6,
-                "reserved_hced_rows": 7,
-                "reviewed_hced_rows": 7,
+                "date_overrides": 3,
+                "holds": 3,
+                "new_entities": 17,
+                "new_sources": 44,
+                "newly_rated_events": 18,
+                "outcome_overrides": 1,
+                "outcome_reversals": 1,
+                "point_quarantine_additions": 18,
+                "promotion_contracts": 18,
+                "reserved_hced_rows": 21,
+                "reviewed_hced_rows": 21,
                 "terminal_exclusions": 0,
             },
         )
         self.assertEqual(
             lane.wave8_exact_priority_cohort_counts(),
             {
+                "byzantine_umayyad_wars": 1,
                 "first_barbary_war": 1,
+                "french_conquest_tidikelt": 3,
+                "great_sioux_war": 1,
                 "mexican_war_of_reform": 1,
                 "nicaragua_filibuster_conflict": 3,
+                "red_cloud_war": 2,
                 "roman_germania_conflict": 1,
+                "sasanian_roman_wars": 3,
                 "spanish_northern_frontier": 1,
+                "umayyad_conquest_north_africa": 1,
+                "zaian_war": 3,
             },
         )
 

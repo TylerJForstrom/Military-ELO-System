@@ -42,28 +42,28 @@ Region memberships are non-exclusive and derive only from a conservative mapping
 
 | Rank | Unresolved label | Marginal events | Cumulative events |
 | --- | --- | --- | --- |
-| 1 | sassanid empire | 3 | 3 |
-| 2 | sioux indians cheyenne indians | 3 | 6 |
-| 3 | tidikelt tribes | 3 | 9 |
-| 4 | wurtemburg | 3 | 12 |
-| 5 | zaia | 3 | 15 |
-| 6 | irish royalists | 2 | 17 |
-| 7 | burma | 2 | 19 |
-| 8 | siam | 7 | 26 |
-| 9 | cambodia | 3 | 29 |
-| 10 | holy roman empire | 2 | 31 |
-| 11 | swabian league | 2 | 33 |
-| 12 | ummayad caliphate | 2 | 35 |
-| 13 | vijayanagar | 2 | 37 |
-| 14 | bahman | 3 | 40 |
-| 15 | russian bolsheviks | 2 | 42 |
-| 16 | finnish whites | 2 | 44 |
-| 17 | corinth | 2 | 46 |
-| 18 | liberals | 2 | 48 |
-| 19 | manchu | 2 | 50 |
-| 20 | ming | 3 | 53 |
+| 1 | wurtemburg | 3 | 3 |
+| 2 | irish royalists | 2 | 5 |
+| 3 | burma | 2 | 7 |
+| 4 | siam | 7 | 14 |
+| 5 | cambodia | 3 | 17 |
+| 6 | holy roman empire | 2 | 19 |
+| 7 | swabian league | 2 | 21 |
+| 8 | vijayanagar | 2 | 23 |
+| 9 | bahman | 3 | 26 |
+| 10 | russian bolsheviks | 2 | 28 |
+| 11 | finnish whites | 2 | 30 |
+| 12 | corinth | 2 | 32 |
+| 13 | liberals | 2 | 34 |
+| 14 | manchu | 2 | 36 |
+| 15 | ming | 3 | 39 |
+| 16 | han | 3 | 42 |
+| 17 | wu | 3 | 45 |
+| 18 | quebecois rebels | 2 | 47 |
+| 19 | quintus sertorius | 2 | 49 |
+| 20 | royalist rebels | 2 | 51 |
 
-Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 53 events.
+Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 51 events.
 
 ## Genuinely-new candidates by century
 

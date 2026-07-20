@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1040,
-    "events": 5432,
-    "sources": 1494,
-    "registry_polities": 2388
+    "entities": 1047,
+    "events": 5444,
+    "sources": 1523,
+    "registry_polities": 2395
   },
   "year_range": {
     "start": -1274,
@@ -164,7 +164,7 @@
     "accepted_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "accepted_wave8_libya_hced_events": 3,
     "accepted_wave8_followup_b_hced_events": 4,
-    "accepted_wave8_exact_priority_hced_events": 6,
+    "accepted_wave8_exact_priority_hced_events": 18,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
     "accepted_wave8_goguryeo_hced_events": 3,
@@ -19149,107 +19149,177 @@
       "audit": "candidate_keyed_exact_event_bounded_priority_rows",
       "counts": {
         "country_quarantine_additions": 0,
-        "holds": 1,
-        "new_entities": 10,
-        "new_sources": 15,
-        "newly_rated_events": 6,
-        "outcome_overrides": 0,
-        "outcome_reversals": 0,
-        "point_quarantine_additions": 6,
-        "promotion_contracts": 6,
-        "reserved_hced_rows": 7,
-        "reviewed_hced_rows": 7,
+        "date_overrides": 3,
+        "holds": 3,
+        "new_entities": 17,
+        "new_sources": 44,
+        "newly_rated_events": 18,
+        "outcome_overrides": 1,
+        "outcome_reversals": 1,
+        "point_quarantine_additions": 18,
+        "promotion_contracts": 18,
+        "reserved_hced_rows": 21,
+        "reviewed_hced_rows": 21,
         "terminal_exclusions": 0
       },
       "cohorts": {
+        "byzantine_umayyad_wars": 1,
         "first_barbary_war": 1,
+        "french_conquest_tidikelt": 3,
+        "great_sioux_war": 1,
         "mexican_war_of_reform": 1,
         "nicaragua_filibuster_conflict": 3,
+        "red_cloud_war": 2,
         "roman_germania_conflict": 1,
-        "spanish_northern_frontier": 1
+        "sasanian_roman_wars": 3,
+        "spanish_northern_frontier": 1,
+        "umayyad_conquest_north_africa": 1,
+        "zaian_war": 3
       },
-      "final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
+      "final_audit_signature": "4fdfe02a84467e7c020f1badb6ba3af676b3e3b85f2f81aa2629f1ffa43966af",
       "held_candidate_ids": [
-        "hced-Granada, Nicaragua1856-1"
+        "hced-Granada, Nicaragua1856-1",
+        "hced-Powder1876-1",
+        "hced-Wagon Box Fight1867-1"
       ],
       "module_owner": "military_elo.promotion.wave8_exact_priority",
       "promoted_candidate_ids": [
+        "hced-Akroinos739-1",
+        "hced-Amida359-1",
+        "hced-Amida502-503-1",
         "hced-Calpulalpam1860-1",
+        "hced-Carthage, Tunisia697-1",
+        "hced-Ctesiphon363-1",
         "hced-Derna1805-1",
+        "hced-El Herri1914-1",
+        "hced-ElKsiba1913-1",
+        "hced-Hayfield Fight1867-1",
+        "hced-In Rhar1900-1",
+        "hced-In Salah1900-1",
+        "hced-Ingosten1899-1",
+        "hced-Khenifra1914-1",
         "hced-La Virgen1855-1",
         "hced-Red River1759-1",
         "hced-Santa Rosa de Copan1856-1",
         "hced-Teutoburgwald9-1"
       ],
       "reserved_candidate_ids": [
+        "hced-Akroinos739-1",
+        "hced-Amida359-1",
+        "hced-Amida502-503-1",
         "hced-Calpulalpam1860-1",
+        "hced-Carthage, Tunisia697-1",
+        "hced-Ctesiphon363-1",
         "hced-Derna1805-1",
+        "hced-El Herri1914-1",
+        "hced-ElKsiba1913-1",
         "hced-Granada, Nicaragua1856-1",
+        "hced-Hayfield Fight1867-1",
+        "hced-In Rhar1900-1",
+        "hced-In Salah1900-1",
+        "hced-Ingosten1899-1",
+        "hced-Khenifra1914-1",
         "hced-La Virgen1855-1",
+        "hced-Powder1876-1",
         "hced-Red River1759-1",
         "hced-Santa Rosa de Copan1856-1",
-        "hced-Teutoburgwald9-1"
+        "hced-Teutoburgwald9-1",
+        "hced-Wagon Box Fight1867-1"
       ],
       "row_dispositions": {
+        "hced-Akroinos739-1": "promote",
+        "hced-Amida359-1": "promote",
+        "hced-Amida502-503-1": "promote",
         "hced-Calpulalpam1860-1": "promote",
+        "hced-Carthage, Tunisia697-1": "promote",
+        "hced-Ctesiphon363-1": "promote",
         "hced-Derna1805-1": "promote",
+        "hced-El Herri1914-1": "promote",
+        "hced-ElKsiba1913-1": "promote",
         "hced-Granada, Nicaragua1856-1": "hold",
+        "hced-Hayfield Fight1867-1": "promote",
+        "hced-In Rhar1900-1": "promote",
+        "hced-In Salah1900-1": "promote",
+        "hced-Ingosten1899-1": "promote",
+        "hced-Khenifra1914-1": "promote",
         "hced-La Virgen1855-1": "promote",
+        "hced-Powder1876-1": "hold",
         "hced-Red River1759-1": "promote",
         "hced-Santa Rosa de Copan1856-1": "promote",
-        "hced-Teutoburgwald9-1": "promote"
+        "hced-Teutoburgwald9-1": "promote",
+        "hced-Wagon Box Fight1867-1": "hold"
       }
     },
     "wave8_exact_priority_counts": {
       "country_quarantine_additions": 0,
-      "holds": 1,
-      "new_entities": 10,
-      "new_sources": 15,
-      "newly_rated_events": 6,
-      "outcome_overrides": 0,
-      "outcome_reversals": 0,
-      "point_quarantine_additions": 6,
-      "promotion_contracts": 6,
-      "reserved_hced_rows": 7,
-      "reviewed_hced_rows": 7,
+      "date_overrides": 3,
+      "holds": 3,
+      "new_entities": 17,
+      "new_sources": 44,
+      "newly_rated_events": 18,
+      "outcome_overrides": 1,
+      "outcome_reversals": 1,
+      "point_quarantine_additions": 18,
+      "promotion_contracts": 18,
+      "reserved_hced_rows": 21,
+      "reviewed_hced_rows": 21,
       "terminal_exclusions": 0
     },
     "wave8_exact_priority_cohort_counts": {
+      "byzantine_umayyad_wars": 1,
       "first_barbary_war": 1,
+      "french_conquest_tidikelt": 3,
+      "great_sioux_war": 1,
       "mexican_war_of_reform": 1,
       "nicaragua_filibuster_conflict": 3,
+      "red_cloud_war": 2,
       "roman_germania_conflict": 1,
-      "spanish_northern_frontier": 1
+      "sasanian_roman_wars": 3,
+      "spanish_northern_frontier": 1,
+      "umayyad_conquest_north_africa": 1,
+      "zaian_war": 3
     },
-    "wave8_exact_priority_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
-    "wave8_exact_priority_final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9",
+    "wave8_exact_priority_audit_signature": "4fdfe02a84467e7c020f1badb6ba3af676b3e3b85f2f81aa2629f1ffa43966af",
+    "wave8_exact_priority_final_audit_signature": "4fdfe02a84467e7c020f1badb6ba3af676b3e3b85f2f81aa2629f1ffa43966af",
     "wave8_exact_priority_queue_validation": {
-      "promotion_contracts": 6,
-      "holds": 1,
-      "reviewed_hced_rows": 7,
-      "audited_candidate_rows": 7,
-      "automated_discovery_rows": 7,
-      "reserved_hced_rows": 7
+      "promotion_contracts": 18,
+      "holds": 3,
+      "reviewed_hced_rows": 21,
+      "audited_candidate_rows": 21,
+      "automated_discovery_rows": 21,
+      "reserved_hced_rows": 21
     },
     "wave8_exact_priority_integration_validation": {
       "existing_release_probable_twins": 0,
       "held_release_events": 0,
       "hced_probable_twins": 0,
       "iwbd_probable_twins": 0,
-      "release_lane_overlap": 6
+      "release_lane_overlap": 18
     },
     "wave8_exact_priority_final_validation": {
       "held_candidate_events": 0,
-      "lane_entities": 10,
-      "lane_events": 6,
-      "lane_sources": 15,
+      "lane_entities": 17,
+      "lane_events": 18,
+      "lane_sources": 44,
       "outside_entity_uses": 0,
-      "reserved_candidate_ids": 7,
-      "final_audit_signature": "e4e46f76859cccf692191072e477281140851268fc84978ac9aa0fd10802f0a9"
+      "reserved_candidate_ids": 21,
+      "final_audit_signature": "4fdfe02a84467e7c020f1badb6ba3af676b3e3b85f2f81aa2629f1ffa43966af"
     },
     "wave8_exact_priority_candidate_ids": [
+      "hced-Akroinos739-1",
+      "hced-Amida359-1",
+      "hced-Amida502-503-1",
       "hced-Calpulalpam1860-1",
+      "hced-Carthage, Tunisia697-1",
+      "hced-Ctesiphon363-1",
       "hced-Derna1805-1",
+      "hced-El Herri1914-1",
+      "hced-ElKsiba1913-1",
+      "hced-Hayfield Fight1867-1",
+      "hced-In Rhar1900-1",
+      "hced-In Salah1900-1",
+      "hced-Ingosten1899-1",
+      "hced-Khenifra1914-1",
       "hced-La Virgen1855-1",
       "hced-Red River1759-1",
       "hced-Santa Rosa de Copan1856-1",
@@ -19275,9 +19345,87 @@
           "status": "reserved_hced_hold"
         },
         "audit_note": "The allied army enclosed and reduced Henningsen's position, but Waters broke through and relieved it, after which the filibuster force completed its destruction of Granada and embarked while the allies occupied the ruins. The row's simple Central American Allies win is known but non-atomic and therefore unrateable as one tactical outcome. It remains unscored for Elo and is not converted to a draw."
+      },
+      {
+        "candidate_id": "hced-Powder1876-1",
+        "raw_row_sha256": "c89dd0c7bd9ffe3bff435dc12241995b30f419464627baa7881ba4a27b0dfb10",
+        "cohort": "great_sioux_war",
+        "disposition": "hold",
+        "reason_code": "raw_draw_rejected_and_tactical_winner_not_directly_attested",
+        "evidence_refs": [
+          "wave8_exact_priority_blm_powder_river",
+          "wave8_exact_priority_nps_powder_river_study",
+          "wave8_exact_priority_oupress_powder_river"
+        ],
+        "evidence_source_family_ids": [
+          "blm_powder_river_1876",
+          "nps_govinfo_powder_river_study",
+          "university_oklahoma_press_powder_river"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_exact_priority",
+          "status": "reserved_hced_hold"
+        },
+        "audit_note": "The source operation failed and led to U.S. court-martials, but that does not supply a direct, atomic tactical winner for Elo. HCED's raw Draw is therefore rejected rather than preserved, and objective failure is not converted into an invented opposing win. Unknown is not a draw, so this row remains unscored."
+      },
+      {
+        "candidate_id": "hced-Wagon Box Fight1867-1",
+        "raw_row_sha256": "8d12e4b1e296e5c2c322d8ed267defcf750718bf99ada52a52ccdc1b69c56dd7",
+        "cohort": "red_cloud_war",
+        "disposition": "hold",
+        "reason_code": "supersession_required_for_broader_existing_event",
+        "evidence_refs": [
+          "wave8_exact_priority_nps_red_cloud",
+          "wave8_exact_priority_nps_wagon_box",
+          "wave8_exact_priority_wyohistory_wagon_box"
+        ],
+        "evidence_source_family_ids": [
+          "nps_gateway_arch_red_cloud_war",
+          "nps_springfield_armory_wagon_box",
+          "wyoming_history_wagon_box_fight"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_exact_priority",
+          "status": "reserved_hced_hold"
+        },
+        "audit_note": "The Wagon Box engagement is historically defensible, but the release already rates the broader hced-Fort Phil Kearney1866-1867-1 event covering the operation. Adding this row would double-rate the same conflict unit; it may enter only through an audited one-for-one supersession, never as an additive event or draw."
       }
     ],
     "wave8_exact_priority_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Akroinos739-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The sources establish Akroinon in Phrygia but do not authenticate HCED's exact coordinate as the battlefield point.",
+        "evidence_refs": [
+          "wave8_exact_priority_asjp_akroinon",
+          "wave8_exact_priority_pbe_akroinon"
+        ]
+      },
+      {
+        "candidate_id": "hced-Amida359-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Amida siege and city, not HCED's single exact battlefield coordinate.",
+        "evidence_refs": [
+          "wave8_exact_priority_ammianus_19",
+          "wave8_exact_priority_iranica_amida"
+        ]
+      },
+      {
+        "candidate_id": "hced-Amida502-503-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The 502-503 siege sources establish Amida at city level but do not authenticate HCED's single point for the prolonged operation.",
+        "evidence_refs": [
+          "wave8_exact_priority_iranica_kawad",
+          "wave8_exact_priority_procopius_persian_wars",
+          "wave8_exact_priority_pseudo_joshua"
+        ]
+      },
       {
         "candidate_id": "hced-Calpulalpam1860-1",
         "actions": [
@@ -19290,6 +19438,28 @@
         ]
       },
       {
+        "candidate_id": "hced-Carthage, Tunisia697-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the city-level capture of Carthage, not HCED's single exact combat coordinate within the operation.",
+        "evidence_refs": [
+          "wave8_exact_priority_carey_carthage",
+          "wave8_exact_priority_moderan_carthage"
+        ]
+      },
+      {
+        "candidate_id": "hced-Ctesiphon363-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The sources locate the battle before Ctesiphon but do not establish HCED's exact point as the reviewed battlefield coordinate.",
+        "evidence_refs": [
+          "wave8_exact_priority_ammianus_24",
+          "wave8_exact_priority_iranica_julian"
+        ]
+      },
+      {
         "candidate_id": "hced-Derna1805-1",
         "actions": [
           "withhold_point"
@@ -19298,6 +19468,84 @@
         "evidence_refs": [
           "wave8_exact_priority_nhhc_derna",
           "wave8_exact_priority_usmcu_obannon_derna"
+        ]
+      },
+      {
+        "candidate_id": "hced-El Herri1914-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The sources establish El Herri and the battle context but do not authenticate HCED's coordinate as an exact battlefield point.",
+        "evidence_refs": [
+          "wave8_exact_priority_berbere_moha_hammou",
+          "wave8_exact_priority_photographica_zaian"
+        ]
+      },
+      {
+        "candidate_id": "hced-ElKsiba1913-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed evidence establishes the El Ksiba action at town and approach level, not HCED's exact combat point.",
+        "evidence_refs": [
+          "wave8_exact_priority_berbere_moha_said",
+          "wave8_exact_priority_goum_5_campaign"
+        ]
+      },
+      {
+        "candidate_id": "hced-Hayfield Fight1867-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's point conflicts materially with the reviewed Fort C.F. Smith context and is not retained as battlefield geometry.",
+        "evidence_refs": [
+          "wave8_exact_priority_army_sioux_wars_atlas",
+          "wave8_exact_priority_nps_fort_cf_smith",
+          "wave8_exact_priority_nps_hayfield"
+        ]
+      },
+      {
+        "candidate_id": "hced-In Rhar1900-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The source-attested In Rhar citadel is not represented by an independently verified exact HCED combat point.",
+        "evidence_refs": [
+          "wave8_exact_priority_martin_oases",
+          "wave8_exact_priority_persee_in_rhar"
+        ]
+      },
+      {
+        "candidate_id": "hced-In Salah1900-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The canonical Deghamcha-Sali action is not supported by HCED's In Salah coordinate, so the point is withheld.",
+        "evidence_refs": [
+          "wave8_exact_priority_martin_oases",
+          "wave8_exact_priority_tirailleurs_sahara"
+        ]
+      },
+      {
+        "candidate_id": "hced-Ingosten1899-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The sources establish Igosten but do not independently authenticate the staged coordinate as the exact battlefield point.",
+        "evidence_refs": [
+          "wave8_exact_priority_constantine_tidikelt",
+          "wave8_exact_priority_tirailleurs_1rta"
+        ]
+      },
+      {
+        "candidate_id": "hced-Khenifra1914-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's Khenifra point is a city or approach locator rather than a reviewed exact battlefield coordinate.",
+        "evidence_refs": [
+          "wave8_exact_priority_berbere_moha_hammou",
+          "wave8_exact_priority_goum_5_campaign"
         ]
       },
       {
@@ -19346,16 +19594,28 @@
       }
     ],
     "wave8_exact_priority_point_quarantine_additions": [
+      "hced-Akroinos739-1",
+      "hced-Amida359-1",
+      "hced-Amida502-503-1",
       "hced-Calpulalpam1860-1",
+      "hced-Carthage, Tunisia697-1",
+      "hced-Ctesiphon363-1",
       "hced-Derna1805-1",
+      "hced-El Herri1914-1",
+      "hced-ElKsiba1913-1",
+      "hced-Hayfield Fight1867-1",
+      "hced-In Rhar1900-1",
+      "hced-In Salah1900-1",
+      "hced-Ingosten1899-1",
+      "hced-Khenifra1914-1",
       "hced-La Virgen1855-1",
       "hced-Red River1759-1",
       "hced-Santa Rosa de Copan1856-1",
       "hced-Teutoburgwald9-1"
     ],
     "wave8_exact_priority_country_quarantine_additions": [],
-    "wave8_exact_priority_entities_added": 10,
-    "wave8_exact_priority_sources_added": 15,
+    "wave8_exact_priority_entities_added": 17,
+    "wave8_exact_priority_sources_added": 44,
     "wave8_kievan_rus_counts": {
       "country_quarantine_additions": 0,
       "holds": 4,
@@ -20955,7 +21215,7 @@
     "wave8_etruria_country_quarantine_additions": [],
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
-    "hced_label_pass_input_rows": 5529,
+    "hced_label_pass_input_rows": 5515,
     "accepted_iwd_wars": 64,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 100,
@@ -20968,7 +21228,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1081,
+      "reserved_candidate_contract": 1095,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -20980,7 +21240,7 @@
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1982,
+      "no_unique_time_valid_label_match": 1968,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,

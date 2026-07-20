@@ -3209,6 +3209,16 @@
       "region": "North America"
     },
     {
+      "id": "hayfield_cheyenne_sioux_attack_force_1867",
+      "name": "Cheyenne-Sioux attacking force at the Hayfield Fight (1867)",
+      "kind": "event_bounded_indigenous_attack_force",
+      "start_year": 1867,
+      "end_year": 1867,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bighorn basin, North America"
+    },
+    {
       "id": "clio_q52028_1775_dced8253",
       "name": "Chiangmai",
       "kind": "polity",
@@ -4624,6 +4634,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "deghamcha_sali_resistance_force_1900",
+      "name": "Deghamcha-Sali resistance force (1900)",
+      "kind": "event_bounded_oasian_resistance_force",
+      "start_year": 1900,
+      "end_year": 1900,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tidikelt and Touat, central Sahara"
     },
     {
       "id": "clio_q49322_1475_9f103b95",
@@ -9667,6 +9687,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "West Asia"
+    },
+    {
+      "id": "in_salah_ksourian_force_igosten_1899",
+      "name": "In Salah ksourian force at Igosten (1899)",
+      "kind": "event_bounded_oasian_resistance_force",
+      "start_year": 1899,
+      "end_year": 1899,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tidikelt, central Sahara"
     },
     {
       "id": "clio_pe_inca_emp_1440_816cd40c",
@@ -14823,6 +14853,36 @@
       "region": "Unclassified"
     },
     {
+      "id": "moha_ou_hammou_el_herri_force_1914",
+      "name": "Moha ou Hammou's counterattack force at El Herri (1914)",
+      "kind": "event_bounded_anti_colonial_force",
+      "start_year": 1914,
+      "end_year": 1914,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Middle Atlas, Morocco"
+    },
+    {
+      "id": "moha_ou_hammou_khenifra_force_1914",
+      "name": "Moha ou Hammou's resistance force at Khenifra (1914)",
+      "kind": "event_bounded_anti_colonial_force",
+      "start_year": 1914,
+      "end_year": 1914,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Middle Atlas, Morocco"
+    },
+    {
+      "id": "moha_ou_said_el_ksiba_force_1913",
+      "name": "Moha ou Said's resistance force at El Ksiba (1913)",
+      "kind": "event_bounded_anti_colonial_force",
+      "start_year": 1913,
+      "end_year": 1913,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Middle Atlas, Morocco"
+    },
+    {
       "id": "clio_q827399_bce170_228a5969",
       "name": "Molossians",
       "kind": "polity",
@@ -16724,6 +16784,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "pasha_timmi_in_rhar_force_1900",
+      "name": "Pasha of Timmi's In Rhar force (1900)",
+      "kind": "event_bounded_oasian_resistance_force",
+      "start_year": 1900,
+      "end_year": 1900,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Touat and Tidikelt, central Sahara"
     },
     {
       "id": "paston_retainers_1469",
@@ -25246,11 +25316,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2388,
-    "rated_entities": 1033,
-    "rated_events": 5432,
+    "registry_polities": 2395,
+    "rated_entities": 1040,
+    "rated_events": 5444,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36916,
+    "unresolved_event_candidates": 36904,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25344,7 +25414,7 @@
     "candidate_keyed_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "candidate_keyed_wave8_libya_hced_events": 3,
     "candidate_keyed_wave8_followup_b_hced_events": 4,
-    "candidate_keyed_wave8_exact_priority_hced_events": 6,
+    "candidate_keyed_wave8_exact_priority_hced_events": 18,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
     "candidate_keyed_wave8_goguryeo_hced_events": 3,
@@ -25367,21 +25437,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 100,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5168,
-      "candidate_keyed_reviewed_contracts": 797,
+      "hced_candidate_bindings": 5180,
+      "candidate_keyed_reviewed_contracts": 809,
       "geojson_points": 4803,
-      "modern_location_country_assertions": 5073,
-      "location_provenance_objects": 5122,
-      "point_fields_withheld_by_quarantine": 365,
+      "modern_location_country_assertions": 5085,
+      "location_provenance_objects": 5134,
+      "point_fields_withheld_by_quarantine": 377,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 413,
-      "point_quarantine_candidate_manifest_sha256": "96993c2b40d5fe3f86df0f22c48424550fc8b031aa668e7e2813fa659bc60057",
+      "unique_events_with_any_quarantined_field": 425,
+      "point_quarantine_candidate_manifest_sha256": "4315bcf1933f0c34e3364f170485c2a7dcaae93689a1e7a73249e6b0dc483e9b",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "53fee63ed5dec651983a812896015b8f39b72a463e586e7f48e1284a6795ffdd",
+      "quarantine_policy_sha256": "d9ba37fbb0328a9e97498ace264ef5a719cf2823664f574a5eaf744c44a6f171",
       "assertion_status": {
-        "unreviewed_source_assertion": 5122
+        "unreviewed_source_assertion": 5134
       },
       "verified_location_assertions": {
         "availability": "not_available",

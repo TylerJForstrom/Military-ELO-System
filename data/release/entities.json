@@ -11836,6 +11836,22 @@
     ]
   },
   {
+    "id": "hayfield_cheyenne_sioux_attack_force_1867",
+    "name": "Cheyenne-Sioux attacking force at the Hayfield Fight (1867)",
+    "kind": "event_bounded_indigenous_attack_force",
+    "start_year": 1867,
+    "end_year": 1867,
+    "region": "Bighorn basin, North America",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force that attacked the haycutters and Fort C.F. Smith detachment. The Army atlas identifies a Cheyenne majority with some Sioux, while the National Park Service identifies Sioux; no permanent coalition, unified polity, or inherited command is inferred. This identity exists only for the named engagement and year 1867. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_army_sioux_wars_atlas",
+      "wave8_exact_priority_nps_fort_cf_smith",
+      "wave8_exact_priority_nps_hayfield"
+    ]
+  },
+  {
     "id": "davis_murie_pawnee_scout_detachments_plum_creek_1867",
     "name": "Davis and Murie Pawnee scout detachments at Plum Creek (1867)",
     "kind": "indigenous_auxiliary_force",
@@ -13195,6 +13211,21 @@
     ]
   },
   {
+    "id": "in_salah_ksourian_force_igosten_1899",
+    "name": "In Salah ksourian force at Igosten (1899)",
+    "kind": "event_bounded_oasian_resistance_force",
+    "start_year": 1899,
+    "end_year": 1899,
+    "region": "Tidikelt, central Sahara",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defenders from the In Salah ksour/oases opposed to the Flamand-Pein mission at Igosten; this is not a timeless Tidikelt tribal or territorial polity. This identity exists only for the named engagement and year 1899. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_constantine_tidikelt",
+      "wave8_exact_priority_tirailleurs_1rta"
+    ]
+  },
+  {
     "id": "somali_dervish_movement_1899_1920",
     "name": "Somali Dervish movement (1899–1920)",
     "kind": "anti_colonial_movement_force",
@@ -13207,6 +13238,36 @@
     "source_ids": [
       "uk_wo_somaliland_official_history_1907",
       "jardine_mad_mullah_somaliland_1923"
+    ]
+  },
+  {
+    "id": "deghamcha_sali_resistance_force_1900",
+    "name": "Deghamcha-Sali resistance force (1900)",
+    "kind": "event_bounded_oasian_resistance_force",
+    "start_year": 1900,
+    "end_year": 1900,
+    "region": "Tidikelt and Touat, central Sahara",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded resistance contingent at Deghamcha and Sali, kept separate from other In Salah, Touat, and Tidikelt formations. This identity exists only for the named engagement and year 1900. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_martin_oases",
+      "wave8_exact_priority_tirailleurs_sahara"
+    ]
+  },
+  {
+    "id": "pasha_timmi_in_rhar_force_1900",
+    "name": "Pasha of Timmi's In Rhar force (1900)",
+    "kind": "event_bounded_oasian_resistance_force",
+    "start_year": 1900,
+    "end_year": 1900,
+    "region": "Touat and Tidikelt, central Sahara",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force at In Rhar associated in the sources with the Pasha of Timmi and warriors from Touat, Aoulef, and Akabli; no permanent confederation is inferred. This identity exists only for the named engagement and year 1900. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_martin_oases",
+      "wave8_exact_priority_persee_in_rhar"
     ]
   },
   {
@@ -13705,6 +13766,21 @@
     ]
   },
   {
+    "id": "moha_ou_said_el_ksiba_force_1913",
+    "name": "Moha ou Said's resistance force at El Ksiba (1913)",
+    "kind": "event_bounded_anti_colonial_force",
+    "start_year": 1913,
+    "end_year": 1913,
+    "region": "Middle Atlas, Morocco",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded force under Moha ou Said at El Ksiba, without creating or transferring a generic Zaia, Zayan, or Berber rating. This identity exists only for the named engagement and year 1913. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_berbere_moha_said",
+      "wave8_exact_priority_goum_5_campaign"
+    ]
+  },
+  {
     "id": "ottoman_hofuf_garrison_1913",
     "name": "Ottoman Hofuf garrison in May 1913",
     "kind": "event_bounded_city_garrison",
@@ -13732,6 +13808,36 @@
     "source_ids": [
       "wave8_moros_army_turning_victory",
       "wave8_moros_field_artillery_bud_bagsak"
+    ]
+  },
+  {
+    "id": "moha_ou_hammou_el_herri_force_1914",
+    "name": "Moha ou Hammou's counterattack force at El Herri (1914)",
+    "kind": "event_bounded_anti_colonial_force",
+    "start_year": 1914,
+    "end_year": 1914,
+    "region": "Middle Atlas, Morocco",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded camp defenders and assembled counterattack force at El Herri, kept distinct from a generic Zaian polity and the earlier Khenifra formation. This identity exists only for the named engagement and year 1914. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_berbere_moha_hammou",
+      "wave8_exact_priority_photographica_zaian"
+    ]
+  },
+  {
+    "id": "moha_ou_hammou_khenifra_force_1914",
+    "name": "Moha ou Hammou's resistance force at Khenifra (1914)",
+    "kind": "event_bounded_anti_colonial_force",
+    "start_year": 1914,
+    "end_year": 1914,
+    "region": "Middle Atlas, Morocco",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded resistance formation opposed to the French capture of Khenifra; it is not merged with the separately bounded El Herri counterattack force. This identity exists only for the named engagement and year 1914. No rating is inherited by a constituent people, party, state, claimant, noncombatant population, predecessor, successor, or other formation.",
+    "source_ids": [
+      "wave8_exact_priority_berbere_moha_hammou",
+      "wave8_exact_priority_goum_5_campaign"
     ]
   },
   {
