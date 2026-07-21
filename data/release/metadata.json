@@ -8,7 +8,7 @@
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
     "entities": 1080,
-    "events": 5502,
+    "events": 5506,
     "sources": 1546,
     "registry_polities": 2419
   },
@@ -74,7 +74,7 @@
   "promotion": {
     "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules to a distinct identity valid for the full event interval. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. Wave 8 reviews 62 additional candidate-keyed HCED rows across African state, New Zealand, and North American conflict lanes: 46 exact tactical engagements enter and 16 massacre, civilian-camp, umbrella-identity, or outcome-dispute rows remain explicit holds. Every new actor is conflict- or engagement-bounded and alias-free; no rating is inherited by a generic ethnic label. Four source outcomes are corrected only from direct official-history or museum evidence, with that source family recorded as outcome provenance. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
     "accepted_hced_events": 1887,
-    "accepted_hced_label_events": 2515,
+    "accepted_hced_label_events": 2519,
     "accepted_wave6_1500_1799_hced_events": 76,
     "accepted_wave7_root_hced_events": 62,
     "accepted_wave7_central_hced_events": 33,
@@ -22706,7 +22706,7 @@
       "label_outcome_not_aligned": 78,
       "label_outside_policy_window": 187,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1896,
+      "no_unique_time_valid_label_match": 1892,
       "no_unique_time_valid_polity": 82,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
@@ -23995,9 +23995,14 @@
     ],
     "hced_reviewed_crosswalk_identity_candidate_ids": [
       "hced-Ayutthaya1568-1569-1",
+      "hced-Corinth, Greece-146-1",
       "hced-Fort Zeelandia1661-1662-1",
+      "hced-Hecatombaeum-226-1",
+      "hced-Muthul-108-1",
       "hced-Piraja1822-1",
-      "hced-Syriam1613-1"
+      "hced-Suthul-109-1",
+      "hced-Syriam1613-1",
+      "hced-Thala-107-1"
     ],
     "hced_wave6_reviewed_candidate_ids": [
       "hced-Adrianople (2nd)1913-1",

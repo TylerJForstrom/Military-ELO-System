@@ -2798,7 +2798,7 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_460 + len(pre1500_candidate_ids),
+        2_464 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -2846,7 +2846,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 401
+        len(HCED_POINT_QUARANTINE_IDS) != 403
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3266,15 +3266,31 @@ def build_expanded_release(
         entity_id: str | None,
         low_year: int,
         high_year: int,
-    ) -> tuple[str | None, None]:
-        """Resolve one contract-pinned ID without opening a label fallback."""
+    ) -> tuple[str | None, dict[str, Any] | None]:
+        """Resolve one contract-pinned ID without opening a label fallback.
+
+        A reviewed target may already be installed or may be one unique,
+        time-valid Cliopatria candidate.  Returning the candidate record lets
+        the ordinary acceptance path materialize it only after every promotion
+        gate passes; zero or multiple exact-ID candidates fail closed.
+        """
 
         if entity_id is None:
             return None, None
         entity = release_entities.get(entity_id)
-        if entity is None or not _entity_covers(entity, low_year, high_year):
+        if entity is not None:
+            if not _entity_covers(entity, low_year, high_year):
+                return None, None
+            return entity_id, None
+        candidates = [
+            polity
+            for polity in polities
+            if _candidate_entity_id(polity) == entity_id
+            and _entity_covers(polity, low_year, high_year)
+        ]
+        if len(candidates) != 1:
             return None, None
-        return entity_id, None
+        return entity_id, candidates[0]
 
     def ensure_candidate_entity(polity: dict[str, Any]) -> str:
         entity_id = _candidate_entity_id(polity)
@@ -3572,18 +3588,22 @@ def build_expanded_release(
         reviewed = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(
             hced_candidate_id(candidate), {}
         )
-        override = reviewed.get("event_year_override")
-        if override is None:
+        year_override = reviewed.get("event_year_override")
+        event_override = reviewed.get("canonical_event_override")
+        if year_override is None and event_override is None:
             reviewed_label_rows.append(candidate)
             continue
         corrected = dict(candidate)
-        corrected.update(
-            {
-                "year_low": int(override["year_low"]),
-                "year_best": int(override["year_best"]),
-                "year_high": int(override["year_high"]),
-            }
-        )
+        if year_override is not None:
+            corrected.update(
+                {
+                    "year_low": int(year_override["year_low"]),
+                    "year_best": int(year_override["year_best"]),
+                    "year_high": int(year_override["year_high"]),
+                }
+            )
+        if event_override is not None:
+            corrected["name"] = str(event_override["name"])
         reviewed_label_rows.append(corrected)
 
     hced_label_pass = promote_hced_label_rows(

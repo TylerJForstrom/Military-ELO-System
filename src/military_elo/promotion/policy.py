@@ -868,6 +868,161 @@ HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
             ),
         },
     },
+    "hced-Hecatombaeum-226-1": {
+        "fingerprint": {
+            "source_row": "6885",
+            "source_record_id": "Hecatombaeum-226",
+            "name": "Hecatombaeum",
+            "year_low": "-226",
+            "year_best": "-226",
+            "year_high": "-226",
+            "side_1_raw": "Sparta",
+            "side_2_raw": "Achean League",
+            "winner_raw": "Sparta",
+            "loser_raw": "Achean League",
+            "seshat_side_1_candidates": (),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Cleomenic War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "achean league": "clio_q244796_bce279_0be1ca53",
+        },
+        "review": {
+            "event_date": "226 BCE",
+            "source_urls": (
+                "https://www.attalus.org/bc3/year226.html",
+                "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cleomenes%2A.html",
+            ),
+        },
+    },
+    "hced-Corinth, Greece-146-1": {
+        "fingerprint": {
+            "source_row": "4125",
+            "source_record_id": "Corinth, Greece-146",
+            "name": "Corinth, Greece",
+            "year_low": "-146",
+            "year_best": "-146",
+            "year_high": "-146",
+            "side_1_raw": "Rome",
+            "side_2_raw": "Achean League",
+            "winner_raw": "Rome",
+            "loser_raw": "Achean League",
+            "seshat_side_1_candidates": ("it_roman_rep_2",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Roman-Achean War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "achean league": "clio_q244796_bce279_0be1ca53",
+        },
+        "review": {
+            "event_date": "146 BCE",
+            "source_urls": (
+                "https://www.theoi.com/Text/Pausanias7A.html",
+                "https://sourcebooks.web.fordham.edu/ancient/polybius-corinth146.asp",
+            ),
+        },
+    },
+    "hced-Muthul-108-1": {
+        "fingerprint": {
+            "source_row": "11003",
+            "source_record_id": "Muthul-108",
+            "name": "Muthul",
+            "year_low": "-108",
+            "year_best": "-108",
+            "year_high": "-108",
+            "side_1_raw": "Rome",
+            "side_2_raw": "Numidia",
+            "winner_raw": "Rome",
+            "loser_raw": "Numidia",
+            "seshat_side_1_candidates": ("it_roman_rep_3",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Jugurthine War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "numidia": "clio_dz_numidia_bce197_0f528fc7",
+        },
+        "event_year_override": {
+            "year_low": -109,
+            "year_best": -108,
+            "year_high": -108,
+        },
+        "review": {
+            "event_date": "109-108 BCE",
+            "source_urls": (
+                "https://penelope.uchicago.edu/Thayer/e/roman/texts/sallust/bellum_jugurthinum/2%2A.html",
+                "https://penelope.uchicago.edu/Thayer/E/Journals/CJ/6/7/Chronology_of_Sallusts_Jugurtha%2A.html",
+            ),
+        },
+    },
+    "hced-Suthul-109-1": {
+        "fingerprint": {
+            "source_row": "15373",
+            "source_record_id": "Suthul-109",
+            "name": "Suthul",
+            "year_low": "-109",
+            "year_best": "-109",
+            "year_high": "-109",
+            "side_1_raw": "Numidia",
+            "side_2_raw": "Rome",
+            "winner_raw": "Numidia",
+            "loser_raw": "Rome",
+            "seshat_side_1_candidates": ("dz_numidia",),
+            "seshat_side_2_candidates": ("it_roman_rep_3",),
+            "war_names": ("Jugurthine War",),
+        },
+        "code_bindings": {},
+        "event_year_override": {
+            "year_low": -110,
+            "year_best": -109,
+            "year_high": -109,
+        },
+        "review": {
+            "event_date": "110-109 BCE",
+            "source_urls": (
+                "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Sallust/Bellum_Jugurthinum/2%2A.html",
+                "https://penelope.uchicago.edu/Thayer/E/Journals/CJ/6/7/Chronology_of_Sallusts_Jugurtha%2A.html",
+            ),
+        },
+    },
+    "hced-Thala-107-1": {
+        "fingerprint": {
+            "source_row": "15837",
+            "source_record_id": "Thala-107",
+            "name": "Thala",
+            "year_low": "-107",
+            "year_best": "-107",
+            "year_high": "-107",
+            "side_1_raw": "Rome",
+            "side_2_raw": "Numidia",
+            "winner_raw": "Rome",
+            "loser_raw": "Numidia",
+            "seshat_side_1_candidates": ("it_roman_rep_3",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Jugurthine War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "numidia": "clio_dz_numidia_bce197_0f528fc7",
+        },
+        "event_year_override": {
+            "year_low": -108,
+            "year_best": -107,
+            "year_high": -107,
+        },
+        "canonical_event_override": {
+            "name": "Siege of Thala",
+        },
+        "review": {
+            "event_date": "108-107 BCE",
+            "source_urls": (
+                "https://penelope.uchicago.edu/Thayer/e/roman/texts/sallust/bellum_jugurthinum/2%2A.html",
+                "https://penelope.uchicago.edu/Thayer/E/Journals/CJ/6/7/Chronology_of_Sallusts_Jugurtha%2A.html",
+            ),
+        },
+    },
 }
 
 

@@ -550,14 +550,14 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_502)
+        self.assertEqual(len(self.events), 5_506)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2_515)
+        self.assertEqual(len(label), 2_519)
         self.assertEqual(len(crosswalk), 1_826)
         self.assertEqual(
             sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 66

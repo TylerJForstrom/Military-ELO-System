@@ -49,7 +49,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_502)
+        self.assertEqual(len(self.events), 5_506)
         self.assertEqual(len(self.entities), 1_080)
         self.assertEqual(len(self.registry_by_id), 2_419)
         self.assertEqual(
@@ -305,7 +305,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("hari_ram_gupta_history_sikhs_vol2", "khushwant_singh_banda_bahadur_chapter", "mirza_muhammad_harisi_ibratnamah"): 1,
             ("harvard_imperiia_riga", "springer_riga_capitulation"): 1,
             ("hayavadana_rao_history_mysore_1945", "tamil_nadu_arcot_municipality_history"): 1,
-            ("hced",): 4724,
+            ("hced",): 4728,
             ("henry_atkinson_bad_axe_primary_account", "patrick_jung_black_hawk_war_monograph", "sac_and_fox_nation_bad_axe_history", "us_army_cmh_black_hawk_campaign", "wisconsin_shpo_historic_indians_context"): 1,
             ("herath_kandy_1803_massacre_2024", "johnston_candy_expedition_narrative_1810", "powell_kandyan_wars_1973", "sivasundaram_tales_land_2007"): 1,
             ("heritage_malta_napoleon_invasion_document", "knobler_holy_wars_2006"): 1,
@@ -526,7 +526,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_502)
+        self.assertEqual(len(self.results["events"]), 5_506)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]

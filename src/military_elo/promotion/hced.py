@@ -132,6 +132,18 @@ def _validate_hced_crosswalk_review_bindings(
                     f"invalid HCED reviewed policy for {candidate_id}: inverted "
                     "event-year override"
                 )
+        event_override = contract.get("canonical_event_override")
+        if event_override is not None:
+            if set(event_override) != {"name"}:
+                raise ValueError(
+                    f"invalid HCED reviewed policy for {candidate_id}: canonical "
+                    "event override must declare name"
+                )
+            if not str(event_override["name"]).strip():
+                raise ValueError(
+                    f"invalid HCED reviewed policy for {candidate_id}: canonical "
+                    "event override name must be nonempty"
+                )
         rows = rows_by_id.get(candidate_id, [])
         if not rows:
             if require_complete:
@@ -227,9 +239,26 @@ def promote_hced_crosswalk_rows(
         if candidate.get("year_low") is None or candidate.get("year_high") is None:
             rejections["missing_or_invalid_year"] += 1
             continue
-        low_year = int(candidate["year_low"])
-        best_year = int(candidate["year_best"])
-        high_year = int(candidate["year_high"])
+        year_override = (
+            identity_policy.get("event_year_override")
+            if identity_policy is not None
+            else None
+        )
+        low_year = int(
+            year_override["year_low"]
+            if year_override is not None
+            else candidate["year_low"]
+        )
+        best_year = int(
+            year_override["year_best"]
+            if year_override is not None
+            else candidate["year_best"]
+        )
+        high_year = int(
+            year_override["year_high"]
+            if year_override is not None
+            else candidate["year_high"]
+        )
         side_a_codes = _deduplicate(
             map(str, candidate.get("seshat_side_1_candidates", []))
         )
