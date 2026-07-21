@@ -420,17 +420,17 @@ class Wave8EtruriaTests(unittest.TestCase):
             },
         )
         coverage = self.registry["coverage"]
-        self.assertEqual(len(self.release_entities), 1_070)
-        self.assertEqual(len(self.release_events), 5_487)
-        self.assertEqual(len(self.registry["entities"]), 2_409)
-        self.assertEqual(coverage["rated_entities"], 1_063)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_856)
+        self.assertEqual(len(self.release_entities), 1_080)
+        self.assertEqual(len(self.release_events), 5_502)
+        self.assertEqual(len(self.registry["entities"]), 2_419)
+        self.assertEqual(coverage["rated_entities"], 1_073)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_841)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_220)
+        self.assertEqual(location["hced_candidate_bindings"], 5_235)
         self.assertEqual(location["candidate_keyed_reviewed_contracts"], 833)
-        self.assertEqual(location["geojson_points"], 4_819)
-        self.assertEqual(location["modern_location_country_assertions"], 5_125)
-        self.assertEqual(location["location_provenance_objects"], 5_174)
+        self.assertEqual(location["geojson_points"], 4_834)
+        self.assertEqual(location["modern_location_country_assertions"], 5_140)
+        self.assertEqual(location["location_provenance_objects"], 5_189)
         self.assertEqual(location["point_fields_withheld_by_quarantine"], 401)
         self.assertEqual(location["unique_events_with_any_quarantined_field"], 449)
 

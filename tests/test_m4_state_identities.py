@@ -324,6 +324,15 @@ class StateCodePolicyTests(unittest.TestCase):
         "clio_cn_ming_dyn_1375_80721637",
         "nurhaci_hong_taiji_jin_state_1616_1636",
         "clio_cn_qing_dyn_1_1645_8a50480c",
+        "first_toungoo_empire_1530_1599",
+        "restored_toungoo_kingdom_1600_1752",
+        "konbaung_kingdom_1752_1885",
+        "ayutthaya_kingdom_1351_1767",
+        "rattanakosin_kingdom_1782_1932",
+        "longvek_cambodian_kingdom_1528_1594",
+        "first_ava_kingdom_1364_1555",
+        "tay_son_regime_1778_1802",
+        "kingdom_vientiane_1707_1828",
     })
 
     def test_every_policy_window_targets_an_existing_seed_identity(self) -> None:
@@ -462,7 +471,7 @@ class PipelineAsymmetryTests(unittest.TestCase):
 class CuratedExclusionTableTests(unittest.TestCase):
     def test_exclusion_tables_are_enumerated_and_documented(self) -> None:
         self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 86)
-        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 84)
+        self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 85)
         self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "17", "42"})
         self.assertLessEqual(
             {
@@ -541,14 +550,14 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_487)
+        self.assertEqual(len(self.events), 5_502)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
             for e in self.events
             if str(e["id"]).startswith("hced_") and e.get("identity_resolution") is None
         ]
-        self.assertEqual(len(label), 2_500)
+        self.assertEqual(len(label), 2_515)
         self.assertEqual(len(crosswalk), 1_826)
         self.assertEqual(
             sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 66
@@ -560,7 +569,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
             sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 8
         )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 1_063)
+        self.assertEqual(len(rated), 1_073)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -592,7 +601,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 2_409)
+        self.assertEqual(len(self.registry["entities"]), 2_419)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:

@@ -2202,5 +2202,145 @@
     "source_ids": [
       "project_continuity_policy"
     ]
+  },
+  {
+    "id": "filipe_de_brito_syrian_regime_1600_1613",
+    "name": "Filipe de Brito's Syriam Regime",
+    "kind": "warlord_state",
+    "start_year": 1600,
+    "end_year": 1613,
+    "region": "Syriam and the lower Irrawaddy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The autonomous fortified regime established at Syriam by Filipe de Brito e Nicote and destroyed by Anaukpetlun in 1613. The exact Syriam 1613 candidate binds its source label Portugal to this actor only after a complete row fingerprint check; no generic Portugal or Portuguese label resolves here, and no rating passes to the Portuguese Crown.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "first_toungoo_empire_1530_1599",
+    "name": "First Toungoo Empire",
+    "kind": "empire",
+    "start_year": 1530,
+    "end_year": 1599,
+    "region": "Mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The reunifying Toungoo state from Tabinshwehti's 1530 accession through the destruction of Nanda Bayin's kingdom in 1599. The bare HCED label Burma resolves here only through 1598; 1599 is deliberately left unresolved because the old empire and the emerging Nyaungyan state coexist within that year. No rating passes to the restored Toungoo or Konbaung states.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "restored_toungoo_kingdom_1600_1752",
+    "name": "Restored Toungoo Kingdom",
+    "kind": "kingdom",
+    "start_year": 1600,
+    "end_year": 1752,
+    "region": "Burma and adjacent mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Nyaungyan or restored Toungoo state centered on Ava from 1600 until Ava fell in 1752. The year 1752 is withheld from the bare Burma policy because the restored state ended and the Konbaung state began within that year. No rating crosses either boundary.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "konbaung_kingdom_1752_1885",
+    "name": "Konbaung Kingdom",
+    "kind": "kingdom",
+    "start_year": 1752,
+    "end_year": 1885,
+    "region": "Burma and adjacent mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The last Burmese monarchy, founded by Alaungpaya in 1752 and ended by the British conquest and King Thibaw's surrender in 1885. The bare Burma policy begins in 1753 to preserve the within-1752 dynastic boundary and ends in 1885; it never bridges into colonial Burma or a modern Myanmar identity.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "ayutthaya_kingdom_1351_1767",
+    "name": "Ayutthaya Kingdom",
+    "kind": "kingdom",
+    "start_year": 1351,
+    "end_year": 1767,
+    "region": "Siam and mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Siamese kingdom centered at Ayutthaya from its 1351 foundation through the Burmese destruction of the capital in 1767. It receives only time-valid bare Siam rows and passes no rating through the Thonburi interregnum or into the Rattanakosin kingdom.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "rattanakosin_kingdom_1782_1932",
+    "name": "Rattanakosin Kingdom",
+    "kind": "kingdom",
+    "start_year": 1782,
+    "end_year": 1932,
+    "region": "Siam and mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Siamese kingdom founded under Rama I at Bangkok in 1782 and ending with the 1932 constitutional transition. Bare Siam resolution begins in 1783 so a year-only 1782 row cannot silently cross the Thonburi-Rattanakosin boundary. No rating is inherited from Ayutthaya or passed to later Thailand regimes.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "longvek_cambodian_kingdom_1528_1594",
+    "name": "Cambodian Kingdom at Longvek",
+    "kind": "kingdom",
+    "start_year": 1528,
+    "end_year": 1594,
+    "region": "Cambodia and the lower Mekong",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The post-Angkor Cambodian kingdom centered at Longvek until the Siamese capture of the capital in 1594. The bare Cambodia policy stops at that fall; the factional Cambodian-Spanish conflict of 1599 remains staged instead of being bridged into this identity.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "first_ava_kingdom_1364_1555",
+    "name": "First Ava Kingdom",
+    "kind": "kingdom",
+    "start_year": 1364,
+    "end_year": 1555,
+    "region": "Upper Burma",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The first Ava polity from the foundation of Inwa in 1364 through its final conquest by Bayinnaung in 1555. The exact Ava label resolves only inside this interval and carries no rating into later Ava-centered restored Toungoo rule.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "tay_son_regime_1778_1802",
+    "name": "Tay Son Regime",
+    "kind": "revolutionary_state",
+    "start_year": 1778,
+    "end_year": 1802,
+    "region": "Vietnam and mainland Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Tay Son revolutionary state from Nguyen Nhac's imperial proclamation in 1778 through its defeat in 1802. The generic HCED spelling is admitted only for the audited 1785 Rach Gam-Xoai Mut engagement and does not create a bridge to generic Vietnam or later Vietnamese regimes.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_vientiane_1707_1828",
+    "name": "Kingdom of Vientiane",
+    "kind": "kingdom",
+    "start_year": 1707,
+    "end_year": 1828,
+    "region": "Vientiane and the middle Mekong",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The Vientiane successor kingdom of Lan Xang through the suppression of Chao Anouvong's revolt in 1828. The broad HCED label Laos resolves here only for the audited 1827 Nong Bua Lamphu engagement and never maps to modern Laos.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
   }
 ]

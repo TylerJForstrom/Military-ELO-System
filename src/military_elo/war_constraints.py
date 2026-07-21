@@ -111,6 +111,33 @@ def _valid_interval(row: Mapping[str, Any]) -> tuple[int, int] | None:
     return low, high
 
 
+def _effective_event_years(
+    row: Mapping[str, Any], *, project_policy: bool
+) -> tuple[int, int, int] | None:
+    """Return the event years seen by the release builder's HCED pass."""
+
+    interval = _valid_interval(row)
+    if interval is None or row.get("year_best") is None:
+        return None
+    low, high = interval
+    best = int(row["year_best"])
+    if project_policy:
+        binding = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(
+            hced_candidate_id(dict(row)), {}
+        )
+        override = binding.get("event_year_override")
+        if override is not None:
+            if set(override) != {"year_low", "year_best", "year_high"}:
+                raise ValueError("reviewed HCED event-year override is incomplete")
+            low, best, high = (
+                int(override[key])
+                for key in ("year_low", "year_best", "year_high")
+            )
+    if not low <= best <= high:
+        raise ValueError("reviewed HCED event years are inverted")
+    return low, best, high
+
+
 def _outcome_aligned(row: Mapping[str, Any]) -> bool:
     winner = normalize_label(row.get("winner_raw"))
     loser = normalize_label(row.get("loser_raw"))
@@ -366,7 +393,12 @@ def _resolve_side(
     *,
     project_policy: bool,
 ) -> dict[str, Any]:
-    low_year, high_year = _valid_interval(row) or (0, -1)
+    effective_years = _effective_event_years(row, project_policy=project_policy)
+    low_year, high_year = (
+        (effective_years[0], effective_years[2])
+        if effective_years is not None
+        else (0, -1)
+    )
     side_number = 1 if side_name == "side_1" else 2
     label = row.get(f"side_{side_number}_raw")
     normalized = normalize_label(label)
@@ -467,7 +499,28 @@ def _resolve_side(
             ),
         }
 
-    if project_policy:
+    reviewed_label_id = (
+        reviewed_binding.get("label_bindings", {}).get(normalized)
+        if reviewed_binding is not None
+        else None
+    )
+    if reviewed_label_id is not None:
+        entity = context["release_entities"].get(reviewed_label_id)
+        if entity is not None and _entity_covers(entity, low_year, high_year):
+            entity_id, polity, reason, tier = (
+                reviewed_label_id,
+                None,
+                None,
+                "candidate_reviewed_label_binding",
+            )
+        else:
+            entity_id, polity, reason, tier = (
+                None,
+                None,
+                "reviewed_identity_outside_interval",
+                None,
+            )
+    elif project_policy:
         entity_id, polity, reason, tier = resolve_wave6_pre1500_candidate_side_label(
             row,
             label,
@@ -557,7 +610,14 @@ def _prepare_observations(
 
     for row in hced_rows:
         candidate_id = hced_candidate_id(row)
-        interval = _valid_interval(row)
+        effective_years = _effective_event_years(
+            row, project_policy=project_policy
+        )
+        interval = (
+            (effective_years[0], effective_years[2])
+            if effective_years is not None
+            else None
+        )
         exact_contract = (
             WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS.get(candidate_id)
             if project_policy
@@ -583,7 +643,7 @@ def _prepare_observations(
             continue
         if set(sides[0]["entity_ids"]) & set(sides[1]["entity_ids"]):
             continue
-        event_key = _event_key(_row_display_name(row), int(row["year_best"]))
+        event_key = _event_key(_row_display_name(row), effective_years[1])
         if event_key in curated_seed_keys:
             continue
         accepted_ids.add(candidate_id)
@@ -598,7 +658,12 @@ def _prepare_observations(
             else None
         )
         if binding is not None:
-            reviewed_targets.update(map(str, binding["code_bindings"].values()))
+            reviewed_targets.update(
+                map(str, binding.get("code_bindings", {}).values())
+            )
+            reviewed_targets.update(
+                map(str, binding.get("label_bindings", {}).values())
+            )
         for side in sides:
             if len(side["entity_ids"]) != 1:
                 continue
@@ -635,7 +700,14 @@ def _classify_rows(
 
     for source_order, row in enumerate(hced_rows):
         candidate_id = hced_candidate_id(row)
-        interval = _valid_interval(row)
+        effective_years = _effective_event_years(
+            row, project_policy=project_policy
+        )
+        interval = (
+            (effective_years[0], effective_years[2])
+            if effective_years is not None
+            else None
+        )
         exact_contract = (
             WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS.get(candidate_id)
             if project_policy
@@ -650,7 +722,7 @@ def _classify_rows(
             "source_order": source_order,
             "name": _row_display_name(row),
             "year_low": interval[0] if interval else None,
-            "year_best": row.get("year_best"),
+            "year_best": effective_years[1] if effective_years else None,
             "year_high": interval[1] if interval else None,
             "war_keys": list(war_keys),
             "war_names": sorted({str(name).strip() for name in row.get("war_names", []) if str(name).strip()}),
@@ -711,8 +783,10 @@ def _classify_rows(
                 state["status"] = "label_other_staged"
                 state["row_failure_cases"].append("same_or_empty_opposing_side")
             else:
-                event_key = _event_key(state["name"], int(row["year_best"]))
-                label_key = _hced_label_row_key(row, state["name"], int(row["year_best"]))
+                event_key = _event_key(state["name"], int(state["year_best"]))
+                label_key = _hced_label_row_key(
+                    row, state["name"], int(state["year_best"])
+                )
                 if event_key in curated_seed_keys:
                     state["status"] = "label_other_staged"
                     state["row_failure_cases"].append("duplicate_of_curated_seed")

@@ -1516,6 +1516,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "ayutthaya_kingdom_1351_1767",
+      "name": "Ayutthaya Kingdom",
+      "kind": "kingdom",
+      "start_year": 1351,
+      "end_year": 1767,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Siam and mainland Southeast Asia"
+    },
+    {
       "id": "clio_th_ayutthaya_1352_775283ab",
       "name": "Ayutthaya Kingdom",
       "kind": "kingdom",
@@ -1524,7 +1534,8 @@
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "region": "Unclassified",
+      "retention_note": "source interval reaches 1768, beyond the curated Ayutthaya endpoint"
     },
     {
       "id": "ayyubid_aleppo_city_garrison_1260",
@@ -2634,8 +2645,9 @@
       "kind": "polity",
       "start_year": 1820,
       "end_year": 1989,
-      "status": "provisional",
+      "status": "unrated",
       "identity_status": "source_candidate",
+      "coverage_discontinuous": true,
       "region": "Unclassified"
     },
     {
@@ -2792,6 +2804,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "longvek_cambodian_kingdom_1528_1594",
+      "name": "Cambodian Kingdom at Longvek",
+      "kind": "kingdom",
+      "start_year": 1528,
+      "end_year": 1594,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cambodia and the lower Mekong"
     },
     {
       "id": "clio_ca_canada_dominion_1932_4993f47a",
@@ -6781,6 +6803,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "filipe_de_brito_syrian_regime_1600_1613",
+      "name": "Filipe de Brito's Syriam Regime",
+      "kind": "warlord_state",
+      "start_year": 1600,
+      "end_year": 1613,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Syriam and the lower Irrawaddy"
+    },
+    {
+      "id": "first_ava_kingdom_1364_1555",
+      "name": "First Ava Kingdom",
+      "kind": "kingdom",
+      "start_year": 1364,
+      "end_year": 1555,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Burma"
+    },
+    {
       "id": "clio_bg_bulgaria_early_682_95daf02a",
       "name": "First Bulgarian Empire",
       "kind": "empire",
@@ -6944,7 +6986,18 @@
       "status": "unrated",
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "region": "Unclassified",
+      "retention_note": "source envelope crosses the First and Restored Toungoo regimes and their deliberately unresolved transition years"
+    },
+    {
+      "id": "first_toungoo_empire_1530_1599",
+      "name": "First Toungoo Empire",
+      "kind": "empire",
+      "start_year": 1530,
+      "end_year": 1599,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mainland Southeast Asia"
     },
     {
       "id": "flemish_communal_army_courtrai_1302",
@@ -12899,6 +12952,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_vientiane_1707_1828",
+      "name": "Kingdom of Vientiane",
+      "kind": "kingdom",
+      "start_year": 1707,
+      "end_year": 1828,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vientiane and the middle Mekong"
+    },
+    {
       "id": "clio_gb_anglo_saxon_1_534_747d30b5",
       "name": "Kingdom of Wessex",
       "kind": "kingdom",
@@ -13044,6 +13107,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "konbaung_kingdom_1752_1885",
+      "name": "Konbaung Kingdom",
+      "kind": "kingdom",
+      "start_year": 1752,
+      "end_year": 1885,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Burma and adjacent mainland Southeast Asia"
     },
     {
       "id": "clio_q28233_1898_0157bcca",
@@ -13221,9 +13294,8 @@
       "kind": "polity",
       "start_year": 1363,
       "end_year": 1708,
-      "status": "unrated",
+      "status": "provisional",
       "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
       "region": "Unclassified"
     },
     {
@@ -18521,15 +18593,27 @@
       "region": "Unclassified"
     },
     {
+      "id": "rattanakosin_kingdom_1782_1932",
+      "name": "Rattanakosin Kingdom",
+      "kind": "kingdom",
+      "start_year": 1782,
+      "end_year": 1932,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Siam and mainland Southeast Asia"
+    },
+    {
       "id": "clio_q1155700_1783_21ca1eec",
       "name": "Rattanakosin Kingdom",
       "kind": "kingdom",
       "start_year": 1783,
       "end_year": 1931,
       "status": "unrated",
-      "identity_status": "source_candidate",
+      "identity_status": "superseded",
+      "superseded_by": "rattanakosin_kingdom_1782_1932",
       "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "region": "Unclassified",
+      "supersession_note": "The curated Rattanakosin identity fully contains this source proposal; its source ID is retained for auditability."
     },
     {
       "id": "red_cloud_agency_cheyenne_war_party_warbonnet_1876",
@@ -19581,6 +19665,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "restored_toungoo_kingdom_1600_1752",
+      "name": "Restored Toungoo Kingdom",
+      "kind": "kingdom",
+      "start_year": 1600,
+      "end_year": 1752,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Burma and adjacent mainland Southeast Asia"
     },
     {
       "id": "republic_haiti_reunified_1820_1849",
@@ -22771,6 +22865,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "tay_son_regime_1778_1802",
+      "name": "Tay Son Regime",
+      "kind": "revolutionary_state",
+      "start_year": 1778,
+      "end_year": 1802,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vietnam and mainland Southeast Asia"
+    },
+    {
       "id": "te_arawa_flying_column_1870",
       "name": "Te Arawa Flying Column",
       "kind": "indigenous_allied_force",
@@ -25447,15 +25551,15 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2409,
-    "rated_entities": 1063,
-    "rated_events": 5487,
+    "registry_polities": 2419,
+    "rated_entities": 1073,
+    "rated_events": 5502,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36856,
+    "unresolved_event_candidates": 36841,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
-    "provisional_hced_label_events": 2500,
+    "provisional_hced_label_events": 2515,
     "candidate_keyed_wave6_hced_events": 76,
     "candidate_keyed_wave7_root_hced_events": 62,
     "candidate_keyed_wave7_central_hced_events": 33,
@@ -25574,11 +25678,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5220,
+      "hced_candidate_bindings": 5235,
       "candidate_keyed_reviewed_contracts": 833,
-      "geojson_points": 4819,
-      "modern_location_country_assertions": 5125,
-      "location_provenance_objects": 5174,
+      "geojson_points": 4834,
+      "modern_location_country_assertions": 5140,
+      "location_provenance_objects": 5189,
       "point_fields_withheld_by_quarantine": 401,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
@@ -25588,7 +25692,7 @@
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
       "quarantine_policy_sha256": "4b47ac509695ed3eae88179e28626a607b347ead805f0bf81a37e8e68b87c6eb",
       "assertion_status": {
-        "unreviewed_source_assertion": 5174
+        "unreviewed_source_assertion": 5189
       },
       "verified_location_assertions": {
         "availability": "not_available",

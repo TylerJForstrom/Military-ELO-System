@@ -325,6 +325,7 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         "wave6_pre1500_candidate_policy",
         "wave7_candidate_keyed_exact",
         "candidate_reviewed_code_binding",
+        "candidate_reviewed_label_binding",
     }
 
     @classmethod
@@ -335,10 +336,10 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
-        self.assertEqual(len(label_events), 2_500)
+        self.assertEqual(len(label_events), 2_515)
         self.assertEqual(
             sum(e.get("identity_resolution") == "label" for e in label_events),
-            2_495,
+            2_510,
         )
         self.assertEqual(
             sum(

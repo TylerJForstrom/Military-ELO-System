@@ -601,6 +601,24 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1659, 1659, "clio_cn_qing_dyn_1_1645_8a50480c"),
         (1683, 1683, "clio_cn_qing_dyn_1_1645_8a50480c"),
     ),
+    # ---- Audited mainland Southeast Asia state tranche (2026-07-20) ----
+    # These labels name successive regimes in the queue, so each policy is
+    # authoritative and intentionally gapped at year-only transitions. Complete
+    # exact-label inventories are pinned in test_mainland_southeast_asia.py.
+    "burma": (
+        (1530, 1598, "first_toungoo_empire_1530_1599"),
+        (1600, 1751, "restored_toungoo_kingdom_1600_1752"),
+        (1753, 1885, "konbaung_kingdom_1752_1885"),
+    ),
+    "siam": (
+        (1351, 1767, "ayutthaya_kingdom_1351_1767"),
+        (1783, 1932, "rattanakosin_kingdom_1782_1932"),
+    ),
+    "cambodia": ((1528, 1594, "longvek_cambodian_kingdom_1528_1594"),),
+    "ava": ((1364, 1555, "first_ava_kingdom_1364_1555"),),
+    "qing": ((1767, 1768, "clio_cn_qing_dyn_1_1645_8a50480c"),),
+    "tay son": ((1785, 1785, "tay_son_regime_1778_1802"),),
+    "laos": ((1827, 1827, "kingdom_vientiane_1707_1828"),),
 }
 
 
@@ -792,6 +810,83 @@ HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
             ),
         },
     },
+    "hced-Syriam1613-1": {
+        "fingerprint": {
+            "source_row": "15439",
+            "source_record_id": "Syriam1613",
+            "name": "Syriam",
+            "year_low": "1613",
+            "year_best": "1613",
+            "year_high": "1613",
+            "side_1_raw": "Burma",
+            "side_2_raw": "Portugal",
+            "winner_raw": "Burma",
+            "loser_raw": "Portugal",
+            "seshat_side_1_candidates": (),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Burmese Dynastic Wars",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "portugal": "filipe_de_brito_syrian_regime_1600_1613",
+        },
+        "review": {
+            "event_date": "1613",
+            "source_urls": (
+                "https://digital.car.chula.ac.th/manusya/vol7/iss2/5/",
+                "https://soas-repository.worktribe.com/OutputFile/431615",
+            ),
+        },
+    },
+    "hced-Ayutthaya1568-1569-1": {
+        "fingerprint": {
+            "source_row": "1383",
+            "source_record_id": "Ayutthaya1568-1569",
+            "name": "Ayutthaya",
+            "year_low": "1568",
+            "year_best": "1568",
+            "year_high": "1568",
+            "side_1_raw": "Burma",
+            "side_2_raw": "Siam",
+            "winner_raw": "Burma",
+            "loser_raw": "Siam",
+            "seshat_side_1_candidates": (),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Burmese-Siamese Wars",),
+        },
+        "code_bindings": {},
+        "event_year_override": {
+            "year_low": 1568,
+            "year_best": 1569,
+            "year_high": 1569,
+        },
+        "review": {
+            "event_date": "1568-1569",
+            "source_urls": (
+                "https://go.ayutthaya.go.th/history-of-ayutthaya/",
+                "https://www.ayutthaya-history.com/files/EABT5_BrochurePM.pdf",
+            ),
+        },
+    },
+}
+
+
+# Preserve Cliopatria's broader or differently bounded proposals as explicit
+# registry records instead of silently collapsing them into the narrower
+# curated mainland-Southeast-Asia identities. The Rattanakosin proposal is
+# fully contained by the curated window and can be marked superseded; the two
+# retained proposals extend across an excluded year or multiple regimes.
+MAINLAND_SEA_REGISTRY_SUPERSESSIONS: dict[str, str] = {
+    "clio_q1155700_1783_21ca1eec": "rattanakosin_kingdom_1782_1932",
+}
+MAINLAND_SEA_REGISTRY_SOURCE_RETENTIONS: dict[str, str] = {
+    "clio_th_ayutthaya_1352_775283ab": (
+        "source interval reaches 1768, beyond the curated Ayutthaya endpoint"
+    ),
+    "clio_q23039102_1502_c7a7b849": (
+        "source envelope crosses the First and Restored Toungoo regimes and "
+        "their deliberately unresolved transition years"
+    ),
 }
 
 
@@ -1318,6 +1413,11 @@ IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
 # variants exact-key dedup cannot catch, one measured crosswalk error, and
 # rows whose "Viet Cong" side labels PAVN engagements.
 HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
+    "hced-Bangkok1688-1": (
+        "conflicting tactical evidence: a scholarly account describes a successful "
+        "French defense followed by a negotiated withdrawal, so the source's hard "
+        "Siamese victory remains staged rather than being silently accepted or inverted"
+    ),
     "hced-Sarhu1619-1": (
         "campaign umbrella overlaps the separately represented Niumaozhai and "
         "Siyanggiayan actions; rating all three would repeat the same Sarhu campaign result"

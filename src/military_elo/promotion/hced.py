@@ -99,12 +99,39 @@ def _validate_hced_crosswalk_review_bindings(
             *expected["seshat_side_1_candidates"],
             *expected["seshat_side_2_candidates"],
         }
-        unexpected_bindings = set(contract["code_bindings"]) - expected_codes
+        unexpected_bindings = set(contract.get("code_bindings", {})) - expected_codes
         if unexpected_bindings:
             raise ValueError(
                 f"invalid HCED reviewed policy for {candidate_id}: bindings name "
                 f"unpinned code(s) {sorted(unexpected_bindings)}"
             )
+        expected_labels = {
+            normalize_label(expected["side_1_raw"]),
+            normalize_label(expected["side_2_raw"]),
+        }
+        unexpected_labels = set(contract.get("label_bindings", {})) - expected_labels
+        if unexpected_labels:
+            raise ValueError(
+                f"invalid HCED reviewed policy for {candidate_id}: bindings name "
+                f"unpinned label(s) {sorted(unexpected_labels)}"
+            )
+        year_override = contract.get("event_year_override")
+        if year_override is not None:
+            override_keys = {"year_low", "year_best", "year_high"}
+            if set(year_override) != override_keys:
+                raise ValueError(
+                    f"invalid HCED reviewed policy for {candidate_id}: event-year "
+                    "override must declare low, best, and high years"
+                )
+            low, best, high = (
+                int(year_override[key])
+                for key in ("year_low", "year_best", "year_high")
+            )
+            if not low <= best <= high:
+                raise ValueError(
+                    f"invalid HCED reviewed policy for {candidate_id}: inverted "
+                    "event-year override"
+                )
         rows = rows_by_id.get(candidate_id, [])
         if not rows:
             if require_complete:

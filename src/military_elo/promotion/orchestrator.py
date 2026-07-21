@@ -72,6 +72,8 @@ from .policy import (
     IWD_COW_CODE_POLICIES,
     IWD_CURATED_PARENT_EXCLUSIONS,
     IWD_REVIEWED_PARENT_CONTRACTS,
+    MAINLAND_SEA_REGISTRY_SOURCE_RETENTIONS,
+    MAINLAND_SEA_REGISTRY_SUPERSESSIONS,
     SEED_EVENT_INTERVAL_EXEMPTIONS,
     UCDP_ACTOR_PARTY_POLICIES,
     UCDP_CURATED_EXCLUSIONS,
@@ -2796,7 +2798,7 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_445 + len(pre1500_candidate_ids),
+        2_460 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -3414,7 +3416,10 @@ def build_expanded_release(
     # interval checks without adding their aliases to the generic label index.
     composite_identity_supersessions: dict[str, tuple[str, ...]] = {
         str(source_id): (str(target_id),)
-        for source_id, target_id in WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.items()
+        for source_id, target_id in {
+            **WAVE6_PRE1500_REGISTRY_SUPERSESSIONS,
+            **MAINLAND_SEA_REGISTRY_SUPERSESSIONS,
+        }.items()
     }
     for candidate_id, replacement_ids in wave7_global_registry_supersessions.items():
         contract = WAVE7_GLOBAL_SUPERSESSIONS[candidate_id]
@@ -3524,8 +3529,65 @@ def build_expanded_release(
         )
         return entity_id, polity, reason, "seshat_crosswalk"
 
+    def resolve_hced_candidate_side_label(
+        candidate: dict[str, Any],
+        label: Any,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, dict[str, Any] | None, str | None, str | None]:
+        candidate_id = hced_candidate_id(candidate)
+        reviewed = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(candidate_id, {})
+        expected_id = reviewed.get("label_bindings", {}).get(
+            normalize_label(label)
+        )
+        if expected_id is not None:
+            entity_id, polity = resolve_reviewed_identity(
+                expected_id, low_year, high_year
+            )
+            if entity_id != expected_id:
+                raise ValueError(
+                    f"stale HCED reviewed label policy for {candidate_id}: "
+                    f"exact-ID resolver returned {entity_id!r} for {label!r}; "
+                    f"expected {expected_id!r}"
+                )
+            return entity_id, polity, None, "candidate_reviewed_label_binding"
+        return resolve_wave6_pre1500_candidate_side_label(
+            candidate,
+            label,
+            low_year,
+            high_year,
+            label_context,
+            lambda generic_label, generic_low, generic_high: (
+                resolve_hced_side_label(
+                    generic_label,
+                    generic_low,
+                    generic_high,
+                    label_context,
+                )
+            ),
+        )
+
+    reviewed_label_rows: list[dict[str, Any]] = []
+    for candidate in deferred_label_rows:
+        reviewed = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(
+            hced_candidate_id(candidate), {}
+        )
+        override = reviewed.get("event_year_override")
+        if override is None:
+            reviewed_label_rows.append(candidate)
+            continue
+        corrected = dict(candidate)
+        corrected.update(
+            {
+                "year_low": int(override["year_low"]),
+                "year_best": int(override["year_best"]),
+                "year_high": int(override["year_high"]),
+            }
+        )
+        reviewed_label_rows.append(corrected)
+
     hced_label_pass = promote_hced_label_rows(
-        deferred_label_rows,
+        reviewed_label_rows,
         curated_seed_keys,
         promoted_hced_keys,
         lambda code, low_year, high_year: _resolve_code(
@@ -3535,23 +3597,7 @@ def build_expanded_release(
             label, low_year, high_year, label_context
         ),
         resolve_candidate_code=resolve_hced_candidate_code,
-        resolve_candidate_side_label=lambda candidate, label, low_year, high_year: (
-            resolve_wave6_pre1500_candidate_side_label(
-                candidate,
-                label,
-                low_year,
-                high_year,
-                label_context,
-                lambda generic_label, generic_low, generic_high: (
-                    resolve_hced_side_label(
-                        generic_label,
-                        generic_low,
-                        generic_high,
-                        label_context,
-                    )
-                ),
-            )
-        ),
+        resolve_candidate_side_label=resolve_hced_candidate_side_label,
         canonicalize_composite_identity=canonicalize_composite_identity,
     )
     label_events: list[dict[str, Any]] = hced_label_pass["events"]
@@ -7376,7 +7422,10 @@ def build_expanded_release(
                 superseded_row["superseded_by"] = global_replacements[0]
             registry_entities[entity_id] = superseded_row
             continue
-        superseded_by = WAVE6_PRE1500_REGISTRY_SUPERSESSIONS.get(entity_id)
+        superseded_by = {
+            **WAVE6_PRE1500_REGISTRY_SUPERSESSIONS,
+            **MAINLAND_SEA_REGISTRY_SUPERSESSIONS,
+        }.get(entity_id)
         if superseded_by:
             replacement = registry_entities.get(superseded_by)
             if replacement is None:
@@ -7393,7 +7442,19 @@ def build_expanded_release(
                     f"registry supersession identity drift: {entity_id} -> "
                     f"{superseded_by}"
                 )
-            registry_entities[entity_id] = {
+            if (
+                entity_id in MAINLAND_SEA_REGISTRY_SUPERSESSIONS
+                and not _entity_covers(
+                    replacement,
+                    int(candidate["start_year"]),
+                    int(candidate["end_year"]),
+                )
+            ):
+                raise ValueError(
+                    "mainland Southeast Asia registry supersession does not "
+                    f"cover its source interval: {entity_id} -> {superseded_by}"
+                )
+            superseded_row = {
                 "id": entity_id,
                 "name": str(candidate["canonical_name_candidate"]),
                 "kind": _infer_kind(str(candidate["canonical_name_candidate"])),
@@ -7408,24 +7469,34 @@ def build_expanded_release(
                 > 1,
                 "region": "Unclassified",
             }
+            if entity_id in MAINLAND_SEA_REGISTRY_SUPERSESSIONS:
+                superseded_row["supersession_note"] = (
+                    "The curated Rattanakosin identity fully contains this source "
+                    "proposal; its source ID is retained for auditability."
+                )
+            registry_entities[entity_id] = superseded_row
             continue
         if entity_id in registry_entities:
             continue
-        mapped_seed = _candidate_policy_seed(candidate, seed_by_id)
-        if not mapped_seed:
-            name_matches = seed_label_index.get(
-                normalize_label(candidate.get("canonical_name_candidate")), set()
-            )
-            if len(name_matches) == 1:
-                named_seed = next(iter(name_matches))
-                named_entity = seed_by_id.get(named_seed)
-                # A name match alone must not bridge eras: a same-named polity
-                # from a different century keeps its own registry row.
-                if named_entity and _candidate_overlaps_entity(candidate, named_entity):
-                    mapped_seed = named_seed
+        mapped_seed = None
+        if entity_id not in MAINLAND_SEA_REGISTRY_SOURCE_RETENTIONS:
+            mapped_seed = _candidate_policy_seed(candidate, seed_by_id)
+            if not mapped_seed:
+                name_matches = seed_label_index.get(
+                    normalize_label(candidate.get("canonical_name_candidate")), set()
+                )
+                if len(name_matches) == 1:
+                    named_seed = next(iter(name_matches))
+                    named_entity = seed_by_id.get(named_seed)
+                    # A name match alone must not bridge eras: a same-named polity
+                    # from a different century keeps its own registry row.
+                    if named_entity and _candidate_overlaps_entity(
+                        candidate, named_entity
+                    ):
+                        mapped_seed = named_seed
         if mapped_seed and mapped_seed in registry_entities:
             continue
-        registry_entities[entity_id] = {
+        candidate_row = {
             "id": entity_id,
             "name": str(candidate["canonical_name_candidate"]),
             "kind": _infer_kind(str(candidate["canonical_name_candidate"])),
@@ -7441,6 +7512,10 @@ def build_expanded_release(
             > 1,
             "region": "Unclassified",
         }
+        retention_note = MAINLAND_SEA_REGISTRY_SOURCE_RETENTIONS.get(entity_id)
+        if retention_note:
+            candidate_row["retention_note"] = retention_note
+        registry_entities[entity_id] = candidate_row
 
     registry_rows = sorted(
         registry_entities.values(),

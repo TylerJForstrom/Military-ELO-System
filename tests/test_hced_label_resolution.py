@@ -1425,6 +1425,7 @@ class ReleaseArtifactTests(unittest.TestCase):
                         "wave6_pre1500_candidate_policy",
                         "wave7_candidate_keyed_exact",
                         "candidate_reviewed_code_binding",
+                        "candidate_reviewed_label_binding",
                     },
                 )
             # At least one side is label- or reviewed-candidate-resolved on
@@ -1552,10 +1553,10 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 8 rows:
-        # 1,514 + 2,980 + 1,887 + 2,500 == 8,881.
+        # 1,514 + 2,965 + 1,887 + 2,515 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (1514, 2980, 1887, 2500, 8881),
+            (1514, 2965, 1887, 2515, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
@@ -1569,7 +1570,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 84
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 85
         )
         self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 158)
         # uncoded_side is gone from pass 1: replaced by the deferral.
@@ -1580,7 +1581,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_500)
+        self.assertEqual(len(label_events), 2_515)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)
