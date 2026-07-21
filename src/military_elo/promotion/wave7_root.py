@@ -344,7 +344,10 @@ WAVE7_ROOT_ENTITIES: tuple[dict[str, Any], ...] = (
         1956,
         "Middle East",
         ("wave7_nam_syria",),
-        "Transjordan's Arab Legion, used only in an exact 1941 coalition contract.",
+        (
+            "Transjordan's Arab Legion, used only in the exact reviewed 1941 "
+            "coalition contract and fingerprinted 1948 Latrun contracts."
+        ),
     ),
 )
 

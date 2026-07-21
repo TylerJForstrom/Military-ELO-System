@@ -49,9 +49,9 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_456)
-        self.assertEqual(len(self.entities), 1_049)
-        self.assertEqual(len(self.registry_by_id), 2_397)
+        self.assertEqual(len(self.events), 5_466)
+        self.assertEqual(len(self.entities), 1_051)
+        self.assertEqual(len(self.registry_by_id), 2_398)
         self.assertEqual(
             families,
             {
@@ -491,6 +491,11 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("maharashtra_akola_district_gazetteer", "maharashtra_state_history_maratha_period"): 2,
             ("marine_corps_history_division_obannon", "naval_history_and_heritage_command_derna"): 1,
             ("museum_park_kalkriese_varus_battle", "oxford_cartography_resistance_arminius"): 1,
+            ("army_upress_beckenbaugh_genghis_khan", "campbell_otrar_archaeology_2020", "juvaini_history_world_conqueror_boyle"): 1,
+            ("army_upress_beckenbaugh_genghis_khan", "iranica_bosworth_jalal_al_din", "juvaini_history_world_conqueror_boyle"): 2,
+            ("army_upress_beckenbaugh_genghis_khan", "juvaini_history_world_conqueror_boyle"): 3,
+            ("davidson_island_of_formosa_1903", "jacar_sino_japanese_war_archives"): 2,
+            ("hughes_glubb_arab_legion_2018", "rodman_victory_defeat_or_draw_2021"): 2,
             },
         )
         hced_candidates = {
@@ -517,7 +522,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_456)
+        self.assertEqual(len(self.results["events"]), 5_466)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -596,10 +601,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_528)
+        self.assertEqual(len(self.sources), 1_538)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_259,
+            1_269,
         )
         new_source_ids = {
             "colombia_constitution_1863",

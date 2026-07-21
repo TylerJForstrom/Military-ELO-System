@@ -3383,6 +3383,22 @@
     ]
   },
   {
+    "id": "clio_tm_khwarezmid_emp_1202_3ad0d483",
+    "name": "Khwarezmid Empire",
+    "kind": "empire",
+    "start_year": 1202,
+    "end_year": 1235,
+    "region": "Khwarazm, Transoxiana, Khorasan, and Iran",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated from the matching time-bounded Cliopatria candidate while retaining its 1202-1235 source window exactly. Only fingerprinted, candidate-keyed events may use this identity: no spelling of Khwarazm becomes a resolver alias, predecessors inherit no Elo, and the post-imperial Khwarazmian mercenary force at Jerusalem in 1244 is explicitly excluded.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+      "wave8_khwarazmian_mongol_iranica_bosworth_jalal"
+    ]
+  },
+  {
     "id": "latin_kingdom_thessalonica_1204_1224",
     "name": "Latin Kingdom of Thessalonica (1204-1224)",
     "kind": "crusader_successor_polity",
@@ -13182,6 +13198,21 @@
     ]
   },
   {
+    "id": "republic_of_formosa_1895",
+    "name": "Republic of Formosa",
+    "kind": "unrecognized_republic",
+    "start_year": 1895,
+    "end_year": 1895,
+    "region": "Taiwan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The year envelope represents only the short-lived Republic of Formosa: Tang Jingsong was inaugurated on 25 May 1895 and Japanese forces entered Tainan on 21 October, terminating the republic. Only the two fingerprinted post-proclamation battles in this lane activate its Elo. No rating is inherited from Qing Taiwan, local militias, later anti-Japanese resistance, Japanese Taiwan, or any modern Taiwan polity.",
+    "source_ids": [
+      "wave8_republic_formosa_jacar_campaign",
+      "wave8_republic_formosa_ntm_flag"
+    ]
+  },
+  {
     "id": "philippine_revolutionary_forces",
     "name": "Philippine Revolutionary Forces",
     "kind": "revolutionary_force",
@@ -14252,7 +14283,7 @@
     "region": "Middle East",
     "aliases": [],
     "predecessors": [],
-    "continuity_note": "Transjordan's Arab Legion, used only in an exact 1941 coalition contract. No rating is inherited by a predecessor or successor.",
+    "continuity_note": "Transjordan's Arab Legion, used only in the exact reviewed 1941 coalition contract and fingerprinted 1948 Latrun contracts. No rating is inherited by a predecessor or successor.",
     "source_ids": [
       "wave7_nam_syria"
     ]

@@ -13457,6 +13457,75 @@
     ]
   },
   {
+    "id": "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+    "title": "Terry Beckenbaugh, Genghis Khan, in Great Commanders",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/GreatCommanders.pdf",
+    "publisher": "Combat Studies Institute Press, US Army Combined Arms Center",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_chapter",
+    "accessed": "2026-07-20",
+    "source_family_id": "army_upress_beckenbaugh_genghis_khan",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+    "title": "The Cambridge History of Iran, Volume 5: The Saljuq and Mongol Periods",
+    "url": "https://www.cambridge.org/core/books/the-cambridge-history-of-iran/D0BEE51C0C239F497ADBC0CA18796A5B",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_reference_volume",
+    "accessed": "2026-07-20",
+    "source_family_id": "cambridge_history_iran_volume_5",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_khwarazmian_mongol_cambridge_otrar_campbell",
+    "title": "Katie Campbell, The City of Otrar, Kazakhstan: Using Archaeology to Better Understand the Impact of the Mongol Conquest of Central Asia",
+    "url": "https://doi.org/10.17863/CAM.87960",
+    "publisher": "Harrassowitz Verlag / University of Cambridge Apollo Repository",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeology_article",
+    "accessed": "2026-07-20",
+    "source_family_id": "campbell_otrar_archaeology_2020",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_khwarazmian_mongol_iranica_bosworth_jalal",
+    "title": "C. E. Bosworth, Jalal-al-Din Khvarazmsah Mengubirni",
+    "url": "https://www.iranicaonline.org/articles/jalal-al-din-kvarazmsahi-mengbirni/",
+    "publisher": "Encyclopaedia Iranica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_encyclopedia",
+    "accessed": "2026-07-20",
+    "source_family_id": "iranica_bosworth_jalal_al_din",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_khwarazmian_mongol_juvaini_boyle",
+    "title": "Ata-Malik Juvaini, The History of the World-Conqueror, Volume I, translated by John Andrew Boyle",
+    "url": "https://archive.org/details/historyoftheworl011691mbp",
+    "publisher": "Manchester University Press / Harvard University Press",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle_scholarly_edition",
+    "accessed": "2026-07-20",
+    "source_family_id": "juvaini_history_world_conqueror_boyle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_kickapoo_connole_tonkawa",
     "title": "A Terrible Truth: The Tonkawa Massacre of 1862",
     "url": "https://gateway.okhistory.org/ark:/67531/metadc2017477/",
@@ -14155,6 +14224,36 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_latrun_hughes_conduct_operations",
+    "title": "The Conduct of Operations: Glubb Pasha, the Arab Legion, and the First Arab-Israeli War, 1948-49",
+    "url": "https://bura.brunel.ac.uk/handle/2438/16047",
+    "publisher": "War in History / Brunel University Research Archive",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_article",
+    "accessed": "2026-07-20",
+    "source_family_id": "hughes_glubb_arab_legion_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_latrun_rodman_battle_chapter",
+    "title": "The Battle of Latrun",
+    "url": "https://www.jstor.org/stable/j.ctv333ktt8.7",
+    "publisher": "Liverpool University Press / JSTOR",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-20",
+    "source_family_id": "rodman_victory_defeat_or_draw_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -17669,6 +17768,47 @@
       "identity_boundary_or_context_reference",
       "outcome",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_republic_formosa_davidson_campaign",
+    "title": "James W. Davidson, The Island of Formosa, Past and Present (1903), chapters on the Japanese occupation of north and mid Formosa",
+    "url": "https://archive.org/details/islandofformosap00davi",
+    "publisher": "Macmillan & Co.; Internet Archive scan from University of California",
+    "license": "Citation and link only",
+    "source_type": "contemporary_historical_monograph",
+    "accessed": "2026-07-20",
+    "source_family_id": "davidson_island_of_formosa_1903",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_republic_formosa_jacar_campaign",
+    "title": "The Sino-Japanese War of 1894-1895: Taiwan, the Republic of Formosa, and the fighting at Keelung and Changhua",
+    "url": "https://www.jacar.go.jp/english/exhibition/jacarbl-fsjwar-e/smart/about/p005.html",
+    "publisher": "Japan Center for Asian Historical Records, National Archives of Japan",
+    "license": "Citation and link only",
+    "source_type": "official_archival_exhibition",
+    "accessed": "2026-07-20",
+    "source_family_id": "jacar_sino_japanese_war_archives",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_republic_formosa_ntm_flag",
+    "title": "The Flag of the Formosan Republic",
+    "url": "https://www.ntm.gov.tw/en/News_Content2.aspx?n=5699&s=149444",
+    "publisher": "National Taiwan Museum",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-20",
+    "source_family_id": "national_taiwan_museum_formosan_republic",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
     ]
   },
   {

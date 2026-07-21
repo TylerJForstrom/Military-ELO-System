@@ -11212,10 +11212,9 @@
       "kind": "empire",
       "start_year": 1202,
       "end_year": 1235,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Khwarazm, Transoxiana, Khorasan, and Iran"
     },
     {
       "id": "kickapoo_town_allied_indigenous_mexican_fighting_force_1838",
@@ -18891,6 +18890,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "republic_of_formosa_1895",
+      "name": "Republic of Formosa",
+      "kind": "unrecognized_republic",
+      "start_year": 1895,
+      "end_year": 1895,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Taiwan"
+    },
+    {
       "id": "republic_geneva_1536_1798",
       "name": "Republic of Geneva (1536-1798)",
       "kind": "sovereign_city_republic",
@@ -25336,11 +25345,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2397,
-    "rated_entities": 1042,
-    "rated_events": 5456,
+    "registry_polities": 2398,
+    "rated_entities": 1044,
+    "rated_events": 5466,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36887,
+    "unresolved_event_candidates": 36877,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25448,6 +25457,9 @@
     "candidate_keyed_wave8_macedon_hced_events": 4,
     "candidate_keyed_wave8_uzbeks_hced_events": 5,
     "candidate_keyed_wave8_etruria_hced_events": 4,
+    "candidate_keyed_wave8_khwarazmian_mongol_hced_events": 6,
+    "candidate_keyed_wave8_latrun_hced_events": 2,
+    "candidate_keyed_wave8_republic_formosa_hced_events": 2,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 66,
     "provisional_iwbd_battles": 153,
@@ -25458,21 +25470,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5189,
-      "candidate_keyed_reviewed_contracts": 818,
+      "hced_candidate_bindings": 5199,
+      "candidate_keyed_reviewed_contracts": 828,
       "geojson_points": 4803,
-      "modern_location_country_assertions": 5094,
-      "location_provenance_objects": 5143,
-      "point_fields_withheld_by_quarantine": 386,
+      "modern_location_country_assertions": 5104,
+      "location_provenance_objects": 5153,
+      "point_fields_withheld_by_quarantine": 396,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 434,
-      "point_quarantine_candidate_manifest_sha256": "652fc8cea2e616e6cdaff865230791e83226bcadbb6da98f563ee9b64af571ef",
+      "unique_events_with_any_quarantined_field": 444,
+      "point_quarantine_candidate_manifest_sha256": "3a4c27d312be72a7d488671bc0ab6a9ddb0be5b8ca833a1915f029f97b147312",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "11a4300ab134cf2bf27b1ec4fc718468e7bc785bbacbf55f3403098fd9c55e0e",
+      "quarantine_policy_sha256": "1877c1573359eb1567ee23e1e070b014f595435e68da1938982c722dda9ea42c",
       "assertion_status": {
-        "unreviewed_source_assertion": 5143
+        "unreviewed_source_assertion": 5153
       },
       "verified_location_assertions": {
         "availability": "not_available",

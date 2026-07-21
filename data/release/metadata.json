@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1049,
-    "events": 5456,
-    "sources": 1528,
-    "registry_polities": 2397
+    "entities": 1051,
+    "events": 5466,
+    "sources": 1538,
+    "registry_polities": 2398
   },
   "year_range": {
     "start": -1274,
@@ -178,6 +178,9 @@
     "accepted_wave8_macedon_hced_events": 4,
     "accepted_wave8_uzbeks_hced_events": 5,
     "accepted_wave8_etruria_hced_events": 4,
+    "accepted_wave8_khwarazmian_mongol_hced_events": 6,
+    "accepted_wave8_latrun_hced_events": 2,
+    "accepted_wave8_republic_formosa_hced_events": 2,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -21495,7 +21498,664 @@
     "wave8_etruria_country_quarantine_additions": [],
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
-    "hced_label_pass_input_rows": 5515,
+    "wave8_khwarazmian_mongol_metadata": {
+      "counts": {
+        "country_quarantine_additions": 0,
+        "discovery_nonrating_twins": 6,
+        "holds": 10,
+        "new_entities": 1,
+        "new_sources": 5,
+        "newly_rated_events": 6,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 6,
+        "promotion_contracts": 6,
+        "reviewed_hced_rows": 16,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "campaign_date_or_counterpart_holds_1205_1218": 2,
+        "mongol_invasion_massacre_scope_holds_1220_1221": 4,
+        "mongol_invasion_promotions_1219_1221": 6,
+        "post_empire_mercenary_hold_1244": 1,
+        "pre_empire_identity_holds_1017_1194": 3
+      },
+      "final_audit_signature": "d13cb22fa3d10d0cd1e60228cf134925ef2b08c2fc51ea229d3e2212fad92cde",
+      "promoted_candidate_ids": [
+        "hced-Bokhara1220-1",
+        "hced-Indus1221-1",
+        "hced-Khojend1220-1",
+        "hced-Otrar1219-1",
+        "hced-Parwan Durrah1221-1",
+        "hced-Samarkand1220-1"
+      ],
+      "hold_candidate_ids": [
+        "hced-Andkhui1205-1",
+        "hced-Bamian1221-1",
+        "hced-Dabusiyya1032-1",
+        "hced-Gurganj1221-1",
+        "hced-Hamadan1220-1",
+        "hced-Hazarasp1017-1",
+        "hced-Jand1218-1",
+        "hced-Jerusalem1244-1",
+        "hced-Merv1221-1",
+        "hced-Shahr Rey1194-1"
+      ],
+      "discovery_nonrating_candidate_ids": [
+        "Q110970851",
+        "Q111943842",
+        "Q136332981",
+        "Q3269746",
+        "Q3269760",
+        "Q7510363"
+      ]
+    },
+    "wave8_khwarazmian_mongol_counts": {
+      "country_quarantine_additions": 0,
+      "discovery_nonrating_twins": 6,
+      "holds": 10,
+      "new_entities": 1,
+      "new_sources": 5,
+      "newly_rated_events": 6,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 6,
+      "promotion_contracts": 6,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 0
+    },
+    "wave8_khwarazmian_mongol_cohort_counts": {
+      "campaign_date_or_counterpart_holds_1205_1218": 2,
+      "mongol_invasion_massacre_scope_holds_1220_1221": 4,
+      "mongol_invasion_promotions_1219_1221": 6,
+      "post_empire_mercenary_hold_1244": 1,
+      "pre_empire_identity_holds_1017_1194": 3
+    },
+    "wave8_khwarazmian_mongol_audit_signature": "d13cb22fa3d10d0cd1e60228cf134925ef2b08c2fc51ea229d3e2212fad92cde",
+    "wave8_khwarazmian_mongol_final_audit_signature": "d13cb22fa3d10d0cd1e60228cf134925ef2b08c2fc51ea229d3e2212fad92cde",
+    "wave8_khwarazmian_mongol_queue_validation": {
+      "promotion_contracts": 6,
+      "holds": 10,
+      "reviewed_hced_rows": 16,
+      "exact_label_rows": 16,
+      "exact_labels": 5
+    },
+    "wave8_khwarazmian_mongol_discovery_validation": {
+      "discovery_nonrating_twins": 6,
+      "discovery_promotions": 0
+    },
+    "wave8_khwarazmian_mongol_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_khwarazmian_mongol_candidate_ids": [
+      "hced-Bokhara1220-1",
+      "hced-Indus1221-1",
+      "hced-Khojend1220-1",
+      "hced-Otrar1219-1",
+      "hced-Parwan Durrah1221-1",
+      "hced-Samarkand1220-1"
+    ],
+    "wave8_khwarazmian_mongol_holds": [
+      {
+        "candidate_id": "hced-Andkhui1205-1",
+        "raw_row_sha256": "8f68118420680ae141945c1e74092f44feda65f60243e35dbc09e79acb4d51d6",
+        "cohort": "campaign_date_or_counterpart_holds_1205_1218",
+        "disposition": "hold",
+        "hold_category": "generic_afghanistan_is_not_a_reviewed_historical_counterpart",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5"
+        ],
+        "hold_reason": "The raw opponent 'Afghanistan' is a modern geographic shorthand, not the reviewed Ghurid/Qara Khitai/Karakhanid coalition or polity for the Andkhud fighting. The counterpart is therefore unresolved.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Bamian1221-1",
+        "raw_row_sha256": "cd359ddc6d79b4d4a8daa27bfcc3bdf4a2e7b2cddd30ef077fa7feff34ae4ba7",
+        "cohort": "mongol_invasion_massacre_scope_holds_1220_1221",
+        "disposition": "hold",
+        "hold_category": "massacre_or_city_capture_scope_not_clean_tactical_battle",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ],
+        "hold_reason": "HCED explicitly marks a battle followed by massacre while its raw participant list names places and peoples rather than a clean Khwarezmid defending force. The Mongol conquest is known, but this row's exact competitive scope is not rated.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Dabusiyya1032-1",
+        "raw_row_sha256": "c45c1078fc7647dd100a363d29023e9d587a19405527ae61f2b5cfad6b35d425",
+        "cohort": "pre_empire_identity_holds_1017_1194",
+        "disposition": "hold",
+        "hold_category": "row_predates_selected_khwarezmid_empire_interval",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5"
+        ],
+        "hold_reason": "The 1032 row predates the selected 1202-1235 Khwarezmid Empire identity by 170 years. No earlier Khwarazm identity is created or bridged in this lane.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Gurganj1221-1",
+        "raw_row_sha256": "463e321828609de15725925c2acc1073a5c4ccaad00696c09a7ad850b7041ccd",
+        "cohort": "mongol_invasion_massacre_scope_holds_1220_1221",
+        "disposition": "hold",
+        "hold_category": "massacre_or_city_capture_scope_not_clean_tactical_battle",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+          "wave8_khwarazmian_mongol_iranica_bosworth_jalal",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ],
+        "hold_reason": "The lengthy investment and destruction of Gurganj are attested, but HCED combines battle and massacre and does not isolate one tactical contest. That composite row remains unknown rather than becoming a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Hamadan1220-1",
+        "raw_row_sha256": "ab0ec0211c31bf4fe47de29743cf8c027a5e3c0bc48d45fc9f63464244a6c9f3",
+        "cohort": "mongol_invasion_massacre_scope_holds_1220_1221",
+        "disposition": "hold",
+        "hold_category": "massacre_or_city_capture_scope_not_clean_tactical_battle",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ],
+        "hold_reason": "HCED's battle-followed-by-massacre classification and broad pursuit participant strings do not define a single independently verified Hamadan engagement in 1220, so no result is emitted.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Hazarasp1017-1",
+        "raw_row_sha256": "4c8cbe8c73d69c93a4075cd8bff3239aa01e6c0f18321345d5762ae682accadb",
+        "cohort": "pre_empire_identity_holds_1017_1194",
+        "disposition": "hold",
+        "hold_category": "rebel_faction_and_massacre_not_selected_polity",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5"
+        ],
+        "hold_reason": "The raw loser is a Khwarezm rebel faction in a battle-followed-by-massacre row from 1017, not the later Khwarezmid Empire. Neither the faction nor the composite outcome is promoted.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Jand1218-1",
+        "raw_row_sha256": "16bf7cffc627565e03e86b1d618bbee795371b57003922684ee0669789de411a",
+        "cohort": "campaign_date_or_counterpart_holds_1205_1218",
+        "disposition": "hold",
+        "hold_category": "source_year_precedes_reviewed_siege_chronology",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ],
+        "hold_reason": "HCED fixes the action in 1218, while reviewed campaign chronology places the Mongol operation against Jand after the invasion began. The exact year cannot be corrected silently, so the row stays held.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Jerusalem1244-1",
+        "raw_row_sha256": "4064c4bc57f411bfe62601e156e0d6355662582c79013e34c02785fc61d428db",
+        "cohort": "post_empire_mercenary_hold_1244",
+        "disposition": "hold",
+        "hold_category": "post_imperial_mercenary_force_not_selected_polity",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+          "wave8_khwarazmian_mongol_iranica_bosworth_jalal"
+        ],
+        "hold_reason": "The Khwarazmian troops at Jerusalem were a displaced post-imperial mercenary formation, not the selected state identity and not the Mongol Empire. A separate force identity would require its own audit.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Merv1221-1",
+        "raw_row_sha256": "7d601a8a42232e31aae8d4ceafb7baf3e60e32aaa9825334f09a7f7763edfb95",
+        "cohort": "mongol_invasion_massacre_scope_holds_1220_1221",
+        "disposition": "hold",
+        "hold_category": "massacre_or_city_capture_scope_not_clean_tactical_battle",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ],
+        "hold_reason": "The sources attest Merv's conquest and catastrophic killing, but the HCED row merges battle and massacre and supplies no clean tactical boundary. The city-level catastrophe is not manufactured into a battle.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Shahr Rey1194-1",
+        "raw_row_sha256": "79e29314237bb760a5615084c220e8513e0bb99bbaff3e05d26ba87751f27e9f",
+        "cohort": "pre_empire_identity_holds_1017_1194",
+        "disposition": "hold",
+        "hold_category": "row_predates_selected_khwarezmid_empire_interval",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_cambridge_history_iran_v5"
+        ],
+        "hold_reason": "The 1194 Ray conflict belongs to an earlier Khwarazmshah interval than the existing 1202-1235 identity. The eight-year boundary gap is preserved instead of expanding the registry window.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_khwarazmian_mongol",
+          "status": "review_hold_owner"
+        }
+      }
+    ],
+    "wave8_khwarazmian_mongol_exact_label_funnel_audit": {
+      "khwarezem": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "911a4bea28a93c7839e563885c4f5df2d0537f5f3fe3501f0dc3c408ff269f2e",
+        "events_touched": 1,
+        "label": "khwarezem",
+        "rated_counterpart_entities": 1,
+        "sole_blocker_events": 1,
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "khwarezm": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "a588302c13e93a00376c4710794ccd3b6c6de2ac7570a6ebd2ea08da668df51f",
+        "events_touched": 5,
+        "label": "khwarezm",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "unresolved_side_attempts": 5,
+        "zero_time_valid_candidates": 5
+      },
+      "khwarezm empire": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "0c89b23c28502e82566d891a90cc981a205bb013ef71d465d0c41337b9e4f543",
+        "events_touched": 3,
+        "label": "khwarezm empire",
+        "rated_counterpart_entities": 1,
+        "sole_blocker_events": 1,
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      },
+      "khwarezm rebels": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "e40fbefc74c3de7383b7466897ce121b503d3e1fec4dbef3158458978ca928c5",
+        "events_touched": 1,
+        "label": "khwarezm rebels",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "khwarezmian empire": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "70b7926ecc30df78de98ff909cbf39236402dabfcc31989d8022fa25e351ff67",
+        "events_touched": 6,
+        "label": "khwarezmian empire",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "unresolved_side_attempts": 6,
+        "zero_time_valid_candidates": 6
+      }
+    },
+    "wave8_khwarazmian_mongol_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Bokhara1220-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      },
+      {
+        "candidate_id": "hced-Indus1221-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_iranica_bosworth_jalal",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      },
+      {
+        "candidate_id": "hced-Khojend1220-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      },
+      {
+        "candidate_id": "hced-Otrar1219-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_cambridge_otrar_campbell",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      },
+      {
+        "candidate_id": "hced-Parwan Durrah1221-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_iranica_bosworth_jalal",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      },
+      {
+        "candidate_id": "hced-Samarkand1220-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named engagement and modern country but do not independently verify HCED's exact coordinate; retain provenance and country while withholding the point.",
+        "evidence_refs": [
+          "wave8_khwarazmian_mongol_army_upress_beckenbaugh",
+          "wave8_khwarazmian_mongol_juvaini_boyle"
+        ]
+      }
+    ],
+    "wave8_khwarazmian_mongol_point_quarantine_additions": [
+      "hced-Bokhara1220-1",
+      "hced-Indus1221-1",
+      "hced-Khojend1220-1",
+      "hced-Otrar1219-1",
+      "hced-Parwan Durrah1221-1",
+      "hced-Samarkand1220-1"
+    ],
+    "wave8_khwarazmian_mongol_country_quarantine_additions": [],
+    "wave8_khwarazmian_mongol_entities_added": 1,
+    "wave8_khwarazmian_mongol_sources_added": 5,
+    "wave8_latrun_metadata": {
+      "counts": {
+        "adjacent_hced_dispositions": 2,
+        "country_quarantine_additions": 0,
+        "holds": 0,
+        "integration_dispositions": 6,
+        "iwbd_adjacent_dispositions": 2,
+        "iwbd_duplicate_dispositions": 2,
+        "new_entities": 0,
+        "new_sources": 2,
+        "newly_rated_events": 2,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 2,
+        "promotion_contracts": 2,
+        "reviewed_hced_rows": 2,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "latrun_arab_legion_defensive_battles_may_1948": 2
+      },
+      "final_audit_signature": "88f181f06f5c45792a077befae74a160fa20bfa88a99c443e13fcad3ab6145ea",
+      "promoted_candidate_ids": [
+        "hced-Latrun (1st)1948-1",
+        "hced-Latrun (2nd)1948-1"
+      ],
+      "hold_candidate_ids": []
+    },
+    "wave8_latrun_counts": {
+      "adjacent_hced_dispositions": 2,
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "integration_dispositions": 6,
+      "iwbd_adjacent_dispositions": 2,
+      "iwbd_duplicate_dispositions": 2,
+      "new_entities": 0,
+      "new_sources": 2,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 2,
+      "terminal_exclusions": 0
+    },
+    "wave8_latrun_cohort_counts": {
+      "latrun_arab_legion_defensive_battles_may_1948": 2
+    },
+    "wave8_latrun_audit_signature": "88f181f06f5c45792a077befae74a160fa20bfa88a99c443e13fcad3ab6145ea",
+    "wave8_latrun_final_audit_signature": "88f181f06f5c45792a077befae74a160fa20bfa88a99c443e13fcad3ab6145ea",
+    "wave8_latrun_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 0,
+      "reviewed_hced_rows": 2,
+      "adjacent_hced_rows": 2,
+      "exact_label_rows": 2
+    },
+    "wave8_latrun_integration_validation": {
+      "adjacent_hced_dispositions": 2,
+      "existing_release_owned_events": 2,
+      "existing_release_probable_twins": 0,
+      "iwbd_adjacent_dispositions": 2,
+      "iwbd_duplicate_dispositions": 2,
+      "iwbd_latrun_rows": 4
+    },
+    "wave8_latrun_release_validation": {
+      "artifact_state": "integrated",
+      "installed_sources": 2,
+      "promoted_events": 2
+    },
+    "wave8_latrun_candidate_ids": [
+      "hced-Latrun (1st)1948-1",
+      "hced-Latrun (2nd)1948-1"
+    ],
+    "wave8_latrun_holds": [],
+    "wave8_latrun_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "ac1537f1f36875340315f38a7e9492b2abf54d88165eef47ba511030db59955b",
+      "events_touched": 2,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 2
+      },
+      "label": "arab legion",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 2
+    },
+    "wave8_latrun_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Latrun (1st)1948-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Latrun defensive position and modern country, but do not independently audit HCED's repeated decimal coordinate. Retain country and provenance; withhold point.",
+        "evidence_refs": [
+          "wave8_latrun_hughes_conduct_operations",
+          "wave8_latrun_rodman_battle_chapter"
+        ]
+      },
+      {
+        "candidate_id": "hced-Latrun (2nd)1948-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Latrun defensive position and modern country, but do not independently audit HCED's repeated decimal coordinate. Retain country and provenance; withhold point.",
+        "evidence_refs": [
+          "wave8_latrun_hughes_conduct_operations",
+          "wave8_latrun_rodman_battle_chapter"
+        ]
+      }
+    ],
+    "wave8_latrun_point_quarantine_additions": [
+      "hced-Latrun (1st)1948-1",
+      "hced-Latrun (2nd)1948-1"
+    ],
+    "wave8_latrun_country_quarantine_additions": [],
+    "wave8_latrun_entities_added": 0,
+    "wave8_latrun_sources_added": 2,
+    "wave8_republic_formosa_metadata": {
+      "adjacent_hced_dispositions": [
+        {
+          "candidate_id": "hced-Pescadores1895-1",
+          "raw_row_sha256": "10726f66b36555d7f1601238b18b4f40c55fe821b14b62776cddb2d3492986a5",
+          "disposition": "pre_republic_existing_release_owner",
+          "owner_event_id": "hced_hced_pescadores1895_1",
+          "reviewed_date": "23-24 March 1895",
+          "reviewed_sides": [
+            "Empire of Japan",
+            "Qing China"
+          ],
+          "result_type": "win",
+          "winner": "Empire of Japan",
+          "evidence_refs": [
+            "wave8_republic_formosa_jacar_campaign"
+          ],
+          "reason": "The Pescadores fighting preceded the May proclamation and therefore cannot be assigned to the Republic of Formosa; retain its existing Japan-versus-Qing release owner."
+        }
+      ],
+      "cohorts": {
+        "japanese_invasion_of_taiwan_1895": 2
+      },
+      "counts": {
+        "adjacent_campaign_dispositions": 1,
+        "adjacent_literal_label_rows": 0,
+        "country_quarantine_additions": 0,
+        "holds": 0,
+        "new_entities": 1,
+        "new_sources": 3,
+        "newly_rated_events": 2,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 2,
+        "promotion_contracts": 2,
+        "reviewed_hced_rows": 3,
+        "terminal_exclusions": 0
+      },
+      "final_audit_signature": "4bde800edb6ad6d43c105eb9f008161db7620ec80e9f1de61c6c60512f29858c",
+      "hold_candidate_ids": [],
+      "promoted_candidate_ids": [
+        "hced-Baguashan1895-1",
+        "hced-Keelung1895-1"
+      ]
+    },
+    "wave8_republic_formosa_counts": {
+      "adjacent_campaign_dispositions": 1,
+      "adjacent_literal_label_rows": 0,
+      "country_quarantine_additions": 0,
+      "holds": 0,
+      "new_entities": 1,
+      "new_sources": 3,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 3,
+      "terminal_exclusions": 0
+    },
+    "wave8_republic_formosa_cohort_counts": {
+      "japanese_invasion_of_taiwan_1895": 2
+    },
+    "wave8_republic_formosa_audit_signature": "4bde800edb6ad6d43c105eb9f008161db7620ec80e9f1de61c6c60512f29858c",
+    "wave8_republic_formosa_final_audit_signature": "4bde800edb6ad6d43c105eb9f008161db7620ec80e9f1de61c6c60512f29858c",
+    "wave8_republic_formosa_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 0,
+      "reviewed_hced_rows": 2,
+      "adjacent_campaign_rows": 1,
+      "adjacent_literal_label_rows": 0,
+      "exact_label_rows": 2,
+      "full_1895_taiwan_campaign_rows": 3
+    },
+    "wave8_republic_formosa_integration_validation": {
+      "adjacent_existing_release_owners": 1,
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 2
+    },
+    "wave8_republic_formosa_candidate_ids": [
+      "hced-Baguashan1895-1",
+      "hced-Keelung1895-1"
+    ],
+    "wave8_republic_formosa_holds": [],
+    "wave8_republic_formosa_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "991d150c3d6810a759604ce2d54af6f088fc32efd80cd12103f16a933258fb0b",
+      "events_touched": 2,
+      "label": "republic of formosa",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 2,
+      "zero_time_valid_candidates": 2
+    },
+    "wave8_republic_formosa_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Baguashan1895-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED provides an unexplained place centroid, not a reviewed battle position or battlefield footprint. Withhold point geometry while retaining the source-bound Taiwan jurisdiction and location provenance.",
+        "evidence_refs": [
+          "wave8_republic_formosa_davidson_campaign",
+          "wave8_republic_formosa_jacar_campaign"
+        ]
+      },
+      {
+        "candidate_id": "hced-Keelung1895-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED provides an unexplained place centroid, not a reviewed battle position or battlefield footprint. Withhold point geometry while retaining the source-bound Taiwan jurisdiction and location provenance.",
+        "evidence_refs": [
+          "wave8_republic_formosa_davidson_campaign",
+          "wave8_republic_formosa_jacar_campaign"
+        ]
+      }
+    ],
+    "wave8_republic_formosa_point_quarantine_additions": [
+      "hced-Baguashan1895-1",
+      "hced-Keelung1895-1"
+    ],
+    "wave8_republic_formosa_country_quarantine_additions": [],
+    "wave8_republic_formosa_entities_added": 1,
+    "wave8_republic_formosa_sources_added": 3,
+    "hced_label_pass_input_rows": 5495,
     "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 107,
@@ -21508,7 +22168,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1095,
+      "reserved_candidate_contract": 1115,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -21516,15 +22176,15 @@
       "curated_row_exclusion": 75,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 434,
+      "faction_label_not_a_polity": 425,
       "label_outcome_not_aligned": 79,
       "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1968,
+      "no_unique_time_valid_label_match": 1958,
       "no_unique_time_valid_polity": 83,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
-      "wave6_pre1500_candidate_not_in_manifest": 40
+      "wave6_pre1500_candidate_not_in_manifest": 39
     },
     "hced_label_policy_labels": [
       "afghanistan",

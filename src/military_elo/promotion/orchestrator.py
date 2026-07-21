@@ -2186,6 +2186,71 @@ from .wave8_etruria import (
     wave8_etruria_cohort_counts,
     wave8_etruria_counts,
 )
+from .wave8_khwarazmian_mongol import (
+    WAVE8_KHWARAZMIAN_MONGOL_CONTRACT_IDS,
+    WAVE8_KHWARAZMIAN_MONGOL_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_KHWARAZMIAN_MONGOL_ENTITIES,
+    WAVE8_KHWARAZMIAN_MONGOL_FINAL_AUDIT_SIGNATURE,
+    WAVE8_KHWARAZMIAN_MONGOL_FUNNEL_AUDIT,
+    WAVE8_KHWARAZMIAN_MONGOL_HOLDS,
+    WAVE8_KHWARAZMIAN_MONGOL_LOCATION_QUARANTINE_REASONS,
+    WAVE8_KHWARAZMIAN_MONGOL_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_KHWARAZMIAN_MONGOL_RESERVED_IDS,
+    WAVE8_KHWARAZMIAN_MONGOL_SOURCES,
+    install_wave8_khwarazmian_mongol_entities,
+    install_wave8_khwarazmian_mongol_sources,
+    promote_wave8_khwarazmian_mongol_contracts,
+    validate_wave8_khwarazmian_mongol_discovery_dispositions,
+    validate_wave8_khwarazmian_mongol_integration_dispositions,
+    validate_wave8_khwarazmian_mongol_queue_contracts,
+    wave8_khwarazmian_mongol_audit_signature,
+    wave8_khwarazmian_mongol_cohort_counts,
+    wave8_khwarazmian_mongol_counts,
+    wave8_khwarazmian_mongol_metadata,
+)
+from .wave8_latrun import (
+    WAVE8_LATRUN_CONTRACT_IDS,
+    WAVE8_LATRUN_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_LATRUN_ENTITIES,
+    WAVE8_LATRUN_FINAL_AUDIT_SIGNATURE,
+    WAVE8_LATRUN_FUNNEL_AUDIT,
+    WAVE8_LATRUN_HOLDS,
+    WAVE8_LATRUN_LOCATION_QUARANTINE_REASONS,
+    WAVE8_LATRUN_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_LATRUN_RESERVED_IDS,
+    WAVE8_LATRUN_SOURCES,
+    install_wave8_latrun_entities,
+    install_wave8_latrun_sources,
+    promote_wave8_latrun_contracts,
+    validate_wave8_latrun_current_release,
+    validate_wave8_latrun_integration_dispositions,
+    validate_wave8_latrun_queue_contracts,
+    wave8_latrun_audit_signature,
+    wave8_latrun_cohort_counts,
+    wave8_latrun_counts,
+    wave8_latrun_metadata,
+)
+from .wave8_republic_formosa import (
+    WAVE8_REPUBLIC_FORMOSA_CONTRACT_IDS,
+    WAVE8_REPUBLIC_FORMOSA_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_REPUBLIC_FORMOSA_ENTITIES,
+    WAVE8_REPUBLIC_FORMOSA_FINAL_AUDIT_SIGNATURE,
+    WAVE8_REPUBLIC_FORMOSA_FUNNEL_AUDIT,
+    WAVE8_REPUBLIC_FORMOSA_HOLDS,
+    WAVE8_REPUBLIC_FORMOSA_LOCATION_QUARANTINE_REASONS,
+    WAVE8_REPUBLIC_FORMOSA_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_REPUBLIC_FORMOSA_RESERVED_IDS,
+    WAVE8_REPUBLIC_FORMOSA_SOURCES,
+    install_wave8_republic_formosa_entities,
+    install_wave8_republic_formosa_sources,
+    promote_wave8_republic_formosa_contracts,
+    validate_wave8_republic_formosa_integration_dispositions,
+    validate_wave8_republic_formosa_queue_contracts,
+    wave8_republic_formosa_audit_signature,
+    wave8_republic_formosa_cohort_counts,
+    wave8_republic_formosa_counts,
+    wave8_republic_formosa_metadata,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -2307,6 +2372,9 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_MACEDON_RESERVED_IDS
     | WAVE8_UZBEKS_RESERVED_IDS
     | WAVE8_ETRURIA_RESERVED_IDS
+    | WAVE8_KHWARAZMIAN_MONGOL_RESERVED_IDS
+    | WAVE8_LATRUN_RESERVED_IDS
+    | WAVE8_REPUBLIC_FORMOSA_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2728,7 +2796,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 386
+        len(HCED_POINT_QUARANTINE_IDS) != 396
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3060,12 +3128,28 @@ def build_expanded_release(
     wave8_macedon_queue_validation = validate_wave8_macedon_queue_contracts(hced)
     wave8_uzbeks_queue_validation = validate_wave8_uzbeks_queue_contracts(hced)
     wave8_etruria_queue_validation = validate_wave8_etruria_queue_contracts(hced)
+    wave8_khwarazmian_mongol_queue_validation = (
+        validate_wave8_khwarazmian_mongol_queue_contracts(hced)
+    )
+    wave8_latrun_queue_validation = validate_wave8_latrun_queue_contracts(hced)
+    wave8_republic_formosa_queue_validation = (
+        validate_wave8_republic_formosa_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
     hced_candidates_by_id = _index_hced_candidates(hced)
     wikidata_path = review / "wikidata-candidates.jsonl"
     wikidata_candidates = read_jsonl(wikidata_path) if wikidata_path.exists() else []
+    wikidata_battle_path = review / "wikidata-battle-candidates.jsonl"
+    wikidata_battle_candidates = (
+        read_jsonl(wikidata_battle_path) if wikidata_battle_path.exists() else []
+    )
+    wave8_khwarazmian_mongol_discovery_validation = (
+        validate_wave8_khwarazmian_mongol_discovery_dispositions(
+            wikidata_battle_candidates
+        )
+    )
     wave6_queue_validation = validate_wave6_queue_contracts(
         hced,
         wikidata_candidates,
@@ -3504,6 +3588,9 @@ def build_expanded_release(
     install_wave8_macedon_entities(release_entities)
     install_wave8_uzbeks_entities(release_entities)
     install_wave8_etruria_entities(release_entities)
+    install_wave8_khwarazmian_mongol_entities(release_entities)
+    install_wave8_latrun_entities(release_entities)
+    install_wave8_republic_formosa_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -5162,6 +5249,33 @@ def build_expanded_release(
         release_entities,
         wave8_etruria_existing_events,
     )
+    wave8_khwarazmian_mongol_existing_events = [
+        *wave8_etruria_existing_events,
+        *wave8_etruria_events,
+    ]
+    wave8_khwarazmian_mongol_events = promote_wave8_khwarazmian_mongol_contracts(
+        hced,
+        release_entities,
+        wave8_khwarazmian_mongol_existing_events,
+    )
+    wave8_latrun_existing_events = [
+        *wave8_khwarazmian_mongol_existing_events,
+        *wave8_khwarazmian_mongol_events,
+    ]
+    wave8_latrun_events = promote_wave8_latrun_contracts(
+        hced,
+        release_entities,
+        wave8_latrun_existing_events,
+    )
+    wave8_republic_formosa_existing_events = [
+        *wave8_latrun_existing_events,
+        *wave8_latrun_events,
+    ]
+    wave8_republic_formosa_events = promote_wave8_republic_formosa_contracts(
+        hced,
+        release_entities,
+        wave8_republic_formosa_existing_events,
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -5266,6 +5380,9 @@ def build_expanded_release(
         *wave8_macedon_events,
         *wave8_uzbeks_events,
         *wave8_etruria_events,
+        *wave8_khwarazmian_mongol_events,
+        *wave8_latrun_events,
+        *wave8_republic_formosa_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -5547,6 +5664,9 @@ def build_expanded_release(
         *wave8_macedon_events,
         *wave8_uzbeks_events,
         *wave8_etruria_events,
+        *wave8_khwarazmian_mongol_events,
+        *wave8_latrun_events,
+        *wave8_republic_formosa_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -6137,6 +6257,33 @@ def build_expanded_release(
             [*wave8_etruria_existing_events, *wave8_etruria_events],
         )
     )
+    wave8_khwarazmian_mongol_integration_validation = (
+        validate_wave8_khwarazmian_mongol_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_khwarazmian_mongol_existing_events,
+                *wave8_khwarazmian_mongol_events,
+            ],
+        )
+    )
+    wave8_latrun_integration_validation = (
+        validate_wave8_latrun_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [*wave8_latrun_existing_events, *wave8_latrun_events],
+        )
+    )
+    wave8_republic_formosa_integration_validation = (
+        validate_wave8_republic_formosa_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_republic_formosa_existing_events,
+                *wave8_republic_formosa_events,
+            ],
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -6398,6 +6545,9 @@ def build_expanded_release(
     install_wave8_macedon_sources(sources_by_id)
     install_wave8_uzbeks_sources(sources_by_id)
     install_wave8_etruria_sources(sources_by_id)
+    install_wave8_khwarazmian_mongol_sources(sources_by_id)
+    install_wave8_latrun_sources(sources_by_id)
+    install_wave8_republic_formosa_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -6507,9 +6657,17 @@ def build_expanded_release(
         *wave8_macedon_events,
         *wave8_uzbeks_events,
         *wave8_etruria_events,
+        *wave8_khwarazmian_mongol_events,
+        *wave8_latrun_events,
+        *wave8_republic_formosa_events,
         *iwbd_events,
         *ucdp_events,
     ]
+    wave8_latrun_release_validation = validate_wave8_latrun_current_release(
+        all_events,
+        release_entities.values(),
+        sources_by_id.values(),
+    )
     huang_chao_release_validation = validate_huang_chao_release(all_events)
     # This audit is pinned from the committed release ledger, so validate the
     # fully assembled ledger rather than the mid-chain duplicate-detection
@@ -6678,6 +6836,9 @@ def build_expanded_release(
         *wave8_macedon_events,
         *wave8_uzbeks_events,
         *wave8_etruria_events,
+        *wave8_khwarazmian_mongol_events,
+        *wave8_latrun_events,
+        *wave8_republic_formosa_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -6786,6 +6947,9 @@ def build_expanded_release(
             | WAVE8_MACEDON_CONTRACT_IDS
             | WAVE8_UZBEKS_CONTRACT_IDS
             | WAVE8_ETRURIA_CONTRACT_IDS
+            | WAVE8_KHWARAZMIAN_MONGOL_CONTRACT_IDS
+            | WAVE8_LATRUN_CONTRACT_IDS
+            | WAVE8_REPUBLIC_FORMOSA_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -6958,6 +7122,15 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_MACEDON_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_UZBEKS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_ETRURIA_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_KHWARAZMIAN_MONGOL_ENTITIES,
+        ),
+        *map(lambda entity: str(entity["id"]), WAVE8_LATRUN_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_REPUBLIC_FORMOSA_ENTITIES,
+        ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
     for entity in release_entity_rows:
@@ -7235,6 +7408,9 @@ def build_expanded_release(
         - len(wave8_macedon_events)
         - len(wave8_uzbeks_events)
         - len(wave8_etruria_events)
+        - len(wave8_khwarazmian_mongol_events)
+        - len(wave8_latrun_events)
+        - len(wave8_republic_formosa_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -7463,6 +7639,13 @@ def build_expanded_release(
         "candidate_keyed_wave8_macedon_hced_events": len(wave8_macedon_events),
         "candidate_keyed_wave8_uzbeks_hced_events": len(wave8_uzbeks_events),
         "candidate_keyed_wave8_etruria_hced_events": len(wave8_etruria_events),
+        "candidate_keyed_wave8_khwarazmian_mongol_hced_events": len(
+            wave8_khwarazmian_mongol_events
+        ),
+        "candidate_keyed_wave8_latrun_hced_events": len(wave8_latrun_events),
+        "candidate_keyed_wave8_republic_formosa_hced_events": len(
+            wave8_republic_formosa_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -7831,6 +8014,13 @@ def build_expanded_release(
             "accepted_wave8_macedon_hced_events": len(wave8_macedon_events),
             "accepted_wave8_uzbeks_hced_events": len(wave8_uzbeks_events),
             "accepted_wave8_etruria_hced_events": len(wave8_etruria_events),
+            "accepted_wave8_khwarazmian_mongol_hced_events": len(
+                wave8_khwarazmian_mongol_events
+            ),
+            "accepted_wave8_latrun_hced_events": len(wave8_latrun_events),
+            "accepted_wave8_republic_formosa_hced_events": len(
+                wave8_republic_formosa_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -12413,6 +12603,139 @@ def build_expanded_release(
             ),
             "wave8_etruria_entities_added": len(WAVE8_ETRURIA_ENTITIES),
             "wave8_etruria_sources_added": len(WAVE8_ETRURIA_SOURCES),
+            "wave8_khwarazmian_mongol_metadata": (
+                wave8_khwarazmian_mongol_metadata()
+            ),
+            "wave8_khwarazmian_mongol_counts": (
+                wave8_khwarazmian_mongol_counts()
+            ),
+            "wave8_khwarazmian_mongol_cohort_counts": (
+                wave8_khwarazmian_mongol_cohort_counts()
+            ),
+            "wave8_khwarazmian_mongol_audit_signature": (
+                wave8_khwarazmian_mongol_audit_signature()
+            ),
+            "wave8_khwarazmian_mongol_final_audit_signature": (
+                WAVE8_KHWARAZMIAN_MONGOL_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_khwarazmian_mongol_queue_validation": (
+                wave8_khwarazmian_mongol_queue_validation
+            ),
+            "wave8_khwarazmian_mongol_discovery_validation": (
+                wave8_khwarazmian_mongol_discovery_validation
+            ),
+            "wave8_khwarazmian_mongol_integration_validation": (
+                wave8_khwarazmian_mongol_integration_validation
+            ),
+            "wave8_khwarazmian_mongol_candidate_ids": sorted(
+                WAVE8_KHWARAZMIAN_MONGOL_CONTRACT_IDS
+            ),
+            "wave8_khwarazmian_mongol_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KHWARAZMIAN_MONGOL_HOLDS.items()
+                )
+            ],
+            "wave8_khwarazmian_mongol_exact_label_funnel_audit": (
+                WAVE8_KHWARAZMIAN_MONGOL_FUNNEL_AUDIT
+            ),
+            "wave8_khwarazmian_mongol_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_KHWARAZMIAN_MONGOL_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_khwarazmian_mongol_point_quarantine_additions": sorted(
+                WAVE8_KHWARAZMIAN_MONGOL_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_khwarazmian_mongol_country_quarantine_additions": sorted(
+                WAVE8_KHWARAZMIAN_MONGOL_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_khwarazmian_mongol_entities_added": len(
+                WAVE8_KHWARAZMIAN_MONGOL_ENTITIES
+            ),
+            "wave8_khwarazmian_mongol_sources_added": len(
+                WAVE8_KHWARAZMIAN_MONGOL_SOURCES
+            ),
+            "wave8_latrun_metadata": wave8_latrun_metadata(),
+            "wave8_latrun_counts": wave8_latrun_counts(),
+            "wave8_latrun_cohort_counts": wave8_latrun_cohort_counts(),
+            "wave8_latrun_audit_signature": wave8_latrun_audit_signature(),
+            "wave8_latrun_final_audit_signature": (
+                WAVE8_LATRUN_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_latrun_queue_validation": wave8_latrun_queue_validation,
+            "wave8_latrun_integration_validation": (
+                wave8_latrun_integration_validation
+            ),
+            "wave8_latrun_release_validation": wave8_latrun_release_validation,
+            "wave8_latrun_candidate_ids": sorted(WAVE8_LATRUN_CONTRACT_IDS),
+            "wave8_latrun_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_LATRUN_HOLDS.items())
+            ],
+            "wave8_latrun_exact_label_funnel_audit": WAVE8_LATRUN_FUNNEL_AUDIT,
+            "wave8_latrun_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_LATRUN_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_latrun_point_quarantine_additions": sorted(
+                WAVE8_LATRUN_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_latrun_country_quarantine_additions": sorted(
+                WAVE8_LATRUN_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_latrun_entities_added": len(WAVE8_LATRUN_ENTITIES),
+            "wave8_latrun_sources_added": len(WAVE8_LATRUN_SOURCES),
+            "wave8_republic_formosa_metadata": wave8_republic_formosa_metadata(),
+            "wave8_republic_formosa_counts": wave8_republic_formosa_counts(),
+            "wave8_republic_formosa_cohort_counts": (
+                wave8_republic_formosa_cohort_counts()
+            ),
+            "wave8_republic_formosa_audit_signature": (
+                wave8_republic_formosa_audit_signature()
+            ),
+            "wave8_republic_formosa_final_audit_signature": (
+                WAVE8_REPUBLIC_FORMOSA_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_republic_formosa_queue_validation": (
+                wave8_republic_formosa_queue_validation
+            ),
+            "wave8_republic_formosa_integration_validation": (
+                wave8_republic_formosa_integration_validation
+            ),
+            "wave8_republic_formosa_candidate_ids": sorted(
+                WAVE8_REPUBLIC_FORMOSA_CONTRACT_IDS
+            ),
+            "wave8_republic_formosa_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_REPUBLIC_FORMOSA_HOLDS.items()
+                )
+            ],
+            "wave8_republic_formosa_exact_label_funnel_audit": (
+                WAVE8_REPUBLIC_FORMOSA_FUNNEL_AUDIT
+            ),
+            "wave8_republic_formosa_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_REPUBLIC_FORMOSA_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_republic_formosa_point_quarantine_additions": sorted(
+                WAVE8_REPUBLIC_FORMOSA_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_republic_formosa_country_quarantine_additions": sorted(
+                WAVE8_REPUBLIC_FORMOSA_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_republic_formosa_entities_added": len(
+                WAVE8_REPUBLIC_FORMOSA_ENTITIES
+            ),
+            "wave8_republic_formosa_sources_added": len(
+                WAVE8_REPUBLIC_FORMOSA_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -12756,6 +13079,13 @@ def build_expanded_release(
         "candidate_keyed_wave8_fln_hced_events": len(wave8_fln_events),
         "candidate_keyed_wave8_sindh_hced_events": len(wave8_sindh_events),
         "candidate_keyed_wave8_oman_hced_events": len(wave8_oman_events),
+        "candidate_keyed_wave8_khwarazmian_mongol_hced_events": len(
+            wave8_khwarazmian_mongol_events
+        ),
+        "candidate_keyed_wave8_latrun_hced_events": len(wave8_latrun_events),
+        "candidate_keyed_wave8_republic_formosa_hced_events": len(
+            wave8_republic_formosa_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),

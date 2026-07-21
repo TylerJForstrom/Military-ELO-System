@@ -36,7 +36,7 @@ RELEASE = ROOT / "data" / "release"
 REGISTRY = ROOT / "data" / "catalog" / "registry.json"
 RESULTS = ROOT / "web" / "data" / "results.json"
 HCED_LOCATION_PROJECTION_SHA256 = (
-    "8b5da476c9dabf9dcb7b17dc9d1573f8f3635cbc4bf37e3992ea2bc0c1a8d944"
+    "63389d88369a2cbe10efcda8549eb46deaa2da612535b86c427c6a0fd9c055ff"
 )
 
 
@@ -76,7 +76,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         }
 
     def test_exact_candidate_bijection_and_promotion_tranches(self) -> None:
-        self.assertEqual(len(self.events), 5_456)
+        self.assertEqual(len(self.events), 5_466)
         self.assertEqual(len(self.hced_events), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(len(self.by_candidate), HCED_EXPECTED_CANDIDATE_BINDINGS)
         self.assertEqual(
@@ -116,7 +116,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
             ),
             22,
         )
-        # The reviewed-contract pin counts contract emissions (818): 815 events
+        # The reviewed-contract pin counts contract emissions (828): 825 events
         # marked candidate_keyed_exact plus three Polish correction lane
         # re-emissions. The fourth correction marker sits on the annotated
         # legacy Cracow 1772 event, which is not a contract emission.
@@ -125,7 +125,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
                 event.get("identity_resolution") == "candidate_keyed_exact"
                 for event in self.hced_events
             ),
-            815,
+            825,
         )
         self.assertEqual(
             sum(
@@ -133,7 +133,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
                 == "candidate_keyed_exact_wave8_correction"
                 for event in self.hced_events
             ),
-            HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS - 815 + 1,
+            HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS - 825 + 1,
         )
         for event in self.hced_events:
             with self.subTest(event_id=event["id"]):
@@ -154,7 +154,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
             for event in self.hced_events
             if event["hced_candidate_id"] in HCED_COUNTRY_QUARANTINE_IDS
         ]
-        self.assertEqual(len(point_event_ids), 386)
+        self.assertEqual(len(point_event_ids), 396)
         self.assertEqual(len(country_event_ids), 94)
         self.assertEqual(
             _sorted_newline_hash(point_event_ids),
@@ -180,7 +180,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
             missing_countries,
             HCED_COUNTRY_QUARANTINE_IDS | HCED_SOURCE_BLANK_COUNTRY_IDS,
         )
-        self.assertEqual(len(missing_points | missing_countries), 435)
+        self.assertEqual(len(missing_points | missing_countries), 445)
         self.assertEqual(
             len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS), 46
         )
@@ -593,11 +593,11 @@ class HcedLocationArtifactTests(unittest.TestCase):
         )
         self.assertIsNone(locations["verified_location_assertion_present"]["numerator"])
         expected_policy = {
-            "point_fields_withheld_by_quarantine": 386,
+            "point_fields_withheld_by_quarantine": 396,
             "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
             "source_blank_country_fields": 1,
             "point_country_quarantine_overlap": 46,
-            "unique_events_with_any_quarantined_field": 434,
+            "unique_events_with_any_quarantined_field": 444,
             "point_quarantine_candidate_manifest_sha256": (
                 HCED_POINT_QUARANTINE_CANDIDATE_SHA256
             ),
@@ -623,7 +623,7 @@ class HcedLocationArtifactTests(unittest.TestCase):
         )
         markdown = render_coverage_markdown(report)
         self.assertIn("Declared HCED location quarantine policy", markdown)
-        self.assertIn("point_fields_withheld_by_quarantine | 386", markdown)
+        self.assertIn("point_fields_withheld_by_quarantine | 396", markdown)
 
     def test_coverage_rejects_contradictory_location_policy_declarations(self) -> None:
         cases = (
@@ -706,19 +706,19 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
             projected_events.append(projected)
         self.assertEqual(
             _canonical_hash(projected_events),
-            "4aeeb50b7c156536eac018231073e26f5e13e8a58a3ef2a81fc1fc6372ad2e06",
+            "ab3b85723349f446f54b2ddd13a4755c328979f9de5af1f7a41c9111bbfe5bd1",
         )
         self.assertEqual(
             _canonical_hash(self.entities),
-            "cfb30c2e1bc97c832416a5608637f0be7eb235a41a782abe0b2f69d51d1d7f14",
+            "b2b1f2d01b2c3539434bee49108ae55653d3ca87155ff9bc9da2865a936b0817",
         )
         self.assertEqual(
             _canonical_hash(self.sources),
-            "7886a049283f984ed3814e4712d9e6dc70932829acd7f71ec6da31d76f7d7862",
+            "da1081f9ad37a083808cd977aa5ba2b5e6c5b7d0d503b929bf5328cb6d44d71d",
         )
         self.assertEqual(
             _canonical_hash(self.registry["entities"]),
-            "908ee7f1030b20593e090599d14b01a9b109388bb55919ea7817a15140a4ab6c",
+            "570dd8664aa4074362b0fdaba4ade497e1e89d313ec26766314e1ec91c902e67",
         )
 
     def test_dashboard_projection_matches_the_coupled_wave5_build(self) -> None:
@@ -738,13 +738,13 @@ class Wave5CoupledArtifactOracleTests(unittest.TestCase):
         ]
         self.assertEqual(
             _canonical_hash(projected_events),
-            "65a1e38cb2113cc4332e4fb2f35f439d5f98a2db6361c5dfa99afcc6af74a095",
+            "61e1c0c108def2f6ac21662c07ac5576e43cb2e0aba0f26a6e8fe7b3d363d015",
         )
         expected_hashes = {
-            "entities": "2343625882e7154dea8640d8cf02782dce5ba4898f91dc5a782c085507af3d75",
-            "series": "c9498a9082dd0848f56246055b08fcd0c91b7335802b690cd5163860992f9afc",
-            "leaderboard": "263506aa33edcba1cd0af752e1cd72b4f356b1931e1e110e4269b8d4fea93ab7",
-            "sensitivity": "a11916294254ce576ea58c2c4d221e8e10efc4c4cfa02ffaa60d80d89832b923",
+            "entities": "d616be3da88a7394b1106dc01b50cbfc1b6ab408d51871ea77e75272d67e470e",
+            "series": "88be7d23be3345227faa27c722b0ce25df4b145472051912ba45033108524498",
+            "leaderboard": "51f942fbba50213b1bb29120bf20a557f68a949290ff1cffebf0a5f818cfe138",
+            "sensitivity": "0bcf25af2eec5c4099273d2c7a5d49f3517b136dc503c748c1bf664a44612e65",
         }
         for field_name, expected_hash in expected_hashes.items():
             with self.subTest(field_name=field_name):
