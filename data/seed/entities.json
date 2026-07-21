@@ -2011,5 +2011,168 @@
     "source_ids": [
       "project_continuity_policy"
     ]
+  },
+  {
+    "id": "kingdom_wurttemberg_1806_1918",
+    "name": "Kingdom of Wurttemberg",
+    "kind": "kingdom",
+    "start_year": 1806,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Kingdom of Wurttemberg from its 1806 elevation through the 1918 monarchy. The deliberately misspelled HCED label 'Wurtemburg' binds here only for the audited 1866 Tauberbischofsheim row; rows where Wurttemberg is merely a commander's title remain curated exclusions. No rating is inherited from the duchy, electorate, or later Free People's State.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "electorate_hanover_1708_1814",
+    "name": "Electorate of Hanover",
+    "kind": "electorate",
+    "start_year": 1708,
+    "end_year": 1814,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Electorate of Brunswick-Luneburg, conventionally Hanover, from imperial recognition of the electoral dignity through its 1814 elevation. The bare HCED label binds here only for the audited 1794 Nieuport siege. No Elo passes through the Napoleonic occupation or into the successor kingdom.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_hanover_1814_1866",
+    "name": "Kingdom of Hanover",
+    "kind": "kingdom",
+    "start_year": 1814,
+    "end_year": 1866,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [
+      "electorate_hanover_1708_1814"
+    ],
+    "continuity_note": "Kingdom created at the Congress of Vienna and extinguished by Prussian annexation in 1866. The bare HCED label binds here only for the audited Langensalza battle; the predecessor link records succession and never transfers Elo.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "grand_duchy_hesse_1806_1918",
+    "name": "Grand Duchy of Hesse",
+    "kind": "grand_duchy",
+    "start_year": 1806,
+    "end_year": 1918,
+    "region": "Central Europe",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Hesse-Darmstadt after its 1806 elevation through the 1918 monarchy. The generic HCED label 'Hesse' binds here only for the audited 1866 Laufach action; it never absorbs Hesse-Kassel, Hessian auxiliaries, or an unverified Ypres record.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "kingdom_hormuz_1500_1622",
+    "name": "Kingdom of Hormuz",
+    "kind": "kingdom",
+    "start_year": 1500,
+    "end_year": 1622,
+    "region": "Persian Gulf",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Curated coverage of the tributary Kingdom of Hormuz for the sixteenth-century Portuguese encounters through its 1622 conquest. The label policy scores only the unambiguous 1515 submission; the 1507-1508 row combines an initial Portuguese victory with Albuquerque's forced withdrawal and remains excluded.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "mataram_sultanate_1588_1755",
+    "name": "Mataram Sultanate",
+    "kind": "sultanate",
+    "start_year": 1588,
+    "end_year": 1755,
+    "region": "Java, Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Islamic Mataram polity through the 1755 partition. HCED's geographic label 'Java' binds here only for the two audited 1628-1629 attacks on Batavia and is never treated as an island-wide or transhistorical polity alias.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "sultanate_gowa_1512_1669",
+    "name": "Sultanate of Gowa",
+    "kind": "sultanate",
+    "start_year": 1512,
+    "end_year": 1669,
+    "region": "South Sulawesi, Southeast Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Gowa-Makassar polity through the final Dutch-allied conquest in 1669. The HCED spelling 'Macassar' binds only for the audited 1660 action; its 1667-1668 campaign envelope omits the decisive Bone and Soppeng allies and remains excluded.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "palmyrene_empire_270_273",
+    "name": "Zenobian Palmyrene Empire",
+    "kind": "empire",
+    "start_year": 270,
+    "end_year": 273,
+    "region": "Roman East",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Autonomous Palmyrene imperial regime under Zenobia and Vaballathus, separated from both the earlier client kingdom and restored Roman provincial rule. The bare Palmyra label binds only to the audited 272 Emesa battle and first surrender of the city; the 273 revolt would require a separate outcome contract.",
+    "source_ids": [
+      "cliopatria_polities",
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "sur_empire_1540_1555",
+    "name": "Sur Empire",
+    "kind": "empire",
+    "start_year": 1540,
+    "end_year": 1555,
+    "region": "South Asia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "North Indian state established by Sher Shah Suri after the 1540 defeat of Humayun and ending with the Mughal restoration in 1555. The HCED spelling 'Suri Empire' binds only for the audited 1540 Kanauj outcome; the misdated pre-imperial Surajgarh row remains excluded.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "corinthian_polis_480_338_bce",
+    "name": "Classical Corinthian Polis",
+    "kind": "city_state",
+    "start_year": -480,
+    "end_year": -338,
+    "region": "Ancient Greece",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Classical Corinth as an autonomous polis before Macedonian hegemony. The bare Corinth label binds only for the audited 435 BCE Leucimme and 425 BCE Solygeia actions; Timoleon's expedition, the indecisive Sybota row, and later regimes remain outside the policy.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "classical_corcyra_480_433_bce",
+    "name": "Classical Corcyra before the Athenian alliance",
+    "kind": "city_state",
+    "start_year": -480,
+    "end_year": -433,
+    "region": "Ionian Sea, Ancient Greece",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Corcyra as an autonomous naval polis through the 433 BCE defensive alliance with Athens. The bare Corcyra label binds only for the audited 435 BCE victory at Leucimme; the later alliance, civil-war factions, and Roman-era polity require separate continuity decisions.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
   }
 ]

@@ -3421,6 +3421,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "classical_corcyra_480_433_bce",
+      "name": "Classical Corcyra before the Athenian alliance",
+      "kind": "city_state",
+      "start_year": -480,
+      "end_year": -433,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ionian Sea, Ancient Greece"
+    },
+    {
+      "id": "corinthian_polis_480_338_bce",
+      "name": "Classical Corinthian Polis",
+      "kind": "city_state",
+      "start_year": -480,
+      "end_year": -338,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ancient Greece"
+    },
+    {
       "id": "claudius_ii_roman_field_army_lake_benacus_268",
       "name": "Claudius II's Roman field army near Lake Benacus (268)",
       "kind": "event_bounded_field_command",
@@ -6101,15 +6121,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q706018_1709_4a1b7d07",
+      "id": "electorate_hanover_1708_1814",
       "name": "Electorate of Hanover",
-      "kind": "polity",
-      "start_year": 1709,
-      "end_year": 1802,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "kind": "electorate",
+      "start_year": 1708,
+      "end_year": 1814,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q529605_1803_875b4b11",
@@ -8101,15 +8120,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q20135_1806_228b6efe",
+      "id": "grand_duchy_hesse_1806_1918",
       "name": "Grand Duchy of Hesse",
-      "kind": "polity",
+      "kind": "grand_duchy",
       "start_year": 1806,
-      "end_year": 1870,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_q688918_1279_6b8877d2",
@@ -11933,15 +11951,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q164079_1803_10b76ee9",
+      "id": "kingdom_hanover_1814_1866",
       "name": "Kingdom of Hanover",
       "kind": "kingdom",
-      "start_year": 1803,
-      "end_year": 1865,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "start_year": 1814,
+      "end_year": 1866,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "hatra_kingdom_defenders_199",
@@ -11985,6 +12002,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kingdom_hormuz_1500_1622",
+      "name": "Kingdom of Hormuz",
+      "kind": "kingdom",
+      "start_year": 1500,
+      "end_year": 1622,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Persian Gulf"
     },
     {
       "id": "kingdom_hungary",
@@ -12883,15 +12910,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q159631_1806_1dd03019",
-      "name": "Kingdom of Württemberg",
+      "id": "kingdom_wurttemberg_1806_1918",
+      "name": "Kingdom of Wurttemberg",
       "kind": "kingdom",
       "start_year": 1806,
-      "end_year": 1870,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Central Europe"
     },
     {
       "id": "clio_rs_gepid_k_510_f7d6bbb8",
@@ -14449,15 +14475,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_id_mataram_k_1588_5972aca3",
+      "id": "mataram_sultanate_1588_1755",
       "name": "Mataram Sultanate",
       "kind": "sultanate",
       "start_year": 1588,
-      "end_year": 1743,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": true,
-      "region": "Unclassified"
+      "end_year": 1755,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Java, Southeast Asia"
     },
     {
       "id": "clio_in_maukhari_dyn_555_8adb33f2",
@@ -21869,15 +21894,14 @@
       "region": "Unclassified"
     },
     {
-      "id": "clio_q1408641_1512_b0c944e7",
+      "id": "sultanate_gowa_1512_1669",
       "name": "Sultanate of Gowa",
       "kind": "sultanate",
       "start_year": 1512,
       "end_year": 1669,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South Sulawesi, Southeast Asia"
     },
     {
       "id": "clio_q2365048_1547_f9530124",
@@ -22181,15 +22205,14 @@
       "region": "Western Europe"
     },
     {
-      "id": "clio_in_sur_emp_1540_86155323",
+      "id": "sur_empire_1540_1555",
       "name": "Sur Empire",
       "kind": "empire",
       "start_year": 1540,
-      "end_year": 1594,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "end_year": 1555,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South Asia"
     },
     {
       "id": "clio_q2122499_1744_de35cbbe",
@@ -25099,6 +25122,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "palmyrene_empire_270_273",
+      "name": "Zenobian Palmyrene Empire",
+      "kind": "empire",
+      "start_year": 270,
+      "end_year": 273,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Roman East"
+    },
+    {
       "id": "clio_q7183_bce208_6e3da8e4",
       "name": "Zhai",
       "kind": "polity",
@@ -25394,15 +25427,15 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2403,
-    "rated_entities": 1050,
-    "rated_events": 5471,
+    "registry_polities": 2407,
+    "rated_entities": 1061,
+    "rated_events": 5484,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36872,
+    "unresolved_event_candidates": 36859,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
-    "provisional_hced_label_events": 2484,
+    "provisional_hced_label_events": 2497,
     "candidate_keyed_wave6_hced_events": 76,
     "candidate_keyed_wave7_root_hced_events": 62,
     "candidate_keyed_wave7_central_hced_events": 33,
@@ -25521,11 +25554,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5204,
+      "hced_candidate_bindings": 5217,
       "candidate_keyed_reviewed_contracts": 833,
-      "geojson_points": 4803,
-      "modern_location_country_assertions": 5109,
-      "location_provenance_objects": 5158,
+      "geojson_points": 4816,
+      "modern_location_country_assertions": 5122,
+      "location_provenance_objects": 5171,
       "point_fields_withheld_by_quarantine": 401,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
@@ -25535,7 +25568,7 @@
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
       "quarantine_policy_sha256": "4b47ac509695ed3eae88179e28626a607b347ead805f0bf81a37e8e68b87c6eb",
       "assertion_status": {
-        "unreviewed_source_assertion": 5158
+        "unreviewed_source_assertion": 5171
       },
       "verified_location_assertions": {
         "availability": "not_available",

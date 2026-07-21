@@ -2,7 +2,7 @@
 
 An auditable, uncertainty-aware system for exploring the military success of historical countries, empires and other autonomous actors.
 
-The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 2,403 catalogued, time-bounded polity identities, of which 1,050 actually participate in rated evidence across 5,471 events. It currently includes:
+The project is a reproducible research foundation, not a claim to contain “every battle ever.” The current expanded provisional release contains 2,407 catalogued, time-bounded polity identities, of which 1,061 actually participate in rated evidence across 5,484 events. It currently includes:
 
 - separate tactical, operational and strategic ratings;
 - participant-specific outcome vectors, so limited withdrawals and terminal defeats are not equivalent;
@@ -49,12 +49,12 @@ python scripts/build_dashboard.py --data data/release --registry data/catalog/re
 The test suite cross-checks the committed artifact against the release and
 registry so a stale or partial rebuild fails before it ships.
 
-The dashboard deliberately separates the polity registry from the rating ledger. The 2,403-entry registry includes unrated and explicitly superseded source candidates; absence from the ledger is not a defeat. The release entity file has 1,057 records, of which 1,050 distinct entity IDs actually participate in rated events. The 5,471-event ledger combines 40 manually curated seed events, 1,887 crosswalk-resolved, 2,484 label-resolved, and 833 candidate-keyed HCED tactical encounters: 76 from Wave 6, 192 from Wave 7, and 565 from Wave 8. It also contains 66 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 8 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
+The dashboard deliberately separates the polity registry from the rating ledger. The 2,407-entry registry includes unrated and explicitly superseded source candidates; absence from the ledger is not a defeat. The release entity file has 1,068 records, of which 1,061 distinct entity IDs actually participate in rated events. The 5,484-event ledger combines 40 manually curated seed events, 1,887 crosswalk-resolved, 2,497 label-resolved, and 833 candidate-keyed HCED tactical encounters: 76 from Wave 6, 192 from Wave 7, and 565 from Wave 8. It also contains 66 coalition-aggregated IWD strategic parent wars, 153 IWBD tactical battles, and 8 UCDP conflict-termination strategic episodes. Source-derived entries remain visibly provisional and must not be published as a comprehensive historical conclusion.
 
-The 5,204 already-rated HCED events also carry an audited, rating-neutral
+The 5,217 already-rated HCED events also carry an audited, rating-neutral
 location tranche where the source assertion survives fail-closed quarantine:
-4,803 exact GeoJSON Points, 5,109 source-transcribed geographic-jurisdiction
-labels in `modern_location_country`, and 5,158 closed `location_provenance`
+4,816 exact GeoJSON Points, 5,122 source-transcribed geographic-jurisdiction
+labels in `modern_location_country`, and 5,171 closed `location_provenance`
 objects. These are modern, unreviewed HCED source assertions with unknown
 coordinate precision, not verified historical locations or sovereign-country
 truth. Candidate-ID manifests withhold 401 Point fields and 94 jurisdiction
@@ -66,10 +66,10 @@ sensitivity result unchanged. Outcome validation and promotion are separate,
 score-changing workflows.
 
 The 1,546-source registry spans 1,277 provenance families and also makes the
-outcome-provenance contract explicit. Of the 5,471 rated events, 5,431 map
+outcome-provenance contract explicit. Of the 5,484 rated events, 5,444 map
 through explicit event outcome metadata to at least one direct outcome family:
-5,204 HCED-derived events, 66 IWD parent wars, 153 IWBD battles, and 8 UCDP
-conflict-termination episodes. Of those mapped events, 5,023 cite one direct
+5,217 HCED-derived events, 66 IWD parent wars, 153 IWBD battles, and 8 UCDP
+conflict-termination episodes. Of those mapped events, 5,036 cite one direct
 outcome family and 408 cite more than one. The 40 curated seed events remain
 explicitly unknown until claim-level outcome locators and human review identify
 which linked sources support the scored assertions. A `source_family_id` is a
@@ -83,7 +83,7 @@ them.
 
 The live ingestion pipeline has immutable snapshots and review candidates from:
 
-- Cliopatria v0.2.0: 1,637 time-bounded identity candidates spanning 3400 BCE–2024, consolidated with curated and explicitly superseded identities into the 2,403-entry registry;
+- Cliopatria v0.2.0: 1,637 time-bounded identity candidates spanning 3400 BCE–2024, consolidated with curated and explicitly superseded identities into the 2,407-entry registry;
 - Historical Conflict Event Dataset (HCED): 8,881 encounter candidates;
 - Interstate War Data (IWD) v1.21: 265 component-war candidates derived once per war rather than once per annual row;
 - Interstate War Battle Dataset (IWBD): 1,708 battle candidates;
@@ -97,7 +97,7 @@ The live ingestion pipeline has immutable snapshots and review candidates from:
   machine-local, ignored workbook with no clear redistributable license.
 
 The review queues now contain 45,968 staged source records. Of 42,344
-event-like candidates, 36,872 remain outside the rating ledger. The additive
+event-like candidates, 36,859 remain outside the rating ledger. The additive
 Wikidata queue contributes discovery metadata only: automated extraction is
 never approved rating data, and Wikidata's roughly 60 winner assertions across
 the whole graph are far too sparse to supply outcomes. These records remain in

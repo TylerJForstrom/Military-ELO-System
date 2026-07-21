@@ -558,6 +558,29 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1500, 1589, "sultanate_of_mombasa"),
         (1631, 1638, "mombasa_revolt_yusuf_ibn_al_hasan"),
     ),
+    # ---- Audited state-polity tranche (2026-07-20) ----
+    # These intentionally narrow windows are outcome-audit boundaries, not
+    # claims that the polity existed only in the listed year. Adjacent rows
+    # with the same raw label remain staged where HCED names a commander,
+    # compresses a mixed campaign, omits a principal ally, or has a chronology
+    # conflict. The identity records retain the independently reviewed polity
+    # intervals while this table controls which bare labels may score.
+    "wurtemburg": ((1866, 1866, "kingdom_wurttemberg_1806_1918"),),
+    "hanover": (
+        (1794, 1794, "electorate_hanover_1708_1814"),
+        (1866, 1866, "kingdom_hanover_1814_1866"),
+    ),
+    "hesse": ((1866, 1866, "grand_duchy_hesse_1806_1918"),),
+    "hormuz": ((1515, 1515, "kingdom_hormuz_1500_1622"),),
+    "java": ((1628, 1629, "mataram_sultanate_1588_1755"),),
+    "macassar": ((1660, 1660, "sultanate_gowa_1512_1669"),),
+    "palmyra": ((272, 272, "palmyrene_empire_270_273"),),
+    "suri empire": ((1540, 1540, "sur_empire_1540_1555"),),
+    "corinth": (
+        (-435, -435, "corinthian_polis_480_338_bce"),
+        (-425, -425, "corinthian_polis_480_338_bce"),
+    ),
+    "corcyra": ((-435, -435, "classical_corcyra_480_433_bce"),),
 }
 
 
@@ -1451,6 +1474,35 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
     "hced-Strymon1185-1": (
         "duplicate of hced-Demetritsa1185-1: both rows encode the 7 November "
         "1185 destruction of the Norman field army on the Strymon"
+    ),
+    # ---- Audited state-polity tranche companion holds (2026-07-20) ----
+    "hced-Altenkirchen (1st)1796-1": (
+        "wrong actor: Duke Ferdinand of Wurttemberg commanded a Habsburg "
+        "Austrian wing; Wurtemburg is a commander's title, not the belligerent polity"
+    ),
+    "hced-Pirna1813-1": (
+        "wrong actor: Duke Eugene of Wurttemberg commanded a Russian-Allied "
+        "formation; the Kingdom of Wurttemberg was not the defeated polity"
+    ),
+    "hced-Ypres1793-1": (
+        "chronology and actor mismatch: the attested French siege of Ypres was "
+        "in 1794 against a mixed Habsburg-Hessian garrison, not a France-Hesse dyad in 1793"
+    ),
+    "hced-Hormuz1507-1508-1": (
+        "mixed-result campaign envelope: the 1507 Portuguese naval victory and "
+        "tribute settlement were followed by Albuquerque's forced withdrawal in 1508"
+    ),
+    "hced-Mount Haemus981-1": (
+        "unverified event: the cited gazetteer identifies the Haemus range but "
+        "does not attest a discrete 981 Bulgarian victory at this location"
+    ),
+    "hced-Macassar1667-1668-1": (
+        "incomplete coalition and campaign envelope: Bone and Soppeng were "
+        "principal Dutch allies and the conquest continued through 1669"
+    ),
+    "hced-Surajgarh1530-1": (
+        "chronology and identity mismatch: the battle is generally dated 1534, "
+        "before the Sur Empire was established by the 1540 victory at Kanauj"
     ),
 }
 

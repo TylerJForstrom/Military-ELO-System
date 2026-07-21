@@ -103,9 +103,9 @@ Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
 
-The current status-aware HCED numerators are 4,803 unreviewed source Points,
-5,109 source-transcribed geographic-jurisdiction labels, and 5,158 events with
-closed location-provenance objects, all over 5,204 HCED-derived rated events.
+The current status-aware HCED numerators are 4,816 unreviewed source Points,
+5,122 source-transcribed geographic-jurisdiction labels, and 5,171 events with
+closed location-provenance objects, all over 5,217 HCED-derived rated events.
 Verified-location coverage is `not_available`. The report separately publishes
 the frozen policy counts rather than inferring policy from absence: 401 Point
 fields withheld by quarantine, 94 country/jurisdiction fields withheld, 46
@@ -163,9 +163,9 @@ is considered only when neither event-level field is present and is never
 unioned into an explicit mapping. The 1,546-source registry contains 944 sources
 advertising the direct `outcome` capability across 862 dependency families.
 Current event-level contracts select 826 of those sources across 758 families
-and map 5,431 of 5,471 rated events. The mapped population contains 5,204
+and map 5,444 of 5,484 rated events. The mapped population contains 5,217
 HCED-derived events, 66 IWD parent wars, 153 IWBD battles, and 8 UCDP
-termination episodes. Of those mapped events, 5,023 cite one declared direct-
+termination episodes. Of those mapped events, 5,036 cite one declared direct-
 outcome family and 408 cite between two and six; family cardinality is an audit
 fact, not automatic proof of independence.
 

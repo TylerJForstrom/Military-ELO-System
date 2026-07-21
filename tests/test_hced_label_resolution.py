@@ -1551,10 +1551,10 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 8 rows:
-        # 1,514 + 2,996 + 1,887 + 2,484 == 8,881.
+        # 1,514 + 2,983 + 1,887 + 2,497 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (1514, 2996, 1887, 2484, 8881),
+            (1514, 2983, 1887, 2497, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
@@ -1568,7 +1568,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 75
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 82
         )
         self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 158)
         # uncoded_side is gone from pass 1: replaced by the deferral.
@@ -1579,7 +1579,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_484)
+        self.assertEqual(len(label_events), 2_497)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)

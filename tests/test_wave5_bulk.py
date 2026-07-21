@@ -355,19 +355,20 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             if TSARDOM_ID in self._participants(event)
         ]
 
-        # Portugal has 78 newly unlocked rows plus the already-rated 1918
-        # Estaires row migrated from its Cliopatria envelope into the curated
-        # First Republic identity. Tsardom contains 55 newly unlocked rows plus
+        # Portugal has its original cohort plus the audited 1515 Hormuz row;
+        # the already-rated 1918 Estaires row remains migrated from its
+        # Cliopatria envelope into the curated First Republic identity.
+        # Tsardom contains 55 newly unlocked rows plus
         # the three already-rated rows on the existing Cliopatria identity;
         # three source rows failed the historical accuracy audit.
-        self.assertEqual(len(portugal), 82)
+        self.assertEqual(len(portugal), 83)
         self.assertEqual(len(tsardom), 62)
         self.assertEqual(
             Counter(
                 "label" if event["id"].startswith("hced_label_") else "crosswalk"
                 for event in portugal
             ),
-            {"crosswalk": 16, "label": 66},
+            {"crosswalk": 16, "label": 67},
         )
         self.assertEqual(
             Counter(
@@ -380,7 +381,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
         combined = [*portugal, *tsardom]
         event_ids = [event["id"] for event in combined]
         candidate_ids = [event.get("hced_candidate_id") for event in combined]
-        self.assertEqual(len(combined), 144)
+        self.assertEqual(len(combined), 145)
         self.assertEqual(len(event_ids), len(set(event_ids)))
         self.assertNotIn(None, candidate_ids)
         self.assertEqual(len(candidate_ids), len(set(candidate_ids)))

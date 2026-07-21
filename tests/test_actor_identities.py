@@ -334,10 +334,10 @@ class ActorReleaseArtifactTests(unittest.TestCase):
         label_events = [
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
-        self.assertEqual(len(label_events), 2_484)
+        self.assertEqual(len(label_events), 2_497)
         self.assertEqual(
             sum(e.get("identity_resolution") == "label" for e in label_events),
-            2_479,
+            2_492,
         )
         self.assertEqual(
             sum(
