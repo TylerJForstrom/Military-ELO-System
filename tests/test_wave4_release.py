@@ -49,9 +49,9 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_466)
-        self.assertEqual(len(self.entities), 1_051)
-        self.assertEqual(len(self.registry_by_id), 2_398)
+        self.assertEqual(len(self.events), 5_471)
+        self.assertEqual(len(self.entities), 1_057)
+        self.assertEqual(len(self.registry_by_id), 2_403)
         self.assertEqual(
             families,
             {
@@ -496,6 +496,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("army_upress_beckenbaugh_genghis_khan", "juvaini_history_world_conqueror_boyle"): 3,
             ("davidson_island_of_formosa_1903", "jacar_sino_japanese_war_archives"): 2,
             ("hughes_glubb_arab_legion_2018", "rodman_victory_defeat_or_draw_2021"): 2,
+            ("albi_first_carlist_war_north_2022", "aunamendi_arquijas_battles"): 2,
+            ("eaton_battle_raichur_2009", "paes_nuniz_sewell_vijayanagara_chronicles"): 1,
+            ("archaeological_survey_india_udayagiri_epigraphy", "rao_shulman_subrahmanyam_vijayanagara"): 1,
+            ("jackson_crusades_1239_1241_aftermath", "karakus_demirci_la_forbie_2024"): 1,
             },
         )
         hced_candidates = {
@@ -522,7 +526,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_466)
+        self.assertEqual(len(self.results["events"]), 5_471)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -601,10 +605,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_538)
+        self.assertEqual(len(self.sources), 1_546)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_269,
+            1_277,
         )
         new_source_ids = {
             "colombia_constitution_1863",

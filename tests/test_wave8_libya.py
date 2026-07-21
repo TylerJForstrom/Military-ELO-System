@@ -542,22 +542,22 @@ class Wave8LibyaTests(unittest.TestCase):
             promotion["wave8_libya_frozen_chadian_rebels_pre_validation"],
             promotion["wave8_libya_frozen_chadian_rebels_post_validation"],
         )
-        self.assertEqual(len(self.release_events), 5_466)
-        self.assertEqual(len(self.release_entities), 1_051)
-        self.assertEqual(len(self.release_sources), 1_538)
+        self.assertEqual(len(self.release_events), 5_471)
+        self.assertEqual(len(self.release_entities), 1_057)
+        self.assertEqual(len(self.release_sources), 1_546)
 
         coverage = self.registry["coverage"]
-        self.assertEqual(coverage["rated_events"], 5_466)
-        self.assertEqual(coverage["rated_entities"], 1_044)
-        self.assertEqual(coverage["registry_polities"], 2_398)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_877)
+        self.assertEqual(coverage["rated_events"], 5_471)
+        self.assertEqual(coverage["rated_entities"], 1_050)
+        self.assertEqual(coverage["registry_polities"], 2_403)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_872)
         self.assertEqual(coverage["candidate_keyed_wave8_libya_hced_events"], 3)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_199)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 828)
+        self.assertEqual(location["hced_candidate_bindings"], 5_204)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 833)
         self.assertEqual(location["geojson_points"], 4_803)
-        self.assertEqual(location["modern_location_country_assertions"], 5_104)
-        self.assertEqual(location["location_provenance_objects"], 5_153)
+        self.assertEqual(location["modern_location_country_assertions"], 5_109)
+        self.assertEqual(location["location_provenance_objects"], 5_158)
         registry_entities = {
             str(item["id"]): item for item in self.registry["entities"]
         }

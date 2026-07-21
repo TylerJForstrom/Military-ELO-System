@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1051,
-    "events": 5466,
-    "sources": 1538,
-    "registry_polities": 2398
+    "entities": 1057,
+    "events": 5471,
+    "sources": 1546,
+    "registry_polities": 2403
   },
   "year_range": {
     "start": -1274,
@@ -181,6 +181,8 @@
     "accepted_wave8_khwarazmian_mongol_hced_events": 6,
     "accepted_wave8_latrun_hced_events": 2,
     "accepted_wave8_republic_formosa_hced_events": 2,
+    "accepted_wave8_arquijas_hced_events": 2,
+    "accepted_wave8_raichur_udayagiri_la_forbie_hced_events": 3,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -22155,7 +22157,531 @@
     "wave8_republic_formosa_country_quarantine_additions": [],
     "wave8_republic_formosa_entities_added": 1,
     "wave8_republic_formosa_sources_added": 3,
-    "hced_label_pass_input_rows": 5495,
+    "wave8_arquijas_metadata": {
+      "counts": {
+        "adjacent_hced_dispositions": 6,
+        "country_quarantine_additions": 0,
+        "discovery_nonrating_twins": 2,
+        "holds": 0,
+        "integration_dispositions": 8,
+        "new_entities": 0,
+        "new_sources": 2,
+        "newly_rated_events": 2,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 2,
+        "promotion_contracts": 2,
+        "reviewed_hced_rows": 2,
+        "terminal_exclusions": 0,
+        "unknown_discovery_outcomes": 1
+      },
+      "cohorts": {
+        "first_carlist_war_arquijas_1834_1835": 2
+      },
+      "final_audit_signature": "7ad64729af51fc9604d00a9dccbe9eaf50c80e84cf9a47aec7c77fd3011134f9",
+      "promoted_candidate_ids": [
+        "hced-Arquijas1834-1",
+        "hced-Arquijas1835-1"
+      ],
+      "hold_candidate_ids": [],
+      "discovery_nonrating_candidate_ids": [
+        "Q12254001",
+        "Q3755395"
+      ]
+    },
+    "wave8_arquijas_counts": {
+      "adjacent_hced_dispositions": 6,
+      "country_quarantine_additions": 0,
+      "discovery_nonrating_twins": 2,
+      "holds": 0,
+      "integration_dispositions": 8,
+      "new_entities": 0,
+      "new_sources": 2,
+      "newly_rated_events": 2,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 2,
+      "promotion_contracts": 2,
+      "reviewed_hced_rows": 2,
+      "terminal_exclusions": 0,
+      "unknown_discovery_outcomes": 1
+    },
+    "wave8_arquijas_cohort_counts": {
+      "first_carlist_war_arquijas_1834_1835": 2
+    },
+    "wave8_arquijas_audit_signature": "7ad64729af51fc9604d00a9dccbe9eaf50c80e84cf9a47aec7c77fd3011134f9",
+    "wave8_arquijas_final_audit_signature": "7ad64729af51fc9604d00a9dccbe9eaf50c80e84cf9a47aec7c77fd3011134f9",
+    "wave8_arquijas_queue_validation": {
+      "promotion_contracts": 2,
+      "holds": 0,
+      "reviewed_hced_rows": 2,
+      "adjacent_hced_rows": 6,
+      "exact_label_rows": 4
+    },
+    "wave8_arquijas_discovery_validation": {
+      "discovery_nonrating_twins": 2,
+      "discovery_promotions": 0,
+      "unknown_never_draw_rows": 1
+    },
+    "wave8_arquijas_integration_validation": {
+      "adjacent_hced_dispositions": 6,
+      "existing_release_owned_events": 2,
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwd_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_arquijas_artifact_validation": {
+      "artifact_state": "integrated",
+      "installed_sources": 2,
+      "promoted_events": 2
+    },
+    "wave8_arquijas_candidate_ids": [
+      "hced-Arquijas1834-1",
+      "hced-Arquijas1835-1"
+    ],
+    "wave8_arquijas_holds": [],
+    "wave8_arquijas_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "db658445487517332b3cddadcac30d7b320d38d9c38823cfab77e540c9de99f0",
+      "events_touched": 4,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 4
+      },
+      "label": "liberals",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 4
+    },
+    "wave8_arquijas_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Arquijas1834-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Ega bridge-area battle and Spain but do not independently validate HCED's exact coordinate. Retain modern country and provenance; withhold the point.",
+        "evidence_refs": [
+          "wave8_arquijas_albi_first_carlist_war_north",
+          "wave8_arquijas_aunamendi_battles"
+        ]
+      },
+      {
+        "candidate_id": "hced-Arquijas1835-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the Ega bridge-area battle and Spain but do not independently validate HCED's exact coordinate. Retain modern country and provenance; withhold the point.",
+        "evidence_refs": [
+          "wave8_arquijas_albi_first_carlist_war_north",
+          "wave8_arquijas_aunamendi_battles"
+        ]
+      }
+    ],
+    "wave8_arquijas_point_quarantine_additions": [
+      "hced-Arquijas1834-1",
+      "hced-Arquijas1835-1"
+    ],
+    "wave8_arquijas_country_quarantine_additions": [],
+    "wave8_arquijas_entities_added": 0,
+    "wave8_arquijas_sources_added": 2,
+    "wave8_raichur_udayagiri_la_forbie_metadata": {
+      "adjacent_hced_dispositions": [
+        {
+          "candidate_id": "hced-Ascalon1247-1",
+          "raw_row_sha256": "96edaef632dfb8471c32c521375ea72573605d087bdf315de0bbbec232017779",
+          "disposition": "existing_exact_release_owner",
+          "owner_event_id": "hced_wave8_egypt_forces_hced_ascalon1247_1",
+          "reason": "Distinct 1247 Ayyubid siege already owned by the Egypt-forces lane; it is not La Forbie."
+        },
+        {
+          "candidate_id": "hced-Kuban1222-1",
+          "raw_row_sha256": "278d9cede9f067fb731c945069ebf12b207f20524aa466676540b01477f760a6",
+          "disposition": "distinct_actor_pair_remains_out_of_scope",
+          "owner_event_id": null,
+          "reason": "The queued actors are Mongols and Georgia; Khwarezmian occurs only in campaign-context participant noise."
+        },
+        {
+          "candidate_id": "hced-Otranto1917-1",
+          "raw_row_sha256": "f8fa2ca48628bd9d70c86a057034c8c6d16cc994325f6baaea22b6b871a8ce77",
+          "disposition": "unrelated_existing_release_owner",
+          "owner_event_id": "hced_hced_otranto1917_1",
+          "reason": "World War I naval event; Otrar/Khwarezm text in participants is extraction contamination, not an actor."
+        }
+      ],
+      "cohorts": {
+        "khwarazm_adjacent_terminal_holds_1221_1222": 2,
+        "la_forbie_exact_promotion_1244": 1,
+        "pathan_campaign_scope_holds_1750_1751": 3,
+        "south_india_bahmani_scope_holds_1367_1443": 5,
+        "south_india_exact_promotions_1513_1520": 2
+      },
+      "counts": {
+        "activated_existing_registry_entities": 1,
+        "adjacent_hced_dispositions": 3,
+        "country_quarantine_additions": 0,
+        "discovery_nonrating_twins": 2,
+        "holds": 10,
+        "identity_window_changes": 0,
+        "new_aliases": 0,
+        "new_event_bounded_entities": 5,
+        "new_sources": 6,
+        "newly_rated_events": 3,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 3,
+        "promotion_contracts": 3,
+        "release_entity_additions": 6,
+        "reviewed_hced_rows": 16,
+        "terminal_exclusions": 0
+      },
+      "discovery_nonrating_candidate_ids": [
+        "Q4872151",
+        "Q578201"
+      ],
+      "final_audit_signature": "af7110f2421a78c3b308cb7ebb192f5cb4939169f875b05a51aa2bba905923c7",
+      "hold_candidate_ids": [
+        "hced-Farrukhabad1750-1",
+        "hced-Farrukhabad1751-1",
+        "hced-Herat1221-1222-1",
+        "hced-Kasganj1750-1",
+        "hced-Kauthal1367-1",
+        "hced-Krishna1398-1",
+        "hced-Mudgal1443-1",
+        "hced-Nishapur1221-1",
+        "hced-Pangul1418-1",
+        "hced-Vijayanagar1406-1"
+      ],
+      "promoted_candidate_ids": [
+        "hced-La Forbie1244-1",
+        "hced-Raichur1520-1",
+        "hced-Udayagiri1513-1514-1"
+      ]
+    },
+    "wave8_raichur_udayagiri_la_forbie_counts": {
+      "activated_existing_registry_entities": 1,
+      "adjacent_hced_dispositions": 3,
+      "country_quarantine_additions": 0,
+      "discovery_nonrating_twins": 2,
+      "holds": 10,
+      "identity_window_changes": 0,
+      "new_aliases": 0,
+      "new_event_bounded_entities": 5,
+      "new_sources": 6,
+      "newly_rated_events": 3,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 3,
+      "promotion_contracts": 3,
+      "release_entity_additions": 6,
+      "reviewed_hced_rows": 16,
+      "terminal_exclusions": 0
+    },
+    "wave8_raichur_udayagiri_la_forbie_cohort_counts": {
+      "khwarazm_adjacent_terminal_holds_1221_1222": 2,
+      "la_forbie_exact_promotion_1244": 1,
+      "pathan_campaign_scope_holds_1750_1751": 3,
+      "south_india_bahmani_scope_holds_1367_1443": 5,
+      "south_india_exact_promotions_1513_1520": 2
+    },
+    "wave8_raichur_udayagiri_la_forbie_audit_signature": "af7110f2421a78c3b308cb7ebb192f5cb4939169f875b05a51aa2bba905923c7",
+    "wave8_raichur_udayagiri_la_forbie_final_audit_signature": "af7110f2421a78c3b308cb7ebb192f5cb4939169f875b05a51aa2bba905923c7",
+    "wave8_raichur_udayagiri_la_forbie_queue_validation": {
+      "promotion_contracts": 3,
+      "holds": 10,
+      "reviewed_hced_rows": 13,
+      "adjacent_hced_rows": 3,
+      "literal_label_inventories": 9,
+      "reviewed_hced_rows_with_adjacency": 16
+    },
+    "wave8_raichur_udayagiri_la_forbie_discovery_validation": {
+      "discovery_nonrating_twins": 2,
+      "discovery_promotions": 0,
+      "unknown_winner_rows": 2
+    },
+    "wave8_raichur_udayagiri_la_forbie_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwd_probable_twins": 0,
+      "iwbd_probable_twins": 0,
+      "release_lane_overlap": 3
+    },
+    "wave8_raichur_udayagiri_la_forbie_artifact_validation": {
+      "entity_records": 6,
+      "event_records": 3,
+      "integration_state": "integrated",
+      "metadata_marker": 0,
+      "source_records": 6
+    },
+    "wave8_raichur_udayagiri_la_forbie_candidate_ids": [
+      "hced-La Forbie1244-1",
+      "hced-Raichur1520-1",
+      "hced-Udayagiri1513-1514-1"
+    ],
+    "wave8_raichur_udayagiri_la_forbie_holds": [
+      {
+        "candidate_id": "hced-Farrukhabad1750-1",
+        "raw_row_sha256": "3f1b89b8269db2f53deb87a4c9b72c6f523f142248f5298349e123e36cd766c1",
+        "cohort": "pathan_campaign_scope_holds_1750_1751",
+        "disposition": "hold",
+        "hold_category": "competing_action_ownership_unresolved",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "Participant strings mix Farrukhabad and Kasganj and do not safely assign this row between the distinct Khudaganj and Ram Chatauni actions.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Farrukhabad1751-1",
+        "raw_row_sha256": "858092c21e902294aff947057a9b88c59efacb600d34ecbaf3d806a15b10fefb",
+        "cohort": "pathan_campaign_scope_holds_1750_1751",
+        "disposition": "hold",
+        "hold_category": "multiple_actions_and_coalition_not_binary",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "The record mixes Farrukhabad and Qadirganj and a Maratha–Awadh/Jat coalition; its binary actors are not safely bounded.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Herat1221-1222-1",
+        "raw_row_sha256": "f57299531562b320db4ce2882a8ecc859ea50fb81008bdc543dcddf7ef282331",
+        "cohort": "khwarazm_adjacent_terminal_holds_1221_1222",
+        "disposition": "hold",
+        "hold_category": "missing_sides_and_outcome_with_massacre_composite",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "Both sides, winner, and loser are null; participant tokens and a battle-followed-by-massacre marker cannot create a competitive outcome.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Kasganj1750-1",
+        "raw_row_sha256": "82c8eeb3be1e1b0cc19725a35f3e50f4d3cc71bb93e9c401dfb4945b0a9b1387",
+        "cohort": "pathan_campaign_scope_holds_1750_1751",
+        "disposition": "hold",
+        "hold_category": "competing_action_ownership_and_massacre_scope_unresolved",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "The row collides with the neighboring 1750 record and combines battle with massacre; provenance does not establish which row owns which action.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Kauthal1367-1",
+        "raw_row_sha256": "b135e849d3dacc8aca8dd1ba9a12556658d16b501523c4f959835be320fc5c7e",
+        "cohort": "south_india_bahmani_scope_holds_1367_1443",
+        "disposition": "hold",
+        "hold_category": "locked_year_conflicts_with_unreconciled_campaign_chronology",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "The locked 1367 date is not reconciled with the competing 1366 chronology; no silent redate or widened interval is allowed.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Krishna1398-1",
+        "raw_row_sha256": "0f367d024e8ea6f2a865bc55b63e6d2c23b8f68ddacf45a6ae42f9ba2e5951c0",
+        "cohort": "south_india_bahmani_scope_holds_1367_1443",
+        "disposition": "hold",
+        "hold_category": "river_or_campaign_label_not_bounded_engagement",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "Krishna is a river/campaign label and the staged row does not establish one independently bounded engagement.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Mudgal1443-1",
+        "raw_row_sha256": "09fd28b80158bead63301e9565242e4af9c1b634a146102b2c24ca1cc9024a24",
+        "cohort": "south_india_bahmani_scope_holds_1367_1443",
+        "disposition": "hold",
+        "hold_category": "multiple_actions_with_changing_tactical_results",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "The source tradition describes multiple actions and changing tactical winners before settlement; the row collapses them into one result.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Nishapur1221-1",
+        "raw_row_sha256": "b0b3923e46c824aad599653e29aadf61d4ee0d4dd846492d3e4005dbdbdfe7ae",
+        "cohort": "khwarazm_adjacent_terminal_holds_1221_1222",
+        "disposition": "hold",
+        "hold_category": "generic_persia_actor_and_massacre_composite",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "Khwarazmian appears only in participant noise while the raw loser is generic Persia and the row combines battle with city massacre.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Pangul1418-1",
+        "raw_row_sha256": "f1a5f1e7c868ea82a42859df32b6330033d28dd69045ae3e492e1ceea114fb5e",
+        "cohort": "south_india_bahmani_scope_holds_1367_1443",
+        "disposition": "hold",
+        "hold_category": "siege_counteroffensive_chronology_not_exact",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "The siege and counteroffensive chronology does not establish an exact 1418 event contract.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Vijayanagar1406-1",
+        "raw_row_sha256": "9bb325ce0df2da438e60ab07178e9b3be722c1acf40748a4b3c6987c1cc4aee1",
+        "cohort": "south_india_bahmani_scope_holds_1367_1443",
+        "disposition": "hold",
+        "hold_category": "campaign_and_peace_not_single_battle",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [],
+        "hold_reason": "Sources support a campaign and imposed peace, not a clean single battle; the queued point is also not a reviewed battlefield position.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_raichur_udayagiri_la_forbie",
+          "status": "review_hold_owner"
+        }
+      }
+    ],
+    "wave8_raichur_udayagiri_la_forbie_label_funnel_audit": {
+      "abasid sultan of damascus kingdom of jerusalem": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "7e72c01b0e8d120e9b16da700f64e0e431220d45ede52b1162eef4d32d9b463b",
+        "events_touched": 1,
+        "label": "abasid sultan of damascus kingdom of jerusalem",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "bahman": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "60d5593679fd2d7d9e84f9332a834852b1230732a17370fa719f86b2d795e887",
+        "events_touched": 3,
+        "label": "bahman",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 1,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      },
+      "bijapur": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "9101bb964c4972f5cbcf05bad1d36626652c3581f3b22e832ee61b5f9b8ed07d",
+        "events_touched": 6,
+        "label": "bijapur",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 6,
+        "zero_time_valid_candidates": 6
+      },
+      "orissa": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "db70c548c82078bede310e51720b59b8628c94f5bd56bade592662a1ff6e6197",
+        "events_touched": 1,
+        "label": "orissa",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 1,
+        "zero_time_valid_candidates": 1
+      },
+      "pathans": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "ae3f026c3f6123e642e6a039ea197f4b090631cc731db221f86e5b1449155f66",
+        "events_touched": 3,
+        "label": "pathans",
+        "rated_counterpart_entities": 2,
+        "sole_blocker_events": 2,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 3,
+        "zero_time_valid_candidates": 3
+      },
+      "vijayanagar": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "704d203083f7eeeefd390cf6a8483cd46acdedaaac041fd966a4f2fe78cefcc1",
+        "events_touched": 6,
+        "label": "vijayanagar",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 2,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 6,
+        "zero_time_valid_candidates": 6
+      }
+    },
+    "wave8_raichur_udayagiri_la_forbie_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-La Forbie1244-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern country but do not independently verify HCED's exact coordinate. Retain country and source provenance while withholding point geometry.",
+        "evidence_refs": [
+          "wave8_rulf_jackson_la_forbie",
+          "wave8_rulf_karakus_demirci_la_forbie"
+        ]
+      },
+      {
+        "candidate_id": "hced-Raichur1520-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern country but do not independently verify HCED's exact coordinate. Retain country and source provenance while withholding point geometry.",
+        "evidence_refs": [
+          "wave8_rulf_eaton_raichur",
+          "wave8_rulf_sewell_paes_nuniz"
+        ]
+      },
+      {
+        "candidate_id": "hced-Udayagiri1513-1514-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "The reviewed sources establish the named action and modern country but do not independently verify HCED's exact coordinate. Retain country and source provenance while withholding point geometry.",
+        "evidence_refs": [
+          "wave8_rulf_asi_udayagiri_epigraphy",
+          "wave8_rulf_rao_shulman_subrahmanyam"
+        ]
+      }
+    ],
+    "wave8_raichur_udayagiri_la_forbie_point_quarantine_additions": [
+      "hced-La Forbie1244-1",
+      "hced-Raichur1520-1",
+      "hced-Udayagiri1513-1514-1"
+    ],
+    "wave8_raichur_udayagiri_la_forbie_country_quarantine_additions": [],
+    "wave8_raichur_udayagiri_la_forbie_entities_added": 6,
+    "wave8_raichur_udayagiri_la_forbie_sources_added": 6,
+    "hced_label_pass_input_rows": 5480,
     "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 107,
@@ -22168,7 +22694,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1115,
+      "reserved_candidate_contract": 1130,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -22176,12 +22702,12 @@
       "curated_row_exclusion": 75,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 425,
-      "label_outcome_not_aligned": 79,
+      "faction_label_not_a_polity": 424,
+      "label_outcome_not_aligned": 78,
       "label_outside_policy_window": 178,
       "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1958,
-      "no_unique_time_valid_polity": 83,
+      "no_unique_time_valid_label_match": 1946,
+      "no_unique_time_valid_polity": 82,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 39

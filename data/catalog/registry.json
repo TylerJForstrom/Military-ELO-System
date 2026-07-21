@@ -1537,6 +1537,16 @@
       "region": "Northern Syria"
     },
     {
+      "id": "ayyubid_damascus_homs_kerak_coalition_la_forbie_1244",
+      "name": "Ayyubid Damascus–Homs–Kerak coalition at La Forbie (1244)",
+      "kind": "military_coalition",
+      "start_year": 1244,
+      "end_year": 1244,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "La Forbie near Gaza"
+    },
+    {
       "id": "clio_eg_ayyubid_sultanate_1177_95f5a3a5",
       "name": "Ayyubid Sultanate",
       "kind": "sultanate",
@@ -4803,6 +4813,16 @@
       "region": "British Zululand"
     },
     {
+      "id": "khwarazmian_mercenary_contingent_la_forbie_1244",
+      "name": "Displaced Khwarazmian mercenary contingent at La Forbie (1244)",
+      "kind": "military_formation",
+      "start_year": 1244,
+      "end_year": 1244,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "La Forbie near Gaza"
+    },
+    {
       "id": "buffalo_wallow_dispatch_detail_1874",
       "name": "Dixon-Chapman Sixth Cavalry dispatch detail at Buffalo Wallow (1874)",
       "kind": "event_bounded_dispatch_detail",
@@ -7056,6 +7076,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "frankish_jerusalem_military_orders_host_la_forbie_1244",
+      "name": "Frankish Jerusalem and military-orders host at La Forbie (1244)",
+      "kind": "military_coalition",
+      "start_year": 1244,
+      "end_year": 1244,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "La Forbie near Gaza"
     },
     {
       "id": "frankish_kingdom",
@@ -23084,6 +23114,16 @@
       "region": "Herat, Khorasan"
     },
     {
+      "id": "tirumala_routaraya_gajapati_udayagiri_garrison_1513_1514",
+      "name": "Tirumala Routaraya's Gajapati garrison at Udayagiri (1513–1514)",
+      "kind": "military_formation",
+      "start_year": 1513,
+      "end_year": 1514,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Udayagiri, present-day Andhra Pradesh"
+    },
+    {
       "id": "clio_q945_1960_22a133c1",
       "name": "Togo",
       "kind": "polity",
@@ -24112,10 +24152,9 @@
       "kind": "empire",
       "start_year": 1344,
       "end_year": 1571,
-      "status": "unrated",
-      "identity_status": "source_candidate",
-      "coverage_discontinuous": false,
-      "region": "Unclassified"
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "South India and the Deccan"
     },
     {
       "id": "viking_lotharingian_campaign_army_891",
@@ -25281,6 +25320,16 @@
       "region": "Ascalon"
     },
     {
+      "id": "al_salih_ayyub_egyptian_field_army_la_forbie_1244",
+      "name": "al-Salih Ayyub's Egyptian Ayyubid field army at La Forbie (1244)",
+      "kind": "military_formation",
+      "start_year": 1244,
+      "end_year": 1244,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "La Forbie near Gaza"
+    },
+    {
       "id": "clio_q867227_bce256_fb867f63",
       "name": "Âu Lạc",
       "kind": "polity",
@@ -25345,11 +25394,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2398,
-    "rated_entities": 1044,
-    "rated_events": 5466,
+    "registry_polities": 2403,
+    "rated_entities": 1050,
+    "rated_events": 5471,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36877,
+    "unresolved_event_candidates": 36872,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25460,6 +25509,8 @@
     "candidate_keyed_wave8_khwarazmian_mongol_hced_events": 6,
     "candidate_keyed_wave8_latrun_hced_events": 2,
     "candidate_keyed_wave8_republic_formosa_hced_events": 2,
+    "candidate_keyed_wave8_arquijas_hced_events": 2,
+    "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": 3,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 66,
     "provisional_iwbd_battles": 153,
@@ -25470,21 +25521,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5199,
-      "candidate_keyed_reviewed_contracts": 828,
+      "hced_candidate_bindings": 5204,
+      "candidate_keyed_reviewed_contracts": 833,
       "geojson_points": 4803,
-      "modern_location_country_assertions": 5104,
-      "location_provenance_objects": 5153,
-      "point_fields_withheld_by_quarantine": 396,
+      "modern_location_country_assertions": 5109,
+      "location_provenance_objects": 5158,
+      "point_fields_withheld_by_quarantine": 401,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 444,
-      "point_quarantine_candidate_manifest_sha256": "3a4c27d312be72a7d488671bc0ab6a9ddb0be5b8ca833a1915f029f97b147312",
+      "unique_events_with_any_quarantined_field": 449,
+      "point_quarantine_candidate_manifest_sha256": "db361f319fd27e4e60b2a07cfa5d0675c6cde02d3e07108929d54c3dbe36e425",
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "1877c1573359eb1567ee23e1e070b014f595435e68da1938982c722dda9ea42c",
+      "quarantine_policy_sha256": "4b47ac509695ed3eae88179e28626a607b347ead805f0bf81a37e8e68b87c6eb",
       "assertion_status": {
-        "unreviewed_source_assertion": 5153
+        "unreviewed_source_assertion": 5158
       },
       "verified_location_assertions": {
         "availability": "not_available",

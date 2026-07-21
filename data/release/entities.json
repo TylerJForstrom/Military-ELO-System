@@ -3664,6 +3664,66 @@
     ]
   },
   {
+    "id": "ayyubid_damascus_homs_kerak_coalition_la_forbie_1244",
+    "name": "Ayyubid Damascus–Homs–Kerak coalition at La Forbie (1244)",
+    "kind": "military_coalition",
+    "start_year": 1244,
+    "end_year": 1244,
+    "region": "La Forbie near Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Syrian Ayyubid coalition at La Forbie only. It does not merge Damascus, Homs, Kerak, Abbasid rule, or Ayyubid regimes outside this battle.",
+    "source_ids": [
+      "wave8_rulf_jackson_la_forbie",
+      "wave8_rulf_karakus_demirci_la_forbie"
+    ]
+  },
+  {
+    "id": "khwarazmian_mercenary_contingent_la_forbie_1244",
+    "name": "Displaced Khwarazmian mercenary contingent at La Forbie (1244)",
+    "kind": "military_formation",
+    "start_year": 1244,
+    "end_year": 1244,
+    "region": "La Forbie near Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded post-imperial mercenary contingent at La Forbie. It does not inherit the Khwarezmid Empire's rating or extend that state identity beyond its reviewed use.",
+    "source_ids": [
+      "wave8_rulf_jackson_la_forbie",
+      "wave8_rulf_karakus_demirci_la_forbie"
+    ]
+  },
+  {
+    "id": "frankish_jerusalem_military_orders_host_la_forbie_1244",
+    "name": "Frankish Jerusalem and military-orders host at La Forbie (1244)",
+    "kind": "military_coalition",
+    "start_year": 1244,
+    "end_year": 1244,
+    "region": "La Forbie near Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Kingdom of Jerusalem and military-orders host at La Forbie only; no timeless Crusader or Jerusalem polity is created.",
+    "source_ids": [
+      "wave8_rulf_jackson_la_forbie",
+      "wave8_rulf_karakus_demirci_la_forbie"
+    ]
+  },
+  {
+    "id": "al_salih_ayyub_egyptian_field_army_la_forbie_1244",
+    "name": "al-Salih Ayyub's Egyptian Ayyubid field army at La Forbie (1244)",
+    "kind": "military_formation",
+    "start_year": 1244,
+    "end_year": 1244,
+    "region": "La Forbie near Gaza",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded Egyptian Ayyubid formation at La Forbie only. It is not a generic Egypt identity, an Abbasid identity, or a vehicle for rating another Ayyubid army.",
+    "source_ids": [
+      "wave8_rulf_jackson_la_forbie",
+      "wave8_rulf_karakus_demirci_la_forbie"
+    ]
+  },
+  {
     "id": "frankish_ascalon_garrison_1247",
     "name": "Frankish garrison of Ascalon (1247)",
     "kind": "event_bounded_formation",
@@ -4343,6 +4403,24 @@
       "wave8_flanders_larousse_philip_vi",
       "wave8_flanders_somme_devries_review",
       "wave8_flanders_tebrake_insurrection"
+    ]
+  },
+  {
+    "id": "clio_in_vijayanagara_emp_1344_0fe07dd4",
+    "name": "Vijayanagara Empire",
+    "kind": "empire",
+    "start_year": 1344,
+    "end_year": 1571,
+    "region": "South India and the Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Activates the existing 1344–1571 Cliopatria registry interval without changing either boundary. Only fingerprinted exact contracts may use it; the raw spellings Vijayanagar and Vijayanagara acquire no resolver alias, and no predecessor or successor inherits Elo.",
+    "source_ids": [
+      "cliopatria_v020",
+      "wave8_rulf_asi_udayagiri_epigraphy",
+      "wave8_rulf_eaton_raichur",
+      "wave8_rulf_rao_shulman_subrahmanyam",
+      "wave8_rulf_sewell_paes_nuniz"
     ]
   },
   {
@@ -5705,6 +5783,21 @@
     "source_ids": [
       "wave8_uzbekistan_iranica_herat",
       "wave8_uzbeks_iranica_abukhayrids"
+    ]
+  },
+  {
+    "id": "tirumala_routaraya_gajapati_udayagiri_garrison_1513_1514",
+    "name": "Tirumala Routaraya's Gajapati garrison at Udayagiri (1513–1514)",
+    "kind": "military_formation",
+    "start_year": 1513,
+    "end_year": 1514,
+    "region": "Udayagiri, present-day Andhra Pradesh",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Event-bounded defending formation for the 1513–1514 siege only. It is not generic Orissa, the Gajapati state across time, another Udayagiri, or a continuity bridge to any predecessor or successor.",
+    "source_ids": [
+      "wave8_rulf_asi_udayagiri_epigraphy",
+      "wave8_rulf_rao_shulman_subrahmanyam"
     ]
   },
   {

@@ -2251,6 +2251,52 @@ from .wave8_republic_formosa import (
     wave8_republic_formosa_counts,
     wave8_republic_formosa_metadata,
 )
+from .wave8_arquijas import (
+    WAVE8_ARQUIJAS_CONTRACT_IDS,
+    WAVE8_ARQUIJAS_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_ARQUIJAS_ENTITIES,
+    WAVE8_ARQUIJAS_FINAL_AUDIT_SIGNATURE,
+    WAVE8_ARQUIJAS_FUNNEL_AUDIT,
+    WAVE8_ARQUIJAS_HOLDS,
+    WAVE8_ARQUIJAS_LOCATION_QUARANTINE_REASONS,
+    WAVE8_ARQUIJAS_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_ARQUIJAS_RESERVED_IDS,
+    WAVE8_ARQUIJAS_SOURCES,
+    install_wave8_arquijas_entities,
+    install_wave8_arquijas_sources,
+    promote_wave8_arquijas_contracts,
+    validate_wave8_arquijas_current_artifact_state,
+    validate_wave8_arquijas_discovery_dispositions,
+    validate_wave8_arquijas_integration_dispositions,
+    validate_wave8_arquijas_queue_contracts,
+    wave8_arquijas_audit_signature,
+    wave8_arquijas_cohort_counts,
+    wave8_arquijas_counts,
+    wave8_arquijas_metadata,
+)
+from .wave8_raichur_udayagiri_la_forbie import (
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_CONTRACT_IDS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_ENTITIES,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_FINAL_AUDIT_SIGNATURE,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_FUNNEL_AUDIT,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_HOLDS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_LOCATION_QUARANTINE_REASONS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_RESERVED_IDS,
+    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_SOURCES,
+    install_wave8_raichur_udayagiri_la_forbie_entities,
+    install_wave8_raichur_udayagiri_la_forbie_sources,
+    promote_wave8_raichur_udayagiri_la_forbie_contracts,
+    validate_wave8_raichur_udayagiri_la_forbie_current_artifact_state,
+    validate_wave8_raichur_udayagiri_la_forbie_discovery_dispositions,
+    validate_wave8_raichur_udayagiri_la_forbie_integration_dispositions,
+    validate_wave8_raichur_udayagiri_la_forbie_queue_contracts,
+    wave8_raichur_udayagiri_la_forbie_audit_signature,
+    wave8_raichur_udayagiri_la_forbie_cohort_counts,
+    wave8_raichur_udayagiri_la_forbie_counts,
+    wave8_raichur_udayagiri_la_forbie_metadata,
+)
 from .wave8_first_saudi import (
     WAVE8_FIRST_SAUDI_CONTRACT_IDS,
     WAVE8_FIRST_SAUDI_ENTITIES,
@@ -2375,6 +2421,8 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_KHWARAZMIAN_MONGOL_RESERVED_IDS
     | WAVE8_LATRUN_RESERVED_IDS
     | WAVE8_REPUBLIC_FORMOSA_RESERVED_IDS
+    | WAVE8_ARQUIJAS_RESERVED_IDS
+    | WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_RESERVED_IDS
 )
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
@@ -2796,7 +2844,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 396
+        len(HCED_POINT_QUARANTINE_IDS) != 401
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3135,6 +3183,10 @@ def build_expanded_release(
     wave8_republic_formosa_queue_validation = (
         validate_wave8_republic_formosa_queue_contracts(hced)
     )
+    wave8_arquijas_queue_validation = validate_wave8_arquijas_queue_contracts(hced)
+    wave8_raichur_udayagiri_la_forbie_queue_validation = (
+        validate_wave8_raichur_udayagiri_la_forbie_queue_contracts(hced)
+    )
     wave7_global_registry_supersessions = validate_wave7_global_supersession_candidates(
         cliopatria
     )
@@ -3147,6 +3199,14 @@ def build_expanded_release(
     )
     wave8_khwarazmian_mongol_discovery_validation = (
         validate_wave8_khwarazmian_mongol_discovery_dispositions(
+            wikidata_battle_candidates
+        )
+    )
+    wave8_arquijas_discovery_validation = (
+        validate_wave8_arquijas_discovery_dispositions(wikidata_battle_candidates)
+    )
+    wave8_raichur_udayagiri_la_forbie_discovery_validation = (
+        validate_wave8_raichur_udayagiri_la_forbie_discovery_dispositions(
             wikidata_battle_candidates
         )
     )
@@ -3591,6 +3651,8 @@ def build_expanded_release(
     install_wave8_khwarazmian_mongol_entities(release_entities)
     install_wave8_latrun_entities(release_entities)
     install_wave8_republic_formosa_entities(release_entities)
+    install_wave8_arquijas_entities(release_entities)
+    install_wave8_raichur_udayagiri_la_forbie_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -5276,6 +5338,26 @@ def build_expanded_release(
         release_entities,
         wave8_republic_formosa_existing_events,
     )
+    wave8_arquijas_existing_events = [
+        *wave8_republic_formosa_existing_events,
+        *wave8_republic_formosa_events,
+    ]
+    wave8_arquijas_events = promote_wave8_arquijas_contracts(
+        hced,
+        release_entities,
+        wave8_arquijas_existing_events,
+    )
+    wave8_raichur_udayagiri_la_forbie_existing_events = [
+        *wave8_arquijas_existing_events,
+        *wave8_arquijas_events,
+    ]
+    wave8_raichur_udayagiri_la_forbie_events = (
+        promote_wave8_raichur_udayagiri_la_forbie_contracts(
+            hced,
+            release_entities,
+            wave8_raichur_udayagiri_la_forbie_existing_events,
+        )
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -5383,6 +5465,8 @@ def build_expanded_release(
         *wave8_khwarazmian_mongol_events,
         *wave8_latrun_events,
         *wave8_republic_formosa_events,
+        *wave8_arquijas_events,
+        *wave8_raichur_udayagiri_la_forbie_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -5667,6 +5751,8 @@ def build_expanded_release(
         *wave8_khwarazmian_mongol_events,
         *wave8_latrun_events,
         *wave8_republic_formosa_events,
+        *wave8_arquijas_events,
+        *wave8_raichur_udayagiri_la_forbie_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -6284,6 +6370,25 @@ def build_expanded_release(
             ],
         )
     )
+    wave8_arquijas_integration_validation = (
+        validate_wave8_arquijas_integration_dispositions(
+            hced,
+            iwd_candidates,
+            iwbd_candidates,
+            [*wave8_arquijas_existing_events, *wave8_arquijas_events],
+        )
+    )
+    wave8_raichur_udayagiri_la_forbie_integration_validation = (
+        validate_wave8_raichur_udayagiri_la_forbie_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            [
+                *wave8_raichur_udayagiri_la_forbie_existing_events,
+                *wave8_raichur_udayagiri_la_forbie_events,
+            ],
+            iwd_candidates,
+        )
+    )
     iwd_parent_ids = {
         str(candidate.get("parent_war_id"))
         for candidate in iwd_candidates
@@ -6548,6 +6653,8 @@ def build_expanded_release(
     install_wave8_khwarazmian_mongol_sources(sources_by_id)
     install_wave8_latrun_sources(sources_by_id)
     install_wave8_republic_formosa_sources(sources_by_id)
+    install_wave8_arquijas_sources(sources_by_id)
+    install_wave8_raichur_udayagiri_la_forbie_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -6660,6 +6767,8 @@ def build_expanded_release(
         *wave8_khwarazmian_mongol_events,
         *wave8_latrun_events,
         *wave8_republic_formosa_events,
+        *wave8_arquijas_events,
+        *wave8_raichur_udayagiri_la_forbie_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -6667,6 +6776,20 @@ def build_expanded_release(
         all_events,
         release_entities.values(),
         sources_by_id.values(),
+    )
+    wave8_arquijas_artifact_validation = (
+        validate_wave8_arquijas_current_artifact_state(
+            all_events,
+            release_entities.values(),
+            sources_by_id.values(),
+        )
+    )
+    wave8_raichur_udayagiri_la_forbie_artifact_validation = (
+        validate_wave8_raichur_udayagiri_la_forbie_current_artifact_state(
+            release_entities.values(),
+            all_events,
+            sources_by_id.values(),
+        )
     )
     huang_chao_release_validation = validate_huang_chao_release(all_events)
     # This audit is pinned from the committed release ledger, so validate the
@@ -6839,6 +6962,8 @@ def build_expanded_release(
         *wave8_khwarazmian_mongol_events,
         *wave8_latrun_events,
         *wave8_republic_formosa_events,
+        *wave8_arquijas_events,
+        *wave8_raichur_udayagiri_la_forbie_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -6950,6 +7075,8 @@ def build_expanded_release(
             | WAVE8_KHWARAZMIAN_MONGOL_CONTRACT_IDS
             | WAVE8_LATRUN_CONTRACT_IDS
             | WAVE8_REPUBLIC_FORMOSA_CONTRACT_IDS
+            | WAVE8_ARQUIJAS_CONTRACT_IDS
+            | WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_CONTRACT_IDS
         ),
     )
     used_entity_ids = {
@@ -7130,6 +7257,10 @@ def build_expanded_release(
         *map(
             lambda entity: str(entity["id"]),
             WAVE8_REPUBLIC_FORMOSA_ENTITIES,
+        ),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_ENTITIES,
         ),
     }
     registry_entities: dict[str, dict[str, Any]] = {}
@@ -7411,6 +7542,8 @@ def build_expanded_release(
         - len(wave8_khwarazmian_mongol_events)
         - len(wave8_latrun_events)
         - len(wave8_republic_formosa_events)
+        - len(wave8_arquijas_events)
+        - len(wave8_raichur_udayagiri_la_forbie_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -7645,6 +7778,10 @@ def build_expanded_release(
         "candidate_keyed_wave8_latrun_hced_events": len(wave8_latrun_events),
         "candidate_keyed_wave8_republic_formosa_hced_events": len(
             wave8_republic_formosa_events
+        ),
+        "candidate_keyed_wave8_arquijas_hced_events": len(wave8_arquijas_events),
+        "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": len(
+            wave8_raichur_udayagiri_la_forbie_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
@@ -8020,6 +8157,10 @@ def build_expanded_release(
             "accepted_wave8_latrun_hced_events": len(wave8_latrun_events),
             "accepted_wave8_republic_formosa_hced_events": len(
                 wave8_republic_formosa_events
+            ),
+            "accepted_wave8_arquijas_hced_events": len(wave8_arquijas_events),
+            "accepted_wave8_raichur_udayagiri_la_forbie_hced_events": len(
+                wave8_raichur_udayagiri_la_forbie_events
             ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
@@ -12736,6 +12877,100 @@ def build_expanded_release(
             "wave8_republic_formosa_sources_added": len(
                 WAVE8_REPUBLIC_FORMOSA_SOURCES
             ),
+            "wave8_arquijas_metadata": wave8_arquijas_metadata(),
+            "wave8_arquijas_counts": wave8_arquijas_counts(),
+            "wave8_arquijas_cohort_counts": wave8_arquijas_cohort_counts(),
+            "wave8_arquijas_audit_signature": wave8_arquijas_audit_signature(),
+            "wave8_arquijas_final_audit_signature": (
+                WAVE8_ARQUIJAS_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_arquijas_queue_validation": wave8_arquijas_queue_validation,
+            "wave8_arquijas_discovery_validation": (
+                wave8_arquijas_discovery_validation
+            ),
+            "wave8_arquijas_integration_validation": (
+                wave8_arquijas_integration_validation
+            ),
+            "wave8_arquijas_artifact_validation": (
+                wave8_arquijas_artifact_validation
+            ),
+            "wave8_arquijas_candidate_ids": sorted(WAVE8_ARQUIJAS_CONTRACT_IDS),
+            "wave8_arquijas_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_ARQUIJAS_HOLDS.items())
+            ],
+            "wave8_arquijas_exact_label_funnel_audit": WAVE8_ARQUIJAS_FUNNEL_AUDIT,
+            "wave8_arquijas_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ARQUIJAS_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_arquijas_point_quarantine_additions": sorted(
+                WAVE8_ARQUIJAS_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_arquijas_country_quarantine_additions": sorted(
+                WAVE8_ARQUIJAS_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_arquijas_entities_added": len(WAVE8_ARQUIJAS_ENTITIES),
+            "wave8_arquijas_sources_added": len(WAVE8_ARQUIJAS_SOURCES),
+            "wave8_raichur_udayagiri_la_forbie_metadata": (
+                wave8_raichur_udayagiri_la_forbie_metadata()
+            ),
+            "wave8_raichur_udayagiri_la_forbie_counts": (
+                wave8_raichur_udayagiri_la_forbie_counts()
+            ),
+            "wave8_raichur_udayagiri_la_forbie_cohort_counts": (
+                wave8_raichur_udayagiri_la_forbie_cohort_counts()
+            ),
+            "wave8_raichur_udayagiri_la_forbie_audit_signature": (
+                wave8_raichur_udayagiri_la_forbie_audit_signature()
+            ),
+            "wave8_raichur_udayagiri_la_forbie_final_audit_signature": (
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_raichur_udayagiri_la_forbie_queue_validation": (
+                wave8_raichur_udayagiri_la_forbie_queue_validation
+            ),
+            "wave8_raichur_udayagiri_la_forbie_discovery_validation": (
+                wave8_raichur_udayagiri_la_forbie_discovery_validation
+            ),
+            "wave8_raichur_udayagiri_la_forbie_integration_validation": (
+                wave8_raichur_udayagiri_la_forbie_integration_validation
+            ),
+            "wave8_raichur_udayagiri_la_forbie_artifact_validation": (
+                wave8_raichur_udayagiri_la_forbie_artifact_validation
+            ),
+            "wave8_raichur_udayagiri_la_forbie_candidate_ids": sorted(
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_CONTRACT_IDS
+            ),
+            "wave8_raichur_udayagiri_la_forbie_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_HOLDS.items()
+                )
+            ],
+            "wave8_raichur_udayagiri_la_forbie_label_funnel_audit": (
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_FUNNEL_AUDIT
+            ),
+            "wave8_raichur_udayagiri_la_forbie_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_raichur_udayagiri_la_forbie_point_quarantine_additions": sorted(
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_raichur_udayagiri_la_forbie_country_quarantine_additions": sorted(
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_raichur_udayagiri_la_forbie_entities_added": len(
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_ENTITIES
+            ),
+            "wave8_raichur_udayagiri_la_forbie_sources_added": len(
+                WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -13085,6 +13320,10 @@ def build_expanded_release(
         "candidate_keyed_wave8_latrun_hced_events": len(wave8_latrun_events),
         "candidate_keyed_wave8_republic_formosa_hced_events": len(
             wave8_republic_formosa_events
+        ),
+        "candidate_keyed_wave8_arquijas_hced_events": len(wave8_arquijas_events),
+        "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": len(
+            wave8_raichur_udayagiri_la_forbie_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

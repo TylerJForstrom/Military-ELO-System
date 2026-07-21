@@ -6417,6 +6417,36 @@
     ]
   },
   {
+    "id": "wave8_arquijas_albi_first_carlist_war_north",
+    "title": "Julio Albi de la Cuesta, La Primera Guerra Carlista en el Norte (DOI 10.55553/504jnk066201)",
+    "url": "https://publicaciones.defensa.gob.es/media/downloadable/files/links/r/h/rhm_extra_ii_2022_.pdf",
+    "publisher": "Ministerio de Defensa de España, Revista de Historia Militar",
+    "license": "Citation and link only",
+    "source_type": "official_peer_reviewed_military_history",
+    "accessed": "2026-07-20",
+    "source_family_id": "albi_first_carlist_war_north_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_arquijas_aunamendi_battles",
+    "title": "Batallas del Puente de Arquijas",
+    "url": "https://aunamendi.eusko-ikaskuntza.eus/es/batallas-del-puente-de-arquijas/ar-4511/",
+    "publisher": "Auñamendi Eusko Entziklopedia / Eusko Ikaskuntza",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_encyclopedia",
+    "accessed": "2026-07-20",
+    "source_family_id": "aunamendi_arquijas_battles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_bannock_columbus_dispatch_miles",
     "title": "Dispatch on Miles's Pendleton fight, 16 July 1878",
     "url": "https://gahistoricnewspapers.galileo.usg.edu/lccn/sn89053815/1878-07-16/ed-1/seq-1/ocr/",
@@ -17820,6 +17850,90 @@
     "source_type": "museum_collection_record",
     "accessed": "2026-07-16",
     "source_family_id": "royal_museums_greenwich",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_asi_udayagiri_epigraphy",
+    "title": "Archaeological Survey of India historical and epigraphic compilation: Udayagiri campaign records",
+    "url": "https://ignca.gov.in/Asi_data/35371.pdf",
+    "publisher": "Archaeological Survey of India / IGNCA digital scan",
+    "license": "Citation and link only",
+    "source_type": "official_epigraphic_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "archaeological_survey_india_udayagiri_epigraphy",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_eaton_raichur",
+    "title": "Richard M. Eaton, ‘Kiss My Foot,’ Said the King: Firearms, Diplomacy, and the Battle for Raichur, 1520",
+    "url": "https://doi.org/10.1017/S0026749X07003289",
+    "publisher": "Cambridge University Press, Modern Asian Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-20",
+    "source_family_id": "eaton_battle_raichur_2009",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_jackson_la_forbie",
+    "title": "Peter Jackson, The Crusades of 1239–41 and Their Aftermath",
+    "url": "https://doi.org/10.1017/S0041977X00053180",
+    "publisher": "Cambridge University Press, Bulletin of SOAS",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-20",
+    "source_family_id": "jackson_crusades_1239_1241_aftermath",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_karakus_demirci_la_forbie",
+    "title": "Nadir Karakuş and Mustafa Demirci, The Capture of al-Quds by the Khwarizm Turks and the Victory of La Forbie in 1244",
+    "url": "https://dergipark.org.tr/en/pub/did/article/1551219",
+    "publisher": "Diyanet İlmi Dergi / DergiPark",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-20",
+    "source_family_id": "karakus_demirci_la_forbie_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_rao_shulman_subrahmanyam",
+    "title": "Velcheru Narayana Rao, David Shulman, and Sanjay Subrahmanyam, A New Imperial Idiom in the Sixteenth Century",
+    "url": "https://books.openedition.org/ifp/7916",
+    "publisher": "Institut Français de Pondichéry / OpenEdition Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_chapter",
+    "accessed": "2026-07-20",
+    "source_family_id": "rao_shulman_subrahmanyam_vijayanagara",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_rulf_sewell_paes_nuniz",
+    "title": "Robert Sewell, A Forgotten Empire (Vijayanagar), including the Paes and Nuniz chronicles",
+    "url": "https://www.gutenberg.org/ebooks/3310",
+    "publisher": "Swan Sonnenschein / Project Gutenberg",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicles",
+    "accessed": "2026-07-20",
+    "source_family_id": "paes_nuniz_sewell_vijayanagara_chronicles",
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
