@@ -581,6 +581,26 @@ HCED_LABEL_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (-425, -425, "corinthian_polis_480_338_bce"),
     ),
     "corcyra": ((-435, -435, "classical_corcyra_480_433_bce"),),
+    # ---- Audited Ming-Manchu transition tranche (2026-07-20) ----
+    # These source spellings are admitted only for the independently reviewed
+    # four-row singular-Manchu/Zheng inventory.  The existing candidate-keyed
+    # Wave 8 Manchus lane continues to own every plural-Manchus row and its
+    # identities. Earlier rows remain outside the policy: several pre-1368
+    # records call Zhu Yuanzhang's forces "Ming", while the frozen pre-1500
+    # cohort may be reopened only by fingerprinted contracts.
+    "ming": (
+        (1659, 1659, "zheng_chenggong_loyalist_forces_1646_1660"),
+        (1661, 1683, "kingdom_tungning_1661_1683"),
+    ),
+    "ming china": (
+        (1619, 1619, "clio_cn_ming_dyn_1375_80721637"),
+        (1661, 1662, "kingdom_tungning_1661_1683"),
+    ),
+    "manchu": (
+        (1619, 1619, "nurhaci_hong_taiji_jin_state_1616_1636"),
+        (1659, 1659, "clio_cn_qing_dyn_1_1645_8a50480c"),
+        (1683, 1683, "clio_cn_qing_dyn_1_1645_8a50480c"),
+    ),
 }
 
 
@@ -742,6 +762,33 @@ HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
             "source_urls": (
                 "https://al.ba.gov.br/historia-do-legislativo/batalha-piraja",
                 "https://www.gov.br/mast/pt-br/assuntos/noticias/2022/julho/as-independencias-do-brasil",
+            ),
+        },
+    },
+    "hced-Fort Zeelandia1661-1662-1": {
+        "fingerprint": {
+            "source_row": "5777",
+            "source_record_id": "Fort Zeelandia1661-1662",
+            "name": "Fort Zeelandia",
+            "year_low": "1661",
+            "year_best": "1662",
+            "year_high": "1662",
+            "side_1_raw": "Ming China",
+            "side_2_raw": "Netherlands",
+            "winner_raw": "Ming China",
+            "loser_raw": "Netherlands",
+            "seshat_side_1_candidates": ("cn_qing_dyn_1",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Chinese Conquest of Taiwan",),
+        },
+        "code_bindings": {
+            "cn_qing_dyn_1": "kingdom_tungning_1661_1683",
+        },
+        "review": {
+            "event_date": "1661-1662",
+            "source_urls": (
+                "https://china.usc.edu/node/20504",
+                "https://ws.moi.gov.tw/Download.ashx?icon=..pdf&n=QVRfMjAwOTAzMjYxMTMzNDcucGRm&u=LzAwMS9VcGxvYWQvT2xkRmlsZV9OTFNDL3VwbG9hZGZpbGUvQVRfMjAwOTAzMjYxMTMzNDcucGRm",
             ),
         },
     },
@@ -1271,6 +1318,14 @@ IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
 # variants exact-key dedup cannot catch, one measured crosswalk error, and
 # rows whose "Viet Cong" side labels PAVN engagements.
 HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
+    "hced-Sarhu1619-1": (
+        "campaign umbrella overlaps the separately represented Niumaozhai and "
+        "Siyanggiayan actions; rating all three would repeat the same Sarhu campaign result"
+    ),
+    "hced-Penghu1683-1": (
+        "inverted outcome: Shi Lang's Qing fleet defeated the Zheng/Tungning fleet "
+        "at Penghu, not the reverse asserted by the source row"
+    ),
     "hced-Megalopolis-331-1": (
         "chronology and the incomplete Macedonian coalition were not independently adjudicated"
     ),

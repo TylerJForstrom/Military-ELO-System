@@ -12867,6 +12867,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "kingdom_tungning_1661_1683",
+      "name": "Kingdom of Tungning",
+      "kind": "kingdom",
+      "start_year": 1661,
+      "end_year": 1683,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Taiwan and adjacent islands"
+    },
+    {
       "id": "clio_tr_urartu_k_bce800_0250083e",
       "name": "Kingdom of Urartu",
       "kind": "kingdom",
@@ -25164,6 +25174,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "zheng_chenggong_loyalist_forces_1646_1660",
+      "name": "Zheng Chenggong's Ming Loyalist Forces",
+      "kind": "loyalist_army",
+      "start_year": 1646,
+      "end_year": 1660,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southeast China"
+    },
+    {
       "id": "clio_q59223_bce366_161ca4d7",
       "name": "Zhongshan",
       "kind": "polity",
@@ -25427,15 +25447,15 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2407,
-    "rated_entities": 1061,
-    "rated_events": 5484,
+    "registry_polities": 2409,
+    "rated_entities": 1063,
+    "rated_events": 5487,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36859,
+    "unresolved_event_candidates": 36856,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
-    "provisional_hced_label_events": 2497,
+    "provisional_hced_label_events": 2500,
     "candidate_keyed_wave6_hced_events": 76,
     "candidate_keyed_wave7_root_hced_events": 62,
     "candidate_keyed_wave7_central_hced_events": 33,
@@ -25554,11 +25574,11 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5217,
+      "hced_candidate_bindings": 5220,
       "candidate_keyed_reviewed_contracts": 833,
-      "geojson_points": 4816,
-      "modern_location_country_assertions": 5122,
-      "location_provenance_objects": 5171,
+      "geojson_points": 4819,
+      "modern_location_country_assertions": 5125,
+      "location_provenance_objects": 5174,
       "point_fields_withheld_by_quarantine": 401,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
       "source_blank_country_fields": 1,
@@ -25568,7 +25588,7 @@
       "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
       "quarantine_policy_sha256": "4b47ac509695ed3eae88179e28626a607b347ead805f0bf81a37e8e68b87c6eb",
       "assertion_status": {
-        "unreviewed_source_assertion": 5171
+        "unreviewed_source_assertion": 5174
       },
       "verified_location_assertions": {
         "availability": "not_available",

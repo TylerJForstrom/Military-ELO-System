@@ -7513,6 +7513,20 @@
     ]
   },
   {
+    "id": "zheng_chenggong_loyalist_forces_1646_1660",
+    "name": "Zheng Chenggong's Ming Loyalist Forces",
+    "kind": "loyalist_army",
+    "start_year": 1646,
+    "end_year": 1660,
+    "region": "Southeast China",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Autonomous Ming-loyalist military organization under Zheng Chenggong from his 1646 break with the Qing through the last full year before the Taiwan expedition. It covers the audited 1659 Nanjing campaign only and passes no rating to the subsequent Tungning polity.",
+    "source_ids": [
+      "project_continuity_policy"
+    ]
+  },
+  {
     "id": "krychevsky_zaporozhian_army_loyew_1649",
     "name": "Krychevsky's Zaporozhian army at Loyew",
     "kind": "campaign_army",
@@ -7554,6 +7568,20 @@
     "source_ids": [
       "wave8_irish_rct_limerick_1651",
       "wave8_irish_ucc_ireton_limerick_1651"
+    ]
+  },
+  {
+    "id": "kingdom_tungning_1661_1683",
+    "name": "Kingdom of Tungning",
+    "kind": "kingdom",
+    "start_year": 1661,
+    "end_year": 1683,
+    "region": "Taiwan and adjacent islands",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Zheng military regime in Taiwan from the 1661 invasion through its 1683 surrender to Qing. The exact Ming spellings bind here only for Baxemboy and Fort Zeelandia; Penghu's reversed HCED result is excluded, and no rating is inherited from the mainland loyalist army.",
+    "source_ids": [
+      "project_continuity_policy"
     ]
   },
   {

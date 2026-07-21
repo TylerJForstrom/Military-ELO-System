@@ -2796,7 +2796,7 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_442 + len(pre1500_candidate_ids),
+        2_445 + len(pre1500_candidate_ids),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -3497,6 +3497,33 @@ def build_expanded_release(
     # through the declared label-resolution ruleset. It runs after IWD
     # aggregation so the IWD inputs are identical with or without the label
     # pass, and entities materialize only after every gate has passed.
+    def resolve_hced_candidate_code(
+        candidate: dict[str, Any],
+        code: str,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, dict[str, Any] | None, str | None, str]:
+        candidate_id = hced_candidate_id(candidate)
+        reviewed = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(candidate_id)
+        expected_id = (
+            reviewed["code_bindings"].get(code) if reviewed is not None else None
+        )
+        if expected_id is not None:
+            entity_id, polity = resolve_reviewed_identity(
+                expected_id, low_year, high_year
+            )
+            if entity_id != expected_id:
+                raise ValueError(
+                    f"stale HCED reviewed label-code policy for {candidate_id}: "
+                    f"exact-ID resolver returned {entity_id!r} for {code!r}; "
+                    f"expected {expected_id!r}"
+                )
+            return entity_id, polity, None, "candidate_reviewed_code_binding"
+        entity_id, polity, reason = _resolve_code(
+            code, low_year, high_year, owners
+        )
+        return entity_id, polity, reason, "seshat_crosswalk"
+
     hced_label_pass = promote_hced_label_rows(
         deferred_label_rows,
         curated_seed_keys,
@@ -3507,6 +3534,7 @@ def build_expanded_release(
         lambda label, low_year, high_year: resolve_hced_side_label(
             label, low_year, high_year, label_context
         ),
+        resolve_candidate_code=resolve_hced_candidate_code,
         resolve_candidate_side_label=lambda candidate, label, low_year, high_year: (
             resolve_wave6_pre1500_candidate_side_label(
                 candidate,

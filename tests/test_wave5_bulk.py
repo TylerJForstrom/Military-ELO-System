@@ -129,7 +129,7 @@ class Wave5BulkPolicyTests(unittest.TestCase):
 
         reviewed = promote_hced_crosswalk_rows(
             [row], {}, set(), lambda polity: None,
-            reviewed_identity_bindings=HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS,
+            reviewed_identity_bindings={candidate_id: contract},
             resolve_reviewed_id=lambda entity_id, low, high: (entity_id, None),
             require_complete_reviewed_identity_bindings=True,
         )

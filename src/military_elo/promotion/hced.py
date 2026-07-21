@@ -463,6 +463,7 @@ def promote_hced_label_rows(
     resolve_code: Any,
     resolve_side_label: Any,
     curated_exclusions: dict[str, str] | None = None,
+    resolve_candidate_code: Any | None = None,
     resolve_candidate_side_label: Any | None = None,
     canonicalize_composite_identity: Any | None = None,
 ) -> dict[str, Any]:
@@ -528,8 +529,17 @@ def promote_hced_label_rows(
         ):
             resolved: list[str] = []
             if codes:
+                code_tier = "seshat_crosswalk"
                 for code in codes:
-                    entity_id, polity, reason = resolve_code(code, low_year, high_year)
+                    if resolve_candidate_code is None:
+                        entity_id, polity, reason = resolve_code(
+                            code, low_year, high_year
+                        )
+                        tier = "seshat_crosswalk"
+                    else:
+                        entity_id, polity, reason, tier = resolve_candidate_code(
+                            candidate, code, low_year, high_year
+                        )
                     if not entity_id:
                         rejections[reason or "unresolved_entity"] += 1
                         resolution_failed = True
@@ -537,7 +547,9 @@ def promote_hced_label_rows(
                     if polity:
                         pending_polities[entity_id] = polity
                     resolved.append(entity_id)
-                side_tiers.append("seshat_crosswalk")
+                    if tier != "seshat_crosswalk":
+                        code_tier = str(tier)
+                side_tiers.append(code_tier)
             else:
                 if resolve_candidate_side_label is None:
                     entity_id, polity, reason, tier = resolve_side_label(

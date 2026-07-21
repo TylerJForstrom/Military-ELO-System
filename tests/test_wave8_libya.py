@@ -542,22 +542,22 @@ class Wave8LibyaTests(unittest.TestCase):
             promotion["wave8_libya_frozen_chadian_rebels_pre_validation"],
             promotion["wave8_libya_frozen_chadian_rebels_post_validation"],
         )
-        self.assertEqual(len(self.release_events), 5_484)
-        self.assertEqual(len(self.release_entities), 1_068)
+        self.assertEqual(len(self.release_events), 5_487)
+        self.assertEqual(len(self.release_entities), 1_070)
         self.assertEqual(len(self.release_sources), 1_546)
 
         coverage = self.registry["coverage"]
-        self.assertEqual(coverage["rated_events"], 5_484)
-        self.assertEqual(coverage["rated_entities"], 1_061)
-        self.assertEqual(coverage["registry_polities"], 2_407)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_859)
+        self.assertEqual(coverage["rated_events"], 5_487)
+        self.assertEqual(coverage["rated_entities"], 1_063)
+        self.assertEqual(coverage["registry_polities"], 2_409)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_856)
         self.assertEqual(coverage["candidate_keyed_wave8_libya_hced_events"], 3)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_217)
+        self.assertEqual(location["hced_candidate_bindings"], 5_220)
         self.assertEqual(location["candidate_keyed_reviewed_contracts"], 833)
-        self.assertEqual(location["geojson_points"], 4_816)
-        self.assertEqual(location["modern_location_country_assertions"], 5_122)
-        self.assertEqual(location["location_provenance_objects"], 5_171)
+        self.assertEqual(location["geojson_points"], 4_819)
+        self.assertEqual(location["modern_location_country_assertions"], 5_125)
+        self.assertEqual(location["location_provenance_objects"], 5_174)
         registry_entities = {
             str(item["id"]): item for item in self.registry["entities"]
         }
