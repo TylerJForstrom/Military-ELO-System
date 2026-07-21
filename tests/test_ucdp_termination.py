@@ -303,6 +303,13 @@ class GwCodePolicyTests(unittest.TestCase):
         self.assertEqual(_gw_policy_seed_id("817", 1965, 1975), "south_vietnam")
         self.assertIsNone(_gw_policy_seed_id("817", 1976, 1976))
 
+    def test_gw_751_resolves_only_the_curated_hyderabad_state(self) -> None:
+        self.assertEqual(
+            _gw_policy_seed_id("751", 1948, 1948),
+            "hyderabad_asaf_jahi_state_1724",
+        )
+        self.assertIsNone(_gw_policy_seed_id("751", 1949, 1949))
+
     def test_policy_codes_never_fall_through_to_labels(self) -> None:
         # A policy code outside its windows must stay unresolved without ever
         # consulting the label path, even when a label match would exist.
@@ -314,6 +321,7 @@ class GwCodePolicyTests(unittest.TestCase):
             "160": (1930, 1930),
             "355": (1908, 1908),
             "652": (1958, 1961),
+            "751": (1949, 1949),
         }
         self.assertEqual(set(gap_years), set(UCDP_GW_CODE_POLICIES))
         for code, (low, high) in gap_years.items():
@@ -1023,6 +1031,34 @@ class ReleaseArtifactTests(unittest.TestCase):
         event_ids = [event["id"] for event in self.ucdp_events]
         self.assertEqual(len(event_ids), len(set(event_ids)))
 
+    def test_hyderabad_episode_uses_the_reviewed_code_window(self) -> None:
+        events = [
+            event
+            for event in self.ucdp_events
+            if event["ucdp_conflict_id"] == "226"
+        ]
+        self.assertEqual(len(events), 1)
+        event = events[0]
+        self.assertEqual(
+            event["id"],
+            "ucdp_term_226_ep1_hyderabad_india_conflict_termination_194",
+        )
+        self.assertEqual((event["year"], event["end_year"]), (1948, 1948))
+        self.assertEqual(
+            {
+                participant["entity_id"]: participant["termination"]
+                for participant in event["participants"]
+            },
+            {
+                "clio_q668_1947_58395c54": "victory",
+                "hyderabad_asaf_jahi_state_1724": "defeat",
+            },
+        )
+        self.assertEqual(
+            event["outcome_source_family_ids"],
+            ["ucdp_conflict_termination"],
+        )
+
     def test_ucdp_events_never_claim_existential_outcomes(self) -> None:
         for event in self.ucdp_events:
             self.assertLessEqual(event["confidence"], 0.74)
@@ -1101,7 +1137,7 @@ class ReleaseArtifactTests(unittest.TestCase):
     def test_promotion_accounting_matches_events(self) -> None:
         promotion = self.metadata["promotion"]
         self.assertEqual(promotion["accepted_ucdp_events"], len(self.ucdp_events))
-        self.assertEqual(len(self.ucdp_events), 7)
+        self.assertEqual(len(self.ucdp_events), 8)
         self.assertEqual(
             sum(promotion["ucdp_rejections"].values())
             + promotion["accepted_ucdp_events"],

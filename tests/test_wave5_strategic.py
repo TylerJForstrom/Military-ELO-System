@@ -70,9 +70,9 @@ def _exact_id_resolver(entity_id, low_year, high_year):
 
 
 class StrategicContractTests(unittest.TestCase):
-    def test_contract_inventory_is_exactly_the_conservative_28(self):
+    def test_contract_inventory_is_exactly_the_conservative_29(self):
         self.assertEqual(set(IWD_REVIEWED_PARENT_CONTRACTS), {
-            "1", "39", "41", "43", "44", "57", "60", "91"
+            "1", "10", "39", "41", "43", "44", "57", "60", "91"
         })
         self.assertEqual(len(IWBD_REVIEWED_IDENTITY_BINDINGS), 20)
         turkey = {
@@ -88,7 +88,7 @@ class StrategicContractTests(unittest.TestCase):
             for candidate_id in ids
         }
         self.assertEqual((len(turkey), len(roc)), (12, 6))
-        self.assertEqual(8 + len(IWBD_REVIEWED_IDENTITY_BINDINGS), 28)
+        self.assertEqual(9 + len(IWBD_REVIEWED_IDENTITY_BINDINGS), 29)
 
     def test_all_reviewed_iwd_parents_promote_once(self):
         result = aggregate_iwd_parent_wars(
@@ -100,7 +100,7 @@ class StrategicContractTests(unittest.TestCase):
             resolve_reviewed_party=_exact_id_resolver,
             require_complete_reviewed_parents=True,
         )
-        self.assertEqual(result["parents_promoted"], 8)
+        self.assertEqual(result["parents_promoted"], 9)
         self.assertEqual(
             {event["iwd_parent_war_id"] for event in result["events"]},
             set(IWD_REVIEWED_PARENT_CONTRACTS),

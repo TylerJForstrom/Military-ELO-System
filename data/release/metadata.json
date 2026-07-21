@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1047,
-    "events": 5444,
-    "sources": 1523,
-    "registry_polities": 2395
+    "entities": 1049,
+    "events": 5456,
+    "sources": 1528,
+    "registry_polities": 2397
   },
   "year_range": {
     "start": -1274,
@@ -163,6 +163,7 @@
     "accepted_wave8_oran_hced_events": 2,
     "accepted_wave8_cheyenne_dog_soldiers_hced_events": 2,
     "accepted_wave8_libya_hced_events": 3,
+    "accepted_wave8_viet_minh_hced_events": 9,
     "accepted_wave8_followup_b_hced_events": 4,
     "accepted_wave8_exact_priority_hced_events": 18,
     "accepted_wave8_kievan_rus_hced_events": 2,
@@ -16792,7 +16793,7 @@
     "wave8_yaqui_sources_added": 9,
     "wave8_egypt_forces_counts": {
       "adjacent_hced_rows": 38,
-      "audited_current_release_events": 57,
+      "audited_current_release_events": 58,
       "audited_existing_identities": 18,
       "country_quarantine_additions": 2,
       "exact_label_rows": 58,
@@ -16824,8 +16825,8 @@
       "six_day_war_sinai": 6,
       "yom_kippur_war_sinai": 4
     },
-    "wave8_egypt_forces_audit_signature": "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b",
-    "wave8_egypt_forces_final_audit_signature": "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b",
+    "wave8_egypt_forces_audit_signature": "772f51dd8c3513c37f64d00b127bb1147c6ce4218d7326de0192da1f6ee5a05e",
+    "wave8_egypt_forces_final_audit_signature": "772f51dd8c3513c37f64d00b127bb1147c6ce4218d7326de0192da1f6ee5a05e",
     "wave8_egypt_forces_queue_validation": {
       "adjacent_hced_rows": 38,
       "exact_label_rows": 58,
@@ -16837,7 +16838,7 @@
     },
     "wave8_egypt_forces_identity_validation": {
       "audited_release_entities": 18,
-      "audited_release_events": 57,
+      "audited_release_events": 58,
       "audited_seed_entities": 3,
       "audited_seed_events": 2,
       "existing_1967_identity_candidates": 0
@@ -17707,9 +17708,9 @@
         "saite_egypt_664_bce"
       ],
       "audited_entity_id_sha256": "09b5ca9eeef1d2ce527057c0668a6101440179701824f2499d0a18aed61db25b",
-      "event_count": 57,
-      "event_id_sha256": "dfe4bae0d3013ea5cbb85de41b8a1c080d6e53b1e0645f160e6bd1f91c4d03f1",
-      "event_projection_sha256": "a064ed3d44dbbe4faf14cad3684079a3af8547cc67336f77ec357d84b7668b79",
+      "event_count": 58,
+      "event_id_sha256": "ba133683ac1907a7ff094702bc9a85e166073cf7ef24781455f6b2c0718ea925",
+      "event_projection_sha256": "99c54b25058a70f719415cf7854c95bab5e7423e9cd5ed22d2e1bbe81fc10801",
       "projection_fields": [
         "end_year",
         "entity_ids",
@@ -19000,6 +19001,285 @@
     "wave8_libya_country_quarantine_additions": [],
     "wave8_libya_entities_added": 1,
     "wave8_libya_sources_added": 6,
+    "wave8_viet_minh_metadata": {
+      "counts": {
+        "country_quarantine_additions": 0,
+        "date_overrides": 1,
+        "holds": 3,
+        "new_entities": 2,
+        "new_sources": 5,
+        "newly_rated_events": 9,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 9,
+        "promotion_contracts": 9,
+        "reviewed_hced_rows": 12,
+        "terminal_exclusions": 0
+      },
+      "cohorts": {
+        "first_indochina_war_viet_minh_engagements_1946_1954": 3,
+        "first_indochina_war_viet_minh_engagements_1950_1954": 9
+      },
+      "final_audit_signature": "b70b8bdb751435802c41898a27e198e8e8f89f643b1ca1144c5ec3a4f92f4c7f",
+      "promoted_candidate_ids": [
+        "hced-Cao-Bang1950-1",
+        "hced-Day River1951-1",
+        "hced-Dien Bien Phu1953-1",
+        "hced-Dong-Khe1950-1",
+        "hced-Mao Khe1951-1",
+        "hced-Muong-Khoua1953-1",
+        "hced-Nghia Lo1951-1",
+        "hced-Nghia Lo1952-1",
+        "hced-Vinh Yen1951-1"
+      ]
+    },
+    "wave8_viet_minh_counts": {
+      "country_quarantine_additions": 0,
+      "date_overrides": 1,
+      "holds": 3,
+      "new_entities": 2,
+      "new_sources": 5,
+      "newly_rated_events": 9,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 9,
+      "promotion_contracts": 9,
+      "reviewed_hced_rows": 12,
+      "terminal_exclusions": 0
+    },
+    "wave8_viet_minh_cohort_counts": {
+      "first_indochina_war_viet_minh_engagements_1946_1954": 3,
+      "first_indochina_war_viet_minh_engagements_1950_1954": 9
+    },
+    "wave8_viet_minh_audit_signature": "b70b8bdb751435802c41898a27e198e8e8f89f643b1ca1144c5ec3a4f92f4c7f",
+    "wave8_viet_minh_final_audit_signature": "b70b8bdb751435802c41898a27e198e8e8f89f643b1ca1144c5ec3a4f92f4c7f",
+    "wave8_viet_minh_queue_validation": {
+      "promotion_contracts": 9,
+      "holds": 3,
+      "reviewed_hced_rows": 12,
+      "exact_label_rows": 12,
+      "date_overrides": 1
+    },
+    "wave8_viet_minh_integration_validation": {
+      "existing_release_probable_twins": 0,
+      "hced_probable_twins": 0,
+      "iwbd_probable_twins": 0
+    },
+    "wave8_viet_minh_candidate_ids": [
+      "hced-Cao-Bang1950-1",
+      "hced-Day River1951-1",
+      "hced-Dien Bien Phu1953-1",
+      "hced-Dong-Khe1950-1",
+      "hced-Mao Khe1951-1",
+      "hced-Muong-Khoua1953-1",
+      "hced-Nghia Lo1951-1",
+      "hced-Nghia Lo1952-1",
+      "hced-Vinh Yen1951-1"
+    ],
+    "wave8_viet_minh_holds": [
+      {
+        "candidate_id": "hced-Hoa Binh1951-1",
+        "raw_row_sha256": "a8b1e3cc9ebc9616514fa54f64e37bf127e45d083f2cf976db473a2c1652d2a1",
+        "cohort": "first_indochina_war_viet_minh_engagements_1946_1954",
+        "disposition": "hold",
+        "hold_category": "mixed_campaign_outcome",
+        "hold_reason": "Hoa Binh denotes the 1951-1952 campaign, whose occupation, relief, attrition, and withdrawal phases do not reduce to HCED's single Viet Minh victory assertion. A bounded event contract is required; the mixed campaign is not scored and is not a draw.",
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ]
+      },
+      {
+        "candidate_id": "hced-Red River Delta1950-1",
+        "raw_row_sha256": "69ccef8acc2dd36c828ddfdaaeed47a95c0a35f4b5af1f21c8ff59fff94fc15b",
+        "cohort": "first_indochina_war_viet_minh_engagements_1946_1954",
+        "disposition": "hold",
+        "hold_category": "unbounded_regional_campaign",
+        "hold_reason": "The row names an entire geographic theater rather than a discrete, source-bounded engagement. No tactical outcome is invented for the Red River Delta label, and unbounded is not a draw.",
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ]
+      },
+      {
+        "candidate_id": "hced-Viet Bac1946-1",
+        "raw_row_sha256": "3fa5921cf32077c451c26a389e459a96732f61651a1dcaa342017c0c01272bf3",
+        "cohort": "first_indochina_war_viet_minh_engagements_1946_1954",
+        "disposition": "hold",
+        "hold_category": "wrong_year_bundled_campaign",
+        "hold_reason": "The cited Viet Bac campaign belongs to 1947, while the staged row is dated 1946 and bundles a campaign rather than one adjudicable engagement. It remains staged instead of receiving a guessed date or result; unknown is not a draw.",
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ]
+      }
+    ],
+    "wave8_viet_minh_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "58df797ab7ab18b8bc5eeb69ba063da2508dec195d19a3a1fe3cf4839e68c542",
+      "events_touched": 12,
+      "label": "viet minh",
+      "sole_blocker_events": 0,
+      "zero_time_valid_candidates": 12
+    },
+    "wave8_viet_minh_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Cao-Bang1950-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          106.2522143,
+          22.635689
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Day River1951-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          106.0805726,
+          20.0917047
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Dien Bien Phu1953-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          103.0061505,
+          21.4139983
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Dong-Khe1950-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          106.4435319,
+          22.4220178
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Mao Khe1951-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          106.5873383,
+          21.0646444
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Muong-Khoua1953-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_clodfelter_warfare",
+          "wave8_viet_minh_wolfson_ford_laos"
+        ],
+        "raw_point": [
+          102.5038963,
+          21.078335
+        ],
+        "retained_country": "Laos",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Nghia Lo1951-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_clodfelter_warfare",
+          "wave8_viet_minh_gras_nghia_lo_1951"
+        ],
+        "raw_point": [
+          104.4563763,
+          21.5988562
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Nghia Lo1952-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_clodfelter_warfare",
+          "wave8_viet_minh_us_army_advice_support"
+        ],
+        "raw_point": [
+          104.4563763,
+          21.5988562
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      },
+      {
+        "candidate_id": "hced-Vinh Yen1951-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_viet_minh_australian_war_memorial",
+          "wave8_viet_minh_clodfelter_warfare"
+        ],
+        "raw_point": [
+          105.5593214,
+          21.5332244
+        ],
+        "retained_country": "Vietnam",
+        "reason": "The reviewed references authenticate the named battle and country but do not independently authenticate HCED's exact coordinate. Retain the country assertion and withhold the point."
+      }
+    ],
+    "wave8_viet_minh_point_quarantine_additions": [
+      "hced-Cao-Bang1950-1",
+      "hced-Day River1951-1",
+      "hced-Dien Bien Phu1953-1",
+      "hced-Dong-Khe1950-1",
+      "hced-Mao Khe1951-1",
+      "hced-Muong-Khoua1953-1",
+      "hced-Nghia Lo1951-1",
+      "hced-Nghia Lo1952-1",
+      "hced-Vinh Yen1951-1"
+    ],
+    "wave8_viet_minh_country_quarantine_additions": [],
+    "wave8_viet_minh_entities_added": 2,
+    "wave8_viet_minh_sources_added": 5,
     "wave8_followup_b_metadata": {
       "counts": {
         "country_quarantine_additions": 0,
@@ -21216,10 +21496,10 @@
     "wave8_etruria_entities_added": 5,
     "wave8_etruria_sources_added": 8,
     "hced_label_pass_input_rows": 5515,
-    "accepted_iwd_wars": 64,
+    "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
-    "iwd_components_aggregated": 100,
-    "iwd_components_attached_to_rated_parents": 100,
+    "iwd_components_aggregated": 107,
+    "iwd_components_attached_to_rated_parents": 107,
     "hced_rejections": {
       "curated_exclusion": 158,
       "duplicate_of_curated_seed": 5,
@@ -23782,10 +24062,6 @@
     ],
     "iwd_curated_parent_exclusions": [
       {
-        "parent_war_id": "10",
-        "reason": "Italian Unification 1859: belligerent was the Kingdom of Sardinia; the 'Kingdom of Italy' [587,1946] envelope is not the 1859 actor (identity pending)"
-      },
-      {
         "parent_war_id": "13",
         "reason": "actor_transition: Garibaldi's volunteer army and later Sardinian regular forces cannot be one Italy identity"
       },
@@ -23820,10 +24096,6 @@
       {
         "parent_war_id": "5",
         "reason": "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the First Schleswig War; the source assertion stays staged rather than being inverted"
-      },
-      {
-        "parent_war_id": "55",
-        "reason": "identity_boundary: the 1948 coalition crosses unresolved Egypt, Syria, and Lebanon polity boundaries"
       },
       {
         "parent_war_id": "56",
@@ -23862,6 +24134,7 @@
       "1",
       "4",
       "6",
+      "10",
       "13",
       "19",
       "20",
@@ -24039,7 +24312,7 @@
       "4": "insurgency_intervention"
     },
     "iwd_rejections": {
-      "curated_exclusion": 19,
+      "curated_exclusion": 17,
       "inconsistent_coalition_sides": 1,
       "mixed_component_outcomes": 2,
       "overlaps_curated_strategic_event": 6,
@@ -24062,7 +24335,7 @@
       "same_or_empty_opposing_side": 2,
       "unresolved_time_bounded_belligerent": 12
     },
-    "accepted_ucdp_events": 7,
+    "accepted_ucdp_events": 8,
     "ucdp_termination_rows_total": 2752,
     "ucdp_rejections": {
       "contradictory_linked_episode_outcomes": 2,
@@ -24080,7 +24353,7 @@
       "outcome_peace_agreement": 60,
       "same_or_empty_opposing_side": 0,
       "unmapped_type_of_conflict": 0,
-      "unresolved_time_bounded_party": 5
+      "unresolved_time_bounded_party": 4
     },
     "ucdp_curated_exclusions": [
       {

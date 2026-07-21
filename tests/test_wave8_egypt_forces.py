@@ -123,7 +123,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
         independent = hashlib.sha256(_canonical_json(payload).encode()).hexdigest()
         self.assertEqual(
             independent,
-            "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b",
+            "772f51dd8c3513c37f64d00b127bb1147c6ce4218d7326de0192da1f6ee5a05e",
         )
         self.assertEqual(independent, lane.WAVE8_EGYPT_FORCES_FINAL_AUDIT_SIGNATURE)
         self.assertEqual(independent, lane.wave8_egypt_forces_audit_signature())
@@ -131,7 +131,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             lane.wave8_egypt_forces_counts(),
             {
                 "adjacent_hced_rows": 38,
-                "audited_current_release_events": 57,
+                "audited_current_release_events": 58,
                 "audited_existing_identities": 18,
                 "country_quarantine_additions": 2,
                 "exact_label_rows": 58,
@@ -446,7 +446,7 @@ class Wave8EgyptForcesTests(unittest.TestCase):
             ),
             {
                 "audited_release_entities": 18,
-                "audited_release_events": 57,
+                "audited_release_events": 58,
                 "audited_seed_entities": 3,
                 "audited_seed_events": 2,
                 "existing_1967_identity_candidates": 0,
@@ -454,6 +454,19 @@ class Wave8EgyptForcesTests(unittest.TestCase):
         )
         release_by_id = {str(item["id"]): item for item in self.release_entities}
         audited = lane.WAVE8_EGYPT_FORCES_IDENTITY_BOUNDARY_AUDIT["release_entities"]
+
+        arab_israeli = next(
+            event
+            for event in self.release_events
+            if event["id"] == "iwd_war_55_arab_israeli_1948_49"
+        )
+        egypt = [
+            participant
+            for participant in arab_israeli["participants"]
+            if participant["entity_id"] == "kingdom_egypt_1922"
+        ]
+        self.assertEqual(len(egypt), 1)
+        self.assertEqual(egypt[0]["termination"], "defeat")
         self.assertFalse(
             {
                 entity_id

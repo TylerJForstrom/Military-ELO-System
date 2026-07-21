@@ -255,6 +255,28 @@ IWD_REVIEWED_PARENT_CONTRACTS: dict[str, dict[str, Any]] = {
             "230": "spanish_empire",
         },
     },
+    "10": {
+        "components": {
+            "iwd-17": _iwd_component_contract(
+                "17", "ItalianUnification1859", "ItalianUnification_France_1859",
+                1859, 1859, (("220", "France"),), (("300", "Austria-Hungary"),),
+                "1", "initiator_victory", ("32",),
+                allies=(("325", "Italy"),),
+                joiner_decision=True,
+            ),
+            "iwd-18": _iwd_component_contract(
+                "18", "ItalianUnification1859", "ItalianUnification_Austria_1859",
+                1859, 1859, (("300", "Austria-Hungary"),), (("325", "Italy"),),
+                "2", "initiator_defeat", ("33",),
+                adversaries=(("220", "France"),),
+            ),
+        },
+        "party_bindings": {
+            "220": "second_french_empire",
+            "300": "austrian_empire",
+            "325": "kingdom_sardinia_piedmont",
+        },
+    },
     "39": {
         "components": {
             "iwd-88": _iwd_component_contract(
@@ -1210,10 +1232,6 @@ IWD_CURATED_PARENT_EXCLUSIONS: dict[str, str] = {
         "Germany-Denmark 1848 asserts a Prussian strategic victory, but Denmark won the "
         "First Schleswig War; the source assertion stays staged rather than being inverted"
     ),
-    "10": (
-        "Italian Unification 1859: belligerent was the Kingdom of Sardinia; the "
-        "'Kingdom of Italy' [587,1946] envelope is not the 1859 actor (identity pending)"
-    ),
     "42": (
         "Hungarian-Allies 1919: fought principally by the Hungarian Soviet Republic; "
         "the [1919,1943] Hungary interval bridges the 1919 regime resets (identity pending)"
@@ -1580,6 +1598,7 @@ UCDP_GW_CODE_POLICIES: dict[str, tuple[tuple[int, int, str], ...]] = {
         (1946, 1957, "clio_sy_syria_modern_1946_86597c89"),
         (1962, 2026, "clio_q41137_1973_b05dea50"),
     ),
+    "751": ((1724, 1948, "hyderabad_asaf_jahi_state_1724"),),
 }
 
 

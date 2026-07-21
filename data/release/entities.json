@@ -14960,6 +14960,38 @@
     ]
   },
   {
+    "id": "viet_minh_first_indochina_war_forces_1950_1954",
+    "name": "Viet Minh First Indochina War field forces (1950-1954)",
+    "kind": "anti_colonial_military_organization",
+    "start_year": 1950,
+    "end_year": 1954,
+    "region": "French Indochina",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Rates only the Viet Minh field forces in the nine reviewed First Indochina War engagements from the 1950 Border Campaign through Dien Bien Phu. No rating is inherited from or passed to generic Vietnamese identity, the Democratic Republic of Vietnam, the later People's Army of Vietnam, or a Viet Minh formation outside this reviewed 1950-1954 interval.",
+    "source_ids": [
+      "wave8_viet_minh_australian_war_memorial",
+      "wave8_viet_minh_clodfelter_warfare",
+      "wave8_viet_minh_gras_nghia_lo_1951",
+      "wave8_viet_minh_us_army_advice_support"
+    ]
+  },
+  {
+    "id": "muong_khoua_lao_french_garrison_1953",
+    "name": "Lao-French garrison at Muong-Khoua (1953)",
+    "kind": "event_bounded_lao_french_garrison_force",
+    "start_year": 1953,
+    "end_year": 1953,
+    "region": "Muong Khoua, Laos",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Rates only the mixed Lao-French garrison besieged at Muong-Khoua in 1953. No rating is inherited from or passed to Laos, France, the French Union, another garrison, or a later Lao force.",
+    "source_ids": [
+      "wave8_viet_minh_clodfelter_warfare",
+      "wave8_viet_minh_wolfson_ford_laos"
+    ]
+  },
+  {
     "id": "clio_eg_egypt_modern_2_1953_a888d535",
     "name": "Republic of Egypt",
     "kind": "republic",

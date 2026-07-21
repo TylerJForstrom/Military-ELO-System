@@ -663,9 +663,9 @@ WAVE6_IWD_REVIEWED_PARENT_CONTRACTS: dict[str, dict[str, Any]] = {
         },
         "party_bindings": {
             "645": "kingdom_iraq",
-            "651": "egypt_muhammad_ali",
-            "652": "clio_q41137_1973_b05dea50",
-            "660": "lebanese_republic",
+            "651": "kingdom_egypt_1922",
+            "652": "clio_sy_syria_modern_1946_86597c89",
+            "660": "clio_q139708_1944_bc8bee86",
             "663": "clio_q810_1947_98de647a",
             "666": "clio_q801_1948_5abea45e",
         },
@@ -836,16 +836,8 @@ WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
     for candidate_id in WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS
 }
 
-WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS = {
-    "55": (
-        "identity_boundary: the 1948 coalition crosses unresolved Egypt, Syria, and "
-        "Lebanon polity boundaries"
-    )
-}
-WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_CONTRACTS = {
-    parent_id: WAVE6_IWD_REVIEWED_PARENT_CONTRACTS.pop(parent_id)
-    for parent_id in WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS
-}
+WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS: dict[str, str] = {}
+WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_CONTRACTS: dict[str, dict[str, Any]] = {}
 
 WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS = {
     **{
@@ -887,5 +879,5 @@ WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS["iwbd-100-36-422"]["attacker"] = (
     ("kingdom_serbia", "kingdom_serbia"),
 )
 
-WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 60, "iwd": 0, "iwbd": 9, "total": 69}
-WAVE6_EXPECTED_HELD_COUNTS = {"hced": 42, "iwd": 15, "iwbd": 225}
+WAVE6_EXPECTED_IMPLEMENTED_COUNTS = {"hced": 60, "iwd": 1, "iwbd": 9, "total": 70}
+WAVE6_EXPECTED_HELD_COUNTS = {"hced": 42, "iwd": 14, "iwbd": 225}

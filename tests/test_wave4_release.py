@@ -49,13 +49,14 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_444)
-        self.assertEqual(len(self.entities), 1_047)
-        self.assertEqual(len(self.registry_by_id), 2_395)
+        self.assertEqual(len(self.events), 5_456)
+        self.assertEqual(len(self.entities), 1_049)
+        self.assertEqual(len(self.registry_by_id), 2_397)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("australian_war_memorial_first_indochina_war", "clodfelter_warfare_armed_conflicts"): 6,
             ("ammianus_roman_history_book_19", "encyclopaedia_iranica_amida"): 1,
             ("ammianus_roman_history_book_24", "encyclopaedia_iranica_julian"): 1,
             ("annales_geographie_in_rhar_1900", "martin_oasis_sahariennes_1908"): 1,
@@ -196,6 +197,9 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("clio_1950_el_numero_report", "espinal_clio_2020_independence"): 1,
             ("codrington_short_history_ceylon_1926", "cordiner_description_ceylon_1807", "jaques_dictionary_battles_2006", "powell_kandyan_wars_1973"): 1,
             ("clodfelter_warfare_armed_conflicts", "jaques_dictionary_battles_2006", "real_academia_historia_dbe"): 1,
+            ("clodfelter_warfare_armed_conflicts", "gras_revue_historique_armees_nghia_lo"): 1,
+            ("clodfelter_warfare_armed_conflicts", "us_army_cmh_advice_support_early_years"): 1,
+            ("clodfelter_warfare_armed_conflicts", "wolfson_ford_first_indochina_war_laos"): 1,
             ("coghlan_harte_natalia_2005", "colenbrander_spencer_natalia_1906_report", "gillings_bambata_mome_1989"): 1,
             ("coghlan_harte_natalia_2005", "gillings_bambata_mome_1989", "saho_bambatha_rebellion"): 1,
             ("coghlan_umvoti_field_force_2006", "colenbrander_spencer_natalia_1906_report", "paterson_natal_rebellion_2006", "waikato_times_mpukunyoni_1906"): 1,
@@ -341,7 +345,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("italian_navy_history",): 1,
             ("iwbd",): 153,
             ("jaques_dictionary_battles_2006", "real_academia_historia_dbe"): 1,
-            ("iwd",): 64,
+            ("iwd",): 66,
             ("james_westfall_thompson_french_wars", "james_wood_kings_army"): 3,
             ("james_wood_kings_army", "musee_protestant"): 4,
             ("josephus_jewish_war_primary",): 1,
@@ -462,7 +466,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("ucc_atlas_irish_revolution",): 4,
             ("ucc_atlas_irish_revolution", "waterford_decies_journal"): 1,
             ("ucc_celt_annals_ulster",): 1,
-            ("ucdp_conflict_termination",): 7,
+            ("ucdp_conflict_termination",): 8,
             ("uk_parliament_hansard", "uk_war_office"): 2,
             ("uk_war_office",): 2,
             ("unc_belgrano_history",): 1,
@@ -511,9 +515,9 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         self.assertIn("1", iwd_parents)
         self.assertEqual(
             sum(len(event.get("iwd_components", ())) for event in self.events),
-            100,
+            107,
         )
-        self.assertEqual(len(self.results["events"]), 5_444)
+        self.assertEqual(len(self.results["events"]), 5_456)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -592,10 +596,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_523)
+        self.assertEqual(len(self.sources), 1_528)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_255,
+            1_259,
         )
         new_source_ids = {
             "colombia_constitution_1863",

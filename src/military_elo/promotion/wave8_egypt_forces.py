@@ -1086,12 +1086,11 @@ WAVE8_EGYPT_FORCES_CURRENT_RELEASE_EVENT_AUDIT = {
         WAVE8_EGYPT_FORCES_IDENTITY_BOUNDARY_AUDIT["release_entities"]
     ),
     "audited_entity_id_sha256": "09b5ca9eeef1d2ce527057c0668a6101440179701824f2499d0a18aed61db25b",
-    # Refreshed to the final ledger after the Wave 8 Macedon lane promoted
-    # Andros with the audited Ptolemaic identity, adding a 57th Egypt-related
-    # release event to this audit's scope.
-    "event_count": 57,
-    "event_id_sha256": "dfe4bae0d3013ea5cbb85de41b8a1c080d6e53b1e0645f160e6bd1f91c4d03f1",
-    "event_projection_sha256": "a064ed3d44dbbe4faf14cad3684079a3af8547cc67336f77ec357d84b7668b79",
+    # Refreshed after the exact IWD Arab-Israeli War parent bound the audited
+    # Kingdom of Egypt identity, adding a 58th Egypt-related release event.
+    "event_count": 58,
+    "event_id_sha256": "ba133683ac1907a7ff094702bc9a85e166073cf7ef24781455f6b2c0718ea925",
+    "event_projection_sha256": "99c54b25058a70f719415cf7854c95bab5e7423e9cd5ed22d2e1bbe81fc10801",
     "projection_fields": [
         "end_year",
         "entity_ids",
@@ -1212,7 +1211,7 @@ def wave8_egypt_forces_audit_signature() -> str:
 
 
 WAVE8_EGYPT_FORCES_FINAL_AUDIT_SIGNATURE = (
-    "e5d2ef668c0ffcd0c6e7371348aa185863716de3280187868d4f08e9727c866b"
+    "772f51dd8c3513c37f64d00b127bb1147c6ce4218d7326de0192da1f6ee5a05e"
 )
 
 

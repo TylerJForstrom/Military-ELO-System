@@ -20266,6 +20266,76 @@
     ]
   },
   {
+    "id": "wave8_viet_minh_australian_war_memorial",
+    "title": "Road to Dien Bien Phu",
+    "url": "https://www.awm.gov.au/wartime/92/article-five",
+    "publisher": "Australian War Memorial",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "australian_war_memorial_first_indochina_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_viet_minh_clodfelter_warfare",
+    "title": "Warfare and Armed Conflicts: A Statistical Encyclopedia of Casualty and Other Figures, 1492-2015, 4th ed., pp. 612-616",
+    "url": "https://books.google.com/books?id=8urEDgAAQBAJ&pg=PA612",
+    "publisher": "McFarland / Google Books",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "clodfelter_warfare_armed_conflicts",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_viet_minh_gras_nghia_lo_1951",
+    "title": "Yves Gras, 'Nghia-Lo. Indochine, octobre 1951,' Revue historique des Armées 26(4), pp. 133-153",
+    "url": "https://doi.org/10.3406/rharm.1970.8539",
+    "publisher": "Revue historique des Armées / Persée",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "gras_revue_historique_armees_nghia_lo",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_viet_minh_us_army_advice_support",
+    "title": "Ronald H. Spector, Advice and Support: The Early Years, 1941-1960, pp. 156-157",
+    "url": "https://history.army.mil/portals/143/Images/Publications/catalog/91-1.pdf",
+    "publisher": "United States Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "us_army_cmh_advice_support_early_years",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_viet_minh_wolfson_ford_laos",
+    "title": "Ryan Wolfson-Ford, 'Parting Ways: Two Civil Wars amid the First Indochina War in Laos (1945-1954),' Southeast Asian Studies 15(1), pp. 3-26",
+    "url": "https://doi.org/10.20495/seas.26001",
+    "publisher": "Center for Southeast Asian Studies, Kyoto University / J-STAGE",
+    "license": "Citation and link only",
+    "source_type": "expert_reviewed_military_reference",
+    "accessed": "2026-07-20",
+    "source_family_id": "wolfson_ford_first_indochina_war_laos",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
     "id": "wave8_vietnam_anderson_siming_frontier",
     "title": "Commissioner Li and Prefect Huang: Sino-Vietnamese Frontier Trade Networks and Political Alliances in the Southern Song",
     "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/2168LqNtBFy.pdf",

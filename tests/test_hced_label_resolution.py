@@ -1346,11 +1346,11 @@ class ReleaseArtifactTests(unittest.TestCase):
 
     def test_iwd_promotion_is_unchanged_by_the_label_pass(self) -> None:
         iwd_events = [e for e in self.events if str(e["id"]).startswith("iwd_war_")]
-        self.assertEqual(len(iwd_events), 64)
+        self.assertEqual(len(iwd_events), 66)
         promotion = self.metadata["promotion"]
-        self.assertEqual(promotion["accepted_iwd_wars"], 64)
+        self.assertEqual(promotion["accepted_iwd_wars"], 66)
         self.assertEqual(
-            sum(promotion["iwd_rejections"].values()) + 64,
+            sum(promotion["iwd_rejections"].values()) + 66,
             promotion["iwd_parent_wars_total"],
         )
         for event in iwd_events:

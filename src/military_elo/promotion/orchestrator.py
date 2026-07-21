@@ -1873,6 +1873,26 @@ from .wave8_libya import (
     wave8_libya_counts,
     wave8_libya_metadata,
 )
+from .wave8_viet_minh import (
+    WAVE8_VIET_MINH_CONTRACT_IDS,
+    WAVE8_VIET_MINH_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_VIET_MINH_ENTITIES,
+    WAVE8_VIET_MINH_FINAL_AUDIT_SIGNATURE,
+    WAVE8_VIET_MINH_FUNNEL_AUDIT,
+    WAVE8_VIET_MINH_HOLDS,
+    WAVE8_VIET_MINH_LOCATION_QUARANTINE_REASONS,
+    WAVE8_VIET_MINH_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_VIET_MINH_SOURCES,
+    install_wave8_viet_minh_entities,
+    install_wave8_viet_minh_sources,
+    promote_wave8_viet_minh_contracts,
+    validate_wave8_viet_minh_integration_dispositions,
+    validate_wave8_viet_minh_queue_contracts,
+    wave8_viet_minh_audit_signature,
+    wave8_viet_minh_cohort_counts,
+    wave8_viet_minh_counts,
+    wave8_viet_minh_metadata,
+)
 from .wave8_followup_b import (
     WAVE8_FOLLOWUP_B_CONTRACT_IDS,
     WAVE8_FOLLOWUP_B_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2708,7 +2728,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 377
+        len(HCED_POINT_QUARANTINE_IDS) != 386
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3011,6 +3031,9 @@ def build_expanded_release(
         validate_wave8_libya_frozen_chadian_rebels()
     )
     wave8_libya_queue_validation = validate_wave8_libya_queue_contracts(hced)
+    wave8_viet_minh_queue_validation = validate_wave8_viet_minh_queue_contracts(
+        hced
+    )
     wave8_followup_b_queue_validation = validate_wave8_followup_b_queue_contracts(
         hced
     )
@@ -3065,6 +3088,27 @@ def build_expanded_release(
     release_entities.update(
         {str(entity["id"]): dict(entity) for entity in WAVE6_1800_2021_ENTITY_OVERRIDES}
     )
+    # Two reviewed IWD parents now reuse identities installed by later exact
+    # HCED lanes.  Make only those byte-identical fixtures available to the
+    # strategic resolver before IWD aggregation; the later lane installers
+    # still validate equality and remain the authoritative owners.  This is
+    # exact-ID precedence, not a label or code fallback.
+    early_iwd_entity_ids = {
+        "kingdom_egypt_1922",
+        "kingdom_sardinia_piedmont",
+    }
+    early_iwd_entity_fixtures = {
+        str(entity["id"]): dict(entity)
+        for entity in (*WAVE7_CENTRAL_PASS2_ENTITIES, *WAVE7_GLOBAL_ENTITIES)
+        if str(entity["id"]) in early_iwd_entity_ids
+    }
+    if set(early_iwd_entity_fixtures) != early_iwd_entity_ids:
+        raise ValueError("Reviewed IWD early-identity fixture inventory drifted")
+    for entity_id, entity in early_iwd_entity_fixtures.items():
+        existing = release_entities.get(entity_id)
+        if existing is not None and existing != entity:
+            raise ValueError(f"Reviewed IWD early-identity collision: {entity_id}")
+        release_entities[entity_id] = entity
     candidate_by_release_id: dict[str, dict[str, Any]] = {}
     iwd_events: list[dict[str, Any]] = []
     iwd_rejections: Counter[str] = Counter()
@@ -3141,6 +3185,21 @@ def build_expanded_release(
             "source_ids": ["cliopatria_v020"],
         }
         return entity_id
+
+    early_iwd_candidate_ids = {
+        "clio_q139708_1944_bc8bee86",
+        "clio_q801_1948_5abea45e",
+        "clio_q810_1947_98de647a",
+    }
+    early_iwd_candidates = {
+        _candidate_entity_id(polity): polity
+        for polity in polities
+        if _candidate_entity_id(polity) in early_iwd_candidate_ids
+    }
+    if set(early_iwd_candidates) != early_iwd_candidate_ids:
+        raise ValueError("Reviewed IWD early candidate-identity inventory drifted")
+    for polity in early_iwd_candidates.values():
+        ensure_candidate_entity(polity)
 
     hced_crosswalk_pass = promote_hced_crosswalk_rows(
         hced,
@@ -3431,6 +3490,7 @@ def build_expanded_release(
     install_wave8_oran_entities(release_entities)
     install_wave8_cheyenne_dog_soldiers_entities(release_entities)
     install_wave8_libya_entities(release_entities)
+    install_wave8_viet_minh_entities(release_entities)
     install_wave8_followup_b_entities(release_entities)
     install_wave8_exact_priority_entities(release_entities)
     install_wave8_kievan_rus_entities(release_entities)
@@ -4967,9 +5027,18 @@ def build_expanded_release(
         raise ValueError(
             "Wave 8 Libya lane changed the frozen Chadian Rebels lane"
         )
-    wave8_followup_b_existing_events = [
+    wave8_viet_minh_existing_events = [
         *wave8_libya_existing_events,
         *wave8_libya_events,
+    ]
+    wave8_viet_minh_events = promote_wave8_viet_minh_contracts(
+        hced,
+        release_entities,
+        wave8_viet_minh_existing_events,
+    )
+    wave8_followup_b_existing_events = [
+        *wave8_viet_minh_existing_events,
+        *wave8_viet_minh_events,
     ]
     wave8_followup_b_events = promote_wave8_followup_b_contracts(
         hced,
@@ -5182,6 +5251,7 @@ def build_expanded_release(
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
         *wave8_libya_events,
+        *wave8_viet_minh_events,
         *wave8_followup_b_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
@@ -5462,6 +5532,7 @@ def build_expanded_release(
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
         *wave8_libya_events,
+        *wave8_viet_minh_events,
         *wave8_followup_b_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
@@ -6312,6 +6383,7 @@ def build_expanded_release(
     install_wave8_oran_sources(sources_by_id)
     install_wave8_cheyenne_dog_soldiers_sources(sources_by_id)
     install_wave8_libya_sources(sources_by_id)
+    install_wave8_viet_minh_sources(sources_by_id)
     install_wave8_followup_b_sources(sources_by_id)
     install_wave8_exact_priority_sources(sources_by_id)
     install_wave8_kievan_rus_sources(sources_by_id)
@@ -6420,6 +6492,7 @@ def build_expanded_release(
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
         *wave8_libya_events,
+        *wave8_viet_minh_events,
         *wave8_followup_b_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
@@ -6443,6 +6516,13 @@ def build_expanded_release(
     # view that precedes later Wave 8 lanes such as Macedon.
     wave8_libya_integration_validation = (
         validate_wave8_libya_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            all_events,
+        )
+    )
+    wave8_viet_minh_integration_validation = (
+        validate_wave8_viet_minh_integration_dispositions(
             hced,
             iwbd_candidates,
             all_events,
@@ -6583,6 +6663,7 @@ def build_expanded_release(
         *wave8_oran_events,
         *wave8_cheyenne_dog_soldiers_events,
         *wave8_libya_events,
+        *wave8_viet_minh_events,
         *wave8_followup_b_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
@@ -6690,6 +6771,7 @@ def build_expanded_release(
             | WAVE8_ORAN_CONTRACT_IDS
             | WAVE8_CHEYENNE_DOG_SOLDIERS_CONTRACT_IDS
             | WAVE8_LIBYA_CONTRACT_IDS
+            | WAVE8_VIET_MINH_CONTRACT_IDS
             | WAVE8_FOLLOWUP_B_CONTRACT_IDS
             | WAVE8_EXACT_PRIORITY_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
@@ -6852,6 +6934,7 @@ def build_expanded_release(
             WAVE8_CHEYENNE_DOG_SOLDIERS_ENTITIES,
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_LIBYA_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_VIET_MINH_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_B_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_EXACT_PRIORITY_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIEVAN_RUS_ENTITIES),
@@ -7137,6 +7220,7 @@ def build_expanded_release(
         - len(wave8_oran_events)
         - len(wave8_cheyenne_dog_soldiers_events)
         - len(wave8_libya_events)
+        - len(wave8_viet_minh_events)
         - len(wave8_followup_b_events)
         - len(wave8_exact_priority_events)
         - len(wave8_kievan_rus_events)
@@ -7346,6 +7430,9 @@ def build_expanded_release(
             wave8_cheyenne_dog_soldiers_events
         ),
         "candidate_keyed_wave8_libya_hced_events": len(wave8_libya_events),
+        "candidate_keyed_wave8_viet_minh_hced_events": len(
+            wave8_viet_minh_events
+        ),
         "candidate_keyed_wave8_followup_b_hced_events": len(
             wave8_followup_b_events
         ),
@@ -7713,6 +7800,7 @@ def build_expanded_release(
                 wave8_cheyenne_dog_soldiers_events
             ),
             "accepted_wave8_libya_hced_events": len(wave8_libya_events),
+            "accepted_wave8_viet_minh_hced_events": len(wave8_viet_minh_events),
             "accepted_wave8_followup_b_hced_events": len(
                 wave8_followup_b_events
             ),
@@ -11762,6 +11850,39 @@ def build_expanded_release(
             ),
             "wave8_libya_entities_added": len(WAVE8_LIBYA_ENTITIES),
             "wave8_libya_sources_added": len(WAVE8_LIBYA_SOURCES),
+            "wave8_viet_minh_metadata": wave8_viet_minh_metadata(),
+            "wave8_viet_minh_counts": wave8_viet_minh_counts(),
+            "wave8_viet_minh_cohort_counts": wave8_viet_minh_cohort_counts(),
+            "wave8_viet_minh_audit_signature": wave8_viet_minh_audit_signature(),
+            "wave8_viet_minh_final_audit_signature": (
+                WAVE8_VIET_MINH_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_viet_minh_queue_validation": wave8_viet_minh_queue_validation,
+            "wave8_viet_minh_integration_validation": (
+                wave8_viet_minh_integration_validation
+            ),
+            "wave8_viet_minh_candidate_ids": sorted(WAVE8_VIET_MINH_CONTRACT_IDS),
+            "wave8_viet_minh_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_VIET_MINH_HOLDS.items())
+            ],
+            "wave8_viet_minh_exact_label_funnel_audit": (
+                WAVE8_VIET_MINH_FUNNEL_AUDIT
+            ),
+            "wave8_viet_minh_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_VIET_MINH_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_viet_minh_point_quarantine_additions": sorted(
+                WAVE8_VIET_MINH_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_viet_minh_country_quarantine_additions": sorted(
+                WAVE8_VIET_MINH_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_viet_minh_entities_added": len(WAVE8_VIET_MINH_ENTITIES),
+            "wave8_viet_minh_sources_added": len(WAVE8_VIET_MINH_SOURCES),
             "wave8_followup_b_metadata": wave8_followup_b_metadata(),
             "wave8_followup_b_counts": wave8_followup_b_counts(),
             "wave8_followup_b_cohort_counts": wave8_followup_b_cohort_counts(),
@@ -12614,6 +12735,9 @@ def build_expanded_release(
             wave8_cheyenne_dog_soldiers_events
         ),
         "candidate_keyed_wave8_libya_hced_events": len(wave8_libya_events),
+        "candidate_keyed_wave8_viet_minh_hced_events": len(
+            wave8_viet_minh_events
+        ),
         "candidate_keyed_wave8_followup_b_hced_events": len(
             wave8_followup_b_events
         ),

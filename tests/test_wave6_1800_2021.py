@@ -65,10 +65,10 @@ class Wave6InventoryTests(unittest.TestCase):
     def test_exact_frozen_inventory(self):
         self.assertEqual(
             WAVE6_EXPECTED_IMPLEMENTED_COUNTS,
-            {"hced": 60, "iwd": 0, "iwbd": 9, "total": 69},
+            {"hced": 60, "iwd": 1, "iwbd": 9, "total": 70},
         )
         self.assertEqual(len(WAVE6_HCED_REVIEWED_CANDIDATE_CONTRACTS), 60)
-        self.assertEqual(WAVE6_IWD_REVIEWED_PARENT_CONTRACTS, {})
+        self.assertEqual(set(WAVE6_IWD_REVIEWED_PARENT_CONTRACTS), {"55"})
         self.assertEqual(len(WAVE6_IWBD_REVIEWED_IDENTITY_BINDINGS), 9)
         self.assertEqual(
             {
@@ -81,15 +81,15 @@ class Wave6InventoryTests(unittest.TestCase):
 
     def test_exact_frozen_holds_and_cross_lane_omissions(self):
         self.assertEqual(
-            WAVE6_EXPECTED_HELD_COUNTS, {"hced": 42, "iwd": 15, "iwbd": 225}
+            WAVE6_EXPECTED_HELD_COUNTS, {"hced": 42, "iwd": 14, "iwbd": 225}
         )
         self.assertEqual(len(WAVE6_HCED_AUDITED_HOLD_IDS), 42)
         self.assertEqual(len(WAVE6_HCED_COMPANION_EXCLUSION_IDS), 15)
-        self.assertEqual(len(WAVE6_IWD_CURATED_PARENT_EXCLUSIONS), 15)
+        self.assertEqual(len(WAVE6_IWD_CURATED_PARENT_EXCLUSIONS), 14)
         self.assertEqual(len(WAVE6_IWBD_HELD_SOURCE_CONTRACTS), 225)
         self.assertEqual(len(WAVE6_IWBD_CURATED_EXCLUSIONS), 203)
         self.assertEqual(len(WAVE6_HCED_IDENTITY_BOUNDARY_HOLD_REASONS), 14)
-        self.assertEqual(len(WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS), 1)
+        self.assertEqual(len(WAVE6_IWD_IDENTITY_BOUNDARY_HOLD_REASONS), 0)
         self.assertEqual(len(WAVE6_IWBD_IDENTITY_BOUNDARY_HOLD_REASONS), 6)
         self.assertEqual(len(WAVE6_IWBD_BASELINE_PUBLISHED_HOLD_IDS), 22)
         self.assertEqual(
@@ -204,14 +204,12 @@ class Wave6IdentityAndSourceTests(unittest.TestCase):
             "kingdom_spain_amadeo_i",
             "first_spanish_republic",
             "kingdom_montenegro",
-            "lebanese_republic",
             "spanish_restoration_monarchy",
             "spanish_bourbon_restoration",
             "state_israel",
             "transjordan_1946",
             "syrian_republic_1946",
             "syrian_arab_republic",
-            "kingdom_egypt",
             "khedivate_egypt",
             "united_arab_republic_egypt",
         ):
@@ -219,6 +217,9 @@ class Wave6IdentityAndSourceTests(unittest.TestCase):
         for canonical in (
             "spanish_empire",
             "clio_q236_1853_31d59baa",
+            "kingdom_egypt_1922",
+            "clio_sy_syria_modern_1946_86597c89",
+            "clio_q139708_1944_bc8bee86",
         ):
             self.assertIn(canonical, payload)
 
@@ -348,7 +349,7 @@ class Wave6QueueContractTests(unittest.TestCase):
             {"exact_reviewed_candidate_contract"},
         )
 
-    def test_parent_55_is_held_at_identity_boundaries(self):
+    def test_parent_55_promotes_after_all_identity_boundaries_are_curated(self):
         contracts = {
             **WAVE6_IWD_REVIEWED_PARENT_CONTRACTS,
             **WAVE6_IWD_HELD_PARENT_CONTRACTS,
@@ -363,8 +364,21 @@ class Wave6QueueContractTests(unittest.TestCase):
             resolve_reviewed_party=self._resolve,
             require_complete_reviewed_parents=True,
         )
-        self.assertEqual(result["events"], [])
-        self.assertIn("55", WAVE6_IWD_CURATED_PARENT_EXCLUSIONS)
+        self.assertEqual(len(result["events"]), 1)
+        event = result["events"][0]
+        self.assertEqual(event["iwd_parent_war_id"], "55")
+        self.assertEqual(
+            {participant["entity_id"] for participant in event["participants"]},
+            {
+                "kingdom_iraq",
+                "kingdom_egypt_1922",
+                "clio_sy_syria_modern_1946_86597c89",
+                "clio_q139708_1944_bc8bee86",
+                "clio_q810_1947_98de647a",
+                "clio_q801_1948_5abea45e",
+            },
+        )
+        self.assertNotIn("55", WAVE6_IWD_CURATED_PARENT_EXCLUSIONS)
 
     def test_exact_8_iwbd_promote_and_coalitions_are_complete(self):
         target = {

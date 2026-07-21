@@ -467,6 +467,48 @@ class ReleaseArtifactTests(unittest.TestCase):
         cluster_ids = [event["cluster_id"] for event in self.iwd_events]
         self.assertEqual(len(cluster_ids), len(set(cluster_ids)))
 
+    def test_reviewed_italian_and_arab_israeli_parents_are_exact(self) -> None:
+        by_parent = {event["iwd_parent_war_id"]: event for event in self.iwd_events}
+
+        italian = by_parent["10"]
+        self.assertEqual(italian["id"], "iwd_war_10_italian_unification_1859")
+        self.assertEqual(
+            [component["candidate_id"] for component in italian["iwd_components"]],
+            ["iwd-17", "iwd-18"],
+        )
+        self.assertEqual(
+            {
+                participant["entity_id"]: participant["termination"]
+                for participant in italian["participants"]
+            },
+            {
+                "austrian_empire": "defeat",
+                "kingdom_sardinia_piedmont": "victory",
+                "second_french_empire": "victory",
+            },
+        )
+
+        arab_israeli = by_parent["55"]
+        self.assertEqual(arab_israeli["id"], "iwd_war_55_arab_israeli_1948_49")
+        self.assertEqual(
+            [component["candidate_id"] for component in arab_israeli["iwd_components"]],
+            ["iwd-160", "iwd-161", "iwd-162", "iwd-163", "iwd-164"],
+        )
+        self.assertEqual(
+            {
+                participant["entity_id"]: participant["termination"]
+                for participant in arab_israeli["participants"]
+            },
+            {
+                "clio_q139708_1944_bc8bee86": "defeat",
+                "clio_q801_1948_5abea45e": "victory",
+                "clio_q810_1947_98de647a": "defeat",
+                "clio_sy_syria_modern_1946_86597c89": "defeat",
+                "kingdom_egypt_1922": "defeat",
+                "kingdom_iraq": "defeat",
+            },
+        )
+
     def test_iraq_receives_one_gulf_war_update_not_sixteen(self) -> None:
         gulf_events = [e for e in self.iwd_events if "gulf" in str(e["name"]).lower()]
         self.assertEqual(len(gulf_events), 1)

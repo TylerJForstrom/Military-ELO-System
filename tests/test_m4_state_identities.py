@@ -460,9 +460,7 @@ class CuratedExclusionTableTests(unittest.TestCase):
     def test_exclusion_tables_are_enumerated_and_documented(self) -> None:
         self.assertEqual(len(HCED_CURATED_EXCLUSIONS), 86)
         self.assertEqual(len(HCED_LABEL_CURATED_EXCLUSIONS), 75)
-        self.assertEqual(
-            set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "10", "17", "42"}
-        )
+        self.assertEqual(set(IWD_CURATED_PARENT_EXCLUSIONS), {"5", "17", "42"})
         self.assertLessEqual(
             {
                 "hced-Megalopolis-331-1",
@@ -508,16 +506,16 @@ class CuratedExclusionTableTests(unittest.TestCase):
     def test_iwd_curated_parent_exclusion_stages_the_whole_parent(self) -> None:
         components = [
             {
-                "candidate_id": "iwd-10",
-                "source_component_id": "10",
-                "parent_war_id": "10",
-                "parent_war_name": "ItalianUnification1859",
-                "name": "ItalianUnification1859",
-                "start_year": 1859,
-                "end_year": 1859,
+                "candidate_id": "iwd-5",
+                "source_component_id": "5",
+                "parent_war_id": "5",
+                "parent_war_name": "Germany-Denmark1848",
+                "name": "Germany-Denmark1848",
+                "start_year": 1848,
+                "end_year": 1848,
                 "terminal_outcome_code": "1",
-                "initiators": [{"name": "Italy", "cow_code": "325"}],
-                "targets": [{"name": "Austria", "cow_code": "300"}],
+                "initiators": [{"name": "Prussia", "cow_code": "255"}],
+                "targets": [{"name": "Denmark", "cow_code": "390"}],
             }
         ]
         result = aggregate_iwd_parent_wars(
@@ -540,7 +538,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
 
     def test_ledger_composition_pins(self) -> None:
-        self.assertEqual(len(self.events), 5_444)
+        self.assertEqual(len(self.events), 5_456)
         label = [e for e in self.events if str(e["id"]).startswith("hced_label_")]
         crosswalk = [
             e
@@ -550,16 +548,16 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
         self.assertEqual(len(label), 2_484)
         self.assertEqual(len(crosswalk), 1_826)
         self.assertEqual(
-            sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 64
+            sum(str(e["id"]).startswith("iwd_war_") for e in self.events), 66
         )
         self.assertEqual(
             sum(str(e["id"]).startswith("iwbd_") for e in self.events), 153
         )
         self.assertEqual(
-            sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 7
+            sum(str(e["id"]).startswith("ucdp_term_") for e in self.events), 8
         )
         rated = {p["entity_id"] for e in self.events for p in e["participants"]}
-        self.assertEqual(len(rated), 1_040)
+        self.assertEqual(len(rated), 1_042)
 
     def test_enumerated_identity_supersessions(self) -> None:
         qajar_events = [
@@ -591,7 +589,7 @@ class TrancheReleaseArtifactTests(unittest.TestCase):
                 rows = rows_by_name.get(name, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["identity_status"], "curated")
-        self.assertEqual(len(self.registry["entities"]), 2_395)
+        self.assertEqual(len(self.registry["entities"]), 2_397)
 
     def test_no_kingdom_of_england_event_bridges_the_interregnum(self) -> None:
         for event in self.events:
