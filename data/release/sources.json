@@ -7766,6 +7766,78 @@
     ]
   },
   {
+    "id": "wave8_cuban_country_study_armed_forces",
+    "title": "Cuba: A Country Study — The Origins of the Revolutionary Armed Forces",
+    "url": "https://www.marines.mil/Portals/1/Publications/Cuba%20Study_4.pdf?ver=2012-10-11-163311-187",
+    "publisher": "Federal Research Division, Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "government_country_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "library_of_congress_cuba_country_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cuban_frus_cienfuegos_1957",
+    "title": "Telegram From the Ambassador in Cuba to the Secretary of State",
+    "url": "https://history.state.gov/historicaldocuments/frus1955-57v06/d294",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "frus_cuba_1955_1960",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cuban_frus_moncada_1953",
+    "title": "Despatch From the Consulate at Santiago de Cuba to the Department of State",
+    "url": "https://history.state.gov/historicaldocuments/frus1958-60v06/d18",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "frus_cuba_1955_1960",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cuban_frus_summer_offensive_1958",
+    "title": "Military Causes for the Collapse of the Batista Regime",
+    "url": "https://history.state.gov/historicaldocuments/frus1958-60v06/d265",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "frus_cuba_1955_1960",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cuban_granma_el_jigue_1958",
+    "title": "En la batalla de El Jigüe la historia de la nación cubana comenzó a cambiar",
+    "url": "https://www.granma.cu/granmad/secciones/60-aniversario-moncada/articulo-32.html",
+    "publisher": "Granma",
+    "license": "Citation and link only",
+    "source_type": "official_historical_feature",
+    "accessed": "2026-07-21",
+    "source_family_id": "granma_cuban_revolution_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
     "id": "wave8_dacia_dio_book_67",
     "title": "Cassius Dio, Roman History, Epitome of Book 67",
     "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/67%2A.html",
@@ -10341,6 +10413,271 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_1914_1918_overview",
+    "title": "Finnish Civil War 1918",
+    "url": "https://encyclopedia.1914-1918-online.net/article/finnish-civil-war-1918/",
+    "publisher": "1914-1918 Online: International Encyclopedia of the First World War",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "1914_1918_online_finnish_civil_war",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_1914_1918_tampere",
+    "title": "Tampere, Battle of",
+    "url": "https://encyclopedia.1914-1918-online.net/article/tampere-battle-of/",
+    "publisher": "1914-1918 Online: International Encyclopedia of the First World War",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "1914_1918_online_tampere",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_city_oulu_history",
+    "title": "Oulussa taisteltiin sisällissodan aikana, mutta terroria oli vähän",
+    "url": "https://www.munoulu.fi/kulttuuri/oulussa-taisteltiin-sis%C3%A4llissodan-aikana-mutta-terroria-oli-v%C3%A4h%C3%A4n/",
+    "publisher": "City of Oulu",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "city_of_oulu_civil_war_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_enqvist_coastal_defence",
+    "title": "Kellä saaret ja selät on hallussaan: Rannikkopuolustuksen aluekysymykset autonomisessa ja itsenäisessä Suomessa",
+    "url": "https://www.doria.fi/bitstream/10024/74458/1/864586_taitto_web_2.pdf",
+    "publisher": "Finnish National Defence University, Department of Military History",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "enqvist_finnish_coastal_defence_2007",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_hovilainen_rautu_dates",
+    "title": "Raudun taistelu 21.2.1918-5.4.1918",
+    "url": "https://jyu.finna.fi/Record/arto.014087642",
+    "publisher": "Kansalliskirjasto Arto via JYKDOK",
+    "license": "Citation and link only",
+    "source_type": "scholarly_article_catalog_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "hovilainen_rautu_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_kemppi_oulu_record",
+    "title": "Scholarly article record for the Battle of Oulu",
+    "url": "https://www.finna.fi/Record/arto.013266593",
+    "publisher": "Finna / Kansalliskirjasto Arto",
+    "license": "Citation and link only",
+    "source_type": "scholarly_article_catalog_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "kemppi_battle_of_oulu",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_kirkkonummi_1918",
+    "title": "1918 Kirkkonummella",
+    "url": "https://kirkkonummi.fi/matkailu/kulttuuri-ja-museo/paikallishistoriaa-kulttuuri/1918-kirkkonummella/",
+    "publisher": "Municipality of Kirkkonummi",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "kirkkonummi_1918_local_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_lahteenmaki_rautu",
+    "title": "Maailmojen rajalla: Kannaksen rajamaa ja poliittiset murtumat 1911-1944",
+    "url": "https://www.doria.fi/bitstream/10024/182959/1/HT243_opt.pdf",
+    "publisher": "Suomalaisen Kirjallisuuden Seura",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "lahteenmaki_maailmojen_rajalla_2009",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_manninen_rautu",
+    "title": "Raudun taistelut 1918 Pietarista katsottuna",
+    "url": "https://jyu.finna.fi/Record/arto.013357343",
+    "publisher": "Kansalliskirjasto Arto via JYKDOK",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_article_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "manninen_rautu_sotilasaikakauslehti_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_mantta_vilppula_history",
+    "title": "Kansallinen perinne, osa 2: vuoden 1918 tapahtumat Vilppulassa",
+    "url": "https://manttavilppula.fi/wp-content/uploads/2024/03/kansallinenperinne_osa2.pdf",
+    "publisher": "City of Mänttä-Vilppula",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "mantta_vilppula_civil_war_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_ruovesi_doctoral_record",
+    "title": "Sisällissodan arvet maalaispitäjässä: Ruovesi vuosina 1918-1930",
+    "url": "https://researchportal.tuni.fi/en/publications/sis%C3%A4llissodan-arvet-maalaispit%C3%A4j%C3%A4ss%C3%A4-ruovesi-vuosina-1918-1930/",
+    "publisher": "Tampere University Research Portal",
+    "license": "Citation and link only",
+    "source_type": "doctoral_research_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "tampere_university_ruovesi_doctoral_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_finnish_ruovesi_thesis",
+    "title": "Ruovesi vuoden 1918 sisällissodassa",
+    "url": "https://trepo.tuni.fi/bitstream/handle/10024/84117/gradu06332.pdf?isAllowed=y&sequence=1",
+    "publisher": "Tampere University Trepo",
+    "license": "Citation and link only",
+    "source_type": "archive_based_history_thesis",
+    "accessed": "2026-07-21",
+    "source_family_id": "tampere_university_ruovesi_thesis",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_sjoblom_aland",
+    "title": "Military decision-making and the Åland question in 1918",
+    "url": "https://www.doria.fi/bitstream/handle/10024/155725/Max%20Sj%C3%B6blom_v%C3%A4it%C3%B6skirja__verkko.pdf?isAllowed=y&sequence=1",
+    "publisher": "Finnish National Defence University / Doria",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-21",
+    "source_family_id": "sjoblom_aland_dissertation",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_sks_viipuri",
+    "title": "The Battle of Viipuri and its aftermath in April 1918",
+    "url": "https://journal.fi/vskst/article/view/128044/77218",
+    "publisher": "Suomalaisen Kirjallisuuden Seura / Journal.fi",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_chapter",
+    "accessed": "2026-07-21",
+    "source_family_id": "sks_viipuri_1918_chapter",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_swedish_archives_aland",
+    "title": "Ålands nationstillhörighet",
+    "url": "https://sok.riksarkivet.se/historier/finska-kriget/alands-nationstillhorighet/",
+    "publisher": "Swedish National Archives",
+    "license": "Citation and link only",
+    "source_type": "official_archival_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "swedish_national_archives_aland_1918",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_uppslagsverket_aland",
+    "title": "Ålandsexpeditionen",
+    "url": "https://www.uppslagsverket.fi/sv/view-170045-Aalandsexpeditionen",
+    "publisher": "Uppslagsverket Finland",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "uppslagsverket_finland_aland_expedition",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_finnish_vapriikki_connections",
+    "title": "The Finnish Civil War and its international connections",
+    "url": "https://tampere1918.fi/en/the-finnish-civil-war-and-its-international-connections/",
+    "publisher": "Museum Centre Vapriikki / Tampere 1918",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "vapriikki_tampere_1918_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_yle_oulu",
+    "title": "Oulun taistelun historical review with University of Oulu historian Olavi Fält",
+    "url": "https://yle.fi/a/3-10048411",
+    "publisher": "Yle",
+    "license": "Citation and link only",
+    "source_type": "public_broadcaster_historical_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "yle_oulu_battle_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_finnish_yle_sigurds",
+    "title": "Sigurdsin kaartin vaiheet helmikuussa 1918",
+    "url": "https://yle.fi/aihe/a/20-207977",
+    "publisher": "Yle",
+    "license": "Citation and link only",
+    "source_type": "public_broadcaster_archival_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "yle_sigurds_archival_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -13490,6 +13827,81 @@
     ]
   },
   {
+    "id": "wave8_irish_royalists_bcw_clonmel",
+    "title": "The Siege of Clonmel, 1650",
+    "url": "https://bcw-project.org.uk/military/third-civil-war/cromwell-in-ireland/clonmel",
+    "publisher": "BCW Project",
+    "license": "Citation and link only",
+    "source_type": "curated_military_history_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "bcw_project_clonmel_1650",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_irish_royalists_history_ireland_hugh_dubh",
+    "title": "Hugh Dubh O'Neill—Cromwell's stoutest enemy",
+    "url": "https://historyireland.com/hugh-dubh-oneill-cromwells-stoutest-enemy/",
+    "publisher": "History Ireland",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "history_ireland_hugh_dubh_oneill",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_irish_royalists_libris_dungans_hill_relation",
+    "title": "An exact and full relation of the great victory obtained against the rebels at Dungons-Hill in Ireland, August 8, 1647",
+    "url": "https://libris.kb.se/bib/10747719",
+    "publisher": "LIBRIS, National Library of Sweden",
+    "license": "Citation and link only",
+    "source_type": "contemporary_parliamentary_print_catalogue_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "commons_dungans_hill_relation_1647",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_irish_royalists_ucc_celt_parliamentary_proceedings",
+    "title": "Proceedings of the forces in Ireland under Sir Hardress Waller and Lord-Deputy Ireton, 1650–1651",
+    "url": "https://celt.ucc.ie/document/E650001-001/",
+    "publisher": "University College Cork, Corpus of Electronic Texts",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_source_transcription",
+    "accessed": "2026-07-21",
+    "source_family_id": "ucc_celt_parliamentary_proceedings_1650_1651",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_irish_royalists_ucd_fitzpatrick_dungans_hill",
+    "title": "Thomas Fitzpatrick Papers: descriptive catalogue",
+    "url": "https://www.ucd.ie/archives/t4media/la0012-fitzpatrick-thomas-descriptive-catalogue.pdf",
+    "publisher": "University College Dublin Archives",
+    "license": "Citation and link only",
+    "source_type": "university_archival_catalogue",
+    "accessed": "2026-07-21",
+    "source_family_id": "ucd_thomas_fitzpatrick_papers",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_irish_simms_dysert_odea",
     "title": "The Battle of Dysert O’Dea and the Gaelic Resurgence in Thomond",
     "url": "https://clarelibraries.ie/localstudies/history/battles-and-fortifications-in-clare/the-battle-of-dysert-odea-and-the-gaelic-resurgence-in-thomond/",
@@ -14988,6 +15400,197 @@
     "source_family_id": "musee_du_louvre",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dcb_brown",
+    "title": "BROWN, THOMAS STORROW",
+    "url": "https://www.biographi.ca/en/bio/brown_thomas_storrow_11E.html",
+    "publisher": "Dictionary of Canadian Biography, University of Toronto/Universite Laval",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "dictionary_canadian_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dcb_chenier",
+    "title": "CHENIER, JEAN-OLIVIER",
+    "url": "https://www.biographi.ca/en/bio/chenier_jean_olivier_7E.html",
+    "publisher": "Dictionary of Canadian Biography, University of Toronto/Universite Laval",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "dictionary_canadian_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dcb_hindenlang",
+    "title": "HINDENLANG, CHARLES",
+    "url": "https://www.biographi.ca/en/bio/hindenlang_charles_7E.html",
+    "publisher": "Dictionary of Canadian Biography, University of Toronto/Universite Laval",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "dictionary_canadian_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dcb_nelson",
+    "title": "NELSON, WOLFRED",
+    "url": "https://www.biographi.ca/en/bio/nelson_wolfred_9F.html",
+    "publisher": "Dictionary of Canadian Biography, University of Toronto/Universite Laval",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "dictionary_canadian_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dcb_wetherall",
+    "title": "WETHERALL, Sir GEORGE AUGUSTUS",
+    "url": "https://www.biographi.ca/en/bio/wetherall_george_augustus_9E.html",
+    "publisher": "Dictionary of Canadian Biography, University of Toronto/Universite Laval",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "dictionary_canadian_biography",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_dnd_saint_denis",
+    "title": "La bataille de Saint-Denis, 1837",
+    "url": "https://www.canada.ca/content/dam/themes/defence/caf/militaryhistory/dhh/reports/batailles-canadiennes/livre-bataille-saint-denis-1837-fr.pdf",
+    "publisher": "Directorate of History and Heritage, Department of National Defence Canada",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "canadian_military_history_battle_series",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_parks_saint_eustache",
+    "title": "Saint-Eustache Church, Saint-Eustache, Quebec",
+    "url": "https://www.canada.ca/en/parks-canada/news/2017/05/saint-eustache_churchsaint-eustachequebec.html",
+    "publisher": "Parks Canada",
+    "license": "Citation and link only",
+    "source_type": "official_commemorative_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "parks_canada_saint_eustache",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_rpcq_freres_chasseurs",
+    "title": "Societe des Freres chasseurs",
+    "url": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=26388&methode=consulter&type=pge",
+    "publisher": "Repertoire du patrimoine culturel du Quebec",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "quebec_cultural_heritage_lower_canada_rebellions",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_rpcq_odelltown",
+    "title": "Bataille d'Odelltown",
+    "url": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=8728&methode=consulter&type=pge",
+    "publisher": "Repertoire du patrimoine culturel du Quebec",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "quebec_cultural_heritage_lower_canada_rebellions",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_rpcq_saint_charles",
+    "title": "Bataille de Saint-Charles",
+    "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=25484&methode=consulter&type=pge",
+    "publisher": "Repertoire du patrimoine culturel du Quebec",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "quebec_cultural_heritage_lower_canada_rebellions",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_rpcq_saint_denis",
+    "title": "Bataille de Saint-Denis",
+    "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=18523&methode=consulter&type=pge",
+    "publisher": "Repertoire du patrimoine culturel du Quebec",
+    "license": "Citation and link only",
+    "source_type": "official_cultural_heritage_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "quebec_cultural_heritage_lower_canada_rebellions",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_state_trials_1839",
+    "title": "Report of the State Trials before a General Court Martial at Montreal, 1838-9",
+    "url": "https://www.canadiana.ca/view/oocihm.40101",
+    "publisher": "Armour and Ramsay; Canadiana digitization",
+    "license": "Citation and link only",
+    "source_type": "digitized_primary_trial_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "lower_canada_state_trials_1839",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_lower_canada_vac_odelltown",
+    "title": "Battle of Odelltown National Historic Site",
+    "url": "https://www.veterans.gc.ca/en/remembrance/memorials/canada/battlefield-odelltown",
+    "publisher": "Veterans Affairs Canada",
+    "license": "Citation and link only",
+    "source_type": "official_battlefield_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "veterans_affairs_canada_odelltown",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -20016,6 +20619,246 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_archivalia_ulm_chronology",
+    "title": "Zur Datierung der Belagerung Ulms 1376",
+    "url": "https://archivalia.hypotheses.org/64555",
+    "publisher": "Archivalia",
+    "license": "Citation and link only",
+    "source_type": "source_critical_historical_note",
+    "accessed": "2026-07-21",
+    "source_family_id": "archivalia_ulm_1376_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_erara_chur_calven",
+    "title": "Contemporary Chur account of the Swabian War (Calven, p. 238)",
+    "url": "https://www.e-rara.ch/download/pdf/27096893.pdf",
+    "publisher": "e-rara / Swiss electronic rare-book library",
+    "license": "Citation and link only",
+    "source_type": "digitized_contemporary_chronicle",
+    "accessed": "2026-07-21",
+    "source_family_id": "chur_contemporary_swabian_war_account",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_frastanz_niederstaetter",
+    "title": "Die Schlacht bei Frastanz",
+    "url": "https://frastanz.at/fileadmin/leben_in_frastanz/Geschichte/Die_Schlacht_bei_Frastanz.pdf",
+    "publisher": "Marktgemeinde Frastanz",
+    "license": "Citation and link only",
+    "source_type": "municipal_scholarly_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "niederstaetter_frastanz_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_grafenau_doffingen",
+    "title": "Geschichte der Gemeinde Grafenau: Schlacht bei Döffingen",
+    "url": "https://www.gemeindegrafenau.de/gemeinde-wirtschaft/geschichte",
+    "publisher": "Gemeinde Grafenau",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "grafenau_doffingen_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_graubuenden_calven",
+    "title": "Chronologie: Schwabenkrieg / Schlacht an der Calven",
+    "url": "https://500.gr.ch/chronologie/",
+    "publisher": "Kanton Graubünden, 500 Jahre Freistaat Drei Bünde",
+    "license": "Citation and link only",
+    "source_type": "official_cantonal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "graubuenden_three_leagues_chronology",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_hlb_cities_war",
+    "title": "Städtekrieg, 1387/1389",
+    "url": "https://www.historisches-lexikon-bayerns.de/Lexikon/St%C3%A4dtekrieg%2C_1387/1389",
+    "publisher": "Historisches Lexikon Bayerns",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "hlb_cities_war_1387_1389",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_hlb_swabian_war",
+    "title": "Schwabenkrieg/Schweizerkrieg, 1499",
+    "url": "https://www.historisches-lexikon-bayerns.de/Lexikon/Artikel_45514",
+    "publisher": "Historisches Lexikon Bayerns",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "hlb_swabian_war_1499",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_hll_triesen",
+    "title": "Schlacht bei Triesen",
+    "url": "https://historisches-lexikon.li/Schlacht_bei_Triesen",
+    "publisher": "Historisches Lexikon des Fürstentums Liechtenstein",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "hll_triesen_battle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_hls_swabian_war",
+    "title": "Schwabenkrieg",
+    "url": "https://hls-dhs-dss.ch/de/articles/008888/",
+    "publisher": "Historisches Lexikon der Schweiz",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "hls_swabian_war_1499",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_isos_triboltingen",
+    "title": "Bundesinventar ISOS: Triboltingen",
+    "url": "https://api.isos.bak.admin.ch/ob/3665/doc/ISOS_3665.pdf",
+    "publisher": "Bundesamt für Kultur, Schweizerische Eidgenossenschaft",
+    "license": "Citation and link only",
+    "source_type": "official_federal_settlement_inventory",
+    "accessed": "2026-07-21",
+    "source_family_id": "swiss_isos_triboltingen",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_joerg_city_league",
+    "title": "Der Rheinisch-Schwäbische Städtebund und der I. Städtekrieg",
+    "url": "https://kath-akademie-bayern.de/mediathek-eintrag/der-rheinisch-schwaebische-staedtebund-und-der-i-staedtekrieg-reichsstaedtische-interessenwahrung-zwischen-koenigtum-und-fuersten/",
+    "publisher": "Katholische Akademie in Bayern",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_lecture",
+    "accessed": "2026-07-21",
+    "source_family_id": "joerg_rhenish_swabian_city_league",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_leo_bw_doffingen",
+    "title": "Döffingen - Altgemeinde~Teilort",
+    "url": "https://www.leo-bw.de/fr/web/guest/detail-gis/-/Detail/details/ORT/labw_ortslexikon/288/D%C3%B6ffingen",
+    "publisher": "LEO-BW / Landesarchiv Baden-Württemberg",
+    "license": "Citation and link only",
+    "source_type": "official_state_historical_portal",
+    "accessed": "2026-07-21",
+    "source_family_id": "leo_bw_doffingen",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_reutlingen_rgb",
+    "title": "Reutlinger Geschichtsblätter, Ausgabe 2020",
+    "url": "https://publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/149386/RGB_Ausgabe_2020_Online.pdf?isAllowed=y&sequence=1",
+    "publisher": "Stadtarchiv Reutlingen / Universität Tübingen repository",
+    "license": "Citation and link only",
+    "source_type": "scholarly_local_history_journal",
+    "accessed": "2026-07-21",
+    "source_family_id": "reutlinger_geschichtsblaetter_2020",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_staelin_reutlingen",
+    "title": "Wirtembergische Geschichte, Band 3: Reutlingen 1377",
+    "url": "https://dl.ub.uni-freiburg.de/diglit/staelin1856-3/0341/ocr",
+    "publisher": "Universitätsbibliothek Freiburg digital collections",
+    "license": "Citation and link only",
+    "source_type": "digitized_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "staelin_wirtembergische_geschichte_v3",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_ulm_city_history",
+    "title": "Die Geschichte der Stadt Ulm",
+    "url": "https://www.ulm.de/tourismus/stadtgeschichte/geschichte-der-stadt",
+    "publisher": "Stadt Ulm",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "ulm_official_city_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_swabian_hre_wilnet_schwaderloh",
+    "title": "Die Schlacht bei Schwaderloh",
+    "url": "https://www.wilnet.ch/files/documents/Die_Schlacht_bei_Schwaderloh.pdf",
+    "publisher": "WilNet / Stadtlexikon Wil",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_battle_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "wilnet_schwaderloh_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
     ]
   },
   {

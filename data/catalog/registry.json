@@ -2723,6 +2723,16 @@
       "region": "Hungary, Galicia, and the Marchfeld"
     },
     {
+      "id": "buendner_confederate_field_host_triesen_1499",
+      "name": "Bündner-Confederate field host at Triesen (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Triesen and the Alpine Rhine valley"
+    },
+    {
       "id": "sardinian_cacciatori_delle_alpi_1859",
       "name": "Cacciatori delle Alpi (1859 Sardinian campaign)",
       "kind": "campaign_bounded_state_volunteer_corps",
@@ -3145,6 +3155,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "charles_iv_imperial_princely_siege_host_ulm_1376",
+      "name": "Charles IV's imperial-princely siege host at Ulm (1376)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1376,
+      "end_year": 1376,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ulm"
+    },
+    {
       "id": "clio_in_chauhana_dyn_980_c5262344",
       "name": "Chauhan Dynasty",
       "kind": "dynastic_state",
@@ -3387,6 +3407,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "cienfuegos_naval_civilian_uprising_coalition_1957",
+      "name": "Cienfuegos naval–civilian uprising coalition (1957)",
+      "kind": "event_bounded_naval_civilian_uprising_coalition",
+      "start_year": 1957,
+      "end_year": 1957,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Cienfuegos, Cuba"
     },
     {
       "id": "cilician_armenian_aleppo_contingent_1260",
@@ -3811,6 +3841,16 @@
       "region": "North America"
     },
     {
+      "id": "confederate_thurgau_field_host_schwaderloh_1499",
+      "name": "Confederate-Thurgau field host at Schwaderloh (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Thurgau near Triboltingen"
+    },
+    {
       "id": "clio_q154741_1809_fffde4ac",
       "name": "Confederation of the Rhine",
       "kind": "confederation",
@@ -3901,6 +3941,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central America"
+    },
+    {
+      "id": "ulrich_wurttemberg_field_force_reutlingen_1377",
+      "name": "Count Ulrich of Württemberg's field force at Reutlingen (1377)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1377,
+      "end_year": 1377,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Reutlingen and Württemberg"
     },
     {
       "id": "clio_q1541699_1000_bdeb307d",
@@ -6813,6 +6863,26 @@
       "region": "Syriam and the lower Irrawaddy"
     },
     {
+      "id": "finnish_red_guard_1918",
+      "name": "Finnish Red Guard (1918)",
+      "kind": "civil_war_faction_army",
+      "start_year": 1918,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Red Finland and its 1918 fronts"
+    },
+    {
+      "id": "finnish_white_army_1918",
+      "name": "Finnish White Army (1918)",
+      "kind": "civil_war_faction_army",
+      "start_year": 1918,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Finland and the 1918 Karelian fronts"
+    },
+    {
       "id": "first_ava_kingdom_1364_1555",
       "name": "First Ava Kingdom",
       "kind": "kingdom",
@@ -8648,6 +8718,26 @@
       "region": "Central Europe"
     },
     {
+      "id": "habsburg_swabian_field_host_hard_1499",
+      "name": "Habsburg-allied Swabian field host at Hard (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhine delta near Hard"
+    },
+    {
+      "id": "habsburg_allied_swabian_landsknechts_triesen_1499",
+      "name": "Habsburg-allied Swabian landsknechts at Triesen (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Triesen and the Alpine Rhine valley"
+    },
+    {
       "id": "clio_q1517159_bce700_d2877f9d",
       "name": "Hadhramaut",
       "kind": "polity",
@@ -9412,6 +9502,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "clonmel_ormond_aligned_ulster_garrison_1650",
+      "name": "Hugh Dubh O'Neill's Ormond-aligned Ulster garrison at Clonmel (1650)",
+      "kind": "event_bounded_garrison",
+      "start_year": 1650,
+      "end_year": 1650,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Clonmel, County Tipperary, Ireland"
+    },
+    {
       "id": "hugh_dubh_oneill_limerick_garrison_1651",
       "name": "Hugh Dubh O’Neill’s Confederate–Royalist Limerick Garrison (1651)",
       "kind": "siege_garrison",
@@ -9788,6 +9888,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "West Asia"
+    },
+    {
+      "id": "imperial_swabian_konstanz_host_schwaderloh_1499",
+      "name": "Imperial-Swabian Constance raiding host at Schwaderloh (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Constance and Thurgau"
     },
     {
       "id": "in_salah_ksourian_force_igosten_1899",
@@ -10485,6 +10595,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "jean_olivier_chenier_saint_eustache_force_1837",
+      "name": "Jean-Olivier Chenier's Saint-Eustache force (1837)",
+      "kind": "event_bounded_rebel_defense_force",
+      "start_year": 1837,
+      "end_year": 1837,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Canada (present-day Quebec, Canada)"
     },
     {
       "id": "clio_q465960_1595_0848d51f",
@@ -13894,6 +14014,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "lower_canada_crown_suppression_force_1837_1838",
+      "name": "Lower Canada Crown suppression force (1837-1838)",
+      "kind": "conflict_bounded_colonial_government_force",
+      "start_year": 1837,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Canada (present-day Quebec, Canada)"
+    },
+    {
       "id": "clio_eg_old_k_2_bce2200_74ae601d",
       "name": "Lower Egypt",
       "kind": "polity",
@@ -14642,6 +14772,26 @@
       "region": "Unclassified"
     },
     {
+      "id": "maximilianian_tyrolean_vinschgau_host_calven_1499",
+      "name": "Maximilianian Tyrolean-Vinschgau host at Calven (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vinschgau and the Münstertal"
+    },
+    {
+      "id": "maximilianian_tyrolean_vorderoesterreich_host_frastenz_1499",
+      "name": "Maximilianian Tyrolean-Vorderösterreich host at Frastanz (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vorarlberg"
+    },
+    {
       "id": "clio_gt_tikal_early_classic_bce247_25a513ad",
       "name": "Mayan City-States",
       "kind": "city_state",
@@ -14869,6 +15019,16 @@
       "region": "Southern Africa"
     },
     {
+      "id": "dungans_hill_parliamentarian_field_army_1647",
+      "name": "Michael Jones's Parliamentarian field army at Dungan's Hill (1647)",
+      "kind": "event_bounded_field_army",
+      "start_year": 1647,
+      "end_year": 1647,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "County Meath, Ireland"
+    },
+    {
       "id": "clio_q79861_1305_c015221f",
       "name": "Michoacán",
       "kind": "polity",
@@ -15068,6 +15228,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Swahili Coast, East Africa"
+    },
+    {
+      "id": "moncada_assault_group_1953",
+      "name": "Moncada assault group (1953)",
+      "kind": "event_bounded_assault_group",
+      "start_year": 1953,
+      "end_year": 1953,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Santiago de Cuba"
     },
     {
       "id": "mongol_empire",
@@ -15928,6 +16098,16 @@
       "region": "North Africa"
     },
     {
+      "id": "clonmel_new_model_army_siege_force_1650",
+      "name": "New Model Army siege force at Clonmel (1650)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1650,
+      "end_year": 1650,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Clonmel, County Tipperary, Ireland"
+    },
+    {
       "id": "clio_q382593_1622_c9db9de9",
       "name": "New Netherland",
       "kind": "polity",
@@ -16677,6 +16857,16 @@
       "region": "Rhodes, Dodecanese"
     },
     {
+      "id": "oulu_russian_garrison_1918",
+      "name": "Oulu Russian garrison (1918)",
+      "kind": "event_bounded_garrison",
+      "start_year": 1918,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Oulu, Finland"
+    },
+    {
       "id": "fort_loudoun_overhill_cherokee_siege_force_1760",
       "name": "Overhill Cherokee siege force at Fort Loudoun (1760)",
       "kind": "event_bounded_indigenous_siege_force",
@@ -17190,6 +17380,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Alexandria, Egypt"
+    },
+    {
+      "id": "petrograd_red_detachments_rautu_1918",
+      "name": "Petrograd Red Army and volunteer detachments at Rautu (1918)",
+      "kind": "event_bounded_joint_detachment",
+      "start_year": 1918,
+      "end_year": 1918,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rautu and the Karelian Isthmus"
     },
     {
       "id": "clio_q4202088_1294_3066b3e1",
@@ -19707,6 +19907,16 @@
       "region": "Haiti and, until 1844, all Hispaniola"
     },
     {
+      "id": "reutlingen_city_force_1377",
+      "name": "Reutlingen civic force (1377)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1377,
+      "end_year": 1377,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Reutlingen"
+    },
+    {
       "id": "clio_q175881_1799_b720cd63",
       "name": "Revolutionary Roman Republic",
       "kind": "republic",
@@ -19801,6 +20011,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "robert_nelson_freres_chasseurs_force_1838",
+      "name": "Robert Nelson's Freres chasseurs force (1838)",
+      "kind": "conflict_bounded_paramilitary_force",
+      "start_year": 1838,
+      "end_year": 1838,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Canada (present-day Quebec, Canada)"
     },
     {
       "id": "robert_sutherland_strathfleet_defence_1453",
@@ -22370,6 +22590,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "swabian_city_league_field_host_doffingen_1388",
+      "name": "Swabian League of Cities field host at Döffingen (1388)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1388,
+      "end_year": 1388,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Swabia"
+    },
+    {
       "id": "clio_q1050_1885_40aff2a6",
       "name": "Swaziland",
       "kind": "polity",
@@ -22390,6 +22620,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "confederate_field_host_frastenz_1499",
+      "name": "Swiss Confederate field host at Frastanz (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vorarlberg"
+    },
+    {
+      "id": "confederate_field_host_hard_1499",
+      "name": "Swiss Confederate field host at Hard (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Rhine delta near Hard"
     },
     {
       "id": "clio_ch_swiss_conf_1_1294_2199c0f7",
@@ -23124,6 +23374,26 @@
       "region": "North America"
     },
     {
+      "id": "dungans_hill_confederate_leinster_redshank_force_1647",
+      "name": "Thomas Preston's Confederate Leinster–Redshank force at Dungan's Hill (1647)",
+      "kind": "event_bounded_coalition_field_force",
+      "start_year": 1647,
+      "end_year": 1647,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "County Meath, Ireland"
+    },
+    {
+      "id": "thomas_storrow_brown_saint_charles_force_1837",
+      "name": "Thomas Storrow Brown's Saint-Charles force (1837)",
+      "kind": "event_bounded_rebel_camp",
+      "start_year": 1837,
+      "end_year": 1837,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Canada (present-day Quebec, Canada)"
+    },
+    {
       "id": "thomas_wright_us_reconnaissance_patrol_1873_04_26",
       "name": "Thomas-Wright U.S. reconnaissance patrol (26 April 1873)",
       "kind": "event_bounded_reconnaissance_patrol",
@@ -23184,6 +23454,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "three_leagues_confederate_field_host_calven_1499",
+      "name": "Three Leagues-led field host at Calven (1499)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1499,
+      "end_year": 1499,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Vinschgau and the Münstertal"
     },
     {
       "id": "clio_q315010_469_a371b111",
@@ -23822,6 +24102,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "ulm_city_defenders_1376",
+      "name": "Ulm civic defenders (1376)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1376,
+      "end_year": 1376,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ulm"
     },
     {
       "id": "umar_salih_dufile_force_1888",
@@ -24828,6 +25118,16 @@
       "region": "Western Europe"
     },
     {
+      "id": "wolfred_nelson_saint_denis_force_1837",
+      "name": "Wolfred Nelson's Saint-Denis force (1837)",
+      "kind": "event_bounded_rebel_defense_force",
+      "start_year": 1837,
+      "end_year": 1837,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lower Canada (present-day Quebec, Canada)"
+    },
+    {
       "id": "wood_eic_butwal_column_1815",
       "name": "Wood's East India Company Butwal column",
       "kind": "company_field_force",
@@ -24878,6 +25178,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Upper Washita, Southern Plains"
+    },
+    {
+      "id": "wurttemberg_princely_coalition_doffingen_1388",
+      "name": "Württemberg-led princely coalition at Döffingen (1388)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1388,
+      "end_year": 1388,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Württemberg and Swabia"
     },
     {
       "id": "clio_q7427_410_b56d774b",
@@ -25591,11 +25901,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2423,
-    "rated_entities": 1077,
-    "rated_events": 5526,
+    "registry_polities": 2454,
+    "rated_entities": 1108,
+    "rated_events": 5546,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36817,
+    "unresolved_event_candidates": 36797,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25691,6 +26001,7 @@
     "candidate_keyed_wave8_viet_minh_hced_events": 9,
     "candidate_keyed_wave8_followup_b_hced_events": 4,
     "candidate_keyed_wave8_followup_c_hced_events": 14,
+    "candidate_keyed_wave8_followup_d_hced_events": 20,
     "candidate_keyed_wave8_exact_priority_hced_events": 18,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
@@ -25719,21 +26030,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5259,
-      "candidate_keyed_reviewed_contracts": 847,
-      "geojson_points": 4843,
-      "modern_location_country_assertions": 5163,
-      "location_provenance_objects": 5212,
-      "point_fields_withheld_by_quarantine": 416,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 95,
+      "hced_candidate_bindings": 5279,
+      "candidate_keyed_reviewed_contracts": 867,
+      "geojson_points": 4848,
+      "modern_location_country_assertions": 5181,
+      "location_provenance_objects": 5230,
+      "point_fields_withheld_by_quarantine": 431,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 97,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 47,
-      "unique_events_with_any_quarantined_field": 464,
-      "point_quarantine_candidate_manifest_sha256": "0dedf5bfa038b24c33eab7914bfadfd62039831ced9a19398c84ce463441e00a",
-      "country_quarantine_candidate_manifest_sha256": "b8536bb2fa5d17ec47e4e3a9b7d5d4ea0b85be3d7fc1ea2db5aadf028787955f",
-      "quarantine_policy_sha256": "ab833838fada26185429fa5b2b118fad59209fdefa140277fb7bbf09455ff78d",
+      "point_country_quarantine_overlap": 49,
+      "unique_events_with_any_quarantined_field": 479,
+      "point_quarantine_candidate_manifest_sha256": "71ea4d4eed9f07cbe7d779488081693348795b4f9b68ac24fb374adc79b39f2a",
+      "country_quarantine_candidate_manifest_sha256": "e3c34aa567567827a732bacb85e46077b9696c98937a4ea0b739e277d56374be",
+      "quarantine_policy_sha256": "294e9cb36cd5ee0645640302318b6e86e5f7c5548795bee312215efe5457d4d7",
       "assertion_status": {
-        "unreviewed_source_assertion": 5212
+        "unreviewed_source_assertion": 5230
       },
       "verified_location_assertions": {
         "availability": "not_available",

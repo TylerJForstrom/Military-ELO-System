@@ -4677,6 +4677,72 @@
     ]
   },
   {
+    "id": "charles_iv_imperial_princely_siege_host_ulm_1376",
+    "name": "Charles IV's imperial-princely siege host at Ulm (1376)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1376,
+    "end_year": 1376,
+    "region": "Ulm",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Charles IV's imperial-princely siege host at Ulm. It does not resolve Holy Roman Empire, HRE, or German Princes labels.",
+    "source_ids": [
+      "wave8_swabian_hre_archivalia_ulm_chronology",
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_joerg_city_league",
+      "wave8_swabian_hre_ulm_city_history"
+    ]
+  },
+  {
+    "id": "ulm_city_defenders_1376",
+    "name": "Ulm civic defenders (1376)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1376,
+    "end_year": 1376,
+    "region": "Ulm",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Ulm and its city-league defenders during Charles IV's 1376 siege; it does not represent the whole city league over time.",
+    "source_ids": [
+      "wave8_swabian_hre_archivalia_ulm_chronology",
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_joerg_city_league",
+      "wave8_swabian_hre_ulm_city_history"
+    ]
+  },
+  {
+    "id": "ulrich_wurttemberg_field_force_reutlingen_1377",
+    "name": "Count Ulrich of Württemberg's field force at Reutlingen (1377)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1377,
+    "end_year": 1377,
+    "region": "Reutlingen and Württemberg",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Count Ulrich's mounted and knightly force at Reutlingen. The raw Holy Roman Empire label is rejected as an actor identity.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_reutlingen_rgb",
+      "wave8_swabian_hre_staelin_reutlingen"
+    ]
+  },
+  {
+    "id": "reutlingen_city_force_1377",
+    "name": "Reutlingen civic force (1377)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1377,
+    "end_year": 1377,
+    "region": "Reutlingen",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Reutlingen's civic infantry in the reviewed battle, not to every member or operation of the Swabian League of Cities.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_reutlingen_rgb",
+      "wave8_swabian_hre_staelin_reutlingen"
+    ]
+  },
+  {
     "id": "ghent_rebel_regime_1379_1385",
     "name": "Ghent rebel regime (Revolt of Ghent, 1379-1385)",
     "kind": "rebel_polity",
@@ -4702,6 +4768,38 @@
     "continuity_note": "Exact Wave 7 Central/East pass-2 reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_p2_savra_elsie"
+    ]
+  },
+  {
+    "id": "swabian_city_league_field_host_doffingen_1388",
+    "name": "Swabian League of Cities field host at Döffingen (1388)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1388,
+    "end_year": 1388,
+    "region": "Swabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the 1376-1389 city league's field army at Döffingen. It is distinct from the league founded in 1488 and has no bare Swabian League alias.",
+    "source_ids": [
+      "wave8_swabian_hre_grafenau_doffingen",
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_leo_bw_doffingen"
+    ]
+  },
+  {
+    "id": "wurttemberg_princely_coalition_doffingen_1388",
+    "name": "Württemberg-led princely coalition at Döffingen (1388)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1388,
+    "end_year": 1388,
+    "region": "Württemberg and Swabia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Eberhard II of Württemberg's princely and noble coalition at Döffingen; the raw German Princes label never resolves.",
+    "source_ids": [
+      "wave8_swabian_hre_grafenau_doffingen",
+      "wave8_swabian_hre_hlb_cities_war",
+      "wave8_swabian_hre_leo_bw_doffingen"
     ]
   },
   {
@@ -5719,6 +5817,164 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "buendner_confederate_field_host_triesen_1499",
+    "name": "Bündner-Confederate field host at Triesen (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Triesen and the Alpine Rhine valley",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Bündner-Confederate pursuing and relief force at Triesen; it does not open a Swiss state or population identity.",
+    "source_ids": [
+      "wave8_swabian_hre_hll_triesen",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "confederate_thurgau_field_host_schwaderloh_1499",
+    "name": "Confederate-Thurgau field host at Schwaderloh (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Thurgau near Triboltingen",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Confederate and Thurgau counterattack force in the named Schwaderloh action; it has no Switzerland alias.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war",
+      "wave8_swabian_hre_isos_triboltingen",
+      "wave8_swabian_hre_wilnet_schwaderloh"
+    ]
+  },
+  {
+    "id": "habsburg_swabian_field_host_hard_1499",
+    "name": "Habsburg-allied Swabian field host at Hard (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Rhine delta near Hard",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Habsburg-allied host containing substantial 1488 league forces at Hard. It is not a generic Habsburg or league polity.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "habsburg_allied_swabian_landsknechts_triesen_1499",
+    "name": "Habsburg-allied Swabian landsknechts at Triesen (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Triesen and the Alpine Rhine valley",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Habsburg-allied landsknechts retreating from St. Luzisteig; no Habsburg or Swabian League alias is created.",
+    "source_ids": [
+      "wave8_swabian_hre_hll_triesen",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "imperial_swabian_konstanz_host_schwaderloh_1499",
+    "name": "Imperial-Swabian Constance raiding host at Schwaderloh (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Constance and Thurgau",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the imperial and Swabian raiding host from the Constance area. It is not an HRE-wide or generic Swabian League identity.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war",
+      "wave8_swabian_hre_isos_triboltingen",
+      "wave8_swabian_hre_wilnet_schwaderloh"
+    ]
+  },
+  {
+    "id": "maximilianian_tyrolean_vinschgau_host_calven_1499",
+    "name": "Maximilianian Tyrolean-Vinschgau host at Calven (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Vinschgau and the Münstertal",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Maximilian I's Tyrolean and Vinschgau royal host at Calven. It is neither a generic Habsburg nor Swabian League polity.",
+    "source_ids": [
+      "wave8_swabian_hre_erara_chur_calven",
+      "wave8_swabian_hre_graubuenden_calven",
+      "wave8_swabian_hre_hlb_swabian_war"
+    ]
+  },
+  {
+    "id": "maximilianian_tyrolean_vorderoesterreich_host_frastenz_1499",
+    "name": "Maximilianian Tyrolean-Vorderösterreich host at Frastanz (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Vorarlberg",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Tyrolean, Vorderösterreich, Vorarlberg, and allied contingents at Frastanz; no Habsburg, HRE, or league alias is added.",
+    "source_ids": [
+      "wave8_swabian_hre_frastanz_niederstaetter",
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "confederate_field_host_frastenz_1499",
+    "name": "Swiss Confederate field host at Frastanz (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Vorarlberg",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Confederate field host at Frastanz; it does not open a Switzerland or Swiss Confederation continuity identity.",
+    "source_ids": [
+      "wave8_swabian_hre_frastanz_niederstaetter",
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "confederate_field_host_hard_1499",
+    "name": "Swiss Confederate field host at Hard (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Rhine delta near Hard",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Confederate field host at Hard; it has no broad Swiss or Switzerland alias and carries no cross-event continuity.",
+    "source_ids": [
+      "wave8_swabian_hre_hlb_swabian_war",
+      "wave8_swabian_hre_hls_swabian_war"
+    ]
+  },
+  {
+    "id": "three_leagues_confederate_field_host_calven_1499",
+    "name": "Three Leagues-led field host at Calven (1499)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1499,
+    "end_year": 1499,
+    "region": "Vinschgau and the Münstertal",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Three Leagues-led host, including Confederate auxiliaries, that fought at Calven. It is not a Swiss Confederation continuity identity and has no Switzerland alias.",
+    "source_ids": [
+      "wave8_swabian_hre_erara_chur_calven",
+      "wave8_swabian_hre_graubuenden_calven",
+      "wave8_swabian_hre_hlb_swabian_war"
     ]
   },
   {
@@ -7658,6 +7914,36 @@
     ]
   },
   {
+    "id": "dungans_hill_parliamentarian_field_army_1647",
+    "name": "Michael Jones's Parliamentarian field army at Dungan's Hill (1647)",
+    "kind": "event_bounded_field_army",
+    "start_year": 1647,
+    "end_year": 1647,
+    "region": "County Meath, Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Michael Jones's field army in the 8 August 1647 engagement. It receives no generic Parliamentarian, Commonwealth of England, Kingdom of England, Dublin-garrison, predecessor, or successor alias and inherits no Elo from any such identity.",
+    "source_ids": [
+      "wave8_irish_royalists_libris_dungans_hill_relation",
+      "wave8_irish_royalists_ucd_fitzpatrick_dungans_hill"
+    ]
+  },
+  {
+    "id": "dungans_hill_confederate_leinster_redshank_force_1647",
+    "name": "Thomas Preston's Confederate Leinster–Redshank force at Dungan's Hill (1647)",
+    "kind": "event_bounded_coalition_field_force",
+    "start_year": 1647,
+    "end_year": 1647,
+    "region": "County Meath, Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Thomas Preston's Leinster Army and its Redshank contingent in the 8 August 1647 engagement. It receives no Irish Royalists, Irish Confederation, Catholic, Leinster, Highlander, ethnic, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_irish_royalists_libris_dungans_hill_relation",
+      "wave8_irish_royalists_ucd_fitzpatrick_dungans_hill"
+    ]
+  },
+  {
     "id": "krychevsky_zaporozhian_army_loyew_1649",
     "name": "Krychevsky's Zaporozhian army at Loyew",
     "kind": "campaign_army",
@@ -7669,6 +7955,38 @@
     "continuity_note": "Event-bounded force under Mykhailo Krychevsky in the 1649 Loyew campaign. No rating is inherited by the Zaporozhian Host generally, modern Ukraine, or unrelated Cossack rebellions.",
     "source_ids": [
       "wave8_nas_ukraine_loyew_1649"
+    ]
+  },
+  {
+    "id": "clonmel_ormond_aligned_ulster_garrison_1650",
+    "name": "Hugh Dubh O'Neill's Ormond-aligned Ulster garrison at Clonmel (1650)",
+    "kind": "event_bounded_garrison",
+    "start_year": 1650,
+    "end_year": 1650,
+    "region": "Clonmel, County Tipperary, Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Hugh Dubh O'Neill's Ulster force in Clonmel during the 27 April–18 May 1650 siege under the Ormond alliance. It receives no Irish Royalists, Ulster Army, Confederation, Ireland, Catholic, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_irish_royalists_bcw_clonmel",
+      "wave8_irish_royalists_history_ireland_hugh_dubh",
+      "wave8_irish_royalists_ucc_celt_parliamentary_proceedings"
+    ]
+  },
+  {
+    "id": "clonmel_new_model_army_siege_force_1650",
+    "name": "New Model Army siege force at Clonmel (1650)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1650,
+    "end_year": 1650,
+    "region": "Clonmel, County Tipperary, Ireland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Cromwell's besieging force during the 27 April–18 May 1650 Clonmel operation. It receives no Parliamentarian, New Model Army, Commonwealth, England, predecessor, or successor alias and inherits no Elo from any broader identity.",
+    "source_ids": [
+      "wave8_irish_royalists_bcw_clonmel",
+      "wave8_irish_royalists_history_ireland_hugh_dubh",
+      "wave8_irish_royalists_ucc_celt_parliamentary_proceedings"
     ]
   },
   {
@@ -10844,6 +11162,48 @@
     ]
   },
   {
+    "id": "jean_olivier_chenier_saint_eustache_force_1837",
+    "name": "Jean-Olivier Chenier's Saint-Eustache force (1837)",
+    "kind": "event_bounded_rebel_defense_force",
+    "start_year": 1837,
+    "end_year": 1837,
+    "region": "Lower Canada (present-day Quebec, Canada)",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Jean-Olivier Chenier's locally commanded Saint-Eustache force. It excludes Girod's separately organized men and has no continuity to other Patriote camps, the political movement, or the 1838 rising.",
+    "source_ids": [
+      "wave8_lower_canada_dcb_chenier",
+      "wave8_lower_canada_dcb_wetherall",
+      "wave8_lower_canada_parks_saint_eustache"
+    ]
+  },
+  {
+    "id": "lower_canada_crown_suppression_force_1837_1838",
+    "name": "Lower Canada Crown suppression force (1837-1838)",
+    "kind": "conflict_bounded_colonial_government_force",
+    "start_year": 1837,
+    "end_year": 1838,
+    "region": "Lower Canada (present-day Quebec, Canada)",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded British regular, artillery, colonial loyal-volunteer, and militia components on the government side of the Lower Canada risings. Event contracts delimit the components actually engaged. The identity creates no continuity to the United Kingdom generally, Lower Canada outside the conflict, the Province or Dominion of Canada, modern Canada, or loyalist civilians.",
+    "source_ids": [
+      "wave8_lower_canada_dcb_brown",
+      "wave8_lower_canada_dcb_chenier",
+      "wave8_lower_canada_dcb_hindenlang",
+      "wave8_lower_canada_dcb_nelson",
+      "wave8_lower_canada_dcb_wetherall",
+      "wave8_lower_canada_dnd_saint_denis",
+      "wave8_lower_canada_parks_saint_eustache",
+      "wave8_lower_canada_rpcq_freres_chasseurs",
+      "wave8_lower_canada_rpcq_odelltown",
+      "wave8_lower_canada_rpcq_saint_charles",
+      "wave8_lower_canada_rpcq_saint_denis",
+      "wave8_lower_canada_state_trials_1839",
+      "wave8_lower_canada_vac_odelltown"
+    ]
+  },
+  {
     "id": "mackenzie_upper_canada_rebel_force_1837",
     "name": "Mackenzie's Upper Canada rebel force (1837)",
     "kind": "rebel_force",
@@ -10856,6 +11216,38 @@
     "source_ids": [
       "wave8_canada_upper_canada_rebellion",
       "wave8_canada_montgomery_tavern"
+    ]
+  },
+  {
+    "id": "thomas_storrow_brown_saint_charles_force_1837",
+    "name": "Thomas Storrow Brown's Saint-Charles force (1837)",
+    "kind": "event_bounded_rebel_camp",
+    "start_year": 1837,
+    "end_year": 1837,
+    "region": "Lower Canada (present-day Quebec, Canada)",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Thomas Storrow Brown's entrenched Saint-Charles camp and armed defenders. It has no continuity from Nelson's or Chenier's separately commanded formations, a political party, or a generic Patriote actor.",
+    "source_ids": [
+      "wave8_lower_canada_dcb_brown",
+      "wave8_lower_canada_dcb_wetherall",
+      "wave8_lower_canada_rpcq_saint_charles"
+    ]
+  },
+  {
+    "id": "wolfred_nelson_saint_denis_force_1837",
+    "name": "Wolfred Nelson's Saint-Denis force (1837)",
+    "kind": "event_bounded_rebel_defense_force",
+    "start_year": 1837,
+    "end_year": 1837,
+    "region": "Lower Canada (present-day Quebec, Canada)",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Wolfred Nelson's armed Saint-Denis defenders and engaged armed reinforcements. It excludes unarmed civilians, the political Parti patriote, the separately commanded Saint-Charles and Saint-Eustache forces, and every 1838 formation.",
+    "source_ids": [
+      "wave8_lower_canada_dcb_nelson",
+      "wave8_lower_canada_dnd_saint_denis",
+      "wave8_lower_canada_rpcq_saint_denis"
     ]
   },
   {
@@ -10905,6 +11297,24 @@
       "wave8_kickapoo_kttt_official",
       "wave8_kickapoo_tsha_cherokee_war",
       "wave8_kickapoo_tsha_people"
+    ]
+  },
+  {
+    "id": "robert_nelson_freres_chasseurs_force_1838",
+    "name": "Robert Nelson's Freres chasseurs force (1838)",
+    "kind": "conflict_bounded_paramilitary_force",
+    "start_year": 1838,
+    "end_year": 1838,
+    "region": "Lower Canada (present-day Quebec, Canada)",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "The army-model Freres chasseurs organization under Robert Nelson in the 1838 rising, bounded here to its Odelltown force. It inherits no rating from any separately commanded 1837 Patriote formation and is not a generic Quebecois, French-Canadian, or rebel identity.",
+    "source_ids": [
+      "wave8_lower_canada_dcb_hindenlang",
+      "wave8_lower_canada_rpcq_freres_chasseurs",
+      "wave8_lower_canada_rpcq_odelltown",
+      "wave8_lower_canada_state_trials_1839",
+      "wave8_lower_canada_vac_odelltown"
     ]
   },
   {
@@ -14446,6 +14856,36 @@
     ]
   },
   {
+    "id": "finnish_red_guard_1918",
+    "name": "Finnish Red Guard (1918)",
+    "kind": "civil_war_faction_army",
+    "start_year": 1918,
+    "end_year": 1918,
+    "region": "Red Finland and its 1918 fronts",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free military identity bounded to the Finnish Red Guard in 1918. It is distinct from Russian revolutionary forces and does not inherit or transfer any Finnish-state, Russian-SFSR, Soviet, labor-movement, predecessor, or successor rating.",
+    "source_ids": [
+      "wave8_finnish_1914_1918_overview",
+      "wave8_finnish_vapriikki_connections"
+    ]
+  },
+  {
+    "id": "finnish_white_army_1918",
+    "name": "Finnish White Army (1918)",
+    "kind": "civil_war_faction_army",
+    "start_year": 1918,
+    "end_year": 1918,
+    "region": "Finland and the 1918 Karelian fronts",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free military identity bounded to the White Army during the 1918 Finnish Civil War. It is not the Republic of Finland and does not inherit or transfer that state's rating; bare Finland, White, Finnish Whites, predecessor, and successor labels resolve nowhere.",
+    "source_ids": [
+      "wave8_finnish_1914_1918_overview",
+      "wave8_finnish_vapriikki_connections"
+    ]
+  },
+  {
     "id": "first_republic_estonia",
     "name": "First Republic of Estonia",
     "kind": "republic",
@@ -14473,6 +14913,36 @@
     "source_ids": [
       "uk_archives_yemen_1918",
       "oeaw_mutawakkilite_yemen"
+    ]
+  },
+  {
+    "id": "oulu_russian_garrison_1918",
+    "name": "Oulu Russian garrison (1918)",
+    "kind": "event_bounded_garrison",
+    "start_year": 1918,
+    "end_year": 1918,
+    "region": "Oulu, Finland",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity for the local Russian garrison that supported the Red side during the 2-3 February Battle of Oulu. It is not the Russian SFSR, the USSR, or a generic Bolshevik polity and inherits or transfers no rating beyond this reviewed event.",
+    "source_ids": [
+      "wave8_finnish_city_oulu_history",
+      "wave8_finnish_yle_oulu"
+    ]
+  },
+  {
+    "id": "petrograd_red_detachments_rautu_1918",
+    "name": "Petrograd Red Army and volunteer detachments at Rautu (1918)",
+    "kind": "event_bounded_joint_detachment",
+    "start_year": 1918,
+    "end_year": 1918,
+    "region": "Rautu and the Karelian Isthmus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity for the Petrograd volunteers and Red Army detachments documented at Rautu in 1918. It is not a continuity bridge to the Russian SFSR or USSR and inherits or transfers no rating outside the fingerprinted Rautu contract.",
+    "source_ids": [
+      "wave8_finnish_lahteenmaki_rautu",
+      "wave8_finnish_manninen_rautu"
     ]
   },
   {
@@ -15478,6 +15948,21 @@
     ]
   },
   {
+    "id": "moncada_assault_group_1953",
+    "name": "Moncada assault group (1953)",
+    "kind": "event_bounded_assault_group",
+    "start_year": 1953,
+    "end_year": 1953,
+    "region": "Santiago de Cuba",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Fidel Castro's armed group in the 26 July 1953 attacks on the Moncada and Carlos Manuel de Céspedes barracks. The organized 26th of July Movement dates from 1955, so no rating is inherited by that movement, a generic Cuban Rebels label, later Rebel Army forces, or the post-1959 Cuban state.",
+    "source_ids": [
+      "wave8_cuban_country_study_armed_forces",
+      "wave8_cuban_frus_moncada_1953"
+    ]
+  },
+  {
     "id": "clio_eg_egypt_modern_2_1953_a888d535",
     "name": "Republic of Egypt",
     "kind": "republic",
@@ -15572,6 +16057,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "cienfuegos_naval_civilian_uprising_coalition_1957",
+    "name": "Cienfuegos naval–civilian uprising coalition (1957)",
+    "kind": "event_bounded_naval_civilian_uprising_coalition",
+    "start_year": 1957,
+    "end_year": 1957,
+    "region": "Cienfuegos, Cuba",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the dissident naval personnel and allied civilian opposition forces in the 5-6 September 1957 Cienfuegos revolt. No rating is inherited by the Cuban Navy, the 26th of July Movement, the Revolutionary Directorate, Auténtico organizations, civilians, or any later revolutionary government or armed force.",
+    "source_ids": [
+      "wave8_cuban_country_study_armed_forces",
+      "wave8_cuban_frus_cienfuegos_1957"
     ]
   },
   {

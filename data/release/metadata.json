@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1084,
-    "events": 5526,
-    "sources": 1580,
-    "registry_polities": 2423
+    "entities": 1115,
+    "events": 5546,
+    "sources": 1638,
+    "registry_polities": 2454
   },
   "year_range": {
     "start": -1274,
@@ -166,6 +166,7 @@
     "accepted_wave8_viet_minh_hced_events": 9,
     "accepted_wave8_followup_b_hced_events": 4,
     "accepted_wave8_followup_c_hced_events": 14,
+    "accepted_wave8_followup_d_hced_events": 20,
     "accepted_wave8_exact_priority_hced_events": 18,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
@@ -20179,6 +20180,1143 @@
       "time_valid_candidate_ids": [],
       "unresolved_side_attempts": 2
     },
+    "wave8_followup_d_metadata": {
+      "counts": {
+        "country_quarantine_additions": 2,
+        "holds": 5,
+        "new_entities": 31,
+        "new_sources": 58,
+        "newly_rated_events": 20,
+        "point_quarantine_additions": 15,
+        "promotion_contracts": 20,
+        "reviewed_hced_rows": 25
+      },
+      "final_audit_signature": "e261be61a3340effc1af26b9bc4077c70cd01b273862ffe706a5c9c5647d93c9",
+      "funnel_audits": {
+        "swabian_hre": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "5bc31f10696ff8762040a3293ff62dfb0fe284db18931ca13bd0250730512afa",
+          "events_touched": 8,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 8
+          },
+          "label": "swabian league",
+          "rated_counterpart_entities": 0,
+          "sole_blocker_events": 0,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 8
+        },
+        "cuban": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "22de611d12dccc8f96ecf5f8501eebe570302e1a4e5880bf2f226a99efdef4cf",
+          "events_touched": 3,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 3
+          },
+          "label": "cuban government",
+          "rated_counterpart_entities": 1,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 3
+        },
+        "lower_canada": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "25cc0516d7c40028a102d9ea2d74ffdb922799d69169870c7d375b3257de314c",
+          "events_touched": 4,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 4
+          },
+          "label": "quebecois rebels",
+          "rated_counterpart_entities": 1,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 4
+        },
+        "irish_royalists": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "1d6baa04aed05281afe720349b0040d3e69db4b1160041fb5a512c806186e8fb",
+          "events_touched": 2,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 2
+          },
+          "label": "irish royalists",
+          "rated_counterpart_entities": 2,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 2
+        },
+        "finnish_civil_war": {
+          "finnish reds": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "cb3031764271e0ce17a6f69ae5c0549201a00fbb6f4c4b9a9e71a684874eb76b",
+            "events_touched": 2,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 2
+            },
+            "label": "finnish reds",
+            "rated_counterpart_entities": 0,
+            "sole_blocker_events": 0,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 2
+          },
+          "finnish whites": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "f2187b6540ccc7be65ebd19ddab107c5d3817594f27b07dcc2184e3e31fe94e2",
+            "events_touched": 5,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 5
+            },
+            "label": "finnish whites",
+            "rated_counterpart_entities": 0,
+            "sole_blocker_events": 0,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 5
+          },
+          "russian bolsheviks": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "5527457b1cdc10298ab2fab404eb7494eae7bd25a87b7f7a8154621e53b4a271",
+            "events_touched": 5,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 5
+            },
+            "label": "russian bolsheviks",
+            "rated_counterpart_entities": 2,
+            "sole_blocker_events": 2,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 5
+          }
+        }
+      },
+      "lanes": {
+        "swabian_hre": {
+          "counts": {
+            "country_quarantine_additions": 1,
+            "discovery_nonrating_records": 6,
+            "holds": 0,
+            "integration_dispositions": 6,
+            "new_entities": 16,
+            "new_sources": 16,
+            "newly_rated_events": 8,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 8,
+            "promotion_contracts": 8,
+            "reviewed_hced_rows": 8,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 6
+          },
+          "cohorts": {
+            "swabian_city_league_wars_1376_1388": 3,
+            "swabian_war_1499": 5
+          },
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q136753967",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Reutlingen1377-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q1398703",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Hard1499-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q319467",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Schwaderloch1499-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q462099",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Calven1499-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q477778",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Frastenz1499-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q873286",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Doffingen1388-1",
+              "outcome_disposition": "unknown_never_draw"
+            }
+          ],
+          "final_audit_signature": "1d1385b8e83910915fbd4f3e7b736c6fd3efa04b30525658007bea3333b3ea8d",
+          "promoted_candidate_ids": [
+            "hced-Calven1499-1",
+            "hced-Doffingen1388-1",
+            "hced-Frastenz1499-1",
+            "hced-Hard1499-1",
+            "hced-Reutlingen1377-1",
+            "hced-Schwaderloch1499-1",
+            "hced-Triesen1499-1",
+            "hced-Ulm1376-1"
+          ]
+        },
+        "cuban": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_records": 1,
+            "holds": 1,
+            "integration_dispositions": 1,
+            "new_entities": 2,
+            "new_sources": 5,
+            "newly_rated_events": 2,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 0,
+            "promotion_contracts": 2,
+            "reviewed_hced_rows": 3,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 1
+          },
+          "cohorts": {
+            "cuban_revolution_exact_rows_1953_1958": 3
+          },
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q11211553",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Moncada1953-1",
+              "outcome_disposition": "unknown_never_draw"
+            }
+          ],
+          "final_audit_signature": "d9f6174e7d01b50a77af029ede3150173c5bb874b2bc3148ff07dfb85f242ee8",
+          "hold_candidate_ids": [
+            "hced-Sierra Maestra1958-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Cienfuegos1957-1",
+            "hced-Moncada1953-1"
+          ]
+        },
+        "lower_canada": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_twins": 4,
+            "holds": 0,
+            "integration_dispositions": 4,
+            "new_entities": 5,
+            "new_sources": 13,
+            "newly_rated_events": 4,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 4,
+            "promotion_contracts": 4,
+            "reviewed_hced_rows": 4,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 4
+          },
+          "cohorts": {
+            "lower_canada_rebellion_1837": 3,
+            "lower_canada_rebellion_1838": 1
+          },
+          "final_audit_signature": "38f50ee9d547513a8960cc748f2b719fcf572c1ec1a4f483f390d7be52bc195b",
+          "promoted_candidate_ids": [
+            "hced-Odelltown1838-1",
+            "hced-St Charles, Quebec1837-1",
+            "hced-St Denis, Quebec1837-1",
+            "hced-St Eustache1837-1"
+          ],
+          "hold_candidate_ids": [],
+          "discovery_nonrating_candidate_ids": [
+            "Q2888006",
+            "Q2889850",
+            "Q2889862",
+            "Q862220"
+          ]
+        },
+        "irish_royalists": {
+          "counts": {
+            "country_quarantine_additions": 1,
+            "discovery_nonrating_records": 2,
+            "holds": 0,
+            "integration_dispositions": 2,
+            "new_entities": 4,
+            "new_sources": 5,
+            "newly_rated_events": 2,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 2,
+            "promotion_contracts": 2,
+            "reviewed_hced_rows": 2,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 2
+          },
+          "cohorts": {
+            "irish_confederate_wars_exact_1647_1650": 2
+          },
+          "country_quarantine_additions": [
+            "hced-Dungan Hill1647-1"
+          ],
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q494896",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Dungan Hill1647-1",
+              "outcome_disposition": "unknown_never_draw",
+              "date_disposition": "discovery_month_value_not_used_for_exact_day"
+            },
+            {
+              "candidate_id": "Q815132",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Clonmel1650-1",
+              "outcome_disposition": "unknown_never_draw",
+              "date_disposition": "discovery_month_bounds_not_used_for_exact_interval"
+            }
+          ],
+          "final_audit_signature": "63ef1b61661d017baada9704ff49f7146b4800014cc9bf6170450fb84101f684",
+          "point_quarantine_additions": [
+            "hced-Clonmel1650-1",
+            "hced-Dungan Hill1647-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Clonmel1650-1",
+            "hced-Dungan Hill1647-1"
+          ]
+        },
+        "finnish_civil_war": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_records": 7,
+            "holds": 4,
+            "integration_dispositions": 7,
+            "new_entities": 4,
+            "new_sources": 19,
+            "newly_rated_events": 4,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 1,
+            "promotion_contracts": 4,
+            "reviewed_hced_rows": 8,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 7
+          },
+          "cohorts": {
+            "finnish_civil_war_exact_1918": 8
+          },
+          "country_quarantine_additions": [],
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q10681754",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_context_for_unknown_hold",
+              "hced_candidate_id": "hced-Vilppula1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "point_date_front_label_not_rateable"
+            },
+            {
+              "candidate_id": "Q18661133",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Oulo1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "probable_discovery_duplicate"
+            },
+            {
+              "candidate_id": "Q2043711",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Tampere1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "broader_start_discovery_duplicate"
+            },
+            {
+              "candidate_id": "Q27839492",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Rautu1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "endpoint_only_discovery_duplicate"
+            },
+            {
+              "candidate_id": "Q28721640",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_context_for_unknown_hold",
+              "hced_candidate_id": "hced-Ruovesi1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "front_endpoint_not_discrete_contract"
+            },
+            {
+              "candidate_id": "Q4060498",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_context_for_unknown_hold",
+              "hced_candidate_id": "hced-Aland1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "broader_multilateral_container_overlap"
+            },
+            {
+              "candidate_id": "Q4411911",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Vyborg1918-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "probable_discovery_duplicate"
+            }
+          ],
+          "final_audit_signature": "5649dc15a7bf9f8982eca6c7847814f418da4e6f9a0023b531a208dd0a3fbab9",
+          "held_candidate_ids": [
+            "hced-Aland1918-1",
+            "hced-Ruovesi1918-1",
+            "hced-Sigurds1918-1",
+            "hced-Vilppula1918-1"
+          ],
+          "point_quarantine_additions": [
+            "hced-Rautu1918-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Oulo1918-1",
+            "hced-Rautu1918-1",
+            "hced-Tampere1918-1",
+            "hced-Vyborg1918-1"
+          ]
+        }
+      },
+      "promoted_candidate_ids": [
+        "hced-Calven1499-1",
+        "hced-Cienfuegos1957-1",
+        "hced-Clonmel1650-1",
+        "hced-Doffingen1388-1",
+        "hced-Dungan Hill1647-1",
+        "hced-Frastenz1499-1",
+        "hced-Hard1499-1",
+        "hced-Moncada1953-1",
+        "hced-Odelltown1838-1",
+        "hced-Oulo1918-1",
+        "hced-Rautu1918-1",
+        "hced-Reutlingen1377-1",
+        "hced-Schwaderloch1499-1",
+        "hced-St Charles, Quebec1837-1",
+        "hced-St Denis, Quebec1837-1",
+        "hced-St Eustache1837-1",
+        "hced-Tampere1918-1",
+        "hced-Triesen1499-1",
+        "hced-Ulm1376-1",
+        "hced-Vyborg1918-1"
+      ],
+      "reserved_candidate_ids": [
+        "hced-Aland1918-1",
+        "hced-Calven1499-1",
+        "hced-Cienfuegos1957-1",
+        "hced-Clonmel1650-1",
+        "hced-Doffingen1388-1",
+        "hced-Dungan Hill1647-1",
+        "hced-Frastenz1499-1",
+        "hced-Hard1499-1",
+        "hced-Moncada1953-1",
+        "hced-Odelltown1838-1",
+        "hced-Oulo1918-1",
+        "hced-Rautu1918-1",
+        "hced-Reutlingen1377-1",
+        "hced-Ruovesi1918-1",
+        "hced-Schwaderloch1499-1",
+        "hced-Sierra Maestra1958-1",
+        "hced-Sigurds1918-1",
+        "hced-St Charles, Quebec1837-1",
+        "hced-St Denis, Quebec1837-1",
+        "hced-St Eustache1837-1",
+        "hced-Tampere1918-1",
+        "hced-Triesen1499-1",
+        "hced-Ulm1376-1",
+        "hced-Vilppula1918-1",
+        "hced-Vyborg1918-1"
+      ]
+    },
+    "wave8_followup_d_counts": {
+      "country_quarantine_additions": 2,
+      "holds": 5,
+      "new_entities": 31,
+      "new_sources": 58,
+      "newly_rated_events": 20,
+      "point_quarantine_additions": 15,
+      "promotion_contracts": 20,
+      "reviewed_hced_rows": 25
+    },
+    "wave8_followup_d_audit_signature": "e261be61a3340effc1af26b9bc4077c70cd01b273862ffe706a5c9c5647d93c9",
+    "wave8_followup_d_final_audit_signature": "e261be61a3340effc1af26b9bc4077c70cd01b273862ffe706a5c9c5647d93c9",
+    "wave8_followup_d_queue_validation": {
+      "swabian_hre": {
+        "promotion_contracts": 8,
+        "holds": 0,
+        "reviewed_hced_rows": 8,
+        "exact_label_rows": 8
+      },
+      "cuban": {
+        "promotion_contracts": 2,
+        "holds": 1,
+        "reviewed_hced_rows": 3,
+        "exact_label_rows": 3
+      },
+      "lower_canada": {
+        "promotion_contracts": 4,
+        "holds": 0,
+        "reviewed_hced_rows": 4,
+        "exact_label_rows": 4
+      },
+      "irish_royalists": {
+        "promotion_contracts": 2,
+        "holds": 0,
+        "reviewed_hced_rows": 2,
+        "exact_label_rows": 2
+      },
+      "finnish_civil_war": {
+        "promotion_contracts": 4,
+        "holds": 4,
+        "reviewed_hced_rows": 8,
+        "exact_cohort_rows": 8
+      }
+    },
+    "wave8_followup_d_discovery_validation": {
+      "swabian_hre": {
+        "discovery_nonrating_twins": 6,
+        "discovery_promotions": 0,
+        "unknown_never_draw_rows": 6
+      },
+      "cuban": {
+        "discovery_nonrating_records": 1,
+        "discovery_promotions": 0,
+        "unknown_never_draw_rows": 1
+      },
+      "lower_canada": {
+        "discovery_nonrating_twins": 4,
+        "discovery_promotions": 0,
+        "unknown_never_draw_rows": 4
+      },
+      "irish_royalists": {
+        "discovery_nonrating_twins": 2,
+        "discovery_promotions": 0,
+        "unknown_never_draw_rows": 2
+      },
+      "finnish_civil_war": {
+        "discovery_nonrating_records": 7,
+        "discovery_promotions": 0,
+        "unknown_never_draw_rows": 7
+      }
+    },
+    "wave8_followup_d_artifact_validation": {
+      "entities_present": 31,
+      "events_present": 20,
+      "holds_absent": 5,
+      "sources_present": 58
+    },
+    "wave8_followup_d_candidate_ids": [
+      "hced-Calven1499-1",
+      "hced-Cienfuegos1957-1",
+      "hced-Clonmel1650-1",
+      "hced-Doffingen1388-1",
+      "hced-Dungan Hill1647-1",
+      "hced-Frastenz1499-1",
+      "hced-Hard1499-1",
+      "hced-Moncada1953-1",
+      "hced-Odelltown1838-1",
+      "hced-Oulo1918-1",
+      "hced-Rautu1918-1",
+      "hced-Reutlingen1377-1",
+      "hced-Schwaderloch1499-1",
+      "hced-St Charles, Quebec1837-1",
+      "hced-St Denis, Quebec1837-1",
+      "hced-St Eustache1837-1",
+      "hced-Tampere1918-1",
+      "hced-Triesen1499-1",
+      "hced-Ulm1376-1",
+      "hced-Vyborg1918-1"
+    ],
+    "wave8_followup_d_holds": [
+      {
+        "candidate_id": "hced-Aland1918-1",
+        "raw_row_sha256": "038ee0befb47d722d931f2a84c3492811cdeb8223d783298b7b24fe1ac5b5f52",
+        "canonical_event": {
+          "canonical_key": "aland_intervention_and_occupation_sequence:1918:1918",
+          "date_precision": "documentary_envelope",
+          "date_text": "14 February-late May 1918; non-scoring documentary envelope",
+          "start_date": "1918-02-14",
+          "end_date": null,
+          "granularity": "multilateral_intervention_and_occupation_sequence",
+          "name": "Åland intervention and occupation sequence",
+          "year_low": 1918,
+          "year_high": 1918
+        },
+        "cohort": "finnish_civil_war_exact_1918",
+        "disposition": "hold",
+        "emit_rated_event": false,
+        "hold_category": "multilateral_sequence_has_no_single_competitive_result",
+        "reviewed_outcome": "unknown_not_draw",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "bound_scoring_sides": [],
+        "reviewed_actor_description": [
+          "Finnish local and expeditionary forces",
+          "Russian garrisons and Finnish Reds",
+          "Swedish and German intervention forces"
+        ],
+        "reviewed_granularity": "multilateral_intervention_and_occupation_sequence",
+        "location_review": {
+          "modern_location_country": "retain:Finland",
+          "point": "quarantine_archipelago_centroid_in_hold_metadata_only"
+        },
+        "hold_reason": "The year row combines Finnish local and expeditionary forces, Russian garrisons, Finnish Reds, Swedish intervention and mediation, and later German forces. Surrenders, occupations, and negotiated withdrawals do not establish one Finnish-White/Russian draw. The raw Draw is rejected: the result is unknown and no sides are scored.",
+        "evidence_refs": [
+          "wave8_finnish_enqvist_coastal_defence",
+          "wave8_finnish_sjoblom_aland",
+          "wave8_finnish_swedish_archives_aland",
+          "wave8_finnish_uppslagsverket_aland"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_finnish_civil_war",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Ruovesi1918-1",
+        "raw_row_sha256": "9771543cc768a823bbdd58147c3df523d8a84a45584ca08250d415851071c37c",
+        "canonical_event": {
+          "canonical_key": "ruovesi_front_operations:1918:1918",
+          "date_precision": "documentary_envelope",
+          "date_text": "5 February-19 March 1918; non-scoring documentary envelope",
+          "start_date": "1918-02-05",
+          "end_date": "1918-03-19",
+          "granularity": "multi_direction_multi_engagement_front",
+          "name": "Ruovesi front operations",
+          "year_low": 1918,
+          "year_high": 1918
+        },
+        "cohort": "finnish_civil_war_exact_1918",
+        "disposition": "hold",
+        "emit_rated_event": false,
+        "hold_category": "multi_engagement_front_cannot_supply_one_tactical_winner",
+        "reviewed_outcome": "unknown_not_draw",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "bound_scoring_sides": [],
+        "reviewed_actor_description": [
+          "Finnish White forces",
+          "Finnish Red forces",
+          "limited Russian volunteers"
+        ],
+        "reviewed_granularity": "multi_direction_multi_engagement_front",
+        "location_review": {
+          "modern_location_country": "retain:Finland",
+          "point": "quarantine_multi_site_municipal_geocode_in_hold_metadata_only"
+        },
+        "hold_reason": "The label covers distinct actions around Pekkala/Jäminkipohja, Väärinmaja, Pitkälä, and Pihlajalahti. A Baltic Fleet volunteer detachment participated briefly in one sector, so Bolsheviks cannot stand for the whole Red side. Strategic front success cannot invent one tactical result; the row remains unknown.",
+        "evidence_refs": [
+          "wave8_finnish_ruovesi_doctoral_record",
+          "wave8_finnish_ruovesi_thesis"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_finnish_civil_war",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Sierra Maestra1958-1",
+        "raw_row_sha256": "300074a1319c5f29274449bbbf77e52e9d187e052b90d270a229e75c5dab78aa",
+        "canonical_event": {
+          "canonical_key": "sierra-maestra-operations:1958:1958",
+          "date_precision": "year",
+          "granularity": "campaign_umbrella_with_el_jigue_constituent_ambiguity",
+          "name": "Sierra Maestra operations",
+          "year_low": 1958,
+          "year_high": 1958
+        },
+        "cohort": "cuban_revolution_exact_rows_1953_1958",
+        "disposition": "hold",
+        "hold_category": "campaign_umbrella_constituent_ambiguity",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "side_1_entity_ids": [
+          "cuban_26_july_movement"
+        ],
+        "side_2_entity_ids": [
+          "clio_cu_cuba_rep_1_1905_9c789e65"
+        ],
+        "evidence_refs": [
+          "wave8_cuban_country_study_armed_forces",
+          "wave8_cuban_frus_summer_offensive_1958",
+          "wave8_cuban_granma_el_jigue_1958"
+        ],
+        "hold_reason": "HCED names the Sierra Maestra campaign but also carries El Jigue as a raw participant token. The sources distinguish the broad summer offensive from the constituent Battle of El Jigüe, so this record cannot be assigned one defensible event boundary. No campaign or constituent outcome is inferred, and unknown is never a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_cuban",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Sigurds1918-1",
+        "raw_row_sha256": "00088d1db647599f7ef6aa70a66ec79e9bf67956cac2e3cf48a4b7ee2cd1857b",
+        "canonical_event": {
+          "canonical_key": "sigurds_ingels_upinniemi_makiluoto_obbnas_sequence:1918:1918",
+          "date_precision": "documentary_envelope",
+          "date_text": "22-27 February 1918; non-scoring documentary envelope",
+          "start_date": "1918-02-22",
+          "end_date": "1918-02-27",
+          "granularity": "multi_site_escape_attack_dissolution_and_mediation_sequence",
+          "name": "Sigurds-Ingels-Upinniemi-Mäkiluoto-Obbnäs sequence",
+          "year_low": 1918,
+          "year_high": 1918
+        },
+        "cohort": "finnish_civil_war_exact_1918",
+        "disposition": "hold",
+        "emit_rated_event": false,
+        "hold_category": "multiple_sites_opponents_and_results_cannot_be_one_red_victory",
+        "reviewed_outcome": "unknown_not_draw",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "bound_scoring_sides": [],
+        "reviewed_actor_description": [
+          "Sigurds White Guard",
+          "Finnish Reds",
+          "Russian fort garrison"
+        ],
+        "reviewed_granularity": "multi_site_escape_attack_dissolution_and_mediation_sequence",
+        "location_review": {
+          "modern_location_country": "retain:Finland",
+          "point": "quarantine_composite_multi_site_geocode_in_hold_metadata_only"
+        },
+        "hold_reason": "The Sigurds Guard escaped one encirclement, moved through several sites, separately failed against a Russian-held fort, and dissolved amid captures, surrenders, and Swedish mediation. These episodes do not constitute one Red tactical victory, and Swedish mediators are not promoted into a belligerent side.",
+        "evidence_refs": [
+          "wave8_finnish_enqvist_coastal_defence",
+          "wave8_finnish_kirkkonummi_1918",
+          "wave8_finnish_yle_sigurds"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_finnish_civil_war",
+          "status": "provisional_hced_hold"
+        }
+      },
+      {
+        "candidate_id": "hced-Vilppula1918-1",
+        "raw_row_sha256": "39b3bd4b9458573ccd494812f56bf76be55c7de902d00642a87e0f580758b869",
+        "canonical_event": {
+          "canonical_key": "vilppula_front_operations:1918:1918",
+          "date_precision": "documentary_envelope",
+          "date_text": "2 February-17 March 1918; non-scoring documentary envelope",
+          "start_date": "1918-02-02",
+          "end_date": "1918-03-17",
+          "granularity": "six_week_static_front_with_multiple_actions",
+          "name": "Vilppula front operations",
+          "year_low": 1918,
+          "year_high": 1918
+        },
+        "cohort": "finnish_civil_war_exact_1918",
+        "disposition": "hold",
+        "emit_rated_event": false,
+        "hold_category": "static_front_not_a_unified_battle_and_ussr_is_anachronistic",
+        "reviewed_outcome": "unknown_not_draw",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "bound_scoring_sides": [],
+        "reviewed_actor_description": [
+          "Finnish White forces",
+          "Finnish Red forces",
+          "limited Russian support"
+        ],
+        "reviewed_granularity": "six_week_static_front_with_multiple_actions",
+        "location_review": {
+          "modern_location_country": "retain:Finland",
+          "point": "quarantine_multi_site_front_geocode_in_hold_metadata_only"
+        },
+        "hold_reason": "The official history describes a six-week front with multiple actions rather than one battle. Limited Russian aid cannot turn the whole Red side into the USSR, which did not exist in 1918, and the eventual withdrawal cannot be converted into a tactical White win.",
+        "evidence_refs": [
+          "wave8_finnish_1914_1918_overview",
+          "wave8_finnish_mantta_vilppula_history"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_finnish_civil_war",
+          "status": "provisional_hced_hold"
+        }
+      }
+    ],
+    "wave8_followup_d_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Calven1499-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": "reviewed_modern_jurisdiction_mismatch",
+        "evidence_refs": [
+          "wave8_swabian_hre_erara_chur_calven",
+          "wave8_swabian_hre_graubuenden_calven",
+          "wave8_swabian_hre_hlb_swabian_war"
+        ]
+      },
+      {
+        "candidate_id": "hced-Clonmel1650-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_country": "Ireland",
+        "raw_point": [
+          -7.6902551,
+          52.3558172
+        ],
+        "reason": "The sources establish Clonmel and modern Ireland but do not independently audit HCED's exact point. Retain country and provenance; withhold the coordinate.",
+        "evidence_refs": [
+          "wave8_irish_royalists_bcw_clonmel",
+          "wave8_irish_royalists_history_ireland_hugh_dubh",
+          "wave8_irish_royalists_ucc_celt_parliamentary_proceedings"
+        ]
+      },
+      {
+        "candidate_id": "hced-Doffingen1388-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_grafenau_doffingen",
+          "wave8_swabian_hre_hlb_cities_war",
+          "wave8_swabian_hre_leo_bw_doffingen"
+        ]
+      },
+      {
+        "candidate_id": "hced-Dungan Hill1647-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "raw_country": "United Kingdom",
+        "raw_point": [
+          -6.7441695,
+          53.5752006
+        ],
+        "reason": "The engagement was in County Meath, Ireland, so HCED's modern United Kingdom country assertion is wrong. Its coordinate also conflicts materially with the staged discovery point and is not independently validated; withhold both fields.",
+        "evidence_refs": [
+          "wave8_irish_royalists_libris_dungans_hill_relation",
+          "wave8_irish_royalists_ucd_fitzpatrick_dungans_hill"
+        ]
+      },
+      {
+        "candidate_id": "hced-Frastenz1499-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_frastanz_niederstaetter",
+          "wave8_swabian_hre_hlb_swabian_war",
+          "wave8_swabian_hre_hls_swabian_war"
+        ]
+      },
+      {
+        "candidate_id": "hced-Hard1499-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_hlb_swabian_war",
+          "wave8_swabian_hre_hls_swabian_war"
+        ]
+      },
+      {
+        "candidate_id": "hced-Odelltown1838-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's point is near the official church-centered battlefield locus, but no closed source authenticates that exact coordinate. Retain modern country Canada and location provenance; do not substitute a new point silently.",
+        "evidence_refs": [
+          "wave8_lower_canada_dcb_hindenlang",
+          "wave8_lower_canada_rpcq_freres_chasseurs",
+          "wave8_lower_canada_rpcq_odelltown",
+          "wave8_lower_canada_state_trials_1839",
+          "wave8_lower_canada_vac_odelltown"
+        ]
+      },
+      {
+        "candidate_id": "hced-Rautu1918-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "evidence_refs": [
+          "wave8_finnish_hovilainen_rautu_dates",
+          "wave8_finnish_lahteenmaki_rautu",
+          "wave8_finnish_manninen_rautu"
+        ],
+        "raw_point": [
+          30.2293083,
+          60.552312
+        ],
+        "reason": "The sources establish the prolonged station-centered battle at Rautu but do not independently audit HCED's modern locality point. Retain the modern-country assertion and withhold only the point."
+      },
+      {
+        "candidate_id": "hced-Reutlingen1377-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_hlb_cities_war",
+          "wave8_swabian_hre_reutlingen_rgb",
+          "wave8_swabian_hre_staelin_reutlingen"
+        ]
+      },
+      {
+        "candidate_id": "hced-Schwaderloch1499-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_hlb_swabian_war",
+          "wave8_swabian_hre_hls_swabian_war",
+          "wave8_swabian_hre_isos_triboltingen",
+          "wave8_swabian_hre_wilnet_schwaderloh"
+        ]
+      },
+      {
+        "candidate_id": "hced-St Charles, Quebec1837-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's point is several kilometres from the official battlefield site at 375 chemin des Patriotes. Retain modern country Canada and location provenance; do not substitute a new point silently.",
+        "evidence_refs": [
+          "wave8_lower_canada_dcb_brown",
+          "wave8_lower_canada_dcb_wetherall",
+          "wave8_lower_canada_rpcq_saint_charles"
+        ]
+      },
+      {
+        "candidate_id": "hced-St Denis, Quebec1837-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's point is far from the independently documented Maison Jean-Baptiste-Masse battle locus. Retain modern country Canada and location provenance; do not substitute a new point silently.",
+        "evidence_refs": [
+          "wave8_lower_canada_dcb_nelson",
+          "wave8_lower_canada_dnd_saint_denis",
+          "wave8_lower_canada_rpcq_saint_denis"
+        ]
+      },
+      {
+        "candidate_id": "hced-St Eustache1837-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "reason": "HCED's point is several kilometres from Saint-Eustache Church, the central defended position documented by Parks Canada. Retain modern country Canada and location provenance; do not substitute a new point silently.",
+        "evidence_refs": [
+          "wave8_lower_canada_dcb_chenier",
+          "wave8_lower_canada_dcb_wetherall",
+          "wave8_lower_canada_parks_saint_eustache"
+        ]
+      },
+      {
+        "candidate_id": "hced-Triesen1499-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "uncertain_battle_site_and_coordinate_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_hll_triesen",
+          "wave8_swabian_hre_hls_swabian_war"
+        ]
+      },
+      {
+        "candidate_id": "hced-Ulm1376-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_swabian_hre_archivalia_ulm_chronology",
+          "wave8_swabian_hre_hlb_cities_war",
+          "wave8_swabian_hre_joerg_city_league",
+          "wave8_swabian_hre_ulm_city_history"
+        ]
+      }
+    ],
+    "wave8_followup_d_point_quarantine_additions": [
+      "hced-Calven1499-1",
+      "hced-Clonmel1650-1",
+      "hced-Doffingen1388-1",
+      "hced-Dungan Hill1647-1",
+      "hced-Frastenz1499-1",
+      "hced-Hard1499-1",
+      "hced-Odelltown1838-1",
+      "hced-Rautu1918-1",
+      "hced-Reutlingen1377-1",
+      "hced-Schwaderloch1499-1",
+      "hced-St Charles, Quebec1837-1",
+      "hced-St Denis, Quebec1837-1",
+      "hced-St Eustache1837-1",
+      "hced-Triesen1499-1",
+      "hced-Ulm1376-1"
+    ],
+    "wave8_followup_d_country_quarantine_additions": [
+      "hced-Calven1499-1",
+      "hced-Dungan Hill1647-1"
+    ],
+    "wave8_followup_d_entities_added": 31,
+    "wave8_followup_d_sources_added": 58,
+    "wave8_swabian_hre_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "5bc31f10696ff8762040a3293ff62dfb0fe284db18931ca13bd0250730512afa",
+      "events_touched": 8,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 8
+      },
+      "label": "swabian league",
+      "rated_counterpart_entities": 0,
+      "sole_blocker_events": 0,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 8
+    },
+    "wave8_cuban_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "22de611d12dccc8f96ecf5f8501eebe570302e1a4e5880bf2f226a99efdef4cf",
+      "events_touched": 3,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 3
+      },
+      "label": "cuban government",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 3
+    },
+    "wave8_lower_canada_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "25cc0516d7c40028a102d9ea2d74ffdb922799d69169870c7d375b3257de314c",
+      "events_touched": 4,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 4
+      },
+      "label": "quebecois rebels",
+      "rated_counterpart_entities": 1,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 4
+    },
+    "wave8_irish_royalists_exact_label_funnel_audit": {
+      "candidate_ids": [],
+      "event_candidate_id_sha256": "1d6baa04aed05281afe720349b0040d3e69db4b1160041fb5a512c806186e8fb",
+      "events_touched": 2,
+      "failure_cases": {
+        "multiple_time_valid_candidates": 0,
+        "one_wrong_interval_candidate": 0,
+        "policy_denied_window": 0,
+        "resolver_guard_or_tier_conflict": 0,
+        "zero_time_valid_candidates": 2
+      },
+      "label": "irish royalists",
+      "rated_counterpart_entities": 2,
+      "sole_blocker_events": 2,
+      "time_valid_candidate_ids": [],
+      "unresolved_side_attempts": 2
+    },
+    "wave8_finnish_civil_war_exact_label_funnel_audit": {
+      "finnish reds": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "cb3031764271e0ce17a6f69ae5c0549201a00fbb6f4c4b9a9e71a684874eb76b",
+        "events_touched": 2,
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 2
+        },
+        "label": "finnish reds",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 2
+      },
+      "finnish whites": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "f2187b6540ccc7be65ebd19ddab107c5d3817594f27b07dcc2184e3e31fe94e2",
+        "events_touched": 5,
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 5
+        },
+        "label": "finnish whites",
+        "rated_counterpart_entities": 0,
+        "sole_blocker_events": 0,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 5
+      },
+      "russian bolsheviks": {
+        "candidate_ids": [],
+        "event_candidate_id_sha256": "5527457b1cdc10298ab2fab404eb7494eae7bd25a87b7f7a8154621e53b4a271",
+        "events_touched": 5,
+        "failure_cases": {
+          "multiple_time_valid_candidates": 0,
+          "one_wrong_interval_candidate": 0,
+          "policy_denied_window": 0,
+          "resolver_guard_or_tier_conflict": 0,
+          "zero_time_valid_candidates": 5
+        },
+        "label": "russian bolsheviks",
+        "rated_counterpart_entities": 2,
+        "sole_blocker_events": 2,
+        "time_valid_candidate_ids": [],
+        "unresolved_side_attempts": 5
+      }
+    },
     "wave8_exact_priority_metadata": {
       "audit": "candidate_keyed_exact_event_bounded_priority_rows",
       "counts": {
@@ -23430,7 +24568,7 @@
     "wave8_raichur_udayagiri_la_forbie_country_quarantine_additions": [],
     "wave8_raichur_udayagiri_la_forbie_entities_added": 6,
     "wave8_raichur_udayagiri_la_forbie_sources_added": 6,
-    "hced_label_pass_input_rows": 5461,
+    "hced_label_pass_input_rows": 5436,
     "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 107,
@@ -23443,7 +24581,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1149,
+      "reserved_candidate_contract": 1174,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -23451,12 +24589,12 @@
       "curated_row_exclusion": 87,
       "duplicate_of_curated_seed": 2,
       "duplicate_of_promoted_event": 0,
-      "faction_label_not_a_polity": 424,
+      "faction_label_not_a_polity": 422,
       "label_outcome_not_aligned": 78,
       "label_outside_policy_window": 187,
-      "label_pending_identity_split": 34,
-      "no_unique_time_valid_label_match": 1865,
-      "no_unique_time_valid_polity": 82,
+      "label_pending_identity_split": 29,
+      "no_unique_time_valid_label_match": 1849,
+      "no_unique_time_valid_polity": 80,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 39

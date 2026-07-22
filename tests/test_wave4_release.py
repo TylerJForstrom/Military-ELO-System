@@ -49,13 +49,31 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_526)
-        self.assertEqual(len(self.entities), 1_084)
-        self.assertEqual(len(self.registry_by_id), 2_423)
+        self.assertEqual(len(self.events), 5_546)
+        self.assertEqual(len(self.entities), 1_115)
+        self.assertEqual(len(self.registry_by_id), 2_454)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("1914_1918_online_finnish_civil_war", "sks_viipuri_1918_chapter"): 1,
+            ("1914_1918_online_tampere", "vapriikki_tampere_1918_history"): 1,
+            ("archivalia_ulm_1376_chronology", "hlb_cities_war_1387_1389", "joerg_rhenish_swabian_city_league", "ulm_official_city_history"): 1,
+            ("bcw_project_clonmel_1650", "history_ireland_hugh_dubh_oneill", "ucc_celt_parliamentary_proceedings_1650_1651"): 1,
+            ("canadian_military_history_battle_series", "dictionary_canadian_biography", "quebec_cultural_heritage_lower_canada_rebellions"): 1,
+            ("chur_contemporary_swabian_war_account", "graubuenden_three_leagues_chronology", "hlb_swabian_war_1499"): 1,
+            ("city_of_oulu_civil_war_history", "yle_oulu_battle_2018"): 1,
+            ("commons_dungans_hill_relation_1647", "ucd_thomas_fitzpatrick_papers"): 1,
+            ("dictionary_canadian_biography", "parks_canada_saint_eustache"): 1,
+            ("dictionary_canadian_biography", "quebec_cultural_heritage_lower_canada_rebellions"): 2,
+            ("frus_cuba_1955_1960", "library_of_congress_cuba_country_study"): 2,
+            ("grafenau_doffingen_history", "hlb_cities_war_1387_1389", "leo_bw_doffingen"): 1,
+            ("hlb_cities_war_1387_1389", "reutlinger_geschichtsblaetter_2020", "staelin_wirtembergische_geschichte_v3"): 1,
+            ("hlb_swabian_war_1499", "hls_swabian_war_1499"): 1,
+            ("hlb_swabian_war_1499", "hls_swabian_war_1499", "niederstaetter_frastanz_study"): 1,
+            ("hlb_swabian_war_1499", "hls_swabian_war_1499", "swiss_isos_triboltingen", "wilnet_schwaderloh_study"): 1,
+            ("hll_triesen_battle", "hls_swabian_war_1499"): 1,
+            ("hovilainen_rautu_2014", "lahteenmaki_maailmojen_rajalla_2009", "manninen_rautu_sotilasaikakauslehti_2015"): 1,
             ("appian_civil_wars_horace_white", "frontinus_strategemata_bennett", "ladon_lauron_2014", "plutarch_parallel_lives_sertorius"): 1,
             ("appian_civil_wars_horace_white", "livy_periochae"): 1,
             ("appian_civil_wars_horace_white", "livy_periochae", "plutarch_parallel_lives_sertorius"): 1,
@@ -540,7 +558,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_526)
+        self.assertEqual(len(self.results["events"]), 5_546)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -619,10 +637,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_580)
+        self.assertEqual(len(self.sources), 1_638)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_308,
+            1_357,
         )
         new_source_ids = {
             "colombia_constitution_1863",
