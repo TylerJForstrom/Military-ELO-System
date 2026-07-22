@@ -10019,6 +10019,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "islamic_republic_mauritania_1960_1978",
+      "name": "Islamic Republic of Mauritania (Ould Daddah era)",
+      "kind": "republic",
+      "start_year": 1960,
+      "end_year": 1978,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mauritania and the wartime Tiris al-Gharbiyya administration"
+    },
+    {
       "id": "clio_pk_pakistan_islamic_rep_1947_f2f20bf1",
       "name": "Islamic Republic of Pakistan",
       "kind": "republic",
@@ -10981,6 +10991,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "kartli_kakheti_uprising_forces_1625",
+      "name": "Kartli-Kakheti uprising forces (1625)",
+      "kind": "uprising_bounded_joint_field_force",
+      "start_year": 1625,
+      "end_year": 1625,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Kartli and Kakheti, eastern Georgia"
     },
     {
       "id": "clio_q43100_626_9ebaa37b",
@@ -20181,6 +20201,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sahrawi_popular_liberation_army_1973_1991",
+      "name": "Sahrawi Popular Liberation Army (1973-1991)",
+      "kind": "national_liberation_army",
+      "start_year": 1973,
+      "end_year": 1991,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Western Sahara, southern Morocco, and Mauritania"
+    },
+    {
       "id": "clio_q5349053_bce206_36577b93",
       "name": "Sai",
       "kind": "polity",
@@ -20851,6 +20881,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": true,
       "region": "Unclassified"
+    },
+    {
+      "id": "sertorian_faction_hispania_80_72_bce",
+      "name": "Sertorian Faction in Hispania (80-72 BCE)",
+      "kind": "civil_war_faction",
+      "start_year": -80,
+      "end_year": -72,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Hispania"
     },
     {
       "id": "clio_eg_thebes_hyksos_bce1600_b2244a4d",
@@ -25551,11 +25591,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2419,
-    "rated_entities": 1073,
-    "rated_events": 5512,
+    "registry_polities": 2423,
+    "rated_entities": 1077,
+    "rated_events": 5526,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36831,
+    "unresolved_event_candidates": 36817,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -25650,6 +25690,7 @@
     "candidate_keyed_wave8_libya_hced_events": 3,
     "candidate_keyed_wave8_viet_minh_hced_events": 9,
     "candidate_keyed_wave8_followup_b_hced_events": 4,
+    "candidate_keyed_wave8_followup_c_hced_events": 14,
     "candidate_keyed_wave8_exact_priority_hced_events": 18,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
@@ -25678,21 +25719,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5245,
-      "candidate_keyed_reviewed_contracts": 833,
-      "geojson_points": 4838,
-      "modern_location_country_assertions": 5150,
-      "location_provenance_objects": 5199,
-      "point_fields_withheld_by_quarantine": 407,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 94,
+      "hced_candidate_bindings": 5259,
+      "candidate_keyed_reviewed_contracts": 847,
+      "geojson_points": 4843,
+      "modern_location_country_assertions": 5163,
+      "location_provenance_objects": 5212,
+      "point_fields_withheld_by_quarantine": 416,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 95,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 46,
-      "unique_events_with_any_quarantined_field": 455,
-      "point_quarantine_candidate_manifest_sha256": "cdff75b4ecf64ef16aa6ec22f64ff268582145dd142f3bc571b53fc987586af1",
-      "country_quarantine_candidate_manifest_sha256": "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6",
-      "quarantine_policy_sha256": "ece2f2014e2fdc209ef4b36beefdd91b5c5cb4f83a2c2ca8c4f8b341995d4af1",
+      "point_country_quarantine_overlap": 47,
+      "unique_events_with_any_quarantined_field": 464,
+      "point_quarantine_candidate_manifest_sha256": "0dedf5bfa038b24c33eab7914bfadfd62039831ced9a19398c84ce463441e00a",
+      "country_quarantine_candidate_manifest_sha256": "b8536bb2fa5d17ec47e4e3a9b7d5d4ea0b85be3d7fc1ea2db5aadf028787955f",
+      "quarantine_policy_sha256": "ab833838fada26185429fa5b2b118fad59209fdefa140277fb7bbf09455ff78d",
       "assertion_status": {
-        "unreviewed_source_assertion": 5199
+        "unreviewed_source_assertion": 5212
       },
       "verified_location_assertions": {
         "availability": "not_available",

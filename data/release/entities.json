@@ -1042,6 +1042,21 @@
     ]
   },
   {
+    "id": "sertorian_faction_hispania_80_72_bce",
+    "name": "Sertorian Faction in Hispania (80-72 BCE)",
+    "kind": "civil_war_faction",
+    "start_year": -80,
+    "end_year": -72,
+    "region": "Hispania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Conflict-bounded to Sertorius's return from Africa and assumption of Lusitanian command in 80 BCE through the faction's terminal defeat under Perperna in 72 BCE. No rating is inherited from or transferred to the Roman Republic, earlier Marian forces, the populares as a timeless category, Lusitanians, Celtiberians, an individual commander, or any successor town or polity. Candidate-keyed contracts are the only resolution path.",
+    "source_ids": [
+      "wave8_sertorian_appian_civil_wars_1",
+      "wave8_sertorian_plutarch_sertorius"
+    ]
+  },
+  {
     "id": "lucullus_roman_army_tigranocerta_69_bce",
     "name": "Lucullus's Roman army at Tigranocerta (69 BCE)",
     "kind": "event_bounded_field_army",
@@ -7442,6 +7457,22 @@
     "source_ids": [
       "wave8_oman_nyuad_state_formation",
       "wave8_oman_ona_yarubis"
+    ]
+  },
+  {
+    "id": "kartli_kakheti_uprising_forces_1625",
+    "name": "Kartli-Kakheti uprising forces (1625)",
+    "kind": "uprising_bounded_joint_field_force",
+    "start_year": 1625,
+    "end_year": 1625,
+    "region": "Kartli and Kakheti, eastern Georgia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Kartli-Kakheti force that fought the Safavid armies at Martqopi and Marabda during the 1625 uprising under Giorgi Saakadze and Teimuraz I. No generic Georgian Rebels, Georgia, Kartli, Kakheti, ethnic-population, dynasty, predecessor, successor, or modern-state alias resolves to this identity, and it inherits no Elo from any such polity.",
+    "source_ids": [
+      "wave8_georgian_uprising_georgian_encyclopedia_marabda",
+      "wave8_georgian_uprising_georgian_encyclopedia_martqopi",
+      "wave8_georgian_uprising_mikaberidze_marabda"
     ]
   },
   {
@@ -15610,6 +15641,21 @@
     ]
   },
   {
+    "id": "islamic_republic_mauritania_1960_1978",
+    "name": "Islamic Republic of Mauritania (Ould Daddah era)",
+    "kind": "republic",
+    "start_year": 1960,
+    "end_year": 1978,
+    "region": "Mauritania and the wartime Tiris al-Gharbiyya administration",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Independent Islamic Republic under Moktar Ould Daddah, bounded from independence on 28 November 1960 through the 10 July 1978 military coup. The two rated 1976-1977 actions fall wholly within this interval. The successor military governments, a generic Mauritania label, and later republics inherit no rating without separate review.",
+    "source_ids": [
+      "wave8_polisario_loc_mauritania_country_study",
+      "wave8_polisario_state_mauritania_recognition"
+    ]
+  },
+  {
     "id": "viet_cong",
     "name": "National Liberation Front of South Vietnam",
     "kind": "insurgent_front",
@@ -16022,6 +16068,21 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "sahrawi_popular_liberation_army_1973_1991",
+    "name": "Sahrawi Popular Liberation Army (1973-1991)",
+    "kind": "national_liberation_army",
+    "start_year": 1973,
+    "end_year": 1991,
+    "region": "Western Sahara, southern Morocco, and Mauritania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Time-bounded armed wing of the Polisario Front during the original armed phase, from the movement's 1973 foundation through the UN-supervised ceasefire effective 6 September 1991. Only exact, fingerprinted military rows may use this identity: the political front, the SADR government, later post-ceasefire forces, and bare Polisario/Polisaro labels inherit no rating and gain no alias.",
+    "source_ids": [
+      "wave8_polisario_air_university_western_sahara",
+      "wave8_polisario_minurso_ceasefire"
     ]
   },
   {

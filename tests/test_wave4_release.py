@@ -49,13 +49,27 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_512)
-        self.assertEqual(len(self.entities), 1_080)
-        self.assertEqual(len(self.registry_by_id), 2_419)
+        self.assertEqual(len(self.events), 5_526)
+        self.assertEqual(len(self.entities), 1_084)
+        self.assertEqual(len(self.registry_by_id), 2_423)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("appian_civil_wars_horace_white", "frontinus_strategemata_bennett", "ladon_lauron_2014", "plutarch_parallel_lives_sertorius"): 1,
+            ("appian_civil_wars_horace_white", "livy_periochae"): 1,
+            ("appian_civil_wars_horace_white", "livy_periochae", "plutarch_parallel_lives_sertorius"): 1,
+            ("cia_weekly_summary_1976_06_18", "mundy_zunes_western_sahara_monograph", "un_a31_106_s12095"): 1,
+            ("clodfelter_warfare_armed_conflicts", "danish_general_staff_great_northern_war_volume_four", "landers_field_forge", "swedish_military_memorials_gadebusch"): 1,
+            ("clodfelter_warfare_armed_conflicts", "danish_general_staff_great_northern_war_volume_four", "swedish_biographical_lexicon_stenbock"): 1,
+            ("elpais_tan_tan_1979_01_30", "mundy_zunes_western_sahara_monograph", "un_a34_23_rev1_volume2"): 1,
+            ("ferra_monge_bilbao_1835_2026", "rah_historia_hispanica_zumalacarregui", "zumalakarregi_museum_bilbao_sieges"): 1,
+            ("frus_1977_1980_north_africa_document_218", "lemonde_oum_drouss_1977_10_27"): 1,
+            ("georgian_encyclopedia_marabda", "mikaberidze_historical_dictionary_georgia"): 1,
+            ("georgian_encyclopedia_martqopi", "mikaberidze_historical_dictionary_georgia"): 1,
+            ("ghdi_stralsund_1715", "landers_field_forge", "royal_collection_stralsund_1715_map"): 1,
+            ("plutarch_parallel_lives_sertorius", "sallust_histories"): 1,
+            ("spanish_army_museum_espartero_sword", "zumalakarregi_museum_bilbao_sieges"): 1,
             ("australian_war_memorial_first_indochina_war", "clodfelter_warfare_armed_conflicts"): 6,
             ("ammianus_roman_history_book_19", "encyclopaedia_iranica_amida"): 1,
             ("ammianus_roman_history_book_24", "encyclopaedia_iranica_julian"): 1,
@@ -526,7 +540,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_512)
+        self.assertEqual(len(self.results["events"]), 5_526)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -605,10 +619,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_546)
+        self.assertEqual(len(self.sources), 1_580)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_277,
+            1_308,
         )
         new_source_ids = {
             "colombia_constitution_1863",

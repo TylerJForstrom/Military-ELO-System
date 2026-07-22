@@ -6531,6 +6531,66 @@
     ]
   },
   {
+    "id": "wave8_bilbao_army_museum_espartero",
+    "title": "El Espadón de Espartero: un regalo de Vizcaya",
+    "url": "https://ejercito.defensa.gob.es/museo/comun/EL_MUSEO_DEL_EJERCITO_ES_NOTICIA/piezas/2023.05.23_EL_ESPADON_DE_ESPARTERO",
+    "publisher": "Museo del Ejército, Ministerio de Defensa de España",
+    "license": "Citation and link only",
+    "source_type": "official_military_museum_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "spanish_army_museum_espartero_sword",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bilbao_ferra_monge_first_siege",
+    "title": "La perspectiva carlista del primer sitio de Bilbao en 1835",
+    "url": "https://dialnet.unirioja.es/descarga/articulo/10558617.pdf",
+    "publisher": "kult-ur / Universitat Jaume I via Dialnet",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "ferra_monge_bilbao_1835_2026",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bilbao_rah_zumalacarregui_timeline",
+    "title": "Tomás de Zumalacárregui e Imaz: hechos y lugares",
+    "url": "https://historia-hispanica.rah.es/biografias/45567-tomas-de-zumalacarregui-e-imaz",
+    "publisher": "Real Academia de la Historia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_national_biography_timeline",
+    "accessed": "2026-07-21",
+    "source_family_id": "rah_historia_hispanica_zumalacarregui",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_bilbao_zumalakarregi_museum_sieges",
+    "title": "Bilbao (VI-1835 y X/XII-1836)",
+    "url": "https://www.zumalakarregimuseoa.eus/es/actividades/investigacion-y-documentacion/historia-del-siglo-xix-en-el-pais-vasco/batallas-y-acciones/bilbao-vi-1835-y-x-xii-1836",
+    "publisher": "Museo Zumalakarregi Museoa",
+    "license": "Citation and link only",
+    "source_type": "official_museum_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "zumalakarregi_museum_bilbao_sieges",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_boe_algiers_expedition_1775",
     "title": "Historical account of the expedition against Algiers in 1775",
     "url": "https://www.boe.es/gazeta/dias/1857/11/29/pdfs/GMD-1857-1790.pdf",
@@ -11414,6 +11474,51 @@
     ]
   },
   {
+    "id": "wave8_georgian_uprising_georgian_encyclopedia_marabda",
+    "title": "Marabda, Battle of (1625)",
+    "url": "https://georgianencyclopedia.ge/ka/form/29845",
+    "publisher": "Georgian National Academy of Sciences, Georgian Encyclopedia Main Scientific Editorial Board",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "georgian_encyclopedia_marabda",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_georgian_uprising_georgian_encyclopedia_martqopi",
+    "title": "Martqopi, Battle of (1625)",
+    "url": "https://georgianencyclopedia.ge/ka/form/29982",
+    "publisher": "Georgian National Academy of Sciences, Georgian Encyclopedia Main Scientific Editorial Board",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "georgian_encyclopedia_martqopi",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_georgian_uprising_mikaberidze_marabda",
+    "title": "Marabda, Battle of (1625)",
+    "url": "https://www.allgeo.org/index.php/en/858-marabda-battle-of-1625",
+    "publisher": "Allgeo.org transcription of Alexander Mikaberidze, Historical Dictionary of Georgia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_dictionary_transcription",
+    "accessed": "2026-07-21",
+    "source_family_id": "mikaberidze_historical_dictionary_georgia",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_germany_1914_1918_cesis",
     "title": "Cēsis, Battle of",
     "url": "https://encyclopedia.1914-1918-online.net/article/cesis-battle-of/",
@@ -11867,6 +11972,111 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_clodfelter_warfare",
+    "title": "Warfare and Armed Conflicts: A Statistical Encyclopedia, p. 89",
+    "url": "https://books.google.com/books?id=8urEDgAAQBAJ&pg=PA89",
+    "publisher": "McFarland / Google Books",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "clodfelter_warfare_armed_conflicts",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_danish_general_staff_v4",
+    "title": "Bidrag til den Store Nordiske Krigs Historie, bind IV",
+    "url": "https://www.marinehist.dk/orlogsbib/SNK/SNK-bind4.pdf",
+    "publisher": "Danish General Staff historical section / Marinehistorisk Selskab",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_digitization",
+    "accessed": "2026-07-21",
+    "source_family_id": "danish_general_staff_great_northern_war_volume_four",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_ghdi_stralsund",
+    "title": "Commemorative Diagram of the Siege of Stralsund in the Year 1715",
+    "url": "https://germanhistorydocs.org/en/the-holy-roman-empire-1648-1815/commemorative-diagram-of-the-siege-of-stralsund-in-the-year-1715-1718",
+    "publisher": "German History in Documents and Images / German Historical Institute",
+    "license": "Citation and link only",
+    "source_type": "scholarly_document_exhibit",
+    "accessed": "2026-07-21",
+    "source_family_id": "ghdi_stralsund_1715",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_landers_field_forge",
+    "title": "The Field and the Forge: Population, Production, and Power in the Pre-Industrial West",
+    "url": "https://academic.oup.com/book/1842",
+    "publisher": "Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "landers_field_forge",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_rct_stralsund",
+    "title": "Map of the siege of Stralsund, 1715 (RCIN 726091)",
+    "url": "https://militarymaps.rct.uk/other-18th/19th-century-conflicts/map-of-the-siege-of-stralsund-1715-stralsund-mecklenburg-vorpommern-germany-54deg1832n-13deg0454e-1",
+    "publisher": "Royal Collection Trust",
+    "license": "Citation and link only",
+    "source_type": "curated_historical_map_catalogue",
+    "accessed": "2026-07-21",
+    "source_family_id": "royal_collection_stralsund_1715_map",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_riksarkivet_stenbock",
+    "title": "Magnus Stenbock",
+    "url": "https://sok.riksarkivet.se/sbl/Presentation.aspx?id=20072",
+    "publisher": "Svenskt biografiskt lexikon / National Archives of Sweden",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "swedish_biographical_lexicon_stenbock",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_great_northern_exact_svmm_gadebusch",
+    "title": "1712 Slaget vid Gadebusch",
+    "url": "https://svmm.se/slaget-vid-gadebusch-1712-ty16/",
+    "publisher": "Svenska militära minnesmärken",
+    "license": "Citation and link only",
+    "source_type": "institutional_military_memorial_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "swedish_military_memorials_gadebusch",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -17195,6 +17405,143 @@
     ]
   },
   {
+    "id": "wave8_polisario_air_university_western_sahara",
+    "title": "War and Insurgency in the Western Sahara",
+    "url": "https://media.defense.gov/2023/May/04/2003215968/-1/-1/0/2224.PDF",
+    "publisher": "Strategic Studies Institute, U.S. Army War College",
+    "license": "Citation and link only",
+    "source_type": "professional_military_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "mundy_zunes_western_sahara_monograph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polisario_cia_nouakchott_1976",
+    "title": "Weekly Summary: Mauritania (18 June 1976)",
+    "url": "https://www.cia.gov/readingroom/docs/CIA-RDP79-00927A011300250001-1.pdf",
+    "publisher": "Central Intelligence Agency Reading Room",
+    "license": "Citation and link only",
+    "source_type": "declassified_contemporary_intelligence_assessment",
+    "accessed": "2026-07-21",
+    "source_family_id": "cia_weekly_summary_1976_06_18",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polisario_elpais_tan_tan_1979",
+    "title": "El Polisario afirma que ocupó durante varias horas una localidad marroquí",
+    "url": "https://elpais.com/diario/1979/01/30/internacional/286498811_850215.html",
+    "publisher": "El País",
+    "license": "Citation and link only",
+    "source_type": "contemporary_newspaper_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "elpais_tan_tan_1979_01_30",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_polisario_frus_oum_drouss_1977",
+    "title": "The Sahara Two Years After the Green March",
+    "url": "https://history.state.gov/historicaldocuments/frus1977-80v17p3/d218",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "official_diplomatic_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "frus_1977_1980_north_africa_document_218",
+    "evidence_roles": [
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_polisario_lemonde_oum_drouss_1977",
+    "title": "Le conflit du Sahara occidental: deux techniciens français et vingt-quatre Mauritaniens ont disparu près de Zouérate",
+    "url": "https://www.lemonde.fr/archives/article/1977/10/27/le-conflit-du-sahara-occidental-deux-techniciens-francais-et-vingt-quatre-mauritaniens-ont-disparu-pres-de-zouerate_3085579_1819218.html",
+    "publisher": "Le Monde",
+    "license": "Citation and link only",
+    "source_type": "contemporary_newspaper_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "lemonde_oum_drouss_1977_10_27",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_polisario_loc_mauritania_country_study",
+    "title": "Mauritania: A Country Study",
+    "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/ma/mauritaniacountr00hand_0/mauritaniacountr00hand_0.pdf",
+    "publisher": "Federal Research Division, Library of Congress",
+    "license": "Citation and link only",
+    "source_type": "government_country_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "loc_mauritania_country_study_1990",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_polisario_minurso_ceasefire",
+    "title": "MINURSO Fact Sheet and settlement-plan background",
+    "url": "https://peacekeeping.un.org/en/factsheet/minurso",
+    "publisher": "United Nations Peacekeeping",
+    "license": "Citation and link only",
+    "source_type": "official_international_organization_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "un_minurso_fact_sheet",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_polisario_state_mauritania_recognition",
+    "title": "A Guide to the United States' History of Recognition: Mauritania",
+    "url": "https://history.state.gov/countries/mauritania",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "official_diplomatic_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "state_department_mauritania_recognition",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_polisario_un_nouakchott_1976",
+    "title": "Letter dated 14 June 1976 from the Permanent Representative of Mauritania to the United Nations",
+    "url": "https://digitallibrary.un.org/record/224981/files/A_31_106--S_12095-EN.pdf",
+    "publisher": "United Nations Digital Library",
+    "license": "Citation and link only",
+    "source_type": "contemporary_official_diplomatic_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "un_a31_106_s12095",
+    "evidence_roles": [
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_polisario_un_western_sahara_1979",
+    "title": "Report of the Special Committee on the Situation, 1979",
+    "url": "https://digitallibrary.un.org/record/15187/files/A_34_23_Rev.1%5EVol.II%5E--A_34_23_Rev.1--A_34_23_Rev.1Vol.II-EN.pdf",
+    "publisher": "United Nations Digital Library",
+    "license": "Citation and link only",
+    "source_type": "official_international_organization_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "un_a34_23_rev1_volume2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_polish_czech_statistics_domazlice",
     "title": "Domažlice and the Hussite victory of 1431",
     "url": "https://csu.gov.cz/produkty/13-3231-06-za_rok_2005-domazlice",
@@ -19044,6 +19391,150 @@
       "identity_boundary_or_context_reference",
       "outcome",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_appian_civil_wars_1",
+    "title": "Appian, Civil Wars 1.108-112: Sertorian government and campaigns",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1%2A.html",
+    "publisher": "LacusCurtius, University of Chicago; Horace White translation",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "appian_civil_wars_horace_white",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_frontinus_strategemata_2",
+    "title": "Frontinus, Strategemata 2.5.31: Sertorius's Lauron operation",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/Strategemata/2%2A.html",
+    "publisher": "LacusCurtius, University of Chicago; Charles Bennett translation",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_military_treatise_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "frontinus_strategemata_bennett",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_konrad_commentary",
+    "title": "A Historical Commentary on Plutarch's Life of Sertorius",
+    "url": "https://www.proquest.com/docview/303354083/",
+    "publisher": "ProQuest; University of North Carolina at Chapel Hill",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_commentary_dissertation",
+    "accessed": "2026-07-21",
+    "source_family_id": "konrad_plutarch_sertorius_commentary",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_ladon_lauron",
+    "title": "Pompejusz versus Sertoriusz: rozważania o bitwie pod Lauro (Pompey versus Sertorius: considerations about the battle of Lauro)",
+    "url": "https://bazhum.muzhp.pl/media/texts/przeglad-historyczno-wojskowy/2014-tom-15-66-numer-1-247/przeglad_historyczno_wojskowy-r2014-t15_66-n1_247-s7-16.pdf",
+    "publisher": "Przegląd Historyczno-Wojskowy",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "ladon_lauron_2014",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_livy_periochae_91_95",
+    "title": "Livy, Periochae 92-93: Sucro, Segontia, and Calagurris",
+    "url": "https://www.livius.org/sources/content/livy/livy-periochae-91-95/",
+    "publisher": "Livius.org; translation of Livy's summaries",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_epitome_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "livy_periochae",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_noguera_jra_chronology",
+    "title": "New perspectives on the Sertorian War in northeastern Hispania",
+    "url": "https://www.cambridge.org/core/journals/journal-of-roman-archaeology/article/new-perspectives-on-the-sertorian-war-in-northeastern-hispania-archaeological-surveys-of-the-roman-camps-of-the-lower-river-ebro/9DD77C6186FE97AFBE0C388AFBCBCC08",
+    "publisher": "Cambridge University Press, Journal of Roman Archaeology",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archaeological_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "noguera_et_al_jra_sertorian_camps",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_plutarch_pompey_19",
+    "title": "Plutarch, Life of Pompey 19: the doubtful issue at Sucro",
+    "url": "https://lexundria.com/plut_pomp/19/prr",
+    "publisher": "Lexundria; Bernadotte Perrin translation",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "plutarch_parallel_lives_pompey",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_plutarch_sertorius",
+    "title": "Plutarch, Life of Sertorius, especially 11-23",
+    "url": "https://classics.mit.edu/Plutarch/sertoriu.html",
+    "publisher": "Internet Classics Archive, Massachusetts Institute of Technology",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_narrative_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "plutarch_parallel_lives_sertorius",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_sallust_histories_2_latin",
+    "title": "Sallust, Histories book 2 fragments: Turia and Durium toponymy",
+    "url": "https://www.attalus.org/latin/sallust2.html",
+    "publisher": "Attalus; Latin fragments of Sallust's Histories",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_fragment_edition",
+    "accessed": "2026-07-21",
+    "source_family_id": "sallust_histories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_sertorian_sallust_histories_translation",
+    "title": "Sallust, Histories fragments: the Baetis crossing and Sertorian War",
+    "url": "https://www.attalus.org/translate/sallust.html",
+    "publisher": "Attalus; translated fragments of Sallust's Histories",
+    "license": "Citation and link only",
+    "source_type": "ancient_primary_fragment_translation",
+    "accessed": "2026-07-21",
+    "source_family_id": "sallust_histories",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {

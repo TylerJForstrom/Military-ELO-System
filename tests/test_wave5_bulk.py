@@ -362,7 +362,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
         # the three already-rated rows on the existing Cliopatria identity;
         # three source rows failed the historical accuracy audit.
         self.assertEqual(len(portugal), 84)
-        self.assertEqual(len(tsardom), 62)
+        self.assertEqual(len(tsardom), 63)
         self.assertEqual(
             Counter(
                 "label" if event["id"].startswith("hced_label_") else "crosswalk"
@@ -375,17 +375,17 @@ class Wave5BulkArtifactTests(unittest.TestCase):
                 "label" if event["id"].startswith("hced_label_") else "crosswalk"
                 for event in tsardom
             ),
-            {"crosswalk": 45, "label": 17},
+            {"crosswalk": 46, "label": 17},
         )
 
         combined = [*portugal, *tsardom]
         event_ids = [event["id"] for event in combined]
         candidate_ids = [event.get("hced_candidate_id") for event in combined]
-        self.assertEqual(len(combined), 146)
+        self.assertEqual(len(combined), 147)
         self.assertEqual(len(event_ids), len(set(event_ids)))
         self.assertNotIn(None, candidate_ids)
         self.assertEqual(len(candidate_ids), len(set(candidate_ids)))
-        # Wave 5 rows carry the bare hced family; the four Tsardom rows later
+        # Wave 5 rows carry the bare hced family; the five Tsardom rows later
         # re-promoted by exact Wave 8 lanes carry curated bibliographic
         # families instead.
         curated_family_rows = {
@@ -400,6 +400,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
                 "hced_wave8_livonian_order_hced_narva1558_1",
                 "hced_wave8_livonian_order_hced_fellin1560_1",
                 "hced_wave8_livonian_order_hced_oomuli1560_1",
+                "hced_wave8_great_northern_exact_hced_tonning1713_1",
             },
         )
 
@@ -422,7 +423,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             for event in self.events
             if TSARDOM_ID in self._participants(event)
         ]
-        self.assertEqual(len(tsardom_events), 62)
+        self.assertEqual(len(tsardom_events), 63)
         self.assertFalse(
             any(
                 "tsardom_russia" in self._participants(event)
@@ -452,7 +453,7 @@ class Wave5BulkArtifactTests(unittest.TestCase):
             for event in results["events"]
             if TSARDOM_ID in self._participants(event)
         ]
-        self.assertEqual(len(site_tsardom_events), 62)
+        self.assertEqual(len(site_tsardom_events), 63)
         self.assertFalse(
             any(
                 "tsardom_russia" in self._participants(event)

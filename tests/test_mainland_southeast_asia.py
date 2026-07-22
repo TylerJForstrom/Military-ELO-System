@@ -339,21 +339,21 @@ class MainlandSoutheastAsiaReleaseTests(unittest.TestCase):
         self.assertEqual(
             metadata["record_counts_expected"],
             {
-                "entities": 1080,
-                "events": 5512,
-                "sources": 1546,
-                "registry_polities": 2419,
+                "entities": 1084,
+                "events": 5526,
+                "sources": 1580,
+                "registry_polities": 2423,
             },
         )
         coverage = registry["coverage"]
-        self.assertEqual(coverage["rated_entities"], 1073)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36831)
+        self.assertEqual(coverage["rated_entities"], 1077)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36817)
         self.assertEqual(coverage["provisional_hced_label_events"], 2525)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5245)
-        self.assertEqual(location["geojson_points"], 4838)
-        self.assertEqual(location["modern_location_country_assertions"], 5150)
-        self.assertEqual(location["location_provenance_objects"], 5199)
+        self.assertEqual(location["hced_candidate_bindings"], 5259)
+        self.assertEqual(location["geojson_points"], 4843)
+        self.assertEqual(location["modern_location_country_assertions"], 5163)
+        self.assertEqual(location["location_provenance_objects"], 5212)
 
     @unittest.skipUnless(REGISTRY_PATH.exists(), "registry unavailable")
     def test_source_candidate_supersessions_are_narrow_and_auditable(self) -> None:

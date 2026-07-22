@@ -317,10 +317,10 @@ class ExactLabelCorrectionReleaseTests(unittest.TestCase):
         self.assertEqual(
             metadata["record_counts_expected"],
             {
-                "entities": 1080,
-                "events": 5512,
-                "sources": 1546,
-                "registry_polities": 2419,
+                "entities": 1084,
+                "events": 5526,
+                "sources": 1580,
+                "registry_polities": 2423,
             },
         )
         promotion = metadata["promotion"]
@@ -328,10 +328,10 @@ class ExactLabelCorrectionReleaseTests(unittest.TestCase):
             set(PROMOTED)
             <= set(promotion["hced_reviewed_crosswalk_identity_candidate_ids"])
         )
-        self.assertEqual(sum(promotion["hced_label_rejections"].values()), 2955)
+        self.assertEqual(sum(promotion["hced_label_rejections"].values()), 2936)
         coverage = registry["coverage"]
-        self.assertEqual(coverage["rated_entities"], 1073)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36831)
+        self.assertEqual(coverage["rated_entities"], 1077)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36817)
         self.assertEqual(coverage["provisional_hced_label_events"], 2525)
         location = coverage["hced_location_assertions"]
         self.assertEqual(
@@ -342,7 +342,7 @@ class ExactLabelCorrectionReleaseTests(unittest.TestCase):
                 location["modern_location_country_assertions"],
                 location["location_provenance_objects"],
             ),
-            (5245, 833, 4838, 5150, 5199),
+            (5259, 847, 4843, 5163, 5212),
         )
 
 

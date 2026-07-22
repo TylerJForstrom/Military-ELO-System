@@ -19,19 +19,19 @@ HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
 HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
-    "ece2f2014e2fdc209ef4b36beefdd91b5c5cb4f83a2c2ca8c4f8b341995d4af1"
+    "ab833838fada26185429fa5b2b118fad59209fdefa140277fb7bbf09455ff78d"
 )
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "cdff75b4ecf64ef16aa6ec22f64ff268582145dd142f3bc571b53fc987586af1"
+    "0dedf5bfa038b24c33eab7914bfadfd62039831ced9a19398c84ce463441e00a"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
-    "bbe783ce4b366d02c0b30634f054740aac2479e809029b2692d4a510ed377bd6"
+    "b8536bb2fa5d17ec47e4e3a9b7d5d4ea0b85be3d7fc1ea2db5aadf028787955f"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "07d470cafba951f1fe9f805b44084086d8ab9cf6952f21c2f643f5c3144d8057"
+    "1883ff9aa13f5bdf551eb0c0bba0c57d589e37cd44e0eb09375a51aed9931b1a"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
-    "a8d96507bcbfef9498b8d8f1d5e8310e8eb7555832c928ded353adad26a5353c"
+    "01cbb8b56178b7209cd15e88adf17606294c47ad2db2515aece8e42d0cbb352e"
 )
 # Wave 5 is the immutable base to which reviewed lane manifests are added
 # during release construction. The final pins below are independently measured
@@ -41,13 +41,13 @@ HCED_WAVE5_CANDIDATE_BINDINGS = 4_291
 HCED_WAVE5_POINT_ASSERTIONS = 4_252
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_211
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_258
-HCED_EXPECTED_CANDIDATE_BINDINGS = 5_245
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 833
-HCED_EXPECTED_POINT_ASSERTIONS = 4_838
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 5_150
-HCED_EXPECTED_PROVENANCE_OBJECTS = 5_199
-HCED_EXPECTED_QUARANTINE_UNION = 455
-HCED_EXPECTED_QUARANTINE_OVERLAP = 46
+HCED_EXPECTED_CANDIDATE_BINDINGS = 5_259
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 847
+HCED_EXPECTED_POINT_ASSERTIONS = 4_843
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 5_163
+HCED_EXPECTED_PROVENANCE_OBJECTS = 5_212
+HCED_EXPECTED_QUARANTINE_UNION = 464
+HCED_EXPECTED_QUARANTINE_OVERLAP = 47
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
     "HCED location fields are unreviewed source assertions. Quarantined values "
@@ -104,6 +104,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Bacolod1903-1",
     "hced-Bad Axe1832-1",
     "hced-Baddowal1846-1",
+    "hced-Baetis-80-1",
     "hced-Bagh Dera1788-1",
     "hced-Bagh1919-1",
     "hced-Baguashan1895-1",
@@ -132,6 +133,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Buffalo Wallow1874-1",
     "hced-Burtinah1839-1",
     "hced-Bytham1221-1",
+    "hced-Calahorra-74-1",
     "hced-Callicinus-171-1",
     "hced-Calpulalpam1860-1",
     "hced-Campi Cannini457-1",
@@ -195,6 +197,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Focchies1649-1",
     "hced-Ford of the Biscuits1594-1",
     "hced-Freeman's Farm1776-1",
+    "hced-Gadebusch1712-1",
     "hced-Gaza1967-1",
     "hced-Gefrees1809-1",
     "hced-Gilbert Islands1943-1",
@@ -266,6 +269,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Lake Smolino1502-1",
     "hced-Latrun (1st)1948-1",
     "hced-Latrun (2nd)1948-1",
+    "hced-Lauron-76-1",
     "hced-Lava Beds (1st)1873-1",
     "hced-Lava Beds (2nd)1873-1",
     "hced-Leuctra-371-1",
@@ -281,8 +285,10 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Mantinea-207-1",
     "hced-Mantinea-362-1",
     "hced-Mao Khe1951-1",
+    "hced-Marabda1625-1",
     "hced-Marchfeld1278-1",
     "hced-Marqab1285-1",
+    "hced-Marqopi1625-1",
     "hced-Martinici1796-1",
     "hced-Massawa1977-1",
     "hced-Massawa1990-1",
@@ -331,6 +337,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Oomuli1560-1",
     "hced-Orthez1569-1",
     "hced-Otrar1219-1",
+    "hced-Oum Droussa1977-1",
     "hced-Palo Duro1874-1",
     "hced-Pandosia-331-1",
     "hced-Parwan Durrah1221-1",
@@ -426,6 +433,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Thebes-335-1",
     "hced-Thessalonica1224-1",
     "hced-Tigranocerta-69-1",
+    "hced-Tonning1713-1",
     "hced-Toppenish1855-1",
     "hced-Tora Bora2001-1",
     "hced-Torata1823-1",
@@ -436,6 +444,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Tristan de Cunha1815-1",
     "hced-Tsarasoatra1895-1",
     "hced-Turabah1919-1",
+    "hced-Turia-75-1",
     "hced-Udayagiri1513-1514-1",
     "hced-Umm Urdhumah1929-1",
     "hced-Unayzah1904-1",
@@ -529,6 +538,7 @@ HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS = (
     "hced-Monzon1809-1",
     "hced-Nemecky Brod1422-1",
     "hced-Noryang1598-1",
+    "hced-Oum Droussa1977-1",
     "hced-Paardeberg1900-1",
     "hced-Pearl Harbour1941-1",
     "hced-Perimeter (2nd)1950-1",
