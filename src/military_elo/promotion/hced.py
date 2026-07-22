@@ -109,6 +109,22 @@ def _validate_hced_crosswalk_review_bindings(
             normalize_label(expected["side_1_raw"]),
             normalize_label(expected["side_2_raw"]),
         }
+        # Post-1500 composite sides may bind an explicitly delimited member,
+        # but only under this candidate's complete source fingerprint.  This
+        # permits exact coalition review without opening a generic alias for
+        # labels such as "Saxony".
+        effective_low_year = int(
+            contract.get("event_year_override", {}).get(
+                "year_low", expected["year_low"]
+            )
+        )
+        if effective_low_year >= _COMPOSITE_SPLIT_MIN_YEAR:
+            for side_field in ("side_1_raw", "side_2_raw"):
+                expected_labels.update(
+                    normalize_label(member)
+                    for member in _split_composite_label(expected[side_field])
+                )
+        expected_labels.discard("")
         unexpected_labels = set(contract.get("label_bindings", {})) - expected_labels
         if unexpected_labels:
             raise ValueError(
@@ -522,6 +538,7 @@ def promote_hced_label_rows(
     resolve_candidate_code: Any | None = None,
     resolve_candidate_side_label: Any | None = None,
     canonicalize_composite_identity: Any | None = None,
+    resolve_candidate_composite_member: Any | None = None,
 ) -> dict[str, Any]:
     """Second HCED promotion pass for rows lacking Seshat coding on a side.
 
@@ -632,9 +649,20 @@ def promote_hced_label_rows(
                     member_polities: dict[str, dict[str, Any]] = {}
                     composite_ok = len(members) >= 2
                     for member in members:
-                        member_id, member_polity, _member_reason, _member_tier = (
-                            resolve_side_label(member, low_year, high_year)
-                        )
+                        if resolve_candidate_composite_member is None:
+                            member_result = resolve_side_label(
+                                member, low_year, high_year
+                            )
+                        else:
+                            member_result = resolve_candidate_composite_member(
+                                candidate, member, low_year, high_year
+                            )
+                        (
+                            member_id,
+                            member_polity,
+                            _member_reason,
+                            _member_tier,
+                        ) = member_result
                         if member_id and canonicalize_composite_identity is not None:
                             member_id, member_polity = canonicalize_composite_identity(
                                 member_id,

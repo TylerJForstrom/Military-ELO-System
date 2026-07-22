@@ -59,6 +59,7 @@ from .iwd import aggregate_iwd_parent_wars, _seed_war_token_spans
 from .iwbd import promote_iwbd_battles
 from .policy import (
     HCED_CURATED_EXCLUSIONS,
+    HCED_EXACT_LABEL_CORRECTION_CONTRACT_IDS,
     HCED_FACTION_LABELS,
     HCED_LABEL_CURATED_EXCLUSIONS,
     HCED_LABEL_POLICIES,
@@ -2755,6 +2756,7 @@ def _validate_hced_location_release(
         "pre1500": pre1500_candidate_ids,
         "candidate_keyed": reviewed_candidate_ids,
         "modern": modern_candidate_ids,
+        "exact_label_corrections": HCED_EXACT_LABEL_CORRECTION_CONTRACT_IDS,
     }
     duplicate_lane_ids = {
         candidate_id
@@ -2769,7 +2771,10 @@ def _validate_hced_location_release(
             f"{sorted(duplicate_lane_ids)}"
         )
     additional_candidate_ids = (
-        reviewed_candidate_ids | pre1500_candidate_ids | modern_candidate_ids
+        reviewed_candidate_ids
+        | pre1500_candidate_ids
+        | modern_candidate_ids
+        | HCED_EXACT_LABEL_CORRECTION_CONTRACT_IDS
     )
 
     if reviewed_event_candidate_ids != reviewed_candidate_ids:
@@ -2798,7 +2803,9 @@ def _validate_hced_location_release(
         raise ValueError("Promoted HCED events must map one-to-one to candidate IDs")
     if (crosswalk_count, label_count, len(reviewed_event_candidate_ids)) != (
         1_827 + len(modern_candidate_ids),
-        2_464 + len(pre1500_candidate_ids),
+        2_464
+        + len(pre1500_candidate_ids)
+        + len(HCED_EXACT_LABEL_CORRECTION_CONTRACT_IDS),
         len(reviewed_candidate_ids),
     ):
         raise ValueError(
@@ -2846,7 +2853,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 403
+        len(HCED_POINT_QUARANTINE_IDS) != 407
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 94
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3255,6 +3262,23 @@ def build_expanded_release(
         if existing is not None and existing != entity:
             raise ValueError(f"Reviewed IWD early-identity collision: {entity_id}")
         release_entities[entity_id] = entity
+    # One reviewed post-1500 composite needs the already-curated Saxon
+    # identity before the generic label pass. Install only its byte-identical
+    # fixture for exact-ID resolution; it is intentionally absent from the
+    # seed and polity alias indexes, so bare "Saxony" remains unresolved.
+    early_hced_reviewed_entity_ids = {"electorate_saxony_1356"}
+    early_hced_reviewed_entity_fixtures = {
+        str(entity["id"]): dict(entity)
+        for entity in WAVE6_ENTITIES
+        if str(entity["id"]) in early_hced_reviewed_entity_ids
+    }
+    if set(early_hced_reviewed_entity_fixtures) != early_hced_reviewed_entity_ids:
+        raise ValueError("Reviewed HCED early-identity fixture inventory drifted")
+    for entity_id, entity in early_hced_reviewed_entity_fixtures.items():
+        existing = release_entities.get(entity_id)
+        if existing is not None and existing != entity:
+            raise ValueError(f"Reviewed HCED early-identity collision: {entity_id}")
+        release_entities[entity_id] = entity
     candidate_by_release_id: dict[str, dict[str, Any]] = {}
     iwd_events: list[dict[str, Any]] = []
     iwd_rejections: Counter[str] = Counter()
@@ -3545,12 +3569,12 @@ def build_expanded_release(
         )
         return entity_id, polity, reason, "seshat_crosswalk"
 
-    def resolve_hced_candidate_side_label(
+    def resolve_hced_reviewed_label_binding(
         candidate: dict[str, Any],
         label: Any,
         low_year: int,
         high_year: int,
-    ) -> tuple[str | None, dict[str, Any] | None, str | None, str | None]:
+    ) -> tuple[str | None, dict[str, Any] | None, str | None, str | None] | None:
         candidate_id = hced_candidate_id(candidate)
         reviewed = HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS.get(candidate_id, {})
         expected_id = reviewed.get("label_bindings", {}).get(
@@ -3567,6 +3591,19 @@ def build_expanded_release(
                     f"expected {expected_id!r}"
                 )
             return entity_id, polity, None, "candidate_reviewed_label_binding"
+        return None
+
+    def resolve_hced_candidate_side_label(
+        candidate: dict[str, Any],
+        label: Any,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, dict[str, Any] | None, str | None, str | None]:
+        reviewed_result = resolve_hced_reviewed_label_binding(
+            candidate, label, low_year, high_year
+        )
+        if reviewed_result is not None:
+            return reviewed_result
         return resolve_wave6_pre1500_candidate_side_label(
             candidate,
             label,
@@ -3582,6 +3619,22 @@ def build_expanded_release(
                 )
             ),
         )
+
+    def resolve_hced_candidate_composite_member(
+        candidate: dict[str, Any],
+        label: Any,
+        low_year: int,
+        high_year: int,
+    ) -> tuple[str | None, dict[str, Any] | None, str | None, str | None]:
+        reviewed_result = resolve_hced_reviewed_label_binding(
+            candidate, label, low_year, high_year
+        )
+        if reviewed_result is not None:
+            return reviewed_result
+        # Composite members deliberately bypass every broader candidate-keyed
+        # resolver.  Only an exact reviewed member binding or the ordinary
+        # time-bounded label chain may resolve them.
+        return resolve_hced_side_label(label, low_year, high_year, label_context)
 
     reviewed_label_rows: list[dict[str, Any]] = []
     for candidate in deferred_label_rows:
@@ -3619,6 +3672,9 @@ def build_expanded_release(
         resolve_candidate_code=resolve_hced_candidate_code,
         resolve_candidate_side_label=resolve_hced_candidate_side_label,
         canonicalize_composite_identity=canonicalize_composite_identity,
+        resolve_candidate_composite_member=(
+            resolve_hced_candidate_composite_member
+        ),
     )
     label_events: list[dict[str, Any]] = hced_label_pass["events"]
     annotate_and_validate_wave6_pre1500_events(source_events, label_events)
@@ -7981,14 +8037,20 @@ def build_expanded_release(
                 "resolve; polity labels pending identity splits never resolve; ambiguity "
                 "always stays staged. For post-1500 rows only, an otherwise unresolved side "
                 "may split on commas, semicolons, or ampersands as a coalition only when "
-                "every member independently resolves through those ordinary label rules to "
-                "a distinct identity valid for the full event interval. The shared canonical "
+                "every member independently resolves through those ordinary label rules or "
+                "an exact candidate-fingerprinted member binding to a distinct identity valid "
+                "for the full event interval. Exact member bindings never become global aliases. "
+                "The shared canonical "
                 "supersession remap runs before coalition assembly; this path is unavailable "
                 "to the frozen pre-1500 cohort. Label-resolved events carry reduced identity "
                 "confidence and an identity_resolution provenance marker. One independently dated "
                 "HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint "
                 "and exact-ID binding to cross an otherwise fail-closed within-year Portugal "
                 "boundary; it does not populate a generic label observation. "
+                "Six additional post-1500 label rows use complete candidate fingerprints and "
+                "candidate-scoped exact label or coalition-member corrections; two audited "
+                "source rows remain explicit holds for compressed chronology or contradictory "
+                "outcomes. None opens a generic label fallback. "
                 "The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED "
                 "contracts whose complete raw rows, canonical event keys, outcomes, "
                 "participant rosters, and entity windows are pinned. Seventy-six are "

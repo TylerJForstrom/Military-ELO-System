@@ -1023,7 +1023,218 @@ HCED_REVIEWED_CROSSWALK_IDENTITY_BINDINGS: dict[str, dict[str, Any]] = {
             ),
         },
     },
+    "hced-Dasmarinas1897-1": {
+        "fingerprint": {
+            "source_row": "4549",
+            "source_record_id": "Dasmarinas1897",
+            "name": "Dasmarinas",
+            "year_low": "1897",
+            "year_best": "1897",
+            "year_high": "1897",
+            "side_1_raw": "Spain",
+            "side_2_raw": "Filippino Rebels",
+            "winner_raw": "Spain",
+            "loser_raw": "Filippino Rebels",
+            "seshat_side_1_candidates": ("es_spanish_emp_3",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Philippines War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "filippino rebels": "philippine_revolutionary_forces",
+        },
+        "canonical_event_override": {
+            "name": "Battle of Pérez Dasmariñas",
+        },
+        "review": {
+            "event_date": "1897-02-25",
+            "source_urls": (
+                "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/es/catalogo_imagenes/grupo.do?path=309894",
+                "https://www.boe.es/gazeta/dias/1910/05/14/pdfs/GMD-1910-134.pdf",
+            ),
+        },
+    },
+    "hced-San Jacinto1899-1": {
+        "fingerprint": {
+            "source_row": "14093",
+            "source_record_id": "San Jacinto1899",
+            "name": "San Jacinto",
+            "year_low": "1899",
+            "year_best": "1899",
+            "year_high": "1899",
+            "side_1_raw": "United States",
+            "side_2_raw": "Filippino Rebels",
+            "winner_raw": "United States",
+            "loser_raw": "Filippino Rebels",
+            "seshat_side_1_candidates": (
+                "us_united_states_of_america_reconstruction",
+            ),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Philippine-American War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "filippino rebels": "first_philippine_republic",
+        },
+        "canonical_event_override": {
+            "name": "Battle of San Jacinto (Pangasinan)",
+        },
+        "review": {
+            "event_date": "1899-11-11",
+            "source_urls": (
+                "https://www.army.mil/article/47711/battle_of_san_jacinto",
+                "https://www.govinfo.gov/content/pkg/GPO-CRECB-1902-pt3-v35/pdf/GPO-CRECB-1902-pt3-v35-23.pdf",
+            ),
+        },
+    },
+    "hced-Goa1570-1": {
+        "fingerprint": {
+            "source_row": "6251",
+            "source_record_id": "Goa1570",
+            "name": "Goa",
+            "year_low": "1570",
+            "year_best": "1570",
+            "year_high": "1570",
+            "side_1_raw": "Portugal",
+            "side_2_raw": "Bihar",
+            "winner_raw": "Portugal",
+            "loser_raw": "Bihar",
+            "seshat_side_1_candidates": ("pt_portuguese_emp_1",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Early Portuguese Colonial Wars in Asia",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "bihar": "clio_in_bijapur_sultanate_1492_49a19c59",
+        },
+        "event_year_override": {
+            "year_low": 1570,
+            "year_best": 1571,
+            "year_high": 1571,
+        },
+        "canonical_event_override": {
+            "name": "Siege of Goa (1570–1571)",
+        },
+        "review": {
+            "event_date": "late 1570-late August 1571",
+            "source_urls": (
+                "https://eve.fcsh.unl.pt/pt/temas-e-factos/batalha-de-talikota",
+                "https://americana.jcblibrary.org/projects/portugal-and-renaissance-europe-147/annotations/",
+            ),
+        },
+    },
+    "hced-Kliszow1702-1": {
+        "fingerprint": {
+            "source_row": "8435",
+            "source_record_id": "Kliszow1702",
+            "name": "Kliszow",
+            "year_low": "1702",
+            "year_best": "1702",
+            "year_high": "1702",
+            "side_1_raw": "Sweden",
+            "side_2_raw": "Poland, Saxony",
+            "winner_raw": "Sweden",
+            "loser_raw": "Poland, Saxony",
+            "seshat_side_1_candidates": ("sv_swedish_k",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("2nd Great Northern War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "poland": "polish_lithuanian_commonwealth",
+            "saxony": "electorate_saxony_1356",
+        },
+        "canonical_event_override": {
+            "name": "Battle of Kliszów",
+        },
+        "review": {
+            "event_date": "1702-07-19 Gregorian",
+            "source_urls": (
+                "https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/kliszow",
+                "https://svmm.se/registerkort-nr-pl04/",
+            ),
+        },
+    },
+    "hced-Thorn1703-1": {
+        "fingerprint": {
+            "source_row": "15901",
+            "source_record_id": "Thorn1703",
+            "name": "Thorn",
+            "year_low": "1703",
+            "year_best": "1703",
+            "year_high": "1703",
+            "side_1_raw": "Sweden",
+            "side_2_raw": "Poland, Saxony",
+            "winner_raw": "Sweden",
+            "loser_raw": "Poland, Saxony",
+            "seshat_side_1_candidates": ("sv_swedish_k",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("Great Northern War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "poland saxony": "electorate_saxony_1356",
+        },
+        "canonical_event_override": {
+            "name": "Siege of Thorn",
+        },
+        "review": {
+            "event_date": "1703-05-26 to 1703-10-14",
+            "source_urls": (
+                "https://muzeum.torun.pl/blog/wojny-polski-i-szwecji/",
+                "https://sok.riksarkivet.se/sbl/Presentation.aspx?forceOrdinarySite=true&id=17128",
+            ),
+        },
+    },
+    "hced-Warsaw1705-1": {
+        "fingerprint": {
+            "source_row": "17117",
+            "source_record_id": "Warsaw1705",
+            "name": "Warsaw",
+            "year_low": "1705",
+            "year_best": "1705",
+            "year_high": "1705",
+            "side_1_raw": "Sweden",
+            "side_2_raw": "Saxony, Poland",
+            "winner_raw": "Sweden",
+            "loser_raw": "Saxony, Poland",
+            "seshat_side_1_candidates": ("sv_swedish_k",),
+            "seshat_side_2_candidates": (),
+            "war_names": ("2nd Great Northern War",),
+        },
+        "code_bindings": {},
+        "label_bindings": {
+            "saxony": "electorate_saxony_1356",
+            "poland": "polish_lithuanian_commonwealth",
+        },
+        "canonical_event_override": {
+            "name": "Battle of Warsaw (1705)",
+        },
+        "review": {
+            "event_date": "1705-07-31 Gregorian",
+            "source_urls": (
+                "https://muzeumwp.pl/timeline/bitwa-pod-warszawa-starcie-kawalerii-szwedzkiej-i-sasko-polsko-litewskiej-w-dobie-wielkiej-wojny-polnocnej-1700-1721-polaczone-wojska-sasko-polsko-litewskie-pod-dowodztwem-otto-arnolda-von-paykulla-w/",
+                "https://sok.riksarkivet.se/sbl/Artikel/8888",
+            ),
+        },
+    },
 }
+
+
+# Exact, fingerprinted label corrections added after the immutable Wave 5
+# location baseline.  Keep this inventory separate from the dedicated
+# candidate-keyed wave lanes: these rows remain ordinary HCED label events,
+# but their release and location deltas are still independently pinned.
+HCED_EXACT_LABEL_CORRECTION_CONTRACT_IDS = frozenset(
+    {
+        "hced-Dasmarinas1897-1",
+        "hced-Goa1570-1",
+        "hced-Kliszow1702-1",
+        "hced-San Jacinto1899-1",
+        "hced-Thorn1703-1",
+        "hced-Warsaw1705-1",
+    }
+)
 
 
 # Preserve Cliopatria's broader or differently bounded proposals as explicit
@@ -1572,6 +1783,16 @@ HCED_LABEL_CURATED_EXCLUSIONS: dict[str, str] = {
         "conflicting tactical evidence: a scholarly account describes a successful "
         "French defense followed by a negotiated withdrawal, so the source's hard "
         "Siamese victory remains staged rather than being silently accepted or inverted"
+    ),
+    "hced-Goa1510-1": (
+        "incomplete coalition and compressed chronology: Timoji's independent "
+        "local force materially supported the Portuguese, while the year-only row "
+        "combines the reversed February seizure with the final November conquest"
+    ),
+    "hced-Poznan1704-1": (
+        "contradictory tactical outcome: the dedicated modern study deems the "
+        "Swedish-Saxon battle tactically unresolved, not the hard Swedish victory "
+        "asserted by the source row"
     ),
     "hced-Sarhu1619-1": (
         "campaign umbrella overlaps the separately represented Niumaozhai and "

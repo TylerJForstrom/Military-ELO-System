@@ -250,12 +250,12 @@ class Wave8CheyenneDogSoldiersTests(unittest.TestCase):
             in lane.WAVE8_CHEYENNE_DOG_SOLDIERS_CONTRACT_IDS
         ]
         self.assertEqual(len(owned), 2)
-        self.assertEqual(len(self.events), 5_506)
+        self.assertEqual(len(self.events), 5_512)
         self.assertEqual(len(self.entities), 1_080)
         self.assertEqual(len(self.registry["entities"]), 2_419)
         coverage = self.registry["coverage"]
         self.assertEqual(coverage["rated_entities"], 1_073)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_837)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_831)
         location = coverage["hced_location_assertions"]
         self.assertEqual(
             (
@@ -265,7 +265,7 @@ class Wave8CheyenneDogSoldiersTests(unittest.TestCase):
                 location["modern_location_country_assertions"],
                 location["location_provenance_objects"],
             ),
-            (5_239, 833, 4_836, 5_144, 5_193),
+            (5_245, 833, 4_838, 5_150, 5_199),
         )
 
     def test_integrated_metadata_registry_entity_and_sources_are_exact(self):

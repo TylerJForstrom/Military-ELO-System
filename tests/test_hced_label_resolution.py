@@ -462,6 +462,56 @@ class CompositeLabelPromotionTests(unittest.TestCase):
         self.assertEqual(result["accepted"], 0)
         self.assertEqual(candidate_calls, [raw_coalition])
 
+    def test_exact_member_resolver_is_separate_from_candidate_resolver(self) -> None:
+        generic = _mapping_label_resolver({"aland": "a"})
+        candidate_calls: list[str] = []
+        member_calls: list[str] = []
+
+        def candidate_resolver(candidate, label, low_year, high_year):
+            del candidate
+            candidate_calls.append(str(label))
+            return generic(label, low_year, high_year)
+
+        def member_resolver(candidate, label, low_year, high_year):
+            del candidate
+            member_calls.append(str(label))
+            if normalize_label(label) == "bland":
+                return "candidate_b", None, None, "candidate_reviewed_label_binding"
+            return generic(label, low_year, high_year)
+
+        raw_coalition = "Aland, Bland"
+        result = promote_hced_label_rows(
+            [
+                _row(
+                    "hced-reviewed-member",
+                    "Battle of Reviewed Coalition",
+                    1900,
+                    raw_coalition,
+                    "Dland",
+                    raw_coalition,
+                    "Dland",
+                    codes2=("d",),
+                )
+            ],
+            set(),
+            set(),
+            _resolve_code_stub,
+            generic,
+            resolve_candidate_side_label=candidate_resolver,
+            resolve_candidate_composite_member=member_resolver,
+        )
+        self.assertEqual(result["accepted"], 1)
+        self.assertEqual(candidate_calls, [raw_coalition])
+        self.assertEqual(member_calls, ["Aland", "Bland"])
+        self.assertEqual(
+            {
+                participant["entity_id"]
+                for participant in result["events"][0]["participants"]
+                if participant["side"] == "side_a"
+            },
+            {"a", "candidate_b"},
+        )
+
     def test_composite_member_supersession_uses_canonical_participant(self) -> None:
         old_orange = "clio_q218023_1856_cfb4e08e"
         raw_orange = {"canonical_name_candidate": "Free Orange State"}
@@ -1555,10 +1605,10 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             pass1_rejected + label_rejected + accepted + label_accepted, queue_total
         )
         # Pinned measured funnel after reserving the reviewed Wave 8 rows:
-        # 1,514 + 2,961 + 1,887 + 2,519 == 8,881.
+        # 1,514 + 2,955 + 1,887 + 2,525 == 8,881.
         self.assertEqual(
             (pass1_rejected, label_rejected, accepted, label_accepted, queue_total),
-            (1514, 2961, 1887, 2519, 8881),
+            (1514, 2955, 1887, 2525, 8881),
         )
         # Label-pass identity: rejections + accepted == deferred input rows.
         self.assertEqual(
@@ -1572,7 +1622,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             promotion["hced_label_rejections"]["duplicate_of_promoted_event"], 0
         )
         self.assertEqual(
-            promotion["hced_label_rejections"]["curated_row_exclusion"], 85
+            promotion["hced_label_rejections"]["curated_row_exclusion"], 87
         )
         self.assertEqual(promotion["hced_rejections"]["curated_exclusion"], 158)
         # uncoded_side is gone from pass 1: replaced by the deferral.
@@ -1583,7 +1633,7 @@ class ArtifactCountConsistencyTests(unittest.TestCase):
             e for e in self.events if str(e["id"]).startswith("hced_label_")
         ]
         coverage = self.registry["coverage"]
-        self.assertEqual(len(label_events), 2_519)
+        self.assertEqual(len(label_events), 2_525)
         self.assertEqual(coverage["provisional_hced_label_events"], len(label_events))
         self.assertEqual(
             self.metadata["promotion"]["accepted_hced_label_events"], len(label_events)
