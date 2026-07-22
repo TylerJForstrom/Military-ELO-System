@@ -2900,6 +2900,16 @@
       "region": "Levant"
     },
     {
+      "id": "thompson_eic_jalan_column_1820",
+      "name": "Captain Thompson's East India Company Ja'alan column (1820)",
+      "kind": "event_bounded_expeditionary_column",
+      "start_year": 1820,
+      "end_year": 1820,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ja'alan, Oman"
+    },
+    {
       "id": "clio_q501754_661_07bf377c",
       "name": "Carantania",
       "kind": "polity",
@@ -3943,6 +3953,16 @@
       "region": "Central America"
     },
     {
+      "id": "council_of_ministers_tegucigalpa_defense_force_1924",
+      "name": "Council of Ministers loyalist defense force at Tegucigalpa",
+      "kind": "event_bounded_loyalist_defense_force",
+      "start_year": 1924,
+      "end_year": 1924,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tegucigalpa, Honduras"
+    },
+    {
       "id": "ulrich_wurttemberg_field_force_reutlingen_1377",
       "name": "Count Ulrich of Württemberg's field force at Reutlingen (1377)",
       "kind": "event_bounded_field_force",
@@ -4865,6 +4885,16 @@
       "region": "North Africa"
     },
     {
+      "id": "dhana_jadav_hindu_rao_wagingera_relief_force_1705",
+      "name": "Dhana Jadav and Hindu Rao's Wagingera relief force (1705)",
+      "kind": "event_bounded_relief_force",
+      "start_year": 1705,
+      "end_year": 1705,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wagingera, Deccan"
+    },
+    {
       "id": "dhaydan_ibn_hithlayn_ajman_force_kanzan_1915",
       "name": "Dhaydan ibn Hithlayn's al-Ajman force at Kanzan in 1915",
       "kind": "event_bounded_tribal_force",
@@ -4944,6 +4974,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "domingo_vasquez_tegucigalpa_defense_force_1894",
+      "name": "Domingo Vásquez government force defending Tegucigalpa",
+      "kind": "event_bounded_government_defense_force",
+      "start_year": 1894,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tegucigalpa, Honduras"
     },
     {
       "id": "clio_q786_1846_e8434d21",
@@ -5038,6 +5078,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "North America"
+    },
+    {
+      "id": "duaij_al_sabah_kuwaiti_detachment_hamdh_1920",
+      "name": "Duaij bin Salman Al Sabah's Kuwaiti detachment at Hamdh in 1920",
+      "kind": "event_bounded_field_detachment",
+      "start_year": 1920,
+      "end_year": 1920,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
     },
     {
       "id": "clio_pl_piast_dyn_2_1279_294e7ee3",
@@ -6664,6 +6714,26 @@
       "region": "Arabian Peninsula"
     },
     {
+      "id": "faisal_al_duwaish_ikhwan_force_hamdh_1920",
+      "name": "Faisal al-Duwaish's Ikhwan force at Hamdh in 1920",
+      "kind": "event_bounded_attacking_force",
+      "start_year": 1920,
+      "end_year": 1920,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
+      "id": "faisal_al_duwaish_ikhwan_force_jahra_1920",
+      "name": "Faisal al-Duwaish's Ikhwan force at Jahra in 1920",
+      "kind": "event_bounded_attacking_force",
+      "start_year": 1920,
+      "end_year": 1920,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "fatimid_beirut_garrison_1110",
       "name": "Fatimid Beirut garrison in 1110",
       "kind": "event_bounded_city_garrison",
@@ -6801,6 +6871,16 @@
       "region": "Fellin (Viljandi), Livonia"
     },
     {
+      "id": "fernan_gonzalez_castilian_contingent_simancas_939",
+      "name": "Fernán González's Castilian contingent at Simancas (939)",
+      "kind": "event_bounded_military_contingent",
+      "start_year": 939,
+      "end_year": 939,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Simancas and the Duero frontier"
+    },
+    {
       "id": "ferrand_santo_domingo_defense_1805",
       "name": "Ferrand's Santo Domingo defensive force (March 1805)",
       "kind": "event_bounded_colonial_defense",
@@ -6809,6 +6889,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Walled city of Santo Domingo"
+    },
+    {
+      "id": "ferrera_division_of_operations_danli_1844",
+      "name": "Ferrera government Division of Operations at Danlí",
+      "kind": "event_bounded_government_field_force",
+      "start_year": 1844,
+      "end_year": 1844,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Danlí, Honduras"
+    },
+    {
+      "id": "ferrera_tosta_martinez_funes_tegucigalpa_force_1924",
+      "name": "Ferrera–Tosta–Martínez Funes revolutionary columns at Tegucigalpa",
+      "kind": "event_bounded_revolutionary_assault_force",
+      "start_year": 1924,
+      "end_year": 1924,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Tegucigalpa, Honduras"
     },
     {
       "id": "ferrers_de_eyville_disinherited_force_chesterfield_1266",
@@ -7787,6 +7887,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "garcia_sanchez_i_pamplonese_contingent_simancas_939",
+      "name": "García Sánchez I's Pamplonese contingent at Simancas (939)",
+      "kind": "event_bounded_military_contingent",
+      "start_year": 939,
+      "end_year": 939,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Simancas and the Duero frontier"
     },
     {
       "id": "garibaldi_lombard_volunteer_column_1848",
@@ -13836,6 +13946,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "lionel_smith_bombay_expedition_bani_bu_ali_1821",
+      "name": "Lionel Smith's Bombay expedition at Bani Bu Ali (1821)",
+      "kind": "event_bounded_expeditionary_force",
+      "start_year": 1821,
+      "end_year": 1821,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ja'alan, Oman"
+    },
+    {
       "id": "liu_sheng_ming_relief_column_chi_lang_1427",
       "name": "Liu Sheng's Ming relief column at Chi Lăng (1427)",
       "kind": "event_bounded_relief_column",
@@ -15168,6 +15288,16 @@
       "region": "Anatolia and the Black Sea"
     },
     {
+      "id": "mogadishu_multinational_relief_force_1993",
+      "name": "Mogadishu multinational relief force (3–4 October 1993)",
+      "kind": "engagement_bounded_multinational_relief_force",
+      "start_year": 1993,
+      "end_year": 1993,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mogadishu, Somalia"
+    },
+    {
       "id": "clio_q1191125_1463_47ecd4e3",
       "name": "Moghulistan",
       "kind": "polity",
@@ -15486,6 +15616,26 @@
       "region": "Transoxiana, Ferghana, Khwarazm, and Khorasan"
     },
     {
+      "id": "muhammad_bin_ali_bani_bu_ali_defenders_1821",
+      "name": "Muhammad bin Ali's Bani Bu Ali defenders (1821)",
+      "kind": "event_bounded_defending_force",
+      "start_year": 1821,
+      "end_year": 1821,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ja'alan, Oman"
+    },
+    {
+      "id": "muhammad_bin_ali_jalan_defenders_1820",
+      "name": "Muhammad bin Ali's Ja'alan defenders near Bilad Bani Bu Ali (1820)",
+      "kind": "event_bounded_defending_force",
+      "start_year": 1820,
+      "end_year": 1820,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ja'alan, Oman"
+    },
+    {
       "id": "muhammad_ibn_abdullah_rashidi_army_mulayda_1891",
       "name": "Muhammad ibn Abdullah Al Rashid's army at al-Mulayda in 1891",
       "kind": "event_bounded_field_army",
@@ -15585,6 +15735,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Pskov region"
+    },
+    {
+      "id": "cordoba_muslim_defenders_1235_1236",
+      "name": "Muslim garrison and defenders of Córdoba (1235-1236)",
+      "kind": "city_defense_force",
+      "start_year": 1235,
+      "end_year": 1236,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Córdoba, al-Andalus"
     },
     {
       "id": "mutawakkilite_kingdom_yemen",
@@ -16243,6 +16403,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central America"
+    },
+    {
+      "id": "anastasio_ortiz_nicaraguan_expedition_1893_1894",
+      "name": "Nicaraguan expeditionary force under Anastasio Ortiz in Honduras",
+      "kind": "conflict_bounded_foreign_expeditionary_force",
+      "start_year": 1893,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Honduras"
     },
     {
       "id": "zannekin_flemish_coast_rebel_army_cassel_1328",
@@ -17015,6 +17185,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "pam_nayak_sagar_defenders_1680",
+      "name": "Pam Nayak's Sagar defenders at Shahpur (1680)",
+      "kind": "event_bounded_defending_force",
+      "start_year": 1680,
+      "end_year": 1680,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Sagar-Shahpur, Deccan"
+    },
+    {
       "id": "clio_in_pandya_emp_2_592_f79cbc32",
       "name": "Pandya Dynasty",
       "kind": "dynastic_state",
@@ -17192,6 +17372,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "patricio_jimenez_liberator_division_danli_1844",
+      "name": "Patricio Jiménez’s Ejército Libertador division at Danlí",
+      "kind": "event_bounded_rebel_field_force",
+      "start_year": 1844,
+      "end_year": 1844,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Danlí, Honduras"
     },
     {
       "id": "rio_de_la_plata_patriot_army_1810",
@@ -17497,6 +17687,16 @@
       "region": "Southern Andes"
     },
     {
+      "id": "pidia_nayak_wagingera_garrison_1705",
+      "name": "Pidia Nayak's Wagingera garrison (1705)",
+      "kind": "event_bounded_fortress_garrison",
+      "start_year": 1705,
+      "end_year": 1705,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Wagingera, Deccan"
+    },
+    {
       "id": "pilsen_landfrieden_pursuit_force_vladar_1421",
       "name": "Pilsen Landfrieden pursuit force at Vladar Hill (1421)",
       "kind": "event_bounded_pursuit_force",
@@ -17536,6 +17736,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "policarpo_bonilla_liberal_revolutionary_force_1893_1894",
+      "name": "Policarpo Bonilla’s Honduran Liberal revolutionary force",
+      "kind": "conflict_bounded_liberal_revolutionary_force",
+      "start_year": 1893,
+      "end_year": 1894,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Honduras"
     },
     {
       "id": "clio_q248989_1918_cdfc55e8",
@@ -20537,6 +20747,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "salim_al_mubarak_jahra_defenders_1920",
+      "name": "Salim al-Mubarak's Kuwaiti and allied defenders at Jahra in 1920",
+      "kind": "event_bounded_defending_force",
+      "start_year": 1920,
+      "end_year": 1920,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Arabian Peninsula"
+    },
+    {
       "id": "clio_uz_samanid_emp_886_151c71d3",
       "name": "Samanid Empire",
       "kind": "empire",
@@ -20786,6 +21006,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "sayyid_said_jalan_levy_1820",
+      "name": "Sayyid Sa'id's Ja'alan levy in the first Bani Bu Ali expedition (1820)",
+      "kind": "event_bounded_allied_levy",
+      "start_year": 1820,
+      "end_year": 1820,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Ja'alan, Oman"
     },
     {
       "id": "clio_sv_scandinavian_minor_k_500_caf3cc75",
@@ -21251,6 +21481,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "siad_barre_loyalist_forces_mogadishu_1990_1991",
+      "name": "Siad Barre loyalist forces in Mogadishu (1990–1991)",
+      "kind": "campaign_bounded_government_force",
+      "start_year": 1990,
+      "end_year": 1991,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mogadishu, Somalia"
+    },
+    {
       "id": "sicilian_revolutionary_state_forces_1848_1849",
       "name": "Sicilian Revolutionary State Forces (1848-1849)",
       "kind": "revolutionary_forces",
@@ -21562,6 +21802,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Horn of Africa"
+    },
+    {
+      "id": "somali_national_alliance_aidid_force_mogadishu_1993",
+      "name": "Somali National Alliance Aidid force in Mogadishu (1993)",
+      "kind": "engagement_bounded_militia_force",
+      "start_year": 1993,
+      "end_year": 1993,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mogadishu, Somalia"
     },
     {
       "id": "clio_q7462_bce750_7c1bc513",
@@ -23155,6 +23405,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "task_force_ranger_mogadishu_1993",
+      "name": "Task Force Ranger in Mogadishu (3–4 October 1993)",
+      "kind": "engagement_bounded_joint_task_force",
+      "start_year": 1993,
+      "end_year": 1993,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mogadishu, Somalia"
+    },
+    {
       "id": "tay_son_regime_1778_1802",
       "name": "Tay Son Regime",
       "kind": "revolutionary_state",
@@ -24300,6 +24560,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "united_somali_congress_mogadishu_force_1990_1991",
+      "name": "United Somali Congress Mogadishu force (1990–1991)",
+      "kind": "campaign_bounded_insurgent_force",
+      "start_year": 1990,
+      "end_year": 1991,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mogadishu, Somalia"
     },
     {
       "id": "united_states",
@@ -25901,11 +26171,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2454,
-    "rated_entities": 1108,
-    "rated_events": 5546,
+    "registry_polities": 2481,
+    "rated_entities": 1135,
+    "rated_events": 5559,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36797,
+    "unresolved_event_candidates": 36784,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -26002,6 +26272,7 @@
     "candidate_keyed_wave8_followup_b_hced_events": 4,
     "candidate_keyed_wave8_followup_c_hced_events": 14,
     "candidate_keyed_wave8_followup_d_hced_events": 20,
+    "candidate_keyed_wave8_followup_e_hced_events": 13,
     "candidate_keyed_wave8_exact_priority_hced_events": 18,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
@@ -26030,21 +26301,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5279,
-      "candidate_keyed_reviewed_contracts": 867,
-      "geojson_points": 4848,
-      "modern_location_country_assertions": 5181,
-      "location_provenance_objects": 5230,
-      "point_fields_withheld_by_quarantine": 431,
+      "hced_candidate_bindings": 5292,
+      "candidate_keyed_reviewed_contracts": 880,
+      "geojson_points": 4850,
+      "modern_location_country_assertions": 5194,
+      "location_provenance_objects": 5243,
+      "point_fields_withheld_by_quarantine": 442,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 97,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 49,
-      "unique_events_with_any_quarantined_field": 479,
-      "point_quarantine_candidate_manifest_sha256": "71ea4d4eed9f07cbe7d779488081693348795b4f9b68ac24fb374adc79b39f2a",
+      "unique_events_with_any_quarantined_field": 490,
+      "point_quarantine_candidate_manifest_sha256": "0a15093c7621d6b48562707ba72a747b5b1b7c81920a18650e8ca3a8f8e65c19",
       "country_quarantine_candidate_manifest_sha256": "e3c34aa567567827a732bacb85e46077b9696c98937a4ea0b739e277d56374be",
-      "quarantine_policy_sha256": "294e9cb36cd5ee0645640302318b6e86e5f7c5548795bee312215efe5457d4d7",
+      "quarantine_policy_sha256": "cd3b2d2ad791e3fa7fd696184bb63f09892902569b7c671fc2b85441f2e0e5b8",
       "assertion_status": {
-        "unreviewed_source_assertion": 5230
+        "unreviewed_source_assertion": 5243
       },
       "verified_location_assertions": {
         "availability": "not_available",

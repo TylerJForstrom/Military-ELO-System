@@ -237,11 +237,11 @@ class CurrentCorpusFunnelTests(unittest.TestCase):
 
     def test_current_locked_corpus_invariants(self) -> None:
         summary = self.report["summary"]
-        self.assertEqual(summary["deferred_label_rows"], 2902)
+        self.assertEqual(summary["deferred_label_rows"], 2883)
         self.assertEqual(summary["published_hced_candidate_rows_excluded"], 2534)
-        self.assertEqual(summary["events_touched"], 2052)
-        self.assertEqual(summary["unresolved_labels"], 2133)
-        self.assertEqual(summary["sole_blocker_events"], 906)
+        self.assertEqual(summary["events_touched"], 2033)
+        self.assertEqual(summary["unresolved_labels"], 2124)
+        self.assertEqual(summary["sole_blocker_events"], 892)
         first = self.report["greedy_batch"]["ranking"][0]
         self.assertEqual(
             (first["label"], first["marginal_events"]),

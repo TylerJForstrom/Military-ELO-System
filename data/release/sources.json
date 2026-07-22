@@ -6531,6 +6531,176 @@
     ]
   },
   {
+    "id": "wave8_banu_berad_guha_environment_ethnicity",
+    "title": "Environment and Ethnicity in India, 1200-1991",
+    "url": "https://www.cambridge.org/core/books/environment-and-ethnicity-in-india-12001991/2B29D4A6B96257B427EDD9C085876EA1",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "guha_environment_ethnicity",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_lees_forgotten_battle",
+    "title": "A Forgotten Battle",
+    "url": "https://www.jstor.org/stable/i40176598",
+    "publisher": "Journal of the Society for Army Historical Research / JSTOR",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "lees_jsahr_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_london_gazette_1821",
+    "title": "Official dispatch on the capture of Bani Bu Ali",
+    "url": "https://www.thegazette.co.uk/London/issue/17762/page/2198/data.pdf",
+    "publisher": "The London Gazette",
+    "license": "Citation and link only",
+    "source_type": "contemporary_official_dispatch",
+    "accessed": "2026-07-21",
+    "source_family_id": "east_india_company_official_dispatches",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_maasir_i_alamgiri",
+    "title": "Ma'asir-i-'Alamgiri",
+    "url": "https://library.bjp.org/jspui/handle/123456789/694",
+    "publisher": "Bharatiya Jana Parishad Digital Library",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_chronicle",
+    "accessed": "2026-07-21",
+    "source_family_id": "maasir_i_alamgiri_primary_chronicle",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_qdl_india_office_1820",
+    "title": "India Office proceedings on the first Bani Bu Ali expedition",
+    "url": "https://www.qdl.qa/archive/81055/vdc_100000001741.0x000173",
+    "publisher": "Qatar Digital Library / British Library India Office Records",
+    "license": "Citation and link only",
+    "source_type": "digitized_primary_source",
+    "accessed": "2026-07-21",
+    "source_family_id": "british_india_office_bani_bu_ali_dispatches",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+    "title": "Gazetteer of the Persian Gulf: Bani Bu Ali and Ja'alan",
+    "url": "https://www.qdl.qa/en/archive/81055/vdc_100023575942.0x000091",
+    "publisher": "Government of India / Qatar Digital Library",
+    "license": "Citation and link only",
+    "source_type": "official_historical_gazetteer",
+    "accessed": "2026-07-21",
+    "source_family_id": "lorimer_goi_persian_gulf_gazetteer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_qdl_persian_gulf_admin_1820",
+    "title": "Persian Gulf administration report on the Bani Bu Ali expedition",
+    "url": "https://www.qdl.qa/en/archive/81055/vdc_100023549644.0x00002f",
+    "publisher": "Qatar Digital Library / British Library",
+    "license": "Citation and link only",
+    "source_type": "official_administration_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "persian_gulf_residency_administration_reports",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_qdl_said_nonparticipation_1821",
+    "title": "Administrative account of Sa'id bin Sultan and the 1821 expedition",
+    "url": "https://www.qdl.qa/en/archive/81055/vdc_100023373225.0x000022",
+    "publisher": "Qatar Digital Library / British Library India Office Records",
+    "license": "Citation and link only",
+    "source_type": "digitized_primary_source",
+    "accessed": "2026-07-21",
+    "source_family_id": "british_india_office_bani_bu_ali_dispatches",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_sarkar_aurangzib_iv",
+    "title": "History of Aurangzib, Volume IV",
+    "url": "https://ir.nbu.ac.in/server/api/core/bitstreams/835a5186-cf8c-4761-a2c4-8aa41d445a4c/content",
+    "publisher": "University of North Bengal Institutional Repository",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "sarkar_history_aurangzib",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_sarkar_aurangzib_v",
+    "title": "History of Aurangzib, Volume V",
+    "url": "https://library.bjp.org/jspui/bitstream/123456789/680/1/History%20of%20Aurangzib%20Vol5.pdf",
+    "publisher": "Bharatiya Jana Parishad Digital Library",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "sarkar_history_aurangzib",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_sarkar_studies_aurangzib",
+    "title": "Studies in Aurangzib's Reign",
+    "url": "https://ignca.gov.in/Asi_data/35129.pdf",
+    "publisher": "Indira Gandhi National Centre for the Arts",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "sarkar_history_aurangzib",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_banu_berad_singh_sagar_2007",
+    "title": "The Last Great Battle of the Mughal Empire",
+    "url": "https://epe.lac-bac.gc.ca/100/201/300/asian_social_science/2007/ASS200705.pdf?nodisclaimer=1",
+    "publisher": "Asian Social Science / Library and Archives Canada mirror",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "singh_asian_social_science",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_bilbao_army_museum_espartero",
     "title": "El Espadón de Espartero: un regalo de Vizcaya",
     "url": "https://ejercito.defensa.gob.es/museo/comun/EL_MUSEO_DEL_EJERCITO_ES_NOTICIA/piezas/2023.05.23_EL_ESPADON_DE_ESPARTERO",
@@ -7762,6 +7932,146 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cordova_calatanazor_biglieri_2024",
+    "title": "En Calatañazor: microrrelato, oralidad y escritura",
+    "url": "https://topicosdelseminario.buap.mx/index.php/topsem/article/view/885",
+    "publisher": "Topicos del Seminario, BUAP",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_literary_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "biglieri_calatanazor_2024",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cordova_calatanazor_castellanos_2001",
+    "title": "La batalla de Calatañazor: mito y realidad",
+    "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/es/catalogo_imagenes/grupo.do?path=306504",
+    "publisher": "Revista de Historia Militar / Biblioteca Virtual de Defensa",
+    "license": "Citation and link only",
+    "source_type": "source_critical_military_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "rhm_castellanos_calatanazor_2001",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cordova_cordoba_museo_ejercito",
+    "title": "Conquista de Córdoba",
+    "url": "https://ejercito.defensa.gob.es/museo/HECHOS_HISTORICOS/HECHOS_HISTORICOS/06.29_junio_Fernando_III_reconquista_Cordoba.html?__locale=es",
+    "publisher": "Museo del Ejercito, Ministerio de Defensa de Espana",
+    "license": "Citation and link only",
+    "source_type": "official_military_museum_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "spain_defence_museo_ejercito_cordoba",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cordova_cordoba_rodriguez_2022",
+    "title": "Royal Entries in Conquered Towns",
+    "url": "https://cultureandhistory.revistas.csic.es/index.php/cultureandhistory/article/download/240/760",
+    "publisher": "Culture & History Digital Journal, CSIC",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "rodriguez_royal_entries_2022",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cordova_simancas_ags_guide",
+    "title": "Guía del investigador del Archivo General de Simancas",
+    "url": "https://www.cultura.gob.es/dam/jcr%3A2794ac18-dfaf-4a7c-99a6-3a7e897b3e5c/guia-del-investigador.pdf",
+    "publisher": "Archivo General de Simancas, Ministerio de Cultura de Espana",
+    "license": "Citation and link only",
+    "source_type": "official_archival_guide",
+    "accessed": "2026-07-21",
+    "source_family_id": "spain_culture_ags_simancas_guide",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cordova_simancas_chalmeta_1976",
+    "title": "Simancas y Alhándega",
+    "url": "https://dialnet.unirioja.es/servlet/articulo?codigo=741054",
+    "publisher": "Hispania, CSIC",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_source_critical_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "chalmeta_simancas_alhandega_1976",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cordova_simancas_kusku_2023",
+    "title": "Simancas Defeat of Andalusian Umayyad Caliph Abdurrahman III (939)",
+    "url": "https://dergipark.org.tr/en/pub/deusosbil/article/1109820",
+    "publisher": "Dokuz Eylul University Journal of Humanities",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "deu_kusku_simancas_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_cordova_zamora_fierro_2004",
+    "title": "¿Hubo propaganda fatimí entre los Kutāma andalusíes?",
+    "url": "https://al-qantara.revistas.csic.es/index.php/al-qantara/article/view/155",
+    "publisher": "Al-Qantara, CSIC",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_islamic_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "fierro_kutama_2004",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cordova_zamora_garcia_2019",
+    "title": "Atilano de Zamora: santo, obispo y profeta",
+    "url": "https://hispaniasacra.revistas.csic.es/index.php/hispaniasacra/article/view/803",
+    "publisher": "Hispania Sacra, CSIC",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_medieval_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "garcia_atilano_zamora_2019",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_cordova_zamora_molenat_2017",
+    "title": "Medieval Zamora and its Andalusi frontier chronology",
+    "url": "https://journals.openedition.org/hamsa/742?lang=en",
+    "publisher": "Hamsa: Journal of Judaic and Islamic Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_medieval_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "molenat_hamsa_2017",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
       "outcome_consistency_crosscheck"
     ]
   },
@@ -12819,6 +13129,170 @@
     "evidence_roles": [
       "identity_boundary_or_context_reference",
       "outcome"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_ariel_233_danli",
+    "title": "Revista ARIEL No. 233: documentos judiciales y militares de Danlí y Texíguat",
+    "url": "https://tzibalnaah.unah.edu.hn/bitstream/handle/123456789/16923/No.233.abr1971.pdf?isAllowed=y&sequence=1",
+    "publisher": "Tz'ibal Naah, Universidad Nacional Autónoma de Honduras",
+    "license": "Citation and link only",
+    "source_type": "digitized_archival_facsimile",
+    "accessed": "2026-07-21",
+    "source_family_id": "unah_archival_facsimiles",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_bancroft_central_america_v3",
+    "title": "History of Central America, Volume III, 1801-1887",
+    "url": "https://www.gutenberg.org/files/62657/62657-h/62657-h.htm",
+    "publisher": "A. L. Bancroft and Company; Project Gutenberg edition",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "bancroft_central_america",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_becerra_evolucion_historica",
+    "title": "Evolución histórica de Honduras",
+    "url": "https://es.scribd.com/document/498046397/Evolucion-Historica-de-Honduras-Longino-Becerra",
+    "publisher": "Longino Becerra; digitized edition",
+    "license": "Citation and link only",
+    "source_type": "historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "becerra_honduran_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_frus_1894_d295",
+    "title": "Foreign Relations of the United States, 1894, Document 295",
+    "url": "https://history.state.gov/historicaldocuments/frus1894/d295",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_state_frus_1894",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_frus_1894_d307",
+    "title": "Foreign Relations of the United States, 1894, Document 307",
+    "url": "https://history.state.gov/historicaldocuments/frus1894/d307",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_state_frus_1894",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_frus_1924_d261",
+    "title": "Foreign Relations of the United States, 1924, Volume II, Document 261",
+    "url": "https://history.state.gov/historicaldocuments/frus1924v02/d261",
+    "publisher": "Office of the Historian, U.S. Department of State",
+    "license": "Citation and link only",
+    "source_type": "edited_primary_diplomatic_document",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_state_frus_1924",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_garcia_buchard_1839_1845",
+    "title": "Las disputas por el poder durante la primera etapa del proceso de construcción estatal en Honduras (1839–1845)",
+    "url": "https://dialnet.unirioja.es/descarga/articulo/5089074.pdf",
+    "publisher": "Intercambio, Universidad de Costa Rica",
+    "license": "Citation and link only",
+    "source_type": "scholarly_journal_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "ucr_intercambio",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_secapph_el_paraiso",
+    "title": "Reseña histórica y geográfica del naciente pueblo de El Paraíso",
+    "url": "https://secapph.gob.hn/wp-content/uploads/2025/06/RESENA-HISTORICA-Y-GEOGRAFICA-DEL-NACIENTE-PUEBLO-DEL-PARAISO.pdf",
+    "publisher": "Secretaria de las Culturas, las Artes y los Patrimonios de Honduras",
+    "license": "Citation and link only",
+    "source_type": "official_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "honduras_secapph",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_sedesol_civil_war_1924",
+    "title": "La guerra civil de 1924 en Honduras",
+    "url": "https://chepes.sedesol.gob.hn/wp-content/uploads/2025/09/LB016_La_guerra_civil_1924_en_Honduras_CHEPES_24-09-2025.pdf",
+    "publisher": "Editorial SEDESOL; ed. Yesenia Martínez García",
+    "license": "Citation and link only",
+    "source_type": "official_edited_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "sedesol_chepes_1924",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_us_navy_expeditions_1901_1929",
+    "title": "List of Expeditions, 1901-1929",
+    "url": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/l/list-of-expeditions-1901-1929.html",
+    "publisher": "Naval History and Heritage Command",
+    "license": "Citation and link only",
+    "source_type": "official_military_operations_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_navy_expedition_records",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_honduran_rebels_yoro_monograph",
+    "title": "Monografía del departamento de Yoro",
+    "url": "https://www.cervantesvirtual.com/descargaPdf/monografia-del-departamento-de-yoro/",
+    "publisher": "Biblioteca Virtual Miguel de Cervantes",
+    "license": "Citation and link only",
+    "source_type": "digitized_honduran_departmental_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "unah_departmental_monographs",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
     ]
   },
   {
@@ -19096,6 +19570,96 @@
     ]
   },
   {
+    "id": "wave8_saudi_arabia_exact_al_sabah_duaij_profile",
+    "title": "Shaikh Duaij bin Salman Al Sabah",
+    "url": "https://alsabahkuwait.com/en-who-we-are-2",
+    "publisher": "Al Sabah Kuwait family-history project",
+    "license": "Citation and link only",
+    "source_type": "curated_family_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "al_sabah_kuwait_duaij_profile",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_saudi_arabia_exact_al_shehabi_kcl_2015",
+    "title": "The Evolution of the Role of Merchants in Kuwaiti Politics",
+    "url": "https://kclpure.kcl.ac.uk/portal/en/theses/the-evolution-of-the-role-of-merchants-in-kuwaiti-politics%286857c175-f2f8-41ba-8231-b67acb9f81a1%29.html",
+    "publisher": "King's College London Research Portal",
+    "license": "Citation and link only",
+    "source_type": "doctoral_dissertation",
+    "accessed": "2026-07-21",
+    "source_family_id": "al_shehabi_kcl_thesis_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_saudi_arabia_exact_hansard_yemen_1934",
+    "title": "The Yemen, House of Commons debate, 7 May 1934",
+    "url": "https://hansard.parliament.uk/Commons/1934-05-07/debates/198f301d-9a21-479d-b8c9-78d7ef50f4fb/TheYemen",
+    "publisher": "UK Parliament",
+    "license": "Citation and link only",
+    "source_type": "official_parliamentary_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "uk_hansard_yemen_1934",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_saudi_arabia_exact_kuna_hamdh_1920",
+    "title": "Events in Kuwait's history: the Hamdh attack of 1920",
+    "url": "https://www.kuna.net.kw/ArticleDetails.aspx?id=1744648&language=en",
+    "publisher": "Kuwait News Agency",
+    "license": "Citation and link only",
+    "source_type": "state_news_agency_historical_notice",
+    "accessed": "2026-07-21",
+    "source_family_id": "kuwait_news_agency_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_saudi_arabia_exact_qdl_saudi_yemen_1934",
+    "title": "File 6/27 Foreign Interests: Sa'udi-Yemen Dispute, folio 26r",
+    "url": "https://www.qdl.qa/en/archive/81055/vdc_100059310911.0x000034",
+    "publisher": "British Library India Office Records / Qatar Digital Library",
+    "license": "Citation and link only",
+    "source_type": "digitized_primary_source",
+    "accessed": "2026-07-21",
+    "source_family_id": "british_library_ior_r_15_6_163",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_saudi_arabia_exact_tetreault_columbia_2000",
+    "title": "Stories of Democracy: Politics and Society in Contemporary Kuwait, chapter 3",
+    "url": "https://ciaotest.cc.columbia.edu/book/tetreault/ch03.html",
+    "publisher": "Columbia University Press / Columbia International Affairs Online",
+    "license": "Citation and link only",
+    "source_type": "academic_monograph_chapter",
+    "accessed": "2026-07-21",
+    "source_family_id": "tetreault_stories_of_democracy_2000",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_saudi_rashidi_abedin_kcl_2002",
     "title": "Abdul Aziz Al-Saud and the Great Game in Arabia, 1896-1946",
     "url": "https://kclpure.kcl.ac.uk/portal/files/2925835/397151.pdf",
@@ -20507,6 +21071,118 @@
     "source_family_id": "royal_talpurs_structure",
     "evidence_roles": [
       "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_africa_watch_somalia_1992",
+    "title": "Somalia: A Government at War with Its Own People",
+    "url": "https://www.hrw.org/reports/pdfs/s/somalia/somalia922.pdf",
+    "publisher": "Africa Watch",
+    "license": "Citation and link only",
+    "source_type": "human_rights_investigative_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "africa_watch_somalia_reporting_1992",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_amnesty_somalia_1992",
+    "title": "Somalia: A Human Rights Disaster",
+    "url": "https://www.amnesty.org/ar/wp-content/uploads/2021/06/afr520011992en.pdf",
+    "publisher": "Amnesty International",
+    "license": "Citation and link only",
+    "source_type": "human_rights_investigative_report",
+    "accessed": "2026-07-21",
+    "source_family_id": "amnesty_international_somalia_reporting_1992",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_cassidy_bsdr_2008",
+    "title": "Counterinsurgency and Military Culture: State Regulars versus Non-State Irregulars",
+    "url": "https://media.voog.com/0000/0051/2796/files/BSDR_10.pdf",
+    "publisher": "Baltic Security and Defence Review",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_analysis",
+    "accessed": "2026-07-21",
+    "source_family_id": "cassidy_counterinsurgency_military_culture_2008",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_durham_archer_dul_madoba",
+    "title": "Catalogue of the papers of Sir G. F. Archer",
+    "url": "https://reed.dur.ac.uk/xtf/view?docId=ark%2F32150_s15q47rn75v.xml",
+    "publisher": "Durham University Library Archives and Special Collections",
+    "license": "Citation and link only",
+    "source_type": "archival_catalogue",
+    "accessed": "2026-07-21",
+    "source_family_id": "durham_sudan_archive",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_hansard_dul_madoba_1914",
+    "title": "Class V — Colonial Services: Somaliland",
+    "url": "https://api.parliament.uk/historic-hansard/commons/1914/feb/24/class-v-colonial-services-somaliland",
+    "publisher": "UK Parliament",
+    "license": "Citation and link only",
+    "source_type": "parliamentary_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "uk_parliament_hansard",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_kakwenzire_dul_madoba_1984",
+    "title": "Richard Corfield and the Dul Madoba Incident",
+    "url": "https://arcadia.sba.uniroma3.it/handle/2307/2898",
+    "publisher": "Northeast African Studies",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "kakwenzire_somali_studies_1984",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_us_army_fm_3_06_somalia",
+    "title": "Urban Operations, FM 3-06, Appendix C: Mogadishu",
+    "url": "https://irp.fas.org/doddir/army/fm3-06.pdf",
+    "publisher": "Department of the Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_doctrine",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_army_doctrine_fm_3_06",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_somali_rebels_us_army_somalia_1992_1994",
+    "title": "United States Forces, Somalia After Action Report and Historical Overview",
+    "url": "https://history.army.mil/portals/143/Images/Publications/catalog/70-81-1.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_army_center_military_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {

@@ -311,10 +311,10 @@ class AchaeanNumidiaReleaseTests(unittest.TestCase):
         self.assertEqual(
             metadata["record_counts_expected"],
             {
-                "entities": 1115,
-                "events": 5546,
-                "sources": 1638,
-                "registry_polities": 2454,
+                "entities": 1142,
+                "events": 5559,
+                "sources": 1685,
+                "registry_polities": 2481,
             },
         )
         promotion = metadata["promotion"]
@@ -322,10 +322,10 @@ class AchaeanNumidiaReleaseTests(unittest.TestCase):
             REVIEWED
             <= set(promotion["hced_reviewed_crosswalk_identity_candidate_ids"])
         )
-        self.assertEqual(sum(promotion["hced_label_rejections"].values()), 2911)
+        self.assertEqual(sum(promotion["hced_label_rejections"].values()), 2892)
         coverage = registry["coverage"]
-        self.assertEqual(coverage["rated_entities"], 1108)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36797)
+        self.assertEqual(coverage["rated_entities"], 1135)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36784)
         self.assertEqual(coverage["provisional_hced_label_events"], 2525)
         location = coverage["hced_location_assertions"]
         self.assertEqual(
@@ -336,7 +336,7 @@ class AchaeanNumidiaReleaseTests(unittest.TestCase):
                 location["modern_location_country_assertions"],
                 location["location_provenance_objects"],
             ),
-            (5279, 867, 4848, 5181, 5230),
+            (5292, 880, 4850, 5194, 5243),
         )
 
 

@@ -49,13 +49,26 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_546)
-        self.assertEqual(len(self.entities), 1_115)
-        self.assertEqual(len(self.registry_by_id), 2_454)
+        self.assertEqual(len(self.events), 5_559)
+        self.assertEqual(len(self.entities), 1_142)
+        self.assertEqual(len(self.registry_by_id), 2_481)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("africa_watch_somalia_reporting_1992", "amnesty_international_somalia_reporting_1992"): 1,
+            ("al_sabah_kuwait_duaij_profile", "kuwait_news_agency_history", "tetreault_stories_of_democracy_2000"): 1,
+            ("al_sabah_kuwait_duaij_profile", "tetreault_stories_of_democracy_2000"): 1,
+            ("becerra_honduran_history", "us_state_frus_1894"): 1,
+            ("british_india_office_bani_bu_ali_dispatches", "persian_gulf_residency_administration_reports"): 1,
+            ("cassidy_counterinsurgency_military_culture_2008", "us_army_center_military_history", "us_army_doctrine_fm_3_06"): 1,
+            ("chalmeta_simancas_alhandega_1976", "deu_kusku_simancas_2023", "spain_culture_ags_simancas_guide"): 1,
+            ("east_india_company_official_dispatches", "lees_jsahr_military_history", "lorimer_goi_persian_gulf_gazetteer"): 1,
+            ("honduras_secapph", "ucr_intercambio", "unah_archival_facsimiles"): 1,
+            ("maasir_i_alamgiri_primary_chronicle", "sarkar_history_aurangzib"): 1,
+            ("rodriguez_royal_entries_2022", "spain_defence_museo_ejercito_cordoba"): 1,
+            ("sarkar_history_aurangzib", "singh_asian_social_science"): 1,
+            ("sedesol_chepes_1924", "us_state_frus_1924"): 1,
             ("1914_1918_online_finnish_civil_war", "sks_viipuri_1918_chapter"): 1,
             ("1914_1918_online_tampere", "vapriikki_tampere_1918_history"): 1,
             ("archivalia_ulm_1376_chronology", "hlb_cities_war_1387_1389", "joerg_rhenish_swabian_city_league", "ulm_official_city_history"): 1,
@@ -558,7 +571,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_546)
+        self.assertEqual(len(self.results["events"]), 5_559)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -637,10 +650,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_638)
+        self.assertEqual(len(self.sources), 1_685)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_357,
+            1_398,
         )
         new_source_ids = {
             "colombia_constitution_1863",

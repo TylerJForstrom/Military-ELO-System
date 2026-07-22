@@ -214,12 +214,12 @@ class HuangChaoPolicyTests(unittest.TestCase):
             3,
         )
         coverage = self.registry["coverage"]
-        self.assertEqual(self.metadata["record_counts_expected"]["events"], 5_546)
-        self.assertEqual(coverage["rated_entities"], 1_108)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_797)
+        self.assertEqual(self.metadata["record_counts_expected"]["events"], 5_559)
+        self.assertEqual(coverage["rated_entities"], 1_135)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_784)
         self.assertEqual(
             coverage["hced_location_assertions"]["hced_candidate_bindings"],
-            5_279,
+            5_292,
         )
 
     def test_row_seed_and_release_drift_fail_closed(self):

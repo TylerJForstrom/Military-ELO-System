@@ -103,13 +103,13 @@ Every ratio carries `availability`, `numerator`, `denominator`, `value`, `unit`,
 and `definition`. A zero denominator produces `not_applicable`; missing
 evidence produces `not_available`, never a fabricated zero.
 
-The current status-aware HCED numerators are 4,848 unreviewed source Points,
-5,181 source-transcribed geographic-jurisdiction labels, and 5,230 events with
-closed location-provenance objects, all over 5,279 HCED-derived rated events.
+The current status-aware HCED numerators are 4,850 unreviewed source Points,
+5,194 source-transcribed geographic-jurisdiction labels, and 5,243 events with
+closed location-provenance objects, all over 5,292 HCED-derived rated events.
 Verified-location coverage is `not_available`. The report separately publishes
-the frozen policy counts rather than inferring policy from absence: 431 Point
+the frozen policy counts rather than inferring policy from absence: 442 Point
 fields withheld by quarantine, 97 country/jurisdiction fields withheld, 49
-events in both quarantine manifests, and 479 unique quarantine-manifest events.
+events in both quarantine manifests, and 490 unique quarantine-manifest events.
 These values describe an audited publication policy; they must not
 be reverse-engineered from absent release fields or relabelled as
 verified-location accuracy. Retained disputed or non-sovereign labels describe
@@ -160,13 +160,14 @@ The current release implements the first two contracts conservatively: each
 mechanically promoted event carries an exact `outcome_source_ids` subset and a
 matching stable `outcome_source_family_ids` array. Generic source-role fallback
 is considered only when neither event-level field is present and is never
-unioned into an explicit mapping. The 1,638-source registry contains 1,014 sources
-advertising the direct `outcome` capability across 925 dependency families.
-Current event-level contracts select 895 of those sources across 820 families
-and map 5,506 of 5,546 rated events. The mapped population contains 5,279
-HCED-derived events, 66 IWD parent wars, 153 IWBD battles, and 8 UCDP
+unioned into an explicit mapping. The 1,685-source registry spans 1,398
+provenance families and contains 1,050 sources advertising the direct `outcome`
+capability across 957 dependency families. Current event-level contracts select
+926 of those sources across 847 families and map 5,519 of 5,559 rated events.
+The mapped population contains 5,292 HCED-derived events, 66 IWD parent wars,
+153 IWBD battles, and 8 UCDP
 termination episodes. Of those mapped events, 5,064 cite one declared direct-
-outcome family and 442 cite between two and six; family cardinality is an audit
+outcome family and 455 cite between two and six; family cardinality is an audit
 fact, not automatic proof of independence.
 
 The other 40 rated events are the curated seed. They remain explicitly

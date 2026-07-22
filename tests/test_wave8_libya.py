@@ -542,22 +542,22 @@ class Wave8LibyaTests(unittest.TestCase):
             promotion["wave8_libya_frozen_chadian_rebels_pre_validation"],
             promotion["wave8_libya_frozen_chadian_rebels_post_validation"],
         )
-        self.assertEqual(len(self.release_events), 5_546)
-        self.assertEqual(len(self.release_entities), 1_115)
-        self.assertEqual(len(self.release_sources), 1_638)
+        self.assertEqual(len(self.release_events), 5_559)
+        self.assertEqual(len(self.release_entities), 1_142)
+        self.assertEqual(len(self.release_sources), 1_685)
 
         coverage = self.registry["coverage"]
-        self.assertEqual(coverage["rated_events"], 5_546)
-        self.assertEqual(coverage["rated_entities"], 1_108)
-        self.assertEqual(coverage["registry_polities"], 2_454)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_797)
+        self.assertEqual(coverage["rated_events"], 5_559)
+        self.assertEqual(coverage["rated_entities"], 1_135)
+        self.assertEqual(coverage["registry_polities"], 2_481)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_784)
         self.assertEqual(coverage["candidate_keyed_wave8_libya_hced_events"], 3)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_279)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 867)
-        self.assertEqual(location["geojson_points"], 4_848)
-        self.assertEqual(location["modern_location_country_assertions"], 5_181)
-        self.assertEqual(location["location_provenance_objects"], 5_230)
+        self.assertEqual(location["hced_candidate_bindings"], 5_292)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 880)
+        self.assertEqual(location["geojson_points"], 4_850)
+        self.assertEqual(location["modern_location_country_assertions"], 5_194)
+        self.assertEqual(location["location_provenance_objects"], 5_243)
         registry_entities = {
             str(item["id"]): item for item in self.registry["entities"]
         }

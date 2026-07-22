@@ -19,16 +19,16 @@ HCED_LOCATION_MACHINE_LOCAL_AUDIT_SNAPSHOT_SHA256 = (
     "670300a7dd145c675fa5219d3d6cbe371d1437c358174650c3124baeb9eea954"
 )
 HCED_LOCATION_QUARANTINE_POLICY_SHA256 = (
-    "294e9cb36cd5ee0645640302318b6e86e5f7c5548795bee312215efe5457d4d7"
+    "cd3b2d2ad791e3fa7fd696184bb63f09892902569b7c671fc2b85441f2e0e5b8"
 )
 HCED_POINT_QUARANTINE_CANDIDATE_SHA256 = (
-    "71ea4d4eed9f07cbe7d779488081693348795b4f9b68ac24fb374adc79b39f2a"
+    "0a15093c7621d6b48562707ba72a747b5b1b7c81920a18650e8ca3a8f8e65c19"
 )
 HCED_COUNTRY_QUARANTINE_CANDIDATE_SHA256 = (
     "e3c34aa567567827a732bacb85e46077b9696c98937a4ea0b739e277d56374be"
 )
 HCED_POINT_QUARANTINE_EVENT_SHA256 = (
-    "e98a258c33defb14d3691079f9ddb76786c78f3caf31669b3069cd71094c57bf"
+    "388ad8c8c0bf416c86a543b8c006ca5bbb8611506f8ca0a07809f8926632e9b0"
 )
 HCED_COUNTRY_QUARANTINE_EVENT_SHA256 = (
     "39ab086e4e35cb17ed6204a09f26f6f45c24d6f1bd1464a31c7328163f5662cf"
@@ -41,12 +41,12 @@ HCED_WAVE5_CANDIDATE_BINDINGS = 4_291
 HCED_WAVE5_POINT_ASSERTIONS = 4_252
 HCED_WAVE5_COUNTRY_ASSERTIONS = 4_211
 HCED_WAVE5_PROVENANCE_OBJECTS = 4_258
-HCED_EXPECTED_CANDIDATE_BINDINGS = 5_279
-HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 867
-HCED_EXPECTED_POINT_ASSERTIONS = 4_848
-HCED_EXPECTED_COUNTRY_ASSERTIONS = 5_181
-HCED_EXPECTED_PROVENANCE_OBJECTS = 5_230
-HCED_EXPECTED_QUARANTINE_UNION = 479
+HCED_EXPECTED_CANDIDATE_BINDINGS = 5_292
+HCED_EXPECTED_CANDIDATE_KEYED_REVIEWED_CONTRACTS = 880
+HCED_EXPECTED_POINT_ASSERTIONS = 4_850
+HCED_EXPECTED_COUNTRY_ASSERTIONS = 5_194
+HCED_EXPECTED_PROVENANCE_OBJECTS = 5_243
+HCED_EXPECTED_QUARANTINE_UNION = 490
 HCED_EXPECTED_QUARANTINE_OVERLAP = 49
 HCED_SOURCE_BLANK_COUNTRY_IDS = frozenset({"hced-Amadiye1973-1"})
 HCED_LOCATION_WARNING = (
@@ -111,6 +111,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Balapur1720-1",
     "hced-Balkans1941-1",
     "hced-Balkans1944-1",
+    "hced-Bani Bu Ali1821-1",
     "hced-Barentu1985-1",
     "hced-Battle Creek, Texas1838-1",
     "hced-Bayan1902-1",
@@ -166,6 +167,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Damalcherry Pass1740-1",
     "hced-Damascus1925-1",
     "hced-Damghan1528-1",
+    "hced-Danli1844-1",
     "hced-Darghiyya1842-1",
     "hced-Darghiyya1845-1",
     "hced-Dasmarinas1897-1",
@@ -218,6 +220,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Gunib1859-1",
     "hced-Gurdas Nangal1715-1",
     "hced-Habry1422-1",
+    "hced-Hamad1920-1",
     "hced-Hanwella1803-1",
     "hced-Hard1499-1",
     "hced-Harenc1098-1",
@@ -241,6 +244,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Issus-333-1",
     "hced-Ivuna1888-1",
     "hced-Iwo Jima1945-1",
+    "hced-Jahrah1920-1",
     "hced-Jarnac1569-1",
     "hced-Jebel Libni1967-1",
     "hced-Junin1824-1",
@@ -309,6 +313,8 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Mincio-197-1",
     "hced-Mitla Pass1956-1",
     "hced-Mitla Pass1967-1",
+    "hced-Mogadishu1990-1991-1",
+    "hced-Mogadishu1993-1",
     "hced-Mombasa1696-1698-1",
     "hced-Mome1906-1",
     "hced-Moncontour1569-1",
@@ -390,6 +396,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Sabalah1929-1",
     "hced-Sabana Larga1856-1",
     "hced-Sablat1619-1",
+    "hced-Sagar1680-1",
     "hced-Salaita1916-1",
     "hced-Salsu612-1",
     "hced-Samarkand1220-1",
@@ -427,6 +434,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-St Pierre and Miquelon1793-1",
     "hced-St Thome1746-1",
     "hced-Strathfleet1453-1",
+    "hced-Sur1820-1",
     "hced-Tabaruzaka1877-1",
     "hced-Takashiro1587-1",
     "hced-Tamatave1845-1",
@@ -438,6 +446,8 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Taraori1191-1",
     "hced-Taraori1192-1",
     "hced-Tatishchevo1774-1",
+    "hced-Tegucicalpa1894-1",
+    "hced-Tegucicalpa1924-1",
     "hced-Tegyra-375-1",
     "hced-Telamon-225-1",
     "hced-Teutoburgwald9-1",
@@ -475,6 +485,7 @@ HCED_POINT_QUARANTINE_CANDIDATE_IDS = (
     "hced-Vitkov Hill1420-1",
     "hced-Vladar1421-1",
     "hced-Vysehrad1420-1",
+    "hced-Wagingera1705-1",
     "hced-Wake1941-1",
     "hced-Walkers Creek1844-1",
     "hced-Warsaw1705-1",

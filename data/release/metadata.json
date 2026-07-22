@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1115,
-    "events": 5546,
-    "sources": 1638,
-    "registry_polities": 2454
+    "entities": 1142,
+    "events": 5559,
+    "sources": 1685,
+    "registry_polities": 2481
   },
   "year_range": {
     "start": -1274,
@@ -167,6 +167,7 @@
     "accepted_wave8_followup_b_hced_events": 4,
     "accepted_wave8_followup_c_hced_events": 14,
     "accepted_wave8_followup_d_hced_events": 20,
+    "accepted_wave8_followup_e_hced_events": 13,
     "accepted_wave8_exact_priority_hced_events": 18,
     "accepted_wave8_kievan_rus_hced_events": 2,
     "accepted_wave8_carnatic_hced_events": 3,
@@ -21317,6 +21318,1301 @@
         "unresolved_side_attempts": 5
       }
     },
+    "wave8_followup_e_metadata": {
+      "counts": {
+        "country_quarantine_additions": 0,
+        "discovery_nonrating_dispositions": 30,
+        "holds": 3,
+        "location_reviews": 13,
+        "new_entities": 27,
+        "new_sources": 47,
+        "newly_rated_events": 13,
+        "point_quarantine_additions": 11,
+        "promotion_contracts": 13,
+        "reviewed_hced_rows": 19,
+        "terminal_exclusions": 3
+      },
+      "final_audit_signature": "9248d7b4019353e9c108cd0848edb0845bb8732804beec5f665890654274d5ee",
+      "funnel_audits": {
+        "cordova": {
+          "cordova": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "783a55177cd006c203675efb661939d29513cf21507c1ea4bdc766ea8852bbc0",
+            "events_touched": 3,
+            "sole_blocker_events": 2,
+            "unresolved_side_attempts": 3,
+            "zero_time_valid_candidates": 3
+          },
+          "andalucia": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "2294ac22111e8134046e29eae76fc305e0f66bc8e356173f44482a4361d56155",
+            "events_touched": 2,
+            "sole_blocker_events": 1,
+            "unresolved_side_attempts": 2,
+            "zero_time_valid_candidates": 2
+          }
+        },
+        "honduran_rebels": {
+          "honduran rebels": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "9a5e364cbe3cb795aa6211b084c9ef26afc3f6ebde627a54215f6ea874f1708b",
+            "events_touched": 3,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 3
+            },
+            "label": "honduran rebels",
+            "rated_counterpart_entities": 1,
+            "sole_blocker_events": 2,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 3
+          },
+          "nicaragua honduran rebels": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "8f7255804d49d90e81cad91277a71a702b082a94578022d32196ea002079195d",
+            "events_touched": 2,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 2
+            },
+            "label": "nicaragua honduran rebels",
+            "rated_counterpart_entities": 1,
+            "sole_blocker_events": 2,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 2
+          }
+        },
+        "somali_rebels": {
+          "somali rebels": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "d9324955fff792afc7a9699d4124757878b0a0e7601e9663ab37a2e5bed5182d",
+            "events_touched": 3,
+            "failure_cases": {
+              "multiple_time_valid_candidates": 0,
+              "one_wrong_interval_candidate": 0,
+              "policy_denied_window": 0,
+              "resolver_guard_or_tier_conflict": 0,
+              "zero_time_valid_candidates": 3
+            },
+            "label": "somali rebels",
+            "rated_counterpart_entities": 2,
+            "sole_blocker_events": 2,
+            "time_valid_candidate_ids": [],
+            "unresolved_side_attempts": 3
+          }
+        },
+        "banu_bu_ali_berad": {
+          "banu bu ali": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "b4f6c360c9256053622f5f67049e9681e14c2b805a2fa89ac302130afc59199a",
+            "events_touched": 2,
+            "sole_blocker_events": 2,
+            "unresolved_side_attempts": 2,
+            "rated_counterpart_entities": 1,
+            "failure_cases": {
+              "zero_time_valid_candidates": 2
+            }
+          },
+          "berad tribes": {
+            "candidate_ids": [],
+            "event_candidate_id_sha256": "469157c3cead8dcbedd67d5b470815be5272592fe8f0ad995fa6c398034d808c",
+            "events_touched": 2,
+            "sole_blocker_events": 2,
+            "unresolved_side_attempts": 2,
+            "rated_counterpart_entities": 1,
+            "failure_cases": {
+              "zero_time_valid_candidates": 2
+            }
+          }
+        }
+      },
+      "hold_candidate_ids": [
+        "hced-Choluteca1894-1",
+        "hced-Dul Madoba1913-1",
+        "hced-San Marcos, Honduras1876-1"
+      ],
+      "lanes": {
+        "cordova": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_records": 6,
+            "holds": 0,
+            "integration_dispositions": 6,
+            "new_entities": 3,
+            "new_sources": 10,
+            "newly_rated_events": 2,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 0,
+            "promotion_contracts": 2,
+            "reviewed_hced_rows": 4,
+            "terminal_exclusions": 2,
+            "unknown_discovery_outcomes": 6
+          },
+          "cohorts": {
+            "castilian_conquest_of_cordoba_1235_1236": 1,
+            "simancas_campaign_939": 1
+          },
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q12216248",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "relationship": "exact_discovery_duplicate",
+              "hced_candidate_id": "hced-Cordova1236-1",
+              "date_disposition": "corroborating_range_only",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q125861402",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_adjudication_hold",
+              "relationship": "adjacent_disputed_simancas_phase",
+              "hced_candidate_id": "hced-Simancas, Valladolid939-1",
+              "date_disposition": "unadopted_disputed_date",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q1518266",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "relationship": "exact_discovery_duplicate_with_rejected_date",
+              "hced_candidate_id": "hced-Simancas, Valladolid939-1",
+              "date_disposition": "reject_unreferenced_conflicting_date",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q1807089",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_terminally_excluded_concept",
+              "relationship": "exact_legendary_concept_twin",
+              "hced_candidate_id": "hced-Calatanazar1002-1",
+              "date_disposition": "nonrating_legendary_date",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q4870264",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_adjudication_hold",
+              "relationship": "adjacent_probable_simancas_duplicate",
+              "hced_candidate_id": "hced-Simancas, Valladolid939-1",
+              "date_disposition": "unadopted_disputed_date",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "Q5242957",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_distinct_staged_event",
+              "relationship": "distinct_901_event_not_the_873_row",
+              "hced_candidate_id": "hced-Zamora873-1",
+              "date_disposition": "retain_separately_staged",
+              "outcome_disposition": "unknown_never_draw"
+            }
+          ],
+          "final_audit_signature": "92afa442ef9e36650c43743da0d86549ed2ef9e041924bf10a194f1bb1969f66",
+          "hold_candidate_ids": [],
+          "promoted_candidate_ids": [
+            "hced-Cordova1236-1",
+            "hced-Simancas, Valladolid939-1"
+          ],
+          "terminal_exclusion_candidate_ids": [
+            "hced-Calatanazar1002-1",
+            "hced-Zamora873-1"
+          ]
+        },
+        "honduran_rebels": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_records": 5,
+            "discovery_twins": 2,
+            "hced_discovery_records": 1,
+            "holds": 2,
+            "integration_dispositions": 5,
+            "iwbd_discovery_records": 2,
+            "new_entities": 7,
+            "new_source_families": 10,
+            "new_sources": 11,
+            "newly_rated_events": 3,
+            "outcome_overrides": 0,
+            "parent_coverage_records": 2,
+            "point_quarantine_additions": 3,
+            "promotion_contracts": 3,
+            "reviewed_hced_rows": 5,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 3
+          },
+          "cohorts": {
+            "honduran_civil_war_1924": 1,
+            "honduran_internal_conflict_1844": 1,
+            "honduran_liberal_revolution_1893_1894": 2,
+            "honduran_medina_revolt_1876": 1
+          },
+          "country_quarantine_candidate_ids": [],
+          "discovery_dispositions": [
+            {
+              "candidate_id": "brecke-2299",
+              "source_dataset": "brecke-conflict-catalog",
+              "disposition": "coverage_only_parent_not_engagement_duplicate",
+              "hced_candidate_id": "hced-Danli1844-1"
+            },
+            {
+              "candidate_id": "brecke-3146",
+              "source_dataset": "brecke-conflict-catalog",
+              "disposition": "coverage_only_parent_not_engagement_duplicate",
+              "hced_candidate_id": "hced-Tegucicalpa1924-1"
+            },
+            {
+              "candidate_id": "hced-La Esperanza1876-1",
+              "source_dataset": "hced",
+              "disposition": "discovery_only_separate_event_outside_lane",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "iwbd-60-21-271",
+              "source_dataset": "iwbd",
+              "disposition": "deduplicate_to_outside_lane_hced_discovery_hold",
+              "hced_candidate_id": "hced-La Esperanza1876-1",
+              "outcome_disposition": "unknown_never_draw"
+            },
+            {
+              "candidate_id": "iwbd-60-21-272",
+              "source_dataset": "iwbd",
+              "disposition": "deduplicate_to_hced_review_hold",
+              "hced_candidate_id": "hced-San Marcos, Honduras1876-1",
+              "outcome_disposition": "unknown_never_draw"
+            }
+          ],
+          "final_audit_signature": "969fb4191bf68eea22945fc82ec409fcf915c2cc8c4349d231669bdc84f84ff5",
+          "hold_candidate_ids": [
+            "hced-Choluteca1894-1",
+            "hced-San Marcos, Honduras1876-1"
+          ],
+          "point_quarantine_candidate_ids": [
+            "hced-Danli1844-1",
+            "hced-Tegucicalpa1894-1",
+            "hced-Tegucicalpa1924-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Danli1844-1",
+            "hced-Tegucicalpa1894-1",
+            "hced-Tegucicalpa1924-1"
+          ],
+          "related_event_boundaries": {
+            "choluteca_vs_tegucigalpa_1894": {
+              "candidate_ids": [
+                "hced-Choluteca1894-1",
+                "hced-Tegucicalpa1894-1"
+              ],
+              "disposition": "distinct_events_in_same_revolution",
+              "reason": "The Choluteca actions end before the separately bounded 23 January-22 February siege and capture of Tegucigalpa."
+            },
+            "la_esperanza_vs_san_marcos_1876": {
+              "candidate_ids": [
+                "hced-La Esperanza1876-1",
+                "hced-San Marcos, Honduras1876-1"
+              ],
+              "disposition": "distinct_earlier_and_later_actions",
+              "reason": "The 15 January La Esperanza record precedes every San Marcos/Naranjo date candidate and is not consumed by this exact-label lane."
+            },
+            "san_marcos_vs_naranjo_1876": {
+              "candidate_ids": [
+                "hced-San Marcos, Honduras1876-1"
+              ],
+              "disposition": "identity_unresolved_review_hold",
+              "reason": "Place-token and date evidence is insufficient to merge San Marcos, Rio San Marcos, El Naranja, and Naranjo into one rated event."
+            }
+          },
+          "source_family_count": 10
+        },
+        "somali_rebels": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_date_quarantines": 1,
+            "holds": 1,
+            "integration_dispositions": 12,
+            "new_entities": 5,
+            "new_sources": 8,
+            "newly_rated_events": 2,
+            "outcome_overrides": 1,
+            "point_quarantine_additions": 3,
+            "promotion_contracts": 2,
+            "required_existing_sources": 2,
+            "reviewed_hced_rows": 3,
+            "terminal_exclusions": 0,
+            "ucdp_nonrating_records": 10,
+            "unknown_holds": 1,
+            "wikidata_nonrating_records": 2
+          },
+          "cohorts": {
+            "somali_rebels_exact_1913_1993": 3
+          },
+          "country_quarantine_additions": [],
+          "discovery_dispositions": [
+            {
+              "candidate_id": "ucdp:ucdp-actor-26.1-493--493",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "actor_identity_record",
+              "disposition": "identity_evidence_only_no_rating_continuity",
+              "outcome_disposition": "no_event_outcome",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-actor-26.1-494--494",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1993-1",
+              "conflict_id": "337",
+              "scope": "actor_identity_record",
+              "disposition": "identity_evidence_only_no_rating_continuity",
+              "outcome_disposition": "no_event_outcome",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-conflict-26.1-337-1990-1787",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "annual_multiactor_conflict_record",
+              "disposition": "broader_context_not_named_tactical_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-conflict-26.1-337-1991-1788",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "annual_multiactor_conflict_record",
+              "disposition": "broader_context_not_named_tactical_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-conflict-26.1-337-1993-1790",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1993-1",
+              "conflict_id": "337",
+              "scope": "government_versus_usc_sna_annual_conflict",
+              "disposition": "different_dyad_not_us_led_battle_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-dyadic-26.1-746-1990-2174",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "annual_dyad_record",
+              "disposition": "broader_context_not_named_tactical_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-dyadic-26.1-746-1991-2175",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "annual_dyad_record",
+              "disposition": "broader_context_not_named_tactical_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-dyadic-26.1-747-1993-2178",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1993-1",
+              "conflict_id": "337",
+              "scope": "government_versus_usc_sna_annual_dyad",
+              "disposition": "different_dyad_not_us_led_battle_duplicate",
+              "outcome_disposition": "intensity_is_not_victory",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-termination-dyad-337-2158",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1990-1991-1",
+              "conflict_id": "337",
+              "scope": "broader_strategic_dyad_episode",
+              "disposition": "endpoint_crosscheck_not_second_rated_event",
+              "outcome_disposition": "strategic_side_b_outcome_not_imported_as_tactical_result",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "ucdp:ucdp-termination-dyad-337-2161",
+              "source_dataset": "ucdp",
+              "owner_hced_candidate_id": "hced-Mogadishu1993-1",
+              "conflict_id": "337",
+              "scope": "government_versus_usc_sna_strategic_episode",
+              "disposition": "different_dyad_not_us_led_battle_duplicate",
+              "outcome_disposition": "unknown_never_draw",
+              "automated_rating": false
+            },
+            {
+              "candidate_id": "wikidata:Q109561628",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_context_for_unknown_hold",
+              "hced_candidate_id": "hced-Dul Madoba1913-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "exact_discovery_duplicate_for_unknown_hold"
+            },
+            {
+              "candidate_id": "wikidata:Q52226",
+              "source_dataset": "wikidata-battles",
+              "disposition": "discovery_only_duplicate",
+              "hced_candidate_id": "hced-Mogadishu1993-1",
+              "outcome_disposition": "unknown_never_draw",
+              "relationship": "exact_discovery_duplicate_with_generic_participants"
+            }
+          ],
+          "final_audit_signature": "3f2557082f71a3d581665ad35356aa6a1c455a06c1cc23dba33703fa675baed5",
+          "held_candidate_ids": [
+            "hced-Dul Madoba1913-1"
+          ],
+          "point_quarantine_additions": [
+            "hced-Dul Madoba1913-1",
+            "hced-Mogadishu1990-1991-1",
+            "hced-Mogadishu1993-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Mogadishu1990-1991-1",
+            "hced-Mogadishu1993-1"
+          ]
+        },
+        "banu_bu_ali_berad": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_records": 2,
+            "holds": 0,
+            "new_entities": 8,
+            "new_sources": 12,
+            "newly_rated_events": 4,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 4,
+            "promotion_contracts": 4,
+            "reviewed_hced_rows": 4,
+            "separate_lane_holds": 1,
+            "terminal_exclusions": 0,
+            "unknown_discovery_outcomes": 2
+          },
+          "cohorts": {
+            "bani_bu_ali_expeditions_1820_1821": 2,
+            "mughal_nayak_wars_1680_1705": 2
+          },
+          "country_quarantine_additions": [],
+          "discovery_dispositions": [
+            {
+              "candidate_id": "Q16931469",
+              "source_dataset": "wikidata-battles",
+              "disposition": "duplicate_superseded_discovery",
+              "canonical_owner": "hced-Wagingera1705-1",
+              "date_disposition": "malformed_1704_subaction_date_not_imported",
+              "outcome_disposition": "unknown_never_draw",
+              "automatic_rating": false
+            },
+            {
+              "candidate_id": "Q4870440",
+              "source_dataset": "wikidata-battles",
+              "disposition": "lexical_false_positive",
+              "canonical_owner": null,
+              "date_disposition": "unrelated_bengal_event_not_imported",
+              "outcome_disposition": "unknown_never_draw",
+              "automatic_rating": false
+            }
+          ],
+          "final_audit_signature": "e56bf90fd868b654a8345e5a546ac799dfde773d216e1089022fde5de75c6361",
+          "outside_lane_holds": [
+            {
+              "candidate_id": "hced-Ras al-Khaimah1809-1",
+              "raw_row_sha256": "8c8ff4497f3b7e6a2a0f88a105576b65746f322628fa112dad7f5fa4747361eb",
+              "disposition": "hold_separate_lane",
+              "label": "bani bu ali",
+              "reason": "The differently spelled label is an attribution collision in the 1809 Ras al-Khaimah/Qawasim operation. It cannot inherit the exact 1820-1821 Banu Bu Ali formations or outcome contract.",
+              "outcome_disposition": "staged_pending_separate_actor_audit",
+              "unknown_is_never_draw": true
+            }
+          ],
+          "point_quarantine_additions": [
+            "hced-Bani Bu Ali1821-1",
+            "hced-Sagar1680-1",
+            "hced-Sur1820-1",
+            "hced-Wagingera1705-1"
+          ],
+          "promoted_candidate_ids": [
+            "hced-Bani Bu Ali1821-1",
+            "hced-Sagar1680-1",
+            "hced-Sur1820-1",
+            "hced-Wagingera1705-1"
+          ],
+          "reserved_candidate_ids": [
+            "hced-Bani Bu Ali1821-1",
+            "hced-Sagar1680-1",
+            "hced-Sur1820-1",
+            "hced-Wagingera1705-1"
+          ]
+        },
+        "saudi_arabia_exact": {
+          "counts": {
+            "country_quarantine_additions": 0,
+            "discovery_nonrating_rows": 4,
+            "holds": 0,
+            "integration_dispositions": 5,
+            "iwbd_discovery_duplicates": 1,
+            "new_entities": 4,
+            "new_sources": 6,
+            "newly_rated_events": 2,
+            "outcome_overrides": 0,
+            "point_quarantine_additions": 2,
+            "promotion_contracts": 2,
+            "reviewed_hced_rows": 3,
+            "terminal_exclusions": 1,
+            "wikidata_discovery_duplicates": 2,
+            "wikidata_false_twins": 1
+          },
+          "cohorts": {
+            "kuwait_najd_border_war_1920": 2
+          },
+          "final_audit_signature": "1345c7103f37f0b1234f63c0da8d7b9e3e4f23b8ae0372c14fa54377b50ee1f1",
+          "promoted_candidate_ids": [
+            "hced-Hamad1920-1",
+            "hced-Jahrah1920-1"
+          ],
+          "hold_candidate_ids": [],
+          "terminal_exclusion_candidate_ids": [
+            "hced-Hudayda1934-1"
+          ],
+          "discovery_nonrating_candidate_ids": [
+            "Q16839041",
+            "Q4871302",
+            "Q48735086",
+            "iwbd-125-48-872"
+          ]
+        }
+      },
+      "location_review_candidate_ids": [
+        "hced-Bani Bu Ali1821-1",
+        "hced-Danli1844-1",
+        "hced-Dul Madoba1913-1",
+        "hced-Hamad1920-1",
+        "hced-Hudayda1934-1",
+        "hced-Jahrah1920-1",
+        "hced-Mogadishu1990-1991-1",
+        "hced-Mogadishu1993-1",
+        "hced-Sagar1680-1",
+        "hced-Sur1820-1",
+        "hced-Tegucicalpa1894-1",
+        "hced-Tegucicalpa1924-1",
+        "hced-Wagingera1705-1"
+      ],
+      "promoted_candidate_ids": [
+        "hced-Bani Bu Ali1821-1",
+        "hced-Cordova1236-1",
+        "hced-Danli1844-1",
+        "hced-Hamad1920-1",
+        "hced-Jahrah1920-1",
+        "hced-Mogadishu1990-1991-1",
+        "hced-Mogadishu1993-1",
+        "hced-Sagar1680-1",
+        "hced-Simancas, Valladolid939-1",
+        "hced-Sur1820-1",
+        "hced-Tegucicalpa1894-1",
+        "hced-Tegucicalpa1924-1",
+        "hced-Wagingera1705-1"
+      ],
+      "reserved_candidate_ids": [
+        "hced-Bani Bu Ali1821-1",
+        "hced-Calatanazar1002-1",
+        "hced-Choluteca1894-1",
+        "hced-Cordova1236-1",
+        "hced-Danli1844-1",
+        "hced-Dul Madoba1913-1",
+        "hced-Hamad1920-1",
+        "hced-Hudayda1934-1",
+        "hced-Jahrah1920-1",
+        "hced-Mogadishu1990-1991-1",
+        "hced-Mogadishu1993-1",
+        "hced-Sagar1680-1",
+        "hced-San Marcos, Honduras1876-1",
+        "hced-Simancas, Valladolid939-1",
+        "hced-Sur1820-1",
+        "hced-Tegucicalpa1894-1",
+        "hced-Tegucicalpa1924-1",
+        "hced-Wagingera1705-1",
+        "hced-Zamora873-1"
+      ],
+      "terminal_exclusion_candidate_ids": [
+        "hced-Calatanazar1002-1",
+        "hced-Hudayda1934-1",
+        "hced-Zamora873-1"
+      ]
+    },
+    "wave8_followup_e_counts": {
+      "country_quarantine_additions": 0,
+      "discovery_nonrating_dispositions": 30,
+      "holds": 3,
+      "location_reviews": 13,
+      "new_entities": 27,
+      "new_sources": 47,
+      "newly_rated_events": 13,
+      "point_quarantine_additions": 11,
+      "promotion_contracts": 13,
+      "reviewed_hced_rows": 19,
+      "terminal_exclusions": 3
+    },
+    "wave8_followup_e_audit_signature": "9248d7b4019353e9c108cd0848edb0845bb8732804beec5f665890654274d5ee",
+    "wave8_followup_e_final_audit_signature": "9248d7b4019353e9c108cd0848edb0845bb8732804beec5f665890654274d5ee",
+    "wave8_followup_e_queue_validation": {
+      "cordova": {
+        "exact_rows": 4,
+        "holds": 0,
+        "promotion_contracts": 2,
+        "reviewed_hced_rows": 4,
+        "terminal_exclusions": 2
+      },
+      "honduran_rebels": {
+        "promotion_contracts": 3,
+        "holds": 2,
+        "reviewed_hced_rows": 5,
+        "audited_label_rows": 5,
+        "audited_labels": 2
+      },
+      "somali_rebels": {
+        "promotion_contracts": 2,
+        "holds": 1,
+        "reviewed_hced_rows": 3,
+        "exact_label_rows": 3
+      },
+      "banu_bu_ali_berad": {
+        "promotion_contracts": 4,
+        "holds": 0,
+        "reviewed_hced_rows": 4,
+        "exact_label_rows": 4,
+        "separate_lane_holds": 1
+      },
+      "saudi_arabia_exact": {
+        "exact_label_rows": 3,
+        "holds": 0,
+        "promotion_contracts": 2,
+        "reviewed_hced_rows": 3,
+        "terminal_exclusions": 1
+      }
+    },
+    "wave8_followup_e_discovery_validation": {
+      "cordova": {
+        "discovery_nonrating_records": 6,
+        "discovery_promotions": 0,
+        "distinct_staged_records": 1,
+        "exact_twins": 3,
+        "source_critical_holds": 2,
+        "unknown_never_draw_rows": 6
+      },
+      "honduran_rebels": {
+        "discovery_nonrating_records": 5,
+        "discovery_promotions": 0,
+        "discovery_twins": 2,
+        "hced_discovery_records": 1,
+        "iwbd_discovery_records": 2,
+        "parent_coverage_records": 2,
+        "unknown_never_draw_rows": 3
+      },
+      "somali_rebels": {
+        "automated_promotions": 0,
+        "discovery_date_quarantines": 1,
+        "ucdp_dispositions": 10,
+        "unknown_never_draw_wikidata_rows": 2,
+        "wikidata_nonrating_records": 2
+      },
+      "banu_bu_ali_berad": {
+        "discovery_nonrating_records": 2,
+        "duplicate_superseded_records": 1,
+        "lexical_false_positives": 1,
+        "unknown_never_draw_rows": 2
+      },
+      "saudi_arabia_exact": {
+        "discovery_promotions": 0,
+        "iwbd_discovery_duplicates": 1,
+        "unknown_never_draw_wikidata_rows": 3,
+        "wikidata_discovery_duplicates": 2,
+        "wikidata_false_twins": 1
+      }
+    },
+    "wave8_followup_e_integration_validation": {
+      "cordova": {
+        "existing_release_probable_twins": 0,
+        "hced_probable_twins": 0,
+        "iwbd_probable_twins": 0
+      },
+      "honduran_rebels": {
+        "discovery_nonrating_dispositions": 5,
+        "existing_release_owned_events": 3,
+        "existing_release_probable_twins": 0,
+        "hced_discovery_dispositions": 1,
+        "hced_probable_twins": 0,
+        "iwd_probable_twins": 0,
+        "iwbd_discovery_dispositions": 2,
+        "iwbd_probable_twins": 0,
+        "parent_coverage_dispositions": 2
+      },
+      "somali_rebels": {
+        "existing_release_owned_events": 2,
+        "existing_release_probable_twins": 0,
+        "hced_probable_twins": 0,
+        "integration_dispositions": 12,
+        "iwd_probable_twins": 0,
+        "iwbd_probable_twins": 0,
+        "ucdp_overlap_dispositions": 10,
+        "wikidata_dispositions": 2
+      },
+      "banu_bu_ali_berad": {
+        "discovery_nonrating_records": 2,
+        "duplicate_superseded_records": 1,
+        "lexical_false_positives": 1,
+        "unknown_never_draw_rows": 2
+      },
+      "saudi_arabia_exact": {
+        "existing_parent_war_owners": 1,
+        "existing_release_probable_twins": 0,
+        "hced_probable_twins": 0,
+        "iwbd_discovery_duplicates": 1,
+        "iwbd_probable_twins": 0,
+        "wikidata_discovery_duplicates": 2,
+        "wikidata_false_twins": 1,
+        "wikidata_probable_twins": 0
+      }
+    },
+    "wave8_followup_e_artifact_validation": {
+      "artifact_state": "integrated",
+      "entities_present": 27,
+      "events_present": 13,
+      "holds_absent": 3,
+      "sources_present": 47,
+      "terminal_exclusions_absent": 3
+    },
+    "wave8_followup_e_candidate_ids": [
+      "hced-Bani Bu Ali1821-1",
+      "hced-Cordova1236-1",
+      "hced-Danli1844-1",
+      "hced-Hamad1920-1",
+      "hced-Jahrah1920-1",
+      "hced-Mogadishu1990-1991-1",
+      "hced-Mogadishu1993-1",
+      "hced-Sagar1680-1",
+      "hced-Simancas, Valladolid939-1",
+      "hced-Sur1820-1",
+      "hced-Tegucicalpa1894-1",
+      "hced-Tegucicalpa1924-1",
+      "hced-Wagingera1705-1"
+    ],
+    "wave8_followup_e_holds": [
+      {
+        "candidate_id": "hced-Choluteca1894-1",
+        "raw_row_sha256": "a56d0d5710c6179db1bed371af4792c01db969757a518c9577428c3ac1b9ea71",
+        "canonical_event": {
+          "canonical_key": "choluteca-actions:1893:1894",
+          "date_precision": "multiple_day_ranges",
+          "date_text": "30 December 1893-3 January 1894 and 15-17 January 1894",
+          "start_date": "1893-12-30",
+          "end_date": "1894-01-17",
+          "granularity": "two_distinct_actions_collapsed_into_one_year_place_row",
+          "name": "Choluteca actions",
+          "year_low": 1893,
+          "year_high": 1894
+        },
+        "cohort": "honduran_liberal_revolution_1893_1894",
+        "disposition": "hold",
+        "hold_category": "year_place_row_collapses_multiple_actions_and_source_outcome_contradiction",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_components": [
+          {
+            "name": "Siege and capture of Choluteca",
+            "start_date": "1893-12-30",
+            "end_date": "1894-01-03",
+            "reviewed_outcome": "liberal_nicaraguan_victory",
+            "defender_boundary": "Vicente Williams and José María Estrada"
+          },
+          {
+            "name": "Second Battle of Choluteca",
+            "start_date": "1894-01-15",
+            "end_date": "1894-01-17",
+            "reviewed_outcome": "liberal_nicaraguan_victory",
+            "defender_boundary": "Domingo Vásquez field force"
+          }
+        ],
+        "reviewed_actor_description": [
+          "Policarpo Bonilla’s Liberal force and Anastasio Ortiz’s Nicaraguan expedition",
+          "separately constituted Choluteca defenders in two different actions"
+        ],
+        "evidence_refs": [
+          "wave8_honduran_rebels_becerra_evolucion_historica",
+          "wave8_honduran_rebels_frus_1894_d295",
+          "wave8_honduran_rebels_frus_1894_d307"
+        ],
+        "hold_reason": "HCED's year-place row compresses the 30 December-3 January siege and the 15-17 January battle even though the defenders differ. Reviewed sources describe Liberal/Nicaraguan victories, contradicting HCED's Honduras win. The lane neither reverses an aggregate row nor chooses one component arbitrarily: the candidate result remains unknown, never a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_honduran_rebels",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-Dul Madoba1913-1",
+        "raw_row_sha256": "a809d229ef24cd2f51d6510b6a5744de6dc33c84443f581175ab4dc659e12fa0",
+        "full_row_sha256": "973a52f82a270f2ba9adf225134b52e111adba8dd351cd0429a1bff03d33e05a",
+        "canonical_event": {
+          "canonical_key": "dul_madoba_engagement:1913:1913",
+          "date_precision": "day",
+          "date_text": "9 August 1913",
+          "start_date": "1913-08-09",
+          "end_date": "1913-08-09",
+          "granularity": "five_hour_pursuit_engagement_after_livestock_raid",
+          "name": "Dul Madoba engagement",
+          "year_low": 1913,
+          "year_high": 1913
+        },
+        "cohort": "somali_rebels_exact_1913_1993",
+        "disposition": "hold",
+        "terminal_exclusion": false,
+        "emit_rated_event": false,
+        "hold_category": "conflicting_tactical_and_operational_outcome_layers",
+        "reviewed_outcome": "unknown_not_draw",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "bound_scoring_sides": [],
+        "candidate_actor_boundaries": {
+          "side_1_if_reopened": [
+            "somaliland_camel_constabulary_dul_madoba_1913"
+          ],
+          "side_2_context_only": [
+            "somali_dervish_movement_1899_1920"
+          ],
+          "excluded_context": [
+            "local_dhulbahante_auxiliaries"
+          ]
+        },
+        "evidence_refs": [
+          "jardine_mad_mullah_somaliland_1923",
+          "wave8_somali_rebels_durham_archer_dul_madoba",
+          "wave8_somali_rebels_hansard_dul_madoba_1914",
+          "wave8_somali_rebels_kakwenzire_dul_madoba_1984"
+        ],
+        "hold_reason": "The sources support a real five-hour engagement on 9 August 1913, but battlefield withdrawal and reported Dervish losses conflict with the Camel Constabulary's severe destruction, failure to recover the raided stock, and the political assessment of a Dervish victory. No single reviewed result layer is defensible: unknown is not a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_somali_rebels",
+          "status": "review_hold_owner"
+        }
+      },
+      {
+        "candidate_id": "hced-San Marcos, Honduras1876-1",
+        "raw_row_sha256": "925128e76d54310d6d22fdc18e26b66e80801169d19e0fd4e29c24759bb3afcb",
+        "canonical_event": {
+          "canonical_key": "san-marcos-naranjo-identity-review:1876:1876",
+          "date_precision": "conflicting_exact_days",
+          "date_text": "13, 14, or 22 February 1876",
+          "start_date": "1876-02-13",
+          "end_date": "1876-02-22",
+          "granularity": "unresolved_san_marcos_rio_san_marcos_naranjo_identity",
+          "name": "San Marcos-Naranjo action",
+          "year_low": 1876,
+          "year_high": 1876
+        },
+        "cohort": "honduran_medina_revolt_1876",
+        "disposition": "hold",
+        "hold_category": "unresolved_san_marcos_naranjo_identity_and_date_conflict",
+        "reviewed_outcome": "unknown",
+        "result_type": "unknown",
+        "unknown_is_never_draw": true,
+        "reviewed_actor_description": [
+          "Leiva–Bográn Honduran government force",
+          "José María Medina or Juan Antonio Medina-aligned force"
+        ],
+        "date_candidates": [
+          {
+            "date": "1876-02-13",
+            "source_record": "iwbd-60-21-272",
+            "place": "San Marcos (Honduras)"
+          },
+          {
+            "date": "1876-02-14",
+            "source_id": "wave8_honduran_rebels_secapph_el_paraiso",
+            "place": "Rio San Marcos near Danli"
+          },
+          {
+            "date": "1876-02-22",
+            "source_id": "wave8_honduran_rebels_yoro_monograph",
+            "place": "Naranjo"
+          }
+        ],
+        "evidence_refs": [
+          "wave8_honduran_rebels_bancroft_central_america_v3",
+          "wave8_honduran_rebels_secapph_el_paraiso",
+          "wave8_honduran_rebels_yoro_monograph"
+        ],
+        "hold_reason": "IWBD gives San Marcos on 13 February; the Honduran local history gives Rio San Marcos on 14 February; Bancroft places Naranjo after 15 February; and the departmental monograph dates Naranjo to 22 February. HCED's raw token 'El Naranja' suggests but does not prove conflation. The likely government victory cannot be attached to one exact event safely, so the reviewed candidate stays unknown, never a draw.",
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_honduran_rebels",
+          "status": "review_hold_owner"
+        }
+      }
+    ],
+    "wave8_followup_e_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Calatanazar1002-1",
+        "raw_row_sha256": "25ef78d0b79342984fc0c30b4ce1956d8dc02cf72e93414536e44fc7d790c230",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "exclusion_reason": "late_legend_without_defensible_historical_battle",
+        "reviewed_outcome": "not_rateable",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_cordova_calatanazor_biglieri_2024",
+          "wave8_cordova_calatanazor_castellanos_2001"
+        ],
+        "audit_note": "The Calatañazor story is first attested centuries later and contains chronological, geographical, and participant anachronisms. It is not rewritten as Cervera and emits no outcome or participants."
+      },
+      {
+        "candidate_id": "hced-Hudayda1934-1",
+        "raw_row_sha256": "982b0581cd30aeebb9ba4f52f1b1c629d0a7c5e07a59e8a2b1f6b35d9642739e",
+        "canonical_event": {
+          "canonical_key": "saudi_occupation_of_al_hudaydah:1934:1934",
+          "date_precision": "day",
+          "date_text": "1934-05-05",
+          "granularity": "unopposed_entry_after_yemeni_withdrawal_not_a_competitive_engagement",
+          "name": "Saudi occupation of al-Hudaydah",
+          "year_low": 1934,
+          "year_high": 1934
+        },
+        "cohort": "saudi_yemeni_war_1934",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "exclusion_category": "unopposed_occupation_duplicate_parent_war",
+        "reviewed_outcome": "not_rateable_unopposed_occupation",
+        "unknown_is_never_draw": true,
+        "raw_winner_raw": "Saudi Arabia",
+        "raw_winner_loser_complete": true,
+        "duplicate_of_existing_event_id": "iwd_war_48_saudi_arabia_yemen_1934",
+        "evidence_refs": [
+          "wave8_saudi_arabia_exact_hansard_yemen_1934",
+          "wave8_saudi_arabia_exact_qdl_saudi_yemen_1934"
+        ],
+        "duplicate_ownership": {
+          "owner_module": "military_elo.promotion.wave8_saudi_arabia_exact",
+          "status": "canonical_hced_nonrating_exclusion"
+        },
+        "exclusion_reason": "Contemporary reporting records that Yemeni civil and military authorities withdrew before Saudi forces entered Hodeida on 5 May. That occupation is not a contested engagement, and the enclosing Saudi-Yemen war already receives one strategic update from the IWD parent-war owner. No tactical win or draw is emitted."
+      },
+      {
+        "candidate_id": "hced-Zamora873-1",
+        "raw_row_sha256": "e727c88472ee0c477d40d482816dbf9dd7bb0eccc9ca3e5e21eaefb97a4ab13a",
+        "disposition": "terminal_exclusion",
+        "terminal_exclusion": true,
+        "exclusion_reason": "uncorroborated_row_conflates_later_zamora_events",
+        "reviewed_outcome": "not_rateable",
+        "unknown_is_never_draw": true,
+        "evidence_refs": [
+          "wave8_cordova_zamora_fierro_2004",
+          "wave8_cordova_zamora_garcia_2019",
+          "wave8_cordova_zamora_molenat_2017"
+        ],
+        "audit_note": "No reviewed source corroborates an 873 battle matching the row. Zamora's rebuilding belongs around 893-894 and the documented Day of Zamora to 901, with different actors. The row is not redated."
+      }
+    ],
+    "wave8_followup_e_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Bani Bu Ali1821-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_country": "Oman",
+        "raw_point": [
+          59.3063443,
+          22.0093158
+        ],
+        "reason": "The point is near the modern locality but does not independently establish the fortified position or battlefield.",
+        "evidence_refs": [
+          "wave8_banu_berad_lees_forgotten_battle",
+          "wave8_banu_berad_london_gazette_1821",
+          "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+          "wave8_banu_berad_qdl_said_nonparticipation_1821"
+        ]
+      },
+      {
+        "candidate_id": "hced-Danli1844-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_point": [
+          -86.5703554,
+          14.0410953
+        ],
+        "retained_country": "Honduras",
+        "reason": "HCED's Danlí point is a modern locality assertion, not an authenticated coordinate for the 20 December battlefield. Retain modern country Honduras and location provenance; do not silently substitute a point.",
+        "evidence_refs": [
+          "wave8_honduran_rebels_ariel_233_danli",
+          "wave8_honduran_rebels_garcia_buchard_1839_1845",
+          "wave8_honduran_rebels_secapph_el_paraiso"
+        ]
+      },
+      {
+        "candidate_id": "hced-Hamad1920-1",
+        "point_disposition": "withhold_unverified_geocoder_point",
+        "country_disposition": "retain_saudi_arabia",
+        "raw_point": [
+          48.1887573,
+          27.944825
+        ],
+        "reason": "The sources bound the Hamdh engagement but do not authenticate HCED's single geocoder coordinate as a battlefield point."
+      },
+      {
+        "candidate_id": "hced-Jahrah1920-1",
+        "point_disposition": "withhold_unverified_geocoder_point",
+        "country_disposition": "retain_kuwait",
+        "raw_point": [
+          47.6755291,
+          29.3365728
+        ],
+        "reason": "The sources establish Jahra and the Red Fort but do not authenticate HCED's single point as the battle or fort coordinate."
+      },
+      {
+        "candidate_id": "hced-Mogadishu1990-1991-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_point": [
+          45.3181623,
+          2.0469343
+        ],
+        "retained_country": "Somalia",
+        "evidence_refs": [
+          "wave8_somali_rebels_africa_watch_somalia_1992",
+          "wave8_somali_rebels_amnesty_somalia_1992"
+        ],
+        "reason": "A modern city centroid cannot represent a month-long urban campaign with shifting fronts and the final loyalist withdrawal."
+      },
+      {
+        "candidate_id": "hced-Mogadishu1993-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_point": [
+          45.3181623,
+          2.0469343
+        ],
+        "retained_country": "Somalia",
+        "evidence_refs": [
+          "wave8_somali_rebels_us_army_fm_3_06_somalia",
+          "wave8_somali_rebels_us_army_somalia_1992_1994"
+        ],
+        "reason": "The target building, two crash sites, convoy routes, and stadium form a distributed battle footprint, not one city-centroid point."
+      },
+      {
+        "candidate_id": "hced-Sagar1680-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_country": "India",
+        "raw_point": [
+          76.8005838,
+          16.6248219
+        ],
+        "reason": "The action spans Shahpur, Gogi, fort approaches, and the field rout; the source point is only a locality centroid.",
+        "evidence_refs": [
+          "wave8_banu_berad_guha_environment_ethnicity",
+          "wave8_banu_berad_sarkar_aurangzib_iv",
+          "wave8_banu_berad_singh_sagar_2007"
+        ]
+      },
+      {
+        "candidate_id": "hced-Sur1820-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_country": "Oman",
+        "raw_point": [
+          59.5066376,
+          22.5652759
+        ],
+        "reason": "Sur was the departure and staging port, roughly 60 kilometres from the inland Bilad Bani Bu Ali battle area.",
+        "evidence_refs": [
+          "wave8_banu_berad_qdl_india_office_1820",
+          "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+          "wave8_banu_berad_qdl_persian_gulf_admin_1820"
+        ]
+      },
+      {
+        "candidate_id": "hced-Tegucicalpa1894-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_point": [
+          -87.192136,
+          14.0722751
+        ],
+        "retained_country": "Honduras",
+        "reason": "A single Tegucigalpa locality point cannot authenticate the month-long siege perimeter or the capital's capture locus. Retain modern country Honduras and location provenance; do not silently substitute a point.",
+        "evidence_refs": [
+          "wave8_honduran_rebels_becerra_evolucion_historica",
+          "wave8_honduran_rebels_frus_1894_d295",
+          "wave8_honduran_rebels_frus_1894_d307"
+        ]
+      },
+      {
+        "candidate_id": "hced-Tegucicalpa1924-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_point": [
+          -87.192136,
+          14.0722751
+        ],
+        "retained_country": "Honduras",
+        "reason": "A single Tegucigalpa locality point does not identify the 27-28 April assault positions or a defensible event centroid. Retain modern country Honduras and location provenance; do not silently substitute a point.",
+        "evidence_refs": [
+          "wave8_honduran_rebels_frus_1924_d261",
+          "wave8_honduran_rebels_sedesol_civil_war_1924",
+          "wave8_honduran_rebels_us_navy_expeditions_1901_1929"
+        ]
+      },
+      {
+        "candidate_id": "hced-Wagingera1705-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "raw_country": "India",
+        "raw_point": [
+          76.6932438,
+          16.5119876
+        ],
+        "reason": "The siege footprint includes fort, pettah, and surrounding hillocks; neither staged point establishes an exact geometry.",
+        "evidence_refs": [
+          "wave8_banu_berad_guha_environment_ethnicity",
+          "wave8_banu_berad_maasir_i_alamgiri",
+          "wave8_banu_berad_sarkar_aurangzib_v",
+          "wave8_banu_berad_sarkar_studies_aurangzib",
+          "wave8_banu_berad_singh_sagar_2007"
+        ]
+      }
+    ],
+    "wave8_followup_e_point_quarantine_additions": [
+      "hced-Bani Bu Ali1821-1",
+      "hced-Danli1844-1",
+      "hced-Hamad1920-1",
+      "hced-Jahrah1920-1",
+      "hced-Mogadishu1990-1991-1",
+      "hced-Mogadishu1993-1",
+      "hced-Sagar1680-1",
+      "hced-Sur1820-1",
+      "hced-Tegucicalpa1894-1",
+      "hced-Tegucicalpa1924-1",
+      "hced-Wagingera1705-1"
+    ],
+    "wave8_followup_e_country_quarantine_additions": [],
+    "wave8_followup_e_entities_added": 27,
+    "wave8_followup_e_sources_added": 47,
+    "wave8_followup_e_exact_label_funnel_audits": {
+      "cordova": {
+        "cordova": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "783a55177cd006c203675efb661939d29513cf21507c1ea4bdc766ea8852bbc0",
+          "events_touched": 3,
+          "sole_blocker_events": 2,
+          "unresolved_side_attempts": 3,
+          "zero_time_valid_candidates": 3
+        },
+        "andalucia": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "2294ac22111e8134046e29eae76fc305e0f66bc8e356173f44482a4361d56155",
+          "events_touched": 2,
+          "sole_blocker_events": 1,
+          "unresolved_side_attempts": 2,
+          "zero_time_valid_candidates": 2
+        }
+      },
+      "honduran_rebels": {
+        "honduran rebels": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "9a5e364cbe3cb795aa6211b084c9ef26afc3f6ebde627a54215f6ea874f1708b",
+          "events_touched": 3,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 3
+          },
+          "label": "honduran rebels",
+          "rated_counterpart_entities": 1,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 3
+        },
+        "nicaragua honduran rebels": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "8f7255804d49d90e81cad91277a71a702b082a94578022d32196ea002079195d",
+          "events_touched": 2,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 2
+          },
+          "label": "nicaragua honduran rebels",
+          "rated_counterpart_entities": 1,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 2
+        }
+      },
+      "somali_rebels": {
+        "somali rebels": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "d9324955fff792afc7a9699d4124757878b0a0e7601e9663ab37a2e5bed5182d",
+          "events_touched": 3,
+          "failure_cases": {
+            "multiple_time_valid_candidates": 0,
+            "one_wrong_interval_candidate": 0,
+            "policy_denied_window": 0,
+            "resolver_guard_or_tier_conflict": 0,
+            "zero_time_valid_candidates": 3
+          },
+          "label": "somali rebels",
+          "rated_counterpart_entities": 2,
+          "sole_blocker_events": 2,
+          "time_valid_candidate_ids": [],
+          "unresolved_side_attempts": 3
+        }
+      },
+      "banu_bu_ali_berad": {
+        "banu bu ali": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "b4f6c360c9256053622f5f67049e9681e14c2b805a2fa89ac302130afc59199a",
+          "events_touched": 2,
+          "sole_blocker_events": 2,
+          "unresolved_side_attempts": 2,
+          "rated_counterpart_entities": 1,
+          "failure_cases": {
+            "zero_time_valid_candidates": 2
+          }
+        },
+        "berad tribes": {
+          "candidate_ids": [],
+          "event_candidate_id_sha256": "469157c3cead8dcbedd67d5b470815be5272592fe8f0ad995fa6c398034d808c",
+          "events_touched": 2,
+          "sole_blocker_events": 2,
+          "unresolved_side_attempts": 2,
+          "rated_counterpart_entities": 1,
+          "failure_cases": {
+            "zero_time_valid_candidates": 2
+          }
+        }
+      }
+    },
     "wave8_exact_priority_metadata": {
       "audit": "candidate_keyed_exact_event_bounded_priority_rows",
       "counts": {
@@ -24568,7 +25864,7 @@
     "wave8_raichur_udayagiri_la_forbie_country_quarantine_additions": [],
     "wave8_raichur_udayagiri_la_forbie_entities_added": 6,
     "wave8_raichur_udayagiri_la_forbie_sources_added": 6,
-    "hced_label_pass_input_rows": 5436,
+    "hced_label_pass_input_rows": 5417,
     "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 107,
@@ -24581,7 +25877,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1174,
+      "reserved_candidate_contract": 1193,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -24593,11 +25889,11 @@
       "label_outcome_not_aligned": 78,
       "label_outside_policy_window": 187,
       "label_pending_identity_split": 29,
-      "no_unique_time_valid_label_match": 1849,
-      "no_unique_time_valid_polity": 80,
+      "no_unique_time_valid_label_match": 1832,
+      "no_unique_time_valid_polity": 79,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
-      "wave6_pre1500_candidate_not_in_manifest": 39
+      "wave6_pre1500_candidate_not_in_manifest": 38
     },
     "hced_label_policy_labels": [
       "afghanistan",

@@ -2470,6 +2470,38 @@
     ]
   },
   {
+    "id": "fernan_gonzalez_castilian_contingent_simancas_939",
+    "name": "Fernán González's Castilian contingent at Simancas (939)",
+    "kind": "event_bounded_military_contingent",
+    "start_year": 939,
+    "end_year": 939,
+    "region": "Simancas and the Duero frontier",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Castilian contingent in Ramiro II's coalition at Simancas; it is not a continuity claim for a Castilian state. The identity is alias-free and inherits or transfers no Elo outside the fingerprinted event. Generic Cordova, Córdoba, Andalucía, Castile, León, or Pamplona labels resolve nowhere through this lane.",
+    "source_ids": [
+      "wave8_cordova_simancas_ags_guide",
+      "wave8_cordova_simancas_chalmeta_1976",
+      "wave8_cordova_simancas_kusku_2023"
+    ]
+  },
+  {
+    "id": "garcia_sanchez_i_pamplonese_contingent_simancas_939",
+    "name": "García Sánchez I's Pamplonese contingent at Simancas (939)",
+    "kind": "event_bounded_military_contingent",
+    "start_year": 939,
+    "end_year": 939,
+    "region": "Simancas and the Duero frontier",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Pamplonese contingent in Ramiro II's coalition at Simancas; it is not the Kingdom of Pamplona in another action. The identity is alias-free and inherits or transfers no Elo outside the fingerprinted event. Generic Cordova, Córdoba, Andalucía, Castile, León, or Pamplona labels resolve nowhere through this lane.",
+    "source_ids": [
+      "wave8_cordova_simancas_ags_guide",
+      "wave8_cordova_simancas_chalmeta_1976",
+      "wave8_cordova_simancas_kusku_2023"
+    ]
+  },
+  {
     "id": "clio_af_ghaznavid_emp_962_f3ec953c",
     "name": "Ghaznavid Empire",
     "kind": "empire",
@@ -3655,6 +3687,21 @@
     "continuity_note": "Distinct Crown identity; generic promotion stops before the 1479 dynastic union to avoid collision with the project Spain policy.",
     "source_ids": [
       "wave6_ocallaghan_iberia"
+    ]
+  },
+  {
+    "id": "cordoba_muslim_defenders_1235_1236",
+    "name": "Muslim garrison and defenders of Córdoba (1235-1236)",
+    "kind": "city_defense_force",
+    "start_year": 1235,
+    "end_year": 1236,
+    "region": "Córdoba, al-Andalus",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the garrison and urban defenders engaged by Ferdinand III's forces from the Axerquia seizure through the city's surrender. The identity is alias-free and inherits or transfers no Elo outside the fingerprinted event. Generic Cordova, Córdoba, Andalucía, Castile, León, or Pamplona labels resolve nowhere through this lane.",
+    "source_ids": [
+      "wave8_cordova_cordoba_museo_ejercito",
+      "wave8_cordova_cordoba_rodriguez_2022"
     ]
   },
   {
@@ -8097,6 +8144,22 @@
     ]
   },
   {
+    "id": "pam_nayak_sagar_defenders_1680",
+    "name": "Pam Nayak's Sagar defenders at Shahpur (1680)",
+    "kind": "event_bounded_defending_force",
+    "start_year": 1680,
+    "end_year": 1680,
+    "region": "Sagar-Shahpur, Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Pam Nayak's force in the 20-21 February 1680 battle. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_guha_environment_ethnicity",
+      "wave8_banu_berad_sarkar_aurangzib_iv",
+      "wave8_banu_berad_singh_sagar_2007"
+    ]
+  },
+  {
     "aliases": [],
     "continuity_note": "Irish claimant army; French state contingents remain separately represented where present. No rating is inherited from a namesake, predecessor, successor, or broader polity without a separate reviewed contract.",
     "end_year": 1691,
@@ -8265,6 +8328,42 @@
       "wave8_punjabi_sikhs_gupta_vol1",
       "wave8_punjabi_sikhs_kaur_march_thesis",
       "wave8_punjabi_sikhs_macauliffe_vol5"
+    ]
+  },
+  {
+    "id": "dhana_jadav_hindu_rao_wagingera_relief_force_1705",
+    "name": "Dhana Jadav and Hindu Rao's Wagingera relief force (1705)",
+    "kind": "event_bounded_relief_force",
+    "start_year": 1705,
+    "end_year": 1705,
+    "region": "Wagingera, Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the named auxiliary relief force in the 1705 siege. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_guha_environment_ethnicity",
+      "wave8_banu_berad_maasir_i_alamgiri",
+      "wave8_banu_berad_sarkar_aurangzib_v",
+      "wave8_banu_berad_sarkar_studies_aurangzib",
+      "wave8_banu_berad_singh_sagar_2007"
+    ]
+  },
+  {
+    "id": "pidia_nayak_wagingera_garrison_1705",
+    "name": "Pidia Nayak's Wagingera garrison (1705)",
+    "kind": "event_bounded_fortress_garrison",
+    "start_year": 1705,
+    "end_year": 1705,
+    "region": "Wagingera, Deccan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the garrison during the 8 February-27 April 1705 siege. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_guha_environment_ethnicity",
+      "wave8_banu_berad_maasir_i_alamgiri",
+      "wave8_banu_berad_sarkar_aurangzib_v",
+      "wave8_banu_berad_sarkar_studies_aurangzib",
+      "wave8_banu_berad_singh_sagar_2007"
     ]
   },
   {
@@ -10566,6 +10665,22 @@
     ]
   },
   {
+    "id": "thompson_eic_jalan_column_1820",
+    "name": "Captain Thompson's East India Company Ja'alan column (1820)",
+    "kind": "event_bounded_expeditionary_column",
+    "start_year": 1820,
+    "end_year": 1820,
+    "region": "Ja'alan, Oman",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Company-led column defeated near Bilad Bani Bu Ali. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_qdl_india_office_1820",
+      "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+      "wave8_banu_berad_qdl_persian_gulf_admin_1820"
+    ]
+  },
+  {
     "id": "free_province_guayaquil_1820_1822",
     "name": "Free Province of Guayaquil",
     "kind": "independent_province",
@@ -10578,6 +10693,22 @@
     "source_ids": [
       "wave8_ecuador_anh_guayaquil_flags",
       "wave8_ecuador_cuenca_independence_history"
+    ]
+  },
+  {
+    "id": "muhammad_bin_ali_jalan_defenders_1820",
+    "name": "Muhammad bin Ali's Ja'alan defenders near Bilad Bani Bu Ali (1820)",
+    "kind": "event_bounded_defending_force",
+    "start_year": 1820,
+    "end_year": 1820,
+    "region": "Ja'alan, Oman",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the force that defeated the first expedition on 9 November 1820. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_qdl_india_office_1820",
+      "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+      "wave8_banu_berad_qdl_persian_gulf_admin_1820"
     ]
   },
   {
@@ -10594,6 +10725,22 @@
       "wave8_haiti_embassy_faustin",
       "wave8_haiti_larousse_soulouque",
       "wave8_haiti_openedition_state_genesis"
+    ]
+  },
+  {
+    "id": "sayyid_said_jalan_levy_1820",
+    "name": "Sayyid Sa'id's Ja'alan levy in the first Bani Bu Ali expedition (1820)",
+    "kind": "event_bounded_allied_levy",
+    "start_year": 1820,
+    "end_year": 1820,
+    "region": "Ja'alan, Oman",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Muscat levy that fought with Thompson's column in 1820. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_qdl_india_office_1820",
+      "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+      "wave8_banu_berad_qdl_persian_gulf_admin_1820"
     ]
   },
   {
@@ -10639,6 +10786,40 @@
     "source_ids": [
       "wave8_argentine_independence_jujuy_government_leon",
       "wave8_argentine_independence_unju_leon"
+    ]
+  },
+  {
+    "id": "lionel_smith_bombay_expedition_bani_bu_ali_1821",
+    "name": "Lionel Smith's Bombay expedition at Bani Bu Ali (1821)",
+    "kind": "event_bounded_expeditionary_force",
+    "start_year": 1821,
+    "end_year": 1821,
+    "region": "Ja'alan, Oman",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Smith's mixed Bombay, Company, and Crown expedition on 2 March 1821. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_lees_forgotten_battle",
+      "wave8_banu_berad_london_gazette_1821",
+      "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+      "wave8_banu_berad_qdl_said_nonparticipation_1821"
+    ]
+  },
+  {
+    "id": "muhammad_bin_ali_bani_bu_ali_defenders_1821",
+    "name": "Muhammad bin Ali's Bani Bu Ali defenders (1821)",
+    "kind": "event_bounded_defending_force",
+    "start_year": 1821,
+    "end_year": 1821,
+    "region": "Ja'alan, Oman",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the fortified defending force defeated on 2 March 1821. It receives no broad tribal, dynastic, imperial, colonial, predecessor, or successor alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_banu_berad_lees_forgotten_battle",
+      "wave8_banu_berad_london_gazette_1821",
+      "wave8_banu_berad_qdl_lorimer_bani_bu_ali",
+      "wave8_banu_berad_qdl_said_nonparticipation_1821"
     ]
   },
   {
@@ -11554,6 +11735,22 @@
     ]
   },
   {
+    "id": "ferrera_division_of_operations_danli_1844",
+    "name": "Ferrera government Division of Operations at Danlí",
+    "kind": "event_bounded_government_field_force",
+    "start_year": 1844,
+    "end_year": 1844,
+    "region": "Danlí, Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Francisco Ferrera's government Division of Operations in the 20 December 1844 Danlí action. It inherits no rating from Honduras, a generic Honduran Government label, or Ferrera's forces elsewhere.",
+    "source_ids": [
+      "wave8_honduran_rebels_ariel_233_danli",
+      "wave8_honduran_rebels_garcia_buchard_1839_1845",
+      "wave8_honduran_rebels_secapph_el_paraiso"
+    ]
+  },
+  {
     "id": "first_dominican_republic_1844_1861",
     "name": "First Dominican Republic (1844-1861)",
     "kind": "republic",
@@ -11580,6 +11777,22 @@
     "continuity_note": "The fifteen-man ranger detachment commanded by John Coffee Hays in the 8 June Walker's Creek action. No rating is inherited by any constituent nation, band, modern people, descendant community, or later force.",
     "source_ids": [
       "wave8_comanche_tsha_walkers_creek"
+    ]
+  },
+  {
+    "id": "patricio_jimenez_liberator_division_danli_1844",
+    "name": "Patricio Jiménez’s Ejército Libertador division at Danlí",
+    "kind": "event_bounded_rebel_field_force",
+    "start_year": 1844,
+    "end_year": 1844,
+    "region": "Danlí, Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Patricio Jiménez’s Ejército Libertador division engaged at Danlí. It inherits no rating from a generic Honduran Rebels label, other anti-Ferrera forces, or later Honduran revolutions.",
+    "source_ids": [
+      "wave8_honduran_rebels_ariel_233_danli",
+      "wave8_honduran_rebels_garcia_buchard_1839_1845",
+      "wave8_honduran_rebels_secapph_el_paraiso"
     ]
   },
   {
@@ -14048,6 +14261,54 @@
     ]
   },
   {
+    "id": "anastasio_ortiz_nicaraguan_expedition_1893_1894",
+    "name": "Nicaraguan expeditionary force under Anastasio Ortiz in Honduras",
+    "kind": "conflict_bounded_foreign_expeditionary_force",
+    "start_year": 1893,
+    "end_year": 1894,
+    "region": "Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Anastasio Ortiz's Nicaraguan expedition in the 1893-1894 Honduran revolution. It inherits no rating from Nicaragua generally, a combined Nicaragua-Honduran Rebels label, or later expeditions.",
+    "source_ids": [
+      "wave8_honduran_rebels_becerra_evolucion_historica",
+      "wave8_honduran_rebels_frus_1894_d295",
+      "wave8_honduran_rebels_frus_1894_d307"
+    ]
+  },
+  {
+    "id": "policarpo_bonilla_liberal_revolutionary_force_1893_1894",
+    "name": "Policarpo Bonilla’s Honduran Liberal revolutionary force",
+    "kind": "conflict_bounded_liberal_revolutionary_force",
+    "start_year": 1893,
+    "end_year": 1894,
+    "region": "Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Policarpo Bonilla’s organized Liberal revolutionary force in the 1893-1894 campaign. It inherits no rating from the Liberal Party, a generic Honduran Rebels label, or later Bonilla governments.",
+    "source_ids": [
+      "wave8_honduran_rebels_becerra_evolucion_historica",
+      "wave8_honduran_rebels_frus_1894_d295",
+      "wave8_honduran_rebels_frus_1894_d307"
+    ]
+  },
+  {
+    "id": "domingo_vasquez_tegucigalpa_defense_force_1894",
+    "name": "Domingo Vásquez government force defending Tegucigalpa",
+    "kind": "event_bounded_government_defense_force",
+    "start_year": 1894,
+    "end_year": 1894,
+    "region": "Tegucigalpa, Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only Domingo Vásquez’s loyal force defending Tegucigalpa in January-February 1894. It inherits no rating from Honduras, a generic Honduran Government label, or other Vasquez forces.",
+    "source_ids": [
+      "wave8_honduran_rebels_becerra_evolucion_historica",
+      "wave8_honduran_rebels_frus_1894_d295",
+      "wave8_honduran_rebels_frus_1894_d307"
+    ]
+  },
+  {
     "id": "cuban_liberation_army_1895",
     "name": "Cuban Liberation Army (War of Independence)",
     "kind": "insurgent_army",
@@ -15136,6 +15397,72 @@
     ]
   },
   {
+    "id": "duaij_al_sabah_kuwaiti_detachment_hamdh_1920",
+    "name": "Duaij bin Salman Al Sabah's Kuwaiti detachment at Hamdh in 1920",
+    "kind": "event_bounded_field_detachment",
+    "start_year": 1920,
+    "end_year": 1920,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity contains only the Kuwaiti cavalry and infantry detachment under Duaij in the reviewed Hamdh engagement. No rating is inherited by Saudi Arabia, Kuwait, Nejd, the Ikhwan generally, Mutayr, a ruling house, a commander personally, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_arabia_exact_al_sabah_duaij_profile",
+      "wave8_saudi_arabia_exact_al_shehabi_kcl_2015",
+      "wave8_saudi_arabia_exact_kuna_hamdh_1920",
+      "wave8_saudi_arabia_exact_tetreault_columbia_2000"
+    ]
+  },
+  {
+    "id": "faisal_al_duwaish_ikhwan_force_hamdh_1920",
+    "name": "Faisal al-Duwaish's Ikhwan force at Hamdh in 1920",
+    "kind": "event_bounded_attacking_force",
+    "start_year": 1920,
+    "end_year": 1920,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity contains only al-Duwaish's source-attested force in the reviewed Hamdh engagement. No rating is inherited by Saudi Arabia, Kuwait, Nejd, the Ikhwan generally, Mutayr, a ruling house, a commander personally, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_arabia_exact_al_sabah_duaij_profile",
+      "wave8_saudi_arabia_exact_al_shehabi_kcl_2015",
+      "wave8_saudi_arabia_exact_kuna_hamdh_1920",
+      "wave8_saudi_arabia_exact_tetreault_columbia_2000"
+    ]
+  },
+  {
+    "id": "faisal_al_duwaish_ikhwan_force_jahra_1920",
+    "name": "Faisal al-Duwaish's Ikhwan force at Jahra in 1920",
+    "kind": "event_bounded_attacking_force",
+    "start_year": 1920,
+    "end_year": 1920,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity contains only al-Duwaish's attacking and besieging force at Jahra through 11 October 1920. No rating is inherited by Saudi Arabia, Kuwait, Nejd, the Ikhwan generally, Mutayr, a ruling house, a commander personally, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_arabia_exact_al_sabah_duaij_profile",
+      "wave8_saudi_arabia_exact_al_shehabi_kcl_2015",
+      "wave8_saudi_arabia_exact_tetreault_columbia_2000"
+    ]
+  },
+  {
+    "id": "salim_al_mubarak_jahra_defenders_1920",
+    "name": "Salim al-Mubarak's Kuwaiti and allied defenders at Jahra in 1920",
+    "kind": "event_bounded_defending_force",
+    "start_year": 1920,
+    "end_year": 1920,
+    "region": "Arabian Peninsula",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "This identity contains only Salim al-Mubarak's Kuwaiti, local, and source-attested allied defenders in the reviewed Jahra battle. No rating is inherited by Saudi Arabia, Kuwait, Nejd, the Ikhwan generally, Mutayr, a ruling house, a commander personally, or any other campaign formation.",
+    "source_ids": [
+      "wave8_saudi_arabia_exact_al_sabah_duaij_profile",
+      "wave8_saudi_arabia_exact_al_shehabi_kcl_2015",
+      "wave8_saudi_arabia_exact_tetreault_columbia_2000"
+    ]
+  },
+  {
     "id": "anti_treaty_ira_1922_1923",
     "name": "Anti-Treaty IRA (1922–1923)",
     "kind": "insurgent_army",
@@ -15211,6 +15538,37 @@
     "continuity_note": "Transjordan's Arab Legion, used only in the exact reviewed 1941 coalition contract and fingerprinted 1948 Latrun contracts. No rating is inherited by a predecessor or successor.",
     "source_ids": [
       "wave7_nam_syria"
+    ]
+  },
+  {
+    "id": "council_of_ministers_tegucigalpa_defense_force_1924",
+    "name": "Council of Ministers loyalist defense force at Tegucigalpa",
+    "kind": "event_bounded_loyalist_defense_force",
+    "start_year": 1924,
+    "end_year": 1924,
+    "region": "Tegucigalpa, Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Council of Ministers' loyalist defenders in the final Tegucigalpa assault. It inherits no rating from Honduras, a generic Honduran Government label, or U.S. protective detachments.",
+    "source_ids": [
+      "wave8_honduran_rebels_frus_1924_d261",
+      "wave8_honduran_rebels_sedesol_civil_war_1924",
+      "wave8_honduran_rebels_us_navy_expeditions_1901_1929"
+    ]
+  },
+  {
+    "id": "ferrera_tosta_martinez_funes_tegucigalpa_force_1924",
+    "name": "Ferrera–Tosta–Martínez Funes revolutionary columns at Tegucigalpa",
+    "kind": "event_bounded_revolutionary_assault_force",
+    "start_year": 1924,
+    "end_year": 1924,
+    "region": "Tegucigalpa, Honduras",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Only the Ferrera, Tosta, and Martínez Funes columns in the final 27-28 April assault on Tegucigalpa. It inherits no rating from a generic Honduran Rebels label or any later claimant coalition.",
+    "source_ids": [
+      "wave8_honduran_rebels_frus_1924_d261",
+      "wave8_honduran_rebels_sedesol_civil_war_1924"
     ]
   },
   {
@@ -16956,6 +17314,38 @@
     ]
   },
   {
+    "id": "siad_barre_loyalist_forces_mogadishu_1990_1991",
+    "name": "Siad Barre loyalist forces in Mogadishu (1990–1991)",
+    "kind": "campaign_bounded_government_force",
+    "start_year": 1990,
+    "end_year": 1991,
+    "region": "Mogadishu, Somalia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity bounded to the government and loyalist forces defending Mogadishu through Barre's expulsion on 26 January 1991. It is not Somalia as a timeless polity and inherits or transfers no rating to later governments, militias, or armed forces.",
+    "source_ids": [
+      "ucdp_termination_dyad",
+      "wave8_somali_rebels_africa_watch_somalia_1992",
+      "wave8_somali_rebels_amnesty_somalia_1992"
+    ]
+  },
+  {
+    "id": "united_somali_congress_mogadishu_force_1990_1991",
+    "name": "United Somali Congress Mogadishu force (1990–1991)",
+    "kind": "campaign_bounded_insurgent_force",
+    "start_year": 1990,
+    "end_year": 1991,
+    "region": "Mogadishu, Somalia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity bounded to the USC forces in the 30 December 1990–26 January 1991 Mogadishu campaign. It does not inherit or transfer a rating to USC/SSA, USC/SNA, SRRC, Somali ethnicity, Somalia, a generic Somali Rebels label, or any successor faction.",
+    "source_ids": [
+      "ucdp_termination_dyad",
+      "wave8_somali_rebels_africa_watch_somalia_1992",
+      "wave8_somali_rebels_amnesty_somalia_1992"
+    ]
+  },
+  {
     "id": "eplf_assab_offensive_force_1991",
     "name": "EPLF Assab Offensive Force (24-25 May 1991)",
     "kind": "engagement_bounded_insurgent_offensive_force",
@@ -17049,6 +17439,54 @@
     "continuity_note": "Time-bounded Cliopatria interval. Namesakes, predecessors, and successors receive no inherited rating without an explicit continuity decision.",
     "source_ids": [
       "cliopatria_v020"
+    ]
+  },
+  {
+    "id": "mogadishu_multinational_relief_force_1993",
+    "name": "Mogadishu multinational relief force (3–4 October 1993)",
+    "kind": "engagement_bounded_multinational_relief_force",
+    "start_year": 1993,
+    "end_year": 1993,
+    "region": "Mogadishu, Somalia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity for the U.S. 10th Mountain/2-14 Infantry quick reaction force and participating Pakistani and Malaysian relief elements in the reviewed extraction. Constituent states and units do not inherit or transfer this event-bounded rating.",
+    "source_ids": [
+      "wave8_somali_rebels_cassidy_bsdr_2008",
+      "wave8_somali_rebels_us_army_fm_3_06_somalia",
+      "wave8_somali_rebels_us_army_somalia_1992_1994"
+    ]
+  },
+  {
+    "id": "somali_national_alliance_aidid_force_mogadishu_1993",
+    "name": "Somali National Alliance Aidid force in Mogadishu (1993)",
+    "kind": "engagement_bounded_militia_force",
+    "start_year": 1993,
+    "end_year": 1993,
+    "region": "Mogadishu, Somalia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity bounded to Aidid-aligned SNA combatants in the 3–4 October 1993 battle. It receives no rating continuity from the 1990–1991 USC force and transfers none to USC/SSA, SRRC, Somalia, Somali ethnicity, or a generic Somali Rebels identity.",
+    "source_ids": [
+      "wave8_somali_rebels_cassidy_bsdr_2008",
+      "wave8_somali_rebels_us_army_fm_3_06_somalia",
+      "wave8_somali_rebels_us_army_somalia_1992_1994"
+    ]
+  },
+  {
+    "id": "task_force_ranger_mogadishu_1993",
+    "name": "Task Force Ranger in Mogadishu (3–4 October 1993)",
+    "kind": "engagement_bounded_joint_task_force",
+    "start_year": 1993,
+    "end_year": 1993,
+    "region": "Mogadishu, Somalia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Alias-free identity for Task Force Ranger during the reviewed raid and extraction battle only. It is not the United States as a polity and transfers no rating to U.S., UNOSOM, UNITAF, or later forces.",
+    "source_ids": [
+      "wave8_somali_rebels_cassidy_bsdr_2008",
+      "wave8_somali_rebels_us_army_fm_3_06_somalia",
+      "wave8_somali_rebels_us_army_somalia_1992_1994"
     ]
   },
   {

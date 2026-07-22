@@ -1963,6 +1963,29 @@ from .wave8_followup_d import (
     wave8_followup_d_counts,
     wave8_followup_d_metadata,
 )
+from .wave8_followup_e import (
+    WAVE8_FOLLOWUP_E_CONTRACT_IDS,
+    WAVE8_FOLLOWUP_E_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_FOLLOWUP_E_ENTITIES,
+    WAVE8_FOLLOWUP_E_FINAL_AUDIT_SIGNATURE,
+    WAVE8_FOLLOWUP_E_FUNNEL_AUDITS,
+    WAVE8_FOLLOWUP_E_HOLDS,
+    WAVE8_FOLLOWUP_E_LOCATION_QUARANTINE_REASONS,
+    WAVE8_FOLLOWUP_E_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_FOLLOWUP_E_RESERVED_IDS,
+    WAVE8_FOLLOWUP_E_SOURCES,
+    WAVE8_FOLLOWUP_E_TERMINAL_EXCLUSIONS,
+    install_wave8_followup_e_entities,
+    install_wave8_followup_e_sources,
+    promote_wave8_followup_e_contracts,
+    validate_wave8_followup_e_artifact_state,
+    validate_wave8_followup_e_discovery_dispositions,
+    validate_wave8_followup_e_integration_dispositions,
+    validate_wave8_followup_e_queue_contracts,
+    wave8_followup_e_audit_signature,
+    wave8_followup_e_counts,
+    wave8_followup_e_metadata,
+)
 from .wave8_exact_priority import (
     WAVE8_EXACT_PRIORITY_CONTRACT_IDS,
     WAVE8_EXACT_PRIORITY_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2455,6 +2478,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_FOLLOWUP_B_RESERVED_IDS
     | WAVE8_FOLLOWUP_C_RESERVED_IDS
     | WAVE8_FOLLOWUP_D_RESERVED_IDS
+    | WAVE8_FOLLOWUP_E_RESERVED_IDS
     | WAVE8_EXACT_PRIORITY_RESERVED_IDS
     | WAVE8_KIEVAN_RUS_RESERVED_IDS
     | WAVE8_CARNATIC_RESERVED_IDS
@@ -2900,7 +2924,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 431
+        len(HCED_POINT_QUARANTINE_IDS) != 442
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 97
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3213,6 +3237,9 @@ def build_expanded_release(
         hced
     )
     wave8_followup_d_queue_validation = validate_wave8_followup_d_queue_contracts(
+        hced
+    )
+    wave8_followup_e_queue_validation = validate_wave8_followup_e_queue_contracts(
         hced
     )
     wave8_exact_priority_queue_validation = (
@@ -3854,6 +3881,7 @@ def build_expanded_release(
         validate_wave8_followup_c_existing_entities(release_entities)
     )
     install_wave8_followup_d_entities(release_entities)
+    install_wave8_followup_e_entities(release_entities)
     install_wave8_exact_priority_entities(release_entities)
     install_wave8_kievan_rus_entities(release_entities)
     install_wave8_carnatic_entities(release_entities)
@@ -5430,9 +5458,18 @@ def build_expanded_release(
         release_entities,
         wave8_followup_d_existing_events,
     )
-    wave8_exact_priority_existing_events = [
+    wave8_followup_e_existing_events = [
         *wave8_followup_d_existing_events,
         *wave8_followup_d_events,
+    ]
+    wave8_followup_e_events = promote_wave8_followup_e_contracts(
+        hced,
+        release_entities,
+        wave8_followup_e_existing_events,
+    )
+    wave8_exact_priority_existing_events = [
+        *wave8_followup_e_existing_events,
+        *wave8_followup_e_events,
     ]
     wave8_exact_priority_events = promote_wave8_exact_priority_contracts(
         hced,
@@ -5687,6 +5724,7 @@ def build_expanded_release(
         *wave8_followup_b_events,
         *wave8_followup_c_events,
         *wave8_followup_d_events,
+        *wave8_followup_e_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -5975,6 +6013,7 @@ def build_expanded_release(
         *wave8_followup_b_events,
         *wave8_followup_c_events,
         *wave8_followup_d_events,
+        *wave8_followup_e_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -6879,6 +6918,7 @@ def build_expanded_release(
     install_wave8_followup_b_sources(sources_by_id)
     install_wave8_followup_c_sources(sources_by_id)
     install_wave8_followup_d_sources(sources_by_id)
+    install_wave8_followup_e_sources(sources_by_id)
     install_wave8_exact_priority_sources(sources_by_id)
     install_wave8_kievan_rus_sources(sources_by_id)
     install_wave8_carnatic_sources(sources_by_id)
@@ -6995,6 +7035,7 @@ def build_expanded_release(
         *wave8_followup_b_events,
         *wave8_followup_c_events,
         *wave8_followup_d_events,
+        *wave8_followup_e_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -7083,6 +7124,40 @@ def build_expanded_release(
     )
     wave8_followup_d_artifact_validation = (
         validate_wave8_followup_d_artifact_state(
+            all_events,
+            release_entities.values(),
+            sources_by_id.values(),
+        )
+    )
+    wave8_followup_e_brecke_rows = read_jsonl(
+        review.parent / "reference" / "brecke-wars.jsonl"
+    )
+    wave8_followup_e_ucdp_rows = [
+        *wave8_taliban_al_qaeda_ucdp_rows,
+        *read_jsonl(review / "ucdp-actor-26.1-candidates.jsonl"),
+    ]
+    wave8_followup_e_discovery_validation = (
+        validate_wave8_followup_e_discovery_dispositions(
+            hced,
+            iwbd_candidates,
+            wave8_followup_e_brecke_rows,
+            wikidata_battle_candidates,
+            wave8_followup_e_ucdp_rows,
+        )
+    )
+    wave8_followup_e_integration_validation = (
+        validate_wave8_followup_e_integration_dispositions(
+            hced,
+            iwd_candidates,
+            iwbd_candidates,
+            wave8_followup_e_brecke_rows,
+            wikidata_battle_candidates,
+            wave8_followup_e_ucdp_rows,
+            all_events,
+        )
+    )
+    wave8_followup_e_artifact_validation = (
+        validate_wave8_followup_e_artifact_state(
             all_events,
             release_entities.values(),
             sources_by_id.values(),
@@ -7214,6 +7289,7 @@ def build_expanded_release(
         *wave8_followup_b_events,
         *wave8_followup_c_events,
         *wave8_followup_d_events,
+        *wave8_followup_e_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -7329,6 +7405,7 @@ def build_expanded_release(
             | WAVE8_FOLLOWUP_B_CONTRACT_IDS
             | WAVE8_FOLLOWUP_C_CONTRACT_IDS
             | WAVE8_FOLLOWUP_D_CONTRACT_IDS
+            | WAVE8_FOLLOWUP_E_CONTRACT_IDS
             | WAVE8_EXACT_PRIORITY_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
             | WAVE8_CARNATIC_CONTRACT_IDS
@@ -7499,6 +7576,7 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_B_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_C_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_D_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_E_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_EXACT_PRIORITY_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIEVAN_RUS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CARNATIC_ENTITIES),
@@ -7829,6 +7907,7 @@ def build_expanded_release(
         - len(wave8_followup_b_events)
         - len(wave8_followup_c_events)
         - len(wave8_followup_d_events)
+        - len(wave8_followup_e_events)
         - len(wave8_exact_priority_events)
         - len(wave8_kievan_rus_events)
         - len(wave8_carnatic_events)
@@ -8053,6 +8132,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_followup_d_hced_events": len(
             wave8_followup_d_events
+        ),
+        "candidate_keyed_wave8_followup_e_hced_events": len(
+            wave8_followup_e_events
         ),
         "candidate_keyed_wave8_exact_priority_hced_events": len(
             wave8_exact_priority_events
@@ -8444,6 +8526,9 @@ def build_expanded_release(
             ),
             "accepted_wave8_followup_d_hced_events": len(
                 wave8_followup_d_events
+            ),
+            "accepted_wave8_followup_e_hced_events": len(
+                wave8_followup_e_events
             ),
             "accepted_wave8_exact_priority_hced_events": len(
                 wave8_exact_priority_events
@@ -12683,6 +12768,56 @@ def build_expanded_release(
             "wave8_finnish_civil_war_exact_label_funnel_audit": (
                 WAVE8_FOLLOWUP_D_FUNNEL_AUDITS["finnish_civil_war"]
             ),
+            "wave8_followup_e_metadata": wave8_followup_e_metadata(),
+            "wave8_followup_e_counts": wave8_followup_e_counts(),
+            "wave8_followup_e_audit_signature": wave8_followup_e_audit_signature(),
+            "wave8_followup_e_final_audit_signature": (
+                WAVE8_FOLLOWUP_E_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_followup_e_queue_validation": (
+                wave8_followup_e_queue_validation
+            ),
+            "wave8_followup_e_discovery_validation": (
+                wave8_followup_e_discovery_validation
+            ),
+            "wave8_followup_e_integration_validation": (
+                wave8_followup_e_integration_validation
+            ),
+            "wave8_followup_e_artifact_validation": (
+                wave8_followup_e_artifact_validation
+            ),
+            "wave8_followup_e_candidate_ids": sorted(
+                WAVE8_FOLLOWUP_E_CONTRACT_IDS
+            ),
+            "wave8_followup_e_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_FOLLOWUP_E_HOLDS.items()
+                )
+            ],
+            "wave8_followup_e_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_FOLLOWUP_E_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_followup_e_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_FOLLOWUP_E_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_followup_e_point_quarantine_additions": sorted(
+                WAVE8_FOLLOWUP_E_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_followup_e_country_quarantine_additions": sorted(
+                WAVE8_FOLLOWUP_E_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_followup_e_entities_added": len(WAVE8_FOLLOWUP_E_ENTITIES),
+            "wave8_followup_e_sources_added": len(WAVE8_FOLLOWUP_E_SOURCES),
+            "wave8_followup_e_exact_label_funnel_audits": (
+                WAVE8_FOLLOWUP_E_FUNNEL_AUDITS
+            ),
             "wave8_exact_priority_metadata": wave8_exact_priority_metadata(),
             "wave8_exact_priority_counts": wave8_exact_priority_counts(),
             "wave8_exact_priority_cohort_counts": (
@@ -13731,6 +13866,9 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_followup_d_hced_events": len(
             wave8_followup_d_events
+        ),
+        "candidate_keyed_wave8_followup_e_hced_events": len(
+            wave8_followup_e_events
         ),
         "candidate_keyed_wave8_exact_priority_hced_events": len(
             wave8_exact_priority_events
