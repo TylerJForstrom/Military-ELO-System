@@ -2049,6 +2049,30 @@ from .wave8_araucanian import (
     wave8_araucanian_counts,
     wave8_araucanian_metadata,
 )
+from .wave8_holy_roman_empire_exact import (
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_CONTRACT_IDS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_DISCOVERY_SNAPSHOT_LOCKS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_ENTITIES,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_FINAL_AUDIT_SIGNATURE,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_HOLDS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_LOCATION_QUARANTINE_REASONS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_RESERVED_IDS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_SOURCES,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_TERMINAL_EXCLUSIONS,
+    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_WAVE6_SUPERSEDED_EXCLUSION_IDS,
+    install_wave8_holy_roman_empire_exact_entities,
+    install_wave8_holy_roman_empire_exact_sources,
+    promote_wave8_holy_roman_empire_exact_contracts,
+    validate_wave8_holy_roman_empire_exact_cross_dataset_inventories,
+    validate_wave8_holy_roman_empire_exact_current_artifact_state,
+    validate_wave8_holy_roman_empire_exact_integration_dispositions,
+    validate_wave8_holy_roman_empire_exact_queue_contracts,
+    wave8_holy_roman_empire_exact_audit_signature,
+    wave8_holy_roman_empire_exact_counts,
+    wave8_holy_roman_empire_exact_metadata,
+)
 from .wave8_exact_priority import (
     WAVE8_EXACT_PRIORITY_CONTRACT_IDS,
     WAVE8_EXACT_PRIORITY_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2545,6 +2569,7 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ALEMANNS_RESERVED_IDS
     | WAVE8_AL_QAEDA_TALIBAN_RESERVED_IDS
     | WAVE8_ARAUCANIAN_RESERVED_IDS
+    | WAVE8_HOLY_ROMAN_EMPIRE_EXACT_RESERVED_IDS
     | WAVE8_EXACT_PRIORITY_RESERVED_IDS
     | WAVE8_KIEVAN_RUS_RESERVED_IDS
     | WAVE8_CARNATIC_RESERVED_IDS
@@ -2564,6 +2589,25 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_ARQUIJAS_RESERVED_IDS
     | WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_RESERVED_IDS
 )
+
+_WAVE6_UNSAFE_HRE_EXCLUSION_IDS = frozenset(
+    candidate_id
+    for candidate_id, contract in WAVE6_HCED_EXCLUSIONS.items()
+    if contract["category"] == "unsafe_imperial_collapse"
+)
+if (
+    _WAVE6_UNSAFE_HRE_EXCLUSION_IDS
+    != WAVE8_HOLY_ROMAN_EMPIRE_EXACT_WAVE6_SUPERSEDED_EXCLUSION_IDS
+):
+    raise ValueError(
+        "Wave 8 Holy Roman Empire supersessions no longer match the complete "
+        "Wave 6 unsafe-imperial-collapse inventory"
+    )
+EFFECTIVE_WAVE6_HCED_NONPROMOTED_IDS = (
+    WAVE6_HCED_NONPROMOTED_IDS
+    - WAVE8_HOLY_ROMAN_EMPIRE_EXACT_WAVE6_SUPERSEDED_EXCLUSION_IDS
+)
+
 EFFECTIVE_HCED_CURATED_EXCLUSIONS = {
     **HCED_CURATED_EXCLUSIONS,
     **WAVE6_PRE1500_CURATED_EXCLUSIONS,
@@ -2990,8 +3034,8 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 450
-        or len(HCED_COUNTRY_QUARANTINE_IDS) != 97
+        len(HCED_POINT_QUARANTINE_IDS) != 468
+        or len(HCED_COUNTRY_QUARANTINE_IDS) != 99
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
         != HCED_EXPECTED_QUARANTINE_OVERLAP
@@ -3314,6 +3358,9 @@ def build_expanded_release(
     )
     wave8_araucanian_queue_validation = validate_wave8_araucanian_queue_contracts(
         hced
+    )
+    wave8_holy_roman_empire_exact_queue_validation = (
+        validate_wave8_holy_roman_empire_exact_queue_contracts(hced)
     )
     wave8_exact_priority_queue_validation = (
         validate_wave8_exact_priority_queue_contracts(hced)
@@ -3975,6 +4022,7 @@ def build_expanded_release(
     install_wave8_republic_formosa_entities(release_entities)
     install_wave8_arquijas_entities(release_entities)
     install_wave8_raichur_udayagiri_la_forbie_entities(release_entities)
+    install_wave8_holy_roman_empire_exact_entities(release_entities)
     # Five already-rated Orange rows are rebuilt through the legacy label pass
     # solely so this exact, complete-event fingerprint migration can replace
     # their old source-candidate identity atomically. Any upstream drift aborts.
@@ -5734,6 +5782,17 @@ def build_expanded_release(
             wave8_raichur_udayagiri_la_forbie_existing_events,
         )
     )
+    wave8_holy_roman_empire_exact_existing_events = [
+        *wave8_raichur_udayagiri_la_forbie_existing_events,
+        *wave8_raichur_udayagiri_la_forbie_events,
+    ]
+    wave8_holy_roman_empire_exact_events = (
+        promote_wave8_holy_roman_empire_exact_contracts(
+            hced,
+            release_entities,
+            wave8_holy_roman_empire_exact_existing_events,
+        )
+    )
     for event in (
         *wave6_events,
         *wave7_root_events,
@@ -5849,6 +5908,7 @@ def build_expanded_release(
         *wave8_republic_formosa_events,
         *wave8_arquijas_events,
         *wave8_raichur_udayagiri_la_forbie_events,
+        *wave8_holy_roman_empire_exact_events,
     ):
         candidate = hced_candidates_by_id[str(event["hced_candidate_id"])]
         war_names = list(map(str, candidate.get("war_names", [])))
@@ -5877,7 +5937,7 @@ def build_expanded_release(
         if str(candidate.get("candidate_id")) in {
             *EFFECTIVE_HCED_CURATED_EXCLUSIONS,
             *HCED_LABEL_CURATED_EXCLUSIONS,
-            *WAVE6_HCED_NONPROMOTED_IDS,
+            *EFFECTIVE_WAVE6_HCED_NONPROMOTED_IDS,
             *WAVE7_ROOT_HOLD_IDS,
             *WAVE7_CENTRAL_HOLD_IDS,
             *WAVE7_CENTRAL_PASS2_HOLD_IDS,
@@ -6141,6 +6201,7 @@ def build_expanded_release(
         *wave8_republic_formosa_events,
         *wave8_arquijas_events,
         *wave8_raichur_udayagiri_la_forbie_events,
+        *wave8_holy_roman_empire_exact_events,
     ):
         winners = frozenset(
             str(participant["entity_id"])
@@ -7049,6 +7110,7 @@ def build_expanded_release(
     install_wave8_republic_formosa_sources(sources_by_id)
     install_wave8_arquijas_sources(sources_by_id)
     install_wave8_raichur_udayagiri_la_forbie_sources(sources_by_id)
+    install_wave8_holy_roman_empire_exact_sources(sources_by_id)
 
     all_events = [
         *seed_events,
@@ -7169,6 +7231,7 @@ def build_expanded_release(
         *wave8_republic_formosa_events,
         *wave8_arquijas_events,
         *wave8_raichur_udayagiri_la_forbie_events,
+        *wave8_holy_roman_empire_exact_events,
         *iwbd_events,
         *ucdp_events,
     ]
@@ -7315,6 +7378,68 @@ def build_expanded_release(
             release_entities.values(),
             sources_by_id.values(),
             seed_events,
+        )
+    )
+    wave8_holy_roman_empire_exact_snapshot_paths = {
+        "wikidata_battle": review / "wikidata-battle-candidates.jsonl",
+        "wikidata_generic": review / "wikidata-candidates.jsonl",
+        "brecke": review.parent / "reference" / "brecke-wars.jsonl",
+        "iwd": review / "iwd-1.21-candidates.jsonl",
+        "iwbd": review / "iwbd-candidates.jsonl",
+        "ucdp_conflict": review / "ucdp-conflict-26.1-candidates.jsonl",
+        "ucdp_dyadic": review / "ucdp-dyadic-26.1-candidates.jsonl",
+        "ucdp_termination_conflict": (
+            review / "ucdp-termination-conflict-candidates.jsonl"
+        ),
+        "ucdp_termination_dyad": (
+            review / "ucdp-termination-dyad-candidates.jsonl"
+        ),
+        "ucdp_actor": review / "ucdp-actor-26.1-candidates.jsonl",
+    }
+    if set(wave8_holy_roman_empire_exact_snapshot_paths) != set(
+        WAVE8_HOLY_ROMAN_EMPIRE_EXACT_DISCOVERY_SNAPSHOT_LOCKS
+    ):
+        raise ValueError("Wave 8 Holy Roman Empire discovery dataset keys changed")
+    wave8_holy_roman_empire_exact_cross_dataset_validation = (
+        validate_wave8_holy_roman_empire_exact_cross_dataset_inventories(
+            {
+                "wikidata_battle": wikidata_battle_candidates,
+                "wikidata_generic": wikidata_candidates,
+                "brecke": wave8_followup_e_brecke_rows,
+                "iwd": iwd_candidates,
+                "iwbd": iwbd_candidates,
+                "ucdp_conflict": read_jsonl(
+                    wave8_holy_roman_empire_exact_snapshot_paths["ucdp_conflict"]
+                ),
+                "ucdp_dyadic": read_jsonl(
+                    wave8_holy_roman_empire_exact_snapshot_paths["ucdp_dyadic"]
+                ),
+                "ucdp_termination_conflict": ucdp_conflict_rows,
+                "ucdp_termination_dyad": ucdp_dyad_rows,
+                "ucdp_actor": read_jsonl(
+                    wave8_holy_roman_empire_exact_snapshot_paths["ucdp_actor"]
+                ),
+            },
+            {
+                dataset: hashlib.sha256(path.read_bytes()).hexdigest()
+                for dataset, path in (
+                    wave8_holy_roman_empire_exact_snapshot_paths.items()
+                )
+            },
+            all_events,
+        )
+    )
+    wave8_holy_roman_empire_exact_integration_validation = (
+        validate_wave8_holy_roman_empire_exact_integration_dispositions(
+            hced,
+            all_events,
+        )
+    )
+    wave8_holy_roman_empire_exact_artifact_validation = (
+        validate_wave8_holy_roman_empire_exact_current_artifact_state(
+            all_events,
+            release_entities.values(),
+            sources_by_id.values(),
         )
     )
     wave8_exact_priority_integration_validation = (
@@ -7465,6 +7590,7 @@ def build_expanded_release(
         *wave8_republic_formosa_events,
         *wave8_arquijas_events,
         *wave8_raichur_udayagiri_la_forbie_events,
+        *wave8_holy_roman_empire_exact_events,
     ]
     hced_location_coverage = _validate_hced_location_release(
         hced_events,
@@ -7566,6 +7692,7 @@ def build_expanded_release(
             | WAVE8_ALEMANNS_CONTRACT_IDS
             | WAVE8_AL_QAEDA_TALIBAN_CONTRACT_IDS
             | WAVE8_ARAUCANIAN_CONTRACT_IDS
+            | WAVE8_HOLY_ROMAN_EMPIRE_EXACT_CONTRACT_IDS
             | WAVE8_EXACT_PRIORITY_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
             | WAVE8_CARNATIC_CONTRACT_IDS
@@ -7743,6 +7870,10 @@ def build_expanded_release(
             WAVE8_AL_QAEDA_TALIBAN_ENTITIES,
         ),
         *map(lambda entity: str(entity["id"]), WAVE8_ARAUCANIAN_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_HOLY_ROMAN_EMPIRE_EXACT_ENTITIES,
+        ),
         *map(lambda entity: str(entity["id"]), WAVE8_EXACT_PRIORITY_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIEVAN_RUS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CARNATIC_ENTITIES),
@@ -8095,6 +8226,7 @@ def build_expanded_release(
         - len(wave8_republic_formosa_events)
         - len(wave8_arquijas_events)
         - len(wave8_raichur_udayagiri_la_forbie_events)
+        - len(wave8_holy_roman_empire_exact_events)
         - len(iwbd_events)
         - len(ucdp_events)
         - iwd_aggregation["components_attached"],
@@ -8352,6 +8484,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": len(
             wave8_raichur_udayagiri_la_forbie_events
         ),
+        "candidate_keyed_wave8_holy_roman_empire_exact_hced_events": len(
+            wave8_holy_roman_empire_exact_events
+        ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),
         "provisional_iwbd_battles": len(iwbd_events),
@@ -8445,9 +8580,11 @@ def build_expanded_release(
                 "contracts whose complete raw rows, canonical event keys, outcomes, "
                 "participant rosters, and entity windows are pinned. Seventy-six are "
                 "active and four exact coalition-evidence holds remain staged. Its 39 "
-                "HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and "
-                "fingerprinted; none creates a label fallback, and all generic Holy "
-                "Roman Empire rows remain staged. "
+                "historical HCED exclusions and eight Wikidata war umbrellas are likewise "
+                "candidate-keyed and fingerprinted; none creates a label fallback. Eleven "
+                "generic Holy Roman Empire exclusions are now explicitly superseded by "
+                "Wave 8 contracts that use separately sourced, event-bounded formation "
+                "pairs; the other 28 HCED exclusions remain staged. "
                 "Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, "
                 "plus five atomic identity migrations of already-rated Orange events. "
                 "Every admitted or held row is pinned by its complete queue-row hash, "
@@ -8753,6 +8890,9 @@ def build_expanded_release(
             "accepted_wave8_raichur_udayagiri_la_forbie_hced_events": len(
                 wave8_raichur_udayagiri_la_forbie_events
             ),
+            "accepted_wave8_holy_roman_empire_exact_hced_events": len(
+                wave8_holy_roman_empire_exact_events
+            ),
             "wave8_polish_audit_corrections": WAVE8_POLISH_AUDIT_CORRECTION_COUNT,
             "wave6_1500_1799_cohort_counts": wave6_cohort_counts(),
             "wave6_1500_1799_queue_validation": wave6_queue_validation,
@@ -8774,6 +8914,29 @@ def build_expanded_release(
                     "raw_row_sha256": contract["raw_row_sha256"],
                 }
                 for candidate_id, contract in sorted(WAVE6_HCED_EXCLUSIONS.items())
+                if candidate_id
+                not in WAVE8_HOLY_ROMAN_EMPIRE_EXACT_WAVE6_SUPERSEDED_EXCLUSION_IDS
+            ],
+            "wave6_1500_1799_hced_exclusion_supersessions": [
+                {
+                    "candidate_id": candidate_id,
+                    "historical_category": WAVE6_HCED_EXCLUSIONS[candidate_id][
+                        "category"
+                    ],
+                    "historical_reason": WAVE6_HCED_EXCLUSIONS[candidate_id][
+                        "reason"
+                    ],
+                    "raw_row_sha256": WAVE6_HCED_EXCLUSIONS[candidate_id][
+                        "raw_row_sha256"
+                    ],
+                    "current_disposition": (
+                        "rated_by_wave8_holy_roman_empire_exact_event_bounded_"
+                        "formation_contract"
+                    ),
+                }
+                for candidate_id in sorted(
+                    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_WAVE6_SUPERSEDED_EXCLUSION_IDS
+                )
             ],
             "wave6_1500_1799_wikidata_exclusions": [
                 {
@@ -13833,6 +13996,63 @@ def build_expanded_release(
             "wave8_raichur_udayagiri_la_forbie_sources_added": len(
                 WAVE8_RAICHUR_UDAYAGIRI_LA_FORBIE_SOURCES
             ),
+            "wave8_holy_roman_empire_exact_metadata": (
+                wave8_holy_roman_empire_exact_metadata()
+            ),
+            "wave8_holy_roman_empire_exact_counts": (
+                wave8_holy_roman_empire_exact_counts()
+            ),
+            "wave8_holy_roman_empire_exact_audit_signature": (
+                wave8_holy_roman_empire_exact_audit_signature()
+            ),
+            "wave8_holy_roman_empire_exact_final_audit_signature": (
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_holy_roman_empire_exact_queue_validation": (
+                wave8_holy_roman_empire_exact_queue_validation
+            ),
+            "wave8_holy_roman_empire_exact_cross_dataset_validation": (
+                wave8_holy_roman_empire_exact_cross_dataset_validation
+            ),
+            "wave8_holy_roman_empire_exact_integration_validation": (
+                wave8_holy_roman_empire_exact_integration_validation
+            ),
+            "wave8_holy_roman_empire_exact_artifact_validation": (
+                wave8_holy_roman_empire_exact_artifact_validation
+            ),
+            "wave8_holy_roman_empire_exact_candidate_ids": sorted(
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_CONTRACT_IDS
+            ),
+            "wave8_holy_roman_empire_exact_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_HOLDS.items()
+                )
+            ],
+            "wave8_holy_roman_empire_exact_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_holy_roman_empire_exact_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_HOLY_ROMAN_EMPIRE_EXACT_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_holy_roman_empire_exact_point_quarantine_additions": sorted(
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_holy_roman_empire_exact_country_quarantine_additions": sorted(
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_holy_roman_empire_exact_entities_added": len(
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_ENTITIES
+            ),
+            "wave8_holy_roman_empire_exact_sources_added": len(
+                WAVE8_HOLY_ROMAN_EMPIRE_EXACT_SOURCES
+            ),
             "hced_label_pass_input_rows": hced_label_pass["rows_total"],
             "accepted_iwd_wars": len(iwd_events),
             "iwd_parent_wars_total": iwd_aggregation["parents_total"],
@@ -14204,6 +14424,9 @@ def build_expanded_release(
         "candidate_keyed_wave8_arquijas_hced_events": len(wave8_arquijas_events),
         "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": len(
             wave8_raichur_udayagiri_la_forbie_events
+        ),
+        "candidate_keyed_wave8_holy_roman_empire_exact_hced_events": len(
+            wave8_holy_roman_empire_exact_events
         ),
         "wave7_global_identity_migrations": len(WAVE7_GLOBAL_ORANGE_MIGRATIONS),
         "provisional_iwd_wars": len(iwd_events),

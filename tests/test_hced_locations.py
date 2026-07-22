@@ -104,8 +104,8 @@ def _rating_event(*, with_location: bool) -> Event:
 
 class HcedPointParserTests(unittest.TestCase):
     def test_quarantine_module_imports_with_final_manifest_sizes(self) -> None:
-        self.assertEqual(len(HCED_POINT_QUARANTINE_CANDIDATE_IDS), 450)
-        self.assertEqual(len(HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS), 97)
+        self.assertEqual(len(HCED_POINT_QUARANTINE_CANDIDATE_IDS), 468)
+        self.assertEqual(len(HCED_COUNTRY_QUARANTINE_CANDIDATE_IDS), 99)
 
     def test_tracked_policy_hashes_duplicates_overlap_and_snapshot_provenance(self) -> None:
         def sorted_newline_hash(values: tuple[str, ...]) -> str:
@@ -129,12 +129,12 @@ class HcedPointParserTests(unittest.TestCase):
             "candidate_id\tevent_id\tfield\treason_codes",
         )
         rows = [line.split("\t") for line in lines[1:]]
-        self.assertEqual(len(rows), 547)
+        self.assertEqual(len(rows), 567)
         self.assertTrue(all(len(row) == 4 and all(row) for row in rows))
         self.assertEqual(rows, sorted(rows))
         self.assertEqual(
             Counter(row[2] for row in rows),
-            {"geometry": 450, "modern_location_country": 97},
+            {"geometry": 468, "modern_location_country": 99},
         )
         point_rows = [row for row in rows if row[2] == "geometry"]
         country_rows = [
@@ -190,11 +190,11 @@ class HcedPointParserTests(unittest.TestCase):
         )
         self.assertEqual(
             HCED_POINT_QUARANTINE_EVENT_SHA256,
-            "92923e406944c3e1e3c7e9582bd45f1360c6d6a7ec8d484dfc930a64cd383553",
+            "896e4b9b90f5059c087e42bb1084abac47375bad2604b8fbcbfcfedb0606f1b4",
         )
         self.assertEqual(
             HCED_COUNTRY_QUARANTINE_EVENT_SHA256,
-            "39ab086e4e35cb17ed6204a09f26f6f45c24d6f1bd1464a31c7328163f5662cf",
+            "2298a8d31f3744b379dc36b32c59ed62a83c4a23c8a880a74e04e25ee9141a19",
         )
 
     def test_valid_pair_is_emitted_in_longitude_latitude_order(self) -> None:

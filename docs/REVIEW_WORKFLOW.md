@@ -9,7 +9,7 @@
 
 Raw facts are never overwritten. Corrections produce a new curated version and preserve the prior decision history.
 
-The current release catalogues 2,503 polity identities and contains 1,164 release entity records, of which 1,157 actually participate across 5,567 rated events. Its 1,711 registered sources span 1,420 provenance families. It reports all 45,968 staged source records separately. The staged total includes identity records, promoted evidence, and the additive 18,954-candidate Wikidata battle/siege discovery queue; of 42,344 event-like candidates, 36,776 remain outside the rating ledger. The new Wikidata rows are automated discovery assertions and add no rated event. These are different denominators and must never be collapsed into a claim that every catalogued or released polity has been rated; unrated and unknown do not mean defeated or drawn.
+The current release catalogues 2,539 polity identities and contains 1,200 release entity records, of which 1,193 actually participate across 5,585 rated events. Its 1,737 registered sources span 1,444 provenance families. It reports all 45,968 staged source records separately. The staged total includes identity records, promoted evidence, and the additive 18,954-candidate Wikidata battle/siege discovery queue; of 42,344 event-like candidates, 36,758 remain outside the rating ledger. The new Wikidata rows are automated discovery assertions and add no rated event. These are different denominators and must never be collapsed into a claim that every catalogued or released polity has been rated; unrated and unknown do not mean defeated or drawn.
 
 ## Provisional source promotion
 

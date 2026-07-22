@@ -49,9 +49,9 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_567)
-        self.assertEqual(len(self.entities), 1_164)
-        self.assertEqual(len(self.registry_by_id), 2_503)
+        self.assertEqual(len(self.events), 5_585)
+        self.assertEqual(len(self.entities), 1_200)
+        self.assertEqual(len(self.registry_by_id), 2_539)
         self.assertEqual(
             families,
             {
@@ -553,6 +553,24 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             ("eaton_battle_raichur_2009", "paes_nuniz_sewell_vijayanagara_chronicles"): 1,
             ("archaeological_survey_india_udayagiri_epigraphy", "rao_shulman_subrahmanyam_vijayanagara"): 1,
             ("jackson_crusades_1239_1241_aftermath", "karakus_demirci_la_forbie_2024"): 1,
+            ("lwl_german_civil_wars", "robinson_henry_iv"): 1,
+            ("deutsche_biographie_hoyer", "lwl_german_civil_wars"): 1,
+            ("freed_barbarossa_yale", "geschichtsquellen_gesta_friderici", "treccani_barbarossa"): 1,
+            ("freed_barbarossa_yale", "treccani_barbarossa"): 1,
+            ("lvr_rainald_dassel", "ricchiuti_monte_porzio_2025"): 1,
+            ("showalter_encyclopedia_warfare", "treccani_federiciana_cortenuova"): 1,
+            ("grillo_parma_2023", "showalter_encyclopedia_warfare"): 1,
+            ("miraslau_scholarly_article", "showalter_encyclopedia_warfare"): 1,
+            ("britannica_1911_warfare", "landers_field_forge"): 1,
+            ("neubrandenburg_city_history", "rostock_mecklenburg_history"): 1,
+            ("britannica_1911_warfare", "glasgow_schuerger_2015", "showalter_encyclopedia_warfare"): 1,
+            ("cambridge_modern_history_thirty_years", "kreis_saarlouis_local_history"): 1,
+            ("cambridge_modern_history_thirty_years", "royal_collection_breisach_1638", "showalter_encyclopedia_warfare"): 1,
+            ("caracol_breme_study", "royal_collection_breme_1638"): 1,
+            ("basler_zeitschrift_wittenweier", "cambridge_modern_history_thirty_years", "landers_field_forge"): 1,
+            ("austrian_state_archives_generals", "cambridge_modern_history_thirty_years", "czech_national_library_reference"): 1,
+            ("cambridge_modern_history_thirty_years", "landers_field_forge"): 1,
+            ("hadtortenelmi_harsany_study", "landers_field_forge", "pecs_harsany_research"): 1,
             },
         )
         hced_candidates = {
@@ -579,7 +597,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_567)
+        self.assertEqual(len(self.results["events"]), 5_585)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -658,10 +676,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_711)
+        self.assertEqual(len(self.sources), 1_737)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_420,
+            1_444,
         )
         new_source_ids = {
             "colombia_constitution_1863",

@@ -42,28 +42,32 @@ Region memberships are non-exclusive and derive only from a conservative mapping
 
 | Rank | Unresolved label | Marginal events | Cumulative events |
 | --- | --- | --- | --- |
-| 1 | wurtemburg | 3 | 3 |
-| 2 | irish royalists | 2 | 5 |
-| 3 | burma | 2 | 7 |
-| 4 | siam | 7 | 14 |
-| 5 | cambodia | 3 | 17 |
-| 6 | holy roman empire | 2 | 19 |
-| 7 | swabian league | 2 | 21 |
-| 8 | vijayanagar | 2 | 23 |
-| 9 | bahman | 3 | 26 |
-| 10 | russian bolsheviks | 2 | 28 |
-| 11 | finnish whites | 2 | 30 |
-| 12 | corinth | 2 | 32 |
-| 13 | liberals | 2 | 34 |
-| 14 | manchu | 2 | 36 |
-| 15 | ming | 3 | 39 |
-| 16 | han | 3 | 42 |
-| 17 | wu | 3 | 45 |
-| 18 | quebecois rebels | 2 | 47 |
-| 19 | quintus sertorius | 2 | 49 |
-| 20 | royalist rebels | 2 | 51 |
+| 1 | royalist rebels | 2 | 2 |
+| 2 | argentine federalist rebels | 2 | 4 |
+| 3 | bijapur marathas | 2 | 6 |
+| 4 | british legion | 2 | 8 |
+| 5 | british tribes | 2 | 10 |
+| 6 | brunei rebels | 2 | 12 |
+| 7 | catalan rebels | 2 | 14 |
+| 8 | chari | 2 | 16 |
+| 9 | chitral | 2 | 18 |
+| 10 | comanche indians kiowa indians | 2 | 20 |
+| 11 | commanche | 2 | 22 |
+| 12 | corsairs of algiers | 2 | 24 |
+| 13 | costa rican rebels | 2 | 26 |
+| 14 | earl of leicester | 2 | 28 |
+| 15 | emirate of aleppo | 2 | 30 |
+| 16 | former carthaginian mercenaries | 2 | 32 |
+| 17 | france italian allies | 2 | 34 |
+| 18 | france netherlands | 2 | 36 |
+| 19 | france polish volunteers | 2 | 38 |
+| 20 | french royalist rebels | 2 | 40 |
 
-Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 51 events.
+The completed exact lane removes the bare `holy roman empire` label from this
+ranking. The separate `ghibelines holy roman empire` composite remains
+deferred with no sole-blocker yield; it is not a generic HRE alias.
+
+Materiality rule: The leading classified discovery lane is absent from the regions represented by the current funnel top 10 and contains more than twice the cumulative event yield of the funnel top 20. The current funnel top 20 unlocks 40 events.
 
 ## Genuinely-new candidates by century
 

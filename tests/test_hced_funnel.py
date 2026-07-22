@@ -237,15 +237,15 @@ class CurrentCorpusFunnelTests(unittest.TestCase):
 
     def test_current_locked_corpus_invariants(self) -> None:
         summary = self.report["summary"]
-        self.assertEqual(summary["deferred_label_rows"], 2873)
+        self.assertEqual(summary["deferred_label_rows"], 2864)
         self.assertEqual(summary["published_hced_candidate_rows_excluded"], 2534)
-        self.assertEqual(summary["events_touched"], 2023)
-        self.assertEqual(summary["unresolved_labels"], 2117)
-        self.assertEqual(summary["sole_blocker_events"], 882)
+        self.assertEqual(summary["events_touched"], 2016)
+        self.assertEqual(summary["unresolved_labels"], 2112)
+        self.assertEqual(summary["sole_blocker_events"], 880)
         first = self.report["greedy_batch"]["ranking"][0]
         self.assertEqual(
             (first["label"], first["marginal_events"]),
-            ("holy roman empire", 2),
+            ("royalist rebels", 2),
         )
         self.assertFalse(
             {
@@ -256,6 +256,7 @@ class CurrentCorpusFunnelTests(unittest.TestCase):
                 "araucanian indians",
                 "araucanians",
                 "cheyenne",
+                "holy roman empire",
                 "libya",
                 "mapuche",
                 "mapuche rebels",

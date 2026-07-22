@@ -13941,6 +13941,396 @@
     ]
   },
   {
+    "id": "wave8_hre_exact_austrian_state_archives_generals",
+    "title": "Die kaiserlichen Generale 1618-1655",
+    "url": "https://www.oesta.gv.at/dam/jcr%3A3cb11fb4-f0f1-4589-85f9-2d4a16d29365/Antonio%20Schmidt-Brentano%20-%20Die%20kaiserlichen%20Generale%202022.pdf",
+    "publisher": "Austrian State Archives",
+    "license": "Citation and link only",
+    "source_type": "official_archival_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "austrian_state_archives_generals",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_basler_wittenweier",
+    "title": "Historical study of the Battle of Wittenweier",
+    "url": "https://www.e-periodica.ch/digbib/view?pid=bzg-002%3A1912%3A11%3A%3A362",
+    "publisher": "Basler Zeitschrift für Geschichte und Altertumskunde",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_journal",
+    "accessed": "2026-07-21",
+    "source_family_id": "basler_zeitschrift_wittenweier",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_cambridge_modern_history",
+    "title": "The Thirty Years' War",
+    "url": "https://mateo.uni-mannheim.de/camenaref/cmh/cmh413.html",
+    "publisher": "Cambridge Modern History / University of Mannheim",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "cambridge_modern_history_thirty_years",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_caracol_breme",
+    "title": "Study of the 1638 Lombard campaign and Breme",
+    "url": "https://www.edizionicaracol.it/wordpress/wp-content/uploads/2020/10/Studi-e-Ricerche-n.-7-low-1.pdf",
+    "publisher": "Edizioni Caracol",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "caracol_breme_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_czech_library_brandeis",
+    "title": "Research response on the 1639 battle near Lobkovice",
+    "url": "https://www.ptejteseknihovny.cz/dotazy/bitva-u-lobkovic",
+    "publisher": "National Library of the Czech Republic",
+    "license": "Citation and link only",
+    "source_type": "national_library_research_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "czech_national_library_reference",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_deutsche_biographie_hoyer",
+    "title": "Hoyer von Mansfeld",
+    "url": "https://www.deutsche-biographie.de/gnd137124988.html?language=en",
+    "publisher": "Deutsche Biographie",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "deutsche_biographie_hoyer",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_eb1911",
+    "title": "Encyclopaedia Britannica 1911 military chronology",
+    "url": "https://en.wikisource.org/wiki/Page%3AEB1911_-_Volume_26.djvu/895",
+    "publisher": "Encyclopaedia Britannica",
+    "license": "Citation and link only",
+    "source_type": "historical_reference_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "britannica_1911_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_freed_barbarossa",
+    "title": "Frederick Barbarossa",
+    "url": "https://academic.oup.com/yale-scholarship-online/book/33328/chapter-abstract/286036920",
+    "publisher": "Yale University Press / Oxford Academic",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "freed_barbarossa_yale",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_geschichtsquellen_gesta",
+    "title": "Gesta Friderici I. imperatoris in Lombardia",
+    "url": "https://geschichtsquellen.de/werk/1993",
+    "publisher": "Geschichtsquellen des deutschen Mittelalters",
+    "license": "Citation and link only",
+    "source_type": "scholarly_primary_source_registry",
+    "accessed": "2026-07-21",
+    "source_family_id": "geschichtsquellen_gesta_friderici",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_glasgow_schuerger",
+    "title": "The archaeology of the Battle of the Alte Veste",
+    "url": "https://theses.gla.ac.uk/6508/1/2015schuergerphd.pdf",
+    "publisher": "University of Glasgow",
+    "license": "Citation and link only",
+    "source_type": "doctoral_thesis",
+    "accessed": "2026-07-21",
+    "source_family_id": "glasgow_schuerger_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_grillo_parma",
+    "title": "The siege of Parma and the destruction of Vittoria",
+    "url": "https://air.unimi.it/handle/2434/1008588",
+    "publisher": "University of Milan institutional repository",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "grillo_parma_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_hadtortenelmi_harsany",
+    "title": "Study of the 1687 Battle of Harsány",
+    "url": "https://epa.oszk.hu/00000/00018/00287/pdf/EPA00018_hadtortenelmi_2020_04.pdf",
+    "publisher": "Hadtörténelmi Közlemények",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_journal",
+    "accessed": "2026-07-21",
+    "source_family_id": "hadtortenelmi_harsany_study",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_kreis_saarlouis",
+    "title": "Historical chronology of the Saarlouis district",
+    "url": "https://www.kreis-saarlouis.de/Geschichte.htm",
+    "publisher": "Landkreis Saarlouis",
+    "license": "Citation and link only",
+    "source_type": "official_regional_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "kreis_saarlouis_local_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_lvr_rainald",
+    "title": "Rainald von Dassel",
+    "url": "https://rheinische-geschichte.lvr.de/Persoenlichkeiten/rainald-von-dassel/DE-2086/lido/57c95b4df1c8a3.86417112",
+    "publisher": "Portal Rheinische Geschichte / LVR",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_biography",
+    "accessed": "2026-07-21",
+    "source_family_id": "lvr_rainald_dassel",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_lwl_german_civil",
+    "title": "Chronology of the German civil wars",
+    "url": "https://www.lwl.org/westfaelische-geschichte/portal/Internet/finde/langDatensatz.php?urlID=29&url_tabelle=tab_websegmente",
+    "publisher": "LWL Westfälische Geschichte",
+    "license": "Citation and link only",
+    "source_type": "scholarly_regional_chronology",
+    "accessed": "2026-07-21",
+    "source_family_id": "lwl_german_civil_wars",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_miraslau_study",
+    "title": "Historical study of the Battle of Mirăslău",
+    "url": "https://dergipark.org.tr/en/download/article-file/4254068",
+    "publisher": "DergiPark scholarly repository",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "miraslau_scholarly_article",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_neubrandenburg_city",
+    "title": "Neubrandenburg in the Thirty Years' War",
+    "url": "https://www.neubrandenburg.de/index.php?FID=2751.779.1&ModID=7&object=tx%7C2751.779.1",
+    "publisher": "City of Neubrandenburg",
+    "license": "Citation and link only",
+    "source_type": "official_municipal_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "neubrandenburg_city_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_pecs_harsany",
+    "title": "Research context for the Battle of Harsány memorial",
+    "url": "https://art.pte.hu/hu/hirek/palyazatok/harsany-hegyi-csata-emlekhelyenek-tovabbepitese-palyazat",
+    "publisher": "University of Pécs",
+    "license": "Citation and link only",
+    "source_type": "university_historical_research_context",
+    "accessed": "2026-07-21",
+    "source_family_id": "pecs_harsany_research",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_rct_breisach",
+    "title": "View of the siege of Breisach, 1638",
+    "url": "https://militarymaps.rct.uk/thirty-years-war-1618-48/view-of-the-siege-of-breisach-1638-breisach-am-rhein-vieux-brisach-baden-wurttemburg-germany",
+    "publisher": "Royal Collection Trust",
+    "license": "Citation and link only",
+    "source_type": "curated_historical_map_catalogue",
+    "accessed": "2026-07-21",
+    "source_family_id": "royal_collection_breisach_1638",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_rct_breme",
+    "title": "View of Breme, 1638",
+    "url": "https://militarymaps.rct.uk/franco-spanish-war-1635-59/view-of-breme-1638-breme-lombardy-italy-45deg0739n-08deg3732e",
+    "publisher": "Royal Collection Trust",
+    "license": "Citation and link only",
+    "source_type": "curated_historical_map_catalogue",
+    "accessed": "2026-07-21",
+    "source_family_id": "royal_collection_breme_1638",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_ricchiuti_monte_porzio",
+    "title": "Study of the Battle of Monte Porzio",
+    "url": "https://iris.uniroma1.it/handle/11573/1742945",
+    "publisher": "Sapienza University of Rome",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_study",
+    "accessed": "2026-07-21",
+    "source_family_id": "ricchiuti_monte_porzio_2025",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_robinson_henry_iv",
+    "title": "Henry IV and Saxony, 1065-1075",
+    "url": "https://www.cambridge.org/core/books/abs/henry-iv-of-germany-10561106/henry-iv-and-saxony-10651075/5E8FAD17B81FD7EECACFF70D1B1B6B39",
+    "publisher": "Cambridge University Press",
+    "license": "Citation and link only",
+    "source_type": "scholarly_historical_monograph",
+    "accessed": "2026-07-21",
+    "source_family_id": "robinson_henry_iv",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_rostock_mecklenburg",
+    "title": "Historical volume on Mecklenburg and Neubrandenburg",
+    "url": "https://rosdok.uni-rostock.de/do/pdfdownload/recordIdentifier/rosdok_ppn178054197X/rosdok_ppn178054197X.pdf",
+    "publisher": "University Library Rostock",
+    "license": "Citation and link only",
+    "source_type": "digitized_scholarly_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "rostock_mecklenburg_history",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_showalter",
+    "title": "The Encyclopedia of Warfare",
+    "url": "https://archive.org/details/isbn_9781435151260",
+    "publisher": "Facts On File / Internet Archive catalogue",
+    "license": "Citation and link only",
+    "source_type": "scholarly_military_history_reference",
+    "accessed": "2026-07-21",
+    "source_family_id": "showalter_encyclopedia_warfare",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_treccani_barbarossa",
+    "title": "Federico I detto il Barbarossa",
+    "url": "https://www.treccani.it/enciclopedia/federico-i-detto-in-italia-il-barbarossa-imperatore_%28Enciclopedia-Italiana%29/",
+    "publisher": "Treccani",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "treccani_barbarossa",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_hre_exact_treccani_cortenuova",
+    "title": "Battaglia di Cortenuova",
+    "url": "https://www.treccani.it/enciclopedia/battaglia-di-cortenuova_%28Federiciana%29/",
+    "publisher": "Treccani Federiciana",
+    "license": "Citation and link only",
+    "source_type": "national_scholarly_encyclopedia",
+    "accessed": "2026-07-21",
+    "source_family_id": "treccani_federiciana_cortenuova",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_hussites_archaeological_atlas_vladar",
     "title": "Zahorice: prehistoric hillfort Vladar",
     "url": "https://www.archeologickyatlas.cz/en/lokace/zahorice_kv_hradiste_vladar",

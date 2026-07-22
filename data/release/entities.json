@@ -2962,6 +2962,36 @@
     ]
   },
   {
+    "id": "henry_iv_royal_episcopal_field_army_langensalza_1075",
+    "name": "Henry IV's royal-episcopal field army at Langensalza (1075)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1075,
+    "end_year": 1075,
+    "region": "Thuringia and Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Langensalza (Unstrut) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_lwl_german_civil",
+      "wave8_hre_exact_robinson_henry_iv"
+    ]
+  },
+  {
+    "id": "saxon_rebel_field_host_langensalza_1075",
+    "name": "Saxon rebel field host at Langensalza (1075)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1075,
+    "end_year": 1075,
+    "region": "Thuringia and Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Langensalza (Unstrut) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_lwl_german_civil",
+      "wave8_hre_exact_robinson_henry_iv"
+    ]
+  },
+  {
     "id": "rum_sultanate_kilij_arslan_i_1092_1107",
     "name": "Sultanate of Rum under Kilij Arslan I",
     "kind": "sultanate_regime",
@@ -3184,6 +3214,36 @@
     ]
   },
   {
+    "id": "hoyer_mansfeld_henry_v_imperial_field_army_welfesholz_1115",
+    "name": "Hoyer of Mansfeld's Henry V-aligned field army at Welfesholz (1115)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1115,
+    "end_year": 1115,
+    "region": "Saxony and Thuringia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Welfesholz and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_deutsche_biographie_hoyer",
+      "wave8_hre_exact_lwl_german_civil"
+    ]
+  },
+  {
+    "id": "lothair_saxon_rhenish_thuringian_rebel_coalition_welfesholz_1115",
+    "name": "Lothair's Saxon-Rhenish-Thuringian rebel coalition at Welfesholz (1115)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1115,
+    "end_year": 1115,
+    "region": "Saxony and Thuringia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Welfesholz and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_deutsche_biographie_hoyer",
+      "wave8_hre_exact_lwl_german_civil"
+    ]
+  },
+  {
     "id": "zengid_mosul_aleppo_imad_al_din_1127_1146",
     "name": "Zengid Atabegate of Mosul and Aleppo under Imad al-Din Zengi",
     "kind": "atabegate_regime",
@@ -3338,6 +3398,38 @@
     ]
   },
   {
+    "id": "frederick_barbarossa_pavian_montferrat_malaspina_siege_host_tortona_1155",
+    "name": "Frederick Barbarossa's Pavian-Montferrat-Malaspina siege host at Tortona (1155)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1155,
+    "end_year": 1155,
+    "region": "Lombardy and Piedmont",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Tortona (1155) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_freed_barbarossa",
+      "wave8_hre_exact_geschichtsquellen_gesta",
+      "wave8_hre_exact_treccani_barbarossa"
+    ]
+  },
+  {
+    "id": "tortona_communal_garrison_milanese_relief_force_1155",
+    "name": "Tortona communal garrison and Milanese relief force (1155)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1155,
+    "end_year": 1155,
+    "region": "Lombardy and Piedmont",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Tortona (1155) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_freed_barbarossa",
+      "wave8_hre_exact_geschichtsquellen_gesta",
+      "wave8_hre_exact_treccani_barbarossa"
+    ]
+  },
+  {
     "id": "dafydd_cynan_gwynedd_ambush_force_1157",
     "name": "Dafydd and Cynan's Gwynedd ambush force at Coleshill (1157)",
     "kind": "event_bounded_princely_force",
@@ -3349,6 +3441,36 @@
     "continuity_note": "The event-bounded force of Owain Gwynedd's sons Dafydd and Cynan in the wooded-pass engagement against Henry II. No rating is inherited by a generic Wales identity, another Welsh dynasty or regime, or any predecessor or successor.",
     "source_ids": [
       "wave8_wales_coflein_coleshill_1157"
+    ]
+  },
+  {
+    "id": "frederick_barbarossa_pavian_cremonese_lodigian_siege_host_milan_1158",
+    "name": "Frederick Barbarossa's Pavian-Cremonese-Lodigian siege host at Milan (1158)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1158,
+    "end_year": 1158,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Milan (1158) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_freed_barbarossa",
+      "wave8_hre_exact_treccani_barbarossa"
+    ]
+  },
+  {
+    "id": "milan_communal_defenders_1158",
+    "name": "Milan communal defenders (1158)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1158,
+    "end_year": 1158,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Milan (1158) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_freed_barbarossa",
+      "wave8_hre_exact_treccani_barbarossa"
     ]
   },
   {
@@ -3377,6 +3499,36 @@
     "continuity_note": "Exact Wave 7 Central/East reviewed-party boundary. It opens no broad alias, country-label, or cross-era fallback, and no predecessor or successor rating is inherited.",
     "source_ids": [
       "wave7_serbia_medieval_museum"
+    ]
+  },
+  {
+    "id": "christian_mainz_rainald_dassel_tusculan_relief_force_monte_porzio_1167",
+    "name": "Christian of Mainz-Rainald of Dassel Tusculan relief force at Monte Porzio (1167)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1167,
+    "end_year": 1167,
+    "region": "Latium and Rome",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Monte Porzio (Tusculum) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_lvr_rainald",
+      "wave8_hre_exact_ricchiuti_monte_porzio"
+    ]
+  },
+  {
+    "id": "commune_of_rome_field_army_monte_porzio_1167",
+    "name": "Commune of Rome field army at Monte Porzio (1167)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1167,
+    "end_year": 1167,
+    "region": "Latium and Rome",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Monte Porzio (Tusculum) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_lvr_rainald",
+      "wave8_hre_exact_ricchiuti_monte_porzio"
     ]
   },
   {
@@ -3801,6 +3953,21 @@
     ]
   },
   {
+    "id": "frederick_ii_imperial_sicilian_campaign_army_cortenuova_1237",
+    "name": "Frederick II's imperial-Sicilian campaign army at Cortenuova (1237)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1237,
+    "end_year": 1237,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Cortenuova and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_showalter",
+      "wave8_hre_exact_treccani_cortenuova"
+    ]
+  },
+  {
     "id": "livonian_branch_teutonic_order_1237_1561",
     "name": "Livonian branch of the Teutonic Order (1237-1561)",
     "kind": "era_bounded_military_order_branch",
@@ -3815,6 +3982,21 @@
       "wave8_livonian_order_militzer_recruitment",
       "wave8_livonian_order_oxford_baltic_crusades",
       "wave8_livonian_order_rudolph_viterbo"
+    ]
+  },
+  {
+    "id": "pietro_tiepolo_lombard_league_field_army_cortenuova_1237",
+    "name": "Pietro Tiepolo's Lombard League field army at Cortenuova (1237)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1237,
+    "end_year": 1237,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Cortenuova and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_showalter",
+      "wave8_hre_exact_treccani_cortenuova"
     ]
   },
   {
@@ -3905,6 +4087,36 @@
     "source_ids": [
       "wave8_egypt_fordham_ascalon_1247",
       "wave8_egypt_tdv_al_salih_ayyub"
+    ]
+  },
+  {
+    "id": "frederick_ii_imperial_siege_host_parma_1247_1248",
+    "name": "Frederick II's imperial siege host at Parma (1247-1248)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1247,
+    "end_year": 1248,
+    "region": "Parma and Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Parma and Vittoria (1247-1248) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_grillo_parma",
+      "wave8_hre_exact_showalter"
+    ]
+  },
+  {
+    "id": "parma_guelph_communal_sortie_force_vittoria_1247_1248",
+    "name": "Parma Guelph communal sortie force at Vittoria (1247-1248)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1247,
+    "end_year": 1248,
+    "region": "Parma and Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Parma and Vittoria (1247-1248) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_grillo_parma",
+      "wave8_hre_exact_showalter"
     ]
   },
   {
@@ -7706,6 +7918,21 @@
     ]
   },
   {
+    "id": "basta_transylvanian_noble_coalition_miraslau_1600",
+    "name": "Basta's Transylvanian noble coalition at Mirăslău (1600)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1600,
+    "end_year": 1600,
+    "region": "Transylvania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Mirăslău and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_miraslau_study",
+      "wave8_hre_exact_showalter"
+    ]
+  },
+  {
     "id": "filipe_de_brito_syrian_regime_1600_1613",
     "name": "Filipe de Brito's Syriam Regime",
     "kind": "warlord_state",
@@ -7731,6 +7958,21 @@
     "continuity_note": "The identity is limited to Docwra’s Lough Foyle expedition and unopposed occupation of Derry. No rating is inherited by any broader Irish, English, Viking, Danish-Dublin, dynastic, confederate, lordship, rebel, or successor identity.",
     "source_ids": [
       "wave8_irish_askaboutireland_docwra"
+    ]
+  },
+  {
+    "id": "michael_wallachian_szekely_field_army_miraslau_1600",
+    "name": "Michael's Wallachian-Székely field army at Mirăslău (1600)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1600,
+    "end_year": 1600,
+    "region": "Transylvania",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Mirăslău and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_miraslau_study",
+      "wave8_hre_exact_showalter"
     ]
   },
   {
@@ -8007,6 +8249,36 @@
     ]
   },
   {
+    "id": "gustavus_adolphus_swedish_saxon_coalition_breitenfeld_1631",
+    "name": "Gustavus Adolphus's Swedish-Saxon coalition at Breitenfeld (1631)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1631,
+    "end_year": 1631,
+    "region": "Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to First Battle of Breitenfeld and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_eb1911"
+    ]
+  },
+  {
+    "id": "kniphausen_swedish_neubrandenburg_garrison_1631",
+    "name": "Kniphausen's Swedish Neubrandenburg garrison (1631)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1631,
+    "end_year": 1631,
+    "region": "Mecklenburg",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Neubrandenburg and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_neubrandenburg_city",
+      "wave8_hre_exact_rostock_mecklenburg"
+    ]
+  },
+  {
     "id": "mombasa_revolt_yusuf_ibn_al_hasan",
     "name": "Mombasa revolt of Yusuf ibn al-Hasan (1631-1638)",
     "kind": "rebel_forces",
@@ -8018,6 +8290,68 @@
     "continuity_note": "Revolt regime of the Portuguese-installed Malindi-line king Yusuf ibn al-Hasan, from the 1631 seizure of the Fort Jesus garrison through the end of his corsair campaign in 1638. It inherits nothing from sultanate_of_mombasa across the 1589-1593 dynastic break. Scoring covers combat elements only, and the 1696-1698 siege of Mombasa belongs to the Ya'rubid lane, not this identity.",
     "source_ids": [
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "tilly_catholic_league_imperial_assault_force_neubrandenburg_1631",
+    "name": "Tilly's Catholic League-Imperial assault force at Neubrandenburg (1631)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1631,
+    "end_year": 1631,
+    "region": "Mecklenburg",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Neubrandenburg and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_neubrandenburg_city",
+      "wave8_hre_exact_rostock_mecklenburg"
+    ]
+  },
+  {
+    "id": "tilly_imperial_catholic_league_army_breitenfeld_1631",
+    "name": "Tilly's Imperial-Catholic League army at Breitenfeld (1631)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1631,
+    "end_year": 1631,
+    "region": "Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to First Battle of Breitenfeld and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_eb1911"
+    ]
+  },
+  {
+    "id": "gustavus_adolphus_swedish_allied_assault_force_alte_veste_1632",
+    "name": "Gustavus Adolphus's Swedish-allied assault force at the Alte Veste (1632)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1632,
+    "end_year": 1632,
+    "region": "Franconia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of the Alte Veste and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_eb1911",
+      "wave8_hre_exact_glasgow_schuerger",
+      "wave8_hre_exact_showalter"
+    ]
+  },
+  {
+    "id": "wallenstein_imperial_catholic_league_camp_force_alte_veste_1632",
+    "name": "Wallenstein's Imperial-Catholic League camp force at the Alte Veste (1632)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1632,
+    "end_year": 1632,
+    "region": "Franconia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of the Alte Veste and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_eb1911",
+      "wave8_hre_exact_glasgow_schuerger",
+      "wave8_hre_exact_showalter"
     ]
   },
   {
@@ -8051,6 +8385,36 @@
     ]
   },
   {
+    "id": "gallas_imperial_pursuit_vanguard_boulay_1635",
+    "name": "Gallas's Imperial pursuit vanguard at Boulay (1635)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1635,
+    "end_year": 1635,
+    "region": "Lorraine and the Saar corridor",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Wallerfangen-Boulay rear-guard action and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_kreis_saarlouis"
+    ]
+  },
+  {
+    "id": "turenne_fabert_french_weimarian_rearguard_boulay_1635",
+    "name": "Turenne-Fabert French-Weimarian rear guard at Boulay (1635)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1635,
+    "end_year": 1635,
+    "region": "Lorraine and the Saar corridor",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Wallerfangen-Boulay rear-guard action and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_kreis_saarlouis"
+    ]
+  },
+  {
     "id": "clio_q917_1636_f706aa87",
     "name": "Kingdom of Bhutan",
     "kind": "kingdom",
@@ -8067,6 +8431,84 @@
     ]
   },
   {
+    "id": "bernard_weimarian_french_field_army_wittenweier_1638",
+    "name": "Bernard's Weimarian-French field army at Wittenweier (1638)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Upper Rhine",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Wittenweier and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_basler_wittenweier",
+      "wave8_hre_exact_cambridge_modern_history"
+    ]
+  },
+  {
+    "id": "bernard_weimarian_french_siege_force_breisach_1638",
+    "name": "Bernard's Weimarian-French siege force at Breisach (1638)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Upper Rhine",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Breisach (1638) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_rct_breisach",
+      "wave8_hre_exact_showalter"
+    ]
+  },
+  {
+    "id": "goetz_savelli_imperial_bavarian_relief_army_wittenweier_1638",
+    "name": "Götz-Savelli Imperial-Bavarian relief army at Wittenweier (1638)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Upper Rhine",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Wittenweier and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_basler_wittenweier",
+      "wave8_hre_exact_cambridge_modern_history"
+    ]
+  },
+  {
+    "id": "leganes_aragon_spanish_army_of_lombardy_breme_1638",
+    "name": "Leganés-Aragón Spanish Army of Lombardy at Breme (1638)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Breme (1638) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_caracol_breme",
+      "wave8_hre_exact_rct_breme"
+    ]
+  },
+  {
+    "id": "mongallar_crequy_french_breme_garrison_relief_force_1638",
+    "name": "Mongallar-Créquy French Breme garrison and relief force (1638)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Lombardy",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Breme (1638) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_caracol_breme",
+      "wave8_hre_exact_rct_breme"
+    ]
+  },
+  {
     "id": "ostryanyn_hunia_rebel_force_1638",
     "name": "Ostryanyn-Hunia rebel force at Zhovnyne",
     "kind": "insurgent_army",
@@ -8079,6 +8521,69 @@
     "source_ids": [
       "wave8_encyclopedia_history_ukraine_zhovnyne",
       "wave8_encyclopedia_ukraine_ostryanyn"
+    ]
+  },
+  {
+    "id": "reinach_imperial_breisach_garrison_1638",
+    "name": "Reinach's Imperial Breisach garrison (1638)",
+    "kind": "event_bounded_siege_force",
+    "start_year": 1638,
+    "end_year": 1638,
+    "region": "Upper Rhine",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Siege of Breisach (1638) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_rct_breisach",
+      "wave8_hre_exact_showalter"
+    ]
+  },
+  {
+    "id": "baner_swedish_field_force_brandeis_1639",
+    "name": "Banér's Swedish field force at Brandeis (1639)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1639,
+    "end_year": 1639,
+    "region": "Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Brandeis (1639) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_austrian_state_archives_generals",
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_czech_library_brandeis"
+    ]
+  },
+  {
+    "id": "hofkirch_imperial_bohemian_field_force_brandeis_1639",
+    "name": "Hofkirch's Imperial-Bohemian field force at Brandeis (1639)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1639,
+    "end_year": 1639,
+    "region": "Bohemia",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Brandeis (1639) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_hre_exact_austrian_state_archives_generals",
+      "wave8_hre_exact_cambridge_modern_history",
+      "wave8_hre_exact_czech_library_brandeis"
+    ]
+  },
+  {
+    "id": "leopold_william_piccolomini_imperial_field_army_breitenfeld_1642",
+    "name": "Leopold William-Piccolomini Imperial field army at Breitenfeld (1642)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1642,
+    "end_year": 1642,
+    "region": "Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Second Battle of Breitenfeld and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_cambridge_modern_history"
     ]
   },
   {
@@ -8109,6 +8614,21 @@
     "source_ids": [
       "britannica_english_civil_wars",
       "project_continuity_policy"
+    ]
+  },
+  {
+    "id": "torstensson_swedish_field_army_breitenfeld_1642",
+    "name": "Torstensson's Swedish field army at Breitenfeld (1642)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1642,
+    "end_year": 1642,
+    "region": "Saxony",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Second Battle of Breitenfeld and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_cambridge_modern_history"
     ]
   },
   {
@@ -8353,6 +8873,38 @@
       "wave8_banu_berad_guha_environment_ethnicity",
       "wave8_banu_berad_sarkar_aurangzib_iv",
       "wave8_banu_berad_singh_sagar_2007"
+    ]
+  },
+  {
+    "id": "lorraine_bavarian_habsburg_allied_army_harsany_1687",
+    "name": "Lorraine-Bavarian-Habsburg allied army at Harsány (1687)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1687,
+    "end_year": 1687,
+    "region": "Southern Hungary",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Harsány (Second Mohács) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_hadtortenelmi_harsany",
+      "wave8_hre_exact_pecs_harsany"
+    ]
+  },
+  {
+    "id": "sari_suleyman_ottoman_field_army_harsany_1687",
+    "name": "Sarı Süleyman's Ottoman field army at Harsány (1687)",
+    "kind": "event_bounded_field_force",
+    "start_year": 1687,
+    "end_year": 1687,
+    "region": "Southern Hungary",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to Battle of Harsány (Second Mohács) and its reviewed source interval. No Holy Roman Empire identity, alias, label rule, predecessor, successor, or cross-event rating continuity is created.",
+    "source_ids": [
+      "wave8_great_northern_exact_landers_field_forge",
+      "wave8_hre_exact_hadtortenelmi_harsany",
+      "wave8_hre_exact_pecs_harsany"
     ]
   },
   {

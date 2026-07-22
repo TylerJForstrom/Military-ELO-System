@@ -1922,6 +1922,16 @@
       "region": "Idaho and eastern Oregon"
     },
     {
+      "id": "baner_swedish_field_force_brandeis_1639",
+      "name": "Banér's Swedish field force at Brandeis (1639)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1639,
+      "end_year": 1639,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bohemia"
+    },
+    {
       "id": "bar_confederation_forces",
       "name": "Bar Confederation Forces",
       "kind": "confederate_forces",
@@ -1952,6 +1962,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "basta_transylvanian_noble_coalition_miraslau_1600",
+      "name": "Basta's Transylvanian noble coalition at Mirăslău (1600)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1600,
+      "end_year": 1600,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Transylvania"
     },
     {
       "id": "batavian_republic_1795",
@@ -2057,6 +2077,26 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "bernard_weimarian_french_field_army_wittenweier_1638",
+      "name": "Bernard's Weimarian-French field army at Wittenweier (1638)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Rhine"
+    },
+    {
+      "id": "bernard_weimarian_french_siege_force_breisach_1638",
+      "name": "Bernard's Weimarian-French siege force at Breisach (1638)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Rhine"
     },
     {
       "id": "bertrand_tripoli_beirut_force_1110",
@@ -3437,6 +3477,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "christian_mainz_rainald_dassel_tusculan_relief_force_monte_porzio_1167",
+      "name": "Christian of Mainz-Rainald of Dassel Tusculan relief force at Monte Porzio (1167)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1167,
+      "end_year": 1167,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Latium and Rome"
+    },
+    {
       "id": "clio_cn_chu_dyn_spring_autumn_bce750_8e5cf9da",
       "name": "Chu",
       "kind": "polity",
@@ -3805,6 +3855,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "commune_of_rome_field_army_monte_porzio_1167",
+      "name": "Commune of Rome field army at Monte Porzio (1167)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1167,
+      "end_year": 1167,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Latium and Rome"
     },
     {
       "id": "clio_q17151_1344_6e267fb6",
@@ -7420,6 +7480,26 @@
       "region": "Ascalon"
     },
     {
+      "id": "frederick_barbarossa_pavian_cremonese_lodigian_siege_host_milan_1158",
+      "name": "Frederick Barbarossa's Pavian-Cremonese-Lodigian siege host at Milan (1158)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1158,
+      "end_year": 1158,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
+    },
+    {
+      "id": "frederick_barbarossa_pavian_montferrat_malaspina_siege_host_tortona_1155",
+      "name": "Frederick Barbarossa's Pavian-Montferrat-Malaspina siege host at Tortona (1155)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1155,
+      "end_year": 1155,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy and Piedmont"
+    },
+    {
       "id": "frederick_i_imperial_field_army_legnano_1176",
       "name": "Frederick I's imperial field army at Legnano (1176)",
       "kind": "event_bounded_imperial_field_army",
@@ -7428,6 +7508,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Southern Europe"
+    },
+    {
+      "id": "frederick_ii_imperial_siege_host_parma_1247_1248",
+      "name": "Frederick II's imperial siege host at Parma (1247-1248)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1247,
+      "end_year": 1248,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Parma and Lombardy"
+    },
+    {
+      "id": "frederick_ii_imperial_sicilian_campaign_army_cortenuova_1237",
+      "name": "Frederick II's imperial-Sicilian campaign army at Cortenuova (1237)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1237,
+      "end_year": 1237,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
     },
     {
       "id": "clio_q474779_1806_5c48ad4e",
@@ -7913,6 +8013,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "gallas_imperial_pursuit_vanguard_boulay_1635",
+      "name": "Gallas's Imperial pursuit vanguard at Boulay (1635)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1635,
+      "end_year": 1635,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lorraine and the Saar corridor"
     },
     {
       "id": "clio_q273025_261_1b4af065",
@@ -8825,6 +8935,26 @@
       "region": "Amritsar, Punjab"
     },
     {
+      "id": "gustavus_adolphus_swedish_saxon_coalition_breitenfeld_1631",
+      "name": "Gustavus Adolphus's Swedish-Saxon coalition at Breitenfeld (1631)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1631,
+      "end_year": 1631,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony"
+    },
+    {
+      "id": "gustavus_adolphus_swedish_allied_assault_force_alte_veste_1632",
+      "name": "Gustavus Adolphus's Swedish-allied assault force at the Alte Veste (1632)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1632,
+      "end_year": 1632,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Franconia"
+    },
+    {
       "id": "clio_q1064034_bce2100_8c57425e",
       "name": "Gutian Dynasty",
       "kind": "dynastic_state",
@@ -8866,6 +8996,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "goetz_savelli_imperial_bavarian_relief_army_wittenweier_1638",
+      "name": "Götz-Savelli Imperial-Bavarian relief army at Wittenweier (1638)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Rhine"
     },
     {
       "id": "fan_habre_ndjamena_campaign_force_1980",
@@ -9281,6 +9421,16 @@
       "region": "Castle Bytham, Lincolnshire"
     },
     {
+      "id": "henry_iv_royal_episcopal_field_army_langensalza_1075",
+      "name": "Henry IV's royal-episcopal field army at Langensalza (1075)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1075,
+      "end_year": 1075,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Thuringia and Saxony"
+    },
+    {
       "id": "ireton_new_model_army_limerick_1651",
       "name": "Henry Ireton’s New Model Army at Limerick (1651)",
       "kind": "siege_army",
@@ -9371,6 +9521,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hofkirch_imperial_bohemian_field_force_brandeis_1639",
+      "name": "Hofkirch's Imperial-Bohemian field force at Brandeis (1639)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1639,
+      "end_year": 1639,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Bohemia"
     },
     {
       "id": "clio_q55523_1314_5148d386",
@@ -9638,6 +9798,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "hoyer_mansfeld_henry_v_imperial_field_army_welfesholz_1115",
+      "name": "Hoyer of Mansfeld's Henry V-aligned field army at Welfesholz (1115)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1115,
+      "end_year": 1115,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony and Thuringia"
     },
     {
       "id": "hoyer_imperial_loyalist_force_warnstedt_1113",
@@ -13428,6 +13598,16 @@
       "region": "Upper Washita and Gageby Creek, Southern Plains"
     },
     {
+      "id": "kniphausen_swedish_neubrandenburg_garrison_1631",
+      "name": "Kniphausen's Swedish Neubrandenburg garrison (1631)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1631,
+      "end_year": 1631,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mecklenburg"
+    },
+    {
       "id": "clio_q1062422_1741_5f5cea8a",
       "name": "Konbaung Dynasty",
       "kind": "dynastic_state",
@@ -13928,6 +14108,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "leganes_aragon_spanish_army_of_lombardy_breme_1638",
+      "name": "Leganés-Aragón Spanish Army of Lombardy at Breme (1638)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
+    },
+    {
       "id": "leinster_dublin_overseas_clontarf_coalition_1014",
       "name": "Leinster–Dublin–Overseas Coalition at Clontarf (1014)",
       "kind": "engagement_coalition",
@@ -13936,6 +14126,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Ireland and the Irish Sea"
+    },
+    {
+      "id": "leopold_william_piccolomini_imperial_field_army_breitenfeld_1642",
+      "name": "Leopold William-Piccolomini Imperial field army at Breitenfeld (1642)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1642,
+      "end_year": 1642,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony"
     },
     {
       "id": "clio_q1013_1967_31d0196b",
@@ -14202,6 +14402,16 @@
       "region": "Isle of Axholme, Lincolnshire"
     },
     {
+      "id": "lorraine_bavarian_habsburg_allied_army_harsany_1687",
+      "name": "Lorraine-Bavarian-Habsburg allied army at Harsány (1687)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1687,
+      "end_year": 1687,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Hungary"
+    },
+    {
       "id": "clio_q738264_1840_0223c46d",
       "name": "Los Altos",
       "kind": "polity",
@@ -14211,6 +14421,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "lothair_saxon_rhenish_thuringian_rebel_coalition_welfesholz_1115",
+      "name": "Lothair's Saxon-Rhenish-Thuringian rebel coalition at Welfesholz (1115)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1115,
+      "end_year": 1115,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony and Thuringia"
     },
     {
       "id": "louis_xiii_royal_siege_army_montauban_1621",
@@ -15259,6 +15479,16 @@
       "region": "County Meath, Ireland"
     },
     {
+      "id": "michael_wallachian_szekely_field_army_miraslau_1600",
+      "name": "Michael's Wallachian-Székely field army at Mirăslău (1600)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1600,
+      "end_year": 1600,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Transylvania"
+    },
+    {
       "id": "clio_q79861_1305_c015221f",
       "name": "Michoacán",
       "kind": "polity",
@@ -15311,6 +15541,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central Europe"
+    },
+    {
+      "id": "milan_communal_defenders_1158",
+      "name": "Milan communal defenders (1158)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1158,
+      "end_year": 1158,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
     },
     {
       "id": "clio_cn_five_dyn_911_de49523f",
@@ -15478,6 +15718,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Santiago de Cuba"
+    },
+    {
+      "id": "mongallar_crequy_french_breme_garrison_relief_force_1638",
+      "name": "Mongallar-Créquy French Breme garrison and relief force (1638)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
     },
     {
       "id": "mongol_empire",
@@ -17431,6 +17681,16 @@
       "region": "Western Europe"
     },
     {
+      "id": "parma_guelph_communal_sortie_force_vittoria_1247_1248",
+      "name": "Parma Guelph communal sortie force at Vittoria (1247-1248)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1247,
+      "end_year": 1248,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Parma and Lombardy"
+    },
+    {
       "id": "parthenopean_republican_forces_1799",
       "name": "Parthenopean Republican Forces at Naples (1799)",
       "kind": "revolutionary_forces",
@@ -17835,6 +18095,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Wagingera, Deccan"
+    },
+    {
+      "id": "pietro_tiepolo_lombard_league_field_army_cortenuova_1237",
+      "name": "Pietro Tiepolo's Lombard League field army at Cortenuova (1237)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1237,
+      "end_year": 1237,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy"
     },
     {
       "id": "pilsen_landfrieden_pursuit_force_vladar_1421",
@@ -19235,6 +19505,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "reinach_imperial_breisach_garrison_1638",
+      "name": "Reinach's Imperial Breisach garrison (1638)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1638,
+      "end_year": 1638,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Upper Rhine"
     },
     {
       "id": "clio_af_afghanistan_rep_1973_7273c016",
@@ -21002,6 +21282,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "sari_suleyman_ottoman_field_army_harsany_1687",
+      "name": "Sarı Süleyman's Ottoman field army at Harsány (1687)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1687,
+      "end_year": 1687,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Southern Hungary"
+    },
+    {
       "id": "sasanian_empire",
       "name": "Sasanian Empire",
       "kind": "empire",
@@ -21114,6 +21404,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central Europe"
+    },
+    {
+      "id": "saxon_rebel_field_host_langensalza_1075",
+      "name": "Saxon rebel field host at Langensalza (1075)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1075,
+      "end_year": 1075,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Thuringia and Saxony"
     },
     {
       "id": "saxon_meissen_thuringian_lusatian_relief_army_aussig_1426",
@@ -23950,6 +24250,26 @@
       "region": "Tigranocerta and Arzanene"
     },
     {
+      "id": "tilly_catholic_league_imperial_assault_force_neubrandenburg_1631",
+      "name": "Tilly's Catholic League-Imperial assault force at Neubrandenburg (1631)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1631,
+      "end_year": 1631,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Mecklenburg"
+    },
+    {
+      "id": "tilly_imperial_catholic_league_army_breitenfeld_1631",
+      "name": "Tilly's Imperial-Catholic League army at Breitenfeld (1631)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1631,
+      "end_year": 1631,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony"
+    },
+    {
       "id": "timur_siege_army_smyrna_1402",
       "name": "Timur's siege army at Smyrna (1402)",
       "kind": "event_bounded_timurid_siege_army",
@@ -24073,6 +24393,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Republic of Texas"
+    },
+    {
+      "id": "torstensson_swedish_field_army_breitenfeld_1642",
+      "name": "Torstensson's Swedish field army at Breitenfeld (1642)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1642,
+      "end_year": 1642,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Saxony"
+    },
+    {
+      "id": "tortona_communal_garrison_milanese_relief_force_1155",
+      "name": "Tortona communal garrison and Milanese relief force (1155)",
+      "kind": "event_bounded_siege_force",
+      "start_year": 1155,
+      "end_year": 1155,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lombardy and Piedmont"
     },
     {
       "id": "toyotomi_kyushu_expedition_army_1587",
@@ -24228,6 +24568,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Vilcabamba road and Huayna Pucara"
+    },
+    {
+      "id": "turenne_fabert_french_weimarian_rearguard_boulay_1635",
+      "name": "Turenne-Fabert French-Weimarian rear guard at Boulay (1635)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1635,
+      "end_year": 1635,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Lorraine and the Saar corridor"
     },
     {
       "id": "turgut_reis_corsair_force_tripoli_1551",
@@ -25197,6 +25547,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Central America"
+    },
+    {
+      "id": "wallenstein_imperial_catholic_league_camp_force_alte_veste_1632",
+      "name": "Wallenstein's Imperial-Catholic League camp force at the Alte Veste (1632)",
+      "kind": "event_bounded_field_force",
+      "start_year": 1632,
+      "end_year": 1632,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Franconia"
     },
     {
       "id": "wang_tong_ming_tot_dong_force_1426",
@@ -26391,11 +26751,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2503,
-    "rated_entities": 1157,
-    "rated_events": 5567,
+    "registry_polities": 2539,
+    "rated_entities": 1193,
+    "rated_events": 5585,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36776,
+    "unresolved_event_candidates": 36758,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -26514,6 +26874,7 @@
     "candidate_keyed_wave8_republic_formosa_hced_events": 2,
     "candidate_keyed_wave8_arquijas_hced_events": 2,
     "candidate_keyed_wave8_raichur_udayagiri_la_forbie_hced_events": 3,
+    "candidate_keyed_wave8_holy_roman_empire_exact_hced_events": 18,
     "wave7_global_identity_migrations": 5,
     "provisional_iwd_wars": 66,
     "provisional_iwbd_battles": 153,
@@ -26524,21 +26885,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5300,
-      "candidate_keyed_reviewed_contracts": 888,
+      "hced_candidate_bindings": 5318,
+      "candidate_keyed_reviewed_contracts": 906,
       "geojson_points": 4850,
-      "modern_location_country_assertions": 5202,
-      "location_provenance_objects": 5251,
-      "point_fields_withheld_by_quarantine": 450,
-      "country_or_jurisdiction_fields_withheld_by_quarantine": 97,
+      "modern_location_country_assertions": 5218,
+      "location_provenance_objects": 5267,
+      "point_fields_withheld_by_quarantine": 468,
+      "country_or_jurisdiction_fields_withheld_by_quarantine": 99,
       "source_blank_country_fields": 1,
-      "point_country_quarantine_overlap": 49,
-      "unique_events_with_any_quarantined_field": 498,
-      "point_quarantine_candidate_manifest_sha256": "433427869516466a8c0cea5f6492e4e20aade4e75c548dae72b330a7f0294f02",
-      "country_quarantine_candidate_manifest_sha256": "e3c34aa567567827a732bacb85e46077b9696c98937a4ea0b739e277d56374be",
-      "quarantine_policy_sha256": "96b07b9dce30380c52b40024bc4db7e76e916ad66051019b2c92e8591fc5f436",
+      "point_country_quarantine_overlap": 51,
+      "unique_events_with_any_quarantined_field": 516,
+      "point_quarantine_candidate_manifest_sha256": "fd20ed62544a20dab6df3d642a17aa30fea06d6c384278928efbe7ac2771b267",
+      "country_quarantine_candidate_manifest_sha256": "bd156d403e80769b6d3d09d5bb6d3568e0fef1b2278c9d1343e8e23aa4f63ad7",
+      "quarantine_policy_sha256": "869702d65ab04ecbd1a5de3939bb2b9e015a3374676b5dcf2916835d87c3985b",
       "assertion_status": {
-        "unreviewed_source_assertion": 5251
+        "unreviewed_source_assertion": 5267
       },
       "verified_location_assertions": {
         "availability": "not_available",

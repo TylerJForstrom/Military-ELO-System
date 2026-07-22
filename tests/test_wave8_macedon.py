@@ -408,19 +408,19 @@ class Wave8MacedonTests(unittest.TestCase):
             {ANTIGONID: "rated", ATHENIAN_DEFENDERS: "rated", SELLASIA_ALLIANCE: "rated"},
         )
         coverage = self.registry["coverage"]
-        self.assertEqual(len(self.release_entities), 1_164)
-        self.assertEqual(len(self.release_events), 5_567)
-        self.assertEqual(len(self.registry["entities"]), 2_503)
-        self.assertEqual(coverage["rated_entities"], 1_157)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36_776)
+        self.assertEqual(len(self.release_entities), 1_200)
+        self.assertEqual(len(self.release_events), 5_585)
+        self.assertEqual(len(self.registry["entities"]), 2_539)
+        self.assertEqual(coverage["rated_entities"], 1_193)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36_758)
         location = coverage["hced_location_assertions"]
-        self.assertEqual(location["hced_candidate_bindings"], 5_300)
-        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 888)
+        self.assertEqual(location["hced_candidate_bindings"], 5_318)
+        self.assertEqual(location["candidate_keyed_reviewed_contracts"], 906)
         self.assertEqual(location["geojson_points"], 4_850)
-        self.assertEqual(location["modern_location_country_assertions"], 5_202)
-        self.assertEqual(location["location_provenance_objects"], 5_251)
-        self.assertEqual(location["point_fields_withheld_by_quarantine"], 450)
-        self.assertEqual(location["unique_events_with_any_quarantined_field"], 498)
+        self.assertEqual(location["modern_location_country_assertions"], 5_218)
+        self.assertEqual(location["location_provenance_objects"], 5_267)
+        self.assertEqual(location["point_fields_withheld_by_quarantine"], 468)
+        self.assertEqual(location["unique_events_with_any_quarantined_field"], 516)
 
 
 if __name__ == "__main__":

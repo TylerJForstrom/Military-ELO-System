@@ -7,10 +7,10 @@
   "comprehensive": false,
   "description": "The curated seed plus source-derived tactical tranches (crosswalk-resolved and label-resolved HCED engagements, deduplicated IWBD battles) and strategic tranches (aggregated IWD coalition wars, UCDP terminal-victory episodes). The separate registry publishes time-bounded Cliopatria polity candidates, including unrated entries, without assigning them invented Elo results.",
   "record_counts_expected": {
-    "entities": 1164,
-    "events": 5567,
-    "sources": 1711,
-    "registry_polities": 2503
+    "entities": 1200,
+    "events": 5585,
+    "sources": 1737,
+    "registry_polities": 2539
   },
   "year_range": {
     "start": -1274,
@@ -72,7 +72,7 @@
   "coverage_note": "Registry coverage is much broader than rating coverage. Source-derived HCED and IWBD engagements remain provisional; IWD component wars enter only as one aggregated coalition update per parent conflict, UCDP termination records only as conflict-level terminal victory episodes, and unresolved records do not affect Elo. The latest rated event ends in 2021; later timeline years carry ratings forward.",
   "footer_note": "Known polities, entities with Elo, and staged source records are reported separately. Absence from the rating ledger is not evidence of military failure.",
   "promotion": {
-    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules or an exact candidate-fingerprinted member binding to a distinct identity valid for the full event interval. Exact member bindings never become global aliases. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. Six additional post-1500 label rows use complete candidate fingerprints and candidate-scoped exact label or coalition-member corrections; two audited source rows remain explicit holds for compressed chronology or contradictory outcomes. None opens a generic label fallback. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback, and all generic Holy Roman Empire rows remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. Wave 8 reviews 62 additional candidate-keyed HCED rows across African state, New Zealand, and North American conflict lanes: 46 exact tactical engagements enter and 16 massacre, civilian-camp, umbrella-identity, or outcome-dispute rows remain explicit holds. Every new actor is conflict- or engagement-bounded and alias-free; no rating is inherited by a generic ethnic label. Four source outcomes are corrected only from direct official-history or museum evidence, with that source family recorded as outcome provenance. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
+    "policy": "Only nonduplicate HCED rows with aligned outcomes, both Seshat-coded sides, and unique time-valid polity identities enter the provisional tactical ledger. Rows lacking Seshat coding on one or both sides are retried in a second, declared label-resolution pass: sides resolve only through explicit time-bounded label policies or exact-normalized alias matching with uniqueness, full event-interval validity, and name-coherence for observation-derived pairings; faction and collective-peoples labels never resolve; polity labels pending identity splits never resolve; ambiguity always stays staged. For post-1500 rows only, an otherwise unresolved side may split on commas, semicolons, or ampersands as a coalition only when every member independently resolves through those ordinary label rules or an exact candidate-fingerprinted member binding to a distinct identity valid for the full event interval. Exact member bindings never become global aliases. The shared canonical supersession remap runs before coalition assembly; this path is unavailable to the frozen pre-1500 cohort. Label-resolved events carry reduced identity confidence and an identity_resolution provenance marker. One independently dated HCED crosswalk candidate (Piraja 1822) uses a complete candidate fingerprint and exact-ID binding to cross an otherwise fail-closed within-year Portugal boundary; it does not populate a generic label observation. Six additional post-1500 label rows use complete candidate fingerprints and candidate-scoped exact label or coalition-member corrections; two audited source rows remain explicit holds for compressed chronology or contradictory outcomes. None opens a generic label fallback. The 1500-1799 Wave 6 lane reviewed exactly 80 candidate-keyed HCED contracts whose complete raw rows, canonical event keys, outcomes, participant rosters, and entity windows are pinned. Seventy-six are active and four exact coalition-evidence holds remain staged. Its 39 historical HCED exclusions and eight Wikidata war umbrellas are likewise candidate-keyed and fingerprinted; none creates a label fallback. Eleven generic Holy Roman Empire exclusions are now explicitly superseded by Wave 8 contracts that use separately sourced, event-bounded formation pairs; the other 28 HCED exclusions remain staged. Wave 7 adds five candidate-keyed lanes covering 192 exact engagements, plus five atomic identity migrations of already-rated Orange events. Every admitted or held row is pinned by its complete queue-row hash, uses an alias-free time-bounded actor identity or an already curated identity, and bypasses generic label fallback. Eight HCED outcomes are corrected only where a direct historical reference contradicts the source assertion; each correction carries its own outcome provenance. The WEST lane also corrects four bad date, actor, or coalition records. Forty-two additional rows remain explicit holds, including Kadesh as a duplicate with a conflicting source outcome. Wave 8 reviews 62 additional candidate-keyed HCED rows across African state, New Zealand, and North American conflict lanes: 46 exact tactical engagements enter and 16 massacre, civilian-camp, umbrella-identity, or outcome-dispute rows remain explicit holds. Every new actor is conflict- or engagement-bounded and alias-free; no rating is inherited by a generic ethnic label. Four source outcomes are corrected only from direct official-history or museum evidence, with that source family recorded as outcome provenance. IWD component wars never enter individually: each parent conflict is rated at most once, as a coalition event aggregated from its component dyads, and only when the reconstructed sides are consistent, the component outcomes are unanimous, no curated seed war overlaps, and every belligerent resolves to a unique time-bounded identity. Eight transition-era parents use exact parent-keyed contracts that pin the complete component set, source semantics, party codes, and target IDs; they do not open generic COW-code fallbacks. All other parent wars stay staged. IWBD battles enter only when they are not a duplicate of any curated seed event, any non-curated-excluded HCED candidate (promoted or staged), or an earlier accepted IWBD row by exact normalized battle name and year within one year; broader ordinal/part matches require one recognized suffix path to extend the other in the same year with the same resolved outcome sides; their date span does not contain a differently-named battle of the same war (campaign umbrellas stay staged); the coded victor matches a named side; and both sides resolve to unique time-bounded identities outside declared deny windows. Twenty transition-era candidates use exact source fingerprints and exact-ID bindings; only those contracts can pass an otherwise applicable deny window, so bare Turkey remains denied in 1919-1923 everywhere else. Two additional candidate-keyed contracts are narrow exceptions: Abtao reconstructs the exact Chile-Peru coalition, and Mishan may overlap the pinned concurrent-distinct Chalainor 2 sibling. Both contracts fail closed on source, sibling-set, or resolver drift and do not enable generic punctuation splitting or containment bypasses. Severity is capped at limited. Duplicate matches are excluded, never merged. UCDP conflict-termination episodes promote only as conflict-level terminal victory episodes (outcome codes 3/4): peace agreements, ceasefires, low activity, and actor cessation stay staged; every primary party must be a state resolving to a unique time-bounded identity through explicit Gleditsch-Ward code policies or exact time-valid alias matching; episodes duplicating an already-promoted strategic event, contradicted by a terminal dyad row, linked by end date to an oppositely-oriented victory assertion, or carrying a documented side-attribution dispute stay staged; severity is capped at limited and secondary supporters carry no outcome. A curated tranche of time-bounded state identities and label/code policy windows (second reviewer pending) resolves previously blocked bare labels and orphaned source codes era-correctly, with deliberate gaps for eras without a defensible single identity, and enumerated curated row exclusions for known wrong-actor and variant-spelling records - counted, never merged. A declared set of curated non-state actor identities moves seven former blocklist labels to authoritative time-bounded policies and covers five additional labels that were never blocklisted; labels for umbrella movements without unified command stay blocked. UCDP terminal-victory episodes may include a curated non-state primary party only through conflict-scoped actor policies whose windows are the actor's attested existence bounds; the government side must independently resolve. UCDP war_type follows the source's type_of_conflict under an exhaustive declared mapping; unmapped types are rejected, never coerced.",
     "accepted_hced_events": 1887,
     "accepted_hced_label_events": 2525,
     "accepted_wave6_1500_1799_hced_events": 76,
@@ -189,6 +189,7 @@
     "accepted_wave8_republic_formosa_hced_events": 2,
     "accepted_wave8_arquijas_hced_events": 2,
     "accepted_wave8_raichur_udayagiri_la_forbie_hced_events": 3,
+    "accepted_wave8_holy_roman_empire_exact_hced_events": 18,
     "wave8_polish_audit_corrections": 4,
     "wave6_1500_1799_cohort_counts": {
       "ahmadnagar_sultanate": 6,
@@ -323,12 +324,6 @@
         "raw_row_sha256": "9965c780d1770e277ce0ed8ddfe65dedae14037a5c0cacaf58eb17e0001041d4"
       },
       {
-        "candidate_id": "hced-Alte Veste1632-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "3d84223f0361ca2543f4a9e381cd99390ecb2f66eda6d08a3bd594b69e09840d"
-      },
-      {
         "candidate_id": "hced-Ambur1749-1",
         "category": "wrong_actor",
         "reason": "HCED reverses/confuses the Carnatic claimants and French-allied side; do not rate Hyderabad from this row.",
@@ -345,42 +340,6 @@
         "category": "wrong_name_date",
         "reason": "Sri Lankan official chronology identifies Danture in 1594 and Balana in 1602; the HCED compound is not safe.",
         "raw_row_sha256": "e14e69e8f7ad0e4d9c2308b6459685213dcf404474113591d745ef23388fa2b7"
-      },
-      {
-        "candidate_id": "hced-Boulay1635-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "9b1351036631ba9f457f4aa128ff310244995fa339bfe86c58fa2a08d7aa6597"
-      },
-      {
-        "candidate_id": "hced-Brandeis1639-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "61c49e604e4c63812faf10db462cca9a3bbbd4d0fd2dd882e33ca490f7899d88"
-      },
-      {
-        "candidate_id": "hced-Breisach1638-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "afa6d0eb0b529017f6fa7a31e6a2e143db480d605a3803e0a2d1e8c90613eeb4"
-      },
-      {
-        "candidate_id": "hced-Breitenfeld1631-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "ccdd4b35b10d763020bc9f953e6e5fad178e237ad189fedfbc9a3b4bdd945ac1"
-      },
-      {
-        "candidate_id": "hced-Breitenfeld1642-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "832ca5f2b2b09b54a51a0533f3ed0b79dd1b51738572bb9eccedb1c6764189fc"
-      },
-      {
-        "candidate_id": "hced-Brema1638-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "ad7a64519a559623db8adeb4735e311542d9339822941af07242dbc1f3fdb0ba"
       },
       {
         "candidate_id": "hced-Carlisle1745-1",
@@ -431,12 +390,6 @@
         "raw_row_sha256": "ad6e508e6b54260d8597db421bab6389cc4f8ce50de33474f373cf651b3a08a1"
       },
       {
-        "candidate_id": "hced-Harkany1687-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "7744fc23f6056a8c7c17b5d895f45411945a9b1a40c6058ec9ebeade37515b93"
-      },
-      {
         "candidate_id": "hced-Humenne1619-1",
         "category": "wrong_actor",
         "reason": "The victorious force was the Lisowczycy/Habsburg-paid irregular formation, not the Polish state as a simple polity.",
@@ -479,12 +432,6 @@
         "raw_row_sha256": "12512550d35f505ca6bd401e065930544953b6f0521abe49a31150da7dce6c24"
       },
       {
-        "candidate_id": "hced-Mirischlau1600-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "604d63b9f7140ebec48d3289e435ac3241c8f5ae51d791ff90cc58d3b9aebde3"
-      },
-      {
         "candidate_id": "hced-Muhlberg1547-1",
         "category": "coalition_incomplete",
         "reason": "Habsburg, Saxon, and Schmalkaldic member forces cannot be collapsed to a generic imperial side.",
@@ -495,12 +442,6 @@
         "category": "claimant_collapse",
         "reason": "Ottoman-backed Apafi forces fought Kemény's rival Transylvanian claimant army; a single Transylvania entity would self-collapse the conflict.",
         "raw_row_sha256": "015095891d9b60983f1d9d0f3f1dc4d9afcd3e8a62c4e6ab075414910f518b51"
-      },
-      {
-        "candidate_id": "hced-Neubrandenburg1631-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "1e296a47886e6b162ac007b8e82be3771ef88efc8ae2dff2b0dfe36602731140"
       },
       {
         "candidate_id": "hced-Pallet1793-1",
@@ -543,12 +484,85 @@
         "category": "outcome_event_ambiguity",
         "reason": "The name/year collides with the Transylvanian-Swedish capture; the HCED Polish victory lacks an exact recapture locator.",
         "raw_row_sha256": "d88f185e8bb17e346e68a6b57ec1ec37a5a546aa4710b58bbfd696ef5e315156"
+      }
+    ],
+    "wave6_1500_1799_hced_exclusion_supersessions": [
+      {
+        "candidate_id": "hced-Alte Veste1632-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "3d84223f0361ca2543f4a9e381cd99390ecb2f66eda6d08a3bd594b69e09840d",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Boulay1635-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "9b1351036631ba9f457f4aa128ff310244995fa339bfe86c58fa2a08d7aa6597",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Brandeis1639-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "61c49e604e4c63812faf10db462cca9a3bbbd4d0fd2dd882e33ca490f7899d88",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Breisach1638-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "afa6d0eb0b529017f6fa7a31e6a2e143db480d605a3803e0a2d1e8c90613eeb4",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1631-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "ccdd4b35b10d763020bc9f953e6e5fad178e237ad189fedfbc9a3b4bdd945ac1",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1642-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "832ca5f2b2b09b54a51a0533f3ed0b79dd1b51738572bb9eccedb1c6764189fc",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Brema1638-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "ad7a64519a559623db8adeb4735e311542d9339822941af07242dbc1f3fdb0ba",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Harkany1687-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "7744fc23f6056a8c7c17b5d895f45411945a9b1a40c6058ec9ebeade37515b93",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Mirischlau1600-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "604d63b9f7140ebec48d3289e435ac3241c8f5ae51d791ff90cc58d3b9aebde3",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
+      },
+      {
+        "candidate_id": "hced-Neubrandenburg1631-1",
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "1e296a47886e6b162ac007b8e82be3771ef88efc8ae2dff2b0dfe36602731140",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
       },
       {
         "candidate_id": "hced-Wittenweier1638-1",
-        "category": "unsafe_imperial_collapse",
-        "reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
-        "raw_row_sha256": "976fc416e82951776c1ea277c3532a0d431845d059a7454ed30fd5c0e0da7084"
+        "historical_category": "unsafe_imperial_collapse",
+        "historical_reason": "Generic Holy Roman Empire label is unsafe: reconstruct Habsburg, Imperial, League, and member-state forces exactly before promotion.",
+        "raw_row_sha256": "976fc416e82951776c1ea277c3532a0d431845d059a7454ed30fd5c0e0da7084",
+        "current_disposition": "rated_by_wave8_holy_roman_empire_exact_event_bounded_formation_contract"
       }
     ],
     "wave6_1500_1799_wikidata_exclusions": [
@@ -26817,7 +26831,447 @@
     "wave8_raichur_udayagiri_la_forbie_country_quarantine_additions": [],
     "wave8_raichur_udayagiri_la_forbie_entities_added": 6,
     "wave8_raichur_udayagiri_la_forbie_sources_added": 6,
-    "hced_label_pass_input_rows": 5407,
+    "wave8_holy_roman_empire_exact_metadata": {
+      "counts": {
+        "adjacent_coverage_only_rows": 10,
+        "country_quarantine_additions": 2,
+        "cross_dataset_inventory_rows": 47,
+        "existing_owner_duplicates": 3,
+        "holds": 1,
+        "new_entities": 36,
+        "new_sources": 26,
+        "newly_rated_events": 18,
+        "outcome_overrides": 0,
+        "point_quarantine_additions": 18,
+        "reviewed_exact_hced_rows": 23,
+        "reviewed_hced_rows": 33,
+        "reused_sources": 1,
+        "terminal_exclusions": 1,
+        "unknown_holds": 1,
+        "wave6_superseded_exclusions": 11
+      },
+      "cohorts": {
+        "barbarossa_italian_expeditions": 3,
+        "frederick_ii_lombard_conflicts": 2,
+        "german_civil_wars": 2,
+        "great_turkish_war": 1,
+        "miraslau_1600": 1,
+        "thirty_years_war": 9
+      },
+      "existing_owner_duplicates": [
+        {
+          "candidate_id": "hced-Reutlingen1377-1",
+          "disposition": "existing_owner_duplicate",
+          "owner_event_id": "hced_wave8_swabian_hre_hced_reutlingen1377_1",
+          "owner_event_full_sha256": "52383f983253ce5ae5a057f330e269b549f814c3039f3b2b1fe5419fe265fa91"
+        },
+        {
+          "candidate_id": "hced-Ulm1376-1",
+          "disposition": "existing_owner_duplicate",
+          "owner_event_id": "hced_wave8_swabian_hre_hced_ulm1376_1",
+          "owner_event_full_sha256": "f4ea269adbc239ba1f3c39e7435a48f67469a57464e548c8c92f012a55b8180f"
+        },
+        {
+          "candidate_id": "hced-Zatec1421-1",
+          "disposition": "existing_owner_duplicate",
+          "owner_event_id": "hced_wave8_hussites_hced_zatec1421_1",
+          "owner_event_full_sha256": "54c41abd25b31f17c61942654e809a473d6bccde799a850d2465ffc70a729829"
+        }
+      ],
+      "final_audit_signature": "740c954b41184a9a774bb70a69e3d74fc361631ae5731f9ddf39428ffd16155a",
+      "hold_candidate_ids": [
+        "hced-Milan1161-1"
+      ],
+      "promoted_candidate_ids": [
+        "hced-Alte Veste1632-1",
+        "hced-Boulay1635-1",
+        "hced-Brandeis1639-1",
+        "hced-Breisach1638-1",
+        "hced-Breitenfeld1631-1",
+        "hced-Breitenfeld1642-1",
+        "hced-Brema1638-1",
+        "hced-Cortenuova1237-1",
+        "hced-Harkany1687-1",
+        "hced-Milan1158-1",
+        "hced-Mirischlau1600-1",
+        "hced-Neubrandenburg1631-1",
+        "hced-Parma1247-1248-1",
+        "hced-Rome1167-1",
+        "hced-Tortona1155-1",
+        "hced-Unstrut1075-1",
+        "hced-Welfesholze1115-1",
+        "hced-Wittenweier1638-1"
+      ],
+      "terminal_exclusion_candidate_ids": [
+        "hced-Rakersberg1416-1"
+      ],
+      "wave6_superseded_exclusion_candidate_ids": [
+        "hced-Alte Veste1632-1",
+        "hced-Boulay1635-1",
+        "hced-Brandeis1639-1",
+        "hced-Breisach1638-1",
+        "hced-Breitenfeld1631-1",
+        "hced-Breitenfeld1642-1",
+        "hced-Brema1638-1",
+        "hced-Harkany1687-1",
+        "hced-Mirischlau1600-1",
+        "hced-Neubrandenburg1631-1",
+        "hced-Wittenweier1638-1"
+      ]
+    },
+    "wave8_holy_roman_empire_exact_counts": {
+      "adjacent_coverage_only_rows": 10,
+      "country_quarantine_additions": 2,
+      "cross_dataset_inventory_rows": 47,
+      "existing_owner_duplicates": 3,
+      "holds": 1,
+      "new_entities": 36,
+      "new_sources": 26,
+      "newly_rated_events": 18,
+      "outcome_overrides": 0,
+      "point_quarantine_additions": 18,
+      "reviewed_exact_hced_rows": 23,
+      "reviewed_hced_rows": 33,
+      "reused_sources": 1,
+      "terminal_exclusions": 1,
+      "unknown_holds": 1,
+      "wave6_superseded_exclusions": 11
+    },
+    "wave8_holy_roman_empire_exact_audit_signature": "740c954b41184a9a774bb70a69e3d74fc361631ae5731f9ddf39428ffd16155a",
+    "wave8_holy_roman_empire_exact_final_audit_signature": "740c954b41184a9a774bb70a69e3d74fc361631ae5731f9ddf39428ffd16155a",
+    "wave8_holy_roman_empire_exact_queue_validation": {
+      "adjacent_coverage_only_rows": 10,
+      "exact_label_rows": 23,
+      "existing_owner_duplicates": 3,
+      "holds": 1,
+      "promotion_contracts": 18,
+      "reviewed_hced_rows": 33,
+      "terminal_exclusions": 1
+    },
+    "wave8_holy_roman_empire_exact_cross_dataset_validation": {
+      "broad_war_coverage_only_rows": 15,
+      "cross_dataset_inventory_rows": 47,
+      "discovery_promotions": 0,
+      "empty_dataset_inventories": 7,
+      "unknown_never_draw_rows": 32
+    },
+    "wave8_holy_roman_empire_exact_integration_validation": {
+      "adjacent_coverage_only_rows": 10,
+      "exact_label_rows": 23,
+      "existing_owner_duplicates": 3,
+      "holds": 1,
+      "promotion_contracts": 18,
+      "reviewed_hced_rows": 33,
+      "terminal_exclusions": 1,
+      "nonrating_lane_emissions": 0
+    },
+    "wave8_holy_roman_empire_exact_artifact_validation": {
+      "artifact_state": "integrated",
+      "installed_entities": 36,
+      "installed_new_sources": 26,
+      "promoted_events": 18,
+      "reused_sources": 1
+    },
+    "wave8_holy_roman_empire_exact_candidate_ids": [
+      "hced-Alte Veste1632-1",
+      "hced-Boulay1635-1",
+      "hced-Brandeis1639-1",
+      "hced-Breisach1638-1",
+      "hced-Breitenfeld1631-1",
+      "hced-Breitenfeld1642-1",
+      "hced-Brema1638-1",
+      "hced-Cortenuova1237-1",
+      "hced-Harkany1687-1",
+      "hced-Milan1158-1",
+      "hced-Mirischlau1600-1",
+      "hced-Neubrandenburg1631-1",
+      "hced-Parma1247-1248-1",
+      "hced-Rome1167-1",
+      "hced-Tortona1155-1",
+      "hced-Unstrut1075-1",
+      "hced-Welfesholze1115-1",
+      "hced-Wittenweier1638-1"
+    ],
+    "wave8_holy_roman_empire_exact_holds": [
+      {
+        "candidate_id": "hced-Milan1161-1",
+        "raw_row_sha256": "7279b443d88c0c9bfb2e7e67bbde40ab70259e1872d5428c96a95cd297762f66",
+        "raw_full_row_sha256": "459c8ad31c627434481fa480ee35bb8f652f208a89b71dd8f4b5a9f49934b611",
+        "disposition": "hold_unknown_never_draw",
+        "outcome_disposition": "unknown_never_draw",
+        "reason_code": "decisive_surrender_and_destruction_are_in_1162_outside_locked_1161_row",
+        "unknown_is_never_draw": true,
+        "evidence_urls": [
+          "https://www.cambridge.org/core/books/conflict-and-violence-in-medieval-italy-5681154/5B05918EC0B043BD2D7E23B62A1D2F60/listing",
+          "https://publires.unicatt.it/en/publications/federico-barbarossa-e-la-distruzione-di-milano-nella-storiografia-9/"
+        ]
+      }
+    ],
+    "wave8_holy_roman_empire_exact_terminal_exclusions": [
+      {
+        "candidate_id": "hced-Rakersberg1416-1",
+        "raw_row_sha256": "b970193f83eec6aab8fcb9cb1e2afa3520120b4b979c360c0cc07ce0457e6051",
+        "raw_full_row_sha256": "7e53d9f72ba0cfb42f81cdceff978ed2df8ce83e1e1ff4dfc9a7eb3fff7b1be2",
+        "disposition": "terminal_exclusion",
+        "reason_code": "late_legendary_event_usually_dated_1418_not_source_locked_1416",
+        "evidence_urls": [
+          "https://www.historischerverein-stmk.at/wp-content/uploads/Z_Jg18_Hans-PIRCHEGGER-Die-ersten-T%C3%BCrkeneinf%C3%A4lle-1396-1415-1418-1.pdf"
+        ]
+      }
+    ],
+    "wave8_holy_roman_empire_exact_location_quarantine_reasons": [
+      {
+        "candidate_id": "hced-Alte Veste1632-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_eb1911",
+          "wave8_hre_exact_glasgow_schuerger",
+          "wave8_hre_exact_showalter"
+        ]
+      },
+      {
+        "candidate_id": "hced-Boulay1635-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": "reviewed_modern_jurisdiction_mismatch",
+        "evidence_refs": [
+          "wave8_hre_exact_cambridge_modern_history",
+          "wave8_hre_exact_kreis_saarlouis"
+        ]
+      },
+      {
+        "candidate_id": "hced-Brandeis1639-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_austrian_state_archives_generals",
+          "wave8_hre_exact_cambridge_modern_history",
+          "wave8_hre_exact_czech_library_brandeis"
+        ]
+      },
+      {
+        "candidate_id": "hced-Breisach1638-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_cambridge_modern_history",
+          "wave8_hre_exact_rct_breisach",
+          "wave8_hre_exact_showalter"
+        ]
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1631-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_great_northern_exact_landers_field_forge",
+          "wave8_hre_exact_eb1911"
+        ]
+      },
+      {
+        "candidate_id": "hced-Breitenfeld1642-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "candidate_keyed_point_not_independently_verified",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_great_northern_exact_landers_field_forge",
+          "wave8_hre_exact_cambridge_modern_history"
+        ]
+      },
+      {
+        "candidate_id": "hced-Brema1638-1",
+        "actions": [
+          "withhold_country",
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": "reviewed_modern_jurisdiction_mismatch",
+        "evidence_refs": [
+          "wave8_hre_exact_caracol_breme",
+          "wave8_hre_exact_rct_breme"
+        ]
+      },
+      {
+        "candidate_id": "hced-Cortenuova1237-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_showalter",
+          "wave8_hre_exact_treccani_cortenuova"
+        ]
+      },
+      {
+        "candidate_id": "hced-Harkany1687-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_great_northern_exact_landers_field_forge",
+          "wave8_hre_exact_hadtortenelmi_harsany",
+          "wave8_hre_exact_pecs_harsany"
+        ]
+      },
+      {
+        "candidate_id": "hced-Milan1158-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_freed_barbarossa",
+          "wave8_hre_exact_treccani_barbarossa"
+        ]
+      },
+      {
+        "candidate_id": "hced-Mirischlau1600-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_miraslau_study",
+          "wave8_hre_exact_showalter"
+        ]
+      },
+      {
+        "candidate_id": "hced-Neubrandenburg1631-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_neubrandenburg_city",
+          "wave8_hre_exact_rostock_mecklenburg"
+        ]
+      },
+      {
+        "candidate_id": "hced-Parma1247-1248-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_grillo_parma",
+          "wave8_hre_exact_showalter"
+        ]
+      },
+      {
+        "candidate_id": "hced-Rome1167-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_lvr_rainald",
+          "wave8_hre_exact_ricchiuti_monte_porzio"
+        ]
+      },
+      {
+        "candidate_id": "hced-Tortona1155-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_freed_barbarossa",
+          "wave8_hre_exact_geschichtsquellen_gesta",
+          "wave8_hre_exact_treccani_barbarossa"
+        ]
+      },
+      {
+        "candidate_id": "hced-Unstrut1075-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "reviewed_battle_location_mismatch",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_lwl_german_civil",
+          "wave8_hre_exact_robinson_henry_iv"
+        ]
+      },
+      {
+        "candidate_id": "hced-Welfesholze1115-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_hre_exact_deutsche_biographie_hoyer",
+          "wave8_hre_exact_lwl_german_civil"
+        ]
+      },
+      {
+        "candidate_id": "hced-Wittenweier1638-1",
+        "actions": [
+          "withhold_point"
+        ],
+        "point_reason_code": "settlement_centroid_not_reviewed_combat_footprint",
+        "country_reason_code": null,
+        "evidence_refs": [
+          "wave8_great_northern_exact_landers_field_forge",
+          "wave8_hre_exact_basler_wittenweier",
+          "wave8_hre_exact_cambridge_modern_history"
+        ]
+      }
+    ],
+    "wave8_holy_roman_empire_exact_point_quarantine_additions": [
+      "hced-Alte Veste1632-1",
+      "hced-Boulay1635-1",
+      "hced-Brandeis1639-1",
+      "hced-Breisach1638-1",
+      "hced-Breitenfeld1631-1",
+      "hced-Breitenfeld1642-1",
+      "hced-Brema1638-1",
+      "hced-Cortenuova1237-1",
+      "hced-Harkany1687-1",
+      "hced-Milan1158-1",
+      "hced-Mirischlau1600-1",
+      "hced-Neubrandenburg1631-1",
+      "hced-Parma1247-1248-1",
+      "hced-Rome1167-1",
+      "hced-Tortona1155-1",
+      "hced-Unstrut1075-1",
+      "hced-Welfesholze1115-1",
+      "hced-Wittenweier1638-1"
+    ],
+    "wave8_holy_roman_empire_exact_country_quarantine_additions": [
+      "hced-Boulay1635-1",
+      "hced-Brema1638-1"
+    ],
+    "wave8_holy_roman_empire_exact_entities_added": 36,
+    "wave8_holy_roman_empire_exact_sources_added": 26,
+    "hced_label_pass_input_rows": 5398,
     "accepted_iwd_wars": 66,
     "iwd_parent_wars_total": 93,
     "iwd_components_aggregated": 107,
@@ -26830,7 +27284,7 @@
       "no_unique_time_valid_polity": 147,
       "outcome_not_aligned_to_crosswalk_sides": 8,
       "outside_continuity_policy": 41,
-      "reserved_candidate_contract": 1203,
+      "reserved_candidate_contract": 1212,
       "same_or_empty_opposing_side": 17
     },
     "hced_label_rejections": {
@@ -26842,8 +27296,8 @@
       "label_outcome_not_aligned": 78,
       "label_outside_policy_window": 187,
       "label_pending_identity_split": 29,
-      "no_unique_time_valid_label_match": 1822,
-      "no_unique_time_valid_polity": 79,
+      "no_unique_time_valid_label_match": 1816,
+      "no_unique_time_valid_polity": 76,
       "outside_continuity_policy": 100,
       "same_or_empty_opposing_side": 38,
       "wave6_pre1500_candidate_not_in_manifest": 38
