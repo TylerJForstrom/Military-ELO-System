@@ -1986,6 +1986,69 @@ from .wave8_followup_e import (
     wave8_followup_e_counts,
     wave8_followup_e_metadata,
 )
+from .wave8_alemanns import (
+    WAVE8_ALEMANNS_CONTRACT_IDS,
+    WAVE8_ALEMANNS_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_ALEMANNS_ENTITIES,
+    WAVE8_ALEMANNS_FINAL_AUDIT_SIGNATURE,
+    WAVE8_ALEMANNS_FUNNEL_AUDIT,
+    WAVE8_ALEMANNS_LOCATION_QUARANTINE_REASONS,
+    WAVE8_ALEMANNS_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_ALEMANNS_RESERVED_IDS,
+    WAVE8_ALEMANNS_SOURCES,
+    install_wave8_alemanns_entities,
+    install_wave8_alemanns_sources,
+    promote_wave8_alemanns_contracts,
+    validate_wave8_alemanns_funnel,
+    validate_wave8_alemanns_integration_dispositions,
+    validate_wave8_alemanns_queue_contracts,
+    wave8_alemanns_audit_signature,
+    wave8_alemanns_counts,
+    wave8_alemanns_metadata,
+)
+from .wave8_al_qaeda_taliban import (
+    WAVE8_AL_QAEDA_TALIBAN_CONTRACT_IDS,
+    WAVE8_AL_QAEDA_TALIBAN_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_AL_QAEDA_TALIBAN_ENTITIES,
+    WAVE8_AL_QAEDA_TALIBAN_FINAL_AUDIT_SIGNATURE,
+    WAVE8_AL_QAEDA_TALIBAN_FUNNEL_AUDIT,
+    WAVE8_AL_QAEDA_TALIBAN_LOCATION_QUARANTINE_REASONS,
+    WAVE8_AL_QAEDA_TALIBAN_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_AL_QAEDA_TALIBAN_RESERVED_IDS,
+    WAVE8_AL_QAEDA_TALIBAN_SOURCES,
+    install_wave8_al_qaeda_taliban_entities,
+    install_wave8_al_qaeda_taliban_sources,
+    promote_wave8_al_qaeda_taliban_contracts,
+    validate_wave8_al_qaeda_taliban_funnel,
+    validate_wave8_al_qaeda_taliban_integration_dispositions,
+    validate_wave8_al_qaeda_taliban_queue_contracts,
+    wave8_al_qaeda_taliban_audit_signature,
+    wave8_al_qaeda_taliban_counts,
+    wave8_al_qaeda_taliban_metadata,
+)
+from .wave8_araucanian import (
+    WAVE8_ARAUCANIAN_CONTRACT_IDS,
+    WAVE8_ARAUCANIAN_COUNTRY_QUARANTINE_ADDITIONS,
+    WAVE8_ARAUCANIAN_ENTITIES,
+    WAVE8_ARAUCANIAN_FINAL_AUDIT_SIGNATURE,
+    WAVE8_ARAUCANIAN_FUNNEL_AUDIT,
+    WAVE8_ARAUCANIAN_HOLDS,
+    WAVE8_ARAUCANIAN_LOCATION_QUARANTINE_REASONS,
+    WAVE8_ARAUCANIAN_POINT_QUARANTINE_ADDITIONS,
+    WAVE8_ARAUCANIAN_RESERVED_IDS,
+    WAVE8_ARAUCANIAN_SOURCES,
+    WAVE8_ARAUCANIAN_TERMINAL_EXCLUSIONS,
+    install_wave8_araucanian_entities,
+    install_wave8_araucanian_sources,
+    promote_wave8_araucanian_contracts,
+    validate_wave8_araucanian_cross_source_inventory,
+    validate_wave8_araucanian_current_artifact_state,
+    validate_wave8_araucanian_funnel,
+    validate_wave8_araucanian_queue_contracts,
+    wave8_araucanian_audit_signature,
+    wave8_araucanian_counts,
+    wave8_araucanian_metadata,
+)
 from .wave8_exact_priority import (
     WAVE8_EXACT_PRIORITY_CONTRACT_IDS,
     WAVE8_EXACT_PRIORITY_COUNTRY_QUARANTINE_ADDITIONS,
@@ -2479,6 +2542,9 @@ EFFECTIVE_HCED_RESERVED_IDS = (
     | WAVE8_FOLLOWUP_C_RESERVED_IDS
     | WAVE8_FOLLOWUP_D_RESERVED_IDS
     | WAVE8_FOLLOWUP_E_RESERVED_IDS
+    | WAVE8_ALEMANNS_RESERVED_IDS
+    | WAVE8_AL_QAEDA_TALIBAN_RESERVED_IDS
+    | WAVE8_ARAUCANIAN_RESERVED_IDS
     | WAVE8_EXACT_PRIORITY_RESERVED_IDS
     | WAVE8_KIEVAN_RUS_RESERVED_IDS
     | WAVE8_CARNATIC_RESERVED_IDS
@@ -2924,7 +2990,7 @@ def _validate_hced_location_release(
     ):
         raise ValueError("HCED country-quarantine event binding hash changed")
     if (
-        len(HCED_POINT_QUARANTINE_IDS) != 442
+        len(HCED_POINT_QUARANTINE_IDS) != 450
         or len(HCED_COUNTRY_QUARANTINE_IDS) != 97
         or len(HCED_SOURCE_BLANK_COUNTRY_IDS) != 1
         or len(HCED_POINT_QUARANTINE_IDS & HCED_COUNTRY_QUARANTINE_IDS)
@@ -3240,6 +3306,13 @@ def build_expanded_release(
         hced
     )
     wave8_followup_e_queue_validation = validate_wave8_followup_e_queue_contracts(
+        hced
+    )
+    wave8_alemanns_queue_validation = validate_wave8_alemanns_queue_contracts(hced)
+    wave8_al_qaeda_taliban_queue_validation = (
+        validate_wave8_al_qaeda_taliban_queue_contracts(hced)
+    )
+    wave8_araucanian_queue_validation = validate_wave8_araucanian_queue_contracts(
         hced
     )
     wave8_exact_priority_queue_validation = (
@@ -3882,6 +3955,9 @@ def build_expanded_release(
     )
     install_wave8_followup_d_entities(release_entities)
     install_wave8_followup_e_entities(release_entities)
+    install_wave8_alemanns_entities(release_entities)
+    install_wave8_al_qaeda_taliban_entities(release_entities)
+    install_wave8_araucanian_entities(release_entities)
     install_wave8_exact_priority_entities(release_entities)
     install_wave8_kievan_rus_entities(release_entities)
     install_wave8_carnatic_entities(release_entities)
@@ -5467,9 +5543,36 @@ def build_expanded_release(
         release_entities,
         wave8_followup_e_existing_events,
     )
-    wave8_exact_priority_existing_events = [
+    wave8_alemanns_existing_events = [
         *wave8_followup_e_existing_events,
         *wave8_followup_e_events,
+    ]
+    wave8_alemanns_events = promote_wave8_alemanns_contracts(
+        hced,
+        release_entities,
+        wave8_alemanns_existing_events,
+    )
+    wave8_al_qaeda_taliban_existing_events = [
+        *wave8_alemanns_existing_events,
+        *wave8_alemanns_events,
+    ]
+    wave8_al_qaeda_taliban_events = promote_wave8_al_qaeda_taliban_contracts(
+        hced,
+        release_entities,
+        wave8_al_qaeda_taliban_existing_events,
+    )
+    wave8_araucanian_existing_events = [
+        *wave8_al_qaeda_taliban_existing_events,
+        *wave8_al_qaeda_taliban_events,
+    ]
+    wave8_araucanian_events = promote_wave8_araucanian_contracts(
+        hced,
+        release_entities,
+        wave8_araucanian_existing_events,
+    )
+    wave8_exact_priority_existing_events = [
+        *wave8_araucanian_existing_events,
+        *wave8_araucanian_events,
     ]
     wave8_exact_priority_events = promote_wave8_exact_priority_contracts(
         hced,
@@ -5725,6 +5828,9 @@ def build_expanded_release(
         *wave8_followup_c_events,
         *wave8_followup_d_events,
         *wave8_followup_e_events,
+        *wave8_alemanns_events,
+        *wave8_al_qaeda_taliban_events,
+        *wave8_araucanian_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -6014,6 +6120,9 @@ def build_expanded_release(
         *wave8_followup_c_events,
         *wave8_followup_d_events,
         *wave8_followup_e_events,
+        *wave8_alemanns_events,
+        *wave8_al_qaeda_taliban_events,
+        *wave8_araucanian_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -6919,6 +7028,9 @@ def build_expanded_release(
     install_wave8_followup_c_sources(sources_by_id)
     install_wave8_followup_d_sources(sources_by_id)
     install_wave8_followup_e_sources(sources_by_id)
+    install_wave8_alemanns_sources(sources_by_id)
+    install_wave8_al_qaeda_taliban_sources(sources_by_id)
+    install_wave8_araucanian_sources(sources_by_id)
     install_wave8_exact_priority_sources(sources_by_id)
     install_wave8_kievan_rus_sources(sources_by_id)
     install_wave8_carnatic_sources(sources_by_id)
@@ -7036,6 +7148,9 @@ def build_expanded_release(
         *wave8_followup_c_events,
         *wave8_followup_d_events,
         *wave8_followup_e_events,
+        *wave8_alemanns_events,
+        *wave8_al_qaeda_taliban_events,
+        *wave8_araucanian_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -7161,6 +7276,45 @@ def build_expanded_release(
             all_events,
             release_entities.values(),
             sources_by_id.values(),
+        )
+    )
+    wave8_alemanns_integration_validation = (
+        validate_wave8_alemanns_integration_dispositions(
+            hced,
+            wikidata_battle_candidates,
+            iwbd_candidates,
+            all_events,
+        )
+    )
+    wave8_al_qaeda_taliban_integration_validation = (
+        validate_wave8_al_qaeda_taliban_integration_dispositions(
+            hced,
+            iwbd_candidates,
+            iwd_candidates,
+            wave8_followup_e_ucdp_rows,
+            wikidata_battle_candidates,
+            wikidata_candidates,
+            all_events,
+            sources_by_id,
+        )
+    )
+    wave8_araucanian_cross_source_validation = (
+        validate_wave8_araucanian_cross_source_inventory(
+            hced,
+            wikidata_battle_candidates,
+            wave8_followup_e_brecke_rows,
+            iwbd_candidates,
+            iwd_candidates,
+            wikidata_candidates,
+            cliopatria,
+        )
+    )
+    wave8_araucanian_artifact_validation = (
+        validate_wave8_araucanian_current_artifact_state(
+            all_events,
+            release_entities.values(),
+            sources_by_id.values(),
+            seed_events,
         )
     )
     wave8_exact_priority_integration_validation = (
@@ -7290,6 +7444,9 @@ def build_expanded_release(
         *wave8_followup_c_events,
         *wave8_followup_d_events,
         *wave8_followup_e_events,
+        *wave8_alemanns_events,
+        *wave8_al_qaeda_taliban_events,
+        *wave8_araucanian_events,
         *wave8_exact_priority_events,
         *wave8_kievan_rus_events,
         *wave8_carnatic_events,
@@ -7406,6 +7563,9 @@ def build_expanded_release(
             | WAVE8_FOLLOWUP_C_CONTRACT_IDS
             | WAVE8_FOLLOWUP_D_CONTRACT_IDS
             | WAVE8_FOLLOWUP_E_CONTRACT_IDS
+            | WAVE8_ALEMANNS_CONTRACT_IDS
+            | WAVE8_AL_QAEDA_TALIBAN_CONTRACT_IDS
+            | WAVE8_ARAUCANIAN_CONTRACT_IDS
             | WAVE8_EXACT_PRIORITY_CONTRACT_IDS
             | WAVE8_KIEVAN_RUS_CONTRACT_IDS
             | WAVE8_CARNATIC_CONTRACT_IDS
@@ -7577,6 +7737,12 @@ def build_expanded_release(
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_C_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_D_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_FOLLOWUP_E_ENTITIES),
+        *map(lambda entity: str(entity["id"]), WAVE8_ALEMANNS_ENTITIES),
+        *map(
+            lambda entity: str(entity["id"]),
+            WAVE8_AL_QAEDA_TALIBAN_ENTITIES,
+        ),
+        *map(lambda entity: str(entity["id"]), WAVE8_ARAUCANIAN_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_EXACT_PRIORITY_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_KIEVAN_RUS_ENTITIES),
         *map(lambda entity: str(entity["id"]), WAVE8_CARNATIC_ENTITIES),
@@ -7908,6 +8074,9 @@ def build_expanded_release(
         - len(wave8_followup_c_events)
         - len(wave8_followup_d_events)
         - len(wave8_followup_e_events)
+        - len(wave8_alemanns_events)
+        - len(wave8_al_qaeda_taliban_events)
+        - len(wave8_araucanian_events)
         - len(wave8_exact_priority_events)
         - len(wave8_kievan_rus_events)
         - len(wave8_carnatic_events)
@@ -8135,6 +8304,15 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_followup_e_hced_events": len(
             wave8_followup_e_events
+        ),
+        "candidate_keyed_wave8_alemanns_hced_events": len(
+            wave8_alemanns_events
+        ),
+        "candidate_keyed_wave8_al_qaeda_taliban_hced_events": len(
+            wave8_al_qaeda_taliban_events
+        ),
+        "candidate_keyed_wave8_araucanian_hced_events": len(
+            wave8_araucanian_events
         ),
         "candidate_keyed_wave8_exact_priority_hced_events": len(
             wave8_exact_priority_events
@@ -8529,6 +8707,13 @@ def build_expanded_release(
             ),
             "accepted_wave8_followup_e_hced_events": len(
                 wave8_followup_e_events
+            ),
+            "accepted_wave8_alemanns_hced_events": len(wave8_alemanns_events),
+            "accepted_wave8_al_qaeda_taliban_hced_events": len(
+                wave8_al_qaeda_taliban_events
+            ),
+            "accepted_wave8_araucanian_hced_events": len(
+                wave8_araucanian_events
             ),
             "accepted_wave8_exact_priority_hced_events": len(
                 wave8_exact_priority_events
@@ -12818,6 +13003,121 @@ def build_expanded_release(
             "wave8_followup_e_exact_label_funnel_audits": (
                 WAVE8_FOLLOWUP_E_FUNNEL_AUDITS
             ),
+            "wave8_alemanns_metadata": wave8_alemanns_metadata(),
+            "wave8_alemanns_counts": wave8_alemanns_counts(),
+            "wave8_alemanns_audit_signature": wave8_alemanns_audit_signature(),
+            "wave8_alemanns_final_audit_signature": (
+                WAVE8_ALEMANNS_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_alemanns_queue_validation": wave8_alemanns_queue_validation,
+            "wave8_alemanns_integration_validation": (
+                wave8_alemanns_integration_validation
+            ),
+            "wave8_alemanns_candidate_ids": sorted(WAVE8_ALEMANNS_CONTRACT_IDS),
+            "wave8_alemanns_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ALEMANNS_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_alemanns_point_quarantine_additions": sorted(
+                WAVE8_ALEMANNS_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_alemanns_country_quarantine_additions": sorted(
+                WAVE8_ALEMANNS_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_alemanns_entities_added": len(WAVE8_ALEMANNS_ENTITIES),
+            "wave8_alemanns_sources_added": len(WAVE8_ALEMANNS_SOURCES),
+            "wave8_alemanns_exact_label_funnel_audit": (
+                WAVE8_ALEMANNS_FUNNEL_AUDIT
+            ),
+            "wave8_al_qaeda_taliban_metadata": (
+                wave8_al_qaeda_taliban_metadata()
+            ),
+            "wave8_al_qaeda_taliban_counts": wave8_al_qaeda_taliban_counts(),
+            "wave8_al_qaeda_taliban_audit_signature": (
+                wave8_al_qaeda_taliban_audit_signature()
+            ),
+            "wave8_al_qaeda_taliban_final_audit_signature": (
+                WAVE8_AL_QAEDA_TALIBAN_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_al_qaeda_taliban_queue_validation": (
+                wave8_al_qaeda_taliban_queue_validation
+            ),
+            "wave8_al_qaeda_taliban_integration_validation": (
+                wave8_al_qaeda_taliban_integration_validation
+            ),
+            "wave8_al_qaeda_taliban_candidate_ids": sorted(
+                WAVE8_AL_QAEDA_TALIBAN_CONTRACT_IDS
+            ),
+            "wave8_al_qaeda_taliban_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_AL_QAEDA_TALIBAN_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_al_qaeda_taliban_point_quarantine_additions": sorted(
+                WAVE8_AL_QAEDA_TALIBAN_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_al_qaeda_taliban_country_quarantine_additions": sorted(
+                WAVE8_AL_QAEDA_TALIBAN_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_al_qaeda_taliban_entities_added": len(
+                WAVE8_AL_QAEDA_TALIBAN_ENTITIES
+            ),
+            "wave8_al_qaeda_taliban_sources_added": len(
+                WAVE8_AL_QAEDA_TALIBAN_SOURCES
+            ),
+            "wave8_al_qaeda_taliban_exact_label_funnel_audit": (
+                WAVE8_AL_QAEDA_TALIBAN_FUNNEL_AUDIT
+            ),
+            "wave8_araucanian_metadata": wave8_araucanian_metadata(),
+            "wave8_araucanian_counts": wave8_araucanian_counts(),
+            "wave8_araucanian_audit_signature": (
+                wave8_araucanian_audit_signature()
+            ),
+            "wave8_araucanian_final_audit_signature": (
+                WAVE8_ARAUCANIAN_FINAL_AUDIT_SIGNATURE
+            ),
+            "wave8_araucanian_queue_validation": (
+                wave8_araucanian_queue_validation
+            ),
+            "wave8_araucanian_cross_source_validation": (
+                wave8_araucanian_cross_source_validation
+            ),
+            "wave8_araucanian_artifact_validation": (
+                wave8_araucanian_artifact_validation
+            ),
+            "wave8_araucanian_candidate_ids": sorted(
+                WAVE8_ARAUCANIAN_CONTRACT_IDS
+            ),
+            "wave8_araucanian_holds": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(WAVE8_ARAUCANIAN_HOLDS.items())
+            ],
+            "wave8_araucanian_terminal_exclusions": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ARAUCANIAN_TERMINAL_EXCLUSIONS.items()
+                )
+            ],
+            "wave8_araucanian_location_quarantine_reasons": [
+                {"candidate_id": candidate_id, **contract}
+                for candidate_id, contract in sorted(
+                    WAVE8_ARAUCANIAN_LOCATION_QUARANTINE_REASONS.items()
+                )
+            ],
+            "wave8_araucanian_point_quarantine_additions": sorted(
+                WAVE8_ARAUCANIAN_POINT_QUARANTINE_ADDITIONS
+            ),
+            "wave8_araucanian_country_quarantine_additions": sorted(
+                WAVE8_ARAUCANIAN_COUNTRY_QUARANTINE_ADDITIONS
+            ),
+            "wave8_araucanian_entities_added": len(WAVE8_ARAUCANIAN_ENTITIES),
+            "wave8_araucanian_sources_added": len(WAVE8_ARAUCANIAN_SOURCES),
+            "wave8_araucanian_exact_label_funnel_audit": (
+                WAVE8_ARAUCANIAN_FUNNEL_AUDIT
+            ),
             "wave8_exact_priority_metadata": wave8_exact_priority_metadata(),
             "wave8_exact_priority_counts": wave8_exact_priority_counts(),
             "wave8_exact_priority_cohort_counts": (
@@ -13869,6 +14169,15 @@ def build_expanded_release(
         ),
         "candidate_keyed_wave8_followup_e_hced_events": len(
             wave8_followup_e_events
+        ),
+        "candidate_keyed_wave8_alemanns_hced_events": len(
+            wave8_alemanns_events
+        ),
+        "candidate_keyed_wave8_al_qaeda_taliban_hced_events": len(
+            wave8_al_qaeda_taliban_events
+        ),
+        "candidate_keyed_wave8_araucanian_hced_events": len(
+            wave8_araucanian_events
         ),
         "candidate_keyed_wave8_exact_priority_hced_events": len(
             wave8_exact_priority_events

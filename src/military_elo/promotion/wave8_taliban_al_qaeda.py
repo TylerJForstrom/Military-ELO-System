@@ -957,8 +957,12 @@ WAVE8_TALIBAN_AL_QAEDA_RELATED_HCED_DISPOSITIONS: dict[
         ),
         "normalized_label": _REVERSED_LABEL,
         "disposition": "separate_reversed_compound_label_lane",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
+        "owner_module": "military_elo.promotion.wave8_al_qaeda_taliban",
+        "owner_event_id": (
+            "hced_wave8_al_qaeda_taliban_"
+            "hced_operation_anaconda2002_1"
+        ),
+        "outcome_not_adjudicated": False,
         "boundary_note": (
             "The reversed al-Qaeda/Taliban spelling belongs to a distinct funnel "
             "lane. Its candidate ID says 2002 while the locked year fields say "
@@ -971,8 +975,12 @@ WAVE8_TALIBAN_AL_QAEDA_RELATED_HCED_DISPOSITIONS: dict[
         ),
         "normalized_label": _REVERSED_LABEL,
         "disposition": "separate_reversed_compound_label_lane",
-        "owner_module": None,
-        "outcome_not_adjudicated": True,
+        "owner_module": "military_elo.promotion.wave8_al_qaeda_taliban",
+        "owner_event_id": (
+            "hced_wave8_al_qaeda_taliban_"
+            "hced_operation_mongoose2003_1"
+        ),
+        "outcome_not_adjudicated": False,
         "boundary_note": (
             "A distinct 2003 operation under the reversed compound spelling; "
             "its actor and event boundaries require their own audit."
@@ -1314,7 +1322,7 @@ def wave8_taliban_al_qaeda_audit_signature() -> str:
 
 
 WAVE8_TALIBAN_AL_QAEDA_FINAL_AUDIT_SIGNATURE = (
-    "e9f9b8a73d528d0055e68d67f1138e1d73211f7bef3d1efb5543772a2cc60937"
+    "e3fd0f0047b3943534866b2bd51a786f3c00a645cf77bfe2125c81f1dad3d2bb"
 )
 
 

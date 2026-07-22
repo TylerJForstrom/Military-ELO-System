@@ -271,6 +271,24 @@ class Wave8TalibanAlQaedaTests(unittest.TestCase):
         )
         anaconda = self.rows_by_id["hced-Operation Anaconda2002-1"]
         self.assertEqual((anaconda["year_low"], anaconda["year_high"]), (2001, 2001))
+        reversed_owners = {
+            "hced-Operation Anaconda2002-1": (
+                "hced_wave8_al_qaeda_taliban_hced_operation_anaconda2002_1"
+            ),
+            "hced-Operation Mongoose2003-1": (
+                "hced_wave8_al_qaeda_taliban_hced_operation_mongoose2003_1"
+            ),
+        }
+        for candidate_id, owner_event_id in reversed_owners.items():
+            disposition = WAVE8_TALIBAN_AL_QAEDA_RELATED_HCED_DISPOSITIONS[
+                candidate_id
+            ]
+            self.assertEqual(
+                disposition["owner_module"],
+                "military_elo.promotion.wave8_al_qaeda_taliban",
+            )
+            self.assertEqual(disposition["owner_event_id"], owner_event_id)
+            self.assertIs(disposition["outcome_not_adjudicated"], False)
 
     def test_disposition_partition_promotes_all_four_and_invents_nothing(self) -> None:
         self.assertEqual(WAVE8_TALIBAN_AL_QAEDA_CONTRACT_IDS, set(EXPECTED_RAW))

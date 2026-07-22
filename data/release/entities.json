@@ -1347,6 +1347,38 @@
     ]
   },
   {
+    "id": "chnodomarius_alemannic_confederate_host_argentoratum_357",
+    "name": "Chnodomarius's Alemannic confederate host at Argentoratum (357)",
+    "kind": "event_bounded_confederate_host",
+    "start_year": 357,
+    "end_year": 357,
+    "region": "Roman Gaul near Argentoratum",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Alemannic coalition led by Chnodomarius and defeated by Julian at Argentoratum. This event-bounded identity has no aliases, predecessor bridge, or rating inheritance outside the fingerprinted contest.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_16",
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanns_ross_strasbourg"
+    ]
+  },
+  {
+    "id": "julian_roman_field_army_argentoratum_357",
+    "name": "Julian's Roman field army at Argentoratum (357)",
+    "kind": "event_bounded_field_army",
+    "start_year": 357,
+    "end_year": 357,
+    "region": "Roman Gaul near Argentoratum",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Caesar Julian's Roman field force in the August 357 battle at Argentoratum. This event-bounded identity has no aliases, predecessor bridge, or rating inheritance outside the fingerprinted contest.",
+    "source_ids": [
+      "wave8_alemanni_ammianus_book_16",
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanns_ross_strasbourg"
+    ]
+  },
+  {
     "id": "jovinus_roman_field_army_chalons_366",
     "name": "Jovinus's Roman field army near Chalons-sur-Marne (366)",
     "kind": "event_bounded_field_command",
@@ -1404,6 +1436,38 @@
     "source_ids": [
       "wave8_alemanni_ammianus_book_27",
       "wave8_alemanni_drinkwater_alamanni_rome"
+    ]
+  },
+  {
+    "id": "nannienus_mallobaudes_roman_field_army_argentaria_378",
+    "name": "Nannienus and Mallobaudes's Roman field army at Argentaria (378)",
+    "kind": "event_bounded_field_army",
+    "start_year": 378,
+    "end_year": 378,
+    "region": "Alsace near Argentaria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Western Roman army commanded by Nannienus and Mallobaudes in the June 378 battle at Argentaria. This event-bounded identity has no aliases, predecessor bridge, or rating inheritance outside the fingerprinted contest.",
+    "source_ids": [
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanns_ammianus_book_31",
+      "wave8_alemanns_drijvers_teitler_378_chronology"
+    ]
+  },
+  {
+    "id": "priarius_lentiensian_alemannic_host_argentaria_378",
+    "name": "Priarius's Lentiensian Alemannic host at Argentaria (378)",
+    "kind": "event_bounded_raiding_host",
+    "start_year": 378,
+    "end_year": 378,
+    "region": "Alsace near Argentaria",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Priarius's Lentiensian force defeated at Argentaria; it is not a timeless identity for every Alemannic group. This event-bounded identity has no aliases, predecessor bridge, or rating inheritance outside the fingerprinted contest.",
+    "source_ids": [
+      "wave8_alemanni_drinkwater_alamanni_rome",
+      "wave8_alemanns_ammianus_book_31",
+      "wave8_alemanns_drijvers_teitler_378_chronology"
     ]
   },
   {
@@ -6712,6 +6776,106 @@
     ]
   },
   {
+    "id": "lautaro_tucapel_lineage_alliance_1553_1554",
+    "name": "Lautaro's lineage alliance at Tucapel (1553-1554 date envelope)",
+    "kind": "event_bounded_lineage_alliance",
+    "start_year": 1553,
+    "end_year": 1554,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the force fighting Valdivia at the ruins of Fort Tucapel. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_barros_arana_tucapel",
+      "wave8_araucanian_gongora_marmolejo",
+      "wave8_araucanian_memoria_lautaro",
+      "wave8_araucanian_memoria_tucapel"
+    ]
+  },
+  {
+    "id": "valdivia_tucapel_column_1553_1554",
+    "name": "Valdivia's combined Tucapel column (1553-1554 date envelope)",
+    "kind": "event_bounded_combined_column",
+    "start_year": 1553,
+    "end_year": 1554,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Valdivia's cavalry and source-attested Indigenous auxiliaries at Tucapel. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_barros_arana_tucapel",
+      "wave8_araucanian_gongora_marmolejo",
+      "wave8_araucanian_memoria_lautaro",
+      "wave8_araucanian_memoria_tucapel"
+    ]
+  },
+  {
+    "id": "lautaro_mariguenu_force_1554",
+    "name": "Lautaro's Mariguenu battle force (1554)",
+    "kind": "event_bounded_battle_force",
+    "start_year": 1554,
+    "end_year": 1554,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Lautaro's force in the February 1554 field battle. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_clement_mariguenu",
+      "wave8_araucanian_gongora_marmolejo",
+      "wave8_araucanian_memoria_lautaro",
+      "wave8_araucanian_memoria_mariguenu"
+    ]
+  },
+  {
+    "id": "villagra_mariguenu_column_1554",
+    "name": "Villagra's combined Mariguenu column (1554)",
+    "kind": "event_bounded_combined_column",
+    "start_year": 1554,
+    "end_year": 1554,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Villagra's Spanish-led column and Indigenous auxiliaries at Mariguenu. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_clement_mariguenu",
+      "wave8_araucanian_gongora_marmolejo",
+      "wave8_araucanian_memoria_lautaro",
+      "wave8_araucanian_memoria_mariguenu"
+    ]
+  },
+  {
+    "id": "lautaro_mataquito_fort_force_1557",
+    "name": "Lautaro's armed Mataquito fort defenders (1557)",
+    "kind": "event_bounded_fortified_camp_force",
+    "start_year": 1557,
+    "end_year": 1557,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded only to armed defenders who fought in Lautaro's fortified camp. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_barros_arana_t2",
+      "wave8_araucanian_marino_lobera_mataquito",
+      "wave8_araucanian_memoria_lautaro"
+    ]
+  },
+  {
+    "id": "villagra_godinez_mataquito_assault_force_1557",
+    "name": "Villagra and Godinez's combined Mataquito assault force (1557)",
+    "kind": "event_bounded_combined_assault_force",
+    "start_year": 1557,
+    "end_year": 1557,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Spanish-led and Indigenous-auxiliary assault on the fortified camp. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_barros_arana_t2",
+      "wave8_araucanian_marino_lobera_mataquito",
+      "wave8_araucanian_memoria_lautaro"
+    ]
+  },
+  {
     "id": "narva_order_city_castle_defence_1558",
     "name": "Narva city and Order-castle defence (1558)",
     "kind": "event_bounded_city_castle_defence",
@@ -7478,6 +7642,22 @@
     ]
   },
   {
+    "id": "onez_de_loyola_curalaba_column_1598",
+    "name": "Onez de Loyola's combined Curalaba column (1598)",
+    "kind": "event_bounded_combined_column",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the governor's Spanish-led column and Indigenous allies at Curalaba. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_ahm_chile_t1",
+      "wave8_araucanian_goicovich_curalaba",
+      "wave8_araucanian_gongora_marmolejo"
+    ]
+  },
+  {
     "id": "oneill_odonnell_yellow_ford_host_1598",
     "name": "O’Neill–O’Donnell Yellow Ford Host (1598)",
     "kind": "engagement_coalition",
@@ -7491,6 +7671,22 @@
       "wave8_irish_ucc_beatha_aodha_ruaidh",
       "wave8_irish_ucc_four_masters_1594_1598",
       "wave8_irish_ucc_hanmer_yellow_ford"
+    ]
+  },
+  {
+    "id": "pelantaro_curalaba_strike_force_1598",
+    "name": "Pelantaro's Curalaba strike force (1598)",
+    "kind": "event_bounded_strike_force",
+    "start_year": 1598,
+    "end_year": 1598,
+    "region": "south-central Chile",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the force attacking the governor's camp on 23 December 1598. It has no ethnic, imperial, national, predecessor, successor, or cross-event alias and inherits no Elo.",
+    "source_ids": [
+      "wave8_araucanian_ahm_chile_t1",
+      "wave8_araucanian_goicovich_curalaba",
+      "wave8_araucanian_gongora_marmolejo"
     ]
   },
   {
@@ -17794,6 +17990,157 @@
       "wave8_taliban_al_qaeda_amnesty_qala",
       "wave8_taliban_al_qaeda_army_oef",
       "wave8_taliban_al_qaeda_commons_2001"
+    ]
+  },
+  {
+    "id": "canadian_3_ppcli_sniper_anaconda_contingent_2002",
+    "name": "3 PPCLI sniper contingent in Operation Anaconda (2002)",
+    "kind": "event_bounded_military_contingent",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Canadian 3 PPCLI sniper participation directly documented for Operation Anaconda. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_canadian_army_anaconda"
+    ]
+  },
+  {
+    "id": "al_qaeda_shahi_kot_force_2002",
+    "name": "Al-Qaeda Shahi Kot force in Operation Anaconda (2002)",
+    "kind": "event_bounded_nonstate_formation",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to al-Qaeda forces defending the Anaconda operational area; enemy escape prevents any strategic continuity claim. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_oxford_anaconda_review",
+      "wave8_taliban_al_qaeda_army_oef"
+    ]
+  },
+  {
+    "id": "australian_sas_anaconda_contingent_2002",
+    "name": "Australian SAS contingent in Operation Anaconda (2002)",
+    "kind": "event_bounded_special_operations_contingent",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to Australian SAS participation directly documented for Operation Anaconda. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_awm_anaconda"
+    ]
+  },
+  {
+    "id": "taliban_shahi_kot_contingent_2002",
+    "name": "Taliban Shahi Kot contingent in Operation Anaconda (2002)",
+    "kind": "event_bounded_nonstate_contingent",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to separately attested Taliban elements defending the Anaconda operational area. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_oxford_anaconda_review",
+      "wave8_taliban_al_qaeda_army_oef"
+    ]
+  },
+  {
+    "id": "us_cjtf_mountain_anaconda_force_2002",
+    "name": "U.S. CJTF Mountain force in Operation Anaconda (2002)",
+    "kind": "event_bounded_joint_task_force",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the U.S. formations operating under CJTF Mountain during the reviewed Anaconda principal-combat phase. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_oxford_anaconda_review",
+      "wave8_taliban_al_qaeda_army_oef"
+    ]
+  },
+  {
+    "id": "zia_haidar_afghan_militia_anaconda_force_2002",
+    "name": "Zia-Haidar Afghan militia force in Operation Anaconda (2002)",
+    "kind": "event_bounded_afghan_militia",
+    "start_year": 2002,
+    "end_year": 2002,
+    "region": "Shahi Kot Valley, Paktia, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Afghan militia columns directly committed to the Shahi Kot assault; it is not a state or nationwide Afghan force. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_oxford_anaconda_review",
+      "wave8_taliban_al_qaeda_army_oef"
+    ]
+  },
+  {
+    "id": "adi_ghar_mongoose_opposition_force_2003",
+    "name": "Adi Ghar opposition force in Operation Mongoose (2003)",
+    "kind": "event_bounded_disputed_nonstate_force",
+    "start_year": 2003,
+    "end_year": 2003,
+    "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded neutrally to the force fought in the Mongoose cave complex. The U.S. Army history and contemporaneous defense dispatches identify HIG or Hekmatyar followers, while the peer-reviewed EPAF archival history identifies Taliban; the conflict is preserved and not resolved into a broad alias. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_army_oef_2002_2005",
+      "wave8_al_qaeda_taliban_dvids_mongoose_0205",
+      "wave8_al_qaeda_taliban_dvids_mongoose_0211",
+      "wave8_al_qaeda_taliban_sjms_epaf"
+    ]
+  },
+  {
+    "id": "afghan_militia_mongoose_contingent_2003",
+    "name": "Afghan militia contingent in Operation Mongoose (2003)",
+    "kind": "event_bounded_afghan_militia",
+    "start_year": 2003,
+    "end_year": 2003,
+    "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Afghan militia directly accompanying coalition cave-clearing forces in Operation Mongoose. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_army_oef_2002_2005",
+      "wave8_al_qaeda_taliban_dvids_mongoose_0205"
+    ]
+  },
+  {
+    "id": "epaf_mongoose_strike_detachment_2003",
+    "name": "EPAF strike detachment supporting Operation Mongoose (2003)",
+    "kind": "event_bounded_multinational_air_detachment",
+    "start_year": 2003,
+    "end_year": 2003,
+    "region": "Air operations over the Adi Ghar area, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the Norwegian, Danish, and Dutch EPAF strike participation documented for Mongoose; it is one integrated event contingent, not three generic state actors. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_dvids_mongoose_0205",
+      "wave8_al_qaeda_taliban_sjms_epaf"
+    ]
+  },
+  {
+    "id": "us_mongoose_ground_force_2003",
+    "name": "U.S. ground force in Operation Mongoose (2003)",
+    "kind": "event_bounded_ground_force",
+    "start_year": 2003,
+    "end_year": 2003,
+    "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan",
+    "aliases": [],
+    "predecessors": [],
+    "continuity_note": "Bounded to the U.S. Special Forces, 82d Airborne, infantry, and engineer elements clearing the Mongoose cave complex. No rating is inherited from or passed to generic Afghanistan, United States, United Kingdom, Australia, Canada, Taliban, al-Qaeda, Hizb-i Islami Gulbuddin, another Afghan faction, or the strategic War in Afghanistan.",
+    "source_ids": [
+      "wave8_al_qaeda_taliban_army_oef_2002_2005",
+      "wave8_al_qaeda_taliban_dvids_mongoose_0205",
+      "wave8_al_qaeda_taliban_dvids_mongoose_0211"
     ]
   },
   {

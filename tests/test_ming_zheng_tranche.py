@@ -259,24 +259,24 @@ class MingZhengReleaseTests(unittest.TestCase):
         self.assertEqual(
             metadata["record_counts_expected"],
             {
-                "entities": 1142,
-                "events": 5559,
-                "sources": 1685,
-                "registry_polities": 2481,
+                "entities": 1164,
+                "events": 5567,
+                "sources": 1711,
+                "registry_polities": 2503,
             },
         )
         coverage = registry["coverage"]
-        self.assertEqual(coverage["rated_entities"], 1135)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36784)
+        self.assertEqual(coverage["rated_entities"], 1157)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36776)
         self.assertEqual(coverage["provisional_hced_label_events"], 2525)
         self.assertEqual(
             coverage["hced_location_assertions"],
             {
                 **coverage["hced_location_assertions"],
-                "hced_candidate_bindings": 5292,
+                "hced_candidate_bindings": 5300,
                 "geojson_points": 4850,
-                "modern_location_country_assertions": 5194,
-                "location_provenance_objects": 5243,
+                "modern_location_country_assertions": 5202,
+                "location_provenance_objects": 5251,
             },
         )
 

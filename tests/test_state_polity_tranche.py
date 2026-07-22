@@ -250,18 +250,18 @@ class StatePolityReleaseArtifactTests(unittest.TestCase):
         self.assertEqual(
             metadata["record_counts_expected"],
             {
-                "entities": 1142,
-                "events": 5559,
-                "sources": 1685,
-                "registry_polities": 2481,
+                "entities": 1164,
+                "events": 5567,
+                "sources": 1711,
+                "registry_polities": 2503,
             },
         )
         coverage = registry["coverage"]
-        self.assertEqual(coverage["rated_entities"], 1135)
-        self.assertEqual(coverage["unresolved_event_candidates"], 36784)
+        self.assertEqual(coverage["rated_entities"], 1157)
+        self.assertEqual(coverage["unresolved_event_candidates"], 36776)
         self.assertEqual(
             coverage["hced_location_assertions"]["hced_candidate_bindings"],
-            5292,
+            5300,
         )
 
 

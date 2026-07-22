@@ -392,6 +392,16 @@
       "region": "East Africa"
     },
     {
+      "id": "canadian_3_ppcli_sniper_anaconda_contingent_2002",
+      "name": "3 PPCLI sniper contingent in Operation Anaconda (2002)",
+      "kind": "event_bounded_military_contingent",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
+    },
+    {
       "id": "clio_iq_abbasid_cal_1_750_82ab6afc",
       "name": "Abbasid Caliphate",
       "kind": "caliphate",
@@ -524,6 +534,16 @@
       "region": "Aberdeen and north-eastern Scotland"
     },
     {
+      "id": "adi_ghar_mongoose_opposition_force_2003",
+      "name": "Adi Ghar opposition force in Operation Mongoose (2003)",
+      "kind": "event_bounded_disputed_nonstate_force",
+      "start_year": 2003,
+      "end_year": 2003,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan"
+    },
+    {
       "id": "aemilius_atilius_roman_consular_armies_telamon_225_bce",
       "name": "Aemilius Papus-Atilius Regulus Roman consular armies at Telamon (225 BCE)",
       "kind": "event_bounded_joint_command",
@@ -552,6 +572,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Awsa, Ethiopia"
+    },
+    {
+      "id": "afghan_militia_mongoose_contingent_2003",
+      "name": "Afghan militia contingent in Operation Mongoose (2003)",
+      "kind": "event_bounded_afghan_militia",
+      "start_year": 2003,
+      "end_year": 2003,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan"
     },
     {
       "id": "afghan_bengal_river_defense_ghaghra_1529",
@@ -696,6 +726,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Iraq"
+    },
+    {
+      "id": "al_qaeda_shahi_kot_force_2002",
+      "name": "Al-Qaeda Shahi Kot force in Operation Anaconda (2002)",
+      "kind": "event_bounded_nonstate_formation",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
     },
     {
       "id": "al_qaeda_tora_bora_defenders_2001",
@@ -1472,6 +1512,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Northern and central Italy"
+    },
+    {
+      "id": "australian_sas_anaconda_contingent_2002",
+      "name": "Australian SAS contingent in Operation Anaconda (2002)",
+      "kind": "event_bounded_special_operations_contingent",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
     },
     {
       "id": "austria_hungary",
@@ -3353,6 +3403,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "chnodomarius_alemannic_confederate_host_argentoratum_357",
+      "name": "Chnodomarius's Alemannic confederate host at Argentoratum (357)",
+      "kind": "event_bounded_confederate_host",
+      "start_year": 357,
+      "end_year": 357,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Roman Gaul near Argentoratum"
     },
     {
       "id": "clio_q1089675_1344_990f9c38",
@@ -5739,6 +5799,16 @@
       "identity_status": "source_candidate",
       "coverage_discontinuous": false,
       "region": "Unclassified"
+    },
+    {
+      "id": "epaf_mongoose_strike_detachment_2003",
+      "name": "EPAF strike detachment supporting Operation Mongoose (2003)",
+      "kind": "event_bounded_multinational_air_detachment",
+      "start_year": 2003,
+      "end_year": 2003,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Air operations over the Adi Ghar area, Afghanistan"
     },
     {
       "id": "eplf_afabet_field_force_1988",
@@ -10954,6 +11024,16 @@
       "region": "Judea"
     },
     {
+      "id": "julian_roman_field_army_argentoratum_357",
+      "name": "Julian's Roman field army at Argentoratum (357)",
+      "kind": "event_bounded_field_army",
+      "start_year": 357,
+      "end_year": 357,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Roman Gaul near Argentoratum"
+    },
+    {
       "id": "julian_roman_garrison_sens_356",
       "name": "Julian's Roman garrison at Sens (356)",
       "kind": "event_bounded_garrison",
@@ -13776,6 +13856,36 @@
       "region": "Latium near Tusculum"
     },
     {
+      "id": "lautaro_mariguenu_force_1554",
+      "name": "Lautaro's Mariguenu battle force (1554)",
+      "kind": "event_bounded_battle_force",
+      "start_year": 1554,
+      "end_year": 1554,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
+      "id": "lautaro_mataquito_fort_force_1557",
+      "name": "Lautaro's armed Mataquito fort defenders (1557)",
+      "kind": "event_bounded_fortified_camp_force",
+      "start_year": 1557,
+      "end_year": 1557,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
+      "id": "lautaro_tucapel_lineage_alliance_1553_1554",
+      "name": "Lautaro's lineage alliance at Tucapel (1553-1554 date envelope)",
+      "kind": "event_bounded_lineage_alliance",
+      "start_year": 1553,
+      "end_year": 1554,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
       "id": "clio_th_lavo_k_1_638_a2331424",
       "name": "Lavo Kingdom",
       "kind": "kingdom",
@@ -15897,6 +16007,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "nannienus_mallobaudes_roman_field_army_argentaria_378",
+      "name": "Nannienus and Mallobaudes's Roman field army at Argentaria (378)",
+      "kind": "event_bounded_field_army",
+      "start_year": 378,
+      "end_year": 378,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alsace near Argentaria"
+    },
+    {
       "id": "clio_q827040_bce206_60e8ba1f",
       "name": "Nanyue",
       "kind": "polity",
@@ -16864,6 +16984,16 @@
       "region": "Bạch Đằng river system"
     },
     {
+      "id": "onez_de_loyola_curalaba_column_1598",
+      "name": "Onez de Loyola's combined Curalaba column (1598)",
+      "kind": "event_bounded_combined_column",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
       "id": "orange_free_state_1854",
       "name": "Orange Free State",
       "kind": "republic",
@@ -17404,6 +17534,16 @@
       "region": "Upper Peru"
     },
     {
+      "id": "pelantaro_curalaba_strike_force_1598",
+      "name": "Pelantaro's Curalaba strike force (1598)",
+      "kind": "event_bounded_strike_force",
+      "start_year": 1598,
+      "end_year": 1598,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
       "id": "pelopidas_sacred_band_cavalry_tegyra_375_bce",
       "name": "Pelopidas's Sacred Band and cavalry at Tegyra (375 BCE)",
       "kind": "field_force",
@@ -17925,6 +18065,16 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Nebovidy-Habry-Nemecky Brod campaign, Bohemia"
+    },
+    {
+      "id": "priarius_lentiensian_alemannic_host_argentaria_378",
+      "name": "Priarius's Lentiensian Alemannic host at Argentaria (378)",
+      "kind": "event_bounded_raiding_host",
+      "start_year": 378,
+      "end_year": 378,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Alsace near Argentaria"
     },
     {
       "id": "primera_junta_auxiliary_army_cotagaita_1810",
@@ -23281,6 +23431,16 @@
       "region": "Mazar-e Sharif, Afghanistan"
     },
     {
+      "id": "taliban_shahi_kot_contingent_2002",
+      "name": "Taliban Shahi Kot contingent in Operation Anaconda (2002)",
+      "kind": "event_bounded_nonstate_contingent",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
+    },
+    {
       "id": "taliban_prisoner_uprising_qala_jangi_2001",
       "name": "Taliban prisoners in the Qala-i-Jangi uprising (2001)",
       "kind": "event_bounded_captive_combatant_formation",
@@ -24272,6 +24432,26 @@
       "region": "Aotearoa New Zealand"
     },
     {
+      "id": "us_cjtf_mountain_anaconda_force_2002",
+      "name": "U.S. CJTF Mountain force in Operation Anaconda (2002)",
+      "kind": "event_bounded_joint_task_force",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
+    },
+    {
+      "id": "us_mongoose_ground_force_2003",
+      "name": "U.S. ground force in Operation Mongoose (2003)",
+      "kind": "event_bounded_ground_force",
+      "start_year": 2003,
+      "end_year": 2003,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Adi/Hade Ghar Mountains near Spin Boldak, Afghanistan"
+    },
+    {
       "id": "us_qala_jangi_response_force_2001",
       "name": "U.S. rescue, special-operations, and air-support force at Qala-i-Jangi (2001)",
       "kind": "event_bounded_foreign_support_force",
@@ -24689,6 +24869,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "valdivia_tucapel_column_1553_1554",
+      "name": "Valdivia's combined Tucapel column (1553-1554 date envelope)",
+      "kind": "event_bounded_combined_column",
+      "start_year": 1553,
+      "end_year": 1554,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
       "id": "valentinian_sebastianus_roman_army_solicinium_368",
       "name": "Valentinian-Sebastianus Roman army at Solicinium (368)",
       "kind": "event_bounded_joint_command",
@@ -24923,6 +25113,26 @@
       "status": "rated",
       "identity_status": "curated",
       "region": "Cerro del Tambor between the Tecoripa frontier and Yaqui country"
+    },
+    {
+      "id": "villagra_godinez_mataquito_assault_force_1557",
+      "name": "Villagra and Godinez's combined Mataquito assault force (1557)",
+      "kind": "event_bounded_combined_assault_force",
+      "start_year": 1557,
+      "end_year": 1557,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
+    },
+    {
+      "id": "villagra_mariguenu_column_1554",
+      "name": "Villagra's combined Mariguenu column (1554)",
+      "kind": "event_bounded_combined_column",
+      "start_year": 1554,
+      "end_year": 1554,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "south-central Chile"
     },
     {
       "id": "villaret_hospitaller_rhodes_conquest_force_1310",
@@ -25941,6 +26151,16 @@
       "region": "Unclassified"
     },
     {
+      "id": "zia_haidar_afghan_militia_anaconda_force_2002",
+      "name": "Zia-Haidar Afghan militia force in Operation Anaconda (2002)",
+      "kind": "event_bounded_afghan_militia",
+      "start_year": 2002,
+      "end_year": 2002,
+      "status": "rated",
+      "identity_status": "curated",
+      "region": "Shahi Kot Valley, Paktia, Afghanistan"
+    },
+    {
       "id": "mandlakazi_zibhebhu_force_ivuna_1888",
       "name": "Zibhebhu's Mandlakazi force at Ivuna (1888)",
       "kind": "event_bounded_allied_force",
@@ -26171,11 +26391,11 @@
     }
   ],
   "coverage": {
-    "registry_polities": 2481,
-    "rated_entities": 1135,
-    "rated_events": 5559,
+    "registry_polities": 2503,
+    "rated_entities": 1157,
+    "rated_events": 5567,
     "staged_source_records": 45968,
-    "unresolved_event_candidates": 36784,
+    "unresolved_event_candidates": 36776,
     "latest_rated_event_year": 2021,
     "curated_seed_events": 40,
     "provisional_hced_events": 1887,
@@ -26273,6 +26493,9 @@
     "candidate_keyed_wave8_followup_c_hced_events": 14,
     "candidate_keyed_wave8_followup_d_hced_events": 20,
     "candidate_keyed_wave8_followup_e_hced_events": 13,
+    "candidate_keyed_wave8_alemanns_hced_events": 2,
+    "candidate_keyed_wave8_al_qaeda_taliban_hced_events": 2,
+    "candidate_keyed_wave8_araucanian_hced_events": 4,
     "candidate_keyed_wave8_exact_priority_hced_events": 18,
     "candidate_keyed_wave8_kievan_rus_hced_events": 2,
     "candidate_keyed_wave8_carnatic_hced_events": 3,
@@ -26301,21 +26524,21 @@
     "iwd_component_records": 265,
     "iwd_components_aggregated": 107,
     "hced_location_assertions": {
-      "hced_candidate_bindings": 5292,
-      "candidate_keyed_reviewed_contracts": 880,
+      "hced_candidate_bindings": 5300,
+      "candidate_keyed_reviewed_contracts": 888,
       "geojson_points": 4850,
-      "modern_location_country_assertions": 5194,
-      "location_provenance_objects": 5243,
-      "point_fields_withheld_by_quarantine": 442,
+      "modern_location_country_assertions": 5202,
+      "location_provenance_objects": 5251,
+      "point_fields_withheld_by_quarantine": 450,
       "country_or_jurisdiction_fields_withheld_by_quarantine": 97,
       "source_blank_country_fields": 1,
       "point_country_quarantine_overlap": 49,
-      "unique_events_with_any_quarantined_field": 490,
-      "point_quarantine_candidate_manifest_sha256": "0a15093c7621d6b48562707ba72a747b5b1b7c81920a18650e8ca3a8f8e65c19",
+      "unique_events_with_any_quarantined_field": 498,
+      "point_quarantine_candidate_manifest_sha256": "433427869516466a8c0cea5f6492e4e20aade4e75c548dae72b330a7f0294f02",
       "country_quarantine_candidate_manifest_sha256": "e3c34aa567567827a732bacb85e46077b9696c98937a4ea0b739e277d56374be",
-      "quarantine_policy_sha256": "cd3b2d2ad791e3fa7fd696184bb63f09892902569b7c671fc2b85441f2e0e5b8",
+      "quarantine_policy_sha256": "96b07b9dce30380c52b40024bc4db7e76e916ad66051019b2c92e8591fc5f436",
       "assertion_status": {
-        "unreviewed_source_assertion": 5243
+        "unreviewed_source_assertion": 5251
       },
       "verified_location_assertions": {
         "availability": "not_available",

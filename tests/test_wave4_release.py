@@ -49,13 +49,21 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         families = Counter(
             tuple(event.get("outcome_source_family_ids", ())) for event in self.events
         )
-        self.assertEqual(len(self.events), 5_559)
-        self.assertEqual(len(self.entities), 1_142)
-        self.assertEqual(len(self.registry_by_id), 2_481)
+        self.assertEqual(len(self.events), 5_567)
+        self.assertEqual(len(self.entities), 1_164)
+        self.assertEqual(len(self.registry_by_id), 2_503)
         self.assertEqual(
             families,
             {
             (): 40,
+            ("academia_historia_militar_chile_t1", "goicovich_historia_2006", "gongora_marmolejo_1575"): 1,
+            ("american_forces_press_service_mongoose_2003", "neumann_mundey_mikolashek_army_cmh_2013", "us_senate_foreign_relations_afghanistan_2003", "van_der_vegt_sjms_epaf_2021"): 1,
+            ("ammianus_roman_history_loeb", "drijvers_teitler_gratian_lentienses_2019", "drinkwater_alamanni_and_rome_2007"): 1,
+            ("ammianus_roman_history_loeb", "drinkwater_alamanni_and_rome_2007", "ross_ammianus_julian_2016"): 1,
+            ("australian_war_memorial_anaconda_2023", "canadian_army_afghanistan_volume_1_2023", "caruso_ohr_anaconda_2012", "folse_army_cmh_oef_2022"): 1,
+            ("barros_arana_historia_general_t1", "gongora_marmolejo_1575", "memoria_chilena_lautaro_minisite"): 1,
+            ("barros_arana_historia_general_t2", "marino_de_lobera_cronica", "memoria_chilena_lautaro_minisite"): 1,
+            ("clement_war_in_history_2015", "gongora_marmolejo_1575", "memoria_chilena_lautaro_minisite"): 1,
             ("africa_watch_somalia_reporting_1992", "amnesty_international_somalia_reporting_1992"): 1,
             ("al_sabah_kuwait_duaij_profile", "kuwait_news_agency_history", "tetreault_stories_of_democracy_2000"): 1,
             ("al_sabah_kuwait_duaij_profile", "tetreault_stories_of_democracy_2000"): 1,
@@ -571,7 +579,7 @@ class Wave5ReleaseContractTests(unittest.TestCase):
             sum(len(event.get("iwd_components", ())) for event in self.events),
             107,
         )
-        self.assertEqual(len(self.results["events"]), 5_559)
+        self.assertEqual(len(self.results["events"]), 5_567)
 
     def test_abtao_and_mishan_are_exact_candidate_keyed_events(self) -> None:
         abtao = self.events_by_id["iwbd_iwbd_52_18_185_abtao"]
@@ -650,10 +658,10 @@ class Wave5ReleaseContractTests(unittest.TestCase):
         )
 
     def test_source_expansion_is_narrow_and_canonical(self) -> None:
-        self.assertEqual(len(self.sources), 1_685)
+        self.assertEqual(len(self.sources), 1_711)
         self.assertEqual(
             len({source["source_family_id"] for source in self.sources}),
-            1_398,
+            1_420,
         )
         new_source_ids = {
             "colombia_constitution_1863",

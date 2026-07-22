@@ -5797,6 +5797,139 @@
     ]
   },
   {
+    "id": "wave8_al_qaeda_taliban_army_oef_2002_2005",
+    "title": "Operation Enduring Freedom, March 2002-April 2005",
+    "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D114-PURL-gpo39933/pdf/GOVPUB-D114-PURL-gpo39933.pdf",
+    "publisher": "U.S. Army Center of Military History",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "neumann_mundey_mikolashek_army_cmh_2013",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_awm_anaconda",
+    "title": "Finishing the job",
+    "url": "https://www.awm.gov.au/wartime/104/finishing-the-job",
+    "publisher": "Australian War Memorial",
+    "license": "Citation and link only",
+    "source_type": "official_military_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "australian_war_memorial_anaconda_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_canadian_army_anaconda",
+    "title": "The Canadian Army in Afghanistan, Volume I: A Nation Under Fire, 2001-2006",
+    "url": "https://www.canada.ca/content/dam/dnd-mdn/army/lineofsight/articleimages/2023/11/CAIA-Vol1-EN.pdf",
+    "publisher": "Canadian Army",
+    "license": "Citation and link only",
+    "source_type": "official_military_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "canadian_army_afghanistan_volume_1_2023",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_dvids_mongoose_0205",
+    "title": "Cave-Clearing Ops Proceed in Spin Boldak Area",
+    "url": "https://www.dvidshub.net/news/printable/532087",
+    "publisher": "American Forces Press Service",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_official_defense_dispatch",
+    "accessed": "2026-07-21",
+    "source_family_id": "american_forces_press_service_mongoose_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_dvids_mongoose_0211",
+    "title": "12 Afghans Surrender After Firefight",
+    "url": "https://www.dvidshub.net/news/532121/12-afghans-surrender-after-firefight",
+    "publisher": "American Forces Press Service",
+    "license": "Citation and link only",
+    "source_type": "contemporaneous_official_defense_dispatch",
+    "accessed": "2026-07-21",
+    "source_family_id": "american_forces_press_service_mongoose_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_hansard_anaconda",
+    "title": "Afghanistan: Lords Chamber, 25 March 2002",
+    "url": "https://hansard.parliament.uk/Lords/2002-03-25/debates/5c2ae04d-4e39-4503-9354-89a8847876ce/LordsChamber",
+    "publisher": "UK Parliament",
+    "license": "Citation and link only",
+    "source_type": "official_parliamentary_record",
+    "accessed": "2026-07-21",
+    "source_family_id": "uk_hansard_afghanistan_2002_03_25",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_oxford_anaconda_review",
+    "title": "Operation Anaconda",
+    "url": "https://doi.org/10.1093/ohr/ohs065",
+    "publisher": "The Oral History Review, Oxford University Press",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "caruso_ohr_anaconda_2012",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_senate_afghanistan_2003",
+    "title": "The Reconstruction of Afghanistan: An Update",
+    "url": "https://www.congress.gov/108/chrg/CHRG-108shrg87575/CHRG-108shrg87575.pdf",
+    "publisher": "U.S. Senate Committee on Foreign Relations",
+    "license": "Citation and link only",
+    "source_type": "official_congressional_hearing",
+    "accessed": "2026-07-21",
+    "source_family_id": "us_senate_foreign_relations_afghanistan_2003",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_al_qaeda_taliban_sjms_epaf",
+    "title": "Joining Forces Over Afghanistan: The EPAF Experiment",
+    "url": "https://sjms.nu/articles/10.31374/sjms.101",
+    "publisher": "Scandinavian Journal of Military Studies",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_archival_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "van_der_vegt_sjms_epaf_2021",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
     "id": "wave8_alemanni_ammianus_book_16",
     "title": "Ammianus Marcellinus, Roman History, Book 16",
     "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/16%2A.html",
@@ -5984,6 +6117,250 @@
       "identity_boundary_or_context_reference",
       "outcome",
       "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanns_ammianus_book_31",
+    "title": "Ammianus Marcellinus, Roman History, Book 31",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/31%2A.html",
+    "publisher": "LacusCurtius; Loeb Classical Library translation",
+    "license": "Citation and link only",
+    "source_type": "translated_primary_source",
+    "accessed": "2026-07-21",
+    "source_family_id": "ammianus_roman_history_loeb",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanns_drijvers_teitler_378_chronology",
+    "title": "Gratian's Campaign against the Lentienses and his Journey to Thrace (Ammianus Marcellinus 31.10 & 31.11.6): A New Chronology",
+    "url": "https://doi.org/10.25162/historia-2019-0006",
+    "publisher": "Jan Willem Drijvers and Hans Carel Teitler / Historia: Zeitschrift fuer Alte Geschichte 68 (2019)",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_ancient_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "drijvers_teitler_gratian_lentienses_2019",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_alemanns_ross_strasbourg",
+    "title": "Strasbourg: Legitimizing Julian, in Ammianus' Julian: Narrative and Genre in the Res Gestae",
+    "url": "https://doi.org/10.1093/acprof:oso/9780198784951.003.0004",
+    "publisher": "Oxford University Press; Alan J. Ross",
+    "license": "Citation and link only",
+    "source_type": "scholarly_monograph_chapter",
+    "accessed": "2026-07-21",
+    "source_family_id": "ross_ammianus_julian_2016",
+    "evidence_roles": [
+      "curated_reference_pending_claim_level_outcome_locator",
+      "identity_boundary_or_context_reference",
+      "outcome",
+      "outcome_consistency_crosscheck"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_ahm_chile_t1",
+    "title": "Historia Militar de Chile, tomo I",
+    "url": "https://www.academiahistoriamilitar.cl/academia/wp-content/uploads/2022/03/TOMO-I-Historia_digital.pdf",
+    "publisher": "Academia de Historia Militar de Chile",
+    "license": "Citation and link only",
+    "source_type": "official_institutional_military_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "academia_historia_militar_chile_t1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_archivo_nombre_apeleg",
+    "title": "El archivo y el nombre: genocidio, memorias y resistencias",
+    "url": "https://saantropologia.com.ar/wp-content/uploads/2023/11/El-archivo-y-el-nombre-FINAL-IMPRENTA.pdf",
+    "publisher": "Sociedad Argentina de Antropologia",
+    "license": "Citation and link only",
+    "source_type": "scholarly_anthropology_collection",
+    "accessed": "2026-07-21",
+    "source_family_id": "sociedad_argentina_antropologia_archivo_nombre",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_bagaloni_pedrotta_san_jacinto",
+    "title": "Historical archaeology of the Battle of San Jacinto",
+    "url": "https://ri.conicet.gov.ar/bitstream/handle/11336/177034/CONICET_Digital_Nro.d91b4e41-c98b-4e7d-93ce-ecdc7dea68d5_B.pdf?isAllowed=y&sequence=2",
+    "publisher": "CONICET institutional repository",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_historical_archaeology_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "bagaloni_pedrotta_hist_arch_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_barcos_lanteri_tapalque",
+    "title": "Fronteras, poder estatal y relaciones interetnicas en Buenos Aires",
+    "url": "https://www.anuarioiha.fahce.unlp.edu.ar/article/download/IHAe066/9637?inline=1",
+    "publisher": "Anuario del Instituto de Historia Argentina",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "barcos_lanteri_anuario_iha_2018",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_barros_arana_t2",
+    "title": "Historia General de Chile, tomo segundo",
+    "url": "https://www.cervantesvirtual.com/obra-visor/historia-general-de-chile-tomo-segundo--0/html/ff2db864-82b1-11df-acc7-002185ce6064_60.html",
+    "publisher": "Biblioteca Virtual Miguel de Cervantes",
+    "license": "Citation and link only",
+    "source_type": "scholarly_history_monograph_digital_edition",
+    "accessed": "2026-07-21",
+    "source_family_id": "barros_arana_historia_general_t2",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_barros_arana_tucapel",
+    "title": "Combate de Tucapel y muerte de Pedro de Valdivia",
+    "url": "https://www.academiahistoriamilitar.cl/academia/wp-content/uploads/2021/12/COMBATE-DE-TUCAPEL-Y-MUERTE-DE-PEDRO-DE-VALDIVIA.pdf",
+    "publisher": "Academia de Historia Militar de Chile",
+    "license": "Citation and link only",
+    "source_type": "institutional_extract_of_scholarly_history",
+    "accessed": "2026-07-21",
+    "source_family_id": "barros_arana_historia_general_t1",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_clement_mariguenu",
+    "title": "The Recruitment of Colonial Troops in Chile, 1550-1650",
+    "url": "https://journals.sagepub.com/doi/10.1177/0968344514523000",
+    "publisher": "War in History / SAGE",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "clement_war_in_history_2015",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_delrio_lenton_apeleg",
+    "title": "Discussing Indigenous Genocide in Argentina",
+    "url": "https://ri.conicet.gov.ar/bitstream/11336/58381/2/CONICET_Digital_Nro.29c0c222-f3de-4205-8bde-5b4fa32a0c11_A.pdf",
+    "publisher": "Genocide Studies and Prevention / CONICET repository",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_genocide_studies_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "delrio_lenton_et_al_gsp_2010",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_goicovich_curalaba",
+    "title": "La etapa de la conquista (1536-1598): origen y desarrollo del Estado indomito",
+    "url": "https://www.scielo.cl/scielo.php?pid=S0717-71942006000100004&script=sci_arttext",
+    "publisher": "Historia, Pontificia Universidad Catolica de Chile / SciELO",
+    "license": "Citation and link only",
+    "source_type": "peer_reviewed_history_article",
+    "accessed": "2026-07-21",
+    "source_family_id": "goicovich_historia_2006",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_gongora_marmolejo",
+    "title": "Historia de Chile desde su descubrimiento hasta el ano 1575",
+    "url": "https://www.cervantesvirtual.com/obra/historia-de-chile-desde-su-descubrimiento-hasta-el-ano-1575--0/",
+    "publisher": "Biblioteca Virtual Miguel de Cervantes",
+    "license": "Citation and link only",
+    "source_type": "primary_chronicle_in_scholarly_digital_edition",
+    "accessed": "2026-07-21",
+    "source_family_id": "gongora_marmolejo_1575",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_marino_lobera_mataquito",
+    "title": "Cronica del Reino de Chile, chapter LV",
+    "url": "https://www.cervantesvirtual.com/obra-visor/cronica-del-reino-de-chile--0/html/feec70e8-82b1-11df-acc7-002185ce6064_2.html",
+    "publisher": "Biblioteca Virtual Miguel de Cervantes",
+    "license": "Citation and link only",
+    "source_type": "primary_chronicle_in_scholarly_digital_edition",
+    "accessed": "2026-07-21",
+    "source_family_id": "marino_de_lobera_cronica",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_memoria_lautaro",
+    "title": "Lautaro (ca. 1534-1557)",
+    "url": "https://www.memoriachilena.gob.cl/602/w3-article-721.html",
+    "publisher": "Biblioteca Nacional de Chile / Memoria Chilena",
+    "license": "Citation and link only",
+    "source_type": "national_library_scholarly_mini_site",
+    "accessed": "2026-07-21",
+    "source_family_id": "memoria_chilena_lautaro_minisite",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_memoria_mariguenu",
+    "title": "Batalla de Mariguen",
+    "url": "https://www.memoriachilena.gob.cl/602/w3-article-95491.html",
+    "publisher": "Biblioteca Nacional de Chile / Memoria Chilena",
+    "license": "Citation and link only",
+    "source_type": "national_library_scholarly_mini_site",
+    "accessed": "2026-07-21",
+    "source_family_id": "memoria_chilena_lautaro_minisite",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
+    ]
+  },
+  {
+    "id": "wave8_araucanian_memoria_tucapel",
+    "title": "Batalla de Tucapel",
+    "url": "https://www.memoriachilena.gob.cl/602/w3-article-95492.html",
+    "publisher": "Biblioteca Nacional de Chile / Memoria Chilena",
+    "license": "Citation and link only",
+    "source_type": "national_library_scholarly_mini_site",
+    "accessed": "2026-07-21",
+    "source_family_id": "memoria_chilena_lautaro_minisite",
+    "evidence_roles": [
+      "identity_boundary_or_context_reference",
+      "outcome"
     ]
   },
   {
